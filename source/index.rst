@@ -15,6 +15,6 @@ The documentation is divided to three parts: overview, trading strategy developm
 
 Quick links to elsewhere
 
-- `Main website <https://tradingstrategy.ai>`_.
-- `About Trading Strategy <https://tradingstrategy.ai/about>`_.
-- `Community Discord for questions <https://tradingstrategy.ai/community>`_.
+- `Trading Strategy main website <https://tradingstrategy.ai>`_
+- `About Trading Strategy <https://tradingstrategy.ai/about>`_
+- `Community Discord for questions <https://tradingstrategy.ai/community>`_
