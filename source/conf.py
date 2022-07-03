@@ -71,18 +71,31 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Logos
+# https://pradyunsg.me/furo/customisation/logo/
+html_theme_options = {
+    "light_logo": "logo-light.svg",
+    "dark_logo": "logo-dark.svg",
+}
+
+html_js_files = [
+    "require.min.js",
+    "custom.js",
+]
+
+html_css_files = [
+    "custom.css",
+]
 
 html_context = {
-    'extra_css_files': [
-        '_static/custom.css',
-    ],
-
     # https://stackoverflow.com/questions/62904172/how-do-i-replace-view-page-source-with-edit-on-github-links-in-sphinx-rtd-th
     # https://github.com/readthedocs/sphinx_rtd_theme/issues/529
     'display_github': True,
     'github_user': 'tradingstrategy-ai',
     'github_repo': 'client',
     'github_version': 'tree/master/docs/source/',
+
+    "theme_sidebar_hide_name": True,
 }
 
 #

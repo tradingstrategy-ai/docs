@@ -4,6 +4,9 @@
 Glossary
 ========
 
+Here you can find terminology used in the documentation, decentralised finance
+and algorithmic trading.
+
 .. glossary::
     :sorted:
 

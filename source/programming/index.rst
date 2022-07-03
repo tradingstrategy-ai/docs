@@ -1,5 +1,5 @@
-Programming trading algorithms
-==============================
+Developing strategies
+=====================
 
 .. _tutorial:
 
