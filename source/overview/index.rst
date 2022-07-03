@@ -1,15 +1,7 @@
 Overview
 ========
 
-.. _tutorial:
-
-Getting started tutorial
-------------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   examples/getting-started
+Learn more about Trading Strategy data, framework and protocol.
 
 Overview
 --------
@@ -19,6 +11,6 @@ Overview
    :maxdepth: 1
 
    about
-   market-data
+   market-data-feeds
    oracles
    glossary
