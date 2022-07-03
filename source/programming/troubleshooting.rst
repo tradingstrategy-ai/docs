@@ -32,4 +32,17 @@ To fix this issue, you can remove all files in the download cache.
 
     rm -rf ~/.cache/tradingstrategy/
 
+Apple macOS on M1 ARM CPUs
+--------------------------
+
+Some dependencies, namely `numpy` are notorious difficult to install on new M1 CPU based Macs.
+Here are some instructions for Macs only:
+
+Before running installer, make sure you use OpenBLAS correctly from Homebrew:
+
+.. code-block::shell
+
+    brew install openblas
+    export OPENBLAS="$(brew --prefix openblas)"
+
 

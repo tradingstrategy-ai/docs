@@ -1,14 +1,11 @@
-Development
-===========
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+Development process and tips
+============================
 
 Preface
 -------
 
-In this chapter, we will discuss how to use `tradingstrategy` locally with your Python or Jupyter Notebook to development new strategies or the library itself.
+In this chapter, we will discuss how to developer `tradingstrategy`
+and `tradeexecutor` Python packages.
 
 Installation for local development
 ----------------------------------
@@ -49,6 +46,19 @@ Or manually:
 
     rm -rf /tmp/trading-strategy-tests
 
+Terminal IPython and debugging with ipdb
+----------------------------------------
+
+You might want to run notebooks in a terminal using ``ipython`` command e.g. for better debugging facilities.
+
+You can run example notebooks in a terminal after git checkout and poetry install:
+
+.. code-block:: shell
+
+    ipython --TerminalIPythonApp.file_to_run=docs/source/programming/algorithms/pancakeswap-momentum.ipynb
+
+This is especially useful if you want to debug library code with ipdb.
+
 Dataset cache
 -------------
 
@@ -73,14 +83,6 @@ You can clear this out manually from the UNIX shell
 .. code-block:: shell
 
     rm -rf ~/.cache/tradingstrategy
-
-
-Deploying new documentation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Github Actions workflow will deploy on Netlify. You need Netlify `AUTH_TOKEN` and `SITE_ID`.
-
-`AUTH_TOKEN` can be generated in the user settings.
 
 Making a release
 ----------------

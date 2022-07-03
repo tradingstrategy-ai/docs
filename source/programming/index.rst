@@ -1,81 +1,22 @@
 Developing strategies
 =====================
 
-.. _tutorial:
+This documentation covers how to write trading strategies for decentralised finance
+using Python and Trading Strategy framework.
 
-Getting started tutorial
-------------------------
+This covers
 
-.. toctree::
-   :maxdepth: 1
+* `trading-strategy market data client Python package <https://github.com/tradingstrategy-ai/trading-strategy/>`_
 
-   examples/getting-started
-
-Overview
---------
-
+* `trade-executor backtesting and live trading Python framework <https://github.com/tradingstrategy-ai/trade-executor/>`_
 
 .. toctree::
    :maxdepth: 1
+   :caption: Development topics
 
-   running
-   tracking
-   token-tax
-   datasets
-   referenceprice
-   internal-id
-   learn
+   examples/index
+   market-data/index
    troubleshooting
+   learn
    development
    release-notes
-
-Code examples
--------------
-
-.. toctree::
-   :maxdepth: 1
-
-   examples/plotting
-   examples/interactive-charts
-   examples/technical-analysis
-   examples/pairs
-   examples/liquidity-analysis
-   examples/price-impact
-   examples/pool-liquidity
-   examples/fastquant
-
-Trading strategy examples
--------------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   algorithms/entropy-monkey
-   algorithms/ape-in
-   algorithms/double-7
-   algorithms/double-7-advanced
-   algorithms/pancakeswap-momentum-naive
-   algorithms/pancakeswap-momentum-liquidity-aware
-
-API documentation
------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   api/client
-   api/chain
-   api/exchange
-   api/pair
-   api/candle
-   api/liquidity
-   api/timebucket
-   api/reader
-   api/priceimpact
-   api/stablecoin
-   api/types
-   api/tradeanalyzer
-   api/portfolioanalyzer
-   api/backtrader
-   api/matplotlib
-

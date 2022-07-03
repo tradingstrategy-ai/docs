@@ -11,7 +11,8 @@ Trading Strategy integrates with :term:`Jupyter notebook`, :term:`Pandas`, :term
 
 .. toctree::
    :maxdepth: 1
-   :caption: Overview
+   :caption: Protocol topics
 
+   overview
    comparison
 

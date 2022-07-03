@@ -6,9 +6,9 @@
 
 ol li, p, ul li {
       font-family: Source Serif Pro, sans-serif;
-      font-size: 1rem;
+      /*font-size: 1rem;
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.6;*/
 }
 
 .toctree-wrapper.compound .caption {
@@ -16,4 +16,16 @@ ol li, p, ul li {
       font-family: Neue Haas Grotesk Display,Helvetica Neue,Helvetica,Arial,sans-serif;
       font-weight: 600;
       font-size: 1rem;
+}
+
+.bottom-of-page .left-details {
+    font-size: var(--font-size--small);
+}
+
+.text-warning {
+    color: #F62F2F;
+}
+
+.img-architecture {
+    margin-bottom: 1rem;
 }
