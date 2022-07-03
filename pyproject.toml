@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "trading-strategy-docs"
+version = "0.1.0"
+description = "Trading strategy documentation"
+authors = ["Mikko Ohtamaa <mikko@tradingstrategy.ai>"]
+license = "APGL"
+
+[tool.poetry.dependencies]
+# Scipy compatibility
+# https://stackoverflow.com/questions/71764027/numpy-installation-fails-when-installing-through-poetry-on-m1-and-macos/71764028#71764028
+python = ">=3.9,<3.11"
+
+furo = {version = "^2022.6.4.1"}
+Sphinx = {version = "^4.4.0"}
+sphinx-rtd-theme = {version = "^1.0.0"}
+sphinx-sitemap = {version = "^2.2.0"}
+sphinx-autodoc-typehints = {version = "^1.16.0"}
+nbsphinx = "^0.8.6"
+
+# trading-strategy = {path = "deps/trading-strategy", develop = true}
+trade-executor = {path = "deps/trade-executor", develop = true}
+
+[tool.poetry.dev-dependencies]
+ipdb = "^0.13.9"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+

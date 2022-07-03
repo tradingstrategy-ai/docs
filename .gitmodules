@@ -1,0 +1,6 @@
+[submodule "deps/trading-strategy"]
+	path = deps/trading-strategy
+	url = https://github.com/tradingstrategy-ai/trading-strategy.git
+[submodule "deps/trade-executor"]
+	path = deps/trade-executor
+	url = git@github.com:tradingstrategy-ai/trade-executor.git
