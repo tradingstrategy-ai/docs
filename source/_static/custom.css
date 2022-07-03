@@ -18,14 +18,32 @@ ol li, p, ul li {
       font-size: 1rem;
 }
 
+/* Footer text size */
 .bottom-of-page .left-details {
     font-size: var(--font-size--small);
 }
 
+/* Footer warning text */
 .text-warning {
     color: #F62F2F;
 }
 
+/* Large intro images */
 .img-architecture {
     margin-bottom: 1rem;
+}
+
+/* Color fix for the dark theme in notebooks */
+.nboutput .rendered_html thead tr,
+.nboutput .rendered_html tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+.nboutput .rendered_html tbody tr:hover {
+    background: #ADD8E6;
+}
+
+/* Increase sidebar with, so our long module names do not get chopped up */
+.sidebar-container {
+    width: 20em;
 }

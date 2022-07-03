@@ -1,6 +1,8 @@
 Code examples
 -------------
 
+Check :doc:`how to run examples <./running>` and from the available code snippets:
+
 .. toctree::
    :maxdepth: 1
 
@@ -13,4 +15,3 @@ Code examples
    liquidity-analysis
    price-impact
    pool-liquidity
-   fastquant

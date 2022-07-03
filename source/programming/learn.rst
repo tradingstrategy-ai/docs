@@ -1,10 +1,6 @@
 Learning resources
 ==================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 Below are useful links to get started with Python, :term:`Jupyter Notebook`, quantitative finance and algorithmig
 trading using Python.
 

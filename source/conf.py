@@ -29,26 +29,23 @@ author = 'Mikko Ohtamaa'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
     'nbsphinx',
     "sphinx.ext.intersphinx",
     "sphinx_sitemap",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.viewcode",
 #    "sphinx_toolbox.more_autodoc",
 #    "sphinx_autodoc_typehints"
 ]
 
-# Grabbed from https://github.com/pandas-dev/pandas/blob/master/doc/source/conf.py
 intersphinx_mapping = {
-    "dateutil": ("https://dateutil.readthedocs.io/en/latest/", None),
     "pandas": ("http://pandas.pydata.org/pandas-docs/dev", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
-    "pandas-gbq": ("https://pandas-gbq.readthedocs.io/en/latest/", None),
     "py": ("https://pylib.readthedocs.io/en/latest/", None),
     "python": ("https://docs.python.org/3/", None),
-    "scipy": ("https://docs.scipy.org/doc/scipy/reference/", None),
-    "statsmodels": ("https://www.statsmodels.org/devel/", None),
-    "pyarrow": ("https://arrow.apache.org/docs/", None),
+    "web3": ("https://web3py.readthedocs.io/en/latest/", None),
 }
 
 # https://help.farbox.com/pygments.html
@@ -78,6 +75,7 @@ html_theme_options = {
     "dark_logo": "logo-dark.svg",
 }
 
+# Fix plotly.js loading
 html_js_files = [
     "require.min.js",
     "custom.js",
@@ -111,17 +109,29 @@ nbsphinx_prolog = """
 
 .. raw:: html
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js'></script>
-    <script>require=requirejs;</script>
+    <a style="display: block; margin-top: 1.5rem" href="https://mybinder.org/v2/gh/tradingstrategy-ai/web3-ethereum-defi/master?labpath=docs/source/{{ env.doc2path(env.docname, base=None) }}">
+        <img src="https://mybinder.org/badge_logo.svg">
+    </a>    
 
-.. image:: https://mybinder.org/badge_logo.svg
-    :target: https://mybinder.org/v2/gh/tradingstrategy-ai/docs/master?labpath=source/{{ env.doc2path(env.docname, base=None) }}
-
-
-.. raw:: html
-
-   <hr width=100% size=1>   
 """
 
 # For the sitemap
 html_baseurl = 'https://tradingstrategy.ai/docs'
+
+
+# Monkey-patch autosummary template context
+from sphinx.ext.autosummary.generate import AutosummaryRenderer
+
+
+def smart_fullname(fullname):
+    parts = fullname.split(".")
+    return ".".join(parts[1:])
+
+
+def fixed_init(self, app, template_dir=None):
+    AutosummaryRenderer.__old_init__(self, app, template_dir)
+    self.env.filters["smart_fullname"] = smart_fullname
+
+
+AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
+AutosummaryRenderer.__init__ = fixed_init
