@@ -48,7 +48,7 @@ Backtesting data requires authentication by an API key due to large size of serv
 API key registration
 ~~~~~~~~~~~~~~~~~~~~
 
-At the moment, the API key registration is only available through the interactive prompt on :doc:`Getting started <examples/getting-started>` notebook.
+You can get a free `API key with a newsletter subscription <https://tradingstrategy.ai/trading-view/api>`_.
 
 Downloading datasets by hand
 -----------------------------
@@ -59,7 +59,7 @@ Accessing datasets programmatically
 -----------------------------------
 
 You should access `the datasets using the Python client library <https://pypi.org/project/trading-strategy/>`_.
-See :doc:`the first example Jupyter notebook how to do this <examples/getting-started>`.
+See :ref:`the first example Jupyter notebook how to do this <tutorial>`.
 
 If you don't wish to use Python, here are the instructions on how to construct dataset download URLs by hand.
 

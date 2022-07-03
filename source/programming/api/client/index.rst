@@ -24,7 +24,9 @@ Trading Strategy client
    tradingstrategy.priceimpact
    tradingstrategy.stablecoin
    tradingstrategy.types
-   tradingstrategy.tradeanalyzer
-   tradingstrategy.portfolioanalyzer
-   tradingstrategy.backtrader
-   tradingstrategy.maplotlib
+   tradingstrategy.analysis.portfolioanalyzer
+   tradingstrategy.analysis.profitdistribution
+   tradingstrategy.analysis.tradeanalyzer
+   tradingstrategy.analysis.tradehint
+   tradingstrategy.frameworks.backtrader
+   tradingstrategy.frameworks.qstrader

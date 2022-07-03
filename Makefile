@@ -16,6 +16,10 @@ help:
 browser-docs-macos:
 	open build/html/index.html
 
+# Clean problematic autosummary leftovers from local tree
+clean-autosummary:
+	-find . -iname "_autosummary" -exec rm -rf {} \; 2>/dev/null
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new

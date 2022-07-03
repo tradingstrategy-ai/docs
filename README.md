@@ -25,7 +25,7 @@ To build:
 ```shell
 poetry shell
 poetry install
-make clean html
+make clean-autosummary clean html
 ```
 
 Then you can open `build/html/index.html` in your local web browser:
@@ -33,4 +33,6 @@ Then you can open `build/html/index.html` in your local web browser:
 ```shell
 open build/html/index.html
 ```
+
+See [Makefile](./Makefile) for more recipes.
 
