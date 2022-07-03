@@ -1,8 +1,7 @@
 Trading Strategy documentation
 ==============================
 
-This documentation is the  technical documentation about Trading Strategy algorithmic trading framework and protocol.
-`If you are unfamiliar with Trading Strategy, please read the general introduction first <https://tradingstrategy.ai/about>`_.
+This is the technical documentation about Trading Strategy algorithmic trading framework and protocol.
 
 The documentation is divided to three parts: overview, trading strategy development framework and trading strategy protocol.
 
@@ -14,4 +13,8 @@ The documentation is divided to three parts: overview, trading strategy developm
    programming/index
    protocol/index
 
-`For any questions, join the community Discord  <https://tradingstrategy.ai/community>`_.
+Quick links to elsewhere
+
+- `Main website <https://tradingstrategy.ai>`_.
+- `About Trading Strategy <https://tradingstrategy.ai/about>`_.
+- `Community Discord for questions <https://tradingstrategy.ai/community>`_.
