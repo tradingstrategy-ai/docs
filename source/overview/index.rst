@@ -12,5 +12,6 @@ Overview
 
    about
    market-data-feeds
+   tooling
    oracles
    glossary
