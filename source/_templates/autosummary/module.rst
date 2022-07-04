@@ -1,4 +1,6 @@
-{{ fullname | escape | underline }}
+{{ fullname | partial_name | escape | underline}}
+
+*{{ fullname }}* module.
 
 .. rubric:: Description
 
@@ -25,5 +27,15 @@
     {% for function in functions %}
     {{ function }}
     {% endfor %}
+{% endif %}
 
+{% if modules %}
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+{% for item in modules %}
+   {{ item }}
+{%- endfor %}
 {% endif %}

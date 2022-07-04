@@ -129,15 +129,15 @@ autodoc_member_order = "bysource"
 from sphinx.ext.autosummary.generate import AutosummaryRenderer
 
 
-def smart_fullname(fullname):
+def partial_name(fullname):
     parts = fullname.split(".")
-    return ".".join(parts[1:])
+    return parts[-1]
 
 
-def fixed_init(self, app, template_dir=None):
-    AutosummaryRenderer.__old_init__(self, app, template_dir)
-    self.env.filters["smart_fullname"] = smart_fullname
+def fixed_init(self, app):
+    AutosummaryRenderer.__old_init__(self, app)
+    self.env.filters["partial_name"] = partial_name
 
 
-#AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
-#AutosummaryRenderer.__init__ = fixed_init
+AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
+AutosummaryRenderer.__init__ = fixed_init

@@ -12,6 +12,7 @@ The documentation is divided to three parts: overview, trading strategy developm
    overview/index
    programming/index
    protocol/index
+   glossary
 
 Quick links to elsewhere
 

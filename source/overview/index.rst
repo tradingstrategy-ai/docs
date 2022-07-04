@@ -14,4 +14,4 @@ Overview
    market-data-feeds
    tooling
    oracles
-   glossary
+

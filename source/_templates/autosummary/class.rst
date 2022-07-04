@@ -1,4 +1,6 @@
-{{ fullname | escape | underline}}
+{{ fullname | partial_name | escape | underline}}
+
+*{{ fullname }}* class.
 
 .. currentmodule:: {{ module }}
 
