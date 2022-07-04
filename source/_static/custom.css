@@ -1,3 +1,8 @@
+:root {
+    --sidebar-expander-width: 2px;
+    --sidebar-item-font-size: 75%;
+}
+
 /* Fonts injected in base.html */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
       font-family: Neue Haas Grotesk Display,Helvetica Neue,Helvetica,Arial,sans-serif;

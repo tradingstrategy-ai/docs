@@ -14,7 +14,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 
@@ -61,8 +60,6 @@ exclude_patterns = []
 
 html_theme = "furo"
 
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -103,8 +100,6 @@ html_context = {
 nbsphinx_execute = 'never'
 
 
-autodoc_class_signature = "separated"
-
 nbsphinx_prolog = """
 
 .. raw:: html
@@ -118,6 +113,17 @@ nbsphinx_prolog = """
 # For the sitemap
 html_baseurl = 'https://tradingstrategy.ai/docs'
 
+
+# https://stackoverflow.com/a/62613202/315168
+autodoc_class_signature = "separated"
+
+autodoc_typehints = "description"
+
+autosummary_generate = True
+
+add_module_names = False
+
+autodoc_member_order = "bysource"
 
 # Monkey-patch autosummary template context
 from sphinx.ext.autosummary.generate import AutosummaryRenderer
@@ -133,5 +139,5 @@ def fixed_init(self, app, template_dir=None):
     self.env.filters["smart_fullname"] = smart_fullname
 
 
-AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
-AutosummaryRenderer.__init__ = fixed_init
+#AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
+#AutosummaryRenderer.__init__ = fixed_init
