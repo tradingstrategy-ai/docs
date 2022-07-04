@@ -38,7 +38,7 @@ extensions = [
 #    "sphinx_autodoc_typehints"
 ]
 
-intersphinx_mapping = {
+xxx_intersphinx_mapping = {
     "pandas": ("http://pandas.pydata.org/pandas-docs/dev", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
@@ -112,7 +112,6 @@ nbsphinx_prolog = """
 
 # For the sitemap
 html_baseurl = 'https://tradingstrategy.ai/docs'
-
 
 # https://stackoverflow.com/a/62613202/315168
 autodoc_class_signature = "separated"

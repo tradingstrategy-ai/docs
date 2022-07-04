@@ -2,14 +2,16 @@
 
 *{{ fullname }}* module.
 
-.. rubric:: Description
+Module description
+------------------
 
 .. automodule:: {{ fullname }}
 
 .. currentmodule:: {{ fullname }}
 
 {% if classes %}
-.. rubric:: Classes
+Classes
+-------
 
 .. autosummary::
     :toctree: .
@@ -20,7 +22,8 @@
 {% endif %}
 
 {% if functions %}
-.. rubric:: Functions
+Functions
+---------
 
 .. autosummary::
     :toctree: .
@@ -30,7 +33,8 @@
 {% endif %}
 
 {% if modules %}
-.. rubric:: Modules
+Submodules
+----------
 
 .. autosummary::
    :toctree:
