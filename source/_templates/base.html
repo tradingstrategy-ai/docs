@@ -86,15 +86,8 @@
 
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
-  </head>
-  <body>
-    {% block body %}
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    {% endblock %}
 
-    {%- block scripts -%}
+ {%- block scripts -%}
 
     {# Custom JS #}
     {%- block regular_scripts -%}
@@ -108,5 +101,14 @@
     {%- endblock -%}
 
     {%- endblock scripts -%}
+  </head>
+  <body>
+    {% block body %}
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    {% endblock %}
+
+
   </body>
 </html>

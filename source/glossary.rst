@@ -308,6 +308,8 @@ and algorithmic trading.
         Enzyme is a fund backoffice protocol for :term:`EVM compatible`
         blockchains.
 
+        See `Enzyme Finance <https://enzyme.finance/>`__ for more information.
+
     Docker
 
         Linux process and packaging management framework. Ideal for managing

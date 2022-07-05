@@ -1,10 +1,20 @@
+.. _tradingstrategy:
+
 tradingstrategy
 ===============
 
 This is the API documentation for Python `tradingstrategy` package.
 
-`tradingstrategy` deals with downloading market data from Trading Strategy oracle
-for data research and analysis.
+`tradingstrategy` is a Python client for downloading decentralised
+market data from Trading Strategy :ref:`oracles <oracle>`.
+
+This allows
+
+- Easy quantitative research for decentralised market trading opportunities
+
+- Developing algorithmic trading strategies for decentralised markets
+
+For code examples, see :ref:`getting started tutorial <getting-started>`_.
 
 Trading Strategy client
 -----------------------

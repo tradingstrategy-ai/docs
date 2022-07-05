@@ -8,9 +8,6 @@ Preface
 
 Trading data feeds establish the foundation of any algorithmic trading. Here is information on Trading Strategy data feeds and datasets.
 
-.. note::
-    This service is still in early beta and subject to change. Reach out in `Discord for any questions <https://tradingstrategy.ai/community>`_.
-
 Explore data
 ------------
 

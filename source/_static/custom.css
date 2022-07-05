@@ -52,3 +52,8 @@ ol li, p, ul li {
 .sidebar-container {
     width: 20em;
 }
+
+.sidebar-logo {
+    max-width: 200px;
+    margin-left: 0;
+}

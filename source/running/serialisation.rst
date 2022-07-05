@@ -1,5 +1,7 @@
-Seralisation
-============
+.. _serialisation:
+
+Serialisation
+=============
 
 The strategy :ref:`state` is serialised as JSON
 
