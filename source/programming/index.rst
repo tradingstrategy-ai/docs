@@ -1,3 +1,5 @@
+.. _framework:
+
 Developing strategies
 =====================
 
