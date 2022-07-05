@@ -10,9 +10,10 @@ using Python and Trading Strategy framework.
 
    code-examples/index
    market-data/index
-   old-strategies/index
    api/index
+   strategy-examples/index
    troubleshooting
    learn
    development
    release-notes
+   old-strategies/index

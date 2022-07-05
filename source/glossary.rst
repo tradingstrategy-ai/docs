@@ -291,3 +291,31 @@ and algorithmic trading.
 
         `One of the most famous rug pulls is Anubis ($60M taken) <https://decrypt.co/84924/anubisdao-investors-lose-60-million-in-alleged-rug-pull>`_.
 
+    Strategy cycle
+
+        Strategies are executed in incremental, fixed internal cycles.
+        See :term:`cycle duration`.
+
+    Cycle duration
+
+        Cycle duration defines how often the strategy main loop triggers.
+        This can be different from the candle :term:`bucket` the strategy is using.
+        For example, a strategy can have a cycle duration of 16h and makes
+        trades based on 4h candles.
+
+    Enzyme
+
+        Enzyme is a fund backoffice protocol for :term:`EVM compatible`
+        blockchains.
+
+    Docker
+
+        Linux process and packaging management framework. Ideal for managing
+        long-running server-side processes.
+
+    Vault
+
+        In decentralised finance, a vault refers to a smart contract
+        that manages assets, in non-custodial manner, for several stakeholders.
+        Usually when you deposit to a vault you receive share or liquidity provider
+        tokens as a return.

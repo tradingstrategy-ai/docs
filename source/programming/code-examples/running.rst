@@ -1,3 +1,5 @@
+.. _running-code-examples:
+
 Running the examples
 ====================
 
