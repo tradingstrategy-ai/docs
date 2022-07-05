@@ -70,6 +70,11 @@ html_static_path = ['_static']
 html_theme_options = {
     "light_logo": "logo-light.svg",
     "dark_logo": "logo-dark.svg",
+
+    # https://pradyunsg.me/furo/customisation/edit-button/
+    "source_repository": "https://github.com/tradingstrategy-ai/docs/",
+    "source_branch": "master",
+    "source_directory": "source/",
 }
 
 # Fix plotly.js loading
@@ -83,13 +88,6 @@ html_css_files = [
 ]
 
 html_context = {
-    # https://stackoverflow.com/questions/62904172/how-do-i-replace-view-page-source-with-edit-on-github-links-in-sphinx-rtd-th
-    # https://github.com/readthedocs/sphinx_rtd_theme/issues/529
-    'display_github': True,
-    'github_user': 'tradingstrategy-ai',
-    'github_repo': 'client',
-    'github_version': 'tree/master/docs/source/',
-
     "theme_sidebar_hide_name": True,
 }
 

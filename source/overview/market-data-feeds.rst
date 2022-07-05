@@ -1,6 +1,6 @@
 .. _trading data:
 
-Market Data
+Market data
 ===========
 
 Preface

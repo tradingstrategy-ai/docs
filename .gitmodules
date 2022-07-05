@@ -4,3 +4,6 @@
 [submodule "deps/trade-executor"]
 	path = deps/trade-executor
 	url = git@github.com:tradingstrategy-ai/trade-executor.git
+[submodule "deps/furo"]
+	path = deps/furo
+	url = git@github.com:tradingstrategy-ai/furo.git

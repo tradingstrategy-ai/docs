@@ -20,12 +20,19 @@ This documentation repository covers
 
 [pyproject.toml](./pyproject.toml) is automatically pulling the master version of the packages.
 
-To build:
+To build everything from the scratch: 
 
 ```shell
+git submodule update --init --recursive 
 poetry shell
 poetry install
-make clean-autosummary clean html
+make install-furo rebuild-furo clean-autosummary clean html
+```
+
+To update Furo SCSS changes:
+
+```shell
+make rebuild-furo clean html
 ```
 
 Then you can open `build/html/index.html` in your local web browser:

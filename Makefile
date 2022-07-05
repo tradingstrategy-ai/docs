@@ -16,6 +16,16 @@ help:
 browser-docs-macos:
 	open build/html/index.html
 
+# Get Webpack tool chain to build Furo theme
+install-furo:
+	cd deps/furo
+	npm install
+
+# Rebuild furo.css
+rebuild-furo:
+	(cd deps/furo && npm run build)
+	cp deps/furo/src/furo/theme/furo/static/styles/furo.css source/_static/styles/
+
 # Clean problematic autosummary leftovers from local tree
 clean-autosummary:
 	-find . -iname "_autosummary" -exec rm -rf {} \; 2>/dev/null

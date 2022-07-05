@@ -15,8 +15,12 @@ The documentation is divided to three parts: overview, trading strategy developm
    protocol/index
    glossary
 
-Quick links to elsewhere
+See also
+--------
 
-- `Trading Strategy main website <https://tradingstrategy.ai>`_
+This is the landing page for the technical documentation.
+Quick links to elsewhere:
+
+- `Website <https://tradingstrategy.ai>`_
 - `About Trading Strategy <https://tradingstrategy.ai/about>`_
 - `Community Discord for questions <https://tradingstrategy.ai/community>`_

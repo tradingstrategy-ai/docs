@@ -19,6 +19,7 @@ nbsphinx = "^0.8.6"
 
 # trading-strategy = {path = "deps/trading-strategy", develop = true}
 trade-executor = {path = "deps/trade-executor", develop = true}
+# furo = {path = "deps/trade-executor", develop = true}
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"
