@@ -1,7 +1,7 @@
 .. _trading data:
 
-Market data
-===========
+Accessing market data
+=====================
 
 Preface
 -------
