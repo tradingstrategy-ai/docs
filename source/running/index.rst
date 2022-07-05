@@ -16,4 +16,6 @@ In this section, we describe how to
    cli
    webhook
    strategy-types
+   serialisation
+   unit-testing
 
