@@ -2,13 +2,8 @@
 
 # Trading strategy documentation
 
-Documentation for [Trading Strategy algorithmic trading framework](https://tradingstrategy.ai/).
-View [the documentation here]((https://tradingstrategy.ai/).
-
-This documentation repository covers
-
-- [Trading strategy DeFi data client](https://github.com/tradingstrategy-ai/trading-strategy/)
-- [Trading strategy execution](https://github.com/tradingstrategy-ai/trade-executor/)
+Documentation for [Trading Strategy algorithmic trading framework and protocol](https://tradingstrategy.ai/).
+View [the documentation here](https://tradingstrategy.ai/docs).
 
 # About documentation internals
 
