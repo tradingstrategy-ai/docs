@@ -38,7 +38,8 @@ jobs:
           echo $PATH
           PYTHON=`poetry env info -p`/bin/python
           SPHINX=`poetry env info -p`/bin/sphinx-build
-          make install-furo rebuild-furo html
+          make install-furo 
+          make rebuild-furo html
 
       # https://zellwk.com/blog/github-actions-deploy/
       # https://github.com/webfactory/ssh-agent
