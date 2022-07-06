@@ -6,7 +6,7 @@ Below are useful links to get started with :term:`Jupyter Notebook`, quantative 
 Books, tutorials and courses on trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Machine Learning for Algorihmic Trading
+Machine Learning for Algorithmic Trading
 ---------------------------------------
 
 A book by Stefan Jansen alongside the ZipLine reloaded and community forum.  `Read more <https://ml4trading.io/>`__.
