@@ -42,7 +42,6 @@ intersphinx_mapping = {
     "pandas": ("http://pandas.pydata.org/pandas-docs/dev", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
-    "py": ("https://pylib.readthedocs.io/en/latest/", None),
     "python": ("https://docs.python.org/3/", None),
     "web3": ("https://web3py.readthedocs.io/en/latest/", None),
     "web3-ethereum-defi": ("https://web3-ethereum-defi.readthedocs.io/", None),
