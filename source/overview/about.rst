@@ -1,16 +1,16 @@
 About Trading Strategy
 ======================
 
-Trading Strategy provides tools to do algorithmic and sophisticated trading for
+Trading Strategy provides tools to do algorithmic and sophisticated trading in
 decentralised finance markets.
 
 - :doc:`Market data feeds <./market-data-feeds>` for decentralised finance protocols
 
 - :doc:`Strategy development and backtesting </programming/index>` framework in Python
 
-- :ref:`Trade execution and strategy running <running-strategies>` for decentralised exchanges
+- :ref:`Trade execution and running strategies <running-strategies>` for decentralised exchanges
 
-- :ref:`A decentralised protocol <protocol>` to deploy strategies as smart contracts for DeFi users
+- :ref:`A decentralised protocol <protocol>` for deploying strategies as smart contracts for DeFi users
 
 - `A community of sophisticated DeFi traders and strategy developers <https://tradingstrategy.ai/community>`_
 
