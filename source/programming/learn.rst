@@ -1,10 +1,6 @@
 Learning resources
 ==================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 Below are useful links to get started with :term:`Jupyter Notebook`, quantative finance and trading.
 
 Books, tutorials and courses on trading
