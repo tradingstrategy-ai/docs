@@ -15,7 +15,7 @@ jobs:
       - name: Fetch submodules
         run: |
           git submodule set-url deps/furo https://github.com/tradingstrategy-ai/furo.git
-          git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git) 
+          git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git 
           git submodule update --init --recursive
       - name: Install poetry
         run: pipx install poetry
