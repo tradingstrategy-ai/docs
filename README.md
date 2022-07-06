@@ -8,7 +8,7 @@ View [the documentation here](https://tradingstrategy.ai/docs).
 # About documentation internals
 
 - The documentation is built on the top of [Sphinx documentation toolchain](https://www.sphinx-doc.org/en/master/)
-- [Furo based theme is used](https://github.com/pradyunsg/furo)
+- [Furo based theme is used](https://github.com/tradingstrategy-ai/furo) (the theme has been modified)
 - [API documentation is generated with sphinx-autodoc-typehints](https://github.com/tox-dev/sphinx-autodoc-typehints) 
 - [Interactive Jupyter notebook examples are generated with nbsphinx](https://nbsphinx.readthedocs.io/)
 - [The documentation is self-hosted using Caddy](github.com/tradingstrategy-ai/proxy-server/)
@@ -39,4 +39,8 @@ open build/html/index.html
 ```
 
 See [Makefile](./Makefile) for more recipes.
+
+# Updating theme
+
+[See theme README](https://github.com/tradingstrategy-ai/furo).
 

@@ -51,6 +51,7 @@ jobs:
           ssh-private-key: ${{ secrets.RSYNC_KEY }}
       - name: Publish docs via rsync
         run: |
+          echo "Running $RSYNC_COMMAND"
           $RSYNC_COMMAND
         env:
           # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
