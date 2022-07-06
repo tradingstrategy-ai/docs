@@ -1,8 +1,11 @@
 Learning resources
 ==================
 
-Below are useful links to get started with Python, :term:`Jupyter Notebook`, quantitative finance and algorithmig
-trading using Python.
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Below are useful links to get started with :term:`Jupyter Notebook`, quantative finance and trading.
 
 Books, tutorials and courses on trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,6 +35,22 @@ Master AI-Driven Algorithmic Trading
 This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
 
 `Read more <https://home.tpq.io/certificates/pyalgo/>`__.
+
+Python for Data Analysis
+------------------------
+
+Get the definitive handbook for manipulating, processing, cleaning, and crunching datasets in Python. Updated for Python 3.9 and pandas 1.2, the third edition of this hands-on guide is packed with practical case studies that show you how to solve a broad set of data analysis problems effectively. You'll learn the latest versions of pandas, NumPy, and Jupyter in the process.
+
+Written by Wes McKinney, the creator of the Python pandas project, this book is a practical, modern introduction to data science tools in Python. It's ideal for analysts new to Python and for Python programmers new to data science and scientific computing. Data files and related material are available on GitHub.
+
+`Read book at <https://wesmckinney.com/book/>`__.
+
+Gallery of Jupyter Books
+------------------------
+
+Multiple data research and quantative finance books for Python and Jupyter
+
+`View gallery at Executable Books <https://executablebooks.org/en/latest/gallery.html>`__
 
 Teddy Koker's blog
 ------------------

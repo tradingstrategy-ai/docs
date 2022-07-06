@@ -47,11 +47,14 @@ jobs:
       - name: Install SSH Key
         uses: webfactory/ssh-agent@v0.5.4
         with:
+          # PK key pair generated locally and
+          # public SSH key copied to the server
           ssh-private-key: ${{ secrets.RSYNC_KEY }}
       - name: Publish docs via rsync
         run: |
           $RSYNC_COMMAND
         env:
+          # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
           RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND }}
 
 

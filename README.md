@@ -1,3 +1,5 @@
+[![Docs autoupdate](https://github.com/tradingstrategy-ai/docs/actions/workflows/rsync-docs.yml/badge.svg)](https://github.com/tradingstrategy-ai/docs/actions/workflows/rsync-docs.yml)
+
 # Trading strategy documentation
 
 Documentation for [Trading Strategy algorithmic trading framework](https://tradingstrategy.ai/).
