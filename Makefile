@@ -18,8 +18,7 @@ browser-docs-macos:
 
 # Get Webpack tool chain to build Furo theme
 install-furo:
-	cd deps/furo
-	npm install
+	(cd deps/furo && npm install)
 
 # Rebuild furo.css
 rebuild-furo:
