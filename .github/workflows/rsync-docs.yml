@@ -11,8 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # We need to use HTTPS checkout on CI
       - name: Fetch submodules
-        run: git submodule update --init --recursive
+        run: |
+          (cd deps/furo && git git config remote.origin.url https://github.com/tradingstrategy-ai/furo.git)
+          (cd deps/trade-executor && git git config remote.origin.url https://github.com/tradingstrategy-ai/trade-executor.git)
+          git submodule update --init --recursive
       - name: Install poetry
         run: pipx install poetry
       - name: Set up Python 3.9

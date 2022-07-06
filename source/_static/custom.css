@@ -57,3 +57,8 @@ ol li, p, ul li {
     max-width: 200px;
     margin-left: 0;
 }
+
+/* Pygment color fixes */
+.highlight {
+    background: #FBEEDB;
+}
