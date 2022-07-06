@@ -102,7 +102,7 @@ nbsphinx_prolog = """
 
 .. raw:: html
 
-    <a style="display: block; margin-top: 1.5rem" href="https://mybinder.org/v2/gh/tradingstrategy-ai/web3-ethereum-defi/master?labpath=docs/source/{{ env.doc2path(env.docname, base=None) }}">
+    <a style="display: block; margin-top: 1.5rem" href="https://mybinder.org/v2/gh/tradingstrategy-ai/docs/master?labpath=source/{{ env.doc2path(env.docname, base=None) }}">
         <img src="https://mybinder.org/badge_logo.svg">
     </a>    
 
