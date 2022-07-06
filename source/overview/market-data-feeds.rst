@@ -47,7 +47,7 @@ API key registration
 
 You can get a free `API key with a newsletter subscription <https://tradingstrategy.ai/trading-view/api>`_.
 
-Downloading datasets by hand
+Downloading datasets manually
 -----------------------------
 
 After you have obtained an API key `you can download datasets from the backtesting page <https://tradingstrategy.ai/trading-view/backtesting>`_.
