@@ -11,7 +11,7 @@ Trading data feeds establish the foundation of any algorithmic trading. Here is 
 Explore data
 ------------
 
-You can explore `the available data on Trading Strategy trading view pages <https://tradingstrategy.ai/trading-view/exchanges>`_.
+You can explore `the available data on Trading Strategy market data pages <https://tradingstrategy.ai/trading-view/exchanges>`_.
 You will find the lists of decentralised exchanges, trading pairs, price charts and metadata.
 
 Not all trading pairs and tokens are included in the dataset. See :ref:`tracking` for more information about inclusion criteria.
