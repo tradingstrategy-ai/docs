@@ -12,9 +12,8 @@ and mathematical functions.
 
    client/index
    execution/index
-   web3
    technical-analysis/index
-   performance/index
+   web3
 
 Indices and tables
 ------------------

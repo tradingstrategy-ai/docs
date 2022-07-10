@@ -75,6 +75,6 @@ table.autosummary {
 }
 
 /* Fix function name links in autosummary table */
-table.autosummary .content a {
+.content table.autosummary a {
     border-bottom: 0;
 }
