@@ -7,7 +7,7 @@ Books, tutorials and courses on trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Machine Learning for Algorithmic Trading
----------------------------------------
+----------------------------------------
 
 A book by Stefan Jansen alongside the ZipLine reloaded and community forum.  `Read more <https://ml4trading.io/>`__.
 
@@ -62,7 +62,7 @@ ML Algotrading Wiki
 -------------------
 
 A wiki website with research and various news sources.
-`MLTraders’ Algotrading and Machine Learning work for everybody. <https://mltraders.wiki/>`_.
+`MLTraders’ Algotrading and Machine Learning work for everybody. <https://mltraders.wiki/>`__.
 
 Books, tutorials and courses on Jupyter Notebook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ QsTrader is a portfolio optimisation backtesting framework for Python. It origin
 Fastquant
 ---------
 
-A simplified one-liner backtesting solution built on the top of Backtrader. `Read more <https://github.com/enzoampil/fastquant>`_.
+A simplified one-liner backtesting solution built on the top of Backtrader. `Read more <https://github.com/enzoampil/fastquant>`__.
 
 Zipline Reloaded
 ----------------
@@ -130,7 +130,7 @@ Performance and risk analysis for portfolios. `Read more <https://github.com/qua
 PyAlgoTrade
 -----------
 
-Was originally written for Bitstamp. Offers backtesting, paper trading, live trading. Looks abandoned now. `Read more <https://github.com/gbeced/pyalgotrade>`_.
+Was originally written for Bitstamp. Offers backtesting, paper trading, live trading. Looks abandoned now. `Read more <https://github.com/gbeced/pyalgotrade>`__.
 
 Communities
 ~~~~~~~~~~~
@@ -138,9 +138,9 @@ Communities
 Fastquant and HawkInsight
 -------------------------
 
-:term:`Fastquant` is an open source backtesting library built by `Hawksight team <https://hawksight.co/>`_. Hawksight offers strategy backtesting and signals for equities and cryptos.
+:term:`Fastquant` is an open source backtesting library built by `Hawksight team <https://hawksight.co/>`__. Hawksight offers strategy backtesting and signals for equities and cryptos.
 
-`Join to Fastquant Slack <https://join.slack.com/t/fastquant/shared_invite/zt-sfoxaqq9-LU0Bha7jDvOVVAzu~B3PDA>`_. `See Fastquant Github <https://github.com/enzoampil/fastquant>`__.
+`Join to Fastquant Slack <https://join.slack.com/t/fastquant/shared_invite/zt-sfoxaqq9-LU0Bha7jDvOVVAzu~B3PDA>`__. `See Fastquant Github <https://github.com/enzoampil/fastquant>`__.
 
 
 Machine Learning for Trading

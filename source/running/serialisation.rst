@@ -51,6 +51,6 @@ lie trading pair id or address, but by a copy. This copy contains
 information like token names and decimals. This information
 is duplicated in every copy, making this inefficient, but it
 greatly simplifies client side and executor side coding,
-because the :ref:`trading-universe` may be dynamic.
+because the :ref:`trading universe` may be dynamic.
 
 

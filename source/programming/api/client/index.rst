@@ -10,11 +10,12 @@ market data from Trading Strategy :ref:`oracles <oracle>`.
 
 This allows
 
-- Easy quantitative research for decentralised market trading opportunities
+- Processing :term:`Decentralised exchange` market data using
+  :term:`pandas`
 
-- Developing algorithmic trading strategies for decentralised markets
+- Quantitative finance research for decentralised market trading opportunities
 
-For code examples, see :ref:`getting started tutorial <getting-started>`_.
+For code examples, see :ref:`getting started tutorial <getting-started>`.
 
 Trading Strategy client
 -----------------------

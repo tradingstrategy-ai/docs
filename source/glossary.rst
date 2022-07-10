@@ -346,16 +346,10 @@ and algorithmic trading.
 
     EMA
 
-        Exponential moving average. One of the most common technical indicators.
+        Exponential moving average. One of the most common :term:`technical indicators <technical indicator>`.
         By comparing the current price of an asset to the moving average price,
         one can determine if the current price is likely dislodged above or
         below the market trend.
 
         `See this post for more information on simple and exponential moving average <https://school.stockcharts.com/doku.php?id=technical_indicators:moving_averages>`__.
 
-    pandas_ta
-
-        A Python library containing :term:`technical indicators <technical indicator>`
-        for :term:`Pandas`.
-
-        `See the project homepage for more information <https://github.com/twopirllc/pandas-ta>`__.

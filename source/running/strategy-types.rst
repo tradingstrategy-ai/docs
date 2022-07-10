@@ -20,7 +20,7 @@ The core features of this strategy type are
 * The name comes from the fact that the strategy operates
   on Python Pandas library data format for candles and liquidity
 
-* Receiving :term:`trading universe` as :py:mod:`tradingstrategy` client data:
+* Receiving :ref:`trading universe` as :py:mod:`tradingstrategy` client data:
   exchange, pairs, candles and liquidity
 
 * Strategies are self-contained Python modules
@@ -179,4 +179,4 @@ and are based on portfolio construction model theory.
 
 However this strategy type was an early attempt and is now
 superset by internal Pandas and PositionManager based strategy
-runner :py:mod:`tradeexecutor.strategy.pandas_trader.
+runner :py:mod:`tradeexecutor.strategy.pandas_trader`.
