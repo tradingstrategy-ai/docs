@@ -323,12 +323,17 @@ and algorithmic trading.
         Linux process and packaging management framework. Ideal for managing
         long-running server-side processes.
 
+        `See Docker.com for more information <https://www.docker.com/>`__.
+
     Vault
 
         In decentralised finance, a vault refers to a smart contract
         that manages assets, in non-custodial manner, for several stakeholders.
         Usually when you deposit to a vault you receive share or liquidity provider
         tokens as a return.
+
+        `See EIP-4626 Tokenised vault standard <https://eips.ethereum.org/EIPS/eip-4626>`__
+        for more information.
 
     Technical indicator
 
@@ -346,7 +351,11 @@ and algorithmic trading.
         one can determine if the current price is likely dislodged above or
         below the market trend.
 
+        `See this post for more information on simple and exponential moving average <https://school.stockcharts.com/doku.php?id=technical_indicators:moving_averages>`__.
+
     pandas_ta
 
         A Python library containing :term:`technical indicators <technical indicator>`
         for :term:`Pandas`.
+
+        `See the project homepage for more information <https://github.com/twopirllc/pandas-ta>`__.
