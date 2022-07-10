@@ -1,7 +1,7 @@
 .. _tradeexecutor:
 
-tradeexecutor
-=============
+Trade execution engine
+======================
 
 This is the API documentation for Python `tradeexecutor` package.
 

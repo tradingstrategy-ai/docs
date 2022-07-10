@@ -47,7 +47,7 @@ And then:
 
 - Cycle to the next historical timestamp
 
-.. _trading-universe:
+.. _trading universe:
 
 Trading universe
 ----------------
@@ -71,6 +71,8 @@ A trading universe defines what trading pairs a strategy can trade.
 
 - See :py:mod:`tradingstrategy.universe`
 
+.. _strategy cycle:
+
 Strategy cycle
 --------------
 
@@ -84,6 +86,8 @@ Each strategy operates in fixed time intervals called cycles.
   E.g. a cycle fo 16 hours can operate on 4 x 4h candles.
 
 - See :py:mod:`tradingstrategy.strategy.cycle`
+
+.. _state:
 
 State
 -----
@@ -248,7 +252,7 @@ Pricing model defines the (estimated) asset price for each trade decisions.
 - Backtesting uses historical pricing model, based on historical
   backtest datasets
 
-- Pricing model consides :ref:`price impact` of a trade
+- Pricing model consides :term:`price impact` of a trade
 
 Valuation model
 ---------------

@@ -62,3 +62,19 @@ ol li, p, ul li {
 .highlight {
     background: #FBEEDB;
 }
+
+/* Fix autosummary tables with long function signatures */
+
+table.autosummary tr td:first-child {
+    width:60%;
+}
+
+table.autosummary {
+    width: 100%;
+    font-size: 90%;
+}
+
+/* Fix function name links in autosummary table */
+table.autosummary .content a {
+    border-bottom: 0;
+}

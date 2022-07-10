@@ -15,7 +15,7 @@ This page covers how to run Trading Strategy code examples
 Prerequisites
 -------------
 
-Code examples are available able :term:`Jupyter notebooks <Jupyter notebooks>` in this documentation.
+Code examples are available able :term:`Jupyter notebooks <Jupyter notebook>` in this documentation.
 
 You to be able work with the examples you need to have
 

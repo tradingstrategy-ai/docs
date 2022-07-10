@@ -110,7 +110,15 @@ and algorithmic trading.
 
     Backtrader
 
-        An old Python based framework for strategy backtesting and live execution. `See documentation <https://www.backtrader.com/>`__.
+        An old Python based algorithmic trading framework for strategy backtesting and live execution.
+        No longer maintained.
+        `See documentation <https://www.backtrader.com/>`__.
+
+    QSTrader
+
+        An old Python based algorithmic trading framework for strategy backtesting and live execution
+        using portfolio construction theory.
+        No longer maintained.
 
     Fastquant
 
@@ -252,7 +260,7 @@ and algorithmic trading.
         Slippage cannot be backtested easily, because it is based on the trade execution delays and those cannot be usually simulated
         (but can be measured).
 
-        :term:`DEX <decentralised-exchange>` swap orders have a slippage parameter with them. You set it when the order is created.
+        :term:`DEX <decentralised exchange>` swap orders have a slippage parameter with them. You set it when the order is created.
         If the price changes more then the slippage between the creation of the order and the execution of the order,
         the DEX will cancel the order (revert).
 
@@ -321,3 +329,24 @@ and algorithmic trading.
         that manages assets, in non-custodial manner, for several stakeholders.
         Usually when you deposit to a vault you receive share or liquidity provider
         tokens as a return.
+
+    Technical indicator
+
+        A technical indicator, or just an indicator, is a calculated value
+        indicating something about the state of the market.
+        Indicators are usually based on :term:`OHLCV` data.
+        By combining several indicators through :term:`technical analysis`,
+        one can create automated trading strategies.
+        An example technical indicator is :term:`EMA (expotential moving average) <EMA>`.
+
+    EMA
+
+        Exponential moving average. One of the most common technical indicators.
+        By comparing the current price of an asset to the moving average price,
+        one can determine if the current price is likely dislodged above or
+        below the market trend.
+
+    pandas_ta
+
+        A Python library containing :term:`technical indicators <technical indicator>`
+        for :term:`Pandas`.

@@ -122,6 +122,8 @@ add_module_names = False
 
 autodoc_member_order = "bysource"
 
+# autosummary_imported_members = True
+
 # Monkey-patch autosummary template context
 from sphinx.ext.autosummary.generate import AutosummaryRenderer
 

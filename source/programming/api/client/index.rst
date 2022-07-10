@@ -1,7 +1,7 @@
 .. _tradingstrategy:
 
-tradingstrategy
-===============
+Market data client
+==================
 
 This is the API documentation for Python `tradingstrategy` package.
 
