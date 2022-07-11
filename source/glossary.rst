@@ -353,3 +353,15 @@ and algorithmic trading.
 
         `See this post for more information on simple and exponential moving average <https://school.stockcharts.com/doku.php?id=technical_indicators:moving_averages>`__.
 
+    DeFi
+
+        Decentralised finance, or DeFi, for short, refers to :term:`on-chain`,
+        protocol based, trading activities. DeFi protocols include
+        exchanges, like :term:`Uniswap` and lending pools like Aave.
+        DeFi services are :term:`non-custodial`, being the largest
+        difference to centralised finance (CeFi) services.
+
+    Quantitative finance
+
+        Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialize in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
+

@@ -9,6 +9,7 @@ The documentation is divided into three parts: overview, trading strategy develo
    :maxdepth: 1
    :caption: Table of contents
 
+   getting-started
    overview/index
    programming/index
    running/index

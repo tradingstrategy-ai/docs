@@ -1,3 +1,5 @@
+.. _learning:
+
 Learning resources
 ==================
 
