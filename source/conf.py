@@ -102,7 +102,7 @@ nbsphinx_prolog = """
 
 .. raw:: html
 
-    <a style="display: block; margin-top: 1.5rem" href="https://mybinder.org/v2/gh/tradingstrategy-ai/binder-env/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Ftradingstrategy-ai%252Fdocs%26branch%3Dmaster%26urlpath%3Dtree%252Fdocs%252Fsource%252F{{ env.doc2path(env.docname, base=None) }}">
+    <a style="display: block; margin-top: 1.5rem" href="https://mybinder.org/v2/gh/tradingstrategy-ai/binder-env/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Ftradingstrategy-ai%252Fdocs%26branch%3Dmaster%26urlpath%3Dlab%252Ftree%252Fdocs%252Fsource%252F{{ env.doc2path(env.docname, base=None) }}">
         <img src="https://mybinder.org/badge_logo.svg">
     </a>    
 
