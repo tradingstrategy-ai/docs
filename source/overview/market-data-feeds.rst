@@ -1,12 +1,13 @@
+.. _market data:
+
 .. _trading data:
 
 Accessing market data
 =====================
 
-Preface
--------
-
-Trading data feeds establish the foundation of any algorithmic trading. Here is information on Trading Strategy data feeds and datasets.
+To efficiently trade, a high quality information about markets is needed.
+Trading Strategy provides various :term:`market data feeds <market data feed>`
+that trades can use to trade on :term:`DeFi markets <defi>` and :term:`decentralised exchanges <decentralised exchange>`.
 
 Explore data
 ------------
@@ -16,13 +17,15 @@ You will find the lists of decentralised exchanges, trading pairs, price charts 
 
 Not all trading pairs and tokens are included in the dataset. See :ref:`tracking` for more information about inclusion criteria.
 
-Available datasets
-------------------
+Data flavours
+-------------
 
 Real-time API
 ~~~~~~~~~~~~~
 
-`Real-time API <https://tradingstrategy.ai/api/explorer/>`_ for live trading and price charts.
+`Real-time API <https://tradingstrategy.ai/api/explorer/>`__ for live trading and price charts.
+
+See `OpenAPI explorer <https://tradingstrategy.ai/api/explorer/>`__ for available APIs.
 
 Backtesting datasets API
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,32 +39,38 @@ For some datasets, like the best performing trading pairs, there is direct Micro
 
 `See PancakeSwap trading pairs <https://tradingstrategy.ai/trading-view/binance/pancakeswap-v2>`_ as an example.
 
-Access
-------
+Accessing data
+--------------
 
-Currently real-time API does not require authentication.
-Backtesting data requires authentication by an API key due to large size of served files.
+You can access market data
+
+- Programmatically using API
+
+- Download datasets by hand
+
+Programmatic access may require an API key
+
+- Real-time API does not require authentication
+
+- Backtesting data requires authentication by an API key due to large size of served files
 
 API key registration
 ~~~~~~~~~~~~~~~~~~~~
 
 You can get a free `API key with a newsletter subscription <https://tradingstrategy.ai/trading-view/api>`_.
 
-Downloading datasets manually
------------------------------
+Datasets manual download
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you have obtained an API key `you can download datasets from the backtesting page <https://tradingstrategy.ai/trading-view/backtesting>`_.
 
-Accessing datasets programmatically
------------------------------------
+Downloading programmatically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You should access `the datasets using the Python client library <https://pypi.org/project/trading-strategy/>`_.
-See :ref:`the first example Jupyter notebook how to do this <tutorial>`.
-
-If you don't wish to use Python, here are the instructions on how to construct dataset download URLs by hand.
+See :ref:`dataset download` for examples.
 
 API endpoints
-~~~~~~~~~~~~~
+-------------
 
 Datasets can be downloaded over authenticated HTTPS API endpoints.
 
@@ -89,60 +98,3 @@ These do not take parameters. They return a JSON file download.
 .. code-block:: none
 
     /exchanges
-
-Downloading datasets programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-All endpoints need your API key in the ``Authorisation`` header.
-
-Because files are large, you need to stream them, as they are unlikely to fit in the RAM.
-
-Example how to download:
-
-.. code-block:: python
-
-    import os
-    import requests
-
-    # Read API key from the process environment
-    # should be in format "secret-token:tradingstrategy-48...
-    # where the secret-token is the part of the API key itself
-    api_key = os.environ["TRADING_STRATEGY_API_KEY"]
-
-    session = requests.Session()
-    session.headers.update({'Authorization': api_key})
-    server = "https://tradingstrategy.ai/api"
-    url = f"{server}/candles-all"
-    params= {"bucket": "1d"}
-    resp = session.get(url, allow_redirects=True, stream=True, params=params)
-    resp.raise_for_status()
-    size = 0
-    with open('candles.parquet', 'wb') as handle:
-        for block in resp.iter_content(64*1024):
-            handle.write(block)
-            size += len(block)
-
-    print(f"Downloaded {size:,} bytes")
-
-Here is a `curl` example for getting 1d liquidity candles and save the file in the current folder:
-
-.. code-block:: shell
-
-    export TRADING_STRATEGY_API_KEY="secret-token:tradingstrategy-..."
-    curl -v -H "Authorization: $TRADING_STRATEGY_API_KEY" "https://tradingstrategy.ai/api/liquidity-all?bucket=1d" --output liquidity-1d.parquet
-
-Reading datasets
-~~~~~~~~~~~~~~~~
-
-Datasets are distributed as compressed :term:`Parquet` files, using Parquet version 2.0.
-
-You can read the files using PyArrow:
-
-.. code-block:: python
-
-    import pyarrow as pa
-    from pyarrow import parquet as pq
-
-    table: pa.Table = pq.read_table("candles.parquet")
-
-Then, you can directly import the table into your database or convert the table to a Pandas DataFrame for further manipulation.

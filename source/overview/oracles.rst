@@ -3,7 +3,7 @@
 Oracles
 =======
 
-In the core of Trading Strategy is the concept of an oracle.
+In the core of :ref:`Trading Strategy protocol <protocol>` is the concept of an oracle.
 
 - Oracles read blockchain and converts raw blockchain events to :doc:`market data feeds <./market-data-feeds>`
 - Oracles :ref:`execute <running-strategies>` trading strategies based on these market data feeds

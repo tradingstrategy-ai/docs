@@ -17,3 +17,4 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
    liquidity-analysis
    price-impact
    pool-liquidity
+   dataset-download

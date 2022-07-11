@@ -2,7 +2,8 @@ Overview
 ========
 
 This document section gives an introduction to the
-different parts of Trading Strategy market data, framework and protocol.
+different parts of Trading Strategy :ref:`market data <market data>`,
+:ref:`strategy development framework <framework>` and :ref:`protocol <protocol>`.
 
 Overview
 --------
