@@ -361,7 +361,11 @@ and algorithmic trading.
         DeFi services are :term:`non-custodial`, being the largest
         difference to centralised finance (CeFi) services.
 
+        `Read more <https://en.wikipedia.org/wiki/Decentralized_finance>`__.
+
     Quantitative finance
 
         Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialize in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
+
+        `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
 
