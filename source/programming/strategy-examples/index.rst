@@ -11,3 +11,4 @@ See :ref:`running backtests <running-backtests>` for how to run.
    :maxdepth: 1
 
    synthetic-ema
+   pancakeswap-ema
