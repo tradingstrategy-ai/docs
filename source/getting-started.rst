@@ -29,8 +29,14 @@ If you want to trade using algorithms on DeFi markets
 
 - See our :doc:`example strategies <programming/strategy-examples/index>`
 
-Learn more
-----------
+Learn about Trading Strategy protocol
+-------------------------------------
+
+See :ref:`protocol` section for more information about Trading Strategy protocol,
+its stakeholders and protocol components.
+
+Learn about algorithmic trading
+-------------------------------
 
 See :ref:`learning` section for references to books and tutorials.
 
