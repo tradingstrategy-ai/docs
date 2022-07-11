@@ -1,4 +1,4 @@
-.. _strategy-examples:
+.. _strategy examples:
 
 Strategy examples
 =================

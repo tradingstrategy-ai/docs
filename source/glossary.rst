@@ -288,12 +288,6 @@ and algorithmic trading.
 
         `More information about the mid price on Uniswap documentation <https://docs.uniswap.org/sdk/2.0.0/guides/pricing>`_.
 
-    Technical analysis
-
-        A branch of finance that tries to predict prices and good trades based on market data.
-
-        `Read more on Wikipedia <https://en.wikipedia.org/wiki/Technical_analysis>`_.
-
     Rug pull
 
         A project where the development team or founders decide to maliciously cash out early, not
@@ -345,6 +339,8 @@ and algorithmic trading.
         By combining several indicators through :term:`technical analysis`,
         one can create automated trading strategies.
         An example technical indicator is :term:`EMA (expotential moving average) <EMA>`.
+
+        See :ref:`technical analysis` documentation for Trading Strategy indicator list.
 
     EMA
 
@@ -400,5 +396,13 @@ and algorithmic trading.
         asset betting the price of an asset goes up or down. In long positions,
         the trader expects the asset price go up, or appreciate. In short positions,
         the trade expects the asset price go down.
+
+    Trading universe
+
+        A trading universe describes all possible assets availble for a :term:`strategy`
+        for its to take different :term:`trading positions <position>`. The simple
+        trading strategies trade only a single trading pair like ETH/USD. More complex
+        strategies can have trding universe consisting of thousands of trading pairs
+        and assets.
 
 

@@ -84,7 +84,7 @@ An on-chain :term:`smart contract` can use around 4 kilobytes of data to make a 
 whereas Trading Strategy oracles can process gigabytes of data per trade.
 
 Oracles read raw data from :term:`on-chain` :term:`DeFi` services like
-:term:`decentralised exchange <decentralised exchanges>`. Then, oracles
+:term:`decentralised exchanges <decentralised exchange>`. Then, oracles
 proces this data to :term:`market data feeds <market data feed>`,
 like price time-series.
 
@@ -171,14 +171,20 @@ A strategy is a :term:`Python` script that decides the trades.
 
 - Trading Strategy protocol comes with its own :ref:`framework` for creating strategies.
 
-- Live trading strategies are fed with :term:`market data feeds <market data feed>`.
+- Live trading strategies are fed with :term:`market data feeds <market data feed>`,
+  but strategies can be :ref:`backtested <running-backtests>` against historical data.
 
-- Strategies can be :ref:`backtested <running-backtest>` against historical data.
+- Strategies calculate different term:`technical indicators <technical indicator>` based
+  on data feeds, like :term`OHLCV` :term:`price candles <candle>`. The main sources of indicators
+  are price, volume and liquidity data, but alternative data sources like on-chain analytics
+  and sentiment can be used as well.
+
+- Strategies then make trading decisions to enter and exit :term:`positions <position>`.
+  A strategy can trade a single trading pair like ETH/USD or have complex
+  :term:`trading universe` of several thousands of assets for portfolio construction.
 
 - Both backtested and live profit and risk performance allows :ref:`investors <investor>`
   to make decisions on which strategies they invest in.
 
-
-
-
-
+If you are into Python and trading algorithm development yourself,
+check out :ref:`strategy examples`.

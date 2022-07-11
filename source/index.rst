@@ -3,6 +3,8 @@ Trading Strategy documentation
 
 This is the technical documentation for Trading Strategy algorithmic trading framework and protocol.
 
+.. image:: doc-overview.svg
+
 The documentation is divided into three parts: overview, trading strategy development framework and trading strategy protocol.
 
 .. toctree::

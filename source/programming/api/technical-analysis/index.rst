@@ -1,3 +1,5 @@
+.. _technical analysis:
+
 Technical analysis
 ==================
 

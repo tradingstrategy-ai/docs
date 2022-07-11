@@ -1,4 +1,4 @@
-... _running-backtests:
+.. _running-backtests:
 
 Backtesting
 ===========
