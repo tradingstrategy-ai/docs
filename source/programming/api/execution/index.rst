@@ -5,8 +5,12 @@ Trade execution engine
 
 This is the API documentation for Python `tradeexecutor` package.
 
-`tradeexecutor` is a framework to run decentralised finance strategy backtests
-and live trading.
+`tradeexecutor` is a trade execution framework to
+
+- Run live DeFi trading strategies
+- Backtest trading strategies
+
+See :ref:`running-strategies` for narrative documentation and tutorials.
 
 Trade execution framework
 -------------------------
