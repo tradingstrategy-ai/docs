@@ -1,10 +1,12 @@
 Comparison
 ==========
 
-How Trading Strategy is different from other business models and services?
+Here is a comparison of the Trading Strategy protocol
+to different entities that provide similar,
+automated and algorithmic trading services.
 
-How Trading Strategy is different from hedge funds?
------------------------------------------------------
+Hedge funds
+-----------
 
 Hedge funds, bank trading desks, and such engage in algorithmic trading as well. Some famous funds that are engaged in algorithmic trading include Alameda Reseearch, CMS, 3AC, Galois Capital, mgnr.io and the giants like Reneissance Technology, Jane Street and Jump Trading.
 
@@ -20,8 +22,8 @@ The major differences are
 
 * Both hedge funds and Trading Strategy can offer :term:`private strategies <private strategy>`. In this case, the strategy source code is not open to the public, but they can still enjoy the protocol benefits like trade execution, reward distribution and fee distribution. Private strategies can choose to whitelist their investors if they wish.
 
-How Trading Strategy is different from yield farming services?
-----------------------------------------------------------------
+Yield farming protocols
+-----------------------
 
 With the advent of Defi Summer of 2020, a various :term:`yield farming` services came to the existing. Famous yield farming services include Yearn Finance, CREAM and SushiSwap.
 
@@ -39,8 +41,8 @@ Yield farming protocol collect fees, often withdrawal fees. Some of these fees c
 
 * Both yield farms and Trading Strategy have a governance token where the token holders can decide various risk an reward parameters. The most important decisions usually focus around the income stream distribution between the token holders and other ecosystem participants, like strategy creators.
 
-How Trading Strategy is different from crypto trading bot services?
----------------------------------------------------------------------
+Crypto trading bot services
+---------------------------
 
 Crypto trading bot services allow you to connect your cryptocurrency exchange account with their trading signal and execution service. Because the connection happens via the cryptocurrency exchange API key, not through a deposit, these services are not hedge funds.
 

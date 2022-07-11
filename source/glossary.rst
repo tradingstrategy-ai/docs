@@ -277,6 +277,8 @@ and algorithmic trading.
         enabling smart contracts to execute based upon inputs and outputs from the real world.
         `Read More <https://chain.link/education/blockchain-oracles>`_
 
+        Trading Strategy :ref:`protocol` has its own :ref:`oracles <oracle>`.
+
     Mid Price
 
         The mid price, in the context of AMM, is the price that reflects the ratio of reserves in one or more pairs. There are three ways we can think about this price. Perhaps most simply, it defines the relative value of one token in terms of the other. It also represents the price at which you could theoretically trade an infinitesimal amount (ε) of one token for the other. Finally, it can be interpreted as the current market-clearing or fair value price of the assets.
@@ -368,4 +370,35 @@ and algorithmic trading.
         Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialize in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
 
         `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
+
+    Stablecoin
+
+        Stablecoins are cryptocurrencies of which value follows a fiat currency value, like the US dollar.
+        One of the most popular stablecoins is :term:`USDC`.
+
+    Python
+
+        One of the most popular and loved programming languages.
+        Python is the number one programming language in :term:`quantitative finance`.
+
+        `Read more <https://python.org>`__.
+
+    Market data feed
+
+        A time-series data on which automated trade decisions are based on.
+        One of the most common data feeds is the price data as :term:`OHLCV` :term:`candles <candle>`.
+
+    Deterministic
+
+        In mathematics, computer science and physics, a deterministic system is a system in which no randomness is involved in the development of future states of the system. A deterministic model will thus always produce the same output from a given starting condition or initial state.
+
+        `Read more <https://en.wikipedia.org/wiki/Deterministic_system>`__.
+
+    Position
+
+        In trading slang, a position means open long or short position of a particular
+        asset betting the price of an asset goes up or down. In long positions,
+        the trader expects the asset price go up, or appreciate. In short positions,
+        the trade expects the asset price go down.
+
 
