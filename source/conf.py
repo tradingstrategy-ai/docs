@@ -69,6 +69,9 @@ html_static_path = ['_static']
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_url_scheme = "{link}"
 
+# Bump to force Google reindex
+sitemap_filename = "sitemap-docs.xml"
+
 # Logos
 # https://pradyunsg.me/furo/customisation/logo/
 html_theme_options = {
