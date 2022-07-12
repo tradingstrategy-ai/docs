@@ -21,7 +21,7 @@ Trading Strategy client
 -----------------------
 
 .. autosummary::
-   :toctree: _autosummary
+   :toctree: help
    :recursive:
 
    tradingstrategy.client

@@ -4,7 +4,7 @@ Overlap and moving averages
 Documentation for :ref:`pandas_ta` Python package.
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.overlap.alma
     pandas_ta.overlap.dema

@@ -4,7 +4,7 @@ Trend indicators
 Documentation for :ref:`pandas_ta` Python package.
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.trend.adx
     pandas_ta.trend.amat

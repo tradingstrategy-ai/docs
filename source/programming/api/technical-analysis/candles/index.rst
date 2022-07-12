@@ -4,7 +4,7 @@ Candle pattern indicators
 Documentation for :ref:`pandas_ta` Python package.
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.candles.cdl_doji
     pandas_ta.candles.cdl_inside

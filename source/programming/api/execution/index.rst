@@ -16,7 +16,7 @@ Trade execution framework
 -------------------------
 
 .. autosummary::
-   :toctree: _autosummary
+   :toctree: help
    :recursive:
 
    tradeexecutor.state

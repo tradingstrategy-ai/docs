@@ -4,7 +4,7 @@ Volatility indicators
 Documentation for :ref:`pandas_ta` Python package.
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.volatility.aberration
     pandas_ta.volatility.accbands

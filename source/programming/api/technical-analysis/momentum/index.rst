@@ -2,7 +2,7 @@ Momentum indicators
 -----------------------
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.momentum.ao
     pandas_ta.momentum.apo

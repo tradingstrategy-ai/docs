@@ -4,7 +4,7 @@ Statistics
 Documentation for :ref:`pandas_ta` Python package.
 
 .. autosummary::
-    :toctree: _autosummary
+    :toctree: help
 
     pandas_ta.statistics.entropy
     pandas_ta.statistics.kurtosis
