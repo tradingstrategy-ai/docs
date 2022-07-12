@@ -65,6 +65,10 @@ html_theme = "furo"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Fix "en" in sitemap URL
+# https://pypi.org/project/sphinx-sitemap/
+sitemap_url_scheme = "{link}"
+
 # Logos
 # https://pradyunsg.me/furo/customisation/logo/
 html_theme_options = {
@@ -140,3 +144,4 @@ def fixed_init(self, app):
 
 AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
 AutosummaryRenderer.__init__ = fixed_init
+
