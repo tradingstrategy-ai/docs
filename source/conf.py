@@ -129,5 +129,5 @@ def fixed_init(self, app):
 
 
 AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
-AutosummaryRenderesynthetic_ema.ipynbr.__init__ = fixed_init
+AutosummaryRenderer.__init__ = fixed_init
 
