@@ -66,6 +66,13 @@ ML Algotrading Wiki
 A wiki website with research and various news sources.
 `MLTraders’ Algotrading and Machine Learning work for everybody. <https://mltraders.wiki/>`__.
 
+Pair Trading: A market-neutral trading strategy with integrated Machine Learning
+--------------------------------------------------------------------------------
+
+The primary goal in an investment endeavor is the implementation of strategies that minimize the risk while also maximizing the financial gain or return from the said investment. While there have been many popular strategies and techniques developed over the years that point towards the same goal, the 'Pairs-Trading' strategy is one that has been used to great extent in modern hedge-funds, for its simplicity and inherent market-neutral qualities.
+
+`Read post <https://daehkim.github.io/pair-trading/>`__.
+
 Books, tutorials and courses on Jupyter Notebook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
