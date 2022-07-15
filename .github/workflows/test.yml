@@ -22,7 +22,8 @@ jobs:
           python-version: 3.9
       - name: Install dependencies
         run: |
-          sudo apt-get install -y pandoc
+          sudo apt update
+          sudo apt install -y pandoc
           poetry env use '3.9'
           poetry install -vv
       - name: Build documentation
