@@ -1,22 +1,19 @@
 # Publish the static Sphinx build on Trading Strategy server using rsync
-
 name: Docs build
 
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
+
 jobs:
   rsync-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # We need to use HTTPS checkout on CI
       - name: Fetch submodules
-        run: |
-          git submodule set-url deps/furo https://github.com/tradingstrategy-ai/furo.git
-          git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git 
-          git submodule update --init --recursive
+        run: make install-deps
       - name: Install poetry
         run: pipx install poetry
       - name: Set up Python 3.9
@@ -27,7 +24,8 @@ jobs:
           python-version: 3.9
       - name: Install dependencies
         run: |
-          sudo apt-get install -y pandoc
+          sudo apt update
+          sudo apt install -y pandoc
           poetry env use '3.9'
           poetry install -vv
       - name: Build documentation
