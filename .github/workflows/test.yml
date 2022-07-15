@@ -1,0 +1,37 @@
+name: Test docs build
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test-docs-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch submodules
+        run: make install-deps
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        # If caches were enabled, it was caching Python 3.8 interpreter
+        # causing the docs build to fails
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y pandoc
+          poetry env use '3.9'
+          poetry install -vv
+      - name: Build documentation
+        run: |        
+          poetry env use '3.9'
+          python -V
+          which python
+          echo $PATH
+          PYTHON=`poetry env info -p`/bin/python
+          SPHINX=`poetry env info -p`/bin/sphinx-build
+          make install-furo 
+          make rebuild-furo html
