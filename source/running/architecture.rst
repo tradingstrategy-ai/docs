@@ -118,6 +118,8 @@ Portfolio
 
 - See :py:mod:`tradeeexecutor.state.portfolio`
 
+.. _reserve currency:
+
 Reserve currency
 ----------------
 
