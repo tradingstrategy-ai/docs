@@ -125,7 +125,7 @@ Reserve currency
 
 Each portfolio must have its own reserve currency.
 
-- The standard reserve currency is USDC token
+- The standard rese`rve currency is USDC token
 
 - All positions and trades are valued in a reserve currency
 
