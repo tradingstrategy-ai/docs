@@ -1,13 +1,11 @@
-# Publish the static Sphinx build on Trading Strategy server using rsync
-name: Docs build
+name: Test docs build
 
 on:
-  push:
+  pull_request:
     branches: [ master ]
-  workflow_dispatch:
 
 jobs:
-  rsync-docs:
+  test-docs-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,21 +36,3 @@ jobs:
           SPHINX=`poetry env info -p`/bin/sphinx-build
           make install-furo 
           make rebuild-furo html
-
-      # https://zellwk.com/blog/github-actions-deploy/
-      # https://github.com/webfactory/ssh-agent
-      - name: Install SSH Key
-        uses: webfactory/ssh-agent@v0.5.4
-        with:
-          # PK key pair generated locally and
-          # public SSH key copied to the server
-          ssh-private-key: ${{ secrets.RSYNC_KEY }}
-      - name: Publish docs via rsync
-        run: |
-          echo "Running $RSYNC_COMMAND"
-          $RSYNC_COMMAND
-        env:
-          # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
-          RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND }}
-
-

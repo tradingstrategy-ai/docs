@@ -20,7 +20,7 @@ View [the documentation here](https://tradingstrategy.ai/docs).
 To build everything from the scratch: 
 
 ```shell
-git submodule update --init --recursive 
+make install-deps
 poetry shell
 poetry install
 make install-furo rebuild-furo clean-autosummary clean html
