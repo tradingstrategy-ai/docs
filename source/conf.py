@@ -48,6 +48,10 @@ html_theme = "furo"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+
+# See if this fixed Google crawling issues
+html_baseurl = "https://tradingstrategy.ai/docs/"
+
 # Fix "en" in sitemap URL
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_url_scheme = "{link}"
