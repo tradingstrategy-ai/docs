@@ -202,6 +202,8 @@ a hot wallet private key and communicating with a blockchain node.
 
 - See :py:mod:`tradeeexecutor.backtest.backtest_execution`
 
+.. _routing model:
+
 Routing model
 -------------
 
