@@ -12,3 +12,4 @@ See :ref:`running backtests <running-backtests>` for how to run.
 
    synthetic-ema
    pancakeswap-ema
+   strategy-backtest-template

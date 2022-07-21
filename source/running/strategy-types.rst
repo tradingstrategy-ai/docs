@@ -1,15 +1,15 @@
-.. _strategy-types:
+.. _strategy types:
 
 Strategy types
 ==============
 
 :py:mod:`tradeexecutor` supports different strategy types.
 
-* Internal
+* Pandas numeric analysis based strategies
 
-* QSTrader inspired
+* QSTrader inspired (deprecated)
 
-"Pandas trades" - Internal strategy type
+"Pandas trader" - Internal strategy type
 ----------------------------------------
 
 The internal strategy type is called "Pandas strategy type"
