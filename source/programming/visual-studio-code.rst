@@ -12,11 +12,20 @@ for developing :term:`Jupyter Notebooks <Jupyter Notebook>`.
 Using Visul Studio Code is recommended for development on your local laptop, unless
 you know any other favority Jupyter Notebook editors.
 
-Requirements for developing with Visual Studio Code are
-- Python basics
+Prerequisites
+~~~~~~~~~~~~~
+
+Prerequisites for developing trading strategies with Visual Studio Code are
+
+- Python programming basics
+
 - Command line usage basics
-- Able to install Visual Studio Code
-- Able to install
+
+- Install Visual Studio Code, git, Python locally
+
+- :doc:`You have completed quick start tutorial <./code-examples/getting-started>`
+
+- :doc:`You have read the backtest template notebook with its instructions <./strategy-examples/strategy-backtest-template>`
 
 .. note::
 
@@ -28,21 +37,22 @@ Requirements for developing with Visual Studio Code are
 Install git
 -----------
 
-While the software is in beta, `git` command must be installed.
+While the software is in beta, `git` command must be installed,
+as we are using it to download code from Github.
 
-[Install git](https://git-scm.com/downloads).
+`Install git <https://git-scm.com/downloads>`_.
 
 Install Python
 --------------
 
 Python 3.9 version recommended.
 
-`Download and Install Python 3.9 <https://www.python.org/downloads/release/python-3913/>`_.
+`Download and install Python 3.9 <https://www.python.org/downloads/release/python-3913/>`_.
 
 Installing Visual Studio Code
 -----------------------------
 
-`Download and Install Visual Studio Code <https://code.visualstudio.com/>`_.
+`Download and install Visual Studio Code <https://code.visualstudio.com/>`_.
 
 Start Visual Studio Code.
 
@@ -57,6 +67,8 @@ Testing Python
 
 In Visual Studio Code, open the terminal (*Terminal* > *New terminal*)
 
+.. image:: vscode-terminal.png
+
 Check that your Python installation is configured
 
 .. code-block:: shell
@@ -66,13 +78,14 @@ Check that your Python installation is configured
 Should print
 
 .. code-block::
+
     Python 3.9.12 (main, Mar 26 2022, 15:44:31)
     [Clang 13.1.6 (clang-1316.0.21.2)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
 
 Use CTRL+D to exit.
 
-Then
+Then try `git` commad on command line:
 
 .. code-block:: shell
 
@@ -99,7 +112,7 @@ Start Visual Studio Code. Go *File* > *Open folder* and choose your newly create
 
 Open terminal inside Visual Studio Code: *Terminal* > *New Terminal*.
 
-Now we need to check out the source code tree using git:
+Now we need to check out the source code tree using git to your workspace folder:
 
 .. code-block:: shell
 
@@ -139,12 +152,15 @@ This should output your *Virtualenv* where the Python packages are installed.
     Valid:          True
 
 Your Python intepreter path is the above path plus added `/bin/python`.
-E.g. in this case:
+E.g. in above case this is:
+
+.. code-block:: shell
 
      /Users/moo/Library/Caches/pypoetry/virtualenvs/trade-executor-49eyUR2P-py3.9/bin/python
 
 You can test that Poetry installation works by running your Python interpreter now.
-Copy-paste the full Python interpreter path to the terminal (you will need this later):
+Copy-paste the full Python interpreter path to your Visual Studio Code terminal.
+You will also need this path of the command later:
 
 .. code-block:: shell
 
@@ -161,7 +177,7 @@ Then in Python prompt running:
 Download strategy backtesting template
 --------------------------------------
 
-`Download the template Jupyter Notebook from Github <https://github.com/tradingstrategy-ai/docs/blob/master/source/programming/strategy-examples/strategy-template.ipynb>`__.
+`Download the template Jupyter Notebook from Github <https://github.com/tradingstrategy-ai/docs/blob/master/source/programming/strategy-examples/strategy-backtest-template.ipynb>`__.
 
 Save it in your workspace folder.
 
@@ -169,6 +185,8 @@ Open the notebook
 -----------------
 
 Use *File... Open* to open the template in Visual Studio Code.
+
+.. image:: vscode-open.png
 
 Adding Python environment to Visual Studio Code
 -----------------------------------------------

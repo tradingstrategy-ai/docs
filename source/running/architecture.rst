@@ -19,7 +19,7 @@ strategy. There is 1:1 mapping between strategies and OS processes.
 
 - Trade executor life cycle depends on if we are doing backtesting or live trading
 
-- Trade executor can support different :ref:`strategy-types`
+- Trade executor can support different :ref:`strategy types`
 
 Live trading life cycle
 ~~~~~~~~~~~~~~~~~~~~~~~
