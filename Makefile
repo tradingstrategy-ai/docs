@@ -19,6 +19,11 @@ browser-docs-macos:
 # Fetch submodules
 install-deps:
 	git submodule update --init --recursive
+
+# Fetch submodules and check out trade-executor master
+install-deps-ci:
+	git submodule update --init --recursive
+    rm -rf deps/trade-executor/
 	git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
 
 # Get Webpack tool chain to build Furo theme
