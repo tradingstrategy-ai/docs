@@ -45,9 +45,9 @@ as we are using it to download code from Github.
 Install Python
 --------------
 
-Python 3.9 version recommended.
+Python 3.9 or highter version is needed.
 
-`Download and install Python 3.9 <https://www.python.org/downloads/release/python-3913/>`_.
+`Download and install Python <https://www.python.org/downloads/>`_.
 
 Installing Visual Studio Code
 -----------------------------
