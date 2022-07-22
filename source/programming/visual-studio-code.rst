@@ -9,19 +9,19 @@ Preface
 `Visual Studio Code <https://code.visualstudio.com/>`__ is free and popular editor from Microsoft
 for developing :term:`Jupyter Notebooks <Jupyter Notebook>`.
 
-Using Visul Studio Code is recommended for development on your local laptop, unless
-you know any other favority Jupyter Notebook editors.
+Using Visual Studio Code is recommended for development on your local laptop, unless
+you know any other favorite Jupyter Notebook editors.
 
 Prerequisites
 ~~~~~~~~~~~~~
 
-Prerequisites for developing trading strategies with Visual Studio Code are
+Prerequisites for developing trading strategies with Visual Studio Code are:
 
 - Python programming basics
 
 - Command line usage basics
 
-- Install Visual Studio Code, git, Python locally
+- Install Visual Studio Code, git, and Python locally
 
 - :doc:`You have completed quick start tutorial <./code-examples/getting-started>`
 
@@ -37,7 +37,7 @@ Prerequisites for developing trading strategies with Visual Studio Code are
 Install git
 -----------
 
-While the software is in beta, `git` command must be installed,
+While the software is in beta, ``git`` command must be installed,
 as we are using it to download code from Github.
 
 `Install git <https://git-scm.com/downloads>`_.
@@ -45,7 +45,7 @@ as we are using it to download code from Github.
 Install Python
 --------------
 
-Python 3.9 or highter version is needed.
+Python 3.9 or higher version is needed.
 
 `Download and install Python <https://www.python.org/downloads/>`_.
 
@@ -101,24 +101,24 @@ Now install `Poetry command <https://python-poetry.org/docs/#installation>`_ nee
 
 .. code-block::
 
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+    curl -sSL https://install.python-poetry.org  | python3 -
 
 Creating Python environment
 ---------------------------
 
 Create an empty folder where you will place your backtesting workspace files.
 
-Start Visual Studio Code. Go *File* > *Open folder* and choose your newly created folder.
+Start Visual Studio Code. Go to *File* > *Open folder* and choose your newly created folder.
 
-Open terminal inside Visual Studio Code: *Terminal* > *New Terminal*.
+Open a terminal inside Visual Studio Code: *Terminal* > *New Terminal*.
 
-Now we need to check out the source code tree using git to your workspace folder:
+Now we need to check out the source code tree using ``git`` to your workspace folder:
 
 .. code-block:: shell
 
     git clone https://github.com/tradingstrategy-ai/trade-executor.git
 
-Then we set up Python environment with `trade-exector` package installed:
+Then we set up Python environment with ``trade-executor`` package installed:
 
 .. code-block:: shell
 
@@ -135,7 +135,7 @@ This should output:
 
 Now Poetry has created a new Python environment with required packages for you.
 
-You can find the Python environment `python` command location on your hard drive with the following command:
+You can find the Python environment ``python`` command location on your hard drive with the following command:
 
 .. code-block:: shell
 
@@ -151,8 +151,8 @@ This should output your *Virtualenv* where the Python packages are installed.
     Path:           /Users/moo/Library/Caches/pypoetry/virtualenvs/trading-strategy-docs-jBbc2tTM-py3.9
     Valid:          True
 
-Your Python intepreter path is the above path plus added `/bin/python`.
-E.g. in above case this is:
+Your Python intepreter path is the above path plus added ``/bin/python``.
+E.g. in the above case this is:
 
 .. code-block:: shell
 
@@ -201,7 +201,7 @@ Type in to search for the command *Python: Select interpreter*.
 
 Choose *Enter interpreter path*.
 
-Copy-paste the Virtualenv path from `poetry env` output you did earlier.
+Copy-paste the Virtualenv path from ``poetry env`` output you did earlier.
 
 For more information, see `configuring enviroments in Visual Studio Code and Python documentation by Microsoft <https://code.visualstudio.com/docs/python/environments>`__.
 
@@ -210,7 +210,7 @@ Run
 
 Press *Run all* to execute the template notebook.
 
-It will prompt you to choose a Python environment. Choose one we just added.
+It will prompt you to choose a Python environment. Choose the one we just added.
 
 - Visual Studio Code should ask for the Trading Strategy API key on the first run
 - The run should complete with a checkmark on the last notebook cell
@@ -227,7 +227,7 @@ If you get an error:
     ModuleNotFoundError: No module named 'tradeexecutor'
 
 It means Visual Studio Code is not picking the Python environment where we installed
-the `trade-executor` package.
+the ``trade-executor`` package.
 
 Make sure that Visual Studio code is displaying the correct Python interpreter in the top right corner:
 
