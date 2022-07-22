@@ -22,6 +22,8 @@ install-deps:
 
 # Fetch submodules and check out trade-executor master
 install-deps-ci:
+	git submodule set-url deps/furo https://github.com/tradingstrategy-ai/furo.git
+	git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git
 	git submodule update --init --recursive
 	rm -rf deps/trade-executor/
 	git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
