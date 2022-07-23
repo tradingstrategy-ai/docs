@@ -14,6 +14,7 @@ using Python and Trading Strategy framework.
    market-data/index
    strategy-examples/index
    api/index
+   binder-development
    visual-studio-code
    learn
    troubleshooting

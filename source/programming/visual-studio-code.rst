@@ -1,5 +1,5 @@
-Visual Studio Code
-==================
+Visual Studio Code development
+==============================
 
 In this document, we show how to develop trading strategies using Visual Studio Code.
 
