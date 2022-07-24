@@ -73,6 +73,14 @@ The primary goal in an investment endeavor is the implementation of strategies t
 
 `Read post <https://daehkim.github.io/pair-trading/>`__.
 
+ML for Trading
+--------------
+
+This book aims to show how ML can add value to algorithmic trading strategies in a practical yet comprehensive way. It covers a broad range of ML techniques from linear regression to deep reinforcement learning and demonstrates how to build, backtest, and evaluate a trading strategy driven by model predictions.
+
+`See Github repository <https://github.com/stefan-jansen/machine-learning-for-trading>`__
+
+
 Books, tutorials and courses on Jupyter Notebook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
