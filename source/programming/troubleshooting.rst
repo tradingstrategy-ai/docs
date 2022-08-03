@@ -45,4 +45,15 @@ Before running installer, make sure you use OpenBLAS correctly from Homebrew:
     brew install openblas
     export OPENBLAS="$(brew --prefix openblas)"
 
+Running Jupyter notebooks with pdb based debuggers
+--------------------------------------------------
+
+You can run the notebooks from console:
+
+.. code-block::shell
+
+    ipython --TerminalIPythonApp.file_to_run=notebooks/pancakeswap-ema-b.ipynb
+
+Then any `pdb` or `ipdb` breakpoints will work correctly.
+
 
