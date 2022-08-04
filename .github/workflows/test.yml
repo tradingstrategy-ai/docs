@@ -1,8 +1,8 @@
 name: Test docs build
 
 on:
-  pull_request:
-    branches: [ master ]
+  push:
+    branches: [ dev* ]
 
 jobs:
   test-docs-build:
