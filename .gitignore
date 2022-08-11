@@ -5,7 +5,11 @@ build/**
 .vscode
 .pytest_cache
 .cache
+
+# Old autosummary
 _autosummary
+
+# All autosummary API documentation is put under folder named help
 help/
 
 # Must be build from deps/furo
