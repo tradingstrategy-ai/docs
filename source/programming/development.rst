@@ -93,3 +93,14 @@ Making a release
 
     poetry build
     poetry publish
+
+Memory profiling
+----------------
+
+Use `pytest-monitor <https://github.com/CFMTech/pytest-monitor>`__ for
+profiling memory usage. We need to ensure large datasets
+do not cause issues on low-memory environments like WebAsssembly
+in web browsers.
+
+
+

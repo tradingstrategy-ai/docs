@@ -405,4 +405,16 @@ and algorithmic trading.
         strategies can have trding universe consisting of thousands of trading pairs
         and assets.
 
+    Factor investing
+
+        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns. There are two main types of factors: macroeconomic and style. The investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
+
+        `Read more <https://learn.aikido.finance/blog/post/how-to-choose-an-algorithmic-trading-strategy-stocks/>`__.
+
+    Alpha generation platform
+
+        An alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or trading strategies, that generate consistent alpha, or absolute returns. The process of alpha generation refers to generating excess returns. Alpha generation platforms are tools used by hedge funds, banks, CTAs and other financial institutions to help develop and test quantitative trading strategies. Alpha generation platforms support quants in the creation of efficient and productive quantitative trading strategies.
+
+        `Read more <https://en.wikipedia.org/wiki/Alpha_generation_platform>`__.
+
 
