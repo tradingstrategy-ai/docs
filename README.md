@@ -44,3 +44,14 @@ See [Makefile](./Makefile) for more recipes.
 
 [See theme README](https://github.com/tradingstrategy-ai/furo).
 
+# Community
+
+* [Trading Strategy website](https://tradingstrategy.ai)
+
+* [Blog](https://tradingstrategy.ai/blog)
+
+* [Twitter](https://twitter.com/TradingProtocol)
+
+* [Discord](https://tradingstrategy.ai/community#discord) 
+
+* [Telegram channel](https://t.me/trading_protocol)
