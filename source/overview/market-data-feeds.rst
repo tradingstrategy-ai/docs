@@ -17,6 +17,7 @@ You will find the lists of decentralised exchanges, trading pairs, price charts 
 
 Not all trading pairs and tokens are included in the dataset. See :ref:`tracking` for more information about inclusion criteria.
 
+
 Data flavours
 -------------
 
@@ -39,6 +40,7 @@ For some datasets, like the best performing trading pairs, there is direct Micro
 
 `See PancakeSwap trading pairs <https://tradingstrategy.ai/trading-view/binance/pancakeswap-v2>`_ as an example.
 
+
 Accessing data
 --------------
 
@@ -46,7 +48,7 @@ You can access market data
 
 - Programmatically using API
 
-- Download datasets by hand
+- Download datasets manually
 
 Programmatic access may require an API key
 
@@ -68,6 +70,7 @@ Downloading programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`dataset download` for examples.
+
 
 API endpoints
 -------------
