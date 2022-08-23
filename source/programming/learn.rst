@@ -159,6 +159,14 @@ Was originally written for Bitstamp. Offers backtesting, paper trading, live tra
 Communities
 ~~~~~~~~~~~
 
+Pyquant News
+------------
+
+Level up with Python for quantitative and data analysis.
+Join 3,600+ subscribers to the PyQuant Newsletter. Every Saturday morning, you'll get Python code you can use right now for quantitative & data analysis.
+
+`Subscaribe to the newsletter <https://pyquantnews.com/the-pyquant-newsletter/>`__.
+
 Fastquant and HawkInsight
 -------------------------
 
