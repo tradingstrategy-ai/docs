@@ -3,9 +3,9 @@
 Wrapped tokens
 ==============
 
-Due to legacy design issues with :ref:`EVM compatible` blockchains,
-any :ref:`native token` must be "wrapped" in order it to be used with
-:ref:`decentralised exchanges <decentralised exchange>`.
+Due to legacy design issues with :term:`EVM compatible` blockchains,
+any :term:`native token` must be "wrapped" in order it to be used with
+:term:`decentralised exchanges <decentralised exchange>`.
 
 To distinguish wrapped tokens from their native token counterparts,
 a letter `W` is added at the front of the token. E.g.
