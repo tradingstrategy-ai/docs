@@ -417,4 +417,12 @@ and algorithmic trading.
 
         `Read more <https://en.wikipedia.org/wiki/Alpha_generation_platform>`__.
 
+    Native token
+
+        Also known as "gas token". The native token is the cryptocurrency used to pay
+        transction fees on :ref:`EVM compatible` blockchain. For Ethereum it is ETH,
+        for Polygon it is MATIC and for Binance Smart Chain it is BNB.
+
+
+
 

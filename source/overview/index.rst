@@ -17,4 +17,5 @@ Overview
    market-data-feeds
    tooling
    oracles
+   wrapped-tokens
 
