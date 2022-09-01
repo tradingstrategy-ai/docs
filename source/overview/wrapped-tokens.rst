@@ -43,4 +43,18 @@ WBNB
 
 Binance smart chain: from BNB to WBNB.
 
+Bridged tokens
+--------------
+
+Besides wrapped tokens, there are bridged tokens.
+Bridges tokens have their primary implementation living on one blockchain,
+but then throuhg a locking mechanism make token liquidity available on
+other chains.
+
+Bridges tokens do not have 'W' prefix.
+
+An example of bridged token is `ETH on Binance Smart Chain <https://tradingstrategy.ai/trading-view/binance/tokens/0x2170ed0880ac9a755fd29b2688956bd959f933f8>`_.
+This token is bridged through Binance custody. Because the native
+token of Binance Smart Chain is BNB, not ETH, ETH on Binance Smart Chain
+does not need to be wrapped.
 
