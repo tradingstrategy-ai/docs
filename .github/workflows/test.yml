@@ -3,6 +3,7 @@ name: Test docs build
 on:
   push:
     branches: [ dev* ]
+  workflow_dispatch:
 
 jobs:
   test-docs-build:
@@ -10,29 +11,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Fetch submodules
-        run: make install-deps
-      - name: Install poetry
-        run: pipx install poetry
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v3
-        # If caches were enabled, it was caching Python 3.8 interpreter
-        # causing the docs build to fails
         with:
-          python-version: 3.9
-      - name: Install dependencies
+          submodules: 'recursive'
+      - name: Fetch submodules
+        run: make install-deps-ci
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install pandoc
         run: |
           sudo apt update
           sudo apt install -y pandoc
-          poetry env use '3.9'
-          poetry install -vv
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+      - name: Load cached venv
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction
       - name: Build documentation
-        run: |        
-          poetry env use '3.9'
-          python -V
-          which python
-          echo $PATH
-          PYTHON=`poetry env info -p`/bin/python
+        run: |
           SPHINX=`poetry env info -p`/bin/sphinx-build
           make install-furo 
           make rebuild-furo html
