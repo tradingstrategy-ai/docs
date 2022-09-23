@@ -55,7 +55,7 @@ You can run example notebooks in a terminal after git checkout and poetry instal
 
 .. code-block:: shell
 
-    ipython --TerminalIPythonApp.file_to_run=docs/source/programming/algorithms/pancakeswap-momentum.ipynb
+    ipython --TerminalIPythonApp.file_to_run=source/programming/strategy-examples/pancakeswap-ema.ipynb
 
 This is especially useful if you want to debug library code with ipdb.
 
