@@ -15,3 +15,5 @@ help/
 # Must be build from deps/furo
 source/_static/styles/furo.css
 
+# Pycharm
+.idea
