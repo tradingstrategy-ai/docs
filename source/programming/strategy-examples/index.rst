@@ -10,7 +10,9 @@ See :ref:`running backtests <running-backtests>` for how to run.
 .. toctree::
    :maxdepth: 1
 
-   synthetic-ema
    pancakeswap-ema
+   pancakeswap-ema-stop-loss
+   synthetic-ema
+   synthetic-ema-stop-loss
    osmosis
    strategy-backtest-template
