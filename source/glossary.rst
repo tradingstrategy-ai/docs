@@ -423,6 +423,20 @@ and algorithmic trading.
         transction fees on :ref:`EVM compatible` blockchain. For Ethereum it is ETH,
         for Polygon it is MATIC and for Binance Smart Chain it is BNB.
 
+    TWAP
+
+        TWAP or Time-weighted Average Price is a calculation that defines the weighted average price over a specified period.
+
+        The real-time price of decentralised exchanges is subject to quite easy manipulation, especially within the
+        range of one block. A manipualtor can use flashloans to access large amount of capital and make trades
+        that a normal trader would not do.
+
+        These kind of attacks may cause very high/low price candles. Using the TWAP price mitigates
+        the risk of performing e.g. an unnecessary stop-loss trigger on a manipulated price.
+
+        `On the security and compromises of price oracles <https://ethereum.stackexchange.com/a/114990/620>`__.
+
+        `Read Uniswap v3 TWAP oracle manipulation cost <https://github.com/euler-xyz/uni-v3-twap-manipulation/blob/master/cost-of-attack.pdf>`__.
 
 
 
