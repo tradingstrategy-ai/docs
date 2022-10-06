@@ -97,6 +97,13 @@ Managing extreme price fluctuations in cryptocurrency markets are of central imp
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S1544612321004116>`__.
 
+How to avoid overfitting trading strategies
+-------------------------------------------
+
+Running a lossy trading strategy would be a very costly mistake, so we spend a lot of effort on assessing the expected performance of our strategies. This task gets harder when we have limited data for this evaluation or when we experiment with the strategy for a longer time and risk manually overfitting the strategy on the same out-of-sample data.
+
+`Read the Quantlane blog post <https://quantlane.com/blog/avoid-overfitting-trading-strategies/>`__.
+
 Books, tutorials and courses on Jupyter Notebook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
