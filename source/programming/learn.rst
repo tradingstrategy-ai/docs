@@ -80,6 +80,13 @@ This book aims to show how ML can add value to algorithmic trading strategies in
 
 `See Github repository <https://github.com/stefan-jansen/machine-learning-for-trading>`__
 
+Didact AI
+---------
+
+The anatomy of an ML-powered stock picking engine.
+
+`Read post <https://daehkim.github.io/pair-trading/>`__.
+
 Papers
 ~~~~~~
 
