@@ -268,3 +268,4 @@ Other
 
 - `The 7 Reasons Most Machine Learning Funds Fail <https://youtu.be/BRUlSm4gdQ4>`_
 
+- `The Case for Variable Fees in Constant Product Markets: An Agent Based Simulation <https://github.com/msabvid/cpm_agent_based_sim>`__
