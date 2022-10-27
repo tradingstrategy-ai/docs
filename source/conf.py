@@ -118,6 +118,12 @@ autodoc_member_order = "bysource"
 
 # autosummary_imported_members = True
 
+# Needed to document DecideTrades
+# https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#confval-autodoc_default_options
+autodoc_default_options = {
+    'special-members': "__init__, __call__"
+}
+
 # Monkey-patch autosummary template context
 from sphinx.ext.autosummary.generate import AutosummaryRenderer
 
