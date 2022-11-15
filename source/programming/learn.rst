@@ -182,6 +182,13 @@ Was originally written for Bitstamp. Offers backtesting, paper trading, live tra
 Communities
 ~~~~~~~~~~~
 
+Awesome Quant Github repository
+-------------------------------
+
+A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
+
+`View Github repository <https://github.com/wilsonfreitas/awesome-quant>`__
+
 Pyquant News
 ------------
 
