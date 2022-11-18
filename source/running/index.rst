@@ -22,4 +22,5 @@ and backtesting the strategy performance.
    strategy-types
    serialisation
    unit-testing
+   strategy-deployment
 
