@@ -168,7 +168,11 @@ Then
 Changes between backtesting and live execution
 ----------------------------------------------
 
-The live execution needs
+Compared to backtesting, the live execution environment has several differences
+
+- The live execution needs a hot wallet with real money and native gas token
+
+- The live execution depends on JSON-RPC node to send transactions
 
 - You need to give `tick_offset_minutes` command line option to tell how much time we give for the price feed
   to generate candles after the trade cycle is triggered
@@ -177,13 +181,32 @@ The live execution needs
   for too long. This is a safety feature to prevent any trades to happen in the case market data is delayed
   or ambitious.
 
-TODO
+- The live execution needs a gas strategy for paying the transaction gas fees
 
-Creating a Docker file
-----------------------
+- The live execution environment has HTTP webhook server
+
+- The live execution environment may have Discord notifications
+
+- The live execution environment may send performance statistics through statsd interface
+
+- The live execution environment may send logs to LogStash server
+
+Downloading trade-executor Docker image
+---------------------------------------
 
 `Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
-There shouldn't be need to build your own.
+
+- It is automatically downloaded by Docker command
+
+- Always pin down the Docker image version to a known good version for yourself
+
+-  There shouldn't be need to build your own Docker image
+
+If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+
+.. code-block:: shell
+
+     docker build -t trading-strategy/trade-executor:latest .
 
 Setting up the frontend webhook URL
 -----------------------------------
@@ -203,10 +226,88 @@ The frontend and any other automation can communicate with `trade-executor` inst
 
 More examples can be found in proxy-server repository.
 
-Example configuration file
---------------------------
+Creating configuration file
+---------------------------
+
+In this example we lay out a simple best practice to manage your `trade-executor` configuration
+
+- We use .env style configuration files
+
+- Public configuration variables can be committed to source code control like Github
+
+- Secret configuration variables are only available locally or on-server using a
+  .env style configuration files
+
+- The final env configuration file, as passed to Docker process,
+  is created by splicing public and private configuration file together
+  and validating it
+
+For this example we assume we have
+
+- Public configuration file `env/pancake-eth-usd-sma.env`
+
+- Secret configuration file `~/pancake-eth-usd-sma-secret.env`
+
+- Final generated configuration file (read by the Docker daemon): `~/pancake-eth-usd-sma-final.env`
+
+Example public configuration file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example settings. Refer :ref:`command line options` for full guide.
+
+.. code-block:: ini
+
+    #
+    # Strategy assets and metadata
+    #
+
+    STRATEGY_FILE=strategies/pancake-eth-usd-sma.py
+    NAME="ETH-USD SMA on Pancake"
+    DOMAIN_NAME="pancake-eth-usd-sma.tradingstrategy.ai"
+    SHORT_DESCRIPTION="One line description of the strategy."
+    LONG_DESCRIPTION="Multiparagraph description of the strategy. May contain Markdown formattting."
+    ICON_URL="https://via.placeholder.com/512"
+
+    # Blockchain transaction broadcasting parameters
+    GAS_PRICE_METHOD="london"
+    EXECUTION_TYPE="uniswap_v2_hot_wallet"
+
+    # The actual webhook HTTP port mapping for the host
+    # is done in docker-compose.yml.
+    # The default port is 3456.
+    HTTP_ENABLED=true
+
+Example secrets configuration file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example settings. Refer :ref:`command line options` for full guide.
+
+Preparing the final configuration file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To generate the final configuration file `trade-executor` comes with `prepare-docker-env helper command <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+
+.. code-block:: shell
+
+    # Read secrets file to local shell context
+    source ~/pancake-eth-usd-sma-secret.en
+
+    # If you want to manually override any environment variables
+    # from config files you can do it using export command in this point
+
+    # Use UNIX command line tooling to pass the secrets and
+    # and the public configuration file for the validation
+    # and splicing
+    docker run \
+        --interactive \
+         --entrypoint=prepare-docker-env \
+        $(env | cut -f1 -d= | sed 's/^/-e /') \
+         trading-strategy/trade-executor \
+        < env/pancake-eth-usd-sma.env \
+        > ~/pancake-eth-usd-sma-final.env
 
 
+(TODO add final link to the command)
 
 Setting up the web frontend
 ---------------------------
