@@ -210,13 +210,13 @@ If you need to locally pull the image:
 
 .. code-block:: shell
 
-     docker pull trading-strategy/trade-executor:v80
+     docker pull ghcr.io/tradingstrategy-ai/trade-executor:v80
 
 If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
 
 .. code-block:: shell
 
-     docker build -t trading-strategy/trade-executor:latest .
+     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
 
 Setting up the frontend webhook URL
 -----------------------------------
@@ -345,6 +345,9 @@ You need to pass in local file system folders, or create a Docker volumes for
 
 - `cache/` where downloaded datasets are stored
 
+- For webhook port we use `19003` in the example below.
+  This needs to be any open ane unoccupied localhost port on your server.
+
 Example of a `docker-compose.yml can be found in trade-executor repository <https://github.com/tradingstrategy-ai/trade-executor/blob/master/docker-compose.yml>`__.
 We set the current version of the image we use with `TRADE_EXECUTOR_VERSION` environment variables.
 
@@ -389,8 +392,20 @@ to see that the application launches correctly.
 
 .. code-block:: shell
 
-    docker-compose run pancake-eth-usd-sma
+    docker-compose run pancake-eth-usd-sma hello
 
+.. code-block:: text
+
+    Hello blockchain
+
+.. note ::
+
+    If you have several services in the same `docker-compose.yml` and `docker-compose` complains about missing `.env`
+    files you can simply create empty files. E.g. `touch ~/pancake-eth-usd-sma-final.env`.
+
+You can also launch directly using `docker` command (change `:latest` tag to your version tag):
+
+    docker run ghcr.io/tradingstrategy-ai/trade-executor:latest hello
 
 Preflight checks
 ----------------
@@ -413,7 +428,13 @@ You can run this with configured `docker-compose` as:
 
 .. code-block:: shell
 
+    docker-compose run check-universe
 
+This will print out:
+
+.. code-block:: text
+
+     Latest OHCLV candle is at: 2022-11-24 16:00:00, 1:49:57.985345 ago
 
 Wallet balance check
 ~~~~~~~~~~~~~~~~~~~~
@@ -431,16 +452,31 @@ This checks
 
 - The last block number of the blockchain
 
-Or directly without `docker-compose`. Note that you need to give explicit cache path
-because to do the wallet balance check we need to download and construct
-the trading universe.
+With `docker-compose`:
+
+.. code-block:: shell
+
+    docker-compose run pancake-eth-usd-sma check-wallet
+
+Output:
+
+.. code-block:: text
+
+    INFO     Latest block is 23,336,055
+    INFO     Hot wallet is ...
+    INFO     We have 0.370500 gas money left
+    INFO     Balance of USD Coin: 500 USDC
+
+
+You can also run directly without `docker-compose`. In this case, you need to give explicit cache path
+and env file, because to do the wallet balance check we need to download and construct the trading universe.
 
 .. code-block:: shell
 
     docker run \
         --env-file=$HOME/pancake-eth-usd-sma-final.env \
         --volume=cache:/usr/src/trade-executor/cache \
-        trading-strategy/trade-executor \
+        docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest \
         check-wallet
 
 Output:
@@ -455,14 +491,28 @@ Output:
 Launching the instance
 ----------------------
 
-Set up the trade executor instance to run in server production mode:
+Set up the `trade-executor` instance to run in server production mode:
 
 .. code-block:: shell
 
     docker-compose up -d
 
+This will start trading.
+
+You can check the logs with:
+
+.. code-block: shell
+
+    docker-compose logs --tail=200 pancake-eth-usd-sma
+
 Checking the webhook
 ---------------------
+
+When your `docker-compose` instance is running you can check that its webhook port is replying using `curl`.
+
+.. code-block: shell
+
+    TODO
 
 Setting up the web frontend
 ---------------------------
