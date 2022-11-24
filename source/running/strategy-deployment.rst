@@ -35,6 +35,28 @@ To get started you need to have a
 
 - Initial cash deposit in stablecoin (USDC, BUSD)
 
+Strategy assets
+---------------
+
+For each live executed strategy you need to have
+
+- A strategy module as Python source code file. This is slightly different from backtesting notebook,
+  but can be constructed from the backtest with copy-paste.
+
+- Strategy name, short description, long description.
+
+- Strategy logo image URL. The image must be 1:1 aspect ratio.
+
+- A URL and a domain name where trade executor frontend, which allows you to access the strategy
+  live statistics and webhook controls.
+
+- The strategy execution configuration that include the hot wallet private key,
+  API keys for oracle market data feeds, blockchain nodes, Discord webhook notifications
+  and such.
+
+- A server where you run the `trade-executor` Docker container and any related infrastructure,
+  like a reverse proxy web server.
+
 Turning a backtest to a strategy module
 ---------------------------------------
 
@@ -88,18 +110,37 @@ the code is broken:
         --cycle-duration=1d \
         --stop-loss-check-frequency=1d \
         --backtest-start=2021-06-01 \
-        --backtest-end=2022-09-01 \
+        --backtest-end=2022-09-01
 
-Changes between backtesting and live execution
-----------------------------------------------
+The backtest summary results are printed to the console. These are garbage,
+as we adjusted the trade cycle and stop loss parameters above:
 
-- Candle time frame is not read from Python file, but is given as `position-trigger-check-frequency` command line option
+.. code-block:: text
 
-- Stop loss signal is not read from Python file, but is given as `tick-size` command line option
-
-- You need to give `tick_offset_minutes` command line option to tell how much time we give for the price feed
-  to generate candles after the trade cycle is triggered
-
+    Trading period length                     440 days
+    Return %                                   -32.68%
+    Annualised return %                        -27.11%
+    Cash at start                           $10,000.00
+    Value at end                             $6,732.17
+    Trade win percent                           22.86%
+    Total trades done                               35
+    Won trades                                       8
+    Lost trades                                     27
+    Stop losses triggered                           27
+    Stop loss % of all                          77.14%
+    Stop loss % of lost                        100.00%
+    Zero profit trades                               0
+    Positions open at the end                        0
+    Realised profit and loss                $-3,267.83
+    Portfolio unrealised value                   $0.00
+    Extra returns on lending pool interest       $0.00
+    Cash left at the end                     $6,732.17
+    Average winning trade profit %               6.96%
+    Average losing trade loss %                 -4.00%
+    Biggest winning trade %                     13.90%
+    Biggest losing trade %                     -12.28%
+    Average duration of winning trades          2 days
+    Average duration of losing trades           1 days
 
 
 Creating a hot wallet
@@ -124,6 +165,50 @@ Then
 - Private key will be needed in the trade execution configuration file
 
 
+Changes between backtesting and live execution
+----------------------------------------------
+
+The live execution needs
+
+- You need to give `tick_offset_minutes` command line option to tell how much time we give for the price feed
+  to generate candles after the trade cycle is triggered
+
+- There is `max_data_delay` parameter that will cause the trade executor to crash if the price feed data is delayed
+  for too long. This is a safety feature to prevent any trades to happen in the case market data is delayed
+  or ambitious.
+
+TODO
+
+Creating a Docker file
+----------------------
+
+`Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
+There shouldn't be need to build your own.
+
+Setting up the frontend webhook URL
+-----------------------------------
+
+The frontend and any other automation can communicate with `trade-executor` instance using webhook URLs.
+
+- Docker exposes the webhook URL as internal IP:port pair
+
+- You need a DNS name or unique URL for your trade executor instance
+
+- You usually need to run a reverse proxy web server that routes
+  any incoming HTTP requests to your server IP address to different
+  web services hosted on your server. We use Caddy here, but could
+  be anything.
+
+- Any details needed for the HTTP routing
+
+More examples can be found in proxy-server repository.
+
+Example configuration file
+--------------------------
 
 
 
+Setting up the web frontend
+---------------------------
+
+`See frontend Github repository <https://github.com/tradingstrategy-ai/frontend/>`_.
