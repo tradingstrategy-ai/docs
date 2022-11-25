@@ -18,6 +18,8 @@ This example shows a trading strategy deployment in its simplest form
 
 - Trades on a single chain, single exchange
 
+.. image:: deployment-overview.drawio.svg
+
 Prerequisites
 -------------
 
@@ -428,7 +430,7 @@ You need to pass in local file system folders, or create a Docker volumes for
   This needs to be any open ane unoccupied localhost port on your server.
 
 Example of a `docker-compose.yml can be found in trade-executor repository <https://github.com/tradingstrategy-ai/trade-executor/blob/master/docker-compose.yml>`__.
-We set the current version of the image we use with `TRADE_EXECUTOR_VERSION` environment variables.
+
 
 .. code-block:: yaml
 
@@ -458,13 +460,13 @@ We set the current version of the image we use with `TRADE_EXECUTOR_VERSION` env
         # There are several subcommands.
         command: start
 
-We pin down our `trade-executor` version.
+We pin down our `trade-executor` version using `TRADE_EXECUTOR_VERSION` environment variable.
 `See the repo for stable versions <https://github.com/tradingstrategy-ai/trade-executor/>`__.
 **Do not use latest tag as it is unstable, unless you build the Docker image yourself**.
 
 .. code-block:: shell
 
-    export TRADE_EXECUTOR_VERSION=latest
+    export TRADE_EXECUTOR_VERSION=v13
 
 Now we can try this out. We invoke `hello` subcommand
 to see that the application launches correctly.
@@ -503,7 +505,7 @@ You can run this with configured `docker-compose` as:
 
 .. code-block:: shell
 
-    docker-compose run check-universe
+    docker-compose run pancake-eth-usd-sma check-universe
 
 This will print out:
 
@@ -570,7 +572,7 @@ Set up the `trade-executor` instance to run in server production mode:
 
 .. code-block:: shell
 
-    docker-compose up -d
+    docker-compose up -d pancake-eth-usd-sma
 
 This will start trading.
 
