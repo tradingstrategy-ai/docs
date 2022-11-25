@@ -653,7 +653,7 @@ world exposed URL.
 
 Perform the command your your local computer:
 
-.. code-block: shell
+.. code-block:: shell
 
     curl https://pancake-eth-usd-sma.example.com/ping
 
@@ -713,8 +713,9 @@ Running trade-executor without Docker
 
 - You need set up a Python environment using Poetry
 
-Then you can run `trade-executor` as:
-python
+Then you can run `trade-executor` as Python application:
+
+
 .. code-block:: shell
 
     trade-executor hello
