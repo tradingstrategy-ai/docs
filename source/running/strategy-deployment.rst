@@ -16,7 +16,7 @@ This example shows a trading strategy deployment in its simplest form
 
 - Runs on a single Docker instance
 
-- Trades on a single chain, single exchange
+- Trades on single chain, single exchange
 
 .. image:: deployment-overview.drawio.svg
 
@@ -24,8 +24,6 @@ Prerequisites
 -------------
 
 To get started you need to have a
-
-- `You need to have a Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_
 
 - A strategy with successful backtests
 
@@ -40,28 +38,29 @@ To get started you need to have a
 
 - Initial cash deposit in stablecoin (USDC, BUSD)
 
+- `A Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_
+
 Strategy assets
 ---------------
 
 For each live executed strategy you need to have
 
-- A strategy module as Python source code file. This is slightly different from backtesting notebook,
+- **Python module**: A strategy module as Python source code file. This is slightly different from backtesting notebook,
   but can be constructed from the backtest with copy-paste. *The filename of this module
   is the same as the strategy id.** In this documentation, we use `pancake-eth-usd-sma` as an example.
 
-- Strategy name, short description, long description.
+- **Metadata**: Strategy name, short description, long description.
 
-- Strategy logo image URL. The image must be 1:1 aspect ratio.
+- **Logo**: Strategy logo image URL. The image must be 1:1 aspect ratio.
   If you do not have images, you can use `placeholder.com <https://placeholder.com>`__.
 
-- A URL and a domain name where trade executor frontend, which allows you to access the strategy
-  live statistics and webhook controls.
+- **Domain**: A URL and a domain name for `trade-executor` webhook server.
 
-- The strategy execution configuration that include the hot wallet private key,
+- **Configuration files**: The strategy execution configuration that include the hot wallet private key,
   API keys for oracle market data feeds, blockchain nodes, Discord webhook notifications
-  and such.
+  and such. Setting up the configuration files are described below.
 
-- A server where you run the `trade-executor` Docker container and any related infrastructure,
+- **Server**: A server where you run the `trade-executor` Docker container and any related infrastructure,
   like a reverse proxy web server.
 
 Turning a backtest to a strategy module
@@ -116,17 +115,12 @@ If you need to locally pull the image:
     export TRADE_EXECUTOR_VERSION=v11
     docker pull ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION
 
-If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
-
-.. code-block:: shell
-
-     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
 
 Check that the image is working for you:
 
 .. code-block:: shell
 
-        docker run ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION hello
+    docker run ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION hello
 
 This should print:
 
@@ -134,8 +128,20 @@ This should print:
 
     Hello blockchain
 
+Local Docker image builds
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+
+.. code-block:: shell
+
+     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
+
+Python application execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
-without Docker, if needed,
+without Docker, if needed.
 
 .. _command-line-backtest:
 
