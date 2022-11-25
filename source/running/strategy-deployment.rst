@@ -252,6 +252,9 @@ Compared to backtesting, the live execution environment has several differences
 
 - The live execution depends on JSON-RPC node to send transactions.
 
+- The live execution maintains the application state in a state file (JSON) and
+  and can resume from crashes.
+
 - You need to give `tick_offset_minutes` command line option to tell how much time we give for the price feed
   to generate candles after the trade cycle is triggered. This has a defaul value.
 
