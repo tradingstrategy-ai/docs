@@ -3,7 +3,7 @@
 Live strategy deployment
 ========================
 
-In this chapter, we explain how to take a backtested strategy and make it a live running strategy instance.
+In this chapter, we explain how to take a backtested strategy and make it to a live running trading strategy instance.
 
 Preface
 -------
@@ -29,9 +29,10 @@ To get started you need to have a
 
 - Basics of Python programming
 
-- Basics of Linux and Docker system administration
+- Basics of UNIX and Docker system administration, using
+  UNIX shell
 
-- Ability to set DNS entries (needed for the web interface of the strategy)
+- Ability to set DNS entries and domain names for your web services
 
 - A stash of blockchain native cryptocurrency for gas fees (ETH, BNB, MATIC)
 
@@ -73,12 +74,66 @@ To create a Python strategy module from a backtest
 - `Looks up examples in trade-executor module <https://github.com/tradingstrategy-ai/trade-executor/tree/master/strategies>`__
 
 - Extract the following to a new Python .py module
+
     - Strategy header with parameter definitions
+
     - `decide_trade()` function
+
     - `create_trading_universe()` function (must be with this name, even as backtests allow other names)
+
     - Make sure the strategy module has `TRADING_STRATEGY_ENGINE_VERSION` as this defines how the module is parsed and loaded
 
 You can store the Python module anywhere, as it is referred by its path in the future.
+
+Managing Docker images
+----------------------
+
+`trade-executor` is distributed as a Docker image.
+`Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
+
+.. image:: docker-image.drawio.svg
+
+- The image name is `ghcr.io/tradingstrategy-ai/trade-executor`
+
+- The Docker image packages Python interpreter and `trade-executor` command
+
+- It is automatically downloaded when you run `docker` or `docker-compose` command
+
+- Always pin down the Docker image version to a known good version for yourself
+
+- There shouldn't be need to build your own Docker image, though we provide instructions
+  for this for developers later on
+
+- The image is distributed using Github's Container Registry (ghcr.io) -
+  you need to `docker login` to this registry to download the image
+
+If you need to locally pull the image:
+
+.. code-block:: shell
+
+    export TRADE_EXECUTOR_VERSION=v11
+    docker pull ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION
+
+If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+
+.. code-block:: shell
+
+     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
+
+Check that the image is working for you:
+
+.. code-block:: shell
+
+        docker run ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION hello
+
+This should print:
+
+.. code-block:: text
+
+    Hello blockchain
+
+You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
+without Docker, if needed,
 
 .. _command-line-backtest:
 
@@ -90,7 +145,7 @@ looks intact.
 
 We can do backtests in two phases
 
-- Speeded up backtest with more granular time frames for the smoke test
+- Quick inconsistent backtest with less time frames and OHLCV samples for the smoke test
 
 - Actual backtest to see we still get the same results as in the notebook
 
@@ -99,7 +154,7 @@ the code is broken:
 
 .. code-block:: shell
 
-    # Set your API key
+    # Set your API key for your shell environment
     export TRADING_STRATEGY_API_KEY=...
 
     # Run the backtest of this module using local trade-executor command
@@ -107,8 +162,13 @@ the code is broken:
     # is expected (1h -> 1d). We call decide_trades less often,
     # allowing us to complete the test faster, albeit with incorrect
     # results.
-    trade-executor start \
-        --strategy-file=strategies/pancake-eth-usdc-sma.py \
+    docker run \
+        --interactive \
+        --tty \
+        --volume=strategies:/usr/src/trade-executor/strategies \
+        ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
+        start \
+        --strategy-file=strategies/pancake-eth-usd-sma.py \
         --execution-type=backtest \
         --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
         --cycle-duration=1d \
@@ -146,6 +206,19 @@ as we adjusted the trade cycle and stop loss parameters above:
     Average duration of winning trades          2 days
     Average duration of losing trades           1 days
 
+Here is also an example to run the backtest using Python and `trade-executor` command directly:
+
+.. code-block:: shell
+
+    trade-executor start \
+        --strategy-file=strategies/pancake-eth-usd-sma.py \
+        --execution-type=backtest \
+        --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
+        --cycle-duration=1d \
+        --stop-loss-check-frequency=1d \
+        --backtest-start=2021-06-01 \
+        --backtest-end=2022-09-01
+
 
 Creating a hot wallet
 ---------------------
@@ -168,85 +241,38 @@ Then
 
 - Private key will be needed in the trade execution configuration file
 
-
 Changes between backtesting and live execution
 ----------------------------------------------
 
 Compared to backtesting, the live execution environment has several differences
 
-- The live execution needs a hot wallet with real money and native gas token
+- The live execution needs a hot wallet with real money and native gas token.
 
-- The live execution depends on JSON-RPC node to send transactions
+- The live execution depends on JSON-RPC node to send transactions.
 
 - You need to give `tick_offset_minutes` command line option to tell how much time we give for the price feed
-  to generate candles after the trade cycle is triggered
+  to generate candles after the trade cycle is triggered. This has a defaul value.
 
 - There is `max_data_delay` parameter that will cause the trade executor to crash if the price feed data is delayed
   for too long. This is a safety feature to prevent any trades to happen in the case market data is delayed
-  or ambitious.
+  or ambitious. This has a defaul value.
 
-- The live execution needs a gas strategy for paying the transaction gas fees
+- The live execution needs a gas strategy for paying the transaction gas fees.
 
-- The live execution environment has HTTP webhook server
+- The live execution environment has HTTP webhook server.
 
-- The live execution environment may have Discord notifications
+- The live execution environment may have Discord notifications.
 
-- The live execution environment may send performance statistics through statsd interface
+- The live execution environment may send performance statistics through statsd interface.
 
-- The live execution environment may send logs to LogStash server
-
-Downloading trade-executor Docker image
----------------------------------------
-
-`Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
-
-- It is automatically downloaded by `docker-compose` command
-
-- Always pin down the Docker image version to a known good version for yourself
-
--  There shouldn't be need to build your own Docker image
-
-If you need to locally pull the image:
-
-.. code-block:: shell
-
-     docker pull ghcr.io/tradingstrategy-ai/trade-executor:v80
-
-If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
-
-.. code-block:: shell
-
-     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
-
-Setting up the frontend webhook URL
------------------------------------
-
-The frontend and any other automation can communicate with `trade-executor` instance using webhook URLs.
-
-- Docker exposes the webhook URL as internal IP:port pair
-
-- You need a DNS name or unique URL for your trade executor instance
-
-- You usually need to run a reverse proxy web server that routes
-  any incoming HTTP requests to your server IP address to different
-  web services hosted on your server. We use Caddy here, but could
-  be anything.
-
-- Any details needed for the HTTP routing
-
-Creating a Caddy routing directive
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Here is an example how to configure `Caddyfile` subdomain for the trade executor webhook.
-
-More examples can be found in `proxy-server repository <https://github.com/tradingstrategy-ai/proxy-server/blob/master/Caddyfile>`__.
+- The live execution environment may send logs to LogStash server.
 
 Creating configuration file
 ---------------------------
 
 In this example we lay out a simple best practice to manage your `trade-executor` configuration
 
-- We use .env style configuration files
+- We use Docker `.env` style configuration files
 
 - Public configuration variables can be committed to source code control like Github
 
@@ -259,11 +285,21 @@ In this example we lay out a simple best practice to manage your `trade-executor
 
 For this example we assume we have
 
-- Public configuration file `env/pancake-eth-usd-sma.env`
+- Public configuration file `env/pancake-eth-usd-sma.env` (stored in a Github repository)
 
-- Secret configuration file `~/pancake-eth-usd-sma-secret.env`
+- Secret configuration file `~/pancake-eth-usd-sma-secret.env` (stored on a server only)
 
 - Final generated configuration file (read by the Docker daemon): `~/pancake-eth-usd-sma-final.env`
+
+.. note ::
+
+    Docker style `.env` files do not have quotes around their values.
+
+
+.. note ::
+
+    Because configuration files are small, you can copy-paste both public and secret configuration
+    files into your pasword manager as a backup.
 
 Example public configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -277,15 +313,15 @@ Example settings. Refer :ref:`command line options` for full guide.
     #
 
     STRATEGY_FILE=strategies/pancake-eth-usd-sma.py
-    NAME="ETH-USD SMA on Pancake"
-    DOMAIN_NAME="pancake-eth-usd-sma.tradingstrategy.ai"
-    SHORT_DESCRIPTION="One line description of the strategy."
-    LONG_DESCRIPTION="Multiparagraph description of the strategy. May contain Markdown formattting."
-    ICON_URL="https://via.placeholder.com/512"
+    NAME=ETH-USD SMA on Pancake
+    DOMAIN_NAME=pancake-eth-usd-sma.tradingstrategy.ai
+    SHORT_DESCRIPTION=One line description of the strategy.
+    LONG_DESCRIPTION=Multiparagraph description of the strategy. May contain Markdown formattting.
+    ICON_URL=https://via.placeholder.com/512
 
     # Blockchain transaction broadcasting parameters
-    GAS_PRICE_METHOD="london"
-    EXECUTION_TYPE="uniswap_v2_hot_wallet"
+    GAS_PRICE_METHOD=london
+    EXECUTION_TYPE=uniswap_v2_hot_wallet
 
     # The actual webhook HTTP port mapping for the host
     # is done in docker-compose.yml.
@@ -308,12 +344,16 @@ Example:
 Preparing the final configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+`Docker does not support multiple .env files <https://github.com/docker/compose/issues/7326>`_.
+We need to generate one composed `.env` for our trade executor instance by hand.
+For this, `trade-executor` provides `prepare-docker-env` helper command.
+
 To generate the final configuration file `trade-executor` comes with `prepare-docker-env helper command <https://github.com/tradingstrategy-ai/trade-executor/>`__:
 
 .. code-block:: shell
 
     # Read secrets file to local shell context
-    source ~/pancake-eth-usd-sma-secret.en
+    source ~/pancake-eth-usd-sma-secrets.env
 
     # If you want to manually override any environment variables
     # from config files you can do it using export command in this point
@@ -325,12 +365,51 @@ To generate the final configuration file `trade-executor` comes with `prepare-do
         --interactive \
          --entrypoint=prepare-docker-env \
         $(env | cut -f1 -d= | sed 's/^/-e /') \
-         trading-strategy/trade-executor \
+        ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
         < env/pancake-eth-usd-sma.env \
         > ~/pancake-eth-usd-sma-final.env
 
+This will print out:
 
-(TODO add final link to the command)
+.. code-block:: text
+
+    Environment variables prepared for Docker .env:
+        STRATEGY_FILE
+        NAME
+        SHORT_DESCRIPTION
+        LONG_DESCRIPTION
+        ICON_URL
+        GAS_PRICE_METHOD
+        EXECUTION_TYPE
+        HTTP_ENABLED
+        PRIVATE_KEY
+        TRADING_STRATEGY_API_KEY
+        DISCORD_WEBHOOK_URL
+        JSON_RPC_BINANCE
+
+Setting up the frontend webhook URL
+-----------------------------------
+
+The frontend and any other automation can communicate with `trade-executor` instance using webhook URLs.
+
+- Docker exposes the webhook URL as internal IP:port pair
+
+- You need a DNS name or unique URL for your trade executor instance
+
+- You usually need to run a reverse proxy web server that routes
+  any incoming HTTP requests to your server IP address to different
+  web services hosted on your server. We use Caddy here, but could
+  be anything.
+
+- The reverse proxy server is also responsible for
+  managing TLS certificates.
+
+In this point, you only need to know that in `docker-compose.yml`
+we allocate a localhost port from the host for each trade executor.
+Then the host is responsible to reverse proxy any webhook
+traffic to this port.
+
+We will cover this after `docker-compose` is running.
 
 Setting up docker-compose
 -------------------------
@@ -402,10 +481,6 @@ to see that the application launches correctly.
 
     If you have several services in the same `docker-compose.yml` and `docker-compose` complains about missing `.env`
     files you can simply create empty files. E.g. `touch ~/pancake-eth-usd-sma-final.env`.
-
-You can also launch directly using `docker` command (change `:latest` tag to your version tag):
-
-    docker run ghcr.io/tradingstrategy-ai/trade-executor:latest hello
 
 Preflight checks
 ----------------
@@ -514,17 +589,68 @@ When your `docker-compose` instance is running you can check that its webhook po
 
     TODO
 
+Setting your HTTPS reverse proxy
+--------------------------------
+
+Now when the webhook is functionality, we need to map HTTPS reverse proxy
+that exposes `trade-executor` webhook to the world.
+
+* We need to have a DNS name which points to our trade executor
+
+* We need to map this DNS name to our server and our
+  server needs to have a web server at ports 80 and 443
+  to proxy the traffic.
+
+Here is an example how to configure `Caddyfile` subdomain for the trade executor webhook.
+We do not cover how to run Caddy in these instructions,
+more examples can be found in `proxy-server repository <https://github.com/tradingstrategy-ai/proxy-server/blob/master/Caddyfile>`__.
+
+.. code-block:: text
+
+    #
+    # pancake-eth-usd-sma trade executor
+    #
+    # See https://tradingstrategy.ai/docs for details.
+    # Internal 19003 port is set in docker-compose.yml
+    #
+    http://pancake-eth-usd-sma.example.com {
+        reverse_proxy 127.0.0.1:19003
+    }
+
+.. note ::
+
+    http:// or https:// in Caddy depends on how your server traffic is configured.
+    For details see Caddy documentation.
+
+Setting up Discord notifications
+--------------------------------
+
+A strategy can report its status to Discord.
+
+- `trade-executor` takes this setting in `DISCORD_WEBHOOK_URL` configuration variable
+
+- Create a Discord channel
+
+- Choose Channel settings > *Integrations* > *Create Webhook*
+
+- Name your webhook the same as your strategy
+
+- Store the Discord webhook URL as `DISCORD_WEBHOOK_URL` in the secrets configuration file
+
 Setting up the web frontend
 ---------------------------
 
 `See frontend Github repository <https://github.com/tradingstrategy-ai/frontend/>`_.
 
+TODO: Have instructions to set up the web frontend here.
 
 Further info
 ------------
 
-Running without Docker
-~~~~~~~~~~~~~~~~~~~~~~
+.. _trade-executor-command-line:
+
+Running trade-executor without Docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `trade-executor` can be run without Docker.
 
@@ -540,9 +666,15 @@ Then you can run `trade-executor` as:
 
     Hello blockchain
 
+Using shdotenv helper
+~~~~~~~~~~~~~~~~~~~~~
+
 Poetry / Typer environment does not support reading `.env` files directly.
 You first need to `load any .env file to your shell using shdotenv <https://stackoverflow.com/a/67357762/315168>`__
 before calling `trade-executor`.
+
+`shdotenv` is especially needed to translate Docker style `.env` files to a format
+UNIX shell can understand.
 
 .. code-block:: shell
 
