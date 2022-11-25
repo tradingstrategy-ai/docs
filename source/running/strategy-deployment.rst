@@ -115,7 +115,6 @@ If you need to locally pull the image:
     export TRADE_EXECUTOR_VERSION=v11
     docker pull ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION
 
-
 Check that the image is working for you:
 
 .. code-block:: shell
@@ -174,18 +173,24 @@ the code is broken:
         --interactive \
         --tty \
         --volume=strategies:/usr/src/trade-executor/strategies \
+        --volume=cache:/usr/src/trade-executor/cache \
         ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
         start \
         --strategy-file=strategies/pancake-eth-usd-sma.py \
         --execution-type=backtest \
         --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
-        --cycle-duration=1d \
-        --stop-loss-check-frequency=1d \
+        --backtest-candle-time-frame-override=1d \
+        --backtest-stop-loss-time-frame-override=1d \
         --backtest-start=2021-06-01 \
         --backtest-end=2022-09-01
 
-The backtest summary results are printed to the console. These are garbage,
-as we adjusted the trade cycle and stop loss parameters above:
+The backtest summary results are printed to the console.
+
+.. note ::
+
+    The summary numbers obtained this way are rubbish -
+    the backtest smoke test with sped up sampling is only useful to find out
+    if your Python code works. It does not tell about the strategy profitability.
 
 .. code-block:: text
 
@@ -222,11 +227,10 @@ Here is also an example to run the backtest using Python and `trade-executor` co
         --strategy-file=strategies/pancake-eth-usd-sma.py \
         --execution-type=backtest \
         --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
-        --cycle-duration=1d \
-        --stop-loss-check-frequency=1d \
+        --backtest-candle-time-frame-override=1d \
+        --backtest-stop-loss-time-frame-override=1d \
         --backtest-start=2021-06-01 \
         --backtest-end=2022-09-01
-
 
 Creating a hot wallet
 ---------------------
@@ -591,17 +595,25 @@ You can check the logs with:
 
     docker-compose logs --tail=200 pancake-eth-usd-sma
 
-Checking the webhook
----------------------
+Checking the webhook health
+---------------------------
 
-When your `docker-compose` instance is running you can check that its webhook port is replying using `curl`.
+After your `docker-compose` instance is running you can check that its webhook port is replying using `curl`.
 
 .. code-block: shell
 
-    TODO
+    curl http://localhost:19003/ping
 
-Setting your HTTPS reverse proxy
---------------------------------
+This should give you the JSON result:
+
+.. code-block:: text
+
+    {"ping": "pong"}
+
+`View the trade-executor webhook API <https://github.com/tradingstrategy-ai/trade-executor/blob/master/tradeexecutor/webhook/api.py>`__.
+
+Setting up HTTPS reverse proxy
+------------------------------
 
 Now when the webhook is functionality, we need to map HTTPS reverse proxy
 that exposes `trade-executor` webhook to the world.
@@ -633,6 +645,24 @@ more examples can be found in `proxy-server repository <https://github.com/tradi
     http:// or https:// in Caddy depends on how your server traffic is configured.
     For details see Caddy documentation.
 
+Point your DNS service to have `A` and `AAAA` subdomains for `pancake-eth-usd-sma`.
+
+After restaring Caddy with the new configutaion, you can do the same ping test as
+we did using the localhost interface earlier. This time, we are using the
+world exposed URL.
+
+Perform the command your your local computer:
+
+.. code-block: shell
+
+    curl https://pancake-eth-usd-sma.example.com/ping
+
+This should give you the JSON result:
+
+.. code-block:: text
+
+    {"ping": "pong"}
+
 Setting up Discord notifications
 --------------------------------
 
@@ -647,6 +677,22 @@ A strategy can report its status to Discord.
 - Name your webhook the same as your strategy
 
 - Store the Discord webhook URL as `DISCORD_WEBHOOK_URL` in the secrets configuration file
+
+Setting up Logstash logging
+---------------------------
+
+Logstash provides centralised logging server where multiple applications can send their logs.
+
+- Better security and auditability as logs are centrally managed and secured
+
+- Good search functionality over logs, allowing to diagnose issues faster
+
+- Logstash is using unauthenticated UDP for log streams: you need to authenticate
+  any logger using firewall IP address based whitelisting
+
+A `trade-executor` can send its Python logs to LogStash using `LogStash adapter <https://github.com/tradingstrategy-ai/python-logstash>`__.
+
+For further configuration about LogStash logging, see `python-logstash` documentation.
 
 Setting up the web frontend
 ---------------------------
@@ -668,7 +714,7 @@ Running trade-executor without Docker
 - You need set up a Python environment using Poetry
 
 Then you can run `trade-executor` as:
-
+python
 .. code-block:: shell
 
     trade-executor hello
