@@ -14,6 +14,7 @@ See :ref:`running backtests <running-backtests>` on how you can to run.
 .. toctree::
    :maxdepth: 1
 
+   running
    pancakeswap-ema
    pancakeswap-ema-stop-loss
    synthetic-ema

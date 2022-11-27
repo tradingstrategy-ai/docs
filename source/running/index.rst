@@ -15,7 +15,6 @@ and backtesting the strategy performance.
    :caption: Trade execution topics
 
    architecture
-   backtesting
    live-trading
    cli
    webhook
