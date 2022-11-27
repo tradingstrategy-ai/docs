@@ -45,7 +45,7 @@ as we are using it to download code from Github.
 Install Python
 --------------
 
-Python 3.9 or higher version is needed.
+Python 3.10 or higher version is needed.
 
 `Download and install Python <https://www.python.org/downloads/>`_.
 

@@ -19,6 +19,8 @@ Code examples are available able :term:`Jupyter notebooks <Jupyter notebook>` in
 
 You to be able work with the examples you need to have
 
+* Python 3.10 installed
+
 * Basic Python programming language understanding
 
 * Basic Jupyter notebook understanding

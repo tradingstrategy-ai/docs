@@ -585,9 +585,48 @@ and env file, because to do the wallet balance check we need to download and con
         docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest \
         check-wallet
 
+Performing a test trade
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Launching the instance
-----------------------
+After you are sure that trading data and hot wallet are fine,
+you can perform a test trade from the command line.
+
+- This will ensure trade routing and execution gas fee methods
+  are working by executing a live trade against live blockchain.
+
+- The test trade will buy and sell the "default" asset of the strategy
+  worth 1 USD. For a single pair strategies the asset is the default
+  base token.
+
+- This will open a position using the strategy's exchange and trade
+  pair routing.
+
+- The position and the trade will have notes field filled in that
+  this was a test trade.
+
+- Broadcasting a transaction through your JSON-RPC connection
+  works.
+
+Example:
+
+.. code-block:: shell
+
+    docker-compose run pancake-eth-usd-sma perform-test-trade
+
+This will give a long output with details to the trade execution for diagnosing any issue.
+The important parts are highlighted:
+
+.. code-block:: text
+
+    ...
+    Making a test trade on pair: <Pair ETH-USDC at 0xea26b78255df2bbc31c1ebf60010d78670185bd0 on exchange 0xca143ce32fe78f1f7019d7d551a6402fc5350c73>, for 1.000000 USDC price is 1217.334094 ETH/USDC
+    ...
+    Position <Open position #2 <Pair ETH-USDC at 0xea26b78255df2bbc31c1ebf60010d78670185bd0 on exchange 0xca143ce32fe78f1f7019d7d551a6402fc5350c73> $1.000501504460405> open. Now closing the position.
+    ...
+    All ok
+
+Launching the trade-executor instance
+-------------------------------------
 
 Set up the `trade-executor` instance to run in server production mode:
 
@@ -599,7 +638,7 @@ This will start trading.
 
 You can check the logs with:
 
-.. code-block: shell
+.. code-block:: shell
 
     docker-compose logs --tail=200 pancake-eth-usd-sma
 
@@ -608,7 +647,7 @@ Checking the webhook health
 
 After your `docker-compose` instance is running you can check that its webhook port is replying using `curl`.
 
-.. code-block: shell
+.. code-block:: shell
 
     curl http://localhost:19003/ping
 
