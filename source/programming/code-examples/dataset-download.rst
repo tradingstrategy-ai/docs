@@ -3,7 +3,10 @@
 Dataset download
 ================
 
-This is a generic example how to access Trading Strategy datasets.
+This is a generic example how to access Trading Strategy datasets by hand.
+
+If you are a Python user, you should use the `trading-strategy` package to access the data.
+In thes examples, we give Python pseudocode other programming languages can adapt.
 
 Downloading datasets programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
