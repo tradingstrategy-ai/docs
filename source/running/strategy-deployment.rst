@@ -526,13 +526,15 @@ This will print out:
 
      Latest OHCLV candle is at: 2022-11-24 16:00:00, 1:49:57.985345 ago
 
-Wallet balance check
-~~~~~~~~~~~~~~~~~~~~
+Wallet and routing check
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 `trade-executor` provides two subcommands, `check-wallet`
 you can use before launching the live trading strategy instance.
 
 This checks
+
+- You are connected to the right blockchain
 
 - Your hot wallet private key has been correctly set up
 
@@ -541,6 +543,8 @@ This checks
 - You have trading capital
 
 - The last block number of the blockchain
+
+- We know how to route trades for our strategy, using the current wallet
 
 With `docker-compose`:
 
@@ -552,11 +556,23 @@ Output:
 
 .. code-block:: text
 
-    INFO     Latest block is 23,336,055
-    INFO     Hot wallet is ...
-    INFO     We have 0.370500 gas money left
-    INFO     Balance of USD Coin: 500 USDC
-
+     RPC details
+       Chain id is 56
+       Latest block is 23,387,643
+     Balance details
+       Hot wallet is ...
+       We have 0.370500 gas money left
+     Reserve asset: USDC
+       Balance of USD Coin: 500 USDC
+     Estimated gas fees for chain 56: <Gas pricing method:legacy base:None priority:None max:None legacy:None>
+     Execution details
+       Execution model is tradeexecutor.ethereum.uniswap_v2_execution.UniswapV2ExecutionModel
+       Routing model is tradeexecutor.ethereum.uniswap_v2_routing.UniswapV2SimpleRoutingModel
+       Token pricing model is tradeexecutor.ethereum.uniswap_v2_live_pricing.UniswapV2LivePricing
+       Position valuation model is tradeexecutor.ethereum.uniswap_v2_valuation.UniswapV2PoolRevaluator
+    Routing details
+        Factory 0xca143ce32fe78f1f7019d7d551a6402fc5350c73 uses router 0x10ED43C718714eb63d5aA57B78B54704E256024E
+        Routed reserve asset is <0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d at 0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d>
 
 You can also run directly without `docker-compose`. In this case, you need to give explicit cache path
 and env file, because to do the wallet balance check we need to download and construct the trading universe.
@@ -569,14 +585,6 @@ and env file, because to do the wallet balance check we need to download and con
         docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest \
         check-wallet
 
-Output:
-
-.. code-block:: text
-
-    INFO     Latest block is 23,336,055
-    INFO     Hot wallet is ...
-    INFO     We have 0.370500 gas money left
-    INFO     Balance of USD Coin: 500 USDC
 
 Launching the instance
 ----------------------
