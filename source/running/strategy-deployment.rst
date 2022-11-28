@@ -328,15 +328,14 @@ Example settings. Refer :ref:`command line options` for full guide.
     #
 
     STRATEGY_FILE=strategies/pancake-eth-usd-sma.py
-    NAME=ETH-USD SMA on Pancake
-    DOMAIN_NAME=pancake-eth-usd-sma.tradingstrategy.ai
-    SHORT_DESCRIPTION=One line description of the strategy.
-    LONG_DESCRIPTION=Multiparagraph description of the strategy. May contain Markdown formattting.
-    ICON_URL=https://via.placeholder.com/512
+    NAME="ETH-USD SMA on Pancake"
+    DOMAIN_NAME="pancake-eth-usd-sma.tradingstrategy.ai"
+    SHORT_DESCRIPTION="Pancake ETH/USDC SMA crossover strategy"
+    LONG_DESCRIPTION="Take position on ETH based on simple moving average crossover. Execute trades on PancakeSwap on BNB Chain."
+    ICON_URL="https://1397868517-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHREX7DHcljbY5IkjgJ%2F-MJfSAPkP4Jn7cikZadQ%2F-MJgOYsqqIJgTs9DVtHu%2Ficon-square-512.png?alt=media&token=5aa29acf-4d4f-4c78-8e8b-39665a0bf8db"
 
     # Blockchain transaction broadcasting parameters
-    GAS_PRICE_METHOD=london
-    EXECUTION_TYPE=uniswap_v2_hot_wallet
+    EXECUTION_TYPE="uniswap_v2_hot_wallet"
 
     # The actual webhook HTTP port mapping for the host
     # is done in docker-compose.yml.
