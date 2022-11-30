@@ -401,8 +401,11 @@ This will print out:
         DISCORD_WEBHOOK_URL
         JSON_RPC_BINANCE
 
+Setting up system
+-----------------
+
 Setting up the frontend webhook URL
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The frontend and any other automation can communicate with `trade-executor` instance using webhook URLs.
 
@@ -426,7 +429,7 @@ traffic to this port.
 We will cover this after `docker-compose` is running.
 
 Setting up docker-compose
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After Docker runs from the command line, you can create a `docker-compose.yml` entry for your strategy.
 
@@ -658,8 +661,11 @@ This should give you the JSON result:
 
 `View the trade-executor webhook API <https://github.com/tradingstrategy-ai/trade-executor/blob/master/tradeexecutor/webhook/api.py>`__.
 
+Setting up related infrastructure
+---------------------------------
+
 Setting up HTTPS reverse proxy
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now when the webhook is functionality, we need to map HTTPS reverse proxy
 that exposes `trade-executor` webhook to the world.
@@ -710,7 +716,7 @@ This should give you the JSON result:
     {"ping": "pong"}
 
 Setting up Discord notifications
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A strategy can report its status to Discord.
 
@@ -725,7 +731,7 @@ A strategy can report its status to Discord.
 - Store the Discord webhook URL as `DISCORD_WEBHOOK_URL` in the secrets configuration file
 
 Setting up Logstash logging
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Logstash provides centralised logging server where multiple applications can send their logs.
 
@@ -741,11 +747,44 @@ A `trade-executor` can send its Python logs to LogStash using `LogStash adapter 
 For further configuration about LogStash logging, see `python-logstash` documentation.
 
 Setting up the web frontend
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `See frontend Github repository <https://github.com/tradingstrategy-ai/frontend/>`_.
 
 TODO: Have instructions to set up the web frontend here.
+
+Monitoring the Docker container
+-------------------------------
+
+The Docker container is set up in such a way that it won't crash
+in the case `trade-execution` fails with a Python exception
+
+- The instance and its webhook service stay up despite `trade-executor` stopping
+
+- You can read the status of the `trade-executor` is running back from `/status` endpoint
+
+- `See /status documentation here <https://github.com/tradingstrategy-ai/spec/blob/main/trade-executor-api.yaml>`_.
+
+Thus, the normal `docker-compose` restart policies are not working. Any trade execution restart
+should be done only manually.
+
+You can check the status if `trade-executor` is running by:
+
+```shell
+curl http://localhost:19003/status | jq
+```
+
+```
+{
+  "last_refreshed_at": 1669801614.073565,
+  "executor_running": true,
+  "completed_cycle": null,
+  "exception": null
+}
+```
+
+For any uptime monitoring you can check the status of `executor_running` field
+to confirm the trade executor is properly running.
 
 Further info
 ------------
