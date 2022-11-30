@@ -770,18 +770,19 @@ should be done only manually.
 
 You can check the status if `trade-executor` is running by:
 
-```shell
-curl http://localhost:19003/status | jq
-```
+.. code-block:: shell
 
-```
-{
-  "last_refreshed_at": 1669801614.073565,
-  "executor_running": true,
-  "completed_cycle": null,
-  "exception": null
-}
-```
+    curl http://localhost:19003/status | jq
+
+.. code-block:: text
+
+    {
+      "last_refreshed_at": 1669801614.073565,
+      "executor_running": true,
+      "completed_cycle": null,
+      "exception": null
+    }
+
 
 For any uptime monitoring you can check the status of `executor_running` field
 to confirm the trade executor is properly running.
