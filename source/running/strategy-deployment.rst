@@ -366,22 +366,14 @@ To generate the final configuration file `trade-executor` comes with `prepare-do
 
 .. code-block:: shell
 
-    # Read secrets file to local shell context
-    # see shdotenv usage instructions further in this chapter
-    eval "$(shdotenv --dialect docker --env ~/pancake-eth-usd-sma-secrets.env)"
-
-    # If you want to manually override any environment variables
-    # from config files you can do it using export command in this point
-
-    # Use UNIX command line tooling to pass the secrets and
-    # and the public configuration file for the validation
-    # and splicing
+    # Use UNIX command line tooling to splice the secrets and
+    # and the public configuration file together.
     docker run \
         --interactive \
          --entrypoint=prepare-docker-env \
         $(env | cut -f1 -d= | sed 's/^/-e /') \
         ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
-        < env/pancake-eth-usd-sma.env \
+        < <(cat ~/pancake-eth-usd-sma-secrets.env env/pancake-eth-usd-sma.env) \
         > ~/pancake-eth-usd-sma-final.env
 
 This will print out:
