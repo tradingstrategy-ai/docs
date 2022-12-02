@@ -367,7 +367,8 @@ To generate the final configuration file `trade-executor` comes with `prepare-do
 .. code-block:: shell
 
     # Read secrets file to local shell context
-    source ~/pancake-eth-usd-sma-secrets.env
+    # see shdotenv usage instructions further in this chapter
+    eval "$(shdotenv --dialect docker --env ~/pancake-eth-usd-sma-secrets.env)"
 
     # If you want to manually override any environment variables
     # from config files you can do it using export command in this point
