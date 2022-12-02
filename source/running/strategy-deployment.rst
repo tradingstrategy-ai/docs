@@ -371,7 +371,6 @@ To generate the final configuration file `trade-executor` comes with `prepare-do
     docker run \
         --interactive \
          --entrypoint=prepare-docker-env \
-        $(env | cut -f1 -d= | sed 's/^/-e /') \
         ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
         < <(cat ~/pancake-eth-usd-sma-secrets.env env/pancake-eth-usd-sma.env) \
         > ~/pancake-eth-usd-sma-final.env
