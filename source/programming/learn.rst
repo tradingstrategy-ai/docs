@@ -225,9 +225,6 @@ Jupyter Notebook run-time environments
 
 * Starboard.gg
 
-Other Notebook services
-~~~~~~~~~~~~~~~~~~~~~~~
-
 * `Binder <https://mybinder.org/>`_ turns a Github repository to executable Jupyter Python notebooks.
 
 Charts
@@ -249,10 +246,6 @@ More beautiful charts in Jupyter Notebooks. `Read more <http://markibrahim.me/mu
 
 `Market depth historical graph <https://tradergav.com/sierra-chart-book-sharing-market-depth-historical-graph/>`_
 
-Adversial environment
-~~~~~~~~~~~~~~~~~~~~~
-
-`On Uniswap listing bots <https://ethereum.stackexchange.com/questions/103970/is-it-possible-to-create-a-vault-that-will-open-itself-after-a-countdown-dead-m/103976#103976>`_
 
 Other
 ~~~~~
@@ -276,3 +269,7 @@ Other
 - `The 7 Reasons Most Machine Learning Funds Fail <https://youtu.be/BRUlSm4gdQ4>`_
 
 - `The Case for Variable Fees in Constant Product Markets: An Agent Based Simulation <https://github.com/msabvid/cpm_agent_based_sim>`__
+
+- `Hurst Exponent to Identify Trading Strategies <https://medium.com/@tk2976/hurst-exponent-to-identify-trading-strategies-6a431672e30b>`__
+
+- `On Uniswap listing bots <https://ethereum.stackexchange.com/questions/103970/is-it-possible-to-create-a-vault-that-will-open-itself-after-a-countdown-dead-m/103976#103976>`_
