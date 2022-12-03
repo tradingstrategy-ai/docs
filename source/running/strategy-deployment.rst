@@ -359,39 +359,12 @@ Preparing the final configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Docker does not support multiple .env files <https://github.com/docker/compose/issues/7326>`_.
-We need to generate one composed `.env` for our trade executor instance by hand.
-For this, `trade-executor` provides `prepare-docker-env` helper command.
-
-To generate the final configuration file `trade-executor` comes with `prepare-docker-env helper command <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+We need to splice one composed `.env` combining both public and secret variables
+for our trade executor instance.
 
 .. code-block:: shell
 
-    # Use UNIX command line tooling to splice the secrets and
-    # and the public configuration file together.
-    docker run \
-        --interactive \
-         --entrypoint=prepare-docker-env \
-        ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
-        < <(cat ~/pancake-eth-usd-sma-secrets.env env/pancake-eth-usd-sma.env) \
-        > ~/pancake-eth-usd-sma-final.env
-
-This will print out:
-
-.. code-block:: text
-
-    Environment variables prepared for Docker .env:
-        STRATEGY_FILE
-        NAME
-        SHORT_DESCRIPTION
-        LONG_DESCRIPTION
-        ICON_URL
-        GAS_PRICE_METHOD
-        EXECUTION_TYPE
-        HTTP_ENABLED
-        PRIVATE_KEY
-        TRADING_STRATEGY_API_KEY
-        DISCORD_WEBHOOK_URL
-        JSON_RPC_BINANCE
+    cat ~/pancake-eth-usd-sma-secrets.env env/pancake-eth-usd-sma.env > ~/pancake-eth-usd-sma-final.env
 
 Setting up system
 -----------------
