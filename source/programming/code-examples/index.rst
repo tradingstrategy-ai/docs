@@ -10,7 +10,7 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
 
    running
    getting-started
-   plotting
+   candle-chart-example
    interactive-charts
    technical-analysis
    pairs
@@ -18,3 +18,4 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
    price-impact
    pool-liquidity
    dataset-download
+   plotting-old
