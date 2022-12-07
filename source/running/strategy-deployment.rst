@@ -725,6 +725,9 @@ Available strategies displayed on the website are configured in `TS_PUBLIC_STRAT
 environment variable passed to the frontend when it is launched. This is usually done
 when the Docker instance of the frontend is restarted.
 
+- To test the frontend updates, you can run the frontend locally, you just need Node and NPM.
+  The instructions are in `README <https://github.com/tradingstrategy-ai/frontend/>`_.
+
 - Edit the `.env file <https://github.com/tradingstrategy-ai/frontend/blob/master/.env>`__
   on tbe production server to include the new strategy information
 
