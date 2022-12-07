@@ -714,9 +714,29 @@ For further configuration about LogStash logging, see `python-logstash` document
 Setting up the web frontend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`See frontend Github repository <https://github.com/tradingstrategy-ai/frontend/>`_.
+Trading Strategy SvelteKit based web frontend provides user interface for the strategy execution.
 
-TODO: Have instructions to set up the web frontend here.
+- The frontend runs as its independent web server using SvelteKit's built-in Vite
+  web server, plus any number of reverse proxies like Cloudflare
+
+- The frontend pulls the data from the trade executor over the webhook interface
+
+Available strategies displayed on the website are configured in `TS_PUBLIC_STRATEGIES`
+environment variable passed to the frontend when it is launched. This is usually done
+when the Docker instance of the frontend is restarted.
+
+- Edit the `.env file <https://github.com/tradingstrategy-ai/frontend/blob/master/.env>`__
+  on tbe production server to include the new strategy information
+
+- `TS_PUBLIC_STRATEGIES` is a JSON encoded list of JavaScript objects
+
+- For each strategy you need `id`, `name`, and webhook `url`
+
+- Restart Docker instance
+
+- Visit on `/strategies` landing page to see your new strategy is now showing up
+
+`For more information, see frontend Github repository <https://github.com/tradingstrategy-ai/frontend/>`_.
 
 Monitoring the Docker container
 -------------------------------
