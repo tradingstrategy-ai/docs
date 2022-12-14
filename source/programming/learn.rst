@@ -272,4 +272,6 @@ Other
 
 - `Hurst Exponent to Identify Trading Strategies <https://medium.com/@tk2976/hurst-exponent-to-identify-trading-strategies-6a431672e30b>`__
 
+- `Automated Market Makers: Mean-Variance Analysis of LPs Payoffs and Design of Pricing Functions <https://arxiv.org/abs/2212.00336>`__
+
 - `On Uniswap listing bots <https://ethereum.stackexchange.com/questions/103970/is-it-possible-to-create-a-vault-that-will-open-itself-after-a-countdown-dead-m/103976#103976>`_
