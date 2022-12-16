@@ -3,8 +3,9 @@
 OHLCV Candle format
 ===================
 
-Trading Strategy uses a specific :ref:`candle` format that might not be uesd
-Trading Strategy uses (first trade, last trade) style candle pricing over traditional open/close price.
+Trading Strategy has a specific OHLCV (open-high-low-close) :ref:`candle` format
+that is more tailored for decentralised markets. Trading Strategy uses (first trade, last trade)
+style candle pricing over traditional cryptocurrency open/close price where open is the last close.
 
 - The opening price `open` is **the price of the first trade** during the candle period.
 
