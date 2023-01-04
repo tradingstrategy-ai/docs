@@ -56,14 +56,14 @@ and quote token.
 * Each token has its Ethereum ERC-20 smart contract address as 160 bit integer,
   presented as hex
 
-For example, Uniswap pair could be
+For example, `Uniswap v2 pair <https://etherscan.io/address/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc#readContract>`_ is
 
 - `USDC (token0 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48) / WETH (token1 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 ) <https://etherscan.io/address/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc#readContract>`_
 
 ... which is inverse what a human would want to trade.
 
 However, because Uniswap does *swaps*, Uniswap internal programming does
-not care what tokens present. Sell is a buy with reserve token order
+not care what tokens reprent. Sell is a buy with reserve token order
 on Uniswap's routing *path*.
 
 - Buy ETH with USDC path: [USDC, WETH]
@@ -93,7 +93,8 @@ The price is:
 
 .. code-block:: text
 
-    how many quote tokens you get for 1 base token
+    how many quote tokens you get for 1 base token (including or excluding
+    any fees, price impact and exeuction slippage)
 
 This is the spot market price.
 
@@ -147,6 +148,8 @@ What are enter and exit position
 --------------------------------
 
 Buy and sell are spot market concepts and do not apply for shorting.
+In a pure spot market you can only 1x long position by buying base token
+and holding it.
 
 When talking about futures markets, it is easier to talk about about entering
 and exiting position.
