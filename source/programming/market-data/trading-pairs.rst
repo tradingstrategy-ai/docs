@@ -83,11 +83,17 @@ arbitrage bots or smart order routing (SOR), as you might get a better
 liquidity and thus better price when routing your order through multiple
 pools.
 
-What is price
--------------
+What is price and how price is calculated
+------------------------------------------
 
 Price is expressed as how many quote tokens one base token gets.
 E.g. ETH/USDC at $1700 means that you get 1700 USDC for 1 ETH.
+
+The price is:
+
+.. code-block:: text
+
+    how many quote tokens you get for 1 base token
 
 This is the spot market price.
 
@@ -105,11 +111,20 @@ Price can be expressed as
 
 - Most centralised exchanges separate fees from the actual trade and price.
 
+- The price also may include :term:`price impact` based on the
+  liquidity available for the trade.
+
+- Outside the theoretical price you are going to get, there is
+  :term:`slippage` because of imperfect execution and latencies -
+  in this case the price you are executed at may be higher or lower
+  than the price you had when you created the order.
+
 - In accounting and trade profit calculations, it is important to pay
   attention when fees are baked in the price and when they are not.
 
 See :py:class:`tradeexecutor.strategy.pricing_model.TradePricing` for more information
 about price calculation logic.
+
 
 What is buy and what is sell
 ----------------------------
