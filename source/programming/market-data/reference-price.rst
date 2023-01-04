@@ -68,6 +68,9 @@ Currently reference price is supported for the following tokens:
 
 * QUICK
 
+
+.. _token order:
+
 Determining quote token
 -----------------------
 

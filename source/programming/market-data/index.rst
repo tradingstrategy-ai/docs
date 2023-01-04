@@ -7,6 +7,7 @@ This documentation covers market data features your can access through Trading S
    :maxdepth: 1
 
    client
+   candle-format
    tracking
    reference-price
    trading-pairs
