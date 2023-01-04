@@ -68,7 +68,7 @@ on Uniswap's routing *path*.
 
 - Buy ETH with USDC path: [USDC, WETH]
 
-- Buy USDC with ETH path: [WETH, USDC], or sell USDC for WETH
+- Buy USDC with ETH path: [WETH, USDC], or sell WETH for USDC
 
 Any Uniswap token0 and token1 style pairs are converted to natural base token
 and quote token for Trading Strategy data, so that trades are easier to reason about.
