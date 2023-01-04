@@ -1,3 +1,5 @@
+.. _price conversion:
+
 US dollar price conversion
 ==========================
 

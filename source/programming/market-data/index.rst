@@ -9,5 +9,6 @@ This documentation covers market data features your can access through Trading S
    client
    tracking
    reference-price
+   trading-pairs
    internal-id
    token-tax
