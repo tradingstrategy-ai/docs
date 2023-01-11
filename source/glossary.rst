@@ -438,5 +438,31 @@ and algorithmic trading.
 
         `Read Uniswap v3 TWAP oracle manipulation cost <https://github.com/euler-xyz/uni-v3-twap-manipulation/blob/master/cost-of-attack.pdf>`__.
 
+    Face value
 
+        In finance, the face value is the nominal value of a financial instrument such as a bond, stock, or currency. For a bond, the face value is the amount that the bond will be worth when it matures. For a stock, the face value is the original value assigned to the stock when it is issued. For currency, the face value is the value printed on the currency.
+
+        For example, Digital Currency Group took over the defaulted Three Arrows Capital
+        loan of $1.1B from its subsdiary Genesis
+        `at its face value <https://twitter.com/ramahluwalia/status/1613040794725670914>`__
+        even though
+        it is unlikely the money will ever be recovered. The fair value
+        of this loan would have been much less.
+
+        See also :term:`Fair value`.
+
+    Fair value
+
+        In finance, fair value is an estimate of the intrinsic value of an asset or liability, based on the most recent market data or other relevant information. The concept of fair value is used to measure the value of an asset or liability that is not traded in an active market, such as in accounting and financial reporting.
+It's the estimated amount for which an asset or liability should exchange on the measurement date between a willing buyer and a willing seller in an arm's-length transaction.
+It's used for financial reporting and taxes, among other purposes. The calculation can be complex, as it often involves estimates and assumptions about future events, such as cash flow projections, volatility, risk, and other factors.
+
+        For example, Digital Currency Group took over the defaulted Three Arrows Capital
+        loan of $1.1B from its subsdiary Genesis
+        `at its face value <https://twitter.com/ramahluwalia/status/1613040794725670914>`__
+        even though
+        it is unlikely the money will ever be recovered. The fair value
+        of this loan would have been much less.
+
+        See also :term:`Face value`.
 
