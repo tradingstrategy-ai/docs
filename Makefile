@@ -1,4 +1,4 @@
-# Minimal makefile for Sphinx documentation
+# Make Trading Strategy docs
 #
 
 # You can set these variables from the command line, and also
@@ -25,8 +25,11 @@ install-deps-ci:
 	git submodule set-url deps/furo https://github.com/tradingstrategy-ai/furo.git
 	git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git
 	git submodule update --init --recursive
-	rm -rf deps/trade-executor/
-	git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
+	# git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
+	# TODO: Some hacks here because Poetry does not pick up changes
+	pip install -e deps/trade-executor/deps/trading-strategy[direct-feed]
+	pip install -e deps/trade-executor/deps/web3-ethereum-defi[data]
+	pip install -e deps/trade-executor[qstrader,execution,web-server]
 
 # Get Webpack tool chain to build Furo theme
 install-furo:
@@ -37,9 +40,11 @@ rebuild-furo:
 	(cd deps/furo && npm run build)
 	cp deps/furo/src/furo/theme/furo/static/styles/furo.css source/_static/styles/
 
-# Clean problematic autosummary leftovers from local tree
+# Clean problematic autosummary leftovers from local tree.
+# We use folder "help" as the slug for API docs
+# TODO: maybe change this
 clean-autosummary:
-	-find . -iname "_autosummary" -exec rm -rf {} \; 2>/dev/null
+	-find sources -iname "help" -exec rm -rf {} \; 2>/dev/null
 
 .PHONY: help Makefile
 
