@@ -28,6 +28,9 @@ jobs:
           sudo apt install -y pandoc
           poetry env use '3.10'
           poetry install -vv
+                
+          # TODO: Hack fix if this is the cause for problems in doc builds
+          make pip-force-install-deps
       - name: Build documentation
         run: |        
           poetry env use '3.10'
