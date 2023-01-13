@@ -27,11 +27,13 @@ install-deps-ci:
 	git submodule update --init --recursive
 	# git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
 
-# TODO: Some hacks here because Poetry does not pick up changes
+# TODO: Some hacks here because Poetry does not pick up right
+# packages always so that docs would get correctly built
 pip-force-install-deps:
 	pip install -e deps/trade-executor/deps/trading-strategy[direct-feed]
 	pip install -e deps/trade-executor/deps/web3-ethereum-defi[data]
 	pip install -e deps/trade-executor[qstrader,execution,web-server]
+	pip install backtrader
 
 # Get Webpack tool chain to build Furo theme
 install-furo:
