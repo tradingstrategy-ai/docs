@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  rsync-docs:
+  build-and-deploy-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,15 +30,18 @@ jobs:
           poetry install -vv
                 
           # TODO: Hack fix if this is the cause for problems in doc builds
-          make pip-force-install-deps
       - name: Build documentation
         run: |        
           poetry env use '3.10'
           python -V
           which python
           echo $PATH
+          VENV_BIN=`poetry env info -p`/bin
           PYTHON=`poetry env info -p`/bin/python
+          PIP=`poetry env info -p`/bin/pip
           SPHINX=`poetry env info -p`/bin/sphinx-build
+          PATH=$VENV_BIN:$PATH
+          make pip-force-install-deps
           make install-furo 
           make rebuild-furo html
 
