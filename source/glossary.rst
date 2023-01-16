@@ -174,7 +174,20 @@ and algorithmic trading.
 
     Drawdown
 
-        How many % the asset can go down. `Read more <https://en.wikipedia.org/wiki/Drawdown_(economics)>`__.
+        How much in percent terms the asset goes or can go down.
+
+        Drawdown refers to the peak-to-trough decline in the value of an investment, usually measured as the percentage of an investment's peak value. It is a measure of the risk of an investment, as it indicates the amount that an investment can decline before it reaches a new high. Drawdown can also refer to the period of time during which an investment's value is in decline.
+
+        `Read more <https://en.wikipedia.org/wiki/Drawdown_(economics)>`__.
+
+    Maximum drawdown
+
+        The maximum :term:`drawdown` is how much your portfolio goes down in the examination period,
+        or maximum amount of loss if you had entered and exited at the worst possible moment.
+
+        Maximum drawdown (MDD) is the largest peak-to-trough decline in the value of an investment over a specific period of time. It is a measure of the risk of an investment, as it indicates the largest amount that an investment can decline from its highest point to its lowest point during a specific period of time. MDD is typically used to measure the risk of a portfolio or investment strategy, and is often expressed as a percentage of the investment's peak value.
+
+        As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns.
 
     USDC
 
