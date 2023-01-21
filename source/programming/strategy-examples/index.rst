@@ -19,6 +19,7 @@ See :ref:`running backtests <running-backtests>` on how you can to run.
    pancakeswap-ema-stop-loss
    synthetic-ema
    synthetic-ema-stop-loss
+   backtest-fee-analysis
    examine-live-strategy
    debugging-live-strategy
    osmosis
