@@ -3,13 +3,19 @@
 Strategy examples
 =================
 
-Here you can find trading strategy examples.
+Here you can find trading strategy examples as notebooks.
 
-Trading strategy examples are backtests you can run yourself.
-Strategy backtests are in the form of :term:`Jupyter notebooks <Jupyter notebook>`.
+- The examples show how to use Trading Strategy framework for algorithmic trading
 
-You can copy these files, run and and start editing them yourself.
-See :ref:`running backtests <running-backtests>` on how you can to run.
+- Some notebooks are complete example strategies
+
+- Some notebooks highlight a particular feature
+
+- Trading strategy examples are backtests you can run yourself.
+  Strategy backtests are in the form of :term:`Jupyter notebooks <Jupyter notebook>`.
+
+- You can copy these files, run and and start editing them yourself.
+  See :ref:`running backtests <running-backtests>` on how you can to run.
 
 .. toctree::
    :maxdepth: 1
