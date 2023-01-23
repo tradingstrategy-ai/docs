@@ -491,4 +491,11 @@ It's used for financial reporting and taxes, among other purposes. The calculati
         it can maintain itself better as it has attracted active traders with larger capital pools
         who now have started to trade the token.
 
+    Mercenary capital
+
+        Mercenary capital is a term used to refer to cryptocurrency investment and trading funds
+        who chase :term:`liquidity mining` and other token rewards without long term commitment
+        to the token success. Mercenary capital moves from a project to a project, chasing
+        best subsidised yields without actually contributing to the token success any way.
+
 
