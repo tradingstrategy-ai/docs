@@ -479,3 +479,16 @@ It's used for financial reporting and taxes, among other purposes. The calculati
 
         See also :term:`Face value`.
 
+    Liquidity mining
+
+        Liquidity mining is a process where :term:`AMM` liquidity providers for a token are subsidised
+        from a token treasury. Effectively, you are paying people to create liquidity in an AMM pool or
+        an order book.
+
+        This is to bootstrap the liquidity from zero to meaningful level, so that users and traders
+        can enter and exit positions without significant :term:`price impact`. The liquidity mining
+        program assumes that after a certain liquidity level is artificially bootstrapped,
+        it can maintain itself better as it has attracted active traders with larger capital pools
+        who now have started to trade the token.
+
+
