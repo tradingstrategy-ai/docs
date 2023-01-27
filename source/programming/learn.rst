@@ -1,9 +1,12 @@
 .. _learning:
 
+.. meta::
+   :description: Learn algorithmic trading, Python, Jupyter Notebook, and AI.
+
 Learning resources
 ==================
 
-Here is a collection of learning resources for  quantitative finance, algorithmic trading,
+Here is a collection of learning resources for quantitative finance, algorithmic trading,
 decentralised finance, Python, :term:`Jupyter Notebook` and AI.
 
 Books and courses on algorithmic trading
@@ -20,13 +23,6 @@ Python For Finance: Algorithmic Trading
 This Python for Finance tutorial introduces you to algorithmic trading, and much more.
 
 `Read more <https://www.datacamp.com/community/tutorials/finance-python-trading>`__.
-
-Financial Models and Numerical Methods
----------------------------------------
-
-A collection of Jupyter notebooks based on different topics in the area of quantitative finance.
-
-`Read more <https://github.com/cantaro86/Financial-Models-Numerical-Methods>`__.
 
 Master AI-Driven Algorithmic Trading
 ------------------------------------
@@ -46,6 +42,13 @@ Written by Wes McKinney, the creator of the Python pandas project, this book is 
 
 Tutorials on algorithmic trading and quantitative finance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Financial Models and Numerical Methods
+---------------------------------------
+
+A collection of Jupyter notebooks based on different topics in the area of quantitative finance.
+
+`Read more <https://github.com/cantaro86/Financial-Models-Numerical-Methods>`__.
 
 Gallery of Jupyter Books
 ------------------------
