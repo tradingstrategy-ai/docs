@@ -3,10 +3,11 @@
 Learning resources
 ==================
 
-Below are useful links to get started with :term:`Jupyter Notebook`, quantative finance and trading.
+Here is a collection of learning resources for  quantitative finance, algorithmic trading,
+decentralised finance, Python, :term:`Jupyter Notebook` and AI.
 
-Books, tutorials and courses on trading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Books and courses on algorithmic trading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Machine Learning for Algorithmic Trading
 ----------------------------------------
@@ -42,6 +43,9 @@ Get the definitive handbook for manipulating, processing, cleaning, and crunchin
 Written by Wes McKinney, the creator of the Python pandas project, this book is a practical, modern introduction to data science tools in Python. It's ideal for analysts new to Python and for Python programmers new to data science and scientific computing. Data files and related material are available on GitHub.
 
 `Read book at <https://wesmckinney.com/book/>`__.
+
+Tutorials on algorithmic trading and quantitative finance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Gallery of Jupyter Books
 ------------------------
@@ -124,13 +128,24 @@ Vectorised backtesting with Pandas
 
 A tutorial by Yao Lei Xu. `Read more <https://towardsdatascience.com/backtest-trading-strategies-with-pandas-vectorized-backtesting-26001b0ba3a5>`__.
 
+https://scribe.citizen4.eu/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43
+
 Algorithmic trading frameworks for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Trading Strategy
+----------------
+
+Next generation algorithmic trading protocol for decentralised markets.
+
+`View website <https://tradingstrategy.ai>`__.
 
 .. _backtrader:
 
 Backtrader
 ----------
+
+**Backtrader is no longer maintained**.
 
 Backtrader is one of the oldest and most popular Python based backtesting frameworks. It supports live trading. Direct support for Jupyter notebooks.  `Read more on BackTrader <https://www.backtrader.com/>`__.
 
@@ -140,11 +155,14 @@ Backtrader is one of the oldest and most popular Python based backtesting framew
 QsTrader
 --------
 
-QsTrader is a portfolio optimisation backtesting framework for Python. It originally focused on ETFs and stock. `Read more on QsTrader <https://www.quantstart.com/qstrader/>`__.
+**QsTrader is no longer maintained**.
 
+QsTrader is a portfolio optimisation backtesting framework for Python. It originally focused on ETFs and stock. `Read more on QsTrader <https://www.quantstart.com/qstrader/>`__.
 
 Fastquant
 ---------
+
+**FastQuant is no longer maintained**.
 
 A simplified one-liner backtesting solution built on the top of Backtrader. `Read more <https://github.com/enzoampil/fastquant>`__.
 
@@ -182,12 +200,12 @@ Was originally written for Bitstamp. Offers backtesting, paper trading, live tra
 Communities
 ~~~~~~~~~~~
 
-Awesome Quant Github repository
--------------------------------
+Trading Strategy Discord
+------------------------
 
-A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
+Join Discord server to to discuss about algorithmic trading decentralised markets.
 
-`View Github repository <https://github.com/wilsonfreitas/awesome-quant>`__
+`Join Discord <https://discord.gg/en8tW6MDtw>`__.
 
 Pyquant News
 ------------
@@ -195,15 +213,21 @@ Pyquant News
 Level up with Python for quantitative and data analysis.
 Join 3,600+ subscribers to the PyQuant Newsletter. Every Saturday morning, you'll get Python code you can use right now for quantitative & data analysis.
 
-`Subscaribe to the newsletter <https://pyquantnews.com/the-pyquant-newsletter/>`__.
+`Subscribe to the newsletter <https://pyquantnews.com/the-pyquant-newsletter/>`__.
 
-Fastquant and HawkInsight
--------------------------
+Algotrading on Reddit
+-------------------------------
 
-:term:`Fastquant` is an open source backtesting library built by `Hawksight team <https://hawksight.co/>`__. Hawksight offers strategy backtesting and signals for equities and cryptos.
+A place for redditors to discuss quantitative trading, statistical methods, econometrics, programming, implementation, automated strategies, and bounce ideas off each other for constructive criticism. Feel free to submit papers/links of things you find interesting.
 
-`Join to Fastquant Slack <https://join.slack.com/t/fastquant/shared_invite/zt-sfoxaqq9-LU0Bha7jDvOVVAzu~B3PDA>`__. `See Fastquant Github <https://github.com/enzoampil/fastquant>`__.
+`View Subreddit <https://www.reddit.com/r/algotrading/>`__
 
+Awesome Quant Github repository
+-------------------------------
+
+A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
+
+`View Github repository <https://github.com/wilsonfreitas/awesome-quant>`__
 
 Machine Learning for Trading
 ----------------------------
@@ -213,7 +237,17 @@ Managed by Stefan Jansen zalongside the ZipLine reloaded and his book Machine Le
 Jupyter Notebook run-time environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Local install
+
+* Visual Studio Code
+
+* PyCharm
+
+Cloud based
+
 * `Google Colab <https://research.google.com/colaboratory/>`_
+
+* `Binder <https://mybinder.org/>`_ turns a Github repository to executable Jupyter Python notebooks.
 
 * Github Codespaces
 
@@ -221,14 +255,8 @@ Jupyter Notebook run-time environments
 
 * `Datalore from Jetbrain <https://datalore.jetbrains.com/>`_
 
-* Visual Studio Code
-
-* Starboard.gg
-
-* `Binder <https://mybinder.org/>`_ turns a Github repository to executable Jupyter Python notebooks.
-
-Charts
-~~~~~~
+Charting solutions
+~~~~~~~~~~~~~~~~~~
 
 Different candlestick chart libraries for Jupyter. `Read post <https://coderzcolumn.com/tutorials/data-science/candlestick-chart-in-python-mplfinance-plotly-bokeh>`__.
 
@@ -246,9 +274,8 @@ More beautiful charts in Jupyter Notebooks. `Read more <http://markibrahim.me/mu
 
 `Market depth historical graph <https://tradergav.com/sierra-chart-book-sharing-market-depth-historical-graph/>`_
 
-
-Other
-~~~~~
+Miscellaneous
+~~~~~~~~~~~~~
 
 - `Using tqdm progress bars in notebooks <https://stackoverflow.com/questions/42212810/tqdm-in-jupyter-notebook-prints-new-progress-bars-repeatedly>`__.
 
