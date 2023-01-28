@@ -1,7 +1,7 @@
 Overview
 ========
 
-This document section gives an introduction to the
+This technical documentation section gives an introduction to the
 different parts of Trading Strategy :ref:`market data <market data>`,
 :ref:`strategy development framework <framework>` and :ref:`protocol <protocol>`.
 

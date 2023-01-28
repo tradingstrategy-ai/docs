@@ -9,6 +9,20 @@
       font-weight: 600;
 }
 
+/* Increase readability */
+article h1 {
+}
+
+/* Increase readability */
+article h2 {
+    margin-top: 2em;
+}
+
+/* Increase readability */
+article h3 {
+    margin-top: 1.25em;
+}
+
 ol li, p, ul li {
       font-family: Source Serif Pro, sans-serif;
       /*font-size: 1rem;
@@ -21,6 +35,11 @@ ol li, p, ul li {
       font-family: Neue Haas Grotesk Display,Helvetica Neue,Helvetica,Arial,sans-serif;
       font-weight: 600;
       font-size: 1rem;
+}
+
+/* Increase readability */
+.toctree-l1 {
+    margin-bottom: 0.75em;
 }
 
 /* Footer text size */
