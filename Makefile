@@ -48,7 +48,7 @@ rebuild-furo:
 # We use folder "help" as the slug for API docs
 # TODO: maybe change this
 clean-autosummary:
-	-find sources -iname "help" -exec rm -rf {} \; 2>/dev/null
+	-find source -iname "help" -exec rm -rf {} \; 2>/dev/null
 
 .PHONY: help Makefile
 

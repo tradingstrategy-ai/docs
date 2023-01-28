@@ -15,7 +15,9 @@ Books and courses on algorithmic trading
 Machine Learning for Algorithmic Trading
 ----------------------------------------
 
-A book by Stefan Jansen alongside the ZipLine reloaded and community forum.  `Read more <https://ml4trading.io/>`__.
+A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
+
+`Read more <https://ml4trading.io/>`__.
 
 Python For Finance: Algorithmic Trading
 ---------------------------------------
@@ -118,20 +120,30 @@ Running a lossy trading strategy would be a very costly mistake, so we spend a l
 
 `Read the Quantlane blog post <https://quantlane.com/blog/avoid-overfitting-trading-strategies/>`__.
 
-Books, tutorials and courses on Jupyter Notebook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jupyter Notebook learning material
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Jupyter Notebook basics
 -----------------------
 
-A tutorial by Dataquest. `Read more <https://www.dataquest.io/blog/jupyter-notebook-tutorial/>`__.
+A tutorial by Dataquest.
+
+`Read more <https://www.dataquest.io/blog/jupyter-notebook-tutorial/>`__.
+
+Pandas Illustrated: The Definitive Visual Guide to Pandas
+---------------------------------------------------------
+
+Visual guide to Pandas functions.
+
+`Read the post <https://scribe.citizen4.eu/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43>`__.
 
 Vectorised backtesting with Pandas
 ----------------------------------
 
-A tutorial by Yao Lei Xu. `Read more <https://towardsdatascience.com/backtest-trading-strategies-with-pandas-vectorized-backtesting-26001b0ba3a5>`__.
+A tutorial by Yao Lei Xu.
 
-https://scribe.citizen4.eu/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43
+`Read more <https://towardsdatascience.com/backtest-trading-strategies-with-pandas-vectorized-backtesting-26001b0ba3a5>`__.
+
 
 Algorithmic trading frameworks for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

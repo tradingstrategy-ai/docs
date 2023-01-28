@@ -23,6 +23,7 @@ To build everything from the scratch:
 make install-deps
 poetry shell
 poetry install
+make pip-force-install-deps  # Currently needed as a workaround for some issues
 make install-furo rebuild-furo clean-autosummary clean html
 ```
 
