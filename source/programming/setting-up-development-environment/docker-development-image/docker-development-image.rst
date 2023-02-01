@@ -1,7 +1,13 @@
 .. _Docker development image:
 
+.. meta::
+   :description: This option allows you to develop Trading Strategy notebooks and backtests using Docker based set up.
+
 Docker development image
 =========================
+
+This option allows you to develop Trading Strategy notebooks and backtests
+using Docker based set up.
 
 Preface
 -------

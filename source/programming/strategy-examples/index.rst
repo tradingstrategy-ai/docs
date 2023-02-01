@@ -1,5 +1,9 @@
 .. _strategy examples:
 
+.. meta::
+   :description: Trading Strategy example Jupyter notebooks
+
+
 Strategy examples
 =================
 
