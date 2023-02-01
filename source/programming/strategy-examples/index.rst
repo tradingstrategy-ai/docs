@@ -17,6 +17,9 @@ Here you can find trading strategy examples as notebooks.
 - You can copy these files, run and and start editing them yourself.
   See :ref:`running backtests <running-backtests>` on how you can to run.
 
+Example backtesting Jupyter notebooks
+-------------------------------------
+
 .. toctree::
    :maxdepth: 1
 
