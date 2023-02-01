@@ -320,3 +320,5 @@ Miscellaneous
 - `On Uniswap listing bots <https://ethereum.stackexchange.com/questions/103970/is-it-possible-to-create-a-vault-that-will-open-itself-after-a-countdown-dead-m/103976#103976>`_
 
 - `Blockchain SaaS node provider latency comparison <https://www.comparenodes.com/performance/ethereum/>`__
+
+- `Awesome On-Chain Investigations HandBook <https://github.com/OffcierCia/On-Chain-Investigations-Tools-List>`__
