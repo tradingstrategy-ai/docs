@@ -8,16 +8,12 @@ using Python and Trading Strategy framework.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Development topics
 
+   setting-up-development-environment/index
    code-examples/index
-   market-data/index
    strategy-examples/index
    api/index
-   binder-development
-   visual-studio-code
-   learn
+   market-data/index
    troubleshooting
    development
-   release-notes
    old-strategies/index

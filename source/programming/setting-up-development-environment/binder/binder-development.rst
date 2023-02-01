@@ -16,6 +16,12 @@ Limitations
 
 .. note ::
 
+    Due to limitations on Binder instances in RAM,
+    most of the examples won't run there or are
+    prohibitive slow.
+
+.. note ::
+
     Binder cloud notebooks do not offer easy Save functionality.
     It is recommended that you use other methods for professional development.
 

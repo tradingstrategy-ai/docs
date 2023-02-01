@@ -20,4 +20,6 @@ The Trading Strategy Docker development image:
 
 - The development image comes with binaries prepackaged, same as :ref:`local Python` installation
 
+- `Dockerfile for the image <https://github.com/tradingstrategy-ai/trade-executor/blob/master/notebook.dockerfile>`__
+
 

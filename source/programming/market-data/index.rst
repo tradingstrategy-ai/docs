@@ -1,5 +1,5 @@
-Market data
-===========
+Market data format details
+==========================
 
 This documentation covers market data features your can access through Trading Strategy.
 
