@@ -33,3 +33,8 @@ Example backtesting Jupyter notebooks
    debugging-live-strategy
    osmosis
    strategy-backtest-template
+
+More basic code examples
+------------------------
+
+If you are new to algorithmic trading we recommend you check :ref:`the basic code examples <tutorial>`_ first.
