@@ -8,7 +8,6 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
 .. toctree::
    :maxdepth: 1
 
-   running
    getting-started
    candle-chart-example
    interactive-charts

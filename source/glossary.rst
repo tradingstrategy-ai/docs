@@ -498,4 +498,8 @@ and algorithmic trading.
         to the token success. Mercenary capital moves from a project to a project, chasing
         best subsidised yields without actually contributing to the token success any way.
 
+    Poetry
 
+        Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poetry offers a lockfile to ensure repeatable installs, and can build your project for distribution.
+
+        `Read more in Poetry documentation <https://python-poetry.org/docs/>`__.
