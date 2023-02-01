@@ -1,5 +1,7 @@
 .. _running-code-examples:
 
+.. _Setting up development environment:
+
 Setting up development environment
 ==================================
 

@@ -3,7 +3,20 @@
 Code examples
 -------------
 
-Check :doc:`how to run examples <./running>` and from the available code snippets:
+This section contains basic examples for Trading Strategy client
+
+- How to access market data from Trading Strategy oracle and APIs (Parquet
+  datasets, real time API, and so on)
+
+- How to plot different charts using Jupyter Notebook tooling
+
+Preface
+-------
+
+Before getting started see :ref:`Setting up development environment`.
+
+Code examples
+-------------
 
 .. toctree::
    :maxdepth: 1
@@ -18,3 +31,10 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
    pool-liquidity
    dataset-download
    plotting-old
+
+Next steps
+----------
+
+Examples in this section are not full-blown trading strategies.
+
+For strategy development and backtesting see :ref:`strategy examples`.
