@@ -30,6 +30,11 @@ ol li, p, ul li {
       line-height: 1.6;*/
 }
 
+/* Article text bullet points */
+.simple li {
+    margin-bottom: 1em;
+}
+
 /* Fix note box text size */
 .admonition,
 p.admonition-title {

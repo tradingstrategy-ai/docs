@@ -24,7 +24,8 @@ and :ref:`Dev Container`.
   users due to `deficiencies in Microsoft Windows native development tooling <https://www.devever.net/~hl/windowsdefeat>`__
 
 * Is currently available for `linux/amd64` architecture - for serious
-  Apple M1 and M2 development we recommend :ref:`local Python` installation
+  Apple M1 and M2 based development work we recommend :ref:`local Python` installation
+  if the code execution speed becomes an issue
 
 * Integrates very well with PyCharm IDE
 
@@ -201,3 +202,4 @@ Next steps
 ----------
 
 See :ref:`code examples <tutorial>`.
+
