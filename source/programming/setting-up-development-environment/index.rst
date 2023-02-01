@@ -41,7 +41,7 @@ Check :doc:`how to run examples <./running>` and from the available code snippet
    :maxdepth: 1
 
    dev-container/visual-studio-code-docker-dev-container-for-jupyter-notebooks
-   docker-development-image
+   docker-development-image/docker-development-image
    binder/binder-development
    local-python
    google-colab

@@ -1,25 +1,16 @@
-Development process and tips
+Internal development process
 ============================
 
 Preface
 -------
 
-In this chapter, we will discuss how to developer `tradingstrategy`
-and `tradeexecutor` Python packages.
+In this chapter, we will discuss how to developer `trading-strategy`
+and `trade-executor` Python packages.
 
 Installation for local development
 ----------------------------------
 
-To install Trading Strategy using pip do:
-
-.. code-block:: shell
-
-    git clone https://github.com/tradingstrategy-ai/trading-strategy.git
-    # We have chains submodule
-    git submodule update --recursive --init
-    cd tradingstrategy
-    poetry shell
-    poetry install -E qstrader
+See respective READMEs in Github repositories.
 
 Run tests
 ---------

@@ -30,6 +30,12 @@ ol li, p, ul li {
       line-height: 1.6;*/
 }
 
+/* Fix note box text size */
+.admonition,
+p.admonition-title {
+    font-size: inherit;
+}
+
 .toctree-wrapper.compound .caption {
       text-transform: none;
       font-family: Neue Haas Grotesk Display,Helvetica Neue,Helvetica,Arial,sans-serif;
