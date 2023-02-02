@@ -57,3 +57,19 @@ You can run the notebooks from console:
 Then any `pdb` or `ipdb` breakpoints will work correctly.
 
 
+Visual Studio Code or PyCharm hangs at a notebook progress bar (tqdm)
+---------------------------------------------------------------------
+
+You might need ot increase the kernel IOPub limits.
+The only way to do this for now is to start the kernel from the command line and
+then give it this as an option.
+
+.. code-block:: shell
+
+  # Default is 1000/s
+  jupyter server --ServerApp.iopub_msg_rate_limit 10000
+
+Then use Visual Studio Code or PyCharm "Connect to remote kernel" feature
+to connect this kernel you started from the command line yourself.
+Then run the notebook.
+
