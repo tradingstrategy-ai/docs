@@ -1,7 +1,7 @@
 .. _tutorial:
 
 Code examples
--------------
+=============
 
 This section contains basic examples for Trading Strategy client
 
@@ -15,8 +15,8 @@ Preface
 
 Before getting started see :ref:`Setting up development environment`.
 
-Code examples
--------------
+Examples
+--------
 
 .. toctree::
    :maxdepth: 1
