@@ -4,7 +4,7 @@
    :description: Learn algorithmic trading, Python, Jupyter Notebook, and AI.
 
 Learning resources
-==================
+==================x
 
 Here is a collection of learning resources for quantitative finance, algorithmic trading,
 decentralised finance, Python, :term:`Jupyter Notebook` and AI.

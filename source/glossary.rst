@@ -248,7 +248,7 @@ and algorithmic trading.
         The missing fill is the price impact.
         It can be expressed as USD value or as percent of the trade amount.
 
-        Illiquid pairs have more slippage than liquid pairs.
+        Illiquid pairs have more price impact than liquid pairs.
 
         Liquidity provider fees are included in the price impact in AMM models.
 
