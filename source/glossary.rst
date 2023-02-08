@@ -11,8 +11,11 @@ and algorithmic trading.
     :sorted:
 
     AMM
-        Automated market maker (AMM) is a `bonding curve based <https://docs.ethhub.io/guides/graphical-guide-for-understanding-uniswap/>`__ decentralised exchange. It does not
-        have an order book.
+        Automated market maker (AMM) is a `bonding curve based <https://docs.ethhub.io/guides/graphical-guide-for-understanding-uniswap/>`__ decentralised exchange.
+
+        An automated market maker (AMM) is a type of decentralized exchange (DEX) that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralized exchange of digital assets using liquidity pools rather than conventional market order books.
+
+        Example AMMs include Uniswap, Curve, Sushi, Trader Joe.
 
     On-chain
 
