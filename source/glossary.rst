@@ -308,6 +308,8 @@ and algorithmic trading.
         A project where the development team or founders decide to maliciously cash out early, not
         fulfilling their promises and disappear with the investor money.
 
+        A rug pull is a type of crypto scam in which fraudsters lie to the public to attract funding and quickly run off with investors' digital tokens. Developers behind rug pulls often promote their tokens on social media platforms to attract as many retail investors as possible. The name comes from the phrase "pulling the rug out" and involves a developer attracting investors to a new crypto project, then pulling away all liquidity.
+
         `One of the most famous rug pulls is Anubis ($60M taken) <https://decrypt.co/84924/anubisdao-investors-lose-60-million-in-alleged-rug-pull>`_.
 
     Strategy cycle
