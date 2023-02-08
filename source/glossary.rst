@@ -27,6 +27,8 @@ and algorithmic trading.
 
         Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`. These exchanges are public, fair, cheap and especially censorship proof. There is no middleman like a broker when you are trading on these venues, but you get equal access to the trade flow. Decentralised exchanges can be :term:`AMM` based or order book based. Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
 
+        See also :term:`CEX`.
+
     Autonomous agent
 
         An agent software that acts without human intervention. Once started, there is no further need for system administration or othe work.
@@ -525,4 +527,26 @@ and algorithmic trading.
         is excellent for editing Jupyter notebooks.
 
         `Read more <https://code.visualstudio.com/>`__
+
+    CEX
+
+        CEX is an acronym for a centralised cryptocurrency exchange.
+
+        It is the opposite of :term:`DEX`. In a centralised cryptocurrency exchange,
+        the exchange takes custody of your assets in non-transparent manner. You are 100%
+        trusting that the exchange does not have technical issues or fraud issues
+        what comes to managing your assets.
+
+    MEV
+
+        Miner Extractable Value (MEV) is a measure of the profit a blockchain block producer can make through their ability to arbitrarily include, exclude, or re-order transactions during the block production process. It refers to the maximum amount of value that can be extracted from block production in excess of the standard block reward and gas fees.
+
+        Because of block producers ability to reorder trades in a single leader blockchain consensus
+        models, MEV causes negative slippage and other issues for traders.
+
+    Rebase token
+
+        Rebase tokens, also known as elastic tokens, are cryptocurrencies whose supply is algorithmically adjusted in order to control its price. They adjust their circulating supply in response to price fluctuation and are designed in a way that the circulating token supply adjusts (increases or decreases) automatically according to a predetermined formula.
+
+        `An example of a rebase token is Klima <https://tradingstrategy.ai/trading-view/polygon/tokens/0x4e78011ce80ee02d2c3e649fb657e45898257815>`__.
 

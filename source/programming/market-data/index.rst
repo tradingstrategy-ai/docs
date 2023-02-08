@@ -13,3 +13,4 @@ This documentation covers market data features your can access through Trading S
    trading-pairs
    internal-id
    token-tax
+   good-trading-pairs

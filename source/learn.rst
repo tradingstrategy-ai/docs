@@ -6,7 +6,6 @@
 Learning resources
 ==================
 
-
 Here is a collection of learning resources for quantitative finance, algorithmic trading,
 decentralised finance, Python, :term:`Jupyter Notebook` and AI.
 
