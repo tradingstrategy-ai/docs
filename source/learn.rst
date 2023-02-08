@@ -1,7 +1,7 @@
 .. _learning:
 
 .. meta::
-   :description: Learn algorithmic trading, Python, Jupyter Notebook, and AI.
+   :description: Learn algorithmic trading with Python and AI.
 
 Learning resources
 ==================
