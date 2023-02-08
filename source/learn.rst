@@ -14,7 +14,7 @@ Conference presentations
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 PyChain 2022
------------
+------------
 
 Watch various presentations in `PyChain 2022 YouTube channel <https://www.youtube.com/@tradingstrategyprotocol>`__.
 PyChain was an virtual conference for Python blockchain developers and traders.
