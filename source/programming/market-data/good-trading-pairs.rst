@@ -28,7 +28,7 @@ Good DeFi trading pairs
 Good and easy DeFi trading pairs are once with long history, robust organisation backing up the
 token, good price data and deep liquidity.
 
-Here is a short list of good trading pairs wiht a long history to start.
+Here is a short list of some hand picked trading pairs with some history to start analyse.
 
 Polygon
 ~~~~~~~
@@ -36,7 +36,7 @@ Polygon
 - `MATIC-USDC on QuickSwap <https://tradingstrategy.ai/trading-view/polygon/quickswap/matic-usdc>`__
 
 - `Klima-USDC on QuickSwap <https://tradingstrategy.ai/trading-view/polygon/sushi/klima-usdc-4>`__
-  (note: Klima is a :term:`rebase token`)
+  (note: Klima is a :term:`rebase token` )
 
 - `Voxel-USDC on QuickSwap <https://tradingstrategy.ai/trading-view/polygon/quickswap/voxel-usdc>`__
 
