@@ -562,7 +562,10 @@ and algorithmic trading.
         where the token owner and deployer manipulates balances.
 
         The scams include "buy only" tokens, tokens with :term:`token tax` or
-        trading pools where the owner can drain :term:`quote token` away.
+        trading pools where the owner can drain :term:`quote token` away. Usually
+        :term:`trading algorithms <trading algorithm>` are baited with "up only" price manipulation
+        techniques and wash trading to believe that the trading pair is robust with good momentum
+        and volume.
 
         See also: term:`token tax`.
 
