@@ -272,18 +272,21 @@ Machine Learning for Trading
 
 Managed by Stefan Jansen zalongside the ZipLine reloaded and his book Machine Learning for Algorithmic Trading.  `View forum <https://exchange.ml4trading.io/>`__.
 
-Jupyter Notebook run-time environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Develop tools and Jupyter Notebook environments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Local install
+Here are some tools for developing and running :term:`Jupyter notebooks <Jupyter notebook>`,
+which are the foundation of all data research.
 
-* Visual Studio Code
+Locally installable applications
 
-* PyCharm
+* :term:`Visual Studio Code`
+
+* :term:`PyCharm`
 
 Cloud based
 
-* `Google Colab <https://research.google.com/colaboratory/>`_
+* :term:`Google Colab`
 
 * `Binder <https://mybinder.org/>`_ turns a Github repository to executable Jupyter Python notebooks.
 

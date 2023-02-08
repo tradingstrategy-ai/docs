@@ -503,3 +503,26 @@ and algorithmic trading.
         Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poetry offers a lockfile to ensure repeatable installs, and can build your project for distribution.
 
         `Read more in Poetry documentation <https://python-poetry.org/docs/>`__.
+
+    Google Colab
+
+        Google Colab is a free Jupyter notebook environment that runs entirely in the cloud.
+        It does not require a setup and allows users to combine executable code, rich text, images, HTML, LaTeX and more in a single document.
+        It provides free access to GPU's and TPU's for anyone who needs them to build machine learning or deep learning models.
+
+        `Read more <https://research.google.com/colaboratory/>`__.
+
+    PyCharm
+
+        PyCharm is an integrated development environment (IDE) used for programming in Python.
+        It provides code analysis, a graphical debugger, an integrated unit tester, integration with version control systems, and supports web development. PyCharm also has a free version specifically designed for education purposes. PyCharm supports Jupyter Notebooks well.
+
+        `Read more <https://www.jetbrains.com/pycharm/>`__
+
+    Visual Studio Code
+
+        Visual Studio Code (VS Code) is a source-code editor made by Microsoft for Windows, Linux and macOS. . VS Code is free and optimized for building and debugging modern web and cloud applications. It comes with features such as code editing, debugging, integrated Git control, syntax highlighting, intelligent code completion, snippets, and more. Visual Studio Code
+        is excellent for editing Jupyter notebooks.
+
+        `Read more <https://code.visualstudio.com/>`__
+
