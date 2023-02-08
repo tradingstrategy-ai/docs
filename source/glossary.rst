@@ -21,7 +21,9 @@ and algorithmic trading.
 
     Backtest
 
-        Simulating the efficiency of a trading strategy against historical data.
+        Simulating the efficiency of a :term:`trading strategy` against historical data.
+
+        Backtesting is the process of analyzing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
 
     Decentralised exchange
 
@@ -112,13 +114,13 @@ and algorithmic trading.
 
     Backtrader
 
-        An old Python based algorithmic trading framework for strategy backtesting and live execution.
+        An old Python based :term:`algorithmic trading` framework for strategy backtesting and live execution.
         No longer maintained.
         `See documentation <https://www.backtrader.com/>`__.
 
     QSTrader
 
-        An old Python based algorithmic trading framework for strategy backtesting and live execution
+        An old Python based :term:`algorithmic trading` framework for strategy backtesting and live execution
         using portfolio construction theory.
         No longer maintained.
 
@@ -552,3 +554,61 @@ and algorithmic trading.
 
         `An example of a rebase token is Klima <https://tradingstrategy.ai/trading-view/polygon/tokens/0x4e78011ce80ee02d2c3e649fb657e45898257815>`__.
 
+    Honey pot
+
+        In :term:`decentralised finance` a honey pot describes a trading pair or a token
+        designed to fool :term:`trading strategies <trading strategy`. This is made possible
+        by :term:`ERC-20` flexibilty allowing it have custom transfer and ownership rules,
+        where the token owner and deployer manipulates balances.
+
+        The scams include "buy only" tokens, tokens with :term:`token tax` or
+        trading pools where the owner can drain :term:`quote token` away.
+
+        See also: term:`token tax`.
+
+    Decentralised finance
+
+        Decentralized finance (DeFi) is an emerging financial technology that challenges the current centralized banking system. It refers to a set of newly emerging financial products and services that operate on decentralized platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+
+        Examples of decentralised finance protocols include Uniswap, Aave, Curve, MakerDAO, Compound,
+        Euler, SushiSwap.
+
+    Algorithmic trading
+
+        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume. It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimize the timing of trades.
+
+    Trading strategy
+
+        A trading strategy is a fixed plan that is designed to achieve a profitable return by going long or short in markets. It involves analysis to identify specific market conditions and price levels. There are many different types of trading strategies, such as trend following, scalping, and arbitrage.
+
+        See also :term:`algorithmic trading` and :term:`alpha generation platform`.
+
+    Automated trading strategy
+
+        Automated trading strategies are computer programs that follow a defined set of instructions to execute trade orders.. Common automated trading strategies include moving average cross strategies, which buy when the stock price rises above the moving average and sell when it falls below[, and trend-following strategies, which follow the mainstream trends and momentum in the market.
+
+        See also :term:`trading strategy`,:term:`algorithmic trading` and :term:`alpha generation platform`..
+
+    Trading algorithm
+
+        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume. Trading algorithms can be fundamentally driven or based on quantitative signals, and can be created using Python with tools such as Trading Strategy.
+
+        See also :term:`algorithmic trading` and :term:`automated trading strategy`.
+
+    Token tax
+
+        A “token” tax is a term often used to describe tokens with transfer fees that cause deflation or redistribute trade profits to the protocol development:
+
+        Each time a token is transferred, some transferred amount is burned, redirected to a development fund or otherwise “taxed”.
+
+        Token tax is usually paid by the originator wallet that initiates the transfer. The tax is taken from the sent amount during the transfer: initiated transfer amount > received transfer amount.
+
+        Token tax may also reduce the token supply, thus creating deflationary tokens. The deflationary assumption comes from the economic theory that by reducing the supply, the value of the goods should go up. The most famous cryptocurrency having such deflationary mechanics is Ethereum and its EIP-1559 burning mechanism.
+
+        Token tax can redirect some of the transfer and trading fees to the protocol development fund. This can guarantee sustainable protocol development outside any initial fundraising.
+
+        Usually, the token tax term is not used for the native gas token on a blockchain, like Ether (ETH) on Ethereum, where any transfer fee is considered to be a natural part of the core protocol. The token tax term applies to ERC-20-like tokens that historically have lacked transfer fee features. There is no terminology standard, so different terms are applied in different contexts.
+
+        Different % amounts of “taxes” may apply to different types of transactions like buy, sell, and treasury management.
+
+        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__. See also :term:`honey pot`.

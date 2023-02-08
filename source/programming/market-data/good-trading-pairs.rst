@@ -3,13 +3,13 @@ Good trading pairs to start with
 
 In this page, we discuss about some "easy" pairs for technical analysis and automatic trading.
 
-Challenges of DeFi markets
---------------------------
+Challenges of DeFi markets and trading
+--------------------------------------
 
 Decentralised finance is challenging as the market is immature ane volatile
 
 - There is no historical data, as most trading pairs are very new with less
-  than two years of history
+  than two years of history.
 
 - Trading data is spotty; DeFi markets have been more illiquid than :term:`CEX` for a long time,
   although this is now changing. There might minutes or somestimes even hours without trades.
@@ -18,9 +18,13 @@ Decentralised finance is challenging as the market is immature ane volatile
 - Many DeFi tokens suffer for starups issues. 80% of startups die young.
 
 - :term:`MEV` and other bots cause large wicks in candles, because they can do arbitrary
-  size trades without fear of loss
+  size trades without fear of loss.
 
-- Pairs trade do not trade against a stablecoin, but a volatile cryptocurrency :term:`quote token`
+- Pairs trade do not trade against a stablecoin, but a volatile cryptocurrency :term:`quote token`.
+
+- DeFi markets contain :term:`rug pulls <rug pull>`, and especially :term:`honey pots <honey pot>`
+  designed to scam :term:`trading algorithms <trading algorithm>` with fake volume
+  and manipulated tokens.
 
 Good DeFi trading pairs
 -----------------------
@@ -29,6 +33,9 @@ Good and easy DeFi trading pairs are once with long history, robust organisation
 token, good price data and deep liquidity.
 
 Here is a short list of some hand picked trading pairs with some history to start analyse.
+These pairs where chosen for the good data availability. Older :term:`DEX` pairs usually have
+higher fees (0.30%) and nowadays the same pair may appear with a lower fee tier on the same or a
+a different exchange.
 
 Polygon
 ~~~~~~~
@@ -79,7 +86,7 @@ Avalanche
 
 - `JOE-USDC on Trader Joe <https://tradingstrategy.ai/trading-view/avalanche/trader-joe/joe-usdc-e>`__
 
-Need ,ore trading pairs?
+Need more trading pairs?
 ------------------------
 
 `You can use Advanced search to quickly explore trading pairs <https://tradingstrategy.ai/search>`__.
