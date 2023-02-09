@@ -18,7 +18,8 @@ Decentralised finance is challenging as the market is immature ane volatile
 - Many DeFi tokens suffer for starups issues. 80% of startups die young.
 
 - :term:`MEV` and other bots cause large wicks in candles, because they can do arbitrary
-  size trades without fear of loss.
+  size trades without fear of loss. OHLC candle high and low may be very arbitrary values
+  that do not reflect the overall market price honestly.
 
 - Pairs trade do not trade against a stablecoin, but a volatile cryptocurrency :term:`quote token`.
 
