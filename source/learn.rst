@@ -9,6 +9,9 @@ Learning resources
 Here is a collection of learning resources for quantitative finance, algorithmic trading,
 decentralised finance, Python, :term:`Jupyter Notebook` and AI.
 
+If you are already familiar with :term:`algorithmic trading` and you want to
+use Trading Strategy framework you can directly hop into :ref:`Getting started tutorial <tutorial>`.
+
 Conference presentations
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
