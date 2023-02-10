@@ -13,7 +13,7 @@ and algorithmic trading.
     AMM
         Automated market maker (AMM) is a `bonding curve based <https://docs.ethhub.io/guides/graphical-guide-for-understanding-uniswap/>`__ decentralised exchange.
 
-        An automated market maker (AMM) is a type of decentralized exchange (DEX) that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralized exchange of digital assets using liquidity pools rather than conventional market order books.
+        An automated market maker (AMM) is a type of decentralised exchange (DEX) that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralised exchange of digital assets using liquidity pools rather than conventional market order books.
 
         Example AMMs include Uniswap, Curve, Sushi, Trader Joe.
 
@@ -26,7 +26,7 @@ and algorithmic trading.
 
         Simulating the efficiency of a :term:`trading strategy` against historical data.
 
-        Backtesting is the process of analyzing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
+        Backtesting is the process of analysing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
 
     Decentralised exchange
 
@@ -53,7 +53,7 @@ and algorithmic trading.
 
     Uniswap
 
-        The most popular :term:`AMM` based :term:`decentralised exchange`. Uniswap has two major versios.
+        The most popular :term:`AMM` based :term:`decentralised exchange`. Uniswap has two major versions.
         In version 2 (v2) the liquidity is evenly distributed across the bonding curve. In version 3, the
         liquidity providers can have liquidity on a partial curve, simulate order book and have better
         capital efficiency. Most decentralised exchanges are Uniswap v2 :term:`clones <clone>`.
@@ -109,11 +109,11 @@ and algorithmic trading.
 
     Strategy
 
-        Also known as trading strategy or algorithm. A trading strategy is a rulebook of what trades to make an how. In the context of quantative finance, and especially automated trading, this rulebook can be expressed as an algorithm and trading bot that has programmed rules for every situation the strategy may encounter.
+        Also known as trading strategy or algorithm. A trading strategy is a rulebook of what trades to make and how. In the context of quantitative finance, and especially automated trading, this rulebook can be expressed as an algorithm and trading bot that has programmed rules for every situation the strategy may encounter.
 
     Technical analysis
 
-        Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analyzing statistical trends gathered from trading activity, such as price movement and volume. `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
+        Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analysing statistical trends gathered from trading activity, such as price movement and volume. `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
 
     Backtrader
 
@@ -145,7 +145,7 @@ and algorithmic trading.
 
     Yield farming
 
-        Pooling assets of multiple people for passive trading strategies. Usually yield farming pools rely on liquidity mining token distribution which they immediately sell (auto compounding). Yield farms operate solely on smart contracts and their strategies are limited. Yield farms almost always take zero market risk agains their :term:`quote token`.
+        Pooling assets of multiple people for passive trading strategies. Usually yield farming pools rely on liquidity mining token distribution which they immediately sell (auto compounding). Yield farms operate solely on smart contracts and their strategies are limited. Yield farms almost always take zero market risk against their :term:`quote token`.
 
     Exposure
 
@@ -169,15 +169,15 @@ and algorithmic trading.
 
     Non-custodial
 
-        A smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most traditional finance services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteted through regulation or government bailouts. The non-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+        A smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most traditional finance services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The non-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
 
     Private strategy
 
-        A trading strategy where the source code of the strategy is not disclosed to public. Private strategies can still be :term:`non-custodial` and enjoy the benefits of Trading Strategy protocol trade execution and fee distribution.
+        A trading strategy where the source code of the strategy is not disclosed to the public. Private strategies can still be :term:`non-custodial` and enjoy the benefits of Trading Strategy protocol trade execution and fee distribution.
 
     Risk-free rate
 
-        The expected return for the money that is considered (almost) risk-free. On the traditional markets, this is the tresury note or government bond yield (although you still have some risks like the sovereignity risk). In DeFi this is considered an US dollar lending pool rate, like one you would get from Aave :term:`USDC` pool.
+        The expected return for the money that is considered (almost) risk-free. On the traditional markets, this is the treasury note or government bond yield (although you still have some risks like the sovereignty risk). In DeFi this is considered an US dollar lending pool rate, like one you would get from Aave :term:`USDC` pool.
 
     Drawdown
 
@@ -247,7 +247,7 @@ and algorithmic trading.
 
     Price impact
 
-        Price impact is the difference between the current market price and the price you will actually pay when performing a swap on a decentralized exchange.
+        Price impact is the difference between the current market price and the price you will actually pay when performing a swap on a decentralised exchange.
 
         Price impact tells how much less your market taker order gets filled because there is not available liquidity.
         For example, if you are trying to buy 5000 USD worth of BNB token, but there isn't available liquidity
@@ -331,7 +331,7 @@ and algorithmic trading.
 
     Enzyme
 
-        Enzyme is a fund backoffice protocol for :term:`EVM compatible`
+        Enzyme is a fund back-office protocol for :term:`EVM compatible`
         blockchains.
 
         See `Enzyme Finance <https://enzyme.finance/>`__ for more information.
@@ -360,7 +360,7 @@ and algorithmic trading.
         Indicators are usually based on :term:`OHLCV` data.
         By combining several indicators through :term:`technical analysis`,
         one can create automated trading strategies.
-        An example technical indicator is :term:`EMA (expotential moving average) <EMA>`.
+        An example technical indicator is :term:`EMA (exponential moving average) <EMA>`.
 
         See :ref:`technical analysis` documentation for Trading Strategy indicator list.
 
@@ -385,7 +385,7 @@ and algorithmic trading.
 
     Quantitative finance
 
-        Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialize in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
+        Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialise in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
 
         `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
 
@@ -421,15 +421,15 @@ and algorithmic trading.
 
     Trading universe
 
-        A trading universe describes all possible assets availble for a :term:`strategy`
+        A trading universe describes all possible assets available for a :term:`strategy`
         for its to take different :term:`trading positions <position>`. The simple
         trading strategies trade only a single trading pair like ETH/USD. More complex
-        strategies can have trding universe consisting of thousands of trading pairs
+        strategies can have trading universe consisting of thousands of trading pairs
         and assets.
 
     Factor investing
 
-        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns. There are two main types of factors: macroeconomic and style. The investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
+        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns. There are two main types of factors: macroeconomic and style. Investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
 
         `Read more <https://learn.aikido.finance/blog/post/how-to-choose-an-algorithmic-trading-strategy-stocks/>`__.
 
@@ -442,7 +442,7 @@ and algorithmic trading.
     Native token
 
         Also known as "gas token". The native token is the cryptocurrency used to pay
-        transction fees on :ref:`EVM compatible` blockchain. For Ethereum it is ETH,
+        transaction fees on :ref:`EVM compatible` blockchain. For Ethereum it is ETH,
         for Polygon it is MATIC and for Binance Smart Chain it is BNB.
 
     TWAP
@@ -450,7 +450,7 @@ and algorithmic trading.
         TWAP or Time-weighted Average Price is a calculation that defines the weighted average price over a specified period.
 
         The real-time price of decentralised exchanges is subject to quite easy manipulation, especially within the
-        range of one block. A manipualtor can use flashloans to access large amount of capital and make trades
+        range of one block. A manipulator can use flash loans to access large amount of capital and make trades
         that a normal trader would not do.
 
         These kind of attacks may cause very high/low price candles. Using the TWAP price mitigates
@@ -465,7 +465,7 @@ and algorithmic trading.
         In finance, the face value is the nominal value of a financial instrument such as a bond, stock, or currency. For a bond, the face value is the amount that the bond will be worth when it matures. For a stock, the face value is the original value assigned to the stock when it is issued. For currency, the face value is the value printed on the currency.
 
         For example, Digital Currency Group took over the defaulted Three Arrows Capital
-        loan of $1.1B from its subsdiary Genesis
+        loan of $1.1B from its subsidiary, Genesis
         `at its face value <https://twitter.com/ramahluwalia/status/1613040794725670914>`__
         even though
         it is unlikely the money will ever be recovered. The fair value
@@ -517,7 +517,7 @@ and algorithmic trading.
 
         Google Colab is a free Jupyter notebook environment that runs entirely in the cloud.
         It does not require a setup and allows users to combine executable code, rich text, images, HTML, LaTeX and more in a single document.
-        It provides free access to GPU's and TPU's for anyone who needs them to build machine learning or deep learning models.
+        It provides free access to GPUs and TPUs for anyone who needs them to build machine learning or deep learning models.
 
         `Read more <https://research.google.com/colaboratory/>`__.
 
@@ -530,7 +530,7 @@ and algorithmic trading.
 
     Visual Studio Code
 
-        Visual Studio Code (VS Code) is a source-code editor made by Microsoft for Windows, Linux and macOS. . VS Code is free and optimized for building and debugging modern web and cloud applications. It comes with features such as code editing, debugging, integrated Git control, syntax highlighting, intelligent code completion, snippets, and more. Visual Studio Code
+        Visual Studio Code (VS Code) is a source-code editor made by Microsoft for Windows, Linux and macOS. . VS Code is free and optimised for building and debugging modern web and cloud applications. It comes with features such as code editing, debugging, integrated Git control, syntax highlighting, intelligent code completion, snippets, and more. Visual Studio Code
         is excellent for editing Jupyter notebooks.
 
         `Read more <https://code.visualstudio.com/>`__
@@ -540,16 +540,16 @@ and algorithmic trading.
         CEX is an acronym for a centralised cryptocurrency exchange.
 
         It is the opposite of :term:`DEX`. In a centralised cryptocurrency exchange,
-        the exchange takes custody of your assets in non-transparent manner. You are 100%
+        the exchange takes custody of your assets in a non-transparent manner. You are 100%
         trusting that the exchange does not have technical issues or fraud issues
-        what comes to managing your assets.
+        when it comes to managing your assets.
 
     MEV
 
         Miner Extractable Value (MEV) is a measure of the profit a blockchain block producer can make through their ability to arbitrarily include, exclude, or re-order transactions during the block production process. It refers to the maximum amount of value that can be extracted from block production in excess of the standard block reward and gas fees.
 
-        Because of block producers ability to reorder trades in a single leader blockchain consensus
-        models, MEV causes negative slippage and other issues for traders.
+        Because of block producers' ability to reorder trades in a single leader blockchain consensus
+        model, MEV causes negative slippage and other issues for traders.
 
     Rebase token
 
@@ -561,7 +561,7 @@ and algorithmic trading.
 
         In :term:`decentralised finance` a honey pot describes a trading pair or a token
         designed to fool :term:`trading strategies <trading strategy`. This is made possible
-        by :term:`ERC-20` flexibilty allowing it have custom transfer and ownership rules,
+        by :term:`ERC-20` flexibility allowing it to have custom transfer and ownership rules,
         where the token owner and deployer manipulates balances.
 
         The scams include "buy only" tokens, tokens with :term:`token tax` or
@@ -574,14 +574,14 @@ and algorithmic trading.
 
     Decentralised finance
 
-        Decentralized finance (DeFi) is an emerging financial technology that challenges the current centralized banking system. It refers to a set of newly emerging financial products and services that operate on decentralized platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+        Decentralised finance (DeFi) is an emerging financial technology that challenges the current centralised banking system. It refers to a set of newly emerging financial products and services that operate on decentralised platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
 
         Examples of decentralised finance protocols include Uniswap, Aave, Curve, MakerDAO, Compound,
         Euler, SushiSwap.
 
     Algorithmic trading
 
-        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume. It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimize the timing of trades.
+        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume. It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimise the timing of trades.
 
     Trading strategy
 
