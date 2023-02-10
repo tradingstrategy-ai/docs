@@ -147,11 +147,9 @@ Running a lossy trading strategy would be a very costly mistake, so we spend a l
 An Efficient Algorithm for Optimal Routing Through Constant Function Market Makers
 ----------------------------------------------------------------------------------
 
-Constant function market makers (CFMMs) such as Uniswap have facilitated tril-
-lions of dollars of digital asset trades and have billions of dollars of liquidity. One
+Constant function market makers (CFMMs) such as Uniswap have facilitated trillions of dollars of digital asset trades and have billions of dollars of liquidity. One
 natural question is how to optimally route trades across a network of CFMMs in order
-to ensure the largest possible utility (as specified by a user). We present an efficient al-
-gorithm, based on a decomposition method, to solve the problem of optimally executing
+to ensure the largest possible utility (as specified by a user). We present an efficient algorithm, based on a decomposition method, to solve the problem of optimally executing
 an order across a network of decentralized exchanges
 
 `Read the paper <https://angeris.github.io/papers/routing-algorithm.pdf>`__.
