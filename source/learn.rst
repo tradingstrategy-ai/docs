@@ -144,6 +144,17 @@ Running a lossy trading strategy would be a very costly mistake, so we spend a l
 
 `Read the Quantlane blog post <https://quantlane.com/blog/avoid-overfitting-trading-strategies/>`__.
 
+An Efficient Algorithm for Optimal Routing Through Constant Function Market Makers
+----------------------------------------------------------------------------------
+
+Constant function market makers (CFMMs) such as Uniswap have facilitated trillions of dollars of digital asset trades and have billions of dollars of liquidity. One
+natural question is how to optimally route trades across a network of CFMMs in order
+to ensure the largest possible utility (as specified by a user). We present an efficient algorithm, based on a decomposition method, to solve the problem of optimally executing
+an order across a network of decentralized exchanges
+
+`Read the paper <https://angeris.github.io/papers/routing-algorithm.pdf>`__.
+
+
 Jupyter Notebook learning material
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

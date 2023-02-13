@@ -19,8 +19,14 @@ and algorithmic trading.
 
     On-chain
 
-        On-chain refers to any activity that happens purely on a public blockchain. It means the data
-        and trading venues are publicly and fairly available for anyone.
+        On-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
+        
+        When an activity is referred to as "on-chain," it means that it is recorded directly on the blockchain, as opposed to off-chain, which refers to transactions or activities that are not recorded on the blockchain but are still facilitated by the network.
+        
+        On-chain transactions are typically considered to be more secure and transparent than off-chain transactions, as they are recorded in a public ledger that is immutable and auditable. Additionally, on-chain transactions are often processed more quickly and with lower fees than off-chain transactions, as they do not require intermediaries or intermediating networks.
+
+        Examples of on-chain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
+
 
     Backtest
 
@@ -36,9 +42,14 @@ and algorithmic trading.
 
     Autonomous agent
 
-        An agent software that acts without human intervention. Once started, there is no further need for system administration or othe work.
+        An autonomous agent is a software program or system that can operate independently and make decisions on its own, without direct intervention from a human. This type of technology is designed to perform specific tasks or functions, such as data processing, problem-solving, decision-making, and even physical actions.
+
+    Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
+
 
     Smart contract
+    
+        An automated transactional service running on any of the blockchains supporting smart contracts.It contains the terms of the agreement between parties, and automatically executes the terms when certain predetermined conditions are met. Smart contracts are tamper-proof, transparent, and autonomous, and they eliminate the need for intermediaries such as lawyers, brokers, or banks. This makes them a secure and efficient way to automate financial transactions, manage digital assets, or automate other types of agreements
 
         An automated transactional service running on any of the blockchains supporting smart contracts. Typically
         runs on Ethereum-based blockchain and is written in the Solidity programming language.
@@ -49,7 +60,11 @@ and algorithmic trading.
 
     Pandas
 
-        A popular Python-based data analysis library.  `More information <https://pandas.pydata.org/>`__.
+        Pandas is a powerful and widely used open-source data analysis library in Python. It provides data structures and functions needed to work with structured data, such as tabular data in the form of tables or spreadsheets. With pandas, it's easy to manipulate, clean, and analyse data, as well as perform complex operations such as grouping, merging, and aggregating data.
+        
+        Pandas is designed to handle a variety of data types, including numerical, categorical, and time-series data. It also integrates well with other libraries, such as NumPy and Matplotlib, making it a popular choice for data analysis and visualisation in the scientific and research communities.
+        
+        One of the key features of pandas is its DataFrame object, which is a two-dimensional labelled data structure with columns of different data types. With pandas, you can easily perform operations on the DataFrame such as filtering, sorting, and grouping data, as well as handling missing values and dealing with time-series data. `More information <https://pandas.pydata.org/>`__.
 
     Uniswap
 
@@ -80,19 +95,29 @@ and algorithmic trading.
 
     Parquet
 
-        A popular file format for large datasets from Apache Arrow project. `More information <https://parquet.apache.org/>`__.
+        Parquet is a columnar storage format for big data processing and analysis, commonly used in the Apache Hadoop and Apache Spark ecosystems. It is optimised for fast querying and efficient storage of large, complex data sets, and supports a wide range of data formats and compression options. By organising data into columns rather than rows, Parquet enables more efficient compression and encoding, as well as improved query performance, making it a popular choice for data warehousing and analytics applications. `More information <https://parquet.apache.org/>`__.
 
     Pyarrow
 
-        Python API for :term:`Arrow` library. `More information <https://arrow.apache.org/docs/python/>`__.
+        Python API for :term:`Arrow` library. `More information <https://arrow.apache.org/docs/python/>`__. PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large datasets, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as Parquet, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
 
     Arrow
 
-        Apache Arrow is a popular open source in-memory analytics technology kit. `More information <https://arrow.apache.org/docs/index.html>`__.
+        Apache Arrow is an open-source, cross-platform columnar data format that is used for storing and processing large amounts of data efficiently. It was designed to address some of the performance and scalability challenges associated with traditional row-based data storage and processing methods.
+
+        Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, Python, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
+
+        In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects.
+ `More information <https://arrow.apache.org/docs/index.html>`__.
 
     Dataclass
 
-        Standard Python way to annotate data structures. `More information <https://realpython.com/python-data-classes/>`__.
+        A dataclass is a type of class in the programming language Python that is used to define data structures. It provides a convenient and efficient way of representing structured data, such as records, tuples, or database tables. Dataclasses allow for the creation of classes with automatically generated special methods, such as the `__init__`, `__repr__`, and `__eq__` methods, which are commonly used for defining classes that represent data.
+
+    With dataclasses, developers can declare fields and their types using the `@dataclass` decorator and the `field` function. This reduces the amount of boilerplate code that needs to be written and makes it easier to maintain and update the code. Additionally, dataclasses provide the ability to add default values for fields, define ordering using the `order` function, and customise the representation of the class using the `repr` function.
+
+    Dataclasses were introduced in Python 3.7 and are considered a modern and convenient way of defining data structures in Python. They can be used in a variety of applications, including data analysis, machine learning, and web development.
+ `More information <https://realpython.com/python-data-classes/>`__.
 
     Dataset
 
@@ -105,7 +130,14 @@ and algorithmic trading.
 
     Notebook
 
-        Notebook refers to an interactively editable Python script or application, mixed with diagrams and notes. The format was popularised by :term:`Jupyter notebook`.
+        A notebook is a web-based interactive platform for writing and running code, as well as documenting and sharing work in a variety of formats, including text, code, and graphics. It is commonly used in the fields of data science, machine learning, and scientific computing for developing and testing algorithms, analysing data, and creating visualisations.
+        
+        In a notebook, users can write code in a variety of programming languages, including Python, and run it directly within the platform. The output of the code, including any visualisations or results, is displayed within the notebook alongside the code itself. This allows users to iteratively develop and test their algorithms, as well as document their work in a readable and reproducible format.
+Notebooks also provide a convenient platform for collaboration and sharing, as they can be easily exported and shared as files, or hosted on platforms such as Jupyter or Google Colab. This makes them a popular choice for data scientists and researchers who need to share their work with others, as well as for organisations who need to collaborate on large data projects.
+
+        Overall, notebooks provide a powerful and flexible platform for data analysis, scientific computing, and code development, making them an essential tool for many researchers and data professionals.
+        
+        The format was popularised by :term:`Jupyter notebook`.
 
     Strategy
 
@@ -133,7 +165,9 @@ and algorithmic trading.
 
     Base token
 
-        The token you want to buy or sell in a trading pair. See also :term:`quote token`.
+        A base token, in the context of cryptocurrencies, refers to the primary token or asset used in a specific trading pair or exchange. The base token is the token that is being traded or exchanged for another token, typically a quote token,  see also :term:`quote token`. For example, in the trading pair BTC/USD, BTC is the base token and USD is the quote token. The price of the quote token is quoted in terms of the base token.
+
+    The base token is an important concept in the cryptocurrency market, as it determines the value of the other token in a trading pair. In other words, the price of the quote token is derived from the price of the base token. This relationship between the base token and the quote token is used to determine the price of the quote token, which can then be used to determine the value of other assets that are pegged to it.
 
     Quote token
 
@@ -161,11 +195,18 @@ and algorithmic trading.
 
     Directional strategy
 
-        A trading strategy where you bet the market to go up or down.
+        A directional strategy is a type of trading or investment strategy that involves taking a bullish or bearish view on a particular asset or market. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
+        
+        Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
+        
+        Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
 
     Active strategy
 
-        Buying and selling assets based on the market movement. Differs from buy-and-hold by actively (hourly, daily, weekly) engaging in trading. `Read more <https://www.investopedia.com/articles/active-trading/11/four-types-of-active-traders.asp>`__.
+        Active strategy in relation to algorithmic trading refers to a type of investment or trading approach that uses algorithms to make regular, data-driven decisions about buying and selling assets. This approach is designed to generate higher returns and outperform passive investment strategies.
+
+        Active strategies in algorithmic trading differ from passive strategies, which simply follow the market and hold assets for the long-term, in that they actively seek to generate higher returns through regular buying and selling of assets. This can involve taking advantage of short-term market movements, or making trades based on a variety of market indicators and economic data.
+`Read more <https://www.investopedia.com/articles/active-trading/11/four-types-of-active-traders.asp>`__.
 
     Non-custodial
 
@@ -198,11 +239,12 @@ and algorithmic trading.
 
     USDC
 
-        A popular US cash and US treasury note backed stablecoin from Circle. `Read more <https://www.circle.com/en/usdc>`__.
+        USDC (USD Coin) is a stablecoin, meaning it is a cryptocurrency that is pegged to the value of the US Dollar. It is designed to maintain a value of 1 USDC = 1 USD, and its value is backed by US dollars held in reserve. USDC is used for a variety of purposes in the cryptocurrency space, including as a unit of account for trading, for remittances and as a medium of exchange. It operates on the Ethereum blockchain and is a popular choice for traders looking for a stable store of value in the cryptocurrency markets.
+ `Read more <https://www.circle.com/en/usdc>`__.
 
     Pine Script
 
-        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__.
+        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, Bollinger Bands, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
 
     TradingView
 
@@ -319,7 +361,7 @@ and algorithmic trading.
 
     Strategy cycle
 
-        Strategies are executed in incremental, fixed internal cycles.
+        The strategy cycle refers to the process of developing, testing, and implementing a trading strategy. This process typically involves several steps, including research and analysis, design, optimization, backtesting, and live trading. The strategy cycle is an iterative process, and the results of each step can influence the next. The goal of the strategy cycle is to identify and develop a profitable and reliable trading strategy that can be consistently executed. The end result of the strategy cycle is a well-designed, thoroughly tested, and successfully deployed trading strategy that can help achieve investment goals.
         See :term:`cycle duration`.
 
     Cycle duration
@@ -398,6 +440,8 @@ and algorithmic trading.
 
         One of the most popular and loved programming languages.
         Python is the number one programming language in :term:`quantitative finance`.
+        
+        Python is a high-level, interpreted programming language known for its readability, simplicity, and versatility. It was first released in 1991 and has since become one of the most widely used programming languages in the world. Python is used for a variety of applications, including web development, scientific computing, data analysis, artificial intelligence, and more. It has a large standard library and a supportive community, making it easy to learn and use. Python is also highly extensible, allowing developers to add functionality through libraries and modules. With its clean syntax, readable code, and ease of use, Python is a popular choice for both beginner and experienced programmers.
 
         `Read more <https://python.org>`__.
 
@@ -618,3 +662,143 @@ and algorithmic trading.
         Different % amounts of “taxes” may apply to different types of transactions like buy, sell, and treasury management.
 
         `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__. See also :term:`honey pot`.
+        
+    Order book model
+    
+        An order book model is a type of exchange that operates based on an order book, a record of all buy and sell orders for a particular asset. In an order book exchange, users can place limit orders, specifying the price and quantity they are willing to buy or sell an asset for. When a matching buy and sell order is found, a trade is executed, and the exchange takes a small fee for facilitating the transaction. Order book exchanges provide more precise price discovery and allow users to take advantage of market inefficiencies, but can suffer from liquidity issues and are more susceptible to front-running and other forms of market manipulation.
+
+        Overall, order book exchanges offer a more traditional trading experience compared to Automated Market Maker (AMM) exchanges, but with the added benefits of being decentralised and secure.
+
+    Stop loss
+    
+        A stop loss is a trading tool used to limit potential losses on a trade. It is a predefined price level that, when reached, automatically closes a trade in order to prevent further losses. A stop loss allows traders to set a maximum amount of money they are willing to lose on a trade, reducing the emotional stress of managing an open position. For example, if a trader buys an asset at $100 and sets a stop loss at $90, if the price of the asset drops to $90, the trade will automatically be closed, limiting the trader's loss to $10.
+
+        Stop losses are an important risk management tool for traders and investors, helping to limit their potential losses and preserving their capital for future trades.
+
+    Bear market
+    
+        A bear market is a condition in the stock market where the overall trend is downward and prices are falling. It is characterised by widespread pessimism and negative investor sentiment, leading to a decrease in the prices of securities. In a bear market, most asset classes tend to decline, and it can last anywhere from a few months to several years. During a bear market, it is common for investors to sell their holdings, leading to further declines in prices. The opposite of a bear market is a bull market, where prices are rising and investor sentiment is positive. Bear markets can be caused by various factors, such as economic recession, high unemployment, and declining corporate earnings.
+
+    Bull market
+    
+        A bull market is a condition in the stock market where the overall trend is upward and prices are rising. It is characterised by widespread optimism and positive investor sentiment, leading to an increase in the prices of securities. In a bull market, most asset classes tend to rise, and it can last anywhere from a few months to several years. During a bull market, it is common for investors to buy assets, leading to further price increases. The opposite of a bull market is a bear market, where prices are falling and investor sentiment is negative. Bull markets can be driven by various factors, such as a strong economy, low unemployment, and rising corporate earnings.
+
+    Mean reversion
+    
+        A mean reversion strategy is a type of trading strategy that assumes that prices of an asset will eventually return to their average or mean levels over time. This strategy is based on the idea that prices tend to move in cycles and that extreme deviations from the average are temporary and eventually return to their historical average. In a mean reversion strategy, a trader buys an asset when its price is lower than its average and sells when the price is higher than its average, with the goal of profiting from the reversion to the mean. Mean reversion strategies can be applied to a variety of assets, such as stocks, bonds, commodities, and currencies, and are commonly used in quantitative finance and algorithmic trading.
+
+    Swing trading
+    
+        Swing trading is a type of short-term trading strategy that aims to take advantage of intermediate-term price movements, typically holding positions for several days to a few weeks. The goal of swing trading is to identify trends and ride them for a profit, rather than trying to predict the market's direction in the long-term. Swing traders use technical analysis to identify potential trades, focusing on price patterns, support and resistance levels, and momentum indicators. They typically trade more frequently than long-term investors and hold positions for a shorter period, but with the potential for larger profits or losses. Swing trading can be used in a variety of markets, including stocks, bonds, commodities, and currencies.
+
+    Dollar cost averaging (DCA)
+    
+        Dollar cost averaging (DCA) is an investment strategy in which an investor divides a larger sum of money into smaller investments, made at regular intervals over a longer period of time. The goal of dollar cost averaging is to reduce the impact of market volatility on the investment portfolio by spreading out the investment over time, rather than investing the entire amount at once.
+
+        For example, an investor who wants to invest $10,000 in a stock may choose to invest $1,000 every month for 10 months, rather than investing the full $10,000 in one lump sum. 
+
+        This approach can help to reduce the impact of short-term market fluctuations and allow the investor to accumulate more shares when prices are low and fewer shares when prices are high.
+
+    Shorting
+    
+        Short selling, also known as shorting or going short, is a trading strategy in which an investor borrows shares of a stock or other security, sells the borrowed shares, and then aims to buy the shares back at a lower price to make a profit.
+
+        The goal of short selling is to profit from a decline in the price of the security being shorted. In a short sale, the investor borrows shares from another investor, typically through a brokerage, and sells the borrowed shares on the open market. If the price of the security drops, the investor can buy the shares back at a lower price and return the borrowed shares to the lender, pocketing the difference as profit. However, if the price of the security increases, the short seller incurs a loss, which can be unlimited.
+
+        Short selling is a high-risk strategy that requires a solid understanding of market dynamics and a careful risk management plan. It is also subject to restrictions and regulations in some markets.
+
+    Quantitative analysis
+
+        Quantitative analysis is a method of evaluating securities by using mathematical and statistical models. It is a data-driven approach to investment that involves the use of numerical and computational techniques to analyse financial data and make investment decisions.
+
+        Quant traders, use tools such as statistical models, algorithms, and high-frequency trading technology to analyse market data, identify trends, and make predictions about future market movements. They rely on historical data, such as stock prices, interest rates, and economic indicators, to develop their models and test their predictions.
+        
+        Quantitative analysis is commonly used in the field of finance, particularly in hedge funds and institutional trading desks, and can be applied to a variety of asset classes, including stocks, bonds, commodities, and currencies.
+
+    Quants
+    
+        Quants are financial professionals who specialise in the use of quantitative methods to analyse financial data and make investment decisions. They are experts in mathematics, statistics, and computer science and use complex models and algorithms to analyse financial data and make predictions about market movements
+
+        Quants work in a variety of settings, including hedge funds, investment banks, and asset management firms, and play a significant role in the field of finance. They use their expertise in data analysis and modelling to develop trading strategies and make investment decisions, often using high-frequency trading technology to execute their trades.
+
+        Quants are known for their ability to analyse large amounts of financial data and make decisions quickly, using a data-driven approach to investment.
+
+    Strategy developer
+    
+        A strategy developer is a financial professional who designs and implements investment strategies. They are responsible for analysing market data, identifying trends and opportunities, and creating investment plans that aim to achieve specific financial goals. 
+
+        Strategy developers use a combination of quantitative and qualitative analysis to make investment decisions, drawing on their expertise in economics, finance, mathematics, and computer science. They also use a variety of tools and technologies, including statistical models, algorithms, and high-frequency trading systems, to support their work.
+
+        Strategy developers work in a variety of settings, including hedge funds, asset management firms, and investment banks, and may specialise in a specific asset class, such as stocks, bonds, commodities, or currencies. They are typically highly skilled and experienced professionals who have a deep understanding of financial markets and investment strategies. Effective strategy development requires a combination of technical expertise, market knowledge, and creativity, as well as a sound risk management plan to ensure that investment decisions align with the goals and risk tolerance of the investor.
+        
+    Public trading strategy
+    
+        A public trading strategy is an investment approach that is disclosed to and available for use by the general public. This type of strategy is often marketed and sold through books, courses, seminars, or other educational materials. Public trading strategies are designed to provide individuals with a set of guidelines and rules for making investment decisions in financial markets. They typically involve the use of technical analysis, fundamental analysis, or a combination of both to identify opportunities in various asset classes, such as stocks, bonds, commodities, or currencies.
+
+        Public trading strategies may also incorporate elements of quantitative analysis, using mathematical models and algorithms to analyse market data and make predictions about market movements. The goal of a public trading strategy is to provide individuals with a systematic approach to investing that can help them achieve their financial goals.
+
+    Private trading strategy
+    
+        A private trading strategy is an investment approach that is not publicly disclosed and is only available to a select group of individuals or institutions. Unlike public trading strategies, which are widely available and marketed to the general public, private trading strategies are typically developed and used by professional traders, hedge funds, or other institutional investors.
+
+        Private trading strategies may be based on proprietary algorithms, mathematical models, or unique market insights and are typically designed to provide an edge over more widely available public strategies. The use of private trading strategies can be a means for institutional investors to achieve higher returns and to gain an advantage over the general public in competitive financial markets.
+
+    Historical market data
+    
+        Historical market data refers to past market information, including prices, volume, and other related metrics, for a specific security, asset class, or financial market. This data is used by traders, investors, and financial professionals to analyse market trends, evaluate investment opportunities, and make informed investment decisions.
+
+        Historical market data can be collected and analysed over various time frames, including daily, weekly, monthly, or even yearly, and can cover different asset classes, including stocks, bonds, commodities, and currencies. This information is critical in providing insights into past market behaviour and can be used to identify patterns and trends, develop trading strategies, and make informed predictions about future market movements.
+
+        Historical market data is widely available through a variety of sources, including financial data providers, stock exchanges, and government agencies.
+
+    Trend
+
+        A trend is a general direction of change in a set of data or a market over time. In the financial markets, trends refer to the general direction of prices for a specific security, asset class, or market index. Trends can be either up, down, or sideways, and they can occur over various time frames, including short-term (such as minutes or hours), intermediate-term (such as days or weeks), or long-term (such as months or years).
+
+        Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use technical analysis to identify and track trends, using tools such as trendlines, moving averages, and momentum indicators.
+
+    Bollinger bands
+    
+        Bollinger Bands are a technical analysis indicator used to measure market volatility and identify potential buying or selling opportunities. The indicator consists of a set of three lines plotted on a price chart, with the middle line being a simple moving average of the security's price, and the upper and lower bands serving as a measure of volatility, typically set 2 standard deviations away from the moving average.
+
+        In a market with low volatility, the Bollinger Bands will be closer together, while in a market with high volatility, the bands will be further apart. When prices move outside the upper band, it can be a sign that the security is overbought, and a potential selling opportunity, while a move below the lower band can indicate that the security is oversold and a potential buying opportunity.
+
+        Bollinger Bands are widely used by traders and investors in making investment decisions, as well as in setting stop-loss orders and determining potential profit targets.
+
+    Relative strength index (RSI)
+
+        The Relative Strength Index (RSI) is a popular momentum indicator used in technical analysis to measure the strength of a security's price action. It compares the magnitude of recent gains to recent losses, in order to determine overbought or oversold conditions, and potential buying or selling opportunities.
+
+        The RSI is calculated as a ratio of average gains to average losses, and is represented as a value between 0 and 100. Values above 70 are considered overbought and may indicate a potential sell opportunity, while values below 30 are considered oversold and may indicate a potential buy opportunity. The RSI can be used for various time frames and for multiple securities, including individual stocks, bonds, commodities, and currencies.
+
+    Fundamental analysis
+    
+        Fundamental analysis is a method used in finance and investing to evaluate the intrinsic value of a security or asset by examining its underlying economic and financial characteristics and performance. The goal of fundamental analysis is to assess the economic viability and financial health of a company, and to determine if the current market price of its securities reflects its true worth.
+
+        In fundamental analysis, investors analyse a wide range of financial and economic data, including financial statements, industry trends, and macroeconomic indicators, to gain insight into a company's earnings potential, growth prospects, and risk factors. Key metrics analysed include revenue, earnings, profitability, and cash flow, as well as debt levels, management quality, and competitive position.
+
+    Systematic trading
+
+        Systematic trading is a method of trading financial markets that utilises mathematical models and algorithms to execute trades based on predefined rules and conditions. It aims to remove emotion and subjectivity from the investment process by relying on data-driven decision making.
+
+        In systematic trading, trades are executed automatically based on the rules established in the trading system. These rules can be based on technical indicators, market data, or other signals, and are designed to identify and take advantage of market inefficiencies and price discrepancies. The models used in systematic trading are typically back-tested using historical market data to assess their viability and refine their parameters.
+
+        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, futures, options, and currencies.
+
+    Custodial
+    
+        A custodial service in cryptocurrency refers to a third-party company or service that holds and manages the private keys associated with a user's cryptocurrency assets. The private keys are used to access and control the user's cryptocurrency holdings, so entrusting them to a custodial service offers increased security and convenience compared to holding them on an individual's own device or exchange.
+
+        In a custodial setup, the user's cryptocurrency assets are stored on the custodian's servers and the user can access and manage their assets through the custodian's platform. This can be useful for individuals or institutions who are concerned about the security of their assets or who do not have the technical expertise to manage their own private keys.
+
+        Custodial services typically offer a variety of features such as multi-signature authorization, offline storage, and insurance for the assets in their care. However, it is important to note that custodial services also come with some risks, as the user is relying on the security and reliability of the custodian to protect their assets. Additionally, users must trust the custodian to act in their best interests and to follow the appropriate procedures and regulations in the event of a security breach or other issue.
+
+        As such, it is important for users to carefully consider the reputation and track record of a custodial service before entrusting their assets to them, and to ensure that they understand the risks and benefits associated with this type of service.
+
+    Lending pools
+
+        Lending pools refer to a platform or service where users can lend their cryptocurrency assets to others in exchange for interest. The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
+
+        Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
+
+        Lending pools are typically run on decentralised finance (DeFi) platforms, which use blockchain technology to create a decentralised, trustless financial system. This means that the platform operates on open-source software and operates transparently and immutably, allowing for secure and transparent transactions.
