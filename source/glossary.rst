@@ -108,16 +108,18 @@ and algorithmic trading.
         Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, Python, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
 
         In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects.
- `More information <https://arrow.apache.org/docs/index.html>`__.
+
+        `More information <https://arrow.apache.org/docs/index.html>`__.
 
     Dataclass
 
         A dataclass is a type of class in the programming language Python that is used to define data structures. It provides a convenient and efficient way of representing structured data, such as records, tuples, or database tables. Dataclasses allow for the creation of classes with automatically generated special methods, such as the `__init__`, `__repr__`, and `__eq__` methods, which are commonly used for defining classes that represent data.
 
-    With dataclasses, developers can declare fields and their types using the `@dataclass` decorator and the `field` function. This reduces the amount of boilerplate code that needs to be written and makes it easier to maintain and update the code. Additionally, dataclasses provide the ability to add default values for fields, define ordering using the `order` function, and customise the representation of the class using the `repr` function.
+        With dataclasses, developers can declare fields and their types using the `@dataclass` decorator and the `field` function. This reduces the amount of boilerplate code that needs to be written and makes it easier to maintain and update the code. Additionally, dataclasses provide the ability to add default values for fields, define ordering using the `order` function, and customise the representation of the class using the `repr` function.
 
-    Dataclasses were introduced in Python 3.7 and are considered a modern and convenient way of defining data structures in Python. They can be used in a variety of applications, including data analysis, machine learning, and web development.
- `More information <https://realpython.com/python-data-classes/>`__.
+        Dataclasses were introduced in Python 3.7 and are considered a modern and convenient way of defining data structures in Python. They can be used in a variety of applications, including data analysis, machine learning, and web development.
+
+        `More information <https://realpython.com/python-data-classes/>`__.
 
     Dataset
 
@@ -133,7 +135,7 @@ and algorithmic trading.
         A notebook is a web-based interactive platform for writing and running code, as well as documenting and sharing work in a variety of formats, including text, code, and graphics. It is commonly used in the fields of data science, machine learning, and scientific computing for developing and testing algorithms, analysing data, and creating visualisations.
         
         In a notebook, users can write code in a variety of programming languages, including Python, and run it directly within the platform. The output of the code, including any visualisations or results, is displayed within the notebook alongside the code itself. This allows users to iteratively develop and test their algorithms, as well as document their work in a readable and reproducible format.
-Notebooks also provide a convenient platform for collaboration and sharing, as they can be easily exported and shared as files, or hosted on platforms such as Jupyter or Google Colab. This makes them a popular choice for data scientists and researchers who need to share their work with others, as well as for organisations who need to collaborate on large data projects.
+        Notebooks also provide a convenient platform for collaboration and sharing, as they can be easily exported and shared as files, or hosted on platforms such as Jupyter or Google Colab. This makes them a popular choice for data scientists and researchers who need to share their work with others, as well as for organisations who need to collaborate on large data projects.
 
         Overall, notebooks provide a powerful and flexible platform for data analysis, scientific computing, and code development, making them an essential tool for many researchers and data professionals.
         
@@ -151,6 +153,7 @@ Notebooks also provide a convenient platform for collaboration and sharing, as t
 
         An old Python based :term:`algorithmic trading` framework for strategy backtesting and live execution.
         No longer maintained.
+
         `See documentation <https://www.backtrader.com/>`__.
 
     QSTrader
@@ -206,7 +209,8 @@ Notebooks also provide a convenient platform for collaboration and sharing, as t
         Active strategy in relation to algorithmic trading refers to a type of investment or trading approach that uses algorithms to make regular, data-driven decisions about buying and selling assets. This approach is designed to generate higher returns and outperform passive investment strategies.
 
         Active strategies in algorithmic trading differ from passive strategies, which simply follow the market and hold assets for the long-term, in that they actively seek to generate higher returns through regular buying and selling of assets. This can involve taking advantage of short-term market movements, or making trades based on a variety of market indicators and economic data.
-`Read more <https://www.investopedia.com/articles/active-trading/11/four-types-of-active-traders.asp>`__.
+
+        `Read more <https://www.investopedia.com/articles/active-trading/11/four-types-of-active-traders.asp>`__.
 
     Non-custodial
 
@@ -240,7 +244,8 @@ Notebooks also provide a convenient platform for collaboration and sharing, as t
     USDC
 
         USDC (USD Coin) is a stablecoin, meaning it is a cryptocurrency that is pegged to the value of the US Dollar. It is designed to maintain a value of 1 USDC = 1 USD, and its value is backed by US dollars held in reserve. USDC is used for a variety of purposes in the cryptocurrency space, including as a unit of account for trading, for remittances and as a medium of exchange. It operates on the Ethereum blockchain and is a popular choice for traders looking for a stable store of value in the cryptocurrency markets.
- `Read more <https://www.circle.com/en/usdc>`__.
+
+        `Read more <https://www.circle.com/en/usdc>`__.
 
     Pine Script
 
