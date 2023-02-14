@@ -44,7 +44,7 @@ and algorithmic trading.
 
         An autonomous agent is a software program or system that can operate independently and make decisions on its own, without direct intervention from a human. This type of technology is designed to perform specific tasks or functions, such as data processing, problem-solving, decision-making, and even physical actions.
 
-    Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
+        Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
 
     Smart contract
