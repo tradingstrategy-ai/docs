@@ -182,7 +182,11 @@ and algorithmic trading.
 
     Yield farming
 
-        Pooling assets of multiple people for passive trading strategies. Usually yield farming pools rely on liquidity mining token distribution which they immediately sell (auto compounding). Yield farms operate solely on smart contracts and their strategies are limited. Yield farms almost always take zero market risk against their :term:`quote token`.
+        Pooling assets of multiple people for passive trading strategies.
+
+        Usually yield farming pools rely on liquidity mining token distribution which they immediately sell (auto compounding).
+
+        Yield farms operate solely on smart contracts and their strategies are limited. Yield farms almost always take zero market risk against their :term:`quote token`.
 
     Exposure
 
