@@ -800,10 +800,26 @@ and algorithmic trading.
 
         As such, it is important for users to carefully consider the reputation and track record of a custodial service before entrusting their assets to them, and to ensure that they understand the risks and benefits associated with this type of service.
 
-    Lending pools
+    Lending pool
 
         Lending pools refer to a platform or service where users can lend their cryptocurrency assets to others in exchange for interest. The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
 
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
 
         Lending pools are typically run on decentralised finance (DeFi) platforms, which use blockchain technology to create a decentralised, trustless financial system. This means that the platform operates on open-source software and operates transparently and immutably, allowing for secure and transparent transactions.
+
+    Cumulative return
+
+        Cumulative return is the total change in the investment price over a set time, taking into account reinvested dividends or capital gains.
+        It allows for investors to measure the performance of an investment over a certain period of time.
+        It is is distinct from annualized return which measures the rate of return over a given period of time.
+
+        Cumulative return is calculated by taking the gain (or loss) of the investment over a certain time period and dividing it by the principal value of that investment.
+        It can also be calculated using the standard returns of each period, where Rc = (1 + R1)(1 + R2) - 1.
+
+    Aggregate return
+
+        Aggregate returns in portfolio refer to the percentage difference from period to period of the value of a portfolio.
+
+        It is calculated by taking the change in the value of the portfolio and expressing it as a percentage of the original invested amount.
+        This generates a time series of interim net asset values.
