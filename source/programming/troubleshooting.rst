@@ -56,6 +56,17 @@ You can run the notebooks from console:
 
 Then any `pdb` or `ipdb` breakpoints will work correctly.
 
+Manually setting up Jupyter kernel for Visual Studio Code
+---------------------------------------------------------
+
+Create kern
+
+.. code-block:: shell
+
+    # First activate virtual env
+    python3 -m ipykernel install --user --name=testx
+
+Then
 
 Visual Studio Code or PyCharm hangs at a notebook progress bar (tqdm)
 ---------------------------------------------------------------------

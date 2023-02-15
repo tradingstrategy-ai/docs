@@ -30,6 +30,7 @@ Example backtesting Jupyter notebooks
    running
    pancakeswap-ema
    pancakeswap-ema-stop-loss
+   portfolio-construction-model
    synthetic-ema
    synthetic-ema-stop-loss
    backtest-fee-analysis
