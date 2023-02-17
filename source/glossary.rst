@@ -613,7 +613,7 @@ and algorithmic trading.
     Honey pot
 
         In :term:`decentralised finance` a honey pot describes a trading pair or a token
-        designed to fool :term:`trading strategies <trading strategy`. This is made possible
+        designed to fool :term:`trading strategies <trading strategy>`. This is made possible
         by :term:`ERC-20` flexibility allowing it to have custom transfer and ownership rules,
         where the token owner and deployer manipulates balances.
 
@@ -889,5 +889,16 @@ and algorithmic trading.
         Due to its decentralised mode, Storj storage and egress costs are very competitive compared
         to centralised cloud offerings such as from Amazon, Microsoft or Google.
 
+    ERC-20
 
+        ERC-20 is the original token standard for Ethereum.
+
+        ERC-20 is a technical standard used to issue and implement tokens on the Ethereum blockchain.
+        It was proposed in November 2015 by Ethereum developer Fabian Vogelsteller and defines a common set of rules such as how the tokens can be transferred, how transactions are approved, and the total supply of tokens. ERC-20 tokens are the most commonly used tokens on the Ethereum network and are designed to be used for paying for functions.
+
+        ERC-20 token standard has several limitations and architectural shortcomings.
+        Its `approve()` and `permit()` based functions, originally planned for having
+        better smart contract security in Solidity, have proven to be an attractive
+        vector for scams as normal users do not understand they are transferring tokens
+        when calling these methods from their wallets.
 
