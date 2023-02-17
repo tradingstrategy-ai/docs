@@ -827,3 +827,30 @@ and algorithmic trading.
 
         It is calculated by taking the change in the value of the portfolio and expressing it as a percentage of the original invested amount.
         This generates a time series of interim net asset values.
+
+    Blockchain snapshot
+
+        A chain snapshot is a dump of the chain state.
+        By downloading the snapsnot a new blockchain node can sync faster
+        to the chain tip, instead of downloading each block and verifying
+        each transaction individually from the peer-to-peer network.
+
+        The snapshot may be
+
+        * Chain built-in sync mechanism: `Ethereum Snapshot Protocol (SNAP) <https://github.com/ethereum/devp2p/blob/master/caps/snap.md>`__
+
+        * Erigon BitTorrent snapshots - Erigon uses internal BitTorrent client to download `https://github.com/ledgerwatch/erigon-snapshot <https://github.com/ethereum/devp2p/blob/master/caps/snap.md>`__
+
+        * Manually hosted snapshot: `Polygon manually hosted downloads <https://snapshots.polygon.technology/>`__
+
+        Different snapshots offer different security guarantees. For example, when downloading
+        a snapshot from a Polygon manually hosted snapshot repository, you trust that the admins of this repository
+        have not modified the current of historical blockchain state. The built-in Ethereum Snapshot Protocol
+        verifies from the peer-to-peer network that the snap state is correct.
+
+        How much snapshot speeds up the node sync depends on what kind of node you want to run:
+        full node without event history, full node with event history or archive node.
+        For example, even with a snapshot syncing a BNB Chain full node with event history
+        will take several weeks, because Erigon needs to construct the historical events
+        from the raw blocks after the download, as historical events are not precomputed in the
+        snapshot.

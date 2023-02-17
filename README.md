@@ -20,17 +20,16 @@ View [the documentation here](https://tradingstrategy.ai/docs).
 To build everything from the scratch: 
 
 ```shell
-make install-deps
 poetry shell
-poetry install
-make pip-force-install-deps  # Currently needed as a workaround for some issues
-make install-furo rebuild-furo clean-autosummary clean html
-```
-
-To update Furo SCSS changes:
-
-```shell
-make rebuild-furo clean html
+make \
+  update-git-submodules \
+  poetry-install \
+  pip-force-install-deps \
+  install-furo \
+  rebuild-furo \
+  clean-autosummary \
+  clean \
+  html
 ```
 
 Then you can open `build/html/index.html` in your local web browser:
@@ -44,6 +43,12 @@ See [Makefile](./Makefile) for more recipes.
 # Updating theme
 
 [See theme README](https://github.com/tradingstrategy-ai/furo).
+
+To update Furo SCSS changes:
+
+```shell
+make rebuild-furo clean html
+```
 
 # Community
 
