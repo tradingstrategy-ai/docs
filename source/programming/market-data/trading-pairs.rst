@@ -46,7 +46,7 @@ all trades converted to US Dollar, so that relative gains can be compared.
 Base token and quote token vs. token0 and token1
 ------------------------------------------------
 
-:ref:`decentralised exchanges <decentralised exchange>` like Uniswap
+:term:`decentralised exchanges <decentralised exchange>` like Uniswap
 use the concept of `token0` and `token1` naming instead of human friendly base token
 and quote token.
 

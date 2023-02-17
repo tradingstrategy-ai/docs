@@ -46,7 +46,6 @@ and algorithmic trading.
 
         Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
-
     Smart contract
     
         An automated transactional service running on any of the blockchains supporting smart contracts.It contains the terms of the agreement between parties, and automatically executes the terms when certain predetermined conditions are met. Smart contracts are tamper-proof, transparent, and autonomous, and they eliminate the need for intermediaries such as lawyers, brokers, or banks. This makes them a secure and efficient way to automate financial transactions, manage digital assets, or automate other types of agreements
@@ -495,7 +494,7 @@ and algorithmic trading.
     Native token
 
         Also known as "gas token". The native token is the cryptocurrency used to pay
-        transaction fees on :ref:`EVM compatible` blockchain. For Ethereum it is ETH,
+        transaction fees on :term:`EVM-compatible` blockchain. For Ethereum it is ETH,
         for Polygon it is MATIC and for Binance Smart Chain it is BNB.
 
     TWAP
@@ -587,6 +586,12 @@ and algorithmic trading.
         is excellent for editing Jupyter notebooks.
 
         `Read more <https://code.visualstudio.com/>`__
+
+    DEX
+
+        DEX is an acronym for :term:`DEcentralised eXchange`.
+
+        For more information see :term:`decentralised exchange` description.
 
     CEX
 
@@ -902,3 +907,25 @@ and algorithmic trading.
         vector for scams as normal users do not understand they are transferring tokens
         when calling these methods from their wallets.
 
+        The token standard has been adopted by other EVM-based blockchains like
+        BNB Chain, Polygon, Avalanche C-Chain and Fantom.
+
+    EVM-compatible
+
+        EVM compatible means that a blockchain uses the same EVM architecture
+        as the original Ethereum mainnet and is its clone.
+
+        EVM compatible blockchains can use the existing smart contracts
+        like :term:`ERC-20` unmodified. They can also blockchain explorers,
+        wallets and such with little modifications. This has lead to
+        born to Ethereum clone chains like Polygon, Avalanche C-Chain and
+        BNB Chain.
+
+    Reserve currency
+
+        In the :term:`trading strategy` terminology, a reserve currency
+        refers to the base currency of the strategy to which profits
+        are withdrawn.
+
+        A common reserve currency for :term:`decentralised finance` strategies
+        is :term:`USDC`.
