@@ -1,6 +1,6 @@
 {{ fullname | partial_name | escape | underline}}
 
-*{{ fullname }}* class.
+*{{ fullname }}* Python class in Trading Strategy framework.
 
 .. currentmodule:: {{ module }}
 

@@ -21,11 +21,14 @@ install-deps:
 	git submodule update --init --recursive
 
 # Fetch submodules and check out trade-executor master
-install-deps-ci:
+update-git-submodules:
 	git submodule set-url deps/furo https://github.com/tradingstrategy-ai/furo.git
 	git submodule set-url deps/trade-executor https://github.com/tradingstrategy-ai/trade-executor.git
 	git submodule update --init --recursive
 	# git clone --recursive https://github.com/tradingstrategy-ai/trade-executor.git deps/trade-executor
+
+poetry-install:
+	poetry install
 
 # TODO: Some hacks here because Poetry does not pick up right
 # packages always so that docs would get correctly built

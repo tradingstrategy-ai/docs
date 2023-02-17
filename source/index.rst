@@ -19,7 +19,7 @@ The documentation is divided into three parts: overview, trading strategy develo
    programming/index
    running/index
    protocol/index
-   learn
+   learn/index
    glossary
 
 See also

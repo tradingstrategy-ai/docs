@@ -827,3 +827,67 @@ and algorithmic trading.
 
         It is calculated by taking the change in the value of the portfolio and expressing it as a percentage of the original invested amount.
         This generates a time series of interim net asset values.
+
+    Blockchain snapshot
+
+        A chain snapshot is a dump of the chain state.
+        By downloading the snapsnot a new blockchain node can sync faster
+        to the chain tip, instead of downloading each block and verifying
+        each transaction individually from the peer-to-peer network.
+
+        The snapshot may be
+
+        * Chain built-in sync mechanism: `Ethereum Snapshot Protocol (SNAP) <https://github.com/ethereum/devp2p/blob/master/caps/snap.md>`__
+
+        * Erigon BitTorrent snapshots - Erigon uses internal BitTorrent client to download `https://github.com/ledgerwatch/erigon-snapshot <https://github.com/ethereum/devp2p/blob/master/caps/snap.md>`__
+
+        * Manually hosted snapshot: `Polygon manually hosted downloads <https://snapshots.polygon.technology/>`__
+
+        Different snapshots offer different security guarantees. For example, when downloading
+        a snapshot from a Polygon manually hosted snapshot repository, you trust that the admins of this repository
+        have not modified the current of historical blockchain state. The built-in Ethereum Snapshot Protocol
+        verifies from the peer-to-peer network that the snap state is correct.
+
+        How much snapshot speeds up the node sync depends on what kind of node you want to run:
+        full node without event history, full node with event history or archive node.
+        For example, even with a snapshot syncing a BNB Chain full node with event history
+        will take several weeks, because Erigon needs to construct the historical events
+        from the raw blocks after the download, as historical events are not precomputed in the
+        snapshot.
+
+    zstd
+
+        `Zstd <https://www.mankier.com/1/zstd>`__ is a modern compression algorithm developed by Facebook. It tries
+        to strike a good balance with speed/compression ratio for modern multithreaded
+        CPUs.
+
+        `zstd` is also the command line utility that can be used to compress/decompress
+        files in a terminal. It can be combined with `tar` to create archives
+        of directories, like :term:`blockchain snaphots <blockchain snapshot>`.
+
+    Erigon
+
+        `Erigon <https://github.com/ledgerwatch/erigon>`__ is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
+        It is a decentralized blockchain node provider that provides a secure, private, and scalable blockchain infrastructure.
+        If you want to host your own JSON-RPC API access to raw EVM blockchain data,
+        Erigon is a good option.
+
+        Erigon is one of the two most popular Ethereum clients, alongside GoEthereum.
+        The benefits of Erigon over GoEthereum include better disk space usage
+        and performance due to more advanced database structures. Internally Erigon uses Lightning Memory-Mapped Database Manager (LMDB).
+
+        Erigon supports some alternative blockchains to Ethereum mainnet,
+        like Polygon and BNB Chain. Erigon is not available for all EVM-compatible networks, as the project was started many years after GoEthereum, which had become the de facto standard EVM implementation at that point.
+
+    Storj
+
+        `Storj <https://www.storj.io/>`__ is a decentralized cloud storage platform that allows users to rent out unused hard drive space for digital file storage.
+        It offers zero-trust security and can be used for large file storage, streaming and backups.
+        Storj runs on its own blockchain model, but for the interaction the user does not need to know about
+        the blockchain at all.
+
+        Due to its decentralised mode, Storj storage and egress costs are very competitive compared
+        to centralised cloud offerings such as from Amazon, Microsoft or Google.
+
+
+

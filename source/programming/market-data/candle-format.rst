@@ -29,7 +29,7 @@ This is because we believe this formats fit better for DeFi market data feeds
   at stock markets.
 
 Converting to traditional OHCLV format
--------------------------------------
+--------------------------------------
 
 Transforming Trading Strategy candle format to the traditional open/close definitions can be done as the following:
 
