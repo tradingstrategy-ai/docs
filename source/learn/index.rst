@@ -25,6 +25,7 @@ Learning resources
 
    conference-presentations
    books
+   courses
    tutorials
    papers
    jupyter-notebook

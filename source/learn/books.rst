@@ -1,5 +1,5 @@
-Books and courses on algorithmic trading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Books on algorithmic trading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Machine Learning for Algorithmic Trading
 ----------------------------------------
