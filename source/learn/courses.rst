@@ -11,6 +11,7 @@ You’ll find practical, real-life problems to solve. Then use pre-built code te
 
 The course is organised by Jason Strimpel.
 
+`View course <https://home.tpq.io/certificates/pyalgo/>`__.
 
 Master AI-Driven Algorithmic Trading
 ------------------------------------

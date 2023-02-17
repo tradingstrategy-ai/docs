@@ -20,7 +20,9 @@ and algorithmic trading.
 
     On-chain
 
-        On-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
+        On-chain refers to transactions or activities that are recorded and processed directly on a blockchain network.
+
+        In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
         
         When an activity is referred to as "on-chain," it means that it is recorded directly on the blockchain, as opposed to off-chain, which refers to transactions or activities that are not recorded on the blockchain but are still facilitated by the network.
         
@@ -482,13 +484,18 @@ and algorithmic trading.
 
     Factor investing
 
-        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns. There are two main types of factors: macroeconomic and style. Investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
+        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns.
+
+        There are two main types of factors: macroeconomic and style. Investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
 
         `Read more <https://learn.aikido.finance/blog/post/how-to-choose-an-algorithmic-trading-strategy-stocks/>`__.
 
     Alpha generation platform
 
-        An alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or trading strategies, that generate consistent alpha, or absolute returns. The process of alpha generation refers to generating excess returns. Alpha generation platforms are tools used by hedge funds, banks, CTAs and other financial institutions to help develop and test quantitative trading strategies. Alpha generation platforms support quants in the creation of efficient and productive quantitative trading strategies.
+        An alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or trading strategies, that generate consistent returns.
+
+        Alpha generation platforms are tools used by hedge funds, banks, CTAs and other financial institutions to help develop and test quantitative trading strategies.
+        Alpha generation platforms support quants in the creation of efficient and productive quantitative trading strategies.
 
         `Read more <https://en.wikipedia.org/wiki/Alpha_generation_platform>`__.
 
