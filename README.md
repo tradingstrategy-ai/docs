@@ -1,4 +1,4 @@
-[![Docs autoupdate](https://github.com/tradingstrategy-ai/docs/actions/workflows/rsync-docs.yml/badge.svg)](https://github.com/tradingstrategy-ai/docs/actions/workflows/rsync-docs.yml)
+[![Docs build](https://github.com/tradingstrategy-ai/docs/actions/workflows/build-and-deploy-dcos.yml/badge.svg)](https://github.com/tradingstrategy-ai/docs/actions/workflows/build-and-deploy-dcos.yml)
 
 # Trading strategy documentation
 
