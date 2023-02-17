@@ -854,3 +854,29 @@ and algorithmic trading.
         will take several weeks, because Erigon needs to construct the historical events
         from the raw blocks after the download, as historical events are not precomputed in the
         snapshot.
+
+    zstd
+
+        `Zstd <https://www.mankier.com/1/zstd>`__ is a modern compression algorithm developed by Facebook. It tries
+        to strike a good balance with speed/compression ratio for modern multithreaded
+        CPUs.
+
+        `zstd` is also the command line utility that can be used to compress/decompress
+        files in a terminal. It can be combined with `tar` to create archives
+        of directories, like :term:`blockchain snaphots <blockchain snapshot>`.
+
+    Erigon
+
+        Erigon is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
+        It is a decentralized blockchain node provider that provides a secure, private, and scalable blockchain infrastructure.
+        If you want to host your own JSON-RPC API access to raw EVM blockchain data,
+        Erigon is a good option.
+
+        Erigon is one of the two most popular Ethereum clients, alongside GoEthereum.
+        The benefits of Erigon over GoEthereum include better disk space usage
+        and performance due to more advanced database structures. Internally Erigon uses Lightning Memory-Mapped Database Manager (LMDB).
+
+        Erigon supports some alternative blockchains to Ethereum mainnet,
+        like Polygon and BNB Chain. Erigon is not available for all EVM-compatible networks, as the project was started many years after GoEthereum, which had become the de facto standard EVM implementation at that point.
+
+

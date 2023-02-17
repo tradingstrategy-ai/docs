@@ -21,6 +21,7 @@ nbsphinx = "^0.8.6"
 notebook = "^6.4.12"
 trade-executor = {path = "deps/trade-executor", develop = true, extras=["qstrader", "execution", "web-server"]}
 # furo = {path = "deps/trade-executor", develop = true}
+sphinx-reredirects = "^0.1.1"
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"

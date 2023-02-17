@@ -1,6 +1,6 @@
 {{ fullname | partial_name | escape | underline}}
 
-*{{ fullname }}* module.
+*{{ fullname }}* Python module in Trading Strategy framework.
 
 Module description
 ------------------

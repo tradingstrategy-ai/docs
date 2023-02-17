@@ -7,17 +7,15 @@
 Learn algorithmic trading
 =========================
 
-We have assembled resources for learning algorithmic trading.
+We have assembled resources for learning algorithmic trading, trading, and technical analysis, both
+written in-house and on external sourecs.
 
-- Background on algorithmic trading and how it maps on Trading Strategy architecture
+- See :doc:`our link collection for books, tutorials and courses <./additional-resources>`
 
-- Some notebooks are complete example strategies
+- If you are already familiar with :term:`algorithmic trading` and you want to
+program using Trading Strategy framework you can directly hop into :ref:`Getting started tutorial <tutorial>`.
 
-- :doc:`Link collection for books, tutorials and coures <./additional-resources>`
-
-- If you want to jump in the code right away see :ref:`the basic code examples <tutorial>`_
-
-- See also `Community discussion <https://tradingstrategy.ai/community>`__ for asking questions
+- Visit `Trading Strategy community discussion <https://tradingstrategy.ai/community>`__ for asking questions
 
 Learning resources
 ------------------
@@ -25,7 +23,8 @@ Learning resources
 .. toctree::
    :maxdepth: 1
 
-   portfolio-construction-model
    additional-resources
+   portfolio-construction-model
+
 
 

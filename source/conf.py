@@ -17,6 +17,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.viewcode",
+    'sphinx_reredirects',
 #    "sphinx_toolbox.more_autodoc",
 #    "sphinx_autodoc_typehints"
 ]
@@ -141,3 +142,11 @@ def fixed_init(self, app):
 AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
 AutosummaryRenderer.__init__ = fixed_init
 
+#
+# Redirect mappings
+# https://documatt.gitlab.io/sphinx-reredirects/install.html
+#
+
+redirects = {
+     "learn": "learn/index.html"
+}
