@@ -867,7 +867,7 @@ and algorithmic trading.
 
     Erigon
 
-        Erigon is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
+        `Erigon <https://github.com/ledgerwatch/erigon>`__ is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
         It is a decentralized blockchain node provider that provides a secure, private, and scalable blockchain infrastructure.
         If you want to host your own JSON-RPC API access to raw EVM blockchain data,
         Erigon is a good option.
@@ -878,5 +878,16 @@ and algorithmic trading.
 
         Erigon supports some alternative blockchains to Ethereum mainnet,
         like Polygon and BNB Chain. Erigon is not available for all EVM-compatible networks, as the project was started many years after GoEthereum, which had become the de facto standard EVM implementation at that point.
+
+    Storj
+
+        `Storj <https://www.storj.io/>`__ is a decentralized cloud storage platform that allows users to rent out unused hard drive space for digital file storage.
+        It offers zero-trust security and can be used for large file storage, streaming and backups.
+        Storj runs on its own blockchain model, but for the interaction the user does not need to know about
+        the blockchain at all.
+
+        Due to its decentralised mode, Storj storage and egress costs are very competitive compared
+        to centralised cloud offerings such as from Amazon, Microsoft or Google.
+
 
 

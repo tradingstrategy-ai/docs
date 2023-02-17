@@ -1,7 +1,7 @@
 .. _learning:
 
 .. meta::
-   :description: Learning resources for Python and trading bots
+   :description: Learn algorithmic trading with Python and AI.
 
 
 Learn algorithmic trading
@@ -23,6 +23,14 @@ Learning resources
 .. toctree::
    :maxdepth: 1
 
+   conference-presentations
+   books
+   tutorials
+   papers
+   jupyter-notebook
+   algorithmic-trading-frameworks
+   communities
+   charting-solutions
    additional-resources
    portfolio-construction-model
 
