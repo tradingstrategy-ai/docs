@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
 
+      <script>
+          /**
+           * Redirect internal /glossary.html#term-XXX links to the glossary section at the main website
+           */
+          function doGlossaryRedirectIfNeeded() {
+              const l = window.location;
+              if(l.pathname.includes("glossary.html")) {
+                  const h = l.hash;
+                  let termSlug, url;
+                  if(h) {
+                      termSlug = h.replace("#term-", "").toLowerCase();
+                      url = `https://tradingstrategy.ai/glossary/${termSlug}`;
+                  } else {
+                      url = `https://tradingstrategy.ai/glossary`;
+                  }
+                  if(l.protocol == "https:" && !l.search.includes("debug")) {
+                      window.location.href = url;
+                  } else {
+                      console.log("No redirect to", url, "because not on a website:", window.location.protocol);
+                  }
+              }
+          }
+          doGlossaryRedirectIfNeeded();
+      </script>
+
       <!-- Hardcoded web font urls for now -->
       <link rel="preload" href="https://tradingstrategy.ai/_app/assets/65-4308d60c.woff2" as="font" crossorigin="anonymous">
       <link rel="preload" href="https://tradingstrategy.ai/_app/assets/75-15c42a4f.woff2" as="font" crossorigin="anonymous">
