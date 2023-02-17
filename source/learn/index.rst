@@ -12,8 +12,7 @@ written in-house and on external sourecs.
 
 - See :doc:`our link collection for books, tutorials and courses <./additional-resources>`
 
-- If you are already familiar with :term:`algorithmic trading` and you want to
-program using Trading Strategy framework you can directly hop into :ref:`Getting started tutorial <tutorial>`.
+- If you are already familiar with :term:`algorithmic trading` and you want to program using Trading Strategy framework you can directly hop into :ref:`Getting started tutorial <tutorial>`.
 
 - Visit `Trading Strategy community discussion <https://tradingstrategy.ai/community>`__ for asking questions
 
