@@ -16,6 +16,8 @@ written in-house and on external sourecs.
 
 - Visit `Trading Strategy community discussion <https://tradingstrategy.ai/community>`__ for asking questions
 
+- See also `DeFi and trading dictionary <https://tradingstrategy.ai/glossary>`__ to learn the industry vocabulary
+
 Learning resources
 ------------------
 
