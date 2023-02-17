@@ -1,5 +1,3 @@
-.. _learning:
-
 .. meta::
    :description: Learn algorithmic trading with Python and AI.
 
