@@ -150,3 +150,6 @@ AutosummaryRenderer.__init__ = fixed_init
 redirects = {
      "learn": "learn/index.html"
 }
+
+# Monkey-patch sphinx-sitemap to support <priority> XML argument
+import trading_strategy_docs.sphinx_sitemap_patch
