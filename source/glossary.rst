@@ -861,7 +861,7 @@ and algorithmic trading.
 
     zstd
 
-        `Zstd <https://www.mankier.com/1/zstd>`__ is a modern compression algorithm developed by Facebook. It tries
+        The `Zstd <https://www.mankier.com/1/zstd>`__ compression is a modern compression algorithm developed by Facebook. It tries
         to strike a good balance with speed/compression ratio for modern multithreaded
         CPUs.
 
