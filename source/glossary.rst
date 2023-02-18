@@ -845,7 +845,7 @@ and algorithmic trading.
 
         * `Erigon BitTorrent snapshots - Erigon uses internal BitTorrent client to download https://github.com/ledgerwatch/erigon-snapshot <https://github.com/ethereum/devp2p/blob/master/caps/snap.md>`__
 
-        * Manually hosted snapshot: `Polygon manually hosted downloads <https://snapshots.polygon.technology/>`__
+        * Manually hosted snapshot: `Polygon manually hosted snapshot downloads <https://snapshots.polygon.technology/>`__
 
         Different snapshots offer different security guarantees. For example, when downloading
         a snapshot from a Polygon manually hosted snapshot repository, you trust that the admins of this repository
@@ -871,7 +871,7 @@ and algorithmic trading.
 
     Erigon
 
-        `Erigon <https://github.com/ledgerwatch/erigon>`__ is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
+        The `Erigon <https://github.com/ledgerwatch/erigon>`__ node is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
         It is a decentralized blockchain node provider that provides a secure, private, and scalable blockchain infrastructure.
         If you want to host your own JSON-RPC API access to raw EVM blockchain data,
         Erigon is a good option.
@@ -885,7 +885,7 @@ and algorithmic trading.
 
     Storj
 
-        `Storj <https://www.storj.io/>`__ is a decentralized cloud storage platform that allows users to rent out unused hard drive space for digital file storage.
+        The `Storj <https://www.storj.io/>`__ protocol is a decentralized cloud storage platform that allows users to rent out unused hard drive space for digital file storage.
         It offers zero-trust security and can be used for large file storage, streaming and backups.
         Storj runs on its own blockchain model, but for the interaction the user does not need to know about
         the blockchain at all.
