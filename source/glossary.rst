@@ -859,6 +859,8 @@ and algorithmic trading.
         from the raw blocks after the download, as historical events are not precomputed in the
         snapshot.
 
+        `Read the blog post about snapshots <https://tradingstrategy.ai/blog/bnb-chain-erigon-snapshot>`__.
+
     zstd
 
         The `Zstd <https://www.mankier.com/1/zstd>`__ compression is a modern compression algorithm developed by Facebook. It tries
