@@ -500,6 +500,12 @@ and algorithmic trading.
 
         - Tether dollar - USDT
 
+        See also
+
+        - :term:`ERC-20`
+
+        - :term:`Wallet`
+
     Pine Script
 
         A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, Bollinger Bands, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
@@ -688,11 +694,6 @@ and algorithmic trading.
         Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialise in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
 
         `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
-
-    Stablecoin
-
-        Stablecoins are cryptocurrencies of which value follows a fiat currency value, like the US dollar.
-        One of the most popular stablecoins is :term:`USDC`.
 
     Python
 
