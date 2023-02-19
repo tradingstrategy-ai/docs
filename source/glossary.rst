@@ -474,10 +474,13 @@ and algorithmic trading.
         High-frequency trading, or HFT for short, is a :term:`trading strategy` where you compete with technical speed.
 
         HFT strategies include arbitration, cross-market market making or such and compete against the other actors with your technical speed.
+        In :term:`decentralised finance`, there is a special category of high-frequency trading called :term:`MEV`.
 
         See also
 
         - :term:`Trading strategy`
+
+        - :term:`MEV`
 
         - :term:`Algorithmic trading`
 
@@ -551,13 +554,35 @@ and algorithmic trading.
 
         - :term:`Decentralised finance`
 
+    Traditional finance
+
+        In :term:`decentralised finance`, traditional finance or TradFi, refers to the old financial system.
+
+        TradFi consists of regulated securities markets, banks, commodities and FX markets.
+        TradFi markets are considered to be inefficient compared to :term:`decentralised finance`,
+        due to excessive amount of middlemen, :term:`custodials <custodial>` and  lack of automation.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Lending protocol`
+
+        - :term:`On-chain`
+
     Private strategy
 
         A trading strategy where the source code of the strategy is not disclosed to the public. Private strategies can still be :term:`non-custodial` and enjoy the benefits of Trading Strategy protocol trade execution and fee distribution.
 
     Risk-free rate
 
-        The expected return for the money that is considered (almost) risk-free. On the traditional markets, this is the treasury note or government bond yield (although you still have some risks like the sovereignty risk). In DeFi this is considered an US dollar lending pool rate, like one you would get from Aave :term:`USDC` pool.
+        The expected return for the money that is considered (almost) risk-free.
+
+        In traditional finance, the risk-free rate is considered to be treasury note or government bond yield, although you still have some risks like the sovereignty risk.
+
+        In :term:`decentralised finance`, a risk-free rate is considered to be an US dollar :term:`lending pool` rate, like one you would get from Aave :term:`USDC` pool.
 
         See also
 
@@ -1019,11 +1044,21 @@ and algorithmic trading.
         Because of block producers' ability to reorder trades in a single leader blockchain consensus
         model, MEV causes negative slippage and other issues for traders.
 
+        See also
+
+        - :term:`High-frequency trading`
+
+        - :term:`Trading strategy`
+
     Rebase token
 
         Rebase tokens, also known as elastic tokens, are cryptocurrencies whose supply is algorithmically adjusted in order to control its price. They adjust their circulating supply in response to price fluctuation and are designed in a way that the circulating token supply adjusts (increases or decreases) automatically according to a predetermined formula.
 
         `An example of a rebase token is Klima <https://tradingstrategy.ai/trading-view/polygon/tokens/0x4e78011ce80ee02d2c3e649fb657e45898257815>`__.
+
+        See also
+
+        - :term:`Token`
 
     Honey pot
 
@@ -1044,20 +1079,25 @@ and algorithmic trading.
 
         Decentralised finance (DeFi) is an emerging financial technology that challenges the current centralised banking system.
 
-        It refers to a set of newly emerging financial products and services that operate on decentralised platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+        Decentralised finance refers to a set of newly emerging financial products and services that operate on blockchains using cryptocurrency and
+        :term:`smart contract` technology.
+        DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+        Thus, decentralised finance is the opposite of :term:`traditional finance (TradFi)`.
 
-        Decentralised finance, or DeFi, for short, refers to :term:`on-chain`,
-        protocol based, trading activities. DeFi protocols include
-        exchanges, like :term:`Uniswap` and lending pools like Aave.
-        DeFi services are :term:`non-custodial`, being the largest
-        difference to centralised finance (CeFi) services.
+        Decentralised finance activities happen:term:`on-chain`,
+        and are protocol based where users connect with their :term:`wallets <wallet`>.
+        The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
+        and intermediates make them very efficient.
 
-        Examples of decentralised finance protocols include Uniswap, Aave, Curve, MakerDAO, Compound,
-        Euler, SushiSwap.
-
-        `Read more at Wikipedia <https://en.wikipedia.org/wiki/Decentralized_finance>`__.
+        Example decentralised finance protocols includ
+        :term:`decentralised exchanges <decentralised exchange>`,
+        like :term:`Uniswap` and :term:`lending protocols <lending protocol>` like Aave.
+        Other famous decentralised finance protocols include Curve, MakerDAO, Compound,
+        Euler and SushiSwap.
 
         See also
+
+        - :term:`Traditional finance`
 
         - :term:`Decentralised exchange`
 
