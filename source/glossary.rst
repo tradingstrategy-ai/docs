@@ -78,6 +78,8 @@ and algorithmic trading.
 
         - :term:`Decentralised exchange`
 
+        - :term:`Decentralised finance`
+
         - :term:`XY Liquidity Model`
 
         - :term:`Order book`
@@ -121,6 +123,15 @@ and algorithmic trading.
 
         Examples of on-chain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
 
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Wallet`
+
+        - :term:`Decentralised exchange`
+
     Backtest
 
         Simulating the efficiency of a :term:`trading strategy` against historical data.
@@ -149,6 +160,8 @@ and algorithmic trading.
         Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
 
         See also
+
+        - :term:`Decentralised finance`
 
         - :term:`CEX`
 
@@ -197,6 +210,18 @@ and algorithmic trading.
         In version 2 (v2) the liquidity is evenly distributed across the bonding curve. In version 3, the
         liquidity providers can have liquidity on a partial curve, simulate order book and have better
         capital efficiency. Most decentralised exchanges are Uniswap v2 :term:`clones <clone>`.
+
+        See also
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Decentralised finance`
+
+        - :term:`On-chain`
+
+        - :term:`AMM`
+
+        - :term:`CLMM`
 
     Clone
 
@@ -651,13 +676,25 @@ and algorithmic trading.
 
     Vault
 
-        In decentralised finance, a vault refers to a smart contract
+        In :term:`decentralised finance`, a vault refers to a :term:`smart contract`
         that manages assets, in non-custodial manner, for several stakeholders.
         Usually when you deposit to a vault you receive share or liquidity provider
         tokens as a return.
 
         `See EIP-4626 Tokenised vault standard <https://eips.ethereum.org/EIPS/eip-4626>`__
         for more information.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Smart contract`
+
+        - :term:`ERC-20`
+
+        - :term:`Non-custodial`
+
+        - :term:`Wallet`
 
     Technical indicator
 
@@ -670,6 +707,12 @@ and algorithmic trading.
 
         See :ref:`technical analysis` documentation for Trading Strategy indicator list.
 
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`EMA`
+
     EMA
 
         Exponential moving average. One of the most common :term:`technical indicators <technical indicator>`.
@@ -679,15 +722,17 @@ and algorithmic trading.
 
         `See this post for more information on simple and exponential moving average <https://school.stockcharts.com/doku.php?id=technical_indicators:moving_averages>`__.
 
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Technical indicator`
+
     DeFi
 
-        Decentralised finance, or DeFi, for short, refers to :term:`on-chain`,
-        protocol based, trading activities. DeFi protocols include
-        exchanges, like :term:`Uniswap` and lending pools like Aave.
-        DeFi services are :term:`non-custodial`, being the largest
-        difference to centralised finance (CeFi) services.
+        DeFi stands for :term:`Decentralised finance`.
 
-        `Read more <https://en.wikipedia.org/wiki/Decentralized_finance>`__.
+        See :term:`decentralised finance` for the full description.
 
     Quantitative finance
 
@@ -900,10 +945,34 @@ and algorithmic trading.
 
     Decentralised finance
 
-        Decentralised finance (DeFi) is an emerging financial technology that challenges the current centralised banking system. It refers to a set of newly emerging financial products and services that operate on decentralised platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+        Decentralised finance (DeFi) is an emerging financial technology that challenges the current centralised banking system.
+
+        It refers to a set of newly emerging financial products and services that operate on decentralised platforms using cryptocurrency and blockchain technology. DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
+
+        Decentralised finance, or DeFi, for short, refers to :term:`on-chain`,
+        protocol based, trading activities. DeFi protocols include
+        exchanges, like :term:`Uniswap` and lending pools like Aave.
+        DeFi services are :term:`non-custodial`, being the largest
+        difference to centralised finance (CeFi) services.
 
         Examples of decentralised finance protocols include Uniswap, Aave, Curve, MakerDAO, Compound,
         Euler, SushiSwap.
+
+        `Read more at Wikipedia <https://en.wikipedia.org/wiki/Decentralized_finance>`__.
+
+        See also
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Non-custodial`
+
+        - :term:`On-chain`
+
+        - :term:`Smart contract`
+
+        - :term:`Stablecoin`
+
+        - :term:`Wallet`
 
     Algorithmic trading
 
