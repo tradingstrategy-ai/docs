@@ -1167,11 +1167,21 @@ and algorithmic trading.
 
     Shorting
     
-        Short selling, also known as shorting or going short, is a trading strategy in which an investor borrows shares of a stock or other security, sells the borrowed shares, and then aims to buy the shares back at a lower price to make a profit.
+        Short selling, also known as shorting or going short, is a :term:`trading strategy` in which an investor borrows as aasset, sells the borrowed asset, and then aims to buy the asset back at a lower price to make a profit.
 
         The goal of short selling is to profit from a decline in the price of the security being shorted. In a short sale, the investor borrows shares from another investor, typically through a brokerage, and sells the borrowed shares on the open market. If the price of the security drops, the investor can buy the shares back at a lower price and return the borrowed shares to the lender, pocketing the difference as profit. However, if the price of the security increases, the short seller incurs a loss, which can be unlimited.
 
-        Short selling is a high-risk strategy that requires a solid understanding of market dynamics and a careful risk management plan. It is also subject to restrictions and regulations in some markets.
+        Short selling is a high-risk strategy that requires a solid understanding of market dynamics and a careful risk management plan.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Lending protocol`
+
+        - :term:`Trading strategy`
 
     Quantitative analysis
 
@@ -1263,9 +1273,57 @@ and algorithmic trading.
 
         See also :term:`non-custodial`.
 
+    Token
+
+        A token in blockchains and :term:`decentralised finance` represents an :term:`on-chain` asset.
+
+        Tokens can be
+
+        - Fungible tokens: assets like crytocurrencies, :term:`stablecoins <stablecoin>`
+
+        - Non-fungible tokens (NFTS), like tokenised pictures and video game items
+
+        :term:`ERC-20` is the most popular technical token standard.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`On-chain`
+
+        - :term:`Wallet`
+
+    Lending protocol
+
+        A lending protocol is a :term:`decentralised finance` service for lending and borrowing :term:`tokens <token>`.
+
+        Lending protocols are :term:`smart contract`-based :term:`non-custodial` protocols to
+        lend and borrow your assets.
+
+        Lending protocols enable :term:`shorting` of different :term:`lending pool` tokens.
+
+        Popular lending protocols include Aave, Compound and Euler.
+
+        See also
+
+        - :term:`Lending pool`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Token`
+
+        - :term:`On-chain`
+
+        - :term:`Smart contract`
+
+
     Lending pool
 
-        Lending pools refer to a platform or service where users can lend their cryptocurrency assets to others in exchange for interest. The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
+        In :term:`decentralised finance:`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
+
+        The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
 
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
 
@@ -1273,7 +1331,13 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Lending protocol`
+
+        - :term:`Shorting`
+
         - :term:`Stablecoin`
+
+        - :term:`Decentralised finance`
 
         - :term:`Decentralised exchange`
 
