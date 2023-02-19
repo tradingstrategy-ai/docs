@@ -476,6 +476,7 @@ and algorithmic trading.
     Strategy cycle
 
         The strategy cycle refers to the process of developing, testing, and implementing a trading strategy. This process typically involves several steps, including research and analysis, design, optimization, backtesting, and live trading. The strategy cycle is an iterative process, and the results of each step can influence the next. The goal of the strategy cycle is to identify and develop a profitable and reliable trading strategy that can be consistently executed. The end result of the strategy cycle is a well-designed, thoroughly tested, and successfully deployed trading strategy that can help achieve investment goals.
+
         See :term:`cycle duration`.
 
     Cycle duration
@@ -485,12 +486,20 @@ and algorithmic trading.
         For example, a strategy can have a cycle duration of 16h and makes
         trades based on 4h candles.
 
-    Enzyme
+    Enzyme protocol
 
-        Enzyme is a fund back-office protocol for :term:`EVM-compatible`
-        blockchains.
+        Enzyme is a fund back-office protocol for :term:`EVM-compatible` blockchains.
 
-        See `Enzyme Finance <https://enzyme.finance/>`__ for more information.
+        Enzyme offers :term:`vaults <vault>` where investors can invest to different
+        :term:`trading strategies <trading strategy>`. Enzyme protocol is :term:`non-custodial`.
+
+        Read `Enzyme Finance <https://enzyme.finance/>`__ for more information.
+
+        See also
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Lending pool`
 
     Docker
 

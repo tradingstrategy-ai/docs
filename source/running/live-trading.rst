@@ -5,10 +5,10 @@ Different live trading models are supported
 
 - Single owner Ethereum hot wallet and private strategies
 
-- Multiple shareholders using :term:`Enzyme` protocol :term:`vault`,
+- Multiple shareholders using :term:`Enzyme protocol` :term:`vault`,
   single :ref:`oracle` and public strategies (coming soon)
 
-- Multiple strategy shareholders using :term:`Enzyme` protocol,
+- Multiple strategy shareholders using :term:`Enzyme protocol`,
   decentralised :ref:`oracle` network and public strategies (coming soon)
 
 Running modes
