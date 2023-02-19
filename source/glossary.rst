@@ -1527,7 +1527,7 @@ and algorithmic trading.
         In a swap you you trade against :term:`liquidity providers <liquidity provider>`
         with market order like trades.
 
-        The user interacts with a :term:`liquidity pool` using their term:`non-custodial` :term:`wallet`
+        The user interacts with a :term:`liquidity pool` using :their term:`non-custodial` :term:`wallet`
         to perform a swap.
 
         Some example swaps:
