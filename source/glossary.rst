@@ -928,3 +928,11 @@ and algorithmic trading.
 
         A common reserve currency for :term:`decentralised finance` strategies
         is :term:`USDC`.
+
+    Curl
+
+        cURL (Client URL) is a command-line tool that enables data exchange between a device and a server through a terminal.
+        It provides a library (libcurl) and command-line tool (curl) for transferring data using various network protocols.
+        cURL commands allow users to transfer data without user interaction using supported libcurl libraries[5]
+
+        `Read more at Curl website <https://curl.se/>`__.
