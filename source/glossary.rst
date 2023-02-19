@@ -229,9 +229,11 @@ and algorithmic trading.
 
     QSTrader
 
-        An old Python based :term:`algorithmic trading` framework for strategy backtesting and live execution
-        using portfolio construction theory.
-        No longer maintained.
+        QSTrader is an old Python based :term:`algorithmic trading` framework.
+
+        QSTrader offers  strategy backtesting and live execution using portfolio construction theory.
+
+        QSTrader is jo longer maintained.
 
     Fastquant
 
@@ -243,13 +245,25 @@ and algorithmic trading.
 
         The base token is an important concept in the cryptocurrency market, as it determines the value of the other token in a trading pair. In other words, the price of the quote token is derived from the price of the base token. This relationship between the base token and the quote token is used to determine the price of the quote token, which can then be used to determine the value of other assets that are pegged to it.
 
-        See also :term:`trading pair`.
+        See also
+
+        - :term:`Trading pair`
+
+        - :term:`Quote token`
+
+        - :term:`Decentralised exchange`
 
     Quote token
 
         The token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
 
-        See also :term:`trading pair`.
+        See also
+
+        - :term:`Trading pair`
+
+        - :term:`Base token`
+
+        - :term:`Decentralised exchange`
 
     Liquidity
 
