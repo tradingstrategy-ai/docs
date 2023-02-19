@@ -7,19 +7,19 @@
 Learn algorithmic trading
 =========================
 
-We have assembled resources for learning algorithmic trading, trading, and technical analysis, both
-written in-house and on external sourecs.
+We have compiled resources for learning algorithmic trading, decentralised finance, and technical analysis.
 
-- See :doc:`our link collection for books, tutorials and courses <./additional-resources>`
+- See below our link collection for books, tutorials and courses.
 
-- If you are already familiar with :term:`algorithmic trading` and you want to program using Trading Strategy framework you can directly hop into :ref:`Getting started tutorial <tutorial>`.
+- If you are already familiar with :term:`algorithmic trading` and you want to program using Trading Strategy framework
+  to trade on :term`decentralised exchanges <decentralised exchange>`  you can directly hop into :ref:`Getting started tutorial <tutorial>`.
 
-- Visit `Trading Strategy community discussion <https://tradingstrategy.ai/community>`__ for asking questions
+- If you have questions or need more hand holding please come to our `Trading Strategy online community discussion <https://tradingstrategy.ai/community>`__ for a chat.
 
-- See also `DeFi and trading dictionary <https://tradingstrategy.ai/glossary>`__ to learn the industry vocabulary
+- If you are new to DeFi and automated, you can also browser `DeFi and trading dictionary <https://tradingstrategy.ai/glossary>`__ to learn the industry vocabulary.
 
-Learning resources
-------------------
+Algorithmic trading learning resources
+--------------------------------------
 
 .. toctree::
    :maxdepth: 1
