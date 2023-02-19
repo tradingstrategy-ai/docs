@@ -9,6 +9,55 @@ and algorithmic trading.
 .. glossary::
     :sorted:
 
+
+    Trading strategy
+
+        A trading strategy is a fixed plan that is designed to achieve a profitable return by going long or short in markets.
+
+        It involves analysis to identify specific market conditions and price levels.
+        There are many different types of trading strategies, such as
+
+        - Moving-average cross strategies like :term:`EMA`
+
+        - Trend-following
+
+        - Market-making (see :term:`AMM` for :term:`decentralised finance`)
+
+        - Arbitrage
+
+        - Scalping
+
+        - Portfolio construction model
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        The trading strategy can be automated as :term:`algorithmic trading` and thus
+        become :term:`automated trading strategy`.
+
+        Trading Strategy can also refer to `Trading Strategy protocol <https://tradingstrategy.ai>`__
+        that offers :term:`non-custodial` :term:`algorithmic trading` to its users.
+
+        See also
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Technical analysis`
+
+        - :term:`Automated trading strategy`
+
+        - :term:`Best trading algorithm`
+
+        - :term:`Alpha generation platform`
+
+        - :term:`Equity curve`
+
+        - :term:`High-frequency trading`
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Factor investing`
+
+
     AMM
         Automated market maker (AMM) is a :term:`bonding curve` based :term:`decentralised exchange`.
 
@@ -72,7 +121,6 @@ and algorithmic trading.
 
         Examples of on-chain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
 
-
     Backtest
 
         Simulating the efficiency of a :term:`trading strategy` against historical data.
@@ -111,6 +159,12 @@ and algorithmic trading.
         - :term:`Non-custodial`
 
         - :term:`Smart contract`
+
+        - :term:`ERC-20`
+
+        - :term:`On-chain`
+
+        - :term:`Wallet`
 
     Autonomous agent
 
@@ -152,17 +206,43 @@ and algorithmic trading.
 
     Candle
 
-        Candle, or a candlestick is a type of price chart used in technical analysis that displays the high, low, open, and closing prices of an asset for a specific time period, or :term:`bucket`. `More information <https://en.wikipedia.org/wiki/Candlestick_chart>`__.
+        Candle, or a candlestick is a type of price chart used in technical analysis that displays the high, low, open, and closing prices of an asset for a specific time period, or :term:`bucket`.
+
+        `More information on Wikipedia <https://en.wikipedia.org/wiki/Candlestick_chart>`__.
+
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Bucket`
 
     Bucket
 
-        The (time) bucket to a time period for :term:`candle` data. For example, you can have one minute, one hour or time buckets, describing for the what period of a time the candle includes the trades.
+        The (time) bucket to a time period for :term:`candle` data.
+
+        For example, you can have one minute, one hour or time buckets, describing for the what period of a time the candle includes the trades.
 
         Also known as time frame, candle length or candle duration.
+
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Bucket`
+
+        - :term:`Trading strategy`
 
     OHLCV
 
         A typical :term:`candle` contains open, high, low and close price and trade volume for a :term:`time bucket <bucket>`. Because on-chain exposes more data than centralised exchanges, Trading Strategy data also contains individual buys and sells, US dollar exchange rate and so forth.
+
+        See also
+
+        - :term:`Candle`
+
+        - :term:`Bucket`
+
+        - :term:`Trading strategy`
 
     Parquet
 
@@ -214,11 +294,23 @@ and algorithmic trading.
 
     Strategy
 
-        Also known as trading strategy or algorithm. A trading strategy is a rulebook of what trades to make and how. In the context of quantitative finance, and especially automated trading, this rulebook can be expressed as an algorithm and trading bot that has programmed rules for every situation the strategy may encounter.
+        In a :term:`decentralised finance`, strategy refers to :`trading strategy`.
+
+        See :term:`trading strategy`.
 
     Technical analysis
 
-        Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analysing statistical trends gathered from trading activity, such as price movement and volume. `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
+        Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analysing statistical trends gathered from trading activity, such as price movement and volume.
+
+        `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Best trading algorithm`
 
     Backtrader
 
@@ -253,6 +345,8 @@ and algorithmic trading.
 
         - :term:`Decentralised exchange`
 
+        - :term:`ERC-20`
+
     Quote token
 
         The token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
@@ -264,6 +358,8 @@ and algorithmic trading.
         - :term:`Base token`
 
         - :term:`Decentralised exchange`
+
+        - :term:`ERC-20`
 
     Liquidity
 
@@ -301,7 +397,17 @@ and algorithmic trading.
 
     High-frequency trading
 
-        High-frequency trading, or HFT for short, is a trading strategy where you do arbitration, cross-market market making or such and compete against the other actors with your technical speed. Trading Strategy is not a suitable framework for HFT trading, though its data can aid to come up with good HFT strategies.
+        High-frequency trading, or HFT for short, is a :term:`trading strategy` where you compete with technical speed.
+
+        HFT strategies include arbitration, cross-market market making or such and compete against the other actors with your technical speed.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Market neutral strategy`
 
     Directional strategy
 
@@ -347,16 +453,31 @@ and algorithmic trading.
 
         Drawdown refers to the peak-to-trough decline in the value of an investment, usually measured as the percentage of an investment's peak value. It is a measure of the risk of an investment, as it indicates the amount that an investment can decline before it reaches a new high. Drawdown can also refer to the period of time during which an investment's value is in decline.
 
-        `Read more <https://en.wikipedia.org/wiki/Drawdown_(economics)>`__.
+        See also
+
+        - :term:`Maximum drawdown`
+
+        - :term:`Risk-adjusted return`
 
     Maximum drawdown
+
+        Maximum drawdown (MDD) is the largest peak-to-trough decline in the value of an investment over a specific period of time.
 
         The maximum :term:`drawdown` is how much your portfolio goes down in the examination period,
         or maximum amount of loss if you had entered and exited at the worst possible moment.
 
-        Maximum drawdown (MDD) is the largest peak-to-trough decline in the value of an investment over a specific period of time. It is a measure of the risk of an investment, as it indicates the largest amount that an investment can decline from its highest point to its lowest point during a specific period of time. MDD is typically used to measure the risk of a portfolio or investment strategy, and is often expressed as a percentage of the investment's peak value.
+        It is a measure of the risk of an investment, as it indicates the largest amount that an investment can decline from its highest point to its lowest point during a specific period of time. MDD is typically used to measure the risk of a portfolio or investment strategy, and is often expressed as a percentage of the investment's peak value.
 
         As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Drawdown`
+
+        - :term:`Risk-adjusted return`
+
 
     USDC
 
@@ -631,6 +752,14 @@ and algorithmic trading.
         transaction fees on :term:`EVM-compatible` blockchain. For Ethereum it is ETH,
         for Polygon it is MATIC and for Binance Smart Chain it is BNB.
 
+        See also
+
+        - :term:`ERC-20`
+
+        - :term:`Base token`
+
+        - :term:`Quote token`
+
     TWAP
 
         TWAP or Time-weighted Average Price is a calculation that defines the weighted average price over a specified period.
@@ -645,6 +774,10 @@ and algorithmic trading.
         `On the security and compromises of price oracles <https://ethereum.stackexchange.com/a/114990/620>`__.
 
         `Read Uniswap v3 TWAP oracle manipulation cost <https://github.com/euler-xyz/uni-v3-twap-manipulation/blob/master/cost-of-attack.pdf>`__.
+
+        See also
+
+        - :term:`Trading strategy`
 
     Face value
 
@@ -773,19 +906,29 @@ and algorithmic trading.
 
     Algorithmic trading
 
-        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume. It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimise the timing of trades.
+        Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume.
 
-    Trading strategy
+        It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimise the timing of trades.
 
-        A trading strategy is a fixed plan that is designed to achieve a profitable return by going long or short in markets. It involves analysis to identify specific market conditions and price levels. There are many different types of trading strategies, such as trend following, scalping, and arbitrage.
+        See also
 
-        See also :term:`algorithmic trading` and :term:`alpha generation platform`.
+        - :term:`Trading strategy`
+
+        - :term:`Automated trading strategy`
 
     Automated trading strategy
 
-        Automated trading strategies are computer programs that follow a defined set of instructions to execute trade orders.. Common automated trading strategies include moving average cross strategies, which buy when the stock price rises above the moving average and sell when it falls below[, and trend-following strategies, which follow the mainstream trends and momentum in the market.
+        Automated trading strategies are computer programs that follow a defined set of instructions to execute trade orders.
 
-        See also :term:`trading strategy`,:term:`algorithmic trading` and :term:`alpha generation platform`..
+        Common automated trading strategies include moving average cross strategies, which buy when the stock price rises above the moving average and sell when it falls below, and trend-following strategies, which follow the mainstream trends and momentum in the market.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`alpha generation platform`
 
     Trading algorithm
 
@@ -1081,6 +1224,14 @@ and algorithmic trading.
         born to Ethereum clone chains like Polygon, Avalanche C-Chain and
         BNB Chain.
 
+        See also
+
+        - :term:`Wallet`
+
+        - :term:`ERC-20`
+
+        - :term:`Erigon`
+
     Reserve currency
 
         In the :term:`trading strategy` terminology, a reserve currency
@@ -1196,6 +1347,10 @@ and algorithmic trading.
 
         - :term:`Decentralised exchange`
 
+        - :term:`ERC-20`
+
+        - :term:`On-chain`
+
     Liquidity provider
 
         Liquidity providers (LPs) are users that deposit their assets to the :term:`liquidity pools <liquidity pool>` of an Automated Market Maker (:term:`AMM`).
@@ -1263,3 +1418,89 @@ and algorithmic trading.
         - :term:`base token`
 
         - :term:`quote token`
+
+    Best trading algorithm
+
+        The best trading algorithm in the world is one that makes most profit.
+
+        Depending on the the market situation and available :term:`trading pairs <trading pair>`,
+        the best trading algorithm can vary day by day. See :term:`trading strategy` term
+        to get an overall summary of different available trading algorithms.
+
+        A trading algoritmn can generally yield 5% - 300% yearly profit depending on the
+        amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`.
+
+        The usual ways to rank :term:`trading algorithms <trading algorithm>` include
+
+        - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Trading algorithm`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Quantitative analysis`
+
+    Risk-adjusted return
+
+        Risk-adjusted return is a calculation of the return (or potential return) on an investment such as a stock or corporate bond when compared to the amount of risk the investment has represented throughout a given period of time.
+
+        It is measured by taking into account the risk associated with an investment and comparing it to its return.
+        The risk can be measured e.g. as a :term:`maximum drawdown`.
+
+        See also
+
+        - :term:`Risk-free rate`
+
+        - :term:`Best trading algorithm`
+
+        - :term:`Cumulative profit`
+
+        - :term:`Equity curve`
+
+        - :term:`Drawdown`
+
+        - :term:`Maximum drawdown`
+
+    Cumulative profit
+
+        Cumulative profit tells the overall profit of :term:`trading strategy` over a time.
+
+        Cumulative profit is the excess of net income and gains over net losses, determined on a cumulative basis from the inception of an investment fund through to its termination date.
+        It includes realized trading P&L, positions open P&L, and other total profits or losses generated since the :term:`trading strategy`'s inception.
+
+        To calculate cumulative profit, one must add together all net profit numbers over a specific time frame.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Equity curve`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Best trading algorithm`
+
+    Equity curve
+
+        An equity curve is a graphical representation of the change in the value of a trading account over a time period.
+
+        Equity curves are used by traders to determine the viability of their :term:`trading strategies <trading strategy>`.
+        A good equity curve has an even slope, small and short-lived :term:`drawdowns <drawdown>`, and a good amount of trades to make the observation statistically significant.
+
+        Equity curve trading is a methodology where a trading strategy is turned on and off based on the performance of an equity curve, which is a plot showing the growth of capital over time from one specific :term:`trading strategy` or portfolio.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Cumulative profit`
+
+        - :term:`Drawdown`
