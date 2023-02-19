@@ -31,6 +31,16 @@ and algorithmic trading.
 
         - :term:`Market neutral <Market neutral strategy>`
 
+        - :term:`Yield farming`
+
+        Further strategies can be classified by their activity and risk profile as
+
+        - :term:`Directional strategies <directional strategy>`
+
+        - :term:`Active strategies <active strategy>`
+
+        - :term:`Passive strategies <passive strategy>`
+
         The trading strategy can be automated as :term:`algorithmic trading` and thus
         become :term:`automated trading strategy`.
 
@@ -56,6 +66,8 @@ and algorithmic trading.
         - :term:`Market neutral strategy`
 
         - :term:`Factor investing`
+
+        - :term:`Yield farming`
 
 
     AMM
@@ -88,13 +100,17 @@ and algorithmic trading.
 
         - :term:`Swap`
 
+        - :term:`Liquidity provider`
+
     CLMM
 
         CLMM stands for Concentrated Liquidity Market Maker.
 
         CLMM is a form of :term:`AMM`.
-        CLMMs provide more capital-efficient liquidity on a :term:`DEX`.
-        It allows liquidity providers to set specific price ranges, add single-sided liquidity and do range order trading,
+        CLMMs provide more capital-efficient :term:`liquidity` on a :term:`DEX`.
+
+        It allows :term:`liquidity providers <liquidity provider>` to set specific price ranges,
+        add single-sided liquidity and do range order trading,
         similar to :term:`order books <order book>`.
 
         See also
@@ -110,6 +126,8 @@ and algorithmic trading.
         - :term:`Liquidity pool`
 
         - :term:`Swap`
+
+        - :term:`Liquidity provider`
 
     On-chain
 
@@ -187,10 +205,20 @@ and algorithmic trading.
 
     Smart contract
     
-        An automated transactional service running on any of the blockchains supporting smart contracts.It contains the terms of the agreement between parties, and automatically executes the terms when certain predetermined conditions are met. Smart contracts are tamper-proof, transparent, and autonomous, and they eliminate the need for intermediaries such as lawyers, brokers, or banks. This makes them a secure and efficient way to automate financial transactions, manage digital assets, or automate other types of agreements
+        Smart contract is automated transactional service running on any of the blockchains.
+
+        A smart contract contains the terms of the agreement between parties, and automatically executes the terms when certain predetermined conditions are met. Smart contracts are tamper-proof, transparent, and autonomous, and they eliminate the need for intermediaries such as lawyers, brokers, or banks. This makes them a secure and efficient way to automate financial transactions, manage digital assets, or automate other types of agreements
 
         An automated transactional service running on any of the blockchains supporting smart contracts. Typically
         runs on Ethereum-based blockchain and is written in the Solidity programming language.
+
+        See also
+
+        - :term:`On-chain`
+
+        - :term:`Non-custodial`
+
+        - :term:`Wallet`
 
     Jupyter notebook
 
@@ -216,6 +244,8 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Decentralised finance`
+
+        - :term:`Smart contract`
 
         - :term:`On-chain`
 
@@ -406,11 +436,30 @@ and algorithmic trading.
 
     Yield farming
 
-        Pooling assets of multiple people for passive trading strategies.
+        Yield farming is a :term:`passive trading strategy <passive strategy>` in :term:`decentralised finance`.
 
-        Usually yield farming pools rely on liquidity mining token distribution which they immediately sell (auto compounding).
+        Usually yield farming strategies rely on :term:`on-chain` :term:`liquidty pools <liquidity pool>` and liquidity mining token distributions,
+        which where any tokens are immediately sold. Strategies can be :term:`auto-compounding`.
 
-        Yield farms operate solely on smart contracts and their strategies are limited. Yield farms almost always take zero market risk against their :term:`quote token`.
+        Yield farms operate solely on smart contracts and their strategies are limited.
+
+        Yield farms almost always aim for :term:`risk-free rate` against their :term:`quote token`.
+
+        See also
+
+        - :term:`Passive strategy`
+
+        - :term:`Exposure`
+
+        - :term:`Smart contract`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Market neutral strategy`
 
     Exposure
 
@@ -442,6 +491,12 @@ and algorithmic trading.
         
         Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
 
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Active strategy`
+
     Active strategy
 
         Active strategy in relation to algorithmic trading refers to a type of investment or trading approach that uses algorithms to make regular, data-driven decisions about buying and selling assets. This approach is designed to generate higher returns and outperform passive investment strategies.
@@ -449,6 +504,36 @@ and algorithmic trading.
         Active strategies in algorithmic trading differ from passive strategies, which simply follow the market and hold assets for the long-term, in that they actively seek to generate higher returns through regular buying and selling of assets. This can involve taking advantage of short-term market movements, or making trades based on a variety of market indicators and economic data.
 
         `Read more <https://www.investopedia.com/articles/active-trading/11/four-types-of-active-traders.asp>`__.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Directional strategy`
+
+        - :term:`Passive strategy`
+
+    Passive strategy
+
+        Passive investing is a long-term :term:`trading strategy` for building wealth by buying securities that mirror stock market indexes and holding them long term.
+
+        A passive strategy involves minimal trading in the market, with investors buying and holding a diversified mix of assets to match, but not beat, the performance of an index.
+        The passive investing strategy is based on the premise that a low-cost, well-diversified portfolio will produce an average market return.
+
+        Often, in :term:`decentralised finance`, passive strategies aims to beat :term:`risk-free rate` without any additional :term:`exposure`
+        and :term:`drawdown`.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Active strategy`
+
+        - :term:`Yield farming`
+
+        - :term:`Exposure`
+
+        - :term:`Drawdown`
 
     Non-custodial
 
@@ -464,6 +549,8 @@ and algorithmic trading.
 
         - :term:`Custodial`
 
+        - :term:`Decentralised finance`
+
     Private strategy
 
         A trading strategy where the source code of the strategy is not disclosed to the public. Private strategies can still be :term:`non-custodial` and enjoy the benefits of Trading Strategy protocol trade execution and fee distribution.
@@ -471,6 +558,16 @@ and algorithmic trading.
     Risk-free rate
 
         The expected return for the money that is considered (almost) risk-free. On the traditional markets, this is the treasury note or government bond yield (although you still have some risks like the sovereignty risk). In DeFi this is considered an US dollar lending pool rate, like one you would get from Aave :term:`USDC` pool.
+
+        See also
+
+        - :term:`Stablecoin`
+
+        - :term:`Lending pool`
+
+        - :term:`Passive strategy`
+
+        - :term:`Drawdown`
 
     Drawdown
 
@@ -1494,7 +1591,10 @@ and algorithmic trading.
         The best trading algorithm in the world is one that makes most profit.
 
         Depending on the the market situation and available :term:`trading pairs <trading pair>`,
-        the best trading algorithm can vary day by day. See :term:`trading strategy` term
+        the best trading algorithm can vary day by day, or depending whether the markets are in
+        :term:`bull market` or :term:`bear market`.
+
+        See :term:`trading strategy` term
         to get an overall summary of different available trading algorithms.
 
         A trading algoritmn can generally yield 5% - 300% yearly profit depending on the
@@ -1574,3 +1674,21 @@ and algorithmic trading.
         - :term:`Cumulative profit`
 
         - :term:`Drawdown`
+
+    Auto-compounding
+
+        Auto-compounding is an investment strategy in which the user's investment yields are automatically reinvested into the investment principal at regular intervals.
+
+        Compounding is a powerful investing concept that involves earning returns on both the original investment and on returns received previously.
+        It is considered one of the smartest investment strategies, as it can generate additional earnings over time.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Cumulative profit`
+
+        - :term:`Drawdown`
+
