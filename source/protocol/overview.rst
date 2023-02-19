@@ -137,7 +137,7 @@ investor assets.
   There are no centralised services.
 
 `EIP-4626 <https://eips.ethereum.org/EIPS/eip-4626>`_ is a popular
-vault smart contract standard for :term:`EVM compatible` blockchains.
+vault smart contract standard for :term:`EVM-compatible` blockchains.
 
 Consensus smart contract
 ~~~~~~~~~~~~~~~~~~~~~~~~

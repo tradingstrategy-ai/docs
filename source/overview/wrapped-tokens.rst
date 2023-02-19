@@ -3,7 +3,7 @@
 Wrapped tokens
 ==============
 
-Due to legacy design issues with :term:`EVM compatible` blockchains,
+Due to legacy design issues with :term:`EVM-compatible` blockchains,
 any :term:`native token` must be "wrapped" in order it to be used with
 :term:`decentralised exchanges <decentralised exchange>`.
 

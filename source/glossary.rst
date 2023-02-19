@@ -14,9 +14,51 @@ and algorithmic trading.
 
         An automated market maker (AMM) is a type of decentralised exchange (DEX) that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralised exchange of digital assets using liquidity pools rather than conventional market order books.
 
+        AMMs can be often seen as the opposite of :term:`order book` markets.
+        In an AMM, the user is trading against :term:`liquidity pool`.
+
+        AMMs can be
+
+        - :term:`Bonding curve` based using :term:`XY liquidity model`.
+
+        - :term:`CLMM` based using concentrated liquidity model
+
         Example AMMs include Uniswap, Curve, Sushi, Trader Joe.
 
-        See also :term:`XY Liquidity Model`.
+        See also
+
+        - :term:`Decentralised exchange`
+
+        - :term:`XY Liquidity Model`
+
+        - :term:`Order book`
+
+        - :term:`Liquidity pool`
+
+        - :term:`Swap`
+
+    CLMM
+
+        CLMM stands for Concentrated Liquidity Market Maker.
+
+        CLMM is a form of :term:`AMM`.
+        CLMMs provide more capital-efficient liquidity on a :term:`DEX`.
+        It allows liquidity providers to set specific price ranges, add single-sided liquidity and do range order trading,
+        similar to :term:`order books <order book>`.
+
+        See also
+
+        - :term:`AMM`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`XY Liquidity Model`
+
+        - :term:`Order book`
+
+        - :term:`Liquidity pool`
+
+        - :term:`Swap`
 
     On-chain
 
@@ -39,9 +81,36 @@ and algorithmic trading.
 
     Decentralised exchange
 
-        Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`. These exchanges are public, fair, cheap and especially censorship proof. There is no middleman like a broker when you are trading on these venues, but you get equal access to the trade flow. Decentralised exchanges can be :term:`AMM` based or order book based. Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
+        Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`.
 
-        See also :term:`CEX`.
+        These exchanges are public, fair, cheap and especially censorship proof.
+        There is no middleman like a broker when you are trading on these venues, but you get equal access to the trade flow.
+        Users trade using their :term:`non-custodial <non-custodial>` :term:`wallets <wallet>` performing :term:`swaps <swap>`.
+
+        A decentralised exchange is an opposite of :term:`CEX`. Decentralised exchanges are always
+        :term:`smart contract` based.
+
+        Decentralised exchanges can be based on different models:
+
+        - term:`AMM`
+
+        - term:`CLMM`
+
+        - term:`Order book`
+
+        Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
+
+        See also
+
+        - :term:`CEX`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Swap`
+
+        - :term:`Non-custodial`
+
+        - :term:`Smart contract`
 
     Autonomous agent
 
@@ -170,17 +239,35 @@ and algorithmic trading.
 
     Base token
 
-        A base token, in the context of cryptocurrencies, refers to the primary token or asset used in a specific trading pair or exchange. The base token is the token that is being traded or exchanged for another token, typically a quote token,  see also :term:`quote token`. For example, in the trading pair BTC/USD, BTC is the base token and USD is the quote token. The price of the quote token is quoted in terms of the base token.
+        A base token, in the context of cryptocurrencies, refers to the primary token or asset used in a specific :term:`trading pair` or exchange. The base token is the token that is being traded or exchanged for another token, typically a quote token,  see also :term:`quote token`. For example, in the trading pair BTC/USD, BTC is the base token and USD is the quote token. The price of the quote token is quoted in terms of the base token.
 
         The base token is an important concept in the cryptocurrency market, as it determines the value of the other token in a trading pair. In other words, the price of the quote token is derived from the price of the base token. This relationship between the base token and the quote token is used to determine the price of the quote token, which can then be used to determine the value of other assets that are pegged to it.
+
+        See also :term:`trading pair`.
 
     Quote token
 
         The token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
 
+        See also :term:`trading pair`.
+
     Liquidity
 
-        Liquidity refers to the depth of the order books: how much volume a single trade can achieve without moving the price. It can be expressed as :term:`slippage` or absolute depth of the order book. The latter is very easy for :term:`AMM` based exchanges where the liquidity is a continuous function. Trading Strategy provides :term:`datasets <dataset>` for AMM liquidity in :py:mod:`capitalgram.liquidity` module.
+        Liquidity refers to the depth of the order books: how much volume a single trade can achieve without moving the price.
+
+        It can be expressed as :term:`slippage` or absolute depth of the order book. The latter is very easy for :term:`AMM` based exchanges where the liquidity is a continuous function.
+
+        Trading Strategy provides :term:`datasets <dataset>` for :term:`AMM` liquidity.
+
+        See also
+
+        - :term:`Trading pair`
+
+        - :term:`Liquidity pool`
+
+        - :term:`Swap`
+
+        - :term:`Swap fee`
 
     Yield farming
 
@@ -220,7 +307,17 @@ and algorithmic trading.
 
     Non-custodial
 
-        A smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most traditional finance services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The non-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+        Non-custodial means that a third party does not have ownership of your assets in a service.
+
+        A non-custodial model usually means s smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most traditional finance services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The non-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+
+        Non-custodial protocol models have become popular in a blockchain, after FTX and Celsius blow-ups: not your keys, not your coins.
+
+        See also
+
+        - :term:`Wallet`
+
+        - :term:`Custodial`
 
     Private strategy
 
@@ -249,9 +346,24 @@ and algorithmic trading.
 
     USDC
 
-        USDC (USD Coin) is a stablecoin, meaning it is a cryptocurrency that is pegged to the value of the US Dollar. It is designed to maintain a value of 1 USDC = 1 USD, and its value is backed by US dollars held in reserve. USDC is used for a variety of purposes in the cryptocurrency space, including as a unit of account for trading, for remittances and as a medium of exchange. It operates on the Ethereum blockchain and is a popular choice for traders looking for a stable store of value in the cryptocurrency markets.
+        USDC (USD Coin) is a :term:`stablecoin`, meaning it is a cryptocurrency that is pegged to the value of the US Dollar. It is designed to maintain a value of 1 USDC = 1 USD, and its value is backed by US dollars held in reserve. USDC is used for a variety of purposes in the cryptocurrency space, including as a unit of account for trading, for remittances and as a medium of exchange. It operates on the Ethereum blockchain and is a popular choice for traders looking for a stable store of value in the cryptocurrency markets.
 
-        `Read more <https://www.circle.com/en/usdc>`__.
+        `Read more <https://www.circle.com/en/usdc>`__.\
+
+        See also :term:`stablecoin`.
+
+    Stablecoin
+
+        A stablecoin is a type of cryptocurrency whose value is tied to an asset such as the U.S. dollar or gold to maintain a stable price.
+        Stablecoins aim to provide price stability and reduce volatility compared to other cryptocurrencies.
+
+        Example stablecoins include
+
+        - Circle USD - :term:`USDC`.
+
+        - Binance dollar - BUSD
+
+        - Tether dollar - USDT
 
     Pine Script
 
@@ -375,7 +487,7 @@ and algorithmic trading.
 
     Enzyme
 
-        Enzyme is a fund back-office protocol for :term:`EVM compatible`
+        Enzyme is a fund back-office protocol for :term:`EVM-compatible`
         blockchains.
 
         See `Enzyme Finance <https://enzyme.finance/>`__ for more information.
@@ -662,23 +774,31 @@ and algorithmic trading.
 
         A “token” tax is a term often used to describe tokens with transfer fees that cause deflation or redistribute trade profits to the protocol development:
 
-        Each time a token is transferred, some transferred amount is burned, redirected to a development fund or otherwise “taxed”.
+        - Each time a token is transferred, some transferred amount is burned, redirected to a development fund or otherwise “taxed”.
 
-        Token tax is usually paid by the originator wallet that initiates the transfer. The tax is taken from the sent amount during the transfer: initiated transfer amount > received transfer amount.
+        - Token tax is usually paid by the originator wallet that initiates the transfer. The tax is taken from the sent amount during the transfer: initiated transfer amount > received transfer amount.
 
-        Token tax may also reduce the token supply, thus creating deflationary tokens. The deflationary assumption comes from the economic theory that by reducing the supply, the value of the goods should go up. The most famous cryptocurrency having such deflationary mechanics is Ethereum and its EIP-1559 burning mechanism.
+        - Token tax may also reduce the token supply, thus creating deflationary tokens. The deflationary assumption comes from the economic theory that by reducing the supply, the value of the goods should go up. The most famous cryptocurrency having such deflationary mechanics is Ethereum and its EIP-1559 burning mechanism.
 
-        Token tax can redirect some of the transfer and trading fees to the protocol development fund. This can guarantee sustainable protocol development outside any initial fundraising.
+        - Token tax can redirect some of the transfer and trading fees to the protocol development fund. This can guarantee sustainable protocol development outside any initial fundraising.
 
         Usually, the token tax term is not used for the native gas token on a blockchain, like Ether (ETH) on Ethereum, where any transfer fee is considered to be a natural part of the core protocol. The token tax term applies to ERC-20-like tokens that historically have lacked transfer fee features. There is no terminology standard, so different terms are applied in different contexts.
 
         Different % amounts of “taxes” may apply to different types of transactions like buy, sell, and treasury management.
 
-        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__. See also :term:`honey pot`.
+        See also
+
+        - :term:`swap fee`
+
+        - :term:`honey pot`
+
+        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__ in our introduction blog post.
         
-    Order book model
+    Order book
     
-        An order book model is a type of exchange that operates based on an order book, a record of all buy and sell orders for a particular asset. In an order book exchange, users can place limit orders, specifying the price and quantity they are willing to buy or sell an asset for. When a matching buy and sell order is found, a trade is executed, and the exchange takes a small fee for facilitating the transaction. Order book exchanges provide more precise price discovery and allow users to take advantage of market inefficiencies, but can suffer from liquidity issues and are more susceptible to front-running and other forms of market manipulation.
+        An order book is a type of market that operates based on an order book, a record of all buy and sell orders for a particular asset.
+
+        In an order book exchange, users can place limit orders, specifying the price and quantity they are willing to buy or sell an asset for. When a matching buy and sell order is found, a trade is executed, and the exchange takes a small fee for facilitating the transaction. Order book exchanges provide more precise price discovery and allow users to take advantage of market inefficiencies, but can suffer from liquidity issues and are more susceptible to front-running and other forms of market manipulation.
 
         Overall, order book exchanges offer a more traditional trading experience compared to Automated Market Maker (AMM) exchanges, but with the added benefits of being decentralised and secure.
 
@@ -808,6 +928,8 @@ and algorithmic trading.
 
         As such, it is important for users to carefully consider the reputation and track record of a custodial service before entrusting their assets to them, and to ensure that they understand the risks and benefits associated with this type of service.
 
+        See also :term:`non-custodial`.
+
     Lending pool
 
         Lending pools refer to a platform or service where users can lend their cryptocurrency assets to others in exchange for interest. The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
@@ -815,6 +937,12 @@ and algorithmic trading.
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
 
         Lending pools are typically run on decentralised finance (DeFi) platforms, which use blockchain technology to create a decentralised, trustless financial system. This means that the platform operates on open-source software and operates transparently and immutably, allowing for secure and transparent transactions.
+
+        See also
+
+        - :term:`Stablecoin`
+
+        - :term:`Decentralised exchange`
 
     Cumulative return
 
@@ -911,6 +1039,14 @@ and algorithmic trading.
         The token standard has been adopted by other EVM-based blockchains like
         BNB Chain, Polygon, Avalanche C-Chain and Fantom.
 
+        See also
+
+        - :term:`Smart contract`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Wallet`
+
     EVM-compatible
 
         EVM compatible means that a blockchain uses the same EVM architecture
@@ -929,7 +1065,7 @@ and algorithmic trading.
         are withdrawn.
 
         A common reserve currency for :term:`decentralised finance` strategies
-        is :term:`USDC`.
+        is :term:`USDC` :term:`stablecoin`.
 
     Curl
 
@@ -938,3 +1074,169 @@ and algorithmic trading.
         cURL commands allow users to transfer data without user interaction using supported libcurl libraries[5]
 
         `Read more at Curl website <https://curl.se/>`__.
+
+    Swap
+
+        In :term:`AMM`-based decentralised exchanges trades called called swaps.
+
+        In a swap you you trade against :term:`liquidity providers <liquidity provider>`
+        with market order like trades.
+
+        The user interacts with a :term:`liquidity pool` using their term:`non-custodial` :term:`wallet`
+        to perform a swap.
+
+        Some example swaps:
+
+        - In a buy swap, you bought cryptocurrency token with a stable coin,
+          e.g. you buy AVAX with :term:`USDC` :term:`stablecoin`
+
+        - In a buy sell, you bought cryptocurrency token with a stable coin,
+          e.g. you sell AVAXs to gain USDC in your :term:`wallet`
+
+        Swaps are used on `AMMs <AMM>`.
+
+        See also
+
+        - :term:`Swap fee`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Liquidity pool`
+
+        - :term:`AMM`
+
+    Swap fee
+
+        Swap fee is the part cost of a trade on :term:`AMM` markets.
+
+        In :term:`AMM`-based decentralised exchanges trades called called :term:`swaps <swap>`.
+
+        Swap fee includes
+
+        - :term:`liquidity provider` reward, usually 0.05% - 0.30%
+
+        - :term:`protocol fee`, usually 0.00% - 0.05%
+
+        Swap fees usually exclude
+
+        - :term:`price impact`
+
+        - :term:`slippage`
+
+        See also
+
+        - :term:`Swap`
+
+        - :term:`AMM`
+
+        - :term:`Liquidity provider`
+
+        - :term:`XY Liquidity Model`
+
+        - :term:`Bonding curve`
+
+    Protocol fee
+
+        In :term:`AMM`-based decentralised exchanges a protocol fee is the fee
+        taken from your trading costs that goes towards the protocol treasury.
+
+        Protocol fee is revenue for the protocol itself.
+
+        The distribution of the protocol fee is decided by a DAO.
+
+        Usually protocol fee is 0.00% (Uniswap v3 default) - 0.005% (PancakeSwap, Sushi).
+
+        See also
+
+        - :term:`Swap fee`
+
+        - :term:`Decentralised exchange`
+
+    Wallet
+
+        In a blockchain, a wallet refers to an application that offers interaction
+        to your :term:`non-custodial` blockchain account.
+
+        Popular wallets include
+
+        - MetaMask (a web browser extension)
+
+        - Avalanche Core (a web browser extension)
+
+        - TrustWallet (a mobile application)
+
+        - Ledger (a hardware wallet)
+
+        See also
+
+        - :term:`Non-custodial`
+
+        - :term:`Decentralised exchange`
+
+    Liquidity provider
+
+        Liquidity providers (LPs) are users that deposit their assets to the :term:`liquidity pools <liquidity pool>` of an Automated Market Maker (:term:`AMM`).
+
+        Liquidity providers are crowdsourced collections of crypto assets used by the AMM to trade with people buying or selling one of these assets.
+        AMMs use pre-programmed mathematical equations to adjust prices based on supply in order to make sure the ratio of assets in any liquidity pool is maintained.
+
+        See also
+
+        - :term:`AMM`
+
+        - :term:`Swap fee`
+
+        - :term:`Liquidity pool`
+
+    Liquidity pool
+
+        Liquidity pool is the available trading liquidity of a single :term:`trading pair` in :term:`AMM`.
+
+        In a liquidity pool, :term:`liquidity providers <liquidity provider>` pool together one of more tokens
+        that users can trade against. For providing liquidity, the providers are rewarded in :term:`swap fees <swap fee>`.
+
+        Liquidity pools are often their own smart contracts that can be easily explored and tracked in a blockchain explorer.
+
+        See also
+
+        - :term:`Liquidity`
+
+        - :term:`Trading pair`
+
+        - :term:`Swap fee`
+
+        - :term:`AMM`
+
+    Trading pair
+
+        In :term:`decentralised finance`, trading pair represents a market for a two or more tokens.
+
+        An example trading pair can be `BNB/BUSD trading pair on PancakeSwap <https://tradingstrategy.ai/trading-view/binance/pancakeswap-v2/bnb-busd>__`.
+
+        Trading pairs are named as a "ticker" based on their :term:`base token` and :term:`quote token` symbols.
+
+        Sometimes trading pairs are also called pools, because they are :term:`liquidity pool` mechanism
+        based.
+
+        Unlike in traditional finance, in :term:`decentralised finance` a trading pair can also consists
+        of three or more assets. This is especially popular in :term:`stablecoin` markets.
+
+        Trading pairs can be
+
+        - :term:`Order book` based
+
+        - :term:`Liquidity pool` based
+
+        See also
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Lending pool`
+
+        - :term:`Liquidity pool`
+
+        - :term:`AMM`
+
+        - :term:`base token`
+
+        - :term:`quote token`
