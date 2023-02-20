@@ -2386,6 +2386,14 @@ and algorithmic trading.
         The :term:`native token` of Avalanche is `AVAX <https://tradingstrategy.ai/trading-view/avalanche/tokens/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7>`__.
         The most popular :term:`decentralised exchange` on Avalanche is `Trader Joe <https://tradingstrategy.ai/trading-view/avalanche/trader-joe>`__.
 
+        Popular subnets include
+
+        - Avalanche C-Chain, generic :term:`EVM-Compatible` chain
+
+        - Dexalot - :term:`EVM-Compatible` :term:`decentralised exchange` chain
+
+        - Swimmer Network - the :term:`app chain` for Crabada idle-game
+
         See also
 
         - :term:`Web3`
