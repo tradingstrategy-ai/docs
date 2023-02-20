@@ -280,9 +280,15 @@ and algorithmic trading.
         lack the same technical understanding as the original founding tech team, forks suffer from hacks
         and are often abandon after a short period of time.
 
+        Examples of forks include :term:`BNB Chain` and :term:`Sushi`.
+
         See also
 
         - :term:`Decentralised finance`
+
+        - :term:`BNB Chain`
+
+        - :term:`Sushi`
 
     Candle
 
@@ -2008,3 +2014,27 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Token`
+
+    Sushi
+
+        In :term:`decentralised finance`, Sushi, also
+        known as SushiSwap, is one of the largest :term:`AMM` :term:`decentralised exchanges <decentralised exchange>`.
+
+        Sushi started as a :term:`fork` of :term:`Uniswap`. The later Sushi versions added support for
+        :term:`CLMM` :term:`liquidity` models and many other trading features.
+
+        Sushi is launched on many blockchains, including Ethereum mainnet, Polygon, Avalanche and
+        :term:`BNB Chain`. `View Sushi on Ethereum mainnet <https://tradingstrategy.ai/trading-view/ethereum/sushi>`__.
+
+        See also
+
+        - :term:`Uniswap`
+
+        - :term:`Fork`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`AMM`
+
+        - :term:`CLMM`
+
