@@ -1901,16 +1901,18 @@ and algorithmic trading.
 
     BNB Chain
 
-        BNB Chain is an :term:`EVM-Compatible` blockchain from Binance cryptocurrency exchange.
+        BNB Chain is an :term:`EVM-Compatible` blockchain from the Binance cryptocurrency exchange.
 
         BNB Chain is a direct :term:`fork` of Ethereum.
 
-        BNB offers good interaction with Binance cryptocurrency exchange (:term:`CEX`), making it attractive
-        for the users of this exchange. A as the writing of this, Binance has 70% market
+        BNB Chain offers good interaction with the Binance cryptocurrency exchange (:term:`CEX`), making it attractive
+        for the users of this exchange. As of the writing of this, Binance has a 70% market
         share of the cryptocurrency trading volume, making it very dominant in the blockchain industry.
 
         BNB Chain is based on centralised, proof-of-authority. model.
         `BNB Chain was recently halted in a hack <https://cointelegraph.com/news/bnb-chain-confirms-bsc-halt-due-to-potential-exploit>`__.
+        It uses `BNB token <https://tradingstrategy.ai/trading-view/binance/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c>`__
+        as its :term:`native token`.
 
         The dominating :term:`decentralised exchange` on BNB Chain is `PancakeSwap <https://tradingstrategy.ai/trading-view/binance/pancakeswap-v2>`__.
 
@@ -1921,6 +1923,8 @@ and algorithmic trading.
         - :term:`Fork`
 
         - :term:`CEX`
+
+        - :term:`Native token`
 
     Airdrop
 
