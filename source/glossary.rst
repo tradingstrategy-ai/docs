@@ -1138,6 +1138,8 @@ and algorithmic trading.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient.
 
+        Decentralised finance can be seen to be a subset of :term:`web3`.
+
         Example decentralised finance protocols includ
         :term:`decentralised exchanges <decentralised exchange>`,
         like :term:`Uniswap` and :term:`lending protocols <lending protocol>` like :term:`Aave`.
@@ -1149,6 +1151,8 @@ and algorithmic trading.
         - :term:`Traditional finance`
 
         - :term:`Decentralised exchange`
+
+        - :term:`Web3`
 
         - :term:`Non-custodial`
 
@@ -1713,6 +1717,9 @@ and algorithmic trading.
         In a blockchain, a wallet refers to an application that offers interaction
         to your :term:`non-custodial` blockchain account.
 
+        Users interact with different :term:`web3` and :term:`decentralised finance` protocols
+        using their wallets.
+
         Popular wallets include
 
         - MetaMask (a web browser extension)
@@ -1724,6 +1731,8 @@ and algorithmic trading.
         - Ledger (a hardware wallet)
 
         See also
+
+        - :term:`Web3`
 
         - :term:`Non-custodial`
 
@@ -2007,6 +2016,9 @@ and algorithmic trading.
         The latest version, Aave v3, was launched in 2023.
         Aave has an :term:`ERC-20` token `AAVE <https://tradingstrategy.ai/trading-view/ethereum/tokens/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9>`__.
 
+        As the writing of this, Aave has been deployed several blockchains, including Ethereum,
+        Polygon, Arbitrum and Optimism.
+
         See also
 
         - :term:`Decentralised finance`
@@ -2038,3 +2050,56 @@ and algorithmic trading.
 
         - :term:`CLMM`
 
+    GM
+
+        In :term:`decentralised finance` and :term:`web3`, GM is a meme of saying "good morning".
+
+        It is a polite greeting people use to notify they have arrived online. Despite what the name says,
+        it can be used at any time of a day.
+
+        The meme is very popular. For example, Warpcast client for Farcast Web3 protocol has a built-in "GM" button.
+
+        See also
+
+        - :term:`Web3`
+
+        - :term:`Decentralised finance`
+
+    Web3
+
+        Web3 is a social and technical movement to decentralised social media and online communities.
+
+        Web 2.0 led to the concentration of power to few Silicon Valley based social media conglomerates,
+        like Facebook and Twitter. Many creators, users and governments are dissatisfied these companies,
+        as they see them executing profit sharing and censorship powers unfairly.
+
+        Web3 movement aims to address this issue with user owned content.
+        The content is usually digital content and can be pictures, posts, social media profiles or video game assets.
+
+        The content is not siloed,
+        truly owned by the user, and can be transferred across different services and protocols.
+        The profit share is made more fair the users, not the corporation owners, have more negotiation power.
+        This is achieved using open source, blockchains,
+        open protocols, public key cryptography and :term:`token` based governance.
+
+        Web3 protocols are funded using :term:`decentralised finance` instead of private venture capital.
+        Web3 protocols aim to fair :term:`token distribution` so that users would own the largest
+        share of protocol control and revenues.
+
+        Web3 has also other meanings
+
+        - Historically, the technical term
+        `web3 referred to the three original decentralised technologies that were visioned when Ethereum launched <https://twitter.com/moo9000/status/1484463908152881152>`__:
+        Ethereum, shh, and bzz.
+
+        - Web3 foundation is the name of the Swiss non-profit that launched Polkadot blockchain
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
+        - :term:`Token distribution`
+
+        - :term:`Wallet`
