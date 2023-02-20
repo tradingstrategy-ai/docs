@@ -1650,8 +1650,8 @@ and algorithmic trading.
         EVM compatible blockchains can use the existing smart contracts
         like :term:`ERC-20` unmodified. They can also blockchain explorers,
         wallets and such with little modifications. This has lead to
-        born to Ethereum clone chains like Polygon, Avalanche C-Chain and
-        BNB Chain.
+        born to Ethereum clone chains like Polygon, :term:`Avalanche` C-Chain and
+        :term:`BNB Chain`.
 
         See also
 
@@ -1660,6 +1660,10 @@ and algorithmic trading.
         - :term:`ERC-20`
 
         - :term:`Erigon`
+
+        - :term:`BNB Chain`
+
+        - :term:`Avalanche`
 
     Reserve currency
 
@@ -2333,4 +2337,88 @@ and algorithmic trading.
 
         - :term:`Decentralised finance`
 
+    HyperSDK
 
+        HyperSDK is an optimised software development kit to build blockchains from :term:`Avalache`.
+
+        HyperSDK is MerkleDB and has very optimised state sync. The high performance
+        makes HyperSDK optimal for building trading focused :term:`app chains <app chain>`. Theoretical
+        transaction throughput can be up to 50 transactions per second (TPS).
+
+        `See HyperSDK on Github <https://github.com/ava-labs/hypersdk>`__.
+
+        See also
+
+        - :term:`Avalanche`
+
+        - :term:`HyperSDK`
+
+        - :term:`App Chain`
+
+        - :term:`Web3`
+
+    IndexVM
+
+        IndexVM is a blockchain virtual machine built on the top of :term:`HyperSDK`
+        dedicated to increasing the usefulness of the world's content-addressable data by enabling anyone to index it.
+
+        `See IndexVM on Github <https://github.com/ava-labs/indexvm>`__.
+
+        See also
+
+        - :term:`App Chain`
+
+        - :term:`Avalanche`
+
+        - :term:`Web3`
+
+        - :term:`HyperSDK`
+
+    Avalanche
+
+        Avalanche is a blockchain based Avalanche consensus protocol.
+
+        Avalanche supports subnets, where each subnet is partially independent blockchain
+        having its own properties. Some subnets, like Avalanche C-Chain are :term:`EVM-Compatible`.
+        Some subnets, can be more optimised. Subnets can be also :term:`app chains <app chain>`.
+
+        The :term:`native token` of Avalanche is `AVAX <https://tradingstrategy.ai/trading-view/avalanche/tokens/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7>`__.
+        The most popular :term:`decentralised exchange` on Avalanche is `Trader Joe <https://tradingstrategy.ai/trading-view/avalanche/trader-joe>`__.
+
+        See also
+
+        - :term:`Web3`
+
+        - :term:`EVM-Compatible`
+
+        - :term:`HyperSDK`
+
+        - :term:`App Chain`
+
+        - :term:`IndexVM`
+
+    App Chain
+
+        An App Chain, also known as  Application-Specific Blockchains, is a blockchain that is exclusively designed to operate one specific application.
+
+        App Chain eliminates competition for resources away from everyone else using the chain, allowing for greater scalability and flexibility
+
+        Popular app chains include
+
+        - DyDx decentralised futures exchange
+
+        - Vega Protocol exchange
+
+        - Stargaze :term:`NFT` chain on Cosmos
+
+        See also
+
+        - :term:`Web3`
+
+        - :term:`Decentralised finance`
+
+        - :term:`NFT`
+
+        - :term:`Avalanche`
+
+        - :term:`HyperSDK`
