@@ -2309,6 +2309,9 @@ and algorithmic trading.
         while blockchain technology itself is defined as a ledger of decentralized data that is securely
         shared by select participants.
 
+        The most common use case for oracle is to tell the :term:`fair value` of an asset.
+        This can be a :term:`token` or a :term:`real-world asset <RWA>`.
+
         Oracles are security critical system, as they often report prices and if the price is wrong
         the underlying protocol may suffer what is called an oracle attack or a price manipulation attack.
         For example, if in a :term:`lending protocol` the collateral price is wrong,
@@ -2323,6 +2326,10 @@ and algorithmic trading.
         See also
 
         - :term:`Smart contract`
+
+        - :term:`Fair value`
+
+        - :term:`RWA`
 
         - :term:`Decentralised finance`
 
