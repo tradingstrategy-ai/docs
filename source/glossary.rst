@@ -774,14 +774,6 @@ and algorithmic trading.
 
         See also :term:`Price impact`.
 
-    Oracle
-
-        Blockchain oracles are entities that connect blockchains to external systems, thereby
-        enabling smart contracts to execute based upon inputs and outputs from the real world.
-        `Read More <https://chain.link/education/blockchain-oracles>`_
-
-        Trading Strategy :ref:`protocol` has its own :ref:`oracles <oracle>`.
-
     Mid Price
 
         The mid price, in the context of AMM, is the price that reflects the ratio of reserves in one or more pairs. There are three ways we can think about this price. Perhaps most simply, it defines the relative value of one token in terms of the other. It also represents the price at which you could theoretically trade an infinitesimal amount (ε) of one token for the other. Finally, it can be interpreted as the current market-clearing or fair value price of the assets.
