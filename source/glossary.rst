@@ -476,6 +476,10 @@ and algorithmic trading.
 
         - :term:`Market neutral strategy`
 
+        - :term:`Token distribution`
+
+        - :term:`Liquidity mining`
+
     Exposure
 
         The risk of a strategy for the volatility of a particular asset. For example, if you have 100% exposure to ETH and ETH prices drops to zero, you lose all of your money.
@@ -993,14 +997,26 @@ and algorithmic trading.
     Liquidity mining
 
         Liquidity mining is a process where :term:`AMM` liquidity providers for a token are subsidised
-        from a token treasury. Effectively, you are paying people to create liquidity in an AMM pool or
-        an order book.
+        from a token treasury.
+
+        Effectively, you are paying people to create liquidity in an :term:`AMM` :term:`trading pair` or
+        an :term:`order book`.
 
         This is to bootstrap the liquidity from zero to meaningful level, so that users and traders
         can enter and exit positions without significant :term:`price impact`. The liquidity mining
         program assumes that after a certain liquidity level is artificially bootstrapped,
         it can maintain itself better as it has attracted active traders with larger capital pools
         who now have started to trade the token.
+
+        See also
+
+        - :term:`Token distribution`
+
+        - :term:`Airdrop`
+
+        - :term:`Yield farming`
+
+        - :term:`Trading pair`
 
     Mercenary capital
 
@@ -1477,6 +1493,14 @@ and algorithmic trading.
         Due to its decentralised mode, Storj storage and egress costs are very competitive compared
         to centralised cloud offerings such as from Amazon, Microsoft or Google.
 
+        Storj has an :term:`ERC-20` token called `STORJ <https://tradingstrategy.ai/trading-view/ethereum/tokens/0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac>`__.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
     ERC-20
 
         ERC-20 is the original token standard for Ethereum.
@@ -1500,6 +1524,10 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Wallet`
+
+        - :term:`Token`
+
+        - :term:`EVM-Compatible`
 
     EVM-compatible
 
@@ -1835,3 +1863,69 @@ and algorithmic trading.
         - :term:`Fork`
 
         - :term:`CEX`
+
+    Airdrop
+
+        In :term:`decentralised finance`, airdop is a method to :term:`distritube tokens <token distribution>`
+        for the project users for free.
+
+        The goals of an airdrop include making the protocol more decentralised and rewarding the users.
+        The airdrop involves sending :term:`tokens <token>` or making them claimable to the users
+        through a Merkle tree method.
+
+        Historically famous airdrops include :term:`Uniswap`, Optimism and Juno.
+
+        :term:`Liquidity mining` is somewhat similar mechnanism to airdrop.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
+        - :term:`Token distribution`
+
+        - :term:`Liquidity mining`
+
+
+    Token distribution
+
+        In :term:`decentralised finance`, a token distribution refers to how the project :term:`tokens <token>`
+        have been divided between different stakeholders.
+
+        More decentralised token distribution is usually good for price action and robustness of the project;
+        there are less large entities that can dominate the DAO governance discussion or be a single point of a failure.
+        Decentralisation and better token distribution lessen the likelihood of severe :term:`price impact` events.
+
+        Token distribution methods include
+
+        - Initial coin offering (ICO)
+
+        - Initial :term:`DEX <decentralised exchange>` offering (IDO)
+
+        - Initial token offering (ITO)
+
+        - Direct market listing
+
+        - Public sale
+
+        - Private sale
+
+        - Simple Agreement for Future Tokens (SAFT)
+
+        - :term:`Airdrop`
+
+        - :term:`Liquidity mining`
+
+        - :term:`Yield farming`
+
+        - Proof-of-work (Bitcoin, Chia, others)
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Token`
+
