@@ -1234,7 +1234,26 @@ and algorithmic trading.
 
     Mean reversion
     
-        A mean reversion strategy is a type of trading strategy that assumes that prices of an asset will eventually return to their average or mean levels over time. This strategy is based on the idea that prices tend to move in cycles and that extreme deviations from the average are temporary and eventually return to their historical average. In a mean reversion strategy, a trader buys an asset when its price is lower than its average and sells when the price is higher than its average, with the goal of profiting from the reversion to the mean. Mean reversion strategies can be applied to a variety of assets, such as stocks, bonds, commodities, and currencies, and are commonly used in quantitative finance and algorithmic trading.
+        A mean reversion strategy is a type of :term:`trading strategy` that assumes that prices of an asset will eventually return to their :term:`average <EMA>` or mean levels over time.
+
+        This strategy is based on the idea that prices tend to move in cycles and that extreme deviations from the average are temporary
+        and eventually return to their :term:`historical <historical market data>` average.
+        In a mean reversion strategy, a trader buys an asset when its price is lower than its average and sells when the price is higher than its average,
+        with the goal of profiting from the reversion to the mean. Mean reversion strategies can be applied to a variety of assets,
+        such as stocks, bonds, commodities, and currencies, and are commonly used in quantitative finance and :term:`algorithmic trading`.
+
+        See also
+
+        - :term:`Technical indicator`
+
+        - :term:`Historical market data`
+
+        - :term:`Trading strategy`
+
+        - :term:`Trend`
+
+        - :term:`EMA`
+
 
     Swing trading
     
