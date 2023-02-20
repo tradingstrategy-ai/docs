@@ -255,9 +255,24 @@ and algorithmic trading.
 
     Clone
 
-        Also known as fork. A product launched based on the open source code of another existing product.
-        In the context of :term:`on-chain`, usually hostile to the original product and competes from the
-        same :term:`liquidity`.
+        Fork is a a product launched based on the open source code of another existing product. Also known as fork.
+
+        See :term:`fork` for details.
+
+    Fork
+
+        Fork is a a product launched based on the open source code of another existing product.
+
+        In the context of :term:`on-chain` forks, forks usually are hostile to the original project and competes from the
+        same users. Forks often do not innovate, or make the product technically better.
+
+        Unlike traditional open source projects, fork rarely co-operate. Because many forks
+        lack the same technical understanding as the original founding tech team, forks suffer from hacks
+        and are often abandon after a short period of time.
+
+        See also
+
+        - :term:`Decentralised finance`
 
     Candle
 
@@ -1082,10 +1097,10 @@ and algorithmic trading.
         Decentralised finance refers to a set of newly emerging financial products and services that operate on blockchains using cryptocurrency and
         :term:`smart contract` technology.
         DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
-        Thus, decentralised finance is the opposite of :term:`traditional finance (TradFi)`.
+        Thus, decentralised finance is the opposite of :term:`traditional finance` (TradFi).
 
         Decentralised finance activities happen:term:`on-chain`,
-        and are protocol based where users connect with their :term:`wallets <wallet`>.
+        and are protocol based where users connect with their :term:`wallets <wallet>`.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient.
 
@@ -1361,7 +1376,7 @@ and algorithmic trading.
 
     Lending pool
 
-        In :term:`decentralised finance:`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
+        In :term:`decentralised finance`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
 
         Sometimes a lending pool is also called *reserve* (Aave v3).
 
@@ -1798,3 +1813,25 @@ and algorithmic trading.
 
         - :term:`Drawdown`
 
+    BNB Chain
+
+        BNB Chain is an :term:`EVM-Compatible` blockchain from Binance cryptocurrency exchange.
+
+        BNB Chain is a direct :term:`fork` of Ethereum.
+
+        BNB offers good interaction with Binance cryptocurrency exchange (:term:`CEX`), making it attractive
+        for the users of this exchange. A as the writing of this, Binance has 70% market
+        share of the cryptocurrency trading volume, making it very dominant in the blockchain industry.
+
+        BNB Chain is based on centralised, proof-of-authority. model.
+        `BNB Chain was recently halted in a hack <https://cointelegraph.com/news/bnb-chain-confirms-bsc-halt-due-to-potential-exploit>`__.
+
+        The dominating :term:`decentralised exchange` on BNB Chain is `PancakeSwap <https://tradingstrategy.ai/trading-view/binance/pancakeswap-v2>`__.
+
+        See also
+
+        - :term:`EVM-compatible`
+
+        - :term:`Fork`
+
+        - :term:`CEX`
