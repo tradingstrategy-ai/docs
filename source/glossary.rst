@@ -2343,7 +2343,8 @@ and algorithmic trading.
 
         HyperSDK is MerkleDB and has very optimised state sync. The high performance
         makes HyperSDK optimal for building trading focused :term:`app chains <app chain>`. Theoretical
-        transaction throughput can be up to 50 transactions per second (TPS).
+        transaction throughput can be up to 50 transactions per second (TPS). Internally HyperSDK nodes
+        uses `Pebble database <https://github.com/cockroachdb/pebble#advantages>`__.
 
         `See HyperSDK on Github <https://github.com/ava-labs/hypersdk>`__.
 
@@ -2376,7 +2377,7 @@ and algorithmic trading.
 
     Avalanche
 
-        Avalanche is a blockchain based Avalanche consensus protocol.
+        Avalanche is a blockchain based on Avalanche consensus protocol.
 
         Avalanche supports subnets, where each subnet is partially independent blockchain
         having its own properties. Some subnets, like Avalanche C-Chain are :term:`EVM-Compatible`.
