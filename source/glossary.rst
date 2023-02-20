@@ -1133,7 +1133,7 @@ and algorithmic trading.
         DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
         Thus, decentralised finance is the opposite of :term:`traditional finance` (TradFi).
 
-        Decentralised finance activities happen:term:`on-chain`,
+        Decentralised finance activities happen :term:`on-chain`,
         and are protocol based where users connect with their :term:`wallets <wallet>`.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient.
