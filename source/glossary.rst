@@ -2094,6 +2094,18 @@ and algorithmic trading.
         Web3 protocols aim to fair :term:`token distribution` so that users would own the largest
         share of protocol control and revenues.
 
+        Popular Web3 protocols and projects include e.g.
+
+        - Lens protocol (social media)
+
+        - Farcast (social media)
+
+        - `Paradise Tycoon <https://paradisetycoon.com/>`__ (mobile game with NFTs)
+
+        - `Phaver <https://phaver.com/>`__ (Reddit for Web3)
+
+        - `Sandbox <https://www.sandbox.game/en/>`__ (metaverse game)
+
         Web3 has also other meanings
 
         - Historically, the technical term
