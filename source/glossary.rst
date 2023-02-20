@@ -156,6 +156,16 @@ and algorithmic trading.
 
         Backtesting is the process of analysing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
 
+        See also
+
+        - :term:`Historical data`
+
+        - :term:`OHLCV`
+
+        - :term:`Dataset`
+
+        - :term:`Trading strategy`
+
     Decentralised exchange
 
         Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`.
@@ -507,7 +517,9 @@ and algorithmic trading.
 
     Directional strategy
 
-        A directional strategy is a type of trading or investment strategy that involves taking a bullish or bearish view on a particular asset or market. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
+        A directional strategy is a type of trading or investment strategy that involves taking a bullish or bearish view on a particular asset or market.
+
+        This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
         
         Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
         
@@ -1298,11 +1310,30 @@ and algorithmic trading.
 
         Historical market data is widely available through a variety of sources, including financial data providers, stock exchanges, and government agencies.
 
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Dataset`
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtesting`
+
+
     Trend
 
         A trend is a general direction of change in a set of data or a market over time. In the financial markets, trends refer to the general direction of prices for a specific security, asset class, or market index. Trends can be either up, down, or sideways, and they can occur over various time frames, including short-term (such as minutes or hours), intermediate-term (such as days or weeks), or long-term (such as months or years).
 
         Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use technical analysis to identify and track trends, using tools such as trendlines, moving averages, and momentum indicators.
+
+        See also
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading strategy`
+
+        - :term:`EMA`
 
     Bollinger bands
     
@@ -1311,6 +1342,14 @@ and algorithmic trading.
         In a market with low volatility, the Bollinger Bands will be closer together, while in a market with high volatility, the bands will be further apart. When prices move outside the upper band, it can be a sign that the security is overbought, and a potential selling opportunity, while a move below the lower band can indicate that the security is oversold and a potential buying opportunity.
 
         Bollinger Bands are widely used by traders and investors in making investment decisions, as well as in setting stop-loss orders and determining potential profit targets.
+
+        See also
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading strategy`
+
+        - :term:`Trend`
 
     Relative strength index (RSI)
 
