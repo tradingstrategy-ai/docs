@@ -1363,6 +1363,8 @@ and algorithmic trading.
 
         In :term:`decentralised finance:`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
 
+        Sometimes a lending pool is also called *reserve* (Aave v3).
+
         The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
 
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
