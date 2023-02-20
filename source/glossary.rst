@@ -2408,7 +2408,7 @@ and algorithmic trading.
 
     App Chain
 
-        An App Chain, also known as  Application-Specific Blockchains, is a blockchain that is exclusively designed to operate one specific application.
+        An App Chain, also known as an application-specific blockchain, is a blockchain that is exclusively designed to operate one specific application.
 
         App Chain eliminates competition for resources away from everyone else using the chain, allowing for greater scalability and flexibility
 
@@ -2419,6 +2419,8 @@ and algorithmic trading.
         - Vega Protocol exchange
 
         - Stargaze :term:`NFT` chain on Cosmos
+
+         - Swimmer Network - the app chain for Crabada idle-game
 
         See also
 
