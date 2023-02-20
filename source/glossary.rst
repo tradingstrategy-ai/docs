@@ -496,6 +496,8 @@ and algorithmic trading.
 
         - :term:`Liquidity mining`
 
+        - :term:`Mercenary capital`
+
     Exposure
 
         The risk of a strategy for the volatility of a particular asset. For example, if you have 100% exposure to ETH and ETH prices drops to zero, you lose all of your money.
@@ -1038,16 +1040,33 @@ and algorithmic trading.
 
     Mercenary capital
 
-        Mercenary capital is a term used to refer to cryptocurrency investment and trading funds
+        In :term:`decentralised finance`, mercenary capital is a term used to refer to cryptocurrency investment and trading funds
         who chase :term:`liquidity mining` and other token rewards without long term commitment
-        to the token success. Mercenary capital moves from a project to a project, chasing
-        best subsidised yields without actually contributing to the token success any way.
+        to the token success.
+
+        Mercenary capital moves from a project to a project, chasing
+        best subsidised :term:`yield farming` and :term:`liquidity mining` opportunities,
+        without actually contributing to the token success any way.
+
+        See also
+
+        - :term:`Yield farming`
+
+        - :term:`Liquidity mining`
+
+        - :term:`Token distribution`
 
     Poetry
 
         Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poetry offers a lockfile to ensure repeatable installs, and can build your project for distribution.
 
         `Read more in Poetry documentation <https://python-poetry.org/docs/>`__.
+
+        See also
+
+        - :term:`Python`
+
+        - :term:`Jupyter notebook`
 
     Google Colab
 
@@ -1057,6 +1076,12 @@ and algorithmic trading.
 
         `Read more <https://research.google.com/colaboratory/>`__.
 
+        See also
+
+        - :term:`Python`
+
+        - :term:`Jupyter notebook`
+
     PyCharm
 
         PyCharm is an integrated development environment (IDE) used for programming in Python.
@@ -1064,12 +1089,24 @@ and algorithmic trading.
 
         `Read more <https://www.jetbrains.com/pycharm/>`__
 
+        See also
+
+        - :term:`Python`
+
+        - :term:`Jupyter notebook`
+
     Visual Studio Code
 
         Visual Studio Code (VS Code) is a source-code editor made by Microsoft for Windows, Linux and macOS. . VS Code is free and optimised for building and debugging modern web and cloud applications. It comes with features such as code editing, debugging, integrated Git control, syntax highlighting, intelligent code completion, snippets, and more. Visual Studio Code
         is excellent for editing Jupyter notebooks.
 
         `Read more <https://code.visualstudio.com/>`__
+
+        See also
+
+        - :term:`Python`
+
+        - :term:`Jupyter notebook`
 
     DEX
 
@@ -2179,6 +2216,7 @@ and algorithmic trading.
         - Carbon certificates
 
         RWAs can trade on :term:`lending protocols <lending protocol>` and :term:`decentralised exchanges <decentralised exchange>`.
+        RWAs need special :term:`oracles <oracle`> to bring information about the real-world asset data to :term:`on=chain`.
 
         As the writing of this, most popular RWA classes are stablecoins and bonds.
 
@@ -2199,6 +2237,8 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Aave`
+
+        - :term:`Oracle`
 
     WalletConnect
 
@@ -2256,4 +2296,34 @@ and algorithmic trading.
         - :term:`Backtest`
 
         - :term:`OHLCV`
+
+    Oracle
+
+        In :term:`decentralised finance`,
+        oracle allows :term:`smart contracts <smart contract>` to access external data.
+
+        An oracle in a blockchain is an entity that connects blockchains to external systems,
+        allowing smart contracts to execute based upon inputs and outputs from the real world.
+
+        Oracles are third-party services that provide smart contracts with external information,
+        while blockchain technology itself is defined as a ledger of decentralized data that is securely
+        shared by select participants.
+
+        Oracles are security critical system, as they often report prices and if the price is wrong
+        the underlying protocol may suffer what is called an oracle attack or a price manipulation attack.
+        For example, if in a :term:`lending protocol` the collateral price is wrong,
+        the loands can be incorrectly liquidated.
+
+        Popular oracles protocols include
+
+        - ChainLink (on :term:`EVM-Compatible` blockchains)
+
+        - Python (Solana)
+
+        See also
+
+        - :term:`Smart contract`
+
+        - :term:`Decentralised finance`
+
 

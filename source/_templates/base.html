@@ -37,8 +37,14 @@
       <link rel="preload" href="https://tradingstrategy.ai/_app/assets/55-b0d6fe58.woff2" as="font" crossorigin="anonymous">
       <link rel="preload" href="https://tradingstrategy.ai/_app/assets/latin-400-normal-547a2c05.woff2" as="font" crossorigin="anonymous">
 
+    {%- if metatags %}
+        {{ metatags }}
+    {% endif -%}
 
-    {%- if metatags %}{{ metatags }}{% endif -%}
+    {# Make sure all pages have a description or Bing does not like us #}
+    {% if 'content="description"' not in metatags %}
+      <meta name="description" content="Python documentation for Trading Strategy development">
+    {% endif %}
 
     {%- block linktags %}
         {%- if hasdoc('about') -%}
