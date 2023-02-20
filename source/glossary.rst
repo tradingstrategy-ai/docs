@@ -1733,6 +1733,8 @@ and algorithmic trading.
 
         - Ledger (a hardware wallet)
 
+        Different services and wallets may interoperate using :term:`WalletConnect` protocol.
+
         See also
 
         - :term:`Web3`
@@ -1744,6 +1746,8 @@ and algorithmic trading.
         - :term:`ERC-20`
 
         - :term:`On-chain`
+
+        - :term:`WalletConnect`
 
     Liquidity provider
 
@@ -2193,3 +2197,37 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Aave`
+
+    WalletConnect
+
+        In :term:`Web3`, WalletConnect is a protocol to allow users to use various kind of wallets with different services.
+
+        WalletConnect is an abstraction layer that supports connecting different :term:`wallet <wallet>` to
+        a :term:`web3` and :term:`decentralised finance` protocols. It supports both :term:`non-custodial`
+        and :term:`custodial` wallets.
+
+        Wallet types may include
+
+        - Mobile app based wallets
+
+        - Desktop app based wallets
+
+        - Website based wallets
+
+        - Hardware wallets
+
+        - Multisignature wallets
+
+        - Professional :term:`custodians <custodian>` like MetaMask Institutional, Fireblock, Q-redo
+
+        WalletConnect is supported across multiple blockchains, including e.g. :term:`EVM-Compatible` ones,
+        NEAR, Chia and Solana.
+
+        See also
+
+        - :term:`Wallet`
+
+        - :term:`Non-custodial`
+
+        - :term:`Custodial`
+
