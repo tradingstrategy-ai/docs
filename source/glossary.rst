@@ -158,7 +158,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Historical data`
+        - :term:`Historical market data`
 
         - :term:`OHLCV`
 
@@ -1138,7 +1138,8 @@ and algorithmic trading.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient.
 
-        Decentralised finance can be seen to be a subset of :term:`web3`.
+        Decentralised finance can be seen to be a subset of :term:`web3`. If decentralised finance
+        trades real-world assets, they are called :term:`RWAs <RWA>`.
 
         Example decentralised finance protocols includ
         :term:`decentralised exchanges <decentralised exchange>`,
@@ -1153,6 +1154,8 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Web3`
+
+        - :term:`RWA`
 
         - :term:`Non-custodial`
 
@@ -1347,7 +1350,7 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
-        - :term:`Backtesting`
+        - :term:`Backtest`
 
 
     Trend
@@ -2019,6 +2022,8 @@ and algorithmic trading.
         As the writing of this, Aave has been deployed several blockchains, including Ethereum,
         Polygon, Arbitrum and Optimism.
 
+        Aave has a protocol subset for :term:`real-world assets (RWAs) <RWA>` called Aave Arc.
+
         See also
 
         - :term:`Decentralised finance`
@@ -2026,6 +2031,9 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Token`
+
+        - :term:`RWA`
+
 
     Sushi
 
@@ -2100,6 +2108,76 @@ and algorithmic trading.
 
         - :term:`Token`
 
+        - :term:`NFT`
+
         - :term:`Token distribution`
 
         - :term:`Wallet`
+
+    NFT
+
+        In :term:`web3`, NFT stands for non-fungible tokens.
+
+        NFTs are :term:`tokens <token>` that unique and thus have value, like artistic value
+        or in-game benefits. Usually NFTs represent digital content, but can also represent
+        :term:`real-world assets <RWA>`.
+
+        Like with all other :term:`decentralised finance` protocols, NFTs are :term:`non-custodial`
+        and do not need an intermediates like banks to track and change their ownership.
+
+        See also
+
+        - :term:`Web3`
+
+        - :term:`Token`
+
+        - :term:`Non-custodial`
+
+        - :term:`Wallet`
+
+    RWA
+
+        In :term:`decentralised finance`, RWA stands for Real World Asset.
+
+        Unlike cryptocurrencies and pure digital assets, like art :term:`NFTs <NFT>`,
+        real-world assets have a real-world ownership representation.
+
+        RWAs can be
+
+        - :term:`Stablecoins <stablecoin>`
+
+        - Real-estate
+
+        - Bonds
+
+        - Stock
+
+        - Land
+
+        - Forest
+
+        - Energy
+
+        - Carbon certificates
+
+        RWAs can trade on :term:`lending protocols <lending protocol>` and :term:`decentralised exchanges <decentralised exchange>`.
+
+        As the writing of this, most popular RWA classes are stablecoins and bonds.
+
+        For RWA case studies, see
+
+        - `Circle's and Uniswaps report on stablecoin usage in remittance and cross-border payments <https://www.circle.com/blog/on-chain-foreign-exchange-and-cross-border-payments>`__
+
+        - `Siemens launching $60M bond on a public blockchain <https://www.ledgerinsights.com/siemens-digital-bond-blockchain/>`__
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Stablecoin`
+
+        - :term:`Lending protocol`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Aave`
