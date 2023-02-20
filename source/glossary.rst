@@ -2118,7 +2118,7 @@ and algorithmic trading.
         - Historically, the technical term `web3 referred to the three original decentralised technologies that were visioned when Ethereum launched <https://twitter.com/moo9000/status/1484463908152881152>`__:
           Ethereum, shh, and bzz.
 
-        - Web3 foundation is the name of the Swiss non-profit that launched Polkadot blockchain
+        - Web3 foundation is the name of the Swiss non-profit that launched Polkadot blockchain.
 
         See also
 
