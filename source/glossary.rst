@@ -1342,6 +1342,8 @@ and algorithmic trading.
 
         Historical market data is widely available through a variety of sources, including financial data providers, stock exchanges, and government agencies.
 
+        You can download :term:`decentralised finance` historical data using :term:`Trading Strategy client`.
+
         See also
 
         - :term:`OHLCV`
@@ -1352,6 +1354,7 @@ and algorithmic trading.
 
         - :term:`Backtest`
 
+        - :term:`Trading Strategy client`
 
     Trend
 
@@ -2218,7 +2221,7 @@ and algorithmic trading.
 
         - Multisignature wallets
 
-        - Professional :term:`custodians <custodian>` like MetaMask Institutional, Fireblock, Q-redo
+        - Professional :term:`custodial wallets <custodial>` like MetaMask Institutional, Fireblock, Q-redo
 
         WalletConnect is supported across multiple blockchains, including e.g. :term:`EVM-Compatible` ones,
         NEAR, Chia and Solana.
@@ -2230,4 +2233,28 @@ and algorithmic trading.
         - :term:`Non-custodial`
 
         - :term:`Custodial`
+
+    Trading Strategy client
+
+        Trading Strategy client is a :term:`Python` library to access the :term:`historical market data`
+        on Trading Strategy protocol oracles.
+
+        The data includes
+
+        - :term:`Decentralised exchanges <decentralised exchange>` market data in :term:`candle` and
+          :term:`OHLCV` format
+
+        - :term:`Lending protocols <lending protocol>`
+
+        You can then examine the data in :term:`Jupyter notebook`.
+
+        `See the project Github README <https://github.com/tradingstrategy-ai/trading-strategy/>`__.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`OHLCV`
 
