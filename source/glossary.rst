@@ -613,7 +613,7 @@ and algorithmic trading.
 
         In traditional finance, the risk-free rate is considered to be treasury note or government bond yield, although you still have some risks like the sovereignty risk.
 
-        In :term:`decentralised finance`, a risk-free rate is considered to be an US dollar :term:`lending pool` rate, like one you would get from Aave :term:`USDC` pool.
+        In :term:`decentralised finance`, a risk-free rate is considered to be an US dollar :term:`lending pool` rate, like one you would get from :term:`Aave` :term:`USDC` pool.
 
         See also
 
@@ -1134,7 +1134,7 @@ and algorithmic trading.
 
         Example decentralised finance protocols includ
         :term:`decentralised exchanges <decentralised exchange>`,
-        like :term:`Uniswap` and :term:`lending protocols <lending protocol>` like Aave.
+        like :term:`Uniswap` and :term:`lending protocols <lending protocol>` like :term:`Aave`.
         Other famous decentralised finance protocols include Curve, MakerDAO, Compound,
         Euler and SushiSwap.
 
@@ -1431,9 +1431,11 @@ and algorithmic trading.
 
         Lending protocols enable :term:`shorting` of different :term:`lending pool` tokens.
 
-        Popular lending protocols include Aave, Compound and Euler.
+        Popular lending protocols include :term:`Aave`, Compound and Euler.
 
         See also
+
+        - :term:`Aave`
 
         - :term:`Lending pool`
 
@@ -1452,7 +1454,7 @@ and algorithmic trading.
 
         In :term:`decentralised finance`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
 
-        Sometimes a lending pool is also called *reserve* (Aave v3).
+        Sometimes a lending pool is also called *reserve* (:`term`Aave`).
 
         The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
 
@@ -1991,3 +1993,18 @@ and algorithmic trading.
 
         - :term:`Token`
 
+    Aave
+
+        In :term:`decentralised finance`, Aave is one of the largest decentralised :term:`lending protocols <lending protocol>`.
+
+        Aave was started in 2017 under EthLend name. Aave means a ghost in the Finnish language.
+        The latest version, Aave v3, was launched in 2023.
+        Aave has an :term:`ERC-20` token `AAVE <https://tradingstrategy.ai/trading-view/ethereum/tokens/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9>`__.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Lending protocol`
+
+        - :term:`Token`
