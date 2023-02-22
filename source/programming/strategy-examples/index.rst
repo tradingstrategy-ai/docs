@@ -31,6 +31,7 @@ Example backtesting Jupyter notebooks
    pancakeswap-ema
    pancakeswap-ema-stop-loss
    portfolio-construction-model
+   trader-joe-momentum
    synthetic-ema
    synthetic-ema-stop-loss
    backtest-fee-analysis
