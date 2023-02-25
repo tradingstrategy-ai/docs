@@ -64,3 +64,12 @@ PyAlgoTrade
 -----------
 
 Was originally written for Bitstamp. Offers backtesting, paper trading, live trading. Looks abandoned now. `Read more <https://github.com/gbeced/pyalgotrade>`__.
+
+LEAN
+----
+
+Lean Engine is an open-source algorithmic trading engine built for easy strategy research, backtesting and live trading. We integrate with common data providers and brokerages so you can quickly deploy algorithmic trading strategies.
+
+The core of the LEAN Engine is written in C#; but it operates seamlessly on Linux, Mac and Windows operating systems. It supports algorithms written in Python 3.8 or C#. Lean drives the web-based algorithmic trading platform QuantConnect.
+
+`View LEAN Github page <https://github.com/QuantConnect/Lean>`__.
