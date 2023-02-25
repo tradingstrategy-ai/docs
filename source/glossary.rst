@@ -131,7 +131,7 @@ and algorithmic trading.
 
     On-chain
 
-        In :term:`decentralised finance, on-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. It is the opposite of :term:`off-chain`.
+        In :term:`decentralised finance`, on-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. It is the opposite of :term:`off-chain`.
 
         In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
         
@@ -1344,6 +1344,30 @@ and algorithmic trading.
 
         This approach can help to reduce the impact of short-term market fluctuations and allow the investor to accumulate more shares when prices are low and fewer shares when prices are high.
 
+    Longing
+
+        Longing means to make a trade where one assumes the price of an asset is going up.
+
+        To go long is the opposite of :term:`shorting`.
+
+        - Longs can be be :term:`spot market` purchases (consider it as :term:`1x leverage <leverage>`
+
+        - Longs can be :term:`levered <leverage>` for higher profits on success
+
+        In decentralised finance, you can build a levered long trade using :term:`lending protocols <lending protocol>`.
+
+        See also
+
+        - :term:`Shorting`
+
+        - :term:`Spot market`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Lending protocol`
+
+        - :term:`Trading strategy`
+
     Shorting
     
         Short selling, also known as shorting or going short, is a :term:`trading strategy` in which an investor borrows as aasset, sells the borrowed asset, and then aims to buy the asset back at a lower price to make a profit.
@@ -1352,7 +1376,11 @@ and algorithmic trading.
 
         Short selling is a high-risk strategy that requires a solid understanding of market dynamics and a careful risk management plan.
 
+        In :term:`decentralised finance`, you can build a short trade using :term:`lending protocols <lending protocol>`.
+
         See also
+
+        - :term:`Longing`
 
         - :term:`Decentralised finance`
 
@@ -1361,6 +1389,8 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Trading strategy`
+
+        - :term:`Liquidation`
 
     Quantitative analysis
 
@@ -2247,7 +2277,7 @@ and algorithmic trading.
         - Carbon certificates
 
         RWAs can trade on :term:`lending protocols <lending protocol>` and :term:`decentralised exchanges <decentralised exchange>`.
-        RWAs need special :term:`oracles <oracle`> to bring information about the real-world asset data to :term:`on=chain`.
+        RWAs need special :term:`oracles <oracle>` to bring information about the real-world asset data to :term:`on-chain`.
 
         As the writing of this, most popular RWA classes are stablecoins and bonds.
 
@@ -2366,7 +2396,7 @@ and algorithmic trading.
 
     HyperSDK
 
-        HyperSDK is an optimised software development kit to build blockchains from :term:`Avalache`.
+        HyperSDK is an optimised software development kit to build blockchains from :term:`Avalanche`.
 
         HyperSDK is MerkleDB and has very optimised state sync. The high performance
         makes HyperSDK optimal for building trading focused :term:`app chains <app chain>`. Theoretical
@@ -2460,3 +2490,89 @@ and algorithmic trading.
         - :term:`Avalanche`
 
         - :term:`HyperSDK`
+
+    Spot market
+
+        A spot market is a market where actual assets are traded as the opposite of interest to the assets.
+
+        - In cryptocurrency markets, spot market is where you receive actual tokens for your purchases.
+
+        - In stock markets, you will receive stock certificate
+
+        - In commodities markets (oil, wheat, etc.), you will receive a physically delivered item
+
+        Spot market itself does not have :term:`shorting`, or :term:`leverage`.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
+
+        - :term:`Leverage`
+
+    Leverage
+
+        Leverage in trading is the use of borrowed funds to increase one's trading position beyond what would be available from their cash balance alone.
+
+        Leverage trading is also known as margin trading.
+
+        It enables traders to open a position worth much more than the money they deposit.
+
+        Leverage can be used in :term:`longing` or :term:`shorting`.
+
+        - In a long, 2x leverage means that you can make 2x profit when the price moves up 1x
+
+        - In a short, 1x leverage means that you can make 1x profit when the price moves up 1x
+
+        - If the price moves too much your deposited money is :term:`liquidated <liquidation>`
+
+        - Shorting always involves borrowing
+
+        - In leveraged markets often longs pay shorts, short pays longs as a zero-sum trading game
+
+        Leverage requires collateral. If the leveraged trade goes belly up, the account
+        doing the leveraged trade may be :term:`liquidated <liquidation>`.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
+
+        - :term:`Lending protocol`
+
+        - :term:`Liquidation`
+
+    Margin trading
+
+        Leverage trading is also known as margin trading.
+
+        See :term:`leverage`.
+
+    Liquidation
+
+        In trading, liquidation happens when a trader has insufficient funds to keep a leveraged trade open.
+
+        The exchange or term:`lending protocol` closes the position.
+
+        - Any collateral that was used to open the position is sold ("liquidated")
+
+        - The proceedings of collateral liquidation is used to paid the trades who took the opposite
+          side of the trade
+
+        In :term:`decentralised finance`, liquidation also happens on :term:`lending protocols <lending protocol>`.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
+
+        - :term:`Leverage`
