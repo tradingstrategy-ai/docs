@@ -131,7 +131,7 @@ and algorithmic trading.
 
     On-chain
 
-        On-chain refers to transactions or activities that are recorded and processed directly on a blockchain network.
+        In :term:`decentralised finance, on-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. It is the opposite of :term:`off-chain`.
 
         In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
         
@@ -144,11 +144,46 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Off-chain`
+
         - :term:`Decentralised finance`
 
         - :term:`Wallet`
 
         - :term:`Decentralised exchange`
+
+    Off-chain
+
+        In :term:`decentralised finance, off-chain refers to software and code that is run outside the blockchain nodes.
+
+        Off-chain activities are needed because some activities are not possible or too expensive (transaction cost wise)
+        to handle in a blockchain core protocol or smart contracts:
+
+        - Computation cost using smart contracts would be too high due to CPU, IO and memory requirements.
+
+        - Information needs to be fetched for :term:`real-world assets <RWA>` or other items
+          that do not have native blockchain data, like centralised exchange cryptocurrency prices.
+          Because blockchains are new technology, most things in the world do not have good blockchain
+          data available yet and off-chain data fetch and validation is needed.
+
+        In the future, the amount of activities that need off-chain computation is going to decrease,
+        as blockchains are getting more powerful.
+
+        Usual off-chain computation use cases include
+
+        - :term:`Price oracles <oracle>`
+
+        - :term:`Order books <order book>` run on a centralised server like 0x protocol or DyDx
+
+        See also
+
+        - :term:`On-chain`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`RWA`
 
     Backtest
 
