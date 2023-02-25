@@ -154,7 +154,7 @@ and algorithmic trading.
 
     Off-chain
 
-        In :term:`decentralised finance, off-chain refers to software and code that is run outside the blockchain nodes.
+        In :term:`decentralised finance`, off-chain refers to software and code that is run outside the blockchain nodes.
 
         Off-chain activities are needed because some activities are not possible or too expensive (transaction cost wise)
         to handle in a blockchain core protocol or smart contracts:
