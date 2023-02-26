@@ -12,7 +12,8 @@ The target audience of this post us :term:`quants <quant>` and people who want t
 What is Portfolio Construction?
 -------------------------------
 
-Portfolio construction is the process of selecting securities optimally to achieve maximum returns while taking minimum risk.
+Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities optimally to achieve maximum returns while taking minimum risk.
+
 It involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
 
 Portfolio construction has several phases
@@ -47,7 +48,7 @@ The framework consists of
 
 - Market data feed reader in the form of :term:`Trading Strategy Client`
 
-- :term:`Backtesting framework <backtesting>`
+- :term:`Backtesting framework <backtest>`
 
 - Live trade execution environment
 
@@ -74,4 +75,48 @@ The workflow for the framework is
   individual positions
 
 - Take your trading strategy backtested code unmodified to the live trading execution environment
+
+The strategy core logic
+-----------------------
+
+The Trading Strategy Framework offers two functions the developer must implement for the strategies
+
+- `creating_trading_universe` that returns an object that represents all assets the strategy can trade.
+  This data is used to set up and update backtesting and live market data feeds. This includes
+  blockchains, exchanges, trading pairs, :term:`OHLCV` data feeds, liquidity data feeds and some
+  special data feeds e.g. used for :term:`stop loss` triggers.
+
+- `decide_trades` takes in the current :term:`strategy cycle`, timestamped
+  trading universe and the current strategy state (open positions) as an input.
+  Based on this data the function will return a list of new trades that will either open new or close
+  existing :term:`positions <position>`
+
+The strategy advanced in ticks. Each tick length is the duration of a :term:`strategy cycle`.
+Common strategy cycles includes hourly, daily and weekly trade decisions.
+In the portfolio construction, this strategy cycle is called :term:`rebalance`.
+
+Overview of portfolio construction strategy architecture
+--------------------------------------------------------
+
+The Trading Strategy framework offers a Python "lego blocks" that allows you to easily
+put together a strategy without need to develop the software plumbinb yourself.
+
+For a develop, this is seen as a high-level Python classes and objects.
+
+- `Timestamp` is the current strategy cycle tick of the trading strategy.
+
+- :py:class:`tradeexecutor.strategy.TradingStrategyUniverse` contains all data that can go input to the trade.
+
+- :py:class:`tradexecutor.state.State` contains all past and current data about the previous actions the strategy took,
+  like opened and closed positions, trades, blockchain transaction execution details,
+  technical indicators, uptime, deposited capital.
+
+- :py:class:`AlphaModel` offers a way to set weighted :term:`trading signals <alpha signal>` based
+  on the data analysis. It has helper methods of trackign signals, choosing top signals,
+  and generating :term:`rebalance` trades automatically.
+
+- `PositionManager` is a high level utility class that is used to generate trades.
+  For example, you can call `PositionManager.close_all` and it will return a list of trade orders
+  that need to be executed in order to sell all assets and go back to fully cash.
+
 

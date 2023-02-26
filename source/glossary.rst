@@ -853,7 +853,9 @@ and algorithmic trading.
 
     Strategy cycle
 
-        The strategy cycle refers to the process of developing, testing, and implementing a trading strategy. This process typically involves several steps, including research and analysis, design, optimization, backtesting, and live trading. The strategy cycle is an iterative process, and the results of each step can influence the next. The goal of the strategy cycle is to identify and develop a profitable and reliable trading strategy that can be consistently executed. The end result of the strategy cycle is a well-designed, thoroughly tested, and successfully deployed trading strategy that can help achieve investment goals.
+        In :term:`Trading Strategy Framework`, the strategy cycle refers to the timestamped process of developing, testing, and implementing a trading strategy.
+
+        This process typically involves several steps, including research and analysis, design, optimization, backtesting, and live trading. The strategy cycle is an iterative process, and the results of each step can influence the next. The goal of the strategy cycle is to identify and develop a profitable and reliable trading strategy that can be consistently executed. The end result of the strategy cycle is a well-designed, thoroughly tested, and successfully deployed trading strategy that can help achieve investment goals.
 
         See :term:`cycle duration`.
 
@@ -974,10 +976,24 @@ and algorithmic trading.
 
     Position
 
-        In trading slang, a position means open long or short position of a particular
-        asset betting the price of an asset goes up or down. In long positions,
+        In :term:`trading strategy`, a position means a :term:`long <longing>` or :term:`short <shorting>` position of a particular
+        asset betting the price of an asset goes up or down.
+
+        In long positions,
         the trader expects the asset price go up, or appreciate. In short positions,
         the trade expects the asset price go down.
+
+        A position can be a :term:`spot market` position or a :term:`levered <leverage>` position.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
+
+        - :term:`Leverage`
 
     Trading universe
 
@@ -2463,7 +2479,7 @@ and algorithmic trading.
 
         - Market data feed reader in the form of :term:`Trading Strategy Client`
 
-]        - :term:`Backtesting framework <backtest>`
+        - :term:`Backtesting framework <backtest>`
 
         - Live trading execution environment
 
@@ -2702,7 +2718,29 @@ and algorithmic trading.
 
     Portfolio construction
 
+        Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities optimally to achieve maximum returns while taking minimum risk.
 
+        Portfolio constructions involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
+
+        Portfolio construction has several phases
+
+        - **Asset allocation models** - to determine the optimal mix of asset classes (stocks, bonds, and commodities) in a portfolio, based on historical returns, volatility, and correlations.
+
+        - **Optimization techniques** - to identify the best combination of individual securities within each asset class, based on factors such as expected return, risk, and liquidity.
+
+        - **Risk management tools** - such as :term:`stop-loss orders <stop loss>`, hedging strategies, and diversification techniques, to manage portfolio risk and reduce exposure to individual assets or market risks
+
+        - :term:`Alpha generation strategies <alpha model>` - such as :term:`factor investing`, :term:`statistical arbitrage`, and :term:`trend-following`, to identify assets that are likely to outperform or underperform the broader market.
+
+        See also
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
+        - :term:`Technical analysis`
+
+        - :term:`Algorithmic trading`
 
     Alpha model
 
@@ -2723,6 +2761,8 @@ and algorithmic trading.
         - :term:`Alpha signal`
 
         - :term:`Technical analysis`
+
+        - :term:`Rebalance`
 
         - :term:`Alpha generation platform`
 
@@ -2758,7 +2798,7 @@ and algorithmic trading.
 
         - Having a special order type on :term:`order book`
 
-        - Manually, by doing :term:`
+        - Manually, by using :term:`market orders <market order>`
 
         A stop loss order is an instruction to automatically sell a security or other asset when its price falls to a certain level, known as the stop price.
 
@@ -2826,3 +2866,25 @@ and algorithmic trading.
     Market trade
 
         See :term:`market order`
+
+    Rebalance
+
+        In a :term:`trading strategy`, rebalance refers to the process of re-weighting the portfolio
+        by selling some assets and buying new ones.
+
+        Rebalances are needed in order for the strategy to follow its :term:`alpha model`.
+
+        Rebalances can be done at fixed intervals, usually hourly, daily or weekly.
+
+        In the process, the strategy opens new and closes existing :term:`positions <position>`.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Position`
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
