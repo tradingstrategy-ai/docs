@@ -267,15 +267,39 @@ and algorithmic trading.
 
     Jupyter notebook
 
-        A popular Python based data science tool. Jupyter allows users to run data research :term:`notebooks <notebook>` interactively. Jupyter notebooks can be easily shared, run on your local computer or on a hosted cloud environment, both free and paid. `More information <https://jupyter.org/>`__.
+        Jupyter Noteook is a popular :term:`Python` based data science tool.
+
+        Jupyter allows users to run data research :term:`notebooks <notebook>` interactively.
+
+        Jupyter notebooks can be easily shared, run on your local computer or on a hosted cloud environment, both free and paid.
+
+        Jupyter is an especially popular software development tool among :term:`quants <quant>`.
+
+        `More information on Jupyter website <https://jupyter.org/>`__.
+
+        See also
+
+        - :term:`Python`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Pandas`
 
     Pandas
 
-        Pandas is a powerful and widely used open-source data analysis library in Python. It provides data structures and functions needed to work with structured data, such as tabular data in the form of tables or spreadsheets. With pandas, it's easy to manipulate, clean, and analyse data, as well as perform complex operations such as grouping, merging, and aggregating data.
+        Pandas is a powerful and widely used open-source data analysis library in :term:`Python`. It provides data structures and functions needed to work with structured data, such as tabular data in the form of tables or spreadsheets. With pandas, it's easy to manipulate, clean, and analyse data, as well as perform complex operations such as grouping, merging, and aggregating data.
         
         Pandas is designed to handle a variety of data types, including numerical, categorical, and time-series data. It also integrates well with other libraries, such as NumPy and Matplotlib, making it a popular choice for data analysis and visualisation in the scientific and research communities.
         
         One of the key features of pandas is its DataFrame object, which is a two-dimensional labelled data structure with columns of different data types. With pandas, you can easily perform operations on the DataFrame such as filtering, sorting, and grouping data, as well as handling missing values and dealing with time-series data. `More information <https://pandas.pydata.org/>`__.
+
+        See also
+
+        - :term:`Python`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Jupyter Notebook`
 
     Uniswap
 
@@ -971,6 +995,10 @@ and algorithmic trading.
 
         `Read more <https://learn.aikido.finance/blog/post/how-to-choose-an-algorithmic-trading-strategy-stocks/>`__.
 
+        See also
+
+        - :term:`Portfolio construction`
+
     Alpha generation platform
 
         An alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or trading strategies, that generate consistent returns.
@@ -979,6 +1007,13 @@ and algorithmic trading.
         Alpha generation platforms support quants in the creation of efficient and productive quantitative trading strategies.
 
         `Read more <https://en.wikipedia.org/wiki/Alpha_generation_platform>`__.
+
+        See
+
+        - :term:`Alpha model`
+
+        - :term:`Portfolio construction`
+
 
     Native token
 
@@ -1003,7 +1038,7 @@ and algorithmic trading.
         that a normal trader would not do.
 
         These kind of attacks may cause very high/low price candles. Using the TWAP price mitigates
-        the risk of performing e.g. an unnecessary stop-loss trigger on a manipulated price.
+        the risk of performing e.g. an unnecessary :term:`stop loss` trigger on a manipulated price.
 
         `On the security and compromises of price oracles <https://ethereum.stackexchange.com/a/114990/620>`__.
 
@@ -1400,13 +1435,21 @@ and algorithmic trading.
         
         Quantitative analysis is commonly used in the field of finance, particularly in hedge funds and institutional trading desks, and can be applied to a variety of asset classes, including stocks, bonds, commodities, and currencies.
 
-    Quants
+    Quant
     
         Quants are financial professionals who specialise in the use of quantitative methods to analyse financial data and make investment decisions. They are experts in mathematics, statistics, and computer science and use complex models and algorithms to analyse financial data and make predictions about market movements
 
         Quants work in a variety of settings, including hedge funds, investment banks, and asset management firms, and play a significant role in the field of finance. They use their expertise in data analysis and modelling to develop trading strategies and make investment decisions, often using high-frequency trading technology to execute their trades.
 
         Quants are known for their ability to analyse large amounts of financial data and make decisions quickly, using a data-driven approach to investment.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Strategy developer`
+
+        - :term:`Quantitative analysis`
 
     Strategy developer
     
@@ -1415,6 +1458,14 @@ and algorithmic trading.
         Strategy developers use a combination of quantitative and qualitative analysis to make investment decisions, drawing on their expertise in economics, finance, mathematics, and computer science. They also use a variety of tools and technologies, including statistical models, algorithms, and high-frequency trading systems, to support their work.
 
         Strategy developers work in a variety of settings, including hedge funds, asset management firms, and investment banks, and may specialise in a specific asset class, such as stocks, bonds, commodities, or currencies. They are typically highly skilled and experienced professionals who have a deep understanding of financial markets and investment strategies. Effective strategy development requires a combination of technical expertise, market knowledge, and creativity, as well as a sound risk management plan to ensure that investment decisions align with the goals and risk tolerance of the investor.
+
+        See also
+
+        - :term:`Quant`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative analysis`
         
     Public trading strategy
     
@@ -1454,15 +1505,39 @@ and algorithmic trading.
 
         A trend is a general direction of change in a set of data or a market over time. In the financial markets, trends refer to the general direction of prices for a specific security, asset class, or market index. Trends can be either up, down, or sideways, and they can occur over various time frames, including short-term (such as minutes or hours), intermediate-term (such as days or weeks), or long-term (such as months or years).
 
-        Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use technical analysis to identify and track trends, using tools such as trendlines, moving averages, and momentum indicators.
+        Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use :term:`technical analysis` to identify and track trends, using tools such as trendlines, :term:`moving averages <EMA>`, and momentum indicators.
 
         See also
+
+        - :term:`Trend-following`
 
         - :term:`Technical indicator`
 
         - :term:`Trading strategy`
 
         - :term:`EMA`
+
+    Trend-following
+
+        Trend-following is a :term:`trading strategy` that follows a :term:`trend`.
+
+        Trend-following is a trading strategy that seeks to profit from the directional movement of prices in financial markets. The strategy involves analyzing the historical price data of an asset to identify trends and then making trades in the direction of the trend.
+
+        Trend-following traders typically use technical analysis tools and :term:`technical indicators <technical indicator>`, such as :term:`moving averages <EMA>`, trend lines, and momentum indicators, to identify trends and determine when to enter or exit trades. The goal is to buy an asset when the trend is bullish (i.e., prices are rising) and sell it when the trend is bearish (i.e., prices are falling).
+
+        The key principle of trend-following is to let profits run and cut losses quickly. This means that trend-following traders will typically use stop loss orders or other risk management techniques to limit their potential losses if the trend reverses.
+
+        Trend-following strategies can be applied to a wide range of financial instruments, including stocks, bonds, currencies, and commodities. The strategy is popular among both individual and institutional traders and has been used successfully by many well-known traders and hedge funds.
+
+        One potential disadvantage of trend-following is that it can be subject to false signals and whipsaws, particularly in volatile or choppy markets. In addition, trend-following can be slow to react to sudden market shifts or changes in investor sentiment, which can result in missed opportunities or losses. As with any trading strategy, it's important to carefully consider the risks and benefits of trend-following and to use it in combination with other tools and techniques to manage risk and optimize performance.
+
+        See also
+
+        - :term:`Trend`
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading strategy`
 
     Bollinger bands
     
@@ -2352,11 +2427,59 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Trading strategy`
+        - :term:`Trading Strategy Framework`
+
+        - :term:`Trading strategy Protocol`
 
         - :term:`Backtest`
 
         - :term:`OHLCV`
+
+    Trading Strategy Protocol
+
+        The Trading Strategy Protocol is a :term:`decentralised finance` protocol build using :term:`oracles <oracle>`
+        and :term:`Trading Strategy Framework`.
+
+        It allows :term:`quant developers <quant>` to deploy :term:`automated trading strategies <automated trading strategy>`
+        that trade on :term:`decentralised exchange <decentralised exchange>` and :term:`lending protocols <lending protocol>`.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`Trading Strategy Client`
+
+        - :term:`Trading Strategy Framework`
+
+    Trading Strategy Framework
+
+        The Trading Strategy Framework is a :term:`Python` based software development library
+        to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
+        markets.
+
+        The framework consists of
+
+        - Market data feed reader in the form of :term:`Trading Strategy Client`
+
+]        - :term:`Backtesting framework <backtest>`
+
+        - Live trading execution environment
+
+        The core audience of the library is :term:`quants <quant>`.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Backtest`
+
+        - :term:`Trading Strategy Client`
+
+        - :term:`Trading Strategy Protocol`
 
     Oracle
 
@@ -2576,3 +2699,130 @@ and algorithmic trading.
         - :term:`Longing`
 
         - :term:`Leverage`
+
+    Portfolio construction
+
+
+
+    Alpha model
+
+        An alpha model is a mathematical or quantitative framework used to generate trading signals that can be used in :term:`portfolio construction`.
+
+        The alpha model seeks to identify assets that are likely to outperform or underperform their peers, based on a variety of factors and variables.
+
+        Alpha models can be constructed using a variety of techniques, such as statistical analysis, machine learning algorithms, or financial modeling. The inputs to an alpha model may include company financial statements, price and volume data, macroeconomic indicators, and other market data.
+
+        Once an alpha model generates :term:`trading signals <trading signal>`, the portfolio manager can use those signals to construct a portfolio that aims to generate alpha (i.e., excess returns) relative to a benchmark index. The portfolio manager may use other tools, such as risk management techniques or diversification strategies, to manage portfolio risk and optimize performance.
+
+        It is important to note that alpha models are not foolproof and can be subject to various biases and errors. As such, portfolio managers must continually test and refine their alpha models to ensure that they are producing accurate and robust trading signals.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Alpha signal`
+
+        - :term:`Technical analysis`
+
+        - :term:`Alpha generation platform`
+
+        - :term:`Decentralised finance`
+
+    Alpha signal
+
+        In :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models.
+
+        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a portfolio that generates excess returns (i.e., alpha) relative to a benchmark index.
+
+        Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Alpha model`
+
+        - :term:`Decentralised finance`
+
+    Trading signal
+
+        A signal that predicts the future price movement.
+
+        For the full description, see :term:`alpha signal`.
+
+    Stop loss
+
+        Stop loss is a risk management tool used by investors and traders to limit their potential losses on a trade.
+
+        Stop loss can be implemented by
+
+        - Having a special order type on :term:`order book`
+
+        - Manually, by doing :term:`
+
+        A stop loss order is an instruction to automatically sell a security or other asset when its price falls to a certain level, known as the stop price.
+
+        For example, if an investor buys a stock at $50 per share and sets a stop loss order at $45 per share, the stop loss order will be triggered if the stock falls to $45 or below. At that point, the stop loss order will automatically sell the stock, limiting the investor's potential loss to $5 per share.
+
+        Stop loss triggers can be particularly useful in volatile markets or when trading more speculative assets with higher levels of risk. By setting a stop loss order, traders can limit their :term:`exposure` and losses in the event that the market moves against them, while still allowing for potential gains if the trade is successful.
+
+        It's important to note that stop loss orders are not foolproof and can be subject to market fluctuations and gaps in trading. In addition, stop loss orders can be triggered during periods of high volatility or sharp price movements, resulting in a sale at a price below the stop price. As with any investment strategy, it's important to carefully consider the risks and benefits of using stop loss orders and to use them in combination with other risk management tools and techniques.
+
+        See also
+
+        - :term:`Order book`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Exposure`
+
+    Statistical arbitrage
+
+        Statistical arbitrage is a :term:`high-frequency trading` :term:`trading strategy` that uses statistical and quantitative techniques to identify and exploit pricing inefficiencies in financial markets.
+
+        The strategy involves taking :term:`long <longing>` and :term:`short positions <shorting>` in pairs of securities that are believed to be mispriced relative to each other.
+
+        The basic idea behind statistical arbitrage is to identify pairs of securities that are highly correlated in terms of their price movements. If the prices of these securities diverge from their historical correlation, a statistical arbitrageur will take a long position in the underpriced security and a short position in the overpriced security, in the hope of profiting from the convergence of prices.
+
+        Statistical arbitrage strategies typically involve a high level of automation, using computer algorithms and mathematical models to analyze large amounts of data and make trades in real time. These algorithms may use a variety of statistical and mathematical techniques, such as regression analysis, machine learning, and time series analysis, to identify and exploit pricing inefficiencies.
+
+        One advantage of statistical arbitrage is that it can be used in a variety of market conditions, including both up and down markets. However, the strategy can be complex and may require significant computational resources and expertise to implement effectively. In addition, as with any investment strategy, there is always the risk of losses due to unforeseen market events or unexpected changes in correlations between securities.
+
+        See also
+
+        - :term:`High-frequency trading`
+
+        - :term:`Decentralised finance`
+
+        - :term:`MEV`
+
+    Market order
+
+        A market order is a trade where a trader order is instantly fulfilled whatever is the availability liquidity and price
+        at the markets.
+
+        Specifically
+
+        - Market orders remove liquidity (also known as a market taker)
+
+        - Market buys move price up, market sells move price ddown
+
+        The opposite of a market order is often a limit order. On :term:`AMMs <AMM>` the opposite is
+        :term:`liquidity provider` position.
+
+        On :term:`AMM` decentralised exchanges every :term:`swap` is a similar to a market order.
+
+        Market orders, as a market taker, typically have higher fees than market makers (provides liquidity),
+        as liquidity is the key selling point for any exchange.
+
+        See also
+
+        - :term:`Order book`
+
+        - :term:`AMM`
+
+        - :term:`Decentralised exchange`
+
+    Market trade
+
+        See :term:`market order`
