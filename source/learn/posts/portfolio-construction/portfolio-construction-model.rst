@@ -12,7 +12,7 @@ The target audience of this post us :term:`quants <quant>` and people who want t
 What is portfolio construction?
 -------------------------------
 
-Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities optimally to achieve maximum returns while taking minimum risk.
+:term:`Portfolio construction` a :term:`trading strategy method <trading strategy>` method of selecting securities optimally to achieve maximum returns while taking minimum risk.
 
 It involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
 
@@ -41,7 +41,7 @@ is redeployed - assets receiving less weight are sold, while those that have a s
 What is Alpha model?
 --------------------
 
-An alpha model is a mathematical or quantitative framework used to generate trading signals that can be used in :term:`portfolio construction`.
+An alpha model is a mathematical or quantitative framework used to generate trading signals that can be used in portfolio construction.
 
 The alpha model seeks to identify assets that are likely to outperform or underperform their peers, based on a variety of factors and variables.
 
