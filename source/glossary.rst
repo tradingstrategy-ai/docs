@@ -1346,12 +1346,6 @@ and algorithmic trading.
 
         Overall, order book exchanges offer a more traditional trading experience compared to Automated Market Maker (AMM) exchanges, but with the added benefits of being decentralised and secure.
 
-    Stop loss
-    
-        A stop loss is a trading tool used to limit potential losses on a trade. It is a predefined price level that, when reached, automatically closes a trade in order to prevent further losses. A stop loss allows traders to set a maximum amount of money they are willing to lose on a trade, reducing the emotional stress of managing an open position. For example, if a trader buys an asset at $100 and sets a stop loss at $90, if the price of the asset drops to $90, the trade will automatically be closed, limiting the trader's loss to $10.
-
-        Stop losses are an important risk management tool for traders and investors, helping to limit their potential losses and preserving their capital for future trades.
-
     Bear market
     
         A bear market is a condition in the stock market where the overall trend is downward and prices are falling. It is characterised by widespread pessimism and negative investor sentiment, leading to a decrease in the prices of securities. In a bear market, most asset classes tend to decline, and it can last anywhere from a few months to several years. During a bear market, it is common for investors to sell their holdings, leading to further declines in prices. The opposite of a bear market is a bull market, where prices are rising and investor sentiment is positive. Bear markets can be caused by various factors, such as economic recession, high unemployment, and declining corporate earnings.
