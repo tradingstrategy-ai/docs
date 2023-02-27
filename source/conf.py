@@ -148,7 +148,8 @@ AutosummaryRenderer.__init__ = fixed_init
 #
 
 redirects = {
-     "learn": "learn/index.html"
+     "learn": "learn/index.html",
+     "home": "index.html"
 }
 
 # Monkey-patch sphinx-sitemap to support <priority> XML argument

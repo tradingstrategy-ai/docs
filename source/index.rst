@@ -10,12 +10,15 @@ This is the technical documentation for Trading Strategy algorithmic trading fra
 
 The documentation is divided into three parts: overview, trading strategy development framework and trading strategy protocol.
 
+.. _table of contents:
+
 Table of contents
 -----------------
 
 .. toctree::
    :maxdepth: 1
 
+   home
    getting-started
    overview/index
    programming/index
