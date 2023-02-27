@@ -7,7 +7,7 @@ Developing portfolio construction trading strategies
 In this post, we will cover the basics of portfolio constructions and alpha models.
 We will show how to build a simple portfolio construction strategy using Python and Trading Strategy's backtesting framework.
 
-The target audience of this post us :term:`quants <quant>` and people who want to learn :term:`algorithmic trading`.
+The target audience of this post is :term:`quantitative finance developers <quant>` and people who want to learn :term:`algorithmic trading`.
 
 What is portfolio construction?
 -------------------------------
