@@ -52,7 +52,7 @@ Once an alpha model generates :term:`trading signals <alpha signal>`, the portfo
 What is Trading Strategy Framework?
 -----------------------------------
 
-The Trading Strategy Framework is a :term:`Python` based software development library
+The Trading Strategy Framework is a :term:`Python`-based software development framework
 to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
 markets.
 

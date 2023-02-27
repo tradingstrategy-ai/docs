@@ -2460,7 +2460,9 @@ and algorithmic trading.
 
         You can then examine the data in :term:`Jupyter notebook`.
 
-        `See the project Github README <https://github.com/tradingstrategy-ai/trading-strategy/>`__.
+        - Read the API documentation for :py:class:`tradingstrategy.client.Client`
+
+        - `See the project Github README <https://github.com/tradingstrategy-ai/trading-strategy/>`__
 
         See also
 
