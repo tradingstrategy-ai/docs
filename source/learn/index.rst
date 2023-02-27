@@ -18,6 +18,16 @@ We have compiled resources for learning algorithmic trading, decentralised finan
 
 - If you are new to DeFi and automated, you can also browser `DeFi and trading dictionary <https://tradingstrategy.ai/glossary>`__ to learn the industry vocabulary.
 
+
+Explanation documentation
+-------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   posts/portfolio-construction/portfolio-construction-model.rst
+
+
 Algorithmic trading learning resources
 --------------------------------------
 
@@ -34,7 +44,6 @@ Algorithmic trading learning resources
    communities
    charting-solutions
    additional-resources
-   portfolio-construction-model
 
 
 

@@ -1549,6 +1549,33 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+    Momentum
+
+        In :term:`trading strategy`, momentum refers to the rate of change in the price of a financial asset over a given period of time.
+
+        The price change si often expressed as a change in the :term:`open-close data <OHLCV>`. E.g. the price of an asset
+        at the opening of the week vs. closing price as the end of the week.
+
+        Momentum traders seek to profit from short-term price trends by buying assets that have been performing well and selling those that have been performing poorly.
+
+        Momentum traders typically use technical analysis to identify assets that are exhibiting strong positive or negative momentum. They may look at indicators such as :term:`moving averages <EMA>`, relative strength index (RSI), and MACD (moving average convergence divergence) to determine the current trend and potential entry and exit points.
+
+        One common strategy used by momentum traders is to buy assets that have recently experienced a significant price increase, on the assumption that the upward trend will continue. This is known as a "breakout" strategy. Conversely, they may sell assets that have experienced a significant price decrease, on the assumption that the downward trend will continue.
+
+        It is important to note that momentum trading can be risky, as price trends can quickly reverse direction, leading to significant losses if a trader's positions are not properly managed. It is therefore important for traders to have a well-defined strategy, strict risk management rules, and the discipline to stick to their plan even in the face of short-term fluctuations.
+
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Trend`
+
+        - :term:`Technical indicator`
+
+        - :term:`EMA`
+
+        - :term:`Trading strategy`
+
     Bollinger bands
     
         Bollinger Bands are a technical analysis indicator used to measure market volatility and identify potential buying or selling opportunities. The indicator consists of a set of three lines plotted on a price chart, with the middle line being a simple moving average of the security's price, and the upper and lower bands serving as a measure of volatility, typically set 2 standard deviations away from the moving average.
@@ -2863,7 +2890,7 @@ and algorithmic trading.
 
     Rebalance
 
-        In a :term:`trading strategy`, rebalance refers to the process of re-weighting the portfolio
+        In a :term:`trading strategy`, rebalance refers to the process of :term:`re-weighting <weight allocation>` the portfolio
         by selling some assets and buying new ones.
 
         Rebalances are needed in order for the strategy to follow its :term:`alpha model`.
@@ -2876,9 +2903,47 @@ and algorithmic trading.
 
         - :term:`Portfolio construction`
 
+        - :term:`Weight allocation`
+
         - :term:`Position`
 
         - :term:`Alpha model`
 
         - :term:`Trading strategy`
 
+    Weight allocation
+
+        In :term:`portfolio construction`, the weight allocation determines how many percents an individual asset :term:`position`
+        will make out of the total portfolio.
+
+        One of the simplest weight allocation method is "1/Nth" allocation: the asset with the strongest :term:`alpha signal`
+        receives 1/1th multiplier, the second asset 1/2th. The weightings are then normalised so that
+        all assets make total of 100%.
+
+        `Read about 1/Nth weight allocation <https://www.r-bloggers.com/2013/06/the-fallacy-of-1n-and-static-weight-allocation>`.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Position`
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
+    JSON
+
+        JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+
+
+        It is a text format that is used to transmit data between a server and a web application, as well as between different parts of a web application.
+        JSON is commonly used in web development for tasks such as sending and receiving data between a server and a client-side web application, or for storing data in a format that can be easily exchanged between different systems.
+
+        JSON is based on a subset of the JavaScript programming language, and it is often used with JavaScript, although it can be used with any programming language that can parse and generate JSON data.
+
+        JSON data is organized into key-value pairs, where keys are strings and values can be strings, numbers, arrays, objects, booleans, or null.
+
+        See also
+
+        - :term:`Python`
