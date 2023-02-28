@@ -7,16 +7,16 @@ Developing portfolio construction trading strategies
 In this post, we will cover the basics of portfolio constructions and alpha models.
 We will show how to build a simple portfolio construction strategy using Python and Trading Strategy's backtesting framework.
 
-The target audience of this post is :term:`quantitative finance developers <quant>` and people who want to learn :term:`algorithmic trading`.
+The target audience of this post are :term:`quantitative finance developers <quant>` and people who want to learn :term:`algorithmic trading`.
 
 What is portfolio construction?
 -------------------------------
 
-:term:`Portfolio construction` a :term:`trading strategy method <trading strategy>` method of selecting securities optimally to achieve maximum returns while taking minimum risk.
+:term:`Portfolio construction` is a :term:`trading strategy method <trading strategy>` method of selecting securities optimally to achieve maximum returns while taking minimum risk.
 
-It involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
+It involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives.
 
-Portfolio construction has several phases
+Portfolio construction consists of several phases:
 
 - **Asset allocation models** - to determine the optimal mix of asset classes (stocks, bonds, and commodities) in a portfolio, based on historical returns, volatility, and correlations.
 
@@ -31,7 +31,7 @@ How does portfolio construction work?
 -------------------------------------
 
 Portfolio construction works by :term:`rebalancing <rebalance>` the portfolio assets based on the new allocation.
-Rebalance usually occurs during a fixed intervals like weekly. The total equity (assets + cash)
+Rebalancing usually occurs at fixed intervals like weekly. The total equity (assets + cash)
 is redeployed - assets receiving less weight are sold, while those that have a stronger alpha signal are bought.
 :term:`The indivual percent weight of an asset <weight allocation>` is decided by some optimisation and risk management criteria.
 
@@ -56,7 +56,7 @@ The Trading Strategy Framework is a :term:`Python`-based software development fr
 to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
 markets.
 
-The framework consists of
+The framework consists of:
 
 - Market data feed reader in the form of :term:`Trading Strategy Client`
 
@@ -64,12 +64,12 @@ The framework consists of
 
 - :ref:`Live trade execution environment <strategy-deployment>` for decentralised markets
 
-The core audience of the library is :term:`quants <quant>`.
+The core audience of the library are :term:`quants <quant>`.
 
 How does Trading Strategy framework support creating portfolio constructions strategies?
 ----------------------------------------------------------------------------------------
 
-The Trading Strategy Framework provides functionality for
+The Trading Strategy Framework provides functionality for:
 
 - Setting up a tradeable asset universe from assets traded on :term:`decentralised finance markets <decentralised finance>`
 
@@ -78,7 +78,7 @@ The Trading Strategy Framework provides functionality for
 
 - Supports :term:`alpha model` that allows easily writing strategies for portfolio construction
 
-The workflow for the framework is
+The workflow for the framework is as follows:
 
 - Develop and :term:`backtest` your strategies using :term:`Jupyter Notebook`
 
@@ -91,9 +91,9 @@ The workflow for the framework is
 The strategy core logic
 -----------------------
 
-The Trading Strategy Framework offers two functions the developer must implement for the strategies
+The Trading Strategy Framework offers two functions the developer must implement for the strategies:
 
-- `creating_trading_universe()` that returns an object that represents all assets the strategy can trade.
+- `create_trading_universe()` that returns an object that represents all assets the strategy can trade.
   This data is used to set up and update backtesting and live market data feeds. This includes
   blockchains, exchanges, trading pairs, :term:`OHLCV` data feeds, liquidity data feeds and some
   special data feeds e.g. used for :term:`stop loss` triggers.
@@ -103,17 +103,17 @@ The Trading Strategy Framework offers two functions the developer must implement
   Based on this data the function will return a list of new trades that will either open new or close
   existing :term:`positions <position>`
 
-The strategy advanced in ticks. Each tick length is the duration of a :term:`strategy cycle`.
-Common strategy cycles includes hourly, daily and weekly trade decisions.
+The strategy advances in ticks. Each tick length is the duration of a :term:`strategy cycle`.
+Common strategy cycles includes hourly, daily, and weekly trade decisions.
 In the portfolio construction, this strategy cycle is called :term:`rebalance`.
 
 Overview of portfolio construction strategy architecture
 --------------------------------------------------------
 
-The Trading Strategy framework offers a Python "lego blocks" that allows you to easily
-put together a strategy without need to develop the software plumbing yourself.
+The Trading Strategy framework offers Python "lego blocks" that allows you to easily
+put together a strategy without the need to develop the software plumbing yourself.
 
-For a developer, this is seen as a high-level Python classes and objects.
+For a developer, this is seen as high-level Python classes and objects.
 
 - `decide_trades()` and `create_trading_universe()` are interface functions that the strategy developer
   fills in
@@ -121,11 +121,11 @@ For a developer, this is seen as a high-level Python classes and objects.
 - `timestamp` is the current strategy cycle tick of the trading strategy.
 
 - Trading pairs are identified with a copy-by-value class :py:class:`tradeexecutor.state.identifier.TradingPairIdentifier`
-  that encapsulates blockchain id, exchange id, :term:`ERC-20 tokens <ERC-20>` and their smart contract addresses which all are needed
+  that encapsulates blockchain id, exchange id, :term:`ERC-20 tokens <ERC-20>` and their smart contract addresses which are all needed
   to uniquely refer to trading pairs in decentralised markets environments. This is one of the core challenges in decentralised markets,
   as assets cannot be simply referred to by their three or four letter stock tickers.
 
-- :py:class:`tradeexecutor.strategy.trading_strategy_universe.TradingStrategyUniverse` contains all data that can go input to the trade.
+- :py:class:`tradeexecutor.strategy.trading_strategy_universe.TradingStrategyUniverse` contains all data that can be an input to the trade.
 
 - :py:class:`tradeexecutor.state.state.State` contains all past and current data about the previous actions the strategy took,
   like opened and closed positions, trades, blockchain transaction execution details,
@@ -143,9 +143,9 @@ Here is how `decide_trades()` interacts in the case of a portfolio construction 
 
 .. image:: portfolio-construction-strategy.svg
 
-State is a :term:`JSON-serialisable <JSON>` hierarchy of all strategy persistent of objects.
+State is a :term:`JSON-serialisable <JSON>` hierarchy of all persistent strategy objects.
 
-The overview of a state management:
+The overview of state management:
 
 .. image:: state.svg
 
@@ -156,20 +156,20 @@ Below is a Python strategy code for an example portfolio construction strategy.
 It is based on fictional strategy that would trade a fixed set of :term:`decentralised finance`
 assets across given set of exchanges and trading pairs.
 
-For this particular example
+This particular example:
 
 - Runs a portfolio construction strategy backtest for a :term:`momentum` strategy
     - Uses handpicked "DeFi bluechip tokens" - see *Trading universe definition* for the list
     - Long only
-    - Pick top assets for each strategy cycle
-    - Trade across multiple blockchains
-    - Trade across multiple DEXes
-    - Based on momentum (previous week price change %)
+    - Picks top assets for each strategy cycle
+    - Trades across multiple blockchains
+    - Trades across multiple DEXes
+    - Is based on momentum (previous week price change %)
     - Weekly rebalances
     - Due to volatile cryptocurrency markets, uses take profit/stop loss triggers to manage risks and exit outside the normal rebalance cycle
-    - Ignore price impact, and thus may cause unrealistic results
-    - Ignore available liquidity to trade, and thus may cause unrealistic results
-    - Ignore any complications of trading assets cross chain - we assume our reserve currency USDC is good on any chain and DEX and trading pair,
+    - Ignores price impact, and thus may cause unrealistic results
+    - Ignores available liquidity to trade, and thus may cause unrealistic results
+    - Ignores any complications of trading assets cross chain - we assume our reserve currency USDC is good on any chain and DEX and trading pair,
       which is not a realistic assumption
 - Order routing is ignored; the strategy cannot be moved to live trading as is
     - We use the oldest available DEX price data we have: Uniswap v2, others
@@ -408,7 +408,7 @@ And then we define the actual strategy in `decide_trades()` function:
 Analysing the backtest results
 ------------------------------
 
-The backtest results can be analysed in various way. Some of the analyses goals are
+The backtesting results can be analysed in various ways. Some of the analysis goals are:
 
 - To see if the strategy is profitable
 
@@ -420,10 +420,10 @@ The backtest results can be analysed in various way. Some of the analyses goals 
 
         Past performance is not indicative of future results.
 
-The :Trading Strategy Framework offers few analysis tools you can
-use in Jupyter Notebooks out of the box. Here are some examples.
+The Trading Strategy Framework offers few analysis tools you can
+use in Jupyter Notebooks out of the box. Below are some examples.
 
-The :term:`equity curve` of the backtest results that compares the example strategy to "buy and hold ETH" index benchhmark:
+The :term:`equity curve` of the backtest results that compares the example strategy to the "buy and hold ETH" index benchhmark:
 
 .. image:: equity-curve.png
 
