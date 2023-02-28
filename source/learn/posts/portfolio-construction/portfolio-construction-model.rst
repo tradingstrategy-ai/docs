@@ -111,9 +111,9 @@ Overview of portfolio construction strategy architecture
 --------------------------------------------------------
 
 The Trading Strategy framework offers a Python "lego blocks" that allows you to easily
-put together a strategy without need to develop the software plumbinb yourself.
+put together a strategy without need to develop the software plumbing yourself.
 
-For a develop, this is seen as a high-level Python classes and objects.
+For a developer, this is seen as a high-level Python classes and objects.
 
 - `decide_trades()` and `create_trading_universe()` are interface functions that the strategy developer
   fills in
@@ -123,7 +123,7 @@ For a develop, this is seen as a high-level Python classes and objects.
 - Trading pairs are identified with a copy-by-value class :py:class:`tradeexecutor.state.identifier.TradingPairIdentifier`
   that encapsulates blockchain id, exchange id, :term:`ERC-20 tokens <ERC-20>` and their smart contract addresses which all are needed
   to uniquely refer to trading pairs in decentralised markets environments. This is one of the core challenges in decentralised markets,
-  as assets cannot be simple referred by their three or four letter stock tickers.
+  as assets cannot be simply referred to by their three or four letter stock tickers.
 
 - :py:class:`tradeexecutor.strategy.trading_strategy_universe.TradingStrategyUniverse` contains all data that can go input to the trade.
 
@@ -132,7 +132,7 @@ For a develop, this is seen as a high-level Python classes and objects.
   technical indicators, uptime, deposited capital.
 
 - :py:class:`tradeexecutor.strategy.alpha_model.AlphaModel` offers a way to set weighted :term:`trading signals <alpha signal>` based
-  on the data analysis. It has helper methods of trackign signals, choosing top signals,
+  on the data analysis. It has helper methods of tracking signals, choosing top signals,
   and generating :term:`rebalance` trades automatically.
 
 - :py:class:`tradeexecutor.strategy.pandas_trader.position_manager.PositionManager` is a high level utility class that is used to generate trades.
@@ -161,7 +161,7 @@ For this particular example
 - Runs a portfolio construction strategy backtest for a :term:`momentum` strategy
     - Uses handpicked "DeFi bluechip tokens" - see *Trading universe definition* for the list
     - Long only
-    - Pick top assetes for each strategy cycle
+    - Pick top assets for each strategy cycle
     - Trade across multiple blockchains
     - Trade across multiple DEXes
     - Based on momentum (previous week price change %)
