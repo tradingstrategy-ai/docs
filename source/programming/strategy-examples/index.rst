@@ -43,4 +43,4 @@ Example backtesting Jupyter notebooks
 More basic code examples
 ------------------------
 
-If you are new to algorithmic trading we recommend you check :ref:`the basic code examples <tutorial>`_ first.
+If you are new to algorithmic trading we recommend you check :ref:`the basic code examples <tutorial>` first.
