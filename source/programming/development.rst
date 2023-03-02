@@ -37,6 +37,17 @@ Or manually:
 
     rm -rf /tmp/trading-strategy-tests
 
+Updating documentation notebooks
+--------------------------------
+
+The example notebooks must be run using `jupyter notebook` server
+before committing to the documentation, as otherwise Plotly figures won't display.
+
+- Visual Studio Code notebook output gives you `Data type cannot be displayed: application/vnd.plotly.v1+json`
+  error if added via `nbsphinx`
+
+- PyCharm has internal bugs and fails to finish running notebooks
+
 Terminal IPython and debugging with ipdb
 ----------------------------------------
 
