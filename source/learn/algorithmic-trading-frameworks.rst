@@ -73,3 +73,20 @@ Lean Engine is an open-source algorithmic trading engine built for easy strategy
 The core of the LEAN Engine is written in C#; but it operates seamlessly on Linux, Mac and Windows operating systems. It supports algorithms written in Python 3.8 or C#. Lean drives the web-based algorithmic trading platform QuantConnect.
 
 `View LEAN Github page <https://github.com/QuantConnect/Lean>`__.
+
+FreqTrade
+---------
+
+Freqtrade is a free and open source crypto trading bot written in Python. It is designed to support all major exchanges and be controlled via Telegram or webUI. It contains backtesting, plotting and money management tools as well as strategy optimization by machine learning.
+
+`View FreqFrade on Github <https://github.com/freqtrade/freqtrade>`__.
+
+Gekko
+-----
+
+**Gekko is no longer maintainer**.
+
+Gekko is an open source platform for automating trading strategies over bitcoin markets.
+
+`View Gekko homepage <https://gekko.wizb.it/>`__.
+
