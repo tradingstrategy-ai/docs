@@ -68,8 +68,8 @@ Create kern
 
 Then
 
-Visual Studio Code or PyCharm hangs at a notebook progress bar (tqdm)
----------------------------------------------------------------------
+Visual Studio Code IOPub limit issue
+------------------------------------
 
 You might need ot increase the kernel IOPub limits.
 The only way to do this for now is to start the kernel from the command line and
@@ -84,3 +84,20 @@ Then use Visual Studio Code or PyCharm "Connect to remote kernel" feature
 to connect this kernel you started from the command line yourself.
 Then run the notebook.
 
+PyCharm using a remote kernel
+-----------------------------
+
+PyCharm "Managed kernel" option fail to run notebooks.
+You can work around this by launching Jupyter server in terminal
+and create "remote kernel" option:
+
+.. code-block:: shell
+
+    poetry shell
+    jupyter server --ServerApp.iopub_msg_rate_limit 10000
+
+- Get the URL with the access token
+
+- Add new kernel in PyCharm
+
+- Switch to this kernel
