@@ -63,12 +63,6 @@ First set up the development environment:
       clean-autosummary \
       clean \
       html
-```
-
-.. note ::
-
-    Because how Sphinx automsummary works, it may update files under `source` tree, so be careful
-    when doing a full regenration.
 
 This will create `build/html/index.html` which you can open in your web browser
 
@@ -105,6 +99,11 @@ Then commit new notebook
 - Push in refreshed `ipynb` file
 
 - Open a PR
+
+.. note ::
+
+    Because how Sphinx automsummary works, it may update files under `source` tree, so be careful
+    when doing a full regeneration of documentation.
 
 Terminal IPython and debugging with ipdb
 ----------------------------------------
