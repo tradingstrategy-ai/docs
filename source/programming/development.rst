@@ -48,6 +48,64 @@ before committing to the documentation, as otherwise Plotly figures won't displa
 
 - PyCharm has internal bugs and fails to finish running notebooks
 
+First set up the development environment:
+
+.. code-block:: shell
+
+    git clone git@github.com:tradingstrategy-ai/docs.git
+    co docs
+    make \
+      update-git-submodules \
+      poetry-install \
+      pip-force-install-deps \
+      install-furo \
+      rebuild-furo \
+      clean-autosummary \
+      clean \
+      html
+```
+
+.. note ::
+
+    Because how Sphinx automsummary works, it may update files under `source` tree, so be careful
+    when doing a full regenration.
+
+This will create `build/html/index.html` which you can open in your web browser
+
+.. code-block:: shell
+
+    open build/html/index.html
+
+And now you can browse the documentation locally using `file://` protcol.
+
+Then to rerun and rerender a Jupyter notebook locally.
+
+First start the notebook browser locally in Poetry environment:
+
+.. code-block::
+
+    jupyter notebook
+
+Find a notebook that you want to rerender.
+
+Choose clear output. Run it.
+
+Manually inspect that the notebook complete and there are no errors
+
+- All figures are rendered
+
+- The last cell with `print("Ok")`
+
+= There are no excessive warnings (some warnings are ok)
+
+Then commit new notebook
+
+- Create a branch
+
+- Push in refreshed `ipynb` file
+
+- Open a PR
+
 Terminal IPython and debugging with ipdb
 ----------------------------------------
 
