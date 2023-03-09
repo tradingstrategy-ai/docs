@@ -80,6 +80,9 @@ First start the notebook browser locally in Poetry environment:
 
     jupyter notebook
 
+This will spawn a Jupyter server and open a Jupyter notebook user interface
+in your web browser. You can later close this with `CTRL + C`.
+
 Find a notebook that you want to rerender.
 
 Choose clear output. Run it.
