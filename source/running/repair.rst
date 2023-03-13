@@ -41,7 +41,11 @@ Choose the trade executor Docker image version (you can peak the current version
 
 .. code-block:: shell
 
+    # Tell docker-compose.yaml the pinned software version
     export TRADE_EXECUTOR_VERSION=v106
+
+    # Executor name for the following commmands
+    EXECUTOR_ID=quickswap-matic-usd-ema
 
 Check running strategies
 
@@ -53,15 +57,26 @@ For any strategy to be repaired, its trade executor must be stopped first.
 
 .. code-block:: shell
 
-    docker-compose stop quickswap-matic-usd-ema
+    docker-compose stop $EXECUTOR_ID
 
 Now you can start the repair:
 
 .. code-block:: shell
 
-    docker-compose run quickswap-matic-usd-ema repair
+    docker-compose run $EXECUTOR_ID repair
 
-This will attempt to re-execute all trades that failed prioer.
+This will attempt to re-execute all trades that failed prior.
+
+.. note ::
+
+    The process is interactive and will prompt you the trades
+    before attempting to fix them, so it is safe to run.
+
+After the repair command is run you get a report:
+
+.. code-block:: text
+
+    Saved state to state/quickswap-matic-usd-ema.json, total 1623881 chars
 
 Restarting the executor
 -----------------------
@@ -70,7 +85,7 @@ For any strategy to be repaired, its trade executor must be stopped first.
 
 .. code-block:: shell
 
-    docker-compose up -d quickswap-matic-usd-ema
+    docker-compose up -d $EXECUTOR_ID
 
 
 
