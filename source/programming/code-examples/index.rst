@@ -31,6 +31,7 @@ Examples
    pool-liquidity
    dataset-download
    plotting-old
+   aave-v3-candles
 
 Next steps
 ----------
