@@ -35,3 +35,5 @@ Miscellaneous
 - `Blockchain SaaS node provider latency comparison <https://www.comparenodes.com/performance/ethereum/>`__
 
 - `Awesome On-Chain Investigations HandBook <https://github.com/OffcierCia/On-Chain-Investigations-Tools-List>`__
+
+- `Uniswap v3 liquidity provider strategies <https://atise.medium.com/42970cf9df4>`__
