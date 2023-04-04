@@ -10,18 +10,12 @@ Preface
 
 This page covers how to run Trading Strategy backtest examples.
 
-* Make sure that you can :ref:`run code eaxmples first <running-code-examples>`
+* First set up your development environment for :ref:`running code examples <running-code-examples>`
 
-* Additiona `trade-executor` package is needed to run the strategy backtests.
-  Make sure that this package is installedin your Jupyter Notebook enviroment.
+* Strategy backtest and example notebooks are not different from other Jupyter Notebooks,
+  so you can run them locally on your computer
 
-To install `trade-executor` package:
-
-.. code-block:: shell
-
-    pip install trade-executor
-
-List of backtests examples
---------------------------
+List of example backtests
+-------------------------
 
 See :ref:`strategy examples`.

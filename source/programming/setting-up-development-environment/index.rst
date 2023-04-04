@@ -29,7 +29,7 @@ To get started, you do not need to install any applications on your computer.
 Recommended set up
 ------------------
 
-If you are not an advanced Python developer,
+If you are not an advanced Python developer, and you do not have a preferred toolchain,
 we recommend you to start with Visual Studio Code :ref:`Dev Container`.
 
 Development environment options
