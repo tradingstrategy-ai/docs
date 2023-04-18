@@ -2949,3 +2949,27 @@ and algorithmic trading.
         See also
 
         - :term:`Python`
+
+    Trailing stop loss
+
+        A trailing stop loss is a special order type or a trigger parameter,
+        which will keep updating the :term:`position`'s :term:`stop loss` dollar limit as the market price moves.
+
+        - Trailing stop loss is set on a :term:`position` when opening it
+
+        - Trailing stop loss is usually specified as % of the market price
+
+        - Trailing stop loss dynamically updates the position's stop loss upwards if the market price moves upwards
+
+        - If the market price moves downwards, the highest and the latest trailing stop loss mark is triggered
+
+        - Trailing stop loss allows you to lock in profits in raising markets
+
+        See also
+
+        - :term:`Stop loss`
+
+        - :term:`Position`
+
+        For more information see `Trailing stop Loss on CMC Markets <https://www.cmcmarkets.com/en/trading-guides/trailing-stop-loss>`__.
+
