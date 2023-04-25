@@ -2973,3 +2973,32 @@ and algorithmic trading.
 
         For more information see `Trailing stop Loss on CMC Markets <https://www.cmcmarkets.com/en/trading-guides/trailing-stop-loss>`__.
 
+    Gas fee
+
+        Gas fee is a term used in blockchains to describe the transactions cost a user pays to block producers
+        to have their block in includedin the blockchain.
+
+        The gas fee is dynamic. During the blockchain cognestion or high activity, block space is more premium, as users are competing
+        to get their transaction included in a block.
+
+        There can be irregular events causing gas fee spikes
+
+        - :term:`Airdops <airdrop>`
+
+        - Popular :term:`NFT` mints
+
+        As the blockchain technology developers, the gas fees, or the transaction costs, are becoming lower and lower.
+        New blockchains always are more gas efficient than their predecessors, as their code and consensus mechanisms
+        are optimised for higher throughput.
+        The costs go down from Bitcoin $20/tx to Ethereum mainnet's 10$ tx to Polygon's 0.20$ to Solana's fractions of cents.
+
+        See also
+
+        - :term:`Protocol fee`
+
+        - :term:`MEV`
+
+
+    Transaction cost
+
+        See :term:`gas fee`
