@@ -214,11 +214,11 @@ and algorithmic trading.
 
         Decentralised exchanges can be based on different models:
 
-        - term:`AMM`
+        - :term:`AMM`
 
-        - term:`CLMM`
+        - :term:`CLMM`
 
-        - term:`Order book`
+        - :term:`Order book`
 
         Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
 
