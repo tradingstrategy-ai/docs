@@ -2998,7 +2998,8 @@ and algorithmic trading.
 
         - :term:`MEV`
 
-
     Transaction cost
 
-        See :term:`gas fee`
+        How much a user pays to the block producers to have their transaction included in a blockchain.
+
+        Also known as :term:`gas fee`. See :term:`gas fee` for more information.
