@@ -3003,3 +3003,12 @@ and algorithmic trading.
         How much a user pays to the block producers to have their transaction included in a blockchain.
 
         Also known as :term:`gas fee`. See :term:`gas fee` for more information.
+
+    API key
+
+        API key is an authentication method for machine-to-machine communications.
+
+        API keys are usually needed with HTTP based API services.
+
+        Blockchain and :term:`decentralised finance` protocols do not need API keys, because the authentication
+        happens with public key cryptography and :term:`wallets <wallet>`.
