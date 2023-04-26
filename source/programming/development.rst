@@ -164,5 +164,23 @@ profiling memory usage. We need to ensure large datasets
 do not cause issues on low-memory environments like WebAsssembly
 in web browsers.
 
+Building Docker image locally
+-----------------------------
+
+For testing `trade-executor` command or for writing documentation with an unreleased version.
+
+.. code-block:: shell
+
+    docker build -t ghcr.io/tradingstrategy-ai/trade-executo/trade-executor:latest .
+
+Then copy-paste the image hash from `docker build` output and run:
+
+.. code-block:: shell
+
+    docker run -it cf308d43ad577c5194dd8669316a6a80ba6adc901f461ddf287f14915f206082 --help
+
+
+
+
 
 

@@ -753,7 +753,7 @@ and algorithmic trading.
 
     Pine Script
 
-        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, Bollinger Bands, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
 
     TradingView
 
@@ -1583,6 +1583,8 @@ and algorithmic trading.
         In a market with low volatility, the Bollinger Bands will be closer together, while in a market with high volatility, the bands will be further apart. When prices move outside the upper band, it can be a sign that the security is overbought, and a potential selling opportunity, while a move below the lower band can indicate that the security is oversold and a potential buying opportunity.
 
         Bollinger Bands are widely used by traders and investors in making investment decisions, as well as in setting stop-loss orders and determining potential profit targets.
+
+        `Read technical deep dive into Bollinger Bands <https://school.stockcharts.com/doku.php?id=technical_indicators:bollinger_bands>`__.
 
         See also
 
