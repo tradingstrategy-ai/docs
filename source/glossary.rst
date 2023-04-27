@@ -1330,13 +1330,22 @@ and algorithmic trading.
 
         Different % amounts of “taxes” may apply to different types of transactions like buy, sell, and treasury management.
 
+        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__ in our introduction blog post.
+
+        Taxed tokens are not supported by Uniswap 3. Note that any bridged tokens cannot have transfer fees,
+        so if you bridge a taxed token from Ethereum mainnet e.g. to Polygon it will work on Uniswap v3.
+
+        - `Uniswap v3 documentation about token transfer fees <https://docs.uniswap.org/concepts/protocol/integration-issues#fee-on-transfer-tokens>`__
+
+        - `The underlying issue on Paxos Gold (PAXG) token on Uniswap v3 <https://github.com/Uniswap/v3-core/issues/565#issuecomment-1158039767>`__
+
+        - `PAXG token trading on Uniswap v3 on Polygon <https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/paxg-usdc-fee-30>`__
+
         See also
 
         - :term:`swap fee`
 
         - :term:`honey pot`
-
-        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__ in our introduction blog post.
         
     Order book
     
