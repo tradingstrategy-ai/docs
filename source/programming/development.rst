@@ -15,6 +15,9 @@ See respective READMEs in Github repositories.
 Run tests
 ---------
 
+trading-strategy package
+------------------------
+
 To run tests you need to have a Trading Strategy API key. Tests use the production server.
 
 .. code-block:: shell
@@ -36,6 +39,44 @@ Or manually:
 .. code-block:: shell
 
     rm -rf /tmp/trading-strategy-tests
+
+trade-executor package
+----------------------
+
+To run the full test suite, multiple blockchain node connections are needed.
+
+You will also need to have installed
+
+* Anvil
+
+* Ganache
+
+You also need [Trading Strategy API key](https://tradingstrategy.ai/trading-view/backtesting).
+
+To set environment:
+
+.. code-block:: shell
+
+    # Free and somewhat robust Polygon endpoint
+    export JSON_RPC_POLYGON="https://polygon-rpc.com"
+    export TRADING_STRATEGY_API_KEY=...
+    export BNB_CHAIN_JSON_RPC=...
+
+Then run:
+
+.. code-block:: shell
+
+    pytest
+
+Some tests take a long time, because they are checking different real-time timings.
+You can skip the slow tests with
+
+.. code-block:: shell
+
+    export SKIP_SLOW_TESTS=true
+
+For more information see Github CI pipeline.
+
 
 Updating documentation notebooks
 --------------------------------
