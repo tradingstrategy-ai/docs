@@ -3023,3 +3023,25 @@ and algorithmic trading.
 
         Blockchain and :term:`decentralised finance` protocols do not need API keys, because the authentication
         happens with public key cryptography and :term:`wallets <wallet>`.
+
+    Quantstats
+
+        Quantstats is a popular :term:`Python` software development library for :term:`quant finance` calcualtions and charts.
+
+        It provides many tools out of the box to analyse your strategies, including
+
+        - :term:`Equity curve`
+
+        - Monthly returns and return distribution charts
+
+        - Metrics calculations like :term:`Maximum drawdown` and other :term:`risk-adjusted return` numbers
+
+        `Visit Quantstats repository <https://github.com/ranaroussi/quantstats>`__.
+
+        See also
+
+        - :term:`Quant finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Jupyter notebook`
