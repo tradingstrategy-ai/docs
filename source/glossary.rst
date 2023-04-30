@@ -1844,12 +1844,14 @@ and algorithmic trading.
 
         - Same libraries like Web3.py and Web3.js, SDKs and development tools work
 
-        Howver, you might need
+        However, you might need
 
         - Run a blockchain node yourself
 
         - Get another node provider as there is no consistency of who is running, connecting and offering
           services to different peer-to-peer networks
+
+        `For an example list of EVM-compatible blockchains see Trading Strategy's supported blockchains <https://tradingstrategy.ai/trading-view/blockchains>`__.
 
         See also
 
