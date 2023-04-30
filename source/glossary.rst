@@ -1833,6 +1833,24 @@ and algorithmic trading.
         born to Ethereum clone chains like Polygon, :term:`Avalanche` C-Chain and
         :term:`BNB Chain`.
 
+        For EVM-compatible chains
+
+        - Same Solidity and Vyper smart contracts work
+
+        - Same JSON-RPC API works
+
+        - Same wallets work, assuming your wallet gives you an option to set up a node JSON-RPC URL
+          to a different EVM chain
+
+        - Same libraries like Web3.py and Web3.js, SDKs and development tools work
+
+        Howver, you might need
+
+        - Run a blockchain node yourself
+
+        - Get another node provider as there is no consistency of who is running, connecting and offering
+          services to different peer-to-peer networks
+
         See also
 
         - :term:`Wallet`
@@ -2071,6 +2089,8 @@ and algorithmic trading.
 
         - :term:`Quantitative analysis`
 
+        - :term:`Quantstats`
+
     Risk-adjusted return
 
         Risk-adjusted return is a calculation of the return (or potential return) on an investment such as a stock or corporate bond when compared to the amount of risk the investment has represented throughout a given period of time.
@@ -2091,6 +2111,8 @@ and algorithmic trading.
         - :term:`Drawdown`
 
         - :term:`Maximum drawdown`
+
+        - :term:`Quantstats`
 
     Cumulative profit
 
