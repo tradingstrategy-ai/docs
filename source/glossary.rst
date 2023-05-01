@@ -3090,6 +3090,35 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Sortino`
+
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+    Sortino
+
+        The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
+
+        The Sortino ratio is similar to the Sharpe ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+
+        The formula for calculating the Sortino ratio is as follows:
+
+        `Sortino ratio = (Rp - Rf) / downside deviation`
+
+        Where:
+
+        `Rp = portfolio return`
+        `Rf = risk-free rate of return`
+        `Downside deviation = standard deviation of negative returns`
+
+        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
+
+        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
+
+        - :term:`Sharpe`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
