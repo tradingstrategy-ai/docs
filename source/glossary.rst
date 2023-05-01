@@ -3096,6 +3096,10 @@ and algorithmic trading.
 
         - :term:`Quantitative finance`
 
+        - :term:`Trading strategy`
+
+        - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
     Sortino
 
         The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
@@ -3116,9 +3120,17 @@ and algorithmic trading.
 
         As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
 
+        See also:
+
         - :term:`Sharpe`
 
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+
 
