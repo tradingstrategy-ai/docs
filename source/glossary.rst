@@ -954,6 +954,12 @@ and algorithmic trading.
 
         `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
 
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Algorithmic trading`
+
     Python
 
         One of the most popular and loved programming languages.
@@ -3064,8 +3070,26 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Quant finance`
+        - :term:`Quantitative finance`
 
         - :term:`Risk-adjusted return`
 
         - :term:`Jupyter notebook`
+
+    Sharpe
+
+        Sharpe, or The Sharpe Ratio, is a widely used financial metric that measures the :term:`risk-adjusted return` of an investment. It was developed by Nobel laureate William F. Sharpe in 1966.
+
+        The Sharpe ratio is calculated by subtracting the risk-free rate (such as the yield on a Treasury bond) from the return of the investment, and then dividing the result by the standard deviation of the investment's returns. The formula is:
+
+        `Sharpe Ratio = (Return of investment - Risk-free rate) / Standard deviation of investment's returns`
+
+        The Sharpe ratio helps investors evaluate an investment's return in relation to the risk taken to achieve that return. A higher Sharpe ratio indicates that an investment has generated higher returns relative to the amount of risk taken, while a lower Sharpe ratio indicates the opposite.
+
+        Generally speaking, a Sharpe ratio above 1 is considered good, and a Sharpe ratio above 2 is considered excellent. However, what is considered good or excellent can vary depending on the context. For example, a lower Sharpe ratio may be acceptable for investments with lower risk or lower volatility, while a higher Sharpe ratio may be necessary for investments with higher risk or higher volatility.
+
+        See also
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
