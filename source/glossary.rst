@@ -3142,7 +3142,7 @@ and algorithmic trading.
 
         There are several libraries available in :term:`Python` that you can use to perform sentiment analysis. One of the most popular libraries is the Natural Language Toolkit (NLTK).
 
-       See also:
+        See also:
 
         - :term:`Alternative data`
 
@@ -3158,7 +3158,7 @@ and algorithmic trading.
 
         Alternative data is often used in conjunction with traditional data sources to gain a more complete understanding of market trends and consumer behavior. By leveraging alternative data sources, investors and businesses can make more informed investment and business decisions, and gain a competitive edge in their respective markets.
 
-       See also:
+        See also:
 
         - :term:`Sentiment analysis`
 
