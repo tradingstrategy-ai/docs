@@ -3056,7 +3056,7 @@ and algorithmic trading.
 
     Quantstats
 
-        Quantstats is a popular :term:`Python` software development library for :term:`quant finance` calcualtions and charts.
+        Quantstats is a popular :term:`Python` software development library for :term:`quantitative finance` calcualtions and charts.
 
         It provides many tools out of the box to analyse your strategies, including
 
