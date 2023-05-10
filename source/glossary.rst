@@ -3132,5 +3132,19 @@ and algorithmic trading.
 
         - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
 
+    Sentiment analysis
 
+        Sentiment analysis, also known as opinion mining, is a technique used to analyze and classify the sentiment or emotion expressed in a piece of text. This can be done by using natural language processing and machine learning algorithms to identify and extract subjective information from the text, such as opinions, emotions, and attitudes.
+
+        Sentiment analysis can be used to determine the overall sentiment of a document, sentence, or even individual words, and can help businesses and organizations gain insights into customer feedback, social media posts, and online reviews. By analyzing sentiment, companies can better understand customer needs and preferences, improve their products and services, and make more informed business decisions.
+
+        Sentiment analysis can also be used in a variety of other applications, including political analysis, market research, and brand management.
+
+        There are several libraries available in :term:`Python` that you can use to perform sentiment analysis. One of the most popular libraries is the Natural Language Toolkit (NLTK).
+
+       See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
 
