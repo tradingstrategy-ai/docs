@@ -3134,7 +3134,7 @@ and algorithmic trading.
 
     Sentiment analysis
 
-        Sentiment analysis, also known as opinion mining, is a technique used to analyze and classify the sentiment or emotion expressed in a piece of text. This can be done by using natural language processing and machine learning algorithms to identify and extract subjective information from the text, such as opinions, emotions, and attitudes.
+        In :term:`quantitative finance`, Sentiment analysis, also known as opinion mining, is a technique used to analyze and classify the sentiment or emotion expressed in a piece of text. This can be done by using natural language processing and machine learning algorithms to identify and extract subjective information from the text, such as opinions, emotions, and attitudes.
 
         Sentiment analysis can be used to determine the overall sentiment of a document, sentence, or even individual words, and can help businesses and organizations gain insights into customer feedback, social media posts, and online reviews. By analyzing sentiment, companies can better understand customer needs and preferences, improve their products and services, and make more informed business decisions.
 
@@ -3144,7 +3144,24 @@ and algorithmic trading.
 
        See also:
 
+        - :term:`Alternative data`
+
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
 
+    Alternative data
+
+        In :term:`quantitative finance`, Alternative data refers to non-traditional data sources that are used by investors and businesses to gain insights into markets, industries, and consumer behavior. This data is often sourced from digital platforms and devices, such as social media, mobile devices, sensors, and web traffic.
+
+        Alternative data can provide a wealth of information that is not available through traditional data sources, such as financial statements and economic indicators. For example, social media data can be used to gauge consumer sentiment and preferences, while satellite imagery can be used to track changes in physical assets like inventories or construction sites.
+
+        Alternative data is often used in conjunction with traditional data sources to gain a more complete understanding of market trends and consumer behavior. By leveraging alternative data sources, investors and businesses can make more informed investment and business decisions, and gain a competitive edge in their respective markets.
+
+       See also:
+
+        - :term:`Sentiment analysis`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
