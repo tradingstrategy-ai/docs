@@ -3283,3 +3283,27 @@ and algorithmic trading.
         - :term:`Trading strategy`
         - :term:`Futures`
 
+    Grid search
+
+        Grid search is a :term:`hyperparameter optimization` technique used to find the best combination of hyperparameters for a machine learning model or trading algorithm. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination using a performance metric, such as accuracy or Sharpe ratio.
+
+        Although grid search can be computationally expensive, it is often used when the search space is relatively small or when a more thorough exploration of the hyperparameter space is desired. Other optimization techniques, such as random search or Bayesian optimization, can be more efficient in cases where the search space is large or the performance landscape is complex.
+
+        See also:
+
+        - :term:`Trading strategy`
+        - :term:`Hyperparameter optimization`
+
+    Hyperparameter optimization
+
+            Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
+
+            Some common hyperparameter optimization techniques include :term:`grid search`, random search, and Bayesian optimization. These methods aim to maximize the performance of the model or algorithm by systematically searching the hyperparameter space and evaluating different configurations using a predefined performance metric, such as accuracy or Sharpe ratio.
+
+            Hyperparameter optimization can help improve the performance of a model or trading strategy by fine-tuning its configuration to better fit the underlying data and problem.
+
+            See also:
+
+            - :term:`Trading strategy`
+            - :term:`Grid search`
+
