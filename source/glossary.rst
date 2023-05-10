@@ -3307,3 +3307,16 @@ and algorithmic trading.
             - :term:`Trading strategy`
             - :term:`Grid search`
 
+    Heatmap
+
+            A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
+
+            Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
+
+            Heatmaps can be created using various software tools, such as Python's Matplotlib library or R's ggplot2 package.
+
+            See also:
+
+            - :term:`Quantitative finance`
+
+            - :term:`Trading strategy`
