@@ -3180,7 +3180,7 @@ and algorithmic trading.
     
     Survivorship bias
 
-        IIn :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
+        In :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
 
         Survivorship bias can be mitigated by incorporating a more comprehensive dataset that includes both successful and unsuccessful assets or strategies, and by carefully considering the potential impact of survivorship bias on performance evaluations.
 
