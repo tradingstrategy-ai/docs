@@ -888,6 +888,12 @@ and algorithmic trading.
 
         `See Docker.com for more information <https://www.docker.com/>`__.
 
+        See also
+
+        - :term:`Environment file`
+
+        - :term:`Python`
+
     Vault
 
         In :term:`decentralised finance`, a vault refers to a :term:`smart contract`
@@ -3303,28 +3309,56 @@ and algorithmic trading.
 
     Hyperparameter optimization
 
-            Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
+        Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
 
-            Some common hyperparameter optimization techniques include :term:`grid search`, random search, and Bayesian optimization. These methods aim to maximize the performance of the model or algorithm by systematically searching the hyperparameter space and evaluating different configurations using a predefined performance metric, such as accuracy or Sharpe ratio.
+        Some common hyperparameter optimization techniques include :term:`grid search`, random search, and Bayesian optimization. These methods aim to maximize the performance of the model or algorithm by systematically searching the hyperparameter space and evaluating different configurations using a predefined performance metric, such as accuracy or Sharpe ratio.
 
-            Hyperparameter optimization can help improve the performance of a model or trading strategy by fine-tuning its configuration to better fit the underlying data and problem.
+        Hyperparameter optimization can help improve the performance of a model or trading strategy by fine-tuning its configuration to better fit the underlying data and problem.
 
-            See also:
+        See also:
 
-            - :term:`Trading strategy`
+        - :term:`Trading strategy`
 
-            - :term:`Grid search`
+        - :term:`Grid search`
 
     Heatmap
 
-            A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
+        A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
 
-            Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
+        Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
 
-            Heatmaps can be created using various software tools, such as Python's Matplotlib library or R's ggplot2 package.
+        Heatmaps can be created using various software tools, such as Python's Matplotlib library or R's ggplot2 package.
 
-            See also:
+        See also:
 
-            - :term:`Quantitative finance`
+        - :term:`Quantitative finance`
 
-            - :term:`Trading strategy`
+        - :term:`Trading strategy`
+
+    Environment file
+
+        Environment file, or env file for short, is a standard way to communicate options and arguments
+        for a process in software development.
+
+        An environment file consists of `environment variables <https://en.wikipedia.org/wiki/Environment_variable>`__
+        maintained as a configuration file.
+
+        There are different environment file formats for UNIX shells, :term:`Docker`, JavaScript and others.
+        A tool like `shdotenv <https://github.com/ko1nksm/shdotenv/>`__ can be used to import and convert between
+        different formats.
+
+        Typically environment file has a file name extension `.env`. The best practice in JavaScript development
+        is to have a file with name `.env` (no name body) that is ignored in version control and contains
+        the secrets needed by a software developer for the local development.
+
+        See also:
+
+        - :term:`Python`
+
+        - :term:`Docker`
+
+
+
+
+
+

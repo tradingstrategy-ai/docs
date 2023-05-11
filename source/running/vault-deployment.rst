@@ -116,3 +116,91 @@ register your vault there, to make it publicly accessible.
 - Sign a message from your wallet for claiming the ownership
 
 - Now you can fill in the vault description on Enzyme's website database
+
+- You can also deposit some USDC in the vault to get started trading
+
+Set up live execution environment
+---------------------------------
+
+Create a `trade-executor` :term:`Docker` instanace using `docker-compose` that will run the live trading.
+
+- You have set up an :term:`environment file` for the vault live trading
+
+- You have set up a `docker-compose` configuration entry for your live trade executor,
+  see :ref:`strategy deploment` for details
+
+You will need to create
+
+- The final strategy module file
+
+- Public environment variables file
+
+- Secret environment variables file
+
+- Final environment variables file
+
+- `docker-compose.yml` entry
+
+Example public environment variables entry:
+
+.. code-block:: shell
+
+    #
+    # This is the public environment variables file for a trade executor.
+    # This is only partial configuration.
+    #
+    # For more information see the documentation https://tradingstrategy.ai/docs/
+    #
+
+    # This is a vault based strategy
+    ASSET_MANAGEMENT_MODE="enzyme"
+
+    #
+    # Strategy assets and metadata
+    #
+
+    STRATEGY_FILE=strategies/enzyme-polygon-eth-usdc.py
+    NAME="ETH-USD breakout on Uniswap v3"
+    DOMAIN_NAME="enzyme-polygon-eth-usdc.tradingstrategy.ai"
+    SHORT_DESCRIPTION="ETH/USDC breakout strategy"
+    LONG_DESCRIPTION="Take long only positions in ETH based on RSI and Bollinger bands indicators"
+    ICON_URL="https://user-images.githubusercontent.com/74208897/215499207-8d661ee9-cc75-4df6-84df-690e14c3d93c.png"
+
+    # Blockchain transaction broadcasting parameters
+
+    # Port 3456 is mapped to the public IP on the host using Caddy
+    HTTP_ENABLED=true
+
+    # The trigger mode for the decide_trades()
+    STRATEGY_CYCLE_TRIGGER="trading_pair_data_availability"
+
+Run a backtest on the strategy module
+-------------------------------------
+
+After the strategy module and Docker instance have been deployed,
+you can run the backtest on the live trade executor.
+
+- This will use the final Docker setup to run the backtest
+
+- This is to ensure your Python code works (no missing imports, etc.)
+
+
+Performing a test trade
+-----------------------
+
+Performing a test trade is the final step before starting live trading.
+
+First make sure
+
+- Your vault has deposits
+
+- Your hot wallet has native gas token for transaction fees
+
+
+You can perform a test trade that checks that the trade routing works, opening and closing positions is possible.
+
+Launch live trading
+-------------------
+
+
+

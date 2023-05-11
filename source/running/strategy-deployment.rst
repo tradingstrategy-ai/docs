@@ -1,5 +1,7 @@
 .. _strategy-deployment:
 
+.. _strategy deployment:
+
 Live strategy deployment
 ========================
 
