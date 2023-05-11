@@ -1627,7 +1627,7 @@ and algorithmic trading.
 
         In systematic trading, trades are executed automatically based on the rules established in the trading system. These rules can be based on technical indicators, market data, or other signals, and are designed to identify and take advantage of market inefficiencies and price discrepancies. The models used in systematic trading are typically back-tested using historical market data to assess their viability and refine their parameters.
 
-        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, futures, options, and currencies.
+        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, :term:`futures`, :term:`options`, and currencies.
 
     Custodial
     
@@ -3056,7 +3056,7 @@ and algorithmic trading.
 
     Quantstats
 
-        Quantstats is a popular :term:`Python` software development library for :term:`quant finance` calcualtions and charts.
+        Quantstats is a popular :term:`Python` software development library for :term:`quantitative finance` calcualtions and charts.
 
         It provides many tools out of the box to analyse your strategies, including
 
@@ -3165,3 +3165,166 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
+    
+    Overfitting
+
+        In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
+
+        Overfitting can be avoided by using a larger training set, or by using regularization techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+    
+    Survivorship bias
+
+        In :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
+
+        Survivorship bias can be mitigated by incorporating a more comprehensive dataset that includes both successful and unsuccessful assets or strategies, and by carefully considering the potential impact of survivorship bias on performance evaluations.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Overfitting`
+
+    Look-ahead bias
+
+        In :term:`quantitative finance`, Look-ahead bias occurs when a trading strategy or model uses information that would not have been available at the time the trade was executed. This can lead to an unrealistic assessment of a strategy's performance, as the model appears to have access to future information.
+
+        To avoid look-ahead bias, it is essential to ensure that the data used in backtesting and strategy development is strictly limited to the information that would have been available at the time of the trade. This can be achieved by using time-stamped data and careful data management techniques.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Overfitting`
+
+    Risk of ruin
+
+        In :term:`quantitative finance`, Risk of ruin refers to the probability of incurring losses severe enough to render a trading account or strategy unviable. This can occur due to a series of consecutive losing trades, excessive leverage, or poor risk management practices.
+
+        To minimize the risk of ruin, traders should employ prudent risk management techniques, such as setting appropriate position sizes, using stop-loss orders, and maintaining a diversified portfolio. Additionally, monitoring the performance of a trading strategy and making adjustments as needed can help reduce the likelihood of ruin.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+    
+        Trend analysis
+
+        In :term:`quantitative finance`, Trend analysis is the study
+        of historical market data, such as price and volume, to
+        identify patterns and trends that may help predict future
+        market movements. This can be a valuable tool for traders and
+        investors when developing trading strategies or making
+        investment decisions.
+
+        Trend analysis often involves the use of technical indicators,
+        such as moving averages, trendlines, and support and resistance
+        levels, to analyze and visualize market trends. It can be
+        applied to various timeframes, from intraday to long-term,
+        depending on the goals and preferences of the trader or investor.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+        
+        - :term:`Technical analysis`
+
+    Futures
+
+        In :term:`quantitative finance`, Futures are standardized
+        financial contracts that obligate the buyer to purchase an
+        asset (or the seller to sell an asset) at a predetermined
+        future date and price. Futures contracts are traded on
+        organized exchanges and can be based on various underlying
+        assets, such as commodities, currencies, or indices.
+
+        Futures contracts are often used for hedging, speculation, or
+        price discovery purposes. They allow market participants to
+        manage their exposure to price fluctuations and take advantage
+        of potential profit opportunities.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Options`
+
+    Options
+
+        In :term:`quantitative finance`, Options are financial
+        contracts that give the buyer the right, but not the
+        obligation, to buy (in the case of a call option) or sell (in
+        the case of a put option) an underlying asset at a specified
+        price (strike price) on or before a certain date (expiration
+        date). The seller of the option, in return, receives a premium
+        from the buyer.
+
+        Options are versatile financial instruments that can be used
+        for various purposes, such as hedging, speculation, or income
+        generation. They allow market participants to manage their
+        risk exposure and take advantage of potential profit
+        opportunities.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Futures`
+
+    Grid search
+
+        Grid search is a :term:`hyperparameter optimization` technique used to find the best combination of hyperparameters for a machine learning model or trading algorithm. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination using a performance metric, such as accuracy or Sharpe ratio.
+
+        Although grid search can be computationally expensive, it is often used when the search space is relatively small or when a more thorough exploration of the hyperparameter space is desired. Other optimization techniques, such as random search or Bayesian optimization, can be more efficient in cases where the search space is large or the performance landscape is complex.
+
+        See also:
+
+        - :term:`Trading strategy`
+
+        - :term:`Hyperparameter optimization`
+
+    Hyperparameter optimization
+
+            Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
+
+            Some common hyperparameter optimization techniques include :term:`grid search`, random search, and Bayesian optimization. These methods aim to maximize the performance of the model or algorithm by systematically searching the hyperparameter space and evaluating different configurations using a predefined performance metric, such as accuracy or Sharpe ratio.
+
+            Hyperparameter optimization can help improve the performance of a model or trading strategy by fine-tuning its configuration to better fit the underlying data and problem.
+
+            See also:
+
+            - :term:`Trading strategy`
+
+            - :term:`Grid search`
+
+    Heatmap
+
+            A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
+
+            Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
+
+            Heatmaps can be created using various software tools, such as Python's Matplotlib library or R's ggplot2 package.
+
+            See also:
+
+            - :term:`Quantitative finance`
+
+            - :term:`Trading strategy`
