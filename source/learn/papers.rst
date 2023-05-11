@@ -31,3 +31,11 @@ to ensure the largest possible utility (as specified by a user). We present an e
 an order across a network of decentralized exchanges
 
 `Read the paper <https://angeris.github.io/papers/routing-algorithm.pdf>`__.
+
+
+Can machines learn finance?
+---------------------------
+
+Machine learning for asset management faces a unique set of challenges that differ markedly from other domains where machine learning has excelled. Understanding these differences is critical for developing impactful approaches and realistic expectations for machine learning in asset management. We discuss a variety of beneficial use cases and potential pitfalls, and emphasize the importance of economic theory and human expertise for achieving success through financial machine learning.
+
+`Read the paper <https://joim.com/can-machines-learn-finance/>`__.

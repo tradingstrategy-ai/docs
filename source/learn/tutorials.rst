@@ -45,12 +45,12 @@ The primary goal in an investment endeavor is the implementation of strategies t
 
 `Read post <https://daehkim.github.io/pair-trading/>`__.
 
-ML for Trading
---------------
+Dead Simple 2-Asset Portfolio that Crushes the S&P500
+-----------------------------------------------------
 
-This book aims to show how ML can add value to algorithmic trading strategies in a practical yet comprehensive way. It covers a broad range of ML techniques from linear regression to deep reinforcement learning and demonstrates how to build, backtest, and evaluate a trading strategy driven by model predictions.
+This is an update to the original blog series that explored a simple strategy of being long UPRO and TMF in equal weight, inverse volatility and inverse-inverse volatility. This strategy crushed the cumulative and risk-adjusted returns of the benchmark SPY etf.
 
-`See Github repository <https://github.com/stefan-jansen/machine-learning-for-trading>`__.
+`Read post <https://www.blackarbs.com/blog/a-dead-simple-2-asset-portfolio-that-crushes-the-sampp500-part-3>`__.
 
 Didact AI
 ---------

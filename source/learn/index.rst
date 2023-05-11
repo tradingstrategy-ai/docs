@@ -30,6 +30,7 @@ Algorithmic trading learning resources
    courses
    tutorials
    papers
+   python
    jupyter-notebook
    algorithmic-trading-frameworks
    communities

@@ -15,6 +15,9 @@ See respective READMEs in Github repositories.
 Run tests
 ---------
 
+trading-strategy package
+------------------------
+
 To run tests you need to have a Trading Strategy API key. Tests use the production server.
 
 .. code-block:: shell
@@ -36,6 +39,44 @@ Or manually:
 .. code-block:: shell
 
     rm -rf /tmp/trading-strategy-tests
+
+trade-executor package
+----------------------
+
+To run the full test suite, multiple blockchain node connections are needed.
+
+You will also need to have installed
+
+* Anvil
+
+* Ganache
+
+You also need [Trading Strategy API key](https://tradingstrategy.ai/trading-view/backtesting).
+
+To set environment:
+
+.. code-block:: shell
+
+    # Free and somewhat robust Polygon endpoint
+    export JSON_RPC_POLYGON="https://polygon-rpc.com"
+    export TRADING_STRATEGY_API_KEY=...
+    export BNB_CHAIN_JSON_RPC=...
+
+Then run:
+
+.. code-block:: shell
+
+    pytest
+
+Some tests take a long time, because they are checking different real-time timings.
+You can skip the slow tests with
+
+.. code-block:: shell
+
+    export SKIP_SLOW_TESTS=true
+
+For more information see Github CI pipeline.
+
 
 Updating documentation notebooks
 --------------------------------
@@ -163,6 +204,24 @@ Use `pytest-monitor <https://github.com/CFMTech/pytest-monitor>`__ for
 profiling memory usage. We need to ensure large datasets
 do not cause issues on low-memory environments like WebAsssembly
 in web browsers.
+
+Building Docker image locally
+-----------------------------
+
+For testing `trade-executor` command or for writing documentation with an unreleased version.
+
+.. code-block:: shell
+
+    docker build -t ghcr.io/tradingstrategy-ai/trade-executo/trade-executor:latest .
+
+Then copy-paste the image hash from `docker build` output and run:
+
+.. code-block:: shell
+
+    docker run -it cf308d43ad577c5194dd8669316a6a80ba6adc901f461ddf287f14915f206082 --help
+
+
+
 
 
 

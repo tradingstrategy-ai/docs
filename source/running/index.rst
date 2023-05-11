@@ -22,5 +22,6 @@ and backtesting the strategy performance.
    serialisation
    unit-testing
    strategy-deployment
+   vault-deployment
    repair
 

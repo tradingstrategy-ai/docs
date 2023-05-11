@@ -214,11 +214,11 @@ and algorithmic trading.
 
         Decentralised exchanges can be based on different models:
 
-        - term:`AMM`
+        - :term:`AMM`
 
-        - term:`CLMM`
+        - :term:`CLMM`
 
-        - term:`Order book`
+        - :term:`Order book`
 
         Some of the most popular decentralised exchanges are Uniswap, Sushiwap and PancakeSwap.
 
@@ -753,7 +753,7 @@ and algorithmic trading.
 
     Pine Script
 
-        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, Bollinger Bands, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
 
     TradingView
 
@@ -953,6 +953,12 @@ and algorithmic trading.
         Quantitative analysis is the use of mathematical and statistical methods in finance and investment management. Those working in the field are quantitative analysts (quants). Quants tend to specialise in specific areas which may include derivative structuring or pricing, risk management, algorithmic trading and investment management.
 
         `Read more <https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)>`__.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Algorithmic trading`
 
     Python
 
@@ -1330,13 +1336,22 @@ and algorithmic trading.
 
         Different % amounts of “taxes” may apply to different types of transactions like buy, sell, and treasury management.
 
+        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__ in our introduction blog post.
+
+        Taxed tokens are not supported by Uniswap 3. Note that any bridged tokens cannot have transfer fees,
+        so if you bridge a taxed token from Ethereum mainnet e.g. to Polygon it will work on Uniswap v3.
+
+        - `Uniswap v3 documentation about token transfer fees <https://docs.uniswap.org/concepts/protocol/integration-issues#fee-on-transfer-tokens>`__
+
+        - `The underlying issue on Paxos Gold (PAXG) token on Uniswap v3 <https://github.com/Uniswap/v3-core/issues/565#issuecomment-1158039767>`__
+
+        - `PAXG token trading on Uniswap v3 on Polygon <https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/paxg-usdc-fee-30>`__
+
         See also
 
         - :term:`swap fee`
 
         - :term:`honey pot`
-
-        `Read more about token tax <https://tradingstrategy.ai/blog/transfer-fees-token-taxes-and-honeypots>`__ in our introduction blog post.
         
     Order book
     
@@ -1584,6 +1599,8 @@ and algorithmic trading.
 
         Bollinger Bands are widely used by traders and investors in making investment decisions, as well as in setting stop-loss orders and determining potential profit targets.
 
+        `Read technical deep dive into Bollinger Bands <https://school.stockcharts.com/doku.php?id=technical_indicators:bollinger_bands>`__.
+
         See also
 
         - :term:`Technical indicator`
@@ -1610,7 +1627,7 @@ and algorithmic trading.
 
         In systematic trading, trades are executed automatically based on the rules established in the trading system. These rules can be based on technical indicators, market data, or other signals, and are designed to identify and take advantage of market inefficiencies and price discrepancies. The models used in systematic trading are typically back-tested using historical market data to assess their viability and refine their parameters.
 
-        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, futures, options, and currencies.
+        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, :term:`futures`, :term:`options`, and currencies.
 
     Custodial
     
@@ -1821,6 +1838,26 @@ and algorithmic trading.
         wallets and such with little modifications. This has lead to
         born to Ethereum clone chains like Polygon, :term:`Avalanche` C-Chain and
         :term:`BNB Chain`.
+
+        For EVM-compatible chains
+
+        - Same Solidity and Vyper smart contracts work
+
+        - Same JSON-RPC API works
+
+        - Same wallets work, assuming your wallet gives you an option to set up a node JSON-RPC URL
+          to a different EVM chain
+
+        - Same libraries like Web3.py and Web3.js, SDKs and development tools work
+
+        However, you might need
+
+        - Run a blockchain node yourself
+
+        - Get another node provider as there is no consistency of who is running, connecting and offering
+          services to different peer-to-peer networks
+
+        `For an example list of EVM-compatible blockchains see Trading Strategy's supported blockchains <https://tradingstrategy.ai/trading-view/blockchains>`__.
 
         See also
 
@@ -2060,6 +2097,8 @@ and algorithmic trading.
 
         - :term:`Quantitative analysis`
 
+        - :term:`Quantstats`
+
     Risk-adjusted return
 
         Risk-adjusted return is a calculation of the return (or potential return) on an investment such as a stock or corporate bond when compared to the amount of risk the investment has represented throughout a given period of time.
@@ -2080,6 +2119,8 @@ and algorithmic trading.
         - :term:`Drawdown`
 
         - :term:`Maximum drawdown`
+
+        - :term:`Quantstats`
 
     Cumulative profit
 
@@ -2949,3 +2990,341 @@ and algorithmic trading.
         See also
 
         - :term:`Python`
+
+    Trailing stop loss
+
+        A trailing stop loss is a special order type or a trigger parameter,
+        which will keep updating the :term:`position`'s :term:`stop loss` dollar limit as the market price moves.
+
+        - Trailing stop loss is set on a :term:`position` when opening it
+
+        - Trailing stop loss is usually specified as % of the market price
+
+        - Trailing stop loss dynamically updates the position's stop loss upwards if the market price moves upwards
+
+        - If the market price moves downwards, the highest and the latest trailing stop loss mark is triggered
+
+        - Trailing stop loss allows you to lock in profits in raising markets
+
+        See also
+
+        - :term:`Stop loss`
+
+        - :term:`Position`
+
+        For more information see `Trailing stop Loss on CMC Markets <https://www.cmcmarkets.com/en/trading-guides/trailing-stop-loss>`__.
+
+    Gas fee
+
+        Gas fee is a term used in blockchains to describe the transactions cost a user pays to block producers
+        to have their block in includedin the blockchain.
+
+        The gas fee is dynamic. During the blockchain cognestion or high activity, block space is more premium, as users are competing
+        to get their transaction included in a block.
+
+        There can be irregular events causing gas fee spikes
+
+        - :term:`Airdops <airdrop>`
+
+        - Popular :term:`NFT` mints
+
+        As the blockchain technology developers, the gas fees, or the transaction costs, are becoming lower and lower.
+        New blockchains always are more gas efficient than their predecessors, as their code and consensus mechanisms
+        are optimised for higher throughput.
+        The costs go down from Bitcoin $20/tx to Ethereum mainnet's 10$ tx to Polygon's 0.20$ to Solana's fractions of cents.
+
+        See also
+
+        - :term:`Protocol fee`
+
+        - :term:`MEV`
+
+    Transaction cost
+
+        How much a user pays to the block producers to have their transaction included in a blockchain.
+
+        Also known as :term:`gas fee`. See :term:`gas fee` for more information.
+
+    API key
+
+        API key is an authentication method for machine-to-machine communications.
+
+        API keys are usually needed with HTTP based API services.
+
+        Blockchain and :term:`decentralised finance` protocols do not need API keys, because the authentication
+        happens with public key cryptography and :term:`wallets <wallet>`.
+
+    Quantstats
+
+        Quantstats is a popular :term:`Python` software development library for :term:`quantitative finance` calcualtions and charts.
+
+        It provides many tools out of the box to analyse your strategies, including
+
+        - :term:`Equity curve`
+
+        - Monthly returns and return distribution charts
+
+        - Metrics calculations like :term:`Maximum drawdown` and other :term:`risk-adjusted return` numbers
+
+        `Visit Quantstats repository <https://github.com/ranaroussi/quantstats>`__.
+
+        See also
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Jupyter notebook`
+
+    Sharpe
+
+        Sharpe, or The Sharpe Ratio, is a widely used financial metric that measures the :term:`risk-adjusted return` of an investment. It was developed by Nobel laureate William F. Sharpe in 1966.
+
+        The Sharpe ratio is calculated by subtracting the risk-free rate (such as the yield on a Treasury bond) from the return of the investment, and then dividing the result by the standard deviation of the investment's returns. The formula is:
+
+        `Sharpe Ratio = (Return of investment - Risk-free rate) / Standard deviation of investment's returns`
+
+        The Sharpe ratio helps investors evaluate an investment's return in relation to the risk taken to achieve that return. A higher Sharpe ratio indicates that an investment has generated higher returns relative to the amount of risk taken, while a lower Sharpe ratio indicates the opposite.
+
+        Generally speaking, a Sharpe ratio above 1 is considered good, and a Sharpe ratio above 2 is considered excellent. However, what is considered good or excellent can vary depending on the context. For example, a lower Sharpe ratio may be acceptable for investments with lower risk or lower volatility, while a higher Sharpe ratio may be necessary for investments with higher risk or higher volatility.
+
+        See also
+
+        - :term:`Sortino`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+    Sortino
+
+        The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
+
+        The Sortino ratio is similar to the Sharpe ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+
+        The formula for calculating the Sortino ratio is as follows:
+
+        `Sortino ratio = (Rp - Rf) / downside deviation`
+
+        Where:
+
+        `Rp = portfolio return`
+        `Rf = risk-free rate of return`
+        `Downside deviation = standard deviation of negative returns`
+
+        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
+
+        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
+
+        See also:
+
+        - :term:`Sharpe`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+    Sentiment analysis
+
+        In :term:`quantitative finance`, Sentiment analysis, also known as opinion mining, is a technique used to analyze and classify the sentiment or emotion expressed in a piece of text. This can be done by using natural language processing and machine learning algorithms to identify and extract subjective information from the text, such as opinions, emotions, and attitudes.
+
+        Sentiment analysis can be used to determine the overall sentiment of a document, sentence, or even individual words, and can help businesses and organizations gain insights into customer feedback, social media posts, and online reviews. By analyzing sentiment, companies can better understand customer needs and preferences, improve their products and services, and make more informed business decisions.
+
+        Sentiment analysis can also be used in a variety of other applications, including political analysis, market research, and brand management.
+
+        There are several libraries available in :term:`Python` that you can use to perform sentiment analysis. One of the most popular libraries is the Natural Language Toolkit (NLTK).
+
+        See also:
+
+        - :term:`Alternative data`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+    Alternative data
+
+        In :term:`quantitative finance`, Alternative data refers to non-traditional data sources that are used by investors and businesses to gain insights into markets, industries, and consumer behavior. This data is often sourced from digital platforms and devices, such as social media, mobile devices, sensors, and web traffic.
+
+        Alternative data can provide a wealth of information that is not available through traditional data sources, such as financial statements and economic indicators. For example, social media data can be used to gauge consumer sentiment and preferences, while satellite imagery can be used to track changes in physical assets like inventories or construction sites.
+
+        Alternative data is often used in conjunction with traditional data sources to gain a more complete understanding of market trends and consumer behavior. By leveraging alternative data sources, investors and businesses can make more informed investment and business decisions, and gain a competitive edge in their respective markets.
+
+        See also:
+
+        - :term:`Sentiment analysis`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+    
+    Overfitting
+
+        In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
+
+        Overfitting can be avoided by using a larger training set, or by using regularization techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+    
+    Survivorship bias
+
+        In :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
+
+        Survivorship bias can be mitigated by incorporating a more comprehensive dataset that includes both successful and unsuccessful assets or strategies, and by carefully considering the potential impact of survivorship bias on performance evaluations.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Overfitting`
+
+    Look-ahead bias
+
+        In :term:`quantitative finance`, Look-ahead bias occurs when a trading strategy or model uses information that would not have been available at the time the trade was executed. This can lead to an unrealistic assessment of a strategy's performance, as the model appears to have access to future information.
+
+        To avoid look-ahead bias, it is essential to ensure that the data used in backtesting and strategy development is strictly limited to the information that would have been available at the time of the trade. This can be achieved by using time-stamped data and careful data management techniques.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Overfitting`
+
+    Risk of ruin
+
+        In :term:`quantitative finance`, Risk of ruin refers to the probability of incurring losses severe enough to render a trading account or strategy unviable. This can occur due to a series of consecutive losing trades, excessive leverage, or poor risk management practices.
+
+        To minimize the risk of ruin, traders should employ prudent risk management techniques, such as setting appropriate position sizes, using stop-loss orders, and maintaining a diversified portfolio. Additionally, monitoring the performance of a trading strategy and making adjustments as needed can help reduce the likelihood of ruin.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+    
+        Trend analysis
+
+        In :term:`quantitative finance`, Trend analysis is the study
+        of historical market data, such as price and volume, to
+        identify patterns and trends that may help predict future
+        market movements. This can be a valuable tool for traders and
+        investors when developing trading strategies or making
+        investment decisions.
+
+        Trend analysis often involves the use of technical indicators,
+        such as moving averages, trendlines, and support and resistance
+        levels, to analyze and visualize market trends. It can be
+        applied to various timeframes, from intraday to long-term,
+        depending on the goals and preferences of the trader or investor.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+        
+        - :term:`Technical analysis`
+
+    Futures
+
+        In :term:`quantitative finance`, Futures are standardized
+        financial contracts that obligate the buyer to purchase an
+        asset (or the seller to sell an asset) at a predetermined
+        future date and price. Futures contracts are traded on
+        organized exchanges and can be based on various underlying
+        assets, such as commodities, currencies, or indices.
+
+        Futures contracts are often used for hedging, speculation, or
+        price discovery purposes. They allow market participants to
+        manage their exposure to price fluctuations and take advantage
+        of potential profit opportunities.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Options`
+
+    Options
+
+        In :term:`quantitative finance`, Options are financial
+        contracts that give the buyer the right, but not the
+        obligation, to buy (in the case of a call option) or sell (in
+        the case of a put option) an underlying asset at a specified
+        price (strike price) on or before a certain date (expiration
+        date). The seller of the option, in return, receives a premium
+        from the buyer.
+
+        Options are versatile financial instruments that can be used
+        for various purposes, such as hedging, speculation, or income
+        generation. They allow market participants to manage their
+        risk exposure and take advantage of potential profit
+        opportunities.
+
+        See also:
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Futures`
+
+    Grid search
+
+        Grid search is a :term:`hyperparameter optimization` technique used to find the best combination of hyperparameters for a machine learning model or trading algorithm. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination using a performance metric, such as accuracy or Sharpe ratio.
+
+        Although grid search can be computationally expensive, it is often used when the search space is relatively small or when a more thorough exploration of the hyperparameter space is desired. Other optimization techniques, such as random search or Bayesian optimization, can be more efficient in cases where the search space is large or the performance landscape is complex.
+
+        See also:
+
+        - :term:`Trading strategy`
+
+        - :term:`Hyperparameter optimization`
+
+    Hyperparameter optimization
+
+            Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
+
+            Some common hyperparameter optimization techniques include :term:`grid search`, random search, and Bayesian optimization. These methods aim to maximize the performance of the model or algorithm by systematically searching the hyperparameter space and evaluating different configurations using a predefined performance metric, such as accuracy or Sharpe ratio.
+
+            Hyperparameter optimization can help improve the performance of a model or trading strategy by fine-tuning its configuration to better fit the underlying data and problem.
+
+            See also:
+
+            - :term:`Trading strategy`
+
+            - :term:`Grid search`
+
+    Heatmap
+
+            A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
+
+            Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
+
+            Heatmaps can be created using various software tools, such as Python's Matplotlib library or R's ggplot2 package.
+
+            See also:
+
+            - :term:`Quantitative finance`
+
+            - :term:`Trading strategy`
