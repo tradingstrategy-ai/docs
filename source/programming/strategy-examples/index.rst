@@ -39,6 +39,7 @@ Example backtesting Jupyter notebooks
    debugging-live-strategy
    osmosis
    strategy-backtest-template
+   grid-search
 
 More basic code examples
 ------------------------
