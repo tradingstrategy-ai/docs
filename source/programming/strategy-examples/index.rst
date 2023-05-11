@@ -32,6 +32,8 @@ Example backtesting Jupyter notebooks
    pancakeswap-ema-stop-loss
    portfolio-construction-model
    trader-joe-momentum
+   bollinger-band-strategy
+   grid-search   
    synthetic-ema
    synthetic-ema-stop-loss
    backtest-fee-analysis
@@ -39,7 +41,7 @@ Example backtesting Jupyter notebooks
    debugging-live-strategy
    osmosis
    strategy-backtest-template
-   grid-search
+
 
 More basic code examples
 ------------------------
