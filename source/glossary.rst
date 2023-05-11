@@ -3238,7 +3238,9 @@ and algorithmic trading.
         See also:
 
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+        
         - :term:`Technical analysis`
 
     Futures
@@ -3258,7 +3260,9 @@ and algorithmic trading.
         See also:
 
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+
         - :term:`Options`
 
     Options
@@ -3280,7 +3284,9 @@ and algorithmic trading.
         See also:
 
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+
         - :term:`Futures`
 
     Grid search
@@ -3292,6 +3298,7 @@ and algorithmic trading.
         See also:
 
         - :term:`Trading strategy`
+
         - :term:`Hyperparameter optimization`
 
     Hyperparameter optimization
@@ -3305,6 +3312,7 @@ and algorithmic trading.
             See also:
 
             - :term:`Trading strategy`
+
             - :term:`Grid search`
 
     Heatmap
