@@ -177,6 +177,11 @@ Example public environment variables entry:
     VAULT_ADDRESS=0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
     VAULT_ADAPTER_ADDRESS=0x07f7eB451DfeeA0367965646660E85680800E352
 
+Remember to slice files together:
+
+.. code-block:: shell
+
+    cat ~/strategies/env/enzyme-polygon-eth-usdc.env ~/secrets/enzyme-polygon-eth-usdc-secrets.env > ~/secrets/enzyme-polygon-eth-usdc-final.env
 
 Example `docker-compose.yml`:
 
@@ -362,5 +367,16 @@ The output looks something like:
 Launch live trading
 -------------------
 
+Launch the trade executor in daemon mode:
 
+.. code-block:: shell
 
+    docker-compose up -d enzyme-polygon-eth-usdc
+
+Then you can follow the logs:
+
+.. code-block:: shell
+
+.. code-block:: shell
+
+    docker-compose logs -
