@@ -30,6 +30,7 @@ Example backtesting Jupyter notebooks
    running
    pancakeswap-ema
    pancakeswap-ema-stop-loss
+   pancake-eth-usd-indicators
    portfolio-construction-model
    trader-joe-momentum
    bollinger-band-strategy
