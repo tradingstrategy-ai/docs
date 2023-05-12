@@ -32,6 +32,7 @@ Examples
    dataset-download
    plotting-old
    aave-v3-candles
+   uniswap-v3-data
 
 Next steps
 ----------
