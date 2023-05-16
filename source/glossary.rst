@@ -590,7 +590,7 @@ and algorithmic trading.
         
         Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
         
-        Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
+        Some common examples of directional strategies include trend-following, :term:`momentum` trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
 
         See also
 
@@ -1246,7 +1246,7 @@ and algorithmic trading.
         The scams include "buy only" tokens, tokens with :term:`token tax` or
         trading pools where the owner can drain :term:`quote token` away. Usually
         :term:`trading algorithms <trading algorithm>` are baited with "up only" price manipulation
-        techniques and wash trading to believe that the trading pair is robust with good momentum
+        techniques and wash trading to believe that the trading pair is robust with good :term:`momentum`
         and volume.
 
         See also: term:`token tax`.
@@ -1310,7 +1310,7 @@ and algorithmic trading.
 
         Automated trading strategies are computer programs that follow a defined set of instructions to execute trade orders.
 
-        Common automated trading strategies include moving average cross strategies, which buy when the stock price rises above the moving average and sell when it falls below, and trend-following strategies, which follow the mainstream trends and momentum in the market.
+        Common automated trading strategies include moving average cross strategies, which buy when the stock price rises above the moving average and sell when it falls below, and trend-following strategies, which follow the mainstream trends and :term:`momentum` in the market.
 
         See also
 
@@ -1400,7 +1400,7 @@ and algorithmic trading.
 
     Swing trading
     
-        Swing trading is a type of short-term trading strategy that aims to take advantage of intermediate-term price movements, typically holding positions for several days to a few weeks. The goal of swing trading is to identify trends and ride them for a profit, rather than trying to predict the market's direction in the long-term. Swing traders use technical analysis to identify potential trades, focusing on price patterns, support and resistance levels, and momentum indicators. They typically trade more frequently than long-term investors and hold positions for a shorter period, but with the potential for larger profits or losses. Swing trading can be used in a variety of markets, including stocks, bonds, commodities, and currencies.
+        Swing trading is a type of short-term trading strategy that aims to take advantage of intermediate-term price movements, typically holding positions for several days to a few weeks. The goal of swing trading is to identify trends and ride them for a profit, rather than trying to predict the market's direction in the long-term. Swing traders use technical analysis to identify potential trades, focusing on price patterns, support and resistance levels, and :term:`momentum` indicators. They typically trade more frequently than long-term investors and hold positions for a shorter period, but with the potential for larger profits or losses. Swing trading can be used in a variety of markets, including stocks, bonds, commodities, and currencies.
 
     Dollar cost averaging (DCA)
     
@@ -1536,7 +1536,7 @@ and algorithmic trading.
 
         A trend is a general direction of change in a set of data or a market over time. In the financial markets, trends refer to the general direction of prices for a specific security, asset class, or market index. Trends can be either up, down, or sideways, and they can occur over various time frames, including short-term (such as minutes or hours), intermediate-term (such as days or weeks), or long-term (such as months or years).
 
-        Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use :term:`technical analysis` to identify and track trends, using tools such as trendlines, :term:`moving averages <EMA>`, and momentum indicators.
+        Trends are important in investment decision-making as they provide insights into market behavior and can indicate potential opportunities for buying or selling securities. Traders and investors often use :term:`technical analysis` to identify and track trends, using tools such as trendlines, :term:`moving averages <EMA>`, and :term:`momentum` indicators.
 
         See also
 
@@ -1554,7 +1554,7 @@ and algorithmic trading.
 
         Trend-following is a trading strategy that seeks to profit from the directional movement of prices in financial markets. The strategy involves analyzing the historical price data of an asset to identify trends and then making trades in the direction of the trend.
 
-        Trend-following traders typically use technical analysis tools and :term:`technical indicators <technical indicator>`, such as :term:`moving averages <EMA>`, trend lines, and momentum indicators, to identify trends and determine when to enter or exit trades. The goal is to buy an asset when the trend is bullish (i.e., prices are rising) and sell it when the trend is bearish (i.e., prices are falling).
+        Trend-following traders typically use technical analysis tools and :term:`technical indicators <technical indicator>`, such as :term:`moving averages <EMA>`, trend lines, and :term:`momentum` indicators, to identify trends and determine when to enter or exit trades. The goal is to buy an asset when the trend is bullish (i.e., prices are rising) and sell it when the trend is bearish (i.e., prices are falling).
 
         The key principle of trend-following is to let profits run and cut losses quickly. This means that trend-following traders will typically use stop loss orders or other risk management techniques to limit their potential losses if the trend reverses.
 
@@ -1617,7 +1617,7 @@ and algorithmic trading.
 
     Relative strength index (RSI)
 
-        The Relative Strength Index (RSI) is a popular momentum indicator used in technical analysis to measure the strength of a security's price action. It compares the magnitude of recent gains to recent losses, in order to determine overbought or oversold conditions, and potential buying or selling opportunities.
+        The Relative Strength Index (RSI) is a popular :term:`momentum` indicator used in technical analysis to measure the strength of a security's price action. It compares the magnitude of recent gains to recent losses, in order to determine overbought or oversold conditions, and potential buying or selling opportunities.
 
         The RSI is calculated as a ratio of average gains to average losses, and is represented as a value between 0 and 100. Values above 70 are considered overbought and may indicate a potential sell opportunity, while values below 30 are considered oversold and may indicate a potential buy opportunity. The RSI can be used for various time frames and for multiple securities, including individual stocks, bonds, commodities, and currencies.
 
