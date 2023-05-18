@@ -1867,6 +1867,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`EVM`
+
         - :term:`Wallet`
 
         - :term:`ERC-20`
@@ -3356,6 +3358,34 @@ and algorithmic trading.
         - :term:`Python`
 
         - :term:`Docker`
+
+    EVM
+
+        EVM stands for Ethereum Virtual Machine.
+
+        It is the execution environment that runs Ethereum blockchain transactions and smart contracts.
+
+        - EVM was originally created in 2014 and is old in blockchain architecture terms
+
+        - EVM is used by multiple chains outside Ethereum, like :term:`Avalanche` and :term:`BNB Chain`
+
+        - There exists multiple implementations of EVM in different programming languages: Go, Rust, Python, etc.
+
+        - Some transactions do not concern or touch EVM; for example beacon chain (staking)
+          happens partially outside EVM domain
+
+        Due to age and limitations of EVM, there have been efforts to extend EVM for more functionality and faster
+        transaction processing. Some efforts include
+
+        - `Aurora - running EVM on more powerful NEAR blockchain <https://aurora.dev/>`__
+
+        - `Stylus - bring WebAssembly based smart contracts to Arbitrum layer two <https://offchain.medium.com/hello-stylus-6b18fecc3a22>`__
+
+        See also
+
+        - :term:`EVM-Compatible`
+
+        - :term:`Decentralised finance`
 
 
 
