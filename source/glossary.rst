@@ -361,9 +361,13 @@ and algorithmic trading.
 
         - :term:`Bucket`
 
+    Time frame
+
+        See :term:`bucket`.
+
     Bucket
 
-        The (time) bucket to a time period for :term:`candle` data.
+        The (time) bucket to a time period for :term:`candle` data. It is also known time frame by some systems.
 
         For example, you can have one minute, one hour or time buckets, describing for the what period of a time the candle includes the trades.
 
@@ -377,6 +381,8 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+        - :term:`Forward fill`
+
     OHLCV
 
         A typical :term:`candle` contains open, high, low and close price and trade volume for a :term:`time bucket <bucket>`. Because on-chain exposes more data than centralised exchanges, Trading Strategy data also contains individual buys and sells, US dollar exchange rate and so forth.
@@ -388,6 +394,8 @@ and algorithmic trading.
         - :term:`Bucket`
 
         - :term:`Trading strategy`
+
+        - :term:`Forward fill`
 
     Parquet
 
@@ -3503,3 +3511,26 @@ and algorithmic trading.
         - :term:`Performance fee`
 
         - :term:`Crystallisation`
+
+    Forward fill
+
+        In data research and analysis, "forward fill" refers to a method of handling missing or incomplete data by carrying forward the last observed value to fill in the gaps. It is also known as "last observation carried forward" (LOCF).
+
+        When dealing with time series data or datasets with missing values, forward fill involves replacing missing data points with the most recent known value. This approach assumes that the value remains constant until a new observation is available. By using the previous observation as a substitute, forward fill helps maintain continuity in the data and allows for continued analysis or modeling.
+
+        Forward fill is often employed when missing data is considered to be missing at random (MAR), meaning the missingness is not related to the actual value. It can be a useful technique when the missing data points are intermittent or occur sporadically.
+
+        However, it is important to note that forward fill may not always be appropriate or suitable for all datasets or analysis scenarios. It assumes that the missing values should be carried forward, which may not be accurate or appropriate in all cases. Researchers should carefully consider the nature of the data and the implications of using forward fill before applying it.
+
+        Alternative methods for handling missing data include backward fill (carrying the next observed value backward) or more sophisticated imputation techniques that estimate missing values based on statistical methods or predictive models. The choice of method depends on the specific characteristics of the dataset and the objectives of the analysis.
+
+        See also
+
+        - :term:`Bucket`
+
+        - :term:`Historical market data`
+
+        - :term:`OHLCV`
+
+        - :term:`Dataset`
+

@@ -11,7 +11,9 @@ style candle pricing over traditional cryptocurrency open/close price where open
 
 - `high` / `low` / `close` fields are the same as for normal candles.
 
-- Candles are sparse: if there are no trades no zero volume candle is generated.
+- OHLV data **sparse**: if there are no trades, no zero volume candle is generated.
+  If your strategy needs to have zero volume candles, you can :term:`forward fill`
+  the data when you are constructing the trading universe.
 
 This is because we believe this formats fit better for DeFi market data feeds
 
