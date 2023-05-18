@@ -30,10 +30,11 @@ This is because we believe this formats fit better for DeFi market data feeds
   Furthermore there are no opening and closing auctions as one might have
   at stock markets.
 
-Converting to traditional OHCLV format
---------------------------------------
+Forward filling data
+--------------------
 
-Transforming Trading Strategy candle format to the traditional open/close definitions can be done as the following:
+Transforming Trading Strategy candle format to the traditional open/close definitions can be done with
+following:
 
 - For strategies that read a candle open price,
   just choose to use previous candle close price instead.
@@ -48,7 +49,7 @@ Transforming Trading Strategy candle format to the traditional open/close defini
   with the close price of the previous candle.
 
 - For any missing sparse timestamps, generate a candle where open/high/low
-  close are set the the volume to zero
+  close are set the the volume to zero using :term:`forward filling`
 
 Distinction between buys and sells
 ----------------------------------
