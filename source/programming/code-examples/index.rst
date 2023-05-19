@@ -26,6 +26,7 @@ Examples
    interactive-charts
    technical-analysis
    pairs
+   low-fee-pairs
    liquidity-analysis
    price-impact
    pool-liquidity
