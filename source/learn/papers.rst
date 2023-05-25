@@ -39,3 +39,18 @@ Can machines learn finance?
 Machine learning for asset management faces a unique set of challenges that differ markedly from other domains where machine learning has excelled. Understanding these differences is critical for developing impactful approaches and realistic expectations for machine learning in asset management. We discuss a variety of beneficial use cases and potential pitfalls, and emphasize the importance of economic theory and human expertise for achieving success through financial machine learning.
 
 `Read the paper <https://joim.com/can-machines-learn-finance/>`__.
+
+
+Automated Market Making and Arbitrage Profits in the Presence of Fees
+---------------------------------------------------------------------
+
+We consider the impact of trading fees on the profits of arbitrageurs trading against an
+automated marker marker (AMM) or, equivalently, on the adverse selection incurred by liquidity
+providers due to arbitrage. We extend the model of Milionis et al. [2022] for a general class
+of two asset AMMs to both introduce fees and discrete Poisson block generation times. In our
+setting, we are able to compute the expected instantaneous rate of arbitrage profit in closed
+form. When the fees are low, in the fast block asymptotic regime, the impact of fees takes a
+particularly simple form: fees simply scale down arbitrage profits by the fraction of time that
+an arriving arbitrageur finds a profitable trade.
+
+`Read the paper <https://moallemi.com/ciamac/papers/lvr-fee-model-2023.pdf>`__.
