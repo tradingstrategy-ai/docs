@@ -49,7 +49,7 @@ following:
   with the close price of the previous candle.
 
 - For any missing sparse timestamps, generate a candle where open/high/low
-  close are set the the volume to zero using :term:`forward filling`
+  close are set the the volume to zero using :term:`forward fill`.
 
 Distinction between buys and sells
 ----------------------------------

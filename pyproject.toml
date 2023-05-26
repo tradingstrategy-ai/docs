@@ -19,7 +19,7 @@ nbsphinx = "^0.8.6"
 
 # trading-strategy = {path = "deps/trading-strategy", develop = true}
 notebook = "^6.4.12"
-trade-executor = {path = "deps/trade-executor", develop = true, extras=["qstrader", "execution", "web-server"]}
+trade-executor = {path = "deps/trade-executor", develop = true, extras=["qstrader", "execution", "web-server", "quantstats"]}
 # furo = {path = "deps/trade-executor", develop = true}
 sphinx-reredirects = "^0.1.1"
 
