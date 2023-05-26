@@ -3483,7 +3483,7 @@ and algorithmic trading.
 
         - :term:`Crystallisation`
 
-    Fee models
+    Fee model
 
         In :term:`quantitative finance`, there are different models how traders, investors, strategy developers, funds
         and other stakeholders of the ecosystem are paid for their work.

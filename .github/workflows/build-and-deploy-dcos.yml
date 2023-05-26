@@ -43,7 +43,9 @@ jobs:
           PATH=$VENV_BIN:$PATH
           make pip-force-install-deps
           make install-furo 
-          make rebuild-furo html
+          make rebuild-furo
+          make clean-autosummary
+          make html
 
       # https://zellwk.com/blog/github-actions-deploy/
       # https://github.com/webfactory/ssh-agent
