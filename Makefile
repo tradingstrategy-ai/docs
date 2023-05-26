@@ -33,9 +33,9 @@ poetry-install:
 # TODO: Some hacks here because Poetry does not pick up right
 # packages always so that docs would get correctly built
 pip-force-install-deps:
-	pip install -e deps/trade-executor/deps/trading-strategy[direct-feed]
-	pip install -e deps/trade-executor/deps/web3-ethereum-defi[data]
-	pip install -e deps/trade-executor[qstrader,execution,web-server]
+	pip install -e "deps/trade-executor/deps/trading-strategy[direct-feed]"
+	pip install -e "deps/trade-executor/deps/web3-ethereum-defi[data]"
+	pip install -e "deps/trade-executor[qstrader,execution,web-server,quantstats]"
 	pip install backtrader
 
 # Get Webpack tool chain to build Furo theme
