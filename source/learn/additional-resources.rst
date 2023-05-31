@@ -37,3 +37,6 @@ Miscellaneous
 - `Awesome On-Chain Investigations HandBook <https://github.com/OffcierCia/On-Chain-Investigations-Tools-List>`__
 
 - `Uniswap v3 liquidity provider strategies <https://atise.medium.com/42970cf9df4>`__
+
+- `Uniswap V3 TWAP: Assessing TWAP Market Risk <https://chaoslabs.xyz/resources/chaos_uniswap_v3_twap_oracle_manipulation.pdf>`__ and `the related portal <https://community.chaoslabs.xyz/uniswap/twap>`__
+

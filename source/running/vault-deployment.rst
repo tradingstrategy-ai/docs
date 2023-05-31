@@ -176,6 +176,7 @@ Example public environment variables entry:
     # Set parameters from Enzyme vault deployment
     VAULT_ADDRESS=0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
     VAULT_ADAPTER_ADDRESS=0x07f7eB451DfeeA0367965646660E85680800E352
+    VAULT_PAYMENT_FORWARDER_ADDRESS=...
 
 Remember to slice files together:
 
