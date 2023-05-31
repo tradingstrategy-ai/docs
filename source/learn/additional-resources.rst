@@ -40,3 +40,5 @@ Miscellaneous
 
 - `Uniswap V3 TWAP: Assessing TWAP Market Risk <https://chaoslabs.xyz/resources/chaos_uniswap_v3_twap_oracle_manipulation.pdf>`__ and `the related portal <https://community.chaoslabs.xyz/uniswap/twap>`__
 
+- `Liquidity Provider Strategies for Uniswap v3: Dynamic Hedging <https://atise.medium.com/liquidity-provider-strategies-for-uniswap-v3-dynamic-hedging-9e6858bea8fa>`__
+
