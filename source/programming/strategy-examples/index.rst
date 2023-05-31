@@ -42,6 +42,7 @@ Example backtesting Jupyter notebooks
    debugging-live-strategy
    osmosis
    strategy-backtest-template
+   momentum-crossover
 
 
 More basic code examples
