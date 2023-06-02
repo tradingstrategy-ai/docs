@@ -43,6 +43,7 @@ Example backtesting Jupyter notebooks
    osmosis
    strategy-backtest-template
    momentum-crossover
+   hackatom-2022-osmosis-backtest
 
 
 More basic code examples
