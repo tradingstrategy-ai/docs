@@ -3186,13 +3186,15 @@ and algorithmic trading.
 
         In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
 
-        Overfitting can be avoided by using a larger training set, or by using regularization techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
+        Overfitting can be avoided by using a larger :term:`training set`, or by using :term:`regularization` techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
 
         See also:
 
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
+
+        - :term:`Training set`
     
     Survivorship bias
 
@@ -3558,3 +3560,176 @@ and algorithmic trading.
 
         - :term:`Alpha signal`
 
+    Cross validation
+
+        Cross-validation is a technique for evaluating the performance of a predictive model by testing it on a subset of data that was not used to train the model. It is a method for assessing how well the model generalizes to new data.
+
+        Cross-validation is a common practice in machine learning and statistical modeling. It is used to assess the predictive accuracy of a model and to detect overfitting, which occurs when a model performs well on the training data but does not generalize well to new data.
+
+        The process involves splitting the dataset into two subsets: a :term:`training set` and a :term:`test set`. The model is trained on the training set and then evaluated on the test set. The results are compared to determine how well the model performs on new data.
+
+        Cross-validation can be used to compare different models or to tune the parameters of a model. It can also be used to select the best features for a model or to determine the optimal number of features.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Statistical modeling`
+
+        - :term:`Overfitting`
+
+        - :term:`Training set`
+
+        - :term:`Test set`
+
+    Regularization
+
+        In :term:`machine learning`, regularization is a technique for reducing overfitting by adding a penalty term to the loss function. It is a form of regression that constrains the model to prevent it from learning the training data too well.
+
+        Regularization is a common practice in machine learning and statistical modeling. It is used to prevent overfitting, which occurs when a model performs well on the training data but does not generalize well to new data.
+
+        The process involves adding a penalty term to the :term:`loss function` that penalizes the model for learning the training data too well. The penalty term is typically a function of the model parameters, such as the sum of the squared weights or the sum of the absolute values of the weights. The penalty term is added to the loss function to create a new loss function that is minimized during training.
+
+        Regularization can be used to compare different models or to tune the parameters of a model. It can also be used to select the best features for a model or to determine the optimal number of features.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Statistical modeling`
+
+        - :term:`Overfitting`
+
+        - :term:`Training set`
+
+        - :term:`Test set`
+    
+    Machine learning
+
+        Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) with data, without being explicitly programmed.
+
+        Machine learning is closely related to computational statistics, which focuses on making predictions using computers. Machine learning is also sometimes conflated with data mining, which focuses on extracting useful information from large datasets.
+
+        Machine learning algorithms are used in a wide variety of applications, including email filtering, speech recognition, and computer vision. They are also used in finance, where they are used to predict stock prices, detect fraud, and make trading decisions.
+
+        Machine learning algorithms can be classified into two broad categories: supervised learning and unsupervised learning. Supervised learning algorithms are trained using labeled data, while unsupervised learning algorithms are trained using unlabeled data.
+
+        Supervised learning algorithms are used to solve classification and regression problems. Classification problems involve predicting a discrete class label, while regression problems involve predicting a continuous quantity.
+
+        Unsupervised learning algorithms are used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
+
+        See also
+
+        - :term:`Statistical modeling`
+
+        - :term:`Supervised learning`
+
+        - :term:`Unsupervised learning`
+
+    Statistical modeling
+
+        Statistical modeling is the process of using statistical techniques to analyze data and make predictions about future events. It is a form of regression that uses statistical methods to estimate the parameters of a model.
+
+        Statistical modeling is a common practice in machine learning and data science. It is used to analyze data and make predictions about future events.
+
+        The process involves fitting a statistical model to the data and then using the model to make predictions. The model is typically a mathematical function that describes the relationship between the variables in the dataset. The model is fitted to the data by estimating the parameters of the model using statistical methods.
+
+        Statistical modeling can be used to compare different models or to tune the parameters of a model. It can also be used to select the best features for a model or to determine the optimal number of features.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Supervised learning`
+
+        - :term:`Unsupervised learning` 
+
+    Training set
+
+        In :term:`machine learning`, the training set is a subset of data that is used to train a model. It is a set of data that is used to fit the parameters of a model.
+
+        The training set is typically a random sample of the dataset. It is used to train the model by minimizing the :term:`loss function`, which is a measure of how well the model fits the training data.
+
+        The training set is used to fit the parameters of the model, while the test set is used to evaluate the performance of the model. The test set is typically a random sample of the dataset that is not used to train the model.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Test set`
+
+        - :term:`Loss function`
+
+        - :term:`Overfitting`
+
+    Test set
+
+        In :term:`machine learning`, the test set is a subset of data that is used to evaluate the performance of a model. It is a set of data that is not used to train the model.
+
+        The test set is typically a random sample of the dataset. It is used to evaluate the performance of the model by measuring its accuracy on the test set.
+
+        The test set is used to evaluate the performance of the model, while the training set is used to fit the parameters of the model. The training set is typically a random sample of the dataset that is used to train the model.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Training set`
+
+        - :term:`Loss function`
+
+        - :term:`Overfitting`
+
+    Loss function
+
+        In :term:`machine learning`, the loss function is a measure of how well a model fits the training data. It is a function that is minimized during training.
+
+        The loss function is typically a mathematical function that measures the difference between the predicted values and the actual values. It is used to train the model by minimizing the loss function.
+
+        The loss function is used to train the model, while the test set is used to evaluate the performance of the model. The test set is typically a random sample of the dataset that is not used to train the model.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Training set`
+
+        - :term:`Test set`
+
+        - :term:`Overfitting`
+
+    Supervised learning
+
+        Supervised learning is a type of machine learning that involves training a model using labeled data. It is a form of regression that uses labeled data to train a model.
+
+        Supervised learning is a common practice in machine learning and data science. It is used to train a model using labeled data.
+
+        The process involves fitting a model to the data and then using the model to make predictions. The model is typically a mathematical function that describes the relationship between the variables in the dataset. The model is fitted to the data by estimating the parameters of the model using statistical methods.
+
+        Supervised learning can be used to solve classification and regression problems. Classification problems involve predicting a discrete class label, while regression problems involve predicting a continuous quantity.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Statistical modeling`
+
+        - :term:`Unsupervised learning`
+
+    Unsupervised learning
+
+        Unsupervised learning is a type of machine learning that involves training a model using unlabeled data. It is a form of regression that uses unlabeled data to train a model.
+
+        Unsupervised learning is a common practice in machine learning and data science. It is used to train a model using unlabeled data.
+
+        The process involves fitting a model to the data and then using the model to make predictions. The model is typically a mathematical function that describes the relationship between the variables in the dataset. The model is fitted to the data by estimating the parameters of the model using statistical methods.
+
+        Unsupervised learning can be used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Statistical modeling`
+
+        - :term:`Supervised learning`     
