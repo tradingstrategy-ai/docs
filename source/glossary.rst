@@ -1,4 +1,4 @@
-.. _glossary:
+a.. _glossary:
 
 Glossary
 ========
@@ -3533,4 +3533,24 @@ and algorithmic trading.
         - :term:`OHLCV`
 
         - :term:`Dataset`
+
+    Tactical asset allocation
+
+        In :term:`quantitative finance`, Tactical Asset Allocation (TAA) is an investment strategy in finance that involves actively adjusting the allocation of assets within a portfolio to take advantage of short-term market opportunities or to manage risk.
+
+        It is a dynamic approach that aims to capitalize on market inefficiencies, mispricings, or changing market conditions.
+
+        TAA differs from strategic asset allocation, which focuses on establishing a long-term allocation mix based on the investor's goals, risk tolerance, and investment horizon. In contrast, TAA involves making short-term shifts in asset allocation based on market forecasts, economic indicators, or other relevant factors.
+
+        The goal of tactical asset allocation is to enhance portfolio performance by overweighting or underweighting certain asset classes, sectors, or geographic regions at specific times. For example, if an investor believes that the stock market is overvalued and poised for a downturn, they may decrease their equity exposure and increase their allocation to bonds or cash. Conversely, if favorable conditions are anticipated for a particular sector or region, the investor may overweight those assets to potentially achieve higher returns.
+
+        TAA strategies can be implemented using various techniques, including fundamental analysis, technical analysis, quantitative models, or a combination of these approaches. It requires active monitoring of market trends, economic indicators, and other relevant factors that can influence asset prices. TAA may be executed through individual security selection, the use of exchange-traded funds (ETFs), or other investment vehicles.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Factor investing`
 

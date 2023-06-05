@@ -42,3 +42,5 @@ Miscellaneous
 
 - `Liquidity Provider Strategies for Uniswap v3: Dynamic Hedging <https://atise.medium.com/liquidity-provider-strategies-for-uniswap-v3-dynamic-hedging-9e6858bea8fa>`__
 
+- `In-Sample vs. Out-Of-Sample Analysis of Trading Strategies <https://quantpedia.com/in-sample-vs-out-of-sample-analysis-of-trading-strategies/>`__
+
