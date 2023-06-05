@@ -3544,7 +3544,7 @@ and algorithmic trading.
 
         The goal of tactical asset allocation is to enhance portfolio performance by overweighting or underweighting certain asset classes, sectors, or geographic regions at specific times. For example, if an investor believes that the stock market is overvalued and poised for a downturn, they may decrease their equity exposure and increase their allocation to bonds or cash. Conversely, if favorable conditions are anticipated for a particular sector or region, the investor may overweight those assets to potentially achieve higher returns.
 
-        TAA strategies can be implemented using various techniques, including fundamental analysis, technical analysis, quantitative models, or a combination of these approaches. It requires active monitoring of market trends, economic indicators, and other relevant factors that can influence asset prices. TAA may be executed through individual security selection, the use of exchange-traded funds (ETFs), or other investment vehicles.
+        TAA strategies can be implemented using various techniques, including fundamental analysis, technical analysis, quantitative models, or a combination of these approaches. It requires active monitoring of market trends, economic indicators, and other relevant :term:`factors <factor investing>` that can influence asset prices. TAA may be executed through individual security selection, the use of exchange-traded funds (ETFs), or other investment vehicles.
 
         See also
 
@@ -3552,5 +3552,9 @@ and algorithmic trading.
 
         - :term:`Portfolio construction`
 
+        - :term:`Rebalance`
+
         - :term:`Factor investing`
+
+        - :term:`Alpha signal`
 
