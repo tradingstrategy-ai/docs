@@ -3186,13 +3186,15 @@ and algorithmic trading.
 
         In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
 
-        Overfitting can be avoided by using a larger training set, or by using :term:`regularization` techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
+        Overfitting can be avoided by using a larger :term:`training set`, or by using :term:`regularization` techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
 
         See also:
 
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
+
+        - :term:`Training set`
     
     Survivorship bias
 
@@ -3564,7 +3566,7 @@ and algorithmic trading.
 
         Cross-validation is a common practice in machine learning and statistical modeling. It is used to assess the predictive accuracy of a model and to detect overfitting, which occurs when a model performs well on the training data but does not generalize well to new data.
 
-        The process involves splitting the dataset into two subsets: a training set and a test set. The model is trained on the training set and then evaluated on the test set. The results are compared to determine how well the model performs on new data.
+        The process involves splitting the dataset into two subsets: a :term:`training set` and a :term:`test set`. The model is trained on the training set and then evaluated on the test set. The results are compared to determine how well the model performs on new data.
 
         Cross-validation can be used to compare different models or to tune the parameters of a model. It can also be used to select the best features for a model or to determine the optimal number of features.
 
@@ -3586,7 +3588,7 @@ and algorithmic trading.
 
         Regularization is a common practice in machine learning and statistical modeling. It is used to prevent overfitting, which occurs when a model performs well on the training data but does not generalize well to new data.
 
-        The process involves adding a penalty term to the loss function that penalizes the model for learning the training data too well. The penalty term is typically a function of the model parameters, such as the sum of the squared weights or the sum of the absolute values of the weights. The penalty term is added to the loss function to create a new loss function that is minimized during training.
+        The process involves adding a penalty term to the :term:`loss function` that penalizes the model for learning the training data too well. The penalty term is typically a function of the model parameters, such as the sum of the squared weights or the sum of the absolute values of the weights. The penalty term is added to the loss function to create a new loss function that is minimized during training.
 
         Regularization can be used to compare different models or to tune the parameters of a model. It can also be used to select the best features for a model or to determine the optimal number of features.
 
@@ -3646,7 +3648,7 @@ and algorithmic trading.
 
         In :term:`machine learning`, the training set is a subset of data that is used to train a model. It is a set of data that is used to fit the parameters of a model.
 
-        The training set is typically a random sample of the dataset. It is used to train the model by minimizing the loss function, which is a measure of how well the model fits the training data.
+        The training set is typically a random sample of the dataset. It is used to train the model by minimizing the :term:`loss function`, which is a measure of how well the model fits the training data.
 
         The training set is used to fit the parameters of the model, while the test set is used to evaluate the performance of the model. The test set is typically a random sample of the dataset that is not used to train the model.
 
