@@ -3003,9 +3003,15 @@ and algorithmic trading.
 
         JSON data is organized into key-value pairs, where keys are strings and values can be strings, numbers, arrays, objects, booleans, or null.
 
+        See the `JSON specification <https://www.json.org/json-en.html>`_ for more information.
+
+        Also see an example of using JSON with TradingStrategy data in the `JSON example <https://tradingstrategy.ai/api/explorer/#/Trading%20pair/web_candles>`_
+
         See also
 
         - :term:`Python`
+
+        - :term:`JSONL`
 
     Trailing stop loss
 
@@ -3732,4 +3738,14 @@ and algorithmic trading.
 
         - :term:`Statistical modeling`
 
-        - :term:`Supervised learning`     
+        - :term:`Supervised learning` 
+
+    JSONL
+
+        JSONL, also known as JSON Lines, is a convenient format for storing structured data that may be processed one record at a time. Each line in a JSONL file is a valid JSON object, allowing for simple append operations and easy processing of large files. The format is particularly useful in cases where the data consists of many small records, as it allows for line-by-line iteration, reducing memory usage when dealing with large datasets.
+
+        This format, although not an official standard, has gained popularity due to its simplicity and efficiency in handling data. The JSONL file format is especially useful in the fields of data processing and machine learning, where dealing with large datasets is common.
+
+        See the `JSONL specification <https://jsonlines.readthedocs.io/en/latest>`_ for more information.
+
+        Also see an example of using JSONL with TradingStrategy data in the `JSONL example <https://tradingstrategy.ai/api/explorer/#/Trading%20pair/web_candles_jsonl>`_.
