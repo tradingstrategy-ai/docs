@@ -3749,3 +3749,27 @@ and algorithmic trading.
         See the `JSONL specification <https://jsonlines.readthedocs.io/en/latest>`_ for more information.
 
         Also see an example of using JSONL with TradingStrategy data in the `JSONL example <https://tradingstrategy.ai/api/explorer/#/Trading%20pair/web_candles_jsonl>`_.
+
+        See also
+
+        - :term:`JSON`
+
+        - :term:`CSV`
+
+        - :term:`dataset`
+
+    CSV
+
+        CSV, or comma-separated values, is a file format that stores tabular data in plain text. It is a common format for storing data in spreadsheets and databases. It is also a common format for exchanging data between applications.
+
+        CSV files are typically used to store data in a tabular format. Each line in a CSV file represents a row in a table, and each column in a row represents a field in the table. The fields are separated by commas, and the rows are separated by newlines.
+
+        CSV files are often used to store data in a tabular format. They are also used to exchange data between applications.
+
+        See also
+
+        - :term:`JSON`
+
+        - :term:`JSONL`
+        
+        - :term:`dataset` 
