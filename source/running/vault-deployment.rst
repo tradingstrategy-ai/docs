@@ -34,24 +34,54 @@ To get started you need to have a
 
 `To generate a private key, you can see the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
-Creating a vault
-----------------
+Run Docker container
+--------------------
 
-You can create a vault by running `trade-executor` and giving it the configuration by environment variables.
-
-.. note ::
-
-    See :ref:`strategy deployment` on how to install and run `trade-executor` Docker image.
-
-Example shell script:
+Start by setting up a command-line shell for the latest version of `trade-executor`.
+`See here for the latest trade-executor releases <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`__.
 
 .. code-block:: shell
 
-    # Pin down the Docker image version we are going to use instead of "v119"
-    # See versions here https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor
-    export TRADE_EXECUTOR_VERSION=v119 && export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    export TRADE_EXECUTOR_VERSION=v163 && export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    docker run $TRADE_EXECUTOR_IMAGE version
 
-    # Run the command, pass private key and JSON-RPC node from environment variables
+Should output:
+
+.. code-block:: text
+
+    Version: v163
+    Commit hash: 2bb422a35d2643265e38204af022560544294c52
+    Commit message: Fix build instructions
+
+See :ref:`strategy deployment` for more information on how to install and run `trade-executor` Docker image.
+
+Create an Enzyme vault
+----------------------
+
+You can create a vault by running `trade-executor enzyme-deploy-vault` command
+and giving it the configuration by environment variables.
+
+You need to
+
+* Decide your vault name and token symbol
+
+* Have `PRIVATE_KEY` set up with some gas money
+
+Here is an example shell command how to put together a Docker command to run `enzyme-deploy-vault`.
+`See also the explanation how a local workign directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
+Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
+
+.. code-block:: shell
+
+    # Use $TRADE_EXECUTOR_IMAGE from the previous step
+
+    # You need to provider these
+    export JSON_RPC_POLYGON=
+    export PRIVATE_KEY=
+
+    # Run the command
+    # - Pass private key and JSON-RPC node from environment variables
+    # - Set vault-info.json to be written to a local file system
     docker run \
         --interactive \
         --tty \
@@ -62,38 +92,55 @@ Example shell script:
         enzyme-deploy-vault \
         --private-key=$PRIVATE_KEY \
         --vault-record-file="vault-info.json" \
-        --fund-name="Degen Fault I" \
-        --fund-symbol="DEGE1" \
+        --fund-name="Your Vault Name" \
+        --fund-symbol="YOURTOKENSYMBOL" \
         --json-rpc-polygon=$JSON_RPC_POLYGON
 
 This will give you the log output for the deployment:
 
 .. code-block:: text
 
-    2023-04-26 19:20:13 tradeexecutor.ethereum.web3config                  INFO     Chain polygon connects using alien-black-thunder.matic.quiknode.pro
-    2023-04-26 19:20:14 tradeexecutor.ethereum.web3config                  TRADE    Connected to chain: polygon, node provider: alien-black-thunder.matic.quiknode.pro, gas pricing method: london
-    2023-04-26 19:20:14 tradeexecutor.ethereum.web3config                  INFO     Using proof-of-authority web3 middleware for chain 137
-    2023-04-26 19:20:14 root                                               INFO     Connected to chain polygon
-    2023-04-26 19:20:14 root                                               INFO       Chain id is 137
-    2023-04-26 19:20:14 root                                               INFO       Latest block is 41,991,567
-    2023-04-26 19:20:14 root                                               INFO     Balance details
-    2023-04-26 19:20:14 root                                               INFO       Hot wallet is 0x40d8368C6D1FfC90fe705B74C6F0F56E1d11092E
-    2023-04-26 19:20:14 root                                               INFO       We have 103.618645 tokens for gas left
-    2023-04-26 19:20:14 root                                               INFO     Enzyme details
-    2023-04-26 19:20:14 root                                               INFO       Integration manager deployed at 0x92fCdE09790671cf085864182B9670c77da0884B
-    2023-04-26 19:20:14 root                                               INFO       USDC is 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    2023-04-26 19:20:14 root                                               INFO     Deploying vault
-    2023-04-26 19:20:19 root                                               INFO     Deploying VaultSpecificGenericAdapter
-    2023-04-26 19:20:23 root                                               INFO     Vault details
-    2023-04-26 19:20:23 root                                               INFO       Vault at 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
-    2023-04-26 19:20:23 root                                               INFO       Comptroller at 0x0fC476e8050a9eDe4D24E2f01d8775249bDf310e
-    2023-04-26 19:20:23 root                                               INFO       GenericAdapter at 0x07f7eB451DfeeA0367965646660E85680800E352
-    2023-04-26 19:20:23 root                                               INFO       Deployment block number is 41991571
+    INFO     Chain polygon connects using alien-black-thunder.matic.quiknode.pro
+    TRADE    Connected to chain: polygon, node provider: alien-black-thunder.matic.quiknode.pro, gas pricing method: london
+    INFO     Using proof-of-authority web3 middleware for chain 137
+    INFO     Connected to chain polygon
+    INFO       Chain id is 137
+    INFO       Latest block is 41,991,567
+    INFO     Balance details
+    INFO       Hot wallet is 0x40d8368C6D1FfC90fe705B74C6F0F56E1d11092E
+    INFO       We have 103.618645 tokens for gas left
+    INFO     Enzyme details
+    INFO       Integration manager deployed at 0x92fCdE09790671cf085864182B9670c77da0884B
+    INFO       USDC is 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    INFO     Deploying vault
+    INFO     Deploying VaultSpecificGenericAdapter
+    INFO     Vault details
+    INFO       Vault at 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
+    INFO       Comptroller at 0x0fC476e8050a9eDe4D24E2f01d8775249bDf310e
+    INFO       GenericAdapter at 0x07f7eB451DfeeA0367965646660E85680800E352
+    INFO       VaultUSDCPaymentForwarder at 0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713
+    INFO       Deployment block number is 41991571
 
+You can also see the deploy data in JSON file:
 
+.. code-block:: shell
+
+    cat vault-info.json
+
+This gives:
+
+.. code-block:: json
+
+    {
+        "vault": "0x77feceCeE6E8aC1baD6207cFb36B26D22D8b2C59",
+        "comptroller": "0x54848b581c61baAdE1BbdA3134AEd48Bca1e4944",
+        "generic_adapter": "0x6b56Ee3C9e6751E94181226057d9589295d15c66",
+        "block_number": 43688398,
+        "usdc_payment_forwarder": "0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713"
+    }
 .. note ::
 
-    It is very important that you keep the contents of the JSON file around,
+    It is important that you keep the contents of the vault smart contract addresses and/or the JSON file around,
     as otherwise you cannot interact with your vault later.
 
 Registering the vault with Enzyme's website
@@ -228,6 +275,40 @@ Example `docker-compose.yml`:
           # Generated by configurations/quickswap-momentum.sh
           - ~/secrets/enzyme-polygon-eth-usdc-final.env
 
+Test docker-compose entry
+-------------------------
+
+You can check the trade executor with:
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-eth-usdc --help
+
+This gives:
+
+.. code-block:: text
+
+    Usage: trade-executor [OPTIONS] COMMAND [ARGS]...
+
+    Options:
+      --install-completion [bash|zsh|fish|powershell|pwsh]
+                                      Install completion for the specified shell.
+      --show-completion [bash|zsh|fish|powershell|pwsh]
+                                      Show completion for the specified shell, to copy it or customize the installation.
+      --help                          Show this message and exit.
+
+    Commands:
+      check-universe       Checks that the trading universe is helthy for a given strategy.
+      check-wallet         Print out the token balances of the hot wallet.
+      console              Open interactive IPython console to explore state.
+      enzyme-asset-list    Print out JSON list of supported Enzyme assets on a chain.
+      enzyme-deploy-vault  Deploy a new Enzyme vault.
+      hello                Check that the application loads without doing anything.
+      init                 Initialise a strategy.
+      perform-test-trade   Perform a small test swap.
+      repair               Repair broken state.
+      start                Launch Trade Executor instance.
+      version              Print out the version information.
 
 Run a backtest on the strategy module
 -------------------------------------
@@ -246,9 +327,10 @@ Example:
     docker-compose run enzyme-polygon-eth-usdc \
         start \
         --strategy-file=strategy/enzyme-polygon-eth-usdc.py \
+        --state-file=state/enzyme-polygon-eth-backtest.json \
         --asset-management-mode=backtest \
-        --backtest-start=2021-01-01 \
-        --backtest-end=2022-01-01
+        --backtest-start=2023-01-01 \
+        --backtest-end=2023-04-01
 
 And you will get a report like:
 
