@@ -2,10 +2,15 @@
 
 .. _strategy deployment:
 
-Live strategy deployment
-========================
+.. _hot wallet deployment:
+
+Hot wallet deployment
+=====================
 
 In this chapter, we explain how to take a backtested strategy and make it to a live running trading strategy instance.
+
+This section is for a single user hot wallet deployment mode.
+If you are looking to deploy a strategy for multiple users see :ref:`vault deployment`.
 
 Preface
 -------

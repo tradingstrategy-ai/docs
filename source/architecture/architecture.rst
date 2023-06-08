@@ -1,7 +1,7 @@
-.. _architecture:
+.. _architecture overview:
 
-Architecture
-============
+Architecture overview
+=====================
 
 Here is an overview of core concepts and architecture of trading strategy execution,
 by walking through modules and terms used. Some concepts are common for trading,

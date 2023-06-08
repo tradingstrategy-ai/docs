@@ -22,7 +22,8 @@ Table of contents
    getting-started
    overview/index
    programming/index
-   running/index
+   architecture/index
+   deployment/index
    protocol/index
    learn/index
    glossary

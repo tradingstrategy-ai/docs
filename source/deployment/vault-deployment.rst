@@ -1,10 +1,13 @@
-.. vault-deployment:
+.. vault deployment:
 
 Vault deployment
 ================
 
-For vault based strategies, before you progress to :ref:`strategy deployment`, you need to
-deploy the underlying vault that is controlled by an oracle.
+This chapter discussed how to deploy a `trade-executor` binary to
+manage a trading strategy deployed for multiple users using a :term:`vault`.
+
+If you are looking for a single user deployment, :ref:`hot wallet deployment`
+is an easier option.
 
 Preface
 -------
@@ -456,10 +459,13 @@ Launch the trade executor in daemon mode:
 
     docker-compose up -d enzyme-polygon-eth-usdc
 
-Then you can follow the logs:
+Checking logs
+-------------
+
+Logs are available through the web frontend.
+
+You can also check the latest logs from Docker:
 
 .. code-block:: shell
 
-.. code-block:: shell
-
-    docker-compose logs -
+    docker-compose logs --tail=200 enzyme-polygon-eth-usdc
