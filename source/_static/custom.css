@@ -108,3 +108,8 @@ table.autosummary {
 .content table.autosummary a {
     border-bottom: 0;
 }
+
+/* Fix next and previous nav at the bottom of the page */
+.related-pages {
+    display: none;
+}
