@@ -31,13 +31,15 @@ Trading Strategy client
    tradingstrategy.candle
    tradingstrategy.liquidity
    tradingstrategy.timebucket
+   tradingstrategy.token
    tradingstrategy.reader
    tradingstrategy.priceimpact
    tradingstrategy.stablecoin
    tradingstrategy.types
-   tradingstrategy.analysis.portfolioanalyzer
-   tradingstrategy.analysis.profitdistribution
-   tradingstrategy.analysis.tradeanalyzer
-   tradingstrategy.analysis.tradehint
+   tradingstrategy.utils
+   tradingstrategy.transport
+   tradingstrategy.charting
+   tradingstrategy.testing
    tradingstrategy.frameworks.backtrader
    tradingstrategy.frameworks.qstrader
+   tradingstrategy.direct_feed
