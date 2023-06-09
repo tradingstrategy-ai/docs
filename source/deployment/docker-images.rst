@@ -46,3 +46,80 @@ Should output:
     Commit hash: 2bb422a35d2643265e38204af022560544294c52
     Commit message: Fix build instructions
 
+.. _docker compose example:
+
+Docker Compose example
+----------------------
+
+After Docker runs from the command line, you can create a `docker-compose.yml` entry for your strategy.
+Compose configuration files are how :ref:`Docker` containers and instances are run.
+
+You need to pass in local file system folders, or create a Docker volumes for
+
+- `strategy/`, or any path where your strategy module is
+
+- `state/` where your strategy persistent state is stored
+
+- `cache/` where downloaded datasets are stored
+
+- For webhook port we use `19006` in the example below.
+  This needs to be any open ane unoccupied localhost port on your server.
+
+Example `docker-compose.yml`:
+
+.. code-block:: yaml
+
+    version: "3.9"
+
+    # The base template for trade-executor live trading
+    x-trade-executor: &default-trade-executor
+      image: ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+      restart: unless-stopped
+      mem_swappiness: 0
+      volumes:
+        # Map the path from where we load the strategy Python modules
+        - ./strategy:/usr/src/trade-executor/strategy
+        # Save the strategy execution state in the local filesystem
+        - ./state:/usr/src/trade-executor/state
+        # Cache the dataset downloads in the local filesystem
+        - ./cache:/usr/src/trade-executor/cache
+        # Save the log files to the local file system
+        - ./logs:/usr/src/trade-executor/logs
+
+      # This is the default trade-executor command to
+      # launch as a daemon mode.
+      # There are several subcommands.
+      command: start
+
+    services:
+
+      enzyme-polygon-eth-usdc:
+        <<: *default-trade-executor
+        container_name: enzyme-polygon-eth-usdc
+        ports:
+          - "127.0.0.1:19006:3456"
+        env_file:
+          - ~/secrets/enzyme-polygon-eth-usdc-final.env
+
+
+
+We pin down our `trade-executor` version using `TRADE_EXECUTOR_VERSION` environment variable.
+`See the repo for stable versions <https://github.com/tradingstrategy-ai/trade-executor/>`__.
+**Do not use latest tag as it is unstable, unless you build the Docker image yourself**.
+
+.. code-block:: shell
+
+    export TRADE_EXECUTOR_VERSION=v13
+
+Now we can try this out. We invoke `hello` subcommand
+to see that the application launches correctly.
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-eth-usdc version
+
+Missing env files
+~~~~~~~~~~~~~~~~~
+
+If you have several services in the same `docker-compose.yml` and `docker-compose` complains about missing `.env`
+files you can simply create empty files. E.g. `touch ~/pancake-eth-usd-sma-final.env`.
