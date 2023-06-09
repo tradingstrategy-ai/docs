@@ -96,58 +96,9 @@ You can store the Python module anywhere, as it is referred by its path in the f
 Managing Docker images
 ----------------------
 
-`trade-executor` is distributed as a Docker image.
-`Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
+- You need to be able to run a Docker image on your server in order to run `trade-executor`
 
-.. image:: docker-image.drawio.svg
-
-- The image name is `ghcr.io/tradingstrategy-ai/trade-executor`
-
-- The Docker image packages Python interpreter and `trade-executor` command
-
-- It is automatically downloaded when you run `docker` or `docker-compose` command
-
-- Always pin down the Docker image version to a known good version for yourself
-
-- There shouldn't be need to build your own Docker image, though we provide instructions
-  for this for developers later on
-
-- The image is distributed using Github's Container Registry (ghcr.io) -
-  you need to `docker login` to this registry to download the image
-
-If you need to locally pull the image:
-
-.. code-block:: shell
-
-    export TRADE_EXECUTOR_VERSION=v11
-    docker pull ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION
-
-Check that the image is working for you:
-
-.. code-block:: shell
-
-    docker run ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION hello
-
-This should print:
-
-.. code-block:: text
-
-    Hello blockchain
-
-Local Docker image builds
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
-
-.. code-block:: shell
-
-     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
-
-Python application execution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
-without Docker, if needed.
+- See :ref:`managing Docker images` to learn how to get started with Docker
 
 .. _command-line-backtest:
 

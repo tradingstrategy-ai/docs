@@ -41,26 +41,12 @@ To get started you need to have a
 
 - `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
-Run Docker container
---------------------
+Managing Docker images
+----------------------
 
-Start by setting up a command-line shell for the latest version of `trade-executor`.
-`See here for the latest trade-executor releases <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`__.
+- You need to be able to run a Docker image on your server in order to run `trade-executor`
 
-.. code-block:: shell
-
-    export TRADE_EXECUTOR_VERSION=v163 && export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
-    docker run $TRADE_EXECUTOR_IMAGE version
-
-Should output:
-
-.. code-block:: text
-
-    Version: v163
-    Commit hash: 2bb422a35d2643265e38204af022560544294c52
-    Commit message: Fix build instructions
-
-See :ref:`strategy deployment` for more information on how to install and run `trade-executor` Docker image.
+- See :ref:`managing Docker images` to learn how to get started with Docker
 
 Create an Enzyme vault
 ----------------------

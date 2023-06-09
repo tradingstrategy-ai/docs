@@ -44,3 +44,20 @@ To start the console you can do:
     In [1]:
 
 Then you can use `%cpaste` command to paste Python snippets into the console.
+
+Local Docker image builds
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If needed you can build the image locally from `trade-executor repo <https://github.com/tradingstrategy-ai/trade-executor/>`__:
+
+.. code-block:: shell
+
+     docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
+
+Python application execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
+without Docker, if needed.
+
+

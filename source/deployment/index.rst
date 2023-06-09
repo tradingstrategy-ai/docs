@@ -9,9 +9,10 @@ developed with :ref:`Trading Strategy framework <framework>`.
 .. toctree::
    :maxdepth: 1
 
-   strategy-deployment
+   hot-wallet-deployment
    vault-deployment
    monitoring
+   docker-images
    troubleshooting
    repair
 
