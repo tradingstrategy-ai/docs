@@ -3772,4 +3772,38 @@ and algorithmic trading.
 
         - :term:`JSONL`
         
-        - :term:`dataset` 
+        - :term:`dataset`
+
+    JSON-RPC
+
+        In blockchain development, JSON-RPC is a popular Remote Procedure Call (RPC) protocol used by blockchain node applications.
+
+        JSON-RPC was popularised by the original `bitcoind` node and then copied to Ethereum.
+        JSON-RPC is human readable and simple protocol for programmatically asking information from your blockchain node.
+
+        This includes
+
+        - Querying the current state information
+
+        - Broadcasting transactions
+
+        JSON-RPC is used by
+
+        - Wallets (query tokens, balances)
+
+        - Decentralised appliaction frontends
+
+        You can get a JSON-RPC API for your blockchain application by
+
+        - Self-hosting a blockchain node and then turning on the JSON-RPC API port
+
+        - Using a software-as-a-service provider - see `ethereumnodes.com <https://ethereumnodes.com>`__ for details
+
+        Popular alternatives for JSON-RPC includes Protobuf, as used by Cosmos SDK.
+
+        See also
+
+        - :term:`JSON`
+
+        - :term:`EVM`
+

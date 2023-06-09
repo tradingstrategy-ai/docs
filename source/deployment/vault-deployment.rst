@@ -14,28 +14,32 @@ Preface
 
 This example shows how to deploy a vault for :ref:`Enzyme protocol`
 
-- Multiple investors
+- Multiple investors,
 
-- Vault owner and asset manager is set to be a single private key
+- Vault owner and asset manager is set to be a single private key.
 
-- Vault does not have any safety features and can trade any assets;
-  use only for trusted setups
+- Any strategy can trade assets whitelisted by Enzyme governance.
+  See :py:mod:`tradeexecutor.cli.commands.enzyme_asset_list` for details
+  how to view the list of currently active assets.
 
-- Any strategy can only trade Enzyme whitelisted addresses;
-  see :py:mod:`tradeexecutor.ethereum.cli.commands.enzyme_asset_list`
+.. note::
+
+    In the beta mode, the vauklt does not have any safety features and can trade any assets.
+    Use only for trusted oracle setups.
+
 
 Prerequisites
 -------------
 
 To get started you need to have a
 
-- JSON-RPC node
+- :term:`JSON-RPC` node
 
 - A private key
 
 - Native token loaded up for :term:`gas fee`
 
-`To generate a private key, you can see the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
+- `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
 Run Docker container
 --------------------
@@ -152,7 +156,8 @@ Registering the vault with Enzyme's website
 After the vault has been deployed, you can visit `enzyme.finance <https://enzyme.finance>` and
 register your vault there, to make it publicly accessible.
 
-- Import your private key to a secure wallet e.g. TrustWallet on mobile
+- Import the private key to a secure wallet e.g. TrustWallet on mobile
+  or Rabby on desktop
 
 - Sign in to Enzyme
 
@@ -166,7 +171,15 @@ register your vault there, to make it publicly accessible.
 
 - Now you can fill in the vault description on Enzyme's website database
 
-- You can also deposit some USDC in the vault to get started trading
+Initial vault deposit
+~~~~~~~~~~~~~~~~~~~~~
+
+- After vault is registered it needs the initial deposit
+
+- You need deposit some USDC in the vault needed later in the test trade,
+  using Enzyme website and your wallet
+
+- Enzyme can automatically convert MATIC to USDC and so on
 
 Set up live execution environment
 ---------------------------------
@@ -223,10 +236,12 @@ Example public environment variables entry:
     # The trigger mode for the decide_trades()
     STRATEGY_CYCLE_TRIGGER="trading_pair_data_availability"
 
-    # Set parameters from Enzyme vault deployment
+    # Set parameters from Enzyme vault deployment.
+    # Get output from trade-executor enzyme-deploy-vault command
     VAULT_ADDRESS=0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
     VAULT_ADAPTER_ADDRESS=0x07f7eB451DfeeA0367965646660E85680800E352
     VAULT_PAYMENT_FORWARDER_ADDRESS=...
+    VAULT_DEPLOYMENT_BLOCK_NUMBER=...
 
 Remember to slice files together:
 
@@ -403,19 +418,21 @@ The output should look like:
     2023-05-11 17:27:13 tradeexecutor.ethereum.routing_model               INFO       Routed reserve asset is <USDC at 0x2791bca1f2de4661ed88a30c99a7a9449aa84174>
     2023-05-11 17:27:13 root                                               INFO     All ok
 
-Initialise vault
-----------------
+Initialise the vault
+--------------------
 
-This will create the state file for the strategy.
+This will initialise the state file for the strategy executor.
 
 - Create a new state file for the strategy
 
-- Record the vault deployment information in the state file
+- Read and sync on-chain information to the state file (smart contract addresses, etc.)
+
+- Start tracking deposit and redemption information
 
 .. code-block:: shell
 
     # Use the deployment block number earlier
-    docker-compose run enzyme-polygon-eth-usdc init -- --vault-deployment-block-number=41991571
+    docker-compose run enzyme-polygon-eth-usdc init
 
 Performing a test trade
 -----------------------
@@ -469,3 +486,17 @@ You can also check the latest logs from Docker:
 .. code-block:: shell
 
     docker-compose logs --tail=200 enzyme-polygon-eth-usdc
+
+Backup trade-executor configuration
+-----------------------------------
+
+After finishing with the vault setup, make sure your configuration files are stored properly.
+
+- Add edits and new files to Git commit
+
+- Push changes to Github
+
+Set up web frontend and monitoring
+----------------------------------
+
+See the next steps in :ref:`strategy monitoring`.

@@ -11,5 +11,7 @@ developed with :ref:`Trading Strategy framework <framework>`.
 
    strategy-deployment
    vault-deployment
+   monitoring
+   troubleshooting
    repair
 
