@@ -9,7 +9,7 @@ Preface
 -------
 
 `trade-executor` is distributed as a Docker image.
-`Trade executor Docker images are avaible in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
+`Trade executor Docker images are available in Github Container Registry <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`_.
 
 .. image:: docker-image.drawio.svg
 
@@ -100,8 +100,6 @@ Example `docker-compose.yml`:
           - "127.0.0.1:19006:3456"
         env_file:
           - ~/secrets/enzyme-polygon-eth-usdc-final.env
-
-
 
 We pin down our `trade-executor` version using `TRADE_EXECUTOR_VERSION` environment variable.
 `See the repo for stable versions <https://github.com/tradingstrategy-ai/trade-executor/>`__.
