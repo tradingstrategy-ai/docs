@@ -1,4 +1,4 @@
-git Troubleshooting strategy deployments
+Troubleshooting strategy deployments
 ====================================
 
 .. _console:

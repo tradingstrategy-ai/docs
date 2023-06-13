@@ -120,7 +120,8 @@ table.autosummary {
     Make sure there is enough space to fit long Class.function() names in the sidebar
     on a single line.
  */
-.sidebar-container, .toc-drawer {
-    box-sizing: border-box;
-    width: 26em;
+@media (min-width: 82em) {
+    .toc-drawer {
+        width: 26em;
+    }
 }
