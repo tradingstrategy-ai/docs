@@ -504,19 +504,7 @@ You can check the logs with:
 Checking the webhook health
 ---------------------------
 
-After your `docker-compose` instance is running you can check that its webhook port is replying using `curl`.
-
-.. code-block:: shell
-
-    curl http://localhost:19003/ping
-
-This should give you the JSON result:
-
-.. code-block:: text
-
-    {"ping": "pong"}
-
-`View the trade-executor webhook API <https://github.com/tradingstrategy-ai/trade-executor/blob/master/tradeexecutor/webhook/api.py>`__.
+Seee :ref:`manually checking webhook`.
 
 Setting up related infrastructure
 ---------------------------------
@@ -528,49 +516,3 @@ Further info
 
 .. _trade-executor-command-line:
 
-Running trade-executor without Docker
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`trade-executor` can be run without Docker.
-
-- You need set up a Python environment using Poetry
-
-Then you can run `trade-executor` as Python application:
-
-
-.. code-block:: shell
-
-    trade-executor hello
-
-.. code-block:: text
-
-    Hello blockchain
-
-Using shdotenv helper
-~~~~~~~~~~~~~~~~~~~~~
-
-Poetry / Typer environment does not support reading `.env` files directly.
-You first need to `load any .env file to your shell using shdotenv <https://stackoverflow.com/a/67357762/315168>`__
-before calling `trade-executor`.
-
-`shdotenv` is especially needed to translate Docker style `.env` files to a format
-UNIX shell can understand.
-
-.. code-block:: shell
-
-    wget https://github.com/ko1nksm/shdotenv/releases/latest/download/shdotenv -O ~/.local/bin/shdotenv
-    chmod +x ~/.local/bin/shdotenv
-
-Then you can run with `.env` file:
-
-.. code-block:: shell
-
-    eval "$(shdotenv --dialect docker --env ~/pancake-eth-usd-sma-final.env)"
-    echo "Strategy file is: $STRATEGY_FILE"
-
-And now you can run `trade-executor` commands that take complex configuration
-that would be hard to type otherwise:
-
-.. code-block:: shell
-
-    trade-executor check-wallet

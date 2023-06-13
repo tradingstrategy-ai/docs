@@ -1,4 +1,4 @@
-Troubleshooting strategy deployments
+git Troubleshooting strategy deployments
 ====================================
 
 .. _console:
@@ -60,4 +60,114 @@ Python application execution
 You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
 without Docker, if needed.
 
+.. _manually checking webhook:
 
+Manually checking webhook
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After your Docker instance is running you can check that its webhook port is replying using `curl`.
+
+.. code-block:: shell
+
+    curl http://localhost:19003/ping
+
+This should give you the JSON result:
+
+.. code-block:: text
+
+    {"ping": "pong"}
+
+You can get the status overview:
+
+.. code-block:: shell
+
+    curl http://localhost:19009/status | jq
+
+.. code-block:: json
+
+    {
+      "executor_id": "enzyme-polygon-eth-usdc-sls",
+      "last_refreshed_at": 1686639960,
+      "started_at": 1686638369,
+      "executor_running": true,
+      "completed_cycle": 2,
+      "cycles": 1,
+      "position_trigger_checks": 9,
+      "position_revaluations": 0,
+      "frozen_positions": 0,
+      "crashed_at": null,
+      "exception": null,
+      "source_code": null,
+      "visualisation": {
+        "last_refreshed_at": 1686640029,
+        "small_image": null,
+        "small_image_dark": null,
+        "large_image": null,
+        "large_image_dark": null
+      },
+      "summary_statistics": {
+        "calculated_at": 1686639605,
+        "first_trade_at": 1686638109,
+        "last_trade_at": 1686638117,
+        "enough_data": false,
+        "current_value": 1.923205,
+        "profitability_90_days": null,
+        "performance_chart_90_days": null
+      },
+      "market_data_feed_lag": null,
+      "version": {
+        "tag": "v170",
+        "commit_message": "Fix close position signature (#381)",
+        "commit_hash": "40f05bf8c550f9edaca01bfeb1360122576f0403"
+      }
+    }
+
+
+`View the trade-executor webhook API <https://github.com/tradingstrategy-ai/trade-executor/blob/master/tradeexecutor/webhook/api.py>`__.
+
+Running trade-executor without Docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`trade-executor` can be run without Docker.
+
+- You need set up a Python environment using Poetry
+
+Then you can run `trade-executor` as Python application:
+
+
+.. code-block:: shell
+
+    trade-executor hello
+
+.. code-block:: text
+
+    Hello blockchain
+
+Using shdotenv helper
+~~~~~~~~~~~~~~~~~~~~~
+
+Poetry / Typer environment does not support reading `.env` files directly.
+You first need to `load any .env file to your shell using shdotenv <https://stackoverflow.com/a/67357762/315168>`__
+before calling `trade-executor`.
+
+`shdotenv` is especially needed to translate Docker style `.env` files to a format
+UNIX shell can understand.
+
+.. code-block:: shell
+
+    wget https://github.com/ko1nksm/shdotenv/releases/latest/download/shdotenv -O ~/.local/bin/shdotenv
+    chmod +x ~/.local/bin/shdotenv
+
+Then you can run with `.env` file:
+
+.. code-block:: shell
+
+    eval "$(shdotenv --dialect docker --env ~/pancake-eth-usd-sma-final.env)"
+    echo "Strategy file is: $STRATEGY_FILE"
+
+And now you can run `trade-executor` commands that take complex configuration
+that would be hard to type otherwise:
+
+.. code-block:: shell
+
+    trade-executor check-wallet
