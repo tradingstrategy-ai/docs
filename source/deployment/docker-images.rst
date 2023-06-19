@@ -74,7 +74,11 @@ Example `docker-compose.yml`:
     # The base template for trade-executor live trading
     x-trade-executor: &default-trade-executor
       image: ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
-      restart: unless-stopped
+      # All live executors have internal exception recovery mechanism,
+      # If trade executor stops it must be manually restarted.
+      # However webhook server stays around and can still take commands
+      # even if the trade executor loop has stopped.
+      restart: "no"
       mem_swappiness: 0
       volumes:
         # Map the path from where we load the strategy Python modules
