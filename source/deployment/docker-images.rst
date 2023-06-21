@@ -15,7 +15,7 @@ Preface
 
 - The image name is `ghcr.io/tradingstrategy-ai/trade-executor`
 
-- The Docker image packages Python interpreter and `trade-executor` command
+- The Docker image packages Python interpreter and `trade-executor` co`mmand
 
 - It is automatically downloaded when you run `docker` or `docker-compose` command
 
