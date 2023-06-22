@@ -21,13 +21,6 @@ Here you can find trading strategy examples as notebooks.
 - You can copy these files, run and and start editing them yourself.
   See :ref:`running backtests <running-backtests>` on how you can to run.
 
-.. toctree::
-   :caption: Strategy tags
-   :maxdepth: 2
-   :titlesonly:
-
-   ../../_tags/tagsindex
-
 Example backtesting Jupyter notebooks
 -------------------------------------
 
@@ -57,3 +50,13 @@ More basic code examples
 ------------------------
 
 If you are new to algorithmic trading we recommend you check :ref:`the basic code examples <tutorial>` first.
+
+
+Notebook tags
+-------------
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   ../../_tags/tagsindex
