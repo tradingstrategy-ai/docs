@@ -18,9 +18,14 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.viewcode",
     'sphinx_reredirects',
+    'sphinx_tags',
 #    "sphinx_toolbox.more_autodoc",
 #    "sphinx_autodoc_typehints"
 ]
+
+tags_create_tags = True
+
+tags_extension = ["rst", "ipynb"]
 
 intersphinx_mapping = {
     "pandas": ("http://pandas.pydata.org/pandas-docs/dev", None),
