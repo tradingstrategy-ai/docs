@@ -19,6 +19,8 @@ To understand if a strategy is performing well we can look
 
 - Profit of trades
 
+- Profit of trades, considering position sizing
+
 - Profit of assets under management
 
 - Profit per share
@@ -33,6 +35,13 @@ This is the default measurement for profitability.
 For most of use cases, we want to measure the trading performance of the strategy,
 not the return on capital. The realised positions profit is simply % profitability
 of closed positions during the time period.
+
+The realised position profit can be
+
+- Absolute performance % of the trades
+
+- Relative % to the size of the total portfolio equity,
+  as :term:`position sizing` is used as the risk control method.
 
 .. warning::
 
@@ -54,6 +63,19 @@ reinvested to trading.
 
 This gives us a good metric to benchmark the performance
 of differents strategies independent of funding flow.
+
+Trading Stratey calculates compounding realised profitability with
+:term:`position sizing considered`.
+The formula for Trading Strategy default profitability calculation over time is:
+
+.. code-block:: text
+
+    strategy_profitability =
+        (1 + position_1_realised_profit_percent * position_1_relative_size) *
+        (1 + position_2_realised_profit_percent * position_2_relative_size) *
+        (1 + position_3_realised_profit_percent * position_3_relative_size)
+        ...
+        - 1
 
 Profit per share
 ----------------

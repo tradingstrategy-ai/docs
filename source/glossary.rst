@@ -3250,7 +3250,7 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
     
-        Trend analysis
+    Trend analysis
 
         In :term:`quantitative finance`, Trend analysis is the study
         of historical market data, such as price and volume, to
@@ -3830,6 +3830,32 @@ and algorithmic trading.
         - :ref:`Profitability calculations <profitability>`
 
         - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
+    Position sizing
+
+        Position sizing in :term:`quantitative finance` refers to the process of determining the appropriate size or quantity of an investment position to take in a financial instrument, such as a stock or a derivative, based on a predefined set of rules or strategies. It is a crucial aspect of portfolio management and risk control.
+
+        The goal of position sizing is to allocate capital efficiently, taking into account factors such as risk tolerance, investment objectives, market conditions, and statistical analysis. The position size is typically determined by a combination of quantitative models, statistical techniques, and risk management principles.
+
+        Some commonly used approaches to position sizing include:
+
+        - *Fixed Fractional Position Sizing*: This approach involves allocating a fixed percentage of the total capital to each trade or investment. For example, a strategy might allocate 2% of the total capital to each trade, regardless of the size or risk of the trade.
+
+        - *Kelly Criterion*: The Kelly Criterion is a mathematical formula that helps determine the optimal position size based on the probability of different outcomes and their corresponding payoffs. It aims to maximize the long-term growth rate of capital while considering the risk involved.
+
+        - *Risk Parity*: Risk parity strategies allocate capital based on the risk contribution of each asset in the portfolio. The position size is determined by the volatility or risk of the asset, aiming for equal risk contributions from each asset class.
+
+        - *Value-at-Risk (VaR)*: VaR is a risk management metric that estimates the maximum potential loss within a specified confidence level over a given time horizon. Position sizing based on VaR involves allocating capital in a way that limits the potential loss to a predetermined threshold.
+
+        - *Optimization techniques*: Mathematical optimization methods can be used to find the optimal position size that maximizes a specific objective function, such as :term:`risk-adjusted returns <risk-adjusted return>` or portfolio diversification.
+
+        See also
+
+        - :ref:`Profitability calculations <profitability>`
 
         - :term:`Risk-adjusted return`
 
