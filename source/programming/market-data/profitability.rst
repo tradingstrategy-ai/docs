@@ -40,6 +40,21 @@ of closed positions during the time period.
     which directly affects the underlying open trading positions.
     Currently this is not yet accounted on these positions.
 
+Compounding realised positions profit
+-------------------------------------
+
+All trading strategies assume that they are :term:`compounding <compound>`:
+you will reinvest the profits to new trading positions.
+Over the time, profits will compound.
+
+The compounding realised positions profit tells the trading strategy
+profitability assuming there are not depositons and redemptions
+during the trading period, and all strategy profits will be
+reinvested to trading.
+
+This gives us a good metric to benchmark the performance
+of differents strategies independent of funding flow.
+
 Profit per share
 ----------------
 
@@ -86,4 +101,9 @@ this investor has done for his/her position over time.
 
     Currently this information is not available through the trade execution user interface.
 
+Technical information
+---------------------
+
+See :py:mod:`tradeexecutor.visual.equity_curve` for different profit calculation
+and equity curve formulas and examples.
 

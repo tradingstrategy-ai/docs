@@ -2138,6 +2138,8 @@ and algorithmic trading.
 
         - :term:`Quantstats`
 
+        - :ref:`Profitability calculations <profitability>`
+
     Cumulative profit
 
         Cumulative profit tells the overall profit of :term:`trading strategy` over a time.
@@ -2145,9 +2147,13 @@ and algorithmic trading.
         Cumulative profit is the excess of net income and gains over net losses, determined on a cumulative basis from the inception of an investment fund through to its termination date.
         It includes realized trading P&L, positions open P&L, and other total profits or losses generated since the :term:`trading strategy`'s inception.
 
+        As trading strategies reinvest earlier profits, the cumulative profit :term:`compounds <compound>`.
+
         To calculate cumulative profit, one must add together all net profit numbers over a specific time frame.
 
         See also
+
+        - :term:`Compound`
 
         - :term:`Trading strategy`
 
@@ -3807,3 +3813,24 @@ and algorithmic trading.
 
         - :term:`EVM`
 
+    Compound
+
+        In :term:`quantitative finance`, compounding returns refer to the process of reinvesting profits or earnings generated from an investment back into the investment itself. It involves earning returns not only on the initial investment but also on the accumulated earnings from previous periods.
+
+        When returns are compounded, they have the potential to grow exponentially over time, thanks to the compounding effect. The compounding effect arises from reinvesting the returns, allowing them to generate additional returns in subsequent periods. As the investment grows, the compounding effect becomes more significant, leading to accelerated growth over the long term.
+
+        To illustrate the concept, consider an investment with an annual return of 10%. If the returns are compounded annually, the initial investment will grow by 10% each year. However, if the returns are compounded more frequently, such as quarterly or monthly, the growth rate will be higher due to the reinvestment of earnings more frequently. This compounding effect can be especially powerful when investing over long periods.
+
+        The compounding effect is commonly observed in various investment vehicles, such as stocks, bonds, mutual funds, and other financial instruments. It is an essential concept in quantitative finance as it influences the calculation of investment performance, risk assessments, and the determination of investment strategies.
+
+        When analyzing investment performance or projecting future returns, it is crucial to consider the impact of compounding. Investors often use compound interest formulas or specialized software to calculate and project the compounded returns based on the investment's expected growth rate and compounding frequency.
+
+        See also
+
+        - :ref:`Profitability calculations <profitability>`
+
+        - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
