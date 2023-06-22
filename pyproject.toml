@@ -16,6 +16,7 @@ sphinx-rtd-theme = {version = "^1.0.0"}
 sphinx-sitemap = {version = "^2.2.0"}
 sphinx-autodoc-typehints = {version = "^1.16.0"}
 nbsphinx = "^0.8.6"
+sphinx-tags = {git = "https://github.com/tradingstrategy-ai/sphinx-tags"}
 
 # trading-strategy = {path = "deps/trading-strategy", develop = true}
 notebook = "^6.4.12"
