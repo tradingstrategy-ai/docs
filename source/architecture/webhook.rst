@@ -12,6 +12,13 @@ status of a trade executor.
 
 - Logs and error conditions
 
+.. note ::
+
+    Even if the `trade-executor` live trade loop dies, the web server stays up
+    to provide the diagnostics information about the cause of the crash.
+    See :ref:`checking for trade execution main loop crash` how to monitor
+    the trade execution crashes.
+
 About the server
 ----------------
 

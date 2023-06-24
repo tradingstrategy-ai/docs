@@ -1,5 +1,7 @@
 .. _running-strategies:
 
+.. _running strategies:
+
 Deploying live trading strategies
 =================================
 

@@ -1,5 +1,8 @@
-Troubleshooting strategy deployments
-====================================
+Troubleshooting live trade execution deployments
+================================================
+
+This chapter contains diagnostics and troubleshooting information and recipes
+for :ref:`live trade executors <.
 
 .. _console:
 
@@ -54,16 +57,31 @@ If needed you can build the image locally from `trade-executor repo <https://git
 
      docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest .
 
-Python application execution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Direct python application execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also run `trade-executor` :ref:`directly from Python source code <trade-executor-command-line>`,
 without Docker, if needed.
 
+- Take Github checkout
+
+- Poetry install
+
+- Read Docker .env files to the shell using :ref:`shdotenv`
+
+- Run `poetry run trade-executor`
+
 .. _manually checking webhook:
 
-Manually checking webhook
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Checking web server uptime
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note ::
+
+    Even if the `trade-executor` live trade loop dies, the web server stays up
+    to provide the diagnostics information about the cause of the crash.
+    See :ref:`checking for trade execution main loop crash` how to monitor
+    the trade execution crashes.
 
 After your Docker instance is running you can check that its webhook port is replying using `curl`.
 
@@ -125,6 +143,78 @@ You can get the status overview:
 
 `View the trade-executor webhook API <https://github.com/tradingstrategy-ai/trade-executor/blob/master/tradeexecutor/webhook/api.py>`__.
 
+.. _checking for trade execution main loop crash:
+
+Checking if the trade executor loop has crashed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :ref:`webhook` server provides information about the status of the
+`trade-execution` live trade main loop.
+
+- When was the last trade
+
+- Whether the loop is still running
+
+- What was the cause of crash if the loop has failed
+
+ A shell script to check the status of `trade-executor`:
+
+.. code-block:: shell
+
+    #!/bin/bash
+    #
+    # Check the trade-executor status through the webhook
+    #
+    # - Return 1 if the trade-executor main loop has crashed
+    #
+    # - Echo the crash reason
+    #
+    # - Read the webhook URL from the command line argumetn
+    #
+
+    set -e
+
+    if [ -z "$1" ]; then
+        echo "Error: Give the webhook URL as the first argument"
+        exit 1
+    fi
+
+    set -u
+
+    webhook_url=$1
+
+    # /status gives 200 in the case the trade-executor has crashed
+    # and you need to check for the exception record in the status output
+    failure_reason=$(curl --silent --fail "$webhook_url/status" | jq ".exception")
+
+    if [ "$failure_reason" != "null" ] ; then
+        echo "trade-executor has crashed: $failure_reason"
+        exit 1
+    fi
+
+    echo "Ok"
+    exit 0
+
+Then you can run:
+
+.. code-block:: shell
+
+     scripts/check-status.sh https://enzyme-polygon-multipair.tradingstrategy.ai
+
+This `script is also included part of the Docker <https://github.com/tradingstrategy-ai/trade-executor/blob/master/scripts/check-webhook-status.sh>`__.
+`docker-compose` health check is set up as:
+
+.. code-block:: shell
+
+    # Internally inside Docker container, the webhook is mapped to http://localhost:3456
+    docker-compose exec enzyme-polygon-multipair scripts/check-webhook-status.sh http://localhost:3456
+
+And if the `trade-executor` main loop is still running this will exit 0 and print:
+
+.. code-block:: text
+
+    Ok
+
 Running trade-executor without Docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -142,6 +232,43 @@ Then you can run `trade-executor` as Python application:
 .. code-block:: text
 
     Hello blockchain
+
+Reinitialising trade-executor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reinitialisation resets the state file of a `trade-executor`.
+
+You need to do this if
+
+- State file data structures have backwards incompatible migrations
+
+- State file account balances have somehow become out of sync with the on-chain balances
+
+.. warning::
+
+    Resetting state file is not possible at the moment if there are open positions.
+    Stop `trade-executor` and manually unwind any positions before performing
+    reinitialisation.
+
+To perform a reinitialisation:
+
+.. code-block:: shell
+
+    export TRADE_EXECUTOR_VERSION=...
+    export EXECUTOR_NAME=enzyme-polygon-eth-usdc
+    docker-compose run $EXECUTOR_NAME reinit
+
+This will:
+
+- Generate a state backup file in `state` folder
+
+- Resync available reserve currency from on-chain data
+
+- Resync vault deployment and such init information
+
+- Clear all statistics and positions
+
+.. _shdotenv:
 
 Using shdotenv helper
 ~~~~~~~~~~~~~~~~~~~~~
@@ -171,3 +298,24 @@ that would be hard to type otherwise:
 .. code-block:: shell
 
     trade-executor check-wallet
+
+Getting the latest release from Github in shell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can set up `TRADE_EXECUTOR_VERSION` environment variable
+to the latest release with the following UNIX shell source snippet:
+
+.. code-block:: shell
+
+    # Export the latest trade-executor tag
+    #
+    # This will set TRADE_EXECUTOR_VERSION environment variable
+    #
+    # Usage:
+    #
+    #    source scripts/set-latest-tag.sh
+    #
+
+    tag=`curl -s "https://api.github.com/repos/tradingstrategy-ai/trade-executor/tags" | jq -r '.[0].name'`
+    export TRADE_EXECUTOR_VERSION=$tag
+    echo "TRADE_EXECUTOR=${TRADE_EXECUTOR_VERSION}"
