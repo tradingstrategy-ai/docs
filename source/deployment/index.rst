@@ -11,6 +11,7 @@ developed with :ref:`Trading Strategy framework <framework>`.
 .. toctree::
    :maxdepth: 1
 
+   metadata
    hot-wallet-deployment
    vault-deployment
    monitoring

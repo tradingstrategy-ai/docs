@@ -48,6 +48,11 @@ Managing Docker images
 
 - See :ref:`managing Docker images` to learn how to get started with Docker
 
+Strategy name and id
+--------------------
+
+See ref:`strategy metadata` for details.
+
 Create an Enzyme vault
 ----------------------
 
@@ -286,8 +291,7 @@ you can run the backtest on the live trade executor.
   run is used to show some of the key metrics (sharpe, sortino, max drawdown)
   in the web frontend UI via :ref:`webhook`.
 
-- The `--state-file` output later becomes `BACKTEST_RESULT` parameter for `trade-executor start`.
-  To automatically associate files, use the convention `{id}-backtest.json`.
+- The default generated state file will be `state/{id}-backtest.json`.
 
 .. note ::
 
@@ -301,7 +305,6 @@ Example:
     docker-compose run enzyme-polygon-eth-usdc \
         start \
         --strategy-file=strategy/enzyme-polygon-eth-usdc.py \
-        --state-file=state/enzyme-polygon-eth-backtest.json \
         --asset-management-mode=backtest \
         --backtest-start=2023-01-01 \
         --backtest-end=2023-04-01
