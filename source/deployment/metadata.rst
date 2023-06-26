@@ -49,6 +49,22 @@ which could not be deduced from the on-chain activity.
 
 For the state details see :ref:`Serialisation`.
 
+Run-time data
+-------------
+
+The live trade executor generates run-time data. This includes things like
+
+- Is the service healthy
+
+- What is the exception message in the case of a crash
+
+- Log output
+
+- Profiling and diagnostics stats
+
+Run-time data is not persistent and is reset every time the `trade-executor` restarts.
+See :ref:`Strategy monitoring` for more information.
+
 Webhook routing
 ---------------
 
