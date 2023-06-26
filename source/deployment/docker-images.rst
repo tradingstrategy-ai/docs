@@ -3,7 +3,7 @@
 Managing Docker images
 ======================
 
-In this section, we discuss how to install and run `trade-executor` Docker images.
+In this section, we discuss how to install and run `trade-executor` :ref:`Docker` images.
 
 Preface
 -------

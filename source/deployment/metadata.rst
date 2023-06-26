@@ -1,9 +1,13 @@
 Strategy metadata
 =================
 
-Live trading sttrategy has metadata. Metadata includes human description
-outside the core execution configuration, mostly to display and route
+Live trading strategy has metadata that lives outside the strategy module.
+Metadata includes on-chain connector data, human description mostly to display and route
 the trade executor data on the web frontend.
+Metadata lives outside the core strategy module, in :ref:`environment file`
+given to the `trade-executor`.
+
+- Private key needed for the hot wallet that executes the transactions.
 
 - Machine readable id e.g. `enzyme-polygon-eth-usdc`. If this is not
   explicitly set then this is the same as the strategy module filename.
