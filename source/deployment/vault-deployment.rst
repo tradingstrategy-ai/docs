@@ -214,8 +214,6 @@ Example public environment variables entry:
     LONG_DESCRIPTION="Take long only positions in ETH based on RSI and Bollinger bands indicators"
     ICON_URL="https://user-images.githubusercontent.com/74208897/215499207-8d661ee9-cc75-4df6-84df-690e14c3d93c.png"
 
-    # Blockchain transaction broadcasting parameters
-
     # Port 3456 is mapped to the public IP on the host using Caddy
     HTTP_ENABLED=true
 
@@ -281,9 +279,20 @@ Run a backtest on the strategy module
 After the strategy module and Docker instance have been deployed,
 you can run the backtest on the live trade executor.
 
-- This will use the final Docker setup to run the backtest
+- This will use the final configuration (strategy module, environment files) to run the backtest
+  and see that the strategy module functions properly.
 
-- This is to ensure your Python code works (no missing imports, etc.)
+- The backtest result is saved on the local file system. The result of this backtest
+  run is used to show some of the key metrics (sharpe, sortino, max drawdown)
+  in the web frontend UI via :ref:`webhook`.
+
+- The `--state-file` output later becomes `BACKTEST_RESULT` parameter for `trade-executor start`.
+  To automatically associate files, use the convention `{id}-backtest.json`.
+
+.. note ::
+
+    Choose backtesting period start and end parameters
+    to the best reflection of the strategy performance.
 
 Example:
 

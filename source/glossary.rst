@@ -2105,6 +2105,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Profitability`
+
         - :term:`Trading strategy`
 
         - :term:`Trading algorithm`
@@ -2155,11 +2157,38 @@ and algorithmic trading.
 
         - :term:`Compound`
 
+        - :term:`Profitability`
+
         - :term:`Trading strategy`
 
         - :term:`Equity curve`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Drawdown`
+
+        - :term:`Best trading algorithm`
+
+    Profitability
+
+        In :term:`quantitative finance`, profitability tells how much a :term:`trading strategy`
+        has generated or is estimated to generate profits.
+
+        The profitability is expressed usually as annualised yearly profit %.
+
+        E.g. 20% profitability means that the trading strategy generates 1/5x return on investment capital
+        yearly.
+
+        For TradingStrategy.ai profitability calculation details, see :ref:`Profitability calculations <profitability>`
+        documentation.
+
+        See also
+
+        - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Drawdown`
 
         - :term:`Best trading algorithm`
 

@@ -12,6 +12,13 @@ In this chapter, we explain how to take a backtested strategy and make it to a l
 This section is for a single user hot wallet deployment mode.
 If you are looking to deploy a strategy for multiple users see :ref:`vault deployment`.
 
+.. warning::
+
+    These instructions are partially outdated regarding individual
+    commands and environment variables due to latest development
+    in `trade-executor`. Refer to :ref:`vault deployment`
+    for up-to-date commands.
+
 Preface
 -------
 

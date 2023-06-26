@@ -1,7 +1,9 @@
 [submodule "deps/furo"]
 	path = deps/furo
 	url = https://github.com/tradingstrategy-ai/furo.git
+	ignore = dirty
 
 [submodule "deps/trade-executor"]
 	path = deps/trade-executor
 	url = https://github.com/tradingstrategy-ai/trade-executor.git
+    ignore = dirty
