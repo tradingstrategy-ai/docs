@@ -1,7 +1,7 @@
 Strategy metadata
 =================
 
-Live trading strategy has metadata that lives outside the strategy module.
+Live trade execution has metadata that lives outside the strategy module.
 Metadata includes on-chain connector data, human description mostly to display and route
 the trade executor data on the web frontend.
 Metadata lives outside the core strategy module, in :ref:`environment file`
@@ -35,4 +35,16 @@ given by `trade-executor enzyme-vault-deploy` command.
 
 * `trade-executor` adapter address
 
+For more details see :ref:`Vault deployment`.
 
+Strategy state
+--------------
+
+The persistent state of the strategy lives in a JSON-based file ("flat file database").
+For :ref:`Docker` this file is mapped to the host file system `state`
+folder.
+
+The frontend can read the whole state file as is and it does not contain any secrets
+which could not be deduced from the on-chain activity.
+
+For the state details see :ref:`Serialisation`.

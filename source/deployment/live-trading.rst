@@ -1,5 +1,7 @@
-Live trading
-============
+.. live trading:
+
+Live trading modes
+==================
 
 Different live trading models are supported
 

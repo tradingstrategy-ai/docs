@@ -10,7 +10,6 @@ architecture of :ref:`Trading Strategy framework <framework>`.
    :maxdepth: 1
 
    architecture
-   live-trading
    cli
    webhook
    strategy-types

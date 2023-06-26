@@ -4,6 +4,8 @@
 
 .. _trade-executor:
 
+.. strategy deployment:
+
 Deploying live trading strategies
 =================================
 
@@ -16,6 +18,7 @@ is deployed as a :ref:`Docker` container.
 .. toctree::
    :maxdepth: 1
 
+   live-trading
    metadata
    hot-wallet-deployment
    vault-deployment

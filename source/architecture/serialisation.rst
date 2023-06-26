@@ -5,6 +5,9 @@ Serialisation
 
 The strategy :ref:`state` is serialised as JSON
 
+- Both backtesting and :ref:`live trade execution` use the same
+  file format. Live trades and backtesting results have the same format.
+
 - The raw state is written to the disk as a flat JSON file
 
 - The web frontend downloads the same JSON file to display the strategy execution
