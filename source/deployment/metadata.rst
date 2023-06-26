@@ -48,3 +48,20 @@ The frontend can read the whole state file as is and it does not contain any sec
 which could not be deduced from the on-chain activity.
 
 For the state details see :ref:`Serialisation`.
+
+Webhook routing
+---------------
+
+A live trading strategy exposes itself to the world using a :ref:`webhook` over an internal web server.
+
+For this you need
+
+- DNS name e.g. `mystrategy.mydomain.com`. The best practice is to use the `id` from metadata
+  as the subdomain name.
+
+- An internal localhost port to map to the Docker container.
+
+- A reverse proxy web server configuration e.g. via :term:`Caddy`
+  so that the webhook is securely exposed to the world.
+
+
