@@ -7,9 +7,12 @@ the trade executor data on the web frontend.
 Metadata lives outside the core strategy module, in :ref:`environment file`
 given to the `trade-executor`.
 
+Configured metadata
+-------------------
+
 - Private key needed for the hot wallet that executes the transactions.
 
-- Machine readable id e.g. `enzyme-polygon-eth-usdc`. If this is not
+- Machine readable id e.g. `enzyme-polygon-eth-usdc`. This is automatically set: If this is not
   explicitly set then this is the same as the strategy module filename.
 
 - Human readable name and description.
@@ -20,8 +23,8 @@ given to the `trade-executor`.
 
 - Backtested result (on the top of the live execution results).
 
-Enzyme vault-based trading
---------------------------
+Enzyme vault-based trading configuration
+----------------------------------------
 
 For vault-based strategies, you will also need the various smart contracts
 given by `trade-executor enzyme-vault-deploy` command.
