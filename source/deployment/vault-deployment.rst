@@ -304,7 +304,6 @@ Example:
 
     docker-compose run enzyme-polygon-eth-usdc \
         start \
-        --strategy-file=strategy/enzyme-polygon-eth-usdc.py \
         --asset-management-mode=backtest \
         --backtest-start=2023-01-01 \
         --backtest-end=2023-04-01

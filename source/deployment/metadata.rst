@@ -75,7 +75,7 @@ A live trading strategy exposes itself to the world using a :ref:`webhook` over 
 
 For this you need
 
-- DNS name e.g. `mystrategy.mydomain.com`. The best practice is to use the `id` from metadata
+- DNS name e.g. `mystrategy.example.com`. The best practice is to use the `id` from metadata
   as the subdomain name.
 
 - An internal localhost port to map to the Docker container.
