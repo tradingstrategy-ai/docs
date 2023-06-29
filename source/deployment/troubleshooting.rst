@@ -48,6 +48,38 @@ To start the console you can do:
 
 Then you can use `%cpaste` command to paste Python snippets into the console.
 
+Inspecting state file on another computer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the case `trade-executor` crashes, you can download its state file into
+local development environment for examination.
+This may offer much faster development cycle than trying to diagnose the state file
+on a remote server.
+
+First copy file to the local computer e.g. using `scp`.
+
+Then start console:
+
+.. code-block:: shell
+
+    ipython
+
+Load the state and extract information from it:
+
+.. code-block:: python
+
+    from tradeexecutor.state.state import State
+    from pathlib import Path
+
+    state = State.read_json_file(Path("../enzyme-polygon-multipair.json"))
+
+    # Run a function against the state
+    from tradeexecutor.statistics.summary import calculate_summary_statistics
+    stats = calculate_summary_statistics(state)
+
+    display(stats)
+
+
 Local Docker image builds
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

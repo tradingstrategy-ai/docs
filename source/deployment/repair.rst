@@ -41,8 +41,11 @@ Choose the trade executor Docker image version (you can peak the current version
 
 .. code-block:: shell
 
+    source scripts/set-latest-tag.sh
+
+    # Or manualy:
     # Tell docker-compose.yaml the pinned software version
-    export TRADE_EXECUTOR_VERSION=v106
+    # export TRADE_EXECUTOR_VERSION=v106
 
     # Executor name for the following commmands
     EXECUTOR_ID=quickswap-matic-usd-ema
