@@ -1675,6 +1675,24 @@ and algorithmic trading.
 
         - :term:`Wallet`
 
+    Protocol
+
+        In :term:`decentralised finance`, a protocol is :term:`non-custodial` financial service.
+
+        In protocol, its users are doing directly transactions with each other without intermediates,
+        in peer-to-peer manner. Protocols can be built into a blockchain or be smart contract based.
+
+        Unlike in traditional finance, in decentralised finance the user is always in control
+        of their assets, making protocols different from centralised services.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Lending protocol`
+
+        - :term:`Total value locked`
+
     Lending protocol
 
         A lending protocol is a :term:`decentralised finance` service for lending and borrowing :term:`tokens <token>`.
@@ -1687,6 +1705,8 @@ and algorithmic trading.
         Popular lending protocols include :term:`Aave`, Compound and Euler.
 
         See also
+
+        - :term:`Protocol`
 
         - :term:`Aave`
 
@@ -3895,9 +3915,10 @@ and algorithmic trading.
     Total equity
 
 
-        In :term:`quantitative finance`, total equity refers to all assets under management minus liabilities.
+        In :term:`trading strategy`, total equity refers to all assets under the management of the strategy minus liabilities.
 
-        In :term:`decentralised finance`, this is also often called *total value locked* or *total assets*.
+        In :term:`decentralised finance`, this may also be called :term:`total value locked` or *total assets*
+        depending on the use case.
 
         Total equity is usually expressed in US dollars. For a :term:`trading strategy`, the total equity is
 
@@ -3926,3 +3947,20 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Equity curve`
+
+        - :term:`Total value locked`
+
+    Total value locked
+
+        In :term:`decentralised finance`, total value locked (TVL) refers to the amount of the assets
+        locked in a :term:`protocol`.
+
+        In traditional finance, the term used is Assets under management (AUM). However, because DeFi
+        protocols are :term:`non-custodial` and assets are always under the management of the users themselves,
+        AUM term cannot be used.
+
+        See also
+
+        - :term:`Protocol`
+
+        - :term:`Total equity`
