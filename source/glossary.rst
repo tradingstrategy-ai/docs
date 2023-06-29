@@ -660,6 +660,8 @@ and algorithmic trading.
 
         - :term:`Decentralised finance`
 
+        - :term:`Protocol`
+
     Traditional finance
 
         In :term:`decentralised finance`, traditional finance or TradFi, refers to the old financial system.
@@ -675,6 +677,8 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Lending protocol`
+
+        - :term:`Protocol`
 
         - :term:`On-chain`
 
@@ -1269,7 +1273,7 @@ and algorithmic trading.
         Thus, decentralised finance is the opposite of :term:`traditional finance` (TradFi).
 
         Decentralised finance activities happen :term:`on-chain`,
-        and are protocol based where users connect with their :term:`wallets <wallet>`.
+        and are :term:`protocol` based where users connect with their :term:`wallets <wallet>`.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient.
 
@@ -1285,6 +1289,8 @@ and algorithmic trading.
         See also
 
         - :term:`Traditional finance`
+
+        - :term:`Protocol`
 
         - :term:`Decentralised exchange`
 
