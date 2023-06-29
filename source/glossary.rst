@@ -73,7 +73,7 @@ and algorithmic trading.
     AMM
         Automated market maker (AMM) is a :term:`bonding curve` based :term:`decentralised exchange`.
 
-        An automated market maker (AMM) is a type of decentralised exchange (DEX) that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralised exchange of digital assets using liquidity pools rather than conventional market order books.
+        An automated market maker (AMM) is a type of decentralised exchange (DEX) :term:`protocol` that uses algorithmic smart contracts to make it easy for individual traders to buy and sell crypto assets. Instead of trading directly with other people as with a traditional order book, users trade directly through the AMM. AMMs facilitate the decentralised exchange of digital assets using liquidity pools rather than conventional market order books.
 
         AMMs can be often seen as the opposite of :term:`order book` markets.
         In an AMM, the user is trading against :term:`liquidity pool`.
@@ -102,6 +102,8 @@ and algorithmic trading.
 
         - :term:`Liquidity provider`
 
+        - :term:`Protocol`
+
     CLMM
 
         CLMM stands for Concentrated Liquidity Market Maker.
@@ -109,7 +111,7 @@ and algorithmic trading.
         CLMM is a form of :term:`AMM`.
         CLMMs provide more capital-efficient :term:`liquidity` on a :term:`DEX`.
 
-        It allows :term:`liquidity providers <liquidity provider>` to set specific price ranges,
+        CLMM :term:`protocol` allows :term:`liquidity providers <liquidity provider>` to set specific price ranges,
         add single-sided liquidity and do range order trading,
         similar to :term:`order books <order book>`.
 
@@ -128,6 +130,8 @@ and algorithmic trading.
         - :term:`Swap`
 
         - :term:`Liquidity provider`
+
+        - :term:`Protocol`
 
     On-chain
 
@@ -1685,7 +1689,7 @@ and algorithmic trading.
 
         In :term:`decentralised finance`, a protocol is :term:`non-custodial` financial service.
 
-        In protocol, its users are doing directly transactions with each other without intermediates,
+        In protocol, its users are doing directly transactions :term:`on-chain` with each other without intermediates,
         in peer-to-peer manner. Protocols can be built into a blockchain or be smart contract based.
 
         Unlike in traditional finance, in decentralised finance the user is always in control
@@ -1698,6 +1702,10 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Total value locked`
+
+        - :term:`On-chain`
+
+        - :term:`Non-custodial`
 
     Lending protocol
 
