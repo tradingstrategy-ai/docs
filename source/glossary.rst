@@ -2203,6 +2203,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Total equity`
+
         - :term:`Trading strategy`
 
         - :term:`Risk-adjusted return`
@@ -3889,3 +3891,38 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+    Total equity
+
+
+        In :term:`quantitative finance`, total equity refers to all assets under management minus liabilities.
+
+        In :term:`decentralised finance`, this is also often called *total value locked* or *total assets*.
+
+        Total equity is usually expressed in US dollars. For a :term:`trading strategy`, the total equity is
+
+        - All assets, which may include
+
+            - Cash
+
+            - Open trading positions
+
+        - Minus liabilities
+
+            - Undercollateralised loans
+
+        If a strategy is closed and all assets can be sold without :term:`price impact` and :term:`slippage`,
+        each investor will get:
+
+        `investor shares * total equity / total shares`
+
+        :term:`Equity curve` shows how total equity has grown over time. Total equity can grow by trading profits
+        and new deposits, and decrease by redemptions and trading losses.
+
+        See also
+
+        - :ref:`Profitability calculations <profitability>`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Equity curve`
