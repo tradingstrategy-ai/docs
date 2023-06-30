@@ -3967,6 +3967,9 @@ and algorithmic trading.
         Performance metrics need enough live trading data to be available to be calculated.
         Longer the strategy has been trading, more high quality and refined its data get.
 
+        If live trading data is not available, estimations of the strategy performance can be
+        made based on :term:`backtests <backtest>`.
+
         See also
 
         - :term:`Backtest`
