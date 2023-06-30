@@ -720,26 +720,6 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
-    Maximum drawdown
-
-        Maximum drawdown (MDD) is the largest peak-to-trough decline in the value of an investment over a specific period of time.
-
-        The maximum :term:`drawdown` is how much your portfolio goes down in the examination period,
-        or maximum amount of loss if you had entered and exited at the worst possible moment.
-
-        It is a measure of the risk of an investment, as it indicates the largest amount that an investment can decline from its highest point to its lowest point during a specific period of time. MDD is typically used to measure the risk of a portfolio or investment strategy, and is often expressed as a percentage of the investment's peak value.
-
-        As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns.
-
-        See also
-
-        - :term:`Trading strategy`
-
-        - :term:`Drawdown`
-
-        - :term:`Risk-adjusted return`
-
-
     USDC
 
         USDC (USD Coin) is a :term:`stablecoin`, meaning it is a cryptocurrency that is pegged to the value of the US Dollar. It is designed to maintain a value of 1 USDC = 1 USD, and its value is backed by US dollars held in reserve. USDC is used for a variety of purposes in the cryptocurrency space, including as a unit of account for trading, for remittances and as a medium of exchange. It operates on the Ethereum blockchain and is a popular choice for traders looking for a stable store of value in the cryptocurrency markets.
@@ -3978,3 +3958,32 @@ and algorithmic trading.
         - :term:`Protocol`
 
         - :term:`Total equity`
+
+    Maximum Drawdown
+
+        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a portfolio, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
+
+        Maximum drawdown is an important metric in risk management as it helps investors understand the potential downside risk of an investment. It is often used to assess the risk of a portfolio and to compare different investment strategies.
+
+        For example, suppose an investment portfolio has a maximum drawdown of 20%. This means that the portfolio has experienced a loss of 20% from its peak value before a new peak is reached. In other words, the portfolio has lost 20% of its value at some point in the past.
+
+        Maximum drawdown is typically expressed as a percentage of the portfolio's value. It can be calculated using the following formula:
+
+        .. math::
+
+            MDD = \frac{P - T}{P}
+
+        where P is the peak value of the portfolio and T is the trough value.
+
+        As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns. For example, if a strategy has an annual return of 30%, the maximum drawdown should not exceed 10%.
+
+        See also
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Equity curve`
+
+        - :term:`Drawdown`
+
+        - :term:`Risk-adjusted return`
+
