@@ -3978,3 +3978,17 @@ and algorithmic trading.
         - :term:`Protocol`
 
         - :term:`Total equity`
+
+    Strategy age
+
+        In :term:`trading strategy`, the age refers to the duration how long the strategy has been doing live
+        trading.
+
+        Performance metrics need enough live trading data to be available to be calculated.
+        Longer the strategy has been trading, more high quality and refined its data get.
+
+        See also
+
+        - :term:`Backtest`
+
+        - :term:`Trading strategy`
