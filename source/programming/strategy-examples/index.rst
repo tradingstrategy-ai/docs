@@ -22,6 +22,7 @@ Prerequisites
 - Refer to :ref:`running backtests <running-backtests>` to see how to set up your development environment and run the notebooks 
 - If you are new to algorithmic trading we recommend you check :ref:`the basic code examples <tutorial>` first.
 
+
 .. raw:: html
 
       <style type="text/css">
@@ -35,7 +36,7 @@ Prerequisites
                   border-style: solid;
                   border-width: 1px;
                   font-family: Arial, sans-serif;
-                  font-size: 15px;
+                  font-size: 15.5px;
                   overflow: hidden;
                   padding: 10px 5px;
                   word-break: normal;
@@ -46,7 +47,7 @@ Prerequisites
                   border-style: solid;
                   border-width: 1px;
                   font-family: Arial, sans-serif;
-                  font-size: 15px;
+                  font-size: 15.5px;
                   font-weight: normal;
                   overflow: hidden;
                   padding: 10px 5px;
@@ -203,6 +204,31 @@ Prerequisites
             </tr>
       </tbody>
       </table>
+
+
+Notebook Overview
+-----------------
+
+.. toctree::
+   :maxdepth: 1
+
+   running
+   pancakeswap-ema
+   pancakeswap-ema-stop-loss
+   pancake-eth-usd-indicators
+   portfolio-construction-model
+   trader-joe-momentum
+   bollinger-band-strategy
+   grid-search   
+   synthetic-ema
+   synthetic-ema-stop-loss
+   backtest-fee-analysis
+   examine-live-strategy
+   debugging-live-strategy
+   osmosis
+   strategy-backtest-template
+   momentum-crossover
+   hackatom-2022-osmosis-backtest
 
 
 Tags
