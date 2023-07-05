@@ -321,7 +321,15 @@ You might want to do this
 
 - If you end up with a position that the strategy cannot take care itself
 
+- You will get an interactive prompt before proceeding
 
+- You will need to stop `trade-executor` when running this command
+
+.. code-block:: shell
+
+    docker-compose stop enzyme-polygon-eth-usdc
+    docker-compose run enzyme-polygon-eth-usdc close-all
+    docker-compose up -s enzyme-polygon-eth-usdc
 
 Reinitialising trade-executor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
