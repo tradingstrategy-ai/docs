@@ -49,6 +49,8 @@ The realised position profit can be
     which directly affects the underlying open trading positions.
     Currently this is not yet accounted on these positions.
 
+.. _compounding realised positions profit:
+
 Compounding realised positions profit
 -------------------------------------
 

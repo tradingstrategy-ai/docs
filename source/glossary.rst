@@ -2188,13 +2188,16 @@ and algorithmic trading.
         In :term:`quantitative finance`, profitability tells how much a :term:`trading strategy`
         has generated or is estimated to generate profits.
 
-        The profitability is expressed usually as annualised yearly profit %.
-
-        E.g. 20% profitability means that the trading strategy generates 1/5x return on investment capital
+        The profitability is expressed usually as yearly returns %. E.g. 20% profitability means that the trading strategy generates 1/5x return on investment capital
         yearly.
 
-        For TradingStrategy.ai profitability calculation details, see :ref:`Profitability calculations <profitability>`
-        documentation.
+        For multi-user trading strategies, profitability calculations get more complex as you need to take account
+        the funding flow, deposits and redemptions.
+
+        TradingStrategy.ai offeres several methods of profitability calculation, for details see :ref:`Profitability calculations <profitability>` documentation.
+
+        - :ref:`Compounding realised positions profit` is the preferred method to display profitability across
+          different strategies
 
         See also
 
