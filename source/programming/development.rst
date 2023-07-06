@@ -220,8 +220,22 @@ Then copy-paste the image hash from `docker build` output and run:
 
     docker run -it cf308d43ad577c5194dd8669316a6a80ba6adc901f461ddf287f14915f206082 --help
 
+Converting backtest notebooks to PDF
+------------------------------------
 
+You might want to convert backtest results Jupyter Notebooks for PDF format
+to share them.
 
+An example:
+
+.. code-block:: shell
+
+    # Mactex takes long to install
+    brew install --cask mactex
+    eval "$(/usr/libexec/path_helper)"
+    jupyter nbconvert --to pdf uniswap_v3_1h_arbitrum.ipynb
+
+This will generate PDF file from the notebook.
 
 
 
