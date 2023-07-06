@@ -226,7 +226,17 @@ Converting backtest notebooks to PDF
 You might want to convert backtest results Jupyter Notebooks for PDF format
 to share them.
 
-An example:
+Make sure you initialise notebook charting in static (offline) mode:
+
+.. code-block:: python
+
+    from tradeexecutor.backtest.notebook import setup_charting_and_output, OutputMode
+    # Set Jupyter Notebook output mode parameters
+    setup_charting_and_output(OutputMode.static)
+
+Run the notebook e.g. using Visual Studio Code.
+
+Then you can use `nbconvert` to generate a PDF out of the notebook:
 
 .. code-block:: shell
 
