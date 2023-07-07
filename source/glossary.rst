@@ -3962,6 +3962,26 @@ and algorithmic trading.
 
         - :term:`Total equity`
 
+        - :term:`Netflow`
+
+    Netflow
+
+        In the context of :term:`trading strategy`, netflow typically refers to the net amount of money that flows into or out of a available capital over a specific period. It represents the difference between the inflows (capital deposited) and outflows (capital redeemed or withdrawn) from the fund.
+
+        Netflow is an important metric related to :term:`total value locked` as it can effect on the trading strategy performance.
+
+        - Positive netflows indicates that TVL is growing
+
+        - Negative netflows indicate that more capital is being redeemed, which can reduce its TVL
+
+        See also
+
+        - :term:`Total value locked`
+
+        - :term:`Total equity`
+
+        - :term:`Trading strategy`
+
     Strategy age
 
         In :term:`trading strategy`, the age refers to the duration how long the strategy has been doing live
