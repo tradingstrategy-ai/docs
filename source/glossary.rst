@@ -4027,4 +4027,18 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
+    Take Profit
+
+        The predetermined price level at which you plan to close out an open position for a profit. This is set when you initially establish the position. This is the price at which you want to sell and take your profit. It is important to set a take profit target and stick to it. If you don’t, you may end up holding a position for too long and lose your profit.
+
+        This can be different to position exit that is profitable. Profitable trades that have been exited due to trailing stop loss without reaching the Take Profit limit are a different category.
+
+        The number of 'Take Profits' may be difficult to calculate if the strategy developer has implemented their own method without using built in methods. The same goes for :term:`trailing stop loss` as well.
+
+        See also
+
+        - :term:`Stop-loss`
+
+        - :term:`Trailing stop loss`
+
 
