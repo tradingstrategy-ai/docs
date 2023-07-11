@@ -417,3 +417,15 @@ to the latest release with the following UNIX shell source snippet:
     tag=`curl -s "https://api.github.com/repos/tradingstrategy-ai/trade-executor/tags" | jq -r '.[0].name'`
     export TRADE_EXECUTOR_VERSION=$tag
     echo "TRADE_EXECUTOR=${TRADE_EXECUTOR_VERSION}"
+
+Cleaning up old Docker containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Old Docker images stay on the disk after new releases.
+
+To reclaim disk space:
+
+.. code-block:: shell
+
+    docker-compose rm
+
