@@ -282,7 +282,11 @@ Run a backtest on the strategy module
 -------------------------------------
 
 After the strategy module and Docker instance have been deployed,
-you can run the backtest on the live trade executor.
+you can run the backtest on the live trade executor with:
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-eth-usdc backtest
 
 - This will use the final configuration (strategy module, environment files) to run the backtest
   and see that the strategy module functions properly.
