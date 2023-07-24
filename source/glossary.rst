@@ -335,6 +335,7 @@ and algorithmic trading.
     Fork
 
         Fork is a a product launched based on the open source code of another existing product.
+        Often forks are also called :term:`clones <clone>`.
 
         In the context of :term:`on-chain` forks, forks usually are hostile to the original project and competes from the
         same users. Forks often do not innovate, or make the product technically better.
@@ -343,15 +344,21 @@ and algorithmic trading.
         lack the same technical understanding as the original founding tech team, forks suffer from hacks
         and are often abandon after a short period of time.
 
-        Examples of forks include :term:`BNB Chain` and :term:`Sushi`.
+        Forks in practice:
+
+        - Blockchains can be forked. The most forked blockchain is Ethereum and its :term:`EVM <EVM Compatible>`
+          architecture. Ethereum forks include Polygon, BNB Smart Chain, Avalanche C-Chain, Fantom.
+
+        - :term:`Uniswap` is the most forked :term:`protocol`. Uniswap forks include :term:`Sushi`,
+          PancakeSwap, Trader Joe and others
 
         See also
 
         - :term:`Decentralised finance`
 
-        - :term:`BNB Chain`
+        - :term:`Protocol`
 
-        - :term:`Sushi`
+        - :term:`Smart contract`
 
     Candle
 
