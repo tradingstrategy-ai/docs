@@ -282,10 +282,16 @@ Run a backtest on the strategy module
 -------------------------------------
 
 After the strategy module and Docker instance have been deployed,
-you can run the backtest on the live trade executor.
+you can run the backtest on the live trade executor with:
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-eth-usdc backtest
 
 - This will use the final configuration (strategy module, environment files) to run the backtest
   and see that the strategy module functions properly.
+
+- This will generate backtest reports (HTML, notebook, state) for the web frontend
 
 - The backtest result is saved on the local file system. The result of this backtest
   run is used to show some of the key metrics (sharpe, sortino, max drawdown)
@@ -293,20 +299,24 @@ you can run the backtest on the live trade executor.
 
 - The default generated state file will be `state/{id}-backtest.json`.
 
-.. note ::
+Following variables need to be set in the strategy module:
 
-    Choose backtesting period start and end parameters
-    to the best reflection of the strategy performance.
+.. code-block:: python
+
+    # Version >= 0.2
+    TRADING_STRATEGY_ENGINE_VERSION = "0.2"
+    BACKTEST_START=
+    BACKTEST_END=
+    INITIAL_CASH=
+
+    # Optional, depends on the strategy create_trading_universe() function
+    STOP_LOSS_TIME_BUCKET=
 
 Example:
 
 .. code-block: shell
 
-    docker-compose run enzyme-polygon-eth-usdc \
-        start \
-        --asset-management-mode=backtest \
-        --backtest-start=2023-01-01 \
-        --backtest-end=2023-04-01
+    docker-compose run enzyme-polygon-matic-usdc backtest
 
 And you will get a report like:
 

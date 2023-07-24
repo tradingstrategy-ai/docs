@@ -4,6 +4,53 @@ Troubleshooting live trade execution deployments
 This chapter contains diagnostics and troubleshooting information and recipes
 for :ref:`live trade executors <.
 
+.. _show-positions:
+
+Showing positions from the state file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can dump current and historical positions and their trades
+using `trade-executor show-positions` command.
+
+This will read the state file and display the contents of position data:
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-matic-usdc show-positions
+
+Example output:
+
+.. code-block:: text
+
+    Displaying positions and trades for state MATIC-USD breakout on Uniswap v3
+    State last updated: 2023-07-03 08:00:00
+    Open positions
+    ╭────┬─────────┬─────────────┬──────────┬──────────────────┬─────────────┬─────────┬────────────┬────────────────────┬──────────────────┬──────────────────┬─────────────────────────────────────╮
+    │    │ Flags   │ Ticker      │ Profit   │ Opened at        │ Closed at   │ Notes   │ Trade id   │ Price              │ Trade opened     │ Trade executed   │ Trade notes                         │
+    ├────┼─────────┼─────────────┼──────────┼──────────────────┼─────────────┼─────────┼────────────┼────────────────────┼──────────────────┼──────────────────┼─────────────────────────────────────┤
+    │  4 │         │ WMATIC-USDC │          │ 2023-07-02 23:00 │             │         │            │                    │                  │                  │                                     │
+    │  4 │         │             │          │                  │             │         │ 6          │ 0.6833976879656909 │ 2023-07-02 23:00 │ 2023-07-02 23:00 │                                     │
+    │  2 │ R       │ WMATIC-USDC │          │ 2023-06-29 12:00 │             │         │            │                    │                  │                  │                                     │
+    │  2 │         │             │          │                  │             │         │ 3          │ 0.6409043118721143 │ 2023-06-29 12:00 │ 2023-06-29 12:00 │                                     │
+    │  2 │         │             │          │                  │             │         │ 4          │                    │ 2023-06-29 14:51 │ 2023-07-03 07:45 │ Repaired at 2023-07-03 07:45, by #7 │
+    │  2 │         │             │          │                  │             │         │ 7          │ 0.6270449460448887 │ 2023-06-29 14:51 │ 2023-07-03 07:45 │ Repairing trade #4                  │
+    ╰────┴─────────┴─────────────┴──────────┴──────────────────┴─────────────┴─────────┴────────────┴────────────────────┴──────────────────┴──────────────────┴─────────────────────────────────────╯
+
+    Frozen positions
+
+
+    Closed positions
+    ╭────┬─────────┬─────────────┬─────────────────────┬──────────────────┬──────────────────┬─────────┬────────────┬────────────────────┬──────────────────┬──────────────────┬─────────────────────────────────────╮
+    │    │ Flags   │ Ticker      │ Profit              │ Opened at        │ Closed at        │ Notes   │ Trade id   │ Price              │ Trade opened     │ Trade executed   │ Trade notes                         │
+    ├────┼─────────┼─────────────┼─────────────────────┼──────────────────┼──────────────────┼─────────┼────────────┼────────────────────┼──────────────────┼──────────────────┼─────────────────────────────────────┤
+    │  1 │         │ WMATIC-USDC │ -1.6855479748310587 │ 2023-06-23 16:00 │ 2023-06-23 22:00 │         │            │                    │                  │                  │                                     │
+    │  1 │         │             │                     │                  │                  │         │ 1          │ 0.6839445975056911 │ 2023-06-23 16:00 │ 2023-06-23 16:00 │                                     │
+    │  1 │         │             │                     │                  │                  │         │ 2          │ 0.6724163831934675 │ 2023-06-23 22:00 │ 2023-06-23 22:00 │                                     │
+    │  3 │ R       │ WMATIC-USDC │ 0.0                 │ 2023-06-30 04:00 │ 2023-07-03 07:45 │         │            │                    │                  │                  │                                     │
+    │  3 │         │             │                     │                  │                  │         │ 5          │                    │ 2023-06-30 04:00 │ 2023-07-03 07:45 │ Repaired at 2023-07-03 07:45, by #8 │
+    │  3 │         │             │                     │                  │                  │         │ 8          │ 0.6502368855791132 │ 2023-06-30 04:00 │ 2023-07-03 07:45 │ Repairing trade #5                  │
+    ╰────┴─────────┴─────────────┴─────────────────────┴──────────────────┴──────────────────┴─────────┴────────────┴────────────────────┴──────────────────┴──────────────────┴─────────────────────────────────────╯
+
 .. _console:
 
 Interactive Python console
@@ -265,6 +312,25 @@ Then you can run `trade-executor` as Python application:
 
     Hello blockchain
 
+Closing all positions
+~~~~~~~~~~~~~~~~~~~~~
+
+You can automatically close all positions.
+
+You might want to do this
+
+- If you end up with a position that the strategy cannot take care itself
+
+- You will get an interactive prompt before proceeding
+
+- You will need to stop `trade-executor` when running this command
+
+.. code-block:: shell
+
+    docker-compose stop enzyme-polygon-eth-usdc
+    docker-compose run enzyme-polygon-eth-usdc close-all
+    docker-compose up -s enzyme-polygon-eth-usdc
+
 Reinitialising trade-executor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -351,3 +417,15 @@ to the latest release with the following UNIX shell source snippet:
     tag=`curl -s "https://api.github.com/repos/tradingstrategy-ai/trade-executor/tags" | jq -r '.[0].name'`
     export TRADE_EXECUTOR_VERSION=$tag
     echo "TRADE_EXECUTOR=${TRADE_EXECUTOR_VERSION}"
+
+Cleaning up old Docker containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Old Docker images stay on the disk after new releases.
+
+To reclaim disk space:
+
+.. code-block:: shell
+
+    docker-compose rm
+

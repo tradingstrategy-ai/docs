@@ -220,8 +220,32 @@ Then copy-paste the image hash from `docker build` output and run:
 
     docker run -it cf308d43ad577c5194dd8669316a6a80ba6adc901f461ddf287f14915f206082 --help
 
+Converting backtest notebooks to PDF
+------------------------------------
 
+You might want to convert backtest results Jupyter Notebooks for PDF format
+to share them.
 
+Make sure you initialise notebook charting in static (offline) mode:
+
+.. code-block:: python
+
+    from tradeexecutor.backtest.notebook import setup_charting_and_output, OutputMode
+    # Set Jupyter Notebook output mode parameters
+    setup_charting_and_output(OutputMode.static)
+
+Run the notebook e.g. using Visual Studio Code.
+
+Then you can use `nbconvert` to generate a PDF out of the notebook:
+
+.. code-block:: shell
+
+    # Mactex takes long to install
+    brew install --cask mactex
+    eval "$(/usr/libexec/path_helper)"
+    jupyter nbconvert --to pdf uniswap_v3_1h_arbitrum.ipynb
+
+This will generate PDF file from the notebook.
 
 
 

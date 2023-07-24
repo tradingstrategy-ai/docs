@@ -2195,13 +2195,16 @@ and algorithmic trading.
         In :term:`quantitative finance`, profitability tells how much a :term:`trading strategy`
         has generated or is estimated to generate profits.
 
-        The profitability is expressed usually as annualised yearly profit %.
-
-        E.g. 20% profitability means that the trading strategy generates 1/5x return on investment capital
+        The profitability is expressed usually as yearly returns %. E.g. 20% profitability means that the trading strategy generates 1/5x return on investment capital
         yearly.
 
-        For TradingStrategy.ai profitability calculation details, see :ref:`Profitability calculations <profitability>`
-        documentation.
+        For multi-user trading strategies, profitability calculations get more complex as you need to take account
+        the funding flow, deposits and redemptions.
+
+        TradingStrategy.ai offeres several methods of profitability calculation, for details see :ref:`Profitability calculations <profitability>` documentation.
+
+        - :ref:`Compounding realised positions profit` is the preferred method to display profitability across
+          different strategies
 
         See also
 
@@ -3966,6 +3969,26 @@ and algorithmic trading.
 
         - :term:`Total equity`
 
+        - :term:`Netflow`
+
+    Netflow
+
+        In the context of :term:`trading strategy`, netflow typically refers to the net amount of money that flows into or out of a available capital over a specific period. It represents the difference between the inflows (capital deposited) and outflows (capital redeemed or withdrawn) from the fund.
+
+        Netflow is an important metric related to :term:`total value locked` as it can effect on the trading strategy performance.
+
+        - Positive netflows indicates that TVL is growing
+
+        - Negative netflows indicate that more capital is being redeemed, which can reduce its TVL
+
+        See also
+
+        - :term:`Total value locked`
+
+        - :term:`Total equity`
+
+        - :term:`Trading strategy`
+
     Strategy age
 
         In :term:`trading strategy`, the age refers to the duration how long the strategy has been doing live
@@ -4010,5 +4033,19 @@ and algorithmic trading.
         - :term:`Drawdown`
 
         - :term:`Risk-adjusted return`
+
+    Take Profit
+
+        The predetermined price level at which you plan to close out an open position for a profit. This is set when you initially establish the position. This is the price at which you want to sell and take your profit. It is important to set a take profit target and stick to it. If you don’t, you may end up holding a position for too long and lose your profit.
+
+        This can be different to position exit that is profitable. Profitable trades that have been exited due to trailing stop loss without reaching the Take Profit limit are a different category.
+
+        The number of 'Take Profits' may be difficult to calculate if the strategy developer has implemented their own method without using built in methods. The same goes for :term:`trailing stop loss` as well.
+
+        See also
+
+        - :term:`Stop-loss`
+
+        - :term:`Trailing stop loss`
 
 
