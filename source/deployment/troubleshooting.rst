@@ -368,8 +368,28 @@ This will:
 
 .. _shdotenv:
 
+.. _reading docker env:
+
+Reading Docker env files in UNIX shell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can read the Dockerish .env files in `bash` and `zsh`
+with this trick
+
+.. code-block:: shell
+
+    set -a  # Turn on export all
+    source docker-env-file.env
+    set +a
+
 Using shdotenv helper
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+    shdotenv silently file to process some Dockerish env files.
+    See :ref:`reading docker env` for a workaround.
+
 
 Poetry / Typer environment does not support reading `.env` files directly.
 You first need to `load any .env file to your shell using shdotenv <https://stackoverflow.com/a/67357762/315168>`__
