@@ -366,8 +366,6 @@ This will:
 
 - Clear all statistics and positions
 
-.. _shdotenv:
-
 .. _reading docker env:
 
 Reading Docker env files in UNIX shell
@@ -381,6 +379,8 @@ with this trick
     set -a  # Turn on export all
     source docker-env-file.env
     set +a
+
+.. _shdotenv:
 
 Using shdotenv helper
 ~~~~~~~~~~~~~~~~~~~~~
