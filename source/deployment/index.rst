@@ -24,6 +24,7 @@ is deployed as a :ref:`Docker` container.
    vault-deployment
    monitoring
    docker-images
+   backtest-vs-live-execution
    troubleshooting
    repair
 

@@ -59,46 +59,7 @@ Strategy assets
 
 For each live executed strategy you need to have
 
-- **Python module**: A strategy module as Python source code file. This is slightly different from backtesting notebook,
-  but can be constructed from the backtest with copy-paste. *The filename of this module
-  is the same as the strategy id.** In this documentation, we use `pancake-eth-usd-sma` as an example.
-
-- **Metadata**: Strategy name, short description, long description.
-
-- **Logo**: Strategy logo image URL. The image must be 1:1 aspect ratio.
-  If you do not have images, you can use `placeholder.com <https://placeholder.com>`__.
-
-- **Domain**: A URL and a domain name for `trade-executor` webhook server.
-
-- **Configuration files**: The strategy execution configuration that include the hot wallet private key,
-  API keys for oracle market data feeds, blockchain nodes, Discord webhook notifications
-  and such. Setting up the configuration files are described below.
-
-- **Server**: A server where you run the `trade-executor` Docker container and any related infrastructure,
-  like a reverse proxy web server.
-
-Turning a backtest to a strategy module
----------------------------------------
-
-Backtests are Jupyter notebooks, but live strategies need to be deployed as Python applications.
-
-Each strategy runs as a single Python application in a Docker container.
-
-To create a Python strategy module from a backtest
-
-- `Looks up examples in trade-executor module <https://github.com/tradingstrategy-ai/trade-executor/tree/master/strategies>`__
-
-- Extract the following to a new Python .py module
-
-    - Strategy header with parameter definitions
-
-    - `decide_trade()` function
-
-    - `create_trading_universe()` function (must be with this name, even as backtests allow other names)
-
-    - Make sure the strategy module has `TRADING_STRATEGY_ENGINE_VERSION` as this defines how the module is parsed and loaded
-
-You can store the Python module anywhere, as it is referred by its path in the future.
+See :ref:`strategy metadata` for the list of resources you need.
 
 Managing Docker images
 ----------------------

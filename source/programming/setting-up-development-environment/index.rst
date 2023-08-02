@@ -58,3 +58,26 @@ go to :ref:`tutorials <tutorial>` section of the documentation.
 
 * How to develop and backtest your own automated trading strategies
 
+
+.. _get an API key
+
+Getting an API key
+------------------
+
+To get a Trading Strategy API key needed to access some of the datasets,
+`please visit here <https://tradingstrategy.ai/trading-view/api>`__.
+
+- Any notebook will prompt you to get and enter the API key if you do not have
+  one yet
+
+- Some binaries like `trade-executor` docker will read the API key from
+  `TRADING_STRATEGY_API_KEY` environment variable.
+
+Example:
+
+.. code-block:: shell
+
+    export TRADING_STRATEGY_API_KEY="secret-token:tradingstrategy-d534e28..."
+
+
+

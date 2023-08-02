@@ -95,6 +95,15 @@ To start the console you can do:
 
 Then you can use `%cpaste` command to paste Python snippets into the console.
 
+Here is an example how to fix state, by pasting a snippet to IPython console:
+
+.. code-block:: python
+
+    # Fix missing data on ETH-USDC, MATIC-USDC pairs
+    state.portfolio.open_positions[40].pair.reverse_token_order = True
+    state.portfolio.open_positions[41].pair.reverse_token_order = False
+    store.sync(state)
+
 Inspecting state file on another computer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
