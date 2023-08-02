@@ -1,4 +1,4 @@
-.. vault deployment:
+.. _vault deployment:
 
 Vault deployment
 ================
