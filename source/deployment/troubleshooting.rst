@@ -1,3 +1,5 @@
+.. _troubleshooting live trading:
+
 Troubleshooting live trade execution deployments
 ================================================
 

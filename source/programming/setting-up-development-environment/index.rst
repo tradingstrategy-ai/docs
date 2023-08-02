@@ -59,7 +59,7 @@ go to :ref:`tutorials <tutorial>` section of the documentation.
 * How to develop and backtest your own automated trading strategies
 
 
-.. _get an API key
+.. _get an API key:
 
 Getting an API key
 ------------------
