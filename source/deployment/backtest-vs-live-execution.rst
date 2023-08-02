@@ -21,7 +21,7 @@ to a live trading strategy module.
   it to see your strategy module is functional (no import errors,
   backtest results are what is expected).
 
-- `Some example strategy modules are available at trade-executor Github repository <https://github.com/tradingstrategy-ai/trade-executor/tree/master/strategies>`__.
+- `Some example strategy modules are available at trade-executor Github repository <https://github.com/tradingstrategy-ai/trade-executor/tree/master/strategy>`__.
   Please check with the community for the latest examples before starting to work.
 
 Turning a backtest to a strategy module
@@ -46,12 +46,28 @@ To create a Python strategy module from a backtest
   - Make sure the strategy module has `TRADING_STRATEGY_ENGINE_VERSION` as this defines how the module is parsed and loaded.
     The version must be `"0.2"` or newer.
 
+  - You also need to set correct `TRADE_ROUTING` option. This is irrelevant option for backtesting,
+    because no real trades are performed.
+
 You can store the Python module anywhere, but we recommend
 
 - Create a folder `strategies`
 
 - Store the Python module as `strategies/strategy-id.py` e.g.
   `strategies/arbitrum-btc-usdc-sls.py`
+
+Limitations in strategy modules
+-------------------------------
+
+Strategy modules
+
+- Cannot import any Python files that are not part of `tradeexecutor` Python package
+  installation and dependencies
+
+- Cannot have writable global variables (constants are ok)
+
+- Any variables, history and such need to be stored as the part of :py:class:`tradeexecutor.state.state.State`,
+  or recalculated every time `decide_trades` function is entered
 
 Backtest specific variables
 ---------------------------
