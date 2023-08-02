@@ -27,6 +27,29 @@ Preface
 - The image is distributed using Github's Container Registry (ghcr.io) -
   you need to `docker login` to this registry to download the image
 
+Login to GHCR
+-------------
+
+Docker images are distributed on Github Container Registry.
+The access is public, but you need to have an access token through your
+Github account.
+
+To enable docker login to Github see `how to set up Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_.
+
+- `Create a personal access tokens in Developer settings of your Github account <https://github.com/settings/tokens>`__.
+
+- You need an access token to publish, install, and delete private, internal, and public packages:
+  `repo:*`.
+
+When you find your token you can do:
+
+.. code-block:: shell
+
+    GITHUB_USERNAME=miohtama
+    # Your Personal Access Token (classic)
+    CR_PAT=ghp_mmc...
+    docker login ghcr.io --username=$GITHUB_USERNAME --password=$CR_PAT
+
 The first run
 -------------
 

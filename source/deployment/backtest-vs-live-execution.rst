@@ -86,11 +86,14 @@ Run a backtest on the standalone strategy module
 This will run a backtest on a strategy module from the command
 line and display the summary backtest.
 
-- You can find more information in :ref:`managing docker images`.
+- Enable docker login to Github - see
+  `how to set up Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_.
 
 - See :ref:`get an API key` if you do not have one yet.
 
 - `Go and check the latest version tag from trade-executor release <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`__.
+
+- You can find more information in :ref:`managing docker images`.
 
 Create folder `state` in the current working directory. The `backtest` command will write multiple report files in this folder.
 If you want to override the file locations you can use command line arguments for `backtest` command to set a different location:
