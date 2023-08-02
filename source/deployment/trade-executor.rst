@@ -23,7 +23,7 @@ You need to
 - Know UNIX command line basics
 
 - Have enabled docker login to Github - see
-  `how to set up Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_
+  `how to set up Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_.
 
 To get started, `check the latest version from trade-executor release <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`__.
 
