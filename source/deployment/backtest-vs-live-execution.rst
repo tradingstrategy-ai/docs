@@ -4,7 +4,7 @@ Backtest and live execution differences
 In this chapter, we discuss how to turn a Jupyter Notebook based backtests
 to a live trading strategy module.
 
-- Backtesting is usually performed in Jupyter Notebook environment.
+- Strategy development and backtesting is usually performed in Jupyter Notebook environment.
 
 - The strategy module is a standalone Python file without outside dependencies,
   including command line applications. The strategy module does not have
@@ -12,6 +12,11 @@ to a live trading strategy module.
 
 - The strategy module itself can be backtested and analysed using
   :ref:`trade-executor` binary commands.
+
+- After you have created an independent strategy module,
+  you need to run `trade-executor backtest` command against
+  it to see your strategy module is functional (no import errors,
+  backtest results are what is expected).
 
 Turning a backtest to a strategy module
 ---------------------------------------
@@ -52,7 +57,8 @@ Following variables need to be set in the strategy module in:
     # How much USD the backtest starts with
     INITIAL_CASH = 10_000
 
-    # Backtest range
+    # Backtest range we will use to show the results
+    # on the website
     BACKTEST_START = datetime.datetime(2022, 12, 20)
     BACKTEST_END = datetime.datetime(2023, 6, 4)
 
@@ -68,6 +74,13 @@ line and display the summary backtest.
 - First :ref:`get an API key`.
 
 - `Check the latest version from trade-executor release <https://github.com/tradingstrategy-ai/trade-executor/pkgs/container/trade-executor>`__
+
+Create folder `state` in the current working directory. The `backtest` command will write multiple report files in this folder.
+If you want to override the file locations you can use command line arguments for `backtest` command to set a different location:
+
+.. code-block:: shell
+
+    mkdir state
 
 Run the backtest. Here we assume you have your strategy module as `strategy/strategy/arbitrum-btc-usdc-sls.py`:
 
