@@ -41,6 +41,11 @@ To get started you need to have a
 
 - `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
+.. note ::
+
+    Private keys or hot wallets cannot be shared across different `trade-executor` instances.
+    Because this will mess up accounting.
+
 Managing Docker images
 ----------------------
 

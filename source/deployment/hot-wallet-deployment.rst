@@ -179,6 +179,11 @@ Then
 
 - Private key will be needed in the trade execution configuration file
 
+.. note ::
+
+    Private keys or hot wallets cannot be shared across different `trade-executor` instances.
+    Because this will mess up accounting.
+
 Changes between backtesting and live execution
 ----------------------------------------------
 
