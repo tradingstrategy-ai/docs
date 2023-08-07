@@ -4049,3 +4049,54 @@ and algorithmic trading.
         - :term:`Trailing stop loss`
 
 
+    Variable borrow rate
+
+        Variable borrow rate refers to the fluctuating interest rate charged to borrowers in decentralized finance (DeFi) protocols for utilizing borrowed funds. DeFi platforms offer lending and borrowing services where users can deposit their assets as collateral and borrow other assets against it.
+
+        In traditional finance, interest rates are often fixed for a specific period, but in DeFi, the Variable borrow rate model is prevalent, where the interest rates can vary over time. The rate's variability is influenced by market forces, supply, demand, and the specific rules governing the DeFi protocol.
+
+        - :term:`Supply rate`
+
+        - :term:`Lending pool`
+
+        - :term:`Aave`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Stable borrow rate`
+
+    Supply rate
+
+        Supply Rate, in the context of Decentralized Finance (DeFi), refers to the interest rate or annual percentage yield (APY) earned by users who lend or supply their cryptocurrency assets to liquidity pools or lending protocols within the DeFi ecosystem. DeFi platforms utilize smart contracts on blockchain networks to enable decentralized borrowing and lending activities, allowing users to earn passive income by contributing their assets as collateral for lending.
+
+        In DeFi, supply rate is determined by the demand for borrowing specific assets within a liquidity pool or lending platform. When users supply their tokens to the pool, they are essentially providing liquidity for borrowers to utilize. The interest rates are dynamically adjusted based on the demand and supply of assets. Factors such as borrowing demand, available liquidity, and market conditions can influence the supply rate, causing it to fluctuate over time.
+
+        - :term:`Variable borrow rate`
+
+        - :term:`Lending pool`
+
+        - :term:`Aave`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Stable borrow rate`
+
+    Stable borrow rate
+
+        Stable Borrow Rate refers to an interest rate model used by decentralized lending and borrowing protocols that offers borrowers a fixed, predictable interest rate for the duration of their loan. Unlike variable borrow rates, which fluctuate based on changes in the market or platform conditions, stable borrow rates remain constant throughout the loan term.
+
+DeFi platforms facilitate lending and borrowing of digital assets, allowing users to deposit their assets into liquidity pools and earn interest or borrow assets against their collateral. The borrow rate is the interest rate charged to borrowers who want to access funds from these liquidity pools.
+
+Stable borrow rates are designed to provide borrowers with certainty and predictability in their borrowing costs. When a user borrows funds from a DeFi platform using the stable borrow rate model, they lock in a fixed interest rate that remains unchanged regardless of market fluctuations or platform dynamics during the loan period.
+
+These rates are often set by the protocol's governance or determined algorithmically to ensure stability and align with the platform's overall objectives. Stable borrow rates can be particularly attractive to borrowers who wish to avoid the risks associated with variable rates, such as sudden interest rate spikes that could lead to unexpected increases in borrowing costs.
+
+        - :term:`Variable borrow rate`
+
+        - :term:`Lending pool`
+
+        - :term:`Aave`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Supply rate`
