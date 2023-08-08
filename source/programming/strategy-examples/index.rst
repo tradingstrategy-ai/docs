@@ -180,7 +180,7 @@ Prerequisites
             </tr>
             <tr>
                   <td class="tg-0pky"><a
-                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/state-candles-from-live-strategy.html">debugging-live-strategy-2</a>
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/state-candles-from-live-strategy.html">examine-live-strategy-2</a>
                   </td>
                   <td class="tg-0pky">Learn how to reverse engineer data from live strategies in order to recreate the current state and OHLCV candles. These candles may also show useful decision making indicators.</td>
             </tr>
