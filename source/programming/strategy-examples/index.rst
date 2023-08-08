@@ -178,6 +178,12 @@ Prerequisites
                   </td>
                   <td class="tg-0pky">Learn to debug unsuccessful trades in a live trading strategy. This knowledge will help you identify and correct potential issues in your strategies, improving your trading success rate.</td>
             </tr>
+            <tr>
+                  <td class="tg-0pky"><a
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/state-candles-from-live-strategy.html">debugging-live-strategy-2</a>
+                  </td>
+                  <td class="tg-0pky">Learn how to reverse engineer data from live strategies in order to recreate the current state and OHLCV candles. These candles may also show useful decision making indicators.</td>
+            </tr>
       </tbody>
       </table>
       <h2>Deprecated</h2>
