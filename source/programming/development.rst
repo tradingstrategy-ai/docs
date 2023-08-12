@@ -205,8 +205,8 @@ profiling memory usage. We need to ensure large datasets
 do not cause issues on low-memory environments like WebAsssembly
 in web browsers.
 
-Backtest speed profiling
-------------------------
+Profiling Python notebooks for code speed bottlenecks
+-----------------------------------------------------
 
 You can profile a backtesting notebook with Python's
 built-in profiler `cProf`.
