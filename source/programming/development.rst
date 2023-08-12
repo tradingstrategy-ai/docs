@@ -208,7 +208,60 @@ in web browsers.
 Backtest speed profiling
 ------------------------
 
-You can profile a
+You can profile a backtesting notebook with Python's
+built-in profiler `cProf`.
+
+In a notebook extract backtest run function to its own
+cell and add `%%prun` meta command:
+
+.. code-block:: ipython
+
+    %%prun -s cumulative
+
+    state, _, debug_dump = run_backtest_inline(
+        name="SLS",
+        start_at=start_at,
+        end_at=end_at,
+        client=client,
+        cycle_duration=cycle_duration,
+        decide_trades=decide_trades,
+        universe=universe,
+        initial_deposit=initial_deposit,
+        reserve_currency=reserve_currency,
+        trade_routing=trade_routing,
+        log_level=logging.WARNING,
+    )
+
+Then run the notebook
+
+.. code-block:: shell
+
+    ipython notebooks/arbitrum-btc-usd-sls-binance-data-1h.ipynbs
+
+The output will be in `less` paged format in your terminal
+
+.. code-block:: text
+
+         15192529 function calls (14695168 primitive calls) in 4.701 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      2/1    0.000    0.000    4.706    4.706 {built-in method builtins.exec}
+        1    0.000    0.000    4.706    4.706 <string>:1(<module>)
+        1    0.000    0.000    4.706    4.706 backtest_runner.py:405(run_backtest_inline)
+        1    0.000    0.000    4.706    4.706 backtest_runner.py:297(run_backtest)
+        1    0.000    0.000    4.706    4.706 loop.py:1209(run_and_setup_backtest)
+        1    0.010    0.010    4.706    4.706 loop.py:669(run_backtest)
+     1416    0.007    0.000    4.162    0.003 loop.py:328(tick)
+     1416    0.013    0.000    4.138    0.003 runner.py:329(tick)
+
+
+For more information
+
+- `%%prun magic <https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-prun>`__
+- `Stackoverflow post <https://stackoverflow.com/questions/28328482/profiling-a-notebook-ipython>`__
+
 
 Building Docker image locally
 -----------------------------
