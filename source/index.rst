@@ -27,6 +27,7 @@ Table of contents
    protocol/index
    learn/index
    glossary
+   api/index
 
 See also
 --------

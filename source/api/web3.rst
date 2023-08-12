@@ -1,3 +1,5 @@
+.. _eth_defi:
+
 Web3 Ethereum DeFi
 ==================
 

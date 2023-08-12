@@ -41,7 +41,7 @@ Documentation for `{{ fullname }}` Python class.
 
 {% else %}
 
-Documentation for `{{ fullname }}` Python {{ objtype }}.
+API documentation for `{{ fullname }}` Python {{ objtype }}.
 
 .. auto{{ objtype }}:: {{ objname }}
 {% endif %}

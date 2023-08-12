@@ -1,6 +1,6 @@
 {{ fullname | partial_name | escape | underline}}
 
-Documentation for `{{ fullname }}` Python module in Trading Strategy.
+API documentation for `{{ fullname }}` Python module in Trading Strategy.
 
 .. meta::
     :description: {{ fullname|extract_module_docstring }}

@@ -6,7 +6,7 @@
     :description: {{ fullname|extract_object_docstring }}
     :title: {{ name }} {{ objtype }} in {{ fullname|extract_mod_path }}
 
-`{{ fullname }}` Python class in Trading Strategy framework.
+API documentation for `{{ fullname }}` Python class in Trading Strategy framework.
 
 .. currentmodule:: {{ module }}
 
