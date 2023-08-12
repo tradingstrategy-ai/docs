@@ -23,6 +23,7 @@ notebook = "^6.4.12"
 trade-executor = {path = "deps/trade-executor", develop = true, extras=["qstrader", "execution", "web-server", "quantstats"]}
 # furo = {path = "deps/trade-executor", develop = true}
 sphinx-reredirects = "^0.1.1"
+zope-dottedname = "^6.0"
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"

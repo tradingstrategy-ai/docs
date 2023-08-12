@@ -42,9 +42,10 @@
     {% endif -%}
 
     {# Make sure all pages have a description or Bing does not like us #}
-    {% if 'content="description"' not in metatags %}
-      <meta name="description" content="Python documentation for Trading Strategy development">
+    {% if 'name="description"' not in metatags %}
+      <meta name="description" content="Trading Strategy API documentation">
     {% endif %}
+
 
     {%- block linktags %}
         {%- if hasdoc('about') -%}
@@ -83,7 +84,10 @@
 
     {#- Site title -#}
     {%- block htmltitle -%}
-      {% if not docstitle %}
+      {# See Sphinx monkey patch in conf.py #}
+      {% if 'title' in metas %}
+        <title>{{ metas.title }}</title>
+      {% elif not docstitle %}
         <title>{{ title|striptags|e }}</title>
       {% elif pagename == master_doc %}
         <title>{{ docstitle|striptags|e }}</title>

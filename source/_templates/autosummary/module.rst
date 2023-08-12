@@ -1,6 +1,11 @@
 {{ fullname | partial_name | escape | underline}}
 
-*{{ fullname }}* Python module in Trading Strategy framework.
+Documentation for `{{ fullname }}` Python module in Trading Strategy.
+
+.. meta::
+    :description: {{ fullname|extract_module_docstring }}
+    :title: {{ name }} {{ objtype }} in {{ fullname|extract_mod_path }}
+
 
 Module description
 ------------------

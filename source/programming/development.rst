@@ -205,6 +205,11 @@ profiling memory usage. We need to ensure large datasets
 do not cause issues on low-memory environments like WebAsssembly
 in web browsers.
 
+Backtest speed profiling
+------------------------
+
+You can profile a
+
 Building Docker image locally
 -----------------------------
 
