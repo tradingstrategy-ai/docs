@@ -1,6 +1,12 @@
-{{ fullname | partial_name | escape | underline}}
+{{ name | escape | underline }}
 
-*{{ fullname }}* Python class in Trading Strategy framework.
+.. currentmodule:: {{ module }}
+
+.. meta::
+    :description: {{ fullname|extract_object_docstring }}
+    :title: {{ name }} {{ objtype }} in {{ fullname|extract_mod_path }}
+
+API documentation for `{{ fullname }}` Python class in Trading Strategy framework.
 
 .. currentmodule:: {{ module }}
 

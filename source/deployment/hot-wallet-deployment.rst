@@ -76,87 +76,7 @@ Testing the strategy module
 You can run backtests using `trade-executor` command locally on your development module to check the strategy module
 looks intact.
 
-We can do backtests in two phases
-
-- Quick inconsistent backtest with less time frames and OHLCV samples for the smoke test
-
-- Actual backtest to see we still get the same results as in the notebook
-
-An example how to run quick backtests. We override some timeframes. This gives incorrect results but quickly shows if
-the code is broken:
-
-.. code-block:: shell
-
-    # Set your API key for your shell environment
-    export TRADING_STRATEGY_API_KEY=...
-
-    # Run the backtest of this module using local trade-executor command
-    # Tick size and stop loss check frequencies are less from what the strategy
-    # is expected (1h -> 1d). We call decide_trades less often,
-    # allowing us to complete the test faster, albeit with incorrect
-    # results.
-    docker run \
-        --interactive \
-        --tty \
-        --volume=strategies:/usr/src/trade-executor/strategies \
-        --volume=cache:/usr/src/trade-executor/cache \
-        ghcr.io/tradingstrategy-ai/trade-executor:$TRADE_EXECUTOR_VERSION \
-        start \
-        --strategy-file=strategies/pancake-eth-usd-sma.py \
-        --execution-type=backtest \
-        --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
-        --backtest-candle-time-frame-override=1d \
-        --backtest-stop-loss-time-frame-override=1d \
-        --backtest-start=2021-06-01 \
-        --backtest-end=2022-09-01
-
-The backtest summary results are printed to the console.
-
-.. note ::
-
-    The summary numbers obtained this way are rubbish -
-    the backtest smoke test with sped up sampling is only useful to find out
-    if your Python code works. It does not tell about the strategy profitability.
-
-.. code-block:: text
-
-    Trading period length                     440 days
-    Return %                                   -32.68%
-    Annualised return %                        -27.11%
-    Cash at start                           $10,000.00
-    Value at end                             $6,732.17
-    Trade win percent                           22.86%
-    Total trades done                               35
-    Won trades                                       8
-    Lost trades                                     27
-    Stop losses triggered                           27
-    Stop loss % of all                          77.14%
-    Stop loss % of lost                        100.00%
-    Zero profit trades                               0
-    Positions open at the end                        0
-    Realised profit and loss                $-3,267.83
-    Portfolio unrealised value                   $0.00
-    Extra returns on lending pool interest       $0.00
-    Cash left at the end                     $6,732.17
-    Average winning trade profit %               6.96%
-    Average losing trade loss %                 -4.00%
-    Biggest winning trade %                     13.90%
-    Biggest losing trade %                     -12.28%
-    Average duration of winning trades          2 days
-    Average duration of losing trades           1 days
-
-Here is also an example to run the backtest using Python and `trade-executor` command directly:
-
-.. code-block:: shell
-
-    trade-executor start \
-        --strategy-file=strategies/pancake-eth-usd-sma.py \
-        --execution-type=backtest \
-        --trading-strategy-api-key=$TRADING_STRATEGY_API_KEY \
-        --backtest-candle-time-frame-override=1d \
-        --backtest-stop-loss-time-frame-override=1d \
-        --backtest-start=2021-06-01 \
-        --backtest-end=2022-09-01
+See :ref:`standalone module backtest` for more information.
 
 Creating a hot wallet
 ---------------------
@@ -165,7 +85,7 @@ To create a hot wallet for a strategy do the following:
 
 .. code-block:: shell
 
-    python -c "from web3 import Web3; w3 = Web3(); acc = w3.eth.account.create(); print(f'private key={w3.toHex(acc.privateKey)}, account={acc.address}')"
+        python -c "from web3 import Web3; w3 = Web3(); acc = w3.eth.account.create(); print(f'private key={w3.to_hex(acc._private_key)}, account={acc.address}')"
 
 This will give you private key and account pair:
 

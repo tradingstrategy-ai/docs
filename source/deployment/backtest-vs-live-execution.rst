@@ -96,6 +96,8 @@ order to perform `trade-executor backtest` command:
     # Optional, depends on the strategy create_trading_universe() function
     STOP_LOSS_TIME_BUCKET=TimeBucket.m5
 
+.. _standalone module backtest:
+
 Run a backtest on the standalone strategy module
 ------------------------------------------------
 
@@ -132,6 +134,7 @@ Run the backtest. Here we assume you have your strategy module as `strategy/stra
 
     # Run the backtest using the backtest period given in the strategy module
     docker run \
+        -it \
         -v `pwd`:`pwd` \
         -w `pwd` \
         ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION} \

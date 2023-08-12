@@ -130,28 +130,6 @@ autodoc_default_options = {
     'special-members': "__init__, __call__"
 }
 
-# Monkey-patch autosummary template context
-from sphinx.ext.autosummary.generate import AutosummaryRenderer
-
-
-def partial_name(fullname):
-    parts = fullname.split(".")
-    return parts[-1]
-
-
-def fixed_init(self, app):
-    AutosummaryRenderer.__old_init__(self, app)
-    self.env.filters["partial_name"] = partial_name
-
-
-AutosummaryRenderer.__old_init__ = AutosummaryRenderer.__init__
-AutosummaryRenderer.__init__ = fixed_init
-
-#
-# Redirect mappings
-# https://documatt.gitlab.io/sphinx-reredirects/install.html
-#
-
 redirects = {
      "learn": "learn/index.html",
      "home": "index.html"
@@ -159,3 +137,6 @@ redirects = {
 
 # Monkey-patch sphinx-sitemap to support <priority> XML argument
 import trading_strategy_docs.sphinx_sitemap_patch
+import trading_strategy_docs.sphinx_render_patch
+
+
