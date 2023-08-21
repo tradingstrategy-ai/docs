@@ -67,7 +67,7 @@ can check out the repository using Visual Studio Code.
 
 Press ``F1`` to bring up the command palette (``fn`` + ``F1`` on Macs)
 
-Choose ``Clone from Github``.
+Choose ``Git Clone`` and then from ``Clone from Github``.
 
 Paste in the repository URL:
 ``https://github.com/tradingstrategy-ai/trade-executor.git``.
@@ -151,6 +151,9 @@ Then press Run all:
 
 .. figure:: run-all.png
    :alt: img_1.png
+
+If you get prompted to choose between different Python versions,
+choose one in ``/usr/local/bin``.
 
 Now scroll to the bottom of the notebook and see you have updated
 results for 2022 - 2023:
