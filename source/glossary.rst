@@ -44,10 +44,13 @@ and algorithmic trading.
         The trading strategy can be automated as :term:`algorithmic trading` and thus
         become :term:`automated trading strategy`.
 
-        Trading Strategy can also refer to `Trading Strategy protocol <https://tradingstrategy.ai>`__
-        that offers :term:`non-custodial` :term:`algorithmic trading` to its users.
+        Trading Strategy can also refer to :term:`Trading Strategy Protocol`
+        which is a solution for creating trading strategies for
+        :term:`decentralised finance`.
 
         See also
+
+        - :term:`Trading Strategy Protocol`
 
         - :term:`Algorithmic trading`
 
@@ -68,7 +71,6 @@ and algorithmic trading.
         - :term:`Factor investing`
 
         - :term:`Yield farming`
-
 
     AMM
         Automated market maker (AMM) is a :term:`bonding curve` based :term:`decentralised exchange`.
@@ -2594,27 +2596,37 @@ and algorithmic trading.
 
     Trading Strategy Protocol
 
-        The Trading Strategy Protocol is a :term:`decentralised finance` protocol build using :term:`oracles <oracle>`
-        and :term:`Trading Strategy Framework`.
+        Trading Strategy Protocol is an :term:`algorithmic trading` solutions for :term:`decentralised finance`
+        using :term:`AMMs <amm>` and :term:`lending prototocols <lending protocol>`.
 
-        It allows :term:`quant developers <quant>` to deploy :term:`automated trading strategies <automated trading strategy>`
-        that trade on :term:`decentralised exchange <decentralised exchange>` and :term:`lending protocols <lending protocol>`.
+        It offers :term:`non-custodial` way for creating :term:`trading strategies <trading strategy>`.
+        :term:`Quants <quant>` can develop and :term:`backtest` their strategies using :term:`Python`.
+
+        Live trading strategies can be securely executed using :term:`vaults <vault>`.
+
+        For introduction information, `visit Trading Strategy website <https://tradingstrategy.ai/>`__.
 
         See also
-
-        - :term:`Trading strategy`
-
-        - :term:`Backtest`
 
         - :term:`Trading Strategy Client`
 
         - :term:`Trading Strategy Framework`
 
+        - :term:`Algorithmic trading`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Automated trading strategy`
+
+        - :term:`Technical analysis`
+
     Trading Strategy Framework
 
         The Trading Strategy Framework is a :term:`Python` based software development library
         to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
-        markets.
+        markets. The core audience of the library is :term:`quants <quant>`.
 
         The framework consists of
 
@@ -2622,21 +2634,21 @@ and algorithmic trading.
 
         - :term:`Backtesting framework <backtest>`
 
-        - Live trading execution environment
+        - :ref:`Live trading execution environment <running strategies>`
 
-        The core audience of the library is :term:`quants <quant>`.
+        - Third-party capital deposits using :term:`vaults <vault>`
 
         See also
+
+        - :term:`Trading Strategy Protocol`
+
+        - :term:`Trading Strategy Client`
 
         - :term:`Trading strategy`
 
         - :term:`Decentralised finance`
 
         - :term:`Backtest`
-
-        - :term:`Trading Strategy Client`
-
-        - :term:`Trading Strategy Protocol`
 
     Oracle
 
@@ -4048,4 +4060,25 @@ and algorithmic trading.
 
         - :term:`Trailing stop loss`
 
+    Last trade
+
+        In :term:`Trading Strategy Protocol`, last trade is the date when a :term:`trading strategy`
+        successfully executed a trade last time.
+
+        This metric tells who lively the underlying algorithm has been recently.
+
+        See also
+
+        - :term:`Trading Strategy Protocol`
+
+    Trades last week
+
+        In :term:`Trading Strategy Protocol`, trades last week is a metric who many successful trades
+        a :term:`trading strategy` did last week.
+
+        This metric tells who lively the underlying algorithm has been recently.
+
+        See also
+
+        - :term:`Trading Strategy Protocol`
 
