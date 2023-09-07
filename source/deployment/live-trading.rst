@@ -1,4 +1,6 @@
-.. live trading:
+.. _live trading modes:
+
+.. _deployment mode:
 
 Live trading modes
 ==================

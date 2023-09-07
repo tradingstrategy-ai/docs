@@ -1,3 +1,5 @@
+.. _troubleshooting live trading:
+
 Troubleshooting live trade execution deployments
 ================================================
 
@@ -94,6 +96,15 @@ To start the console you can do:
     In [1]:
 
 Then you can use `%cpaste` command to paste Python snippets into the console.
+
+Here is an example how to fix state, by pasting a snippet to IPython console:
+
+.. code-block:: python
+
+    # Fix missing data on ETH-USDC, MATIC-USDC pairs
+    state.portfolio.open_positions[40].pair.reverse_token_order = True
+    state.portfolio.open_positions[41].pair.reverse_token_order = False
+    store.sync(state)
 
 Inspecting state file on another computer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -366,10 +377,30 @@ This will:
 
 - Clear all statistics and positions
 
+.. _reading docker env:
+
+Reading Docker env files in UNIX shell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can read the Dockerish .env files in `bash` and `zsh`
+with this trick
+
+.. code-block:: shell
+
+    set -a  # Turn on export all
+    source docker-env-file.env
+    set +a
+
 .. _shdotenv:
 
 Using shdotenv helper
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+    shdotenv silently file to process some Dockerish env files.
+    See :ref:`reading docker env` for a workaround.
+
 
 Poetry / Typer environment does not support reading `.env` files directly.
 You first need to `load any .env file to your shell using shdotenv <https://stackoverflow.com/a/67357762/315168>`__

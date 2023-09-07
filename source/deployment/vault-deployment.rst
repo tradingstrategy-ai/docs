@@ -1,4 +1,4 @@
-.. vault deployment:
+.. _vault deployment:
 
 Vault deployment
 ================
@@ -40,6 +40,11 @@ To get started you need to have a
 - Native token loaded up for :term:`gas fee`
 
 - `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
+
+.. note ::
+
+    Private keys or hot wallets cannot be shared across different `trade-executor` instances.
+    Because this will mess up accounting.
 
 Managing Docker images
 ----------------------
@@ -282,7 +287,11 @@ Run a backtest on the strategy module
 -------------------------------------
 
 After the strategy module and Docker instance have been deployed,
-you can run the backtest on the live trade executor.
+you can run the backtest on the live trade executor with:
+
+.. code-block:: shell
+
+    docker-compose run enzyme-polygon-eth-usdc backtest
 
 - This will use the final configuration (strategy module, environment files) to run the backtest
   and see that the strategy module functions properly.

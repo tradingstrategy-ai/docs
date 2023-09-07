@@ -1,3 +1,5 @@
+.. _strategy metadata:
+
 Strategy metadata
 =================
 
@@ -10,18 +12,31 @@ given to the `trade-executor`.
 Configured metadata
 -------------------
 
-- Private key needed for the hot wallet that executes the transactions.
+- **Python module**: A strategy module as Python source code file. This is slightly different from backtesting notebook,
+  but can be constructed from the backtest with copy-paste. *The filename of this module
+  is the same as the strategy id.** In this documentation, we use `pancake-eth-usd-sma` as an example.
 
-- Machine readable id e.g. `enzyme-polygon-eth-usdc`. This is automatically set: If this is not
+- **Logo**: Strategy logo image URL. The image must be 1:1 aspect ratio.
+  If you do not have images, you can use `placeholder.com <https://placeholder.com>`__.
+
+- **Machine readable id** e.g. `enzyme-polygon-eth-usdc`. This is automatically set: If this is not
   explicitly set then this is the same as the strategy module filename.
 
-- Human readable name and description.
-  These need to be configured in the `trade-executor` :ref:`environment file`.
+- **Domain**: A URL and a domain name for `trade-executor` webhook server.
+  For the sake of convenience, use the same as machine readable id.
 
-- Icons. These need to be configured in the `trade-executor` :ref:`environment file`.
-  Icons point to externally hosted image URLs.
+- **Configuration files**: The strategy execution configuration that include the hot wallet private key,
+  API keys for oracle market data feeds, blockchain nodes, Discord webhook notifications
+  and such. Setting up the configuration files are described below.
 
-- Backtested result (on the top of the live execution results).
+- **Server**: A server where you run the `trade-executor` Docker container and any related infrastructure,
+  like a reverse proxy web server.
+
+- **Private key** needed for the hot wallet that executes the transactions.
+
+- **Initial test funds**: native blockchain token and USDC for gas fees.
+
+- **Backtest results**: this will be generated during the strategy deployment process
 
 Enzyme vault-based trading configuration
 ----------------------------------------

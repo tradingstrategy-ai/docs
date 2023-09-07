@@ -34,6 +34,7 @@ Examples
    plotting-old
    aave-v3-candles
    uniswap-v3-data
+   xsgd-json-lines
 
 Next steps
 ----------

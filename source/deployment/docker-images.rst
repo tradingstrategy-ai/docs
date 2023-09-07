@@ -27,6 +27,56 @@ Preface
 - The image is distributed using Github's Container Registry (ghcr.io) -
   you need to `docker login` to this registry to download the image
 
+Installing Docker
+-----------------
+
+- For macOS use Docker for Mac
+- [For Ubuntu](https://docs.docker.com/engine/install/ubuntu/):
+
+```shell
+sudo -i
+apt install ca-certificates curl gnupg
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Make ubuntu user to use Docker
+# Note: not the safest method
+usermod -aG docker ubuntu
+
+# Restart need to change to takes effect
+reboot now
+```
+
+Login to GHCR
+-------------
+
+Docker images are distributed on Github Container Registry.
+The access is public, but you need to have an access token through your
+Github account.
+
+To enable docker login to Github see `how to set up Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_.
+
+- `Create a personal access tokens in Developer settings of your Github account <https://github.com/settings/tokens>`__.
+
+- You need an access token to publish, install, and delete private, internal, and public packages:
+  `repo:*`.
+
+When you find your token you can do:
+
+.. code-block:: shell
+
+    GITHUB_USERNAME=miohtama
+    # Your Personal Access Token (classic)
+    CR_PAT=ghp_mmc...
+    docker login ghcr.io --username=$GITHUB_USERNAME --password=$CR_PAT
+
 The first run
 -------------
 
