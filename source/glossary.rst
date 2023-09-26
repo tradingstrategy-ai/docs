@@ -1220,12 +1220,44 @@ and algorithmic trading.
 
     MEV
 
-        Miner Extractable Value (MEV) is a measure of the profit a blockchain block producer can make through their ability to arbitrarily include, exclude, or re-order transactions during the block production process. It refers to the maximum amount of value that can be extracted from block production in excess of the standard block reward and gas fees.
+        Malicious Extractable Value (MEV) is a measure of the profit a blockchain block producer can make through their ability to arbitrarily include, exclude, or re-order transactions during the block production process. It refers to the maximum amount of value that can be extracted from block production in excess of the standard block reward and gas fees.
+
+        MEV is also known as Miner Extractable Value (original proof-of-work term) and Maximum Extractable Value.
 
         Because of block producers' ability to reorder trades in a single leader blockchain consensus
         model, MEV causes negative slippage and other issues for traders.
 
+        Market participants in the position to do MEV can harm traders in multiple ways:
+
+        - MEV operators frontrun trades and liquidity changes to get a better price for themselves as they see the market is about to change. This is often a tactic used in :term:`CEX`-:term:`DEX`
+          arbitrage. More on `CEX-DEX arbitrage here <https://medium.com/virtuswap/dissecting-mev-arbitrage-fb8f9492cdf1>`__.
+        - MEV operators perform `sandwitch attack <https://tradingstrategy.ai/glossary/evm>`__ to manipulation the market, by frontrunning and backrunning the trade to set the price to some arbitrary value.
+        - Backrun the the trades to extract any arbitrage opportunities that are opened by executing the trade.
+
+        Most of MEV is a harmful for traders and protocols as it extracts value out from the system and moves it to a third party, unrelated to the actual trading activity. If traders
+        could choose, they would always choose a system without harmful MEV instead of a system with it.
+        Furthermore, frontrunning and market manipulation are illegal in many jurisdictions. `Backrunning is generally found acceptable <https://twitter.com/TradingProtocol/status/1697627466267779389>`__,
+        especially if it distributes some of arbitrage profits back to traders and protocols.
+
+        Getting rid of MEV is often referred as "solving MEV" or "minimising MEV."
+
+        MEV can be prevented by
+        - Using private pools. Most popular solutions include changing our :term:`EVM` :term:`JSON-RPC` node to one that supports
+          a private mempool, like `MEV Blocker <https://mevblocker.io/>`__. However these systems are trust-based so they are not ideal,
+          as the private mempool operator itself could extract value, though this could be quite easily audited afterwards.
+        - Making transactions invisible to block producers. This is called to a shutter or shielding. One way to achieve this
+          is to use two-phase `commit and reveal scheme <https://en.wikipedia.org/wiki/Commitment_scheme>`__, also known as commitment scheme for including transactions in a block.
+          `Shutter Network <https://shutter.network/>`__ is a commit-and-reveal scheme for :term:`EVM` block building.
+        - Backrunning built into the protocol itself to capture any arbitrage left after routing a trade. Osmosis is doing this
+          if the form of `ProtoRev module <https://docs.osmosis.zone/osmosis-core/modules/protorev/>`__. More about `ProtoRev solution here <https://osmosis.zone/blog/osmosis-protorev-by-skip-protocol-on-chain-app-directed-arbitrage>`__.
+        - Most :term:`EVM-compatible` blockchains and virtual machines are not powerful enough to do backrunning on-chain, but off-chain solutions like `CowSwap <https://swap.cow.fi/>`__ and `MEV Blocker <https://mevblocker.io/>`__ exist.
+        - Creating a blockchain block production system where there is no single leader who can decide on transactions. `See Advanced consensys system design presentation here <https://www.youtube.com/watch?v=SFpEPjY-sxs>`__.
+        - CEX-DEX arbitrage, though not always MEV but harmful for :term:`decentralised finance` ecosystem due to its harm for passive liquiditity providers, can be mitigated with dynamic fees, introduced by :term:`Uniswap` version 4. `More on dynamic fees mitigating arbitrage here <https://doseofdefi.substack.com/p/uniswap-v4-and-ambient-finance-fresh>`__.
+
+
         See also
+
+        - :term:`DEX`
 
         - :term:`High-frequency trading`
 
