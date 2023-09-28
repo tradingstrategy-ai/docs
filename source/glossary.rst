@@ -827,11 +827,11 @@ and algorithmic trading.
         Slippage cannot be backtested easily, because it is based on the trade execution delays and those cannot be usually simulated
         (but can be measured).
 
-        :term:`DEX <decentralised exchange>` swap orders have a slippage parameter with them. You set it when the order is created.
-        If the price changes more then the slippage between the creation of the order and the execution of the order,
+        :term:`DEX <decentralised exchange>` swap orders have a slippage tolerance parameter with them. You set it when the order is created.
+        If the price changes more then the slippage tolerance between the creation of the order and the execution of the order,
         the DEX will cancel the order (revert).
 
-        Setting a low slippage value prevents frontrunning your trades, because frontrunners cannot
+        Setting a low slippage tolerance value prevents frontrunning your trades, because frontrunners cannot
         extract more value than what your slippage tolerance is.
 
         `See ParaSwap's excellent documentation on slippage <https://doc.paraswap.network/price-impact-slippage>`_.
@@ -1224,36 +1224,70 @@ and algorithmic trading.
 
         MEV is also known as Miner Extractable Value (original proof-of-work term) and Maximum Extractable Value.
 
-        Because of block producers' ability to reorder trades in a single leader blockchain consensus
-        model, MEV causes negative slippage and other issues for traders.
+        MEV is applicable to a blockchain that have a consensus model where there is a single elected leader for each block, round or epoch (terminology varies).
+        This leader sees the content of new transactions and can decide what are transactions and which order they are going to be included in the next block,
+        effectively deciding the final execution order of the transcations.
+        The leader can also insert their own transactions to at any point of the new block.
+        If any of transactions contain trades, the leader can insert their own trades before or after the transactions of other blockchain users.
 
-        Market participants in the position to do MEV can harm traders in multiple ways:
+        A block producer in a position to do MEV can harm traders in multiple ways:
 
-        - MEV operators frontrun trades and liquidity changes to get a better price for themselves as they see the market is about to change. This is often a tactic used in :term:`CEX`-:term:`DEX`
-          arbitrage. More on `CEX-DEX arbitrage here <https://medium.com/virtuswap/dissecting-mev-arbitrage-fb8f9492cdf1>`__.
-        - MEV operators perform `sandwitch attack <https://tradingstrategy.ai/glossary/evm>`__ to manipulation the market, by frontrunning and backrunning the trade to set the price to some arbitrary value.
-        - Backrun the the trades to extract any arbitrage opportunities that are opened by executing the trade.
+        - MEV operators *frontrun* trades and liquidity provisions to get a better price for themselves as they see the market is about to change,
+          by inserting their own trades before others.
 
-        Most of MEV is a harmful for traders and protocols as it extracts value out from the system and moves it to a third party, unrelated to the actual trading activity. If traders
-        could choose, they would always choose a system without harmful MEV instead of a system with it.
-        Furthermore, frontrunning and market manipulation are illegal in many jurisdictions. `Backrunning is generally found acceptable <https://twitter.com/TradingProtocol/status/1697627466267779389>`__,
-        especially if it distributes some of arbitrage profits back to traders and protocols.
+        - MEV operators perform `sandwitch attack <https://tradingstrategy.ai/glossary/evm>`__ to manipulation the market, by frontrunning and backrunning s single trade to set the price to some arbitrary value.
 
+        - MEV operators *backrun* trades and extract any arbitrage opportunities which open up after executing a trade.
+
+        Because of MEV, traders using blockchain may lose money they would not lost in trading otherwise.
+        Ethereum mainnet block producers have been manipulating on-chain markets via MEV since 2020. This money goes to the block producers as excessive profits from their MEV trades.
+        Most of MEV is a harmful for traders and protocols as it extracts value out from the system and moves it to a third party, unrelated to the actual trading activity. If a rational trader
+        can choose between two otherwise equal markets, they will always choose the market without MEV.
+
+        From community acceptance and legal standpoint a third-party MEV, where traders and the protocols are not participants, can be considered harmful:
+
+        - Frontrunning and market manipulation are illegal in many jurisdictions and different contexts.
+
+        -`Backrunning is generally found acceptable <https://twitter.com/TradingProtocol/status/1697627466267779389>`__,
+          especially if it distributes some of arbitrage profits back to traders and protocols.
+
+        Not all blockchains are suspectible to MEV.
         Getting rid of MEV is often referred as "solving MEV" or "minimising MEV."
 
-        MEV can be prevented by
-        - Using private pools. Most popular solutions include changing our :term:`EVM` :term:`JSON-RPC` node to one that supports
-          a private mempool, like `MEV Blocker <https://mevblocker.io/>`__. However these systems are trust-based so they are not ideal,
-          as the private mempool operator itself could extract value, though this could be quite easily audited afterwards.
-        - Making transactions invisible to block producers. This is called to a shutter or shielding. One way to achieve this
-          is to use two-phase `commit and reveal scheme <https://en.wikipedia.org/wiki/Commitment_scheme>`__, also known as commitment scheme for including transactions in a block.
-          `Shutter Network <https://shutter.network/>`__ is a commit-and-reveal scheme for :term:`EVM` block building.
+        MEV can be prevented and mitigated by
+
+        - Making transactions invisible to block producers. This is called to shuttering or shielding. One way to achieve this
+          is to use two-phase `commit and reveal scheme <https://en.wikipedia.org/wiki/Commitment_scheme>`__, also known as commitment scheme. for including transactions in a block.
+          In this scheme, the block producers ability to see the transaction content is removed. Commit-and-reveal schemes can happen on the block production level (hardcoded
+          for all transactions) or on the application level (a special :term:`DEX` smart contract needed with two separate transactions).
+          `Shutter Network <https://shutter.network/>`__ is a commit-and-reveal scheme for :term:`EVM` block building. Commit-and-reveal schemes usually do not
+          remove the block producers ability to do backrunning.
+
+        - Setting a :term:`slippage` tolerance for traders. The slippage is the amount of price change between the user creating a trade
+          and the time the trade gets executed. If the trade outcome is not within the slippage tolerance, the trade fails and the trader
+          may try again. The slippage tolerance sets the upper bound for the value frontrun and sandwich attacks can extract. However,
+          the requirement to use tight slippage tolerance to avoid harmful MEV will also cause legimate trades to fail, and MEV participants
+          will still extract value, just lower.
+
+        - Using private mempools. A mempool is a public peer-to-peer network where transactions are broadcasted before they are included in a block.
+          A private mempool operator submits transactions to the block producers with a honour agreement "do not negatively manipulate these"
+          and there is some sort of revenue sharing agreement with the private mempool operator and block producers about this.
+          Multiple private mempool solutions for :term:`EVM` blockchains exist. Users are incentivised to use a private mempool
+          by paying back some of the backrun arbitrage profits from users trades in the form of a kickback.
+          A simple solution for ordinary users is to change the :term:`JSON-RPC` node configuraiton of a wallet to point to  in the form of a kickback.
+          a private mempool, like `MEV Blocker <https://mevblocker.io/>`__. So far all private mempools are trust-based, so they are not ideal
+          solution as a rogue private mempool operator does not need to respect any honour agreements.
+
         - Backrunning built into the protocol itself to capture any arbitrage left after routing a trade. Osmosis is doing this
           if the form of `ProtoRev module <https://docs.osmosis.zone/osmosis-core/modules/protorev/>`__. More about `ProtoRev solution here <https://osmosis.zone/blog/osmosis-protorev-by-skip-protocol-on-chain-app-directed-arbitrage>`__.
         - Most :term:`EVM-compatible` blockchains and virtual machines are not powerful enough to do backrunning on-chain, but off-chain solutions like `CowSwap <https://swap.cow.fi/>`__ and `MEV Blocker <https://mevblocker.io/>`__ exist.
-        - Creating a blockchain block production system where there is no single leader who can decide on transactions. `See Advanced consensys system design presentation here <https://www.youtube.com/watch?v=SFpEPjY-sxs>`__.
-        - CEX-DEX arbitrage, though not always MEV but harmful for :term:`decentralised finance` ecosystem due to its harm for passive liquiditity providers, can be mitigated with dynamic fees, introduced by :term:`Uniswap` version 4. `More on dynamic fees mitigating arbitrage here <https://doseofdefi.substack.com/p/uniswap-v4-and-ambient-finance-fresh>`__.
 
+        - Creating a blockchain block production system where there is no single leader who can decide on transactions. `See Advanced consensys system design presentation here <https://www.youtube.com/watch?v=SFpEPjY-sxs>`__.
+
+        - Having a blockchain that is too dumb to support logic needed to calculate trades. Bitcoin is such a blockchain and that's
+          why there cannot be trading on Bitcoin, and all of its trading needs to happen outside native Bitcoin blockchain.
+
+        - CEX-DEX arbitrage, though not always MEV but harmful for :term:`decentralised finance` ecosystem due to its harm for passive liquiditity providers, can be mitigated with dynamic fees, introduced by :term:`Uniswap` version 4. `More on dynamic fees mitigating arbitrage here <https://doseofdefi.substack.com/p/uniswap-v4-and-ambient-finance-fresh>`__.
 
         See also
 
