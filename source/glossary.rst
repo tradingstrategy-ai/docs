@@ -2663,7 +2663,7 @@ and algorithmic trading.
     Trading Strategy Protocol
 
         Trading Strategy Protocol is an :term:`algorithmic trading` solutions for :term:`decentralised finance`
-        using :term:`AMMs <amm>` and :term:`lending prototocols <lending protocol>`.
+        using :term:`AMMs <amm>` and :term:`lending protocols <lending protocol>`.
 
         It offers :term:`non-custodial` way for creating :term:`trading strategies <trading strategy>`.
         :term:`Quants <quant>` can develop and :term:`backtest` their strategies using :term:`Python`.
