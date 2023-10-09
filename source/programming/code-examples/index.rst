@@ -32,7 +32,7 @@ Examples
    pool-liquidity
    dataset-download
    plotting-old
-   aave-v3-candles
+   lending-market-summary
    uniswap-v3-data
    xsgd-json-lines
 
