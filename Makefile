@@ -46,10 +46,18 @@ pip-force-install-deps:
 install-furo:
 	(cd deps/furo && npm install)
 
+
+# Makefile hack, Sphinx build does something weird
+build-html:
+	$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+
 # Rebuild furo.css
 rebuild-furo:
 	(cd deps/furo && npm run build)
 	cp deps/furo/src/furo/theme/furo/static/styles/furo.css source/_static/styles/
+
+# Recreate environment, update all to the latest, clean any generated files and rebuild HTML docs
+clean-install-and-build-local-docs: update-git-submodules poetry-install pip-force-install-deps install-furo rebuild-furo clean-autosummary clean build-html
 
 # Clean problematic autosummary leftovers from local tree.
 # We use folder "help" as the slug for API docs

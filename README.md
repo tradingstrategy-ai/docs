@@ -21,15 +21,11 @@ To build everything from the scratch:
 
 ```shell
 poetry shell
-make \
-  update-git-submodules \
-  poetry-install \
-  pip-force-install-deps \
-  install-furo \
-  rebuild-furo \
-  clean-autosummary \
-  clean \
-  html
+# This is a very long duration command.
+# For the subsequent documenation updates,
+# it is enough to run
+# make html
+make clean-install-and-build-local-docs
 ```
 
 Then you can open `build/html/index.html` in your local web browser:
@@ -47,6 +43,7 @@ See [Makefile](./Makefile) for more recipes.
 To update Furo SCSS changes:
 
 ```shell
+
 make rebuild-furo clean html
 ```
 
