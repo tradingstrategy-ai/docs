@@ -22,8 +22,8 @@ Before starting
 .. note::
 
     The installation method described here is for advanced Python developers.
-    If you are new to Python we recommend using Visual Studio Dev Container
-    installation method instead. To set up your own local environment from the scratch, you need to be
+    If you are new to Python we recommend using :ref:`Visual Studio Dev Container <running-code-examples>`
+    installation method instead. If you think you can set up your own local environment from the scratch, you need to be
     able to resolve Python version and package compatibility issues, or other issues which
     may occur.
 
@@ -111,7 +111,7 @@ This gives you the full path of `python` command.
 
 Then use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option for the interpreter.
 
-Now you can run `Getting started <https://tradingstrategy.ai/docs/programming/examples/getting-started.html>`_ and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
+Now you can run :ref:`Getting started <tutorial>`_ and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
 
 .. image:: ./vscode.png
     :alt: Visual Studio Code example how to run a Jupyter Notebook
@@ -119,7 +119,8 @@ Now you can run `Getting started <https://tradingstrategy.ai/docs/programming/ex
 Local Jupyter installation
 --------------------------
 
-You can also run notebooks by installing a local `Jupyter notebook installation <https://jupyter.org/>`_.
+You run notebooks by installing a local `Jupyter notebook installation <https://jupyter.org/>`_.
+This will create a local Jupyter server and open Jupyter notebooks in your web browser.
 
 Take a git checkout.
 

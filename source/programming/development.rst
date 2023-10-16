@@ -205,6 +205,14 @@ profiling memory usage. We need to ensure large datasets
 do not cause issues on low-memory environments like WebAsssembly
 in web browsers.
 
+`pytest-monitor` is installed as a dev dependency.
+
+Example:
+
+.. code-block:: shell
+
+    pytest --db ./monitor.db
+
 Profiling Python notebooks for code speed bottlenecks
 -----------------------------------------------------
 
