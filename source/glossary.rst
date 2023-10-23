@@ -2991,6 +2991,8 @@ and algorithmic trading.
 
         In :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models.
 
+        Alpha signals are also known as *trading signals*.
+
         The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a portfolio that generates excess returns (i.e., alpha) relative to a benchmark index.
 
         Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
@@ -4148,3 +4150,16 @@ and algorithmic trading.
 
         - :term:`Trading Strategy Protocol`
 
+    Discretionary investment management
+
+        Discretionary management in the context of :term:`quantitative finance` refers to a trading approach where human traders have the authority to make final decisions about trade execution based on their expertise and judgment, even though algorithms and automated systems might be used to generate :ref:`trading signals <trading signal>` or suggestions.
+
+        See also
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical analysis`
+
+        - :term:`Trading signal`
+
+        - :term:`Active strategy`
