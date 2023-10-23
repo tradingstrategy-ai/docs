@@ -1012,6 +1012,10 @@ and algorithmic trading.
 
         - :term:`Leverage`
 
+        - :term:`Open position`
+
+        - :term:`Closed position`
+
     Trading universe
 
         A trading universe describes all possible assets available for a :term:`strategy`
@@ -4187,3 +4191,30 @@ and algorithmic trading.
         See also
 
         - :term:`Maximum drawdown`
+
+    Open position
+
+        An open position in finance and trading refers to a trade that has been initiated but has not yet been closed or settled. It represents an active market exposure that carries with it the risk of loss as well as the potential for profit. The position can be either long, indicating ownership and the expectation that the asset will appreciate in value, or short, indicating a borrowed asset that is sold with the expectation of buying it back at a lower price.
+
+        See also
+
+        - :term:`Unrealised profit and loss`
+
+        - :term:`Closed position`
+        
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
+    Closed position
+
+        A closed position in finance and trading refers to a trade that has been completed by taking an action that is the opposite of the initial transaction. This means selling assets in a long position or buying back assets in a short position, thereby neutralizing the market exposure and locking in any realized gains or losses.
+
+        - :term:`Realised profit and loss`
+
+        - :term:`Open position`
+        
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
