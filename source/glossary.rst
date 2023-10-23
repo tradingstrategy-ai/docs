@@ -4253,3 +4253,71 @@ and algorithmic trading.
         See also
 
         - :term:`Unrealised risk`
+
+    Median
+
+        The median is a measure of central tendency that separates a data set into two equal halves. It is the middle value when all data points are arranged in ascending or descending order. In the case of an even number of observations, the median is the average of the two middle numbers.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the median is 6. If the data set were [1, 3, 3, 6, 7, 8], the median would be (3+6)/2 = 4.5
+
+        Usage: The median is often used in statistical analyses to provide a measure of the "typical" value in a distribution, particularly when the data set may contain outliers that could heavily influence the mean. It is also used to calculate the median absolute deviation (MAD), which is a measure of dispersion that is less sensitive to outliers than the standard deviation.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Standard deviation`
+
+        - :term:`Variance`
+
+    Mean
+
+        The mean is a measure of central tendency that represents the average value of a data set. It is calculated by dividing the sum of all values by the number of values in the data set. It is also known as the arithmetic mean or average.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the mean is (1+3+3+6+7+8+9)/7 = 5.14
+
+        Usage: The average is widely used in various fields for summarizing data sets, comparing different groups, or tracking changes over time. However, it can be susceptible to the influence of outliers.
+
+        See also
+
+        - :term:`Median`
+
+        - :term:`Standard deviation`
+
+        - :term:`Variance`
+
+    
+    Standard Deviation
+        
+        Standard deviation is a statistical measure that quantifies the dispersion or variability of a data set around its mean (average). In finance and investment, standard deviation is often used as an indicator of risk or volatility. A higher standard deviation indicates greater variability in the data set or more volatility in a financial asset, while a lower standard deviation indicates less variability or lower volatility.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the standard deviation is 2.92
+
+        Usage: In financial markets, standard deviation is commonly used as a measure of an asset's volatility, which helps investors and traders understand the asset's risk profile. A higher standard deviation implies more unpredictability in price movement, signaling higher risk, while a lower standard deviation indicates less risk and more stable returns.
+
+        Standard deviation and volatility are closely related concepts, especially in the context of finance. Volatility is essentially a practical application of standard deviation, often used to gauge the risk associated with different financial instruments.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Median`
+
+        - :term:`Variance`
+
+    
+    Variance
+    
+        Variance is a statistical measure that represents the spread or dispersion of a set of data points around their mean (average). It quantifies how far each data point in the set is from the mean and, consequently, from every other data point in the set. In finance, variance is often used as a measure of risk or volatility, although it is less commonly used than its square root, the standard deviation.
+
+        Usage: Variance is used in various fields, including statistics, finance, and engineering, to quantify variability or dispersion. In finance, it serves as a measure of an asset's risk. However, standard deviation is more commonly used for this purpose because it is in the same unit as the data, making it more interpretable.
+
+        Variance is the square of the standard deviation, and both are used to measure the volatility or risk associated with a financial asset. However, standard deviation is generally preferred in practical applications because it is in the same unit as the original data points.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Median`
+
+        - :term:`Standard deviation`
