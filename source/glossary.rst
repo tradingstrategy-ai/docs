@@ -4179,3 +4179,11 @@ and algorithmic trading.
         See also
 
         - :term:`Realised profit and loss`
+
+    Maximum pullback
+
+        Maximum decrease in profitability % as a result of consecutive losing positions with respect to the portfolio's initial value. Intuitively, this can be thought of as the biggest losing streak. Not to be confused with :term:`maximum drawdown`.
+
+        See also
+
+        - :term:`Maximum drawdown`
