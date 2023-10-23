@@ -4218,3 +4218,38 @@ and algorithmic trading.
 
         - :term:`Shorting`
 
+    Realised risk
+
+        Realized risk refers to the actual risk that has manifested in a financial investment or trading position, leading to either a loss or lower-than-expected returns. It is the quantifiable loss or underperformance that occurs once a position is closed, as opposed to potential or "unrealized" risks that exist while a position remains open. Realized risk essentially captures how much an investor's concerns or expectations about market risk have actually materialized.
+
+        Example: If an investor buys a stock at $100 per share and later sells it at $90, the realized risk is a 10% loss on the investment. This is an example of a risk that has been "realized" because the position is closed and the loss is confirmed.
+
+        See also
+
+        - :term:`Unrealised risk`
+
+        - :term:`Market exposure`
+
+    Unrealised risk
+
+        Unrealized risk refers to the potential for loss or underperformance in a financial investment or trading position that has not yet been closed or settled. Unlike realized risk, which captures actual losses or gains, unrealized risk represents the possibility of future losses or gains as long as the position remains open. It quantifies the extent to which an asset or portfolio could be impacted by future market fluctuations.
+
+        Example: If an investor owns shares of a company that have declined in value but has not yet sold those shares, the decline represents an unrealized risk. Until the investor sells the shares, the potential for loss or gain remains.
+
+        See also
+
+        - :term:`Realised risk`
+
+        - :term:`Market exposure`
+
+    Market Exposure
+
+        Market exposure refers to the extent to which an investment portfolio is subject to fluctuations in the overall financial market or a specific asset class. It describes the amount of risk or potential for gain that an investor or organization faces as a result of having invested in a particular market, sector, or individual security.
+
+        Example: An investor with a portfolio heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
+
+        Unrealized risk and market exposure are often interconnected, as the level of market exposure can directly impact the degree of unrealized risk in a portfolio. A portfolio with high market exposure to volatile sectors will inherently carry a higher degree of unrealized risk until positions are closed.
+
+        See also
+
+        - :term:`Unrealised risk`
