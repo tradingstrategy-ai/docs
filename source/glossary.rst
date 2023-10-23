@@ -4162,4 +4162,20 @@ and algorithmic trading.
 
         - :term:`Trading signal`
 
-        - :term:`Active strategy`
+        - :term:`Active strategy`    
+        
+    Realised profit and loss
+
+        Realized Profit and Loss refer to the actual gains or losses incurred from the sale or closure of an investment or asset. A "realized profit" occurs when an asset is sold for a price higher than its purchase price, while a "realized loss" occurs when an asset is sold for a price lower than its purchase price. These are different from "unrealized" profits or losses, which represent potential gains or losses on assets that are still owned and have not yet been sold. Realized profits and losses are typically recorded in financial statements and are subject to taxation.
+
+        See also
+
+        - :term:`Unrealised profit and loss`
+
+    Unrealised profit and loss
+
+        Unrealized Profit and Loss refer to the theoretical gains or losses on an investment or asset that has not yet been sold or closed. These are "paper" profits or losses, meaning they exist only on paper and have not been actualized through a transaction. An "unrealized profit" occurs when the current market value of an asset is higher than its purchase price, while an "unrealized loss" occurs when the current market value is lower than the purchase price. Unlike realized profits and losses, unrealized amounts are not recorded as income or loss for tax purposes until they are realized through a sale or other transaction.
+
+        See also
+
+        - :term:`Realised profit and loss`
