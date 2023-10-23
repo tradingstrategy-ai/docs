@@ -1,3 +1,5 @@
+.. docker-backtest:
+
 Turning backtest to an executable live trading strategy
 =======================================================
 
@@ -134,7 +136,7 @@ Run the backtest. Here we assume you have your strategy module as `strategy/stra
 
     # Run the backtest using the backtest period given in the strategy module
     docker run \
-        -it \
+        -t \
         -v `pwd`:`pwd` \
         -w `pwd` \
         ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION} \

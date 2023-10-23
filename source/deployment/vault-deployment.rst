@@ -68,7 +68,11 @@ You need to
 
 * Decide your vault name and token symbol
 
-* Have `PRIVATE_KEY` set up with some gas money
+* Have `PRIVATE_KEY` set up with some gas money.
+
+.. note ::
+
+    Never share the hot wallet (private key) across different executors.
 
 Here is an example shell command how to put together a Docker command to run `enzyme-deploy-vault`.
 `See also the explanation how a local workign directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
@@ -286,14 +290,11 @@ This gives:
 Run a backtest on the strategy module
 -------------------------------------
 
-After the strategy module and Docker instance have been deployed,
-you can run the backtest on the live trade executor with:
+After the strategy module and Docker instance have been deployed.
+For more details on how to do a final backtest see :ref:`docker-backtest`,
+here are the quick instructions.
 
-.. code-block:: shell
-
-    docker-compose run enzyme-polygon-eth-usdc backtest
-
-- This will use the final configuration (strategy module, environment files) to run the backtest
+- This will use the final configuration (strategy module, environment files, docker compose) to run the backtest
   and see that the strategy module functions properly.
 
 - This will generate backtest reports (HTML, notebook, state) for the web frontend
@@ -304,20 +305,7 @@ you can run the backtest on the live trade executor with:
 
 - The default generated state file will be `state/{id}-backtest.json`.
 
-Following variables need to be set in the strategy module:
-
-.. code-block:: python
-
-    # Version >= 0.2
-    TRADING_STRATEGY_ENGINE_VERSION = "0.2"
-    BACKTEST_START=
-    BACKTEST_END=
-    INITIAL_CASH=
-
-    # Optional, depends on the strategy create_trading_universe() function
-    STOP_LOSS_TIME_BUCKET=
-
-Example:
+You can run the backtest on the live trade executor with:
 
 .. code-block: shell
 
