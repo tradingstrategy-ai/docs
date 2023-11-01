@@ -1012,6 +1012,10 @@ and algorithmic trading.
 
         - :term:`Leverage`
 
+        - :term:`Open position`
+
+        - :term:`Closed position`
+
     Trading universe
 
         A trading universe describes all possible assets available for a :term:`strategy`
@@ -2991,6 +2995,8 @@ and algorithmic trading.
 
         In :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models.
 
+        Alpha signals are also known as *trading signals*.
+
         The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a portfolio that generates excess returns (i.e., alpha) relative to a benchmark index.
 
         Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
@@ -4148,3 +4154,247 @@ and algorithmic trading.
 
         - :term:`Trading Strategy Protocol`
 
+    Discretionary investment management
+
+        Discretionary management in the context of :term:`quantitative finance` refers to a trading approach where human traders have the authority to make final decisions about trade execution based on their expertise and judgment, even though algorithms and automated systems might be used to generate :ref:`trading signals <trading signal>` or suggestions.
+
+        See also
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical analysis`
+
+        - :term:`Trading signal`
+
+        - :term:`Active strategy`    
+        
+    Realised profit and loss
+
+        Realized Profit and Loss refer to the actual gains or losses incurred from the sale or closure of an investment or asset. A "realized profit" occurs when an asset is sold for a price higher than its purchase price, while a "realized loss" occurs when an asset is sold for a price lower than its purchase price. These are different from "unrealized" profits or losses, which represent potential gains or losses on assets that are still owned and have not yet been sold. Realized profits and losses are typically recorded in financial statements and are subject to taxation.
+
+        See also
+
+        - :term:`Unrealised profit and loss`
+
+    Unrealised profit and loss
+
+        Unrealized Profit and Loss refer to the theoretical gains or losses on an investment or asset that has not yet been sold or closed. These are "paper" profits or losses, meaning they exist only on paper and have not been actualized through a transaction. An "unrealized profit" occurs when the current market value of an asset is higher than its purchase price, while an "unrealized loss" occurs when the current market value is lower than the purchase price. Unlike realized profits and losses, unrealized amounts are not recorded as income or loss for tax purposes until they are realized through a sale or other transaction.
+
+        See also
+
+        - :term:`Realised profit and loss`
+
+    Maximum pullback
+
+        Maximum decrease in profitability % as a result of consecutive losing positions with respect to the portfolio's initial value. Intuitively, this can be thought of as the biggest losing streak. Not to be confused with :term:`maximum drawdown`.
+
+        See also
+
+        - :term:`Maximum drawdown`
+
+    Open position
+
+        An open position in finance and trading refers to a trade that has been initiated but has not yet been closed or settled. It represents an active market exposure that carries with it the risk of loss as well as the potential for profit. The position can be either long, indicating ownership and the expectation that the asset will appreciate in value, or short, indicating a borrowed asset that is sold with the expectation of buying it back at a lower price.
+
+        See also
+
+        - :term:`Unrealised profit and loss`
+
+        - :term:`Closed position`
+        
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
+    Closed position
+
+        A closed position in finance and trading refers to a trade that has been completed by taking an action that is the opposite of the initial transaction. This means selling assets in a long position or buying back assets in a short position, thereby neutralizing the market exposure and locking in any realized gains or losses.
+
+        - :term:`Realised profit and loss`
+
+        - :term:`Open position`
+        
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
+    Realised risk
+
+        Realized risk refers to the actual risk that has manifested in a financial investment or trading position, leading to either a loss or lower-than-expected returns. It is the quantifiable loss or underperformance that occurs once a position is closed, as opposed to potential or "unrealized" risks that exist while a position remains open. Realized risk essentially captures how much an investor's concerns or expectations about market risk have actually materialized.
+
+        Example: If an investor buys a stock at $100 per share and later sells it at $90, the realized risk is a 10% loss on the investment. This is an example of a risk that has been "realized" because the position is closed and the loss is confirmed.
+
+        See also
+
+        - :term:`Unrealised risk`
+
+        - :term:`Market exposure`
+
+    Unrealised risk
+
+        Unrealized risk refers to the potential for loss or underperformance in a financial investment or trading position that has not yet been closed or settled. Unlike realized risk, which captures actual losses or gains, unrealized risk represents the possibility of future losses or gains as long as the position remains open. It quantifies the extent to which an asset or portfolio could be impacted by future market fluctuations.
+
+        Example: If an investor owns shares of a company that have declined in value but has not yet sold those shares, the decline represents an unrealized risk. Until the investor sells the shares, the potential for loss or gain remains.
+
+        See also
+
+        - :term:`Realised risk`
+
+        - :term:`Market exposure`
+
+    Market Exposure
+
+        Market exposure refers to the extent to which an investment portfolio is subject to fluctuations in the overall financial market or a specific asset class. It describes the amount of risk or potential for gain that an investor or organization faces as a result of having invested in a particular market, sector, or individual security.
+
+        Example: An investor with a portfolio heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
+
+        Unrealized risk and market exposure are often interconnected, as the level of market exposure can directly impact the degree of unrealized risk in a portfolio. A portfolio with high market exposure to volatile sectors will inherently carry a higher degree of unrealized risk until positions are closed.
+
+        See also
+
+        - :term:`Unrealised risk`
+
+    Median
+
+        The median is a measure of central tendency that separates a data set into two equal halves. It is the middle value when all data points are arranged in ascending or descending order. In the case of an even number of observations, the median is the average of the two middle numbers.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the median is 6. If the data set were [1, 3, 3, 6, 7, 8], the median would be (3+6)/2 = 4.5
+
+        Usage: The median is often used in statistical analyses to provide a measure of the "typical" value in a distribution, particularly when the data set may contain outliers that could heavily influence the mean. It is also used to calculate the median absolute deviation (MAD), which is a measure of dispersion that is less sensitive to outliers than the standard deviation.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Standard deviation`
+
+        - :term:`Variance`
+
+    Mean
+
+        The mean is a measure of central tendency that represents the average value of a data set. It is calculated by dividing the sum of all values by the number of values in the data set. It is also known as the arithmetic mean or average.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the mean is (1+3+3+6+7+8+9)/7 = 5.14
+
+        Usage: The average is widely used in various fields for summarizing data sets, comparing different groups, or tracking changes over time. However, it can be susceptible to the influence of outliers.
+
+        See also
+
+        - :term:`Median`
+
+        - :term:`Standard deviation`
+
+        - :term:`Variance`
+
+    
+    Standard Deviation
+        
+        Standard deviation is a statistical measure that quantifies the dispersion or variability of a data set around its mean (average). In finance and investment, standard deviation is often used as an indicator of risk or volatility. A higher standard deviation indicates greater variability in the data set or more volatility in a financial asset, while a lower standard deviation indicates less variability or lower volatility.
+
+        Example: For the data set [1, 3, 3, 6, 7, 8, 9], the standard deviation is 2.92
+
+        Usage: In financial markets, standard deviation is commonly used as a measure of an asset's volatility, which helps investors and traders understand the asset's risk profile. A higher standard deviation implies more unpredictability in price movement, signaling higher risk, while a lower standard deviation indicates less risk and more stable returns.
+
+        Standard deviation and volatility are closely related concepts, especially in the context of finance. Volatility is essentially a practical application of standard deviation, often used to gauge the risk associated with different financial instruments.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Median`
+
+        - :term:`Variance`
+
+    
+    Variance
+    
+        Variance is a statistical measure that represents the spread or dispersion of a set of data points around their mean (average). It quantifies how far each data point in the set is from the mean and, consequently, from every other data point in the set. In finance, variance is often used as a measure of risk or volatility, although it is less commonly used than its square root, the standard deviation.
+
+        Usage: Variance is used in various fields, including statistics, finance, and engineering, to quantify variability or dispersion. In finance, it serves as a measure of an asset's risk. However, standard deviation is more commonly used for this purpose because it is in the same unit as the data, making it more interpretable.
+
+        Variance is the square of the standard deviation, and both are used to measure the volatility or risk associated with a financial asset. However, standard deviation is generally preferred in practical applications because it is in the same unit as the original data points.
+
+        See also
+
+        - :term:`Mean`
+
+        - :term:`Median`
+
+        - :term:`Standard deviation`
+
+    Volume
+        
+        In the context of cryptocurrency, trading volume refers to the total number of tokens or coins that have been traded for a specific cryptocurrency pair within a given time frame. It serves as a key indicator of the asset's liquidity and the level of investor interest. High trading volumes often suggest a more liquid and stable market, while low volumes may indicate less liquidity and greater potential for price manipulation.
+
+        Example: If the trading volume for the Bitcoin/USD pair is 50,000 BTC, it means that 50,000 Bitcoins have been traded against the US dollar during the specified time frame.
+
+        Usage: Trading volume is a crucial metric for traders, analysts, and investors in the cryptocurrency market. It provides insights into market sentiment, liquidity, and potential volatility. High trading volume is generally seen as a sign of market strength and can be a good indicator for entry or exit points. Conversely, low trading volume may indicate a lack of interest or uncertainty.
+
+        The trading volume in the cryptocurrency market is often used alongside other metrics and indicators to form a more comprehensive view of market conditions.
+
+        See also
+
+        - :term:`Liquidity`
+
+        - :term:`Market sentiment`
+
+        - :term:`Order book`
+
+        - :term:`Bid-ask spread`
+
+        - :term:`Volatility`
+
+    
+    Market Sentiment
+
+        Market sentiment refers to the overall attitude or tone of investors toward a particular financial market or asset. It is often gauged through various indicators such as price movements, trading volume, news, and other market activities. Market sentiment can be bullish (optimistic), bearish (pessimistic), or neutral.
+
+        Example: If most news articles about a particular stock are positive and its trading volume is high, the market sentiment is likely to be bullish.
+
+        Usage: Market sentiment is closely monitored by traders and investors as it can influence price trends and market volatility. Understanding market sentiment can help in making more informed investment decisions.
+
+        See also
+
+        - :term:`Volume`
+
+        - :term:`Market exposure`
+
+        - :term:`Volatility`
+
+        - :term:`Technical analysis`
+
+    Bid-Ask Spread
+
+        The bid-ask spread is the difference between the highest price a buyer is willing to pay for an asset (the bid) and the lowest price at which a seller is willing to sell (the ask). It serves as a measure of the asset's liquidity and is a cost that traders have to consider when entering and exiting positions.
+
+        Example: If the bid price for a stock is $50 and the ask price is $51, the bid-ask spread is $1.
+
+        Usage: The bid-ask spread is important for traders and investors as a narrower spread generally indicates higher liquidity and lower transaction costs, while a wider spread can signify the opposite.
+
+        See also
+
+        - :term:`Liquidity`
+
+        - :term:`Volume`
+
+        - :term:`Market order`
+
+        - :term:`Limit order`
+
+    Volatility
+
+        Volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
+
+        Example: If a cryptocurrency experiences rapid price swings within short periods, it is said to have high volatility.
+
+        Usage: Volatility is a crucial concept in financial markets, often used by traders and investors to assess the risk and potential returns of an asset. High volatility can offer opportunities for greater returns but also poses higher risks.
+
+        Each of these terms offers a different lens through which to analyze market conditions and can be used in combination to make more informed trading or investing decisions.
+
+        See also
+
+        - :term:`Standard deviation`
+
+        - :term:`Market sentiment`
+
+        - :term:`Volume`

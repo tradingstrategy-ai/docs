@@ -1,5 +1,15 @@
+.. meta::
+   :description: How to use machine learning and AI in trading
+
 Books on algorithmic trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Books
+=====
+
+Here is a list of books related to quantitative finance and
+algorithmic trading, with their descriptions and
+links,
 
 Machine Learning for Algorithmic Trading
 ----------------------------------------
@@ -44,3 +54,49 @@ If you're eager to manage uncertainty in industry applications using Python, 'Pr
 
 `Buy the book on Amazon <https://www.amazon.com/dp/1805122762?ref_=cm_sw_r_cp_ud_dp_W066MGMRTTPV3C4E91TZ>`__
 
+Further reading lists
+=====================
+
+Here are more books on quantitative finance and algorithmic trading topics by the author.
+
+General Finance Textbooks
+-------------------------
+
+- Options, Futures and Other Derivatives, John Hull
+- The Concepts and Practice of Mathematical Finance, Mark Joshi
+- Paul Wilmott on Quantitative Finance, Paul Wilmott
+
+Option Pricing Theory and Stochastic Calculus
+---------------------------------------------
+
+- Financial Calculus: An Introduction to Derivative Pricing, Martin Baxter and Andrew Rennie
+- Arbitrage Theory in Continuous Time, Tomas Björk
+- Stochastic Calculus for Finance I: The Binomial Asset Pricing Model, Steven Shreve
+- Stochastic Calculus for Finance II: Continuous-Time Models, Steven Shreve
+- Martingale Methods in Financial Modelling, Marek Musiela and Marek Rutkowski
+- Mathematical Methods for Financial Markets, Monique Jeanblanc, Marc Yor, and Marc Chesney
+- Financial Modelling With Jump Processes, Rama Cont and Peter Tankov
+- Option Volatility and Pricing, Sheldon Natenberg
+
+Quantitative Risk Management
+----------------------------
+
+- Risk Management and Financial Institutions, by John C. Hull
+- Quantitative Risk Management: Concepts, Techniques, and Tools" by Alexander J. McNeil, Rüdiger Frey, and Paul Embrechts
+- Market Risk Analysis, Volume I: Quantitative Methods in Finance" by Carol Alexander
+- The Concepts and Practice of Mathematical Finance" by Mark S. Joshi
+
+Asset Pricing
+-------------
+
+- Asset Pricing (Revised Edition), Cochrane, John H. Princeton University Press, 2009.
+- Financial Decisions and Markets: A Course in Asset Pricing, Campbell, John Y. Princeton University Press, 2017.
+- Asset pricing and portfolio choice theory, Back, Kerry. Oxford University Press, 2010.
+- Damodaran on Valuation, Damodaran, Aswath, Wiley Finance, 2006
+- Dynamic Asset Pricing Theory (Third Edition), Duffie, Darrell. Princeton University Press, 2001.
+
+Machine Learning
+----------------
+
+- Machine Learning: A Probabilistic Perspective, Kevin P Murphy
+- Advances in Financial Machine Learning, Marcos Lopez de Prado
