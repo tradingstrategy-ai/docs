@@ -92,6 +92,13 @@ Prerequisites
                   <td class="tg-0pky"><a href="">bollinger-band-strategy</a></td>
                   <td class="tg-0pky">Learn how to convert a PineScript strategy into our own TradingStrategy framework. This notebook uses introduces an indicator called the Bollinger Band in a way that is suitable for beginners.</td>
             </tr>
+            <tr>
+                  <td class="tg-0pky"><a
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/pancake-eth-usd-indicators.html">pancake-eth-usd-indicators</a>
+                  </td>
+                  <td class="tg-0pky">Explore the application of detached technical indicators on PancakeSwap's ETH-USD pair. This notebook is a great way to learn how to use detached indicators in your trading strategies, as well as how to visualise horizontal lines and cross over events between multiple indicators. It uses a basic EMA strategy to make trades.
+                  </td>
+            </tr>
       </tbody>
       </table>
 
@@ -195,13 +202,6 @@ Prerequisites
             </tr>
       </thead>
       <tbody>
-            <tr>
-                  <td class="tg-0pky"><a
-                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/pancake-eth-usd-indicators.html">pancake-eth-usd-indicators</a>
-                  </td>
-                  <td class="tg-0pky">Explore the application of detached technical indicators on PancakeSwap's ETH-USD pair. Even though it's currently deprecated, it is only because the crossover visuals are not accurate (which is currently being investigated), but all the other code is still valid. This notebook is a great way to learn how to use detached indicators in your trading strategies.
-                  </td>
-            </tr>
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/strategy-backtest-template.html">strategy-backtest-template</a>
