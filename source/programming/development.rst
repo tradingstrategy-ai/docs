@@ -213,6 +213,69 @@ Example:
 
     pytest --db ./monitor.db
 
+    sqlite3 ./monitor.db
+
+Then
+
+.. code-block:: sqlite
+
+     select ITEM, MEM_USAGE from TEST_METRICS;
+
+`See more examples here <https://stackoverflow.com/a/60395759/315168>`__.
+
+Leak detection
+--------------
+
+For memory leaks see `pytest-leaks <https://pypi.org/project/pytest-leaks/>`__.
+
+.. warning::
+
+    pytest-leaks crashes with pyarrow package
+
+.. note ::
+
+    Python debug build needed. Here are instructions
+    how to install one. Also, this means
+    you need to create another Poetry environment
+    for leak testing.
+
+First create install a Python debug build with `pyenv`.
+
+Pick a Python version you want to have a debug build.
+This cannot be the same as your current Python version,
+as pyenv will overwrite it.
+The easiest way is to pick a different patch
+version of your current interpreter.
+
+.. code-block:: shell
+
+    pyenv install --list
+
+.. code-block:: shell
+
+    # We have 3.10.13 as main
+    pyenv install --debug 3.10.12
+
+Then create a new Poetry environment with debug Python:
+
+.. code-block:: shell
+
+    git clone --recursive git@github.com:tradingstrategy-ai/trade-executor.git executor-debug
+    cd executor-debug
+    pyenv local 3.10.12
+    # Should be 3.10.12
+    poetry install --all-extras
+    pip install pytest-leaks
+
+And run a single test to figure out where the leaks are:
+
+.. code-block:: shell
+
+    poetry shell
+    #
+    pytest --leaks : -k test_load_trading_and_lending_data_historical_certain_assets_only
+
+
 Profiling Python notebooks for code speed bottlenecks
 -----------------------------------------------------
 

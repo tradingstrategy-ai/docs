@@ -460,3 +460,14 @@ To reclaim disk space:
 
     docker-compose rm
 
+Manually deploying vault payment forwarder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`VaultUSDCPaymentForwarder` smart contract is a standalone deployment.
+You can replace it witih
+
+- Deploying a new contract version
+
+- Configuring the trade executor to use the new deployed contract address
+
+`To manually deploy a new payment forwarder, see README in Foundry repo <https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/master/contracts/in-house/README.md>`__.

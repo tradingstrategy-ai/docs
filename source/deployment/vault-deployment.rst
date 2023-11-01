@@ -81,6 +81,7 @@ Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
     # You need to provider these
     export JSON_RPC_POLYGON=
     export PRIVATE_KEY=
+    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables

@@ -1,8 +1,27 @@
+.. meta::
+   :description: How to learn Python, online and with books
+
 Python
 ======
 
 Python is the de facto programming language of data science and quant finance.
+Python is the second most popular language on Github, and a safe bet
+for the future software developer career development.
+
 Here is a collection of resources to start learning Python.
+
+- Books
+
+- Online courses
+
+- Communities for Python learning
+
+Learn Python Reddit
+-------------------
+
+A Reddit community for Python learning questions.
+
+`Go to /r/LearnPython <https://www.reddit.com/r/learnpython/>`__.
 
 Learn Python Wiki
 -----------------
