@@ -185,7 +185,7 @@ Initial vault deposit
 Set up live execution environment
 ---------------------------------
 
-Create a `trade-executor` :term:`Docker` instanace using `docker-compose` that will run the live trading.
+Create a `trade-executor` :term:`Docker` instance using `docker-compose` that will run the live trading.
 
 - You have set up an :term:`environment file` for the vault live trading
 

@@ -3936,7 +3936,7 @@ and algorithmic trading.
 
         - Wallets (query tokens, balances)
 
-        - Decentralised appliaction frontends
+        - Decentralised application frontends
 
         You can get a JSON-RPC API for your blockchain application by
 

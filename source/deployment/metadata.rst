@@ -17,7 +17,6 @@ Configured metadata
   is the same as the strategy id.** In this documentation, we use `pancake-eth-usd-sma` as an example.
 
 - **Logo**: Strategy logo image URL. The image must be 1:1 aspect ratio.
-  If you do not have images, you can use `placeholder.com <https://placeholder.com>`__.
 
 - **Machine readable id** e.g. `enzyme-polygon-eth-usdc`. This is automatically set: If this is not
   explicitly set then this is the same as the strategy module filename.
