@@ -77,3 +77,16 @@ Predicting the prices of cryptocurrencies is a notoriously challenging task due 
 
 `Read the paper <https://arxiv.org/pdf/2102.08189.pdf>`__.
 
+Data Resampling for Cryptocurrency Investment with Ensemble of Machine Learning Algorithms
+------------------------------------------------------------------------------------------
+
+This work proposes a system based on machine learning aimed at creating an investment strategy capable of trading on the volatile cryptocurrency exchange markets with the highest returns and lowest risk. With the former goal in mind, several methods are employed for resampling the original financial data into a time series more prone of obtaining higher returns and the final results are compared to the obtained with commonly utilized time sampled series. These methods resample the original financial time series according to price action rather than a fixed time period. Simply put, the original samples are grouped as the closing value surpasses a threshold variation of quote currency. Three experimental thresholds were analysed: percentual value, fixed amount and fixed logarithmic amount.
+
+`Read the paper <https://fenix.tecnico.ulisboa.pt/downloadFile/563345090417208/FinalThesis.pdf>`__.
+
+
+
+
+
+
+
