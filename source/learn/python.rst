@@ -16,6 +16,11 @@ Here is a collection of resources to start learning Python.
 
 - Communities for Python learning
 
+Online courses to learn Python
+------------------------------
+
+`See discussion on Reddit <https://www.reddit.com/r/learnpython/comments/112hyvj/best_online_course_to_actually_learn_to_use_python/>`__.
+
 Learn Python Reddit
 -------------------
 
