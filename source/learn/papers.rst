@@ -69,3 +69,25 @@ Momentum trading in cryptocurrencies: short-term returns and diversification ben
 We test for the presence of momentum effects in cryptocurrency market and estimate dynamic conditional correlations (DCCs) of returns between momentum portfolios of cryptocurrencies and traditional assets. First, investment portfolios are constructed adherent to the classic J/K momentum strategy, using daily data from twelve cryptocurrencies for over a period of three years. We identify the existence of momentum effect, which is highly significant for short-term portfolios but disappears over the longer term. Second, we show that cross correlations of weekly returns between momentum portfolio of cryptocurrencies and traditional assets are unlike correlations of returns between traditional assets. Third, we find that momentum portfolios of cryptocurrencies not only offer diversification benefits but also can be a hedge and safe haven for traditional assets.
 
 `Read the paper <https://sussex.figshare.com/articles/journal_contribution/Momentum_trading_in_cryptocurrencies_short-term_returns_and_diversification_benefits/23472263>`__.
+
+On technical trading and social media indicators for cryptocurrency price classification through deep learning
+--------------------------------------------------------------------------------------------------------------
+
+Predicting the prices of cryptocurrencies is a notoriously challenging task due to high volatility and new mechanisms characterising the crypto markets. In this work, we focus on the two major cryptocurrencies for market capitalisation at the time of the study, Ethereum and Bitcoin, for the period 2017–2020. We present a comprehensive analysis of the predictability of price movements comparing four different deep learning algorithms (Multi Layers Perceptron (MLP), Convolutional Neural Network (CNN), Long Short Term Memory (LSTM) neural network and Attention Long Short Term Memory (ALSTM)). We use three classes of features, considering a combination of technical (e.g. opening and closing prices), trading (e.g. moving averages) and social (e.g. users’ sentiment) indicators as input to our classification algorithm. We compare a restricted model composed of technical indicators only, and an unrestricted model including technical, trading and social media indicators. We found an increase in accuracy for the daily classification task from a range of 51%–55% for the restricted model to 67%–84% for the unrestricted one. This study demonstrates that including both trading and social media indicators yields a significant improvement in the prediction and accuracy consistently across all algorithms.
+
+`Read the paper <https://arxiv.org/pdf/2102.08189.pdf>`__.
+
+Data Resampling for Cryptocurrency Investment with Ensemble of Machine Learning Algorithms
+------------------------------------------------------------------------------------------
+
+This work proposes a system based on machine learning aimed at creating an investment strategy capable of trading on the volatile cryptocurrency exchange markets with the highest returns and lowest risk. With the former goal in mind, several methods are employed for resampling the original financial data into a time series more prone of obtaining higher returns and the final results are compared to the obtained with commonly utilized time sampled series. These methods resample the original financial time series according to price action rather than a fixed time period. Simply put, the original samples are grouped as the closing value surpasses a threshold variation of quote currency. Three experimental thresholds were analysed: percentual value, fixed amount and fixed logarithmic amount.
+
+`Read the paper <https://fenix.tecnico.ulisboa.pt/downloadFile/563345090417208/FinalThesis.pdf>`__.
+
+Pure Momentum in Cryptocurrency Markets
+---------------------------------------
+
+Momentum is one of the most widespread, persistent, and puz- zling phenomenon in asset pricing. The prevailing explanation for momentum is that investors under-react to new information, and thus asset prices tend to drift over time. We use a unique fea- ture of cryptocurrency markets: the fact that they are open 24/7, and report returns over the last 24 hours. Thus, the one-day re- turn is subject to predictable fluctuations based on the removal of lagged information. We show that investors respond positively to changes in reported returns that are unrelated to any new release of information, or change in the asset fundamentals. We call this behavioral anomaly “Pure Momentum”.
+
+`Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
+
