@@ -91,3 +91,12 @@ Momentum is one of the most widespread, persistent, and puz- zling phenomenon in
 
 `Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
 
+Dissecting Investment Strategies in the Cross Section and Time Series
+---------------------------------------------------------------------
+
+We contrast the time-series and cross-sectional performance of three popular investment
+strategies: carry, momentum and value. While considerable research has examined the perfor-
+mance of these strategies in either a directional or cross-asset settings, we offer some insights
+on the market conditions that favor the application of a particular setting.
+
+`Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
