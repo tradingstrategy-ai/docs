@@ -1,14 +1,26 @@
 Getting started
 ===============
 
-Trading Strategy helps you with
+Trading Strategy is a solution for algorithmic trading on decentralised markets:
 
-* Market data services for :term:`DeFi` traders
+* To access DeFi market data, decentralised exchanges like lending protocols,
+  in free APIs and batch download files
 
-* Algorithmic trading strategy framework for :term:`quantitative finance`
-  or :term:`decentralised exchanges <Decentralised exchange>`
+* Develop trading strategies in Python using Trading Strategy framework,
+  tailored for automated DeFi trading
 
-For more information about use cases, read :ref:`about` page.
+* Backtest trading stragies across hundreds of thousands
+  of DEX trading pairs on protocols like Uniswap, Aave, PancakeSwap
+
+* Turn key solution to take your backtested strategy to live trading
+
+* Raise capital for your trading strategies by using vault protocol integrations like Enzyme Finance
+  and Velvet Finance
+
+.. note ::
+
+    If you are new to the Trading Strategy framework or algorithmic trading in general,
+    please start by watching `the recorded workshop tutorial session from Avalanche Summit <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
 
 Explore DeFi market data
 ------------------------
