@@ -9,6 +9,11 @@ Strategy examples
 
 Here you can find trading strategy examples as :term:`Jupyter notebooks <Jupyter notebook>`.
 
+.. note ::
+
+    If you are new to the Trading Strategy framework or algorithmic trading in general,
+    please start by watching `the recorded workshop tutorial session from Avalanche Summit <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
+
 - The examples show how to use Trading Strategy framework for algorithmic trading
 - Some notebooks are examples of complete strategies
 - Some notebooks highlight a particular feature

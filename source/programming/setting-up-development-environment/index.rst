@@ -13,6 +13,12 @@ This documentation section covers how to run Trading Strategy code examples and 
 * How to set up libraries and development environment on your local computer
   or a cloud server
 
+.. note ::
+
+    If you are new to the Trading Strategy framework or algorithmic trading in general,
+    please start by watching `the recorded workshop tutorial session from Avalanche Summit <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
+
+
 Prerequisites
 -------------
 
