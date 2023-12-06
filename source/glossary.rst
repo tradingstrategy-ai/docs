@@ -1,4 +1,4 @@
-a.. _glossary:
+.. _glossary:
 
 Glossary
 ========

@@ -22,3 +22,4 @@ source/_static/styles/furo.css
 source/**.html
 
 _tags
+dist
