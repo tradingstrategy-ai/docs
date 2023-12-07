@@ -84,7 +84,8 @@ html_js_files = [
 ]
 
 html_css_files = [
-    "custom.css",
+    "https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.4.1",
+    "custom.css"
 ]
 
 html_context = {

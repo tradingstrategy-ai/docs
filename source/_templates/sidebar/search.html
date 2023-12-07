@@ -1,8 +1,21 @@
-<form class="sidebar-search-container" method="get" action="{{ pathto('search') }}" role="search">
-  <input class="sidebar-search" placeholder="{{ _("Search") }}" name="q" aria-label="{{ _("Search" ) }}">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="docsearch-searchbox"></div>
-
-yxxxxxxxxx test
+<div id="searchbar"></div>
+<!--
+  Below <script> tag should ideally be loaded here, but fails due to conflict with
+  requirejs. Hack workaround is to load it directly in base.html to ensure it loads
+  before multiple different versions of requirejs.
+-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4"></script> -->
+<script>
+  docsearch({
+    container: '#searchbar',
+    typesenseCollectionName: 'sphinx', // Should match the collection name you mention in the docsearch scraper config.js
+    typesenseServerConfig: {
+      nodes: [{
+        host: 'jason.tradingstrategy.ai',
+        port: '443',
+        protocol: 'https'
+      }],
+      apiKey: 'aJjYhRHKGCWdodjNEOLkVM0VSMymvbcH', // Use API Key with only Search permissions
+    },
+  });
+</script>
