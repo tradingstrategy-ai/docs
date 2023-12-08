@@ -144,14 +144,14 @@ Prerequisites
             </tr>
              <tr>
                   <td class="tg-0pky"><a
-                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/momentum-crossover.html">Shorting with Bollinger bands</a>
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/long-short-bollingerbands-polygon.html">Shorting with Bollinger bands</a>
                   </td>
                   <td class="tg-0pky">This notebook introduces shorting capabilities. Shorting allows us to profit from downturns in the market. It uses mean reversion to decide on long/short signals. For users seeking to maximize gains from both bull and bear markets, this notebook is for you.
                   </td>
             </tr>
             <tr>
                   <td class="tg-0pky"><a
-                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/momentum-crossover.html">Shorting with Binance data</a>
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/binance-data-shorting.html">Shorting with Binance data</a>
                   </td>
                   <td class="tg-0pky">This notebook introduces the concept of 'sideloading', which refers to the use of external data within the TradingStrategy framework. In this case, we use Binance data to short the market. This notebook is a great way to learn how to use external data in your trading strategies to lengthen your backtesting period.
                   </td>
@@ -255,6 +255,8 @@ Notebook Overview
    momentum-crossover
    hackatom-2022-osmosis-backtest
    state-candles-from-live-strategy
+   long-short-bollingerbands-polygon
+   binance-data-shorting
 
 
 Tags
