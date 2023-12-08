@@ -125,8 +125,6 @@
  {%- block scripts -%}
 
     {# Custom JS #}
-    {# Hack workaround to inject typesense-docsearch before requirejs #}
-    <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4"></script>
     {%- block regular_scripts -%}
     {% for path in script_files -%}
       {{ js_tag(path) }}
