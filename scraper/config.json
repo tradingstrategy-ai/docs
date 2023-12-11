@@ -1,10 +1,10 @@
 {
-    "index_name": "sphinx",
+    "index_name": "tradingstrategy",
     "start_urls": [
-      "https://son-docs.tradingstrategy.ai/"
+      "https://tradingstrategy.ai/docs"
     ],
     "sitemap_urls": [
-      "https://son-docs.tradingstrategy.ai/sitemap-docs.xml"
+      "https://tradingstrategy.ai/docs/sitemap-docs.xml"
     ],
     "stop_urls": [],
     "selectors": {
