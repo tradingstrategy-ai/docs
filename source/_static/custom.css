@@ -125,3 +125,85 @@ table.autosummary {
         width: 26em;
     }
 }
+
+body {
+    /* bg of search button in nav bar */
+    --docsearch-searchbox-background: var(--color-input-background);
+    /* bg of search input field when focused (e.g., in modal) */
+    --docsearch-searchbox-focus-background: var(--color-input-background-focus);
+    /* text color for search input in modal */
+    --docsearch-text-color: var(--color-foreground-primary);
+    /* text color for placeholder text; original */
+    --docsearch-muted-color: var(--color-foreground-muted);
+  
+    /* bg color of active search hit / color of magnifying glass icon in modal search field */
+    --docsearch-highlight-color: var(--color-highlighted-background);
+    /* outline of search fields when focused */
+    --docsearch-searchbox-shadow: inset 0 0 0 2px var(--color-foreground-border);
+  
+    /* overlay of document behind modal */
+    --docsearch-container-background: var(--color-modal-overlay);
+    /* main bg of modal dialog */
+    --docsearch-modal-background: var(--color-background-primary);
+    /* box shadow on modal dialog box */
+    --docsearch-modal-shadow: 0 3px 8px 0 #00000080;
+
+    /* modal dialog footer */
+    --docsearch-footer-background: var(--color-background-secondary);
+    /* drop shadow to separate footer from rest of modal bg */
+    --docsearch-footer-shadow: 0 -1px 0 0 var(--color-background-border),0 -3px 6px 0 #00000010;
+    /* color of typesense logo */
+    --docsearch-logo-color: var(--color-brand-primary);
+  
+    /* text color of search hit (not active) */
+    --docsearch-hit-color: var(--color-foreground-secondary);
+    /* text color of active search hit */
+    --docsearch-hit-active-color: var(--color-foreground-primary);
+    /* bg color of search hit (not active) */
+    --docsearch-hit-background: var(--color-background-secondary);
+    /* box shadow around each search hit row */
+    --docsearch-hit-shadow: 0 1px 3px 0 var(--color-foreground-border);
+  
+    /* gradient background for search key hints */
+    --docsearch-key-gradient: linear-gradient(-225deg,var(--color-keyboard-2),var(--color-keyboard-1));
+    /* shadow outline for search key hints */
+    --docsearch-key-shadow: inset 0 -2px 0 0 var(--color-keyboard-3),inset 0 0 1px 1px var(--color-keyboard-1),0 1px 2px 1px var(--color-keyboard-4);
+  }
+
+/* search button should span full navbar width (minus padding) */
+.DocSearch-Button {
+    width: calc(100% - 2rem);
+}
+
+/* fix highlighted style of matching text in search hit */
+.DocSearch-Hits mark {
+    background: var(--color-highlighted-background);
+    color: var(--color-highlighted-text);
+}
+
+/* Neet to override some things here b/c of conflicting style sheet */
+kbd.DocSearch-Button-Key,
+kbd.DocSearch-Commands-Key {
+  align-items: center;
+  background: var(--docsearch-key-gradient);
+  box-shadow: var(--docsearch-key-shadow);
+  color: var(--docsearch-secondary-color);
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  margin-right: 0.4em;
+  position: relative;
+  border: 0;
+  top: -1px;
+  width: 20px;
+}
+
+kbd.DocSearch-Button-Key {
+  border-radius: 3px;
+  padding: 0 0 2px;
+}
+
+kbd.DocSearch-Commands-Key {
+  border-radius: 2px;
+  padding: 0 0 1px;
+}
