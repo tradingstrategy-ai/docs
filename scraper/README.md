@@ -103,3 +103,33 @@ poetry shell
 # make html
 make clean-install-and-build-local-docs
 ```
+
+### Add scraper to Github Action
+Before add step to run scraper in Github action. You need add `secrect env`
+```
+TYPESENSE_API_KEY
+TYPESENSE_HOST 
+``` 
+
+Add step to run scraper after deploy docs
+
+```yml
+      - name: Run Docsearch Scraper
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          # The secret containing your Typesense API key. Required.
+          api-key: ${{ secrets.TYPESENSE_API_KEY }}
+          
+          # The hostname or IP address of your Typesense server. Required.
+          host: ${{ secrets.TYPESENSE_HOST }}
+          
+          # The port on which your Typesense server is listening. Optional. Default: 8108.
+          port: 443
+          
+          # The protocol to use when connecting to your Typesense server. Optional. Default: http.
+          protocol: https
+          
+          # The path to your DocSearch config file. Optional. Default: docsearch.config.json.
+          config: ./scraper/config.json
+
+```
