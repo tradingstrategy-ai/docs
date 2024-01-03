@@ -62,34 +62,31 @@ TYPESENSE_PROTOCOL=https
 docker run -it   -e --env-file=./secrect.env  -e "CONFIG=$(cat config.json | jq -r tostring)"   typesense/docsearch-scraper:0.9.1
 ```
 
-## Add a Search Bar to document
-Follow as [guide from Typesense docsearch](https://typesense.org/docs/guide/docsearch.html#integrate-with-ci-deploy-it-to-a-server). We create a `searchbox.html` in `_template`
+## 2. Add a Search Bar to document
+Follow as [guide from Typesense docsearch](https://typesense.org/docs/guide/docsearch.html#integrate-with-ci-deploy-it-to-a-server). We create a `search.html` in `source/_template/sidebar`
 
 ```html
-<!-- Somwhere in your doc site's navigation -->
-<input type="search" id="searchbar">
-
-<!-- Before the closing head -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@1/dist/cdn/docsearch.min.css"
-/>
-
-<!-- Before the closing body -->
-<script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@1/dist/cdn/docsearch.min.js"></script>
-
+<div id="searchbar"></div>
 <script>
-  docsearch({
-    inputSelector: '#searchbar',
-    typesenseCollectionName: 'sphinx', // Should match the collection name you mention in the docsearch scraper config.js
-    typesenseServerConfig: { 
-      nodes: [{
-        host: 'Typesense_host', // For Typesense Cloud use xxx.a1.typesense.net
-        port: '443',      // For Typesense Cloud use 443
-        protocol: 'https'   // For Typesense Cloud use https
-      }],
-      apiKey: 'XYZ', // Use API Key with only Search permissions
-    },
+  require.config({
+    paths: {
+      docsearch: 'https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4?'
+    }
+  });
+
+  require(['docsearch'], (docsearch) => {
+    docsearch({
+      container: '#searchbar',
+      typesenseCollectionName: 'docs', // Should match the collection name you mention in the docsearch scraper config.js
+      typesenseServerConfig: {
+        nodes: [{
+          host: 'Typesense_host',
+          port: '443',
+          protocol: 'https'
+        }],
+        apiKey: 'XYZ', // Use API Key with only Search permissions
+      },
+    });
   });
 </script>
 ```
@@ -103,6 +100,30 @@ poetry shell
 # make html
 make clean-install-and-build-local-docs
 ```
+
+## 3. Local test
+If you want to test `typesense docsearch` in your local machine
+You have to do:
+- Build your old `typesense server`. You can do as follow of this [guide](https://github.com/tradingstrategy-ai/search)
+- Config and run scraper from [`Step 1`](#1-setup-docsearch-scraper) 
+    
+    Update domain/ip in Scaper `config.json` 
+    
+  ```json
+    "index_name": "sphinx",
+    "start_urls": [
+    # Update your test domain or IP here    
+      "https://tradingstrategy.ai/"
+    ],
+    "sitemap_urls": [
+    # Update path of your sitemap
+      "https://tradingstrategy.ai/sitemap-docs.xml"
+    ],
+  ```
+    Update `secrect.env` with your `typesense server` info
+
+
+- Update `search.html` as [`Step 2`](#2-add-a-search-bar-to-document)
 
 ### Add scraper to Github Action
 Before add step to run scraper in Github action. You need add `secrect env`
@@ -119,16 +140,16 @@ Add step to run scraper after deploy docs
         with:
           # The secret containing your Typesense API key. Required.
           api-key: ${{ secrets.TYPESENSE_API_KEY }}
-          
+
           # The hostname or IP address of your Typesense server. Required.
           host: ${{ secrets.TYPESENSE_HOST }}
-          
+
           # The port on which your Typesense server is listening. Optional. Default: 8108.
           port: 443
-          
+
           # The protocol to use when connecting to your Typesense server. Optional. Default: http.
           protocol: https
-          
+
           # The path to your DocSearch config file. Optional. Default: docsearch.config.json.
           config: ./scraper/config.json
 
