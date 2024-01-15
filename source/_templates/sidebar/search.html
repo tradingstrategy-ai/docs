@@ -1,0 +1,23 @@
+<div id="searchbar"></div>
+<script>
+  require.config({
+    paths: {
+      docsearch: 'https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4?'
+    }
+  });
+
+  require(['docsearch'], (docsearch) => {
+    docsearch({
+      container: '#searchbar',
+      typesenseCollectionName: 'docs', // Should match the collection name you mention in the docsearch scraper config.js
+      typesenseServerConfig: {
+        nodes: [{
+          host: 'jason.tradingstrategy.ai',
+          port: '443',
+          protocol: 'https'
+        }],
+        apiKey: 'xD0MIZ1vgQhSrhmzawSeQ0y4J7lno9vB', // Use API Key with only Search permissions
+      },
+    });
+  });
+</script>
