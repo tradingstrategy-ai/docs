@@ -95,7 +95,8 @@ order to perform `trade-executor backtest` command:
     BACKTEST_START = datetime.datetime(2022, 12, 20)
     BACKTEST_END = datetime.datetime(2023, 6, 4)
 
-    # Optional, depends on the strategy create_trading_universe() function
+    # Live execution will always use real-times stop loss.
+    # Coarse stop loss is usedin backtesting.
     STOP_LOSS_TIME_BUCKET=TimeBucket.m5
 
 .. _standalone module backtest:
@@ -127,7 +128,9 @@ Run the backtest. Here we assume you have your strategy module as `strategy/stra
 .. code-block:: shell
 
     # Replace with the latest version
-    export TRADE_EXECUTOR_VERSION=v163
+    # or set the latest executor release version using the script
+    # export TRADE_EXECUTOR_VERSION=v163
+    source scripts/set-latest-tag.sh
 
     # Read command line help
     docker run \
