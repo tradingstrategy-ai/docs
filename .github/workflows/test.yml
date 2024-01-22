@@ -6,7 +6,9 @@ on:
 
 jobs:
   test-docs-build:
-    runs-on: ubuntu-latest
+    # Use paid faster Github Actions runner
+    runs-on:
+      group: Beefy runners
     steps:
       - name: Checkout
         uses: actions/checkout@v3
