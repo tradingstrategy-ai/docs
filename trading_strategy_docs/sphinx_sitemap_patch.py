@@ -104,7 +104,7 @@ def _create_sitemap_patched(app: Sphinx, exception):
     """
     site_url = app.builder.config.site_url or app.builder.config.html_baseurl
     if site_url:
-        site_url.rstrip("/") + "/"
+        site_url = site_url.rstrip("/") + "/"
     else:
         logger.warning(
             "sphinx-sitemap: html_baseurl is required in conf.py." "Sitemap not built.",
