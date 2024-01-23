@@ -1,5 +1,5 @@
 {
-    "index_name": "docs.*",
+    "index_name": "docs",
     "start_urls": [
       "https://tradingstrategy.ai/docs"
     ],
