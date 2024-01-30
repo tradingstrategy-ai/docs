@@ -9,6 +9,11 @@ manage a trading strategy deployed for multiple users using a :term:`vault`.
 If you are looking for a single user deployment, :ref:`hot wallet deployment`
 is an easier option.
 
+.. warning::
+
+    This chapter is somewhat outdated, as Enzyme Vault integration has been updated
+    with new security policies that are not yet covered here.
+
 Preface
 -------
 
