@@ -307,7 +307,7 @@ Then run the notebook
 
 .. code-block:: shell
 
-    ipython notebooks/arbitrum-btc-usd-sls-binance-data-1h.ipynbs
+    ipython notebooks/arbitrum-btc-usd-sls-binance-data-1h.ipynb
 
 The output will be in `less` paged format in your terminal
 

@@ -75,6 +75,17 @@ Paste in the repository URL:
 It will now ask you for the destination folder on your hard disk. Choose
 any folder name you like, e.g. ``my-fabulous-trading-strategy``.
 
+.. note ::
+
+    Currently `a recursive git clone is needed <https://stackoverflow.com/questions/3796927/how-do-i-git-clone-a-repo-including-its-submodules>`__.
+
+Visual Studio Code may not do a recursive clone, so you need to run the following command in the folder
+after the cloning is complete:
+
+.. code-block:: shell
+
+    git submodule update --init --recursive
+
 Open the folder after cloning is complete.
 
 .. figure:: open-folder.png
