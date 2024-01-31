@@ -71,6 +71,7 @@ This gives you the full path of `python` command like:
 
 Then use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option for the interpreter.
 
+
 Now you can run `Getting started <https://tradingstrategy.ai/docs/programming/code-examples/getting-started.html>`_ and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
 
 .. image:: ./vscode.png
@@ -111,7 +112,7 @@ This gives you the full path of `python` command.
 
 Then use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option for the interpreter.
 
-Now you can run :ref:`Getting started <tutorial>`_ and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
+Now you can run :ref:`Getting started <tutorial>` and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
 
 .. image:: ./vscode.png
     :alt: Visual Studio Code example how to run a Jupyter Notebook
