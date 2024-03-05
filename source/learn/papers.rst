@@ -128,3 +128,17 @@ on the aforementioned features. Extensive experiments prove that MAC outperforms
 in stock price movement prediction, Sharpe Ratio, and backtesting trading incomes
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019>`__.
+
+From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses
+----------------------------------------------------------------------
+
+We train an AI analyst that digests corporate disclosures, industry trends, and macroeconomic
+indicators to the extent it beats most analysts. Human wins the “Man vs. Machine”
+contest when a firm is complex with intangible assets, and AI wins when information is
+transparent but voluminous. Analysts catch up with machines over time, especially after
+firms are covered by alternative data and their institutions build AI capabilities. AI power
+and human wisdom are complementary in generating accurate forecasts and mitigating extreme
+errors, portraying a future of “Man + Machine” (instead of human displacement) in
+financial analyses, and likely other high-skill professions.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3840538>`__.
