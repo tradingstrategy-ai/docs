@@ -68,6 +68,7 @@ Momentum trading in cryptocurrencies: short-term returns and diversification ben
 
 We test for the presence of momentum effects in cryptocurrency market and estimate dynamic conditional correlations (DCCs) of returns between momentum portfolios of cryptocurrencies and traditional assets. First, investment portfolios are constructed adherent to the classic J/K momentum strategy, using daily data from twelve cryptocurrencies for over a period of three years. We identify the existence of momentum effect, which is highly significant for short-term portfolios but disappears over the longer term. Second, we show that cross correlations of weekly returns between momentum portfolio of cryptocurrencies and traditional assets are unlike correlations of returns between traditional assets. Third, we find that momentum portfolios of cryptocurrencies not only offer diversification benefits but also can be a hedge and safe haven for traditional assets.
 
+
 `Read the paper <https://sussex.figshare.com/articles/journal_contribution/Momentum_trading_in_cryptocurrencies_short-term_returns_and_diversification_benefits/23472263>`__.
 
 On technical trading and social media indicators for cryptocurrency price classification through deep learning
@@ -100,3 +101,44 @@ mance of these strategies in either a directional or cross-asset settings, we of
 on the market conditions that favor the application of a particular setting.
 
 `Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
+
+Can Day Trading Really Be Profitable?
+-------------------------------------
+
+The validity of day trading as a long-term consistent and uncorrelated source of income for traders and investors is a matter of debate. In this paper, we investigate the profitability of the well-known Opening Range Breakout (ORB) strategy during the period of 2016 to 2023. This period encompasses two bear markets and a few events with abnormal volatility. Our results suggest that with the proper use of leverage or leveraged products (such as 3x leveraged ETFs), day trading can empirically produce significant returns when compared to a standard buy and hold strategy on benchmark indexes in the US public equity markets (Nasdaq or NYSE). Without any loss of generality, we studied the results of an ORB strategy implemented in QQQ. By comparing the results of the active day trading approach with a passive exposure in QQQ, we prove that it is possible for the ORB portfolio to significantly outperform the passive investment. In fact, the day trading portfolio produced an annualized alpha of 33% (net of commissions). Nevertheless, due to leverage constraints enforced by brokers, an active trader would have capped the full upside potential given by the ORB strategy. To overcome this issue, we introduced the use of TQQQ, a leveraged ETF of QQQ, which allows day traders to fully exploit the benefit of the active strategy while adhering to leverage constraints. The resulting portfolio would have earned an outstanding return of 1,484% during the same period of 2016 to 2023, while an investment in the QQQ ETF would have earned only 169%.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4416622>`__.
+
+
+Multi-source aggregated classification for stock price movement prediction
+--------------------------------------------------------------------------
+
+Predicting stock price movements is a challenging task. Previous studies mostly used numerical features and
+news sentiments of target stocks to predict stock price movements. However, their semantics-based sentiment
+analysis is sub-optimal to represent real market sentiments. Moreover, only considering the information of
+target companies is insufficient because the stock prices of target companies can be affected by their related
+companies. Thus, we propose a novel Multi-source Aggregated Classification (MAC) method for stock price
+movement prediction. MAC incorporates the numerical features and market-driven news sentiments of target
+stocks, as well as the news sentiments of their related stocks. To better represent real market sentiments from
+the news, we pre-train an embedding feature generator by fitting the news to real stock price movements.
+Embeddings given by the pre-trained sentiment classifier can represent the sentiment information in vector
+space. Moreover, MAC introduces a graph convolutional network to capture the news effects of related
+companies on the target stock. Finally, MAC can predict stock price movements for the next trading day based
+on the aforementioned features. Extensive experiments prove that MAC outperforms state-of-the-art baselines
+in stock price movement prediction, Sharpe Ratio, and backtesting trading incomes
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019>`__.
+
+From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses
+----------------------------------------------------------------------
+
+We train an AI analyst that digests corporate disclosures, industry trends, and macroeconomic
+indicators to the extent it beats most analysts. Human wins the “Man vs. Machine”
+contest when a firm is complex with intangible assets, and AI wins when information is
+transparent but voluminous. Analysts catch up with machines over time, especially after
+firms are covered by alternative data and their institutions build AI capabilities. AI power
+and human wisdom are complementary in generating accurate forecasts and mitigating extreme
+errors, portraying a future of “Man + Machine” (instead of human displacement) in
+financial analyses, and likely other high-skill professions.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3840538>`__.

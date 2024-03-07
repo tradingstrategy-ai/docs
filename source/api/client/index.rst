@@ -30,6 +30,7 @@ Trading Strategy client
    tradingstrategy.pair
    tradingstrategy.candle
    tradingstrategy.liquidity
+   tradingstrategy.trade
    tradingstrategy.timebucket
    tradingstrategy.token
    tradingstrategy.reader

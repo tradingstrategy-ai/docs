@@ -45,3 +45,5 @@ Miscellaneous
 - `In-Sample vs. Out-Of-Sample Analysis of Trading Strategies <https://quantpedia.com/in-sample-vs-out-of-sample-analysis-of-trading-strategies/>`__
 
 - `Awesome Conformal Prediction for time series <https://github.com/valeman/awesome-conformal-prediction>`__
+
+- `Portfolio Optimization in Python With Datalore and AI Assistant <https://blog.jetbrains.com/datalore/2024/01/26/portfolio-optimization-in-python-with-datalore-and-ai-assistant/>`__
