@@ -4456,3 +4456,20 @@ and algorithmic trading.
     CAGR
 
         See :term:`Compound Annual Growth Rate (CAGR)`.
+
+    Time in Market
+
+        "Time in Market" refers to the duration for which a :term:`trading strategy` or an algorithm maintains positions in the market. In algorithmic trading, strategies are often designed to exploit short-term market inefficiencies or trends, and the duration for which they hold positions can vary significantly.
+
+        For example, some algorithmic trading strategies may execute trades within microseconds or milliseconds, aiming to capitalize on very short-term price movements. These strategies have a minimal "time in market" as they quickly enter and exit positions. On the other hand, some strategies may hold positions for longer durations, ranging from minutes to hours or even days. These strategies rely on capturing larger market trends or exploiting fundamental factors that may take time to unfold. They have a longer "time in market" compared to high-frequency trading strategies.
+
+        Time in Market can be also percents expressing how long the strategy hold any position open vs. just having cash. For example 30% Time in Market means that the strategy hold the underlying assets for 30% of its life time, and was all cash 70% of the time.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
