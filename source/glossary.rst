@@ -1656,7 +1656,7 @@ and algorithmic trading.
 
         Momentum traders seek to profit from short-term price trends by buying assets that have been performing well and selling those that have been performing poorly.
 
-        Momentum traders typically use technical analysis to identify assets that are exhibiting strong positive or negative momentum. They may look at indicators such as :term:`moving averages <EMA>`, relative strength index (RSI), and MACD (moving average convergence divergence) to determine the current trend and potential entry and exit points.
+        Momentum traders typically use technical analysis to identify assets that are exhibiting strong positive or negative momentum. They may look at indicators such as :term:`moving averages <EMA>`, relative strength index (:term:`RSI`), and MACD (moving average convergence divergence) to determine the current trend and potential entry and exit points.
 
         One common strategy used by momentum traders is to buy assets that have recently experienced a significant price increase, on the assumption that the upward trend will continue. This is known as a "breakout" strategy. Conversely, they may sell assets that have experienced a significant price decrease, on the assumption that the downward trend will continue.
 
@@ -1694,9 +1694,25 @@ and algorithmic trading.
 
     Relative strength index (RSI)
 
-        The Relative Strength Index (RSI) is a popular momentum indicator used in technical analysis to measure the strength of a security's price action. It compares the magnitude of recent gains to recent losses, in order to determine overbought or oversold conditions, and potential buying or selling opportunities.
+        The Relative Strength Index (RSI) is a popular momentum indicator used in :term:`technical analysis` to measure the strength of a security's price action. It compares the magnitude of recent gains to recent losses, in order to determine overbought or oversold conditions, and potential buying or selling opportunities.
 
         The RSI is calculated as a ratio of average gains to average losses, and is represented as a value between 0 and 100. Values above 70 are considered overbought and may indicate a potential sell opportunity, while values below 30 are considered oversold and may indicate a potential buy opportunity. The RSI can be used for various time frames and for multiple securities, including individual stocks, bonds, commodities, and currencies.
+
+        See also
+
+        - :term:`Technical indicator`
+
+        - :term:`OHLCV`
+
+        - :term:`Trend`
+
+        - :term:`EMA`
+
+        - :term:`Trading strategy`
+
+    RSI
+
+        See :term:`Relative strength index (RSI)`
 
     Fundamental analysis
     
@@ -4398,3 +4414,45 @@ and algorithmic trading.
         - :term:`Market sentiment`
 
         - :term:`Volume`
+
+    Compound Annual Growth Rate (CAGR)
+
+        CAGR, or Compound Annual Growth Rate, is a financial metric that measures the average annual growth rate of an investment over a specified period of time, typically longer than one year. It provides a smoothed-out view of an investment’s performance by accounting for compounding effects. In :term:`quantitative finance`, CAGR is used to compare performance of different portfolios. CAGR does not account for investment risk.
+
+        Here’s how to calculate CAGR:
+
+        - Beginning Value (BV): Determine the value of the investment at the start of the period.
+        - Ending Value (EV): Find the value of the investment at the end of the same period.
+        - Number of Years (n): Calculate the total number of years in the investment period.
+        - Divide the ending value by the beginning value.
+        - Raise the result to an exponent of one divided by the number of years.
+        - Subtract one from the subsequent result.
+        - Multiply by 100 to express the answer as a percentage.
+
+        The CAGR represents the hypothetical constant annual growth rate that would lead to the same final value if the investment grew at that rate every year and profits were reinvested annually. It’s important to note that this smooths out variations in returns and provides a more easily understandable comparison across different investments.
+
+        For example, let’s say you invested $10,000 in a portfolio with the following returns:
+
+            From Jan. 1, 2018, to Jan. 1, 2019: Portfolio grew to $13,000 (30% in year one).
+            From Jan. 1, 2019, to Jan. 1, 2020: Portfolio was $14,000 (7.69% growth).
+            From Jan. 1, 2020, to Jan. 1, 2021: Portfolio ended at $19,000 (35.71% growth).
+
+        While the annual growth rates varied significantly, the CAGR over the entire period would be approximately 23.86%1.
+
+        See also
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Maximum drawdown`
+
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Trading strategy`
+
+    CAGR
+
+        See :term:`Compound Annual Growth Rate (CAGR)`.
