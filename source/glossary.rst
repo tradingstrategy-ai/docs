@@ -4465,6 +4465,8 @@ and algorithmic trading.
 
         Time in Market can be also percents expressing how long the strategy hold any position open vs. just having cash. For example 30% Time in Market means that the strategy hold the underlying assets for 30% of its life time, and was all cash 70% of the time.
 
+        Usually Time in Market also correlates with the position count: if the time in market is low, it means strategy is opening positions less frequently.
+
         See also
 
         - :term:`Trading strategy`
