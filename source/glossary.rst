@@ -4475,3 +4475,69 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
+    Delta neutral
+
+        In :term:`quantitative finance`, a delta neutral :term:`trading strategy` is not exposed to the volatility of underlying assets.
+
+        A delta neutral strategy does not make any losses regardless if asset prices more up or down.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+     Annual Percentage Rate (APR)
+
+        APR stands for Annual Percentage Rate in :term:`quantitative finance`. It is a standardized way of expressing the cost of borrowing money or the return on investment over a yearly basis. In quantitative finance, APR is commonly used in various financial instruments such as loans, mortgages, credit cards, and investment products.
+
+        In trading :term:`Compound Annual Growth Rate (CAGR)` is more commonly used. APR is used for loans, :term:`delta neutral` trading strategies
+        and :term:`yield farming` in :term:`decentralised finance`.
+
+        APR does not account compounding interest, unlike :term:`:term:`Annual Percentage Yield (APY)`.
+
+        See also
+
+        - :term:`Annual Percentage Yield (APY)`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Risk-adjusted return`
+
+    APR
+
+        See :term:`Annual Percentage Rate (APR)`
+
+    Annual Percentage Yield (APY)
+
+        APY stands for Annual Percentage Yield in :term:`quantitative finance`. It is a measure used to represent the effective annual rate of return or the annualized rate of interest earned on an investment or deposit, taking into account the effect of compounding interest.
+
+        Unlike :term:`APR (Annual Percentage Rate)`, which only considers the nominal interest rate, APY factors in the compounding frequency of interest payments. This means that APY reflects the total amount of interest earned or paid over a year, including the effect of reinvesting interest earnings or paying interest on previously earned interest.
+
+        APY is particularly useful for comparing the true returns of different investment or deposit options, as it provides a standardized way of expressing the annualized rate of return while accounting for compounding. It allows investors to make more informed decisions about where to allocate their funds based on the actual returns they can expect to earn.
+
+        In trading :term:`Compound Annual Growth Rate (CAGR)` is more commonly used. APY is used for loans, :term:`delta neutral` trading strategies
+        and :term:`yield farming` in :term:`decentralised finance`.
+
+        See also
+
+        - :term:`Annual Percentage Rate (APR)`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Risk-adjusted return`
+    APY
+
+        See :term:`Annual Percentage Yield (APY)`
+
+
