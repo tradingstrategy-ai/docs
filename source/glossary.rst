@@ -4451,6 +4451,10 @@ and algorithmic trading.
 
         - :term:`Sortino`
 
+        - :term:`Annual Percentage Rate (APR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
         - :term:`Trading strategy`
 
     CAGR
