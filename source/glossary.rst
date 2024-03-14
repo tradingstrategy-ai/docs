@@ -4603,3 +4603,9 @@ and algorithmic trading.
 
         - :term:`Profitability`
 
+    Excess returns
+
+        See :term:`alpha`.
+
+
+
