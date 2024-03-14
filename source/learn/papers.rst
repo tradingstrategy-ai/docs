@@ -142,3 +142,10 @@ errors, portraying a future of “Man + Machine” (instead of human displacemen
 financial analyses, and likely other high-skill professions.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3840538>`__.
+
+Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing
+------------------------------------------------------------------
+
+The motivation of this research is in two folds, to understand the distributional characteristics of cryptocurrencies by means of stylized facts, and also to assess the feasibility of risk based and trend following approaches to investing in this asset class. Cryptocurrencies are more of a recent phenomenon, unlike the traditional asset classes. This poses an explicit constraint on the availability of longer history and also reliability of investment performance. Acknowledging such constraint, I focus my analysis based on the few years of data that is available.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__.
