@@ -58,3 +58,11 @@ Didact AI
 The anatomy of an ML-powered stock picking engine.
 
 `Read post <https://daehkim.github.io/pair-trading/>`__.
+
+Trend following regime filter with HMM
+--------------------------------------
+
+In this article the Hidden Markov Model will be utilised within the QSTrader framework as a risk-managing market regime filter. It will disallow trades when higher volatility regimes are predicted. The hope is that by doing so it will eliminate unprofitable trades and possibly remove volatility from the strategy, thus increasing its Sharpe ratio.
+
+`Read post <https://www.quantstart.com/articles/market-regime-detection-using-hidden-markov-models-in-qstrader/>`__.
+
