@@ -4493,7 +4493,7 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
-     Annual Percentage Rate (APR)
+    Annual Percentage Rate (APR)
 
         APR stands for Annual Percentage Rate in :term:`quantitative finance`. It is a standardized way of expressing the cost of borrowing money or the return on investment over a yearly basis. In quantitative finance, APR is commonly used in various financial instruments such as loans, mortgages, credit cards, and investment products.
 
