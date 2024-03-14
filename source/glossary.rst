@@ -4607,5 +4607,61 @@ and algorithmic trading.
 
         See :term:`alpha`.
 
+    Market regime
 
+        In :term:`quantitative finance`, market regime means the current general state of the market. It can concern a single :term:`trading pair`,
+        of the market as a whole.
 
+        Popular market regimes includes
+
+        - :term:`Bull market` - everything goes up
+
+        - :term:`Bear market` - everything comes down
+
+        - :Crab market - everything moves sideways
+
+        Market regime can be also volatility based, for the risk management
+
+        - High volatility - avoid trend following strategies, as trend is unclear
+
+        - Low volatility - breakouts are less likely, avoid breakout strategies
+
+        See also
+
+        - :term:`Regime filter`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+    Regime filter
+
+        In a :term:`trading strategy`, a regime filter tells the current :term:`market regime`.
+
+        The strategy should modify its behavior based on the direction of the markets
+
+        - In a :term:`bull market` make more aggressive bets
+
+        - In a :term:`bear market` - conserve cash and open more short positions
+
+        Some regime filters are
+
+        - Bitcoin 200-days :term:`moving average` - if we are above 200 days moving average cryptocurrencies are in a bull market
+
+        - Machine learning based clustering
+
+        Market regime filter examples
+
+        - `Market Regime Detection using Hidden Markov Models in QSTrader <https://www.quantstart.com/articles/market-regime-detection-using-hidden-markov-models-in-qstrader/>`__
+
+        See also
+
+        - :term:`Market regime`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
