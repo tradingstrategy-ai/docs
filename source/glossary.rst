@@ -48,9 +48,9 @@ and algorithmic trading.
 
         - Scalping
 
-        - :term:`Portfolio construction model`
+        - :term:`Portfolio construction model` or :term:`tactical asset allocation`
 
-        - :term:`Market neutral <Market neutral strategy>`
+        - :term:`Market neutral <Market neutral strategy>`, or :term:`delta neutral`
 
         - :term:`Yield farming`
 
@@ -635,7 +635,17 @@ and algorithmic trading.
 
     Market neutral strategy
 
-        Market neutral strategies are trading strategies that have little or no :term:`exposure` to crypto asset volatility. They are often :term:`high-frequency trading` strategies, like arbitrage. Good market neutral strategies can make 10% - 20% monthly yield in cryptocurrency markets.
+        Market neutral strategies are :term:`trading strategies <trading strategy>` that have little or no :term:`exposure` to crypto asset :term:`volatility`. They are often :term:`high-frequency trading` strategies, like arbitrage. Good market neutral strategies can make 10% - 20% monthly yield in cryptocurrency markets.
+
+        See also
+
+        - :term:`Delta neutral`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Best trading strategy`
 
     High-frequency trading
 
@@ -3834,13 +3844,15 @@ and algorithmic trading.
 
         In data research and analysis, "forward fill" refers to a method of handling missing or incomplete data by carrying forward the last observed value to fill in the gaps. It is also known as "last observation carried forward" (LOCF).
 
-        When dealing with time series data or datasets with missing values, forward fill involves replacing missing data points with the most recent known value. This approach assumes that the value remains constant until a new observation is available. By using the previous observation as a substitute, forward fill helps maintain continuity in the data and allows for continued analysis or modeling.
+        When dealing with time series data or :term:`datasets <dataset>` with missing values, forward fill involves replacing missing data points with the most recent known value. This approach assumes that the value remains constant until a new observation is available. By using the previous observation as a substitute, forward fill helps maintain continuity in the data and allows for continued analysis or modeling.
 
         Forward fill is often employed when missing data is considered to be missing at random (MAR), meaning the missingness is not related to the actual value. It can be a useful technique when the missing data points are intermittent or occur sporadically.
 
         However, it is important to note that forward fill may not always be appropriate or suitable for all datasets or analysis scenarios. It assumes that the missing values should be carried forward, which may not be accurate or appropriate in all cases. Researchers should carefully consider the nature of the data and the implications of using forward fill before applying it.
 
         Alternative methods for handling missing data include backward fill (carrying the next observed value backward) or more sophisticated imputation techniques that estimate missing values based on statistical methods or predictive models. The choice of method depends on the specific characteristics of the dataset and the objectives of the analysis.
+
+        The :term:`Trading Strategy Framework` gives you various :term:`Python` functions for forward-fill, especially for :term:`OHLCV` data. See :term:`documentation` for more info.
 
         See also
 
@@ -4652,17 +4664,21 @@ and algorithmic trading.
 
     Delta neutral
 
-        In :term:`quantitative finance`, a delta neutral :term:`trading strategy` is not exposed to the volatility of underlying assets.
+        In :term:`quantitative finance`, a delta neutral :term:`trading strategy` is not exposed to the :term:`volatility` of underlying assets.
 
-        A delta neutral strategy does not make any losses regardless if asset prices more up or down.
+        A delta neutral strategy, also known as :term:`market neutral strategy` does not make any losses regardless if asset prices more up or down.
 
         See also
+
+        - :term:`Market neutral strategy`
 
         - :term:`Trading strategy`
 
         - :term:`Quantitative finance`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Volatility`
 
     Annual Percentage Rate (APR)
 
