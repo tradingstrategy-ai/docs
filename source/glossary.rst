@@ -4618,7 +4618,7 @@ and algorithmic trading.
 
         - :term:`Bear market` - everything comes down
 
-        - :Crab market - everything moves sideways
+        - Crab market - everything moves sideways
 
         Market regime can be also volatility based, for the risk management
 
