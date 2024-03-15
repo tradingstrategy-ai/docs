@@ -435,7 +435,7 @@ and algorithmic trading.
 
         - :term:`PyArrow` - Python library
 
-        - :term:`Parquet` - file format
+        - :term:`Apache Arrow` - open source data science ecosystem project
 
         - :term:`OHLCV` - market and price data type
 
@@ -449,7 +449,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Arrow` - native library
+        - :term:`Apache Arrow` - native library
 
         - :term:`Parquet` - file format
 
@@ -461,11 +461,15 @@ and algorithmic trading.
 
     Arrow
 
+        See :term:`Apache Arrow`.
+
+    Apache Arrow
+
         Apache Arrow is an open-source, cross-platform columnar data format that is used for storing and processing large amounts of data efficiently. It was designed to address some of the performance and scalability challenges associated with traditional row-based data storage and processing methods.
 
-        Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, Python, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
+        Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, :term:`Python`, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
 
-        In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects.
+        In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects with large :term:`datasets <dataset>`.
 
         `More information <https://arrow.apache.org/docs/index.html>`__.
 
