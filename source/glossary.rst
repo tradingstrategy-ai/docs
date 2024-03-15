@@ -2207,6 +2207,10 @@ and algorithmic trading.
 
         - :term:`quote token`
 
+    Best trading algorithm
+
+        See :term:`best trading strategy`.
+
     Best trading strategy
 
         The best trading strategy is one that makes most excessive profit, or :term:`alpha`,
