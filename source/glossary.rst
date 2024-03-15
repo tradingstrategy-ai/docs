@@ -3102,13 +3102,25 @@ and algorithmic trading.
 
     Alpha signal
 
-        In :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models.
+        In :term:`quantitative finance` and :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models. Portfolio construction is a specific type of :term:``trading strategy`.
 
         Alpha signals are also known as *trading signals*.
 
-        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a portfolio that generates excess returns (i.e., alpha) relative to a benchmark index.
+        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a :term:`portfolio` that generates excess returns (i.e., alpha) relative to a benchmark index.
 
         Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
+
+        Some of the common alpha signals include
+
+        - :term:`Trading pair` momentum, or the raw price movement
+
+        - :term:`Technical indicators <technical indicator>`
+
+        - Machine learning-based indicators extracted from :term:`OHLCV` market data
+
+        - :term:`Alternative data` sources and their derivatives
+
+        When alpha signals of different industry verticals are compared, it is called :term:`factor investing`.
 
         See also
 
@@ -3116,7 +3128,13 @@ and algorithmic trading.
 
         - :term:`Alpha model`
 
-        - :term:`Decentralised finance`
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
 
     Trading signal
 
