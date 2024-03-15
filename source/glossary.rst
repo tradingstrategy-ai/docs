@@ -2296,6 +2296,8 @@ and algorithmic trading.
 
         - :term:`Compound`
 
+        - :term:`Auto-compounding`
+
         - :term:`Compound Annual Growth Rate (CAGR)`
 
         - :term:`Annual Percentage Yield (APY)`
@@ -2364,6 +2366,7 @@ and algorithmic trading.
     Auto-compounding
 
         Auto-compounding is a :term:`trading strategy` in which the investors's investment yields are automatically reinvested into the investment principal at regular intervals.
+        This is called :`compound`.
 
         Auto-compounding strategies are :term:`benchmarked <benchmark>` using metrics having compounding factored in
 
@@ -2376,6 +2379,8 @@ and algorithmic trading.
         See also
 
         - :term:`Cumulative profit`
+
+        - :term:`Compound`
 
         - :term:`Compound Annual Growth Rate (CAGR)`
 
@@ -2391,15 +2396,20 @@ and algorithmic trading.
 
     BNB Chain
 
-        BNB Chain is an :term:`EVM-Compatible` blockchain from the Binance cryptocurrency exchange.
+        See :term:`BNB Smart Chain`.
 
-        BNB Chain is a direct :term:`fork` of Ethereum.
+    BNB Smart Chain
 
-        BNB Chain offers good interaction with the Binance cryptocurrency exchange (:term:`CEX`), making it attractive
+        BNB Smart Chain is an :term:`EVM-Compatible` blockchain from the Binance cryptocurrency exchange.
+        It is called as :term:`BNB Chain`, though these two are separate.
+
+        BNB Smart Chain is a direct :term:`fork` of Ethereum.
+
+        BNB Smart Chain offers good interaction with the Binance cryptocurrency exchange (:term:`CEX`), making it attractive
         for the users of this exchange. As of the writing of this, Binance has a 70% market
         share of the cryptocurrency trading volume, making it very dominant in the blockchain industry.
 
-        BNB Chain is based on centralised, proof-of-authority. model.
+        BNB Smart Chain is based on centralised, proof-of-authority. model.
         `BNB Chain was recently halted in a hack <https://cointelegraph.com/news/bnb-chain-confirms-bsc-halt-due-to-potential-exploit>`__.
         It uses `BNB token <https://tradingstrategy.ai/trading-view/binance/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c>`__
         as its :term:`native token`.
@@ -2411,6 +2421,8 @@ and algorithmic trading.
         - :term:`EVM-compatible`
 
         - :term:`Fork`
+
+        - :term:`Decentralised finance`
 
         - :term:`CEX`
 
@@ -4049,7 +4061,7 @@ and algorithmic trading.
 
     Compound
 
-        In :term:`quantitative finance`, compounding returns refer to the process of reinvesting profits or earnings generated from an investment back into the investment itself. It involves earning returns not only on the initial investment but also on the accumulated earnings from previous periods.
+        In :term:`quantitative finance`, compounding returns refer to the process of reinvesting profits or earnings generated from a :term:`trading strategy` back into the itself. It involves earning returns not only on the initial investment but also on the accumulated earnings from previous periods.
 
         When returns are compounded, they have the potential to grow exponentially over time, thanks to the compounding effect. The compounding effect arises from reinvesting the returns, allowing them to generate additional returns in subsequent periods. As the investment grows, the compounding effect becomes more significant, leading to accelerated growth over the long term.
 
@@ -4059,15 +4071,27 @@ and algorithmic trading.
 
         When analyzing investment performance or projecting future returns, it is crucial to consider the impact of compounding. Investors often use compound interest formulas or specialized software to calculate and project the compounded returns based on the investment's expected growth rate and compounding frequency.
 
+        Common :term:`benchmark` metrics that deal with compound include
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
+        If an automated strategy does compounding it is called :term:`auto-compound` strategy.
+
         See also
 
-        - :ref:`Profitability calculations <profitability>`
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         - :term:`Cumulative profit`
 
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+        - :ref:`Profitability calculations <profitability>`
 
     Position sizing
 
