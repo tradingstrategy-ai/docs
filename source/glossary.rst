@@ -12,12 +12,33 @@ and algorithmic trading.
 
     Trading strategy
 
-        A trading strategy is a fixed plan that is designed to achieve a profitable return by going long or short in markets.
+        In :term:`quantitative finance`, a trading strategy is a fixed plan that is designed to achieve a profitable returns for its investors.
 
-        It involves analysis to identify specific market conditions and price levels.
-        There are many different types of trading strategies, such as
+        Common trading strategies include:
 
-        - Moving-average cross strategies like :term:`EMA`
+        - :term:`Buy and hold`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Algorithmic trading`
+
+        - Index investing
+
+        A trading strategy may look to optimise :term:`cumulative profit` or :term:`risk-adjusted returns`.
+
+        Further strategies can be classified by their activity and risk profile as
+
+        - :term:`Directional strategies <directional strategy>` that are :term:`volatile`
+
+        - :term:`Active strategies <active strategy>`
+
+        - :term:`Passive strategies <passive strategy>`
+
+        The trading strategy can be automated as :term:`algorithmic trading` and thus
+        become :term:`automated trading strategy`. Automated strategies
+        can be e.g.
+
+        - :term:`Technical indicator`-based strategies
 
         - Trend-following
 
@@ -27,28 +48,22 @@ and algorithmic trading.
 
         - Scalping
 
-        - Portfolio construction model
+        - :term:`Portfolio construction model`
 
         - :term:`Market neutral <Market neutral strategy>`
 
         - :term:`Yield farming`
 
-        Further strategies can be classified by their activity and risk profile as
-
-        - :term:`Directional strategies <directional strategy>`
-
-        - :term:`Active strategies <active strategy>`
-
-        - :term:`Passive strategies <passive strategy>`
-
-        The trading strategy can be automated as :term:`algorithmic trading` and thus
-        become :term:`automated trading strategy`.
+        Trading strategies can be objectively compared to each other.
+        This is called :term:`benchmarking <benchmark>`.
 
         Trading Strategy can also refer to :term:`Trading Strategy Protocol`
         which is a solution for creating trading strategies for
         :term:`decentralised finance`.
 
         See also
+
+        - :term:`Best trading strategy`
 
         - :term:`Trading Strategy Protocol`
 
@@ -58,7 +73,7 @@ and algorithmic trading.
 
         - :term:`Automated trading strategy`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
         - :term:`Alpha generation platform`
 
@@ -476,7 +491,7 @@ and algorithmic trading.
 
         - :term:`Algorithmic trading`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Backtrader
 
@@ -2192,41 +2207,46 @@ and algorithmic trading.
 
         - :term:`quote token`
 
-    Best trading algorithm
+    Best trading strategy
 
-        The best trading algorithm in the world is one that makes most profit, or :term:`alpha`.
+        The best trading strategy is one that makes most excessive profit, or :term:`alpha`,
+        for the least risk.
 
         Depending on the the market situation and available :term:`trading pairs <trading pair>`,
-        the best trading algorithm can vary day by day, or depending whether the markets are in
-        :term:`bull market` or :term:`bear market`.
+        the current best trading strategy can vary day by day, or depending whether the markets are in
+        :term:`bull market` or :term:`bear market`. Also, depending on the trader risk apetitve
 
-        See :term:`trading strategy` term
-        to get an overall summary of different available trading algorithms.
+        A trading algorithm can generally yield 5% - 300% yearly profit depending on the
+        amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`,
+        with :term:`risk-adjusted returns` having profits enough to cover any :term:`volatility` or other risk taken.
 
-        A trading algoritmn can generally yield 5% - 300% yearly profit depending on the
-        amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`.
+        In :term:`quantitative finance`, different trading strategies can be objectively compared
+        based on their performance metrics.
+        Some usual ways to :term:`benchmark` include:
 
-        The usual ways to rank :term:`trading algorithms <trading algorithm>` include
+        - :term:`Cumulative profit` or :term:`Compound Annual Growth Rate (CAGR)`
 
-        - :term:`Cumulative profit`
-
-        - :term:`Risk-adjusted return`
+        - :term:`Risk-adjusted return`, like :term:`Sharpe` and :term:`Sortino` ratios
 
         See also
 
         - :term:`Alpha`
 
+        - :term:`Risk-adjusted return`
+
         - :term:`Profitability`
 
         - :term:`Trading strategy`
+
+        - :term:`Benchmark`
+
+        - :term:`Buy and hold`
 
         - :term:`Trading algorithm`
 
         - :term:`Algorithmic trading`
 
         - :term:`Quantitative analysis`
-
-        - :term:`Quantstats`
 
     Risk-adjusted return
 
@@ -2239,7 +2259,7 @@ and algorithmic trading.
 
         - :term:`Risk-free rate`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
         - :term:`Cumulative profit`
 
@@ -2255,12 +2275,18 @@ and algorithmic trading.
 
     Cumulative profit
 
-        Cumulative profit tells the overall profit of :term:`trading strategy` over a time.
+        In :term:`quantitative finance`, cumulative profit tells the overall profit of :term:`trading strategy` over a time.
 
         Cumulative profit is the excess of net income and gains over net losses, determined on a cumulative basis from the inception of an investment fund through to its termination date.
         It includes realized trading P&L, positions open P&L, and other total profits or losses generated since the :term:`trading strategy`'s inception.
 
         As trading strategies reinvest earlier profits, the cumulative profit :term:`compounds <compound>`.
+
+        Cumulative profit is expressed as % of yearly gains, as:
+
+        - :term:`Compound Annual Growth Rate (CAGR)` (volatile trading)
+
+        - :term:`Annual Percentage Yield (APY)` (loans, :term:`delta neutral` strategies)
 
         To calculate cumulative profit, one must add together all net profit numbers over a specific time frame.
 
@@ -2268,17 +2294,23 @@ and algorithmic trading.
 
         - :term:`Compound`
 
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
         - :term:`Profitability`
-
-        - :term:`Trading strategy`
-
-        - :term:`Equity curve`
 
         - :term:`Risk-adjusted return`
 
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Equity curve`
+
         - :term:`Drawdown`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Profitability
 
@@ -2304,7 +2336,7 @@ and algorithmic trading.
 
         - :term:`Drawdown`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Equity curve
 
@@ -2959,7 +2991,7 @@ and algorithmic trading.
 
     Portfolio construction
 
-        Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities optimally to achieve maximum returns while taking minimum risk.
+        Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities to your :term:`portfolio` optimally to achieve maximum returns while taking minimum risk.
 
         Portfolio constructions involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
 
@@ -2982,6 +3014,36 @@ and algorithmic trading.
         - :term:`Technical analysis`
 
         - :term:`Algorithmic trading`
+
+    Portfolio
+
+        In :term:`quantitative finance`, portfolio means the list of assets that a :term:`trading strategy` is currently holding.
+
+        Assets can include
+
+        - Equity - stocks
+
+        - Bonds - loans
+
+        - Cryptocurrencies
+
+        - Derivatives
+
+        Depending on the asset, the holdings are expressed as assets, or tokens in cryptocurrencies and :term:`trading pair` (derivatives).
+
+        When the portfolio changes, assets are bought or sold, it is called :term:`rebalancing <rebalance>`,
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
 
     Alpha model
 
@@ -3112,7 +3174,7 @@ and algorithmic trading.
 
     Rebalance
 
-        In a :term:`trading strategy`, rebalance refers to the process of :term:`re-weighting <weight allocation>` the portfolio
+        In a :term:`trading strategy`, rebalance refers to the process of :term:`re-weighting <weight allocation>` the :term:`portfolio`
         by selling some assets and buying new ones.
 
         Rebalances are needed in order for the strategy to follow its :term:`alpha model`.
@@ -3122,6 +3184,8 @@ and algorithmic trading.
         In the process, the strategy opens new and closes existing :term:`positions <position>`.
 
         See also
+
+        - :term:`Portfolio`
 
         - :term:`Portfolio construction`
 
@@ -3632,7 +3696,7 @@ and algorithmic trading.
 
     Management fee
 
-        A management fee is a recurring fee charged by investment managers or fund managers for managing and overseeing investment portfolios or funds on behalf of investors. It is a compensation mechanism for the services provided by the manager in managing the assets and making investment decisions.
+        A management fee is a recurring fee charged by investment managers or fund managers for managing and overseeing investment :term:`portfolios <portfolio>` or funds on behalf of investors. It is a compensation mechanism for the services provided by the manager in managing the assets and making investment decisions.
 
         The management fee is typically calculated as a percentage of the total assets under management (AUM). The percentage fee can vary depending on the type of fund, investment strategy, or asset class. It is usually expressed as an annual rate and is deducted from the fund's assets on a regular basis, such as quarterly or annually.
 
@@ -4018,6 +4082,8 @@ and algorithmic trading.
 
         - :term:`Quantitative finance`
 
+        - :term:`Portfolio construction`
+
     Total equity
 
 
@@ -4110,7 +4176,7 @@ and algorithmic trading.
 
     Maximum Drawdown
 
-        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a portfolio, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
+        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a :term:`portfolio`, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
 
         Maximum drawdown is an important metric in risk management as it helps investors understand the potential downside risk of an investment. It is often used to assess the risk of a portfolio and to compare different investment strategies.
 
@@ -4264,13 +4330,19 @@ and algorithmic trading.
 
         Market exposure refers to the extent to which an investment portfolio is subject to fluctuations in the overall financial market or a specific asset class. It describes the amount of risk or potential for gain that an investor or organization faces as a result of having invested in a particular market, sector, or individual security.
 
-        Example: An investor with a portfolio heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
+        Example: An investor with a :term:`portfolio` heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
 
         Unrealized risk and market exposure are often interconnected, as the level of market exposure can directly impact the degree of unrealized risk in a portfolio. A portfolio with high market exposure to volatile sectors will inherently carry a higher degree of unrealized risk until positions are closed.
 
         See also
 
         - :term:`Unrealised risk`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Trading strategy`
 
     Median
 
@@ -4443,6 +4515,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Cumulative profit`
+
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
@@ -4603,6 +4677,8 @@ and algorithmic trading.
 
         - :term:`Profitability`
 
+        - :term:`Best trading strategy`
+
     Excess returns
 
         See :term:`alpha`.
@@ -4665,3 +4741,77 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Best trading strategy`
+
+    Benchmark
+
+        In :term:`quantitative finance`, benchmarking is comparing different :term:`portfolios <portfolio>`
+        or :term:`trading strategies <trading strategy>` against each other.
+
+        The comparison examines
+
+        - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        - Fees paid or generated
+
+        Common comparison methods include
+
+        - :term:`Compound Annual Growth Rate (CAGR)`, or :term:`cumulative profit`
+
+        - :term:`Equity curve` comparison
+
+        - :term:`Volatility` risk-based and risk-adjusted metrics like :term:`Sharpe` and :term:`Sortino` ratios
+
+        Benchmark can compare
+
+        - Different :term:`trading stragies <trading strategy>` to each other
+
+        - Different :term:`portfolios <portfolio>` to each other
+
+        - Strategies and portfolios to a :term:`trading pair` :term:`buy and hold` performance
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Buy and hold`
+
+        - :term:`Best trading strategy`
+
+    Buy and hold
+
+        In :term:`quantitative finance`, a buy and hold trading strategy is to buy an asset
+        and not sell it ever, or for a long period of time.
+
+        In cryptocurrency trading, this kind of :term:`trading strategy` is called "diamond hands."
+
+        The benefit of this kind of strategy is that you are not paying any trading fees.
+        Holding an asset is usually free.
+
+        Even if you never sell the asset, you can use it as collateral and borrow money against it.
+
+        On of the most famous diamon hands are Michael Saylor and his company MicroStrategy that are
+        only buying more and more bitcoin since 2019.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
