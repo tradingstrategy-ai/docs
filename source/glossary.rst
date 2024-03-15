@@ -2290,6 +2290,8 @@ and algorithmic trading.
 
         To calculate cumulative profit, one must add together all net profit numbers over a specific time frame.
 
+        If a trading strategy automatically reinvests its profits to itself, it is called :term:`auto-compounding`.
+
         See also
 
         - :term:`Compound`
@@ -2361,12 +2363,23 @@ and algorithmic trading.
 
     Auto-compounding
 
-        Auto-compounding is an investment strategy in which the user's investment yields are automatically reinvested into the investment principal at regular intervals.
+        Auto-compounding is a :term:`trading strategy` in which the investors's investment yields are automatically reinvested into the investment principal at regular intervals.
+
+        Auto-compounding strategies are :term:`benchmarked <benchmark>` using metrics having compounding factored in
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         Compounding is a powerful investing concept that involves earning returns on both the original investment and on returns received previously.
-        It is considered one of the smartest investment strategies, as it can generate additional earnings over time.
 
         See also
+
+        - :term:`Cumulative profit`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         - :term:`Trading strategy`
 
