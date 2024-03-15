@@ -429,9 +429,35 @@ and algorithmic trading.
 
         Parquet is a columnar storage format for big data processing and analysis, commonly used in the Apache Hadoop and Apache Spark ecosystems. It is optimised for fast querying and efficient storage of large, complex data sets, and supports a wide range of data formats and compression options. By organising data into columns rather than rows, Parquet enables more efficient compression and encoding, as well as improved query performance, making it a popular choice for data warehousing and analytics applications. `More information <https://parquet.apache.org/>`__.
 
-    Pyarrow
+        Parquent comes from Apache :term:`Arrow` ecosystem.
 
-        Python API for :term:`Arrow` library. `More information <https://arrow.apache.org/docs/python/>`__. PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large datasets, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as Parquet, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
+        See also
+
+        - :term:`PyArrow` - Python library
+
+        - :term:`Parquet` - file format
+
+        - :term:`OHLCV` - market and price data type
+
+    PyArrow
+
+        PyArrow is Python API for :term:`Arrow` library.
+
+        PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large :term:`datasets <dataset>`, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as :term`Parquet`, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
+
+        `More information <https://arrow.apache.org/docs/python/>`__.
+
+        See also
+
+        - :term:`Arrow` - native library
+
+        - :term:`Parquet` - file format
+
+        - :term:`Python` - programming language
+
+        - :term:`Jupyter Notebook` - data research tool
+
+        - :term:`Trading Strategy Framework` - build automated :term:`trading strategies <trading strategy>` with Python
 
     Arrow
 
@@ -442,6 +468,12 @@ and algorithmic trading.
         In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects.
 
         `More information <https://arrow.apache.org/docs/index.html>`__.
+
+        See also
+
+        - :term:`PyArrow` - Python library
+
+        - :term:`Parquet` - file format
 
     Dataclass
 
