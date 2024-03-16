@@ -431,6 +431,8 @@ and algorithmic trading.
 
         Parquent comes from Apache :term:`Arrow` ecosystem.
 
+        Parquet files have internal compression, usually :term:`Zstd`, to make transferring large data series faster.
+
         See also
 
         - :term:`PyArrow` - Python library
@@ -439,11 +441,13 @@ and algorithmic trading.
 
         - :term:`OHLCV` - market and price data type
 
+        - :term:`Zstd`
+
     PyArrow
 
         PyArrow is Python API for :term:`Arrow` library.
 
-        PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large :term:`datasets <dataset>`, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as :term`Parquet`, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
+        PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large :term:`datasets <dataset>`, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as :term:`Parquet`, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
 
         `More information <https://arrow.apache.org/docs/python/>`__.
 
@@ -1952,6 +1956,10 @@ and algorithmic trading.
         files in a terminal. It can be combined with `tar` to create archives
         of directories, like :term:`blockchain snaphots <blockchain snapshot>`.
 
+        See also
+
+        - :term:`Parquet`
+
     Erigon
 
         The `Erigon <https://github.com/ledgerwatch/erigon>`__ node is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
@@ -2819,7 +2827,7 @@ and algorithmic trading.
 
     Trading Strategy Framework
 
-        The Trading Strategy Framework is a :term:`Python` based software development library
+        The Trading Strategy Framework is a :term:`Python`-based software development library
         to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
         markets. The core audience of the library is :term:`quants <quant>`.
 
@@ -2827,7 +2835,7 @@ and algorithmic trading.
 
         - Market data feed reader in the form of :term:`Trading Strategy Client`
 
-        - :term:`Backtesting framework <backtest>`
+        - :term:`Backtesting framework <backtest>` based on :term:`Jupyter Notebook`
 
         - :ref:`Live trading execution environment <running strategies>`
 
@@ -2835,15 +2843,23 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
         - :term:`Trading Strategy Protocol`
 
         - :term:`Trading Strategy Client`
 
-        - :term:`Trading strategy`
-
         - :term:`Decentralised finance`
 
         - :term:`Backtest`
+
+        - :term:`Python`
+
+        - :term:`Jupyter Notebook`
+
+        - :term:`PyArrow`
 
     Oracle
 
