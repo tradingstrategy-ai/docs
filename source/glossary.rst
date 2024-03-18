@@ -24,7 +24,7 @@ and algorithmic trading.
 
         - Index investing
 
-        A trading strategy may look to optimise :term:`cumulative profit` or :term:`risk-adjusted returns`.
+        A trading strategy may look to optimise :term:`cumulative profit` or :term:`risk-adjusted return`.
 
         Further strategies can be classified by their activity and risk profile as
 
@@ -2286,7 +2286,7 @@ and algorithmic trading.
 
         A trading algorithm can generally yield 5% - 300% yearly profit depending on the
         amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`,
-        with :term:`risk-adjusted returns` having profits enough to cover any :term:`volatility` or other risk taken.
+        with :term:`risk-adjusted return` having profits enough to cover any :term:`volatility` or other risk taken.
 
         In :term:`quantitative finance`, different trading strategies can be objectively compared
         based on their performance metrics.
@@ -4616,7 +4616,7 @@ and algorithmic trading.
 
         Each of these terms offers a different lens through which to analyze market conditions and can be used in combination to make more informed trading or investing decisions.
 
-        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`risk-adjusted returns`, volatility is the fundamental
+        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`Risk-adjusted return`, volatility is the fundamental
         metric for various risk vs. rewards calculations.
 
         See also
@@ -4631,7 +4631,7 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
-        - :term:`Risk-adjusted returns`
+        - :term:`Risk-adjusted return`
 
     Compound Annual Growth Rate (CAGR)
 
