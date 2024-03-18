@@ -4619,6 +4619,9 @@ and algorithmic trading.
         When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`Risk-adjusted return`, volatility is the fundamental
         metric for various risk vs. rewards calculations.
 
+        :term:`Delta neutral` :term:`trading strategy` is a strategy that is immune to volatility: no matter which direction the price
+        moves, the strategy makes profit.
+
         See also
 
         - :term:`Standard deviation`
@@ -4632,6 +4635,8 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Delta neutral`
 
     Compound Annual Growth Rate (CAGR)
 
