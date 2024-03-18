@@ -4545,6 +4545,8 @@ and algorithmic trading.
 
         - :term:`Standard deviation`
 
+        - :term:`Volatility`
+
     Volume
         
         In the context of cryptocurrency, trading volume refers to the total number of tokens or coins that have been traded for a specific cryptocurrency pair within a given time frame. It serves as a key indicator of the asset's liquidity and the level of investor interest. High trading volumes often suggest a more liquid and stable market, while low volumes may indicate less liquidity and greater potential for price manipulation.
@@ -4606,13 +4608,16 @@ and algorithmic trading.
 
     Volatility
 
-        Volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
+        In :term:`quantitative finance`, volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
 
         Example: If a cryptocurrency experiences rapid price swings within short periods, it is said to have high volatility.
 
-        Usage: Volatility is a crucial concept in financial markets, often used by traders and investors to assess the risk and potential returns of an asset. High volatility can offer opportunities for greater returns but also poses higher risks.
+        Volatility is a crucial concept in financial markets, often used by traders and investors to assess the risk and potential returns of an asset. High volatility can offer opportunities for greater returns but also poses higher risks.
 
         Each of these terms offers a different lens through which to analyze market conditions and can be used in combination to make more informed trading or investing decisions.
+
+        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`risk-adjusted returns`, volatility is the fundamental
+        metric for various risk vs. rewards calculations.
 
         See also
 
@@ -4621,6 +4626,12 @@ and algorithmic trading.
         - :term:`Market sentiment`
 
         - :term:`Volume`
+
+        - :term:`Variance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted returns`
 
     Compound Annual Growth Rate (CAGR)
 
