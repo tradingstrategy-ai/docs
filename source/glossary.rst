@@ -303,6 +303,16 @@ and algorithmic trading.
 
         Autonomous agents typically use artificial intelligence (AI) and :term:`machine learning` algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
+    See also
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Machine learning`
+
+        - :term:`Decentralised finace`
+
+        - :term:`Smart contractopen`
+
     Smart contract
     
         Smart contract is automated transactional service running on any of the blockchains.
@@ -704,19 +714,26 @@ and algorithmic trading.
 
     Directional strategy
 
-        A directional strategy is a type of trading or investment strategy that involves taking a bullish or bearish view on a particular asset or market.
-
-        This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
+        A directional strategy is a type of a :term:`trading strategy` that involves taking a :term:`bullish <bull market>` or :term:`bearish <bear market>` view on a particular asset or market,
+        and then attempt to make :term`profit <cumulative profit>` on the :term:`volatility` of the asset. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
         
         Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
         
         Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
+
+        The opposite of directional strategy is :term:`market neutral strategy`.
 
         See also
 
         - :term:`Trading strategy`
 
         - :term:`Active strategy`
+
+        - :term:`Volatility`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Risk-adjusted return`
 
     Active strategy
 
@@ -755,6 +772,8 @@ and algorithmic trading.
         - :term:`Exposure`
 
         - :term:`Drawdown`
+
+        - :term:`Market neutral strategy`.
 
     Non-custodial
 
