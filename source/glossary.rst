@@ -5078,7 +5078,8 @@ and algorithmic trading.
 
         - Predictive Modeling: Machine learning algorithms are employed to predict financial market movements, asset prices, trading volumes, and other relevant variables. Techniques such as regression, decision trees, random forests, support vector machines (SVM), and deep learning are commonly utilized for this purpose.
 
-        - Risk Management: Machine learning models are used to assess and manage financial risk by predicting credit defaults, market :term:`volatility`, portfolio losses, and other risk factors. These models help financial institutions optimize their risk exposure and comply with regulatory requirements.
+        - Risk Management: Machine learning models are used to assess and manage financial risk by predicting market :term:`volatility`, portfolio losses, and other risk factors.
+          Risk management can be tied to :term:`position sizing`.
 
         - :term:`Portfolio construction`: Machine learning algorithms aid in constructing optimized investment portfolios by analyzing historical market data, asset correlations, and investor preferences. Portfolio optimization models aim to maximize returns while minimizing risk or achieving specific investment objectives.
 
@@ -5091,6 +5092,10 @@ and algorithmic trading.
         - :term:`Backtest`
 
         - :term:`Trading strategy`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Position sizing`
 
         - :term:`Grid seacrh`
 
