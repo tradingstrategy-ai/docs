@@ -303,7 +303,7 @@ and algorithmic trading.
 
         An autonomous agent is a software program or system that can operate independently and make decisions on its own, without direct intervention from a human. This type of technology is designed to perform specific tasks or functions, such as data processing, problem-solving, decision-making, and even physical actions.
 
-        Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
+        Autonomous agents typically use artificial intelligence (AI) and :term:`machine learning` algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
     Smart contract
     
@@ -5045,6 +5045,17 @@ and algorithmic trading.
 
         - **Complexity**: Introducing unnecessary complexity into a trading strategy can increase the likelihood of overfitting. A complex model may capture noise in the data rather than true underlying relationships.
 
+        Overfitting bias can be mitigated with various methods
+
+        - Using different :term:`datasets <dataset>` for strategy backtesting and validation of the backtest,
+          a usual method in :term:`machine learning`
+
+        - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`_ by
+          creating random asset prices where the behavior resembles the :term:`
+
+        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>__` and shifted
+          :term:`OHLCV` data.
+
         See also
 
         - :term:`Backtest`
@@ -5056,4 +5067,36 @@ and algorithmic trading.
         - :term:`Benchmark`
 
         - :term:`Best trading strategy`
+
+    Machine learning
+
+        Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed to perform specific tasks.
+
+        In :term:`quantitative finance`, machine learning is used to drive :term:`trading strategies <trading strategy>`:
+
+        - :term:`Algorithmic Trading`: Machine learning algorithms play a crucial role in algorithmic trading systems, where they analyze market data in real-time to identify trading opportunities and execute trades automatically. Reinforcement learning algorithms are particularly suitable for this task as they can learn optimal trading strategies through trial and error.
+
+        - Predictive Modeling: Machine learning algorithms are employed to predict financial market movements, asset prices, trading volumes, and other relevant variables. Techniques such as regression, decision trees, random forests, support vector machines (SVM), and deep learning are commonly utilized for this purpose.
+
+        - Risk Management: Machine learning models are used to assess and manage financial risk by predicting credit defaults, market :term:`volatility`, portfolio losses, and other risk factors. These models help financial institutions optimize their risk exposure and comply with regulatory requirements.
+
+        - :term:`Portfolio construction`: Machine learning algorithms aid in constructing optimized investment portfolios by analyzing historical market data, asset correlations, and investor preferences. Portfolio optimization models aim to maximize returns while minimizing risk or achieving specific investment objectives.
+
+        - :term:`High-Frequency Trading`: Machine learning techniques are applied in high-frequency trading strategies, where trades are executed within milliseconds to exploit fleeting market inefficiencies. These algorithms leverage advanced statistical models and data analysis techniques to identify profitable trading opportunities in high-speed trading environments.
+
+        - :term:`Sentiment Analysis: Machine learning models analyze news articles, social media feeds, and other textual data sources to gauge market sentiment and investor opinions. Sentiment analysis helps traders and investors make informed decisions by assessing the impact of public sentiment on financial markets.
+
+        See also
+
+        - :term:`Backtest`
+
+        - :term:`Trading strategy`
+
+        - :term:`Grid seacrh`
+
+        - :term:`Benchmark`
+
+
+
+
 
