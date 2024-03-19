@@ -230,6 +230,7 @@ and algorithmic trading.
         - *Vectorised*: quickly compare thousands of :term:`grid search` options using parallel computation.
           Popular Python-based vectorised backtesting frameworks include Moonshot, VectorBT.
           To speed up computation, vectorised framework sometimes need to compromise with realism of the results.
+          Vectorised frameworks can also easily utilise :term:`machine learning`.
 
         - *Event-driven*: support complex decision making process and logic for the trade decisions.
           Event-driven approach usually enables easier re-use of the strategy code between backtesting and live trade execution.
@@ -257,6 +258,8 @@ and algorithmic trading.
         - :term:`Dataset`
 
         - :term:`Python`
+
+        - :term:`Machine learning`
 
     Decentralised exchange
 
@@ -1504,11 +1507,15 @@ and algorithmic trading.
 
         It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimise the timing of trades.
 
+        Developing algorithmic trading strategies is called :term:`backtesting <backtest>`.
+
         See also
 
         - :term:`Trading strategy`
 
         - :term:`Automated trading strategy`
+
+        - :term:`Machine learning`
 
     Automated trading strategy
 
