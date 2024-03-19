@@ -212,6 +212,10 @@ and algorithmic trading.
 
         Backtesting is the process of analysing :term:`historical market data` to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
 
+        Backtesting results are :term:`benchmarked <benchmark>` against each other and indices like SP500, Bitcoin price.
+        Backtesting results are often too promising due to :term:`overfitting`. It can be always assumed that the live
+        trading performance is worse than the strategy backtested results.
+
         Backtesting is usually performed by specialised tool, or a backtesting framework written in some programming language.
         Different backtesting frameworks offer compromises between speed (how many combinations you can test and how fast),
         complexity (single pair. vs multi pair vs. :term:`portfolio construction` strategies), supported market data
@@ -241,6 +245,8 @@ and algorithmic trading.
         - :term:`Trading Strategy Framework`
 
         - :term:`Trading strategy`
+
+        - :term:`Overfitting`
 
         - :term:`Grid search`
 
@@ -3707,11 +3713,17 @@ and algorithmic trading.
 
     Grid search
 
-        Grid search is a :term:`hyperparameter optimization` technique used to find the best combination of hyperparameters for a machine learning model or trading algorithm. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination using a performance metric, such as accuracy or Sharpe ratio.
+        In :term:`algorithmic trading`, grid search is a :term:`hyperparameter optimization` technique used to :term:`backtest` the best combination of hyperparameters for a :term:`trading strategy`. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination for :term:`cumulative profit` and  :term:`risk-adjusted return`.
 
         Although grid search can be computationally expensive, it is often used when the search space is relatively small or when a more thorough exploration of the hyperparameter space is desired. Other optimization techniques, such as random search or Bayesian optimization, can be more efficient in cases where the search space is large or the performance landscape is complex.
 
+        Blindly using grid search may result to :term:`overfitting` and the trading strategy does not have any real :term:`alpha`.
+
         See also:
+
+        - :term:`Backtest`
+
+        - :term:`Overfitting`
 
         - :term:`Trading strategy`
 
@@ -5014,3 +5026,34 @@ and algorithmic trading.
         - :term:`Benchmark`
 
         - :term:`Best trading strategy`
+
+    Overfitting
+
+        In term:`quantitative finance`, overfitting of :term:`trading strategy` means that the
+        trading strategy results in :term:`backtest` where mostly luck-driven and there is no real :term:`alpha`.
+
+        Because of limited historical data, backtesting results, especially :term:`grid search` results
+        may look too rosy. Trading strategy is excessively tailored to historical market data, to the point that it performs well on past data but fails to generalize to new, unseen data or real-world market conditions. This phenomenon can occur when trading algorithm is optimised too much based on historical data, effectively fitting the strategy too closely to the noise or random fluctuations present in that data (luck-driven vs. finding real :term:`alpha`).
+
+        Examples of overfitting include
+
+        - **Data snooping bias**: Traders or developers sift through historical market data to find patterns or relationships that may not actually exist. By repeatedly testing different strategies on the same dataset, they might stumble upon strategies that seem to perform exceptionally well purely by chance.
+
+        - **Curve fitting**: Traders may excessively tweak the parameters of their trading algorithms to make them fit historical data perfectly. While this may result in high returns on historical data, it often leads to poor performance in real-world trading because the strategy becomes too sensitive to past market conditions.
+
+        - **Optimization bias**: Optimizing trading strategies based on past data can lead to strategies that are highly specialized to those specific market conditions. When market conditions change, these strategies may fail to adapt and perform poorly.
+
+        - **Complexity**: Introducing unnecessary complexity into a trading strategy can increase the likelihood of overfitting. A complex model may capture noise in the data rather than true underlying relationships.
+
+        See also
+
+        - :term:`Backtest`
+
+        - :term:`Trading strategy`
+
+        - :term:`Grid seacrh`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
+
