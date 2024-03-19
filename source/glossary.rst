@@ -208,12 +208,9 @@ and algorithmic trading.
 
     Backtest
 
-        Simulating the efficiency of a :term:`trading strategy` against historical data.
+        Backtesting is simulating the efficiency of a :term:`trading strategy` against historical data.
 
-        Backtesting is the process of analysing :term:`historical market data` to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
-
-        Backtesting results are :term:`benchmarked <benchmark>` against each other and indices like SP500, Bitcoin price.
-        Backtesting results are often too promising due to :term:`overfitting`. It can be always assumed that the live
+        Backtesting is the process of analysing :term:`historical market data` to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data. Backtesting results are then :term:`benchmarked <benchmark>` against each other and indices like SP500, Bitcoin price. Backtesting results are often too promising due to :term:`overfitting`. It can be always assumed that the live
         trading performance is worse than the strategy backtested results.
 
         Backtesting is usually performed by specialised tool, or a backtesting framework written in some programming language.
@@ -221,9 +218,7 @@ and algorithmic trading.
         complexity (single pair. vs multi pair vs. :term:`portfolio construction` strategies), supported market data
         and supported trading activities (:term:`volatility`-based, debt-based, etc.)
 
-        TradingView's :term:`Pine Script` is the most well-known backtesting framework in the world.
-
-        :term:`Trading Strategy Framework` is one of the backtesting frameworks for :term:`Python`, designed for :term:`decentralised finance`.
+        :term:`Trading Strategy Framework` is one of the backtesting frameworks for :term:`Python`, designed for :term:`decentralised finance`. TradingView's :term:`Pine Script` is the most well-known backtesting framework in the world.
 
         Backtesters can be implemented in two ways, making a compromise with the speed of backtesting vs. how complex the strategy logic can be:
 
@@ -239,7 +234,7 @@ and algorithmic trading.
 
         Here is more about `compromised between vectorised and event-driven frameworks <https://raposa.trade/blog/what-everybody-ought-to-know-about-backtesting/>`__.
 
-        ``See the list of Python backtesting frameworks <https://github.com/kernc/backtesting.py/blob/master/doc/alternatives.md>`__.
+        `See the list of Python backtesting frameworks <https://github.com/kernc/backtesting.py/blob/master/doc/alternatives.md>`__.
 
         See also
 
