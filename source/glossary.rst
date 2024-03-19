@@ -210,9 +210,39 @@ and algorithmic trading.
 
         Simulating the efficiency of a :term:`trading strategy` against historical data.
 
-        Backtesting is the process of analysing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
+        Backtesting is the process of analysing :term:`historical market data` to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
+
+        Backtesting is usually performed by specialised tool, or a backtesting framework written in some programming language.
+        Different backtesting frameworks offer compromises between speed (how many combinations you can test and how fast),
+        complexity (single pair. vs multi pair vs. :term:`portfolio construction` strategies), supported market data
+        and supported trading activities (:term:`volatility`-based, debt-based, etc.)
+
+        TradingView's :term:`Pine Script` is the most well-known backtesting framework in the world.
+
+        :term:`Trading Strategy Framework` is one of the backtesting frameworks for :term:`Python`, designed for :term:`decentralised finance`.
+
+        Backtesters can be implemented in two ways, making a compromise with the speed of backtesting vs. how complex the strategy logic can be:
+
+        - *Vectorised*: quickly compare thousands of :term:`grid search` options using parallel computation.
+          Popular Python-based vectorised backtesting frameworks include Moonshot, VectorBT.
+          To speed up computation, vectorised framework sometimes need to compromise with realism of the results.
+
+        - *Event-driven*: support complex decision making process and logic for the trade decisions.
+          Event-driven approach usually enables easier re-use of the strategy code between backtesting and live trade execution.
+          One popular Python-based event-driven backtesting framework is Zipline.
+          Read more about `event-driven logic here <https://www.quantstart.com/articles/Event-Driven-Backtesting-with-Python-Part-I/>`__.
+
+        Here is more about `compromised between vectorised and event-driven frameworks <https://raposa.trade/blog/what-everybody-ought-to-know-about-backtesting/>`__.
+
+        ``See the list of Python backtesting frameworks <https://github.com/kernc/backtesting.py/blob/master/doc/alternatives.md>`__.
 
         See also
+
+        - :term:`Trading Strategy Framework`
+
+        - :term:`Trading strategy`
+
+        - :term:`Grid search`
 
         - :term:`Historical market data`
 
@@ -220,7 +250,7 @@ and algorithmic trading.
 
         - :term:`Dataset`
 
-        - :term:`Trading strategy`
+        - :term:`Python`
 
     Decentralised exchange
 
@@ -823,7 +853,23 @@ and algorithmic trading.
 
     Pine Script
 
-        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+        Pine Script is a popular :term:`backtesting <backtest>` framework for :term:`trading strategies <trading strategy>`.
+
+        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__.
+
+        Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+
+        Pine Script also trades speed to limitations, and it cannot be used for complex trading strategies.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`Trading Strategy Framework`
+
+        - :term:`Python`
 
     TradingView
 
