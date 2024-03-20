@@ -9,6 +9,8 @@ manage a trading strategy deployed for multiple users using a :term:`vault`.
 If you are looking for a single user deployment, :ref:`hot wallet deployment`
 is an easier option.
 
+- This chapter is for a specific kind of Enzyme vault deployment to be used with :term:`Trading Strategy Protocol`
+
 .. warning::
 
     This chapter is somewhat outdated, as Enzyme Vault integration has been updated
@@ -44,6 +46,8 @@ To get started you need to have a
 
 - Native token loaded up for :term:`gas fee`
 
+- Deployed `Terms of Service manager smart contract <https://github.com/tradingstrategy-ai/terms-of-service/tree/main>`__
+
 - `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
 .. note ::
@@ -71,30 +75,67 @@ and giving it the configuration by environment variables.
 
 You need to
 
-* Decide your vault name and token symbol
+- Be familiar with UNIX shell
 
-* Have `PRIVATE_KEY` set up with some gas money.
+- Decide your vault name and token symbol
+
+- Have `PRIVATE_KEY` set up with some gas money for the trade executor hot wallet.
+  See how to :ref:`creating hot wallet` for more info.
+
+- Have Polygonscan, etc. API key for the verification of the deployed contracts
+
+- Get `TRADE_EXECUTOR_VERSION` Docker version from the Github container registry
 
 .. note ::
 
     Never share the hot wallet (private key) across different executors.
 
+This will
+
+- Deploy the Enzyme vault
+
+- `Set up a guard contract with given parameters to increase security and limit the role what trade-executor can do <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/guard>`__
+
+- Set up a `deposit forwarder smart contract for USDC <https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/master/contracts/in-house/src/TermedVaultUSDCPaymentForwarder.sol>`__
+
 Here is an example shell command how to put together a Docker command to run `enzyme-deploy-vault`.
-`See also the explanation how a local workign directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
+`See also the explanation how a local working directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
 Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
 
-.. code-block:: shell
+We are deploying multiple contracts. First test with `--simulate` flag to see the deployment finish all the way to end.
 
-    # Use $TRADE_EXECUTOR_IMAGE from the previous step
+.. code-block:: shell
 
     # You need to provider these
     export JSON_RPC_POLYGON=
     export PRIVATE_KEY=
-    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    export ETHERSCAN_API_KEY=
+
+    # The address DAO/proto DAO multisig that will own this vault.
+    # This address is Trading Strategy Protocol's ProtoDAO address.
+    export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
+
+    # ERC-20 token symbol
+    export FUND_SYMBOL="YOURTOKENSYMBOL"
+
+    # Enzyme vault name
+    export FUND_NAME="Your algorithm name"
+
+    # Space-separated list of tokens the vault allows the trade-executor to trade.
+    # Here we have WETH and WMATIC on Polygon.
+    export WHITELISTED_ASSETS="0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
+
+    # The vault is nominated in USDC *Polygon
+    export DENOMINATION_ASSET="0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+
+    # Terms of service manager smart contract address.
+    # This one is deployed on Polygon.
+    export TERMS_OF_SERVICE_ADDRESS="0xbe1418df0bAd87577de1A41385F19c6e77312780"
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables
     # - Set vault-info.json to be written to a local file system
+    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
     docker run \
         --interactive \
         --tty \
@@ -103,11 +144,17 @@ Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
         $TRADE_EXECUTOR_IMAGE \
         -- \
         enzyme-deploy-vault \
+        --simulate \
         --private-key=$PRIVATE_KEY \
-        --vault-record-file="vault-info.json" \
-        --fund-name="Your Vault Name" \
-        --fund-symbol="YOURTOKENSYMBOL" \
-        --json-rpc-polygon=$JSON_RPC_POLYGON
+        --vault-record-file="$FUND_SYMBOL-vault-info.json" \
+        --fund-name="$FUND_NAME" \
+        --fund-symbol="$FUND_SYMBOL" \
+        --json-rpc-polygon="$JSON_RPC_POLYGON" \
+        --etherscan-api-key=$ETHERSCAN_API_KEY \
+        --whitelisted-assets="$WHITELISTED_ASSETS" \
+        --denomination-asset="$DENOMIATION_ASSET" \
+        --terms-of-service-address="$TERMS_OF_SERVICE_ADDRESS" \
+        --owner-address="$OWNER_ADDRESS"
 
 This will give you the log output for the deployment:
 
@@ -145,12 +192,22 @@ This gives:
 .. code-block:: json
 
     {
-        "vault": "0x77feceCeE6E8aC1baD6207cFb36B26D22D8b2C59",
-        "comptroller": "0x54848b581c61baAdE1BbdA3134AEd48Bca1e4944",
-        "generic_adapter": "0x6b56Ee3C9e6751E94181226057d9589295d15c66",
-        "block_number": 43688398,
-        "usdc_payment_forwarder": "0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713"
+        "fund_name": "MATIC-ETH-USDC momentum algorithm",
+        "fund_symbol": "MATIC-ETH-USDC-ALGO",
+        "vault": "0xA2488118e33b2a72DC11e2c97eF0f5788700B2C2",
+        "comptroller": "0x5Cf97C5084fa1220Ac1465f4Fa7402F962C638d8",
+        "generic_adapter": "0x103DAa155fe94c6E53719E3f1d52bbACC4c15f8D",
+        "block_number": 54883433,
+        "usdc_payment_forwarder": "0xffaA2134DEf71180Db9e831c1765333645F0EC18",
+        "guard": "0xD03a5D1AD2391A6009Ab0d6c519967790461b282",
+        "deployer": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
+        "denomination_token": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+        "terms_of_service": "0xbe1418df0bAd87577de1A41385F19c6e77312780",
+        "whitelisted_assets": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+        "asset_manager_address": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
+        "owner_address": "0x238B0435F69355e623d99363d58F7ba49C408491"
     }
+
 .. note ::
 
     It is important that you keep the contents of the vault smart contract addresses and/or the JSON file around,

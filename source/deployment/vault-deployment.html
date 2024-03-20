@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<title>Vault deployment</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="vault-deployment-1">
+<span id="vault-deployment"></span>
+<h1 class="title">Vault deployment</h1>
+
+<p>This chapter discussed how to deploy a <cite>trade-executor</cite> binary to
+manage a trading strategy deployed for multiple users using a <a href="#system-message-1"><span class="problematic" id="problematic-1">:term:`vault`</span></a>.</p>
+<div class="system-message" id="system-message-1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 6); <em><a href="#problematic-1">backlink</a></em></p>
+Unknown interpreted text role &quot;term&quot;.</div>
+<p>If you are looking for a single user deployment, <a href="#system-message-2"><span class="problematic" id="problematic-2">:ref:`hot wallet deployment`</span></a>
+is an easier option.</p>
+<div class="system-message" id="system-message-2">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 9); <em><a href="#problematic-2">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+<ul>
+<li><p class="first">This chapter is for a specific kind of Enzyme vault deployment to be used with <a href="#system-message-3"><span class="problematic" id="problematic-3">:term:`Trading Strategy Protocol`</span></a></p>
+<div class="system-message" id="system-message-3">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 12); <em><a href="#problematic-3">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;term&quot;.</p>
+</div>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This chapter is somewhat outdated, as Enzyme Vault integration has been updated
+with new security policies that are not yet covered here.</p>
+</div>
+<div class="section" id="preface">
+<h1>Preface</h1>
+<p>This example shows how to deploy a vault for <a href="#system-message-4"><span class="problematic" id="problematic-4">:ref:`Enzyme protocol`</span></a></p>
+<div class="system-message" id="system-message-4">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 22); <em><a href="#problematic-4">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+<ul>
+<li><p class="first">Multiple investors,</p>
+</li>
+<li><p class="first">Vault owner and asset manager is set to be a single private key.</p>
+</li>
+<li><p class="first">Any strategy can trade assets whitelisted by Enzyme governance.
+See <a href="#system-message-5"><span class="problematic" id="problematic-5">:py:mod:`tradeexecutor.cli.commands.enzyme_asset_list`</span></a> for details
+how to view the list of currently active assets.</p>
+<div class="system-message" id="system-message-5">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 28); <em><a href="#problematic-5">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;py:mod&quot;.</p>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the beta mode, the vauklt does not have any safety features and can trade any assets.
+Use only for trusted oracle setups.</p>
+</div>
+</div>
+<div class="section" id="prerequisites">
+<h1>Prerequisites</h1>
+<p>To get started you need to have a</p>
+<ul>
+<li><p class="first"><a href="#system-message-6"><span class="problematic" id="problematic-6">:term:`JSON-RPC`</span></a> node</p>
+<div class="system-message" id="system-message-6">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 43); <em><a href="#problematic-6">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;term&quot;.</p>
+</div>
+</li>
+<li><p class="first">A private key</p>
+</li>
+<li><p class="first">Native token loaded up for <a href="#system-message-7"><span class="problematic" id="problematic-7">:term:`gas fee`</span></a></p>
+<div class="system-message" id="system-message-7">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 47); <em><a href="#problematic-7">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;term&quot;.</p>
+</div>
+</li>
+<li><p class="first">Deployed <a class="reference external" href="https://github.com/tradingstrategy-ai/terms-of-service/tree/main">Terms of Service manager smart contract</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line">To generate a private key securely offline, you can follow the instructions here</a>.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Private keys or hot wallets cannot be shared across different <cite>trade-executor</cite> instances.
+Because this will mess up accounting.</p>
+</div>
+</div>
+<div class="section" id="managing-docker-images">
+<h1>Managing Docker images</h1>
+<ul>
+<li><p class="first">You need to be able to run a Docker image on your server in order to run <cite>trade-executor</cite></p>
+</li>
+<li><p class="first">See <a href="#system-message-8"><span class="problematic" id="problematic-8">:ref:`managing Docker images`</span></a> to learn how to get started with Docker</p>
+<div class="system-message" id="system-message-8">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 63); <em><a href="#problematic-8">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;ref&quot;.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="strategy-name-and-id">
+<h1>Strategy name and id</h1>
+<p>See ref:<cite>strategy metadata</cite> for details.</p>
+</div>
+<div class="section" id="create-an-enzyme-vault">
+<h1>Create an Enzyme vault</h1>
+<p>You can create a vault by running <cite>trade-executor enzyme-deploy-vault</cite> command
+and giving it the configuration by environment variables.</p>
+<p>You need to</p>
+<ul>
+<li><p class="first">Be familiar with UNIX shell</p>
+</li>
+<li><p class="first">Decide your vault name and token symbol</p>
+</li>
+<li><p class="first">Have <cite>PRIVATE_KEY</cite> set up with some gas money for the trade executor hot wallet.
+See how to <a href="#system-message-9"><span class="problematic" id="problematic-9">:ref:`creating hot wallet`</span></a> for more info.</p>
+<div class="system-message" id="system-message-9">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 82); <em><a href="#problematic-9">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;ref&quot;.</p>
+</div>
+</li>
+<li><p class="first">Have Polygonscan, etc. API key for the verification of the deployed contracts</p>
+</li>
+<li><p class="first">Get <cite>TRADE_EXECUTOR_VERSION</cite> Docker version from the Github container registry</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Never share the hot wallet (private key) across different executors.</p>
+</div>
+<p>This will</p>
+<ul class="simple">
+<li>Deploy the Enzyme vault</li>
+<li><a class="reference external" href="https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/guard">Set up a guard contract with given parameters to increase security and limit the role what trade-executor can do</a></li>
+<li>Set up a <a class="reference external" href="https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/master/contracts/in-house/src/TermedVaultUSDCPaymentForwarder.sol">deposit forwarder smart contract for USDC</a></li>
+</ul>
+<p>Here is an example shell command how to put together a Docker command to run <cite>enzyme-deploy-vault</cite>.
+<a class="reference external" href="https://stackoverflow.com/a/76434724/315168">See also the explanation how a local working directory is mounted</a>.
+Remember to replace <cite>--fund-name</cite> and <cite>--fund-symbol</cite> with your own strings.</p>
+<p>We are deploying multiple contracts. First test with <cite>--simulate</cite> flag to see the deployment finish all the way to end.</p>
+<pre class="code shell literal-block">
+<span class="comment single"># You need to provider these
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">JSON_RPC_POLYGON</span><span class="operator">=</span><span class="whitespace">
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">PRIVATE_KEY</span><span class="operator">=</span><span class="whitespace">
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">ETHERSCAN_API_KEY</span><span class="operator">=</span><span class="whitespace">
+
+</span><span class="comment single"># The address DAO/proto DAO multisig that will own this vault.
+# This address is Trading Strategy Protocol's ProtoDAO address.
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">OWNER_ADDRESS</span><span class="operator">=</span>0x238B0435F69355e623d99363d58F7ba49C408491<span class="whitespace">
+
+</span><span class="comment single"># ERC-20 token symbol
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">FUND_SYMBOL</span><span class="operator">=</span><span class="literal string double">&quot;YOURTOKENSYMBOL&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Enzyme vault name
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">FUND_NAME</span><span class="operator">=</span><span class="literal string double">&quot;Your algorithm name&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Space-separated list of tokens the vault allows the trade-executor to trade.
+# Here we have WETH and WMATIC on Polygon.
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">WHITELISTED_ASSETS</span><span class="operator">=</span><span class="literal string double">&quot;0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># The vault is nominated in USDC *Polygon
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">DENOMINATION_ASSET</span><span class="operator">=</span><span class="literal string double">&quot;0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Terms of service manager smart contract address.
+# This one is deployed on Polygon.
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">TERMS_OF_SERVICE_ADDRESS</span><span class="operator">=</span><span class="literal string double">&quot;0xbe1418df0bAd87577de1A41385F19c6e77312780&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Run the command
+# - Pass private key and JSON-RPC node from environment variables
+# - Set vault-info.json to be written to a local file system
+</span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">TRADE_EXECUTOR_IMAGE</span><span class="operator">=</span>ghcr.io/tradingstrategy-ai/trade-executor:<span class="literal string interpol">${</span><span class="name variable">TRADE_EXECUTOR_VERSION</span><span class="literal string interpol">}</span><span class="whitespace">
+</span>docker<span class="whitespace"> </span>run<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--interactive<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--tty<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>-v<span class="whitespace"> </span><span class="literal string backtick">`</span><span class="name builtin">pwd</span><span class="literal string backtick">`</span>:<span class="literal string backtick">`</span><span class="name builtin">pwd</span><span class="literal string backtick">`</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>-w<span class="whitespace"> </span><span class="literal string backtick">`</span><span class="name builtin">pwd</span><span class="literal string backtick">`</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span><span class="name variable">$TRADE_EXECUTOR_IMAGE</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>enzyme-deploy-vault<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--simulate<span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--private-key<span class="operator">=</span><span class="name variable">$PRIVATE_KEY</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--vault-record-file<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$FUND_SYMBOL</span><span class="literal string double">-vault-info.json&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--fund-name<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$FUND_NAME</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--fund-symbol<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$FUND_SYMBOL</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--json-rpc-polygon<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$JSON_RPC_POLYGON</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--etherscan-api-key<span class="operator">=</span><span class="name variable">$ETHERSCAN_API_KEY</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--whitelisted-assets<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$WHITELISTED_ASSETS</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--denomination-asset<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$DENOMIATION_ASSET</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--terms-of-service-address<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$TERMS_OF_SERVICE_ADDRESS</span><span class="literal string double">&quot;</span><span class="whitespace"> </span><span class="literal string escape">\
+</span><span class="whitespace">    </span>--owner-address<span class="operator">=</span><span class="literal string double">&quot;</span><span class="name variable">$OWNER_ADDRESS</span><span class="literal string double">&quot;</span>
+</pre>
+<p>This will give you the log output for the deployment:</p>
+<pre class="code text literal-block">
+INFO     Chain polygon connects using alien-black-thunder.matic.quiknode.pro
+TRADE    Connected to chain: polygon, node provider: alien-black-thunder.matic.quiknode.pro, gas pricing method: london
+INFO     Using proof-of-authority web3 middleware for chain 137
+INFO     Connected to chain polygon
+INFO       Chain id is 137
+INFO       Latest block is 41,991,567
+INFO     Balance details
+INFO       Hot wallet is 0x40d8368C6D1FfC90fe705B74C6F0F56E1d11092E
+INFO       We have 103.618645 tokens for gas left
+INFO     Enzyme details
+INFO       Integration manager deployed at 0x92fCdE09790671cf085864182B9670c77da0884B
+INFO       USDC is 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+INFO     Deploying vault
+INFO     Deploying VaultSpecificGenericAdapter
+INFO     Vault details
+INFO       Vault at 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
+INFO       Comptroller at 0x0fC476e8050a9eDe4D24E2f01d8775249bDf310e
+INFO       GenericAdapter at 0x07f7eB451DfeeA0367965646660E85680800E352
+INFO       VaultUSDCPaymentForwarder at 0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713
+INFO       Deployment block number is 41991571
+</pre>
+<p>You can also see the deploy data in JSON file:</p>
+<pre class="code shell literal-block">
+cat<span class="whitespace"> </span>vault-info.json
+</pre>
+<p>This gives:</p>
+<pre class="code json literal-block">
+<span class="punctuation">{</span><span class="whitespace">
+    </span><span class="name tag">&quot;vault&quot;</span><span class="punctuation">:</span><span class="whitespace"> </span><span class="literal string double">&quot;0x77feceCeE6E8aC1baD6207cFb36B26D22D8b2C59&quot;</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="name tag">&quot;comptroller&quot;</span><span class="punctuation">:</span><span class="whitespace"> </span><span class="literal string double">&quot;0x54848b581c61baAdE1BbdA3134AEd48Bca1e4944&quot;</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="name tag">&quot;generic_adapter&quot;</span><span class="punctuation">:</span><span class="whitespace"> </span><span class="literal string double">&quot;0x6b56Ee3C9e6751E94181226057d9589295d15c66&quot;</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="name tag">&quot;block_number&quot;</span><span class="punctuation">:</span><span class="whitespace"> </span><span class="literal number integer">43688398</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="name tag">&quot;usdc_payment_forwarder&quot;</span><span class="punctuation">:</span><span class="whitespace"> </span><span class="literal string double">&quot;0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713&quot;</span><span class="whitespace">
+</span><span class="punctuation">}</span>
+</pre>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is important that you keep the contents of the vault smart contract addresses and/or the JSON file around,
+as otherwise you cannot interact with your vault later.</p>
+</div>
+</div>
+<div class="section" id="registering-the-vault-with-enzyme-s-website">
+<h1>Registering the vault with Enzyme's website</h1>
+<p>After the vault has been deployed, you can visit <cite>enzyme.finance &lt;https://enzyme.finance&gt;</cite> and
+register your vault there, to make it publicly accessible.</p>
+<ul class="simple">
+<li>Import the private key to a secure wallet e.g. TrustWallet on mobile
+or Rabby on desktop</li>
+<li>Sign in to Enzyme</li>
+<li>Switch to correct network</li>
+<li>The vault should automatically appear in left under &quot;My vault&quot;</li>
+<li>Go to Vault Settings, choose Claim vault</li>
+<li>Sign a message from your wallet for claiming the ownership</li>
+<li>Now you can fill in the vault description on Enzyme's website database</li>
+</ul>
+<div class="section" id="initial-vault-deposit">
+<h2>Initial vault deposit</h2>
+<ul class="simple">
+<li>After vault is registered it needs the initial deposit</li>
+<li>You need deposit some USDC in the vault needed later in the test trade,
+using Enzyme website and your wallet</li>
+<li>Enzyme can automatically convert MATIC to USDC and so on</li>
+</ul>
+</div>
+</div>
+<div class="section" id="set-up-live-execution-environment">
+<h1>Set up live execution environment</h1>
+<p>Create a <cite>trade-executor</cite> <a href="#system-message-10"><span class="problematic" id="problematic-10">:term:`Docker`</span></a> instance using <cite>docker-compose</cite> that will run the live trading.</p>
+<div class="system-message" id="system-message-10">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 240); <em><a href="#problematic-10">backlink</a></em></p>
+Unknown interpreted text role &quot;term&quot;.</div>
+<ul>
+<li><p class="first">You have set up an <a href="#system-message-11"><span class="problematic" id="problematic-11">:term:`environment file`</span></a> for the vault live trading</p>
+<div class="system-message" id="system-message-11">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 242); <em><a href="#problematic-11">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;term&quot;.</p>
+</div>
+</li>
+<li><p class="first">You have set up a <cite>docker-compose</cite> configuration entry for your live trade executor,
+see <a href="#system-message-12"><span class="problematic" id="problematic-12">:ref:`strategy deploment`</span></a> for details</p>
+<div class="system-message" id="system-message-12">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 244); <em><a href="#problematic-12">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;ref&quot;.</p>
+</div>
+</li>
+</ul>
+<p>You will need to create</p>
+<ul class="simple">
+<li>The final strategy module file</li>
+<li>Public environment variables file</li>
+<li>Secret environment variables file</li>
+<li>Final environment variables file</li>
+<li><cite>docker-compose.yml</cite> entry</li>
+</ul>
+<p>Example public environment variables entry:</p>
+<pre class="code shell literal-block">
+<span class="comment single">#
+# This is the public environment variables file for a trade executor.
+# This is only partial configuration.
+#
+# For more information see the documentation https://tradingstrategy.ai/docs/
+#
+</span><span class="whitespace">
+</span><span class="comment single"># This is a vault based strategy
+</span><span class="name variable">ASSET_MANAGEMENT_MODE</span><span class="operator">=</span><span class="literal string double">&quot;enzyme&quot;</span><span class="whitespace">
+
+</span><span class="comment single">#
+# Strategy assets and metadata
+#
+</span><span class="whitespace">
+</span><span class="name variable">STRATEGY_FILE</span><span class="operator">=</span>strategies/enzyme-polygon-eth-usdc.py<span class="whitespace">
+</span><span class="name variable">NAME</span><span class="operator">=</span><span class="literal string double">&quot;ETH-USD breakout on Uniswap v3&quot;</span><span class="whitespace">
+</span><span class="name variable">DOMAIN_NAME</span><span class="operator">=</span><span class="literal string double">&quot;enzyme-polygon-eth-usdc.tradingstrategy.ai&quot;</span><span class="whitespace">
+</span><span class="name variable">SHORT_DESCRIPTION</span><span class="operator">=</span><span class="literal string double">&quot;ETH/USDC breakout strategy&quot;</span><span class="whitespace">
+</span><span class="name variable">LONG_DESCRIPTION</span><span class="operator">=</span><span class="literal string double">&quot;Take long only positions in ETH based on RSI and Bollinger bands indicators&quot;</span><span class="whitespace">
+</span><span class="name variable">ICON_URL</span><span class="operator">=</span><span class="literal string double">&quot;https://user-images.githubusercontent.com/74208897/215499207-8d661ee9-cc75-4df6-84df-690e14c3d93c.png&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Port 3456 is mapped to the public IP on the host using Caddy
+</span><span class="name variable">HTTP_ENABLED</span><span class="operator">=</span><span class="name builtin">true</span><span class="whitespace">
+
+</span><span class="comment single"># The trigger mode for the decide_trades()
+</span><span class="name variable">STRATEGY_CYCLE_TRIGGER</span><span class="operator">=</span><span class="literal string double">&quot;trading_pair_data_availability&quot;</span><span class="whitespace">
+
+</span><span class="comment single"># Set parameters from Enzyme vault deployment.
+# Get output from trade-executor enzyme-deploy-vault command
+</span><span class="name variable">VAULT_ADDRESS</span><span class="operator">=</span>0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0<span class="whitespace">
+</span><span class="name variable">VAULT_ADAPTER_ADDRESS</span><span class="operator">=</span>0x07f7eB451DfeeA0367965646660E85680800E352<span class="whitespace">
+</span><span class="name variable">VAULT_PAYMENT_FORWARDER_ADDRESS</span><span class="operator">=</span>...<span class="whitespace">
+</span><span class="name variable">VAULT_DEPLOYMENT_BLOCK_NUMBER</span><span class="operator">=</span>...
+</pre>
+<p>Remember to slice files together:</p>
+<pre class="code shell literal-block">
+cat<span class="whitespace"> </span>~/strategies/env/enzyme-polygon-eth-usdc.env<span class="whitespace"> </span>~/secrets/enzyme-polygon-eth-usdc-secrets.env<span class="whitespace"> </span>&gt;<span class="whitespace"> </span>~/secrets/enzyme-polygon-eth-usdc-final.env
+</pre>
+</div>
+<div class="section" id="setting-up-docker-compose-entry">
+<h1>Setting up docker-compose entry</h1>
+<p>See <a href="#system-message-13"><span class="problematic" id="problematic-13">:ref:`docker compose example`</span></a>.</p>
+<div class="system-message" id="system-message-13">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 306); <em><a href="#problematic-13">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+</div>
+<div class="section" id="test-docker-compose-entry">
+<h1>Test docker-compose entry</h1>
+<p>You can check the trade executor with:</p>
+<pre class="code shell literal-block">
+docker-compose<span class="whitespace"> </span>run<span class="whitespace"> </span>enzyme-polygon-eth-usdc<span class="whitespace"> </span>--help
+</pre>
+<p>This gives:</p>
+<pre class="code text literal-block">
+Usage: trade-executor [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --install-completion [bash|zsh|fish|powershell|pwsh]
+                                  Install completion for the specified shell.
+  --show-completion [bash|zsh|fish|powershell|pwsh]
+                                  Show completion for the specified shell, to copy it or customize the installation.
+  --help                          Show this message and exit.
+
+Commands:
+  check-universe       Checks that the trading universe is helthy for a given strategy.
+  check-wallet         Print out the token balances of the hot wallet.
+  console              Open interactive IPython console to explore state.
+  enzyme-asset-list    Print out JSON list of supported Enzyme assets on a chain.
+  enzyme-deploy-vault  Deploy a new Enzyme vault.
+  hello                Check that the application loads without doing anything.
+  init                 Initialise a strategy.
+  perform-test-trade   Perform a small test swap.
+  repair               Repair broken state.
+  start                Launch Trade Executor instance.
+  version              Print out the version information.
+</pre>
+</div>
+<div class="section" id="run-a-backtest-on-the-strategy-module">
+<h1>Run a backtest on the strategy module</h1>
+<p>After the strategy module and Docker instance have been deployed.
+For more details on how to do a final backtest see <a href="#system-message-14"><span class="problematic" id="problematic-14">:ref:`docker-backtest`</span></a>,
+here are the quick instructions.</p>
+<div class="system-message" id="system-message-14">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 346); <em><a href="#problematic-14">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+<ul>
+<li><p class="first">This will use the final configuration (strategy module, environment files, docker compose) to run the backtest
+and see that the strategy module functions properly.</p>
+</li>
+<li><p class="first">This will generate backtest reports (HTML, notebook, state) for the web frontend</p>
+</li>
+<li><p class="first">The backtest result is saved on the local file system. The result of this backtest
+run is used to show some of the key metrics (sharpe, sortino, max drawdown)
+in the web frontend UI via <a href="#system-message-15"><span class="problematic" id="problematic-15">:ref:`webhook`</span></a>.</p>
+<div class="system-message" id="system-message-15">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 355); <em><a href="#problematic-15">backlink</a></em></p>
+<p>Unknown interpreted text role &quot;ref&quot;.</p>
+</div>
+</li>
+<li><p class="first">The default generated state file will be <cite>state/{id}-backtest.json</cite>.</p>
+</li>
+</ul>
+<p>You can run the backtest on the live trade executor with:</p>
+<!-- code-block: shell
+
+docker-compose run enzyme-polygon-matic-usdc backtest -->
+<p>And you will get a report like:</p>
+<pre class="code text literal-block">
+Trading period length                      359 days
+Return %                                     57.96%
+Annualised return %                          58.87%
+Cash at start                            $10,000.00
+Value at end                             $15,796.42
+Trade volume                            $948,224.62
+Position win percent                         48.48%
+Total positions                                  66
+Won positions                                    32
+...
+Avg realised risk                            -0.96%
+Max pullback of total capital                -6.47%
+Max loss risk at opening of position          1.02%
+</pre>
+</div>
+<div class="section" id="check-wallet">
+<h1>Check wallet</h1>
+<p>Check that your vault has deposits for test trade.</p>
+<pre class="code shell literal-block">
+docker-compose<span class="whitespace"> </span>run<span class="whitespace"> </span>enzyme-polygon-eth-usdc<span class="whitespace"> </span>check-wallet
+</pre>
+<p>The output should look like:</p>
+<pre class="code text literal-block">
+2023-05-11 17:27:11 root                                               INFO     Reading strategy strategy/enzyme-polygon-eth-usdc.py
+2023-05-11 17:27:11 root                                               INFO     Strategy module strategy/enzyme-polygon-eth-usdc.py, engine version 0.1
+2023-05-11 17:27:11 tradeexecutor.cli.bootstrap                        INFO     Dataset cache is /usr/src/trade-executor/cache
+2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  INFO     Chain polygon connects using mihailo2.tradingstrategy.ai
+2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  TRADE    Connected to chain: polygon, node provider: mihailo2.tradingstrategy.ai, gas pricing method: london
+2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  INFO     Using proof-of-authority web3 middleware for chain 137
+2023-05-11 17:27:11 tradeexecutor.utils.timer                          INFO     Starting task create_trading_universe at 2023-05-11 17:27:11.395569, context is {}
+2023-05-11 17:27:11 tradeexecutor.utils.timer                          INFO     Starting task load_pair_data_for_single_exchange at 2023-05-11 17:27:11.395682, context is {'time_bucket': '1h'}
+2023-05-11 17:27:11 tradeexecutor.strategy.trading_strategy_universe   INFO     Using cached data if available
+2023-05-11 17:27:13 tradingstrategy.reader                             INFO     Reading Parquet /usr/src/trade-executor/cache/pair-universe.parquet
+2023-05-11 17:27:13 tradeexecutor.utils.timer                          INFO     Ended task load_pair_data_for_single_exchange, took 0:00:01.938099
+2023-05-11 17:27:13 tradeexecutor.utils.timer                          INFO     Ended task create_trading_universe, took 0:00:01.944877
+2023-05-11 17:27:13 root                                               INFO     RPC details
+2023-05-11 17:27:13 root                                               INFO       Chain id is 137
+2023-05-11 17:27:13 root                                               INFO       Latest block is 42,582,328
+2023-05-11 17:27:13 root                                               INFO     Balance details
+2023-05-11 17:27:13 root                                               INFO       Hot wallet is &lt;eth_defi.hotwallet.HotWallet object at 0x7f5ba143f9d0&gt;
+2023-05-11 17:27:13 root                                               INFO       Vault address is 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
+2023-05-11 17:27:13 root                                               INFO       We have 101.844157 tokens for gas left
+2023-05-11 17:27:13 root                                               INFO       The gas error limit is 0.100000 tokens
+2023-05-11 17:27:13 root                                               INFO       Reserve asset: USDC (0x2791bca1f2de4661ed88a30c99a7a9449aa84174)
+2023-05-11 17:27:13 root                                               INFO       Balance of USD Coin (PoS) (0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174): 4.950005 USDC
+2023-05-11 17:27:13 tradeexecutor.strategy.runner                      INFO     Setting up routing. Routing model is &lt;tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing.UniswapV3SimpleRoutingModel object at 0x7f5ba04b0820&gt;, details are {'tx_builder': &lt;tradeexecutor.ethereum.enzyme.tx.EnzymeTransactionBuilder object at 0x7f5ba11c0790&gt;}, universe is &lt;TradingStrategyUniverse for WETH-USDC&gt;
+2023-05-11 17:27:13 root                                               INFO     Execution details
+2023-05-11 17:27:13 root                                               INFO       Execution model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_execution.UniswapV3ExecutionModel
+2023-05-11 17:27:13 root                                               INFO       Routing model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing.UniswapV3SimpleRoutingModel
+2023-05-11 17:27:13 root                                               INFO       Token pricing model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_live_pricing.UniswapV3LivePricing
+2023-05-11 17:27:13 root                                               INFO       Position valuation model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_valuation.UniswapV3PoolRevaluator
+2023-05-11 17:27:13 root                                               INFO       Sync model is tradeexecutor.ethereum.enzyme.vault.EnzymeVaultSyncModel
+2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO     Routing details
+2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Router: 0xE592427A0AEce92De3Edee1F18E0157C05861564
+2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Position Manager: 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Quoter: 0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6
+2023-05-11 17:27:13 tradeexecutor.ethereum.routing_model               INFO       Routed reserve asset is &lt;USDC at 0x2791bca1f2de4661ed88a30c99a7a9449aa84174&gt;
+2023-05-11 17:27:13 root                                               INFO     All ok
+</pre>
+</div>
+<div class="section" id="initialise-the-vault">
+<h1>Initialise the vault</h1>
+<p>This will initialise the state file for the strategy executor.</p>
+<ul class="simple">
+<li>Create a new state file for the strategy</li>
+<li>Read and sync on-chain information to the state file (smart contract addresses, etc.)</li>
+<li>Start tracking deposit and redemption information</li>
+</ul>
+<pre class="code shell literal-block">
+<span class="comment single"># Use the deployment block number earlier
+</span>docker-compose<span class="whitespace"> </span>run<span class="whitespace"> </span>enzyme-polygon-eth-usdc<span class="whitespace"> </span>init
+</pre>
+</div>
+<div class="section" id="performing-a-test-trade">
+<h1>Performing a test trade</h1>
+<p>Performing a test trade is the final step before starting live trading.</p>
+<p>First make sure</p>
+<ul class="simple">
+<li>Your vault has deposits</li>
+<li>Your hot wallet has native gas token for transaction fees</li>
+</ul>
+<p>You can perform a test trade that checks that the trade routing works, opening and closing positions is possible.
+This command will buy and sell a single trading pair from the strategy, worth of 1 USD.</p>
+<pre class="code shell literal-block">
+docker-compose<span class="whitespace"> </span>run<span class="whitespace"> </span>enzyme-polygon-eth-usdc<span class="whitespace"> </span>perform-test-trade
+</pre>
+<p>The output looks something like:</p>
+<pre class="code text literal-block">
+2023-05-11 21:29:08 tradeexecutor.ethereum.execution                   INFO     Waiting 1 trades to confirm, confirm block count 2, timeout 0:01:00
+2023-05-11 21:29:08 eth_defi.confirmation                              INFO     Waiting 2 transactions to confirm in 2 blocks, timeout is 0:01:00
+2023-05-11 21:29:21 tradeexecutor.ethereum.execution                   INFO     Resolved trade &lt;Sell #2 0.000556383506855833 WETH at 1795.5241082637904, broadcasted&gt;
+2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO     Final report
+2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Gas spent: 0.111114647238662268
+2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Trades done currently: 2
+2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserves currently: 4.949005 USDC
+2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserve currency spent: 0.001000000000000334 USDC
+2023-05-11 21:29:21 tradeexecutor.state.store                          INFO     Saved state to state/enzyme-polygon-eth-usdc.json, total 41620 chars
+2023-05-11 21:29:21 root                                               INFO     All ok
+</pre>
+</div>
+<div class="section" id="launch-live-trading">
+<h1>Launch live trading</h1>
+<p>Launch the trade executor in daemon mode:</p>
+<pre class="code shell literal-block">
+docker-compose<span class="whitespace"> </span>up<span class="whitespace"> </span>-d<span class="whitespace"> </span>enzyme-polygon-eth-usdc
+</pre>
+</div>
+<div class="section" id="checking-logs">
+<h1>Checking logs</h1>
+<p>Logs are available through the web frontend.</p>
+<p>You can also check the latest logs from Docker:</p>
+<pre class="code shell literal-block">
+docker-compose<span class="whitespace"> </span>logs<span class="whitespace"> </span>--tail<span class="operator">=</span><span class="literal number">200</span><span class="whitespace"> </span>enzyme-polygon-eth-usdc
+</pre>
+</div>
+<div class="section" id="backup-trade-executor-configuration">
+<h1>Backup trade-executor configuration</h1>
+<p>After finishing with the vault setup, make sure your configuration files are stored properly.</p>
+<ul class="simple">
+<li>Add edits and new files to Git commit</li>
+<li>Push changes to Github</li>
+</ul>
+</div>
+<div class="section" id="set-up-web-frontend-and-monitoring">
+<h1>Set up web frontend and monitoring</h1>
+<p>See the next steps in <a href="#system-message-16"><span class="problematic" id="problematic-16">:ref:`strategy monitoring`</span></a>.</p>
+<div class="system-message" id="system-message-16">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/moo/code/docs/source/deployment/vault-deployment.rst</tt>, line 516); <em><a href="#problematic-16">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+</div>
+</div>
+</body>
+</html>

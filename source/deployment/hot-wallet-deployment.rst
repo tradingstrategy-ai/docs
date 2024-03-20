@@ -78,6 +78,9 @@ looks intact.
 
 See :ref:`standalone module backtest` for more information.
 
+
+.. _creating hot wallet:
+
 Creating a hot wallet
 ---------------------
 
@@ -87,7 +90,7 @@ To create a hot wallet for a strategy do the following:
 
         python -c "from web3 import Web3; w3 = Web3(); acc = w3.eth.account.create(); print(f'private key={w3.to_hex(acc._private_key)}, account={acc.address}')"
 
-This will give you private key and account pair:
+This will give you private key and account pair (not a real private key, do not use):
 
 .. code-block:: text
 
