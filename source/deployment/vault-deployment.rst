@@ -234,16 +234,6 @@ register your vault there, to make it publicly accessible.
 
 - Now you can fill in the vault description on Enzyme's website database
 
-Initial vault deposit
-~~~~~~~~~~~~~~~~~~~~~
-
-- After vault is registered it needs the initial deposit
-
-- You need deposit some USDC in the vault needed later in the test trade,
-  using Enzyme website and your wallet
-
-- Enzyme can automatically convert MATIC to USDC and so on
-
 Set up live execution environment
 ---------------------------------
 
@@ -285,17 +275,9 @@ Example public environment variables entry:
     #
 
     STRATEGY_FILE=strategies/enzyme-polygon-eth-usdc.py
-    NAME="ETH-USD breakout on Uniswap v3"
-    DOMAIN_NAME="enzyme-polygon-eth-usdc.tradingstrategy.ai"
-    SHORT_DESCRIPTION="ETH/USDC breakout strategy"
-    LONG_DESCRIPTION="Take long only positions in ETH based on RSI and Bollinger bands indicators"
-    ICON_URL="https://user-images.githubusercontent.com/74208897/215499207-8d661ee9-cc75-4df6-84df-690e14c3d93c.png"
 
     # Port 3456 is mapped to the public IP on the host using Caddy
     HTTP_ENABLED=true
-
-    # The trigger mode for the decide_trades()
-    STRATEGY_CYCLE_TRIGGER="trading_pair_data_availability"
 
     # Set parameters from Enzyme vault deployment.
     # Get output from trade-executor enzyme-deploy-vault command
@@ -366,7 +348,8 @@ here are the quick instructions.
   run is used to show some of the key metrics (sharpe, sortino, max drawdown)
   in the web frontend UI via :ref:`webhook`.
 
-- The default generated state file will be `state/{id}-backtest.json`.
+- The default generated state file will be `state/{id}-backtest.json` with other files like HTML report
+  to be shown in the frontend.
 
 You can run the backtest on the live trade executor with:
 
@@ -458,6 +441,56 @@ This will initialise the state file for the strategy executor.
     # Use the deployment block number earlier
     docker-compose run enzyme-polygon-eth-usdc init
 
+First vault deposit
+-------------------
+
+- After vault is registered it needs the initial deposit e.g. 1 USDC,
+  for a test trade
+
+- You can do the initial deposit on Enzyme website,
+  or the Python console script below
+
+- You need deposit some USDC in the vault needed later in the test trade,
+  using Enzyme website and your wallet
+
+- Enzyme can automatically convert MATIC to USDC and so on
+
+To do the deposit using the console:
+
+.. code-block:: shell
+
+    docker compose run enzyme-polygon-matic-eth-usdc console
+
+Then with `%cpaste`:
+
+.. code-block:: python
+
+    from decimal import Decimal
+    from eth_defi.token import fetch_erc20_details
+    from eth_defi.trace import assert_transaction_success_with_explanation
+    from eth_defi.enzyme.vault import Vault
+
+    print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
+    usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
+    usdc = fetch_erc20_details(web3, usdc_address)
+    deposit_amount = Decimal(1)
+    vault_address = state.sync.deployment.address  # init command saves vault address here
+
+    our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
+    assert our_usdc_balance > deposit, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
+
+    # Perform approve + deposit from the trade-executor hot wallet
+    vault = Vault.fetch(web3, vault_address)
+    tx_hash = usdc.contract.functions.approve(vault.comptroller.address, usdc.convert_to_raw(deposit_amount)).transact({"from": hot_wallet.address})
+    print(f"Approving in TX {tx_hash.hex()}")
+    assert_transaction_success_with_explanation(web3, tx_hash)
+    tx_hash = vault.comptroller.functions.buyShares(usdc.convert_to_raw(deposit_amount), 1).transact({"from": hot_wallet.address})
+    print(f"buyShares() in TX {tx_hash.hex()}")
+    assert_transaction_success_with_explanation(web3, tx_hash)
+    vault_usdc_amount = usdc.fetch_balance_of(vault.address)
+    print(f"Deposit done, the vault has now {vault_usdc_amount} USDC, you can do perform-test-trade")
+
+
 Performing a test trade
 -----------------------
 
@@ -474,7 +507,10 @@ This command will buy and sell a single trading pair from the strategy, worth of
 
 .. code-block:: shell
 
-    docker-compose run enzyme-polygon-eth-usdc perform-test-trade
+    docker-compose run \
+        enzyme-polygon-eth-usdc \
+        perform-test-trade \
+        --all-pairs
 
 The output looks something like:
 
