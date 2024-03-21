@@ -11,11 +11,6 @@ is an easier option.
 
 - This chapter is for a specific kind of Enzyme vault deployment to be used with :term:`Trading Strategy Protocol`
 
-.. warning::
-
-    This chapter is somewhat outdated, as Enzyme Vault integration has been updated
-    with new security policies that are not yet covered here.
-
 Preface
 -------
 
