@@ -30,6 +30,8 @@ This is because we believe this formats fit better for DeFi market data feeds
   Furthermore there are no opening and closing auctions as one might have
   at stock markets.
 
+.. forward filling data:
+
 Forward filling data
 --------------------
 
@@ -50,6 +52,15 @@ following:
 
 - For any missing sparse timestamps, generate a candle where open/high/low
   close are set the the volume to zero using :term:`forward fill`.
+
+Some methods for forward fill your data:
+
+- :py:meth:`tradeexecutor.strategy.trading_strategy_universe.TradingStrategyUniverse.create_from_dataset`
+  takes `forward_fill` argument (`False` by default). You can use this in your `create_trading_universe`
+  function to forward fill loaded data.
+
+- For low-level forward filling see :py:func:`tradingstrategy.utils.groupeduniverse.resample_candles`
+  and :py:func:`tradingstrategy.utils.groupeduniverse.resample_series`.
 
 Distinction between buys and sells
 ----------------------------------

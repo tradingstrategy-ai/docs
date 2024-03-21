@@ -433,6 +433,8 @@ and algorithmic trading.
 
         - :term:`Bucket`
 
+        - :term:`Forward fill`
+
     Time frame
 
         See :term:`bucket`.
@@ -539,8 +541,22 @@ and algorithmic trading.
 
     Dataset
 
-        A data bundle consisting of :term:`candles <candle>` or other quantitative data sources.
-        The most usual dataset is hourly or daily candles for multiple assets, distributed as a downloadable archive of several hundreds of megabytes.
+        In :term:`quantitative finance`, a dataset is  a data bundle consisting of :term:`candles <candle>` or other quantitative data sources.
+        The most usual dataset is hourly or daily :term:`OHLCV` candles for multiple assets.
+
+        Datasets can be anywhere between megabytes to several gigabytes.
+
+        `See Trading Strategy free and open datasets <https://tradingstrategy.ai/trading-view/backtesting>`__.
+
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Forward fill`
+
+        - :term:`Jupyter notebook`
+
+        - :term:`Machine learning`
 
     Dataset server
 
@@ -3957,7 +3973,8 @@ and algorithmic trading.
 
         Alternative methods for handling missing data include backward fill (carrying the next observed value backward) or more sophisticated imputation techniques that estimate missing values based on statistical methods or predictive models. The choice of method depends on the specific characteristics of the dataset and the objectives of the analysis.
 
-        The :term:`Trading Strategy Framework` gives you various :term:`Python` functions for forward-fill, especially for :term:`OHLCV` data. See :term:`documentation` for more info.
+        The :term:`Trading Strategy Framework` gives you various :term:`Python` functions for forward-fill, especially for :term:`OHLCV` data. See ref:`forward filling data`
+        in the documentation for more information.
 
         See also
 
