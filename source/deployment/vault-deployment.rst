@@ -473,11 +473,11 @@ Then with `%cpaste`:
     print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
     usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
     usdc = fetch_erc20_details(web3, usdc_address)
-    deposit_amount = Decimal(1)
+    deposit_amount = Decimal(1.5)
     vault_address = state.sync.deployment.address  # init command saves vault address here
 
     our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
-    assert our_usdc_balance > deposit, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
+    assert our_usdc_balance > deposit_amount, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
 
     # Perform approve + deposit from the trade-executor hot wallet
     vault = Vault.fetch(web3, vault_address)
@@ -507,8 +507,8 @@ This command will buy and sell a single trading pair from the strategy, worth of
 
 .. code-block:: shell
 
-    docker-compose run \
-        enzyme-polygon-eth-usdc \
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
         perform-test-trade \
         --all-pairs
 
