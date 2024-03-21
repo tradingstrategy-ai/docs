@@ -5105,8 +5105,6 @@ and algorithmic trading.
 
         See also
 
-        See also
-
         - :term:`Statistical modeling`
 
         - :term:`Supervised learning`
