@@ -4053,28 +4053,6 @@ and algorithmic trading.
         - :term:`Training set`
 
         - :term:`Test set`
-    
-    Machine learning
-
-        Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) with data, without being explicitly programmed.
-
-        Machine learning is closely related to computational statistics, which focuses on making predictions using computers. Machine learning is also sometimes conflated with data mining, which focuses on extracting useful information from large datasets.
-
-        Machine learning algorithms are used in a wide variety of applications, including email filtering, speech recognition, and computer vision. They are also used in finance, where they are used to predict stock prices, detect fraud, and make trading decisions.
-
-        Machine learning algorithms can be classified into two broad categories: supervised learning and unsupervised learning. Supervised learning algorithms are trained using labeled data, while unsupervised learning algorithms are trained using unlabeled data.
-
-        Supervised learning algorithms are used to solve classification and regression problems. Classification problems involve predicting a discrete class label, while regression problems involve predicting a continuous quantity.
-
-        Unsupervised learning algorithms are used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
-
-        See also
-
-        - :term:`Statistical modeling`
-
-        - :term:`Supervised learning`
-
-        - :term:`Unsupervised learning`
 
     Statistical modeling
 
@@ -5126,6 +5104,14 @@ and algorithmic trading.
         - :term:`Sentiment Analysis: Machine learning models analyze news articles, social media feeds, and other textual data sources to gauge market sentiment and investor opinions. Sentiment analysis helps traders and investors make informed decisions by assessing the impact of public sentiment on financial markets.
 
         See also
+
+        See also
+
+        - :term:`Statistical modeling`
+
+        - :term:`Supervised learning`
+
+        - :term:`Unsupervised learning`
 
         - :term:`Backtest`
 
