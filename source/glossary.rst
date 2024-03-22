@@ -256,6 +256,10 @@ and algorithmic trading.
 
         - :term:`Machine learning`
 
+        - :term:`Test set`
+
+        - :term:`Dataset`
+
     Decentralised exchange
 
         Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`.
@@ -3622,21 +3626,7 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
-    
-    Overfitting
 
-        In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
-
-        Overfitting can be avoided by using a larger :term:`training set`, or by using :term:`regularization` techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
-
-        See also:
-
-        - :term:`Quantitative finance`
-
-        - :term:`Trading strategy`
-
-        - :term:`Training set`
-    
     Survivorship bias
 
         In :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
@@ -4082,6 +4072,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Dataset`
+
         - :term:`Machine learning`
 
         - :term:`Test set`
@@ -4100,6 +4092,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Backtest`
+
         - :term:`Machine learning`
 
         - :term:`Training set`
@@ -4117,6 +4111,8 @@ and algorithmic trading.
         The loss function is used to train the model, while the test set is used to evaluate the performance of the model. The test set is typically a random sample of the dataset that is not used to train the model.
 
         See also
+
+        - :term:`Backtest`
 
         - :term:`Machine learning`
 
@@ -4138,6 +4134,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Backtest`
+
         - :term:`Machine learning`
 
         - :term:`Statistical modeling`
@@ -4155,6 +4153,8 @@ and algorithmic trading.
         Unsupervised learning can be used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
 
         See also
+
+        - :term:`Backtest`
 
         - :term:`Machine learning`
 
@@ -5083,6 +5083,8 @@ and algorithmic trading.
         - :term:`Benchmark`
 
         - :term:`Best trading strategy`
+
+        - :term:`Training set`
 
     Machine learning
 
