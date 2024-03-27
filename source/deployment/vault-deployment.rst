@@ -470,9 +470,13 @@ Then with `%cpaste`:
     usdc = fetch_erc20_details(web3, usdc_address)
     deposit_amount = Decimal(1.5)
     vault_address = state.sync.deployment.address  # init command saves vault address here
+    assert vault_address, "Vault address not in state, run trade-executor init first"
 
+    out_gas_balance = web3.eth.get_balance(hot_wallet.address) / (10**18)
     our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
     assert our_usdc_balance > deposit_amount, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
+
+    print(f"Depositing, we have {out_gas_balance} for gas and {our_usdc_balance} USDC at {hot_wallet.address}")
 
     # Perform approve + deposit from the trade-executor hot wallet
     vault = Vault.fetch(web3, vault_address)

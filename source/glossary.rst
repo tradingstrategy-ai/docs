@@ -5125,7 +5125,41 @@ and algorithmic trading.
 
         - :term:`Benchmark`
 
+    Trade frequency
 
+        In :term:`trading strategies <trading strategy>`, a trade frequency is a metric telling how often the strategy makes a trade.
 
+        - High frequency strategies can make several trades per minute
+
+        - Mid frequency, intra day and breakout strategies can make several trades per day
+
+        - Low frequency, more macroeconomics strategies, can make some trades per year
+
+        - :term:`Buy and hold` strategy makes only two trades: enter the position and then sell it later
+
+        The trading frequency does not need to be constant. The strategy can take more positions
+        and trade differently in different :term:`market regimes <market regime>`, like bull and bear markets,
+        depending on the :term:`volatility` of the underlying market.
+
+        The higher the trading frequency is, more trading fees will occur. Strategies that make
+        trades too often might not be profitable on high-free trading venues like some :term:`decentralised exchanges <decentralised exchange>`
+        like :term:`Uniswap v2-compatibles <uniswap>`.
+
+        Trades do not necessarily mean opening and closing the whole position: trades can also occur
+        to adjust the :term:`position sizing` and risk mitigation measurements.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`Buy and hold`
+
+        - :term:`Portfolio`
+
+        - :term:`Market regime`
+
+        - :term:`Volatility`
 
 
