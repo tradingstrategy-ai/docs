@@ -2936,7 +2936,7 @@ and algorithmic trading.
 
         In trading, liquidation happens when a trader has insufficient funds to keep a leveraged trade open.
 
-        The exchange or term:`lending protocol` closes the position.
+        The exchange or :term:`lending protocol` closes the position.
 
         - Any collateral that was used to open the position is sold ("liquidated")
 
