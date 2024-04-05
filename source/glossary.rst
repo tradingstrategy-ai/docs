@@ -5187,7 +5187,7 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
-        - :term:`Market neutral`
+        - :term:`Market neutral strategy`
 
         - :term:`Delta neutral`
 
