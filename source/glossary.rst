@@ -1508,7 +1508,8 @@ and algorithmic trading.
         Decentralised finance activities happen :term:`on-chain`,
         and are :term:`protocol` based where users connect with their :term:`wallets <wallet>`.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
-        and intermediates make them very efficient.
+        and intermediates make them very efficient. Different decentralised finance protocols can be effectively
+        :term:`composed <composability>` to more complex financial applications.
 
         Decentralised finance can be seen to be a subset of :term:`web3`. If decentralised finance
         trades real-world assets, they are called :term:`RWAs <RWA>`.
@@ -1540,6 +1541,8 @@ and algorithmic trading.
         - :term:`Stablecoin`
 
         - :term:`Wallet`
+
+        - :term:`Composability`
 
     Algorithmic trading
 
@@ -5260,3 +5263,23 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - :term:`Mercenary capital`
+
+    Composability
+
+        Composability in :term:`decentralized finance` refers to the ability of different financial :term:`protocols <protocol>` or applications to seamlessly interact and interoperate with each other. In the context of DeFi, financial primitives such as lending, borrowing, trading, and yield farming are often implemented as separate protocols or smart contracts. Composability allows these protocols to be combined or "composed" in various ways to create more complex and sophisticated financial services.
+
+        Here are some key aspects of composability in DeFi:
+
+        - **Interoperability**: DeFi protocols are designed to be interoperable, meaning they can communicate and interact with each other without friction. This allows developers to combine different protocols to create new financial products and services.
+
+        - **Building Blocks**: DeFi protocols are often modular, meaning they can be used as building blocks to construct more complex applications. For example, a lending protocol can be combined with an automated market maker (AMM) to create a decentralized exchange with lending functionality.
+
+        - **Composable Assets**: Composability extends beyond protocols to the assets themselves. Many DeFi tokens and assets are designed to be composable, meaning they can be used as collateral, traded, or otherwise interacted with across different protocols.
+
+        - **Permissionless Innovation**: Composability enables permissionless innovation, allowing developers to experiment and build new financial products without needing approval from centralized authorities. This has led to a rapid pace of innovation in the DeFi space.
+
+        - :term:`Decentralised finance`
+
+        - :term:`Protocol`
+
+        - :term:`Trading strategy`
