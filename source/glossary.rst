@@ -3834,6 +3834,8 @@ and algorithmic trading.
 
         - :term:`Decentralised finance`
 
+        - :term:`Ether`
+
     Crystallisation
 
         In :term:`quantitative finance`, "crystallisation" typically refers to the process by which the value of a fund investment is determined or realized. It involves calculating the net asset value (NAV) of the fund and providing investors with a clear picture of their investment's worth.
@@ -5170,7 +5172,7 @@ and algorithmic trading.
 
         Cash and carry trades are commonly used in markets where futures or forward contracts are actively traded and where there are opportunities for arbitrage or speculation based on expected price movements.
 
-        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. Ethena popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open.
+        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. Ethena popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
 
         See also
 
@@ -5193,3 +5195,25 @@ and algorithmic trading.
     Spot-forward basis
 
         See :term:`cash and carry`.
+
+    Ether
+
+        Ether, or ETH, is the second most popular cryptocurrency in the world.
+
+        Ether is the native :term:`gas fee` token of Ethereum blockchain and its various layer two chains.
+
+        Ethereum is a proof-of-stake blockchain. Staked ether earns around ~4% annual yield.
+
+        See also
+
+        - :term:`Gas fee`
+
+        - :term:`EVM`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Buy and hold`
+
+        - :term:`Erigon`
