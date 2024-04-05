@@ -83,9 +83,11 @@ and algorithmic trading.
 
         - :term:`Market neutral strategy`
 
-        - :term:`Factor investing`
+        - :term:`Factor investing`\
 
         - :term:`Yield farming`
+
+        - :term:`Real yield`
 
     AMM
         Automated market maker (AMM) is a :term:`bonding curve` based :term:`decentralised exchange`.
@@ -668,10 +670,10 @@ and algorithmic trading.
 
         Yield farming is a :term:`passive trading strategy <passive strategy>` in :term:`decentralised finance`.
 
-        Usually yield farming strategies rely on :term:`on-chain` :term:`liquidty pools <liquidity pool>` and liquidity mining token distributions,
+        Usually yield farming strategies rely on :term:`on-chain` :term:`liquidity pools <liquidity pool>` and liquidity mining token distributions,
         which where any tokens are immediately sold. Strategies can be :term:`auto-compounding`.
 
-        Yield farms operate solely on smart contracts and their strategies are limited.
+        Yield farms operate solely on smart contracts and their strategies are limited. Often yield is not :term:`real yield`.
 
         Yield farms almost always aim for :term:`risk-free rate` against their :term:`quote token`.
 
@@ -696,6 +698,8 @@ and algorithmic trading.
         - :term:`Liquidity mining`
 
         - :term:`Mercenary capital`
+
+        - :term:`Real yield`
 
     Exposure
 
@@ -1318,6 +1322,8 @@ and algorithmic trading.
         - :term:`Liquidity mining`
 
         - :term:`Token distribution`
+
+        - :term:`Real yield`
 
     Poetry
 
@@ -5235,3 +5241,22 @@ and algorithmic trading.
         - :term:`Delta neutra`
 
         - :term:`Trading strategy`
+
+        - :term:`Real yield`
+
+    Real yield
+
+        In :term:`decentralised finance`, real yield means true profit earned by :term:`protocol`.
+        Real yield is sustainable, and usually comes from trade fees or profits: there is user demand for the service and users are willing to pay for it.
+
+        The opposite of real yield is subsidised profit, which is paid from the protocol treasury or with minted new token ("printing tokens").
+        The most infamous case of non-real yield was Terra's Anchor protocol that promised "guaranteed 20% :term:`Annual Percentage Yield (APY)`".
+        The yield was funded from Terra's treasury and then the treasury and token value collapsed, it took Anchor depositors with it.
+
+        - :term:`Decentralised finance`
+
+        - :term:`Protocol`
+
+        - :term:`Trading strategy`
+
+        - :term:`Mercenary capital`
