@@ -5172,7 +5172,7 @@ and algorithmic trading.
 
         Cash and carry trades are commonly used in markets where futures or forward contracts are actively traded and where there are opportunities for arbitrage or speculation based on expected price movements.
 
-        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. Ethena popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
+        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. :term:`Ethena` popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
 
         See also
 
@@ -5217,3 +5217,21 @@ and algorithmic trading.
         - :term:`Buy and hold`
 
         - :term:`Erigon`
+
+    Ethena
+
+        Ethena is a :term:`decentralised finance` :term:`protocol` which popularised :term:`cash and carry` trade.
+
+        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. :term:`Ethena` popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
+
+        See also
+
+        - :term:`Decentralised finance`
+
+        - :term:`Protocol`
+
+        - :term:`Cash and carry`
+
+        - :term:`Delta neutra`
+
+        - :term:`Trading strategy`
