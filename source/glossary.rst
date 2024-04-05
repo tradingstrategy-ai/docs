@@ -5162,4 +5162,34 @@ and algorithmic trading.
 
         - :term:`Volatility`
 
+    Cash and carry
 
+        In :term:`quantitative finance`, a "cash and carry trade" refers to a strategy where an investor simultaneously buys an asset and sells (or "carries") a related derivative contract. This :term:`trading strategy` is typically employed when the asset is expected to appreciate in value over time, and the investor seeks to profit from the price difference between the asset and its derivative.
+
+        This trade can be also known as carry trade and spot-forward basis.
+
+        Cash and carry trades are commonly used in markets where futures or forward contracts are actively traded and where there are opportunities for arbitrage or speculation based on expected price movements.
+
+        In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. Ethena popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Market neutral`
+
+        - :term:`Delta neutral`
+
+        - :term:`Volatility`
+
+        - :term:`Buy and hold`
+
+        - :term:`Best trading strategy`
+
+    Carry trade
+
+        See :term:`cash and carry`.
+
+    Spot-forward basis
+
+        See :term:`cash and carry`.
