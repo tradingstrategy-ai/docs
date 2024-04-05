@@ -12,12 +12,33 @@ and algorithmic trading.
 
     Trading strategy
 
-        A trading strategy is a fixed plan that is designed to achieve a profitable return by going long or short in markets.
+        In :term:`quantitative finance`, a trading strategy is a fixed plan that is designed to achieve a profitable returns for its investors.
 
-        It involves analysis to identify specific market conditions and price levels.
-        There are many different types of trading strategies, such as
+        Common trading strategies include:
 
-        - Moving-average cross strategies like :term:`EMA`
+        - :term:`Buy and hold`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Algorithmic trading`
+
+        - Index investing
+
+        A trading strategy may look to optimise :term:`cumulative profit` or :term:`risk-adjusted return`.
+
+        Further strategies can be classified by their activity and risk profile as
+
+        - :term:`Directional strategies <directional strategy>` that are :term:`volatile`
+
+        - :term:`Active strategies <active strategy>`
+
+        - :term:`Passive strategies <passive strategy>`
+
+        The trading strategy can be automated as :term:`algorithmic trading` and thus
+        become :term:`automated trading strategy`. Automated strategies
+        can be e.g.
+
+        - :term:`Technical indicator`-based strategies
 
         - Trend-following
 
@@ -27,28 +48,22 @@ and algorithmic trading.
 
         - Scalping
 
-        - Portfolio construction model
+        - :term:`Portfolio construction model` or :term:`tactical asset allocation`
 
-        - :term:`Market neutral <Market neutral strategy>`
+        - :term:`Market neutral <Market neutral strategy>`, or :term:`delta neutral`
 
         - :term:`Yield farming`
 
-        Further strategies can be classified by their activity and risk profile as
-
-        - :term:`Directional strategies <directional strategy>`
-
-        - :term:`Active strategies <active strategy>`
-
-        - :term:`Passive strategies <passive strategy>`
-
-        The trading strategy can be automated as :term:`algorithmic trading` and thus
-        become :term:`automated trading strategy`.
+        Trading strategies can be objectively compared to each other.
+        This is called :term:`benchmarking <benchmark>`.
 
         Trading Strategy can also refer to :term:`Trading Strategy Protocol`
         which is a solution for creating trading strategies for
         :term:`decentralised finance`.
 
         See also
+
+        - :term:`Best trading strategy`
 
         - :term:`Trading Strategy Protocol`
 
@@ -58,7 +73,7 @@ and algorithmic trading.
 
         - :term:`Automated trading strategy`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
         - :term:`Alpha generation platform`
 
@@ -193,11 +208,43 @@ and algorithmic trading.
 
     Backtest
 
-        Simulating the efficiency of a :term:`trading strategy` against historical data.
+        Backtesting is simulating the efficiency of a :term:`trading strategy` against historical data.
 
-        Backtesting is the process of analysing historical trade data to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data.
+        Backtesting is the process of analysing :term:`historical market data` to see how a trading strategy would have performed statistically in the past. It is a key component of effective trading system development and can be used to test a trading hypothesis/strategy on the historical data. Backtesting results are then :term:`benchmarked <benchmark>` against each other and indices like SP500, Bitcoin price. Backtesting results are often too promising due to :term:`overfitting`. It can be always assumed that the live
+        trading performance is worse than the strategy backtested results.
+
+        Backtesting is usually performed by specialised tool, or a backtesting framework written in some programming language.
+        Different backtesting frameworks offer compromises between speed (how many combinations you can test and how fast),
+        complexity (single pair. vs multi pair vs. :term:`portfolio construction` strategies), supported market data
+        and supported trading activities (:term:`volatility`-based, debt-based, etc.)
+
+        :term:`Trading Strategy Framework` is one of the backtesting frameworks for :term:`Python`, designed for :term:`decentralised finance`. TradingView's :term:`Pine Script` is the most well-known backtesting framework in the world.
+
+        Backtesters can be implemented in two ways, making a compromise with the speed of backtesting vs. how complex the strategy logic can be:
+
+        - *Vectorised*: quickly compare thousands of :term:`grid search` options using parallel computation.
+          Popular Python-based vectorised backtesting frameworks include Moonshot, VectorBT.
+          To speed up computation, vectorised framework sometimes need to compromise with realism of the results.
+          Vectorised frameworks can also easily utilise :term:`machine learning`.
+
+        - *Event-driven*: support complex decision making process and logic for the trade decisions.
+          Event-driven approach usually enables easier re-use of the strategy code between backtesting and live trade execution.
+          One popular Python-based event-driven backtesting framework is Zipline.
+          Read more about `event-driven logic here <https://www.quantstart.com/articles/Event-Driven-Backtesting-with-Python-Part-I/>`__.
+
+        Here is more about `compromised between vectorised and event-driven frameworks <https://raposa.trade/blog/what-everybody-ought-to-know-about-backtesting/>`__.
+
+        `See the list of Python backtesting frameworks <https://github.com/kernc/backtesting.py/blob/master/doc/alternatives.md>`__.
 
         See also
+
+        - :term:`Trading Strategy Framework`
+
+        - :term:`Trading strategy`
+
+        - :term:`Overfitting`
+
+        - :term:`Grid search`
 
         - :term:`Historical market data`
 
@@ -205,7 +252,13 @@ and algorithmic trading.
 
         - :term:`Dataset`
 
-        - :term:`Trading strategy`
+        - :term:`Python`
+
+        - :term:`Machine learning`
+
+        - :term:`Test set`
+
+        - :term:`Dataset`
 
     Decentralised exchange
 
@@ -252,7 +305,17 @@ and algorithmic trading.
 
         An autonomous agent is a software program or system that can operate independently and make decisions on its own, without direct intervention from a human. This type of technology is designed to perform specific tasks or functions, such as data processing, problem-solving, decision-making, and even physical actions.
 
-        Autonomous agents typically use artificial intelligence (AI) and machine learning algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
+        Autonomous agents typically use artificial intelligence (AI) and :term:`machine learning` algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
+
+    See also
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Machine learning`
+
+        - :term:`Decentralised finace`
+
+        - :term:`Smart contractopen`
 
     Smart contract
     
@@ -374,6 +437,8 @@ and algorithmic trading.
 
         - :term:`Bucket`
 
+        - :term:`Forward fill`
+
     Time frame
 
         See :term:`bucket`.
@@ -414,19 +479,59 @@ and algorithmic trading.
 
         Parquet is a columnar storage format for big data processing and analysis, commonly used in the Apache Hadoop and Apache Spark ecosystems. It is optimised for fast querying and efficient storage of large, complex data sets, and supports a wide range of data formats and compression options. By organising data into columns rather than rows, Parquet enables more efficient compression and encoding, as well as improved query performance, making it a popular choice for data warehousing and analytics applications. `More information <https://parquet.apache.org/>`__.
 
-    Pyarrow
+        Parquent comes from Apache :term:`Arrow` ecosystem.
 
-        Python API for :term:`Arrow` library. `More information <https://arrow.apache.org/docs/python/>`__. PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large datasets, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as Parquet, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
+        Parquet files have internal compression, usually :term:`Zstd`, to make transferring large data series faster.
+
+        See also
+
+        - :term:`PyArrow` - Python library
+
+        - :term:`Apache Arrow` - open source data science ecosystem project
+
+        - :term:`OHLCV` - market and price data type
+
+        - :term:`Zstd`
+
+    PyArrow
+
+        PyArrow is Python API for :term:`Arrow` library.
+
+        PyArrow is an open-source Python library that provides a fast, efficient way to process and analyse large :term:`datasets <dataset>`, especially those in Apache Arrow format. It is used for handling columnar and/or chunked data in memory, including reading and writing data from/to disk and interprocess communication. PyArrow also provides a rich set of data structures and algorithms for working with arrays, tables, and data frames, as well as support for various data formats such as :term:`Parquet`, Avro, ORC, and others. The library is designed to be highly performant and can be used in a variety of applications, including data science, machine learning, and data engineering.
+
+        `More information <https://arrow.apache.org/docs/python/>`__.
+
+        See also
+
+        - :term:`Apache Arrow` - native library
+
+        - :term:`Parquet` - file format
+
+        - :term:`Python` - programming language
+
+        - :term:`Jupyter Notebook` - data research tool
+
+        - :term:`Trading Strategy Framework` - build automated :term:`trading strategies <trading strategy>` with Python
 
     Arrow
 
+        See :term:`Apache Arrow`.
+
+    Apache Arrow
+
         Apache Arrow is an open-source, cross-platform columnar data format that is used for storing and processing large amounts of data efficiently. It was designed to address some of the performance and scalability challenges associated with traditional row-based data storage and processing methods.
 
-        Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, Python, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
+        Arrow provides a common format for storing data, which can be used across multiple platforms and programming languages, including C++, Java, :term:`Python`, and R. This allows for faster data processing and improved performance, as data can be shared and processed efficiently between different applications and systems.
 
-        In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects.
+        In addition to its performance benefits, Arrow also provides a number of other advantages, such as support for a wide range of data types and low overhead. This makes it well-suited for use in big data and analytics applications, as well as other data-intensive projects with large :term:`datasets <dataset>`.
 
         `More information <https://arrow.apache.org/docs/index.html>`__.
+
+        See also
+
+        - :term:`PyArrow` - Python library
+
+        - :term:`Parquet` - file format
 
     Dataclass
 
@@ -440,8 +545,22 @@ and algorithmic trading.
 
     Dataset
 
-        A data bundle consisting of :term:`candles <candle>` or other quantitative data sources.
-        The most usual dataset is hourly or daily candles for multiple assets, distributed as a downloadable archive of several hundreds of megabytes.
+        In :term:`quantitative finance`, a dataset is  a data bundle consisting of :term:`candles <candle>` or other quantitative data sources.
+        The most usual dataset is hourly or daily :term:`OHLCV` candles for multiple assets.
+
+        Datasets can be anywhere between megabytes to several gigabytes.
+
+        `See Trading Strategy free and open datasets <https://tradingstrategy.ai/trading-view/backtesting>`__.
+
+        See also
+
+        - :term:`OHLCV`
+
+        - :term:`Forward fill`
+
+        - :term:`Jupyter notebook`
+
+        - :term:`Machine learning`
 
     Dataset server
 
@@ -476,7 +595,7 @@ and algorithmic trading.
 
         - :term:`Algorithmic trading`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Backtrader
 
@@ -584,7 +703,17 @@ and algorithmic trading.
 
     Market neutral strategy
 
-        Market neutral strategies are trading strategies that have little or no :term:`exposure` to crypto asset volatility. They are often :term:`high-frequency trading` strategies, like arbitrage. Good market neutral strategies can make 10% - 20% monthly yield in cryptocurrency markets.
+        Market neutral strategies are :term:`trading strategies <trading strategy>` that have little or no :term:`exposure` to crypto asset :term:`volatility`. They are often :term:`high-frequency trading` strategies, like arbitrage. Good market neutral strategies can make 10% - 20% monthly yield in cryptocurrency markets.
+
+        See also
+
+        - :term:`Delta neutral`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Best trading strategy`
 
     High-frequency trading
 
@@ -605,19 +734,26 @@ and algorithmic trading.
 
     Directional strategy
 
-        A directional strategy is a type of trading or investment strategy that involves taking a bullish or bearish view on a particular asset or market.
-
-        This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
+        A directional strategy is a type of a :term:`trading strategy` that involves taking a :term:`bullish <bull market>` or :term:`bearish <bear market>` view on a particular asset or market,
+        and then attempt to make :term`profit <cumulative profit>` on the :term:`volatility` of the asset. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
         
         Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
         
         Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
+
+        The opposite of directional strategy is :term:`market neutral strategy`.
 
         See also
 
         - :term:`Trading strategy`
 
         - :term:`Active strategy`
+
+        - :term:`Volatility`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Risk-adjusted return`
 
     Active strategy
 
@@ -656,6 +792,8 @@ and algorithmic trading.
         - :term:`Exposure`
 
         - :term:`Drawdown`
+
+        - :term:`Market neutral strategy`.
 
     Non-custodial
 
@@ -758,7 +896,23 @@ and algorithmic trading.
 
     Pine Script
 
-        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__. Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+        Pine Script is a popular :term:`backtesting <backtest>` framework for :term:`trading strategies <trading strategy>`.
+
+        A proprietary trading strategy programming language for :term:`TradingView`. `Read more <https://www.tradingview.com/support/solutions/43000561836-what-is-pine-script/>`__.
+
+        Pine Script is a high-level scripting language that is specifically designed for use in creating custom trading indicators and strategies for financial markets. It is used by traders to create custom technical indicators, such as moving averages, :term:`Bollinger Bands`, and Relative Strength Indicators, as well as more complex algorithms for automated trading.
+
+        Pine Script also trades speed to limitations, and it cannot be used for complex trading strategies.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`Trading Strategy Framework`
+
+        - :term:`Python`
 
     TradingView
 
@@ -1026,7 +1180,7 @@ and algorithmic trading.
 
     Factor investing
 
-        Factor investing is an investment approach that chooses securities based on attributes that have historically been associated with higher returns.
+        Factor investing is a :term:`trading strategy` that chooses securities based on attributes that have historically been associated with higher returns.
 
         There are two main types of factors: macroeconomic and style. Investing in factors can help improve portfolio outcomes, reduce volatility and enhance diversification.
 
@@ -1036,9 +1190,15 @@ and algorithmic trading.
 
         - :term:`Portfolio construction`
 
+        - :term:`Portfolio`
+
+        - :term:`Trading strategy`
+
+        - :term:`Alpha`
+
     Alpha generation platform
 
-        An alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or trading strategies, that generate consistent returns.
+        In :term:`quantitative finance`, alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or :term:`trading strategies <trading strategy>`, that generate consistent returns.
 
         Alpha generation platforms are tools used by hedge funds, banks, CTAs and other financial institutions to help develop and test quantitative trading strategies.
         Alpha generation platforms support quants in the creation of efficient and productive quantitative trading strategies.
@@ -1047,9 +1207,13 @@ and algorithmic trading.
 
         See
 
+        - :term:`Alpha`
+
         - :term:`Alpha model`
 
         - :term:`Portfolio construction`
+
+        - :term:`Trading strategy
 
 
     Native token
@@ -1377,11 +1541,15 @@ and algorithmic trading.
 
         It involves making trading decisions based on pre-set rules that are programmed into a computer. :term:`Python` is often used for algorithmic trading due to its ability to handle complex calculations and its flexibility. Algorithmic trading strategies can be used to find potential trades and optimise the timing of trades.
 
+        Developing algorithmic trading strategies is called :term:`backtesting <backtest>`.
+
         See also
 
         - :term:`Trading strategy`
 
         - :term:`Automated trading strategy`
+
+        - :term:`Machine learning`
 
     Automated trading strategy
 
@@ -1891,6 +2059,10 @@ and algorithmic trading.
         files in a terminal. It can be combined with `tar` to create archives
         of directories, like :term:`blockchain snaphots <blockchain snapshot>`.
 
+        See also
+
+        - :term:`Parquet`
+
     Erigon
 
         The `Erigon <https://github.com/ledgerwatch/erigon>`__ node is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
@@ -2194,37 +2366,48 @@ and algorithmic trading.
 
     Best trading algorithm
 
-        The best trading algorithm in the world is one that makes most profit.
+        See :term:`best trading strategy`.
+
+    Best trading strategy
+
+        The best trading strategy is one that makes most excessive profit, or :term:`alpha`,
+        for the least risk.
 
         Depending on the the market situation and available :term:`trading pairs <trading pair>`,
-        the best trading algorithm can vary day by day, or depending whether the markets are in
-        :term:`bull market` or :term:`bear market`.
+        the current best trading strategy can vary day by day, or depending whether the markets are in
+        :term:`bull market` or :term:`bear market`. Also, depending on the trader risk apetitve
 
-        See :term:`trading strategy` term
-        to get an overall summary of different available trading algorithms.
+        A trading algorithm can generally yield 5% - 300% yearly profit depending on the
+        amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`,
+        with :term:`risk-adjusted return` having profits enough to cover any :term:`volatility` or other risk taken.
 
-        A trading algoritmn can generally yield 5% - 300% yearly profit depending on the
-        amount of deployed capital and the market size. The goal is to beat :term:`risk-free rate`.
+        In :term:`quantitative finance`, different trading strategies can be objectively compared
+        based on their performance metrics.
+        Some usual ways to :term:`benchmark` include:
 
-        The usual ways to rank :term:`trading algorithms <trading algorithm>` include
+        - :term:`Cumulative profit` or :term:`Compound Annual Growth Rate (CAGR)`
 
-        - :term:`Cumulative profit`
-
-        - :term:`Risk-adjusted return`
+        - :term:`Risk-adjusted return`, like :term:`Sharpe` and :term:`Sortino` ratios
 
         See also
+
+        - :term:`Alpha`
+
+        - :term:`Risk-adjusted return`
 
         - :term:`Profitability`
 
         - :term:`Trading strategy`
+
+        - :term:`Benchmark`
+
+        - :term:`Buy and hold`
 
         - :term:`Trading algorithm`
 
         - :term:`Algorithmic trading`
 
         - :term:`Quantitative analysis`
-
-        - :term:`Quantstats`
 
     Risk-adjusted return
 
@@ -2237,7 +2420,7 @@ and algorithmic trading.
 
         - :term:`Risk-free rate`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
         - :term:`Cumulative profit`
 
@@ -2253,30 +2436,46 @@ and algorithmic trading.
 
     Cumulative profit
 
-        Cumulative profit tells the overall profit of :term:`trading strategy` over a time.
+        In :term:`quantitative finance`, cumulative profit tells the overall profit of :term:`trading strategy` over a time.
 
         Cumulative profit is the excess of net income and gains over net losses, determined on a cumulative basis from the inception of an investment fund through to its termination date.
         It includes realized trading P&L, positions open P&L, and other total profits or losses generated since the :term:`trading strategy`'s inception.
 
         As trading strategies reinvest earlier profits, the cumulative profit :term:`compounds <compound>`.
 
+        Cumulative profit is expressed as % of yearly gains, as:
+
+        - :term:`Compound Annual Growth Rate (CAGR)` (volatile trading)
+
+        - :term:`Annual Percentage Yield (APY)` (loans, :term:`delta neutral` strategies)
+
         To calculate cumulative profit, one must add together all net profit numbers over a specific time frame.
+
+        If a trading strategy automatically reinvests its profits to itself, it is called :term:`auto-compounding`.
 
         See also
 
         - :term:`Compound`
 
+        - :term:`Auto-compounding`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
         - :term:`Profitability`
-
-        - :term:`Trading strategy`
-
-        - :term:`Equity curve`
 
         - :term:`Risk-adjusted return`
 
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Equity curve`
+
         - :term:`Drawdown`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Profitability
 
@@ -2302,7 +2501,7 @@ and algorithmic trading.
 
         - :term:`Drawdown`
 
-        - :term:`Best trading algorithm`
+        - :term:`Best trading strategy`
 
     Equity curve
 
@@ -2327,12 +2526,26 @@ and algorithmic trading.
 
     Auto-compounding
 
-        Auto-compounding is an investment strategy in which the user's investment yields are automatically reinvested into the investment principal at regular intervals.
+        Auto-compounding is a :term:`trading strategy` in which the investors's investment yields are automatically reinvested into the investment principal at regular intervals.
+        This is called :`compound`.
+
+        Auto-compounding strategies are :term:`benchmarked <benchmark>` using metrics having compounding factored in
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         Compounding is a powerful investing concept that involves earning returns on both the original investment and on returns received previously.
-        It is considered one of the smartest investment strategies, as it can generate additional earnings over time.
 
         See also
+
+        - :term:`Cumulative profit`
+
+        - :term:`Compound`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         - :term:`Trading strategy`
 
@@ -2344,15 +2557,20 @@ and algorithmic trading.
 
     BNB Chain
 
-        BNB Chain is an :term:`EVM-Compatible` blockchain from the Binance cryptocurrency exchange.
+        See :term:`BNB Smart Chain`.
 
-        BNB Chain is a direct :term:`fork` of Ethereum.
+    BNB Smart Chain
 
-        BNB Chain offers good interaction with the Binance cryptocurrency exchange (:term:`CEX`), making it attractive
+        BNB Smart Chain is an :term:`EVM-Compatible` blockchain from the Binance cryptocurrency exchange.
+        It is called as :term:`BNB Chain`, though these two are separate.
+
+        BNB Smart Chain is a direct :term:`fork` of Ethereum.
+
+        BNB Smart Chain offers good interaction with the Binance cryptocurrency exchange (:term:`CEX`), making it attractive
         for the users of this exchange. As of the writing of this, Binance has a 70% market
         share of the cryptocurrency trading volume, making it very dominant in the blockchain industry.
 
-        BNB Chain is based on centralised, proof-of-authority. model.
+        BNB Smart Chain is based on centralised, proof-of-authority. model.
         `BNB Chain was recently halted in a hack <https://cointelegraph.com/news/bnb-chain-confirms-bsc-halt-due-to-potential-exploit>`__.
         It uses `BNB token <https://tradingstrategy.ai/trading-view/binance/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c>`__
         as its :term:`native token`.
@@ -2364,6 +2582,8 @@ and algorithmic trading.
         - :term:`EVM-compatible`
 
         - :term:`Fork`
+
+        - :term:`Decentralised finance`
 
         - :term:`CEX`
 
@@ -2710,7 +2930,7 @@ and algorithmic trading.
 
     Trading Strategy Framework
 
-        The Trading Strategy Framework is a :term:`Python` based software development library
+        The Trading Strategy Framework is a :term:`Python`-based software development library
         to develop :term:`automated trading strategies <automated trading strategy>` for :term:`decentralised finance`
         markets. The core audience of the library is :term:`quants <quant>`.
 
@@ -2718,7 +2938,7 @@ and algorithmic trading.
 
         - Market data feed reader in the form of :term:`Trading Strategy Client`
 
-        - :term:`Backtesting framework <backtest>`
+        - :term:`Backtesting framework <backtest>` based on :term:`Jupyter Notebook`
 
         - :ref:`Live trading execution environment <running strategies>`
 
@@ -2726,15 +2946,23 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
         - :term:`Trading Strategy Protocol`
 
         - :term:`Trading Strategy Client`
 
-        - :term:`Trading strategy`
-
         - :term:`Decentralised finance`
 
         - :term:`Backtest`
+
+        - :term:`Python`
+
+        - :term:`Jupyter Notebook`
+
+        - :term:`PyArrow`
 
     Oracle
 
@@ -2957,7 +3185,7 @@ and algorithmic trading.
 
     Portfolio construction
 
-        Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities optimally to achieve maximum returns while taking minimum risk.
+        Portfolio construction a :term:`trading strategy method <trading strategy>` of selecting securities to your :term:`portfolio` optimally to achieve maximum returns while taking minimum risk.
 
         Portfolio constructions involves understanding how different asset classes, funds, and weightings impact each other and an investor's objectives
 
@@ -2980,6 +3208,36 @@ and algorithmic trading.
         - :term:`Technical analysis`
 
         - :term:`Algorithmic trading`
+
+    Portfolio
+
+        In :term:`quantitative finance`, portfolio means the list of assets that a :term:`trading strategy` is currently holding.
+
+        Assets can include
+
+        - Equity - stocks
+
+        - Bonds - loans
+
+        - Cryptocurrencies
+
+        - Derivatives
+
+        Depending on the asset, the holdings are expressed as assets, or tokens in cryptocurrencies and :term:`trading pair` (derivatives).
+
+        When the portfolio changes, assets are bought or sold, it is called :term:`rebalancing <rebalance>`,
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
 
     Alpha model
 
@@ -3009,13 +3267,25 @@ and algorithmic trading.
 
     Alpha signal
 
-        In :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models.
+        In :term:`quantitative finance` and :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models. Portfolio construction is a specific type of :term:``trading strategy`.
 
         Alpha signals are also known as *trading signals*.
 
-        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a portfolio that generates excess returns (i.e., alpha) relative to a benchmark index.
+        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a :term:`portfolio` that generates excess returns (i.e., alpha) relative to a benchmark index.
 
         Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
+
+        Some of the common alpha signals include
+
+        - :term:`Trading pair` momentum, or the raw price movement
+
+        - :term:`Technical indicators <technical indicator>`
+
+        - Machine learning-based indicators extracted from :term:`OHLCV` market data
+
+        - :term:`Alternative data` sources and their derivatives
+
+        When alpha signals of different industry verticals are compared, it is called :term:`factor investing`.
 
         See also
 
@@ -3023,7 +3293,13 @@ and algorithmic trading.
 
         - :term:`Alpha model`
 
-        - :term:`Decentralised finance`
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
 
     Trading signal
 
@@ -3110,7 +3386,7 @@ and algorithmic trading.
 
     Rebalance
 
-        In a :term:`trading strategy`, rebalance refers to the process of :term:`re-weighting <weight allocation>` the portfolio
+        In a :term:`trading strategy`, rebalance refers to the process of :term:`re-weighting <weight allocation>` the :term:`portfolio`
         by selling some assets and buying new ones.
 
         Rebalances are needed in order for the strategy to follow its :term:`alpha model`.
@@ -3120,6 +3396,8 @@ and algorithmic trading.
         In the process, the strategy opens new and closes existing :term:`positions <position>`.
 
         See also
+
+        - :term:`Portfolio`
 
         - :term:`Portfolio construction`
 
@@ -3348,21 +3626,7 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
-    
-    Overfitting
 
-        In :term:`quantitative finance`, Overfitting is a term used to describe the phenomenon where a model performs well on the data it was trained on, but poorly on new data. This is often caused by the model learning the noise in the data rather than the underlying pattern.
-
-        Overfitting can be avoided by using a larger :term:`training set`, or by using :term:`regularization` techniques such as dropout or weight decay. It is also important to use cross-validation to ensure that the model is not overfitting to the training data.
-
-        See also:
-
-        - :term:`Quantitative finance`
-
-        - :term:`Trading strategy`
-
-        - :term:`Training set`
-    
     Survivorship bias
 
         In :term:`quantitative finance`, Survivorship bias refers to the tendency to focus on assets, strategies, or systems that have survived or performed well over a certain period, while ignoring those that have underperformed or ceased to exist. This can lead to an overestimation of the performance or reliability of a trading strategy, as the analysis does not take into account the entire population of assets or strategies.
@@ -3476,11 +3740,17 @@ and algorithmic trading.
 
     Grid search
 
-        Grid search is a :term:`hyperparameter optimization` technique used to find the best combination of hyperparameters for a machine learning model or trading algorithm. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination using a performance metric, such as accuracy or Sharpe ratio.
+        In :term:`algorithmic trading`, grid search is a :term:`hyperparameter optimization` technique used to :term:`backtest` the best combination of hyperparameters for a :term:`trading strategy`. Grid search involves exhaustively searching through a manually specified subset of the hyperparameter space and evaluating each combination for :term:`cumulative profit` and  :term:`risk-adjusted return`.
 
         Although grid search can be computationally expensive, it is often used when the search space is relatively small or when a more thorough exploration of the hyperparameter space is desired. Other optimization techniques, such as random search or Bayesian optimization, can be more efficient in cases where the search space is large or the performance landscape is complex.
 
+        Blindly using grid search may result to :term:`overfitting` and the trading strategy does not have any real :term:`alpha`.
+
         See also:
+
+        - :term:`Backtest`
+
+        - :term:`Overfitting`
 
         - :term:`Trading strategy`
 
@@ -3630,7 +3900,7 @@ and algorithmic trading.
 
     Management fee
 
-        A management fee is a recurring fee charged by investment managers or fund managers for managing and overseeing investment portfolios or funds on behalf of investors. It is a compensation mechanism for the services provided by the manager in managing the assets and making investment decisions.
+        A management fee is a recurring fee charged by investment managers or fund managers for managing and overseeing investment :term:`portfolios <portfolio>` or funds on behalf of investors. It is a compensation mechanism for the services provided by the manager in managing the assets and making investment decisions.
 
         The management fee is typically calculated as a percentage of the total assets under management (AUM). The percentage fee can vary depending on the type of fund, investment strategy, or asset class. It is usually expressed as an annual rate and is deducted from the fund's assets on a regular basis, such as quarterly or annually.
 
@@ -3685,13 +3955,16 @@ and algorithmic trading.
 
         In data research and analysis, "forward fill" refers to a method of handling missing or incomplete data by carrying forward the last observed value to fill in the gaps. It is also known as "last observation carried forward" (LOCF).
 
-        When dealing with time series data or datasets with missing values, forward fill involves replacing missing data points with the most recent known value. This approach assumes that the value remains constant until a new observation is available. By using the previous observation as a substitute, forward fill helps maintain continuity in the data and allows for continued analysis or modeling.
+        When dealing with time series data or :term:`datasets <dataset>` with missing values, forward fill involves replacing missing data points with the most recent known value. This approach assumes that the value remains constant until a new observation is available. By using the previous observation as a substitute, forward fill helps maintain continuity in the data and allows for continued analysis or modeling.
 
         Forward fill is often employed when missing data is considered to be missing at random (MAR), meaning the missingness is not related to the actual value. It can be a useful technique when the missing data points are intermittent or occur sporadically.
 
         However, it is important to note that forward fill may not always be appropriate or suitable for all datasets or analysis scenarios. It assumes that the missing values should be carried forward, which may not be accurate or appropriate in all cases. Researchers should carefully consider the nature of the data and the implications of using forward fill before applying it.
 
         Alternative methods for handling missing data include backward fill (carrying the next observed value backward) or more sophisticated imputation techniques that estimate missing values based on statistical methods or predictive models. The choice of method depends on the specific characteristics of the dataset and the objectives of the analysis.
+
+        The :term:`Trading Strategy Framework` gives you various :term:`Python` functions for forward-fill, especially for :term:`OHLCV` data. See ref:`forward filling data`
+        in the documentation for more information.
 
         See also
 
@@ -3770,28 +4043,6 @@ and algorithmic trading.
         - :term:`Training set`
 
         - :term:`Test set`
-    
-    Machine learning
-
-        Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) with data, without being explicitly programmed.
-
-        Machine learning is closely related to computational statistics, which focuses on making predictions using computers. Machine learning is also sometimes conflated with data mining, which focuses on extracting useful information from large datasets.
-
-        Machine learning algorithms are used in a wide variety of applications, including email filtering, speech recognition, and computer vision. They are also used in finance, where they are used to predict stock prices, detect fraud, and make trading decisions.
-
-        Machine learning algorithms can be classified into two broad categories: supervised learning and unsupervised learning. Supervised learning algorithms are trained using labeled data, while unsupervised learning algorithms are trained using unlabeled data.
-
-        Supervised learning algorithms are used to solve classification and regression problems. Classification problems involve predicting a discrete class label, while regression problems involve predicting a continuous quantity.
-
-        Unsupervised learning algorithms are used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
-
-        See also
-
-        - :term:`Statistical modeling`
-
-        - :term:`Supervised learning`
-
-        - :term:`Unsupervised learning`
 
     Statistical modeling
 
@@ -3821,6 +4072,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Dataset`
+
         - :term:`Machine learning`
 
         - :term:`Test set`
@@ -3839,6 +4092,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Backtest`
+
         - :term:`Machine learning`
 
         - :term:`Training set`
@@ -3856,6 +4111,8 @@ and algorithmic trading.
         The loss function is used to train the model, while the test set is used to evaluate the performance of the model. The test set is typically a random sample of the dataset that is not used to train the model.
 
         See also
+
+        - :term:`Backtest`
 
         - :term:`Machine learning`
 
@@ -3877,6 +4134,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Backtest`
+
         - :term:`Machine learning`
 
         - :term:`Statistical modeling`
@@ -3894,6 +4153,8 @@ and algorithmic trading.
         Unsupervised learning can be used to solve clustering and dimensionality reduction problems. Clustering problems involve grouping similar data points together, while dimensionality reduction problems involve reducing the number of features in a dataset.
 
         See also
+
+        - :term:`Backtest`
 
         - :term:`Machine learning`
 
@@ -3970,7 +4231,7 @@ and algorithmic trading.
 
     Compound
 
-        In :term:`quantitative finance`, compounding returns refer to the process of reinvesting profits or earnings generated from an investment back into the investment itself. It involves earning returns not only on the initial investment but also on the accumulated earnings from previous periods.
+        In :term:`quantitative finance`, compounding returns refer to the process of reinvesting profits or earnings generated from a :term:`trading strategy` back into the itself. It involves earning returns not only on the initial investment but also on the accumulated earnings from previous periods.
 
         When returns are compounded, they have the potential to grow exponentially over time, thanks to the compounding effect. The compounding effect arises from reinvesting the returns, allowing them to generate additional returns in subsequent periods. As the investment grows, the compounding effect becomes more significant, leading to accelerated growth over the long term.
 
@@ -3980,15 +4241,27 @@ and algorithmic trading.
 
         When analyzing investment performance or projecting future returns, it is crucial to consider the impact of compounding. Investors often use compound interest formulas or specialized software to calculate and project the compounded returns based on the investment's expected growth rate and compounding frequency.
 
+        Common :term:`benchmark` metrics that deal with compound include
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
+        If an automated strategy does compounding it is called :term:`auto-compound` strategy.
+
         See also
 
-        - :ref:`Profitability calculations <profitability>`
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Annual Percentage Yield (APY)`
 
         - :term:`Cumulative profit`
 
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+        - :ref:`Profitability calculations <profitability>`
 
     Position sizing
 
@@ -4015,6 +4288,8 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
+
+        - :term:`Portfolio construction`
 
     Total equity
 
@@ -4108,7 +4383,7 @@ and algorithmic trading.
 
     Maximum Drawdown
 
-        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a portfolio, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
+        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a :term:`portfolio`, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
 
         Maximum drawdown is an important metric in risk management as it helps investors understand the potential downside risk of an investment. It is often used to assess the risk of a portfolio and to compare different investment strategies.
 
@@ -4262,13 +4537,19 @@ and algorithmic trading.
 
         Market exposure refers to the extent to which an investment portfolio is subject to fluctuations in the overall financial market or a specific asset class. It describes the amount of risk or potential for gain that an investor or organization faces as a result of having invested in a particular market, sector, or individual security.
 
-        Example: An investor with a portfolio heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
+        Example: An investor with a :term:`portfolio` heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
 
         Unrealized risk and market exposure are often interconnected, as the level of market exposure can directly impact the degree of unrealized risk in a portfolio. A portfolio with high market exposure to volatile sectors will inherently carry a higher degree of unrealized risk until positions are closed.
 
         See also
 
         - :term:`Unrealised risk`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Trading strategy`
 
     Median
 
@@ -4338,6 +4619,8 @@ and algorithmic trading.
 
         - :term:`Standard deviation`
 
+        - :term:`Volatility`
+
     Volume
         
         In the context of cryptocurrency, trading volume refers to the total number of tokens or coins that have been traded for a specific cryptocurrency pair within a given time frame. It serves as a key indicator of the asset's liquidity and the level of investor interest. High trading volumes often suggest a more liquid and stable market, while low volumes may indicate less liquidity and greater potential for price manipulation.
@@ -4399,13 +4682,19 @@ and algorithmic trading.
 
     Volatility
 
-        Volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
+        In :term:`quantitative finance`, volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
 
         Example: If a cryptocurrency experiences rapid price swings within short periods, it is said to have high volatility.
 
-        Usage: Volatility is a crucial concept in financial markets, often used by traders and investors to assess the risk and potential returns of an asset. High volatility can offer opportunities for greater returns but also poses higher risks.
+        Volatility is a crucial concept in financial markets, often used by traders and investors to assess the risk and potential returns of an asset. High volatility can offer opportunities for greater returns but also poses higher risks.
 
         Each of these terms offers a different lens through which to analyze market conditions and can be used in combination to make more informed trading or investing decisions.
+
+        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`Risk-adjusted return`, volatility is the fundamental
+        metric for various risk vs. rewards calculations.
+
+        :term:`Delta neutral` :term:`trading strategy` is a strategy that is immune to volatility: no matter which direction the price
+        moves, the strategy makes profit.
 
         See also
 
@@ -4414,6 +4703,14 @@ and algorithmic trading.
         - :term:`Market sentiment`
 
         - :term:`Volume`
+
+        - :term:`Variance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Delta neutral`
 
     Compound Annual Growth Rate (CAGR)
 
@@ -4441,6 +4738,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Cumulative profit`
+
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
@@ -4451,8 +4750,416 @@ and algorithmic trading.
 
         - :term:`Sortino`
 
+        - :term:`Annual Percentage Rate (APR)`
+
+        - :term:`Annual Percentage Yield (APY)`
+
         - :term:`Trading strategy`
 
     CAGR
 
         See :term:`Compound Annual Growth Rate (CAGR)`.
+
+    Time in Market
+
+        "Time in Market" refers to the duration for which a :term:`trading strategy` or an algorithm maintains positions in the market. In algorithmic trading, strategies are often designed to exploit short-term market inefficiencies or trends, and the duration for which they hold positions can vary significantly.
+
+        For example, some algorithmic trading strategies may execute trades within microseconds or milliseconds, aiming to capitalize on very short-term price movements. These strategies have a minimal "time in market" as they quickly enter and exit positions. On the other hand, some strategies may hold positions for longer durations, ranging from minutes to hours or even days. These strategies rely on capturing larger market trends or exploiting fundamental factors that may take time to unfold. They have a longer "time in market" compared to high-frequency trading strategies.
+
+        Time in Market can be also percents expressing how long the strategy hold any position open vs. just having cash. For example 30% Time in Market means that the strategy hold the underlying assets for 30% of its life time, and was all cash 70% of the time.
+
+        Usually Time in Market also correlates with the position count: if the time in market is low, it means strategy is opening positions less frequently.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+    Delta neutral
+
+        In :term:`quantitative finance`, a delta neutral :term:`trading strategy` is not exposed to the :term:`volatility` of underlying assets.
+
+        A delta neutral strategy, also known as :term:`market neutral strategy` does not make any losses regardless if asset prices more up or down.
+
+        See also
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Volatility`
+
+    Annual Percentage Rate (APR)
+
+        APR stands for Annual Percentage Rate in :term:`quantitative finance`. It is a standardized way of expressing the cost of borrowing money or the return on investment over a yearly basis. In quantitative finance, APR is commonly used in various financial instruments such as loans, mortgages, credit cards, and investment products.
+
+        In trading :term:`Compound Annual Growth Rate (CAGR)` is more commonly used. APR is used for loans, :term:`delta neutral` trading strategies
+        and :term:`yield farming` in :term:`decentralised finance`.
+
+        APR does not account compounding interest, unlike :term:`:term:`Annual Percentage Yield (APY)`.
+
+        See also
+
+        - :term:`Annual Percentage Yield (APY)`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Risk-adjusted return`
+
+    APR
+
+        See :term:`Annual Percentage Rate (APR)`
+
+    Annual Percentage Yield (APY)
+
+        APY stands for Annual Percentage Yield in :term:`quantitative finance`. It is a measure used to represent the effective annual rate of return or the annualized rate of interest earned on an investment or deposit, taking into account the effect of compounding interest.
+
+        Unlike :term:`APR (Annual Percentage Rate)`, which only considers the nominal interest rate, APY factors in the compounding frequency of interest payments. This means that APY reflects the total amount of interest earned or paid over a year, including the effect of reinvesting interest earnings or paying interest on previously earned interest.
+
+        APY is particularly useful for comparing the true returns of different investment or deposit options, as it provides a standardized way of expressing the annualized rate of return while accounting for compounding. It allows investors to make more informed decisions about where to allocate their funds based on the actual returns they can expect to earn.
+
+        In trading :term:`Compound Annual Growth Rate (CAGR)` is more commonly used. APY is used for loans, :term:`delta neutral` trading strategies
+        and :term:`yield farming` in :term:`decentralised finance`.
+
+        See also
+
+        - :term:`Annual Percentage Rate (APR)`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Risk-adjusted return`
+    APY
+
+        See :term:`Annual Percentage Yield (APY)`
+
+    Alpha
+
+        In :term:`quantitative finance`, "alpha" refers to a measure of an investment strategy's performance compared to a benchmark index, after adjusting for risk. It represents the excess return generated by the strategy beyond what would be expected based on its level of risk. Alpha is often used to assess the skill or effectiveness of portfolio managers, traders, or investment strategies in generating returns.
+
+        Mathematically, alpha is typically calculated using the Capital Asset Pricing Model (CAPM) or similar models that relate an asset's return to its level of risk. In these models, alpha is the intercept term of the regression equation, representing the excess return not explained by the systematic risk factors.
+
+        Positive alpha indicates that the :term:`trading strategy` has outperformed the benchmark, while negative alpha suggests underperformance.
+
+        Alpha is a crucial concept in quantitative finance, as it helps investors evaluate the effectiveness of their investment decisions and identify sources of added value beyond market movements.
+
+        See also
+
+        - :term:`Alpha model`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Alpha generation platform`
+
+        - :term:`Profitability`
+
+        - :term:`Strategy decay`
+
+    Strategy decay
+
+        In :term:`quantitative finance`, strategy decay means that a :term:`trading strategy` loses is excessive profit, or :term:`alpha` generation, capabilities over time.
+
+        `From QuantStrat <https://www.quantstart.com/articles/annualised-rolling-sharpe-ratio-in-qstrader/>`__:
+
+        "Strategy decay is one of the trickiest aspects to manage within the realm of quantitative trading. It involves previously performing strategies that gradually, and sometimes rapidly, lose their performance characteristics and end up becoming unprofitable."
+
+        "Quantitative trading strategies almost unilaterally rely on the concept of forecasting and/or statistical mispricing. As more and more trading entities–retail or institutional–implement similar systematic strategies the mispricings give way to price efficiency. The gain derived from such strategies is eroded and then usually falls to the level of transaction costs required to carry it out, making them unprofitable."
+
+        "This means that quantitative trading is not a "set and forget" activity. In reality quant traders need to have a portfolio of strategies that are slowly rotated out over time once any arbitrage opportunities begin to erode. Thus constant research is required to continually develop new profitable edges that replace those that have been arbed away".
+
+        One common way to measure and visualise strategy decay is visualising rolling :term:`Sharpe` ratio.
+        If Sharpe is getting worse over time, the strategy is decaying.
+
+        See also
+
+        - :term:`Sharpe`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Alpha`
+
+        - :term:`Sharpe`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Profitability`
+
+        - :term:`Best trading strategy`
+
+    Excess returns
+
+        See :term:`alpha`.
+
+    Market regime
+
+        In :term:`quantitative finance`, market regime means the current general state of the market. It can concern a single :term:`trading pair`,
+        of the market as a whole.
+
+        Popular market regimes includes
+
+        - :term:`Bull market` - everything goes up
+
+        - :term:`Bear market` - everything comes down
+
+        - Crab market - everything moves sideways
+
+        Market regime can be also volatility based, for the risk management
+
+        - High volatility - avoid trend following strategies, as trend is unclear
+
+        - Low volatility - breakouts are less likely, avoid breakout strategies
+
+        See also
+
+        - :term:`Regime filter`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+    Regime filter
+
+        In a :term:`trading strategy`, a regime filter tells the current :term:`market regime`.
+
+        The strategy should modify its behavior based on the direction of the markets
+
+        - In a :term:`bull market` make more aggressive bets
+
+        - In a :term:`bear market` - conserve cash and open more short positions
+
+        Some regime filters are
+
+        - Bitcoin 200-days :term:`moving average` - if we are above 200 days moving average cryptocurrencies are in a bull market
+
+        - Machine learning based clustering
+
+        Market regime filter examples
+
+        - `Market Regime Detection using Hidden Markov Models in QSTrader <https://www.quantstart.com/articles/market-regime-detection-using-hidden-markov-models-in-qstrader/>`__
+
+        See also
+
+        - :term:`Market regime`
+
+        - :term:`Trading strategy`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Best trading strategy`
+
+    Benchmark
+
+        In :term:`quantitative finance`, benchmarking is comparing different :term:`portfolios <portfolio>`
+        or :term:`trading strategies <trading strategy>` against each other.
+
+        The comparison examines
+
+        - :term:`Cumulative profit`
+
+        - :term:`Risk-adjusted return`
+
+        - Fees paid or generated
+
+        Common comparison methods include
+
+        - :term:`Compound Annual Growth Rate (CAGR)`, or :term:`cumulative profit`
+
+        - :term:`Equity curve` comparison
+
+        - :term:`Volatility` risk-based and risk-adjusted metrics like :term:`Sharpe` and :term:`Sortino` ratios
+
+        Benchmark can compare
+
+        - Different :term:`trading stragies <trading strategy>` to each other
+
+        - Different :term:`portfolios <portfolio>` to each other
+
+        - Strategies and portfolios to a :term:`trading pair` :term:`buy and hold` performance
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Buy and hold`
+
+        - :term:`Best trading strategy`
+
+    Buy and hold
+
+        In :term:`quantitative finance`, a buy and hold trading strategy is to buy an asset
+        and not sell it ever, or for a long period of time.
+
+        In cryptocurrency trading, this kind of :term:`trading strategy` is called "diamond hands."
+
+        The benefit of this kind of strategy is that you are not paying any trading fees.
+        Holding an asset is usually free.
+
+        Even if you never sell the asset, you can use it as collateral and borrow money against it.
+
+        On of the most famous diamon hands are Michael Saylor and his company MicroStrategy that are
+        only buying more and more bitcoin since 2019.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
+
+    Overfitting
+
+        In term:`quantitative finance`, overfitting of :term:`trading strategy` means that the
+        trading strategy results in :term:`backtest` where mostly luck-driven and there is no real :term:`alpha`.
+
+        Because of limited historical data, backtesting results, especially :term:`grid search` results
+        may look too rosy. Trading strategy is excessively tailored to historical market data, to the point that it performs well on past data but fails to generalize to new, unseen data or real-world market conditions. This phenomenon can occur when trading algorithm is optimised too much based on historical data, effectively fitting the strategy too closely to the noise or random fluctuations present in that data (luck-driven vs. finding real :term:`alpha`).
+
+        Examples of overfitting include
+
+        - **Data snooping bias**: Traders or developers sift through historical market data to find patterns or relationships that may not actually exist. By repeatedly testing different strategies on the same dataset, they might stumble upon strategies that seem to perform exceptionally well purely by chance.
+
+        - **Curve fitting**: Traders may excessively tweak the parameters of their trading algorithms to make them fit historical data perfectly. While this may result in high returns on historical data, it often leads to poor performance in real-world trading because the strategy becomes too sensitive to past market conditions.
+
+        - **Optimization bias**: Optimizing trading strategies based on past data can lead to strategies that are highly specialized to those specific market conditions. When market conditions change, these strategies may fail to adapt and perform poorly.
+
+        - **Complexity**: Introducing unnecessary complexity into a trading strategy can increase the likelihood of overfitting. A complex model may capture noise in the data rather than true underlying relationships.
+
+        Overfitting bias can be mitigated with various methods
+
+        - Using different :term:`datasets <dataset>` for strategy backtesting and validation of the backtest,
+          a usual method in :term:`machine learning`
+
+        - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`_ by
+          creating random asset prices where the behavior resembles the :term:`
+
+        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>__` and shifted
+          :term:`OHLCV` data.
+
+        See also
+
+        - :term:`Backtest`
+
+        - :term:`Trading strategy`
+
+        - :term:`Grid seacrh`
+
+        - :term:`Benchmark`
+
+        - :term:`Best trading strategy`
+
+        - :term:`Training set`
+
+    Machine learning
+
+        Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed to perform specific tasks.
+
+        In :term:`quantitative finance`, machine learning is used to drive :term:`trading strategies <trading strategy>`:
+
+        - :term:`Algorithmic Trading`: Machine learning algorithms play a crucial role in algorithmic trading systems, where they analyze market data in real-time to identify trading opportunities and execute trades automatically. Reinforcement learning algorithms are particularly suitable for this task as they can learn optimal trading strategies through trial and error.
+
+        - Predictive Modeling: Machine learning algorithms are employed to predict financial market movements, asset prices, trading volumes, and other relevant variables. Techniques such as regression, decision trees, random forests, support vector machines (SVM), and deep learning are commonly utilized for this purpose.
+
+        - Risk Management: Machine learning models are used to assess and manage financial risk by predicting market :term:`volatility`, portfolio losses, and other risk factors.
+          Risk management can be tied to :term:`position sizing`.
+
+        - :term:`Portfolio construction`: Machine learning algorithms aid in constructing optimized investment portfolios by analyzing historical market data, asset correlations, and investor preferences. Portfolio optimization models aim to maximize returns while minimizing risk or achieving specific investment objectives.
+
+        - :term:`High-Frequency Trading`: Machine learning techniques are applied in high-frequency trading strategies, where trades are executed within milliseconds to exploit fleeting market inefficiencies. These algorithms leverage advanced statistical models and data analysis techniques to identify profitable trading opportunities in high-speed trading environments.
+
+        - :term:`Sentiment Analysis: Machine learning models analyze news articles, social media feeds, and other textual data sources to gauge market sentiment and investor opinions. Sentiment analysis helps traders and investors make informed decisions by assessing the impact of public sentiment on financial markets.
+
+        See also
+
+        - :term:`Statistical modeling`
+
+        - :term:`Supervised learning`
+
+        - :term:`Unsupervised learning`
+
+        - :term:`Backtest`
+
+        - :term:`Trading strategy`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Position sizing`
+
+        - :term:`Grid seacrh`
+
+        - :term:`Benchmark`
+
+    Trade frequency
+
+        In :term:`trading strategies <trading strategy>`, a trade frequency is a metric telling how often the strategy makes a trade.
+
+        - High frequency strategies can make several trades per minute
+
+        - Mid frequency, intra day and breakout strategies can make several trades per day
+
+        - Low frequency, more macroeconomics strategies, can make some trades per year
+
+        - :term:`Buy and hold` strategy makes only two trades: enter the position and then sell it later
+
+        The trading frequency does not need to be constant. The strategy can take more positions
+        and trade differently in different :term:`market regimes <market regime>`, like bull and bear markets,
+        depending on the :term:`volatility` of the underlying market.
+
+        The higher the trading frequency is, more trading fees will occur. Strategies that make
+        trades too often might not be profitable on high-free trading venues like some :term:`decentralised exchanges <decentralised exchange>`
+        like :term:`Uniswap v2-compatibles <uniswap>`.
+
+        Trades do not necessarily mean opening and closing the whole position: trades can also occur
+        to adjust the :term:`position sizing` and risk mitigation measurements.
+
+        See also
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
+
+        - :term:`Buy and hold`
+
+        - :term:`Portfolio`
+
+        - :term:`Market regime`
+
+        - :term:`Volatility`
+
+

@@ -1,6 +1,8 @@
 .. meta::
    :description: Trading Strategy technical documentation
 
+.. _documentation:
+
 Trading Strategy documentation
 ==============================
 

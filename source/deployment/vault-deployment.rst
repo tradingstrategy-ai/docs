@@ -9,10 +9,7 @@ manage a trading strategy deployed for multiple users using a :term:`vault`.
 If you are looking for a single user deployment, :ref:`hot wallet deployment`
 is an easier option.
 
-.. warning::
-
-    This chapter is somewhat outdated, as Enzyme Vault integration has been updated
-    with new security policies that are not yet covered here.
+- This chapter is for a specific kind of Enzyme vault deployment to be used with :term:`Trading Strategy Protocol`
 
 Preface
 -------
@@ -44,6 +41,8 @@ To get started you need to have a
 
 - Native token loaded up for :term:`gas fee`
 
+- Deployed `Terms of Service manager smart contract <https://github.com/tradingstrategy-ai/terms-of-service/tree/main>`__
+
 - `To generate a private key securely offline, you can follow the instructions here <https://ethereum.stackexchange.com/questions/82926/how-to-generate-a-new-ethereum-address-and-private-key-from-a-command-line>`__.
 
 .. note ::
@@ -71,30 +70,67 @@ and giving it the configuration by environment variables.
 
 You need to
 
-* Decide your vault name and token symbol
+- Be familiar with UNIX shell
 
-* Have `PRIVATE_KEY` set up with some gas money.
+- Decide your vault name and token symbol
+
+- Have `PRIVATE_KEY` set up with some gas money for the trade executor hot wallet.
+  See how to :ref:`creating hot wallet` for more info.
+
+- Have Polygonscan, etc. API key for the verification of the deployed contracts
+
+- Get `TRADE_EXECUTOR_VERSION` Docker version from the Github container registry
 
 .. note ::
 
     Never share the hot wallet (private key) across different executors.
 
+This will
+
+- Deploy the Enzyme vault
+
+- `Set up a guard contract with given parameters to increase security and limit the role what trade-executor can do <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/guard>`__
+
+- Set up a `deposit forwarder smart contract for USDC <https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/master/contracts/in-house/src/TermedVaultUSDCPaymentForwarder.sol>`__
+
 Here is an example shell command how to put together a Docker command to run `enzyme-deploy-vault`.
-`See also the explanation how a local workign directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
+`See also the explanation how a local working directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
 Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
 
-.. code-block:: shell
+We are deploying multiple contracts. First test with `--simulate` flag to see the deployment finish all the way to end.
 
-    # Use $TRADE_EXECUTOR_IMAGE from the previous step
+.. code-block:: shell
 
     # You need to provider these
     export JSON_RPC_POLYGON=
     export PRIVATE_KEY=
-    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    export ETHERSCAN_API_KEY=
+
+    # The address DAO/proto DAO multisig that will own this vault.
+    # This address is Trading Strategy Protocol's ProtoDAO address.
+    export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
+
+    # ERC-20 token symbol
+    export FUND_SYMBOL="YOURTOKENSYMBOL"
+
+    # Enzyme vault name
+    export FUND_NAME="Your algorithm name"
+
+    # Space-separated list of tokens the vault allows the trade-executor to trade.
+    # Here we have WETH and WMATIC on Polygon.
+    export WHITELISTED_ASSETS="0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
+
+    # The vault is nominated in USDC *Polygon
+    export DENOMINATION_ASSET="0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+
+    # Terms of service manager smart contract address.
+    # This one is deployed on Polygon.
+    export TERMS_OF_SERVICE_ADDRESS="0xbe1418df0bAd87577de1A41385F19c6e77312780"
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables
     # - Set vault-info.json to be written to a local file system
+    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
     docker run \
         --interactive \
         --tty \
@@ -103,11 +139,17 @@ Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
         $TRADE_EXECUTOR_IMAGE \
         -- \
         enzyme-deploy-vault \
+        --simulate \
         --private-key=$PRIVATE_KEY \
-        --vault-record-file="vault-info.json" \
-        --fund-name="Your Vault Name" \
-        --fund-symbol="YOURTOKENSYMBOL" \
-        --json-rpc-polygon=$JSON_RPC_POLYGON
+        --vault-record-file="$FUND_SYMBOL-vault-info.json" \
+        --fund-name="$FUND_NAME" \
+        --fund-symbol="$FUND_SYMBOL" \
+        --json-rpc-polygon="$JSON_RPC_POLYGON" \
+        --etherscan-api-key=$ETHERSCAN_API_KEY \
+        --whitelisted-assets="$WHITELISTED_ASSETS" \
+        --denomination-asset="$DENOMIATION_ASSET" \
+        --terms-of-service-address="$TERMS_OF_SERVICE_ADDRESS" \
+        --owner-address="$OWNER_ADDRESS"
 
 This will give you the log output for the deployment:
 
@@ -145,12 +187,22 @@ This gives:
 .. code-block:: json
 
     {
-        "vault": "0x77feceCeE6E8aC1baD6207cFb36B26D22D8b2C59",
-        "comptroller": "0x54848b581c61baAdE1BbdA3134AEd48Bca1e4944",
-        "generic_adapter": "0x6b56Ee3C9e6751E94181226057d9589295d15c66",
-        "block_number": 43688398,
-        "usdc_payment_forwarder": "0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713"
+        "fund_name": "MATIC-ETH-USDC momentum algorithm",
+        "fund_symbol": "MATIC-ETH-USDC-ALGO",
+        "vault": "0xA2488118e33b2a72DC11e2c97eF0f5788700B2C2",
+        "comptroller": "0x5Cf97C5084fa1220Ac1465f4Fa7402F962C638d8",
+        "generic_adapter": "0x103DAa155fe94c6E53719E3f1d52bbACC4c15f8D",
+        "block_number": 54883433,
+        "usdc_payment_forwarder": "0xffaA2134DEf71180Db9e831c1765333645F0EC18",
+        "guard": "0xD03a5D1AD2391A6009Ab0d6c519967790461b282",
+        "deployer": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
+        "denomination_token": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+        "terms_of_service": "0xbe1418df0bAd87577de1A41385F19c6e77312780",
+        "whitelisted_assets": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+        "asset_manager_address": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
+        "owner_address": "0x238B0435F69355e623d99363d58F7ba49C408491"
     }
+
 .. note ::
 
     It is important that you keep the contents of the vault smart contract addresses and/or the JSON file around,
@@ -176,16 +228,6 @@ register your vault there, to make it publicly accessible.
 - Sign a message from your wallet for claiming the ownership
 
 - Now you can fill in the vault description on Enzyme's website database
-
-Initial vault deposit
-~~~~~~~~~~~~~~~~~~~~~
-
-- After vault is registered it needs the initial deposit
-
-- You need deposit some USDC in the vault needed later in the test trade,
-  using Enzyme website and your wallet
-
-- Enzyme can automatically convert MATIC to USDC and so on
 
 Set up live execution environment
 ---------------------------------
@@ -228,17 +270,9 @@ Example public environment variables entry:
     #
 
     STRATEGY_FILE=strategies/enzyme-polygon-eth-usdc.py
-    NAME="ETH-USD breakout on Uniswap v3"
-    DOMAIN_NAME="enzyme-polygon-eth-usdc.tradingstrategy.ai"
-    SHORT_DESCRIPTION="ETH/USDC breakout strategy"
-    LONG_DESCRIPTION="Take long only positions in ETH based on RSI and Bollinger bands indicators"
-    ICON_URL="https://user-images.githubusercontent.com/74208897/215499207-8d661ee9-cc75-4df6-84df-690e14c3d93c.png"
 
     # Port 3456 is mapped to the public IP on the host using Caddy
     HTTP_ENABLED=true
-
-    # The trigger mode for the decide_trades()
-    STRATEGY_CYCLE_TRIGGER="trading_pair_data_availability"
 
     # Set parameters from Enzyme vault deployment.
     # Get output from trade-executor enzyme-deploy-vault command
@@ -309,7 +343,8 @@ here are the quick instructions.
   run is used to show some of the key metrics (sharpe, sortino, max drawdown)
   in the web frontend UI via :ref:`webhook`.
 
-- The default generated state file will be `state/{id}-backtest.json`.
+- The default generated state file will be `state/{id}-backtest.json` with other files like HTML report
+  to be shown in the frontend.
 
 You can run the backtest on the live trade executor with:
 
@@ -401,6 +436,60 @@ This will initialise the state file for the strategy executor.
     # Use the deployment block number earlier
     docker-compose run enzyme-polygon-eth-usdc init
 
+First vault deposit
+-------------------
+
+- After vault is registered it needs the initial deposit e.g. 1 USDC,
+  for a test trade
+
+- You can do the initial deposit on Enzyme website,
+  or the Python console script below
+
+- You need deposit some USDC in the vault needed later in the test trade,
+  using Enzyme website and your wallet
+
+- Enzyme can automatically convert MATIC to USDC and so on
+
+To do the deposit using the console:
+
+.. code-block:: shell
+
+    docker compose run enzyme-polygon-matic-eth-usdc console
+
+Then with `%cpaste`:
+
+.. code-block:: python
+
+    from decimal import Decimal
+    from eth_defi.token import fetch_erc20_details
+    from eth_defi.trace import assert_transaction_success_with_explanation
+    from eth_defi.enzyme.vault import Vault
+
+    print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
+    usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
+    usdc = fetch_erc20_details(web3, usdc_address)
+    deposit_amount = Decimal(1.5)
+    vault_address = state.sync.deployment.address  # init command saves vault address here
+    assert vault_address, "Vault address not in state, run trade-executor init first"
+
+    out_gas_balance = web3.eth.get_balance(hot_wallet.address) / (10**18)
+    our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
+    assert our_usdc_balance > deposit_amount, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
+
+    print(f"Depositing, we have {out_gas_balance} for gas and {our_usdc_balance} USDC at {hot_wallet.address}")
+
+    # Perform approve + deposit from the trade-executor hot wallet
+    vault = Vault.fetch(web3, vault_address)
+    tx_hash = usdc.contract.functions.approve(vault.comptroller.address, usdc.convert_to_raw(deposit_amount)).transact({"from": hot_wallet.address})
+    print(f"Approving in TX {tx_hash.hex()}")
+    assert_transaction_success_with_explanation(web3, tx_hash)
+    tx_hash = vault.comptroller.functions.buyShares(usdc.convert_to_raw(deposit_amount), 1).transact({"from": hot_wallet.address})
+    print(f"buyShares() in TX {tx_hash.hex()}")
+    assert_transaction_success_with_explanation(web3, tx_hash)
+    vault_usdc_amount = usdc.fetch_balance_of(vault.address)
+    print(f"Deposit done, the vault has now {vault_usdc_amount} USDC, you can do perform-test-trade")
+
+
 Performing a test trade
 -----------------------
 
@@ -417,7 +506,10 @@ This command will buy and sell a single trading pair from the strategy, worth of
 
 .. code-block:: shell
 
-    docker-compose run enzyme-polygon-eth-usdc perform-test-trade
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
+        perform-test-trade \
+        --all-pairs
 
 The output looks something like:
 
