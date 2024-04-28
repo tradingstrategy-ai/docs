@@ -6,7 +6,9 @@
     "sitemap_urls": [
       "https://tradingstrategy.ai/docs/sitemap-docs.xml"
     ],
-    "stop_urls": [],
+    "stop_urls": [
+      "https://tradingstrategy.ai/docs/genindex.html"
+    ],
     "selectors": {
       "lvl0": {
         "selector": "",
