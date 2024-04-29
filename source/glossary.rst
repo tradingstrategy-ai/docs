@@ -48,7 +48,7 @@ and algorithmic trading.
 
         - Scalping
 
-        - :term:`Portfolio construction model` or :term:`tactical asset allocation`
+        - :term:`Portfolio construction` or :term:`tactical asset allocation`
 
         - :term:`Market neutral <Market neutral strategy>`, or :term:`delta neutral`
 
@@ -5089,7 +5089,7 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
-        - :term:`Grid seacrh`
+        - :term:`Grid search`
 
         - :term:`Benchmark`
 
@@ -5132,7 +5132,7 @@ and algorithmic trading.
 
         - :term:`Position sizing`
 
-        - :term:`Grid seacrh`
+        - :term:`Grid search`
 
         - :term:`Benchmark`
 

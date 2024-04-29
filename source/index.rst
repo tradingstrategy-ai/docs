@@ -12,6 +12,13 @@ This is the technical documentation for Trading Strategy algorithmic trading fra
 
 The documentation is divided into three parts: overview, trading strategy development framework and trading strategy protocol.
 
+.. note ::
+
+    If you want to get started with writing or porting your own algorithms, you can directly jump to
+    `Getting started Github repository <https://github.com/tradingstrategy-ai/getting-started>`__, which
+    provides Github Codespaces cloud environment and Visual Studio Code Dev Container
+    to develop and backtest strategies right away.
+
 .. _table of contents:
 
 Table of contents

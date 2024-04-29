@@ -10,14 +10,12 @@ Preface
 
 This documentation section covers how to run Trading Strategy code examples and notebooks:
 
-* How to set up libraries and development environment on your local computer
+* How to set up a Python-based Trading Strategy development environment on your local computer
   or a cloud server
 
 .. note ::
 
-    If you are new to the Trading Strategy framework or algorithmic trading in general,
-    please start by watching `the recorded workshop tutorial session from Avalanche Summit <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
-
+    If you want to get started fast, you can directly jump to `Getting started Github repository and Codespaces <https://github.com/tradingstrategy-ai/getting-started>`__.
 
 Prerequisites
 -------------
@@ -26,44 +24,48 @@ Code examples are available able :term:`Jupyter notebooks <Jupyter notebook>` in
 
 You to be able work with the examples you need to have
 
-* Basic Python programming language understanding
+* Python programming basics
 
-* Basic Jupyter notebook understanding
+* Data sciense basics: Jupyter notebook and Pandas
 
-To get started, you do not need to install any applications on your computer.
+* :ref:`Price action and technical indicator basics <learning>`
 
 Recommended set up
 ------------------
 
-If you are not an advanced Python developer, and you do not have a preferred toolchain,
-we recommend you to start with Visual Studio Code :ref:`Dev Container`.
+- We recommend trying out with :ref:`Github Codespaces <codespaces>` cloud-based tutorial first
+- The next easiest option is with Visual Studio Code :ref:`Dev Container`
+- If you are experienced Python developer you can use any Python editor you wish,
+  and install the source code from Github checkout
 
 Development environment options
 -------------------------------
 
-Check :doc:`how to run examples <./running>` and from the available code snippets:
+We offer different strategy development environments for different level of developers:
 
 .. toctree::
    :maxdepth: 1
 
+   codespaces/index
    dev-container/visual-studio-code-docker-dev-container-for-jupyter-notebooks
    docker-development-image/docker-development-image
    binder/binder-development
    local-python
    google-colab
 
-How to get started
-------------------
+Next steps
+----------
 
 After setting up your development environment,
 go to :ref:`tutorials <tutorial>` section of the documentation.
 
-* How to use Trading Strategy API
-
-* How to analyse DeFi market data
+You find tutorials for:
 
 * How to develop and backtest your own automated trading strategies
 
+* How to analyse DeFi market data
+
+* How to use Trading Strategy API
 
 .. _get an API key:
 
@@ -78,6 +80,8 @@ To get a Trading Strategy API key needed to access some of the datasets,
 
 - Some binaries like `trade-executor` docker will read the API key from
   `TRADING_STRATEGY_API_KEY` environment variable.
+
+- API key is free
 
 Example:
 
