@@ -1083,18 +1083,29 @@ and algorithmic trading.
 
         A technical indicator, or just an indicator, is a calculated value
         indicating something about the state of the market.
-        Indicators are usually based on :term:`OHLCV` data.
-        By combining several indicators through :term:`technical analysis`,
-        one can create automated trading strategies.
-        An example technical indicator is :term:`EMA (exponential moving average) <EMA>`.
 
-        See :ref:`technical analysis` documentation for Trading Strategy indicator list.
+        Indicators are usually based on :term:`OHLCV` data.
+
+        By combining several indicators through :term:`technical analysis`,
+        one can create automated :term:`trading strategies <trading strategy>`.
+
+        Example technical indicators are e.g. :term:`EMA (exponential moving average) <EMA>`
+        and :term:`Average Directional Index (ADX)`.
+
+        If you are developing your algorithmic trading strategy using :term:`Trading Strategy framework,
+        see :ref:`technical analysis` documentation for available technical indicators.
 
         See also
 
         - :term:`Trading strategy`
 
+        - :term:`Technical analysis`
+
+        - :term:`Algorithmic trading`
+
         - :term:`EMA`
+
+        - :term:`Average Directional Index (ADX)`
 
     EMA
 
@@ -5278,8 +5289,70 @@ and algorithmic trading.
 
         - **Permissionless Innovation**: Composability enables permissionless innovation, allowing developers to experiment and build new financial products without needing approval from centralized authorities. This has led to a rapid pace of innovation in the DeFi space.
 
+        See also:
+
         - :term:`Decentralised finance`
 
         - :term:`Protocol`
 
         - :term:`Trading strategy`
+
+    Average Directional Index (ADX)
+
+        In :term:`quantitative finance`, ADX stands for Average Directional Index. It's a technical analysis indicator used in algorithmic trading to measure the strength and direction of a trend. Developed by J. Welles Wilder, Jr., the ADX is non-directional, meaning it does not indicate whether the price is trending up or down, but rather the strength of the trend regardless of direction.
+
+        ADX is calculated based on the spread between two directional movement indicators, typically the positive directional movement indicator (+DI) and the negative directional movement indicator (-DI). These indicators are derived from price movement over a specified period. The ADX value ranges from 0 to 100, with higher values indicating a stronger trend.
+
+        In algorithmic trading, ADX can be used in various ways, such as:
+
+        - **Trend Confirmation**: Traders may use ADX to confirm the presence of a trend before entering a trade. A high ADX value suggests a strong trend, while a low value indicates a weak or sideways market.
+
+        - **Trend Strength**: ADX values can help traders assess the strength of a trend. A rising ADX suggests strengthening momentum, while a falling ADX may indicate a weakening trend.
+
+        - **Trend Reversals**: Changes in the direction of the ADX line can signal potential trend reversals. For example, if the ADX has been rising but starts to decline, it may indicate that the current trend is losing strength.
+
+        - **Filtering Trades**: Some algorithmic trading strategies use ADX as a filter to avoid trading in choppy or range-bound markets. They may only take trades when the ADX is above a certain threshold, indicating a trending market.
+
+        Overall, ADX is a versatile tool in algorithmic trading that helps traders assess the strength and direction of trends, allowing for more informed trading decisions.
+
+        See also:
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading Strategy`
+
+        - :term:`OHLCV`
+
+        - :term:`Average True Range (ATR)`
+
+     Average True Range (ATR)
+
+        In :term:`quantitative finance`, ATR stands for Average True Range. It's another popular :term:`technical indicator` used in algorithmic trading to measure volatility in the market. Developed by J. Welles Wilder, Jr., ATR is calculated based on the true range of price movement over a specified period.
+
+        The true range is the greatest of the following:
+
+        - The difference between the current high and the current low.
+        - The difference between the previous close and the current high.
+        - The difference between the previous close and the current low.
+
+        ATR is then calculated as the average of these true ranges over the specified period, typically 14 periods.
+
+        In algorithmic trading, ATR has several applications:
+
+        - :term:`Volatility` Measurement: ATR provides a measure of market volatility. Higher ATR values indicate higher volatility, while lower values suggest lower volatility.
+
+        - Setting :term:`stop loss` and Take Profit Levels: Traders can use ATR to set dynamic stop loss and take profit levels based on the current volatility of the market. For example, they may set stop losses a certain number of ATR units away from the entry price to account for market fluctuations.
+
+        - :term:`Position sizing`: ATR can be used to adjust position sizes based on market volatility. In highly volatile markets, traders may reduce their position sizes to manage risk, while in low volatility markets, they may increase position sizes to take advantage of potential larger moves.
+
+        - Filtering Trades: Some trading strategies use ATR as a filter to only take trades when volatility is above or below a certain threshold. This helps traders avoid entering trades in excessively volatile or quiet market conditions.
+
+        See also:
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading Strategy`
+
+        - :term:`OHLCV`
+
+        - :term:`Average Directional Index (ADX)`
