@@ -28,7 +28,7 @@ and algorithmic trading.
 
         Further strategies can be classified by their activity and risk profile as
 
-        - :term:`Directional strategies <directional strategy>` that are :term:`volatile`
+        - :term:`Directional strategies <directional strategy>` that are :term:`volatile <volatility>`
 
         - :term:`Active strategies <active strategy>`
 
@@ -317,7 +317,7 @@ and algorithmic trading.
 
         - :term:`Decentralised finace`
 
-        - :term:`Smart contractopen`
+        - :term:`Smart contract`
 
     Smart contract
     
@@ -413,7 +413,7 @@ and algorithmic trading.
 
         Forks in practice:
 
-        - Blockchains can be forked. The most forked blockchain is Ethereum and its :term:`EVM <EVM Compatible>`
+        - Blockchains can be forked. The most forked blockchain is Ethereum and its :term:`EVM <EVM-Compatible>`
           architecture. Ethereum forks include Polygon, BNB Smart Chain, Avalanche C-Chain, Fantom.
 
         - :term:`Uniswap` is the most forked :term:`protocol`. Uniswap forks include :term:`Sushi`,
@@ -620,9 +620,15 @@ and algorithmic trading.
 
     Base token
 
-        A base token, in the context of cryptocurrencies, refers to the primary token or asset used in a specific :term:`trading pair` or exchange. The base token is the token that is being traded or exchanged for another token, typically a quote token,  see also :term:`quote token`. For example, in the trading pair BTC/USD, BTC is the base token and USD is the quote token. The price of the quote token is quoted in terms of the base token.
+        In the context of :term:`quantitative finance` and :term:`algorithmic trading`, a base token refers to the primary token or asset used in a specific :term:`trading pair` or exchange. The base token is the token that is being traded or exchanged for another token, typically a quote token, see also :term:`quote token`. For example, in the trading pair BTC/USD, BTC is the base token and USD is the quote token. The price of the quote token is quoted in terms of the base token.
 
         The base token is an important concept in the cryptocurrency market, as it determines the value of the other token in a trading pair. In other words, the price of the quote token is derived from the price of the base token. This relationship between the base token and the quote token is used to determine the price of the quote token, which can then be used to determine the value of other assets that are pegged to it.
+
+        For example trading pair can be: `BTC-USDT`. In this case the base token `BTC` and quote token is `USDT`.
+
+        .. note ::
+
+            If you are looking information about :term:`Base blockchain`, Base does not have a token.
 
         See also
 
@@ -634,9 +640,27 @@ and algorithmic trading.
 
         - :term:`ERC-20`
 
+        - :term:`Base blockchain`
+
+    Base blockchain
+
+        Base is a layer two :term:`EVM-compatible` blockchain from Coinbase.
+
+        Base does not have its own token. :term:`Native token` of base is :term:`Ether`.
+
+        See also
+
+        - :term:`Base token`
+
+        - :term:`EVM`
+
+        - :term:`EVM-compatible`
+
     Quote token
 
-        The token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
+        In :term:`algorithmic trading`, the token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
+
+        For example trading pair can be: `BTC-USDT`. In this case the base token `BTC` and quote token is `USDT`.
 
         See also
 
@@ -1092,7 +1116,7 @@ and algorithmic trading.
         Example technical indicators are e.g. :term:`EMA (exponential moving average) <EMA>`
         and :term:`Average Directional Index (ADX)`.
 
-        If you are developing your algorithmic trading strategy using :term:`Trading Strategy framework,
+        If you are developing your algorithmic trading strategy using :term:`Trading Strategy framework`,
         see :ref:`technical analysis` documentation for available technical indicators.
 
         See also
@@ -3981,7 +4005,7 @@ and algorithmic trading.
 
         Forward fill is often employed when missing data is considered to be missing at random (MAR), meaning the missingness is not related to the actual value. It can be a useful technique when the missing data points are intermittent or occur sporadically.
 
-        However, it is important to note that forward fill may not always be appropriate or suitable for all datasets or analysis scenarios. It assumes that the missing values should be carried forward, which may not be accurate or appropriate in all cases. Researchers should carefully consider the nature of the data and the implications of using forward fill before applying it.
+        However, it is important to note that forward fill may not always be appropriate or suitable for all datasets or analysis scenarios. It assumes that the missing values should be carried forward, which may not be accurate or appropriate in all cases. Researchers should carefully consider the nature of the data and the implications of using forward fill before applying it. The opposite of forward fill is backward fill.
 
         Alternative methods for handling missing data include backward fill (carrying the next observed value backward) or more sophisticated imputation techniques that estimate missing values based on statistical methods or predictive models. The choice of method depends on the specific characteristics of the dataset and the objectives of the analysis.
 
@@ -3997,6 +4021,8 @@ and algorithmic trading.
         - :term:`OHLCV`
 
         - :term:`Dataset`
+
+        - :term:`Trading Strategy Framework`
 
     Tactical asset allocation
 
@@ -4441,7 +4467,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Stop-loss`
+        - :term:`Stop loss`
 
         - :term:`Trailing stop loss`
 
@@ -4825,7 +4851,7 @@ and algorithmic trading.
         In trading :term:`Compound Annual Growth Rate (CAGR)` is more commonly used. APR is used for loans, :term:`delta neutral` trading strategies
         and :term:`yield farming` in :term:`decentralised finance`.
 
-        APR does not account compounding interest, unlike :term:`:term:`Annual Percentage Yield (APY)`.
+        APR does not account compounding interest, unlike :term:`Annual Percentage Yield (APY)`.
 
         See also
 
@@ -4847,7 +4873,7 @@ and algorithmic trading.
 
         APY stands for Annual Percentage Yield in :term:`quantitative finance`. It is a measure used to represent the effective annual rate of return or the annualized rate of interest earned on an investment or deposit, taking into account the effect of compounding interest.
 
-        Unlike :term:`APR (Annual Percentage Rate)`, which only considers the nominal interest rate, APY factors in the compounding frequency of interest payments. This means that APY reflects the total amount of interest earned or paid over a year, including the effect of reinvesting interest earnings or paying interest on previously earned interest.
+        Unlike :term:`Annual Percentage Rate (APR)`, which only considers the nominal interest rate, APY factors in the compounding frequency of interest payments. This means that APY reflects the total amount of interest earned or paid over a year, including the effect of reinvesting interest earnings or paying interest on previously earned interest.
 
         APY is particularly useful for comparing the true returns of different investment or deposit options, as it provides a standardized way of expressing the annualized rate of return while accounting for compounding. It allows investors to make more informed decisions about where to allocate their funds based on the actual returns they can expect to earn.
 
@@ -5252,7 +5278,7 @@ and algorithmic trading.
 
         - :term:`Cash and carry`
 
-        - :term:`Delta neutra`
+        - :term:`Delta neutral`
 
         - :term:`Trading strategy`
 
@@ -5277,7 +5303,7 @@ and algorithmic trading.
 
     Composability
 
-        Composability in :term:`decentralized finance` refers to the ability of different financial :term:`protocols <protocol>` or applications to seamlessly interact and interoperate with each other. In the context of DeFi, financial primitives such as lending, borrowing, trading, and yield farming are often implemented as separate protocols or smart contracts. Composability allows these protocols to be combined or "composed" in various ways to create more complex and sophisticated financial services.
+        Composability in :term:`decentralised finance` refers to the ability of different financial :term:`protocols <protocol>` or applications to seamlessly interact and interoperate with each other. In the context of DeFi, financial primitives such as lending, borrowing, trading, and yield farming are often implemented as separate protocols or smart contracts. Composability allows these protocols to be combined or "composed" in various ways to create more complex and sophisticated financial services.
 
         Here are some key aspects of composability in DeFi:
 
