@@ -4,13 +4,13 @@
    :description: Trading Strategy example Jupyter notebooks
 
 
-Deprecation warning
-===================
+Deprecated Strategy Examples
+=============================
 
 The examples listed here are all deprecated. They are kept here for reference purposes only. Please instead refer to the latest notebooks at the `getting strated repo <https://github.com/tradingstrategy-ai/getting-started>`.
 
-Deprecated strategy examples
-============================
+Deprecated 
+----------
 
 Here you can find trading strategy examples as :term:`Jupyter notebooks <Jupyter notebook>`.
 
