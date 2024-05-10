@@ -7,10 +7,10 @@
 Deprecated Strategy Examples
 =============================
 
-The examples listed here are all deprecated. They are kept here for reference purposes only. Please instead refer to the latest notebooks at the `getting strated repo <https://github.com/tradingstrategy-ai/getting-started>`.
+The examples listed here, as well as the documentation, are all deprecated. They are kept here for reference purposes only. Please instead refer to the latest notebooks at the `getting started repo <https://github.com/tradingstrategy-ai/getting-started>`_.
 
-Deprecated 
-----------
+Introcution
+-----------
 
 Here you can find trading strategy examples as :term:`Jupyter notebooks <Jupyter notebook>`.
 
@@ -87,7 +87,6 @@ Prerequisites
                   <td class="tg-0pky">Get familiar with an old backtesting template. Despite its deprecated status, understanding the evolution of backtesting templates can provide insights into the improvements made over time.</td>
             </tr>
 
-            .. Get started
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/pancakeswap-ema.html">pancakeswap-ema</a>
@@ -118,8 +117,6 @@ Prerequisites
                   </td>
             </tr>
 
-
-            .. Advanced
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/portfolio-construction-model.html">portfolio-construction-model</a>
@@ -161,7 +158,6 @@ Prerequisites
                   </td>
             </tr>
 
-            .. More examples
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/synthetic-ema.html">synthetic-ema</a>
