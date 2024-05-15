@@ -5382,3 +5382,24 @@ and algorithmic trading.
         - :term:`OHLCV`
 
         - :term:`Average Directional Index (ADX)`
+
+    Money Flow Index (MFI)
+
+        The Money Flow Index (MFI) is a :term:`technical indicator` used in :term:`quantitative finance` and trading to measure the strength and direction of money flowing in and out of a security over a specific period, typically 14 periods. It combines both price and volume data to provide insight into the buying and selling pressure within a security.
+
+        The calculation of the Money Flow Index involves several steps:
+
+        - Typical Price (TP): This is the average of the high, low, and closing prices for each period. It's calculated as (High + Low + Close) / 3.
+        - Money Flow (MF): This is the product of the Typical Price and the volume traded for each period. If the Typical Price is higher than the previous period's Typical Price, it's considered positive money flow, and if it's lower, it's considered negative money flow.
+        - Money Flow Ratio (MFR): This is the ratio of positive money flow to negative money flow over a specific period (usually 14 periods). It's calculated as (14-period Positive Money Flow) / (14-period Negative Money Flow).
+        - Money Flow Index (MFI): Finally, the Money Flow Index is calculated using the formula 100 - (100 / (1 + MFR)). It ranges from 0 to 100. A high MFI value suggests that the security is overbought, indicating a potential reversal, while a low MFI value suggests that the security is oversold, indicating a potential buying opportunity.
+
+        Traders use the Money Flow Index to identify overbought or oversold conditions in a security, divergence between price and money flow, and potential trend reversals. However, like all technical indicators, it's not foolproof and should be used in conjunction with other analysis techniques for better decision-making.
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading Strategy`
+
+        - :term:`OHLCV`
+
+        - :term:`Average Directional Index (ADX)`
