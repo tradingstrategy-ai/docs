@@ -100,3 +100,8 @@ Machine Learning
 
 - Machine Learning: A Probabilistic Perspective, Kevin P Murphy
 - Advances in Financial Machine Learning, Marcos Lopez de Prado
+
+Reddit algo trading book recommendations
+----------------------------------------
+
+`Read the thread <https://www.reddit.com/r/algotrading/comments/1crn46u/what_have_been_the_most_influential_books_for/>`__

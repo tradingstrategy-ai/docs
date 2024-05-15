@@ -4,8 +4,13 @@
    :description: Trading Strategy example Jupyter notebooks
 
 
-Strategy examples
-=================
+Deprecated Strategy Examples
+=============================
+
+The examples listed here, as well as the documentation, are all deprecated. They are kept here for reference purposes only. Please instead refer to the latest notebooks at the `getting started repo <https://github.com/tradingstrategy-ai/getting-started>`_.
+
+Introcution
+-----------
 
 Here you can find trading strategy examples as :term:`Jupyter notebooks <Jupyter notebook>`.
 
@@ -66,7 +71,7 @@ Prerequisites
             }
       </style>
 
-      <h2>Get started</h2>
+      <h2>Deprecated</h2>
       <table class="tg">
       <thead>
             <tr>
@@ -75,6 +80,13 @@ Prerequisites
             </tr>
       </thead>
       <tbody>
+            <tr>
+                  <td class="tg-0pky"><a
+                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/strategy-backtest-template.html">strategy-backtest-template</a>
+                  </td>
+                  <td class="tg-0pky">Get familiar with an old backtesting template. Despite its deprecated status, understanding the evolution of backtesting templates can provide insights into the improvements made over time.</td>
+            </tr>
+
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/pancakeswap-ema.html">pancakeswap-ema</a>
@@ -104,18 +116,7 @@ Prerequisites
                   <td class="tg-0pky">Explore the application of detached technical indicators on PancakeSwap's ETH-USD pair. This notebook is a great way to learn how to use detached indicators in your trading strategies, as well as how to visualise horizontal lines and cross over events between multiple indicators. It uses a basic EMA strategy to make trades.
                   </td>
             </tr>
-      </tbody>
-      </table>
 
-      <h2>Advanced</h2>
-      <table class="tg">
-      <thead>
-            <tr>
-                  <th class="tg-0pky">Notebook</th>
-                  <th class="tg-0pky">Description</th>
-            </tr>
-      </thead>
-      <tbody>
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/portfolio-construction-model.html">portfolio-construction-model</a>
@@ -156,18 +157,7 @@ Prerequisites
                   <td class="tg-0pky">This notebook introduces the concept of 'sideloading', which refers to the use of external data within the TradingStrategy framework. In this case, we use Binance data to short the market. This notebook is a great way to learn how to use external data in your trading strategies to lengthen your backtesting period.
                   </td>
             </tr>
-      </tbody>
-      </table>
-      
-      <h2>More examples</h2>
-      <table class="tg">
-      <thead>
-            <tr>
-                  <th class="tg-0pky">Notebook</th>
-                  <th class="tg-0pky">Description</th>
-            </tr>
-      </thead>
-      <tbody>
+
             <tr>
                   <td class="tg-0pky"><a
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/synthetic-ema.html">synthetic-ema</a>
@@ -209,23 +199,6 @@ Prerequisites
                         href="https://tradingstrategy.ai/docs/programming/strategy-examples/state-candles-from-live-strategy.html">examine-live-strategy-2</a>
                   </td>
                   <td class="tg-0pky">Learn how to reverse engineer data from live strategies in order to recreate the current state and OHLCV candles. These candles may also show useful decision making indicators.</td>
-            </tr>
-      </tbody>
-      </table>
-      <h2>Deprecated</h2>
-      <table class="tg">
-      <thead>
-            <tr>
-                  <th class="tg-0pky">Notebook</th>
-                  <th class="tg-0pky">Description</th>
-            </tr>
-      </thead>
-      <tbody>
-            <tr>
-                  <td class="tg-0pky"><a
-                        href="https://tradingstrategy.ai/docs/programming/strategy-examples/strategy-backtest-template.html">strategy-backtest-template</a>
-                  </td>
-                  <td class="tg-0pky">Get familiar with an old backtesting template. Despite its deprecated status, understanding the evolution of backtesting templates can provide insights into the improvements made over time.</td>
             </tr>
       </tbody>
       </table>
