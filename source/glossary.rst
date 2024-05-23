@@ -5396,6 +5396,8 @@ and algorithmic trading.
         - **Money Flow Ratio (MFR)**: This is the ratio of positive money flow to negative money flow over a specific period (usually 14 periods). It's calculated as (14-period Positive Money Flow) / (14-period Negative Money Flow).
         - **Money Flow Index (MFI)**: Finally, the Money Flow Index is calculated using the formula 100 - (100 / (1 + MFR)). It ranges from 0 to 100. A high MFI value suggests that the security is overbought, indicating a potential reversal, while a low MFI value suggests that the security is oversold, indicating a potential buying opportunity.
 
+        See also
+
         - :term:`Technical indicator`
 
         - :term:`Trading Strategy`
@@ -5407,3 +5409,20 @@ and algorithmic trading.
         - :term:`OHLCV`
 
         - :term:`Average Directional Index (ADX)`
+
+    Maximum Adverse Excursion (MAE)
+
+        MAE measures the largest loss suffered by a trade while it is open.
+
+        MAE analysis is one of the keys to understanding how your :term:`trading strategy` works.
+        Trades with a high MAE tend to revert, and many times these trades ended in a small loss or even in profit.
+        This is typical with too tight :term:`stop loss`.
+
+        `More on how to understand MAE <https://www.linkedin.com/pulse/trading-myth-always-use-stop-loss-pavel-k%2525C3%2525BD%2525C4%25258Dek-e0dhe/?trackingId=4VUiOfrGp3EzTZvOIBKPag%3D%3D>`__.
+
+        See also
+
+        - :term:`Trading Strategy`
+
+        - :term:`Stop loss`
+
