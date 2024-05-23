@@ -33,7 +33,6 @@ Table of contents
    programming/index
    architecture/index
    deployment/index
-   protocol/index
    learn/index
    glossary
    api/index
