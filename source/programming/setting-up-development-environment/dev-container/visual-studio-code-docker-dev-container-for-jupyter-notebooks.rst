@@ -1,3 +1,7 @@
+.. meta ::
+    :description: Setting up Trading Strategy development in VS Code
+    :title: Developing algorithmic trading in Visual Studio Code
+
 .. _Dev Container:
 
 Visual Studio Code Dev Container for Jupyter Notebooks

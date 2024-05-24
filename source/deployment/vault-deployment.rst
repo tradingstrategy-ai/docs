@@ -348,7 +348,7 @@ here are the quick instructions.
 
 You can run the backtest on the live trade executor with:
 
-.. code-block: shell
+.. code-block:: shell
 
     docker-compose run enzyme-polygon-matic-usdc backtest
 
@@ -464,6 +464,8 @@ Then with `%cpaste`:
     from eth_defi.token import fetch_erc20_details
     from eth_defi.trace import assert_transaction_success_with_explanation
     from eth_defi.enzyme.vault import Vault
+
+    print("Using RPC provider", web3.provider)
 
     print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
     usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon

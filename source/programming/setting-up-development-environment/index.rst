@@ -50,6 +50,7 @@ We offer different strategy development environments for different level of deve
    dev-container/visual-studio-code-docker-dev-container-for-jupyter-notebooks
    docker-development-image/docker-development-image
    binder/binder-development
+   pycharm/index
    local-python
    google-colab
 
