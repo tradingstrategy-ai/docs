@@ -1,4 +1,4 @@
-gi.. meta ::
+.. meta ::
     :description: Developing algorithmic trading in PyCharm
     :title: Setting up Trading Strategy development in PyCharm
 
@@ -62,6 +62,8 @@ You need to trust it:
 
 .. image:: trust.png
 
+_ ..poetry-pycharm:
+
 Using Poetry in PyCharm
 -----------------------
 
@@ -74,9 +76,9 @@ PyCharm will automatically ask you if you wish to initialise the Poetry environm
 
 Choose ok.
 
-After a while you should get a PyCharm notification to choose Python interpreter:
+After a while you should get a PyCharm notification to *Configure a Python interpreter*:
 
-.. image:: choose-python.png
+.. image:: configure-python.png
 
 **If you miss this notification there is Notifications tab bar on the right edge of PyCharm**.
 
@@ -93,10 +95,9 @@ After clicking this it allows to choose used Python installation in Project sett
 
 .. image:: project-interpreter.png
 
-It should also automatically pick the interpreter, but PyCharm allows to change the Python version
-if this is not the case.
+.. note ::
 
-.. image:: interpreter.png
+    If you have issues getting Python interpreter selected, see :ref:`pycharm-troubleshooting` below.
 
 Running notebooks
 -----------------
@@ -109,13 +110,13 @@ We recommend starting with the first RSI example.
 
 - There are many examples for Trading Strategy but only Getting started examples are maintained
 
-- You can also add examples to your PyCharm project by running git clone in terminal:
+- You can also add all Getting Strated examples to your PyCharm project by running a single `git clone` in the terminal:
 
 .. code-block:: shell
 
     git clone https://github.com/tradingstrategy-ai/getting-started.git
 
-Open the notebook file. Here we open `getting-started/single-backtest/moving-average.ipynb`.
+Open the notebook file. Here we open `getting-started/notebooks/single-backtest/moving-average.ipynb`.
 
 You need to mark the notebook **Trusted** or PyCharm may fail randomly.
 PyCharm should prompt you for this, but sometimes it doesn't.
@@ -128,6 +129,8 @@ Press run (Double arrow).
 
 When you run the notebook for the first time, it asks you to register for Trading Strategy API key.
 Give your email, and then you will receive an API key in the email.
+
+.. image:: api-key.png
 
 .. note ::
 
@@ -167,10 +170,12 @@ Virtualenv is now activated in your UNIX shell.
 
 Now you can install more packages with `poetry add` or `pip install`.
 
-.. pycharm-troubleshooting:
+.. _pycharm-troubleshooting:
 
-Troubleshooting
----------------
+Troubleshooting PyCharm and Jupyter Notebooks
+---------------------------------------------
+
+Here are some instructions to fix PyCharm Jupyter Notebook projects.
 
 ImportError: No module tradingstrategy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +219,7 @@ Double click three dots (...) and paste in `python` path we copied earlier.
 
 .. image:: add-existing-interpreter.png
 
-Now the notebooks should run when you choose this interpreter.
+Now the notebooks should run when you choose this interpreter. See ref:`poetry-pycharm` for more details.
 
 This is the Python that gets used when you run the notebook using the option what is called *Managed server*.
 
@@ -229,6 +234,8 @@ Because Jupyter integration in PyCharm is very buggy, you sometimes need to manu
 to make notebooks run again.
 
 Choose *Jupyter* tab at the bottom of the screen (next to *Terminal*).
+
+.. image:: restart-jupyter.png
 
 Press Stop button (Red square).
 
