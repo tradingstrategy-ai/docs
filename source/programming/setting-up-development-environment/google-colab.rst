@@ -1,5 +1,6 @@
 Google Colab
 ~~~~~~~~~~~~
 
-As the writing of this, Google Colab does not support Python version 3.10
-and is not able to run Trading Strategy notebooks.
+.. warning::
+
+    This is no longer maintained. You should use `Github Codespaces <https://github.com/tradingstrategy-ai/getting-started>`__ instead.

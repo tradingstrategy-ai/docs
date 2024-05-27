@@ -65,11 +65,33 @@ You need to trust it:
 Using Poetry in PyCharm
 -----------------------
 
-After the project is open, PyCharm will automatically ask you if you wish to initialise the Poetry environment.
+**Wait until PyCharm finishes indexing the newly opened project**.
+This may take up to a minute.
+
+PyCharm will automatically ask you if you wish to initialise the Poetry environment.
 
 .. image:: poetry.png
 
 Choose ok.
+
+After a while you should get a PyCharm notification to choose Python interpreter:
+
+.. image:: choose-python.png
+
+**If you miss this notification there is Notifications tab bar on the right edge of PyCharm**.
+
+Choose *Poetry interpreter*.
+
+.. image:: poetry-interpreter.png
+
+If you miss this you can also find the action **Python interpreter (Preferences > Project interpreter)** in
+PyCharm command palette (activates with double clicking left shift).
+
+.. image:: search-python.png
+
+After clicking this it allows to choose used Python installation in Project settings.
+
+.. image:: project-interpreter.png
 
 It should also automatically pick the interpreter, but PyCharm allows to change the Python version
 if this is not the case.
@@ -85,13 +107,32 @@ Copy-paste any `Getting started notebooks <https://github.com/tradingstrategy-ai
 Download file from the Github and then copy-paste the file into PyCharm project tree. Any folder is good.
 We recommend starting with the first RSI example.
 
-- There are many examples but only Getting started examples are maintained
+- There are many examples for Trading Strategy but only Getting started examples are maintained
 
-Open the notebook file and press run (Double arrow).
+- You can also add examples to your PyCharm project by running git clone in terminal:
+
+.. code-block:: shell
+
+    git clone https://github.com/tradingstrategy-ai/getting-started.git
+
+Open the notebook file. Here we open `getting-started/single-backtest/moving-average.ipynb`.
+
+You need to mark the notebook **Trusted** or PyCharm may fail randomly.
+PyCharm should prompt you for this, but sometimes it doesn't.
+
+.. image:: trusted.png
+
+Press run (Double arrow).
 
 .. image:: run.png
 
 When you run the notebook for the first time, it asks you to register for Trading Strategy API key.
+Give your email, and then you will receive an API key in the email.
+
+.. note ::
+
+    `secret-token:` is part of the API, as per RFC 8595 and must be copy-pasted
+    as the part of the API key.
 
 You see a HTML progress bar when the notebook starts to download data and running backtests.
 
@@ -100,6 +141,10 @@ You see a HTML progress bar when the notebook starts to download data and runnin
 After running you see the result charts and tables in the end of the notebook.
 
 .. image:: result.png
+
+.. note ::
+
+    If you have issues see :ref:`pycharm-troubleshooting` below.
 
 .. note ::
 
@@ -122,3 +167,69 @@ Virtualenv is now activated in your UNIX shell.
 
 Now you can install more packages with `poetry add` or `pip install`.
 
+.. pycharm-troubleshooting:
+
+Troubleshooting
+---------------
+
+ImportError: No module tradingstrategy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This means that PyCharm is trying to run the notebook with a wrong Python interpreter which
+does not have `tradingstrategy` and other packges installed.
+
+Confirm that you have a correct interpreter in PyCharm shell.
+
+Open terminal.
+
+.. code-block:: shell
+
+    cd trade-executor
+    poetry shell
+    which python
+
+    # Run this command manually if Poetry somehow failed to install earlier
+    # poetry install
+
+This displays the Python interpreter set up by PyCharm, like `/Users/moo/Library/Caches/pypoetry/virtualenvs/trade-executor-49eyUR2P-py3.11/bin/python`.
+
+.. image:: which.png
+
+Copy this path.
+
+Find the action **Python interpreter (Preferences > Project interpreter)** in
+PyCharm command palette (activates with double clicking left shift).
+
+.. image:: search-python.png
+
+After clicking this it allows to choose used Python installation in Project settings.
+
+.. image:: project-interpreter.png
+
+Choose *Add interpreter* > *Add local interpreter*.
+
+Instead of *New*, choose *Existing* as we are adding an existing Poetry virtual environment.
+
+Double click three dots (...) and paste in `python` path we copied earlier.
+
+.. image:: add-existing-interpreter.png
+
+Now the notebooks should run when you choose this interpreter.
+
+This is the Python that gets used when you run the notebook using the option what is called *Managed server*.
+
+.. image:: managed-server.png
+
+Notebook not running: Restarting Jupyter kernel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes the notebook just does not run even if press *Run* button on notebook toolbar.
+
+Because Jupyter integration in PyCharm is very buggy, you sometimes need to manually restart Jupyter kernel
+to make notebooks run again.
+
+Choose *Jupyter* tab at the bottom of the screen (next to *Terminal*).
+
+Press Stop button (Red square).
+
+Now run notebook again.

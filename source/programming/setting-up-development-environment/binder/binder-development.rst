@@ -1,6 +1,11 @@
 Binder development
 ==================
 
+.. warning::
+
+    This is no longer maintained. You should use `Github Codespaces <https://github.com/tradingstrategy-ai/getting-started>`__ instead.
+
+
 In this document, we show how to develop trading strategies using `Binder <https://mybinder.org/>`_ cloud based
 :term:`Jupyter notebook` environment.
 
