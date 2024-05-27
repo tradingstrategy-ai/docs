@@ -1,4 +1,4 @@
-.. meta ::
+gi.. meta ::
     :description: Developing algorithmic trading in PyCharm
     :title: Setting up Trading Strategy development in PyCharm
 
