@@ -1,3 +1,7 @@
+.. meta ::
+    :description: How to develop your own trading strategy in Python
+    :title: Developing trading strategies
+
 .. _framework:
 
 Developing strategies
@@ -19,10 +23,11 @@ Developer documentation:
    :maxdepth: 1
 
    setting-up-development-environment/index
+   example-trading-strategies
    code-examples/index
-   strategy-examples/index
    api/index
    market-data/index
    troubleshooting
    development
    old-strategies/index
+   more-old-strategy-examples/index

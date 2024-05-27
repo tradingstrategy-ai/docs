@@ -4,27 +4,15 @@
    :description: Trading Strategy example Jupyter notebooks
 
 
-Deprecated Strategy Examples
-=============================
+Old strategy examples (more)
+===========================
 
-The examples listed here, as well as the documentation, are all deprecated. They are kept here for reference purposes only. Please instead refer to the latest notebooks at the `getting started repo <https://github.com/tradingstrategy-ai/getting-started>`_.
+.. warning::
 
-Introcution
------------
+    All the examples here are deprecated. They are stored only for reference purposes,
+    Refer to `Getting started Github repository <https://github.com/tradingstrategy-ai/getting-started>`__ to find to up-to-date examples
+    that run.
 
-Here you can find trading strategy examples as :term:`Jupyter notebooks <Jupyter notebook>`.
-
-.. note ::
-
-    If you are new to the Trading Strategy framework or algorithmic trading in general,
-    please start by watching `the recorded workshop tutorial session from Avalanche Summit <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
-
-- The examples show how to use Trading Strategy framework for algorithmic trading
-- Some notebooks are examples of complete strategies
-- Some notebooks highlight a particular feature
-- These examples also include backtests that you can run yourself.
-- You can copy these files, run and and start editing them to suit your needs.
-- Refer to the `Tags`_ section to see all the tags associated with each notebook
 
 Prerequisites
 -------------
