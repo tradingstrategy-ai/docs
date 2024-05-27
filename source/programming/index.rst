@@ -7,15 +7,17 @@
 Developing strategies
 =====================
 
-This documentation covers how to write trading strategies for decentralised finance
-using Python and Trading Strategy framework.
+This documentation covers how to develop and backtest :term:`algorithmic trading strategies <algorithmic trading>`
+for :ref:`Trading Strategy framework`.
 
 - If you want to get started quickly, hop to the `Getting started Github repository <https://github.com/tradingstrategy-ai/getting-started>`__.
 
 - If you are new to algorithmic trading and want to just learn algorithmic trading,
   see :ref:`learning` section.
 
-- See also `a workshop recording video and an example Github repository for porting TradingView's PineScript strategies <https://github.com/tradingstrategy-ai/tradingview-defi-strategy>`__.
+- If you are an end-user and just want to deposit money into the ready automated trading strategies
+  visit `Trading Strategy website and community <https://tradingstrategy.ai/community>`__
+
 
 Developer documentation:
 
