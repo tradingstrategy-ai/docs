@@ -62,7 +62,7 @@ You need to trust it:
 
 .. image:: trust.png
 
-_ ..poetry-pycharm:
+.. _poetry-pycharm:
 
 Using Poetry in PyCharm
 -----------------------
