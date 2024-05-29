@@ -1654,7 +1654,19 @@ and algorithmic trading.
 
         In an order book exchange, users can place limit orders, specifying the price and quantity they are willing to buy or sell an asset for. When a matching buy and sell order is found, a trade is executed, and the exchange takes a small fee for facilitating the transaction. Order book exchanges provide more precise price discovery and allow users to take advantage of market inefficiencies, but can suffer from liquidity issues and are more susceptible to front-running and other forms of market manipulation.
 
-        Overall, order book exchanges offer a more traditional trading experience compared to Automated Market Maker (AMM) exchanges, but with the added benefits of being decentralised and secure.
+        Overall, order book exchanges offer a more traditional trading experience compared to :term:`Automated Market Maker (AMM) <AMM>` exchanges, but with the added benefits of being decentralised and secure.
+
+        See also
+
+        - :term:`AMM`
+
+        - :term:`CLMM`
+
+        - :term:`Decentralised exchange`
+
+    Limit order
+
+        See :term:`order book`.
 
     Bear market
     
@@ -5351,7 +5363,7 @@ and algorithmic trading.
 
         - :term:`Average True Range (ATR)`
 
-     Average True Range (ATR)
+    Average True Range (ATR)
 
         In :term:`quantitative finance`, ATR stands for Average True Range. It's another popular :term:`technical indicator` used in algorithmic trading to measure volatility in the market. Developed by J. Welles Wilder, Jr., ATR is calculated based on the true range of price movement over a specified period.
 
