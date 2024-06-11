@@ -172,3 +172,25 @@ XGBoost for Classifying Ethereum Short-term Return Based on Technical Factor
 The concept of digital cash has the potential to completely change how people think about money. Digital currency has emerged as a possible alternative for exchanging currency and traditional payment systems, in addition to a popular investment option due to its potential for high returns. One of the three main varieties of digital currency is cryptocurrency that is secured by blockchain technology. Bitcoin, Ethereum, and many other cryptocurrencies exist in crypto markets. Investing in cryptocurrencies still carries risks and uncertainties due to the price volatility. It is thus important to approach such investments with caution and thoroughly research the market and its risks before making investment decisions. This paper presents an application of AI technology for learning the price movement of Ethereum (ETH) which is second only to Bitcoin in market capitalization. Based on the Technical factor, the XGBoost model is constructed for classification of return on Ethereum close price. The technical indicators such as moving averages and relative strength index, together with the Bitcoin price trend are chosen to determine influence on Ethereum price further used for computing the short-term return separate into 3 classes: downtrend, sideway, and uptrend. The model performance is measured by multiclass ROC-AUC, achieving the micro-average ROC-AUC of 0.66 saying the model is reasonably good at predicting the overall trend of ETH price.
 
 `Read the paper <https://dl.acm.org/doi/fullHtml/10.1145/3605423.3605462>`__.
+
+
+Predicting Cryptocurrency Prices with Machine Learning Algorithms: A Comparative Analysis
+-----------------------------------------------------------------------------------------
+
+Due to its decentralized nature and opportunity for substantial gains,
+cryptocurrency has become a popular investment opportunity. However, the highly
+unpredictable and volatile nature of the cryptocurrency market poses a challenge
+for investors looking to predict price movements and make profitable investments.
+Time series analysis, which recognizes trends and patterns in previous price data to
+create forecasts about future price movements, is one of the prominent and effective
+techniques for price prediction. Integrating Machine learning (ML) techniques and
+technical indicators along with time series analysis, can enhance the prediction ac-
+curacy significantly.
+
+Objectives. The objective of this thesis is to identify an effective ML algorithm for
+making long-term predictions of Bitcoin prices, by developing prediction models using
+the ML algorithms and making predictions using the technical indicators(Relative
+Strength Index (RSI), Exponential Moving Average (EMA), Simple Moving Aver-
+age (SMA)) as input for these models.
+
+`Read the Bachelor thesis <https://www.diva-portal.org/smash/get/diva2:1778251/FULLTEXT03>`__.
