@@ -4,7 +4,7 @@ Additional algorithmic trading links
 A collection of random links and notes that are not a good fit for other learning categories.
 
 Miscellaneous
-~~~~~~~~~~~~~
+-------------
 
 - `Using tqdm progress bars in notebooks <https://stackoverflow.com/questions/42212810/tqdm-in-jupyter-notebook-prints-new-progress-bars-repeatedly>`__.
 
@@ -47,3 +47,41 @@ Miscellaneous
 - `Awesome Conformal Prediction for time series <https://github.com/valeman/awesome-conformal-prediction>`__
 
 - `Portfolio Optimization in Python With Datalore and AI Assistant <https://blog.jetbrains.com/datalore/2024/01/26/portfolio-optimization-in-python-with-datalore-and-ai-assistant/>`__
+
+Risk, portfolio construction, optimization, and factor essentials
+-----------------------------------------------------------------
+
+Risk and Portfolio Construction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"Advanced Portfolio Management" (Paleologo) https://buff.ly/3Jn0hcj
+"Active Portfolio Management" (Grinold & Kahn) https://buff.ly/3Z3ooUr
+"Advances in Active Portfolio Management" (G&K) https://buff.ly/3VrgIeP
+"Quantitative Equity Portfolio Management" https://buff.ly/3r6vYkC
+"Quantitative Portfolio Management" https://buff.ly/44wamvO
+"Portfolio Risk Analysis" (Connor & Goldberg) https://buff.ly/3yDK5RW
+"Equity Portfolio Management" (Fabozzi) https://buff.ly/3qWKBHd
+"Modern Invesment Management" (Litterman/GSAM) https://buff.ly/3PqZF9K
+
+Factor Models & Related
+~~~~~~~~~~~~~~~~~~~~~~~
+
+"Modeling Equities Returns: The Linear Case" (Zhang, HRT) https://buff.ly/4e9t1DB
+"Factor Models of Asset Returns" (Connor) https://buff.ly/3V5g852
+"The Econometrics of Financial Markets" (Campbell & Lo) https://buff.ly/3Vfa4XM
+"Multi-factor Models & Signal Processing Techniques" https://buff.ly/3RdeQUh
+"Elements of Quantitative Investing" (Paleologo) https://buff.ly/4566DqM
+"Asset Management: Systematic Factor Investing" (Ang) https://buff.ly/4e7Hr7h
+"Finding Alphas" (Tulchinsky) https://buff.ly/4bG4c0H
+"Practioner's Guide to Factor Models" (CFA, 1994) https://buff.ly/4bIxR9r
+"The Remarkable Multidimensionality in Stock Returns" https://buff.ly/3yLNJJA
+
+Optimization
+~~~~~~~~~~~~
+
+"Dispelling Myths in Mean-Variance Optimization" https://buff.ly/4aKIs2j
+"Portfolio Optimization Cookbook" (Mosek) https://buff.ly/3Va7uC4
+"Multi-Period Trading via Complex Optimization" (Boyd) https://buff.ly/4aGJf4k
+"Optimal Turnover" (Baldacci, more t cost emphasis) https://buff.ly/3V5bZhf
+
+Broader list of mathematical finance references: https://buff.ly/3tH37Vb
