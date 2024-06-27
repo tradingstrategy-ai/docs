@@ -201,3 +201,22 @@ age (SMA)) as input for these models.
 We provide detailed descriptions, including over 550 mathematical formulas, for over 150 trading strategies across a host of asset classes (and trading styles). This includes stocks, options, fixed income, futures, ETFs, indexes, commodities, foreign exchange, convertibles, structured assets, volatility (as an asset class), real estate, distressed assets, cash, cryptocurrencies, miscellany (such as weather, energy, inflation), global macro, infrastructure, and tax arbitrage. Some strategies are based on machine learning algorithms (such as artificial neural networks, Bayes, k-nearest neighbors). We also give: source code for illustrating out-of-sample backtesting with explanatory notes; around 2,000 bibliographic references; and over 900 glossary, acronym and math definitions. The presentation is intended to be descriptive and pedagogical. This is the complete version of the book.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__.
+
+Multivariate cryptocurrency prediction: comparative analysis of three recurrent neural networks approaches
+----------------------------------------------------------------------------------------------------------
+
+As a new type of currency introduced in the new millennium, cryptocurrency has
+established its ecosystems and attracts many people to use and invest in it. However,
+cryptocurrencies are highly dynamic and volatile, making it challenging to predict
+their future values. In this research, we use a multivariate prediction approach and
+three different recurrent neural networks (RNNs), namely the long short-term memory
+(LSTM), the bidirectional LSTM (Bi-LSTM), and the gated recurrent unit (GRU). We also
+propose simple three layers deep networks architecture for the regression task in this
+study. From the experimental results on five major cryptocurrencies, i.e., Bitcoin (BTC),
+Ethereum (ETH), Cardano (ADA), Tether (USDT), and Binance Coin (BNB), we find that
+both Bi-LSTM and GRU have similar performance results in terms of accuracy. However,
+in terms of the execution time, both LSTM and GRU have similar results, where GRU is
+slightly better and has lower variation results on average.
+
+`Read the paper <https://www.academia.edu/82633717/Multivariate_cryptocurrency_prediction_comparative_analysis_of_three_recurrent_neural_networks_approaches?email_work_card=title>`__.
+
