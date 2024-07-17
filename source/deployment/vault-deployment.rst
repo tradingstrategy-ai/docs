@@ -126,9 +126,6 @@ An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
         exit 1
     fi
 
-    export JSON_RPC_ETHEREUM="https://lb.drpc.org/ogrpc?network=ethereum&dkey=At2ZgGvHCU-XovMtHL1LWipuywDcNToR76SzhkHL9tz4"
-    export ETHERSCAN_API_KEY=MXT9393CGY4WJB4REWNQZXS5WVAI8TZVX7
-
     # The address DAO/proto DAO multisig that will own this vault.
     # This address is Trading Strategy Protocol's ProtoDAO address.
     export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
@@ -163,7 +160,6 @@ An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
         --vault-record-file="deploy/$FUND_SYMBOL-vault-info.json" \
         --fund-name="$FUND_NAME" \
         --fund-symbol="$FUND_SYMBOL" \
-        --json-rpc-ethereum="$JSON_RPC_ETHEREUM" \
         --etherscan-api-key=$ETHERSCAN_API_KEY \
         --whitelisted-assets="$WHITELISTED_ASSETS" \
         --denomination-asset="$DENOMINATION_ASSET" \
