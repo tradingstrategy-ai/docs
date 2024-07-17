@@ -46,13 +46,94 @@ To get started you need to have a
 - Basics of UNIX and Docker system administration, using
   UNIX shell
 
-- Ability to set DNS entries and domain names for your web services
-
 - A stash of blockchain native cryptocurrency for gas fees (ETH, BNB, MATIC)
 
 - Initial cash deposit in stablecoin (USDC, BUSD)
 
+- Ability to set DNS entries and domain names for your web services
+
 - `A Github access token to download Docker images from GHCR <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry>`_
+  (Github does not currently allow to downlaod public Docker images without an API key)
+
+Preproduction checklist
+-----------------------
+
+First before doing the production deployment, it is a good idea to practice the deployment on a local laptop.
+
+The preproduction set up can be more straightforward than the actual production deployment,
+as we are less worried about security like managing the access to the private keys. It will also no
+web frontend or diagnostics configured, which is the major share of work of setting up a new automated trade executor.
+The only output you can see is in Docker log output of the trade executor process.
+
+- `[ ]` A repository tool where you are going to manage your configuration files (Github, Gitlab, etc.)
+    - See the project structure details below
+- `[ ]` Linux / macOS laptop (Windows should work, but the command line commmands differ so much, so it is unsupported)
+- `[ ]` :ref:`Docker installation with Docker compose <managing docker images>`
+- `[ ]` Convert your backtest notebook :ref:`to a Python strategy module <>`
+
+First name your trade executor. This will be used as filename and URL ids. A good name is
+
+.. code-block:: text
+
+    [execution type]-[chain]-[base token]-[quote token]-[strategy type]
+
+E.g.
+
+.. code-block:: text
+
+    hotwallet-ethereum-eth-usdc-mean-reversion
+
+
+Create a new project with the folder structure
+
+.. code-block:: text
+
+    logs/
+    state/
+    strategy/
+    cache/
+    strategy/my-strategy-module.py
+
+Create a `docker-compose.yml` based on the example:
+
+.. code-block:: yaml
+
+    version: "3.9"
+
+    # The base template for trade-executor live trading
+    x-trade-executor: &default-trade-executor
+      image: ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+      # All live executors have internal exception recovery mechanism,
+      # If trade executor stops it must be manually restarted.
+      # However webhook server stays around and can still take commands
+      # even if the trade executor loop has stopped.
+      restart: "no"
+      mem_swappiness: 0
+      volumes:
+        # Map the path from where we load the strategy Python modules
+        - ./strategy:/usr/src/trade-executor/strategy
+        # Save the strategy execution state in the local filesystem
+        - ./state:/usr/src/trade-executor/state
+        # Cache the dataset downloads in the local filesystem
+        - ./cache:/usr/src/trade-executor/cache
+        # Save the log files to the local file system
+        - ./logs:/usr/src/trade-executor/logs
+
+      # This is the default trade-executor command to
+      # launch as a daemon mode.
+      # There are several subcommands.
+      command: start
+
+    services:
+
+      # This is your trade executor name
+      hotwallet-ethereum-eth-usdc-mean-reversion:
+        <<: *default-trade-executor
+        container_name: hotwallet-ethereum-eth-usdc-mean-reversion
+        env_file:
+          - ~/env/strategy.env
+
+
 
 Strategy assets
 ---------------
