@@ -83,7 +83,7 @@ You need to
 
 .. note ::
 
-    Never share the hot wallet (private key) across different executors.
+    Never share the hot wallet (private key) across different executors on the same blockchain.
 
 This will
 
@@ -99,57 +99,78 @@ Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
 
 We are deploying multiple contracts. First test with `--simulate` flag to see the deployment finish all the way to end.
 
+An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
+
 .. code-block:: shell
 
-    # You need to provider these
-    export JSON_RPC_POLYGON=
-    export PRIVATE_KEY=
-    export ETHERSCAN_API_KEY=
+    #!/bin/bash
+    #
+    # Deploy Enzyme vault for a strategy defined in docker-compose.yml
+    #
+    # Set up
+    # - name
+    # - guard with allowed assets
+    # - trade executor hot wallet as the asset manager role
+    #
+
+    set -e
+    set -u
+
+    if [ "$SIMULATE" = "" ]; then
+        echo "Set SIMULATE=true or SIMULATE=false"
+        exit 1
+    fi
+
+    if [ "$TRADE_EXECUTOR_VERSION" = "" ]; then
+        echo "TRADE_EXECUTOR_VERSION missing"
+        exit 1
+    fi
+
+    export JSON_RPC_ETHEREUM="https://lb.drpc.org/ogrpc?network=ethereum&dkey=At2ZgGvHCU-XovMtHL1LWipuywDcNToR76SzhkHL9tz4"
+    export ETHERSCAN_API_KEY=MXT9393CGY4WJB4REWNQZXS5WVAI8TZVX7
 
     # The address DAO/proto DAO multisig that will own this vault.
     # This address is Trading Strategy Protocol's ProtoDAO address.
     export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
 
     # ERC-20 token symbol
-    export FUND_SYMBOL="YOURTOKENSYMBOL"
+    export FUND_SYMBOL="STOCH-RSI"
 
     # Enzyme vault name
-    export FUND_NAME="Your algorithm name"
+    export FUND_NAME="ETC/BTC Stochastic RSI crossover"
 
     # Space-separated list of tokens the vault allows the trade-executor to trade.
-    # Here we have WETH and WMATIC on Polygon.
-    export WHITELISTED_ASSETS="0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
+    # WETH WBTC
+    export WHITELISTED_ASSETS="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
 
-    # The vault is nominated in USDC *Polygon
-    export DENOMINATION_ASSET="0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+    # The vault is nominated in USDC *ethereum
+    export DENOMINATION_ASSET="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
 
     # Terms of service manager smart contract address.
-    # This one is deployed on Polygon.
-    export TERMS_OF_SERVICE_ADDRESS="0xbe1418df0bAd87577de1A41385F19c6e77312780"
+    # This one is deployed on ethereum.
+    export TERMS_OF_SERVICE_ADDRESS="0xd63c1bE9D8B56CCcD6fd2Dd9F9c030c6a9916f5F"
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables
     # - Set vault-info.json to be written to a local file system
+    #poetry run trade-executor \
     export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
-    docker run \
-        --interactive \
-        --tty \
-        -v `pwd`:`pwd` \
-        -w `pwd` \
-        $TRADE_EXECUTOR_IMAGE \
-        -- \
+    echo "Using $TRADE_EXECUTOR_IMAGE"
+    docker compose run \
+        -e SIMULATE \
+        enzyme-ethereum-btc-eth-stoch-rsi \
         enzyme-deploy-vault \
-        --simulate \
-        --private-key=$PRIVATE_KEY \
-        --vault-record-file="$FUND_SYMBOL-vault-info.json" \
+        --vault-record-file="deploy/$FUND_SYMBOL-vault-info.json" \
         --fund-name="$FUND_NAME" \
         --fund-symbol="$FUND_SYMBOL" \
-        --json-rpc-polygon="$JSON_RPC_POLYGON" \
+        --json-rpc-ethereum="$JSON_RPC_ETHEREUM" \
         --etherscan-api-key=$ETHERSCAN_API_KEY \
         --whitelisted-assets="$WHITELISTED_ASSETS" \
-        --denomination-asset="$DENOMIATION_ASSET" \
+        --denomination-asset="$DENOMINATION_ASSET" \
         --terms-of-service-address="$TERMS_OF_SERVICE_ADDRESS" \
         --owner-address="$OWNER_ADDRESS"
+
+
 
 This will give you the log output for the deployment:
 
