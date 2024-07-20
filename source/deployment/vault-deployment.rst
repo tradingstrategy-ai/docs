@@ -486,6 +486,7 @@ Then with `%cpaste`:
 
     print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
     usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
+    # usdc_address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # USDC on Ethereum
     usdc = fetch_erc20_details(web3, usdc_address)
     deposit_amount = Decimal(1.5)
     vault_address = state.sync.deployment.address  # init command saves vault address here
