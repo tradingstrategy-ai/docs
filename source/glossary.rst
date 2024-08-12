@@ -5438,3 +5438,37 @@ and algorithmic trading.
 
         - :term:`Stop loss`
 
+    Stochastic oscillator
+
+        The Stochastic Oscillator is a widely used :term:`technical indicator` tool in :term:`quantitative finance` that helps traders assess the :term:`momentum` of an asset's price movement. The primary function of the stochastic oscillator is to determine the position of the current closing price relative to the price range (i.e., the high-low range) over a specified period. This oscillator is particularly effective in identifying potential reversal points, overbought and oversold conditions, and confirming trends.
+
+        See also
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+        - :term:`Stochastic RSI indicator`
+
+    Stochastic RSI indicator
+
+        Stochastic RSI (StochRSI) is a :term:`technical indicator` used in :term:`quantitative finance`, combining the concepts of the :term;`Stochastic Oscillator` and the Relative Strength Index (RSI). It is primarily used to identify overbought and oversold conditions in a market, as well as potential price reversals. The Stochastic RSI is more sensitive and responsive than the traditional RSI, making it popular among traders looking for early signals.
+
+        Key Components:
+
+        - :term:`Relative Strength Index (RSI)`: RSI is a momentum oscillator that measures the speed and change of price movements. It ranges from 0 to 100, typically with thresholds at 70 (overbought) and 30 (oversold).
+
+        - :term:`Stochastic Oscillator`: The Stochastic Oscillator measures the level of the close relative to the range of highs and lows over a certain period. It also ranges from 0 to 100, with common thresholds at 80 (overbought) and 20 (oversold).
+
+        Examples:
+
+        - Buy Signal: When StochRSI moves above 20, indicating the asset might be transitioning out of oversold territory.
+        - Sell Signal: When StochRSI moves below 80, indicating the asset might be moving out of overbought territory.
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+        - :term:`Stochastic RSI indicator`
+
+        - :term:`Relative strength index (RSI)`
