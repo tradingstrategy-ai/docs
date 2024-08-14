@@ -484,13 +484,19 @@ Then with `%cpaste`:
 
     print("Using RPC provider", web3.provider)
 
-    print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
+    deposit_amount = Decimal(1.5)
+    # We need to manual specify gas, because having two
+    # subsequent txs may hit different RPC endpoints
+    # when transact() calls eth_estimateGas
+    # and then the tx would revert in the gas estimation
+    buy_shares_gas = 500_000
+
+    print(f"Depositing USDC from our hot wallet {hot_wallet.address}, amount {deposit_amount} USDC")
     usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
     # usdc_address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # USDC on Ethereum
     usdc = fetch_erc20_details(web3, usdc_address)
-    deposit_amount = Decimal(1.5)
     vault_address = state.sync.deployment.address  # init command saves vault address here
-    assert vault_address, "Vault address not in state, run trade-executor init first"
+    assert vault_address, "Vault address not in trade-executor state, run trade-executor init first"
 
     out_gas_balance = web3.eth.get_balance(hot_wallet.address) / (10**18)
     our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
@@ -503,7 +509,9 @@ Then with `%cpaste`:
     tx_hash = usdc.contract.functions.approve(vault.comptroller.address, usdc.convert_to_raw(deposit_amount)).transact({"from": hot_wallet.address})
     print(f"Approving in TX {tx_hash.hex()}")
     assert_transaction_success_with_explanation(web3, tx_hash)
-    tx_hash = vault.comptroller.functions.buyShares(usdc.convert_to_raw(deposit_amount), 1).transact({"from": hot_wallet.address})
+    raw_amount = usdc.convert_to_raw(deposit_amount)
+    print(f"Buying shares, raw amount {raw_amount}")
+    tx_hash = vault.comptroller.functions.buyShares(raw_amount, 1).transact({"from": hot_wallet.address, "gas": buy_shares_gas})
     print(f"buyShares() in TX {tx_hash.hex()}")
     assert_transaction_success_with_explanation(web3, tx_hash)
     vault_usdc_amount = usdc.fetch_balance_of(vault.address)
@@ -545,6 +553,19 @@ The output looks something like:
     2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserve currency spent: 0.001000000000000334 USDC
     2023-05-11 21:29:21 tradeexecutor.state.store                          INFO     Saved state to state/enzyme-polygon-eth-usdc.json, total 41620 chars
     2023-05-11 21:29:21 root                                               INFO     All ok
+
+Running a test strategy decision cycle
+--------------------------------------
+
+You can now manually execute the first strategy cycle. This will be executed off-timestamp,
+but will still demostrate the `decide_trades()` Python function is not broken.
+
+.. code-block:: shell
+
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
+        start \
+        --run-single-cycle
 
 Launch live trading
 -------------------
