@@ -309,7 +309,7 @@ and algorithmic trading.
 
         Autonomous agents typically use artificial intelligence (AI) and :term:`machine learning` algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
-    See also
+        See also
 
         - :term:`Algorithmic trading`
 
@@ -658,7 +658,7 @@ and algorithmic trading.
 
     Quote token
 
-        In :term:`algorithmic trading`, the token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
+        In :term:`algorithmic trading`, the token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. The opposite is :term:`base token`.
 
         For example trading pair can be: `BTC-USDT`. In this case the base token `BTC` and quote token is `USDT`.
 
