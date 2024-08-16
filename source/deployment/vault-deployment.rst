@@ -554,8 +554,8 @@ The output looks something like:
     2023-05-11 21:29:21 tradeexecutor.state.store                          INFO     Saved state to state/enzyme-polygon-eth-usdc.json, total 41620 chars
     2023-05-11 21:29:21 root                                               INFO     All ok
 
-Running a test strategy decision cycle
---------------------------------------
+Running one test strategy decision cycle
+----------------------------------------
 
 You can now manually execute the first strategy cycle. This will be executed off-timestamp,
 but will still demostrate the `decide_trades()` Python function is not broken.
@@ -566,6 +566,11 @@ but will still demostrate the `decide_trades()` Python function is not broken.
         enzyme-polygon-matic-eth-usdc \
         start \
         --run-single-cycle
+
+.. note::
+
+    If you are doing this multiple times, make sure the `trade-executor` Docker is not running on the background,
+    as otherwise you have two instances accessing the same state file at the same time resulting to the corruption.
 
 Launch live trading
 -------------------
