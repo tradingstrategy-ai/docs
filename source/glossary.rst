@@ -3621,7 +3621,28 @@ and algorithmic trading.
 
         The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
 
-        The Sortino ratio is similar to the Sharpe ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+        The Sortino ratio is similar to the :term:`Sharpe` ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+
+        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
+
+        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
+
+        **Relationship to downside volatility**
+
+        The Sortino ratio is more closely related to downside volatility because it specifically targets the negative fluctuations in returns. This focus on downside risk makes the Sortino ratio particularly useful for investors who are more concerned about potential losses than overall volatility.
+        Key points:
+
+        - Downside focus: The Sortino ratio acknowledges that upside volatility is generally not a concern for investors, as they typically welcome positive surprises in returns.
+        - Penalizing negative returns: By using only the downside deviation, the Sortino ratio penalizes investments with a higher frequency or magnitude of negative returns more heavily than the Sharpe ratio would.
+        - Applicability: The Sortino ratio is especially useful for evaluating investments or strategies with asymmetric return distributions or those designed to limit downside risk.
+        - Complementary use: Both ratios can be used together to provide a more comprehensive view of an investment's risk-adjusted performance.
+
+        **Examples**
+
+        - Cryptocurrency: Highly volatile, but you only care about number going up
+        - Investing in stocks over three years time horizon: In this time horizon if market goes dow it may have no time to recover
+
+        **Formulas**
 
         The formula for calculating the Sortino ratio is as follows:
 
@@ -3632,10 +3653,6 @@ and algorithmic trading.
         `Rp = portfolio return`
         `Rf = risk-free rate of return`
         `Downside deviation = standard deviation of negative returns`
-
-        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
-
-        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
 
         See also:
 
