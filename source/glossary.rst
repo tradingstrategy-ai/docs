@@ -3630,7 +3630,6 @@ and algorithmic trading.
         **Relationship to downside volatility**
 
         The Sortino ratio is more closely related to downside volatility because it specifically targets the negative fluctuations in returns. This focus on downside risk makes the Sortino ratio particularly useful for investors who are more concerned about potential losses than overall volatility.
-        Key points:
 
         - Downside focus: The Sortino ratio acknowledges that upside volatility is generally not a concern for investors, as they typically welcome positive surprises in returns.
         - Penalizing negative returns: By using only the downside deviation, the Sortino ratio penalizes investments with a higher frequency or magnitude of negative returns more heavily than the Sharpe ratio would.
