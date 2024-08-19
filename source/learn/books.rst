@@ -35,6 +35,23 @@ If you're eager to manage uncertainty in industry applications using Python, 'Pr
 
 `Buy the book on Amazon <https://www.amazon.com/dp/1805122762?ref_=cm_sw_r_cp_ud_dp_W066MGMRTTPV3C4E91TZ>`__
 
+Algorithmic Trading: Winning Strategies and Their Rationale
+-----------------------------------------------------------
+
+Engaging and informative, Algorithmic Trading skillfully covers a wide array of strategies. Broadly divided into the mean-reverting and momentum camps, it lays out standard techniques for trading each category of strategies and, equally important, the fundamental reasons why a strategy should work. The emphasis throughout is on simple and linear strategies, as an antidote to the over-fitting and data-snooping biases that often plague complex strategies. Along the way, it provides comprehensive coverage of:
+
+- Choosing the right automated execution platform as well as a backtesting platform that will allow you to reduce or eliminate common pitfalls associated with algorithmic trading strategies
+- Multiple statistical techniques for detecting “time series” mean reversion or stationarity, and for detecting cointegration of a portfolio of instruments
+- Simple techniques for trading mean-reverting portfolios―linear, Bollinger band, and Kalman filter―and whether using raw prices, log prices, or ratios make the most sense as inputs to these tests and strategies
+- Mean-reverting strategies for stocks, ETFs, currencies, and futures calendar and intermarket spreads
+- The four main drivers of momentum in stocks and futures, and strategies that can extract time series and cross sectional momentum
+- Newer momentum strategies based on news events and sentiment, leveraged ETFs, order flow, and high-frequency trading
+- Issues involving risk and money management based on the Kelly formula, but tempered with the author’s practical experience in risk management involving black swans, Constant Proportion Portfolio Insurance, and stop losses
+
+Mathematics and software are the twin languages of algorithmic trading. This book stays true to that view by using a level of mathematics that allows for a more precise discussion of the concepts involved in financial markets. And it includes illustrative examples that are built around MATLAB© codes, which are available for download.
+
+`Read book at <https://www.amazon.com/Algorithmic-Trading-Winning-Strategies-Rationale/dp/1118460146#>`__.
+
 Further reading lists
 =====================
 
