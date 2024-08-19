@@ -4,19 +4,7 @@
 Books on algorithmic trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Books
-=====
-
-Here is a list of books related to quantitative finance and
-algorithmic trading, with their descriptions and
-links,
-
-Machine Learning for Algorithmic Trading
-----------------------------------------
-
-A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
-
-`Read more <https://ml4trading.io/>`__.
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
 
 Python For Finance: Algorithmic Trading
 ---------------------------------------
@@ -24,13 +12,6 @@ Python For Finance: Algorithmic Trading
 This Python for Finance tutorial introduces you to algorithmic trading, and much more.
 
 `Read more <https://www.datacamp.com/community/tutorials/finance-python-trading>`__.
-
-Master AI-Driven Algorithmic Trading
-------------------------------------
-
-This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
-
-`Read more <https://home.tpq.io/certificates/pyalgo/>`__.
 
 Python for Data Analysis
 ------------------------

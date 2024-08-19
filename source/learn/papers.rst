@@ -32,15 +32,6 @@ an order across a network of decentralized exchanges
 
 `Read the paper <https://angeris.github.io/papers/routing-algorithm.pdf>`__.
 
-
-Can machines learn finance?
----------------------------
-
-Machine learning for asset management faces a unique set of challenges that differ markedly from other domains where machine learning has excelled. Understanding these differences is critical for developing impactful approaches and realistic expectations for machine learning in asset management. We discuss a variety of beneficial use cases and potential pitfalls, and emphasize the importance of economic theory and human expertise for achieving success through financial machine learning.
-
-`Read the paper <https://joim.com/can-machines-learn-finance/>`__.
-
-
 Automated Market Making and Arbitrage Profits in the Presence of Fees
 ---------------------------------------------------------------------
 
@@ -78,13 +69,6 @@ Predicting the prices of cryptocurrencies is a notoriously challenging task due 
 
 `Read the paper <https://arxiv.org/pdf/2102.08189.pdf>`__.
 
-Data Resampling for Cryptocurrency Investment with Ensemble of Machine Learning Algorithms
-------------------------------------------------------------------------------------------
-
-This work proposes a system based on machine learning aimed at creating an investment strategy capable of trading on the volatile cryptocurrency exchange markets with the highest returns and lowest risk. With the former goal in mind, several methods are employed for resampling the original financial data into a time series more prone of obtaining higher returns and the final results are compared to the obtained with commonly utilized time sampled series. These methods resample the original financial time series according to price action rather than a fixed time period. Simply put, the original samples are grouped as the closing value surpasses a threshold variation of quote currency. Three experimental thresholds were analysed: percentual value, fixed amount and fixed logarithmic amount.
-
-`Read the paper <https://fenix.tecnico.ulisboa.pt/downloadFile/563345090417208/FinalThesis.pdf>`__.
-
 Pure Momentum in Cryptocurrency Markets
 ---------------------------------------
 
@@ -109,7 +93,6 @@ The validity of day trading as a long-term consistent and uncorrelated source of
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4416622>`__.
 
-
 Multi-source aggregated classification for stock price movement prediction
 --------------------------------------------------------------------------
 
@@ -129,20 +112,6 @@ in stock price movement prediction, Sharpe Ratio, and backtesting trading income
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019>`__.
 
-From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses
-----------------------------------------------------------------------
-
-We train an AI analyst that digests corporate disclosures, industry trends, and macroeconomic
-indicators to the extent it beats most analysts. Human wins the “Man vs. Machine”
-contest when a firm is complex with intangible assets, and AI wins when information is
-transparent but voluminous. Analysts catch up with machines over time, especially after
-firms are covered by alternative data and their institutions build AI capabilities. AI power
-and human wisdom are complementary in generating accurate forecasts and mitigating extreme
-errors, portraying a future of “Man + Machine” (instead of human displacement) in
-financial analyses, and likely other high-skill professions.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3840538>`__.
-
 Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing
 ------------------------------------------------------------------
 
@@ -150,73 +119,9 @@ The motivation of this research is in two folds, to understand the distributiona
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__.
 
-BITCOIN-USD Trading Using SVM to Detect The Current day’s Trend in The Market
------------------------------------------------------------------------------
-
-Cryptocurrency trade is now a popular type of investment. Cryptocurrency market has been treated similar to foreign exchange and stock market. The Characteristics of Bitcoin have made Bitcoin keep rising In the last few years. Bitcoin exchange rate to American Dollar (USD) is $3990 USD on November 2018, with daily pice fluctuations could reach 4.55%2. It is important to able to predict value to ensure profitable investment. However, because of its volatility, there’s a need for a prediction tool for investors to help them consider investment decisions for cryptocurrency trade. Nowadays, computing based tools are commonly used in stock and foreign exchange market predictions. There has been much research about SVM prediction on stocks and foreign exchange as case studies but none on cryptocurrency. Therefore, this research studied method to predict the market value of one of the most used cryptocurrency, Bitcoin. The preditct methods will be used on this research is regime prediction to develop model to predict the close value of Bitcoin and use Support vector classifier algorithm to predict the current day’s trend at the opening of the market
-
-`Read the paper <https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET>`__.
-
-Can Machines Time Markets? The Virtue of Complexity in Return Prediction
-------------------------------------------------------------------------
-
-Machine learning techniques can be used to improve market timing strategies by picking up nonlinearities between the predictor variables (i.e., signals) and returns. In order to identify the nonlinearities, complex models – i.e., models where the number of predictor variables is larger than the number of return time series observations – must be estimated. More complex models better identify the true nonlinear relationships and, thus, produce better market timing strategy performance.
-
-This "virtue of complexity" result is validated in three practical market timing applications: timing the stock market, the bond market, and the long/short value factor. The performance improvements are real but modest, consistent with the view that machine learning applied to return prediction leads to evolutionary, not revolutionary, wealth gains.
-
-`Read the paper <https://www.aqr.com/Insights/Research/Alternative-Thinking/Can-Machines-Time-Markets-The-Virtue-of-Complexity-in-Return-Prediction>`__.
-
-XGBoost for Classifying Ethereum Short-term Return Based on Technical Factor
-----------------------------------------------------------------------------
-
-The concept of digital cash has the potential to completely change how people think about money. Digital currency has emerged as a possible alternative for exchanging currency and traditional payment systems, in addition to a popular investment option due to its potential for high returns. One of the three main varieties of digital currency is cryptocurrency that is secured by blockchain technology. Bitcoin, Ethereum, and many other cryptocurrencies exist in crypto markets. Investing in cryptocurrencies still carries risks and uncertainties due to the price volatility. It is thus important to approach such investments with caution and thoroughly research the market and its risks before making investment decisions. This paper presents an application of AI technology for learning the price movement of Ethereum (ETH) which is second only to Bitcoin in market capitalization. Based on the Technical factor, the XGBoost model is constructed for classification of return on Ethereum close price. The technical indicators such as moving averages and relative strength index, together with the Bitcoin price trend are chosen to determine influence on Ethereum price further used for computing the short-term return separate into 3 classes: downtrend, sideway, and uptrend. The model performance is measured by multiclass ROC-AUC, achieving the micro-average ROC-AUC of 0.66 saying the model is reasonably good at predicting the overall trend of ETH price.
-
-`Read the paper <https://dl.acm.org/doi/fullHtml/10.1145/3605423.3605462>`__.
-
-
-Predicting Cryptocurrency Prices with Machine Learning Algorithms: A Comparative Analysis
------------------------------------------------------------------------------------------
-
-Due to its decentralized nature and opportunity for substantial gains,
-cryptocurrency has become a popular investment opportunity. However, the highly
-unpredictable and volatile nature of the cryptocurrency market poses a challenge
-for investors looking to predict price movements and make profitable investments.
-Time series analysis, which recognizes trends and patterns in previous price data to
-create forecasts about future price movements, is one of the prominent and effective
-techniques for price prediction. Integrating Machine learning (ML) techniques and
-technical indicators along with time series analysis, can enhance the prediction ac-
-curacy significantly.
-
-Objectives. The objective of this thesis is to identify an effective ML algorithm for
-making long-term predictions of Bitcoin prices, by developing prediction models using
-the ML algorithms and making predictions using the technical indicators(Relative
-Strength Index (RSI), Exponential Moving Average (EMA), Simple Moving Aver-
-age (SMA)) as input for these models.
-
-`Read the Bachelor thesis <https://www.diva-portal.org/smash/get/diva2:1778251/FULLTEXT03>`__.
-
 151 Trading Strategies
 ----------------------
 
 We provide detailed descriptions, including over 550 mathematical formulas, for over 150 trading strategies across a host of asset classes (and trading styles). This includes stocks, options, fixed income, futures, ETFs, indexes, commodities, foreign exchange, convertibles, structured assets, volatility (as an asset class), real estate, distressed assets, cash, cryptocurrencies, miscellany (such as weather, energy, inflation), global macro, infrastructure, and tax arbitrage. Some strategies are based on machine learning algorithms (such as artificial neural networks, Bayes, k-nearest neighbors). We also give: source code for illustrating out-of-sample backtesting with explanatory notes; around 2,000 bibliographic references; and over 900 glossary, acronym and math definitions. The presentation is intended to be descriptive and pedagogical. This is the complete version of the book.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__.
-
-Multivariate cryptocurrency prediction: comparative analysis of three recurrent neural networks approaches
-----------------------------------------------------------------------------------------------------------
-
-As a new type of currency introduced in the new millennium, cryptocurrency has
-established its ecosystems and attracts many people to use and invest in it. However,
-cryptocurrencies are highly dynamic and volatile, making it challenging to predict
-their future values. In this research, we use a multivariate prediction approach and
-three different recurrent neural networks (RNNs), namely the long short-term memory
-(LSTM), the bidirectional LSTM (Bi-LSTM), and the gated recurrent unit (GRU). We also
-propose simple three layers deep networks architecture for the regression task in this
-study. From the experimental results on five major cryptocurrencies, i.e., Bitcoin (BTC),
-Ethereum (ETH), Cardano (ADA), Tether (USDT), and Binance Coin (BNB), we find that
-both Bi-LSTM and GRU have similar performance results in terms of accuracy. However,
-in terms of the execution time, both LSTM and GRU have similar results, where GRU is
-slightly better and has lower variation results on average.
-
-`Read the paper <https://www.academia.edu/82633717/Multivariate_cryptocurrency_prediction_comparative_analysis_of_three_recurrent_neural_networks_approaches?email_work_card=title>`__.
-

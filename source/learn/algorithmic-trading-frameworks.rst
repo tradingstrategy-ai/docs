@@ -1,6 +1,8 @@
 Algorithmic trading frameworks for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
+
 Trading Strategy
 ----------------
 
