@@ -29,6 +29,7 @@ Algorithmic trading learning resources
    books
    courses
    tutorials
+   ai-and-machine-learning
    papers
    python
    jupyter-notebook

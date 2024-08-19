@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to use machine learning and AI in trading
+   :description: Books about algorithmic trading
 
 Books on algorithmic trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
