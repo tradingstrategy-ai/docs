@@ -5595,3 +5595,45 @@ and algorithmic trading.
         - :term:`Liquidity provision`
 
         - :term:`Trading Strategy`
+
+    Credit markets
+
+        Credit markets are a key component of the financial system where various forms of debt are traded.
+        Credit markets facilitate the buying and selling of debt instruments and loans.
+
+        Typical credit markets include:
+
+        - Bond markets (government and corporate)
+        - Loan markets (bank loans, syndicated loans)
+        - Money markets (short-term debt instruments)
+
+        Credit markets participants contain:
+
+        - Borrowers (governments, corporations, individuals, traders)
+        - Lenders (banks, institutional investors, individual investors)
+        - Intermediaries (brokers, dealers)
+
+        Credit markets provide financial market functionality like:
+
+        - Provide capital to borrowers
+        - Offer investment opportunities for lenders
+        - Determine interest rates based on supply and demand
+        - Facilitate risk transfer
+        - Offer :term:`leverage` for traders
+        - Allow to hedge trading positions to make :term:`delta neutral` :term:`trading strategies <trading strategy>`,
+          often needed for :term:`market making` and providing deeper :term:`liquidity`
+
+        In :term:`decentralised finance`, :term:`lending protocols <lending protocol>` take some of the role
+        of credit markets.
+
+        See also:
+
+        - :term:`Lending protocol`
+
+        - :term:`Aave`
+
+        - :term:`Leverage`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
