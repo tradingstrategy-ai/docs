@@ -589,9 +589,19 @@ and algorithmic trading.
 
         Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analysing statistical trends gathered from trading activity, such as price movement and volume.
 
-        `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
+        Technical analysis in trading is the study of historical price movements and patterns on charts to predict future market behavior.
+        It uses various indicators, chart patterns, and statistical tools to identify trends, support and resistance levels, and potential entry or exit points for trades. The core assumption of technical analysis is that all relevant market information is reflected in the price,
+        and that price movements are not entirely random but follow identifiable patterns that tend to repeat over time.
+
+        Technical analysis is the opposite of :term:`fundamental analysis`.
+
+        `More information in Wikipedia <https://en.wikipedia.org/wiki/Technical_analysis>`__.
 
         See also
+
+        - :term:`Fundamental analysis`
+
+        - :term:`Technical indicator`
 
         - :term:`Trading strategy`
 
@@ -1944,6 +1954,13 @@ and algorithmic trading.
 
         In fundamental analysis, investors analyse a wide range of financial and economic data, including financial statements, industry trends, and macroeconomic indicators, to gain insight into a company's earnings potential, growth prospects, and risk factors. Key metrics analysed include revenue, earnings, profitability, and cash flow, as well as debt levels, management quality, and competitive position.
 
+        See also
+
+        - :term:`Technical analysis`
+
+        - :term:`Trading strategy`
+
+
     Systematic trading
 
         Systematic trading is a method of trading financial markets that utilises mathematical models and algorithms to execute trades based on predefined rules and conditions. It aims to remove emotion and subjectivity from the investment process by relying on data-driven decision making.
@@ -3258,6 +3275,8 @@ and algorithmic trading.
         See also
 
         - :term:`Alpha model`
+
+        - :term:`Continuous trading`
 
         - :term:`Trading strategy`
 
@@ -5481,6 +5500,8 @@ and algorithmic trading.
         - Buy Signal: When StochRSI moves above 20, indicating the asset might be transitioning out of oversold territory.
         - Sell Signal: When StochRSI moves below 80, indicating the asset might be moving out of overbought territory.
 
+        See also:
+
         - :term:`Trading Strategy`
 
         - :term:`Technical indicator`-based strategies
@@ -5488,3 +5509,89 @@ and algorithmic trading.
         - :term:`Stochastic RSI indicator`
 
         - :term:`Relative strength index (RSI)`
+
+    Continuous trading
+
+        A continuous trading strategy, often referred to as a continuous execution strategy, is an approach to trading that involves making ongoing trades throughout the trading day or over extended periods, rather than executing trades at specific, predetermined times. Here are the key aspects:
+
+        - Ongoing execution: Trading positiosn are rebalanced at     frequent intervals, often using automated systems.
+        - Algorithmic implementation: These strategies typically rely on computer algorithms to analyze market data and execute trades based on predefined rules.
+        - Adaptability: The strategy continuously adjusts to market conditions, aiming to take advantage of small price movements or market inefficiencies.
+        - Volume management: Often used to execute large orders by breaking them into smaller pieces to minimize market impact.
+        - Risk management: Continuous monitoring and adjustment of positions to manage risk exposure.
+
+        The opposite of continuous trading is :term:`discrete trading`.
+
+        Continuous trading strategies are commonly used by institutional investors, high-frequency traders, and some advanced individual traders. They require sophisticated technology and often aim to profit from small but frequent opportunities in the market.
+
+        Continuous trading and :term:`portfolio construction` are related:
+
+        - Dynamic rebalancing: Continuous trading allows for ongoing portfolio adjustments, helping maintain desired asset allocations as market conditions change.
+        - Risk management: It enables real-time monitoring and adjustment of portfolio risk exposures.
+        - Implementation of complex strategies: It facilitates the execution of more sophisticated portfolio strategies that require frequent adjustments.
+        - Liquidity management: Continuous trading can help manage portfolio liquidity by spreading trades over time, especially for large positions.
+
+        See also:
+
+        - :term:`Discrete trading`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Technical indicator`-based strategies
+
+    Discrete trading
+
+        In discrete trading, a :term:`trading strategy` shifts between positions in discrete, usually large and complete, steps.
+
+        Here are the key characteristics of discrete trading:
+
+        - Scheduled execution: Trades are made at specific, predetermined times rather than continuously throughout the trading day.
+        - Less frequent: Trading occurs at intervals, which could be daily, weekly, monthly, or even quarterly.
+        - Manual intervention: Often involves more human decision-making and less reliance on automated systems.
+        - Batch processing: Orders are often grouped and executed together at set times.
+        - Traditional portfolio management: More commonly associated with traditional buy-and-hold strategies or periodic rebalancing approaches.
+
+        Discrete trading is the opposite of :term:`continuous trading`.
+
+        Discrete :term:`algorithmic trading` usually uses :term:`technical indicators <technical indicator>` thresholds
+        to enter and exit positions fully.
+
+        See also:
+
+        - :term:`Continuous trading`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+    Market making
+
+        Market making is a crucial function in financial markets that involves providing :term:`liquidity` and facilitating trades.
+
+        - Market makers are firms or individuals who stand ready to buy and sell a particular asset on a regular and continuous basis at publicly quoted prices.
+        - Process: They simultaneously provide bid (buy) and ask (sell) prices for a security, profiting from the spread between these prices.
+        - Function: Market makers ensure liquidity in the market, reduce price volatility, and enable smoother trading by being willing to trade when other buyers or sellers might not be immediately available.
+
+        Market makers are especially important in less liquid markets or for less frequently traded securities. They take on inventory risk by holding positions in securities, which allows other market participants to trade more easily and efficiently.
+
+        In :term:`decentralised finance`, a specific form of market making is used, called :term:`liquidity provision`.
+        :term:`AMM` (Automated market maker) is a specific type of :term:`decentralised exchange` where liquidity
+        providers do not need to adjust their positions to react the market situation, but the price of an asset
+        is determined by :term:`bonding curve`.
+
+        Market makers often do not want to take inventory risk and try to stay :term:`delta neutral` when
+        providing liquidity.
+
+        See also:
+
+        - :term:`AMM` (Automated market making)
+
+        - :term:`Bonding curve`
+
+        - :term:`CLMM` (Concentrated liquidity market making)
+
+        - :term:`Liquidity provision`
+
+        - :term:`Trading Strategy`
