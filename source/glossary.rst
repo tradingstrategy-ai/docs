@@ -5645,3 +5645,31 @@ and algorithmic trading.
 
         - :term:`Market making`
 
+    Reinforced learning
+
+        Reinforcement learning is a type of :term:`machine learning` where an agent learns to make decisions by interacting with an environment.
+        The agent receives feedback in the form of rewards or penalties for its actions, allowing it to improve its decision-making over time. This approach enables the agent to learn optimal strategies for achieving goals in complex, dynamic environments without explicit programming of every possible scenario.
+
+        Reinforced learning is used in :term:`algorithmic trading` to predict the success of trades and train a model that can automatically trade.
+
+        A popular tool to use reinforced learning for trading strategies is :term:`FinRL`.
+
+        `Learn more about AI trading in Trading Strategy learning resources <https://tradingstrategy.ai/docs/learn/ai-and-machine-learning.html>`__.
+
+        See also:
+
+        - :term:`Machine learning`
+
+        - :term:`Trading strategy`
+
+    FinRL
+
+        FinRL is a popular :term:`Python`-based ramework for :term:`algorithmic trading` using :term:`reinforced learning`.
+
+        See also:
+
+        - :term:`Reinforced learning`
+
+        - :term:`Trading strategy`
+
+
