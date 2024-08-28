@@ -2025,7 +2025,7 @@ and algorithmic trading.
 
     Lending protocol
 
-        A lending protocol is a :term:`decentralised finance` service for lending and borrowing :term:`tokens <token>`.
+        A lending protocol is a :term:`decentralised finance` :term:`credit market` for lending and borrowing :term:`tokens <token>`.
 
         Lending protocols are :term:`smart contract`-based :term:`non-custodial` protocols to
         lend and borrow your assets.
@@ -2035,6 +2035,8 @@ and algorithmic trading.
         Popular lending protocols include :term:`Aave`, Compound and Euler.
 
         See also
+
+        - :term:`Credit market`
 
         - :term:`Protocol`
 
@@ -2729,7 +2731,8 @@ and algorithmic trading.
 
     Aave
 
-        In :term:`decentralised finance`, Aave is one of the largest decentralised :term:`lending protocols <lending protocol>`.
+        In :term:`decentralised finance`, Aave is one of the largest decentralised :term:`lending protocols <lending protocol>`
+        and :term:`credit markets <credit market>`.
 
         Aave was started in 2017 under EthLend name. Aave means a ghost in the Finnish language.
         The latest version, Aave v3, was launched in 2023.
@@ -2745,6 +2748,8 @@ and algorithmic trading.
         - :term:`Decentralised finance`
 
         - :term:`Lending protocol`
+
+        - :term:`Credit market`
 
         - :term:`Token`
 
@@ -5596,7 +5601,7 @@ and algorithmic trading.
 
         - :term:`Trading Strategy`
 
-    Credit markets
+    Credit market
 
         Credit markets are a key component of the financial system where various forms of debt are traded.
         Credit markets facilitate the buying and selling of debt instruments and loans.
@@ -5637,3 +5642,6 @@ and algorithmic trading.
         - :term:`Shorting`
 
         - :term:`Longing`
+
+        - :term:`Market making`
+
