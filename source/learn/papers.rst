@@ -1,5 +1,8 @@
-Papers about algorithmic trading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. meta::
+   :description: Latest scientific research to algorithmic trading.
+
+Research papers about algorithmic trading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An Investor’s Guide to Crypto
 -----------------------------
