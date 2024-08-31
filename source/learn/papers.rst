@@ -125,3 +125,14 @@ The motivation of this research is in two folds, to understand the distributiona
 We provide detailed descriptions, including over 550 mathematical formulas, for over 150 trading strategies across a host of asset classes (and trading styles). This includes stocks, options, fixed income, futures, ETFs, indexes, commodities, foreign exchange, convertibles, structured assets, volatility (as an asset class), real estate, distressed assets, cash, cryptocurrencies, miscellany (such as weather, energy, inflation), global macro, infrastructure, and tax arbitrage. Some strategies are based on machine learning algorithms (such as artificial neural networks, Bayes, k-nearest neighbors). We also give: source code for illustrating out-of-sample backtesting with explanatory notes; around 2,000 bibliographic references; and over 900 glossary, acronym and math definitions. The presentation is intended to be descriptive and pedagogical. This is the complete version of the book.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__.
+
+Cryptocurrency trading: A systematic mapping study
+--------------------------------------------------
+
+- This systematic mapping examines the current state of cryptocurrency trading research.
+- This study observes a recent increase in high-quality research and international collaboration in cryptocurrency trading.
+- This study notes a shift towards practical applications in cryptocurrency trading research, particularly in AI-driven prediction and automated trading.
+- This study highlights the diverse data types and inputs employed in cryptocurrency trading systems, with emphasis on the prevalent use of neural networks and deep learning algorithms.
+
+`Read the paper <https://research.usq.edu.au/download/08395df9ddb5c5782d17d677bca8793eb08fa40019201ea5337b109d635a76ac/3861227/1-s2.0-S2667096824000296-main.pdf>`__.
+
