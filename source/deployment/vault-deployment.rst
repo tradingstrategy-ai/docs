@@ -83,7 +83,7 @@ You need to
 
 .. note ::
 
-    Never share the hot wallet (private key) across different executors.
+    Never share the hot wallet (private key) across different executors on the same blockchain.
 
 This will
 
@@ -99,57 +99,74 @@ Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
 
 We are deploying multiple contracts. First test with `--simulate` flag to see the deployment finish all the way to end.
 
+An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
+
 .. code-block:: shell
 
-    # You need to provider these
-    export JSON_RPC_POLYGON=
-    export PRIVATE_KEY=
-    export ETHERSCAN_API_KEY=
+    #!/bin/bash
+    #
+    # Deploy Enzyme vault for a strategy defined in docker-compose.yml
+    #
+    # Set up
+    # - name
+    # - guard with allowed assets
+    # - trade executor hot wallet as the asset manager role
+    #
+
+    set -e
+    set -u
+
+    if [ "$SIMULATE" = "" ]; then
+        echo "Set SIMULATE=true or SIMULATE=false"
+        exit 1
+    fi
+
+    if [ "$TRADE_EXECUTOR_VERSION" = "" ]; then
+        echo "TRADE_EXECUTOR_VERSION missing"
+        exit 1
+    fi
 
     # The address DAO/proto DAO multisig that will own this vault.
     # This address is Trading Strategy Protocol's ProtoDAO address.
     export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
 
     # ERC-20 token symbol
-    export FUND_SYMBOL="YOURTOKENSYMBOL"
+    export FUND_SYMBOL="STOCH-RSI"
 
     # Enzyme vault name
-    export FUND_NAME="Your algorithm name"
+    export FUND_NAME="ETC/BTC Stochastic RSI crossover"
 
     # Space-separated list of tokens the vault allows the trade-executor to trade.
-    # Here we have WETH and WMATIC on Polygon.
-    export WHITELISTED_ASSETS="0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
+    # WETH WBTC
+    export WHITELISTED_ASSETS="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
 
-    # The vault is nominated in USDC *Polygon
-    export DENOMINATION_ASSET="0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+    # The vault is nominated in USDC *ethereum
+    export DENOMINATION_ASSET="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
 
     # Terms of service manager smart contract address.
-    # This one is deployed on Polygon.
-    export TERMS_OF_SERVICE_ADDRESS="0xbe1418df0bAd87577de1A41385F19c6e77312780"
+    # This one is deployed on ethereum.
+    export TERMS_OF_SERVICE_ADDRESS="0xd63c1bE9D8B56CCcD6fd2Dd9F9c030c6a9916f5F"
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables
     # - Set vault-info.json to be written to a local file system
+    #poetry run trade-executor \
     export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
-    docker run \
-        --interactive \
-        --tty \
-        -v `pwd`:`pwd` \
-        -w `pwd` \
-        $TRADE_EXECUTOR_IMAGE \
-        -- \
+    echo "Using $TRADE_EXECUTOR_IMAGE"
+    docker compose run \
+        -e SIMULATE \
+        enzyme-ethereum-btc-eth-stoch-rsi \
         enzyme-deploy-vault \
-        --simulate \
-        --private-key=$PRIVATE_KEY \
-        --vault-record-file="$FUND_SYMBOL-vault-info.json" \
+        --vault-record-file="deploy/$FUND_SYMBOL-vault-info.json" \
         --fund-name="$FUND_NAME" \
         --fund-symbol="$FUND_SYMBOL" \
-        --json-rpc-polygon="$JSON_RPC_POLYGON" \
         --etherscan-api-key=$ETHERSCAN_API_KEY \
         --whitelisted-assets="$WHITELISTED_ASSETS" \
-        --denomination-asset="$DENOMIATION_ASSET" \
+        --denomination-asset="$DENOMINATION_ASSET" \
         --terms-of-service-address="$TERMS_OF_SERVICE_ADDRESS" \
         --owner-address="$OWNER_ADDRESS"
+
+
 
 This will give you the log output for the deployment:
 
@@ -467,12 +484,19 @@ Then with `%cpaste`:
 
     print("Using RPC provider", web3.provider)
 
-    print(f"Depositing USDC from our hot wallet {hot_wallet.address}")
-    usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
-    usdc = fetch_erc20_details(web3, usdc_address)
     deposit_amount = Decimal(1.5)
+    # We need to manual specify gas, because having two
+    # subsequent txs may hit different RPC endpoints
+    # when transact() calls eth_estimateGas
+    # and then the tx would revert in the gas estimation
+    buy_shares_gas = 500_000
+
+    print(f"Depositing USDC from our hot wallet {hot_wallet.address}, amount {deposit_amount} USDC")
+    usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
+    # usdc_address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # USDC on Ethereum
+    usdc = fetch_erc20_details(web3, usdc_address)
     vault_address = state.sync.deployment.address  # init command saves vault address here
-    assert vault_address, "Vault address not in state, run trade-executor init first"
+    assert vault_address, "Vault address not in trade-executor state, run trade-executor init first"
 
     out_gas_balance = web3.eth.get_balance(hot_wallet.address) / (10**18)
     our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
@@ -485,7 +509,9 @@ Then with `%cpaste`:
     tx_hash = usdc.contract.functions.approve(vault.comptroller.address, usdc.convert_to_raw(deposit_amount)).transact({"from": hot_wallet.address})
     print(f"Approving in TX {tx_hash.hex()}")
     assert_transaction_success_with_explanation(web3, tx_hash)
-    tx_hash = vault.comptroller.functions.buyShares(usdc.convert_to_raw(deposit_amount), 1).transact({"from": hot_wallet.address})
+    raw_amount = usdc.convert_to_raw(deposit_amount)
+    print(f"Buying shares, raw amount {raw_amount}")
+    tx_hash = vault.comptroller.functions.buyShares(raw_amount, 1).transact({"from": hot_wallet.address, "gas": buy_shares_gas})
     print(f"buyShares() in TX {tx_hash.hex()}")
     assert_transaction_success_with_explanation(web3, tx_hash)
     vault_usdc_amount = usdc.fetch_balance_of(vault.address)
@@ -527,6 +553,24 @@ The output looks something like:
     2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserve currency spent: 0.001000000000000334 USDC
     2023-05-11 21:29:21 tradeexecutor.state.store                          INFO     Saved state to state/enzyme-polygon-eth-usdc.json, total 41620 chars
     2023-05-11 21:29:21 root                                               INFO     All ok
+
+Running one test strategy decision cycle
+----------------------------------------
+
+You can now manually execute the first strategy cycle. This will be executed off-timestamp,
+but will still demostrate the `decide_trades()` Python function is not broken.
+
+.. code-block:: shell
+
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
+        start \
+        --run-single-cycle
+
+.. note::
+
+    If you are doing this multiple times, make sure the `trade-executor` Docker is not running on the background,
+    as otherwise you have two instances accessing the same state file at the same time resulting to the corruption.
 
 Launch live trading
 -------------------

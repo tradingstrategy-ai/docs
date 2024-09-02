@@ -1,22 +1,10 @@
 .. meta::
-   :description: How to use machine learning and AI in trading
+   :description: Books about algorithmic trading
 
 Books on algorithmic trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Books
-=====
-
-Here is a list of books related to quantitative finance and
-algorithmic trading, with their descriptions and
-links,
-
-Machine Learning for Algorithmic Trading
-----------------------------------------
-
-A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
-
-`Read more <https://ml4trading.io/>`__.
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
 
 Python For Finance: Algorithmic Trading
 ---------------------------------------
@@ -24,13 +12,6 @@ Python For Finance: Algorithmic Trading
 This Python for Finance tutorial introduces you to algorithmic trading, and much more.
 
 `Read more <https://www.datacamp.com/community/tutorials/finance-python-trading>`__.
-
-Master AI-Driven Algorithmic Trading
-------------------------------------
-
-This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
-
-`Read more <https://home.tpq.io/certificates/pyalgo/>`__.
 
 Python for Data Analysis
 ------------------------
@@ -53,6 +34,23 @@ Designed for data scientists, analysts, machine learning engineers, and industry
 If you're eager to manage uncertainty in industry applications using Python, 'Practical Guide to Applied Conformal Prediction in Python' is the ultimate guide for you. Order your copy today and propel your career to new heights!
 
 `Buy the book on Amazon <https://www.amazon.com/dp/1805122762?ref_=cm_sw_r_cp_ud_dp_W066MGMRTTPV3C4E91TZ>`__
+
+Algorithmic Trading: Winning Strategies and Their Rationale
+-----------------------------------------------------------
+
+Engaging and informative, Algorithmic Trading skillfully covers a wide array of strategies. Broadly divided into the mean-reverting and momentum camps, it lays out standard techniques for trading each category of strategies and, equally important, the fundamental reasons why a strategy should work. The emphasis throughout is on simple and linear strategies, as an antidote to the over-fitting and data-snooping biases that often plague complex strategies. Along the way, it provides comprehensive coverage of:
+
+- Choosing the right automated execution platform as well as a backtesting platform that will allow you to reduce or eliminate common pitfalls associated with algorithmic trading strategies
+- Multiple statistical techniques for detecting “time series” mean reversion or stationarity, and for detecting cointegration of a portfolio of instruments
+- Simple techniques for trading mean-reverting portfolios―linear, Bollinger band, and Kalman filter―and whether using raw prices, log prices, or ratios make the most sense as inputs to these tests and strategies
+- Mean-reverting strategies for stocks, ETFs, currencies, and futures calendar and intermarket spreads
+- The four main drivers of momentum in stocks and futures, and strategies that can extract time series and cross sectional momentum
+- Newer momentum strategies based on news events and sentiment, leveraged ETFs, order flow, and high-frequency trading
+- Issues involving risk and money management based on the Kelly formula, but tempered with the author’s practical experience in risk management involving black swans, Constant Proportion Portfolio Insurance, and stop losses
+
+Mathematics and software are the twin languages of algorithmic trading. This book stays true to that view by using a level of mathematics that allows for a more precise discussion of the concepts involved in financial markets. And it includes illustrative examples that are built around MATLAB© codes, which are available for download.
+
+`Read book at <https://www.amazon.com/Algorithmic-Trading-Winning-Strategies-Rationale/dp/1118460146#>`__.
 
 Further reading lists
 =====================

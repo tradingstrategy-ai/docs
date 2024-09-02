@@ -16,6 +16,8 @@ Here is a collection of resources to start learning Python.
 
 - Communities for Python learning
 
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
+
 Online courses to learn Python
 ------------------------------
 

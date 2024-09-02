@@ -1,5 +1,8 @@
-Papers about algorithmic trading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. meta::
+   :description: Latest scientific research to algorithmic trading.
+
+Research papers about algorithmic trading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An Investor’s Guide to Crypto
 -----------------------------
@@ -31,15 +34,6 @@ to ensure the largest possible utility (as specified by a user). We present an e
 an order across a network of decentralized exchanges
 
 `Read the paper <https://angeris.github.io/papers/routing-algorithm.pdf>`__.
-
-
-Can machines learn finance?
----------------------------
-
-Machine learning for asset management faces a unique set of challenges that differ markedly from other domains where machine learning has excelled. Understanding these differences is critical for developing impactful approaches and realistic expectations for machine learning in asset management. We discuss a variety of beneficial use cases and potential pitfalls, and emphasize the importance of economic theory and human expertise for achieving success through financial machine learning.
-
-`Read the paper <https://joim.com/can-machines-learn-finance/>`__.
-
 
 Automated Market Making and Arbitrage Profits in the Presence of Fees
 ---------------------------------------------------------------------
@@ -78,13 +72,6 @@ Predicting the prices of cryptocurrencies is a notoriously challenging task due 
 
 `Read the paper <https://arxiv.org/pdf/2102.08189.pdf>`__.
 
-Data Resampling for Cryptocurrency Investment with Ensemble of Machine Learning Algorithms
-------------------------------------------------------------------------------------------
-
-This work proposes a system based on machine learning aimed at creating an investment strategy capable of trading on the volatile cryptocurrency exchange markets with the highest returns and lowest risk. With the former goal in mind, several methods are employed for resampling the original financial data into a time series more prone of obtaining higher returns and the final results are compared to the obtained with commonly utilized time sampled series. These methods resample the original financial time series according to price action rather than a fixed time period. Simply put, the original samples are grouped as the closing value surpasses a threshold variation of quote currency. Three experimental thresholds were analysed: percentual value, fixed amount and fixed logarithmic amount.
-
-`Read the paper <https://fenix.tecnico.ulisboa.pt/downloadFile/563345090417208/FinalThesis.pdf>`__.
-
 Pure Momentum in Cryptocurrency Markets
 ---------------------------------------
 
@@ -109,7 +96,6 @@ The validity of day trading as a long-term consistent and uncorrelated source of
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4416622>`__.
 
-
 Multi-source aggregated classification for stock price movement prediction
 --------------------------------------------------------------------------
 
@@ -129,20 +115,6 @@ in stock price movement prediction, Sharpe Ratio, and backtesting trading income
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019>`__.
 
-From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses
-----------------------------------------------------------------------
-
-We train an AI analyst that digests corporate disclosures, industry trends, and macroeconomic
-indicators to the extent it beats most analysts. Human wins the “Man vs. Machine”
-contest when a firm is complex with intangible assets, and AI wins when information is
-transparent but voluminous. Analysts catch up with machines over time, especially after
-firms are covered by alternative data and their institutions build AI capabilities. AI power
-and human wisdom are complementary in generating accurate forecasts and mitigating extreme
-errors, portraying a future of “Man + Machine” (instead of human displacement) in
-financial analyses, and likely other high-skill professions.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3840538>`__.
-
 Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing
 ------------------------------------------------------------------
 
@@ -150,21 +122,22 @@ The motivation of this research is in two folds, to understand the distributiona
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__.
 
-BITCOIN-USD Trading Using SVM to Detect The Current day’s Trend in The Market
------------------------------------------------------------------------------
+151 Trading Strategies
+----------------------
 
-Cryptocurrency trade is now a popular type of investment. Cryptocurrency market has been treated similar to foreign exchange and stock market. The Characteristics of Bitcoin have made Bitcoin keep rising In the last few years. Bitcoin exchange rate to American Dollar (USD) is $3990 USD on November 2018, with daily pice fluctuations could reach 4.55%2. It is important to able to predict value to ensure profitable investment. However, because of its volatility, there’s a need for a prediction tool for investors to help them consider investment decisions for cryptocurrency trade. Nowadays, computing based tools are commonly used in stock and foreign exchange market predictions. There has been much research about SVM prediction on stocks and foreign exchange as case studies but none on cryptocurrency. Therefore, this research studied method to predict the market value of one of the most used cryptocurrency, Bitcoin. The preditct methods will be used on this research is regime prediction to develop model to predict the close value of Bitcoin and use Support vector classifier algorithm to predict the current day’s trend at the opening of the market
+We provide detailed descriptions, including over 550 mathematical formulas, for over 150 trading strategies across a host of asset classes (and trading styles). This includes stocks, options, fixed income, futures, ETFs, indexes, commodities, foreign exchange, convertibles, structured assets, volatility (as an asset class), real estate, distressed assets, cash, cryptocurrencies, miscellany (such as weather, energy, inflation), global macro, infrastructure, and tax arbitrage. Some strategies are based on machine learning algorithms (such as artificial neural networks, Bayes, k-nearest neighbors). We also give: source code for illustrating out-of-sample backtesting with explanatory notes; around 2,000 bibliographic references; and over 900 glossary, acronym and math definitions. The presentation is intended to be descriptive and pedagogical. This is the complete version of the book.
 
-`Read the paper <https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET>`__.
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__.
 
-Can Machines Time Markets? The Virtue of Complexity in Return Prediction
-------------------------------------------------------------------------
+Cryptocurrency trading: A systematic mapping study
+--------------------------------------------------
 
-Machine learning techniques can be used to improve market timing strategies by picking up nonlinearities between the predictor variables (i.e., signals) and returns. In order to identify the nonlinearities, complex models – i.e., models where the number of predictor variables is larger than the number of return time series observations – must be estimated. More complex models better identify the true nonlinear relationships and, thus, produce better market timing strategy performance.
+- This systematic mapping examines the current state of cryptocurrency trading research.
+- This study observes a recent increase in high-quality research and international collaboration in cryptocurrency trading.
+- This study notes a shift towards practical applications in cryptocurrency trading research, particularly in AI-driven prediction and automated trading.
+- This study highlights the diverse data types and inputs employed in cryptocurrency trading systems, with emphasis on the prevalent use of neural networks and deep learning algorithms.
 
-This "virtue of complexity" result is validated in three practical market timing applications: timing the stock market, the bond market, and the long/short value factor. The performance improvements are real but modest, consistent with the view that machine learning applied to return prediction leads to evolutionary, not revolutionary, wealth gains.
-
-`Read the paper <https://www.aqr.com/Insights/Research/Alternative-Thinking/Can-Machines-Time-Markets-The-Virtue-of-Complexity-in-Return-Prediction>`__.
+`Read the paper <https://research.usq.edu.au/download/08395df9ddb5c5782d17d677bca8793eb08fa40019201ea5337b109d635a76ac/3861227/1-s2.0-S2667096824000296-main.pdf>`__.
 
 Clustering in Cardinality-Constrained Portfolio Optimization
 ------------------------------------------------------------

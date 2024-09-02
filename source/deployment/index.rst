@@ -7,6 +7,10 @@
 Deploying live trading strategies
 =================================
 
+.. note::
+
+    First check `Getting started with live trade execution example <https://github.com/tradingstrategy-ai/dex-live-algorithmic-trading-example>`__ repository.
+
 In this section, we discuss how to run trading strategies
 developed with :ref:`Trading Strategy framework <framework>`.
 

@@ -309,7 +309,7 @@ and algorithmic trading.
 
         Autonomous agents typically use artificial intelligence (AI) and :term:`machine learning` algorithms to analyse data, make decisions, and interact with the environment. They are designed to work in complex, dynamic environments, and can respond to changes in real-time.
 
-    See also
+        See also
 
         - :term:`Algorithmic trading`
 
@@ -589,9 +589,19 @@ and algorithmic trading.
 
         Technical analysis is a trading discipline employed to evaluate investments and identify trading opportunities by analysing statistical trends gathered from trading activity, such as price movement and volume.
 
-        `More information <https://www.investopedia.com/terms/t/technicalanalysis.asp>`__.
+        Technical analysis in trading is the study of historical price movements and patterns on charts to predict future market behavior.
+        It uses various indicators, chart patterns, and statistical tools to identify trends, support and resistance levels, and potential entry or exit points for trades. The core assumption of technical analysis is that all relevant market information is reflected in the price,
+        and that price movements are not entirely random but follow identifiable patterns that tend to repeat over time.
+
+        Technical analysis is the opposite of :term:`fundamental analysis`.
+
+        `More information in Wikipedia <https://en.wikipedia.org/wiki/Technical_analysis>`__.
 
         See also
+
+        - :term:`Fundamental analysis`
+
+        - :term:`Technical indicator`
 
         - :term:`Trading strategy`
 
@@ -658,7 +668,7 @@ and algorithmic trading.
 
     Quote token
 
-        In :term:`algorithmic trading`, the token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. See also :term:`base token`.
+        In :term:`algorithmic trading`, the token that acts as a nominator for the price when you are buying or selling. Usually this is more well-known token of the pair: ETH, BTC or any of various USD stablecoins. The opposite is :term:`base token`.
 
         For example trading pair can be: `BTC-USDT`. In this case the base token `BTC` and quote token is `USDT`.
 
@@ -1944,6 +1954,13 @@ and algorithmic trading.
 
         In fundamental analysis, investors analyse a wide range of financial and economic data, including financial statements, industry trends, and macroeconomic indicators, to gain insight into a company's earnings potential, growth prospects, and risk factors. Key metrics analysed include revenue, earnings, profitability, and cash flow, as well as debt levels, management quality, and competitive position.
 
+        See also
+
+        - :term:`Technical analysis`
+
+        - :term:`Trading strategy`
+
+
     Systematic trading
 
         Systematic trading is a method of trading financial markets that utilises mathematical models and algorithms to execute trades based on predefined rules and conditions. It aims to remove emotion and subjectivity from the investment process by relying on data-driven decision making.
@@ -2008,7 +2025,7 @@ and algorithmic trading.
 
     Lending protocol
 
-        A lending protocol is a :term:`decentralised finance` service for lending and borrowing :term:`tokens <token>`.
+        A lending protocol is a :term:`decentralised finance` :term:`credit market` for lending and borrowing :term:`tokens <token>`.
 
         Lending protocols are :term:`smart contract`-based :term:`non-custodial` protocols to
         lend and borrow your assets.
@@ -2018,6 +2035,8 @@ and algorithmic trading.
         Popular lending protocols include :term:`Aave`, Compound and Euler.
 
         See also
+
+        - :term:`Credit market`
 
         - :term:`Protocol`
 
@@ -2712,7 +2731,8 @@ and algorithmic trading.
 
     Aave
 
-        In :term:`decentralised finance`, Aave is one of the largest decentralised :term:`lending protocols <lending protocol>`.
+        In :term:`decentralised finance`, Aave is one of the largest decentralised :term:`lending protocols <lending protocol>`
+        and :term:`credit markets <credit market>`.
 
         Aave was started in 2017 under EthLend name. Aave means a ghost in the Finnish language.
         The latest version, Aave v3, was launched in 2023.
@@ -2728,6 +2748,8 @@ and algorithmic trading.
         - :term:`Decentralised finance`
 
         - :term:`Lending protocol`
+
+        - :term:`Credit market`
 
         - :term:`Token`
 
@@ -3259,6 +3281,8 @@ and algorithmic trading.
 
         - :term:`Alpha model`
 
+        - :term:`Continuous trading`
+
         - :term:`Trading strategy`
 
         - :term:`Technical analysis`
@@ -3621,7 +3645,27 @@ and algorithmic trading.
 
         The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
 
-        The Sortino ratio is similar to the Sharpe ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+        The Sortino ratio is similar to the :term:`Sharpe` ratio, but instead of using the total volatility of returns, it only considers the downside volatility. This is based on the premise that investors are more concerned with the risk of losing money than they are with the risk of missing out on potential gains.
+
+        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
+
+        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
+
+        **Relationship to downside volatility**
+
+        The Sortino ratio is more closely related to downside volatility because it specifically targets the negative fluctuations in returns. This focus on downside risk makes the Sortino ratio particularly useful for investors who are more concerned about potential losses than overall volatility.
+
+        - Downside focus: The Sortino ratio acknowledges that upside volatility is generally not a concern for investors, as they typically welcome positive surprises in returns.
+        - Penalizing negative returns: By using only the downside deviation, the Sortino ratio penalizes investments with a higher frequency or magnitude of negative returns more heavily than the Sharpe ratio would.
+        - Applicability: The Sortino ratio is especially useful for evaluating investments or strategies with asymmetric return distributions or those designed to limit downside risk.
+        - Complementary use: Both ratios can be used together to provide a more comprehensive view of an investment's risk-adjusted performance.
+
+        **Examples**
+
+        - Cryptocurrency: Highly volatile, but you only care about number going up
+        - Investing in stocks over three years time horizon: In this time horizon if market goes dow it may have no time to recover
+
+        **Formulas**
 
         The formula for calculating the Sortino ratio is as follows:
 
@@ -3632,10 +3676,6 @@ and algorithmic trading.
         `Rp = portfolio return`
         `Rf = risk-free rate of return`
         `Downside deviation = standard deviation of negative returns`
-
-        The Sortino ratio is useful in comparing the risk-adjusted performance of different investments or portfolios. A higher Sortino ratio indicates a better risk-adjusted return, while a lower ratio indicates a lower risk-adjusted return.
-
-        As a rough guide, a Sortino ratio of 1 or higher is considered good, while a ratio of 2 or higher is considered excellent.
 
         See also:
 
@@ -5437,4 +5477,199 @@ and algorithmic trading.
         - :term:`Trading Strategy`
 
         - :term:`Stop loss`
+
+    Stochastic oscillator
+
+        The Stochastic Oscillator is a widely used :term:`technical indicator` tool in :term:`quantitative finance` that helps traders assess the :term:`momentum` of an asset's price movement. The primary function of the stochastic oscillator is to determine the position of the current closing price relative to the price range (i.e., the high-low range) over a specified period. This oscillator is particularly effective in identifying potential reversal points, overbought and oversold conditions, and confirming trends.
+
+        See also
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+        - :term:`Stochastic RSI indicator`
+
+    Stochastic RSI indicator
+
+        Stochastic RSI (StochRSI) is a :term:`technical indicator` used in :term:`quantitative finance`, combining the concepts of the :term;`Stochastic Oscillator` and the Relative Strength Index (RSI). It is primarily used to identify overbought and oversold conditions in a market, as well as potential price reversals. The Stochastic RSI is more sensitive and responsive than the traditional RSI, making it popular among traders looking for early signals.
+
+        Key Components:
+
+        - :term:`Relative Strength Index (RSI)`: RSI is a momentum oscillator that measures the speed and change of price movements. It ranges from 0 to 100, typically with thresholds at 70 (overbought) and 30 (oversold).
+
+        - :term:`Stochastic Oscillator`: The Stochastic Oscillator measures the level of the close relative to the range of highs and lows over a certain period. It also ranges from 0 to 100, with common thresholds at 80 (overbought) and 20 (oversold).
+
+        Examples:
+
+        - Buy Signal: When StochRSI moves above 20, indicating the asset might be transitioning out of oversold territory.
+        - Sell Signal: When StochRSI moves below 80, indicating the asset might be moving out of overbought territory.
+
+        See also:
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+        - :term:`Stochastic RSI indicator`
+
+        - :term:`Relative strength index (RSI)`
+
+    Continuous trading
+
+        A continuous trading strategy, often referred to as a continuous execution strategy, is an approach to trading that involves making ongoing trades throughout the trading day or over extended periods, rather than executing trades at specific, predetermined times. Here are the key aspects:
+
+        - Ongoing execution: Trading positiosn are rebalanced at     frequent intervals, often using automated systems.
+        - Algorithmic implementation: These strategies typically rely on computer algorithms to analyze market data and execute trades based on predefined rules.
+        - Adaptability: The strategy continuously adjusts to market conditions, aiming to take advantage of small price movements or market inefficiencies.
+        - Volume management: Often used to execute large orders by breaking them into smaller pieces to minimize market impact.
+        - Risk management: Continuous monitoring and adjustment of positions to manage risk exposure.
+
+        The opposite of continuous trading is :term:`discrete trading`.
+
+        Continuous trading strategies are commonly used by institutional investors, high-frequency traders, and some advanced individual traders. They require sophisticated technology and often aim to profit from small but frequent opportunities in the market.
+
+        Continuous trading and :term:`portfolio construction` are related:
+
+        - Dynamic rebalancing: Continuous trading allows for ongoing portfolio adjustments, helping maintain desired asset allocations as market conditions change.
+        - Risk management: It enables real-time monitoring and adjustment of portfolio risk exposures.
+        - Implementation of complex strategies: It facilitates the execution of more sophisticated portfolio strategies that require frequent adjustments.
+        - Liquidity management: Continuous trading can help manage portfolio liquidity by spreading trades over time, especially for large positions.
+
+        See also:
+
+        - :term:`Discrete trading`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Technical indicator`-based strategies
+
+    Discrete trading
+
+        In discrete trading, a :term:`trading strategy` shifts between positions in discrete, usually large and complete, steps.
+
+        Here are the key characteristics of discrete trading:
+
+        - Scheduled execution: Trades are made at specific, predetermined times rather than continuously throughout the trading day.
+        - Less frequent: Trading occurs at intervals, which could be daily, weekly, monthly, or even quarterly.
+        - Manual intervention: Often involves more human decision-making and less reliance on automated systems.
+        - Batch processing: Orders are often grouped and executed together at set times.
+        - Traditional portfolio management: More commonly associated with traditional buy-and-hold strategies or periodic rebalancing approaches.
+
+        Discrete trading is the opposite of :term:`continuous trading`.
+
+        Discrete :term:`algorithmic trading` usually uses :term:`technical indicators <technical indicator>` thresholds
+        to enter and exit positions fully.
+
+        See also:
+
+        - :term:`Continuous trading`
+
+        - :term:`Trading Strategy`
+
+        - :term:`Technical indicator`-based strategies
+
+    Market making
+
+        Market making is a crucial function in financial markets that involves providing :term:`liquidity` and facilitating trades.
+
+        - Market makers are firms or individuals who stand ready to buy and sell a particular asset on a regular and continuous basis at publicly quoted prices.
+        - Process: They simultaneously provide bid (buy) and ask (sell) prices for a security, profiting from the spread between these prices.
+        - Function: Market makers ensure liquidity in the market, reduce price volatility, and enable smoother trading by being willing to trade when other buyers or sellers might not be immediately available.
+
+        Market makers are especially important in less liquid markets or for less frequently traded securities. They take on inventory risk by holding positions in securities, which allows other market participants to trade more easily and efficiently.
+
+        In :term:`decentralised finance`, a specific form of market making is used, called :term:`liquidity provision`.
+        :term:`AMM` (Automated market maker) is a specific type of :term:`decentralised exchange` where liquidity
+        providers do not need to adjust their positions to react the market situation, but the price of an asset
+        is determined by :term:`bonding curve`.
+
+        Market makers often do not want to take inventory risk and try to stay :term:`delta neutral` when
+        providing liquidity.
+
+        See also:
+
+        - :term:`AMM` (Automated market making)
+
+        - :term:`Bonding curve`
+
+        - :term:`CLMM` (Concentrated liquidity market making)
+
+        - :term:`Liquidity provision`
+
+        - :term:`Trading Strategy`
+
+    Credit market
+
+        Credit markets are a key component of the financial system where various forms of debt are traded.
+        Credit markets facilitate the buying and selling of debt instruments and loans.
+
+        Typical credit markets include:
+
+        - Bond markets (government and corporate)
+        - Loan markets (bank loans, syndicated loans)
+        - Money markets (short-term debt instruments)
+
+        Credit markets participants contain:
+
+        - Borrowers (governments, corporations, individuals, traders)
+        - Lenders (banks, institutional investors, individual investors)
+        - Intermediaries (brokers, dealers)
+
+        Credit markets provide financial market functionality like:
+
+        - Provide capital to borrowers
+        - Offer investment opportunities for lenders
+        - Determine interest rates based on supply and demand
+        - Facilitate risk transfer
+        - Offer :term:`leverage` for traders
+        - Allow to hedge trading positions to make :term:`delta neutral` :term:`trading strategies <trading strategy>`,
+          often needed for :term:`market making` and providing deeper :term:`liquidity`
+
+        In :term:`decentralised finance`, :term:`lending protocols <lending protocol>` take some of the role
+        of credit markets.
+
+        See also:
+
+        - :term:`Lending protocol`
+
+        - :term:`Aave`
+
+        - :term:`Leverage`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
+
+        - :term:`Market making`
+
+    Reinforced learning
+
+        Reinforcement learning is a type of :term:`machine learning` where an agent learns to make decisions by interacting with an environment.
+        The agent receives feedback in the form of rewards or penalties for its actions, allowing it to improve its decision-making over time. This approach enables the agent to learn optimal strategies for achieving goals in complex, dynamic environments without explicit programming of every possible scenario.
+
+        Reinforced learning is used in :term:`algorithmic trading` to predict the success of trades and train a model that can automatically trade.
+
+        A popular tool to use reinforced learning for trading strategies is :term:`FinRL`.
+
+        `Learn more about AI trading in Trading Strategy learning resources <https://tradingstrategy.ai/docs/learn/ai-and-machine-learning.html>`__.
+
+        See also:
+
+        - :term:`Machine learning`
+
+        - :term:`Trading strategy`
+
+    FinRL
+
+        FinRL is a popular :term:`Python`-based ramework for :term:`algorithmic trading` using :term:`reinforced learning`.
+
+        See also:
+
+        - :term:`Reinforced learning`
+
+        - :term:`Trading strategy`
+
 

@@ -31,28 +31,29 @@ Installing Docker
 -----------------
 
 - For macOS use Docker for Mac
-- [For Ubuntu](https://docs.docker.com/engine/install/ubuntu/):
+- [For Ubuntu](https://docs.docker.com/engine/install/ubuntu/) the condensed instructions:
 
-```shell
-sudo -i
-apt install ca-certificates curl gnupg
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-apt update
-apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+.. code-block:: shell
 
-# Make ubuntu user to use Docker
-# Note: not the safest method
-usermod -aG docker ubuntu
+    sudo -i
+    apt install ca-certificates curl gnupg
+    install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    echo \
+      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    apt update
+    apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Restart need to change to takes effect
-reboot now
-```
+    # Make ubuntu user to use Docker
+    # Note: not the safest method
+    usermod -aG docker ubuntu
+
+    # Restart need to change to takes effect
+    reboot now
+
 
 Login to GHCR
 -------------
@@ -147,6 +148,7 @@ Example `docker-compose.yml`:
 
     services:
 
+      # This is your trade executor name
       enzyme-polygon-eth-usdc:
         <<: *default-trade-executor
         container_name: enzyme-polygon-eth-usdc
