@@ -166,3 +166,16 @@ This "virtue of complexity" result is validated in three practical market timing
 
 `Read the paper <https://www.aqr.com/Insights/Research/Alternative-Thinking/Can-Machines-Time-Markets-The-Virtue-of-Complexity-in-Return-Prediction>`__.
 
+Clustering in Cardinality-Constrained Portfolio Optimization
+------------------------------------------------------------
+
+In portfolio optimization, efficiently managing large pools of assets while adhering to car-
+dinality constraints presents a significant challenge. We propose a novel portfolio optimization
+framework that combines cardinality constraints with the classical Markowitz mean-variance
+model, using clustering to reduce dimensionality and achieve an optimal balance of risk and
+return. We use spectral clustering to group the residual returns of stocks. This method reveals
+natural groupings of assets based on their returns and correlations, enhancing our understand-
+ing and categorization of assets, which is crucial for efficiently reducing the optimization space
+and dimensionality
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4914246>`__.
