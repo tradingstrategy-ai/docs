@@ -153,3 +153,15 @@ and dimensionality
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4914246>`__.
 
+Regularised jump models for regime identification and feature selection
+-----------------------------------------------------------------------
+
+ A regime modelling framework can be employed to address the complexities of financial markets. Under the framework, market periods are grouped into distinct regimes, each distinguished by similar statistical characteristics. Regimes in financial markets are not directly observable but are often manifested in market and macroeconomic variables. The objective of regime modelling is to accurately identify the active regime from these variables at a point in time, a process known as regime identification.
+
+One way to enhance the accuracy of regime identification is to select features that are most responsible for statistical differences between regimes, a process known as feature selection. Feature selection is also capable of both enhancing the interpretability of outputs from regime models, and substantially reducing the computational time required to calibrate regime models.
+
+Models based on the Jump Model framework have recently been developed to address the joint problem of regime identification and feature selection. In the following work, we propose a new set of models called Regularised Jump Models that are founded upon the Jump Model framework.
+
+These models perform feature selection that is more interpretable than that from the Sparse Jump Model, a model proposed in the literature pertaining to the Jump Model framework. Through a simulation experiment, we find evidence that these new models outperform the Standard and Sparse Jump Models, both in terms of regime identification and feature selection.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4950423>`__.
