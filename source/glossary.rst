@@ -4435,7 +4435,7 @@ and algorithmic trading.
         locked in a :term:`protocol`.
 
         The calculation is the same: take amount of assets in a smart contract addresses. However the meaning
-        of the metric may vary:
+        of the metric may vary depending on what the related protocol is doing:
 
         - For wealth management and funds: In traditional finance, the term used is Assets under management (AUM). However, because DeFi
           protocols are :term:`non-custodial` and assets are always under the management of the users themselves,
