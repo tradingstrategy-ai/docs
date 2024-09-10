@@ -2017,7 +2017,7 @@ and algorithmic trading.
 
         - :term:`Lending protocol`
 
-        - :term:`Total value locked`
+        - :term:`Total value locked (TVL)`
 
         - :term:`On-chain`
 
@@ -4396,7 +4396,7 @@ and algorithmic trading.
 
         In :term:`trading strategy`, total equity refers to all assets under the management of the strategy minus liabilities.
 
-        In :term:`decentralised finance`, this may also be called :term:`total value locked` or *total assets*
+        In :term:`decentralised finance`, this may also be called :term:`Total value locked (TVL)` or *total assets*
         depending on the use case.
 
         Total equity is usually expressed in US dollars. For a :term:`trading strategy`, the total equity is
@@ -4427,20 +4427,35 @@ and algorithmic trading.
 
         - :term:`Equity curve`
 
-        - :term:`Total value locked`
+        - :term:`Total value locked (TVL)`
 
-    Total value locked
+    Total value locked (TVL)
 
         In :term:`decentralised finance`, total value locked (TVL) refers to the amount of the assets
         locked in a :term:`protocol`.
 
-        In traditional finance, the term used is Assets under management (AUM). However, because DeFi
-        protocols are :term:`non-custodial` and assets are always under the management of the users themselves,
-        AUM term cannot be used.
+        The calculation is the same: take amount of assets in a smart contract addresses. However the meaning
+        of the metric may vary:
+
+        - For wealth management and funds: In traditional finance, the term used is Assets under management (AUM). However, because DeFi
+          protocols are :term:`non-custodial` and assets are always under the management of the users themselves,
+          AUM term cannot be used.
+
+        - For trading, like :term:`AMM` :term:`decentralised exchange`: This means how many tokens there is sitting in a trading pool, an :term:`order book` equivalent.
+          Essentially, this is the lit market depth of a token. Based on the DEX pool TVL, and its shape, you can calculate the :term:`price impact` of any trade,
+          including hypothetical historical trades.
 
         See also
 
         - :term:`Protocol`
+
+        - :term:`Price impact`
+
+        - :term:`AMM`
+
+        - :term:`CLMM`
+
+        - :term:`Order book`
 
         - :term:`Total equity`
 
@@ -4450,7 +4465,7 @@ and algorithmic trading.
 
         In the context of :term:`trading strategy`, netflow typically refers to the net amount of money that flows into or out of a available capital over a specific period. It represents the difference between the inflows (capital deposited) and outflows (capital redeemed or withdrawn) from the fund.
 
-        Netflow is an important metric related to :term:`total value locked` as it can effect on the trading strategy performance.
+        Netflow is an important metric related to :term:`Total value locked (TVL)` as it can effect on the trading strategy performance.
 
         - Positive netflows indicates that TVL is growing
 
@@ -4458,7 +4473,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`Total value locked`
+        - :term:`Total value locked (TVL)`
 
         - :term:`Total equity`
 
