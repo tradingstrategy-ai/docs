@@ -40,6 +40,75 @@ Several state-of-the-art algorithms are implemented, based on my understanding o
 
 `Visit Python project page <https://github.com/Marigold/universal-portfolios>`__.
 
+Books
+=====
+
+Here is a list of books for learning to use AI and machine learning in trading.
+
+Machine Learning for Algorithmic Trading: Predictive models to extract signals from market and alternative data for systematic trading strategies with Python
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The definite book for machine learning-based trading.
+
+This book introduces end-to-end machine learning for the trading workflow, from the idea and feature engineering to model optimization, strategy design, and backtesting. It illustrates this by using examples ranging from linear models and tree-based ensembles to deep-learning techniques from cutting edge research.
+
+This edition shows how to work with market, fundamental, and alternative data, such as tick data, minute and daily bars, SEC filings, earnings call transcripts, financial news, or satellite images to generate tradeable signals. It illustrates how to engineer financial features or alpha factors that enable an ML model to predict returns from price data for US and international stocks and ETFs. It also shows how to assess the signal content of new features using Alphalens and SHAP values and includes a new appendix with over one hundred alpha factor examples.
+
+By the end, you will be proficient in translating ML model predictions into a trading strategy that operates at daily or intraday horizons, and in evaluating its performance.
+What you will learn
+
+- Leverage market, fundamental, and alternative text and image data
+- Research and evaluate alpha factors using statistics, Alphalens, and SHAP values
+- Implement machine learning techniques to solve investment and trading problems
+- Backtest and evaluate trading strategies based on machine learning using Zipline and Backtrader
+- Optimize portfolio risk and performance analysis using pandas, NumPy, and pyfolio
+- Create a pairs trading strategy based on cointegration for US equities and ETFs
+- Train a gradient boosting model to predict intraday returns using AlgoSee's high-quality trades and quotes data
+
+`View book <https://www.amazon.com/Machine-Learning-Algorithmic-Trading-alternative/dp/1839217715>`__.
+
+ML for Trading
+--------------
+
+This book aims to show how ML can add value to algorithmic trading strategies in a practical yet comprehensive way. It covers a broad range of ML techniques from linear regression to deep reinforcement learning and demonstrates how to build, backtest, and evaluate a trading strategy driven by model predictions.
+
+Github repository available.
+
+`View Github page <https://github.com/stefan-jansen/machine-learning-for-trading>`__.
+
+Machine Learning for Algorithmic Trading
+----------------------------------------
+
+A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
+
+`Read more <https://ml4trading.io/>`__.
+
+Master AI-Driven Algorithmic Trading
+------------------------------------
+
+This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
+
+`Read more <https://home.tpq.io/certificates/pyalgo/>`__.
+
+Videos
+======
+
+Crypto Trading Using FinRL
+--------------------------
+
+Explaining crypto trading using FinRL.
+
+`Watch the video <https://www.youtube.com/watch?v=aJAbgJf6AFM&feature=youtu.be>`__
+
+Stock Trading AI with FinRL in Python
+-------------------------------------
+
+- Wrangling
+- Trading and fitting
+- Backtesting against mean-variance optimised portfolio
+
+`Watch the video <https://www.youtube.com/watch?v=OrqffjqkklM&list=WL&index=1>`__
+
 Papers
 ======
 
@@ -161,74 +230,6 @@ Cryptocurrency trade is now a popular type of investment. Cryptocurrency market 
 
 `Read the paper <https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET>`__.
 
-Books
-=====
-
-Here is a list of books for learning to use AI and machine learning in trading.
-
-Machine Learning for Algorithmic Trading: Predictive models to extract signals from market and alternative data for systematic trading strategies with Python
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-The definite book for machine learning-based trading.
-
-This book introduces end-to-end machine learning for the trading workflow, from the idea and feature engineering to model optimization, strategy design, and backtesting. It illustrates this by using examples ranging from linear models and tree-based ensembles to deep-learning techniques from cutting edge research.
-
-This edition shows how to work with market, fundamental, and alternative data, such as tick data, minute and daily bars, SEC filings, earnings call transcripts, financial news, or satellite images to generate tradeable signals. It illustrates how to engineer financial features or alpha factors that enable an ML model to predict returns from price data for US and international stocks and ETFs. It also shows how to assess the signal content of new features using Alphalens and SHAP values and includes a new appendix with over one hundred alpha factor examples.
-
-By the end, you will be proficient in translating ML model predictions into a trading strategy that operates at daily or intraday horizons, and in evaluating its performance.
-What you will learn
-
-- Leverage market, fundamental, and alternative text and image data
-- Research and evaluate alpha factors using statistics, Alphalens, and SHAP values
-- Implement machine learning techniques to solve investment and trading problems
-- Backtest and evaluate trading strategies based on machine learning using Zipline and Backtrader
-- Optimize portfolio risk and performance analysis using pandas, NumPy, and pyfolio
-- Create a pairs trading strategy based on cointegration for US equities and ETFs
-- Train a gradient boosting model to predict intraday returns using AlgoSee's high-quality trades and quotes data
-
-`View book <https://www.amazon.com/Machine-Learning-Algorithmic-Trading-alternative/dp/1839217715>`__.
-
-ML for Trading
---------------
-
-This book aims to show how ML can add value to algorithmic trading strategies in a practical yet comprehensive way. It covers a broad range of ML techniques from linear regression to deep reinforcement learning and demonstrates how to build, backtest, and evaluate a trading strategy driven by model predictions.
-
-Github repository available.
-
-`View Github page <https://github.com/stefan-jansen/machine-learning-for-trading>`__.
-
-Machine Learning for Algorithmic Trading
-----------------------------------------
-
-A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
-
-`Read more <https://ml4trading.io/>`__.
-
-Master AI-Driven Algorithmic Trading
-------------------------------------
-
-This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
-
-`Read more <https://home.tpq.io/certificates/pyalgo/>`__.
-
-Videos
-======
-
-Crypto Trading Using FinRL
---------------------------
-
-Explaining crypto trading using FinRL.
-
-`Watch the video <https://www.youtube.com/watch?v=aJAbgJf6AFM&feature=youtu.be>`__
-
-Stock Trading AI with FinRL in Python
--------------------------------------
-
-- Wrangling
-- Trading and fitting
-- Backtesting against mean-variance optimised portfolio
-
-`Watch the video <https://www.youtube.com/watch?v=OrqffjqkklM&list=WL&index=1>`__
 
 Intelligent Algorithmic Trading Strategy Using Reinforcement Learning and Directional Change
 --------------------------------------------------------------------------------------------
@@ -243,11 +244,4 @@ Deep Reinforcement Trading with Predictable Returns
 Classical portfolio optimization often requires forecasting asset returns and their corresponding variances in spite of the low signal-to-noise ratio provided in the financial markets. Deep reinforcement learning (DRL) offers a framework for optimizing sequential trader decisions through an objective which represents its reward function penalized by risk and transaction costs. We investigate the performance of model-free DRL traders in a market environment with frictions and different meanreverting factors driving the dynamics of the returns. Since this framework admits an exact dynamic programming solution, we can assess limits and capabilities of different value-based algorithms to retrieve meaningful trading signals in a datadriven manner and to reach the benchmark performance.
 
 `Read more <https://arxiv.org/abs/2104.14683>`__
-
-Dynamic Asset Allocation with Asset-Specific Regime Forecasts
--------------------------------------------------------------
-
-This article introduces a novel hybrid regime identification-forecasting framework designed to enhance multi-asset portfolio construction by integrating asset-specific regime forecasts. Unlike traditional approaches that focus on broad economic regimes affecting the entire asset universe, our framework leverages both unsupervised and supervised learning to generate tailored regime forecasts for individual assets. Initially, we use the statistical jump model, a robust unsupervised regime identification model, to derive regime labels for historical periods, classifying them into bullish or bearish states based on features extracted from an asset return series. Following this, a supervised gradient-boosted decision tree classifier is trained to predict these regimes using a combination of asset-specific return features and cross-asset macro-features. We apply this framework individually to each asset in our universe. Subsequently, return and risk forecasts which incorporate these regime predictions are input into Markowitz mean-variance optimization to determine optimal asset allocation weights. We demonstrate the efficacy of our approach through an empirical study on a multi-asset portfolio comprising twelve risky assets, including global equity, bond, real estate, and commodity indexes spanning from 1991 to 2023. The results consistently show outperformance across various portfolio models, including minimum-variance, mean-variance, and naive-diversified portfolios, highlighting the advantages of integrating asset-specific regime forecasts into dynamic asset allocation.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
 
