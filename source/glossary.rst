@@ -5712,7 +5712,7 @@ and algorithmic trading.
           it is not possible to have a price difference
 
         - Batch auctions: Instead of clearing market taker traders right away,
-          short very high frequencty auctions where multiple orders are matches and batches
+          short very high frequency auctions where multiple orders are matches and batches
           together, like CowSwap does
 
         See also:
