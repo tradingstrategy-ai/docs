@@ -5695,6 +5695,9 @@ and algorithmic trading.
 
         Arbitrageurs exploit this difference by trading from the :term:`AMM`, like :term:`Uniswap`, to the more liquid exchange (usually a centralized exchange like Binance), correcting the arbitrage and extracting value from LPs in the process.
 
+        In the worst case, centralised exchanges can themselves exploit this difference,
+        if they have a priviledged access to their own order book and :term:`MEV`.
+
         See:
 
         - `CowSwap on LVR <https://cow.fi/learn/what-is-loss-versus-rebalancing-lvr>`__
@@ -5721,5 +5724,7 @@ and algorithmic trading.
         - :term:`Liquidity provider`
 
         - :term:`Decentralised finance`
+
+        - :term:`MEV`
 
 
