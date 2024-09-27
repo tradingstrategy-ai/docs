@@ -5687,4 +5687,39 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+    Loss-Versus-Rebalancing (LVR)
+
+        In :term:`decentralised finance`, loan-versus-rebalancing refers to form of arbitrage that occurs whenever an :term:`AMM` :term:`decentralised exchange` has an outdated (stale) price in comparison to some other trading venue.
+
+        For :term:`liquidity providers <liquidity provider>` (LP) this can be seen as toxic order flow, which eats their profits.
+
+        Arbitrageurs exploit this difference by trading from the :term:`AMM`, like :term:`Uniswap`, to the more liquid exchange (usually a centralized exchange like Binance), correcting the arbitrage and extracting value from LPs in the process.
+
+        See:
+
+        - `CowSwap on LVR <https://cow.fi/learn/what-is-loss-versus-rebalancing-lvr>`__
+
+        - Original research from the Columbia University: `Automated Market Making and Loss-Versus-Rebalancing <https://arxiv.org/abs/2208.06046>`__
+
+        It is not possible to get rid of LVR competely, but it can be mitigated e.g. with
+
+        - Shorter block times: arbitrage difference cannot grow that big
+
+        - Price oracles: By fetching the price from a centralised exchange,
+          it is not possible to have a price difference
+
+        - Batch auctions: Instead of clearing market taker traders right away,
+          short very high frequencty auctions where multiple orders are matches and batches
+          together, like CowSwap does
+
+        See also:
+
+        - :term:`Decentralised exchange`
+
+        - :term:`AMM`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Decentralised finance`
+
 
