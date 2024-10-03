@@ -5704,7 +5704,7 @@ and algorithmic trading.
 
         - Original research from the Columbia University: `Automated Market Making and Loss-Versus-Rebalancing <https://arxiv.org/abs/2208.06046>`__
 
-        It is not possible to get rid of LVR competely, but it can be mitigated e.g. with
+        It is not possible to get rid of LVR completely, but it can be mitigated e.g. with
 
         - Shorter block times: arbitrage difference cannot grow that big
 

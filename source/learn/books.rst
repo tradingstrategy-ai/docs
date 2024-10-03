@@ -6,6 +6,15 @@ Books on algorithmic trading
 
 See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
 
+Advanced Futures Trading Strategies
+-----------------------------------
+
+**Our personal favourite.**
+
+In Advanced Futures Trading Strategies, Robert Carver provides a complete practical guide to 30 trading strategies for the futures markets. Advanced Futures Trading Strategies is the definitive practical guide to futures trading strategies.
+
+`Buy the book <https://www.amazon.com/Advanced-Futures-Trading-Strategies-Robert/dp/0857199684>`__.
+
 Python For Finance: Algorithmic Trading
 ---------------------------------------
 
