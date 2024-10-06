@@ -173,3 +173,9 @@ This article introduces a novel hybrid regime identification-forecasting framewo
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
 
+Optimal Factor Timing in a High-Dimensional Setting
+---------------------------------------------------
+
+We develop a framework for equity factor timing in a high-dimensional setting when the number of factors and factor return predictors can be large. To ensure good out-of-sample performance, the approach is disciplined by shrinkage that effectively expresses a degree of skepticism about outsized gains from timing. In our empirical application, the predictors include macroeconomic variables and factor-specific characteristics spreads between the long and short legs of the factors. We find sizable gains from timing equity factors, including for factors constructed only from large-cap stocks.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
