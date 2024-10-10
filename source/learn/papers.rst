@@ -189,7 +189,7 @@ We develop a framework for equity factor timing in a high-dimensional setting wh
 Providing Liquidity in Uniswap V3
 ---------------------------------
 
-One of the largest DEX Uniswap released their version v3 in 2021 and introduced
+One of the largest :term:`DEX` :term:`Uniswap` released their version v3 in 2021 and introduced
 the concept of concentrated liquidity. Now liquidity providers in Uniswap v3
 need to choose a range in which they want to provide liquidity. We built a
 robust and precise backtester based on the original Uniswap v3 smart contract
@@ -200,3 +200,10 @@ these strategies did not perform so well when Ethereum was going down. We
 also analyzed the delta of liquidity provision strategies.
 
 `Read the paper <https://pub.tik.ee.ethz.ch/students/2021-HS/BA-2021-21.pdf>`__
+
+Opportunity Costs and Profitability: Insights into LP Behavior
+--------------------------------------------------------------
+
+Analysis on which :term:`liquidity providers <liquidity provider>` are profitable on :term:`Uniswap` v3.
+
+`Read the post <https://medium.com/zelos-research/opportunity-costs-and-profitability-insights-into-lp-behavior-953933f65d19>`__
