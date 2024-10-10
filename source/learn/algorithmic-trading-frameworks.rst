@@ -10,6 +10,26 @@ Next generation algorithmic trading protocol for decentralised markets.
 
 `View website <https://tradingstrategy.ai>`__.
 
+Demeter
+-------
+
+Demeter is a :term:`liquidity provision` :term:`backtest` framework for :term:`Uniswap`, :term:`Aave`
+and other :term:`decentralised finance` protocols.
+
+Demeter allows you to simulate :term:`high-frequency trading` :term:`market making` using :term:`Python` code.
+
+Demeter is good for backtesting
+
+- :term:`CLMM` strategies
+
+- :term:`Delta hedged` strategies (e.g. with Aave)
+
+- :term:`Gamma hedged` strategies (e.g. with decentralised options market places like Aevo or Derive)
+
+Examples of Demeter strategies are available in `Trading Strategy's Getting started <https://github.com/tradingstrategy-ai/getting-started>`__ repository.
+
+See -`Demeter website <https://github.com/zelos-alpha/demeter/>`__ by Zelos Alpha.
+
 .. _backtrader:
 
 Backtrader
