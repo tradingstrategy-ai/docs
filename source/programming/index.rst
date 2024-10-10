@@ -16,7 +16,8 @@ for :ref:`Trading Strategy framework`.
   see :ref:`learning` section.
 
 - If you are an end-user and just want to deposit money into the ready automated trading strategies
-  visit `Trading Strategy website and community <https://tradingstrategy.ai/community>`__
+  visit `Trading Strategy website <https://tradingstrategy.ai/community>`__ and its
+  `Strategies section <https://tradingstrategy.ai/strategies>`__
 
 
 Developer documentation:
@@ -31,5 +32,4 @@ Developer documentation:
    market-data/index
    troubleshooting
    development
-   old-strategies/index
-   more-old-strategy-examples/index
+
