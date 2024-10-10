@@ -21,6 +21,10 @@ To build everything from the scratch:
 
 ```shell
 poetry shell
+
+# If needed
+brew install pandoc
+
 # This is a very long duration command.
 # For the subsequent documenation updates,
 # it is enough to run
