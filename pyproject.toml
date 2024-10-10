@@ -8,15 +8,13 @@ license = "APGL"
 [tool.poetry.dependencies]
 # Scipy compatibility
 # https://stackoverflow.com/questions/71764027/numpy-installation-fails-when-installing-through-poetry-on-m1-and-macos/71764028#71764028
-python = ">=3.10,<3.11"
+python = ">=3.11,<=3.12"
 
 furo = {version = "2022.6.4.1"}
-#Sphinx = {version = "^5.0.2"}
 Sphinx = {version = "5.0.2"}
 sphinx-rtd-theme = {version = "^1.0.0"}
 sphinx-sitemap = {version = "^2.5.0"}
 sphinx-autodoc-typehints = {version = "^1.16.0"}
-# nbsphinx = "^0.8.6"
 nbsphinx = "0.8.6"
 sphinx-tags = {git = "https://github.com/tradingstrategy-ai/sphinx-tags"}
 notebook = "^6.4.12"
