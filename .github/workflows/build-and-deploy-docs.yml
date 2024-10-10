@@ -16,23 +16,21 @@ jobs:
         run: make update-git-submodules
       - name: Install poetry
         run: pipx install poetry==1.6.1
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
-        # If caches were enabled, it was caching Python 3.8 interpreter
-        # causing the docs build to fails
         with:
-          python-version: '3.10'
+          python-version: '3.11'
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y pandoc
-          poetry env use '3.10'
+          poetry env use '3.11'
           poetry install -vv
                 
           # TODO: Hack fix if this is the cause for problems in doc builds
       - name: Build documentation
         run: |        
-          poetry env use '3.10'
+          poetry env use '3.11'
           python -V
           which python
           echo $PATH
