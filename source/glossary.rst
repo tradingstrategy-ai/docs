@@ -5823,7 +5823,7 @@ and algorithmic trading.
 
         - *No Expiration*: Unlike traditional futures contracts that have a set expiry date, perpetual futures can be held indefinitely. This eliminates the need to "roll over" contracts as they approach expiration.
         - *Funding Rate*: To keep the price of the perpetual futures contract in line with the underlying cryptocurrency's spot price, a funding rate mechanism is used. This periodic payment system incentivizes traders to keep the futures price close to the spot price.
-        - *Leverage*: Perpetual futures contracts often offer high leverage, allowing traders to control a larger position with a smaller amount of capital. This can amplify potential profits but also increases the risk of losses.
+        - :term:`Leverage`: Perpetual futures contracts often offer high leverage, allowing traders to control a larger position with a smaller amount of capital. This can amplify potential profits but also increases the risk of losses.
         - *Long or Short*: Traders can go long (betting on price increase) or short (betting on price decrease), providing flexibility in different market conditions.
 
         How
@@ -5831,6 +5831,8 @@ and algorithmic trading.
         - *Trading*: Perpetual futures are traded on cryptocurrency exchanges, similar to spot trading.
         - *Funding Rate*: The funding rate is periodically paid between long and short position holders. If the funding rate is positive, long position holders pay short position holders, and vice versa. This mechanism helps to anchor the perpetual futures price to the spot price.
         - *Profit and Loss*: Profit or loss is realized based on the difference between the entry price and exit price of the contract, multiplied by the contract size and leverage.
+
+        In :`decentralised finance`, you do not need perps to get leverage. Instead, you can build leveraged positions on the top of :term:`lending protocols <lending protocol>`.
 
         See
 
@@ -5841,3 +5843,5 @@ and algorithmic trading.
         - :term:`Shorting`
 
         - :term:`Longing`
+
+        - :term:`Lending protocol`
