@@ -66,3 +66,10 @@ In this article the Hidden Markov Model will be utilised within the QSTrader fra
 
 `Read post <https://www.quantstart.com/articles/market-regime-detection-using-hidden-markov-models-in-qstrader/>`__.
 
+Uniswap v3 and Aave delta hedged strategy
+-----------------------------------------
+
+A blog outlining an example trading strategy creating Uniswap V3 :term:`liquidity provision` position
+which is :term:`delta hedged` using :term:`Aave` :term:`lending protocol`.
+
+`Read post <https://medium.com/zelos-research/how-to-implement-uniswap-delta-neutral-strategy-with-lending-protocol-eee10371a77f>`__.

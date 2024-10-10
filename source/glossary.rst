@@ -1465,7 +1465,7 @@ and algorithmic trading.
 
         A block producer in a position to do MEV can harm traders in multiple ways:
 
-        - MEV operators *frontrun* trades and liquidity provisions to get a better price for themselves as they see the market is about to change,
+        - MEV operators *frontrun* trades and :term:`liquidity provisions <Liquidity provision>` to get a better price for themselves as they see the market is about to change,
           by inserting their own trades before others.
 
         - MEV operators perform `sandwitch attack <https://tradingstrategy.ai/glossary/evm>`__ to manipulation the market, by frontrunning and backrunning s single trade to set the price to some arbitrary value.
@@ -2075,7 +2075,7 @@ and algorithmic trading.
 
         Sometimes a lending pool is also called *reserve* (:`term`Aave`).
 
-        The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, liquidity provision, or to meet other financial obligations.
+        The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, :term:`liquidity provision`, or to meet other financial obligations.
 
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
 
