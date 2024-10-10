@@ -179,3 +179,18 @@ Optimal Factor Timing in a High-Dimensional Setting
 We develop a framework for equity factor timing in a high-dimensional setting when the number of factors and factor return predictors can be large. To ensure good out-of-sample performance, the approach is disciplined by shrinkage that effectively expresses a degree of skepticism about outsized gains from timing. In our empirical application, the predictors include macroeconomic variables and factor-specific characteristics spreads between the long and short legs of the factors. We find sizable gains from timing equity factors, including for factors constructed only from large-cap stocks.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
+
+Providing Liquidity in Uniswap V3
+---------------------------------
+
+One of the largest DEX Uniswap released their version v3 in 2021 and introduced
+the concept of concentrated liquidity. Now liquidity providers in Uniswap v3
+need to choose a range in which they want to provide liquidity. We built a
+robust and precise backtester based on the original Uniswap v3 smart contract
+and used it to test eleven different strategies for liquidity providers. We analyzed
+those strategies on the USDC-ETH pool with 0.05% transaction fee. We found
+strategies that performed really well when Ethereum was going up, but most of
+these strategies did not perform so well when Ethereum was going down. We
+also analyzed the delta of liquidity provision strategies.
+
+`Read the paper <https://pub.tik.ee.ethz.ch/students/2021-HS/BA-2021-21.pdf>`__
