@@ -1,12 +1,19 @@
 Algorithmic trading frameworks for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>` if you are especially looking for AI-based trading solutions.
 
 Trading Strategy
 ----------------
 
-Next generation algorithmic trading protocol for decentralised markets.
+Trading Strategy is the next generation algorithmic trading protocol for decentralised markets.
+
+It includes
+
+- Market data fetch
+- Backtesting and strategy development framework
+- Live trade execution
+- Capital and investor management with smart contract-based vaults
 
 `View website <https://tradingstrategy.ai>`__.
 
