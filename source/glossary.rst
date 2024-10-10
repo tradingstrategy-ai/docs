@@ -739,6 +739,16 @@ and algorithmic trading.
 
         The risk of a strategy for the volatility of a particular asset. For example, if you have 100% exposure to ETH and ETH prices drops to zero, you lose all of your money.
 
+        See also
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Delta neutral`
+
+        - :term:`Delta hedged`
+
+        - :term:`Gamma hedged`
+
     Market neutral strategy
 
         Market neutral strategies are :term:`trading strategies <trading strategy>` that have little or no :term:`exposure` to crypto asset :term:`volatility`. They are often :term:`high-frequency trading` strategies, like arbitrage. Good market neutral strategies can make 10% - 20% monthly yield in cryptocurrency markets.
@@ -746,6 +756,10 @@ and algorithmic trading.
         See also
 
         - :term:`Delta neutral`
+
+        - :term:`Delta hedged`
+
+        - :term:`Gamma hedged`
 
         - :term:`Trading strategy`
 
@@ -4901,6 +4915,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Delta hedged`
+
         - :term:`Market neutral strategy`
 
         - :term:`Trading strategy`
@@ -5289,6 +5305,8 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Perpetual future`
+
         - :term:`Trading strategy`
 
         - :term:`Market neutral strategy`
@@ -5338,6 +5356,8 @@ and algorithmic trading.
         In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. :term:`Ethena` popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
 
         See also
+
+        - :term:`Perpetual future`
 
         - :term:`Decentralised finance`
 
@@ -5727,4 +5747,97 @@ and algorithmic trading.
 
         - :term:`MEV`
 
+    Delta hedged
 
+        Delta hedging is a technique used in :term:`quantitative finance` to manage risk associated with options trading.
+
+        The most popular way to delta hedge in cryptocurrency markets is :term:`perpetual futures <perpetual future>`:
+        buy spot, short perpetuals. This is :term:`cash and carry`-style trade is popularised by :term:`Ethena`.
+
+        An example:
+
+        - *Hedging with Spot or Opposite Futures*: To delta hedge, traders can use either the underlying cryptocurrency (spot market) or an opposite position in the same perpetual futures contract. For example, if you have a long perpetual futures position with a delta of 0.8, you can hedge by:
+        - *Selling 0.8 units of the underlying cryptocurrency*: This reduces your overall exposure to price increases in the cryptocurrency.
+        - *Opening a short perpetual futures position with a delta of 0.8*: This creates an offsetting position that profits if the price goes down, counteracting potential losses in your long position.
+
+        If the price moves too fast, delta hedging might not be enough, but you need be :term:`gamma hedged`.
+
+        See
+
+        - :term:`Gamma hedged`
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        - :term:`Cash and carry`
+
+        - :term:`Perpetual future`
+
+        - :term:`Delta neutral`
+
+        - :term:`Market making`
+
+        - :term:`Lending protocol`
+
+    Gamma hedged
+
+        Gamma hedging in :term:`quantitative finance` is a more advanced risk management technique used in options trading to mitigate the risk associated with changes in delta. It's essentially hedging the change in the hedge itself.
+
+        Gamma measures the rate of change of delta for every one-point move in the underlying asset's price.
+
+        In simpler terms, it tells you how much the delta of an option is expected to change as the price of the underlying cryptocurrency moves. A high gamma means the delta is very sensitive to price changes, requiring more frequent adjustments to your delta hedge.
+
+        Benefits of gamma hedging include:
+
+        - *Reduce Gamma Risk*: :term:`Delta hedging <delta hedged>` only neutralizes the first-order risk (delta). Gamma hedging aims to reduce the second-order risk, which is the risk that delta changes significantly, making your initial delta hedge less effective.
+        - *Maintain Delta-Neutral Position*: Gamma hedging helps maintain a delta-neutral position, especially in volatile markets where prices can move rapidly.
+        - *Improve Hedging Accuracy*: By accounting for changes in delta, gamma hedging provides a more precise and dynamic hedge.
+
+        How build gamma hedged position:
+
+        - *Options with Opposite Gamma*: To gamma hedge, traders typically use options with opposite gamma to their existing position. For example, if you have a long call option with positive gamma, you might buy a short call option with negative gamma to offset it.
+        - *Adjusting the Underlying*: In some cases, gamma hedging can also involve adjusting the position in the underlying cryptocurrency to counteract the gamma risk.
+
+        See
+
+        - :term:`Delta hedged`
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        - :term:`Cash and carry`
+
+        - :term:`Perpetual future`
+
+        - :term:`Delta neutral`
+
+        - :term:`Market making`
+
+        - :term:`Lending protocol`
+
+    Perpetual future
+
+        Perpetual futures contracts, also known as *perps*, in :term:`quantitative finance` are a special type of derivative that allow traders to speculate on the price of a cryptocurrency without an expiration date.  Think of them like a continuous futures contract.
+
+        Perpetual futures are very popular in cryptocurrency trading, but unknown in traditional finance. They were popularised by BitMEX exchange.
+
+        Here's a breakdown of their key features:
+
+        - *No Expiration*: Unlike traditional futures contracts that have a set expiry date, perpetual futures can be held indefinitely. This eliminates the need to "roll over" contracts as they approach expiration.
+        - *Funding Rate*: To keep the price of the perpetual futures contract in line with the underlying cryptocurrency's spot price, a funding rate mechanism is used. This periodic payment system incentivizes traders to keep the futures price close to the spot price.
+        - *Leverage*: Perpetual futures contracts often offer high leverage, allowing traders to control a larger position with a smaller amount of capital. This can amplify potential profits but also increases the risk of losses.
+        - *Long or Short*: Traders can go long (betting on price increase) or short (betting on price decrease), providing flexibility in different market conditions.
+
+        How
+
+        - *Trading*: Perpetual futures are traded on cryptocurrency exchanges, similar to spot trading.
+        - *Funding Rate*: The funding rate is periodically paid between long and short position holders. If the funding rate is positive, long position holders pay short position holders, and vice versa. This mechanism helps to anchor the perpetual futures price to the spot price.
+        - *Profit and Loss*: Profit or loss is realized based on the difference between the entry price and exit price of the contract, multiplied by the contract size and leverage.
+
+        See
+
+        - :term:`Cash and carry`
+
+        - :term:`Leverage`
+
+        - :term:`Shorting`
+
+        - :term:`Longing`
