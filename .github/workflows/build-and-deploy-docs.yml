@@ -15,7 +15,7 @@ jobs:
       - name: Fetch git submodules
         run: make update-git-submodules
       - name: Install poetry
-        run: pipx install poetry==1.6.1
+        run: pipx install poetry==1.8.3
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
