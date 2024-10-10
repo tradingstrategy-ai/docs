@@ -244,6 +244,8 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+        - :term:`Demeter`
+
         - :term:`Overfitting`
 
         - :term:`Grid search`
@@ -5778,6 +5780,8 @@ and algorithmic trading.
 
         - :term:`Lending protocol`
 
+        - :term:`Demeter`
+
     Gamma hedged
 
         Gamma hedging in :term:`quantitative finance` is a more advanced risk management technique used in options trading to mitigate the risk associated with changes in delta. It's essentially hedging the change in the hedge itself.
@@ -5813,6 +5817,8 @@ and algorithmic trading.
 
         - :term:`Lending protocol`
 
+        - :term:`Demeter`
+
     Perpetual future
 
         Perpetual futures contracts, also known as *perps*, in :term:`quantitative finance` are a special type of derivative that allow traders to speculate on the price of a cryptocurrency without an expiration date.  Think of them like a continuous futures contract.
@@ -5845,3 +5851,32 @@ and algorithmic trading.
         - :term:`Longing`
 
         - :term:`Lending protocol`
+
+    Demeter
+
+        Demeter is a :term:`liquidity provision` :term:`backtest` framework for :term:`Uniswap`, :term:`Aave`
+        and other :term:`decentralised finance` protocols.
+
+        Demeter allows you to simulate :term:`high-frequency trading` :term:`market making` using :term:`Python` code.
+
+        Demeter is good for backtesting
+
+        - :term:`CLMM` strategies
+
+        - :term:`Delta hedged` strategies (e.g. with Aave)
+
+        - :term:`Gamma hedged` strategies (e.g. with decentralised options market places like Aevo or Derive)
+
+        Examples of Demeter strategies are available in `Trading Strategy's Getting started <https://github.com/tradingstrategy-ai/getting-started>`__ repository.
+
+        See
+
+        - :term:`Liquidity provision`
+
+        - :term:`Backtest`
+
+        - :term:`Market making`
+
+        - :term:`High-frequency trading`
+
+        - :term:`Uniswap`
