@@ -5871,6 +5871,8 @@ and algorithmic trading.
 
         See
 
+        - `Demeter website <https://github.com/zelos-alpha/demeter/>`__ by Zelos Alpha
+
         - :term:`Liquidity provision`
 
         - :term:`Backtest`
