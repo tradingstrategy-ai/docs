@@ -1,8 +1,14 @@
 .. meta::
-   :description: Latest scientific research to algorithmic trading.
+   :description: Latest research to algorithmic trading.
 
-Research papers about algorithmic trading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Papers about algorithmic trading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section contains various research papers related to algorithmic trading.
+
+.. note::
+
+    AI-related papers have their own :doc:`AI section <./ai-and-machine-learning>`.
 
 An Investor’s Guide to Crypto
 -----------------------------
