@@ -4,7 +4,8 @@
 Books on algorithmic trading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`.
+See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`,
+as AI and machine learning books have their own section.
 
 Advanced Futures Trading Strategies
 -----------------------------------
