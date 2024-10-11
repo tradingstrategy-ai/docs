@@ -15,6 +15,60 @@ In Advanced Futures Trading Strategies, Robert Carver provides a complete practi
 
 `Buy the book <https://www.amazon.com/Advanced-Futures-Trading-Strategies-Robert/dp/0857199684>`__.
 
+Beating the Financial Futures Market
+------------------------------------
+
+Traders in today’s fast-moving financial futures markets must contend with market noise that is ambiguous, contradictory, and (here’s the worst part) almost entirely random. More than ninety percent of traders will eventually go broke trying to make sense of, and systemize, that noise. But for those that learn the tricks of survival, the rewards can be phenomenal. How can you become one of the five to ten percent of traders that survive the learning curve, design a profitable system, and turn financial futures trading into a profitable sideline or even a full-time career? Beating the Financial Futures Market provides you with a straightforward, historically proven program to cut through the noise, determine what bits of information are valuable, and integrate those bits into an overall trading program designed to jump on lucrative trading opportunities as they occur. Written by veteran commodities trader, systems designer, lecturer, author, and Chicago Board of Trade member Art Collins, this comprehensive trading handbook details: *Guidelines for overcoming dead-end discretionary trading “insights” to focus on market-tested, mechanical trading rules and knowledge *The four rules of prudent optimization, essential for identifying the best performing variables within your formulas *Eight consistent biases that, when followed, can lead you to more reliable and profitable trades *Statistically verifiable strategies for combining—and recombining—specific indicators based on prevailing market environments *Actual TradeStation© summaries, showing in black and white which concepts worked and which didn’t, and when and why The backroads of financial futures trading are littered with failed geniuses, traders who spent their days trying to outthink the markets. Beating the Financial Futures Market will show you how to simplify your trading program by strictly adhering, 100 percent of the time, to a focused roster of mechanical trading techniques. It will help you remove much of the difficulty from your trading day by developing a disciplined, turnkey system and letting the system do the work—leaving you to simply make trades as specified by your system, institute the necessary safeguards, and dramatically improve both your percentage of winning trades and the bottomline profitability of those winning trades.
+
+`Buy the book <https://www.amazon.com/Beating-Financial-Futures-Market-Strategies/dp/1540394522>`__.
+
+Detecting Regime Change in Computational Finance
+------------------------------------------------
+
+Based on interdisciplinary research into "Directional Change", a new data-driven approach to financial data analysis, Detecting Regime Change in Computational Finance: Data Science, Machine Learning and Algorithmic Trading applies machine learning to financial market monitoring and algorithmic trading. Directional Change is a new way of summarising price changes in the market. Instead of sampling prices at fixed intervals (such as daily closing in time series), it samples prices when the market changes direction ("zigzags"). By sampling data in a different way, this book lays out concepts which enable the extraction of information that other market participants may not be able to see. The book includes a Foreword by Richard Olsen and explores the following topics:
+
+- Data science: as an alternative to time series, price movements in a market can be summarised as directional changes
+- Machine learning for regime change detection: historical regime changes in a market can be discovered by a Hidden Markov Model
+- Regime characterisation: normal and abnormal regimes in historical data can be characterised using indicators defined under Directional Change
+- Market Monitoring: by using historical characteristics of normal and abnormal regimes, one can monitor the market to detect whether the market regime has changed
+- Algorithmic trading: regime tracking information can help us to design trading algorithms
+
+It will be of great interest to researchers in computational finance, machine learning and data science.
+
+`Buy the book <https://www.routledge.com/Detecting-Regime-Change-in-Computational-Finance-Data-Science-Machine-Learning-and-Algorithmic-Trading/Chen-Tsang/p/book/9780367540951>`__.
+
+Finding Alphas: A Quantitative Approach to Building Trading Strategies
+----------------------------------------------------------------------
+
+Drawing on the expertise of WorldQuant’s global network, this new edition of Finding Alphas: A Quantitative Approach to Building Trading Strategies contains significant changes and updates to the original material, with new and updated data and examples.
+
+Nine chapters have been added about alphas – models used to make predictions regarding the prices of financial instruments. The new chapters cover topics including alpha correlation, controlling biases, exchange-traded funds, event-driven investing, index alphas, intraday data in alpha research, intraday trading, machine learning, and the triple axis plan for identifying alphas.
+
+- Provides more references to the academic literature
+- Includes new, high-quality material
+- Organizes content in a practical and easy-to-follow manner
+ -Adds new alpha examples with formulas and explanations
+
+If you’re looking for the latest information on building trading strategies from a quantitative approach, this book has you covered.
+
+`Buy the book <https://www.amazon.com/Finding-Alphas-Quantitative-Approach-Strategies-dp-1119571219/dp/1119571219/ref=dp_ob_title_bk>`__.
+
+Building Winning Algorithmic Trading Systems
+--------------------------------------------
+
+In Building Algorithmic Trading Systems: A Trader's Journey From Data Mining to Monte Carlo Simulation to Live Training, award-winning trader Kevin Davey shares his secrets for developing trading systems that generate triple-digit returns. With both explanation and demonstration, Davey guides you step-by-step through the entire process of generating and validating an idea, setting entry and exit points, testing systems, and implementing them in live trading. You'll find concrete rules for increasing or decreasing allocation to a system, and rules for when to abandon one. The companion website includes Davey's own Monte Carlo simulator and other tools that will enable you to automate and test your own trading ideas.
+
+A purely discretionary approach to trading generally breaks down over the long haul. With market data and statistics easily available, traders are increasingly opting to employ an automated or algorithmic trading system―enough that algorithmic trades now account for the bulk of stock trading volume. Building Algorithmic Trading Systems teaches you how to develop your own systems with an eye toward market fluctuations and the impermanence of even the most effective algorithm.
+
+- Learn the systems that generated triple-digit returns in the World Cup Trading Championship
+- Develop an algorithmic approach for any trading idea using off-the-shelf software or popular platforms
+- Test your new system using historical and current market data
+- Mine market data for statistical tendencies that may form the basis of a new system
+
+Market patterns change, and so do system results. Past performance isn't a guarantee of future success, so the key is to continually develop new systems and adjust established systems in response to evolving statistical tendencies. For individual traders looking for the next leap forward, Building Algorithmic Trading Systems provides expert guidance and practical advice.
+
+`Buy the book <https://www.amazon.com/Building-Winning-Algorithmic-Trading-Systems/dp/1118778987>`__.
+
 Python For Finance: Algorithmic Trading
 ---------------------------------------
 

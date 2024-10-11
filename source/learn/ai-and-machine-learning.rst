@@ -45,6 +45,23 @@ Books
 
 Here is a list of books for learning to use AI and machine learning in trading.
 
+Advances in Financial Machine Learning
+--------------------------------------
+
+Machine learning (ML) is changing virtually every aspect of our lives. Today, ML algorithms accomplish tasks that – until recently – only expert humans could perform. And finance is ripe for disruptive innovations that will transform how the following generations understand money and invest.
+
+In the book, readers will learn how to:
+
+- Structure big data in a way that is amenable to ML algorithms
+- Conduct research with ML algorithms on big data
+- Use supercomputing methods and back test their discoveries while avoiding false positives
+
+Advances in Financial Machine Learning addresses real life problems faced by practitioners every day, and explains scientifically sound solutions using math, supported by code and examples. Readers become active users who can test the proposed solutions in their individual setting.
+
+Written by a recognized expert and portfolio manager Marcos López de Prado, this book will equip investment professionals with the groundbreaking tools needed to succeed in modern finance.
+
+`Buy the book <https://www.amazon.com/Advances-Financial-Machine-Learning-Marcos/dp/1119482089>`__.
+
 Machine Learning for Algorithmic Trading: Predictive models to extract signals from market and alternative data for systematic trading strategies with Python
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
