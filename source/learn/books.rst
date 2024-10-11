@@ -89,7 +89,7 @@ Written by Wes McKinney, the creator of the Python pandas project, this book is 
 Practical Guide to Applied Conformal Prediction: Learn and apply the best uncertainty frameworks to your industry applications
 ------------------------------------------------------------------------------------------------------------------------------
 
-mbark on an insightful journey with 'Practical Guide to Applied Conformal Prediction in Python', a comprehensive resource that equips you with the latest techniques to quantify uncertainty in machine learning and computer vision models effectively.
+Embark on an insightful journey with 'Practical Guide to Applied Conformal Prediction in Python', a comprehensive resource that equips you with the latest techniques to quantify uncertainty in machine learning and computer vision models effectively.
 
 This book covers a wide array of real-world applications, including Conformal Prediction for forecasting, computer vision, and NLP, as well as advanced examples for handling imbalanced data and multi-class classification problems. These practical case studies will enable you to apply your newfound knowledge to various industry scenarios.
 
