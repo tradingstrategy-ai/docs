@@ -42,6 +42,7 @@ Trading Strategy client
    tradingstrategy.charting
    tradingstrategy.testing
    tradingstrategy.binance
+   tradingstrategy.alternative_data
    tradingstrategy.frameworks.backtrader
    tradingstrategy.frameworks.qstrader
    tradingstrategy.direct_feed
