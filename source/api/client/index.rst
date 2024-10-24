@@ -41,6 +41,7 @@ Trading Strategy client
    tradingstrategy.transport
    tradingstrategy.charting
    tradingstrategy.testing
+   tradingstrategy.top
    tradingstrategy.binance
    tradingstrategy.alternative_data
    tradingstrategy.frameworks.backtrader
