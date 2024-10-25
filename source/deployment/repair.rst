@@ -27,6 +27,15 @@ The reasons why a trade executor may mark a position as a frozen
 
 - Out of gas money
 
+Checking positions
+------------------
+
+You can check open/frozen/closed positions from the command line:
+
+.. code-block:: shell
+
+    docker compose run ethereum-memecoin-swing show-positions
+
 Fixing frozen positions
 -----------------------
 
@@ -41,26 +50,21 @@ Choose the trade executor Docker image version (you can peak the current version
 
 .. code-block:: shell
 
+    # Sets TRADE_EXECUTOR_VERSION environment variable needed for docker-compose.yml file
     source scripts/set-latest-tag.sh
-
-    # Or manualy:
-    # Tell docker-compose.yaml the pinned software version
-    # export TRADE_EXECUTOR_VERSION=v106
-
-    # Executor name for the following commmands
-    EXECUTOR_ID=quickswap-matic-usd-ema
 
 Check running strategies
 
 .. code-block:: shell
 
-    docker-compose ps
+    docker compose ps
 
 For any strategy to be repaired, its trade executor must be stopped first.
 
 .. code-block:: shell
 
-    docker-compose stop $EXECUTOR_ID
+    $EXECUTOR_ID=ethereum-memecoin-swing
+    docker compose stop $EXECUTOR_ID
 
 Now you can start the repair:
 
