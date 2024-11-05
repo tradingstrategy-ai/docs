@@ -3293,11 +3293,15 @@ and algorithmic trading.
 
         - :term:`Alpha generation strategies <alpha model>` - such as :term:`factor investing`, :term:`statistical arbitrage`, and :term:`trend-following`, to identify assets that are likely to outperform or underperform the broader market.
 
+        - :term:`Volatility basket` is a specific portfolio construction strategy that focuses on the :term:`volatility` of the assets
+
         See also
 
         - :term:`Alpha model`
 
         - :term:`Continuous trading`
+
+        - :term:`Volatility basket`
 
         - :term:`Trading strategy`
 
