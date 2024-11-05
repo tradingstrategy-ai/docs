@@ -4873,10 +4873,11 @@ and algorithmic trading.
             * While high volatility does  not directly correlate with higher returns, assets with higher volatility are often associated with higher potential returns (and losses), as they tend to make larger movements.
 
         Volatility basket strategy can
-        - Calculate the trailing volatility of the asset for a certain period time (weeks, months) to benchmark different assets
+
+        - Calculate the trailing volatility of the asset for a certain period time (weeks, months) to benchmark different assets.
         - Include multiple assets that may have different volatility characteristics—some with high volatility, others with low volatility, and potentially even inverse relationships.
-        - Be around a certain sector (see :term:`factor investing`)
-        - Go degen and pick only assets with the highest volatility
+        - Be around a certain sector (see :term:`factor investing`).
+        - Go degen and pick only assets with the highest volatility.
 
         See also
 
