@@ -4882,6 +4882,8 @@ and algorithmic trading.
         - Include multiple assets that may have different volatility characteristics—some with high volatility, others with low volatility, and potentially even inverse relationships.
         - Be around a certain sector (see :term:`factor investing`).
         - Go degen and pick only assets with the highest volatility.
+        - Because :term:`volatility` metric itself does not tell the direction of asset price,
+          a strategy may use its derivative like :term:`Sharpe` ratio which also includes whether asset made positive or negative returns (to long or t short).
 
         See also
 
@@ -4890,6 +4892,8 @@ and algorithmic trading.
         - :term:`Portfolio construction`
 
         - :term:`Portfolio`
+
+        - :term:`Sharpe`
 
         - :term:`Trading strategy`
 
