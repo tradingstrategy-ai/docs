@@ -83,7 +83,7 @@ and algorithmic trading.
 
         - :term:`Market neutral strategy`
 
-        - :term:`Factor investing`\
+        - :term:`Factor investing`
 
         - :term:`Yield farming`
 
@@ -3669,9 +3669,9 @@ and algorithmic trading.
 
         **Relationship to downside volatility**
 
-        The Sortino ratio is more closely related to downside volatility because it specifically targets the negative fluctuations in returns. This focus on downside risk makes the Sortino ratio particularly useful for investors who are more concerned about potential losses than overall volatility.
+        The Sortino ratio is more closely related to downside volatility because it specifically targets the negative fluctuations in returns. This focus on downside risk makes the Sortino ratio particularly useful for investors who are more concerned about potential losses than overall :term:`volatility`.
 
-        - Downside focus: The Sortino ratio acknowledges that upside volatility is generally not a concern for investors, as they typically welcome positive surprises in returns.
+        - Downside focus: The Sortino ratio acknowledges that upside :term:`volatility` is generally not a concern for investors, as they typically welcome positive surprises in returns.
         - Penalizing negative returns: By using only the downside deviation, the Sortino ratio penalizes investments with a higher frequency or magnitude of negative returns more heavily than the Sharpe ratio would.
         - Applicability: The Sortino ratio is especially useful for evaluating investments or strategies with asymmetric return distributions or those designed to limit downside risk.
         - Complementary use: Both ratios can be used together to provide a more comprehensive view of an investment's risk-adjusted performance.
@@ -3884,7 +3884,7 @@ and algorithmic trading.
 
     Heatmap
 
-        A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, volatility surfaces, or other forms of multidimensional data.
+        A heatmap is a graphical representation of data that uses color coding to represent the values of a matrix or a two-dimensional dataset. In :term:`quantitative finance`, heatmaps are often used to visualize correlation matrices, :term:`volatility` surfaces, or other forms of multidimensional data.
 
         Heatmaps can be useful for quickly identifying patterns or trends in the data, as well as for highlighting areas of high or low values. They can also be used to compare different datasets or to track changes in the data over time.
 
@@ -4717,15 +4717,17 @@ and algorithmic trading.
     
     Standard Deviation
         
-        Standard deviation is a statistical measure that quantifies the dispersion or variability of a data set around its mean (average). In finance and investment, standard deviation is often used as an indicator of risk or volatility. A higher standard deviation indicates greater variability in the data set or more volatility in a financial asset, while a lower standard deviation indicates less variability or lower volatility.
+        Standard deviation is a statistical measure that quantifies the dispersion or variability of a data set around its mean (average). In finance and investment, standard deviation is often used as an indicator of risk or :term:`volatility`. A higher standard deviation indicates greater variability in the data set or more volatility in a financial asset, while a lower standard deviation indicates less variability or lower volatility.
 
         Example: For the data set [1, 3, 3, 6, 7, 8, 9], the standard deviation is 2.92
 
-        Usage: In financial markets, standard deviation is commonly used as a measure of an asset's volatility, which helps investors and traders understand the asset's risk profile. A higher standard deviation implies more unpredictability in price movement, signaling higher risk, while a lower standard deviation indicates less risk and more stable returns.
+        Usage: In financial markets, standard deviation is commonly used as a measure of an asset's :term:`volatility`, which helps investors and traders understand the asset's risk profile. A higher standard deviation implies more unpredictability in price movement, signaling higher risk, while a lower standard deviation indicates less risk and more stable returns.
 
         Standard deviation and volatility are closely related concepts, especially in the context of finance. Volatility is essentially a practical application of standard deviation, often used to gauge the risk associated with different financial instruments.
 
         See also
+
+        - :term:`Volatility`
 
         - :term:`Mean`
 
@@ -4813,7 +4815,7 @@ and algorithmic trading.
 
     Volatility
 
-        In :term:`quantitative finance`, volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing.
+        In :term:`quantitative finance`, volatility refers to the degree of variation or fluctuation in the price of a financial asset over a certain period of time. It is often measured by statistical metrics like standard deviation or historical price changes. Higher volatility indicates a greater potential for rapid price changes, while lower volatility suggests more stable pricing. Sometimes volatility is shortened as "vol" (not to be confused with volme that is similarly shortened).
 
         Example: If a cryptocurrency experiences rapid price swings within short periods, it is said to have high volatility.
 
@@ -4821,15 +4823,27 @@ and algorithmic trading.
 
         Each of these terms offers a different lens through which to analyze market conditions and can be used in combination to make more informed trading or investing decisions.
 
-        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`Risk-adjusted return`, volatility is the fundamental
-        metric for various risk vs. rewards calculations.
+        Volatility can be applied to
+        - Asset prices
+        - Asset returns
+        - Portfolio returns
 
-        :term:`Delta neutral` :term:`trading strategy` is a strategy that is immune to volatility: no matter which direction the price
-        moves, the strategy makes profit.
+        When :term:`benchmarking <benchmark>` different :term:`portfolios <portfolio>` for :term:`Risk-adjusted return`, volatility is the fundamental
+        metric for various risk vs. rewards calculations. :term:`Delta neutral` :term:`trading strategy` is a strategy that is immune to volatility: no matter which direction the price
+        moves, the strategy makes profit. A :term:`volatility basket` trading strategy construct a basket of assets based on their volatility.
+
+        Volatility is calculated as `returns / standard deviation of return`. Returns can be binned daily, weekly, hourly, etc.
+        The period of returns can be trailing months, years, or the whole duration of an asset. Volatility always expressed as a positive number because it measures the magnitude of fluctuations around an average return, regardless of whether those fluctuations are positive or negative. In other words, volatility is a measure of risk or uncertainty, not direction.
+
+        :term:`Sharpe` ratio is the derivation of volatility: `returns / volatility`.
 
         See also
 
+        - :term:`Volatility basket`
+
         - :term:`Standard deviation`
+
+        - :term:`Sharpe`
 
         - :term:`Market sentiment`
 
@@ -4842,6 +4856,39 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Delta neutral`
+
+    Volatility basked
+
+        A volatility basket is a :term:`portfolio construction` :term:`trading strategy` where assets are picked
+        by their highest :term:`volatility`.
+
+        Volatility measures
+
+        - Magnitude of price fluctuation
+            * A higher volatility number indicates greater variability in returns, meaning the asset or portfolio experiences more dramatic swings in value. This can imply higher risk, as the asset's price is more unpredictable.
+            * A lower volatility number suggests smaller fluctuations, implying that the asset or portfolio is more stable over the measured period.
+        - Relative risk
+            * Volatility allows investors to compare the risk of different assets or :term:`portfolios <portfolio>`. For example, an asset with 20% volatility is considered riskier than one with 10% volatility over the same period.
+        - Impact on expected returns
+            * While high volatility does  not directly correlate with higher returns, assets with higher volatility are often associated with higher potential returns (and losses), as they tend to make larger movements.
+
+        Volatility basket strategy can
+        - Calculate the trailing volatility of the asset for a certain period time (weeks, months) to benchmark different assets
+        - Include multiple assets that may have different volatility characteristics—some with high volatility, others with low volatility, and potentially even inverse relationships.
+        - Be around a certain sector (see :term:`factor investing`)
+        - Go degen and pick only assets with the highest volatility
+
+        See also
+
+        - :term:`Volatility`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Portfolio`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
 
     Compound Annual Growth Rate (CAGR)
 
