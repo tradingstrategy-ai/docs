@@ -4857,7 +4857,7 @@ and algorithmic trading.
 
         - :term:`Delta neutral`
 
-    Volatility basked
+    Volatility basket
 
         A volatility basket is a :term:`portfolio construction` :term:`trading strategy` where assets are picked
         by their :term:`volatility`.
