@@ -4860,7 +4860,7 @@ and algorithmic trading.
     Volatility basked
 
         A volatility basket is a :term:`portfolio construction` :term:`trading strategy` where assets are picked
-        by their highest :term:`volatility`.
+        by their :term:`volatility`.
 
         Volatility measures
 
