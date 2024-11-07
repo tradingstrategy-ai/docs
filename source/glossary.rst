@@ -1524,6 +1524,12 @@ and algorithmic trading.
 
         - CEX-DEX arbitrage, though not always MEV but harmful for :term:`decentralised finance` ecosystem due to its harm for passive liquiditity providers, can be mitigated with dynamic fees, introduced by :term:`Uniswap` version 4. `More on dynamic fees mitigating arbitrage here <https://doseofdefi.substack.com/p/uniswap-v4-and-ambient-finance-fresh>`__.
 
+        Read elsewhere
+
+        - `Toxic MEV <https://info.zeromev.org/terms.html#toxic-mev>`__
+
+        - `Frontrunning explorer <https://info.zeromev.org/explorer.html>`__
+
         See also
 
         - :term:`DEX`
