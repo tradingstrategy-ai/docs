@@ -290,17 +290,6 @@ Example:
     TRADING_STRATEGY_API_KEY=...
     PRIVATE_KEY=...
 
-Preparing the final configuration file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Docker does not support multiple .env files <https://github.com/docker/compose/issues/7326>`_.
-We need to splice one composed `.env` combining both public and secret variables
-for our trade executor instance.
-
-.. code-block:: shell
-
-    cat ~/pancake-eth-usd-sma-secrets.env env/pancake-eth-usd-sma.env > ~/pancake-eth-usd-sma-final.env
-
 Setting up system
 -----------------
 
@@ -421,6 +410,14 @@ and env file, because to do the wallet balance check we need to download and con
         docker build -t ghcr.io/tradingstrategy-ai/trade-executor:latest \
         check-wallet
 
+Getting initial deposit
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Before performing test trade, you need to have both gas token and reserve currency (USDC/USDT) in the hot wallet.
+
+- Swap with a command line script
+- Deposit USDC from another wallet
+
 Performing a test trade
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -443,11 +440,20 @@ you can perform a test trade from the command line.
 - Broadcasting a transaction through your JSON-RPC connection
   works.
 
-Example:
+First test with Anvil simulated transactions:
 
 .. code-block:: shell
 
-    docker-compose run pancake-eth-usd-sma perform-test-trade
+    docker compose run ethereum-memecoin-vol-basket \
+        perform-test-trade \
+        --pair "(ethereum, uniswap-v2, BITCOIN, WETH, 0.003)" \
+        --simulate
+
+And then for real:
+
+.. code-block:: shell
+
+    docker compose run pancake-eth-usd-sma perform-test-trade
 
 This will give a long output with details to the trade execution for diagnosing any issue.
 The important parts are highlighted:
@@ -460,6 +466,43 @@ The important parts are highlighted:
     Position <Open position #2 <Pair ETH-USDC at 0xea26b78255df2bbc31c1ebf60010d78670185bd0 on exchange 0xca143ce32fe78f1f7019d7d551a6402fc5350c73> $1.000501504460405> open. Now closing the position.
     ...
     All ok
+
+Test loggers
+------------
+
+Check that Discord and Telegram bots worl:
+
+. code-block:: shell
+
+    docker compose run ethereum-memecoin-vol-basket send-log-message
+
+Perform one off simulated trade cycle
+-------------------------------------
+
+This will ensure `decide_trades()` function is not broken.
+
+You can now manually execute the first strategy cycle. This will be executed off-timestamp,
+but will still demostrate the `decide_trades()` Python function is not broken.
+
+First simulated:
+
+.. code-block:: shell
+
+    docker compose run \
+        ethereum-memecoin-vol-basket \
+        start \
+        --run-single-cycle \
+        --simulate
+
+Then for real:
+
+.. code-block:: shell
+
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
+        start \
+        --run-single-cycle
+
 
 Launching the trade-executor instance
 -------------------------------------

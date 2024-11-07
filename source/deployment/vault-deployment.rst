@@ -560,6 +560,17 @@ Running one test strategy decision cycle
 You can now manually execute the first strategy cycle. This will be executed off-timestamp,
 but will still demostrate the `decide_trades()` Python function is not broken.
 
+First simulated:
+
+.. code-block:: shell
+
+    docker compose run \
+        enzyme-polygon-matic-eth-usdc \
+        start \
+        --run-single-cycle
+
+Then for real:
+
 .. code-block:: shell
 
     docker compose run \
