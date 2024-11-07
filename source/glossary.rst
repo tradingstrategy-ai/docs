@@ -4883,7 +4883,7 @@ and algorithmic trading.
         - Be around a certain sector (see :term:`factor investing`).
         - Go degen and pick only assets with the highest volatility.
         - Because :term:`volatility` metric itself does not tell the direction of asset price,
-          a strategy may use its derivative like :term:`Sharpe` ratio which also includes whether asset made positive or negative returns (to long or t short).
+          a strategy may use its derivative like :term:`Sharpe` ratio which also includes whether asset made positive or negative returns (to long or to short).
 
         See also
 
