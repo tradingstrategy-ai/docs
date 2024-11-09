@@ -185,3 +185,10 @@ Optimal Factor Timing in a High-Dimensional Setting
 We develop a framework for equity factor timing in a high-dimensional setting when the number of factors and factor return predictors can be large. To ensure good out-of-sample performance, the approach is disciplined by shrinkage that effectively expresses a degree of skepticism about outsized gains from timing. In our empirical application, the predictors include macroeconomic variables and factor-specific characteristics spreads between the long and short legs of the factors. We find sizable gains from timing equity factors, including for factors constructed only from large-cap stocks.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
+
+Optimal Allocation to Cryptocurrencies in Diversified Portfolios
+----------------------------------------------------------------
+
+We apply four quantitative methods for optimal allocation to Bitcoin and Ether cryptocurrencies within alternative and balanced portfolios including metrics for portfolio diversification, expected risk-returns, and skewness of returns distribution. Using roll-forward historical simulations, we show that all four allocation methods produce a persistent positive allocation to Bitcoin and Ether in alternative and balanced portfolios with a median allocation of about 2.7%. We conclude that core cryptocurrencies may provide positive contribution to risk-adjusted performances of broad investment portfolios. We emphasize the diversification benefits of cryptocurrencies as an asset class within broad risk-managed portfolios with systematic re-balancing.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4217841>`__
