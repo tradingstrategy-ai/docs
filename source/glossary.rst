@@ -4867,44 +4867,6 @@ and algorithmic trading.
 
         - :term:`Delta neutral`
 
-    Volatility basket
-
-        A volatility basket is a :term:`portfolio construction` :term:`trading strategy` where assets are picked
-        by their :term:`volatility`.
-
-        Volatility measures
-
-        - Magnitude of price fluctuation
-            * A higher volatility number indicates greater variability in returns, meaning the asset or portfolio experiences more dramatic swings in value. This can imply higher risk, as the asset's price is more unpredictable.
-            * A lower volatility number suggests smaller fluctuations, implying that the asset or portfolio is more stable over the measured period.
-        - Relative risk
-            * Volatility allows investors to compare the risk of different assets or :term:`portfolios <portfolio>`. For example, an asset with 20% volatility is considered riskier than one with 10% volatility over the same period.
-        - Impact on expected returns
-            * While high volatility does  not directly correlate with higher returns, assets with higher volatility are often associated with higher potential returns (and losses), as they tend to make larger movements.
-
-        Volatility basket strategy can
-
-        - Calculate the trailing volatility of the asset for a certain period time (weeks, months) to benchmark different assets.
-        - Include multiple assets that may have different volatility characteristics—some with high volatility, others with low volatility, and potentially even inverse relationships.
-        - Be around a certain sector (see :term:`factor investing`).
-        - Go degen and pick only assets with the highest volatility.
-        - Because :term:`volatility` metric itself does not tell the direction of asset price,
-          a strategy may use its derivative like :term:`Sharpe` ratio which also includes whether asset made positive or negative returns (to long or to short).
-
-        See also
-
-        - :term:`Volatility`
-
-        - :term:`Portfolio construction`
-
-        - :term:`Portfolio`
-
-        - :term:`Sharpe`
-
-        - :term:`Trading strategy`
-
-        - :term:`Risk-adjusted return`
-
     Compound Annual Growth Rate (CAGR)
 
         CAGR, or Compound Annual Growth Rate, is a financial metric that measures the average annual growth rate of an investment over a specified period of time, typically longer than one year. It provides a smoothed-out view of an investment’s performance by accounting for compounding effects. In :term:`quantitative finance`, CAGR is used to compare performance of different portfolios. CAGR does not account for investment risk.
