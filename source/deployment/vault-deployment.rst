@@ -529,6 +529,9 @@ First make sure
 
 - Your hot wallet has native gas token for transaction fees
 
+- Use `--simulate` switch to do the first stab: this will fork the mainnet and simulate the transaction
+  in Anvil, so you do not spend gas if there are bugs in your `decide_trades()`
+
 You can perform a test trade that checks that the trade routing works, opening and closing positions is possible.
 This command will buy and sell a single trading pair from the strategy, worth of 1 USD.
 
@@ -537,7 +540,18 @@ This command will buy and sell a single trading pair from the strategy, worth of
     docker compose run \
         enzyme-polygon-matic-eth-usdc \
         perform-test-trade \
-        --all-pairs
+        --all-pairs \
+        --simulate
+
+For a multipair strategy, you need to pick the pair:
+
+.. code-block:: shell
+
+    docker compose run \
+        ethereum-memecoin-vol-basket \
+        perform-test-trade \
+        --pair "(ethereum, uniswap-v2, KEYCAT, WETH, 0.003)" \
+        --simulate
 
 The output looks something like:
 
