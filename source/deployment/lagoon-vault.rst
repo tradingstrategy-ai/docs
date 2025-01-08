@@ -19,17 +19,29 @@ An automated trading Lagoon vault consists of
 Lagoon example deploy script
 ----------------------------
 
+This example deploy script used with Docker Compose setup for creating a vault on Base.
+
 The deployment creates contracts
 - Safe
 - Vault
 - TradingStrategyModuleV0
 
 To deploy
+- You need Ethescan-compatible API key to verify deployed contracts onchain
 - Do Anvil-based simulation first
 - Then do live deployment
-- You need to give a bunch of multisig cosigners who will own
+- You need to give a bunch of multisig cosigners who will be owners of the created Safe
 
-An example deploy script used with Docker Compose setup for creating a vault on Base:
+The deployer creates several transactions to configure ``TradingStrategyModuleV0``.
+
+Secrets needed, give to the script via Docker compose environment variable files:
+
+.. code-block:: text
+
+    PRIVATE_KEY=
+    ETHERSCAN_API_KEY=
+
+The deployment script:
 
 .. code-block:: shell
 
@@ -38,7 +50,8 @@ An example deploy script used with Docker Compose setup for creating a vault on 
     # Deploy Lagoon vault for a strategy defined in docker-compose.yml
     #
     # Set up
-    # - name
+    # - Gnosis Safe
+    # - Vault smart contract
     # - TradingStrategyModuleV0 guard with allowed assets
     # - trade executor hot wallet as the asset manager role
     #
@@ -48,8 +61,8 @@ An example deploy script used with Docker Compose setup for creating a vault on 
     #
 
     set -e
-    set -u
     set -x
+    # set -u
 
     if [ "$SIMULATE" = "" ]; then
         echo "Set SIMULATE=true or SIMULATE=false"
@@ -68,7 +81,7 @@ An example deploy script used with Docker Compose setup for creating a vault on 
     export FUND_SYMBOL="MEMEX"
 
     # ERC-20 share toke  name
-    export FUND_NAME="Memex (Base)"
+    export FUND_NAME="Memex memecoin index strategy (Base)"
 
     # The vault is nominated in USDC on Base
     export DENOMINATION_ASSET="0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
@@ -116,3 +129,12 @@ Example output:
     Share token symbol             MEMEX
     Multisig owners                0xa7208b5c92d4862b3f11c0047b57a00Dc304c0f8, 0xbD35322AA7c7842bfE36a8CF49d0F063bf83a100, 0x05835597cAf9e04331dfe1f62C2Ec0C2aDc0d4a2, 0x5C46ab9e42824c51b55DcD3Cf5876f1132F9FbA9
     Block number                   24,773,588
+
+Safe multisignature wallet cosigners
+------------------------------------
+
+Each Lagoon vault has an underlying Safe multisignature wallet with cosigners.
+
+These cosigners are given to the development script, but you need to manually remove the deployer key
+from the Safe cosigner list. This operation has to be done by other cosigners.
+
