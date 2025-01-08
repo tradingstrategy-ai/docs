@@ -1114,12 +1114,19 @@ and algorithmic trading.
         Usually when you deposit to a vault you receive share or liquidity provider
         tokens as a return.
 
-        `See EIP-4626 Tokenised vault standard <https://eips.ethereum.org/EIPS/eip-4626>`__
-        for more information.
+        More technical details
+
+        - `EIP-4626 Tokenised vault standard <https://eips.ethereum.org/EIPS/eip-4626>`__
+
+        - `EIP-7540 Asynchronous Tokenized Vaults <https://eips.ethereum.org/EIPS/eip-7540>`__
+
+        An example of vault :term:`protocol` is :term:`Lagoon`.
 
         See also
 
         - :term:`Trading strategy`
+
+        - :term:`Lagoon`
 
         - :term:`Smart contract`
 
@@ -5906,3 +5913,24 @@ and algorithmic trading.
         - :term:`High-frequency trading`
 
         - :term:`Uniswap`
+
+    Lagoon
+
+        `Lagoon Finance <https://lagoon.finance/>`__ is a :term:`vault` :term:`protocol` for :term:`EVM` blockchains.
+
+        Lagoon provides vaults where users can invest to portfolios and strategies run by asset managers in
+        :term:`DeFi` ecosystem.
+
+        Lagoon uses - `EIP-7540 Asynchronous Tokenized Vaults <https://eips.ethereum.org/EIPS/eip-7540>`__
+        standard for their vaults.
+
+        See
+
+        - `Lagoon Finance website <https://lagoon.finance/>`__
+
+        - :term:`Vault`
+
+        - :term:`Protocol`
+
+        - :term:`EVM`
+

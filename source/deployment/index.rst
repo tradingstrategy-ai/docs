@@ -27,6 +27,7 @@ to choose how you wish to run it, see :ref:`live trading modes`.
    metadata
    hot-wallet-deployment
    vault-deployment
+   lagoon-vault
    monitoring
    docker-images
    backtest-vs-live-execution
