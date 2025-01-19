@@ -96,20 +96,10 @@ Local Jupyter installation
 You run notebooks by installing a local `Jupyter notebook installation <https://jupyter.org/>`_.
 This will create a local Jupyter server and open Jupyter notebooks in your web browser.
 
-Take a git checkout.
-
-Install using poetry:
+Start Jupyter server at the root folder:
 
 .. code-block:: shell
 
-    poetry install
-
-Then start Jupyter server at the root folder:
-
-.. code-block:: shell
-
-    ipython notebook
+    poetry run ipython notebook
 
 Navigate to a file you want to edit in your web browser.
-
-
