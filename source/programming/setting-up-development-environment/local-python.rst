@@ -6,7 +6,7 @@ Local Python installation
 This is the recommended method for advanced strategy development.
 You can checkout the example code and run it on your local computer.
 
-This method uses Git checkout and :term:`Poetry` package manager for Python.
+This method uses Git checkout and :term:`Poetry` package manager for Python (you can install poetry).
 
 This is a good option if you are using any of popular IDEs such as
 
@@ -61,7 +61,7 @@ First in Poetry shell figure where Poetry installed the Python interpreter:
 
 .. code-block:: shell
 
-    which python
+    poetry run which python
 
 This gives you the full path of `python` command like:
 
