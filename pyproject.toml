@@ -23,10 +23,8 @@ zope-dottedname = "^6.0"
 
 trade-executor = {path = "deps/trade-executor", develop = true, extras=["qstrader", "execution", "web-server"]}
 
-[tool.poetry.dev-dependencies]
-ipdb = "^0.13.9"
-
 [tool.poetry.group.dev.dependencies]
+ipdb = "^0.13.9"
 pre-commit = "^3.3.3"
 
 [build-system]

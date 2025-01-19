@@ -55,64 +55,37 @@ Install the client and its dependencies using `Poetry <https://python-poetry.org
     # - qstrader: still needed to run legacy unit tests
     poetry install --all-extras
 
-Configure Visual Studio Code to use Python interpreter from Poetry installation.
+    # Optionally specify Python version
+    poetry env use python3.11
 
-First in Poetry shell figure where Poetry installed the Python interpreter:
+    # Activate the virtual environment
+    poetry env activate
+
+    # Run commands in the Poetry environment, e.g.:
+    poetry run ipython
+
+Configure Visual Studio Code
+---------------------------
+
+Install `Jupyter Visual Studio Code extension <https://code.visualstudio.com/docs/datascience/jupyter-notebooks>`_. 
+Choosing a black-on-white theme is recommended, because the default charts assume white background.
+
+To configure VS Code to use the Poetry Python interpreter:
 
 .. code-block:: shell
 
+    # Find the interpreter path
     poetry run which python
 
-This gives you the full path of `python` command like:
+This gives you the full path of `python` command, for example:
 
 .. code-block:: text
 
     /Users/moo/Library/Caches/pypoetry/virtualenvs/tradingstrategy-lMEetNwg-py3.8/bin/python
 
-Then use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option for the interpreter.
+Use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option.
 
-
-Now you can run `Getting started <https://tradingstrategy.ai/docs/programming/code-examples/getting-started.html>`_ and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
-
-.. image:: ./vscode.png
-    :alt: Visual Studio Code example how to run a Jupyter Notebook
-
-Local Python environment with git checkout
-------------------------------------------
-
-This is the recommended method for advanced strategy development.
-You can checkout the example code and run it on your local computer,
-using Visual Studio Code, PyCharm or other local Python editor.
-
-Install `Jupyter Visual Studio Code extension <https://code.visualstudio.com/docs/datascience/jupyter-notebooks>`_. Choosing a black-on-white theme recommended, because the default charts assume white background.
-
-Git clone the `Trading Strategy client repository from Github <https://github.com/tradingstrategy-ai/trading-strategy/>`_.
-
-Install the client and its dependencies using `Poetry <https://python-poetry.org/>`_:
-
-.. code-block:: shell
-
-    cd client
-    poetry shell
-    poetry install
-
-Configure Visual Studio Code to use Python interpreter from Poetry installation.
-
-First in Poetry shell figure where Poetry installed the Python interpreter:
-
-.. code-block:: shell
-
-    which python
-
-This gives you the full path of `python` command.
-
-.. code-block:: text
-
-    /Users/moo/Library/Caches/pypoetry/virtualenvs/tradingstrategy-lMEetNwg-py3.8/bin/python
-
-Then use Visual Studio Code *Python: Select Interpreter* command from *Command palette* to configure this interpreter by choosing *Enter interpreter path* option for the interpreter.
-
-Now you can run :ref:`Getting started <tutorial>` and other example notebooks. Open `ipynb` file in Visual Studio Code. Then choose *Run All* on the open notebook.
+Now you can run `Getting started <https://tradingstrategy.ai/docs/programming/code-examples/getting-started.html>`_ and other example notebooks. Open any `ipynb` file in Visual Studio Code and choose *Run All* on the open notebook.
 
 .. image:: ./vscode.png
     :alt: Visual Studio Code example how to run a Jupyter Notebook
