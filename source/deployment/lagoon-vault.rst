@@ -41,7 +41,7 @@ Secrets needed, give to the script via Docker compose environment variable files
     PRIVATE_KEY=
     ETHERSCAN_API_KEY=
 
-The deployment script:
+An example deployment script:
 
 .. code-block:: shell
 
@@ -57,12 +57,11 @@ The deployment script:
     #
     # To run:
     #
-    #   SIMULATE=true deploy/deploy-base-memex.sh
+    #   SIMULATE=true deploy/deploy-base-ath.sh
     #
 
+
     set -e
-    set -x
-    # set -u
 
     if [ "$SIMULATE" = "" ]; then
         echo "Set SIMULATE=true or SIMULATE=false"
@@ -74,17 +73,25 @@ The deployment script:
         exit 1
     fi
 
+    set -u
+
     # docker composer entry name
-    ID="base-memex"
+    ID="base-ath"
 
     # ERC-20 share token symbol
-    export FUND_SYMBOL="MEMEX"
+    export FUND_SYMBOL="ATH1"
 
     # ERC-20 share toke  name
-    export FUND_NAME="Memex memecoin index strategy (Base)"
+    export FUND_NAME="All-time high (Base)"
 
     # The vault is nominated in USDC on Base
     export DENOMINATION_ASSET="0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+
+    # 0%
+    export MANAGEMENT_FEE=0
+
+    #: 20%
+    export PERFORMANCE_FEE=2000
 
     # Set as the initial owners or deployed Safe + deployer will be threre
     # Safe signing threshold is number of cosigners minus one.
@@ -111,7 +118,11 @@ The deployment script:
         --any-asset \
         --uniswap-v2 \
         --uniswap-v3 \
-        --multisig-owners="$MULTISIG_OWNERS"
+        --multisig-owners="$MULTISIG_OWNERS" \
+        --performance-fee="$PERFORMANCE_FEE" \
+        --management-fee="$MANAGEMENT_FEE"
+
+
 
 Example output:
 
