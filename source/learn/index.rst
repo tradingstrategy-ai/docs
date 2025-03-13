@@ -25,6 +25,7 @@ Algorithmic trading learning resources
 .. toctree::
    :maxdepth: 1
 
+   influencers
    conference-presentations
    books
    courses
