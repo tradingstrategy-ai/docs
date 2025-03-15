@@ -3,11 +3,15 @@ Traders to follow
 
 Here are some quant trades to follow. They often share good insights and free alpha.
 
-Twitter (nowdays X)
+Twitter (now known as X)
 -------------------
 
 - `Pavel Kycek <https://x.com/PKycek/status/1898060523427508247>`__
 - `pedma <https://x.com/pedma7>`__
+- `rysky.eth <https://x.com/RyskyGeronimo/>`__
+- `Andreas Himmelreich <https://x.com/GfI_Himmelreich>`__
+- `Systematic Peter <https://x.com/SystematicPeter>`__
+- `QuantSeeker <https://x.com/quantseeker>`__
 
 LinkedIn
 --------
