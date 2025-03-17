@@ -12,6 +12,7 @@ Twitter (now known as X)
 - `Andreas Himmelreich <https://x.com/GfI_Himmelreich>`__
 - `Systematic Peter <https://x.com/SystematicPeter>`__
 - `QuantSeeker <https://x.com/quantseeker>`__
+- `Robot James <https://x.com/therobotjames>`__
 
 LinkedIn
 --------
