@@ -3452,6 +3452,8 @@ and algorithmic trading.
 
         - :term:`Exposure`
 
+        - :term:`Volatility-Based Position Sizing`
+
     Statistical arbitrage
 
         Statistical arbitrage is a :term:`high-frequency trading` :term:`trading strategy` that uses statistical and quantitative techniques to identify and exploit pricing inefficiencies in financial markets.
@@ -6016,3 +6018,49 @@ and algorithmic trading.
 
         See :term:`Binary signal`.
 
+    Volatility-Based Position Sizing
+
+        Volatility-Based Position Sizing (VBPS) in :term:`quantitative finance` is a risk management technique used to determine the size of a trading position based on the :term:`volatility` of the asset being traded. The core idea is to adjust the position size inversely to the level of volatility: when volatility is high, the position size is reduced to limit risk exposure, and when volatility is low, the position size can be increased to take advantage of potentially more stable conditions. This approach aims to normalize risk across trades and maintain consistent risk exposure regardless of market conditions.
+
+        VBPS typically uses a measure of volatility—such as historical volatility, implied volatility, or the Average True Range (ATR)—to scale the position size. The goal is to ensure that the potential loss (or risk) per trade remains proportional to a predefined risk tolerance, often expressed as a percentage of the trading capital.
+        The basic formula for volatility-based position sizing can be expressed as:
+
+        `position size = risk amount / (volatility measure * price)`
+
+        Where:
+        - *Risk Amount*: The dollar amount or percentage of capital the trader is willing to risk (e.g., 1% of a $100,000 portfolio = $1,000).
+        - *Volatility Measure*: A metric like ATR or standard deviation of price returns, representing the asset’s typical price movement.
+        - *Price*: The current price of the asset.
+
+        Example: Suppose a trader has a $100,000 portfolio and is willing to risk 1% ($1,000) per trade. They’re trading a stock priced at $50, and the ATR (a common volatility measure) over the last 14 days is $2, indicating the stock’s typical daily price range.
+
+        `Risk per share = $2 (ATR).`
+
+        `Position size = $1,000 / $2 = 500 shares.`
+
+        So, the trader would buy 500 shares, ensuring the potential loss (based on volatility) aligns with their risk tolerance.
+
+        If the same stock’s ATR increases to $4 due to higher volatility, the position size adjusts:
+
+        `Position size = $1,000 / $4 = 250 shares.`
+
+        This reduces exposure as volatility rises.
+
+        Benefits
+        - Risk Consistency: Keeps risk uniform across trades, regardless of an asset’s price or volatility.
+        - Adaptability: Automatically adjusts to changing market conditions.
+        - Capital Preservation: Helps avoid oversized bets in turbulent markets.
+
+        VBPS is widely used in algorithmic trading and quantitative strategies, such as trend-following systems, mean-reversion models, or futures trading. It’s particularly popular in frameworks like the Kelly Criterion or when trading multiple assets with differing volatility profiles (e.g., forex pairs or commodities).
+
+        See also
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Volatility`
+
+        - :term:`Exposure`
+
+        - :term:`Stop loss`
