@@ -3418,7 +3418,13 @@ and algorithmic trading.
 
         A signal that predicts the future price movement.
 
-        For the full description, see :term:`alpha signal`.
+        Different signals can include
+
+        - :term:`Continuous signal`
+
+        - :term:`Binary signal`
+
+        - :term:`Alpha signal` in :term:`portfolio construction` :term:`trading strategies <trading strategy>`
 
     Stop loss
 
@@ -5958,4 +5964,55 @@ and algorithmic trading.
         - :term:`EVM`
 
         - :term:`Lagoon`
+
+    Continuous signal
+
+        In :term:`algorithmic trading`, a *continuous signal* is a :term:`trading signal`, which refers to a type of trading signal that provides ongoing, real-time, or frequently updated information about market conditions or asset behavior, as opposed to discrete signals that occur at specific intervals or events. These signals are typically derived from mathematical models, technical indicators, or data analysis and are used to inform automated trading decisions.
+
+        A continuous signal could represent a value that changes smoothly over time, such as a moving average, a volatility measure, or a trend strength indicator. For example, a trading algorithm might use a continuous signal like the difference between two exponential moving averages (:term:`EMAs <EMA>`) to determine whether to buy, sell, or hold a position. As market data (e.g., price, volume) updates in real time, the signal adjusts accordingly, allowing the algorithm to react dynamically to market movements.
+
+        The advantage of continuous signals in algorithmic trading is their ability to provide a constant stream of insights, enabling systems to adapt quickly to changing conditions without waiting for predefined triggers or time-based events. They are often used in high-frequency trading (HFT) or strategies that require precise timing and responsiveness.
+
+        See also
+
+        - :term:`Trading signal`
+
+        - :term:`Binary signal`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Trading strategy`
+
+        - :term:`Trading strategy`
+
+    Binary signal
+
+        In :term:`algorithmic trading`, a binary signal is a type of :term:`trading signal` that provides a simple, discrete output with only two possible states—typically represented as 0 or 1, yes or no, or buy or sell. Unlike continuous signals, which vary smoothly over time and offer a range of values, binary signals are straightforward and event-driven, indicating a clear action or condition based on predefined criteria.
+
+        For example, a binary signal might be generated when a specific threshold is crossed, such as:
+
+        - 1 (Buy) if the price of an asset rises above its 50-day moving average, and 0 (Sell or Hold) if it falls below.
+        - 1 (Enter Trade) if a momentum indicator exceeds a certain value, and 0 (Exit or Do Nothing) if it doesn’t.
+
+        These signals are often derived from technical indicators, market data, or rules-based logic in the :term:`trading algorithm`. Their simplicity makes them especially useful for automated systems that need clear, unambiguous instructions to execute trades without hesitation.
+
+        In practice, binary signals are common in strategies like :term:`trend-following` or breakout systems, where the algorithm needs to act decisively on specific market events. However, their limitation is that they don’t convey nuance or magnitude—only the presence or absence of a condition.
+
+        See also
+
+        - :term:`Trading signal`
+
+        - :term:`Continuous signal`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Trading strategy`
+
+        - :term:`Trading strategy`
+
+    Discrete signal
+
+        Discrete signal is the same as :term:`binary signal` in :term:`algorithmic trading`.
+
+        See :term:`Binary signal`.
 
