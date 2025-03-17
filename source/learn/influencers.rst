@@ -18,4 +18,6 @@ LinkedIn
 
 - `Nick Francis <https://www.linkedin.com/in/nick-francis-73542a6/>`__
 - `Lucas Inglese <https://www.linkedin.com/in/lucas-inglese-75574817b/>`__
+- `Kurtis Hemmerling <https://www.linkedin.com/in/hemmerlingkurtis/>`__
+- `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 
