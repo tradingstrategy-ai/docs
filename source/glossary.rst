@@ -6071,7 +6071,7 @@ and algorithmic trading.
 
         Hyperliquidity Provider (HLP) is a protocol vault that does :term:`market making` and liquidations and receives a portion of trading fees.
 
-        The HLP vault operates as a community-owned liquidity pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across Hyperliquid’s trading pairs. These strategies involve
+        The HLP vault operates as a community-owned :term:`liquidity` pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across Hyperliquid’s trading pairs. These strategies involve
 
         - Placing buy and sell orders on the order book to provide liquidity
 
@@ -6088,6 +6088,8 @@ and algorithmic trading.
         - :term:`Vault`
 
         - :term:`Market making`
+
+        - :term:`Liquidity`
 
         - :term:`Market neutral <Market neutral strategy>`
 
