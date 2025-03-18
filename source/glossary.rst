@@ -6064,3 +6064,35 @@ and algorithmic trading.
         - :term:`Exposure`
 
         - :term:`Stop loss`
+
+    Hyperliquid Provider Vault
+
+        Hyperliquid Provider (HLP) is a :term:`decentralised finance` :term:`vault` on Hyperliquid :term:`DEX`.
+
+        Hyperliquidity Provider (HLP) is a protocol vault that does market making and liquidations and receives a portion of trading fees.
+
+        The HLP vault operates as a community-owned liquidity pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across Hyperliquid’s trading pairs. These strategies involve
+        - Placing buy and sell orders on the order book to provide liquidity
+        - Earning profits from the bid-ask spread, trading fees, and funding rates paid by traders.
+        - The vault also handles liquidations, taking over positions from traders who get liquidated and profiting (or losing) based on how those positions are managed.
+
+        The market-making :term:`strategy <trading strategy>` is proprietary and managed by Hyperliquid’s team, who come from a market-making background. While the exact details of the strategy aren’t public, it’s known to involve :term:`high-frequency <high-frequency trading>`, :term:`mean-reverting <mean reversion>` trades that aim to profit from short-term price movements. The vault provides liquidity by acting as a counterparty to trades when needed, but it doesn’t take every trade—other users or external market makers can also fill orders. Historically, HLP has often maintained a net short position, which has been profitable in bull markets when retail traders tend to go long.
+
+        Deposits into the HLP vault have a 4-day lock-up period, meaning you can only withdraw funds 4 days after your most recent deposit. This ensures stability for the vault’s operations. The vault’s performance isn’t guaranteed—profits depend on market conditions and the success of the strategy. Risks include losses from adverse market moves or liquidations that don’t work out in the vault’s favor, as seen in a notable $4 million loss event in March 2025, where a trader exploited liquidation mechanics to offload a large position.
+
+        See also
+
+        - :term:`Vault`
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        - :term:`Delta neutral`
+
+        - :term:`Stop loss`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`AMM`
+
