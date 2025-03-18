@@ -6081,7 +6081,7 @@ and algorithmic trading.
 
         The market-making :term:`strategy <trading strategy>` is proprietary and managed by Hyperliquid’s team, who come from a market-making background. While the exact details of the strategy aren’t public, it’s known to involve :term:`high-frequency <high-frequency trading>`, :term:`mean-reverting <mean reversion>` trades that aim to profit from short-term price movements. The vault provides liquidity by acting as a counterparty to trades when needed, but it doesn’t take every trade—other users or external market makers can also fill orders. Historically, HLP has often maintained a net short position, which has been profitable in bull markets when retail traders tend to go long.
 
-        Deposits into the HLP vault have a 4-day lock-up period, meaning you can only withdraw funds 4 days after your most recent deposit. This ensures stability for the vault’s operations. The vault’s performance isn’t guaranteed—profits depend on market conditions and the success of the strategy. Risks include losses from adverse market moves or liquidations that don’t work out in the vault’s favor, as seen in a notable $4 million loss event in March 2025, where a trader exploited liquidation mechanics to offload a large position.
+        Deposits into the HLP vault have a 4-day lock-up period, meaning you can only withdraw funds 4 days after your most recent deposit. This ensures stability for the vault’s operations. The vault’s performance isn’t guaranteed—profits depend on market conditions and the success of the strategy. Risks include losses from adverse market moves or liquidations that don’t work out in the vault’s favor, as seen in a notable $4 million loss event in March 2025, where a trader exploited liquidation mechanics to offload a large :term:`position`.
 
         See also
 
@@ -6094,8 +6094,6 @@ and algorithmic trading.
         - :term:`Market neutral <Market neutral strategy>`
 
         - :term:`Delta neutral`
-
-        - :term:`Stop loss`
 
         - :term:`Quantitative finance`
 
