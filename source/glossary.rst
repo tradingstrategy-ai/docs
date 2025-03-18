@@ -6067,13 +6067,16 @@ and algorithmic trading.
 
     Hyperliquid Provider Vault
 
-        Hyperliquid Provider (HLP) is a :term:`decentralised finance` :term:`vault` on Hyperliquid :term:`DEX`.
+        Hyperliquid Provider (HLP) is a :term:`decentralised finance` market making :term:`vault` on Hyperliquid :term:`DEX`.
 
-        Hyperliquidity Provider (HLP) is a protocol vault that does market making and liquidations and receives a portion of trading fees.
+        Hyperliquidity Provider (HLP) is a protocol vault that does :term:`market making` and liquidations and receives a portion of trading fees.
 
         The HLP vault operates as a community-owned liquidity pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across Hyperliquid’s trading pairs. These strategies involve
+
         - Placing buy and sell orders on the order book to provide liquidity
+
         - Earning profits from the bid-ask spread, trading fees, and funding rates paid by traders.
+
         - The vault also handles liquidations, taking over positions from traders who get liquidated and profiting (or losing) based on how those positions are managed.
 
         The market-making :term:`strategy <trading strategy>` is proprietary and managed by Hyperliquid’s team, who come from a market-making background. While the exact details of the strategy aren’t public, it’s known to involve :term:`high-frequency <high-frequency trading>`, :term:`mean-reverting <mean reversion>` trades that aim to profit from short-term price movements. The vault provides liquidity by acting as a counterparty to trades when needed, but it doesn’t take every trade—other users or external market makers can also fill orders. Historically, HLP has often maintained a net short position, which has been profitable in bull markets when retail traders tend to go long.
@@ -6083,6 +6086,8 @@ and algorithmic trading.
         See also
 
         - :term:`Vault`
+
+        - :term:`Market making`
 
         - :term:`Market neutral <Market neutral strategy>`
 
