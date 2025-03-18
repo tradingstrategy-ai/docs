@@ -3,8 +3,8 @@ Traders to follow
 
 Here are some quant trades to follow. They often share good insights and free alpha.
 
-Twitter (now known as X)
--------------------
+Quant trades on Twitter (now known as X)
+----------------------------------------
 
 - `Pavel Kycek <https://x.com/PKycek/status/1898060523427508247>`__
 - `pedma <https://x.com/pedma7>`__
@@ -13,12 +13,18 @@ Twitter (now known as X)
 - `Systematic Peter <https://x.com/SystematicPeter>`__
 - `QuantSeeker <https://x.com/quantseeker>`__
 - `Robot James <https://x.com/therobotjames>`__
+- `Chief Number Optimizer <https://x.com/arnaud710>`__
 
-LinkedIn
---------
+Quant trades on LinkedIn
+------------------------
 
 - `Nick Francis <https://www.linkedin.com/in/nick-francis-73542a6/>`__
 - `Lucas Inglese <https://www.linkedin.com/in/lucas-inglese-75574817b/>`__
 - `Kurtis Hemmerling <https://www.linkedin.com/in/hemmerlingkurtis/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
+
+Macro trades on Twitter
+-----------------------
+
+- `Michael J. Kramer <https://x.com/MichaelMOTTCM>`_
 
