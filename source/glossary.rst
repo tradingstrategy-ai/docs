@@ -5238,11 +5238,10 @@ and algorithmic trading.
         - Using different :term:`datasets <dataset>` for strategy backtesting and validation of the backtest,
           a usual method in :term:`machine learning`
 
-        - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`_ by
+        - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`__ by
           creating random asset prices where the behavior resembles the :term:`
 
-        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>__` and shifted
-          :term:`OHLCV` data.
+        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>`__ on :term:`OHLCV` data.
 
         See also
 

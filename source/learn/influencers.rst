@@ -14,6 +14,9 @@ Quant trades on Twitter (now known as X)
 - `QuantSeeker <https://x.com/quantseeker>`__
 - `Robot James <https://x.com/therobotjames>`__
 - `Chief Number Optimizer <https://x.com/arnaud710>`__
+- `Quant Science <https://x.com/quantscience_>`__
+- `Piotr Pomorski <https://x.com/PtrPomorski>`__
+- `Hakan <https://x.com/arcadia_eth/status/1902276472363954405>`__
 
 Quant trades on LinkedIn
 ------------------------
