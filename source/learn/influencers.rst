@@ -28,3 +28,8 @@ Macro trades on Twitter
 
 - `Michael J. Kramer <https://x.com/MichaelMOTTCM>`_
 
+Macro trades on LinkedIn
+------------------------
+
+- `Mitchell Askew <https://www.linkedin.com/in/mitchellaskew/>`__
+- `Charles-Henry Monchau <https://www.linkedin.com/in/charles-henry-monchau-cfa-cmt-caia-4003096/>`__
