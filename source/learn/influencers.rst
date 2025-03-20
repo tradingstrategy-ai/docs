@@ -1,7 +1,8 @@
-Traders to follow
-=================
+To follow
+=========
 
-Here are some quant trades to follow. They often share good insights and free alpha.
+Here are some quant trades and macro traders to follow, on Twitter and LinkedIn.
+They often share good insights into the markets, free :term:`alpha` and strategy ideas.
 
 Quant trades on Twitter (now known as X)
 ----------------------------------------
