@@ -5241,7 +5241,7 @@ and algorithmic trading.
         - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`__ by
           creating random asset prices where the behavior resembles the :term:`
 
-        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>`__ on :term:`OHLCV` data.
+        - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>`__ on    :term:`OHLCV` data.
 
         See also
 
