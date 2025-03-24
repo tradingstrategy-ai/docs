@@ -3312,9 +3312,9 @@ and algorithmic trading.
 
         - :term:`Continuous trading`
 
-        - :term:`Hierarchical Risk Parity`.
+        - :term:`Hierarchical Risk Parity`
 
-        - :term:`Mean-variance optimisation`.
+        - :term:`Mean-variance optimisation`
 
         - :term:`Trading strategy`
 
@@ -6225,7 +6225,7 @@ and algorithmic trading.
         1. Investors are rational and prefer lower risk for the same return.
         2. Returns follow a normal distribution (symmetrical, no extreme outliers).
         3. No transaction costs, taxes, or liquidity constraints.
-        4. Single-period investment horizon (no rebalancing over time).
+        4. Single-period investment horizon (no :term:`rebalancing <rebalance>` over time).
 
         **Implementation Steps**
 
@@ -6260,6 +6260,7 @@ and algorithmic trading.
         - :term:`Hierarchical Risk Parity`
         - :term:`Covariance matrix`
         - :term:`Sharpe`
+        - :term:`Rebalance`
 
 
 
