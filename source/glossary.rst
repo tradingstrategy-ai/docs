@@ -6082,6 +6082,8 @@ and algorithmic trading.
 
         Deposits into the HLP vault have a 4-day lock-up period, meaning you can only withdraw funds 4 days after your most recent deposit. This ensures stability for the vault’s operations. The vault’s performance isn’t guaranteed—profits depend on market conditions and the success of the strategy. Risks include losses from adverse market moves or liquidations that don’t work out in the vault’s favor, as seen in a notable $4 million loss event in March 2025, where a trader exploited liquidation mechanics to offload a large :term:`position`.
 
+        On DyDx, the similar vault is called :term:`MegaVault`.
+
         See also
 
         - :term:`Vault`
@@ -6097,6 +6099,8 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Trading strategy`
+
+        - :term:`MegaVault`
 
         - :term:`AMM`
 
@@ -6262,8 +6266,45 @@ and algorithmic trading.
         - :term:`Sharpe`
         - :term:`Rebalance`
 
+    MegaVault
 
+        MegaVault is a feature on the dYdX :term:`perpetual future` :term:`DEX`, specifically within the dYdX Chain ecosystem, designed to enhance liquidity and provide users with a way to earn passive yield. It allows users to deposit :term`USDC` (a stablecoin pegged to the U.S. dollar) into a centralized liquidity pool, which is then used to support automated market-making strategies across various markets on the dYdX Chain. In return, depositors can earn yield from sources such as profits and losses (PnL) on vault positions, funding rate payments, and a share of the protocol’s trading fee revenue.
 
+        Here’s how MegaVault works at a high level:
+
+        - **Liquidity Provision**: When users deposit USDC into MegaVault, these funds are allocated to multiple “sub-vaults,” each tied to a specific market on dYdX. These sub-vaults employ automated market-making strategies to provide liquidity, ensuring smooth trading and sufficient market depth across the platform, including for newly listed markets.
+        - **Yield Generation**: Depositors earn a yield based on the performance of MegaVault’s market-making activities and a portion of the protocol’s revenue (e.g., trading fees). The yield is variable and depends on factors like market conditions, vault performance, and :term:`total value locked` (TVL) in the vault. For example, as more users deposit USDC, the yield may dilute across participants.
+        - **Flexibility**: Users can deposit USDC into MegaVault at any time and typically withdraw their funds whenever they choose, though withdrawals may incur “slippage” (a potential cost) depending on the vault’s positions and market conditions. In certain cases, such as deposits tied to launching new markets, funds may be locked for a period (e.g., 30 days), but this applies only to specific scenarios.
+        - **Governance and Operation**: Initially, MegaVault relies on an “operator” elected through dYdX’s governance process to manually manage tasks like allocating USDC between sub-vaults and adjusting market-making parameters (e.g., quoting strategies). Over time, these processes may become fully automated. The dYdX community also governs aspects like the share of protocol revenue allocated to MegaVault (currently set at 25% as of March 24, 2025, per recent community decisions).
+
+        MegaVault is a key part of the “dYdX Unlimited” upgrade, launched to address liquidity challenges in decentralized finance (DeFi), particularly for derivatives markets. It aims to make trading more efficient by ensuring liquidity is available instantly, even for permissionless market listings, while offering depositors a passive income opportunity without requiring active trading. However, it’s not risk-free—yields are not guaranteed, and losses are possible depending on market performance and vault strategies.
+
+        A similar vault on Hyperliquid is called :term:`Hyperliquid Provider Vault`. MegaVault market-making algorithms
+        are proprietary and `operated by Greave as writing of this <https://dydx.forum/t/proposal-to-set-greave-as-the-dydx-megavault-operator/3129>`__.
+
+        See also
+
+        - `MegaVault announcement <https://www.dydx.xyz/blog/deep-dive-megavault>`__
+
+        - `Megavault FAQ <https://help.dydx.trade/en/articles/240151-megavault-faq>`__
+
+        - :term:`Vault`
+
+        - :term:`Market making`
+
+        - :term:`Liquidity`
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        - :term:`Delta neutral`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - :term:`Hyperliquid Provider Vault`
+
+        - :term:`AMM`
 
 
 
