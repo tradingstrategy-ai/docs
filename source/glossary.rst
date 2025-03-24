@@ -6110,7 +6110,7 @@ and algorithmic trading.
 
         2. Recursive Bisection:
         - The hierarchical tree is split recursively into smaller sub-clusters.
-        - At each split, the algorithm calculates the total risk (variance) of the portfolio and allocates it inversely proportional to the risk contribution of each sub-cluster. This ensures that riskier clusters receive less weight.
+        - At each split, the algorithm calculates the total risk (:term:`variance`) of the portfolio and allocates it inversely proportional to the risk contribution of each sub-cluster. This ensures that riskier clusters receive less weight.
 
         3: Weight Allocation:
         - Portfolio weights are assigned at the asset level by propagating the risk allocations back through the hierarchy.

@@ -119,3 +119,17 @@ Gekko is an open source platform for automating trading strategies over bitcoin 
 
 `View Gekko homepage <https://gekko.wizb.it/>`__.
 
+HftBacktest
+-----------
+
+This framework is designed for developing high-frequency trading and market-making strategies. It focuses on accounting for both feed and order latencies, as well as the order queue position for order fill simulation. The framework aims to provide more accurate market replay-based backtesting, based on full order book and trade tick feed data.
+
+Written in Python and Rust.
+
+- Complete tick-by-tick simulation with a variable time interval.
+- Full order book reconstruction based on L2 feeds(Market-By-Price).
+- Backtest accounting for both feed and order latency, using provided models or your own custom model.
+- Order fill simulation that takes into account the order queue position, using provided models or your own custom model.
+
+`View homepage <https://hftbacktest.readthedocs.io/en/v1.8.4/>`__.
+
