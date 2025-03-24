@@ -6103,18 +6103,16 @@ and algorithmic trading.
 
         **Steps in HRP**
 
-        1. Hierarchical Clustering:
-        - Start with the correlation matrix of asset returns.
-        - Use a clustering algorithm (often based on a distance metric derived from correlations) to group assets into a hierarchical tree (dendrogram). Assets with similar behavior (high correlation) are clustered together, while dissimilar assets are separated.
-        - This process doesn’t require predefined clusters—it dynamically identifies relationships based on the data.
-
-        2. Recursive Bisection:
-        - The hierarchical tree is split recursively into smaller sub-clusters.
-        - At each split, the algorithm calculates the total risk (:term:`variance`) of the portfolio and allocates it inversely proportional to the risk contribution of each sub-cluster. This ensures that riskier clusters receive less weight.
-
-        3: Weight Allocation:
-        - Portfolio weights are assigned at the asset level by propagating the risk allocations back through the hierarchy.
-        - The result is a set of weights where risk is distributed more evenly across the portfolio, avoiding over-concentration in any single asset or group of assets.
+        1. *Hierarchical Clustering*:
+            - Start with the correlation matrix of asset returns.
+            - Use a clustering algorithm (often based on a distance metric derived from correlations) to group assets into a hierarchical tree (dendrogram). Assets with similar behavior (high correlation) are clustered together, while dissimilar assets are separated.
+            - This process doesn’t require predefined clusters—it dynamically identifies relationships based on the data.
+        2. *Recursive Bisection*:
+            - The hierarchical tree is split recursively into smaller sub-clusters.
+            - At each split, the algorithm calculates the total risk (:term:`variance`) of the portfolio and allocates it inversely proportional to the risk contribution of each sub-cluster. This ensures that riskier clusters receive less weight.
+        3. *Weight Allocation*:
+            - Portfolio weights are assigned at the asset level by propagating the risk allocations back through the hierarchy.
+            - The result is a set of weights where risk is distributed more evenly across the portfolio, avoiding over-concentration in any single asset or group of assets.
 
         **Advantages of HRP**
 
@@ -6127,7 +6125,7 @@ and algorithmic trading.
 
         - *Correlation Focus*: HRP assumes the correlation matrix is a good representation of risk relationships, but this may not always hold (e.g., during market crises when correlations spike).
         - *No Return Optimization*: It doesn’t explicitly maximize expected returns, which might be a drawback for investors with strong views on future performance.
-        - *Complexity: The clustering and recursive process can be computationally intensive for very large portfolios.
+        - *Complexity*: The clustering and recursive process can be computationally intensive for very large portfolios.
 
         **Example**
 
