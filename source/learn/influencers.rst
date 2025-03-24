@@ -19,6 +19,7 @@ Quant trades on Twitter (now known as X)
 - `Piotr Pomorski <https://x.com/PtrPomorski>`__
 - `Hakan <https://x.com/arcadia_eth/status/1902276472363954405>`__
 - `TradeQuantiX <https://x.com/TradeQuantiX>`__
+- `Stat Arb <https://x.com/quant_arb>`__
 
 Quant trades on LinkedIn
 ------------------------
