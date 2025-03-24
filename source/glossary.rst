@@ -3300,7 +3300,7 @@ and algorithmic trading.
 
         - **Asset allocation models** - to determine the optimal mix of asset classes (stocks, bonds, and commodities) in a portfolio, based on historical returns, volatility, and correlations.
 
-        - **Optimization techniques** - to identify the best combination of individual securities within each asset class, based on factors such as expected return, risk, and liquidity. Common techniques are mean-variance optimisation and :term:`Hierarchical Risk Parity`.
+        - **Optimization techniques** - to identify the best combination of individual securities within each asset class, based on factors such as expected return, risk, and liquidity. Common techniques are :term:`mean-variance optimisation` and :term:`Hierarchical Risk Parity`.
 
         - **Risk management tools** - such as :term:`stop-loss orders <stop loss>`, hedging strategies, and diversification techniques, to manage portfolio risk and reduce exposure to individual assets or market risks
 
@@ -3313,6 +3313,8 @@ and algorithmic trading.
         - :term:`Continuous trading`
 
         - :term:`Hierarchical Risk Parity`.
+
+        - :term:`Mean-variance optimisation`.
 
         - :term:`Trading strategy`
 
@@ -6100,7 +6102,7 @@ and algorithmic trading.
 
     Hierarchical Risk Parity
 
-        In :term:`quantitative finance` and - :term:`portfolio construction`, Hierarchical Risk Parity (HRP) is a portfolio optimization that aims to allocate risk more effectively across assets compared to traditional methods like mean-variance optimization.
+        In :term:`quantitative finance` and :term:`portfolio construction`, Hierarchical Risk Parity (HRP) is a portfolio optimization that aims to allocate risk more effectively across assets compared to traditional methods like :term:`mean-variance optimisation`.
 
         Developed by Marcos López de Prado, HRP leverages the hierarchical structure of asset correlations to create diversified portfolios that are less sensitive to estimation errors in expected returns and covariance matrices.
 
@@ -6124,7 +6126,7 @@ and algorithmic trading.
         **Advantages of HRP**
 
         - *Robustness*: It reduces reliance on fragile inputs like expected returns, focusing instead on the covariance structure, which is easier to estimate accurately.
-        - *Diversification*: By balancing risk across clusters, HRP avoids the extreme concentration often seen in mean-variance optimization (e.g., putting all weight in a few assets).
+        - *Diversification*: By balancing risk across clusters, HRP avoids the extreme concentration often seen in :term:`mean-variance optimisation` (e.g., putting all weight in a few assets).
         - *No Matrix Inversion*: Unlike Markowitz’s mean-variance optimization, HRP doesn’t require inverting the covariance matrix, which can be unstable when assets are highly correlated or the matrix is ill-conditioned.
         - *Intuitive*: The hierarchical structure reflects natural groupings in the market (e.g., sectors, asset classes), making it easier to interpret.
 
@@ -6166,6 +6168,8 @@ and algorithmic trading.
 
         - :term:`Variance`
 
+        - :term:`Mean-variance optimisation`
+
         - :term:`Covariance matrix`
 
     Covariance matrix
@@ -6188,7 +6192,74 @@ and algorithmic trading.
         - :term:`Portfolio construction`
         - :term:`Volatility`
         - :term:`Variance`
-        - :term:`Hierarchical Risk Parity`.
+        - :term:`Hierarchical Risk Parity`
+
+    Mean-Variance Optimisation
+
+        In :term:`quantitative finance`, Mean-Variance Optimization (MVO) is a :term:`portfolio construction` framework that balances risk and return. Developed by Harry Markowitz in 1952, it underpins Modern Portfolio Theory (MPT) and emphasizes diversification to achieve efficient portfolios.
+
+        **Key Concepts**
+
+        - **Mean (Expected Return)**: The average return an asset is anticipated to generate.
+        - :term:`Variance` (Risk): A measure of how much an asset’s returns fluctuate over time.
+        - **Covariance**: Indicates how two assets’ returns move relative to each other (e.g., rising or falling together).
+        - **Efficient Frontier**: A curve representing portfolios that offer the highest return for a specific risk level or the lowest risk for a target return.
+
+        **Portfolio Return and Risk**
+
+        - The expected return of a portfolio is the weighted average of its individual assets’ returns.
+        - Portfolio risk depends not only on individual asset risks but also on how assets interact (covariance). Diversification reduces risk when assets are not perfectly correlated.
+
+        **Optimization Goal**
+
+        - Maximize returns for a given risk tolerance **or** minimize risk for a target return.
+        - Investors specify constraints, such as budget limits (weights summing to 100%) or restrictions on short-selling.
+
+        **Efficient Frontier**
+
+        - Portfolios on the efficient frontier are optimal—no other portfolio offers a better risk-return tradeoff.
+        - Lower correlation between assets improves diversification, pushing the frontier upward (higher returns for the same risk).
+
+        **Assumptions**
+
+        1. Investors are rational and prefer lower risk for the same return.
+        2. Returns follow a normal distribution (symmetrical, no extreme outliers).
+        3. No transaction costs, taxes, or liquidity constraints.
+        4. Single-period investment horizon (no rebalancing over time).
+
+        **Implementation Steps**
+
+        1. **Estimate Inputs**: Forecast expected returns, risks (variances), and pairwise covariances for all assets.
+        2. **Define Constraints**: Ensure portfolio weights add to 100% and comply with restrictions (e.g., no short-selling).
+        3. **Optimize**: Use computational tools to find weights that align with the investor’s :term:`risk-adjusted return` goals.
+
+        **Limitations**
+
+        - **Input Sensitivity**: Small errors in return or covariance estimates can drastically alter the optimal portfolio.
+        - **Simplified Risk Measure**: Variance ignores tail risks (e.g., market crashes) and liquidity risks.
+        - **Static Approach**: Assumes market conditions and investor goals remain constant over time.
+        - **Normality Assumption**: Real-world returns often exhibit skewness and fat tails.
+
+        **Extensions and Alternatives**
+
+        - :term:`Hierarchical Risk Parity`: Allocates risk equally across assets instead of capital.
+        - **Black-Litterman Model**: Combines market equilibrium with investor views.
+        - **Tangency Portfolio**: Maximizes return per unit of risk (:term:`Sharpe` ratio).
+        - **Multi-Period Models**: Address dynamic rebalancing and changing goals.
+
+        See also
+
+        - `Modern portfolio theory on Wikipedia <https://en.wikipedia.org/wiki/Modern_portfolio_theory>`__
+        - :term:`Quantitative finance`
+        - :term:`Quantitative finance`
+        - :term:`Trading strategy`
+        - :term:`Portfolio construction`
+        - :term:`Risk-adjusted return`
+        - :term:`Volatility`
+        - :term:`Variance`
+        - :term:`Hierarchical Risk Parity`
+        - :term:`Covariance matrix`
+        - :term:`Sharpe`
 
 
 
