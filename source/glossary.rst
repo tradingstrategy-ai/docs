@@ -6145,6 +6145,7 @@ and algorithmic trading.
         In practice, if tech stocks are volatile, HRP might give them a lower total weight compared to a naive equal-weight approach, but it would still diversify within the tech cluster to avoid over-reliance on a single stock.
 
         Comparison to Other Methods
+
         - *Equal Weighting*: Simpler but ignores risk and correlation.
         - *Mean-Variance Optimization*: Optimizes for return and risk but is sensitive to input errors.
         - *Risk Parity*: Allocates risk equally across assets but doesn’t account for hierarchical relationships like HRP does.
@@ -6172,26 +6173,21 @@ and algorithmic trading.
         In :term:`quantitative finance`, a covariance matrix is a mathematical tool used to describe the relationships between the returns of multiple assets in a portfolio. It’s a square matrix that captures both the variance of individual asset returns (how much each asset’s returns fluctuate) and the covariance between pairs of assets (how their returns move together). This matrix is a cornerstone of :term:`portfolio theory <portfolio construction>`, especially in risk management and optimization techniques like mean-variance analysis or :term:`Hierarchical Risk Parity`.
 
         **Role in Quantitative Finance**
+
         - *Portfolio Risk Calculation*: This captures both individual asset risks and how they interact, allowing for diversification benefits (negative or low covariances reduce total risk).
         - *Optimization*: In mean-variance optimization (Markowitz), the covariance matrix helps find the portfolio with the minimum risk for a given return or the maximum return for a given risk.
         - *Hierarchical Risk Parity*: it’s used to cluster assets and allocate risk based on their correlation structure.
         - *Diversification*: Assets with low or negative covariance provide diversification, reducing portfolio risk. The covariance matrix quantifies these relationships.
-        - **Statistical arbitrage (stat arb)**: the covariance matrix plays a critical role in identifying and exploiting pricing inefficiencies in financial markets while managing risk. Stat arb strategies rely on statistical relationships between asset prices or returns, often using mean-reverting properties, and the covariance matrix helps quantify these relationships, assess portfolio risk, and optimize positions.
+        - *Statistical arbitrage (stat arb)*: the covariance matrix plays a critical role in identifying and exploiting pricing inefficiencies in financial markets while managing risk. Stat arb strategies rely on statistical relationships between asset prices or returns, often using mean-reverting properties, and the covariance matrix helps quantify these relationships, assess portfolio risk, and optimize positions.
 
         See also
 
         - `Covariance matrix <https://en.wikipedia.org/wiki/Covariance_matrix>`__
-
         - :term:`Quantitative finance`
-
         - :term:`Trading strategy`
-
         - :term:`Portfolio construction`
-
         - :term:`Volatility`
-
         - :term:`Variance`
-
         - :term:`Hierarchical Risk Parity`.
 
 
