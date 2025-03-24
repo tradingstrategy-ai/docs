@@ -6083,12 +6083,19 @@ and algorithmic trading.
         See also
 
         - :term:`Vault`
+
         - :term:`Market making`
+
         - :term:`Liquidity`
+
         - :term:`Market neutral <Market neutral strategy>`
+
         - :term:`Delta neutral`
+
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+
         - :term:`AMM`
 
     Hierarchical Risk Parity
@@ -6145,12 +6152,19 @@ and algorithmic trading.
         HRP strikes a balance—it’s more sophisticated than basic risk parity and more practical than mean-variance optimization, making it popular in modern portfolio management, especially for large, complex portfolios.
 
         See also
+
         - `Hierarchical Risk Parity on Wikipedia <https://en.wikipedia.org/wiki/Hierarchical_Risk_Parity>`__
+
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+
         - :term:`Rebalance`
+
         - :term:`Volatility`
+
         - :term:`Variance`
+
         - :term:`Covariance matrix`
 
     Covariance matrix
@@ -6165,12 +6179,19 @@ and algorithmic trading.
         - **Statistical arbitrage (stat arb)**: the covariance matrix plays a critical role in identifying and exploiting pricing inefficiencies in financial markets while managing risk. Stat arb strategies rely on statistical relationships between asset prices or returns, often using mean-reverting properties, and the covariance matrix helps quantify these relationships, assess portfolio risk, and optimize positions.
 
         See also
+
         - `Covariance matrix <https://en.wikipedia.org/wiki/Covariance_matrix>`__
+
         - :term:`Quantitative finance`
+
         - :term:`Trading strategy`
+
         - :term:`Portfolio construction`
+
         - :term:`Volatility`
+
         - :term:`Variance`
+
         - :term:`Hierarchical Risk Parity`.
 
 
