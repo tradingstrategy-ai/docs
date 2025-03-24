@@ -27,6 +27,7 @@ Quant trades on LinkedIn
 - `Lucas Inglese <https://www.linkedin.com/in/lucas-inglese-75574817b/>`__
 - `Kurtis Hemmerling <https://www.linkedin.com/in/hemmerlingkurtis/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
+- `Doug Busch <https://www.linkedin.com/in/doug-busch-cmt-8531471b/>`__
 
 Macro trades on Twitter
 -----------------------
@@ -36,6 +37,7 @@ Macro trades on Twitter
 - `Robin Brooks <https://x.com/robin_j_brooks>`__
 - `Michael Antonelli <https://x.com/BullandBaird>`__
 - `Kacper Piotr Kaminski <https://x.com/Kacper_PK_CH>`__
+
 Macro trades on LinkedIn
 ------------------------
 
@@ -44,3 +46,5 @@ Macro trades on LinkedIn
 - `Dr. Maximilian Bader <https://www.linkedin.com/in/drmaximilianbader/>`__
 - `Alfonso Peccatiello <https://www.linkedin.com/in/alfonso-peccatiello-72156a6a/>`__
 - `Robert Karas <https://www.linkedin.com/in/robertkaras/>`__
+- `Mario Ottaiano <https://www.linkedin.com/in/marioottaiano/>`__
+- `John Reade <https://www.linkedin.com/in/johnreade/>`__

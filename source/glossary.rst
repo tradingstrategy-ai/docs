@@ -3300,13 +3300,11 @@ and algorithmic trading.
 
         - **Asset allocation models** - to determine the optimal mix of asset classes (stocks, bonds, and commodities) in a portfolio, based on historical returns, volatility, and correlations.
 
-        - **Optimization techniques** - to identify the best combination of individual securities within each asset class, based on factors such as expected return, risk, and liquidity.
+        - **Optimization techniques** - to identify the best combination of individual securities within each asset class, based on factors such as expected return, risk, and liquidity. Common techniques are mean-variance optimisation and :term:`Hierarchical Risk Parity`.
 
         - **Risk management tools** - such as :term:`stop-loss orders <stop loss>`, hedging strategies, and diversification techniques, to manage portfolio risk and reduce exposure to individual assets or market risks
 
         - :term:`Alpha generation strategies <alpha model>` - such as :term:`factor investing`, :term:`statistical arbitrage`, and :term:`trend-following`, to identify assets that are likely to outperform or underperform the broader market.
-
-        - :term:`Volatility basket` is a specific portfolio construction strategy that focuses on the :term:`volatility` of the assets
 
         See also
 
@@ -3314,7 +3312,7 @@ and algorithmic trading.
 
         - :term:`Continuous trading`
 
-        - :term:`Volatility basket`
+        - :term:`Hierarchical Risk Parity`.
 
         - :term:`Trading strategy`
 
@@ -6085,18 +6083,106 @@ and algorithmic trading.
         See also
 
         - :term:`Vault`
-
         - :term:`Market making`
-
         - :term:`Liquidity`
-
         - :term:`Market neutral <Market neutral strategy>`
-
         - :term:`Delta neutral`
-
         - :term:`Quantitative finance`
-
         - :term:`Trading strategy`
-
         - :term:`AMM`
+
+    Hierarchical Risk Parity
+
+        In :term:`quantitative finance` and - :term:`portfolio construction`, Hierarchical Risk Parity (HRP) is a portfolio optimization that aims to allocate risk more effectively across assets compared to traditional methods like mean-variance optimization.
+
+        Developed by Marcos López de Prado, HRP leverages the hierarchical structure of asset correlations to create diversified portfolios that are less sensitive to estimation errors in expected returns and covariance matrices.
+
+        **Key Concept**
+
+        HRP focuses on risk allocation rather than capital allocation alone. It uses the correlation structure of assets to group them into clusters and then allocates risk (typically measured as :term:`variance` or :term:`volatility`) across these clusters in a balanced way. Unlike traditional methods that rely heavily on precise estimates of expected returns (which are notoriously hard to predict), HRP primarily depends on the :term:`covariance matrix`, which is relatively more stable.
+
+        **Steps in HRP**
+
+        1. Hierarchical Clustering:
+        - Start with the correlation matrix of asset returns.
+        - Use a clustering algorithm (often based on a distance metric derived from correlations) to group assets into a hierarchical tree (dendrogram). Assets with similar behavior (high correlation) are clustered together, while dissimilar assets are separated.
+        - This process doesn’t require predefined clusters—it dynamically identifies relationships based on the data.
+
+        2. Recursive Bisection:
+        - The hierarchical tree is split recursively into smaller sub-clusters.
+        - At each split, the algorithm calculates the total risk (variance) of the portfolio and allocates it inversely proportional to the risk contribution of each sub-cluster. This ensures that riskier clusters receive less weight.
+
+        3: Weight Allocation:
+        - Portfolio weights are assigned at the asset level by propagating the risk allocations back through the hierarchy.
+        - The result is a set of weights where risk is distributed more evenly across the portfolio, avoiding over-concentration in any single asset or group of assets.
+
+        **Advantages of HRP**
+
+        - *Robustness*: It reduces reliance on fragile inputs like expected returns, focusing instead on the covariance structure, which is easier to estimate accurately.
+        - *Diversification*: By balancing risk across clusters, HRP avoids the extreme concentration often seen in mean-variance optimization (e.g., putting all weight in a few assets).
+        - *No Matrix Inversion*: Unlike Markowitz’s mean-variance optimization, HRP doesn’t require inverting the covariance matrix, which can be unstable when assets are highly correlated or the matrix is ill-conditioned.
+        - *Intuitive*: The hierarchical structure reflects natural groupings in the market (e.g., sectors, asset classes), making it easier to interpret.
+
+        **Limitations**
+
+        - *Correlation Focus*: HRP assumes the correlation matrix is a good representation of risk relationships, but this may not always hold (e.g., during market crises when correlations spike).
+        - *No Return Optimization*: It doesn’t explicitly maximize expected returns, which might be a drawback for investors with strong views on future performance.
+        - *Complexity: The clustering and recursive process can be computationally intensive for very large portfolios.
+
+        **Example**
+
+        Imagine a portfolio with stocks from tech (highly correlated within the sector) and bonds (less correlated with stocks). HRP would:
+
+        1. Cluster tech stocks together and bonds separately based on their correlation patterns.
+        2. Allocate risk between the tech cluster and bond cluster, ensuring neither dominates the portfolio’s risk profile.
+        3. Assign weights to individual assets within each cluster, balancing their contributions.
+
+        In practice, if tech stocks are volatile, HRP might give them a lower total weight compared to a naive equal-weight approach, but it would still diversify within the tech cluster to avoid over-reliance on a single stock.
+
+        Comparison to Other Methods
+        - *Equal Weighting*: Simpler but ignores risk and correlation.
+        - *Mean-Variance Optimization*: Optimizes for return and risk but is sensitive to input errors.
+        - *Risk Parity*: Allocates risk equally across assets but doesn’t account for hierarchical relationships like HRP does.
+
+        HRP strikes a balance—it’s more sophisticated than basic risk parity and more practical than mean-variance optimization, making it popular in modern portfolio management, especially for large, complex portfolios.
+
+        See also
+        - `Hierarchical Risk Parity on Wikipedia <https://en.wikipedia.org/wiki/Hierarchical_Risk_Parity>`__
+        - :term:`Quantitative finance`
+        - :term:`Trading strategy`
+        - :term:`Rebalance`
+        - :term:`Volatility`
+        - :term:`Variance`
+        - :term:`Covariance matrix`
+
+    Covariance matrix
+
+        In :term:`quantitative finance`, a covariance matrix is a mathematical tool used to describe the relationships between the returns of multiple assets in a portfolio. It’s a square matrix that captures both the variance of individual asset returns (how much each asset’s returns fluctuate) and the covariance between pairs of assets (how their returns move together). This matrix is a cornerstone of :term:`portfolio theory <portfolio construction>`, especially in risk management and optimization techniques like mean-variance analysis or :term:`Hierarchical Risk Parity`.
+
+        **Role in Quantitative Finance**
+        - *Portfolio Risk Calculation*: This captures both individual asset risks and how they interact, allowing for diversification benefits (negative or low covariances reduce total risk).
+        - *Optimization*: In mean-variance optimization (Markowitz), the covariance matrix helps find the portfolio with the minimum risk for a given return or the maximum return for a given risk.
+        - *Hierarchical Risk Parity*: it’s used to cluster assets and allocate risk based on their correlation structure.
+        - *Diversification*: Assets with low or negative covariance provide diversification, reducing portfolio risk. The covariance matrix quantifies these relationships.
+        - **Statistical arbitrage (stat arb)**: the covariance matrix plays a critical role in identifying and exploiting pricing inefficiencies in financial markets while managing risk. Stat arb strategies rely on statistical relationships between asset prices or returns, often using mean-reverting properties, and the covariance matrix helps quantify these relationships, assess portfolio risk, and optimize positions.
+
+        See also
+        - `Covariance matrix <https://en.wikipedia.org/wiki/Covariance_matrix>`__
+        - :term:`Quantitative finance`
+        - :term:`Trading strategy`
+        - :term:`Portfolio construction`
+        - :term:`Volatility`
+        - :term:`Variance`
+        - :term:`Hierarchical Risk Parity`.
+
+
+
+
+
+
+
+
+
+
+
 
