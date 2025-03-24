@@ -28,6 +28,7 @@ Quant trades on LinkedIn
 - `Kurtis Hemmerling <https://www.linkedin.com/in/hemmerlingkurtis/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 - `Doug Busch <https://www.linkedin.com/in/doug-busch-cmt-8531471b/>`__
+- `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 
 Macro trades on Twitter
 -----------------------

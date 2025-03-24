@@ -6153,7 +6153,7 @@ and algorithmic trading.
         Comparison to Other Methods
 
         - *Equal Weighting*: Simpler but ignores risk and correlation.
-        - *Mean-Variance Optimization*: Optimizes for return and risk but is sensitive to input errors.
+        - :term:`Mean-Variance Optimisation`: Optimises for return and risk but is sensitive to input errors.
         - *Risk Parity*: Allocates risk equally across assets but doesn’t account for hierarchical relationships like HRP does.
 
         HRP strikes a balance—it’s more sophisticated than basic risk parity and more practical than mean-variance optimization, making it popular in modern portfolio management, especially for large, complex portfolios.
