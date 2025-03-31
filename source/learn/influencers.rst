@@ -20,6 +20,7 @@ Quant trades on Twitter (now known as X)
 - `Hakan <https://x.com/arcadia_eth/status/1902276472363954405>`__
 - `TradeQuantiX <https://x.com/TradeQuantiX>`__
 - `Stat Arb <https://x.com/quant_arb>`__
+- `Zion Trading Algos <https://x.com/ZionAlgos>`__
 
 Quant trades on LinkedIn
 ------------------------
@@ -30,6 +31,7 @@ Quant trades on LinkedIn
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 - `Doug Busch <https://www.linkedin.com/in/doug-busch-cmt-8531471b/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
+- `Aditya Narayan Garnaik <https://www.linkedin.com/in/aditya-narayan-garnaik-b551b5212/>`__
 
 Macro trades on Twitter
 -----------------------

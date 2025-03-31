@@ -33,4 +33,5 @@ to choose how you wish to run it, see :ref:`live trading modes`.
    backtest-vs-live-execution
    troubleshooting
    repair
+   wallet-operations
 
