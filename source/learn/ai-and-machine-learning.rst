@@ -226,6 +226,33 @@ slightly better and has lower variation results on average.
 
 `Read the paper <https://www.academia.edu/82633717/Multivariate_cryptocurrency_prediction_comparative_analysis_of_three_recurrent_neural_networks_approaches?email_work_card=title>`__.
 
+Portfolio Optimization Strategies: New Approaches Based on Machine Learning Forecasting
+---------------------------------------------------------------------------------------
+
+This study provides an in-depth discussion and comprehensive review of the latest applications of machine learning techniques in the field of portfolio optimization. The article begins with an overview of traditional portfolio optimization theory and its limitations, and then focuses on how machine learning predictive models, which have flourished in recent years, can provide new perspectives and tools for solving the problems of non-linearity, dynamics and uncertainty in investment decision-making. This paper provides a detailed overview of the application practices of various machine learning algorithms (e.g., deep learning, reinforcement learning, integrated learning, etc.) in the areas of asset return prediction, risk assessment, and optimal weight allocation, and analyses their advantages and challenges compared to traditional methods. The analysis of relevant research cases reveals the significant effect of machine learning predictions in increasing expected portfolio returns, reducing risk exposure, and achieving effective diversification. The study also explores possible future trends and potential research directions for machine learning in portfolio optimization, highlighting the importance of combining domain knowledge with big data-driven intelligent investment decisions. This review aims to provide financial scholars and practitioners with a new way of thinking about portfolio optimization, and to promote the combination of theoretical research and practical operation in the fields of financial engineering and investment management, so as to achieve more accurate and efficient investment decisions.
+
+`Read the paper <https://www.researchgate.net/publication/383710710_Portfolio_Optimization_Strategies_New_Approaches_Based_on_Machine_Learning_Forecasting>`__.
+
+A Deep Learning Based Asset Allocation Methodology For Investment Portfolio Optimization Under Uncertainties
+------------------------------------------------------------------------------------------------------------
+
+This paper introduces a novel methodology for determining optimal asset allocation within diversified investment
+portfolios by integrating Modern Portfolio Theory with a Deep Learning model. This approach enhances portfolio
+diversification by considering both historical asset correlations and forecasts of individual asset volatility.
+Distinct from traditional methods that rely solely on historical data, our methodology incorporates current
+trading conditions and market dynamics, as reflected in asset prices. The S&P-500 index serves as the benchmark
+for this study, with the primary aim of achieving returns comparable to the benchmark while minimizing risk
+through a strategic combination of multiple assets.
+
+`Read the paper <https://www.iosrjournals.org/iosr-jef/papers/Vol16-Issue1/Ser-3/H1601035970.pdf>`__.
+
+Machine learning portfolio allocation
+-------------------------------------
+
+We find economically and statistically significant gains when using machine learning for portfolio allocation between the market index and risk-free asset. Optimal portfolio rules for time-varying expected returns and volatility are implemented with two Random Forest models. One model is employed in forecasting monthly excess returns with macroeconomic factors including payout yields. The second is used to estimate the prevailing volatility. Reward-risk timing with machine learning provides substantial improvements over the buy-and-hold in utility, risk-adjusted returns, and maximum drawdowns. This paper presents a unifying framework for machine learning applied to both return- and volatility-timing.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S2405918821000155#sec4>`__.
+
 Can machines learn finance?
 ---------------------------
 

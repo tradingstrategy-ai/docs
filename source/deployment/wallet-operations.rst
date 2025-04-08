@@ -29,8 +29,8 @@ Copy paste script wit ``%cpaste` to execute a transaction.
 
     print("Using RPC provider", web3.provider)
 
-    transfer_amount = Decimal(1)
-    target_address = "0x0000000000000000000000000"
+    transfer_amount = Decimal(5004)
+    target_address = "0xC9E60a9605a67c408a16c47652070Aa5E28ddD64"
 
     print(f"Sending USDC from our hot wallet {hot_wallet.address}, amount {transfer_amount} USDC")
     usdc_address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # USDC on Ethereum
