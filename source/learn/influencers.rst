@@ -21,6 +21,7 @@ Quant trades on Twitter (now known as X)
 - `TradeQuantiX <https://x.com/TradeQuantiX>`__
 - `Stat Arb <https://x.com/quant_arb>`__
 - `Zion Trading Algos <https://x.com/ZionAlgos>`__
+- `qm <https://x.com/quantymacro>`__
 
 Quant trades on LinkedIn
 ------------------------
