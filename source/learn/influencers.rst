@@ -22,6 +22,7 @@ Quant trades on Twitter (now known as X)
 - `Stat Arb <https://x.com/quant_arb>`__
 - `Zion Trading Algos <https://x.com/ZionAlgos>`__
 - `qm <https://x.com/quantymacro>`__
+- `Ali Martinez  <https://x.com/ali_charts>`__
 
 Quant trades on LinkedIn
 ------------------------
