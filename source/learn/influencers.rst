@@ -24,6 +24,7 @@ Quant trades on Twitter (now known as X)
 - `qm <https://x.com/quantymacro>`__
 - `Ali Martinez <https://x.com/ali_charts>`__
 - `Concretum Research <https://x.com/ConcretumR>`__
+- `onchainquant <https://x.com/onchainquant>`__
 
 Quant trades on LinkedIn
 ------------------------
@@ -44,6 +45,7 @@ Macro trades on Twitter
 - `Robin Brooks <https://x.com/robin_j_brooks>`__
 - `Michael Antonelli <https://x.com/BullandBaird>`__
 - `Kacper Piotr Kaminski <https://x.com/Kacper_PK_CH>`__
+- `David Woo <https://x.com/Davidwoounbound>`__
 
 Macro trades on LinkedIn
 ------------------------

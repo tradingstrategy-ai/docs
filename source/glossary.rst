@@ -6306,6 +6306,26 @@ and algorithmic trading.
 
         - :term:`AMM`
 
+    Velvet Capital
+
+        `Velvet Capital <https://www.velvet.capital/>`__ is a :term:`vault` :term:`protocol` for :term:`EVM` blockchains.
+
+        Velvet provides vaults where users can invest portfolios run by asset managers in
+        :term:`DeFi` ecosystem. Velvet is available on :term:`BNB Smart Chain` and other :term:`EVM-compatible`
+        blockchains.
+
+        See
+
+        - `Velvet Capital <https://www.velvet.capital/>`__
+
+        - :term:`Vault`
+
+        - :term:`Protocol`
+
+        - :term:`EVM`
+
+
+
 
 
 
