@@ -149,3 +149,23 @@ Each Lagoon vault has an underlying Safe multisignature wallet with cosigners.
 These cosigners are given to the development script, but you need to manually remove the deployer key
 from the Safe cosigner list. This operation has to be done by other cosigners.
 
+Executing Safe actions manually
+-------------------------------
+
+Multisig cosigners may need to do manual actions on behalf of the vault owners. Such actions include
+- Trading away broken ERC-20 tokens (can't swap)
+- Liquidating any airdrops
+
+To do that
+
+- You need to access the underlying Safe multisignature wallet of the vault through Safe URL
+- Open any service where you wish to do transactions through Safe app menu, e.g. 1inch
+- Initiate a transaction
+- Confirm the transaction
+
+Safe multisignature URL is format of: https://app.safe.global/home?safe=base:0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64
+
+.. note ::
+
+    The vault address (Lagoon Silo smart contract) is different from the underlying Safe address.
+
