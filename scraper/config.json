@@ -1,29 +1,53 @@
 {
-    "index_name": "docs",
-    "start_urls": [
-      "https://tradingstrategy.ai/docs"
-    ],
-    "sitemap_urls": [
-      "https://tradingstrategy.ai/docs/sitemap-docs.xml"
-    ],
-    "stop_urls": [
-      "https://tradingstrategy.ai/docs/genindex.html"
-    ],
-    "selectors": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "Documentation"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5",
-      "text": "article p, article li"
+  "index_name": "docs",
+
+  "start_urls": [
+    { "url": "https://tradingstrategy.ai/docs/guides/", "page_rank": 10 },
+    { "url": "https://tradingstrategy.ai/docs/api/",    "page_rank": 2 },
+    "https://tradingstrategy.ai/docs"
+  ],
+
+  "sitemap_urls": [
+    "https://tradingstrategy.ai/docs/sitemap-docs.xml"
+  ],
+
+  "stop_urls": [
+    "https://tradingstrategy.ai/docs/genindex.html",
+    "https://tradingstrategy.ai/docs/search.html",
+    "https://tradingstrategy.ai/docs/py-modindex.html",
+    "https://tradingstrategy.ai/docs/modindex.html"
+  ],
+
+  "selectors": {
+    "lvl0": {
+      "selector": "",
+      "global": true,
+      "default_value": "Documentation"
     },
-    "conversation_id": [
-      "1654845501"
-    ],
-    "nb_hits": 636
+    "lvl1": "article h1, dt.sig.sig-object > span.sig-name",
+    "lvl2": "article h2",
+    "lvl3": "article h3",
+    "lvl4": "article h4",
+    "lvl5": "article h5",
+    "text": "article p, article li, dd",
+    "page_rank": "section[data-page*='/api/']"
+  },
+
+  "selectors_exclude": [
+    ".headerlink",
+    ".toc-backref",
+    "nav",
+    "footer"
+  ],
+
+  "strip_chars": "#¶›",
+  "min_indexed_level": 2,
+
+  "custom_ranking": [
+    "desc(page_rank)",
+    "asc(level)",
+    "asc(position)"
+  ],
+
+  "render_js": false
 }
