@@ -5876,7 +5876,7 @@ and algorithmic trading.
         - *Funding Rate*: The funding rate is periodically paid between long and short position holders. If the funding rate is positive, long position holders pay short position holders, and vice versa. This mechanism helps to anchor the perpetual futures price to the spot price.
         - *Profit and Loss*: Profit or loss is realized based on the difference between the entry price and exit price of the contract, multiplied by the contract size and leverage.
 
-        In :`decentralised finance`, you do not need perps to get leverage. Instead, you can build leveraged positions on the top of :term:`lending protocols <lending protocol>`.
+        In :term:`decentralised finance`, you do not need perps to get leverage. Instead, you can build leveraged positions on the top of :term:`lending protocols <lending protocol>`.
 
         See
 
