@@ -149,6 +149,8 @@ Each Lagoon vault has an underlying Safe multisignature wallet with cosigners.
 These cosigners are given to the development script, but you need to manually remove the deployer key
 from the Safe cosigner list. This operation has to be done by other cosigners.
 
+_ ..safe-manual-action:
+
 Executing Safe actions manually
 -------------------------------
 
@@ -168,4 +170,169 @@ Safe multisignature URL is format of: https://app.safe.global/home?safe=base:0x6
 .. note ::
 
     The vault address (Lagoon Silo smart contract) is different from the underlying Safe address.
+
+Upgrading the guard smart contract
+----------------------------------
+
+When a strategy is updated to trade new assets and vaults, also its guard smart contract needs to be updated.
+For this, a new guard smart contract, a Zodiac module `TradingStrategyModuleV0 <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/safe-integration>`__, is deployed.
+
+The upgrade process is as follows:
+
+1. Stop `trade-executor` Docker
+2. Prepare a new strategy module Python file and backtest it with new assets
+3. Create a new version of the guard smart contract using `lagoon-deloy-vault` script
+4. :ref:`safe-manual-action` to remove the old guard smart contract from the Safe multisignature wallet
+5. :ref:`safe-manual-action` to add the new guard smart contract to the Safe multisignature wallet
+6. Perform `trade-executor peform-test-trade` for newly added assets to see the guard works
+7. Restart `trade-executor` Docker
+
+Deploy new guard module smart contract
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here is an example script:
+
+.. code-block:: shell
+
+    #!/bin/bash
+    #
+    # Redeploy Base ATH strategy guard with Harvest Finance IPOR vault whitelisted
+    #
+    # Uses --guard-only, --existing-vault-address and --existing-safe-address options.
+    #
+    # To run: SIMULATE=false scripts/base-ath/redeploy-guard-base-ath-v3.sh
+    #
+
+    set -e
+    set -u
+
+    ID="base-ath"
+
+    # Existing Lagoon deployment for which we want to deploy a new guard
+    EXISTING_VAULT_ADDRESS="0x7d8Fab3E65e6C81ea2a940c050A7c70195d1504f"
+
+    # Existing Safe address (old Lagoon versions do not support reflecting this back from the smart contract)
+    EXISTING_SAFE_ADDRESS="0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64"
+
+    # Whitelist Harvest Finance IPOR vault, Spark USDC on Base
+    WHITELISTED_VAULTS="0x0d877Dc7C8Fa3aD980DfDb18B48eC9F8768359C4, 0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a"
+
+    # Mark new deployment files with this suffix
+    SUFFIX="v3-new-guard"
+
+    if [ "$SIMULATE" = "" ]; then
+        echo "Set SIMULATE=true or SIMULATE=false"
+        exit 1
+    fi
+
+    if [ "$SIMULATE" = "false" ]; then
+        if [ "$ETHERSCAN_API_KEY" = "" ]; then
+            echo "Set ETHERSCAN_API_KEY=... to make sure the deployment is verified on Etherscan"
+            exit 1
+        fi
+    fi
+
+    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    echo "Using $TRADE_EXECUTOR_IMAGE"
+    docker compose run \
+        -e SIMULATE \
+        $ID \
+        lagoon-deploy-vault \
+        --guard-only \
+        --etherscan-api-key="$ETHERSCAN_API_KEY" \
+        --erc-4626-vaults="$WHITELISTED_VAULTS" \
+        --existing-vault-address="$EXISTING_VAULT_ADDRESS" \
+        --existing-safe-address="$EXISTING_SAFE_ADDRESS" \
+        --vault-record-file="deploy/$ID-$SUFFIX-vault-info.txt" \
+        --any-asset \
+        --uniswap-v2 \
+        --uniswap-v3 \
+        --aave
+
+When run the script will at the end tell you what Gnosis Safe transactions are needed to upgrade the guard module.
+
+Example output:
+
+.. code-block:: none
+
+    New guard deployed: 0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393
+    Old guard address: 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac
+    Safe address: 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64
+    Vault address: 0x7d8Fab3E65e6C81ea2a940c050A7c70195d1504f
+
+    Safe transactions needed:
+    1. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.disableModule(0x0000000000000000000000000000000000000001, 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac)
+    2. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.enabledModule(0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393)
+
+Crafting enableModule() transaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Go to Gnosis Safe transaction builder.
+
+You need to create a batch of two transactions.
+
+Get `Gnosis Safe ABI JSON files here <https://app.unpkg.com/@safe-global/safe-contracts@1.4.1-2/files/build/artifacts/contracts>`__
+- `SafeL2 ABI <https://unpkg.com/@safe-global/safe-contracts@1.4.1-2/build/artifacts/contracts/SafeL2.sol/SafeL2.json>`__
+
+For ``enableModule`` / ``disableModule`` the ABI snippet is:
+
+.. code-block:: json
+
+    [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "enableModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "prevModule",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "disableModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+    ]
+
+The transaction builder should have a batch transaction of
+
+1. ``disableModule()`` Disable the old guard module, reset the list with 0x1 special address
+2. ``enableModule()`` Enable the new guard module
+
+Finishing the transition
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Upgrade the strategy source code, have new assets enabled in ``create_trading_universe()`` Python function.
+
+Run ``perform-test-trade --simulate`` to make sure the new guard works with the new assets.
+
+.. code-block:: shell
+
+    docker compose run \
+        base-ath \
+        perform-test-trade \
+        --all-vaults  \
+        --simulate \
+        --amount=1.0
+
+
+Then restart the `trade-executor` Docker container with the new strategy code.
 
