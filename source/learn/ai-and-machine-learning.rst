@@ -289,3 +289,56 @@ Classical portfolio optimization often requires forecasting asset returns and th
 
 `Read more <https://arxiv.org/abs/2104.14683>`__
 
+Multi-feature stock price prediction by LSTM networks based on VMD and TMFG
+---------------------------------------------------------------------------
+
+The stock market is characterized by its high nonlinearity and complexity, making traditional methods ineffective in capturing its nonlinear features and complex market dynamics. This paper proposes a novel stock price forecasting model—the Variational Mode Decomposition—Triangulated Maximally Filtered Graph—Long Short-Term Memory (VMD–TMFG–LSTM) combined model—aimed at improving prediction accuracy, stability, and computational efficiency. The proposed model first employs Variational Mode Decomposition (VMD) to decompose the stock price time series into multiple smooth intrinsic mode functions (IMFs), reducing data complexity and mitigating noise interference. Subsequently, the TMFG algorithm is utilized for feature selection, simplifying the input data and accelerating the iterative convergence process. Finally, the filtered features are modeled and predicted using a Long Short-Term Memory (LSTM) network. Experimental results demonstrate that the VMD–TMFG–LSTM model significantly outperforms AutoRegressive Integrated Moving Average (ARIMA), Neural Network (NN), Deep Neural Network (DNN), Convolutional Neural Network (CNN), as well as single LSTM, TMFG–LSTM, and VMD–LSTM models in forecasting the closing prices of multiple stocks. Specifically, for Shanghai International Airport Co., Ltd. (sh600009), the VMD–TMFG–LSTM model achieves a 69.76% reduction in Root Mean Squared Error (RMSE), a 71.41% reduction in Mean Absolute Error (MAE), a 46.28% reduction in runtime, and an improvement of 0.2184 in R-squared (R2), indicating significantly higher prediction accuracy. In conclusion, the combined model proposed in this paper enhances the accuracy, efficiency, and stability of stock price prediction, providing a robust and efficient solution for forecasting stock market trends.
+
+`Read the paper <https://journalofbigdata.springeropen.com/articles/10.1186/s40537-025-01127-4>`__.
+
+A CNN-LSTM Stock Prediction Algorithm
+-------------------------------------
+
+A deep learning model for predicting the next three closing prices of a stock, index, currency pair, etc. based on the past 10 days of trading history (Open, High, Low, Close, Volume, Day of Week). Neural network architecture based on paper a `CNN-LSTM-Based Model to Forecast Stock Prices <https://onlinelibrary.wiley.com/doi/10.1155/2020/6622927>`__.
+
+`View Github Repository <https://github.com/alexkalinins/cnn-lstm-stock>`__.
+
+Predicting Stock Market time-series data using CNN-LSTM Neural Network model
+----------------------------------------------------------------------------
+
+Stock market is often important as it represents
+the ownership claims on businesses. Without sufficient stocks,
+a company cannot perform well in finance. Predicting a stock
+market performance of a company is nearly hard because every
+time the prices of a company’s stock keeps changing and not
+constant. So, it’s complex to determine the stock data. But
+if the previous performance of a company in stock market is
+known, then we can track the data and provide predictions to
+stockholders in order to wisely take decisions on handling the
+stocks to a company. To handle this, many machine learning
+models have been invented but they didn’t succeed due to many
+reasons like absence of advanced libraries, inaccuracy of model
+when made to train with real time data and much more. So, to
+track the patterns and the features of data, a CNN-LSTM Neural
+Network can be made. Recently, CNN is now used in Natural
+Language Processing (NLP) based applications, so by identifying
+the features from stock data and converting them into tensors,
+we can obtain the features and then send it to LSTM neural
+network to find the patterns and thereby predicting the stock
+market for given period of time. The accuracy of the CNN-
+LSTM NN model is found to be high even when allowed to
+train on real-time stock market data. This paper describes about
+the features of the custom CNN-LSTM model, experiments we
+made with the model (like training with stock market datasets,
+performance comparison with other models) and the end product
+we obtained at final stage.
+
+`Read the paper <https://arxiv.org/pdf/2305.14378>`__.
+
+Dependency structures in cryptocurrency market from high to low frequency
+-------------------------------------------------------------------------
+
+We investigate logarithmic price returns cross-correlations at different time horizons for a set of 25 liquid cryptocurrencies traded on the FTX digital currency exchange. We study how the structure of the Minimum Spanning Tree (MST) and the Triangulated Maximally Filtered Graph (TMFG) evolve from high (15 s) to low (1 day) frequency time resolutions. For each horizon, we test the stability, statistical significance and economic meaningfulness of the networks. Results give a deep insight into the evolutionary process of the time dependent hierarchical organization of the system under analysis. A decrease in correlation between pairs of cryptocurrencies is observed for finer time sampling resolutions. A growing structure emerges for coarser ones, highlighting multiple changes in the hierarchical reference role played by mainstream cryptocurrencies. This effect is studied both in its pairwise realizations and intra-sector ones.
+
+`Read the paper <https://arxiv.org/abs/2206.03386>`__.
+
