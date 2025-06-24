@@ -342,3 +342,9 @@ We investigate logarithmic price returns cross-correlations at different time ho
 
 `Read the paper <https://arxiv.org/abs/2206.03386>`__.
 
+Bitcoin price forecasting method based on CNN-LSTM hybrid neural network model
+------------------------------------------------------------------------------
+
+In this study, aiming at the problem that the price of Bitcoin varies greatly and is difficult to predict, a hybrid neural network model based on convolutional neural network (CNN) and long short-term memory (LSTM) neural network is proposed. The transaction data of Bitcoin itself, as well as external information, such as macroeconomic variables and investor attention, are taken as input. Firstly, CNN is used for feature extraction. Then the feature vectors are input into LSTM for training and forecasting the short-term price of Bitcoin. The result shows that the CNN-LSTM hybrid neural network can effectively improve the accuracy of value prediction and direction prediction compared with the single structure neural network. The finding has important implications for researchers and investors in the digital currencies market.
+
+`Read the paper <https://digital-library.theiet.org/doi/full/10.1049/joe.2019.1203>`__.
