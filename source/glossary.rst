@@ -152,17 +152,17 @@ and algorithmic trading.
 
         - :term:`Protocol`
 
-    On-chain
+    Onchain
 
-        In :term:`decentralised finance`, on-chain refers to transactions or activities that are recorded and processed directly on a blockchain network. It is the opposite of :term:`off-chain`.
+        In :term:`decentralised finance`, onchain refers to transactions or activities that are recorded and processed directly on a blockchain network. It is the opposite of :term:`off-chain`.
 
         In a blockchain, transactions are verified by nodes in the network and added to the chain of blocks that make up the blockchain. These transactions are permanent and unalterable, and the state of the blockchain can be seen by anyone on the network.
         
-        When an activity is referred to as "on-chain," it means that it is recorded directly on the blockchain, as opposed to off-chain, which refers to transactions or activities that are not recorded on the blockchain but are still facilitated by the network.
+        When an activity is referred to as "onchain," it means that it is recorded directly on the blockchain, as opposed to off-chain, which refers to transactions or activities that are not recorded on the blockchain but are still facilitated by the network.
         
-        On-chain transactions are typically considered to be more secure and transparent than off-chain transactions, as they are recorded in a public ledger that is immutable and auditable. Additionally, on-chain transactions are often processed more quickly and with lower fees than off-chain transactions, as they do not require intermediaries or intermediating networks.
+        Onchain transactions are typically considered to be more secure and transparent than off-chain transactions, as they are recorded in a public ledger that is immutable and auditable. Additionally, onchain transactions are often processed more quickly and with lower fees than off-chain transactions, as they do not require intermediaries or intermediating networks.
 
-        Examples of on-chain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
+        Examples of onchain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
 
 
         See also
@@ -200,7 +200,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Decentralised finance`
 
@@ -266,7 +266,7 @@ and algorithmic trading.
 
     Decentralised exchange
 
-        Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`on-chain`.
+        Decentralised exchange (DEX) is an asset trading exchange where all trades happen purely :term:`onchain`.
 
         These exchanges are public, fair, cheap and especially censorship proof.
         There is no middleman like a broker when you are trading on these venues, but you get equal access to the trade flow.
@@ -301,7 +301,7 @@ and algorithmic trading.
 
         - :term:`ERC-20`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Wallet`
 
@@ -332,7 +332,7 @@ and algorithmic trading.
 
         See also
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Non-custodial`
 
@@ -389,7 +389,7 @@ and algorithmic trading.
 
         - :term:`Smart contract`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`AMM`
 
@@ -406,7 +406,7 @@ and algorithmic trading.
         Fork is a a product launched based on the open source code of another existing product.
         Often forks are also called :term:`clones <clone>`.
 
-        In the context of :term:`on-chain` forks, forks usually are hostile to the original project and competes from the
+        In the context of :term:`onchain` forks, forks usually are hostile to the original project and competes from the
         same users. Forks often do not innovate, or make the product technically better.
 
         Unlike traditional open source projects, fork rarely co-operate. Because many forks
@@ -467,7 +467,7 @@ and algorithmic trading.
 
     OHLCV
 
-        A typical :term:`candle` contains open, high, low and close price and trade volume for a :term:`time bucket <bucket>`. Because on-chain exposes more data than centralised exchanges, Trading Strategy data also contains individual buys and sells, US dollar exchange rate and so forth.
+        A typical :term:`candle` contains open, high, low and close price and trade volume for a :term:`time bucket <bucket>`. Because onchain exposes more data than centralised exchanges, Trading Strategy data also contains individual buys and sells, US dollar exchange rate and so forth.
 
         See also
 
@@ -706,7 +706,7 @@ and algorithmic trading.
 
         Yield farming is a :term:`passive trading strategy <passive strategy>` in :term:`decentralised finance`.
 
-        Usually yield farming strategies rely on :term:`on-chain` :term:`liquidity pools <liquidity pool>` and liquidity mining token distributions,
+        Usually yield farming strategies rely on :term:`onchain` :term:`liquidity pools <liquidity pool>` and liquidity mining token distributions,
         which where any tokens are immediately sold. Strategies can be :term:`auto-compounding`.
 
         Yield farms operate solely on smart contracts and their strategies are limited. Often yield is not :term:`real yield`.
@@ -894,7 +894,7 @@ and algorithmic trading.
 
         - :term:`Protocol`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
     Private strategy
 
@@ -1497,7 +1497,7 @@ and algorithmic trading.
         - MEV operators *backrun* trades and extract any arbitrage opportunities which open up after executing a trade.
 
         Because of MEV, traders using blockchain may lose money they would not lost in trading otherwise.
-        Ethereum mainnet block producers have been manipulating on-chain markets via MEV since 2020. This money goes to the block producers as excessive profits from their MEV trades.
+        Ethereum mainnet block producers have been manipulating onchain markets via MEV since 2020. This money goes to the block producers as excessive profits from their MEV trades.
         Most of MEV is a harmful for traders and protocols as it extracts value out from the system and moves it to a third party, unrelated to the actual trading activity. If a rational trader
         can choose between two otherwise equal markets, they will always choose the market without MEV.
 
@@ -1536,8 +1536,8 @@ and algorithmic trading.
           solution as a rogue private mempool operator does not need to respect any honour agreements.
 
         - Backrunning built into the protocol itself to capture any arbitrage left after routing a trade. Osmosis is doing this
-          if the form of `ProtoRev module <https://docs.osmosis.zone/osmosis-core/modules/protorev/>`__. More about `ProtoRev solution here <https://osmosis.zone/blog/osmosis-protorev-by-skip-protocol-on-chain-app-directed-arbitrage>`__.
-        - Most :term:`EVM-compatible` blockchains and virtual machines are not powerful enough to do backrunning on-chain, but off-chain solutions like `CowSwap <https://swap.cow.fi/>`__ and `MEV Blocker <https://mevblocker.io/>`__ exist.
+          if the form of `ProtoRev module <https://docs.osmosis.zone/osmosis-core/modules/protorev/>`__. More about `ProtoRev solution here <https://osmosis.zone/blog/osmosis-protorev-by-skip-protocol-onchain-app-directed-arbitrage>`__.
+        - Most :term:`EVM-compatible` blockchains and virtual machines are not powerful enough to do backrunning onchain, but off-chain solutions like `CowSwap <https://swap.cow.fi/>`__ and `MEV Blocker <https://mevblocker.io/>`__ exist.
 
         - Creating a blockchain block production system where there is no single leader who can decide on transactions. `See Advanced consensys system design presentation here <https://www.youtube.com/watch?v=SFpEPjY-sxs>`__.
 
@@ -1594,7 +1594,7 @@ and algorithmic trading.
         DeFi eliminates the fees that banks and other financial institutions charge, making it more accessible to anyone with an internet connection.
         Thus, decentralised finance is the opposite of :term:`traditional finance` (TradFi).
 
-        Decentralised finance activities happen :term:`on-chain`,
+        Decentralised finance activities happen :term:`onchain`,
         and are :term:`protocol` based where users connect with their :term:`wallets <wallet>`.
         The underlying concept that DeFi services are :term:`non-custodial` without direct counterparty humans
         and intermediates make them very efficient. Different decentralised finance protocols can be effectively
@@ -1623,7 +1623,7 @@ and algorithmic trading.
 
         - :term:`Non-custodial`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Smart contract`
 
@@ -2027,7 +2027,7 @@ and algorithmic trading.
 
     Token
 
-        A token in blockchains and :term:`decentralised finance` represents an :term:`on-chain` asset.
+        A token in blockchains and :term:`decentralised finance` represents an :term:`onchain` asset.
 
         Tokens can be
 
@@ -2041,7 +2041,7 @@ and algorithmic trading.
 
         - :term:`Decentralised finance`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Wallet`
 
@@ -2049,7 +2049,7 @@ and algorithmic trading.
 
         In :term:`decentralised finance`, a protocol is :term:`non-custodial` financial service.
 
-        In protocol, its users are doing directly transactions :term:`on-chain` with each other without intermediates,
+        In protocol, its users are doing directly transactions :term:`onchain` with each other without intermediates,
         in peer-to-peer manner. Protocols can be built into a blockchain or be smart contract based.
 
         Unlike in traditional finance, in decentralised finance the user is always in control
@@ -2063,7 +2063,7 @@ and algorithmic trading.
 
         - :term:`Total value locked (TVL)`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Non-custodial`
 
@@ -2094,7 +2094,7 @@ and algorithmic trading.
 
         - :term:`Token`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`Smart contract`
 
@@ -2184,7 +2184,7 @@ and algorithmic trading.
 
     Erigon
 
-        The `Erigon <https://github.com/ledgerwatch/erigon>`__ node is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of on-chain data.
+        The `Erigon <https://github.com/ledgerwatch/erigon>`__ node is an implementation of Ethereum written in Go, designed to run archive nodes that manage large amounts of onchain data.
         It is a decentralized blockchain node provider that provides a secure, private, and scalable blockchain infrastructure.
         If you want to host your own JSON-RPC API access to raw EVM blockchain data,
         Erigon is a good option.
@@ -2411,7 +2411,7 @@ and algorithmic trading.
 
         - :term:`ERC-20`
 
-        - :term:`On-chain`
+        - :term:`Onchain`
 
         - :term:`WalletConnect`
 
@@ -2937,13 +2937,13 @@ and algorithmic trading.
         - Carbon certificates
 
         RWAs can trade on :term:`lending protocols <lending protocol>` and :term:`decentralised exchanges <decentralised exchange>`.
-        RWAs need special :term:`oracles <oracle>` to bring information about the real-world asset data to :term:`on-chain`.
+        RWAs need special :term:`oracles <oracle>` to bring information about the real-world asset data to :term:`onchain`.
 
         As the writing of this, most popular RWA classes are stablecoins and bonds.
 
         For RWA case studies, see
 
-        - `Circle's and Uniswaps report on stablecoin usage in remittance and cross-border payments <https://www.circle.com/blog/on-chain-foreign-exchange-and-cross-border-payments>`__
+        - `Circle's and Uniswaps report on stablecoin usage in remittance and cross-border payments <https://www.circle.com/blog/onchain-foreign-exchange-and-cross-border-payments>`__
 
         - `Siemens launching $60M bond on a public blockchain <https://www.ledgerinsights.com/siemens-digital-bond-blockchain/>`__
 
@@ -5975,6 +5975,10 @@ and algorithmic trading.
 
         This proposal is particularly beneficial for protocols involving real-world assets (:term:`RWAs <RWA>`), cross-chain lending, and liquid staking, where immediate processing may not always be feasible. Introduced in October 2023, ERC-7540 aims to enhance Ethereum’s functionality and scalability, making it more adaptable to complex financial applications.
 
+        More info
+
+         - `EIP-7540 Asynchronous Tokenized Vaults <https://eips.ethereum.org/EIPS/eip-7540>`__
+
         See also
 
         - :term:`Vault`
@@ -5990,6 +5994,8 @@ and algorithmic trading.
     ERC-4626
 
         ERC-4626 is an Ethereum smart contract standard that defines a uniform interface for tokenized :term:`vaults <vault>` in :term:`decentralised finance`. Introduced as an Ethereum Improvement Proposal, it standardizes how yield-bearing vaults interact with underlying assets, creating consistency across different DeFi protocols.
+
+        ERC-4626 is :term:`self-custodial` and offers :term:`onchain` :term:`trading strategies <trading strategy>`.
 
         The standard enables:
 
@@ -6008,6 +6014,10 @@ and algorithmic trading.
         ERC-4626 cannot be applied for all strategies, as it need syncrhonous withdrawals and this is not possible
         for all trading. There exist :term:`ERC-7540` extension for these applications, and this extension
         is implemented e.g. bt :term:`Lagoon` :term:`protocol`.
+
+        More info
+
+        - `EIP-4626 Tokenized Vault Standard on Ethereum.org <https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/>`__
 
         See also
 

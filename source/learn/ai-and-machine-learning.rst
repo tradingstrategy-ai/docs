@@ -355,3 +355,35 @@ Attention-Based Deep Learning Models for Cryptocurrency Price Prediction: A Comp
 This study presents a comparative analysis of two advanced attention-based deep learning models—Attention-LSTM and Attention-GRU—for predicting cryptocurrency price movements. The models utilize historical OHLCV data, combined with four technical indicators: SMA, EMA, TEMA, and MACD, to enhance the accuracy of classification into three categories: uptrend, downtrend, and neutral. Both models aim to capture market dynamics through sequential data while incorporating attention mechanisms to focus on relevant time steps. Experimental results demonstrate that the inclusion of technical indicators significantly improves model performance, with MACD yielding the highest accuracy. The Attention-GRU model shows computational advantages, while the Attention-LSTM model excels in capturing long-term dependencies.
 
 `Read the paper <https://www.preprints.org/manuscript/202410.1852/v1>`__.
+
+Application of Deep Q-Network in Portfolio Management
+-----------------------------------------------------
+
+Machine Learning algorithms and Neural Networks
+are widely applied to many different areas such as stock market
+prediction, face recognition and population analysis. This paper
+will introduce a strategy based on the classic Deep
+Reinforcement Learning algorithm, Deep Q-Network, for
+portfolio management in stock market. It is a type of deep
+neural network which is optimized by Q Learning. To make the
+DQN adapt to financial market, we first discretize the action
+space which is defined as the weight of portfolio in different
+assets so that portfolio management becomes a problem that
+Deep Q-Network can solve. Next, we combine the Convolutional
+Neural Network and dueling Q-net to enhance the recognition
+ability of the algorithm. Experimentally, we chose five low-
+relevant American stocks to test the model. The result
+demonstrates that the DQN based strategy outperforms the ten
+other traditional strategies. The profit of DQN algorithm is 30%
+more than the profit of other strategies. Moreover, the Sharpe
+ratio associated with Max Drawdown demonstrates that the risk
+of policy made with DQN is the lowest.
+
+`Read the paper <https://arxiv.org/pdf/2003.06365>`__.
+
+A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem
+--------------------------------------------------------------------------------------
+
+Financial portfolio management is the process of constant redistribution of a fund into different financial products. This paper presents a financial-model-free Reinforcement Learning framework to provide a deep machine learning solution to the portfolio management problem. The framework consists of the Ensemble of Identical Independent Evaluators (EIIE) topology, a Portfolio-Vector Memory (PVM), an Online Stochastic Batch Learning (OSBL) scheme, and a fully exploiting and explicit reward function. This framework is realized in three instants in this work with a Convolutional Neural Network (CNN), a basic Recurrent Neural Network (RNN), and a Long Short-Term Memory (LSTM). They are, along with a number of recently reviewed or published portfolio-selection strategies, examined in three back-test experiments with a trading period of 30 minutes in a cryptocurrency market. Cryptocurrencies are electronic and decentralized alternatives to government-issued money, with Bitcoin as the best-known example of a cryptocurrency. All three instances of the framework monopolize the top three positions in all experiments, outdistancing other compared trading algorithms. Although with a high commission rate of 0.25% in the backtests, the framework is able to achieve at least 4-fold returns in 50 days.
+
+`Read the paper <https://arxiv.org/abs/1706.10059>`__.
