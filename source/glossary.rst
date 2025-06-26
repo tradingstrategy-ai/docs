@@ -851,19 +851,28 @@ and algorithmic trading.
 
     Non-custodial
 
-        Non-custodial means that a third party does not have ownership of your assets in a service.
+        See :term:`self-custodial`.
 
-        A non-custodial model usually means s smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most traditional finance services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The non-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+    Self-custodial
 
-        Non-custodial protocol models have become popular in a blockchain, after FTX and Celsius blow-ups: not your keys, not your coins.
+        Self-custodial means that a third party does not have ownership of your assets in a service. Self-custodial
+        model is also called :term:`non-custodial`, self-hosted, unhosted wallets and such.
+
+        A self-custodial business model usually means s smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most :term:`traditional finance` services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The self-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+
+        Self-custodial :term:`decentralised finance` :term:`protocol` models have become popular in a blockchain, after FTX and Celsius blow-ups: not your keys, not your coins.
+
+        Example of self-custodial protocols include :term:`vaults <vault>`, :term:`AMMs <AMM>`, :term:`lending protocols <lending protocol>`.
 
         See also
+
+        - :term:`Decentralised finance`
 
         - :term:`Wallet`
 
         - :term:`Custodial`
 
-        - :term:`Decentralised finance`
+        - :term:`Vault`
 
         - :term:`Protocol`
 
@@ -1114,17 +1123,21 @@ and algorithmic trading.
         Usually when you deposit to a vault you receive share or liquidity provider
         tokens as a return.
 
-        More technical details
+        Most vaults are :term:`self-custodial` and allow you to withdraw your assets at any time.
 
-        - `EIP-4626 Tokenised vault standard <https://eips.ethereum.org/EIPS/eip-4626>`__
+        Common vault applications:
 
-        - `EIP-7540 Asynchronous Tokenized Vaults <https://eips.ethereum.org/EIPS/eip-7540>`__
+        * **Yield farming vaults** that deploy assets across multiple protocols
+        * **Lending optimisation** representing deposits in money markets
+        * **Liquidity provision** for automated market makers
+        * **Strategy vaults** implementing complex DeFi :term:`trading strategies <trading strategy>`
 
-        An example of vault :term:`protocol` is :term:`Lagoon`.
+        A common vault smart contract standards are :term:`ERC-4626` and :term:`ERC-7540`.
+        An example of vault :term:`protocol` are :term:`Lagoon` and :term:`Enzyme protocol`.
 
         See also
 
-        - :term:`Trading strategy`
+        - :term:`ERC-4626`
 
         - :term:`Lagoon`
 
@@ -1132,9 +1145,11 @@ and algorithmic trading.
 
         - :term:`ERC-20`
 
-        - :term:`Non-custodial`
+        - :term:`Self-custodial`
 
         - :term:`Wallet`
+
+        - :term:`Trading strategy`
 
     Technical indicator
 
@@ -5943,6 +5958,8 @@ and algorithmic trading.
 
         - :term:`ERC-7540`
 
+        - :term:`ERC-4626`
+
     ERC-7540
 
         ERC-7540 is :term:`EVM` vault standard. In 7540, deposits and redemptions are not instantly processed
@@ -5958,6 +5975,8 @@ and algorithmic trading.
 
         This proposal is particularly beneficial for protocols involving real-world assets (:term:`RWAs <RWA>`), cross-chain lending, and liquid staking, where immediate processing may not always be feasible. Introduced in October 2023, ERC-7540 aims to enhance Ethereum’s functionality and scalability, making it more adaptable to complex financial applications.
 
+        See also
+
         - :term:`Vault`
 
         - :term:`Protocol`
@@ -5965,6 +5984,42 @@ and algorithmic trading.
         - :term:`EVM`
 
         - :term:`Lagoon`
+
+        - :term:`ERC-4626`
+
+    ERC-4626
+
+        ERC-4626 is an Ethereum smart contract standard that defines a uniform interface for tokenized :term:`vaults <vault>` in :term:`decentralised finance`. Introduced as an Ethereum Improvement Proposal, it standardizes how yield-bearing vaults interact with underlying assets, creating consistency across different DeFi protocols.
+
+        The standard enables:
+
+        * **Vault aggregators** to easily integrate multiple yield sources
+        * **Portfolio management tools** to track vault positions uniformly
+        * **Cross-protocol strategies** that move assets between different vaults
+        * **Automated yield optimization** across various platforms
+
+        Common ERC-4626 vault applications:
+
+        * **Yield farming vaults** that deploy assets across multiple protocols
+        * **Lending optimisation** representing deposits in money markets
+        * **Liquidity provision** for automated market makers
+        * **Strategy vaults** implementing complex DeFi trading strategies
+
+        ERC-4626 cannot be applied for all strategies, as it need syncrhonous withdrawals and this is not possible
+        for all trading. There exist :term:`ERC-7540` extension for these applications, and this extension
+        is implemented e.g. bt :term:`Lagoon` :term:`protocol`.
+
+        See also
+
+        - :term:`Vault`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Protocol`
+
+        - :term:`EVM`
+
+        - :term:`ERC-7540`
 
     Continuous signal
 
