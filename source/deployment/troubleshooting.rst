@@ -4,7 +4,7 @@ Troubleshooting live trade execution deployments
 ================================================
 
 This chapter contains diagnostics and troubleshooting information and recipes
-for :ref:`live trade executors <.
+for :ref:`live trade executors <trade-executor>`.
 
 .. _show-positions:
 
