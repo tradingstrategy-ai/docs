@@ -4,7 +4,7 @@ Troubleshooting live trade execution deployments
 ================================================
 
 This chapter contains diagnostics and troubleshooting information and recipes
-for :ref:`live trade executors <.
+for :ref:`live trade executors <trade-executor>`.
 
 .. _show-positions:
 
@@ -137,6 +137,59 @@ Load the state and extract information from it:
 
     display(stats)
 
+
+.. _prune-state:
+
+Pruning the state file
+~~~~~~~~~~~~~~~~~~~~~~
+
+Strategy ``state.json`` files can grow quite large. To reduce the file size, data that is no longer
+needed can be pruned using the ``prune-state`` command.
+
+.. caution ::
+
+    Make sure to stop the running trade executor process before running
+    the ``prune-state`` command. Running this command while the executor
+    is active may cause data conflicts or unexpected behavior.
+
+**1. Stop the running trade executor service**
+
+Stop the Docker service while keeping the container available:
+
+.. code-block:: shell
+
+    docker compose stop <strategy-id>
+
+**2. Run the prune-state command**
+
+Execute the prune command using the stopped container:
+
+.. code-block:: shell
+
+    docker compose run --rm <strategy-id> prune-state
+
+Example output:
+
+.. code-block:: text
+
+    Pruning state file: state/base-ath.json
+    Creating backup of state file...
+    Pruning balance updates from closed positions...
+    Saving pruned state...
+    Pruning completed successfully!
+    Positions processed: 319
+    Balance updates removed: 43459
+    Trades processed: 1898
+    Blockchain transactions processed: 1666
+    Estimated space saved: ~48.5 MB
+
+**3. Restart the trade executor service**
+
+Restart the service to resume normal operation:
+
+.. code-block:: shell
+
+    docker compose start <strategy-id>
 
 Local Docker image builds
 ~~~~~~~~~~~~~~~~~~~~~~~~~
