@@ -387,3 +387,52 @@ A Deep Reinforcement Learning Framework for the Financial Portfolio Management P
 Financial portfolio management is the process of constant redistribution of a fund into different financial products. This paper presents a financial-model-free Reinforcement Learning framework to provide a deep machine learning solution to the portfolio management problem. The framework consists of the Ensemble of Identical Independent Evaluators (EIIE) topology, a Portfolio-Vector Memory (PVM), an Online Stochastic Batch Learning (OSBL) scheme, and a fully exploiting and explicit reward function. This framework is realized in three instants in this work with a Convolutional Neural Network (CNN), a basic Recurrent Neural Network (RNN), and a Long Short-Term Memory (LSTM). They are, along with a number of recently reviewed or published portfolio-selection strategies, examined in three back-test experiments with a trading period of 30 minutes in a cryptocurrency market. Cryptocurrencies are electronic and decentralized alternatives to government-issued money, with Bitcoin as the best-known example of a cryptocurrency. All three instances of the framework monopolize the top three positions in all experiments, outdistancing other compared trading algorithms. Although with a high commission rate of 0.25% in the backtests, the framework is able to achieve at least 4-fold returns in 50 days.
 
 `Read the paper <https://arxiv.org/abs/1706.10059>`__.
+
+Reinforcement Learning Approaches to Optimal Market Making
+----------------------------------------------------------
+
+Market making is the process whereby a market participant, called a market maker,
+simultaneously and repeatedly posts limit orders on both sides of the limit order book of a security
+in order to both provide liquidity and generate proﬁt. Optimal market making entails dynamic
+adjustment of bid and ask prices in response to the market maker’s current inventory level and
+market conditions with the goal of maximizing a risk-adjusted return measure. This problem is
+naturally framed as a Markov decision process, a discrete-time stochastic (inventory) control process.
+Reinforcement learning, a class of techniques based on learning from observations and used for
+solving Markov decision processes, lends itself particularly well to it. Recent years have seen a
+very strong uptick in the popularity of such techniques in the ﬁeld, fueled in part by a series of
+successes of deep reinforcement learning in other domains. The primary goal of this paper is to
+provide a comprehensive and up-to-date overview of the current state-of-the-art applications of
+(deep) reinforcement learning focused on optimal market making. The analysis indicated that
+reinforcement learning techniques provide superior performance in terms of the risk-adjusted return
+over more standard market making strategies, typically derived from analytical models.
+
+`Read the paper <https://www.academia.edu/79674814/Reinforcement_Learning_Approaches_to_Optimal_Market_Making?email_work_card=reading-history>`__.
+
+Deep Learning for High-Frequency Price Prediction in Cryptocurrency Markets
+---------------------------------------------------------------------------
+
+The rapid rise of high-frequency trading in cryptocurrency markets has intensified
+the need for robust predictive models capable of navigating extreme volatility, frag-
+mented liquidity, and the unique microstructure of digital asset exchanges. This
+thesis investigates the effectiveness of deep learning architectures, specifically con-
+volutional neural networks (CNNs), long short-term memory networks (LSTMs),
+and hybrid CNN-LSTM models, in forecasting short-horizon mid-price log-returns
+from limit order book data in cryptocurrency markets. Drawing on a large scale,
+tick-level dataset from ByBit across three major cryptocurrency pairs, the study
+evaluates the performance of these neural networks. Each model is evaluated on its
+ability to predict a vector of ten future returns, using both raw book features and
+engineered stationary signals. Results indicate that deep learning models consis-
+tently outperform linear benchmarks in terms of out-of-sample R2 and directional
+accuracy, capturing complex non-linear dependencies present in the data. The anal-
+ysis also highlights the impact of input feature transformations on predictive power
+and model robustness. These findings provide insights into the adaptability of deep
+neural architectures for high-frequency price prediction in continuously evolving,
+highly volatile financial environments, and underscore the potential for advanced
+machine learning techniques to enhance market understanding in the cryptocur-
+rency domain.
+
+`Read the paper <file:///Users/moo/Downloads/DLHFPP-1.pdf>`__.
+
+`Read the code <https://github.com/miohtama/Midprice-Prediction>`__.
+
+g
