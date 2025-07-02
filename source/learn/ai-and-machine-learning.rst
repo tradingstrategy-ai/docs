@@ -435,4 +435,9 @@ rency domain.
 
 `Read the code <https://github.com/miohtama/Midprice-Prediction>`__.
 
-g
+From Rules to Rewards: Reinforcement Learning for Interest Rate Adjustment in DeFi Lending
+------------------------------------------------------------------------------------------
+
+Decentralized Finance (DeFi) lending enables permissionless borrowing via smart contracts. However, it faces challenges in optimizing interest rates, mitigating bad debt, and improving capital efficiency. Rule-based interest-rate models struggle to adapt to dynamic market conditions, leading to inefficiencies. This work applies Offline Reinforcement Learning (RL) to optimize interest rate adjustments in DeFi lending protocols. Using historical data from Aave protocol, we evaluate three RL approaches: Conservative Q-Learning (CQL), Behavior Cloning (BC), and TD3 with Behavior Cloning (TD3-BC). TD3-BC demonstrates superior performance in balancing utilization, capital stability, and risk, outperforming existing models. It adapts effectively to historical stress events like the May 2021 crash and the March 2023 USDC depeg, showcasing potential for automated, real-time governance.
+
+`Read the paper <https://arxiv.org/abs/2506.00505>`__.
