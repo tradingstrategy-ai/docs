@@ -47,5 +47,5 @@ jobs:
           echo "Running $RSYNC_COMMAND_TEST"
           $RSYNC_COMMAND_TEST
         env:
-          # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
+          # RSYNC_COMMAND="scp -vvv -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
           RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND_TEST }}
