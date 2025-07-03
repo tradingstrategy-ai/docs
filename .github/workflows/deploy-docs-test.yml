@@ -44,5 +44,8 @@ jobs:
           ssh-private-key: ${{ secrets.RSYNC_KEY }}  
       - name: Publish docs via rsync
         run: |
-          echo "Syncing docs to test server"
-          eval "${{ secrets.RSYNC_COMMAND_TEST }}"
+          echo "Running $RSYNC_COMMAND_TEST"
+          $RSYNC_COMMAND_TEST
+        env:
+          # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
+          RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND_TEST }}
