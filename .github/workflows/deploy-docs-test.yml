@@ -1,0 +1,48 @@
+name: Docs build (Dev)
+
+on:
+  push:
+    branches: [ dev-docs ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-docs-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch git submodules
+        run: make update-git-submodules
+      - name: Install poetry
+        run: pipx install poetry==1.8.3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y pandoc
+          poetry env use '3.11'
+          poetry install -vv
+      - name: Build documentation
+        run: |        
+          poetry env use '3.11'
+          python -V
+          which python
+          echo $PATH
+          VENV_BIN=`poetry env info -p`/bin
+          PATH=$VENV_BIN:$PATH
+          make pip-force-install-deps
+          make install-furo 
+          make rebuild-furo
+          make clean-autosummary
+          make html
+      - name: Install SSH Key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.RSYNC_KEY }}  
+      - name: Publish docs via rsync
+        run: |
+          echo "Syncing docs to test server"
+          eval "${{ secrets.RSYNC_COMMAND_TEST }}"
