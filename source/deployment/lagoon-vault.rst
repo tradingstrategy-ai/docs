@@ -141,6 +141,88 @@ Example output:
     Multisig owners                0xa7208b5c92d4862b3f11c0047b57a00Dc304c0f8, 0xbD35322AA7c7842bfE36a8CF49d0F063bf83a100, 0x05835597cAf9e04331dfe1f62C2Ec0C2aDc0d4a2, 0x5C46ab9e42824c51b55DcD3Cf5876f1132F9FbA9
     Block number                   24,773,588
 
+Performing a test deposit and a test trade
+------------------------------------------
+
+When Lagoon vault is deployed, you need to make a test deposit to have some funds for performing the test trade.
+
+- Assume your deployer key has some denomination token like USDC/USDT to deposit
+- We will perform a test deposit of 10 USD to the vault
+- Then we will sync the vault
+
+.. code-block:: shell
+
+    # Perform a test deposit
+    docker compose run bnb-local-high console
+
+.. code-block:: python
+
+        from decimal import Decimal
+
+        from eth_defi.trace import assert_transaction_success_with_explanation
+        from eth_defi.etherscan.config import get_etherscan_tx_link
+
+        deposit_amount = Decimal(10.0)  # USD
+
+        vault = sync_model.vault
+        deposit_token = vault.denomination_token
+        wallet = hot_wallet
+
+        balance = deposit_token.fetch_balance_of(wallet.address)
+        print(f"Hot wallet balance: {balance} {deposit_token.symbol}")
+        assert balance > deposit_amount, "Asset manager has no balance to deposit"
+
+        # 1. Approve
+        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_token.approve(vault.address, deposit_amount))
+        print(f"Approving with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
+        assert_transaction_success_with_explanation(web3, tx_hash)
+
+        # 2. Put to deposit queue
+        raw_amount = deposit_token.convert_to_raw(deposit_amount)
+        deposit_func = vault.request_deposit(hot_wallet.address, raw_amount)
+        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_func)
+        print(f"requestDeposit() with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
+        assert_transaction_success_with_explanation(web3, tx_hash)
+
+        # 3. Add reserve currency
+        reserve_asset = strategy_universe.get_asset_by_address(deposit_token.address)
+        state.portfolio.initialise_reserves(reserve_asset, reserve_token_price=1.0)
+
+        # 4. Sync deposits as the asset manager
+        end_block = execution_model.get_safe_latest_block()
+        timestamp = datetime.datetime.utcnow()
+        sync_model.hot_wallet.sync_nonce(web3)
+        sync_model.sync_treasury(
+            strategy_cycle_ts=timestamp,
+            state=state,
+            end_block=end_block,
+            post_valuation=True,
+        )
+
+        # 5. Store results
+        store.sync(state)
+
+And then we can perform a test trade to see if the vault works as expected.:
+
+.. code-block:: shell
+
+    # List all pairs
+    docker compose run bnb-local-high check-universe
+
+    # Pancakeswap test trade
+    docker compose run \
+        bnb-local-high \
+        perform-test-trade \
+        --pair "(binance, pancakeswap-v2, WBNB, USDT, 0.0025)" \
+        --simulate
+
+    # ERC-4626 vault test trade
+    docker compose run \
+        bnb-local-high \
+        perform-test-trade \
+        --pair "(binance, euler-vault-kit, eUSDT-4, USDT)" \
+        --simulate
+
 Safe multisignature wallet cosigners
 ------------------------------------
 
