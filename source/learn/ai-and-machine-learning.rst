@@ -40,6 +40,16 @@ Several state-of-the-art algorithms are implemented, based on my understanding o
 
 `Visit Python project page <https://github.com/Marigold/universal-portfolios>`__.
 
+
+AI-based Trading Strategies: Comparing Deep Learning Architectures
+------------------------------------------------------------------
+
+his project deploys a systematic, AI-driven framework to develop and evaluate quantitative trading strategies. Our modular pipeline integrates robust API-based data acquisition with advanced feature engineering—including regime detection via Hidden Markov Models—to produce high-quality inputs for our models. We implement a suite of deep learning architectures, including a GRU, a standalone LSTM model, and an LSTM-CNN hybrid, all validated through rolling cross-validation and realistic backtesting that incorporates transaction cost adjustments. Performance is benchmarked against a buy-and-hold baseline, and the framework supports rapid experimentation with alternative architectures such as LSTM with attention mechanisms and transformers.
+
+By Jose Francisco Salazar Guillen, St Edward's University and other collaborators.
+
+`Visit Github repository <https://github.com/FranQuant/AI-based-Trading-Strategies/tree/308151561093960aed7c721a7370d5f8fa15fbd5>`__
+
 Books
 =====
 
@@ -448,3 +458,21 @@ Bitcoin volatility forecasting: a comparative analysis of conventional econometr
 The behavior of the Bitcoin market is dynamic and erratic, impacted by a range of elements including news developments and investor mood. One well-known aspect of bitcoin is its extreme volatility. This study uses both conventional econometric techniques and deep learning algorithms to anticipate the volatility of Bitcoin returns. The research is based on historical Bitcoin price data spanning October 2014 to February 2022, which was obtained using the Yahoo Finance API. In this work, we contrast the efficacy of generalized autoregressive conditional heteroskedasticity (GARCH) and threshold ARCH (TARCH) models with long short-term memory (LSTM), bidirectional LSTM (Bi-LSTM), and multivariate Bi-LSTM models. Model effectiveness is evaluated by means of root mean squared error (RMSE) and root mean squared percentage error (RMSPE) scores. The multivariate Bi-LSTM model emerges as mostly effective, achieving an RMSE score of 0.0425 and an RMSPE score of 0.1106. This comparative scrutiny contributes to understanding the dynamics of Bitcoin volatility prediction, offering insights that can inform investment strategies and risk management practices in this quickly changing environment of finance.
 
 `Read the paper <https://www.academia.edu/126426432/Bitcoin_volatility_forecasting_a_comparative_analysis_of_conventional_econometric_models_with_deep_learning_models?email_work_card=title>`__.
+
+Cryptocurrency Price Prediction Using Frequency Decomposition and Deep Learning
+-------------------------------------------------------------------------------
+
+A good paper on variational mode decomposition (VMD).
+
+Given the substantial volatility and non-stationarity of cryptocurrency prices, forecasting them has become a complex task within the realm of financial time series analysis. This study introduces an innovative hybrid prediction model, VMD-AGRU-RESVMD-LSTM, which amalgamates the disintegration–integration framework with deep learning techniques for accurate cryptocurrency price prediction. The process begins by decomposing the cryptocurrency price series into a finite number of subseries, each characterized by relatively simple volatility patterns, using the variational mode decomposition (VMD) method. Next, the gated recurrent unit (GRU) neural network, in combination with an attention mechanism, predicts each modal component’s sequence separately. Additionally, the residual sequence, obtained after decomposition, undergoes further decomposition. The resultant residual sequence components serve as input to an attentive GRU (AGRU) network, which predicts the residual sequence’s future values. Ultimately, the long short-term memory (LSTM) neural network integrates the predictions of modal components and residuals to yield the final forecasted price. Empirical results obtained for daily Bitcoin and Ethereum data exhibit promising performance metrics. The root mean square error (RMSE) is reported as 50.651 and 2.873, the mean absolute error (MAE) stands at 42.298 and 2.410, and the mean absolute percentage error (MAPE) is recorded at 0.394% and 0.757%, respectively. Notably, the predictive outcomes of the VMD-AGRU-RESVMD-LSTM model surpass those of standalone LSTM and GRU models, as well as other hybrid models, confirming its superior performance in cryptocurrency price forecasting.
+
+`Read the paper <https://www.mdpi.com/2504-3110/7/10/708>`__.
+
+Benchmarking Cryptocurrency Forecasting Models in the Context of Data Properties and Market Factors
+---------------------------------------------------------------------------------------------------
+
+Cryptocurrency price prediction presents a significant challenge due to the inherent nonlinearity of the market. In this thesis, we assess the performance of thirteen time series forecasting models in predicting the prices of twenty-one different cryptocurrencies across four specific time frames. Our analysis centers on how data characteristics and market conditions affect the precision of these models and explores the implications of both broadening the scope of training data and extending the forecast periods. Our findings indicate that TBATS, LightGBM, XGBoost, and ARIMA consistently deliver the most accurate results. We identify key factors influencing prediction accuracy, including market trends, heteroskedasticity, volatility, and market capitalization. Additionally, the choice of time frame markedly affects all models’ predictive accuracy. Contrary to expectations, we observe that increasing the volume of training data does not necessarily enhance the performance of deep-learning and RNN-based models. Our thesis offers a comprehensive benchmark of forecasting models within the cryptocurrency context, underscoring the conditions crucial for improving prediction accuracy.
+
+By Stephan Akkerman from Utrecht University, Netherlands.
+
+`Read the paper <https://studenttheses.uu.nl/handle/20.500.12932/45623>`__.
