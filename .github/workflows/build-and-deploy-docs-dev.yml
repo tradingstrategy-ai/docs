@@ -1,0 +1,86 @@
+# Publish the static Sphinx build on Trading Strategy server using rsync
+name: Docs build
+
+on:
+  push:
+    branches: [ dev-docs ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch git submodules
+        run: make update-git-submodules
+      - name: Install poetry
+        run: pipx install poetry==1.8.3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y pandoc
+          poetry env use '3.11'
+          poetry install -vv
+                
+          # TODO: Hack fix if this is the cause for problems in doc builds
+      - name: Build documentation
+        run: |        
+          poetry env use '3.11'
+          python -V
+          which python
+          echo $PATH
+          VENV_BIN=`poetry env info -p`/bin
+          PYTHON=`poetry env info -p`/bin/python
+          PIP=`poetry env info -p`/bin/pip
+          SPHINX=`poetry env info -p`/bin/sphinx-build
+          PATH=$VENV_BIN:$PATH
+          make pip-force-install-deps
+          make install-furo 
+          make rebuild-furo
+          make clean-autosummary
+          make html
+      
+      # https://zellwk.com/blog/github-actions-deploy/
+      # https://github.com/webfactory/ssh-agent
+
+      - name: Verify docs build output
+        run: |
+        ls -lah docs/build/html || (echo "❌ Folder docs/build/html not found" && exit 1)
+      
+      - name: Install SSH Key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          # PK key pair generated locally and
+          # public SSH key copied to the server
+          ssh-private-key: ${{ secrets.RSYNC_KEY }}
+          
+      - name: Publish docs via rsync
+        run: |
+          echo "Running $RSYNC_COMMAND"
+          $RSYNC_COMMAND
+        env:
+          # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
+          RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND }}
+      - name: Run Docsearch Scraper
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          # The secret containing your Typesense API key. Required.
+          api-key: ${{ secrets.TYPESENSE_API_KEY }}
+          
+          # The hostname or IP address of your Typesense server. Required.
+          host: ${{ secrets.TYPESENSE_HOST }}
+          
+          # The port on which your Typesense server is listening. Optional. Default: 8108.
+          port: 443
+          
+          # The protocol to use when connecting to your Typesense server. Optional. Default: http.
+          protocol: https
+          
+          # The path to your DocSearch config file. Optional. Default: docsearch.config.json.
+          config: ./scraper/config.json
+
