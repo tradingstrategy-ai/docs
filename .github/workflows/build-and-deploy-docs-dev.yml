@@ -48,9 +48,10 @@ jobs:
       # https://zellwk.com/blog/github-actions-deploy/
       # https://github.com/webfactory/ssh-agent
 
-      - name: Verify docs build output
+      - name: Locate built HTML folder (absolute)
         run: |
-          ls -lah docs/build/html || (echo "❌ Folder docs/build/html not found" && exit 1)
+          echo "📍 Absolute path of html folder:"
+          find "$(pwd)" -type d -name html | grep build || (echo "❌ html folder not found" && exit 1)
       
       - name: Install SSH Key
         uses: webfactory/ssh-agent@v0.5.4
