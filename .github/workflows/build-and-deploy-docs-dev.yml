@@ -50,7 +50,7 @@ jobs:
 
       - name: Verify docs build output
         run: |
-        ls -lah docs/build/html || (echo "❌ Folder docs/build/html not found" && exit 1)
+          ls -lah docs/build/html || (echo "❌ Folder docs/build/html not found" && exit 1)
       
       - name: Install SSH Key
         uses: webfactory/ssh-agent@v0.5.4
