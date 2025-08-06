@@ -47,17 +47,6 @@ jobs:
       
       # https://zellwk.com/blog/github-actions-deploy/
       # https://github.com/webfactory/ssh-agent
-
-      - name: Locate built HTML folder (absolute)
-        run: |
-          echo "📍 Absolute path of html folder:"
-          find "$(pwd)" -type d -name html | grep build || (echo "❌ html folder not found" && exit 1)
-      
-      - name: Show docs folder tree
-        run: |
-          echo "📁 Tree structure under ./docs"
-          sudo apt-get update && sudo apt-get install -y tree
-          tree -L 3 ./docs || (echo "❌ Cannot show tree of ./docs" && exit 1)
       
       - name: Install SSH Key
         uses: webfactory/ssh-agent@v0.5.4
