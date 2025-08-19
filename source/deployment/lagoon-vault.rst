@@ -394,10 +394,10 @@ For ``enableModule`` / ``disableModule`` the ABI snippet is:
     }
     ]
 
-The transaction builder should have a batch transaction of
+The script above should give you the information for the Gnosis SAfe Transaction builder to craft a batch transaction of:
 
-1. ``disableModule()`` Disable the old guard module, reset the list with 0x1 special address
-2. ``enableModule()`` Enable the new guard module
+1. ``disableModule(0x0000000000000000000000000000000000000001, old guard address)`` Disable the old guard module, reset the list with 0x1 special address
+2. ``enableModule(new guard aaddess)`` Enable the new guard module
 
 Finishing the transition
 ~~~~~~~~~~~~~~~~~~~~~~~~
