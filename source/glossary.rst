@@ -5968,10 +5968,11 @@ and algorithmic trading.
         ERC-7540 is an Ethereum Improvement Proposal (EIP) that extends the ERC-4626 tokenized vault standard by introducing support for asynchronous deposit and redemption processes. The ERC-4626 standard defines a framework for yield-bearing vaults—smart contracts that manage assets and provide rewards to token depositors—but it is limited to atomic (immediate) deposits and redemptions up to a certain threshold, beyond which no further actions can be processed. ERC-7540 addresses this limitation by enabling asynchronous workflows, allowing users to request deposits or redemptions and track their status over time, rather than requiring instant execution.
 
         Key features of ERC-7540 include:
-        - Asynchronous Requests: New methods are added to initiate deposit or redemption requests, with the ability to monitor their progress (e.g., pending or claimable status).
-        - Compatibility with ERC-4626: It builds on the existing standard, using ERC-4626’s deposit, mint, withdraw, and redeem functions to execute requests once they are claimable, while overriding certain behaviors for asynchronous flows.
-        - Flexibility: Implementations can choose to support asynchronous deposits, redemptions, or both, depending on the use case.
-        - Enhanced Composability: By supporting delayed or asynchronous actions, it improves the usability of yield-bearing tokens in decentralized finance (DeFi), especially for systems requiring time-dependent operations.
+
+        * Asynchronous Requests: New methods are added to initiate deposit or redemption requests, with the ability to monitor their progress (e.g., pending or claimable status).
+        * Compatibility with ERC-4626: It builds on the existing standard, using ERC-4626’s deposit, mint, withdraw, and redeem functions to execute requests once they are claimable, while overriding certain behaviors for asynchronous flows.
+        * Flexibility: Implementations can choose to support asynchronous deposits, redemptions, or both, depending on the use case.
+        * Enhanced Composability: By supporting delayed or asynchronous actions, it improves the usability of yield-bearing tokens in decentralized finance (DeFi), especially for systems requiring time-dependent operations.
 
         This proposal is particularly beneficial for protocols involving real-world assets (:term:`RWAs <RWA>`), cross-chain lending, and liquid staking, where immediate processing may not always be feasible. Introduced in October 2023, ERC-7540 aims to enhance Ethereum’s functionality and scalability, making it more adaptable to complex financial applications.
 
