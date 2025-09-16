@@ -6397,6 +6397,12 @@ and algorithmic trading.
         GMX offers dozens of perp trading pairs for popular cryptocurrencies like BTC, ETH and SOL.
         GMX is so-called pure :term:`onchain` market with high degree of decentralisation. Thus, GMX has
         high :term:`composability` with other :term:`decentralised finance` :term:`protocols <protocol>`.
+        This allows users :term:`longing` and :term:`shorting` different asset prices with :term:`leverage`
+        onchain.
+
+        GMX is one of the oldest pure onchain perpetual future market places still running. GMX mainly operates on Arbitrum,
+        but has expanded to include cross-chain functionality.
+        `GMX saw a hacking incident in July 2025 from which it recovered <https://www.google.com/search?q=gmx+hack&sca_esv=53f892ddff1617d9&hl=en&ei=-A3JaNPhK9yxwPAPoueP8Q8&start=10&sa=N&sstk=Ac65TH6389bl2w7it5NOm9PYcB84kQsMy3g3h7SI5jDpQxdQ9yJ0SNQe2uotMiMya0GtFAxg6GGRazcWSoMNNmG5kuQJAn-eDIwtzA&ved=2ahUKEwjTvcHL3dyPAxXcGBAIHaLzI_4Q8NMDegQIChAW&biw=1376&bih=928&dpr=2>`__.
 
         GMX has its own :term:`pools` for :term:`market making` where pools users can provide liquidity
         and take the other side of the trade. There are `GLP vaults <https://x.com/GMX_IO/status/1831403607972892737?lang=en>`__
@@ -6407,9 +6413,8 @@ and algorithmic trading.
         There are multiple third-party DeFi vaults built on the top of GMX, like `Umami's GM vaults <https://umami.finance/vaults>`__
         following :term:`ERC-4626` standard.
 
-        GMX is one of the oldest pure onchain perpetual future market places still running. GMX mainly operates on Arbitrum,
-        but has expanded to include cross-chain functionality.
-        `GMX saw a hacking incident in July 2025 from which it recovered <https://www.google.com/search?q=gmx+hack&sca_esv=53f892ddff1617d9&hl=en&ei=-A3JaNPhK9yxwPAPoueP8Q8&start=10&sa=N&sstk=Ac65TH6389bl2w7it5NOm9PYcB84kQsMy3g3h7SI5jDpQxdQ9yJ0SNQe2uotMiMya0GtFAxg6GGRazcWSoMNNmG5kuQJAn-eDIwtzA&ved=2ahUKEwjTvcHL3dyPAxXcGBAIHaLzI_4Q8NMDegQIChAW&biw=1376&bih=928&dpr=2>`__.
+        GMX does not have its own price formation, but uses ChainLink price feeds to the track the :term:`spot market` price of underlying
+        futures.
 
         More:
 
