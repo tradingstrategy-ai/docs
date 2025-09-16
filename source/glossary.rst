@@ -6413,8 +6413,12 @@ and algorithmic trading.
         There are multiple third-party DeFi vaults built on the top of GMX, like `Umami's GM vaults <https://umami.finance/vaults>`__
         following :term:`ERC-4626` standard.
 
-        GMX does not have its own price formation, but uses ChainLink price feeds to the track the :term:`spot market` price of underlying
-        futures.
+        GMX price formation relies on its multi-asset liquidity pool (GLP) and a "virtual" :term:`AMM` (vAMM) model that uses
+        Chainlink oracles for price data instead of a traditional order book.
+        When users trade, the vAMM calculates the price based on the ratio of assets in the GLP pool,
+        and price feeds from Chainlink ensure accurate pricing for fixed-price trades.
+        Unlike standard AMMs, GMX's vAMM shifts risk to :term:`liquidity providers <liquidity provider>` (LPs) in the GLP pool,
+        with traders paying a fee that is split between the GMX token holders and the GLP LPs.
 
         More:
 
