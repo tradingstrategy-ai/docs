@@ -6436,5 +6436,32 @@ and algorithmic trading.
 
         - :term:`EVM`
 
+    CCXT
+
+        In :term:`quantitative finance`, CCXT is a popular software development library for abstracting integration
+        with different cryptocurrency exchanges.
+
+        CCXT is one of the most popular open source libraries for trading automation for cryptocurrencies. Traders use it to
+        connect to different cryptocurrency exchanges to automatically execute trades and :term:`trading strategies <trading strategy>`.
+        CCXT supports ~200 different cryptocurrency exchanges.
+
+        CCXT is developed in domain-specific language variation of TypeScript, and API bindings are generated for
+        multiple programming languages, including :term:`Python`, JavaScript, PHP, Rust and C#.
+
+        CCXT supports :term:`spot markets <spot market>`, :term:`perpetual futures <perpetual futures>`.
+
+        More about CCXT:
+
+        - `CCXT home page <https://github.com/ccxt/ccxt>`__
+
+        See also
+
+        - :term:`Market making`
+
+        - :term:`Python`
+
+        - :term:`CEX`
+
+        - :term:`DEX`
 
 
