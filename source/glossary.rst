@@ -6390,13 +6390,42 @@ and algorithmic trading.
 
         - :term:`EVM`
 
+    GMX
 
+        GMX is a :term:`perpetual future <perpetual future>` ("perp") :term:`DEX` for :term:`EVM` blockchains.
 
+        GMX offers dozens of perp trading pairs for popular cryptocurrencies like BTC, ETH and SOL.
+        GMX is so-called pure :term:`onchain` market with high degree of decentralisation. Thus, GMX has
+        high :term:`composability` with other :term:`decentralised finance` :term:`protocols <protocol>`.
 
+        GMX has its own :term:`pools` for :term:`market making` where pools users can provide liquidity
+        and take the other side of the trade. There are `GLP vaults <https://x.com/GMX_IO/status/1831403607972892737?lang=en>`__
+        in GMX v2 and older GLP vaults in GMX v1. GLV is the index pool of GMX's markets,
+        rebalancing liquidity to its best-performing GM pools and generating fees from them.
+        As a result, GLV offers liquidity providers a balanced instrument with stable risk-adjusted returns and high capital efficiency.
 
+        There are multiple third-party DeFi vaults built on the top of GMX, like `Umami's GM vaults <https://umami.finance/vaults>`__
+        following :term:`ERC-4626` standard.
 
+        GMX is one of the oldest pure onchain perpetual future market places still running. GMX mainly operates on Arbitrum,
+        but has expanded to include cross-chain functionality.
+        `GMX saw a hacking incident in July 2025 from which it recovered <https://www.google.com/search?q=gmx+hack&sca_esv=53f892ddff1617d9&hl=en&ei=-A3JaNPhK9yxwPAPoueP8Q8&start=10&sa=N&sstk=Ac65TH6389bl2w7it5NOm9PYcB84kQsMy3g3h7SI5jDpQxdQ9yJ0SNQe2uotMiMya0GtFAxg6GGRazcWSoMNNmG5kuQJAn-eDIwtzA&ved=2ahUKEwjTvcHL3dyPAxXcGBAIHaLzI_4Q8NMDegQIChAW&biw=1376&bih=928&dpr=2>`__.
 
+        More:
 
+        - `GMX Python API documentation in eth_defi package <https://web3-ethereum-defi.readthedocs.io/api/gmx/index.html>`__
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Vault`
+
+        - :term:`Protocol`
+
+        - :term:`EVM`
 
 
 

@@ -206,3 +206,31 @@ Does Trend-Following Still Work on Stocks?
 This paper revisits and extends the results presented in 2005 by Wilcox and Crittenden in a white paper titled Does Trend Following Work on Stocks? Leveraging a survivorship-bias-free dataset of all liquid U.S. stocks from 1950 through November 2024, we examine more than 66,000 simulated long-only trend trades. Our results confirm a highly skewed profit distribution, with less than 7% of trades driving the cumulative profitability. These core statistics hold up out-of-sample (2005–2024), maintaining strong returns despite a modest decline in average trade profitability following the original publication. In the second part of this study, we backtest a long-only trend-following portfolio specifically aimed at capturing outlier returns in individual stocks. While the theoretical portfolio exhibits exceptional gross-of-fees performance from 1991 until 2024 (e.g., a CAGR of 15.19% and an annualized alpha of 6.18%), its extensive daily turnover poses a significant challenge once transaction costs are considered. Examining net-of-fee performance across various asset under management (AUM) levels, we find that the base trend-following approach is not viable for smaller portfolios (AUM less than $1M) due to the dampening effect of trading costs. However, by incorporating a Turnover Control algorithm, we substantially mitigate these transaction cost burdens, rendering the strategy attractive across all tested portfolio sizes even after fees.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5084316>`__
+
+
+Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture
+------------------------------------------------------------------------------------
+
+We introduce the Momentum Transformer,
+an attention-based deep-learning architecture, which out-
+performs benchmark time-series momentum and mean-
+reversion trading strategies. Unlike state-of-the-art Long
+Short-Term Memory (LSTM) architectures, which are
+sequential in nature and tailored to local processing, an
+attention mechanism provides our architecture with a
+direct connection to all previous time-steps. Our archi-
+tecture, an attention-LSTM hybrid, enables us to learn
+longer-term dependencies, improves performance when
+considering returns net of transaction costs and naturally
+adapts to new market regimes, such as during the SARS-
+CoV-2 crisis. Via the introduction of multiple attention
+heads, we can capture concurrent regimes, or temporal
+dynamics, which are occurring at different timescales.
+The Momentum Transformer is inherently interpretable,
+providing us with greater insights into our deep-learning
+momentum trading strategy, including the importance of
+different factors over time and the past time-steps which
+are of the greatest significance to the model.
+
+`Read the paper <https://arxiv.org/pdf/2112.08534>`__
+
