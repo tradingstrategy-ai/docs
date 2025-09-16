@@ -6414,7 +6414,7 @@ and algorithmic trading.
         following :term:`ERC-4626` standard.
 
         GMX price formation relies on its multi-asset liquidity pool (GLP) and a "virtual" :term:`AMM` (vAMM) model that uses
-        Chainlink oracles for price data instead of a traditional order book.
+        Chainlink oracles for price data instead of a traditional :term:`order book`.
         When users trade, the vAMM calculates the price based on the ratio of assets in the GLP pool,
         and price feeds from Chainlink ensure accurate pricing for fixed-price trades.
         Unlike standard AMMs, GMX's vAMM shifts risk to :term:`liquidity providers <liquidity provider>` (LPs) in the GLP pool,
