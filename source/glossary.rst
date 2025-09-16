@@ -6445,6 +6445,20 @@ and algorithmic trading.
         connect to different cryptocurrency exchanges to automatically execute trades and :term:`trading strategies <trading strategy>`.
         CCXT supports ~200 different cryptocurrency exchanges.
 
+        Use cases include
+
+        * Algorithmic Trading: Build and backtest trading strategies using historical data or real-time feeds, leveraging CCXT's ability to fetch data and execute trades across exchanges.
+        * Arbitrage: Identify and exploit price differences between exchanges by using CCXT to monitor and trade on multiple platforms simultaneously.
+        * Portfolio Management: Monitor and manage cryptocurrency holdings across multiple exchanges.
+        * Market Analysis: Collect and analyze large datasets for statistical modeling, machine learning, or technical analysis.
+        * Risk Management: Use CCXT to fetch real-time data for calculating metrics like volatility, Value-at-Risk (VaR), or portfolio exposure.
+
+        Benefits of CCXT are
+        * Saves Time: Abstracts away the complexity of dealing with different exchange APIs.
+        * Scalability: Supports a wide range of exchanges, making it easy to scale strategies across platforms.
+        * Community-Driven: Actively maintained with contributions from developers worldwide.
+        * Open-Source: Free to use and customizable for specific needs.
+
         CCXT is developed in domain-specific language variation of TypeScript, and API bindings are generated for
         multiple programming languages, including :term:`Python`, JavaScript, PHP, Rust and C#.
 
