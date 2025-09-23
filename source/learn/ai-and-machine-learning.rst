@@ -441,7 +441,7 @@ highly volatile financial environments, and underscore the potential for advance
 machine learning techniques to enhance market understanding in the cryptocur-
 rency domain.
 
-`Read the paper <file:///Users/moo/Downloads/DLHFPP-1.pdf>`__.
+`Read the paper <https://github.com/miohtama/Midprice-Prediction/blob/main/DLHFPP.pdf>`__.
 
 `Read the code <https://github.com/miohtama/Midprice-Prediction>`__.
 
