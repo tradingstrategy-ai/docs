@@ -476,3 +476,10 @@ Cryptocurrency price prediction presents a significant challenge due to the inhe
 By Stephan Akkerman from Utrecht University, Netherlands.
 
 `Read the paper <https://studenttheses.uu.nl/handle/20.500.12932/45623>`__.
+
+Volatility dynamics of cryptocurrencies: a comparative analysis using GARCH-family models
+-----------------------------------------------------------------------------------------
+
+Cryptocurrency markets have evolved into a vital segment of the global financial ecosystem, drawing considerable interest from both investors and regulatory bodies. Yet, their extreme price instability demands innovative strategies for risk mitigation and investment that diverge from conventional financial practices. This research focuses on analyzing the volatility patterns of leading cryptocurrencies—Bitcoin (BTC), Ethereum (ETH), and Binance Coin (BNB)—by employing GARCH-family models such as GARCH, EGARCH, TGARCH, and CGARCH. Through a comparative evaluation of these models, the study identifies the optimal framework for characterizing cryptocurrency market volatility. Utilizing daily closing prices from Yahoo Finance (January 1, 2019, to January 8, 2025), the analysis reveals that TGARCH outperforms others for BTC, EGARCH for ETH, and CGARCH for BNB, underscoring the critical role of asymmetric volatility in these markets. This work advances existing research by offering a detailed comparison of GARCH-based approaches and practical insights for risk evaluation and portfolio optimization.
+
+`Read the paper <https://fbj.springeropen.com/articles/10.1186/s43093-025-00568-w#>`__.
