@@ -6570,7 +6570,7 @@ and algorithmic trading.
 
     Aster
 
-        Aster DEX is a decentralized :term:`perpetual futures <perpetual future>` exchange (perp :term:`DEX`) designed for traders of all levels, offering seamless on-chain trading with features like low fees, deep liquidity, multichain support, and leverage up to 1001x. Backed by YZI Labs and linked to Changpeng Zhao (CZ), the former Binance CEO, it aims to rival established platforms like Hyperliquid by providing user-friendly modes—Simple for beginners with one-click trades and Pro for advanced users with tools like hidden orders and MEV-free execution. Launched in 2025, Aster emphasizes accessibility and innovation in the DeFi space, allowing spot and perpetual trading across various assets while incorporating yield-earning opportunities.
+        Aster DEX is a decentralized :term:`perpetual futures <perpetual future>` exchange (perp :term:`DEX`) designed for traders of all levels, offering seamless on-chain trading with features like low fees, deep liquidity, multichain support, and leverage up to 1001x. Backed by YZI Labs and linked to Changpeng Zhao (CZ), the former Binance CEO, it aims to rival established platforms like Hyperliquid.
 
         The platform supports a wide range of cryptocurrencies and is expanding its offerings, with plans to introduce blue-chip stock perpetuals (e.g., NVDA, TSLA) already live and commodities like oil and gold, plus forex pairs, slated for rollout by the end of 2025. Aster's token, ASTER, powers the ecosystem, with governance and staking features to enhance user engagement. It has gained traction for its high-performance infrastructure and focus on fair trading rules, positioning itself as a next-gen DEX amid growing competition in :term:`onchain` trading.
 
@@ -6598,3 +6598,16 @@ and algorithmic trading.
         - :term:`Delta hedged`
 
         - :term:`Annual Percentage Yield (APY)`
+
+    Euler
+
+        Euler Finance is a :term:`self-custodial`, permissionless :term:`decentralised finance` :term:`lending protocol` built on :term:`Ethereum`, enabling users to lend and borrow a wide range of long-tail crypto assets with flexible collateral options and market-leading risk-adjusted rates. Launched in 2021 and redesigned as Euler V2 following a significant exploit, the protocol emphasizes modularity, security, and capital efficiency, allowing any asset to serve as collateral for lending markets. It operates as a "DeFi super app" with features like isolated lending pools and advanced risk management, positioning it as a second-generation platform for efficient borrowing and lending in the crypto ecosystem.
+
+        The Euler Vault Kit (EVK) is a core component of Euler V2, providing a modular framework for developers to create customizable credit :term:`vaults <vault>` — extended ERC-4626 compliant vaults that add borrowing functionality to passive lending pools. EVK enables permissionless, composable lending markets by handling base authentication, vault access logic, and operations, while integrating with the Ethereum Vault Connector (EVC) for enhanced interoperability and yield generation through external strategies. This toolkit empowers builders to tailor vaults for specific assets or risk profiles, fostering a broader modular lending ecosystem within DeFi.
+
+
+        - :term:`Lending protocol`
+
+        - :term:`Self-custodial`
+
+        - :term:`Delta hedged`
