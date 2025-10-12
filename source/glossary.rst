@@ -6605,6 +6605,7 @@ and algorithmic trading.
 
         The Euler Vault Kit (EVK) is a core component of Euler V2, providing a modular framework for developers to create customizable credit :term:`vaults <vault>` — extended ERC-4626 compliant vaults that add borrowing functionality to passive lending pools. EVK enables permissionless, composable lending markets by handling base authentication, vault access logic, and operations, while integrating with the Ethereum Vault Connector (EVC) for enhanced interoperability and yield generation through external strategies. This toolkit empowers builders to tailor vaults for specific assets or risk profiles, fostering a broader modular lending ecosystem within DeFi.
 
+        See also
 
         - :term:`Lending protocol`
 
