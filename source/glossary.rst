@@ -6551,3 +6551,50 @@ and algorithmic trading.
         - :term:`Decentralised finance`
 
         - :term:`DEX`
+
+    MetaMask mUSD
+
+        MetaMask USD (mUSD) is a US Dollar-backed :term:`stablecoin` launched by MetaMask, the popular :temr:`self-custodial` cryptocurrency :term:`wallet` developed by ConsenSys. Introduced in August 2025 as the first wallet-native stablecoin, mUSD is designed to simplify cryptocurrency interactions by being fully integrated into the MetaMask ecosystem. It operates on :term:`Ethereum` and :term:`Linea` blockchains, allowing users to easily buy, hold, trade, swap, and spend the stablecoin directly within the wallet without needing external exchanges. Backed by partnerships like Stripe's Bridge for stability and security, mUSD maintains a 1:1 peg to the USD and emphasizes user control over funds in a non-custodial manner.
+
+        Beyond basic holding, mUSD offers features like earning passive income through MetaMask's Stablecoin Earn, powered by :term:`Aave`, where users can deposit stablecoins such as USDC, USDT, or DAI to generate yields directly in the wallet. It also integrates with trading tools, including perpetual futures, and a rewards program that lets users earn points for holding mUSD. The stablecoin saw rapid adoption, with its circulating supply exceeding $100 million.
+
+        See also
+
+        - :term:`Stablecoin`
+
+        - :term:`Lending pool`
+
+        - :term:`Passive strategy`
+
+        - :term:`Drawdown`
+
+    Aster
+
+        Aster DEX is a decentralized :term:`perpetual futures <perpetual future>` exchange (perp :term:`DEX`) designed for traders of all levels, offering seamless on-chain trading with features like low fees, deep liquidity, multichain support, and leverage up to 1001x. Backed by YZI Labs and linked to Changpeng Zhao (CZ), the former Binance CEO, it aims to rival established platforms like Hyperliquid by providing user-friendly modes—Simple for beginners with one-click trades and Pro for advanced users with tools like hidden orders and MEV-free execution. Launched in 2025, Aster emphasizes accessibility and innovation in the DeFi space, allowing spot and perpetual trading across various assets while incorporating yield-earning opportunities.
+
+        The platform supports a wide range of cryptocurrencies and is expanding its offerings, with plans to introduce blue-chip stock perpetuals (e.g., NVDA, TSLA) already live and commodities like oil and gold, plus forex pairs, slated for rollout by the end of 2025. Aster's token, ASTER, powers the ecosystem, with governance and staking features to enhance user engagement. It has gained traction for its high-performance infrastructure and focus on fair trading rules, positioning itself as a next-gen DEX amid growing competition in :term:`onchain` trading.
+
+
+        :term:`USDF` is a native, yield-bearing :term:`stablecoin` issued by Aster.
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
+        - :term:`USDF`
+
+    USDF
+
+        USDF is a native, yield-bearing :term:`stablecoin` issued by :term:`Aster`, designed to maintain a 1:1 peg with USDT while providing passive returns to holders through interest accrual. It is fully collateralized by USDT deposits, which Aster allocates to generate yields via :term:`delta-neutral <delta hedged>` strategies and other mechanisms, allowing users to earn :term:`APY <Annual Percentage Yield (APY)>` >5% without exposing them to significant :term:`volatility`. Users can mint USDF by depositing USDT, stake it to receive asUSDF for enhanced yields, and utilize it in looping strategies on platforms like Lista DAO to borrow and reinvest for compounded returns. As of recent data, USDF has seen rapid growth, with over $370 million minted and its supply expanding 4x in a single week, reflecting strong adoption in the BNB Chain ecosystem.
+
+        USDF is deeply integrated into Aster DEX as part of its Aster Earn suite, serving as a key collateral asset for perpetual futures trading and enhancing user incentives through airdrop points multipliers (e.g., 1.2x on certain markets). This creates a flywheel effect where users deposit USDT to mint USDF, stake for yields, and trade on Aster's multi-chain platform.  Positioned as a competitor to projects like Ethena on BSC, USDF drives Aster's growth by turning idle capital into productive assets.
+
+        - :term:`Aster`
+
+        - :term:`Stablecoin`
+
+        - :term:`Delta hedged`
+
+        - :term:`Annual Percentage Yield (APY)`
