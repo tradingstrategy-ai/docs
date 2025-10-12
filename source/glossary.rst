@@ -6478,4 +6478,76 @@ and algorithmic trading.
 
         - :term:`DEX`
 
+    Hemi
 
+        Hemi is an :term:`EVM-compatible` blockchain.
+
+        Hemi is a modular Layer-2 blockchain designed to bridge the gap between Bitcoin and Ethereum, creating a unified "supernetwork." Its primary goal is to bring Ethereum's smart contract capabilities to the Bitcoin ecosystem, unlocking new possibilities for decentralized finance (DeFi) on the world's original cryptocurrency. By doing so, Hemi aims to address Bitcoin's limited programmability while leveraging its robust security, offering developers a platform to build powerful cross-chain applications. This interoperability allows for the seamless transfer of assets and data between the two largest blockchain networks.
+
+            At its core, Hemi employs several key technological innovations to achieve this integration. The Hemi Virtual Machine (hVM) is an Ethereum Virtual Machine (EVM)-compatible environment that includes a full Bitcoin node, enabling smart contracts to directly access and interact with Bitcoin's data. Security is paramount, and Hemi utilizes a unique Proof-of-Proof (PoP) consensus mechanism, which anchors its state to the Bitcoin blockchain. This process provides Hemi with Bitcoin-level security and finality. Furthermore, Hemi facilitates cross-chain asset transfers through a system called "Tunnels," which are designed to be more secure and trust-minimized than traditional blockchain bridges.
+
+        See also
+
+        - :term:`EVM-compatible`
+
+        - :term:`EVM`
+
+        - :term:`DEX`
+
+        - :term:`Decentralised finance`
+
+    Katana
+
+        Katana is an :term:`EVM-compatible` blockchain.
+
+        Katana is a Layer 2 blockchain specifically designed to enhance the :term:`decentralised finance` ecosystem by tackling the prevalent issues of fragmented liquidity and unsustainable yields. Developed in collaboration with Polygon Labs and GSR, Katana provides a comprehensive platform that integrates liquidity aggregation, yield optimization, and privacy features. By creating a unified environment, it aims to offer deeper liquidity and more reliable returns for both individual and institutional users. The native token of the Katana network is KAT, which is utilized for governance, fee sharing, and various incentive programs within the ecosystem.
+
+        At its core, Katana operates on Polygon's Agglayer, which allows for seamless interoperability between different blockchains. This architecture enables Katana to consolidate liquidity from various sources into a select few core applications, such as a decentralized exchange (:term:`DEX`) (Sushi), a :term:`lending protocol` (Morpho), and a perpetuals decentralized exchange (Vertex). A key feature is the "VaultBridge," which automatically deploys bridged assets into low-risk, yield-generating strategies on the Ethereum network. The returns from these strategies are then funneled back into the Katana ecosystem to provide sustainable incentives for its users, creating a more capital-efficient and user-friendly DeFi experience.
+
+        See also
+
+        - :term:`EVM-compatible`
+
+        - :term:`EVM`
+
+        - :term:`DEX`
+
+        - :term:`Decentralised finance`
+
+    Plasma
+
+        Plasma is an :term:`EVM-compatible` blockchain.
+
+         Plasma is a standalone Layer-1 blockchain meticulously engineered to optimize global stablecoin payments, distinguishing it from the earlier Ethereum scaling solution of the same name. Its primary mission is to provide a high-throughput, low-cost, and user-friendly infrastructure for stablecoins like USDT. To achieve this, Plasma introduces several key innovations, most notably the ability to conduct zero-fee USDT transfers. This is made possible through a "paymaster" system that subsidizes the gas costs for simple transactions, removing a significant barrier to entry for mainstream users who may not want to hold a separate native token (XPL) just to pay for transaction fees.
+
+        At its technical core, Plasma operates on a consensus mechanism called PlasmaBFT, which is a variation of the HotStuff protocol, enabling fast transaction finality in under a second. The network is also fully :term:`EVM-compatible`, meaning developers can easily migrate decentralized applications from Ethereum or build new ones using the familiar Solidity programming language and developer tools. This focus on both performance and ease of development positions Plasma to support a wide range of applications beyond simple payments, including remittances, payroll, and various :term:`decentralised finance` (DeFi) protocols that rely on the stability and efficiency of stablecoin transactions.
+
+        See also
+
+        - :term:`EVM-compatible`
+
+        - :term:`EVM`
+
+        - :term:`DEX`
+
+        - :term:`Decentralised finance`
+
+    Linea
+
+        Linea is an :term:`EVM-compatible` blockchain.
+
+        Linea is a Layer 2 (L2) scaling solution designed to enhance the :term:`Ethereum` network by providing faster, cheaper transactions while maintaining full compatibility with Ethereum's ecosystem. Developed primarily by ConsenSys in collaboration with the Ethereum open-source community, including partners like ENS and Status, Linea operates as a zkEVM rollup—a zero-knowledge Ethereum Virtual Machine that uses cryptographic proofs to bundle off-chain transactions and settle them securely on Ethereum mainnet. This architecture ensures Ethereum equivalence, meaning developers can seamlessly deploy decentralized applications (dApps) using familiar Ethereum tools and smart contracts without modifications, while benefiting from features like rapid settlement, ultra-low fees, and up to 10x improved zero-knowledge proving performance compared to general zkVMs.
+
+        A core focus of Linea is strengthening Ethereum's economic model by driving value back to the mainnet; for instance, every transaction burns :term:`Ether` (with 20% of fees dedicated to this), promoting scarcity and long-term value for ETH. It also introduces capital-efficient mechanisms like native staking on bridged ETH, which generates yields for :term:`decentralised finance` liquidity providers, and an Ecosystem Council comprising major players such as MetaMask, Aave, Chainlink, and others to manage a large fund for ecosystem growth. The LINEA token, which mirrors Ethereum's Genesis distribution without insider allocations, serves to incentivize builders, users, public goods, and Ethereum R&D, aligning the network's incentives closely with Ethereum's overall success.
+
+        See also
+
+        - :term:`EVM-compatible`
+
+        - :term:`EVM`
+
+        - :term:`DEX`
+
+        - :term:`Decentralised finance`
+
+        - :term:`DEX`
