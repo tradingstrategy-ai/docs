@@ -6612,3 +6612,25 @@ and algorithmic trading.
         - :term:`Self-custodial`
 
         - :term:`Delta hedged`
+
+    Selling volatility
+
+        In :term:`quantitative finance`, "selling volatility" (also known as being "short volatility" or "short vol" or "selling vol") refers to implementing :term:`trading strategies <trading strategy>` that profit when market :term:`volatility` decreases, remains stable, or when realized (actual) volatility turns out lower than the implied volatility priced into financial instruments. This is often done by selling options contracts, such as calls, puts, straddles, or strangles, where the seller collects a premium upfront. If the underlying asset's price doesn't move significantly (i.e., low volatility), the options may expire worthless, allowing the seller to retain the premium as profit. However, this approach carries substantial risk, as a sudden spike in volatility can lead to large losses—often described as "picking up pennies in front of a steamroller." Other methods include shorting volatility futures (e.g., VIX futures), exchange-traded products like inverse volatility ETFs, or variance swaps. These strategies are common in hedge funds and proprietary trading desks, where quantitative models forecast volatility to identify overpriced implied vol for selling.
+
+        In cryptocurrency trading, the concept is similar but adapted to the crypto ecosystem's unique characteristics, such as 24/7 markets and inherently high baseline volatility driven by factors like low :term:`liquidity`, speculation, and sentiment swings. Selling volatility typically involves selling options on cryptocurrencies like Bitcoin or Ethereum through centralized exchanges (e.g., Deribit, OKX) or decentralized platforms. Traders might sell call or put options to collect premiums, betting that crypto prices won't fluctuate wildly beyond the strike prices before expiration. In perpetual futures markets, :term:`delta-neutral <Delta hedged>` strategies can also mimic short vol positions by hedging :term:`spot market` exposure while profiting from funding rates during low-vol periods. The appeal in crypto stems from elevated implied volatilities (often 50-100% annualized for major coins), but the risks are amplified due to potential flash crashes or extreme price swings, making it a high-stakes quant strategy for experienced traders.
+
+        See also
+
+        - :term:`Volatility`
+
+        - :term:`Trading Strategy Protocol`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Technical analysis`
+
+        - :term:`Automated trading strategy`
+
+        - :term:`Delta hedged`
+
+        - :term:`Spot market`
