@@ -6634,3 +6634,113 @@ and algorithmic trading.
         - :term:`Delta hedged`
 
         - :term:`Spot market`
+
+    Automatic deleverage
+
+        In cryptocurrency :term:`perpetual futures trading <perpetual future>`, "automatic deleverage" (often abbreviated as ADL or auto-deleverage) refers to a risk management mechanism implemented by exchanges to prevent systemic losses when a trader's position becomes bankrupt and the platform's insurance fund cannot fully absorb the resulting shortfall. This typically occurs in :term:`highly volatile <volatility>` markets where liquidations happen at prices worse than the bankruptcy price, leading to uncovered losses.
+
+        **How ADL works**
+
+        1. **Triggering ADL**: When a position is liquidated but cannot be closed at or better than its bankruptcy price (the price at which the position's value equals zero after accounting for margin and fees), the exchange's insurance fund steps in to cover the difference. If multiple such events deplete the fund below a certain threshold (e.g., when the fund's balance plus the liquidated position's unrealized P&L and margin ≤ 0), ADL is activated as a last resort to restore the fund.
+
+        2. **Ranking and Selection**: Profitable positions on the opposite side of the liquidated trade (e.g., longs if a short is bankrupt, or vice versa) are ranked for deleveraging. Ranking is typically based on a combination of profit percentage and leverage, prioritizing the most profitable and highly leveraged positions. For example:
+           - On some platforms, it's calculated as Leveraged Returns = Position P&L (%) × Position Margin Rate (for isolated margin positions in profit).
+           - On others, it's Leverage PnL% = Position's PnL% × Effective Leverage, with higher positive values deleveraged first.
+           Exchanges often display an ADL indicator (e.g., 1-5 lights) to warn users of their risk level based on this ranking.
+
+        3. **Execution**: Selected positions are partially or fully closed at the bankruptcy price of the liquidated position, with the proceeds contributing to the insurance fund. This offsets the losses without the exchange bearing them. Active orders on affected positions are canceled, and traders are notified via email or app. Fees may apply, such as maker fees for the deleveraged trader.
+
+        **Risks and considerations**
+
+        ADL can shock even experienced traders by forcibly reducing winning positions, potentially locking in profits prematurely or at unfavorable prices. It amplifies risks in crypto's 24/7, high-volatility environment, where flash crashes can trigger mass liquidations. To mitigate, traders can use lower leverage, monitor ADL indicators, or employ hedging strategies (e.g., :term:`delta-neutral <delta hedged>` across :term:`spot markets` and futures), which may lower ranking priority. While rare, ADL events have occurred during major market moves, like crypto crashes, affecting platforms such as Bybit, OKX, Binance, and others.
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`Volatility`
+
+        - :term:`Trading strategy`
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Delta hedged`
+
+    Cascading liquidation
+
+        Cascading liquidation, also known as a liquidation cascade, refers to a chain reaction in cryptocurrency markets where an initial wave of forced position closures triggers further :term:`liquidations <liquidadtion>`, often resulting in rapid and amplified price declines. This phenomenon is particularly prevalent in leveraged trading environments, such as :term:`perpetual futures <perpetual future>` or margin trading on crypto exchanges, where traders borrow funds to amplify their positions. When the market moves against these positions (e.g., a sharp price drop for long positions), accounts fall below required margin levels, prompting automated liquidations to repay borrowed funds. The selling pressure from these closures pushes prices even lower, hitting more liquidation thresholds and creating a self-reinforcing downward spiral.
+
+        ** How cascading liquidations occur**
+
+        1. **Initial Trigger**: A market event, such as negative news, regulatory announcements, or a sudden sell-off, causes prices to drop. Highly leveraged positions (e.g., 10x or higher) are the first to hit liquidation prices, where the exchange force-sells the collateral.
+
+        2. **Domino Effect**: The forced sales increase supply in the market, driving prices down further. This activates liquidations for positions with slightly higher thresholds, compounding the sell-off. In extreme cases, this can lead to flash crashes, where prices plummet temporarily before recovering.
+
+        3. **Market-Wide Impact**: Cascades often spread beyond a single asset due to correlations in crypto (e.g., Bitcoin's drop affecting altcoins). They are more common in bear markets with low confidence, high speculation, and over-leveraged participants. Exchanges may implement mechanisms like insurance funds or auto-deleverage to mitigate systemic risks, but these aren't always sufficient during high volatility.
+
+        ### Risks and Consequences
+        - Heightened :term:`volatility`: Rapid price swings can erode market confidence and lead to broader instability.
+        - Massive losses: Traders face not just position closures but also slippage (worse execution prices) and fees, potentially wiping out accounts.
+        - Systemic fffects: In interconnected markets, one cascade can trigger others, as seen in events like the 2020 "Crypto Black Thursday" (Bitcoin's value halved amid COVID-19 panic) or the 2021 Bitcoin crash from $60,000 to $30,000 due to regulatory fears.
+
+        **Prevention strategies**
+
+        To avoid being caught in a cascade, traders can:
+        - Use lower :term:`leverage` to increase buffer against price swings.
+        - Set :term:`stop loss` orders to exit positions before liquidation thresholds.
+        - Monitor open interest, funding rates, and market news for signs of over-leveraging.
+        - Diversify across assets and maintain sufficient account balances to handle margin calls.
+
+        While cascading liquidations highlight the risks of crypto's 24/7, high-leverage ecosystem, they also create opportunities for contrarian traders who anticipate rebounds after the dust settles in the form of "buy the dip" :term:`trading strategies <trading strategy>`.
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`Volatility`
+
+        - :term:`Liquidation`
+
+        - :term:`Leverage`
+
+        - :term:`Stop loss`
+
+    Recursive looping
+
+        Recursive looping, also known as recursive lending or borrowing loops, is a :term:`leveraged <leverage>` :term:`yield farming` strategy in :term:`decentralised finance` (DeFi) lending markets. It involves repeatedly borrowing against deposited collateral—often using the borrowed assets as additional collateral—to amplify exposure to interest rates, liquidity mining rewards, or other yields offered by lending protocols like Aave, Compound, or Euler. This creates a "loop" that multiplies the effective capital deployed without requiring additional external funds, essentially allowing users to borrow from themselves to lend back into the protocol.
+
+        **How Recursive Looping Works**
+
+        The process typically leverages overcollateralized lending mechanics in DeFi, where loans require collateral worth more than the borrowed amount (e.g., a 75% loan-to-value ratio means you can borrow up to 75% of your collateral's value). Here's a step-by-step breakdown:
+
+        1. **Initial Deposit**: A user deposits an asset (e.g., 100 USDC) as collateral into a :term:`lending protocol` like :term:`Aave`, earning supply interest and possibly governance tokens (e.g., ETH on Ethereum).
+
+        2. **Borrowing**: They borrow against this collateral—often the same asset or a correlated one (e.g., borrow 75 USDC against the 100 USDC collateral). The borrowed amount incurs borrowing interest, but if supply rewards outweigh borrowing costs, the net yield is positive.
+
+        3. **Re-Deposit and Repeat**: The borrowed asset is re-deposited as additional collateral, enabling more borrowing. This loop is repeated multiple times (e.g., 3-5x) to achieve higher leverage, such as turning 100 USDC into effective exposure of 300-400 USDC. Modern implementations often use flash loans (temporary, uncollateralized loans repaid in the same transaction) to automate the entire loop atomically, avoiding multiple on-chain steps and reducing gas fees.
+
+        4. **Yield Amplification**: The strategy profits from the spread between supply APY (annual percentage yield) and borrow APY, plus any token incentives. For instance, if supplying earns 5% APY plus rewards while borrowing costs 3%, the net yield per loop compounds. It's commonly applied to stablecoins or real-world asset (RWA) tokens for lower volatility.
+
+        In vault-based DeFi (e.g., Yearn Finance or recursive yield loops), automated strategies or "vaults" handle this recursively, where the vault borrows to fund its own liquidity provision, creating self-sustaining yield loops.
+
+        **Risks and considerations**
+
+        - **Liquidation Risk**: Leverage amplifies losses; a small price drop in the collateral asset can trigger cascading liquidations if the loan-to-value ratio exceeds safe levels.
+        - **Interest Rate Volatility**: If borrow rates spike above supply rates (e.g., due to market stress), the loop becomes unprofitable, leading to negative yields.
+        - **Smart Contract and Protocol Risks**: Bugs, oracle failures, or protocol exploits can lead to total loss.
+        - **Tax Implications**: In some jurisdictions, each borrow/re-deposit may trigger taxable events, creating a "recursive tax" burden.
+        - **Systemic Effects**: Widespread recursive looping can inflate protocol TVL (total value locked) artificially, potentially masking underlying risks and contributing to market bubbles and :term:`cascading liquidation`.
+
+        While recursive looping can generate high APYs (e.g., 10-50% or more in bull markets), it's suited for experienced users who monitor health factors and use tools like DeFi aggregators for optimization.
+
+        See also
+
+        - :term:`Lending protocol`
+
+        - :term:`Aave`
+
+        - :term:`Liquidation`
+
+        - :term:`Leverage`
+
+        - :term:`Cascading liquidation`
