@@ -247,3 +247,16 @@ Following a Trend with an Exponential Moving Average: Analytical Results for a G
 We investigate how price variations of a stock are transformed into profits and losses (P&Ls) of a trend following strategy. In the frame of a Gaussian model, we derive the probability distribution of P&Ls and analyze its moments (mean, variance, skewness and kurtosis) and asymptotic behavior (quantiles). We show that the asymmetry of the distribution (with often small losses and less frequent but significant profits) is reminiscent to trend following strategies and less dependent on peculiarities of price variations. At short times, trend following strategies admit larger losses than one may anticipate from standard Gaussian estimates, while smaller losses are ensured at longer times. Simple explicit formulas characterizing the distribution of P&Ls illustrate the basic mechanisms of momentum trading, while general matrix representations can be applied to arbitrary Gaussian models. We also compute explicitly annualized risk adjusted P&L and strategy turnover to account for transaction costs. We deduce the trend following optimal timescale and its dependence on both auto-correlation level and transaction costs. Theoretical results are illustrated on the Dow Jones index.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5209907>`__
+
+On covariance estimation of non-synchronously observed diffusion processes
+--------------------------------------------------------------------------
+
+We consider the problem of estimating the covariance of two diffusion processes when they are
+observed only at discrete times in a non-synchronous manner. The modern, popular approach in the
+literature, the realized covariance estimator, which is based on (regularly spaced) synchronous data, is
+problematic because the choice of regular interval size and data interpolation scheme may lead to
+unreliable estimation. We propose a new estimator which is free of any ‘synchronization’ processing
+of the original data, hence free of bias or other problems caused by it.
+
+`Read the paper <https://projecteuclid.org/journals/bernoulli/volume-11/issue-2/On-covariance-estimation-of-non-synchronously-observed-diffusion-processes/10.3150/bj/1116340299.pdf>`__
+
