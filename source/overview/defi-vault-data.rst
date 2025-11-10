@@ -22,17 +22,19 @@ See also
 - `Sharpe Ratio <https://tradingstrategy.ai/glossary/sharpe>`__
 - `TVL <https://tradingstrategy.ai/glossary/total-value-locked-tvl>`__
 
+The field descriptions:
+
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | Key                         | Label                     | Description                                                                                                                        |
 |                             |                           |                                                                                                                                    |
 +=============================+===========================+====================================================================================================================================+
 | ``name``                    | Name                      | Human‑readable vault name. May include chain information to ensure uniqueness.                                                     |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``lifetime_return``         | Lifetime Return (Gross)   | All‑time gross return from first to last price as a decimal fraction (e.g., 0.10 = 10%).                                          |
+| ``lifetime_return``         | Lifetime Return (Gross)   | All‑time gross return from first to last price as a decimal fraction (e.g., 0.10 = 10%).                                           |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``lifetime_return_net``     | Lifetime Return (Net)     | All‑time net return after fees as a decimal fraction. Present only when fee data is available.                                    |
+| ``lifetime_return_net``     | Lifetime Return (Net)     | All‑time net return after fees as a decimal fraction. Present only when fee data is available.                                     |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``cagr``                    | CAGR (Gross)              | Annualized gross return (Compound Annual Growth Rate) over the full history.                                                      |
+| ``cagr``                    | CAGR (Gross)              | Annualized gross return (Compound Annual Growth Rate) over the full history.                                                       |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``cagr_net``                | CAGR (Net)                | Annualized net return after fees over the full history.                                                                            |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,15 +60,15 @@ See also
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``one_month_cagr_net``      | 1M CAGR (Net)             | Annualized net return after fees computed from the last \~30 days window.                                                          |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``denomination``            | Denomination              | Underlying denomination token (e.g., USDC). Indicates the unit of account for share price and TVL.                                |
+| ``denomination``            | Denomination              | Underlying denomination token (e.g., USDC). Indicates the unit of account for share price and TVL.                                 |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``share_token``             | Share Token               | The vault’s share token identifier (symbol or address), representing depositor shares.                                             |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``chain``                   | Chain                     | Human‑readable blockchain name (e.g., Ethereum, Arbitrum).                                                                         |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``peak_nav``                | Peak TVL/NAV              | All‑time high TVL by the vault. Reported in the denomination currency.                                       |
+| ``peak_nav``                | Peak TVL/NAV              | All‑time high TVL by the vault. Reported in the denomination currency.                                                             |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``current_nav``             | Current TVL/NAV           | Latest TVL by the vault. Reported in the denomination currency.                                         |
+| ``current_nav``             | Current TVL/NAV           | Latest TVL by the vault. Reported in the denomination currency.                                                                    |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``years``                   | Age (Years)               | Vault observation window length in years from first to last data point.                                                            |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +92,7 @@ See also
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``risk_numeric``            | Risk (Numeric)            | Numeric representation of the technical risk category for sorting or filtering.                                                    |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``id``                      | Vault ID                  | Unique identifier combining chain and address (``<chainId>-<address>``). Can be used as a stable primary key.  |
+| ``id``                      | Vault ID                  | Unique identifier combining chain and address (``<chainId>-<address>``). Can be used as a stable primary key.                      |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``start_date``              | Start Date                | Timestamp of the first available price observation used in metrics.                                                                |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,6 +110,8 @@ See also
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``features``                | Detected Features         | List of detected vault features (e.g., ERC‑4626/7540 capabilities) as feature names.                                               |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
+For `any questions join Discord <https://tradingstrategy.ai/community>`__.
 
 Stablecoin vs. non-stablecoin
 -----------------------------
