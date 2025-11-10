@@ -13,6 +13,7 @@ Overview
    :maxdepth: 1
 
    about
+   defi-vault-data
    supported-markets
    market-data-feeds
    tooling
