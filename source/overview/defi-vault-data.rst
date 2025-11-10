@@ -14,6 +14,12 @@ Summary data description
 
 Here is the description of the summary JSON data for all vaults.
 
+See also
+
+- `CAGR <https://tradingstrategy.ai/glossary/cagr>`__
+- `Sharpe Ratio <https://tradingstrategy.ai/glossary/sharpe>`__
+- `TVL <https://tradingstrategy.ai/glossary/total-value-locked-tvl>`__
+
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | Key                         | Label                     | Description                                                                                                                        |
 |                             |                           |                                                                                                                                    |
