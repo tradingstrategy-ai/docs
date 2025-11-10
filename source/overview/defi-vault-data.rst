@@ -6,8 +6,10 @@ This document describes `the format of DeFi vault data <https://tradingstrategy.
 - Available data includes real time summaries of the vaults and historical performance data
 - The summary data is available as JSON blob
 - Separate API endpoints are available for stablecoin vaults only (500+) and all vaults (25,000+)
-- See the `DeFi dataset page <https://tradingstrategy.ai/trading-view/backtesting>`__ on how to get an API key for the data
+- See the `DeFi dataset page <https://tradingstrategy.ai/trading-view/backtesting>`__ on how to get an API key and the download link for the data
 - See `risk levels and categories here <https://tradingstrategy.ai/blog/announcing-vault-technical-risk-framework-beta>`__
+
+Currently over twenty `EVM chains <https://tradingstrategy.ai/glossary/evm-compatible>`__ are covered.
 
 Summary data description
 ------------------------
@@ -106,4 +108,18 @@ See also
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``features``                | Detected Features         | List of detected vault features (e.g., ERC‑4626/7540 capabilities) as feature names.                                               |
 +-----------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
+Stablecoin vs. non-stablecoin
+-----------------------------
+
+For vault data coversing all vaults
+
+- There are thousands of entries
+- Most of the vaults are denoinated in non-stablecoin assets (e.g., ETH, BTC, altcoins)
+- Most of the vaults are stale - they never had any meaningful TVL
+
+For non-stablecoin vaults, any return data (CAGR, Sharpe, etc.) is incorrect.
+
+- These numbers reflect more of the performance of the underlying asset
+- Small cap asset denominated vaults do not have reliable exchange rate for their denomination asset
 
