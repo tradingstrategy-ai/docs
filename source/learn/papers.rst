@@ -260,3 +260,9 @@ of the original data, hence free of bias or other problems caused by it.
 
 `Read the paper <https://projecteuclid.org/journals/bernoulli/volume-11/issue-2/On-covariance-estimation-of-non-synchronously-observed-diffusion-processes/10.3150/bj/1116340299.pdf>`__
 
+Optimizing the Persistence of Price Momentum: Which Trends Are Your Friends?
+----------------------------------------------------------------------------
+
+The traditional wisdom that price momentum which ranks stocks’ raw trailing returns is crash-prone fails to differentiate the various drivers of stocks’ past performances. As such, we compare the persistence of different sources of stocks’ price momentum discerned from applying factor-based performance attribution to their trailing 12-month returns. Our empirical analysis shows that beta- and country-driven price trends were not robust while style and industry momentum persisted both over the intermediate and, more strongly, short-term. Stock-specific momentum persisted over the intermediate term but strongly reverted over the short term; it was subsumed as a stand-alone strategy by both industry and style momentum and should be downweighed when optimizing a momentum signal for persistence. Our results suggest that style momentum is mostly a proxy for static factor tilts while industry and stock-specific momentum appear a separate anomaly that is strongest conditional on low-volatility market regimes. Their premium may reflect investor underreaction to economic shifts to which stocks’ exposures are imperfectly captured by binary industry classifications. Our results corroborate a strand of the extant literature through the novel lens of exactly decomposing the cross-section of stocks’ price momentum; contradicting findings are explained by methodological differences.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5716502>`__
