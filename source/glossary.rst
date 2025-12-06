@@ -5358,6 +5358,10 @@ and algorithmic trading.
 
         In cryptocurrency markets, the most popular carry trade is to hold spot cryptocurrency (Bitcoin, Ether), against the similar sized short perpetual contract, creating a :term:`delta neutral` position. :term:`Ethena` popularised this strategy by creating a USD stablecoin out of this. Because in perpetual markets, short pays longs, longs pays short, a in a :term:`bull market`, Ethena trade earns interest on its open short position from traders that have the opposite long position open. Ethena also earns additional yield in the staking rewards of its staked :term:`Ether`.
 
+        Read more
+
+        - `Perpetual futures explained by Patrick McKenzie <https://www.bitsaboutmoney.com/archive/perpetual-futures-explained/>`__
+
         See also
 
         - :term:`Perpetual future`
