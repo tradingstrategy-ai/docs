@@ -6748,3 +6748,21 @@ and algorithmic trading.
         - :term:`Leverage`
 
         - :term:`Cascading liquidation`
+
+    FreqTrade
+
+        FreqTrade is a popualr open-source :term:`algorithmic trading` software written in :term:`Python` for cryptocurrency markets. It allows users to develop, :term:`backtest`, and deploy automated trading strategies across multiple exchanges.
+
+        FreqTrade supports various order types, risk management features, and technical indicators, making it a versatile tool for both novice and experienced traders looking to implement systematic trading approaches in the crypto space.
+
+        FreqTrade is based on :term:`CCXT` connector.
+
+        See also
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Python`
+
+        - :term:`CCXT`
+
+        - :term:`DEX`
