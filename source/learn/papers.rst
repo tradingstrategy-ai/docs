@@ -275,3 +275,10 @@ As a special case of the above, we develop a robust algorithm that automates the
 clustering algorithms by studying the so-called maximum mean discrepancy scores between, and within clusters. In both cases it is shown that the WK-means algorithm vastly outperforms all considered competitor approaches. We demonstrate the performance of all approaches both in a controlled environment on synthetic data, and on real data.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3947905>`__
+
+Nonlinear Time Series Momentum
+------------------------------
+
+We document a persistent nonlinear relationship between price trends and risk-adjusted returns across markets and asset classes that is consistent with asset pricing theory. Nonlinearities in time series momentum are consistent with past returns reflecting information about conditional expected returns, in line with investors using conditioning information to form efficient portfolios. Machine learning techniques are useful in uncovering these relationships and yield economically and statistically significant out-of-sample improvements in time series momentum strategies.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5933974>`__
