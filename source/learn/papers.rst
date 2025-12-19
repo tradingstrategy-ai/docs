@@ -282,3 +282,12 @@ Nonlinear Time Series Momentum
 We document a persistent nonlinear relationship between price trends and risk-adjusted returns across markets and asset classes that is consistent with asset pricing theory. Nonlinearities in time series momentum are consistent with past returns reflecting information about conditional expected returns, in line with investors using conditioning information to form efficient portfolios. Machine learning techniques are useful in uncovering these relationships and yield economically and statistically significant out-of-sample improvements in time series momentum strategies.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5933974>`__
+
+Building Diversified Portfolios that Outperform Out-of-Sample
+--------------------------------------------------------------
+
+This paper introduces the Hierarchical Risk Parity (HRP) approach. HRP portfolios address three major concerns of quadratic optimizers in general and Markowitz’s CLA in particular: Instability, concentration and underperformance.
+
+HRP applies modern mathematics (graph theory and machine learning techniques) to build a diversified portfolio based on the information contained in the covariance matrix. However, unlike quadratic optimizers, HRP does not require the invertibility of the covariance matrix. In fact, HRP can compute a portfolio on an ill-degenerated or even a singular covariance matrix, an impossible feat for quadratic optimizers. Monte Carlo experiments show that HRP delivers lower out-of-sample variance than CLA, even though minimum-variance is CLA’s optimization objective. HRP also produces less risky portfolios out-of-sample compared to traditional risk parity methods.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678>`__
