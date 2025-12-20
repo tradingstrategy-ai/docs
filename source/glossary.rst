@@ -5352,7 +5352,7 @@ and algorithmic trading.
 
         In :term:`quantitative finance`, a "cash and carry trade" refers to a strategy where an investor simultaneously buys an asset and sells (or "carries") a related derivative contract. This :term:`trading strategy` is typically employed when the asset is expected to appreciate in value over time, and the investor seeks to profit from the price difference between the asset and its derivative.
 
-        This trade can be also known as carry trade and spot-forward basis.
+        This trade can be also known as carry trade, spot-forward basis and basis trade.
 
         Cash and carry trades are commonly used in markets where futures or forward contracts are actively traded and where there are opportunities for arbitrage or speculation based on expected price movements.
 
