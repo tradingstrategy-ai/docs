@@ -7,6 +7,19 @@ Books on algorithmic trading
 See also :doc:`AI and machine learning topics <./ai-and-machine-learning.rst>`,
 as AI and machine learning books have their own section.
 
+Quant Bible
+-----------
+
+I started this guide sometime in my junior fall during an interview season for quantitative finance that I
+found super-challenging. As interviews wrapped up, I thought it would be a good idea to really go back
+to the basics and examine the fundamentals of what goes into interviewing for quant. That idea ended up
+turning into a question bank, and then a long write-up spanning a lot of the core concepts that apply to
+quantitative finance. Here, there’s sections on probability and statistics, data science and regressions, quant
+research cases (with contributions from Kyri Chen), market making (written by Ravi Raghavan, Guang Cui,
+and Evan Vogelbaum), and an expansive question bank (with contributions by Evan and Ravi).
+
+`Download the book <https://drive.google.com/file/d/1LO7D0C9FC-KHViThmTXfUTLyr6Wke5-f/view>`__.
+
 Advanced Futures Trading Strategies
 -----------------------------------
 
