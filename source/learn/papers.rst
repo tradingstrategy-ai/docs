@@ -291,3 +291,31 @@ This paper introduces the Hierarchical Risk Parity (HRP) approach. HRP portfolio
 HRP applies modern mathematics (graph theory and machine learning techniques) to build a diversified portfolio based on the information contained in the covariance matrix. However, unlike quadratic optimizers, HRP does not require the invertibility of the covariance matrix. In fact, HRP can compute a portfolio on an ill-degenerated or even a singular covariance matrix, an impossible feat for quadratic optimizers. Monte Carlo experiments show that HRP delivers lower out-of-sample variance than CLA, even though minimum-variance is CLA’s optimization objective. HRP also produces less risky portfolios out-of-sample compared to traditional risk parity methods.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678>`__
+
+The CoinAlg Bind: Profitability-Fairness Tradeoffs in Collective Investment Algorithms
+--------------------------------------------------------------------------------------
+
+Collective In vestment Algorithms (CoinAlgs) are increas-
+ingly popular systems that deploy shared trading strate-
+gies for investor communities. Their goal is to democratize
+sophisticated—often AI-based—investing tools.
+We identify and demonstrate a fundamental profitability-
+fairness tradeoff in CoinAlgs that we call the CoinAlg Bind:
+CoinAlgs cannot ensure economic fairness without losing
+profit to arbitrage.
+We present a formal model of CoinAlgs, with definitions of
+privacy (incomplete algorithm disclosure) and economic fair-
+ness (value extraction by an adversarial insider). We prove two
+complementary results that together demonstrate the CoinAlg
+Bind. First, privacy in a CoinAlg is a precondition for insider
+attacks on economic fairness. Conversely, in a game-theoretic
+model, lack of privacy, i.e., transparency, enables arbitrageurs
+to erode the profitability of a CoinAlg.
+Using data from Uniswap, a decentralized exchange, we
+empirically study both sides of the CoinAlg Bind. We quantify
+the impact of arbitrage against transparent CoinAlgs. We show
+the risks posed by a private CoinAlg: Even low-bandwidth
+covert-channel information leakage enables unfair value ex-
+traction.
+
+`Read the paper <https://arxiv.org/pdf/2601.00523>`__
