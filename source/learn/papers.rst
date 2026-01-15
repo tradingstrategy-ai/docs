@@ -319,3 +319,10 @@ covert-channel information leakage enables unfair value ex-
 traction.
 
 `Read the paper <https://arxiv.org/pdf/2601.00523>`__
+
+Enhancing FX Portfolio Allocations through Reinforcement Learning
+-----------------------------------------------------------------
+
+This paper introduces a model-free Reinforcement Learning (RL) framework for portfolio allocation across Foreign Exchange (FX) assets, with a particular focus on carry trade strategies. The study examines whether RL-based approaches can yield distinct outcomes compared to traditional portfolio allocation techniques, such as Mean-Variance Optimization (MVO). The objective is to evaluate the performance of an RL agent in constructing a portfolio driven by FX carry signals and benchmark it against MVO. This work contributes to the literature by demonstrating the adaptability of RL to dynamic FX environments and its potential to outperform static optimization methods under varying market conditions.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6004794>`__
