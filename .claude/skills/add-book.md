@@ -1,3 +1,8 @@
+---
+name: add-book
+description: Add a new book to the documentation collection
+---
+
 # Add new book
 
 Add a new book to the documentation collection.
@@ -8,11 +13,7 @@ Add a new book to the documentation collection.
 
 ## Steps
 
-1. **Determine book category**: Ask the user whether this is:
-   - A **trading/finance book** (goes to `source/learn/books.rst`) - for books about algorithmic trading, quantitative finance, portfolio management, etc.
-   - An **AI/ML book** (goes to `source/learn/ai-and-machine-learning.rst`) - for books about machine learning and AI applied to trading
-
-2. **Find the canonical book page**: If the input URL is:
+1. **Find the canonical book page**: If the input URL is:
    - A tweet (x.com or twitter.com): Use Playwright to fetch the tweet content since WebFetch cannot access Twitter/X. Navigate to the URL, extract the book link from the tweet using JavaScript DOM manipulation.
    - An Amazon page: Use that URL
    - A publisher page: Use that URL
@@ -20,7 +21,7 @@ Add a new book to the documentation collection.
 
    **Important**: If WebFetch fails or returns no useful content (common with Twitter/X, sites requiring JavaScript), use Playwright with Node.js to navigate to the page and extract the information.
 
-3. **Extract book information**:
+2. **Extract book information**:
    - **Title**: The full book title
    - **Author(s)**: The book author(s)
    - **Description**: A concise summary (1-3 paragraphs) describing what the book covers and who it's for
@@ -30,6 +31,12 @@ Add a new book to the documentation collection.
    - Use `browser.launch({ headless: false })` to open a visible browser window
    - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
    - Extract title, author, and description from the page
+
+3. **Determine category**: Based on the extracted content, automatically determine the category:
+   - **Trading/Finance** (goes to `source/learn/books.rst`) - for books about algorithmic trading, quantitative finance, portfolio management, risk management, market microstructure, etc.
+   - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for books primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
+
+   Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
 
 4. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 

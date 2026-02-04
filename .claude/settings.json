@@ -11,7 +11,9 @@
       "Bash(node extract_profile.js:*)",
       "Bash(node extract_post.js:*)",
       "Bash(node fetch-ssrn.js:*)",
-      "Bash(node fetch-tweet.js:*)"
+      "Bash(node fetch-tweet.js:*)",
+      "Bash(node fetch-tweets.js:*)",
+      "Bash(npx playwright install:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"

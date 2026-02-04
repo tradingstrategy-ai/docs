@@ -1,3 +1,8 @@
+---
+name: add-post
+description: Add a new blog post or article to the documentation collection
+---
+
 # Add new blog post
 
 Add a new blog post or article to the documentation collection.
@@ -8,18 +13,15 @@ Add a new blog post or article to the documentation collection.
 
 ## Steps
 
-1. **Determine post category**: Ask the user whether this is:
-   - A **trading/finance blog post** (goes to `source/learn/blog-posts.rst`) - for blog posts about algorithmic trading, quantitative finance, market analysis, etc.
-   - An **AI/ML blog post** (goes to `source/learn/ai-and-machine-learning.rst`) - for blog posts about machine learning and AI applied to trading
-
-2. **Find the canonical blog post page**: If the input URL is:
+1. **Find the canonical blog post page**: If the input URL is:
    - A tweet (x.com or twitter.com): Use Playwright to fetch the tweet content since WebFetch cannot access Twitter/X. Navigate to the URL, extract the blog post link from the tweet using JavaScript DOM manipulation.
    - A direct blog post URL: Use that URL
    - Other: Use the provided URL
+   - For X.com (Twitter) links, it can be either a X post or X article - handle articles as posts
 
    **Important**: If WebFetch fails or returns no useful content (common with Twitter/X, sites requiring JavaScript), use Playwright with Node.js to navigate to the page and extract the information.
 
-3. **Extract blog post information**:
+2. **Extract blog post information**:
    - **Title**: The full blog post title
    - **Author/Source**: The author name or blog/publication name
    - **Description**: A concise summary (1-2 paragraphs) describing what the post covers
@@ -29,6 +31,12 @@ Add a new blog post or article to the documentation collection.
    - Use `browser.launch({ headless: false })` to open a visible browser window if needed
    - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
    - Extract title from `h1` element and description from article content or meta description
+
+3. **Determine category**: Based on the extracted content, automatically determine the category:
+   - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
+   - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for posts primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
+
+   Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
 
 4. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 
