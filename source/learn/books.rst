@@ -129,6 +129,19 @@ Mathematics and software are the twin languages of algorithmic trading. This boo
 
 `Read book at <https://www.amazon.com/Algorithmic-Trading-Winning-Strategies-Rationale/dp/1118460146#>`__.
 
+The Algorithmic Crypto Playbook
+-------------------------------
+
+A practical guide to building, testing, and trading systematic strategies in crypto markets. This book covers how momentum and mean reversion strategies are built and tested, why no single strategy works in all conditions, and how combining uncorrelated approaches creates robust performance across market environments. It also addresses how to recognize survivorship bias, overfitting, and the psychological traps that undermine most traders, along with core principles of risk management and portfolio design.
+
+Whether you're a trader looking to systematize your approach, a developer interested in algorithmic trading, or an investor seeking a more disciplined way to participate in crypto markets, this book provides the framework you need. No prior programming experience required.
+
+Written by Pavel Kycek, a trader with two decades of market experience and founder and CEO of ROBUXIO, an institutional crypto algorithmic trading engine.
+
+Mentioned by NoBodyNose in `this discussion <https://x.com/vladijakobi/status/2018256031122415888>`__: "I believe it's one of the best introductions to algorithmic trading out there, especially for crypto. It focuses on the very basic overlying principles (eg expectation) for successful algorithmic trading."
+
+`Buy the book <https://www.amazon.com/Algorithmic-Crypto-Playbook-Systematic-Strategies-ebook/dp/B0GFDY5T3M>`__
+
 Further reading lists
 =====================
 
