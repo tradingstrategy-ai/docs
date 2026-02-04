@@ -320,9 +320,20 @@ traction.
 
 `Read the paper <https://arxiv.org/pdf/2601.00523>`__
 
-Enhancing FX Portfolio Allocations through Reinforcement Learning
+E
 -----------------------------------------------------------------
 
 This paper introduces a model-free Reinforcement Learning (RL) framework for portfolio allocation across Foreign Exchange (FX) assets, with a particular focus on carry trade strategies. The study examines whether RL-based approaches can yield distinct outcomes compared to traditional portfolio allocation techniques, such as Mean-Variance Optimization (MVO). The objective is to evaluate the performance of an RL agent in constructing a portfolio driven by FX carry signals and benchmark it against MVO. This work contributes to the literature by demonstrating the adaptability of RL to dynamic FX environments and its potential to outperform static optimization methods under varying market conditions.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6004794>`__
+
+Anomaly Premiums with Dynamic Exits
+-----------------------------------
+
+Anomaly premiums are traditionally based on long-short portfolios held passively for a fixed horizon. This paper estimates premiums when exits are instead optimized using machine learning with a computationally light architecture. The authors use randomized kernels to generate high-dimensional representations of time-series inputs. A classifier ingests the inputs and predicts optimal exits. In a conservative universe with only large-cap value-weighted portfolios, dynamic exits generate premiums of about 100 basis points per month for momentum, profitability, and value. These premiums are not replicated with static or random exits, without random re-representations, in non-anomaly portfolios, and are robust to reasonable transaction cost hurdles.
+
+By Nitin Kumar (Nanyang Technological University), Nagpurnanand Prabhala (Johns Hopkins Carey Business School), and Ravi Ranjan (UNC Kenan-Flagler Business School).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2018712332625445079>`__: "Most anomalies don't decay smoothly; they switch off and rotate. Dynamic exits materially improve Sharpe ratios across many classic anomalies, and drawdowns are meaningfully reduced by avoiding low-signal periods. The gains come more from risk control and timing exits than from boosting raw returns."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6076808>`__
