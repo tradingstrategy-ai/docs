@@ -8,7 +8,10 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(node extract_thread.js:*)",
-      "Bash(node extract_profile.js:*)"
+      "Bash(node extract_profile.js:*)",
+      "Bash(node extract_post.js:*)",
+      "Bash(node fetch-ssrn.js:*)",
+      "Bash(node fetch-tweet.js:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"

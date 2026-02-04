@@ -38,6 +38,8 @@ Add a new blog post or article to the documentation collection.
 
    Description paragraph(s) here. Keep it informative but concise.
 
+   Two paragraph summary of the post here.
+
    `Read the blog post <https://url-here>`__.
    ```
 
@@ -48,6 +50,8 @@ Add a new blog post or article to the documentation collection.
    ----------------------
 
    Description paragraph(s) here.
+
+   Two paragraph summary of the post here.
 
    By Author Name.
 
