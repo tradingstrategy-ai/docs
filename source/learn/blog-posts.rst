@@ -61,3 +61,14 @@ The equity curve shown suggests consistent performance with this systematic appr
 By Pavel (Robuxio).
 
 `See the original discussion <https://x.com/PKycek/status/1966803799278055516>`__
+
+Forecasting Market Regimes with the sUSDe Term Structure
+--------------------------------------------------------
+
+An exploration of how the sUSDe term structure on Pendle can serve as a forward-looking signal for crypto market sentiment and regime forecasting. The article explains how crypto prices are heavily influenced by leveraged trading in perpetual futures, and how Ethena's sUSDe effectively captures the basis from funding rates through delta-neutral strategies.
+
+With multiple sUSDe expirations trading on Pendle, the market reveals implied yields across various maturities, producing an onchain term structure. This yield curve indicates whether markets expect rising funding rates (contango) or declining rates (backwardation). The article demonstrates that the term spread—the difference between back month and front month implied yields—is highly correlated with underlying yield regimes and produces a stronger signal for returns than the underlying yield alone. Historical analysis supports using this term structure as a leading indicator for changes in cost of carry and BTC price levels.
+
+By Luke Leasure.
+
+`Read the article <https://x.com/0xMether/article/2016201886395990198>`__
