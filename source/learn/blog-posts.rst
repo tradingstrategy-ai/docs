@@ -72,3 +72,14 @@ With multiple sUSDe expirations trading on Pendle, the market reveals implied yi
 By Luke Leasure.
 
 `Read the article <https://x.com/0xMether/article/2016201886395990198>`__
+
+Using Log Returns and Volatility to Normalize Strike Distances
+--------------------------------------------------------------
+
+A foundational tutorial on why log returns matter in financial and derivatives modeling. The article starts from first principles, explaining how the constant e represents continuous compounding and how the natural logarithm measures the time needed to reach a certain level of growth. This mathematical foundation is then applied to understanding why upside and downside price moves are not symmetric in compounded return space.
+
+The practical application focuses on normalizing option strike distances. For a $100 stock, $150 and $50 are not equidistant in the world of compounding—$150 is closer. The article shows how to compute equivalent distances using log returns and extends this to normalizing for volatility, allowing traders to compare strikes across different assets with different volatility profiles. This framework is essential for proper options analysis and understanding moneyness in a mathematically consistent way.
+
+By Kris Abdelmessih.
+
+`Read the article <https://x.com/KrisAbdelmessih/article/2018698687665312013>`__
