@@ -28,3 +28,14 @@ The system targets "fat tails" while keeping maximum drawdown to -15%. With a 47
 By Petr Podhajsky. Tools used: RealTest & Norgate Data.
 
 `Read the post <https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/>`__
+
+Why Mean-Variance Optimization Breaks Down
+------------------------------------------
+
+Mean-Variance Optimization (MVO) is a central framework for portfolio construction, yet practitioners quickly encounter a paradox: the mathematically "optimal" portfolio built from estimated inputs is often unstable, highly leveraged, and disappoints out-of-sample. This is not a minor implementation detail—it is a structural consequence of combining a high-dimensional optimizer with noisy estimates of expected returns and covariances.
+
+This article develops MVO from first principles and explains, in a mathematically explicit way, why raw MVO tends to maximize estimation error. It surveys the spectrum of practical fixes organized around two levers: improving or regularizing the inputs (expected returns and covariances), and constraining or regularizing the optimizer (the feasible set and objective). The unifying theme is that almost every successful fix works by injecting bias in exchange for a large reduction in variance of the resulting portfolio weights.
+
+By VertoxQuant.
+
+`Read the post <https://www.vertoxquant.com/p/why-mean-variance-optimization-breaks>`__
