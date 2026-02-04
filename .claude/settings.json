@@ -6,7 +6,9 @@
       "Bash(node extract_ssrn.js:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(node extract_thread.js:*)",
+      "Bash(node extract_profile.js:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"
