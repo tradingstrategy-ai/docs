@@ -337,3 +337,16 @@ By Nitin Kumar (Nanyang Technological University), Nagpurnanand Prabhala (Johns 
 Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2018712332625445079>`__: "Most anomalies don't decay smoothly; they switch off and rotate. Dynamic exits materially improve Sharpe ratios across many classic anomalies, and drawdowns are meaningfully reduced by avoiding low-signal periods. The gains come more from risk control and timing exits than from boosting raw returns."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6076808>`__
+
+Risk Beyond Volatility: A Conditional Framework for Downside Harm and Capital Loss
+-----------------------------------------------------------------------------------
+
+Volatility remains the dominant operational proxy for risk in portfolio theory, asset pricing, and performance evaluation. Despite its widespread adoption, volatility treats upside and downside deviations symmetrically and abstracts away from the temporal and path-dependent nature of capital loss. This paper argues that these properties reflect not an economic definition of risk, but a modeling convenience rooted in early mean-variance theory.
+
+The authors propose a conditional framework in which risk is defined as cumulative downside exposure relative to an explicit evaluation horizon and constraint set. This formulation captures both the magnitude and persistence of losses while preserving the asymmetry inherent in capital impairment. The paper shows that volatility-based metrics can misrank risk across strategies and assets exhibiting similar dispersion but substantially different drawdown dynamics.
+
+By Ryan Nelson (The University of Tampa).
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2018955197045694601>`__: "Paper proposes an alternative to volatility where risk is defined as cumulative downside exposure relative to an explicit evaluation horizon... It captures both the magnitude and persistence of losses while preserving the asymmetry inherent in capital impairment."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5954796>`__
