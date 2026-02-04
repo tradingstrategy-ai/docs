@@ -50,3 +50,14 @@ The post demonstrates how to build a simple "trashmetric" derived from trading v
 By Robot James.
 
 `Read the post <https://robotjames.substack.com/p/short-scamtrash-long-distinguished>`__
+
+Simple Crypto Momentum Strategy: Buying Corrections
+---------------------------------------------------
+
+A straightforward crypto trading approach shared by Pavel demonstrating that simple strategies can work effectively in cryptocurrency markets. The strategy involves: buying corrections on the highest momentum coins, holding positions for one day, and applying a basic regime filter to avoid unfavorable market conditions.
+
+The equity curve shown suggests consistent performance with this systematic approach. The strategy exemplifies how basic momentum and mean-reversion concepts can be combined—buying dips in strong trending assets while using regime filtering to stay out during adverse market conditions.
+
+By Pavel (Robuxio).
+
+`See the original discussion <https://x.com/PKycek/status/1966803799278055516>`__
