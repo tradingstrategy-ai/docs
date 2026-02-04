@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx playwright screenshot --help:*)",
+      "Bash(node extract_tweet.js:*)",
+      "Bash(node extract_ssrn.js:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/moo/code/docs/.claude"
+    ]
+  }
+}
