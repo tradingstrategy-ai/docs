@@ -39,3 +39,14 @@ This article develops MVO from first principles and explains, in a mathematicall
 By VertoxQuant.
 
 `Read the post <https://www.vertoxquant.com/p/why-mean-variance-optimization-breaks>`__
+
+Short Scamtrash / Long Distinguished Crypto
+-------------------------------------------
+
+A practical investigation into the "quality factor" for cryptocurrency perpetuals trading. The core strategy is simple: short scammy, low-quality crypto perps while going long large-cap crypto against it. This works better in crypto than traditional equities because markets are less efficient and there are abundant opportunities to identify low-quality assets.
+
+The post demonstrates how to build a simple "trashmetric" derived from trading volume to sort perpetuals into buckets by quality. Backtests show that trashier assets have worse average returns while more distinguished assets perform better. The strategy trades once a week, going long the least trashy third of the universe and short the most trashy third, with volatility-targeted position sizing. The author discusses ways to improve the strategy by adding more proxies for trashiness (instability, size, liquidity) and being smarter about portfolio turnover and trading costs.
+
+By Robot James.
+
+`Read the post <https://robotjames.substack.com/p/short-scamtrash-long-distinguished>`__
