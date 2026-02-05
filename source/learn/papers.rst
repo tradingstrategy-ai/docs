@@ -468,3 +468,14 @@ By Carlo Zarattini, Andrew Aziz, and Andrea Barbon.
 Mentioned by Pasta Capital in `this discussion <https://x.com/Pasta_Capital/status/2008856283387531360>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824172>`__
+
+A Unified Framework for Anomalies based on Daily Returns
+---------------------------------------------------------
+
+Numerous cross-sectional equity anomalies draw on the same underlying information: the sequence of daily returns over the previous month. Using a data-driven approach, the authors estimate the empirical mapping from the distribution of last month's daily returns to future performance without imposing functional forms. The resulting Daily Return Information Factor (DRIF) earns economically large premia, holds across subsamples and research designs, and remains significant after controlling for the modern factor zoo. DRIF subsumes most short-horizon and lottery-style anomalies and emerges as a key factor in asset pricing tests.
+
+By Nusret Cakici, Christian Fieberg, Gabor Neszveda, Robert J. Bianchi, and Adam Zaremba.
+
+Mentioned by Quantitativo in `this discussion <https://substack.com/@quantitativo/note/c-196576483>`__: "The factor zoo isn't crowded. It's redundant. Daily returns already contain the signal — we just kept slicing them the wrong way."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6005614>`__
