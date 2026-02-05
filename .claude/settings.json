@@ -13,7 +13,10 @@
       "Bash(node fetch-ssrn.js:*)",
       "Bash(node fetch-tweet.js:*)",
       "Bash(node fetch-tweets.js:*)",
-      "Bash(npx playwright install:*)"
+      "Bash(npx playwright install:*)",
+      "WebFetch",
+      "WebSearch",
+      "Bash(git checkout:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"

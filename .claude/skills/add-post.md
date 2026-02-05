@@ -32,6 +32,9 @@ Add a new blog post or article to the documentation collection.
    - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
    - Extract title from `h1` element and description from article content or meta description
 
+   **For Medium.com**
+   - Medium.com blocks WebFetch tool. Always use Playwright.
+
 3. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
    - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for posts primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
