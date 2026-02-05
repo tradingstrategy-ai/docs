@@ -1,0 +1,9 @@
+{
+  "name": "claude-skills-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright automation scripts for Claude Code skills",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}
