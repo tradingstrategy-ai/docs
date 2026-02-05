@@ -79,7 +79,19 @@ Add a new blog post or article to the documentation collection.
 
 If the source of the link is a discussion like a tweet, then include a paragraph with a link to that tweet with the comment "Mentioned by XXX in this discussion" and include what they say about it.
 
-5. **Commit and push**:
+5. **Save post as PDF**:
+   - Use Playwright to save the blog post page as a PDF to `~/Dropbox/posts/`
+   - Filename should be a slugified version of the title, e.g. `building-robust-trading-systems.pdf`
+   - Use Playwright's `page.pdf()` method after navigating to the post URL
+   - Example:
+     ```js
+     const page = await browser.newPage();
+     await page.goto(url, { waitUntil: 'networkidle' });
+     await page.pdf({ path: outputPath, format: 'A4', printBackground: true });
+     ```
+   - Create the `~/Dropbox/posts/` directory if it doesn't exist
+
+6. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Blog Post Title}"
    - Push to master branch
