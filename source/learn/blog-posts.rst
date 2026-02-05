@@ -1030,3 +1030,21 @@ By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/how-to-build-a-crypto-market-scanner>`__.
 
+Vol-Based Stops: Stop Leaving Money on the Table
+-------------------------------------------------
+
+A practical Python script for calculating volatility-adjusted stop-loss distances for index futures (NQ, ES)
+and ETFs (QQQ, SPY). The script runs daily, downloading VIX, VXN, VIX9D, and price data to determine
+the current volatility regime and compute appropriate stop distances and position sizes.
+
+The approach uses a severity score derived from realized volatility (20-day SPY close-to-close), VIX momentum
+(5-day change), and VIX acceleration. These features are ranked, weighted, and bucketed into four regimes:
+LOW VOL, NORMAL, ELEVATED, and EXTREME. For each regime, the script outputs the appropriate stop distance
+and number of micro contracts to trade at 1% risk, helping traders avoid the common pitfalls of using stops
+that are too tight in high-volatility environments (getting stopped on noise) or too wide in low-volatility
+environments (giving back gains unnecessarily).
+
+By AlgoFlows.
+
+`Read the article <https://x.com/algoflows/status/2019143439485661382>`__
+
