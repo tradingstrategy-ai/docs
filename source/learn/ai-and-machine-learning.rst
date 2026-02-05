@@ -490,3 +490,25 @@ Stochastic Volatility Modelling with LSTM Networks: A Hybrid Approach for S&P 50
 Accurate volatility forecasting is essential in various domains, including banking, investment, and risk management, as expectations about future market movements directly influence current decision-making. This study proposes a hybrid modeling framework that integrates a Stochastic Volatility model with a Long Short-Term Memory neural network. The SV model contributes statistical precision and the ability to capture latent volatility dynamics, particularly in response to unforeseen events, while the LSTM network enhances the model's ability to detect complex, nonlinear patterns in financial time series. The forecasting is conducted using daily data from the S&P 500 index, covering the period from January 1, 1998, to December 31, 2024. A rolling window approach is employed to train the model and generate one-step-ahead volatility forecasts. The performance of the hybrid SV-LSTM model is evaluated through both statistical testing and investment simulations. Results show that the hybrid approach outperforms both the standalone SV and LSTM models. These findings contribute to the ongoing development of volatility modeling techniques and provide a robust foundation for enhancing risk assessment and strategic investment planning in the context of the S&P 500.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5910742>`__.
+
+KASPER: Kolmogorov Arnold Networks for Stock Prediction and Explainable Regimes
+--------------------------------------------------------------------------------
+
+This paper introduces the KASPER framework, which combines regime detection, sparse spline-based function modeling, and symbolic rule extraction for financial forecasting. The approach uses Kolmogorov-Arnold Network (KAN) layers with specialized activation functions and extracts human-readable rules for interpretability. When tested on real market data, the model demonstrated strong performance with an R² score of 0.89, a Sharpe Ratio of 12.02, and mean squared error of 0.0001, outperforming existing methods in regime-aware financial forecasting.
+
+By Vidhi Oad, Param Pathak, Nouhaila Innan, Shalini D, and Muhammad Shafique.
+
+Mentioned by Piotr Pomorski in `this discussion <https://x.com/PtrPomorski/status/2017303718182404487>`__.
+
+`Read the paper <https://arxiv.org/abs/2507.18983>`__
+
+TradingAgents: Multi-Agents LLM Financial Trading Framework
+------------------------------------------------------------
+
+This paper introduces a collaborative trading framework powered by large language models. It features specialized AI agents in roles like fundamental analysts, sentiment analysts, and technical analysts, along with researchers assessing market conditions and a risk management team. The system aims to replicate how real trading firms operate by having agents debate insights and synthesize data to inform trading decisions. The framework demonstrates improvements in cumulative returns, Sharpe ratio, and maximum drawdown compared to baseline approaches.
+
+By Yijia Xiao, Edward Sun, Di Luo, and Wei Wang.
+
+Mentioned by Quant Science in `this discussion <https://x.com/quantscience_/status/2016920152739131471>`__.
+
+`Read the paper <https://arxiv.org/abs/2412.20138>`__
