@@ -38,6 +38,7 @@ Add a new blog post or article to the documentation collection.
 3. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
    - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for posts primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
+     **Not trading related**: Don't add this post. If the user specifically asked to add this post, ask user for confrimation.
 
    Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
 
@@ -86,8 +87,8 @@ If the source of the link is a discussion like a tweet, then include a paragraph
    - Example:
      ```js
      const page = await browser.newPage();
-     await page.goto(url, { waitUntil: 'networkidle' });
-     await page.pdf({ path: outputPath, format: 'A4', printBackground: true });
+     await page.goto(url, { waitUntil: "networkidle" });
+     await page.pdf({ path: outputPath, format: "A4", printBackground: true });
      ```
    - Create the `~/Dropbox/posts/` directory if it doesn't exist
 
