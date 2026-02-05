@@ -37,6 +37,7 @@ Add a new research paper to the documentation collection.
      3. Wait and check if CAPTCHA is present
      4. If CAPTCHA: inform user and wait for them to complete it
      5. Extract title and abstract after page loads
+   - IMPORTANT: Don't use WebFetch tool because it is blocked by SSRN and you are wasting your time
 
 3. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/papers.rst`) - for papers about algorithmic trading, portfolio optimization, market microstructure, momentum strategies, risk management, etc.
@@ -63,6 +64,8 @@ Add a new research paper to the documentation collection.
    - Add the new entry at the END of the file (before any blank lines at the very end)
 
 If the source of the link is discussion like a tweet, then include a paragraph with a link to that tweet and with the comment "Mentioned by XXX in this discussion" and this is what people say about it".
+
+IMPORTANT. If the paper already exists, do not add it again.
 
 5. **Commit and push**:
    - Stage the modified file
