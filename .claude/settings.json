@@ -4,19 +4,14 @@
       "Bash(npx playwright screenshot --help:*)",
       "Bash(node extract_tweet.js:*)",
       "Bash(node extract_ssrn.js:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(node extract_thread.js:*)",
-      "Bash(node extract_profile.js:*)",
-      "Bash(node extract_post.js:*)",
-      "Bash(node fetch-ssrn.js:*)",
-      "Bash(node fetch-tweet.js:*)",
-      "Bash(node fetch-tweets.js:*)",
+      "Bash(git:*)",
+      "Bash(node:*)",
       "Bash(npx playwright install:*)",
       "WebFetch",
       "WebSearch",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(pbcopy)",
+      "Bash(open \"https://x.com/compose/post\")"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"
