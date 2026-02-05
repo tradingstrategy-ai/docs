@@ -16,7 +16,6 @@ Add a new research paper to the documentation collection.
 1. **Find the canonical paper page**: If the input URL is:
    - A tweet (x.com or twitter.com): Use Playwright MCP browser to fetch the tweet content since WebFetch cannot access Twitter/X. Navigate to the URL, take a screenshot, and extract the paper link from the tweet.
    - An arXiv abstract page: Use that URL
-   - An SSRN page: Use that URL
    - A PDF direct link: Try to find the canonical landing page (e.g., arXiv abstract page instead of PDF)
    - Other: Use the provided URL
 
@@ -25,19 +24,6 @@ Add a new research paper to the documentation collection.
 2. **Extract paper information**:
    - **Title**: The full paper title
    - **Description**: A concise summary (1-3 paragraphs) describing what the paper is about, its methodology, and key findings
-
-   **For SSRN papers**: Use Playwright to scrape the paper details:
-   - Create a Node.js script using Playwright to navigate to the SSRN page
-   - Use `browser.launch({ headless: false })` to open a visible browser window
-   - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
-   - Extract title from `h1` element and abstract from `.abstract-text` element
-   - Example flow:
-     1. Launch browser with `headless: false`
-     2. Navigate to SSRN URL
-     3. Wait and check if CAPTCHA is present
-     4. If CAPTCHA: inform user and wait for them to complete it
-     5. Extract title and abstract after page loads
-   - IMPORTANT: Don't use WebFetch tool because it is blocked by SSRN and you are wasting your time
 
 3. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/papers.rst`) - for papers about algorithmic trading, portfolio optimization, market microstructure, momentum strategies, risk management, etc.
