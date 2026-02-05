@@ -413,3 +413,58 @@ Stochastic Processes and the Pricing of Uniswap V2
 Analyzes Uniswap V2 liquidity provider positions through stochastic processes, examining impermanent loss (IL) and loss versus rebalancing (LVR). The authors apply martingale stopping methods to derive pricing formulas for V2 positions, treating them as exotic options. Key findings include that the value of the V2 position is independent of volatility in their model, though they acknowledge this oversimplifies by ignoring position reconstruction costs during price swings. Covers geometric Brownian motion modeling, American perpetual option pricing, and Jensen's inequality applications. By Zelos Research.
 
 `Read the post <https://medium.com/zelos-research/stochastic-processes-and-the-pricing-of-uniswap-v2-f8daf81b0f7b>`__
+
+Are Simple Technical Trading Rules Profitable in Bitcoin Markets?
+-----------------------------------------------------------------
+
+This paper examines the profitability of simple technical trading rules in bitcoin markets comprehensively, taking into account realistic investor behavior. The study investigates whether classic technical analysis strategies such as moving average rules can generate excess returns in cryptocurrency markets, contributing to the ongoing debate about market efficiency in digital asset markets.
+
+By Michael Frömmel and Niek Deprez, published in the International Review of Economics & Finance (2024).
+
+Mentioned by Jungle Rock in `this discussion <https://x.com/JungleRockRes/status/2019145963844100349>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4401552>`__
+
+Quality Minus Junk
+------------------
+
+This paper provides a tractable valuation model that shows how stock prices should increase in their quality characteristics: profitability, growth, and safety. A "quality" security is defined as one that is safe, profitable, growing, and well managed. Empirically, the authors find that high-quality stocks do have higher prices on average but not by a large margin, and high-quality stocks have high risk-adjusted returns. A quality-minus-junk (QMJ) factor that goes long high-quality stocks and shorts low-quality stocks earns significant risk-adjusted returns in the United States and across 24 countries.
+
+By Clifford S. Asness, Andrea Frazzini, and Lasse Heje Pedersen.
+
+Mentioned by Kurtis The Quant in `this discussion <https://x.com/Quant_Kurtis/status/2014420038951088341>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2312432>`__
+
+Episodic Factor Pricing
+-----------------------
+
+This paper challenges conventional factor models by showing that factor pricing power is time varying and frequently switches between active and inactive states. The authors propose a real-time method to identify factor pricing states, showing that conditioning on these states materially improves out-of-sample multifactor portfolio performance, even after transaction costs. A conditional stochastic discount factor with state-dependent risk prices provides a better description of the investment opportunity set. Across a broad set of factors, pricing power is concentrated in active states and largely absent otherwise, implying that factor premia and risk prices are inherently episodic rather than persistent.
+
+By Sophia Zhengzi Li, Peixuan Yuan, and Guofu Zhou.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2014362167232040969>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661444>`__
+
+All Days Are Not Created Equal: Understanding Momentum by Learning to Weight Past Returns
+-----------------------------------------------------------------------------------------
+
+By flexibly weighting the information contained in past realized returns, the authors construct a momentum strategy that outperforms and subsumes the performance of traditional stock momentum. The strategy performs well in crises and continues to work in recent decades, circumventing the issue of momentum crashes. The authors show that the way past returns are weighted is consistent with the strategy exploiting an underreaction to information contained in realized returns. Earnings announcements, market-wide jumps, and large individual returns realized during the formation period are found to be most informative about future stock returns.
+
+By Heiner Beckmeyer and Timo Wiedemann, published in the Journal of Banking and Finance (2025).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2009217668566966658>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5702162>`__
+
+Beat the Market: An Effective Intraday Momentum Strategy for S&P500 ETF (SPY)
+------------------------------------------------------------------------------
+
+This paper investigates the profitability of a simple yet effective intraday momentum strategy applied to SPY, one of the most liquid ETFs tracking the S&P 500. Unlike academic literature that typically limits trading to the last 30 minutes of the trading session, this model initiates trend-following positions as soon as there is an indication of abnormal demand/supply imbalance in the intraday price action. The strategy introduces dynamic trailing stops to mitigate downside risks while allowing for unlimited upside potential. From 2007 to early 2024, the resulting intraday momentum portfolio achieved a total return of 1,985% (net of costs), an annualized return of 19.6%, and a Sharpe Ratio of 1.33.
+
+By Carlo Zarattini, Andrew Aziz, and Andrea Barbon.
+
+Mentioned by Pasta Capital in `this discussion <https://x.com/Pasta_Capital/status/2008856283387531360>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824172>`__
