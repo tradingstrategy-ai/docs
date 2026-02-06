@@ -1048,3 +1048,14 @@ By AlgoFlows.
 
 `Read the article <https://x.com/algoflows/status/2019143439485661382>`__
 
+Yield as a Risk Signal: Part II
+-------------------------------
+
+A data-driven analysis of market making vaults on perpetual DEXs, examining whether these products should be treated as cash-like instruments or risk assets. The article analyzes four vaults - Hyperliquid's HLP, Lighter.xyz's LLP, Paradex's Gigavault, and Ostium Labs' oLP - examining max drawdowns, underwater durations, APY vs realized paths, risk-adjusted returns, and tail risks.
+
+The core finding is that MM vaults do not behave like cash. With 5-9% drawdowns for most vaults and months spent underwater after market shocks, these products are fundamentally incompatible with expectations of redeeming at par. The article demonstrates that while Sharpe ratios can be attractive (4.71 for LLP, 2.89 for HLP), early-life metrics are often front-loaded and compress over time as TVL grows. The piece also examines venue-level tail risks, including the JELLYJELLY incident on Hyperliquid where LPs became the backstop for structural failures. The conclusion: allocators should treat MM vaults as risk assets with structural edge, not cash substitutes.
+
+By Chaos Labs.
+
+`Read the article <https://x.com/chaoslabs/status/2019498892761374811>`__
+
