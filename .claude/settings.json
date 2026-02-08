@@ -14,7 +14,9 @@
       "Bash(open \"https://x.com/compose/post\")",
       "Bash(gh pr create:*)",
       "Bash(git stash:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(lsof:*)",
+      "Bash(claude --chrome --version:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude"

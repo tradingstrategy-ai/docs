@@ -33,7 +33,9 @@ Add a new blog post or article to the documentation collection.
    - **Author/Source**: The author name or blog/publication name
    - **Description**: A concise summary (1-2 paragraphs) describing what the post covers
 
-   **For pages requiring browser**: Use `navigate` to open the page, then `get_page_text` or `read_page` to extract content. If CAPTCHA appears, ask the user to complete it manually.
+   **For pages requiring browser**: Use `navigate` to open the page, then use `javascript_tool` to extract content. See **CLAUDE.md > JavaScript DOM Extraction Patterns** for selectors and examples.
+
+   If CAPTCHA appears, ask the user to complete it manually.
 
 4. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
