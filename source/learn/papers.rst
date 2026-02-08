@@ -479,3 +479,18 @@ By Nusret Cakici, Christian Fieberg, Gabor Neszveda, Robert J. Bianchi, and Adam
 Mentioned by Quantitativo in `this discussion <https://substack.com/@quantitativo/note/c-196576483>`__: "The factor zoo isn't crowded. It's redundant. Daily returns already contain the signal — we just kept slicing them the wrong way."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6005614>`__
+
+ASRI: An Aggregated Systemic Risk Index for Cryptocurrency Markets
+-------------------------------------------------------------------
+
+Cryptocurrency markets have grown to over $3 trillion in capitalization, yet no unified index exists to monitor systemic risks arising from the interconnection between DeFi protocols and traditional financial institutions. This paper introduces the Aggregated Systemic Risk Index (ASRI), a composite measure comprising four weighted sub-indices: Stablecoin Concentration Risk (30%), DeFi Liquidity Risk (25%), Contagion Risk (25%), and Regulatory Opacity Risk (20%).
+
+The framework incorporates data from DeFi Llama, Federal Reserve FRED, and on-chain analytics, and was validated against historical crises including Terra/Luna (May 2022), Celsius/3AC (June 2022), FTX (November 2022), and SVB (March 2023). Event study analysis detected statistically significant signals for all four crises with an average lead time of 18 days. A three-regime Hidden Markov Model identifies distinct Low Risk, Moderate, and Elevated states with regime persistence exceeding 94%, and out-of-sample testing on 2024-2025 data confirmed zero false positives.
+
+The ASRI framework addresses a critical gap in risk monitoring by capturing DeFi-specific vulnerabilities—composability risk, flash loan exposure, and tokenized real-world asset linkages—that traditional systemic risk measures cannot accommodate.
+
+By Murad Farzulla and Andrew Maksakov.
+
+Mentioned by Saeed in `this discussion <https://x.com/saeedamenfx/status/2020120481056067612>`__.
+
+`Read the paper <https://arxiv.org/abs/2602.03874>`__
