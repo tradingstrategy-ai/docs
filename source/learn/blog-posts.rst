@@ -1070,3 +1070,14 @@ By Prometheus Macro (@aahan_prometheus).
 
 `Read the thread <https://threadreaderapp.com/thread/2020234019108266368.html>`__
 
+The Signal Types Needed for Trading
+-----------------------------------
+
+A comprehensive guide to the three signal types used in systematic trading: Binary, Ensemble, and Continuous signals. The article breaks down each type with practical examples and explains when to use each approach for building robust trading strategies.
+
+Binary signals are the simplest form (ON/OFF), easy to implement but treat all signals equally regardless of conviction. Ensemble signals combine multiple weak learners using methods like Majority Voting, Equal-Weight Scoring, and Weighted Averaging to create stronger, more robust signals—based on Condorcet's Jury Theorem. Continuous signals output values on a spectrum (-1 to +1) that map directly to position size ("bet sizing"), allowing traders to express varying conviction levels and produce smoother equity curves. The article also covers critical concepts including the three sources of error in trading models (Bias, Variance, Irreducible Error), Bagging vs Boosting in financial applications, the Observation Redundancy Problem specific to financial data, and how these signal types connect in a complete trading pipeline.
+
+By Goshawk Trades.
+
+`Read the article <https://x.com/GoshawkTrades/status/2019810833904373805>`__
+
