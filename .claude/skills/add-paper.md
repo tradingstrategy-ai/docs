@@ -31,6 +31,7 @@ Add a new research paper to the documentation collection.
 3. **Extract paper information**:
    - **Title**: The full paper title
    - **Description**: A concise summary (1-3 paragraphs) describing what the paper is about, its methodology, and key findings
+   - **Full text**: Needed for summarisation later
 
    **For pages requiring browser**: Use `navigate` to open the page, then `get_page_text` or `read_page` to extract content. If CAPTCHA appears, ask the user to complete it manually.
 

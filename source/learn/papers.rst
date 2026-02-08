@@ -483,7 +483,7 @@ Mentioned by Quantitativo in `this discussion <https://substack.com/@quantitativ
 ASRI: An Aggregated Systemic Risk Index for Cryptocurrency Markets
 -------------------------------------------------------------------
 
-Cryptocurrency markets have grown to over $3 trillion in capitalization, yet no unified index exists to monitor systemic risks arising from the interconnection between DeFi protocols and traditional financial institutions. This paper introduces the Aggregated Systemic Risk Index (ASRI), a composite measure comprising four weighted sub-indices: Stablecoin Concentration Risk (30%), DeFi Liquidity Risk (25%), Contagion Risk (25%), and Regulatory Opacity Risk (20%).
+This paper introduces the Aggregated Systemic Risk Index (ASRI), a composite measure comprising four weighted sub-indices: Stablecoin Concentration Risk (30%), DeFi Liquidity Risk (25%), Contagion Risk (25%), and Regulatory Opacity Risk (20%).
 
 The framework incorporates data from DeFi Llama, Federal Reserve FRED, and on-chain analytics, and was validated against historical crises including Terra/Luna (May 2022), Celsius/3AC (June 2022), FTX (November 2022), and SVB (March 2023). Event study analysis detected statistically significant signals for all four crises with an average lead time of 18 days. A three-regime Hidden Markov Model identifies distinct Low Risk, Moderate, and Elevated states with regime persistence exceeding 94%, and out-of-sample testing on 2024-2025 data confirmed zero false positives.
 
