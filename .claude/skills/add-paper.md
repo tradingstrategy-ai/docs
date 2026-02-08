@@ -42,21 +42,28 @@ Add a new research paper to the documentation collection.
 
 5. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 
-   ```rst
-   Title of the Paper
-   ------------------
+Write a custom summary for the paper by reading it and summarising highlights.
 
-   Description paragraph(s) here. Keep it informative but concise.
+Then add the
 
-   `Read the paper <https://canonical-url-here>`__
-   ```
+```rst
+Title of the Paper
+------------------
 
-   Important formatting notes:
-   - The underline of dashes must be at least as long as the title
-   - There should be a blank line after the title underline
-   - There should be a blank line before the "Read the paper" link
-   - The link format uses double underscores at the end: `__`
-   - Add the new entry at the END of the file (before any blank lines at the very end)
+Description paragraph(s) here fom the paper itself. Keep it informative but concise.
+
+Our summary of the contents.
+
+`Read the paper <https://canonical-url-here>`__
+```
+
+Important formatting notes:
+
+- The underline of dashes must be at least as long as the title
+- There should be a blank line after the title underline
+- There should be a blank line before the "Read the paper" link
+- The link format uses double underscores at the end: `__`
+- Add the new entry at the END of the file (before any blank lines at the very end)
 
 If the source of the link is discussion like a tweet, then include a paragraph with a link to that tweet and with the comment "Mentioned by XXX in this discussion" and this is what people say about it".
 
