@@ -13,32 +13,34 @@ Add a new book to the documentation collection.
 
 ## Steps
 
-1. **Find the canonical book page**: If the input URL is:
-   - A tweet (x.com or twitter.com): Use Playwright to fetch the tweet content since WebFetch cannot access Twitter/X. Navigate to the URL, extract the book link from the tweet using JavaScript DOM manipulation.
+1. **Check browser is activated**:
+   - Call `tabs_context_mcp` to verify browser connection
+   - If it fails, ask the user to enable browser:
+     - VS Code: Ensure Chrome extension is connected
+     - CLI: Run `claude --chrome` or type `/chrome`
+
+2. **Find the canonical book page**: If the input URL is:
+   - A tweet (x.com or twitter.com): Use browser to navigate to the tweet, take a screenshot, and extract the book link
    - An Amazon page: Use that URL
    - A publisher page: Use that URL
    - Other: Use the provided URL
 
-   **Important**: If WebFetch fails or returns no useful content (common with Twitter/X, sites requiring JavaScript), use Playwright with Node.js to navigate to the page and extract the information.
+   **Important**: For Twitter/X and sites requiring JavaScript, use browser automation instead of WebFetch.
 
-2. **Extract book information**:
+3. **Extract book information**:
    - **Title**: The full book title
    - **Author(s)**: The book author(s)
    - **Description**: A concise summary (1-3 paragraphs) describing what the book covers and who it's for
 
-   **For pages with JavaScript/CAPTCHA**: Use Playwright to scrape the book details:
-   - Create a Node.js script using Playwright to navigate to the page
-   - Use `browser.launch({ headless: false })` to open a visible browser window
-   - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
-   - Extract title, author, and description from the page
+   **For pages requiring browser**: Use `navigate` to open the page, then `get_page_text` or `read_page` to extract content. If CAPTCHA appears, ask the user to complete it manually.
 
-3. **Determine category**: Based on the extracted content, automatically determine the category:
+4. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/books.rst`) - for books about algorithmic trading, quantitative finance, portfolio management, risk management, market microstructure, etc.
    - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for books primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
 
    Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
 
-4. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
+5. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 
    ```rst
    Title of the Book
@@ -70,7 +72,7 @@ Add a new book to the documentation collection.
 
 If the source of the link is a discussion like a tweet, then include a paragraph with a link to that tweet with the comment "Mentioned by XXX in this discussion" and include what they say about it.
 
-5. **Commit and push**:
+6. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Book Title}"
    - Push to master branch

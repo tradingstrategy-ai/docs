@@ -13,36 +13,36 @@ Add a new blog post or article to the documentation collection.
 
 ## Steps
 
-1. **Find the canonical blog post page**: If the input URL is:
-   - A tweet (x.com or twitter.com): Use Playwright to fetch the tweet content since WebFetch cannot access Twitter/X. Navigate to the URL, extract the blog post link from the tweet using JavaScript DOM manipulation.
+1. **Check browser is activated**:
+   - Call `tabs_context_mcp` to verify browser connection
+   - If it fails, ask the user to enable browser:
+     - VS Code: Ensure Chrome extension is connected
+     - CLI: Run `claude --chrome` or type `/chrome`
+
+2. **Find the canonical blog post page**: If the input URL is:
+   - A tweet (x.com or twitter.com): Use browser to navigate to the tweet, extract the blog post link
    - A direct blog post URL: Use that URL
+   - Medium.com or Substack.com: Use browser (WebFetch is blocked)
    - Other: Use the provided URL
    - For X.com (Twitter) links, it can be either a X post or X article - handle articles as posts
 
-   **Important**: If WebFetch fails or returns no useful content (common with Twitter/X, sites requiring JavaScript), use Playwright with Node.js to navigate to the page and extract the information.
+   **Important**: For Twitter/X, Medium, Substack, and sites requiring JavaScript, use browser automation instead of WebFetch.
 
-2. **Extract blog post information**:
+3. **Extract blog post information**:
    - **Title**: The full blog post title
    - **Author/Source**: The author name or blog/publication name
    - **Description**: A concise summary (1-2 paragraphs) describing what the post covers
 
-   **For pages with JavaScript/CAPTCHA**: Use Playwright to scrape the details:
-   - Create a Node.js script using Playwright to navigate to the page
-   - Use `browser.launch({ headless: false })` to open a visible browser window if needed
-   - If CAPTCHA appears, ask the user to complete it manually, then continue extraction
-   - Extract title from `h1` element and description from article content or meta description
+   **For pages requiring browser**: Use `navigate` to open the page, then `get_page_text` or `read_page` to extract content. If CAPTCHA appears, ask the user to complete it manually.
 
-   **For Medium.com**
-   - Medium.com blocks WebFetch tool. Always use Playwright.
-
-3. **Determine category**: Based on the extracted content, automatically determine the category:
+4. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
    - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for posts primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
      **Not trading related**: Don't add this post. If the user specifically asked to add this post, ask user for confrimation.
 
    Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
 
-4. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
+5. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 
    ```rst
    Title of the Blog Post
@@ -80,19 +80,14 @@ Add a new blog post or article to the documentation collection.
 
 If the source of the link is a discussion like a tweet, then include a paragraph with a link to that tweet with the comment "Mentioned by XXX in this discussion" and include what they say about it.
 
-5. **Save post as PDF**:
-   - Use Playwright to save the blog post page as a PDF to `~/Dropbox/posts/`
-   - Filename should be a slugified version of the title, e.g. `building-robust-trading-systems.pdf`
-   - Use Playwright's `page.pdf()` method after navigating to the post URL
-   - Example:
-     ```js
-     const page = await browser.newPage();
-     await page.goto(url, { waitUntil: "networkidle" });
-     await page.pdf({ path: outputPath, format: "A4", printBackground: true });
-     ```
+6. **Save post as PDF**:
+   - Use browser to navigate to the post URL
+   - Use the `computer` tool with action `key` to trigger print (Cmd+P on Mac)
+   - Or ask the user to save as PDF manually if browser print doesn't work
+   - Save to `~/Dropbox/posts/` with a slugified filename, e.g. `building-robust-trading-systems.pdf`
    - Create the `~/Dropbox/posts/` directory if it doesn't exist
 
-6. **Commit and push**:
+7. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Blog Post Title}"
    - Push to master branch
