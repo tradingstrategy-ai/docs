@@ -512,3 +512,12 @@ By Yijia Xiao, Edward Sun, Di Luo, and Wei Wang.
 Mentioned by Quant Science in `this discussion <https://x.com/quantscience_/status/2016920152739131471>`__.
 
 `Read the paper <https://arxiv.org/abs/2412.20138>`__
+
+Deep Learning Statistical Arbitrage
+------------------------------------
+
+Statistical arbitrage exploits temporal price differences between similar assets. This paper develops a unifying conceptual framework for statistical arbitrage and a novel data-driven solution. The approach constructs arbitrage portfolios of similar assets as residual portfolios from conditional latent asset pricing factors, extracts time series signals using a convolutional transformer, and uses these signals to form an optimal trading policy that maximizes risk-adjusted returns under constraints. The comprehensive empirical study on daily US equities shows high compensation for arbitrageurs to enforce the law of one price, with consistently high out-of-sample mean returns and Sharpe ratios that substantially outperform benchmark approaches.
+
+By Jorge Guijarro-Ordonez, Markus Pelger, and Greg Zanotti.
+
+`Read the paper <https://arxiv.org/abs/2106.04028>`__
