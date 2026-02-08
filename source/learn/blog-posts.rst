@@ -1081,3 +1081,14 @@ By Goshawk Trades.
 
 `Read the article <https://x.com/GoshawkTrades/status/2019810833904373805>`__
 
+Gold Momentum Strategy
+----------------------
+
+A simple dual-momentum approach for timing gold investments. The strategy combines 12-month total return signals from both gold (GLD) and 10-year U.S. Treasuries (IEF) to filter out weak periods and reduce drawdowns.
+
+The trading rules are straightforward: when both gold and Treasury returns are positive at month-end, go long gold; if either is negative, stay in cash. This deliberate simplicity—with minimal parameters—reduces the risk of overfitting. Based on research from Allocate Smartly's "Gold Cross-Asset Momentum," historical backtesting over 50 years shows the strategy has generally reduced exposure during losing phases and outperformed a basic gold-only momentum approach.
+
+By QuantifiedStrategies.com.
+
+`Read the post <https://x.com/QuantifiedStrat/status/2020152068422648277>`__
+
