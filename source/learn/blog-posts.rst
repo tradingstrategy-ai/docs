@@ -1059,3 +1059,14 @@ By Chaos Labs.
 
 `Read the article <https://x.com/chaoslabs/status/2019498892761374811>`__
 
+Basic Trend Following
+---------------------
+
+A comprehensive primer on constructing a basic trend following program, shared freely with full transparency. The thread covers both the philosophy and exact implementation steps for building a systematic trend strategy that can be stacked on beta exposure.
+
+The four-step framework includes: (1) Beta/Benchmark Selection, (2) Two-Speed Binary Trend signals, (3) Risk Parity allocation, and (4) Dynamic Leverage with Max Volatility Cap. The author argues that a basic trend program is one of the most defensible things an investor can do—intuitive, empirically backed, and suited to most investor psychology. The goal is to provide both a benchmark for measuring market strategy and an accessible portfolio solution for anyone with a brokerage account.
+
+By Prometheus Macro (@aahan_prometheus).
+
+`Read the thread <https://threadreaderapp.com/thread/2020234019108266368.html>`__
+
