@@ -16,10 +16,13 @@
       "Bash(git stash:*)",
       "Bash(git pull:*)",
       "Bash(lsof:*)",
-      "Bash(claude --chrome --version:*)"
+      "Bash(claude --chrome --version:*)",
+      "Bash(/private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-text.txt << 'TWEETEOF'\nAnomaly premiums aren't static — they switch off and rotate. ML-optimized dynamic exits time when factors are active, boosting momentum to ~100bps/month while cutting drawdowns.\n\nDiscussed by @iblanco_finance here:\nhttps://x.com/iblanco_finance/status/2018712332625445079\n\nhttps://papers.ssrn.com/sol3/papers.cfm?abstract_id=6076808\nTWEETEOF)",
+      "Bash(screencapture:*)"
     ],
     "additionalDirectories": [
-      "/Users/moo/code/docs/.claude"
+      "/Users/moo/code/docs/.claude",
+      "/Users/moo/Dropbox/posts"
     ]
   }
 }

@@ -45,11 +45,18 @@ Pick a random item from the algorithmic trading content collection (papers, blog
 
 3. **Pick a random item**: Select one item at random from the list. Tell the user which item was selected.
 
-4. **Download the article image**: Use browser to navigate to the article URL and capture a screenshot of the main content. Steps:
+4. **Capture the article screenshot**: Use browser MCP to navigate to the article URL and save a screenshot. Steps:
    - Use `navigate` to open the article URL
-   - Wait for page to load, handle CAPTCHA if needed
+   - Wait for page to load; if CAPTCHA appears, ask the user to complete it manually
    - Use `computer` with action `screenshot` to capture the page
-   - The screenshot ID can be used with `upload_image` if needed
+   - Save the screenshot to disk using `javascript_tool`:
+     ```javascript
+     // Get the screenshot as a data URL and trigger a download
+     // Alternatively, use the returned screenshot data from the computer tool
+     ```
+   - Save the image to the scratchpad:
+     `/private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-image.png`
+   - If saving fails, use Bash: `screencapture` or fall back to a manual approach
 
    If the page cannot be accessed (paywall, CAPTCHA), tell the user and proceed without an image.
 
@@ -70,17 +77,49 @@ Pick a random item from the algorithmic trading content collection (papers, blog
    Save the tweet text to the scratchpad:
    `/private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-text.txt`
 
-7. **Copy tweet text to clipboard and open X compose**:
-   ```bash
-   cat /private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-text.txt | pbcopy
-   ```
-   ```bash
-   open "https://x.com/compose/post"
-   ```
-   This copies the tweet text to the clipboard and opens the X compose window in the user's default browser (with their signed-in session).
+7. **Open X compose and prepare the draft in browser**:
+   Use browser MCP to navigate to X and fill in the tweet compose form with text and image.
 
-8. **Stop and wait**: Tell the user:
-   - "The tweet text has been copied to your clipboard (Cmd+V to paste)."
-   - "If a screenshot was captured, you can drag it into the compose window."
-   - "X compose is open in your browser. Paste, attach any image, review, and post."
-   Do NOT attempt to post the tweet automatically.
+   a. **Navigate to X compose**:
+      - Use `navigate` to open `https://x.com/compose/post`
+      - Wait for the compose dialog to load
+      - If a login page or CAPTCHA appears, ask the user to handle it, then continue
+
+   b. **Type the tweet text**:
+      - Use `find` to locate the tweet text input area (the contenteditable div in the compose dialog)
+      - Use `computer` with action `click` to focus the text input
+      - Use `computer` with action `type` to type the tweet text character by character
+      - Alternatively, use `javascript_tool` to set the text directly:
+        ```javascript
+        (() => {
+          const editor = document.querySelector('[data-testid="tweetTextarea_0"] [contenteditable="true"]');
+          if (!editor) return 'ERROR: Could not find tweet editor';
+          editor.focus();
+          // Use execCommand to trigger React's change detection
+          document.execCommand('insertText', false, TWEET_TEXT_HERE);
+          return 'OK';
+        })();
+        ```
+      - Verify the text appears correctly using `computer` with action `screenshot`
+
+   c. **Attach the screenshot image** (if one was captured in step 4):
+      - Use `find` to locate the media upload button (the image/photo icon in the compose toolbar)
+      - Use `computer` with action `click` on the media upload button
+      - This opens a file picker dialog — use `form_input` or `computer` to interact with it
+      - Navigate to the screenshot file:
+        `/private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-image.png`
+      - If the file picker cannot be automated, fall back to copying the file path to clipboard and tell the user to paste it:
+        ```bash
+        echo "/private/tmp/claude/-Users-moo-code-docs/882c5ece-843e-4dd4-ab2c-94ca5a77e61c/scratchpad/tweet-image.png" | pbcopy
+        ```
+      - Wait for the image thumbnail to appear in the compose dialog
+
+   d. **Take a confirmation screenshot**:
+      - Use `computer` with action `screenshot` to capture the compose dialog with text and image ready
+      - Show this to the user for review
+
+8. **Stop and wait for user approval**: Tell the user:
+   - "The tweet draft is ready in your browser with text and image attached."
+   - "Please review the compose window and click Post when ready."
+   - If the image could not be attached automatically: "The screenshot path has been copied to your clipboard — use the media button in the compose window to attach it manually."
+   Do NOT click the Post button. The user must post manually.

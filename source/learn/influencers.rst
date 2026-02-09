@@ -25,6 +25,7 @@ Quant trades on Twitter (now known as X)
 - `Ali Martinez <https://x.com/ali_charts>`__
 - `Concretum Research <https://x.com/ConcretumR>`__
 - `onchainquant <https://x.com/onchainquant>`__
+- `Ivan Blanco <https://x.com/iblanco_finance>`__
 
 Quant trades on LinkedIn
 ------------------------
