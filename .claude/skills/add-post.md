@@ -86,8 +86,8 @@ If the source of the link is a discussion like a tweet, then include a paragraph
    - Use browser to navigate to the post URL
    - Use the `computer` tool with action `key` to trigger print (Cmd+P on Mac)
    - Or ask the user to save as PDF manually if browser print doesn't work
-   - Save to `~/Dropbox/posts/` with a slugified filename, e.g. `building-robust-trading-systems.pdf`
-   - Create the `~/Dropbox/posts/` directory if it doesn't exist
+   - Save to `articles/` in the repo root with a slugified filename, e.g. `building-robust-trading-systems.pdf`
+   - Create the `articles/` directory if it doesn't exist
 
 7. **Commit and push**:
    - Stage the modified file
