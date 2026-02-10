@@ -72,7 +72,14 @@ Add a new book to the documentation collection.
 
 If the source of the link is a discussion like a tweet, then include a paragraph with a link to that tweet with the comment "Mentioned by XXX in this discussion" and include what they say about it.
 
-6. **Commit and push**:
+6. **Save book page as PDF**:
+   - Use browser to navigate to the book URL
+   - Use the `computer` tool with action `key` to trigger print (Cmd+P on Mac)
+   - Or ask the user to save as PDF manually if browser print doesn't work
+   - Save to `articles/` in the repo root with a slugified filename, e.g. `advances-in-financial-ml.pdf`
+   - Create the `articles/` directory if it doesn't exist
+
+7. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Book Title}"
    - Push to master branch

@@ -70,7 +70,14 @@ If the source of the link is discussion like a tweet, then include a paragraph w
 
 IMPORTANT. If the paper already exists, do not add it again.
 
-6. **Commit and push**:
+6. **Save paper as PDF**:
+   - Use browser to navigate to the paper URL
+   - Use the `computer` tool with action `key` to trigger print (Cmd+P on Mac)
+   - Or ask the user to save as PDF manually if browser print doesn't work
+   - Save to `articles/` in the repo root with a slugified filename, e.g. `optimal-execution-strategies.pdf`
+   - Create the `articles/` directory if it doesn't exist
+
+7. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Paper Title}"
    - Push to master branch
