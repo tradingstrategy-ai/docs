@@ -1125,3 +1125,29 @@ By pedma7.
 
 `Read the post <https://x.com/pedma7/status/2020946617344389474>`__.
 
+Seasonality in Bitcoin Intraday Trend Trading
+----------------------------------------------
+
+An investigation into whether Bitcoin exhibits exploitable intraday trend-following dynamics and, critically, whether those dynamics vary by time of week. Concretum Research constructs a high-frequency Bitcoin trend-following benchmark and uncovers a clear intraweek seasonality pattern they call the "Monday Asia Open Effect."
+
+The key finding is that intraday trend-following performance is strongly positive starting Sunday around 7:00 PM New York time, with elevated returns persisting for roughly 24 hours into Monday, aligning with the Monday open of Asian cash equity markets. In contrast, US Sunday morning is associated with negative benchmark performance, consistent with choppier price action and weaker trend persistence. The article demonstrates that incorporating this day-of-week filter can materially improve portfolio performance for intraday crypto trend-following strategies.
+
+By Concretum Research.
+
+Mentioned by Concretum Research in `this discussion <https://x.com/ConcretumR/status/2017289662902272327>`__.
+
+`Read the article <https://concretumgroup.com/seasonality-in-bitcoin-intraday-trend-trading/>`__.
+
+Detecting VIX Term Structure Regimes
+-------------------------------------
+
+A practical guide to analyzing the VIX term structure using Principal Component Analysis (PCA) and Hidden Markov Models (HMM) in Python. The article argues that a single VIX number tells you almost nothing about where risk sits in the market, but the term structure reveals whether the crowd expects a crisis next week or three months from now, and whether the market is bracing for a known event or pricing uncertainty across the entire curve.
+
+The methodology uses PCA to reduce the dimensionality of the VIX term structure into interpretable components (level, slope, curvature), then applies a Gaussian Hidden Markov Model to classify the slope series into distinct regimes including contango, backwardation, and transition states. A complete Python notebook is provided for reproducing the analysis.
+
+By Cristian Velasquez.
+
+Mentioned by QuantSeeker in `this discussion <https://x.com/quantseeker>`__.
+
+`Read the article <https://medium.com/@crisvelasquez/detecting-vix-term-structure-regimes-8f3b1a4ddf15>`__.
+

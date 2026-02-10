@@ -494,3 +494,42 @@ By Murad Farzulla and Andrew Maksakov.
 Mentioned by Saeed in `this discussion <https://x.com/saeedamenfx/status/2020120481056067612>`__.
 
 `Read the paper <https://arxiv.org/abs/2602.03874>`__
+
+R&D Alpha: Investment Intensity and Long-Term Stock Returns
+-----------------------------------------------------------
+
+This paper tests whether high research and development (R&D) intensity predicts higher subsequent equity returns in a large-cap U.S. universe using methodology designed for portfolio implementability. Each year, S&P 500 stocks are sorted into quintiles by R&D intensity (R&D expense divided by revenue) and subsequent returns are evaluated with timing designed to mitigate look-ahead bias.
+
+The high-minus-low R&D factor averages 3.73% per year, with monthly factor spanning tests confirming a statistically distinct premium (FF5 alpha = 4.37%, p < 0.01). The investable RD20 strategy, a simple long-only portfolio holding the top 20 stocks by R&D intensity equal-weighted, delivers 7.52% annual excess return versus SPY after transaction costs. The paper documents sector tilts, factor exposures, and regime dependence, noting that much of the value comes from sector tilts and regime dependence rather than a clean textbook factor.
+
+By Abhishek Sehgal.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2019799495723085860>`__: "Worth a read for anyone thinking seriously about intangible capital, innovation exposure, and practical factor implementation."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6002295>`__
+
+Magnificent, but Not Extraordinary: Market Concentration in the US and Beyond
+------------------------------------------------------------------------------
+
+This paper examines equity market concentration in the US since 1926 and in several developed markets. The authors find that current index weights of the largest firms align with historical and international patterns, and that valuation concentration moves with earnings concentration. A geometric Brownian motion benchmark with firm-specific shocks reproduces observed concentration, with idiosyncratic volatility identified as the key driver.
+
+The central finding is that high concentration alone does not justify deviations from market weights or policy conclusions about firm breakups. The market portfolio remains optimal in the authors' benchmark framework. Their evidence constrains pure multiple-expansion narratives and behavioral channels by linking valuations to fundamentals, pushing back on the popular narrative that the Magnificent 7 represent an unprecedented anomaly.
+
+By Per Bye, Jens Soerlie Kvaerner, and Bas J.M. Werker.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance>`__: "If you believe today's US equity market is uniquely concentrated because of the Magnificent 7, history may disagree."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6080632>`__
+
+Credit Spread News and Financial Market Risk
+---------------------------------------------
+
+This paper shows that credit spread news, defined by changes and absolute changes in corporate bond credit spreads, predict a substantial share of future variation in financial market risk. The author first documents a strong and robust predictive relationship between credit spread news and financial market risk, then investigates the economic mechanism underlying this relationship.
+
+Both theoretical and empirical evidence highlight a central role for financial intermediaries' risk expectations in driving the predictive power of credit spread changes. The findings establish credit spread news as statistically significant and economically meaningful predictors of financial market risk, offering a practical signal for macro-oriented systematic traders.
+
+By Fabrizio Ghezzi.
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2020764100608004604>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5994074>`__
