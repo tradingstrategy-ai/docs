@@ -1164,3 +1164,157 @@ Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/stat
 
 `Read the article <https://medium.com/@simomenaldo/realized-volatility-and-har-models-a-new-paradigm-for-volatility-forecasting-4a660f2530f3>`__.
 
+Time Series Fundamentals
+------------------------
+
+A foundational overview of time series analysis for financial econometrics. The article covers the core concepts that underpin quantitative finance, including stationarity and unit root testing (ADF and KPSS tests), autocorrelation functions (ACF and PACF), lag selection criteria (AIC, BIC, HQIC), and an introduction to spectral analysis for identifying cyclical patterns in financial data.
+
+The post emphasizes the practical importance of these tools for portfolio managers and risk analysts, explaining how stationarity assumptions affect model validity, how autocorrelation structure informs model selection, and how frequency-domain analysis can complement time-domain approaches for understanding market dynamics.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/time-series-fundamentals-4dfbbc5dc1d1>`__.
+
+Market Microstructure Foundations
+---------------------------------
+
+A comprehensive introduction to market microstructure, the branch of financial economics that studies how investors' latent demands are translated into executed trades. The article covers the core building blocks including order-driven versus quote-driven markets, the role of market makers, price discovery mechanisms, and the concept of information asymmetry between market participants.
+
+The post explores foundational theoretical models and their practical implications for trading decisions, risk management, and understanding the forces that shape asset prices. Topics include bid-ask spreads, transaction costs, market efficiency at the microstructure level, and the impact of market structure on price formation.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/market-microstructure-foundations-aabb765d9fd2>`__.
+
+Strategic Trading Models
+------------------------
+
+An exploration of strategic trading models that provide rigorous frameworks for executing large orders while minimizing market impact and preserving informational advantages. The article covers foundational concepts including Kyle's Lambda estimation, the mechanics of price impact, and advanced execution tactics such as trade splitting, stealth trading, and the logic behind parent order strategies.
+
+The post delves into how institutional traders balance the trade-off between execution speed and market impact, drawing on Kyle's 1985 seminal model and its extensions. It examines how informed traders optimally reveal their information through trading, and how these theoretical insights translate into practical algorithmic execution strategies used by quantitative trading firms.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/strategic-trading-models-baf99eecdf11>`__.
+
+Information-Based Models in Market Microstructure
+-------------------------------------------------
+
+A comprehensive overview of information-based models in market microstructure, providing a framework for understanding how private information is incorporated into asset prices. The article traces the development of these models from Bagehot's foundational insights through to modern metrics like the Probability of Informed Trading (PIN) and Volume-Synchronized PIN (VPIN).
+
+The post explores the theoretical underpinnings of information asymmetry, adverse selection, and the strategic behavior of informed and uninformed traders. It covers the Glosten-Milgrom sequential trade model, the Kyle continuous auction model, and how these frameworks explain the mechanics of price discovery, liquidity provision, and trading costs in modern markets.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/information-based-models-in-market-microstructure-6d8c7b8dbfa9>`__.
+
+Stochastic Volatility Models
+-----------------------------
+
+An in-depth exploration of stochastic volatility models, which offer a more sophisticated and realistic framework for capturing market dynamics than simpler constant-volatility assumptions. The article covers the foundational concepts of the basic stochastic volatility model, the widely used Heston model, and methods for their estimation and calibration.
+
+The post explains how stochastic volatility models treat volatility as a latent random process driven by its own source of uncertainty, allowing them to capture key features of financial markets such as volatility clustering, mean reversion, and the leverage effect. Applications to derivatives pricing, risk management, and portfolio optimization are discussed.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/stochastic-volatility-models-a473e32d5519>`__.
+
+Inventory Models in Market Microstructure
+-----------------------------------------
+
+A comprehensive overview of inventory models in market microstructure, which provide a systematic framework for understanding how market makers quote bid-ask spreads to control inventory risk and maximize profitability. The article covers foundational models by Garman (1976), Stoll (1978), and Ho and Stoll (1981), as well as advanced topics such as optimal inventory control and the Avellaneda-Stoikov framework.
+
+The post explores how uncontrolled inventory exposes market makers to adverse price movements, and how optimal quoting strategies dynamically adjust spreads based on current inventory levels, risk aversion, and market volatility. The Avellaneda-Stoikov model is presented as the modern standard for high-frequency market making, providing closed-form solutions for optimal bid-ask quotes.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/inventory-models-in-market-microstructure-2956ba9b31cb>`__.
+
+Understanding Multivariate GARCH Models
+----------------------------------------
+
+An overview of Multivariate GARCH models for modeling and forecasting the volatility of multiple assets simultaneously. The article covers the progression from the foundational VEC and BEKK models to the more advanced Constant Conditional Correlation (CCC) and Dynamic Conditional Correlation (DCC) frameworks, with practical applications in portfolio risk management.
+
+The post explains how these models capture time-varying correlations and volatility spillovers between assets, which are critical for portfolio construction, hedging, and risk measurement. The trade-offs between model flexibility and computational tractability are discussed, with the DCC model highlighted as the most practical choice for large-dimensional systems.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/understanding-multivariate-garch-models-39bab25b527c>`__.
+
+Bid-Ask Spread Decomposition
+-----------------------------
+
+A detailed guide to decomposing the bid-ask spread into its fundamental components: order processing costs, inventory holding costs, and adverse selection costs. The article covers the theoretical models behind each component, methods for empirical estimation including the Roll (1984) and Madhavan-Richardson-Roomans (1997) approaches, and their behavior across different market conditions.
+
+The post also examines time-varying spread dynamics, cross-sectional variation in spread components across different assets, intraday U-shaped spread patterns, and the impact of electronic versus floor trading on spread composition. Understanding these components informs execution strategies, transaction cost analysis, and market surveillance.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/bid-ask-spread-decomposition-1a5ddfd8f554>`__.
+
+Volatility Modeling: A Deep Dive into the ARCH Family
+------------------------------------------------------
+
+A comprehensive exploration of the ARCH family of volatility models, from the original ARCH model by Robert Engle to its many extensions. The article begins with the stylized facts of financial returns that motivate these models, including volatility clustering, fat tails, and the leverage effect, then covers ARCH, GARCH, EGARCH, GJR-GARCH, and IGARCH specifications.
+
+The post provides detailed mathematical formulations, explains estimation via maximum likelihood, and discusses model selection and diagnostic testing. Practical considerations for applying these models to financial risk management, Value-at-Risk estimation, and options pricing are covered, with emphasis on choosing the right specification for different financial applications.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/volatility-modeling-a-deep-dive-into-the-arch-family-f361bafbb3f7>`__.
+
+Market Liquidity
+----------------
+
+An overview of essential measures of market liquidity, from classic spread-based measures to more advanced model-based indicators. The article covers effective spread, realized spread, quoted depth, Amihud illiquidity ratio, Kyle's Lambda, and other key metrics used to quantify the ease with which assets can be traded without significantly affecting their price.
+
+The post explores the theoretical underpinnings and practical applications of each liquidity measure, explaining how they capture different dimensions of liquidity including tightness, depth, resiliency, and immediacy. In a world of fragmented markets and high-frequency trading, the ability to accurately gauge liquidity is presented as critical to both execution quality and risk management.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/market-liquidity-c66bd2c8ca5a>`__.
+
+Cointegration and Error Correction Models
+------------------------------------------
+
+An exploration of cointegration and Error Correction Models (ECMs) for analyzing long-run relationships between financial time series. The article covers the problem of spurious regression, the Engle-Granger two-step method and Johansen test for cointegration testing, and the Vector Error Correction Model (VECM) framework for modeling both short-run dynamics and long-run equilibrium relationships.
+
+The post demonstrates how these tools move beyond simple correlations to uncover deeper economic connections between non-stationary time series. Applications in quantitative finance include pairs trading strategies, cross-asset hedging, term structure modeling, and understanding the lead-lag relationships between related financial instruments.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/cointegration-and-error-correction-models-a03cfb900ed1>`__.
+
+Limit Order Book Structure
+--------------------------
+
+A comprehensive overview of the limit order book (LOB), the fundamental data structure representing real-time supply and demand for financial instruments. The article covers key components including price-time priority, pro-rata allocation, order book depth, Level I/II/III market data, order book imbalance as a predictor of short-term price movements, queue position, and visible versus hidden depth.
+
+The post explains how understanding LOB structure provides insights into market sentiment, liquidity, and short-term price dynamics. For traders and portfolio managers, this knowledge informs trading strategies, improves execution quality, and enhances risk management in modern electronic markets where the LOB is the central mechanism for price discovery.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/limit-order-book-structure-2aed9971e998>`__.
+
+ARMA and ARIMA Models
+---------------------
+
+A foundational guide to Autoregressive Moving Average (ARMA) and Autoregressive Integrated Moving Average (ARIMA) models for financial time series forecasting. The article covers the theoretical framework from the seminal Box-Jenkins methodology, including model identification, parameter estimation via maximum likelihood, diagnostic checking, and the complete model selection process using ACF/PACF analysis and information criteria.
+
+The post explains how these models capture temporal dependencies in financial data through autoregressive and moving average components, and how differencing extends them to handle non-stationary series. Practical applications in algorithmic trading, risk management, and investment strategy formulation are discussed, along with model limitations and extensions.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/arma-and-arima-models-f5ab52a191ba>`__.
+
+Understanding Order Types
+-------------------------
+
+A detailed guide to the order types that translate trading strategies into executed trades in modern financial markets. The article covers market orders, limit orders, stop orders, stop-limit orders, iceberg orders, and more complex conditional and algorithmic order variants, examining their mechanics and strategic applications within the limit order book framework.
+
+The post emphasizes that understanding order types is fundamental to managing execution costs, controlling market impact, and optimizing portfolio performance. Each order type is analyzed in terms of its interaction with the order book, its trade-off between execution certainty and price improvement, and its appropriate use cases in different market conditions.
+
+By Simone Menaldo.
+
+`Read the article <https://medium.com/@simomenaldo/understanding-order-types-462f69e62a85>`__.
+
