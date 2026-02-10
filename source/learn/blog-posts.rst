@@ -1092,3 +1092,14 @@ By QuantifiedStrategies.com.
 
 `Read the post <https://x.com/QuantifiedStrat/status/2020152068422648277>`__
 
+Vs Random Benchmarking: Detecting Lucky Backtests
+--------------------------------------------------
+
+A method for determining whether a backtested trading strategy has genuine edge or is simply the product of overfitting. The Vs. Random test, popularized by hedge fund manager Jaffray Woodriff of Quantitative Investment Management in his Hedge Fund Market Wizards chapter, works by building the best possible strategies using random signals and random data, then using the best random result as a baseline benchmark.
+
+If a strategy cannot meaningfully exceed the performance of the best randomly generated strategy, there is a strong chance it is overfit to historical noise rather than capturing real market dynamics. The article covers common implementation mistakes including comparing against average random performance instead of best random, failing to match constraints between real and random strategy searches, and mismatching the fitness metric used for comparison. It also discusses how Build Alpha v3 automates this test as a pre-generation filter.
+
+Mentioned by Build Alpha in `this discussion <https://x.com/buildalpha/status/2020940208091312594>`__.
+
+`Read the blog post <https://www.buildalpha.com/vs-random-test/>`__.
+
