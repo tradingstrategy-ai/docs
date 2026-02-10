@@ -1103,3 +1103,14 @@ Mentioned by Build Alpha in `this discussion <https://x.com/buildalpha/status/20
 
 `Read the blog post <https://www.buildalpha.com/vs-random-test/>`__.
 
+A Simple Monthly Momentum Strategy for US Stocks
+-------------------------------------------------
+
+A beginner-friendly systematic trading strategy using monthly momentum on Nasdaq 100 stocks. The approach focuses on robustness over complexity, framing the strategy as premium harvesting of beta rather than alpha mining — fewer moving parts mean fewer things that can break compared to overoptimized, datamined strategies.
+
+The exact rules: trade only when NDX is in an uptrend (Close > MA200), filter the Nasdaq 100 universe for stocks also in uptrend with positive 6-month returns, rank by 6-month return once a month, buy the top 5 equally weighted at 20% each, hold for one month, then repeat. No stop loss, no profit target. The author positions this as a solid core sleeve for a systematic portfolio that can be improved by combining it with uncorrelated strategies like long mean reversion or by adding better filters and ranking criteria.
+
+By Petr Podhajsky.
+
+`Read the post <https://www.linkedin.com/posts/petr-podhajsky_not-sure-where-to-start-with-systematic-trading-share-7426649340364046336-3mSb>`__.
+
