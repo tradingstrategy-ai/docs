@@ -1114,3 +1114,14 @@ By Petr Podhajsky.
 
 `Read the post <https://www.linkedin.com/posts/petr-podhajsky_not-sure-where-to-start-with-systematic-trading-share-7426649340364046336-3mSb>`__.
 
+Using Rolling Correlation to Hit Volatility Targets in Crypto Trend Following
+------------------------------------------------------------------------------
+
+A practical discussion on incorporating correlation estimates into position sizing for a long/short crypto trend following portfolio. The author was targeting 40% annualised volatility but consistently hitting only 20%, because the sizing formula assumed perfect correlation among positions — clearly wrong when the portfolio's rolling correlation sat around 0.1.
+
+The fix involved adding a rolling correlation estimate to the sizing formula. The key question was whether past correlation is predictive enough to rely on, similar to how past volatility predicts future volatility. After analysing the data, the author found R² values of 0.25–0.4 for correlation predictability in crypto — consistent with assumptions in Rob Carver's work — and confirmed that using the rolling correlation estimate allowed the portfolio to consistently hit its volatility target.
+
+By pedma7.
+
+`Read the post <https://x.com/pedma7/status/2020946617344389474>`__.
+
