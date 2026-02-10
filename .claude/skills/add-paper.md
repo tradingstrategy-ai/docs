@@ -70,14 +70,15 @@ If the source of the link is discussion like a tweet, then include a paragraph w
 
 IMPORTANT. If the paper already exists, do not add it again.
 
-6. **Save paper as PDF**:
-   - Use browser to navigate to the paper URL
-   - Use the `computer` tool with action `key` to trigger print (Cmd+P on Mac)
-   - Or ask the user to save as PDF manually if browser print doesn't work
-   - Save to `articles/` in the repo root with a slugified filename, e.g. `optimal-execution-strategies.pdf`
-   - Create the `articles/` directory if it doesn't exist
-
-7. **Commit and push**:
+6. **Commit and push**:
    - Stage the modified file
    - Commit with message: "Add: {Paper Title}"
    - Push to master branch
+
+7. **Save as PDF** (manual step):
+   - Ensure the browser is on the paper page
+   - Tell the user the suggested filename: `articles/<slugified-title>.pdf`
+   - Ask the user to save the page as PDF themselves (Cmd+P → "Save as PDF" → save to `articles/`)
+   - **Do not** use `computer` tool with `key` Cmd+P or `window.print()` — these trigger a native dialog that blocks the browser extension
+   - Create the `articles/` directory if it doesn't exist
+   - If the user skips this step, proceed without the PDF
