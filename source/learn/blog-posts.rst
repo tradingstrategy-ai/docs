@@ -1151,3 +1151,16 @@ Mentioned by QuantSeeker in `this discussion <https://x.com/quantseeker>`__.
 
 `Read the article <https://medium.com/@crisvelasquez/detecting-vix-term-structure-regimes-8f3b1a4ddf15>`__.
 
+Realized Volatility and HAR Models: A New Paradigm for Volatility Forecasting
+------------------------------------------------------------------------------
+
+A comprehensive guide to realized volatility and the Heterogeneous Autoregressive (HAR) model for volatility forecasting. The article explains how high-frequency intraday data can be used to construct realized volatility measures that are more precise than traditional close-to-close estimators, and how the HAR framework captures the multi-scale, long-memory properties of volatility through a hierarchical cascade of daily, weekly, and monthly components.
+
+The post covers key extensions of the base HAR model, including handling jumps (HAR-J), leverage effects, and realized semi-variance decomposition. It also discusses practical considerations such as microstructure noise, kernel-based estimators, and model evaluation using QLIKE and MSE loss functions. A Python implementation is provided for fitting HAR models and generating forecasts.
+
+By Simone Menaldo.
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2021129224879288810>`__.
+
+`Read the article <https://medium.com/@simomenaldo/realized-volatility-and-har-models-a-new-paradigm-for-volatility-forecasting-4a660f2530f3>`__.
+
