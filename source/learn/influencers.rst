@@ -26,6 +26,18 @@ Quant trades on Twitter (now known as X)
 - `Concretum Research <https://x.com/ConcretumR>`__
 - `onchainquant <https://x.com/onchainquant>`__
 - `Ivan Blanco <https://x.com/iblanco_finance>`__
+- `AlgoFlows <https://x.com/algoflows>`__
+- `Chaos Labs <https://x.com/chaoslabs>`__
+- `Goshawk Trades <https://x.com/GoshawkTrades>`__
+- `QuantifiedStrategies <https://x.com/QuantifiedStrat>`__
+- `Build Alpha <https://x.com/buildalpha>`__
+- `Prometheus Macro <https://x.com/aahan_prometheus>`__
+- `Luke Leasure <https://x.com/0xMether>`__
+- `Kris Abdelmessih <https://x.com/KrisAbdelmessih>`__
+- `Jungle Rock <https://x.com/JungleRockRes>`__
+- `Kurtis The Quant <https://x.com/Quant_Kurtis>`__
+- `Pasta Capital <https://x.com/Pasta_Capital>`__
+- `Saeed Amen <https://x.com/saeedamenfx>`__
 
 Quant trades on LinkedIn
 ------------------------
@@ -37,6 +49,7 @@ Quant trades on LinkedIn
 - `Doug Busch <https://www.linkedin.com/in/doug-busch-cmt-8531471b/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 - `Aditya Narayan Garnaik <https://www.linkedin.com/in/aditya-narayan-garnaik-b551b5212/>`__
+- `Petr Podhajsky <https://www.linkedin.com/in/petr-podhajsky/>`__
 
 Macro trades on Twitter
 -----------------------
@@ -47,6 +60,7 @@ Macro trades on Twitter
 - `Michael Antonelli <https://x.com/BullandBaird>`__
 - `Kacper Piotr Kaminski <https://x.com/Kacper_PK_CH>`__
 - `David Woo <https://x.com/Davidwoounbound>`__
+- `Ralph Sueppel <https://x.com/macro_synergy>`__
 
 Macro trades on LinkedIn
 ------------------------
