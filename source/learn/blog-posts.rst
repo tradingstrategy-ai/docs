@@ -1344,3 +1344,14 @@ Mentioned by `Stacy Muur <https://x.com/stacy_muur>`__ in `this discussion <http
 
 `Read the post <https://x.com/stacy_muur/status/2021216093394915574>`__.
 
+Why Cumulative Volume Delta Fails Traders
+-----------------------------------------
+
+An examination of why Cumulative Volume Delta (CVD), despite its apparent objectivity, consistently misleads traders. The post argues that CVD wins traders over in hindsight — after a session ends, the CVD chart appears to confirm moves cleanly — but in real time, the signal breaks down because CVD measures aggression totals, not who is actually in control of the auction.
+
+The core issue is that CVD assumes aggressive buying should push price up and aggressive selling should push it down, but this ignores the role of passive absorption by limit orders. The post explains how time aggregation further distorts the picture, compressing meaningful microstructure dynamics into a single cumulative line. Instead of relying on CVD as a directional signal, the author advocates examining delta on lower timeframes to observe how aggression is being absorbed or accepted at specific price levels.
+
+By Sierra Trading.
+
+`Read the blog post <https://beyondcandlesticks.substack.com/p/why-cumulative-volume-delta-fails>`__.
+
