@@ -1329,3 +1329,18 @@ By Margin Syndicate.
 
 `Read the post <https://www.linkedin.com/posts/a-token-gets-listed-on-binance-with-a-perpetual-share-7427034487001083904-Ky2t/>`__.
 
+List of Perpetual Futures DEXes
+-------------------------------
+
+A comprehensive ecosystem map of decentralized perpetual futures exchanges, categorizing platforms by their underlying architecture into three design families: orderbook-based, AMM-based, and exotic perps. The classification highlights that not all perp DEXes are built the same — orderbook-based platforms prioritize execution speed and price discovery through central limit order books, AMM-based platforms use liquidity pools and synthetic pricing for permissionless trading, and exotic perp platforms enable markets on non-traditional data feeds and novel asset types.
+
+**Orderbook-Based:** `Hyperliquid <https://hyperliquid.xyz/>`__, `dYdX <https://dydx.exchange/>`__, `Vertex Protocol <https://vertexprotocol.com/>`__, `Aevo <https://aevo.xyz/>`__, `Paradex <https://www.paradex.gg/>`__, `Lighter <https://lighter.xyz/>`__, `Aster DEX <https://www.asterdex.com/>`__, `Backpack <https://backpack.exchange/>`__, `edgeX <https://edgex.exchange/>`__, `Nado <https://www.nado.xyz/>`__, `Pacifica <https://pacifica.fi/>`__, `GRVT <https://grvt.io/>`__, `Hibachi <https://hibachi.xyz/>`__.
+
+**AMM-Based:** `GMX <https://gmx.io/>`__, `Gains Network <https://gains.trade/>`__, `Synthetix <https://synthetix.io/>`__, `Drift Protocol <https://drift.trade/>`__, `Ostium <https://www.ostium.com/>`__, `ApeX <https://www.apex.exchange/>`__.
+
+**Exotic Perps:** `Overlay Protocol <https://overlay.market/>`__, `Variational <https://variational.io/>`__, `Extended <https://extended.xyz/>`__.
+
+Mentioned by `Stacy Muur <https://x.com/stacy_muur>`__ in `this discussion <https://x.com/stacy_muur/status/2021216093394915574>`__: "Not all perp DEXs are built the same. Your eco map, by design."
+
+`Read the post <https://x.com/stacy_muur/status/2021216093394915574>`__.
+
