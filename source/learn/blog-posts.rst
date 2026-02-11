@@ -1318,3 +1318,14 @@ By Simone Menaldo.
 
 `Read the article <https://medium.com/@simomenaldo/understanding-order-types-462f69e62a85>`__.
 
+Perpetual Contracts Without Spot Markets: A Hidden Delisting Risk
+-----------------------------------------------------------------
+
+A cautionary analysis of a recurring pattern in crypto derivatives markets where tokens get listed on Binance with perpetual contracts but no spot market. Without spot trading, there is no natural price discovery — no real supply and demand anchoring the mark price. When funding rates spike negative, systematic strategies flag these as funding rate arbitrage opportunities, but the apparent yield is a trap.
+
+The post describes how, within days or weeks, Binance announces a vote-to-delist, the token dumps sharply, and funding yield gets wiped out by drawdowns that no amount of price-based risk management could have anticipated. The tokens that blow up share a common fingerprint: perp without spot on the listing venue, thin liquidity, and single-exchange dependency. The author advocates for automated screening to filter out these structurally compromised tokens before they enter any trading pipeline.
+
+By Margin Syndicate.
+
+`Read the post <https://www.linkedin.com/posts/a-token-gets-listed-on-binance-with-a-perpetual-share-7427034487001083904-Ky2t/>`__.
+
