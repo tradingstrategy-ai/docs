@@ -1355,16 +1355,24 @@ By Sierra Trading.
 
 `Read the blog post <https://beyondcandlesticks.substack.com/p/why-cumulative-volume-delta-fails>`__.
 
-01 Market Maker: A Simple Market Making Bot for 01 Exchange
+A Simple Market Making Bot for 01 Exchange
 -----------------------------------------------------------
 
 An open-source TypeScript market making bot for `01 Exchange <https://01.xyz/>`__, a Solana-based perpetual futures DEX. The project demonstrates how to connect to 01 Exchange using the official SDK (@n1xyz/nord-ts) and implement a basic market making strategy. It places buy and sell orders symmetrically around a fair price derived from Binance mid-price, with a configurable spread (default 10 bps). When positions grow beyond a threshold, the bot switches to a close-only mode with tighter spreads (5 bps) to reduce exposure.
 
 The repository includes a clean project structure with separate modules for quote generation, position tracking, price feeds (via Binance WebSocket), and order management. Configuration options cover spread size, order size in USD, close-mode thresholds, update throttling, and fair price calculation windows. The bot supports BTC and ETH markets and can be deployed via Docker Compose. A market monitor TUI is also included for observing orderbook state. The author notes this is intended for educational purposes and ran a $100 challenge generating $150k in volume by capturing wide spreads in a low-liquidity environment.
 
-By `URA (yat1ma30) <https://github.com/yat1ma30>`__.
-
 Mentioned by `URA <https://x.com/uradyor>`__ in `this discussion <https://x.com/uradyor/status/2018107463795720336>`__: ran a $100 challenge with the bot on a sub-account, generating $150k in volume by capturing wide spreads in a low-liquidity environment on 01 Exchange.
 
-`Read the repository <https://github.com/yat1ma30/zo-market-maker-ts>`__.
+`View the repository <https://github.com/yat1ma30/zo-market-maker-ts>`__.
 
+Time of Day Same Bar Trading
+-----------------------------
+
+A straightforward intraday momentum strategy for ES (E-mini S&P 500) futures using 30-minute bars. The approach analyzes absolute price moves (|Close-Open|) for each 30-minute time slot over a 120-day lookback, building historical distributions per slot. A signal triggers when the current bar's movement exceeds the 90th percentile of that slot's history, trading directionally with the impulse: long if Close > Open, short if Close < Open. The position is held for exactly one 30-minute bar, then exited at close.
+
+The strategy deliberately excludes stop losses, profit targets, regime filters, transaction fees, and risk management to focus purely on the "raw tendency." The author emphasizes that this "extreme impulse by time-of-day effect" appears persistent across both long and short sides and multiple markets, positioning it as a foundational building block for systematic trading systems.
+
+By Petr Podhajsky.
+
+`Read the post <https://www.linkedin.com/posts/petr-podhajsky_im-interested-in-systems-built-on-one-simple-share-7427372617675763712-TuwD>`__.
