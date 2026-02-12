@@ -123,6 +123,8 @@ and algorithmic trading.
 
         - :term:`Protocol`
 
+        - :term:`GMX`
+
     CLMM
 
         CLMM stands for Concentrated Liquidity Market Maker.
@@ -304,6 +306,8 @@ and algorithmic trading.
         - :term:`Onchain`
 
         - :term:`Wallet`
+
+        - :term:`GMX`
 
     Autonomous agent
 
@@ -2430,6 +2434,8 @@ and algorithmic trading.
 
         - :term:`Liquidity pool`
 
+        - :term:`GMX`
+
     Liquidity pool
 
         Liquidity pool is the available trading liquidity of a single :term:`trading pair` in :term:`AMM`.
@@ -3275,6 +3281,8 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Liquidation`
+
+        - :term:`GMX`
 
     Margin trading
 
@@ -5695,6 +5703,8 @@ and algorithmic trading.
 
         - :term:`Trading Strategy`
 
+        - :term:`GMX`
+
     Credit market
 
         Credit markets are a key component of the financial system where various forms of debt are traded.
@@ -5908,6 +5918,8 @@ and algorithmic trading.
         - :term:`Longing`
 
         - :term:`Lending protocol`
+
+        - :term:`GMX`
 
     Demeter
 
@@ -6424,9 +6436,18 @@ and algorithmic trading.
         Unlike standard AMMs, GMX's vAMM shifts risk to :term:`liquidity providers <liquidity provider>` (LPs) in the GLP pool,
         with traders paying a fee that is split between the GMX token holders and the GLP LPs.
 
+        GMX can be programmatically accessed using the `eth_defi` Python package,
+        which connects directly to JSON-RPC nodes and interacts with GMX :term:`smart contracts <smart contract>`.
+        The Python API supports opening and closing leveraged positions, reading historical and current
+        market data (open interest, volume, funding rates, borrowing rates), token swaps,
+        liquidity provision (GM/GLV deposits and withdrawals), order tracking, and gas monitoring.
+        The main entry point is the ``GMXClient`` class which coordinates trading via ``GMXTrading``,
+        market data via ``GMXMarketData``, order management via ``GMXOrderManager``,
+        and liquidity management via ``GMXLiquidityManager``.
+
         More:
 
-        - `GMX Python API documentation in eth_defi package <https://web3-ethereum-defi.readthedocs.io/api/gmx/index.html>`__
+        - `GMX Python API documentation in eth_defi package <https://web3-ethereum-defi.tradingstrategy.ai/api/gmx/>`__
 
         See also
 
@@ -6766,3 +6787,45 @@ and algorithmic trading.
         - :term:`CCXT`
 
         - :term:`DEX`
+
+    Mainnet fork
+
+        A mainnet fork is a local copy of a live blockchain's state used for development and testing.
+        By forking mainnet, developers get a local :term:`EVM` environment that mirrors the real chain -
+        including all deployed :term:`smart contracts <smart contract>`, token balances, and protocol state -
+        without spending real assets or affecting production systems.
+
+        Mainnet forks are essential for:
+
+        - Testing :term:`smart contract` interactions against real protocol deployments (e.g. swapping on :term:`Uniswap`, borrowing on Aave)
+
+        - Simulating complex :term:`DeFi <decentralised finance>` transactions before executing them onchain
+
+        - Debugging failed transactions by replaying them locally
+
+        - Developing trading strategies that interact with live :term:`liquidity` pools
+
+        The most common tool for creating mainnet forks is
+        `Anvil <https://book.getfoundry.sh/reference/anvil/>`__,
+        part of the `Foundry <https://book.getfoundry.sh/>`__ toolkit for :term:`EVM` development.
+        Anvil spins up a local :term:`JSON-RPC` node that fetches and caches state from a remote RPC endpoint.
+        Other tools include Hardhat Network and Ganache (deprecated).
+
+        A typical Anvil mainnet fork command:
+
+        .. code-block:: shell
+
+            anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY
+
+        This starts a local node at ``http://localhost:8545`` with the full Ethereum mainnet state
+        available for read and write operations.
+
+        See also
+
+        - :term:`EVM`
+
+        - :term:`Smart contract`
+
+        - :term:`JSON-RPC`
+
+        - :term:`Fork`

@@ -21,7 +21,9 @@
       "Bash(screencapture:*)",
       "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=\"/Users/moo/code/docs/articles/vs-random-benchmarking-detecting-lucky-backtests.pdf\" \"https://www.buildalpha.com/vs-random-test/\")",
-      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=\"/Users/moo/code/docs/articles/simple-monthly-momentum-strategy-us-stocks.pdf\" \"https://www.linkedin.com/posts/petr-podhajsky_not-sure-where-to-start-with-systematic-trading-share-7426649340364046336-3mSb\")"
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=\"/Users/moo/code/docs/articles/simple-monthly-momentum-strategy-us-stocks.pdf\" \"https://www.linkedin.com/posts/petr-podhajsky_not-sure-where-to-start-with-systematic-trading-share-7426649340364046336-3mSb\")",
+      "Bash(python3:*)",
+      "Bash(claude mcp call:*)"
     ],
     "additionalDirectories": [
       "/Users/moo/code/docs/.claude",
