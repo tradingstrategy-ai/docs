@@ -1376,3 +1376,16 @@ The strategy deliberately excludes stop losses, profit targets, regime filters, 
 By Petr Podhajsky.
 
 `Read the post <https://www.linkedin.com/posts/petr-podhajsky_im-interested-in-systems-built-on-one-simple-share-7427372617675763712-TuwD>`__.
+
+Project Kintoun: A Regime-Filtered ORB Strategy
+------------------------------------------------
+
+A regime-filtered opening range breakout (ORB) strategy for NQ (Nasdaq-100) futures on 1-minute timeframes during US equity morning sessions. The strategy builds on classic ORB mechanics — trading price movements beyond the initial 15-minute range — but adds three validation layers to filter false breakouts: microstructure retest confirmation (price must return to the breakout level), VWAP slope regime filtering (trades align with intraday trend direction), and volume confirmation (breakouts require above-average participation).
+
+Backtested from June 2022 through October 2025 across 1,062 trades, the strategy achieved a 1.47 profit factor, 2.28 Sharpe ratio, 57.24% annualized returns, and a maximum drawdown of -8.46% (6.76 Calmar ratio) on a 33.9% win rate. The implementation handles timezone alignment across daylight savings transitions, incorporates dynamic position scaling based on account equity changes, and uses multiple exit mechanisms including profit targets, stop losses, and time-based exits.
+
+By Jeremy Hsu.
+
+Mentioned by `Jeremy Hsu <https://www.linkedin.com/in/jerm04>`__ in `this discussion <https://www.linkedin.com/posts/jerm04_most-trading-strategies-fail-because-they-share-7423958468975407104-pZ7E>`__: "Most trading strategies fail because they assume the wrong probability model." Hsu describes how conditioning a strategy on market state — rather than optimizing parameters — cut trades in half while doubling risk-adjusted performance, arguing that losses often contain more information than wins and that edges are conditional on regime.
+
+`Read the blog post <https://mrjerm.github.io/project_kintoun.html>`__.
