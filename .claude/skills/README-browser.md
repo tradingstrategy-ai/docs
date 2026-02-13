@@ -124,13 +124,34 @@ Skills generate PDFs automatically using html2pdf.js injected via the MCP browse
 
 ### How it works
 
-1. The browser MCP navigates to the page (using your logged-in Chrome session)
-2. `javascript_tool` injects html2pdf.js from CDN into the page
-3. html2pdf.js renders the content to canvas and generates a PDF
-4. The PDF downloads to `~/Downloads/`
-5. Claude moves it from `~/Downloads/` to `articles/`
+1. Ensure the browser is on the target page (use `navigate` if needed)
+2. Use `javascript_tool` to inject html2pdf.js and generate the PDF:
+   ```javascript
+   // Step 1: Inject html2pdf.js
+   await new Promise(r => {
+     if (typeof html2pdf !== 'undefined') return r();
+     const s = document.createElement('script');
+     s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js';
+     s.onload = r;
+     document.head.appendChild(s);
+   });
+   // Step 2: Generate and download PDF (replace SELECTOR and FILENAME)
+   const el = document.querySelector(SELECTOR);
+   await html2pdf().set({
+     filename: FILENAME,
+     margin: [10, 10, 10, 10],
+     image: { type: 'jpeg', quality: 0.92 },
+     html2canvas: { scale: 2, useCORS: true },
+     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+   }).from(el).save();
+   ```
+3. Wait a few seconds for the download to complete
+4. Move from `~/Downloads/<filename>.pdf` to `articles/`
+5. Create the `articles/` directory first if it doesn't exist
 
-This approach uses the MCP browser session, so it works for both public and authenticated/paywalled pages.
+This uses the MCP browser session (has user cookies), so it works for both public and authenticated/paywalled pages.
+
+**Do not** use `computer` tool with `key` Cmd+P or `window.print()` — these trigger a native dialog that blocks the browser extension.
 
 ### Requirements
 

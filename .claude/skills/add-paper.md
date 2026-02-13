@@ -75,30 +75,6 @@ IMPORTANT. If the paper already exists, do not add it again.
    - Commit with message: "Add: {Paper Title}"
    - Push to master branch
 
-7. **Save as PDF** (automated via browser MCP):
-   - Create the `articles/` directory if it doesn't exist
-   - Ensure the browser is on the paper page (use `navigate` if needed)
-   - Use `javascript_tool` to inject html2pdf.js and generate the PDF:
-     ```javascript
-     // Step 1: Inject html2pdf.js
-     await new Promise(r => {
-       if (typeof html2pdf !== 'undefined') return r();
-       const s = document.createElement('script');
-       s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js';
-       s.onload = r;
-       document.head.appendChild(s);
-     });
-     // Step 2: Generate and download PDF
-     const el = document.querySelector('article') || document.querySelector('.abstract-text') || document.querySelector('#abstract') || document.querySelector('main');
-     await html2pdf().set({
-       filename: '<slugified-title>.pdf',
-       margin: [10, 10, 10, 10],
-       image: { type: 'jpeg', quality: 0.92 },
-       html2canvas: { scale: 2, useCORS: true },
-       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-     }).from(el).save();
-     ```
-   - Wait a few seconds for the download to complete
-   - Move from `~/Downloads/<slugified-title>.pdf` to `articles/`
-   - This uses the MCP browser session (has user cookies, works for authenticated pages)
-   - **Do not** use `computer` tool with `key` Cmd+P or `window.print()` — these trigger a native dialog that blocks the browser extension
+7. **Save as PDF**: Follow the procedure in **README-browser.md > PDF Generation > How it works** with:
+   - SELECTOR: `'article' || '.abstract-text' || '#abstract' || 'main'`
+   - FILENAME: `<slugified-title>.pdf`
