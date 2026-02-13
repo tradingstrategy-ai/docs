@@ -104,6 +104,49 @@ When a CAPTCHA appears:
 4. **Extract content**: Use `get_page_text` or `read_page` to extract content.
 ```
 
+## Setup: Enabling Downloads Folder Access
+
+Skills use `~/Downloads` as an intermediate location when generating PDFs from authenticated pages via html2pdf.js. macOS blocks access by default.
+
+To grant access:
+
+1. Open **System Settings** > **Privacy & Security** > **Files and Folders**
+2. Find **Visual Studio Code** (or your terminal app)
+3. Enable **Downloads Folder**
+
+Alternatively, enable **Full Disk Access** for the app under **Privacy & Security** > **Full Disk Access**.
+
+Without this, the PDF save step in skills will fail when trying to move files from Downloads to `articles/`.
+
+## PDF Generation
+
+Skills generate PDFs automatically using html2pdf.js injected via the MCP browser — no manual Cmd+P needed.
+
+### How it works
+
+1. The browser MCP navigates to the page (using your logged-in Chrome session)
+2. `javascript_tool` injects html2pdf.js from CDN into the page
+3. html2pdf.js renders the content to canvas and generates a PDF
+4. The PDF downloads to `~/Downloads/`
+5. Claude moves it from `~/Downloads/` to `articles/`
+
+This approach uses the MCP browser session, so it works for both public and authenticated/paywalled pages.
+
+### Requirements
+
+- Browser MCP must be connected (see setup above)
+- `~/Downloads` must be accessible (see "Enabling Downloads Folder Access")
+- Chrome must not have "Ask where to save" enabled (default is off)
+
+### Why not other approaches?
+
+| Approach | Problem |
+|----------|---------|
+| `Cmd+P` / `window.print()` | Opens native dialog, blocks MCP browser extension |
+| Headless Chrome `--print-to-pdf` | No cookies — fails on authenticated/paywalled pages |
+| CDP `Page.printToPDF` | Not accessible from `javascript_tool` (page context only) |
+| Base64 transfer via `javascript_tool` | Blocked by MCP tool |
+
 ## Troubleshooting
 
 | Issue | Solution |
