@@ -1389,3 +1389,14 @@ By Jeremy Hsu.
 Mentioned by `Jeremy Hsu <https://www.linkedin.com/in/jerm04>`__ in `this discussion <https://www.linkedin.com/posts/jerm04_most-trading-strategies-fail-because-they-share-7423958468975407104-pZ7E>`__: "Most trading strategies fail because they assume the wrong probability model." Hsu describes how conditioning a strategy on market state — rather than optimizing parameters — cut trades in half while doubling risk-adjusted performance, arguing that losses often contain more information than wins and that edges are conditional on regime.
 
 `Read the blog post <https://mrjerm.github.io/project_kintoun.html>`__.
+
+Reverse Engineering propAMMs Pricing Curves
+-------------------------------------------
+
+A deep technical analysis of five proprietary automated market makers (propAMMs) on Solana — BisonFi, GoonFi, HumidiFi, SolFi, and Tessera — reverse-engineered using nothing but swap simulations and compute unit traces. Without access to source code, the researchers reconstructed each system's pricing logic by segmenting price curves via rate derivatives and compute unit analysis, then fitting candidate mathematical functions (linear, quadratic, cubic, sqrt-mixed, log-linear) using weighted least squares and Bayesian Information Criterion (BIC) for model selection.
+
+The study achieved pricing reconstruction accuracies below 0.001% MAPE across most systems, revealing distinct architectural choices: some propAMMs use simple linear pricing while others employ more complex nonlinear curves. The methodology — combining on-chain simulation data with statistical model selection — provides a replicable framework for analyzing any black-box AMM. Future work includes longitudinal analysis of how these curves evolve over time and bidirectional (buy and sell) pricing reconstruction.
+
+By moon shiesty.
+
+`Read the article <https://x.com/i/article/2019626170774413312>`__.
