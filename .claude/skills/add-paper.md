@@ -45,6 +45,8 @@ Add a new research paper to the documentation collection.
 
 Write a custom summary for the paper by reading it and summarising highlights.
 
+Add another paragraph about the key result metrics of the paper, like annualised profit, Sharpe, max drawdown, win rate and other financial and trading metrics.
+
 Then add the
 
 ```rst
@@ -54,6 +56,8 @@ Title of the Paper
 Description paragraph(s) here fom the paper itself. Keep it informative but concise.
 
 Our summary of the contents.
+
+Key metrics.
 
 `Read the paper <https://canonical-url-here>`__
 ```
