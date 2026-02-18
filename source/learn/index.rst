@@ -32,6 +32,7 @@ Algorithmic trading learning resources
    tutorials
    ai-and-machine-learning
    papers
+   papers-stat-arb
    blog-posts
    python
    jupyter-notebook
