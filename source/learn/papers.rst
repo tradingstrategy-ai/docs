@@ -533,3 +533,16 @@ By Fabrizio Ghezzi.
 Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2020764100608004604>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5994074>`__
+
+Trend Following in Strategic Asset Allocation: A Long-Horizon Analysis and Retail-Oriented Implementation
+----------------------------------------------------------------------------------------------------------
+
+Traditional portfolio construction frameworks rely on static asset allocation and cross-asset diversification to manage risk and improve long-term outcomes. This paper investigates the role of trend following as a structural component of strategic asset allocation, rather than as a standalone return-seeking strategy. Using long-horizon historical data from 1979 to 2025, the authors examine whether systematic trend-based exposure management can complement traditional diversification by addressing risk from a different dimension: the temporal evolution of market trends.
+
+The results suggest that incorporating trend following as a structural overlay can provide a complementary form of diversification — one based on time and regime dynamics rather than asset classes alone — potentially improving portfolio efficiency and resilience without relying on return forecasting or discretionary market timing. Simple equity trend filters such as 10-month moving averages or 12-1 momentum signals deliver comparable returns to buy-and-hold while substantially reducing maximum drawdown and improving risk-adjusted performance.
+
+By Gabriele Galletta (Investimento Custodito).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2023797049141964889>`__: "Trend following is not about alpha. It's about risk control."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6177818>`__
