@@ -1400,3 +1400,174 @@ The study achieved pricing reconstruction accuracies below 0.001% MAPE across mo
 By moon shiesty.
 
 `Read the article <https://x.com/i/article/2019626170774413312>`__.
+
+Survivorship Bias in Backtesting
+--------------------------------
+
+An explanation of survivorship bias and why it matters in backtesting trading strategies. When historical databases only include stocks that still exist today, backtests can produce misleadingly optimistic results by ignoring companies that went bankrupt or were delisted. The post illustrates the problem with concrete examples and explains how to use survivorship-bias-free data from providers like Norgate Data to get more realistic backtest results.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/survivorship-bias/>`__.
+
+Buy the Dip
+-----------
+
+A systematic approach to buying short-term dips in the stock market. The strategy identifies when stocks have pulled back from recent highs and enters positions mechanically based on predefined rules. The post covers the logic behind mean reversion in equities, entry and exit criteria, and the importance of market regime filtering to avoid catching falling knives during bear markets.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/buy-the-dip/>`__.
+
+Buy the Dip Weekly
+------------------
+
+A weekly-frequency version of the buy-the-dip mean reversion strategy for stocks. This variant adapts the daily dip-buying approach to a weekly timeframe, making it suitable for traders who prefer less frequent portfolio adjustments. The post walks through the modified rules for weekly signals, position sizing considerations, and how performance compares to the daily version.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/buy-the-dip-weekly/>`__.
+
+NDX Momentum
+------------
+
+A momentum-based rotational strategy focused on Nasdaq-listed stocks. The system ranks stocks by their momentum scores and rotates into the strongest performers while applying a market regime filter to reduce exposure during unfavorable conditions. The post details the ranking methodology, rebalancing frequency, and historical performance characteristics of this systematic approach to capturing momentum in technology-heavy equities.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/ndx-momentum/>`__.
+
+IV Mean Reversion
+-----------------
+
+A trading strategy based on implied volatility mean reversion. The approach identifies when implied volatility for individual stocks has moved significantly away from its historical average and takes positions expecting a reversion to the mean. The post covers how to measure IV deviation, set entry and exit thresholds, and combine the IV signal with directional filters for a complete trading system.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/iv-mean-reversion/>`__.
+
+Interactive Brokers IV Downloader
+---------------------------------
+
+A practical tool for downloading implied volatility data from Interactive Brokers. The post provides code and instructions for systematically collecting IV data across multiple symbols, which can be used for research, strategy development, and monitoring volatility levels. This is a companion piece to the IV Mean Reversion strategy, providing the data infrastructure needed to implement volatility-based trading systems.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/interactive-brokers-iv-downloader/>`__.
+
+Day Trading Volatility Breakouts Systematically - All Rules Included
+--------------------------------------------------------------------
+
+A complete rule set for systematically day trading volatility breakouts. The post provides all the mechanical rules needed to trade intraday breakouts driven by volatility expansion, including entry triggers based on ATR-derived levels, position sizing, stop placement, and exit criteria. The approach is designed to be fully systematic with no discretionary decisions, making it suitable for automation.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/day-trading-volatility-breakouts-systematically-all-rules-included/>`__.
+
+Buying Short-Term Dips in Stocks
+--------------------------------
+
+An interactive backtester for exploring short-term dip-buying strategies in stocks. The tool allows users to adjust parameters like the dip threshold, holding period, and market regime filter to see how different configurations affect historical performance. The backtester demonstrates the core concept that buying temporary pullbacks in uptrending stocks can produce consistent returns when combined with proper market timing and position sizing.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/buying-short-term-dips-in-stocks/>`__.
+
+US Stock Momentum Trading System for Retail Traders
+----------------------------------------------------
+
+A comprehensive deep research report on building a US stock momentum trading system suitable for retail traders. The post was generated using ChatGPT Pro's Deep Research functionality and covers extensive academic and practical sources on momentum strategies. It addresses universe selection, momentum measurement, portfolio construction, rebalancing schedules, and risk management, providing a thorough starting point for retail traders looking to implement systematic momentum strategies.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/us-stock-momentum-trading-system-for-retail-traders-deep-research/>`__.
+
+Deep Dip - Innovative Short-Term Mean Reversion
+------------------------------------------------
+
+A live trading model implementing a short-term mean reversion strategy called Deep Dip. The system targets stocks that have experienced unusually large short-term drawdowns and enters positions expecting a snap-back rally. The post describes the signal construction, filters used to avoid value traps, position sizing methodology, and real-time tracking of the model's performance as a live trading system.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/deep-dip-innovative-short-term-mean-reversion/>`__.
+
+Finding an Edge in IPOs: Research and a Backtested Mechanical Trading System
+----------------------------------------------------------------------------
+
+Research into whether IPOs offer a tradable edge, backed by a fully backtested mechanical trading system. The post examines the well-documented IPO anomalies — initial underpricing and longer-term underperformance — and develops systematic rules to exploit these patterns. It covers the data challenges unique to IPO trading, the construction of entry and exit signals, and presents backtest results showing how a mechanical approach to IPO trading performs historically.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system/>`__.
+
+Comparing Affordable Intraday Data Sources: TradeStation vs. Polygon vs. Alpaca
+--------------------------------------------------------------------------------
+
+A practical comparison of three affordable intraday data sources for retail algorithmic traders: TradeStation, Polygon, and Alpaca. The post evaluates each provider on cost, data quality, coverage, API usability, and suitability for backtesting intraday strategies. It helps retail traders navigate the often confusing landscape of market data providers and make an informed choice based on their specific needs and budget.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/comparing-affordable-intraday-data-sources-tradestation-vs-polygon-vs-alpaca/>`__.
+
+RealTest Code for SPX Momentum Rotational System
+-------------------------------------------------
+
+Complete RealTest code for an SPX momentum rotational system, backtested using Norgate Data with commissions and delisted stocks included. The system checks a market regime filter based on the balance between stocks with positive and negative longer-term momentum, then opens up to 10 positions ranked by momentum. The post provides the full implementation code for site supporters.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/realtest-code-for-spx-momentum-rotational-system/>`__.
+
+Buying Short-Term Dips in Stocks - RealTest Code
+-------------------------------------------------
+
+The RealTest implementation code for the short-term dip buying strategy. This companion post provides the complete RealTest script for the mean reversion strategy that buys temporary pullbacks in uptrending stocks. The code handles position sizing, market regime filtering, and portfolio-level risk management, allowing traders to reproduce and extend the strategy using the RealTest backtesting platform.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/buying-short-term-dips-in-stocks-realtest-code/>`__.
+
+Downloading Stock/ETF Market Data with Python and Alpaca API
+------------------------------------------------------------
+
+A step-by-step tutorial on downloading stock and ETF market data using Python and the free Alpaca API. The post walks through setting up the API connection, requesting historical price data at various timeframes, handling pagination, and storing the data for backtesting. This is a foundational building block for any Python-based trading research workflow, providing the data pipeline needed before strategy development can begin.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/downloading-stock-etf-market-data-with-python-and-alpaca-api/>`__.
+
+Intraday Breakout Strategy Backtester
+-------------------------------------
+
+A Python-based backtester for volatility-driven intraday breakout strategies. The tool generates raw trades from 1-minute data using ATR-based breakout levels, designed as one block in a complete modular research pipeline. The backtester handles data loading, signal generation, and trade tracking, outputting raw trade records that can then be fed into RealTest or other analysis tools for portfolio construction and performance evaluation.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/intraday-breakout-strategy-backtester/>`__.
+
+Intraday Breakout Strategy - RealTest Analysis Script
+-----------------------------------------------------
+
+A RealTest script for importing, filtering, and analyzing raw trades generated by the Python intraday breakout backtester. This script handles portfolio construction, position sizing, market context filtering, and performance analysis. It serves as the analysis layer in a modular research pipeline, taking raw trade data from the Python backtester and evaluating it with proper portfolio-level constraints and realistic execution assumptions.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/intraday-breakout-strategy-realtest-analysis-script/>`__.
+
+Intraday Volatility Breakout Blueprint
+---------------------------------------
+
+A comprehensive guide to building and testing simple intraday breakout systems using free Python tools, Alpaca data, and modular research steps. The blueprint covers the complete workflow from data acquisition through signal generation to backtest analysis, structured as a reproducible research pipeline. Each component is designed to be independent and reusable, allowing traders to swap in different data sources, signals, or analysis tools as their research evolves.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/intraday-volatility-breakout-blueprint/>`__.
+
+Do Breakouts of Strong Swings Work? Testing 40 Futures Markets
+---------------------------------------------------------------
+
+A quantitative study testing whether breakouts of swing highs and lows provide a tradable edge across 40 futures markets over 15 years of historical data. While many traders focus on fading support and resistance levels, the research finds that holding positions mechanically in the direction of the breakout — even for just a few hours — produces a statistically significant edge. The post presents the methodology, results across different asset classes, and discusses why trend continuation at swing points tends to outperform counter-trend approaches.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/do-breakouts-of-strong-swings-work-i-tested-40-futures-markets-and-the-data-is-clear/>`__.
