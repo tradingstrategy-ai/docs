@@ -87,6 +87,7 @@ If the source of the link is a discussion like a tweet, then include a paragraph
    - Commit with message: "Add: {Blog Post Title}"
    - Push to master branch
 
-7. **Save as PDF**: Follow the procedure in **README-browser.md > PDF Generation > How it works** with:
-   - SELECTOR: `'article' || '.entry-content' || '.post-content' || 'main'`
+7. **Save as PDF**: Follow the procedure in **README-browser.md > Saving PDFs > How it works** using:
+   - URL: the blog post URL
    - FILENAME: `<slugified-title>.pdf`
+   - Save to `articles/` directory
