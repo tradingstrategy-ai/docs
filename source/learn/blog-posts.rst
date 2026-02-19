@@ -1571,3 +1571,16 @@ A quantitative study testing whether breakouts of swing highs and lows provide a
 By Peter, CrackingMarkets.
 
 `Read the blog post <https://www.crackingmarkets.com/do-breakouts-of-strong-swings-work-i-tested-40-futures-markets-and-the-data-is-clear/>`__.
+
+Portfolio Backtest and Trading Techniques
+------------------------------------------
+
+This post explores why combining multiple independent trading strategies into a capital-aware portfolio is more effective than searching for a single "holy grail" strategy. The author argues that over-optimizing, constant tweaking, and adding complex rules create great backtests that fail in live markets.
+
+The real key is building a team of robust strategies that work well together across different market conditions. Some strategies perform in bull markets, others in bear markets; some thrive in calm conditions, others in crisis. By mixing strategies across different assets, timeframes, frequencies, and styles, and ensuring they have low correlation, traders can create a portfolio that compounds returns while dramatically reducing drawdowns. The post demonstrates this with examples showing how individually volatile strategies can combine to produce smooth, consistent returns, referencing Parrondo's Paradox where combining "losing" strategies can create a winning approach.
+
+By Build Alpha.
+
+Mentioned by Build Alpha in `this X article <https://x.com/buildalpha/status/2024162464426807631>`__ where they discuss how the goal isn't one perfect strategy but rather a team of strategies that work like pistons in a car's engine - some go up, some go down, but the car moves forward.
+
+`Read the blog post <https://www.buildalpha.com/portfolio-backtest-trading/>`__.
