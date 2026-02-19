@@ -9,26 +9,17 @@ manage a trading strategy deployed for multiple users using a :term:`vault`.
 If you are looking for a single user deployment, :ref:`hot wallet deployment`
 is an easier option.
 
-- This chapter is for a specific kind of Enzyme vault deployment to be used with :term:`Trading Strategy Protocol`
-
 Preface
 -------
 
-This example shows how to deploy a vault for :ref:`Enzyme protocol`
+An automated trading Lagoon vault consists of
 
-- Multiple investors,
-
-- Vault owner and asset manager is set to be a single private key.
-
-- Any strategy can trade assets whitelisted by Enzyme governance.
-  See :py:mod:`tradeexecutor.cli.commands.enzyme_asset_list` for details
-  how to view the list of currently active assets.
-
-.. note::
-
-    In the beta mode, the vauklt does not have any safety features and can trade any assets.
-    Use only for trusted oracle setups.
-
+- Safe multisig wallet
+- Lagoon vault smart contract: manages deposit and redemption calls
+- Lagoon silo smart contract: stores deposit queue assets before they are settled in the vault
+- Gnosis Safe multisig: main contract storing the assets
+- `Trading Strategy Module <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/safe-integration>`__:
+   A Zodiac-module to enable automated asset management with safeguard
 
 Prerequisites
 -------------
@@ -62,10 +53,10 @@ Strategy name and id
 
 See ref:`strategy metadata` for details.
 
-Create an Enzyme vault
-----------------------
+Create a Lagoon vault
+---------------------
 
-You can create a vault by running `trade-executor enzyme-deploy-vault` command
+You can create a vault by running `trade-executor lagoon-deploy-vault` command
 and giving it the configuration by environment variables.
 
 You need to
@@ -77,44 +68,63 @@ You need to
 - Have `PRIVATE_KEY` set up with some gas money for the trade executor hot wallet.
   See how to :ref:`creating hot wallet` for more info.
 
-- Have Polygonscan, etc. API key for the verification of the deployed contracts
+- Have Etherscan-compatible API key for the verification of the deployed contracts
 
 - Get `TRADE_EXECUTOR_VERSION` Docker version from the Github container registry
+
+- Give a list of multisig cosigners who will be owners of the created Safe
 
 .. note ::
 
     Never share the hot wallet (private key) across different executors on the same blockchain.
 
-This will
+The deployment creates contracts
 
-- Deploy the Enzyme vault
+- Safe
 
-- `Set up a guard contract with given parameters to increase security and limit the role what trade-executor can do <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/guard>`__
+- Vault
 
-- Set up a `deposit forwarder smart contract for USDC <https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/master/contracts/in-house/src/TermedVaultUSDCPaymentForwarder.sol>`__
+- TradingStrategyModuleV0
 
-Here is an example shell command how to put together a Docker command to run `enzyme-deploy-vault`.
-`See also the explanation how a local working directory is mounted <https://stackoverflow.com/a/76434724/315168>`__.
+The deployer creates several transactions to configure ``TradingStrategyModuleV0``.
+
+- Do Anvil-based simulation first
+
+- Then do live deployment
+
+Secrets needed, give to the script via Docker compose environment variable files:
+
+.. code-block:: text
+
+    PRIVATE_KEY=
+    ETHERSCAN_API_KEY=
+
+Here is an example deployment script for creating a vault on Base.
 Remember to replace `--fund-name` and `--fund-symbol` with your own strings.
 
 We are deploying multiple contracts. First test with `--simulate` flag to see the deployment finish all the way to end.
 
-An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
+An example `deploy/deploy-base-ath.sh` script
 
 .. code-block:: shell
 
     #!/bin/bash
     #
-    # Deploy Enzyme vault for a strategy defined in docker-compose.yml
+    # Deploy Lagoon vault for a strategy defined in docker-compose.yml
     #
     # Set up
-    # - name
-    # - guard with allowed assets
+    # - Gnosis Safe
+    # - Vault smart contract
+    # - TradingStrategyModuleV0 guard with allowed assets
     # - trade executor hot wallet as the asset manager role
     #
+    # To run:
+    #
+    #   SIMULATE=true deploy/deploy-base-ath.sh
+    #
+
 
     set -e
-    set -u
 
     if [ "$SIMULATE" = "" ]; then
         echo "Set SIMULATE=true or SIMULATE=false"
@@ -126,125 +136,78 @@ An example `deploy/deploy-enzyme-ethereum-btc-eth-stoch-rsi.sh` script
         exit 1
     fi
 
-    # The address DAO/proto DAO multisig that will own this vault.
-    # This address is Trading Strategy Protocol's ProtoDAO address.
-    export OWNER_ADDRESS=0x238B0435F69355e623d99363d58F7ba49C408491
+    set -u
 
-    # ERC-20 token symbol
-    export FUND_SYMBOL="STOCH-RSI"
+    # docker composer entry name
+    ID="base-ath"
 
-    # Enzyme vault name
-    export FUND_NAME="ETC/BTC Stochastic RSI crossover"
+    # ERC-20 share token symbol
+    export FUND_SYMBOL="ATH1"
 
-    # Space-separated list of tokens the vault allows the trade-executor to trade.
-    # WETH WBTC
-    export WHITELISTED_ASSETS="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+    # ERC-20 share toke  name
+    export FUND_NAME="All-time high (Base)"
 
-    # The vault is nominated in USDC *ethereum
-    export DENOMINATION_ASSET="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    # The vault is nominated in USDC on Base
+    export DENOMINATION_ASSET="0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+
+    # 0%
+    export MANAGEMENT_FEE=0
+
+    #: 20%
+    export PERFORMANCE_FEE=2000
+
+    # Set as the initial owners or deployed Safe + deployer will be threre
+    # Safe signing threshold is number of cosigners minus one.
+    export MULTISIG_OWNERS="0xa7208b5c92d4862b3f11c0047b57a00Dc304c0f8, 0xbD35322AA7c7842bfE36a8CF49d0F063bf83a100, 0x05835597cAf9e04331dfe1f62C2Ec0C2aDc0d4a2, 0x5C46ab9e42824c51b55DcD3Cf5876f1132F9FbA9"
 
     # Terms of service manager smart contract address.
-    # This one is deployed on ethereum.
-    export TERMS_OF_SERVICE_ADDRESS="0xd63c1bE9D8B56CCcD6fd2Dd9F9c030c6a9916f5F"
+    # This one is deployed on Polygon.
+    # export TERMS_OF_SERVICE_ADDRESS="0xDCD7C644a6AA72eb2f86781175b18ADc30Aa4f4d"
 
     # Run the command
     # - Pass private key and JSON-RPC node from environment variables
     # - Set vault-info.json to be written to a local file system
-    #poetry run trade-executor \
+
     export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
     echo "Using $TRADE_EXECUTOR_IMAGE"
     docker compose run \
         -e SIMULATE \
-        enzyme-ethereum-btc-eth-stoch-rsi \
-        enzyme-deploy-vault \
-        --vault-record-file="deploy/$FUND_SYMBOL-vault-info.json" \
+        $ID \
+        lagoon-deploy-vault \
+        --vault-record-file="deploy/$ID-vault-info.json" \
         --fund-name="$FUND_NAME" \
         --fund-symbol="$FUND_SYMBOL" \
-        --etherscan-api-key=$ETHERSCAN_API_KEY \
-        --whitelisted-assets="$WHITELISTED_ASSETS" \
         --denomination-asset="$DENOMINATION_ASSET" \
-        --terms-of-service-address="$TERMS_OF_SERVICE_ADDRESS" \
-        --owner-address="$OWNER_ADDRESS"
+        --any-asset \
+        --uniswap-v2 \
+        --uniswap-v3 \
+        --multisig-owners="$MULTISIG_OWNERS" \
+        --performance-fee="$PERFORMANCE_FEE" \
+        --management-fee="$MANAGEMENT_FEE"
 
 
 
-This will give you the log output for the deployment:
+Example output:
 
 .. code-block:: text
 
-    INFO     Chain polygon connects using alien-black-thunder.matic.quiknode.pro
-    TRADE    Connected to chain: polygon, node provider: alien-black-thunder.matic.quiknode.pro, gas pricing method: london
-    INFO     Using proof-of-authority web3 middleware for chain 137
-    INFO     Connected to chain polygon
-    INFO       Chain id is 137
-    INFO       Latest block is 41,991,567
-    INFO     Balance details
-    INFO       Hot wallet is 0x40d8368C6D1FfC90fe705B74C6F0F56E1d11092E
-    INFO       We have 103.618645 tokens for gas left
-    INFO     Enzyme details
-    INFO       Integration manager deployed at 0x92fCdE09790671cf085864182B9670c77da0884B
-    INFO       USDC is 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    INFO     Deploying vault
-    INFO     Deploying VaultSpecificGenericAdapter
-    INFO     Vault details
-    INFO       Vault at 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
-    INFO       Comptroller at 0x0fC476e8050a9eDe4D24E2f01d8775249bDf310e
-    INFO       GenericAdapter at 0x07f7eB451DfeeA0367965646660E85680800E352
-    INFO       VaultUSDCPaymentForwarder at 0xE244CEcd9Ee1e2eeAda81Da12650F1fd5d866713
-    INFO       Deployment block number is 41991571
-
-You can also see the deploy data in JSON file:
-
-.. code-block:: shell
-
-    cat vault-info.json
-
-This gives:
-
-.. code-block:: json
-
-    {
-        "fund_name": "MATIC-ETH-USDC momentum algorithm",
-        "fund_symbol": "MATIC-ETH-USDC-ALGO",
-        "vault": "0xA2488118e33b2a72DC11e2c97eF0f5788700B2C2",
-        "comptroller": "0x5Cf97C5084fa1220Ac1465f4Fa7402F962C638d8",
-        "generic_adapter": "0x103DAa155fe94c6E53719E3f1d52bbACC4c15f8D",
-        "block_number": 54883433,
-        "usdc_payment_forwarder": "0xffaA2134DEf71180Db9e831c1765333645F0EC18",
-        "guard": "0xD03a5D1AD2391A6009Ab0d6c519967790461b282",
-        "deployer": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
-        "denomination_token": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
-        "terms_of_service": "0xbe1418df0bAd87577de1A41385F19c6e77312780",
-        "whitelisted_assets": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
-        "asset_manager_address": "0x69960a0E963Ba6800A87980D4239A60fF7EC5e6e",
-        "owner_address": "0x238B0435F69355e623d99363d58F7ba49C408491"
-    }
+    Key                            Label
+    Deployer                       0x5BbB9768f878a2eDe9A4317878606fd1BA9e7879
+    Safe                           0x04a7cBA3f913eC9aD3f9A26E604F3e75d4E6b530
+    Vault                          0x6E20dA351c36eb30241E9D62961681288FD34397
+    Trading strategy module        0x4ef44a6835F98D4Eac7D74aE3c196a832B19B939
+    Asset manager                  0x5BbB9768f878a2eDe9A4317878606fd1BA9e7879
+    Underlying token               0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+    Underlying symbol              USDC
+    Share token                    0x6E20dA351c36eb30241E9D62961681288FD34397
+    Share token symbol             MEMEX
+    Multisig owners                0xa7208b5c92d4862b3f11c0047b57a00Dc304c0f8, 0xbD35322AA7c7842bfE36a8CF49d0F063bf83a100, 0x05835597cAf9e04331dfe1f62C2Ec0C2aDc0d4a2, 0x5C46ab9e42824c51b55DcD3Cf5876f1132F9FbA9
+    Block number                   24,773,588
 
 .. note ::
 
     It is important that you keep the contents of the vault smart contract addresses and/or the JSON file around,
     as otherwise you cannot interact with your vault later.
-
-Registering the vault with Enzyme's website
--------------------------------------------
-
-After the vault has been deployed, you can visit `enzyme.finance <https://enzyme.finance>` and
-register your vault there, to make it publicly accessible.
-
-- Import the private key to a secure wallet e.g. TrustWallet on mobile
-  or Rabby on desktop
-
-- Sign in to Enzyme
-
-- Switch to correct network
-
-- The vault should automatically appear in left under "My vault"
-
-- Go to Vault Settings, choose Claim vault
-
-- Sign a message from your wallet for claiming the ownership
-
-- Now you can fill in the vault description on Enzyme's website database
 
 Set up live execution environment
 ---------------------------------
@@ -280,29 +243,27 @@ Example public environment variables entry:
     #
 
     # This is a vault based strategy
-    ASSET_MANAGEMENT_MODE="enzyme"
+    ASSET_MANAGEMENT_MODE="lagoon"
 
     #
     # Strategy assets and metadata
     #
 
-    STRATEGY_FILE=strategies/enzyme-polygon-eth-usdc.py
+    STRATEGY_FILE=strategies/base-ath.py
 
     # Port 3456 is mapped to the public IP on the host using Caddy
     HTTP_ENABLED=true
 
-    # Set parameters from Enzyme vault deployment.
-    # Get output from trade-executor enzyme-deploy-vault command
-    VAULT_ADDRESS=0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
-    VAULT_ADAPTER_ADDRESS=0x07f7eB451DfeeA0367965646660E85680800E352
-    VAULT_PAYMENT_FORWARDER_ADDRESS=...
+    # Set parameters from Lagoon vault deployment.
+    # Get output from trade-executor lagoon-deploy-vault command
+    VAULT_ADDRESS=0x6E20dA351c36eb30241E9D62961681288FD34397
     VAULT_DEPLOYMENT_BLOCK_NUMBER=...
 
 Remember to slice files together:
 
 .. code-block:: shell
 
-    cat ~/strategies/env/enzyme-polygon-eth-usdc.env ~/secrets/enzyme-polygon-eth-usdc-secrets.env > ~/secrets/enzyme-polygon-eth-usdc-final.env
+    cat ~/strategies/env/base-ath.env ~/secrets/base-ath-secrets.env > ~/secrets/base-ath-final.env
 
 Setting up docker-compose entry
 -------------------------------
@@ -316,7 +277,7 @@ You can check the trade executor with:
 
 .. code-block:: shell
 
-    docker-compose run enzyme-polygon-eth-usdc --help
+    docker-compose run base-ath --help
 
 This gives:
 
@@ -332,17 +293,16 @@ This gives:
       --help                          Show this message and exit.
 
     Commands:
-      check-universe       Checks that the trading universe is helthy for a given strategy.
-      check-wallet         Print out the token balances of the hot wallet.
-      console              Open interactive IPython console to explore state.
-      enzyme-asset-list    Print out JSON list of supported Enzyme assets on a chain.
-      enzyme-deploy-vault  Deploy a new Enzyme vault.
-      hello                Check that the application loads without doing anything.
-      init                 Initialise a strategy.
-      perform-test-trade   Perform a small test swap.
-      repair               Repair broken state.
-      start                Launch Trade Executor instance.
-      version              Print out the version information.
+      check-universe        Checks that the trading universe is helthy for a given strategy.
+      check-wallet          Print out the token balances of the hot wallet.
+      console               Open interactive IPython console to explore state.
+      lagoon-deploy-vault   Deploy a new Lagoon vault.
+      hello                 Check that the application loads without doing anything.
+      init                  Initialise a strategy.
+      perform-test-trade    Perform a small test swap.
+      repair                Repair broken state.
+      start                 Launch Trade Executor instance.
+      version               Print out the version information.
 
 Run a backtest on the strategy module
 -------------------------------------
@@ -367,25 +327,7 @@ You can run the backtest on the live trade executor with:
 
 .. code-block:: shell
 
-    docker-compose run enzyme-polygon-matic-usdc backtest
-
-And you will get a report like:
-
-.. code-block:: text
-
-    Trading period length                      359 days
-    Return %                                     57.96%
-    Annualised return %                          58.87%
-    Cash at start                            $10,000.00
-    Value at end                             $15,796.42
-    Trade volume                            $948,224.62
-    Position win percent                         48.48%
-    Total positions                                  66
-    Won positions                                    32
-    ...
-    Avg realised risk                            -0.96%
-    Max pullback of total capital                -6.47%
-    Max loss risk at opening of position          1.02%
+    docker-compose run base-ath backtest
 
 Check wallet
 ------------
@@ -394,48 +336,7 @@ Check that your vault has deposits for test trade.
 
 .. code-block:: shell
 
-    docker-compose run enzyme-polygon-eth-usdc check-wallet
-
-The output should look like:
-
-.. code-block:: text
-
-    2023-05-11 17:27:11 root                                               INFO     Reading strategy strategy/enzyme-polygon-eth-usdc.py
-    2023-05-11 17:27:11 root                                               INFO     Strategy module strategy/enzyme-polygon-eth-usdc.py, engine version 0.1
-    2023-05-11 17:27:11 tradeexecutor.cli.bootstrap                        INFO     Dataset cache is /usr/src/trade-executor/cache
-    2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  INFO     Chain polygon connects using mihailo2.tradingstrategy.ai
-    2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  TRADE    Connected to chain: polygon, node provider: mihailo2.tradingstrategy.ai, gas pricing method: london
-    2023-05-11 17:27:11 tradeexecutor.ethereum.web3config                  INFO     Using proof-of-authority web3 middleware for chain 137
-    2023-05-11 17:27:11 tradeexecutor.utils.timer                          INFO     Starting task create_trading_universe at 2023-05-11 17:27:11.395569, context is {}
-    2023-05-11 17:27:11 tradeexecutor.utils.timer                          INFO     Starting task load_pair_data_for_single_exchange at 2023-05-11 17:27:11.395682, context is {'time_bucket': '1h'}
-    2023-05-11 17:27:11 tradeexecutor.strategy.trading_strategy_universe   INFO     Using cached data if available
-    2023-05-11 17:27:13 tradingstrategy.reader                             INFO     Reading Parquet /usr/src/trade-executor/cache/pair-universe.parquet
-    2023-05-11 17:27:13 tradeexecutor.utils.timer                          INFO     Ended task load_pair_data_for_single_exchange, took 0:00:01.938099
-    2023-05-11 17:27:13 tradeexecutor.utils.timer                          INFO     Ended task create_trading_universe, took 0:00:01.944877
-    2023-05-11 17:27:13 root                                               INFO     RPC details
-    2023-05-11 17:27:13 root                                               INFO       Chain id is 137
-    2023-05-11 17:27:13 root                                               INFO       Latest block is 42,582,328
-    2023-05-11 17:27:13 root                                               INFO     Balance details
-    2023-05-11 17:27:13 root                                               INFO       Hot wallet is <eth_defi.hotwallet.HotWallet object at 0x7f5ba143f9d0>
-    2023-05-11 17:27:13 root                                               INFO       Vault address is 0x6E321256BE0ABd2726A234E8dBFc4d3caf255AE0
-    2023-05-11 17:27:13 root                                               INFO       We have 101.844157 tokens for gas left
-    2023-05-11 17:27:13 root                                               INFO       The gas error limit is 0.100000 tokens
-    2023-05-11 17:27:13 root                                               INFO       Reserve asset: USDC (0x2791bca1f2de4661ed88a30c99a7a9449aa84174)
-    2023-05-11 17:27:13 root                                               INFO       Balance of USD Coin (PoS) (0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174): 4.950005 USDC
-    2023-05-11 17:27:13 tradeexecutor.strategy.runner                      INFO     Setting up routing. Routing model is <tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing.UniswapV3SimpleRoutingModel object at 0x7f5ba04b0820>, details are {'tx_builder': <tradeexecutor.ethereum.enzyme.tx.EnzymeTransactionBuilder object at 0x7f5ba11c0790>}, universe is <TradingStrategyUniverse for WETH-USDC>
-    2023-05-11 17:27:13 root                                               INFO     Execution details
-    2023-05-11 17:27:13 root                                               INFO       Execution model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_execution.UniswapV3ExecutionModel
-    2023-05-11 17:27:13 root                                               INFO       Routing model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing.UniswapV3SimpleRoutingModel
-    2023-05-11 17:27:13 root                                               INFO       Token pricing model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_live_pricing.UniswapV3LivePricing
-    2023-05-11 17:27:13 root                                               INFO       Position valuation model is tradeexecutor.ethereum.uniswap_v3.uniswap_v3_valuation.UniswapV3PoolRevaluator
-    2023-05-11 17:27:13 root                                               INFO       Sync model is tradeexecutor.ethereum.enzyme.vault.EnzymeVaultSyncModel
-    2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO     Routing details
-    2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
-    2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Router: 0xE592427A0AEce92De3Edee1F18E0157C05861564
-    2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Position Manager: 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
-    2023-05-11 17:27:13 tradeexecutor.ethereum.uniswap_v3.uniswap_v3_routing INFO       Quoter: 0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6
-    2023-05-11 17:27:13 tradeexecutor.ethereum.routing_model               INFO       Routed reserve asset is <USDC at 0x2791bca1f2de4661ed88a30c99a7a9449aa84174>
-    2023-05-11 17:27:13 root                                               INFO     All ok
+    docker-compose run base-ath check-wallet
 
 Initialise the vault
 --------------------
@@ -451,72 +352,70 @@ This will initialise the state file for the strategy executor.
 .. code-block:: shell
 
     # Use the deployment block number earlier
-    docker-compose run enzyme-polygon-eth-usdc init
+    docker-compose run base-ath init
 
 First vault deposit
 -------------------
 
-- After vault is registered it needs the initial deposit e.g. 1 USDC,
-  for a test trade
+When the Lagoon vault is deployed, you need to make a test deposit to have some funds for performing the test trade.
 
-- You can do the initial deposit on Enzyme website,
-  or the Python console script below
-
-- You need deposit some USDC in the vault needed later in the test trade,
-  using Enzyme website and your wallet
-
-- Enzyme can automatically convert MATIC to USDC and so on
-
-To do the deposit using the console:
+- Assume your deployer key has some denomination token like USDC/USDT to deposit
+- We will perform a test deposit of 10 USD to the vault
+- Then we will sync the vault
 
 .. code-block:: shell
 
-    docker compose run enzyme-polygon-matic-eth-usdc console
+    # Perform a test deposit
+    docker compose run base-ath console
 
 Then with `%cpaste`:
 
 .. code-block:: python
 
-    from decimal import Decimal
-    from eth_defi.token import fetch_erc20_details
-    from eth_defi.trace import assert_transaction_success_with_explanation
-    from eth_defi.enzyme.vault import Vault
+        from decimal import Decimal
 
-    print("Using RPC provider", web3.provider)
+        from eth_defi.trace import assert_transaction_success_with_explanation
+        from eth_defi.etherscan.config import get_etherscan_tx_link
 
-    deposit_amount = Decimal(1.5)
-    # We need to manual specify gas, because having two
-    # subsequent txs may hit different RPC endpoints
-    # when transact() calls eth_estimateGas
-    # and then the tx would revert in the gas estimation
-    buy_shares_gas = 500_000
+        deposit_amount = Decimal(10.0)  # USD
 
-    print(f"Depositing USDC from our hot wallet {hot_wallet.address}, amount {deposit_amount} USDC")
-    usdc_address = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e on Polygon
-    # usdc_address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # USDC on Ethereum
-    usdc = fetch_erc20_details(web3, usdc_address)
-    vault_address = state.sync.deployment.address  # init command saves vault address here
-    assert vault_address, "Vault address not in trade-executor state, run trade-executor init first"
+        vault = sync_model.vault
+        deposit_token = vault.denomination_token
+        wallet = hot_wallet
 
-    out_gas_balance = web3.eth.get_balance(hot_wallet.address) / (10**18)
-    our_usdc_balance = usdc.fetch_balance_of(hot_wallet.address)
-    assert our_usdc_balance > deposit_amount, f"We have only {our_usdc_balance} USDC at {hot_wallet.address}, we need {deposit_amount} USDC"
+        balance = deposit_token.fetch_balance_of(wallet.address)
+        print(f"Hot wallet balance: {balance} {deposit_token.symbol}")
+        assert balance > deposit_amount, "Asset manager has no balance to deposit"
 
-    print(f"Depositing, we have {out_gas_balance} for gas and {our_usdc_balance} USDC at {hot_wallet.address}")
+        # 1. Approve
+        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_token.approve(vault.address, deposit_amount))
+        print(f"Approving with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
+        assert_transaction_success_with_explanation(web3, tx_hash)
 
-    # Perform approve + deposit from the trade-executor hot wallet
-    vault = Vault.fetch(web3, vault_address)
-    tx_hash = usdc.contract.functions.approve(vault.comptroller.address, usdc.convert_to_raw(deposit_amount)).transact({"from": hot_wallet.address})
-    print(f"Approving in TX {tx_hash.hex()}")
-    assert_transaction_success_with_explanation(web3, tx_hash)
-    raw_amount = usdc.convert_to_raw(deposit_amount)
-    print(f"Buying shares, raw amount {raw_amount}")
-    tx_hash = vault.comptroller.functions.buyShares(raw_amount, 1).transact({"from": hot_wallet.address, "gas": buy_shares_gas})
-    print(f"buyShares() in TX {tx_hash.hex()}")
-    assert_transaction_success_with_explanation(web3, tx_hash)
-    vault_usdc_amount = usdc.fetch_balance_of(vault.address)
-    print(f"Deposit done, the vault has now {vault_usdc_amount} USDC, you can do perform-test-trade")
+        # 2. Put to deposit queue
+        raw_amount = deposit_token.convert_to_raw(deposit_amount)
+        deposit_func = vault.request_deposit(hot_wallet.address, raw_amount)
+        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_func)
+        print(f"requestDeposit() with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
+        assert_transaction_success_with_explanation(web3, tx_hash)
 
+        # 3. Add reserve currency
+        reserve_asset = strategy_universe.get_asset_by_address(deposit_token.address)
+        state.portfolio.initialise_reserves(reserve_asset, reserve_token_price=1.0)
+
+        # 4. Sync deposits as the asset manager
+        end_block = execution_model.get_safe_latest_block()
+        timestamp = datetime.datetime.utcnow()
+        sync_model.hot_wallet.sync_nonce(web3)
+        sync_model.sync_treasury(
+            strategy_cycle_ts=timestamp,
+            state=state,
+            end_block=end_block,
+            post_valuation=True,
+        )
+
+        # 5. Store results
+        store.sync(state)
 
 Performing a test trade
 -----------------------
@@ -537,36 +436,32 @@ This command will buy and sell a single trading pair from the strategy, worth of
 
 .. code-block:: shell
 
+    # List all pairs
+    docker compose run base-ath check-universe
+
+    # DEX test trade
     docker compose run \
-        enzyme-polygon-matic-eth-usdc \
+        base-ath \
         perform-test-trade \
-        --all-pairs \
+        --pair "(base, uniswap-v3, WETH, USDC, 0.0005)" \
         --simulate
 
-For a multipair strategy, you need to pick the pair:
+    # ERC-4626 vault test trade
+    docker compose run \
+        base-ath \
+        perform-test-trade \
+        --pair "(base, euler-vault-kit, eUSDT-4, USDT)" \
+        --simulate
+
+For a multipair strategy with all pairs:
 
 .. code-block:: shell
 
     docker compose run \
-        ethereum-memecoin-vol-basket \
+        base-ath \
         perform-test-trade \
-        --pair "(ethereum, uniswap-v2, KEYCAT, WETH, 0.003)" \
+        --all-pairs \
         --simulate
-
-The output looks something like:
-
-.. code-block:: text
-
-    2023-05-11 21:29:08 tradeexecutor.ethereum.execution                   INFO     Waiting 1 trades to confirm, confirm block count 2, timeout 0:01:00
-    2023-05-11 21:29:08 eth_defi.confirmation                              INFO     Waiting 2 transactions to confirm in 2 blocks, timeout is 0:01:00
-    2023-05-11 21:29:21 tradeexecutor.ethereum.execution                   INFO     Resolved trade <Sell #2 0.000556383506855833 WETH at 1795.5241082637904, broadcasted>
-    2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO     Final report
-    2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Gas spent: 0.111114647238662268
-    2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Trades done currently: 2
-    2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserves currently: 4.949005 USDC
-    2023-05-11 21:29:21 tradeexecutor.cli.testtrade                        INFO       Reserve currency spent: 0.001000000000000334 USDC
-    2023-05-11 21:29:21 tradeexecutor.state.store                          INFO     Saved state to state/enzyme-polygon-eth-usdc.json, total 41620 chars
-    2023-05-11 21:29:21 root                                               INFO     All ok
 
 Running one test strategy decision cycle
 ----------------------------------------
@@ -579,7 +474,7 @@ First simulated:
 .. code-block:: shell
 
     docker compose run \
-        enzyme-polygon-matic-eth-usdc \
+        base-ath \
         start \
         --run-single-cycle
 
@@ -588,7 +483,7 @@ Then for real:
 .. code-block:: shell
 
     docker compose run \
-        enzyme-polygon-matic-eth-usdc \
+        base-ath \
         start \
         --run-single-cycle
 
@@ -604,7 +499,7 @@ Launch the trade executor in daemon mode:
 
 .. code-block:: shell
 
-    docker-compose up -d enzyme-polygon-eth-usdc
+    docker-compose up -d base-ath
 
 Checking logs
 -------------
@@ -615,7 +510,7 @@ You can also check the latest logs from Docker:
 
 .. code-block:: shell
 
-    docker-compose logs --tail=200 enzyme-polygon-eth-usdc
+    docker-compose logs --tail=200 base-ath
 
 Backup trade-executor configuration
 -----------------------------------
@@ -630,3 +525,199 @@ Set up web frontend and monitoring
 ----------------------------------
 
 See the next steps in :ref:`strategy monitoring`.
+
+Safe multisignature wallet cosigners
+------------------------------------
+
+Each Lagoon vault has an underlying Safe multisignature wallet with cosigners.
+
+These cosigners are given to the development script, but you need to manually remove the deployer key
+from the Safe cosigner list. This operation has to be done by other cosigners.
+
+.. _safe-manual-action:
+
+Executing Safe actions manually
+-------------------------------
+
+Multisig cosigners may need to do manual actions on behalf of the vault owners. Such actions include
+
+- Trading away broken ERC-20 tokens (can't swap)
+- Liquidating any airdrops
+
+To do that
+
+- You need to access the underlying Safe multisignature wallet of the vault through Safe URL
+- Open any service where you wish to do transactions through Safe app menu, e.g. 1inch
+- Initiate a transaction
+- Confirm the transaction
+
+Safe multisignature URL is format of: https://app.safe.global/home?safe=base:0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64
+
+.. note ::
+
+    The vault address (Lagoon Silo smart contract) is different from the underlying Safe address.
+
+Upgrading the guard smart contract
+-----------------------------------
+
+When a strategy is updated to trade new assets and vaults, also its guard smart contract needs to be updated.
+For this, a new guard smart contract, a Zodiac module `TradingStrategyModuleV0 <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/safe-integration>`__, is deployed.
+
+The upgrade process is as follows:
+
+1. Stop `trade-executor` Docker
+2. Prepare a new strategy module Python file and backtest it with new assets
+3. Create a new version of the guard smart contract using `lagoon-deloy-vault` script
+4. :ref:`safe-manual-action` to remove the old guard smart contract from the Safe multisignature wallet
+5. :ref:`safe-manual-action` to add the new guard smart contract to the Safe multisignature wallet
+6. Perform `trade-executor peform-test-trade` for newly added assets to see the guard works
+7. Restart `trade-executor` Docker
+
+Deploy new guard module smart contract
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here is an example script:
+
+.. code-block:: shell
+
+    #!/bin/bash
+    #
+    # Redeploy Base ATH strategy guard with Harvest Finance IPOR vault whitelisted
+    #
+    # Uses --guard-only, --existing-vault-address and --existing-safe-address options.
+    #
+    # To run: SIMULATE=false scripts/base-ath/redeploy-guard-base-ath-v3.sh
+    #
+
+    set -e
+    set -u
+
+    ID="base-ath"
+
+    # Existing Lagoon deployment for which we want to deploy a new guard
+    EXISTING_VAULT_ADDRESS="0x7d8Fab3E65e6C81ea2a940c050A7c70195d1504f"
+
+    # Existing Safe address (old Lagoon versions do not support reflecting this back from the smart contract)
+    EXISTING_SAFE_ADDRESS="0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64"
+
+    # Whitelist Harvest Finance IPOR vault, Spark USDC on Base
+    WHITELISTED_VAULTS="0x0d877Dc7C8Fa3aD980DfDb18B48eC9F8768359C4, 0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a"
+
+    # Mark new deployment files with this suffix
+    SUFFIX="v3-new-guard"
+
+    if [ "$SIMULATE" = "" ]; then
+        echo "Set SIMULATE=true or SIMULATE=false"
+        exit 1
+    fi
+
+    if [ "$SIMULATE" = "false" ]; then
+        if [ "$ETHERSCAN_API_KEY" = "" ]; then
+            echo "Set ETHERSCAN_API_KEY=... to make sure the deployment is verified on Etherscan"
+            exit 1
+        fi
+    fi
+
+    export TRADE_EXECUTOR_IMAGE=ghcr.io/tradingstrategy-ai/trade-executor:${TRADE_EXECUTOR_VERSION}
+    echo "Using $TRADE_EXECUTOR_IMAGE"
+    docker compose run \
+        -e SIMULATE \
+        $ID \
+        lagoon-deploy-vault \
+        --guard-only \
+        --etherscan-api-key="$ETHERSCAN_API_KEY" \
+        --erc-4626-vaults="$WHITELISTED_VAULTS" \
+        --existing-vault-address="$EXISTING_VAULT_ADDRESS" \
+        --existing-safe-address="$EXISTING_SAFE_ADDRESS" \
+        --vault-record-file="deploy/$ID-$SUFFIX-vault-info.txt" \
+        --any-asset \
+        --uniswap-v2 \
+        --uniswap-v3 \
+        --aave
+
+When run the script will at the end tell you what Gnosis Safe transactions are needed to upgrade the guard module.
+
+Example output:
+
+.. code-block:: none
+
+    New guard deployed: 0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393
+    Old guard address: 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac
+    Safe address: 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64
+    Vault address: 0x7d8Fab3E65e6C81ea2a940c050A7c70195d1504f
+
+    Safe transactions needed:
+    1. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.disableModule(0x0000000000000000000000000000000000000001, 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac)
+    2. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.enabledModule(0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393)
+
+Crafting enableModule() transaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Go to Gnosis Safe transaction builder.
+
+You need to create a batch of two transactions.
+
+Get `Gnosis Safe ABI JSON files here <https://app.unpkg.com/@safe-global/safe-contracts@1.4.1-2/files/build/artifacts/contracts>`__
+- `SafeL2 ABI <https://unpkg.com/@safe-global/safe-contracts@1.4.1-2/build/artifacts/contracts/SafeL2.sol/SafeL2.json>`__
+
+For ``enableModule`` / ``disableModule`` the ABI snippet is:
+
+.. code-block:: json
+
+    [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "enableModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "prevModule",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "disableModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+    ]
+
+The script above should give you the information for the Gnosis SAfe Transaction builder to craft a batch transaction of:
+
+1. ``disableModule(0x0000000000000000000000000000000000000001, old guard address)`` Disable the old guard module, reset the list with 0x1 special address
+2. ``enableModule(new guard aaddess)`` Enable the new guard module
+
+Finishing the transition
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Upgrade the strategy source code, have new assets enabled in ``create_trading_universe()`` Python function.
+
+Run ``perform-test-trade --simulate`` to make sure the new guard works with the new assets.
+
+.. code-block:: shell
+
+    docker compose run \
+        base-ath \
+        perform-test-trade \
+        --all-vaults  \
+        --simulate \
+        --amount=1.0
+
+
+Then restart the `trade-executor` Docker container with the new strategy code.
