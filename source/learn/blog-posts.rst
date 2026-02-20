@@ -1584,3 +1584,14 @@ By Build Alpha.
 Mentioned by Build Alpha in `this X article <https://x.com/buildalpha/status/2024162464426807631>`__ where they discuss how the goal isn't one perfect strategy but rather a team of strategies that work like pistons in a car's engine - some go up, some go down, but the car moves forward.
 
 `Read the blog post <https://www.buildalpha.com/portfolio-backtest-trading/>`__.
+
+Happy Farming: How Loopers Get Squeezed
+-----------------------------------------
+
+This article explains the dynamics of DeFi looping — a strategy where traders leverage exposure to an asset's yield by borrowing correlated assets, such as borrowing WETH against wstETH collateral. The piece walks through how looping works mechanically, the math behind leveraged yield positions, and how spread compression, price deviation, and withdrawal queue length can interact to produce dangerous squeezes for leveraged loopers.
+
+The article covers the key risk factors: borrow rate spikes that compress or invert the carry spread, wstETH market price deviations from redemption value, and Ethereum beacon chain withdrawal queue delays. It then shows how these can combine into a self-reinforcing squeeze scenario and concludes with practical tools for managing risk, including Aave's E-Mode for higher LTV borrowing and flash loans for efficient position entry and exit.
+
+By Joe Wait.
+
+`Read the article <https://x.com/JoeWaitOfficial/article/2024781759498358824>`__.
