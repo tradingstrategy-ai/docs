@@ -546,3 +546,12 @@ By Gabriele Galletta (Investimento Custodito).
 Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2023797049141964889>`__: "Trend following is not about alpha. It's about risk control."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6177818>`__
+
+A Quantitative Trading Strategy Based on A Position Management Model
+---------------------------------------------------------------------
+
+This paper establishes a quantitative trading strategy based on a position management model, applied to gold and bitcoin trading. The approach combines ARIMA time-series forecasting for price prediction with a position management framework that governs trade sizing and entry/exit rules. The authors develop differential autoregressive moving average models calibrated at different cycle times, finding that a 60-day data window produces the smallest prediction error, with the relative error of the average prediction value controlled at 0.003016. The position management model then uses these forecasts to determine optimal trade timing and allocation.
+
+The strategy achieves an annualized rate of return of 25%, with accumulated income reaching $223,640.58 USD by September 10, 2021. Profitability and risk resistance are evaluated using Principal Component Analysis, and model validation via parameter variation confirms the solution is locally optimal and consistent with the initial parameterization. Sensitivity analysis shows that as initial commission increases or principal decreases, both trade count and returns decline gradually, confirming the model behaves as expected under parameter perturbation.
+
+`Read the paper <https://www.researchgate.net/publication/367593705_A_Quantitative_Trading_Strategy_Based_on_A_Position_Management_Model>`__
