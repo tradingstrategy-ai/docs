@@ -521,3 +521,16 @@ Statistical arbitrage exploits temporal price differences between similar assets
 By Jorge Guijarro-Ordonez, Markus Pelger, and Greg Zanotti.
 
 `Read the paper <https://arxiv.org/abs/2106.04028>`__
+
+Enhancing Time Series Momentum Strategies Using Deep Neural Networks
+---------------------------------------------------------------------
+
+This paper introduces Deep Momentum Networks, a hybrid approach that injects deep learning-based trading rules into the volatility scaling framework of time series momentum. Unlike traditional momentum strategies that require manually specifying both a trend estimator and a position sizing rule, the model simultaneously learns both components in a data-driven manner. The networks are directly trained by optimising the Sharpe ratio of the signal, using architectures including linear models, MLPs, LSTMs, and WaveNets. The authors also propose a turnover regularisation term that trains the network to factor in transaction costs at run-time, addressing a key practical concern for more illiquid assets.
+
+Backtesting on a portfolio of 88 continuous futures contracts from 1995 to 2015, the Sharpe-optimised LSTM achieves a Sharpe ratio of 2.91, a Sortino ratio of 4.29, and a Calmar ratio of 2.16 when rescaled to a 15% volatility target, with annualised returns of 45.1% and a maximum drawdown of 20.9%. This represents a more than 2x improvement over the best traditional benchmark (Sgn(Returns), Sharpe 1.39). The win rate reaches 59.6%. However, the high turnover of the raw LSTM signal makes it sensitive to transaction costs — at 10bps costs the unregularised LSTM Sharpe collapses to -5.31. With the proposed turnover regularisation, the LSTM recovers to a Sharpe of 0.91 at 10bps costs, remaining competitive with traditional benchmarks.
+
+By Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
+
+Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2025129088302621068>`__.
+
+`Read the paper <https://arxiv.org/abs/1904.04912>`__
