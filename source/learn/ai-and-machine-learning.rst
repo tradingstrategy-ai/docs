@@ -534,3 +534,16 @@ By Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-M
 Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2025129088302621068>`__.
 
 `Read the paper <https://arxiv.org/abs/1904.04912>`__
+
+Rethinking the ML Pipeline: Why "Train Wide, Filter Smart" is a Game-Changer for AI Factor Models
+---------------------------------------------------------------------------------------------------
+
+This post challenges the conventional quantitative investing approach of pre-filtering a stock universe before training machine learning models. Instead, it advocates a "Train Wide, Filter Smart" paradigm: let nonlinear models like LightGBM or ExtraTrees learn from the full, noisy market universe, then apply simple quality filters only at the portfolio construction stage. The argument is that models trained on a broad universe develop deeper market intelligence about regime changes, factor interactions, and market dynamics that are invisible in a pre-filtered dataset.
+
+The post provides detailed technical insights on how buy filter design interacts with feature normalization. For Z-Score normalized models, simple absolute quality filters like positive EPS are dramatically superior to complex percentile-based filters, because Z-Score normalization amplifies distribution tails. The author also explains why AI factor models built as ensembles of decision trees (e.g., 500 trees with depth 5 yielding over 25,000 decision paths) remain robust even with strict buy rules — the quality filter focuses the model's application without deleting its pre-trained knowledge. The post addresses the "Junk Factor" problem, where ML models naturally load up on speculative stocks because they optimize for prediction rather than risk, and shows how the Train Wide, Filter Smart approach can tame this while preserving alpha.
+
+By Andreas Himmelreich (Systematic AI Investing Portfolios).
+
+Mentioned by Andreas Himmelreich in `this discussion <https://x.com/GfI_Himmelreich/status/2025219523985481896>`__: "Train on a broad universe, then filter. This approach works exceptionally well with AI factor models, but avoid it with traditional ranking systems."
+
+`Read the blog post <https://systematicportfolios.substack.com/p/rethinking-the-ml-pipeline-why-train>`__
