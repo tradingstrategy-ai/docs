@@ -555,3 +555,18 @@ This paper establishes a quantitative trading strategy based on a position manag
 The strategy achieves an annualized rate of return of 25%, with accumulated income reaching $223,640.58 USD by September 10, 2021. Profitability and risk resistance are evaluated using Principal Component Analysis, and model validation via parameter variation confirms the solution is locally optimal and consistent with the initial parameterization. Sensitivity analysis shows that as initial commission increases or principal decreases, both trade count and returns decline gradually, confirming the model behaves as expected under parameter perturbation.
 
 `Read the paper <https://www.researchgate.net/publication/367593705_A_Quantitative_Trading_Strategy_Based_on_A_Position_Management_Model>`__
+
+Efficient Portfolio Estimation in Large Risky Asset Universes
+--------------------------------------------------------------
+
+This paper addresses the challenge of constructing efficient portfolios within a large investment universe composed exclusively of risky assets. The authors derive a linearly constrained regression representation of the efficient portfolio, which circumvents the need to estimate the mean vector and covariance matrix. Instead, they apply constrained sparse regression techniques (Linearly Constrained LASSO) to estimate portfolio weights directly.
+
+The key insight is that in many real-world settings — such as institutional equity funds, emerging markets with unstable sovereign debt, or decentralized finance — a risk-free asset is unavailable. Traditional approaches like sample-based plug-in estimators, the 1/N rule, or minimum variance portfolios struggle to achieve mean-variance efficiency in large asset pools. By recasting the efficient portfolio problem as a linearly constrained regression, the authors bypass the notoriously difficult estimation of high-dimensional covariance matrices and mean vectors.
+
+Theoretically, the authors establish asymptotic mean-variance efficiency of the estimated portfolio as both the number of assets and the sample size proportionally approach infinity. In extensive simulations and empirical studies using S&P 500 constituents with out-of-sample returns from 1981 to 2024, the method yields portfolios that satisfy specified risk levels, achieve superior Sharpe ratios, and outperform various benchmarks including equally weighted, minimum variance, and other sparse portfolio methods — both net and gross of transaction costs.
+
+By Leheng Chen, Yingying Li, and Xinghua Zheng (Hong Kong University of Science & Technology).
+
+Mentioned by Piotr Pomorski in `this discussion <https://x.com/PtrPomorski/status/2025269292913361406>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6059635>`__
