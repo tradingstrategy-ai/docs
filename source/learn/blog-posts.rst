@@ -1595,3 +1595,14 @@ The article covers the key risk factors: borrow rate spikes that compress or inv
 By Joe Wait.
 
 `Read the article <https://x.com/JoeWaitOfficial/article/2024781759498358824>`__.
+
+The Math Needed for Position Sizing (Complete Roadmap)
+-------------------------------------------------------
+
+A comprehensive guide to the essential math behind position sizing for systematic traders. The article walks through five position sizing methods in order of complexity: Fixed Dollar (almost never recommended), Fixed Percentage (the default starting point at 1-2% risk per trade), Equal Weighting for diversified portfolios, the Kelly Criterion (mathematically optimal but practically dangerous due to extreme sensitivity to estimation errors), and Volatility Targeting (the gold standard for multi-asset systematic trading).
+
+For each method, the author provides the exact formulas, worked examples, and honest assessments of when to use or avoid them. The volatility targeting section covers three sub-approaches: ATR-based sizing, percent volatility model, and fixed percentage with volatility adjustment — all of which automatically scale positions inversely to asset volatility. The article also includes practical guidance on calculating volatility using 20-day standard deviation annualized by the square root of 252. The overarching principle: the best position size is one that lets you execute your strategy without emotional interference, which is often smaller than what the math suggests.
+
+By Goshawk Trades (Mounir).
+
+`Read the article <https://x.com/GoshawkTrades/status/2024873947414904842>`__
