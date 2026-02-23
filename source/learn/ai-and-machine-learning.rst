@@ -547,3 +547,16 @@ By Andreas Himmelreich (Systematic AI Investing Portfolios).
 Mentioned by Andreas Himmelreich in `this discussion <https://x.com/GfI_Himmelreich/status/2025219523985481896>`__: "Train on a broad universe, then filter. This approach works exceptionally well with AI factor models, but avoid it with traditional ranking systems."
 
 `Read the blog post <https://systematicportfolios.substack.com/p/rethinking-the-ml-pipeline-why-train>`__
+
+Deep Reinforcement Learning for Optimal Portfolio Allocation: A Comparative Study with Mean-Variance Optimization
+-------------------------------------------------------------------------------------------------------------------
+
+This paper from J.P. Morgan AI Research presents a thorough comparison between model-free Deep Reinforcement Learning (DRL) and Mean-Variance Optimization (MVO) for portfolio allocation. The authors design a simple market replay environment that slides over historical data, training a DRL agent using Proximal Policy Optimization (PPO) on S&P 500 sector indices from 2006 to 2021. The study uses daily adjusted close price data for 11 S&P 500 sector indices along with VIX and S&P 500 index data as features, incorporating volatility regime indicators derived from rolling window standard deviations. Unlike many DRL studies that benchmark only against naive baselines or other DRL agents, this work provides a practical head-to-head comparison with MVO, the method most commonly used by financial professionals.
+
+The DRL agent outperforms MVO across virtually all key metrics averaged over ten backtesting periods (2012-2021). The DRL agent achieves an annualised return of 12.11% versus 6.53% for MVO, a Sharpe ratio of 1.17 compared to 0.68, and a Sortino ratio of 1.72 versus 1.01. Maximum drawdown is comparable at -32.96% (DRL) versus -33.03% (MVO). The Calmar ratio stands at 2.31 for DRL versus 1.16 for MVO. The DRL strategy also leads to more stable portfolios with decreased turnover, which has practical implications for live deployment where transaction costs and slippage erode returns.
+
+By Srijan Sood, Kassiani Papasotiriou, Marius Vaiciulis, and Tucker Balch (J.P. Morgan AI Research).
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2025841104478687644>`__.
+
+`Read the paper <https://arxiv.org/abs/2602.17098>`__
