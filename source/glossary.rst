@@ -6186,6 +6186,116 @@ and algorithmic trading.
 
         - :term:`AMM`
 
+    GRVT
+
+        GRVT (pronounced "gravity") is a :term:`perpetual future` :term:`DEX` built on :term:`ZKsync` technology. GRVT operates as a hybrid exchange combining an off-chain order matching engine with on-chain settlement for high performance and transparency.
+
+        GRVT offers :term:`perpetual future` trading pairs for popular cryptocurrencies. Unlike pure :term:`onchain` perpetual exchanges like :term:`GMX`, GRVT uses an :term:`order book` model with off-chain matching and on-chain settlement, targeting institutional-grade performance while maintaining :term:`self-custodial` properties.
+
+        A key differentiator of GRVT is its native support for trading vaults, called :term:`GRVT Strategy`. These allow verified strategy managers to run professionally managed investment strategies on-chain, where retail investors can allocate capital. All strategies are :term:`non-custodial` — managers control trading but cannot withdraw investor funds.
+
+        GRVT also operates its own in-house :term:`market making` vault called the :term:`GRVT Liquidity Provider` (GLP), similar to :term:`Hyperliquid Provider Vault` on Hyperliquid and :term:`MegaVault` on dYdX.
+
+        GRVT vault data is available through the `Trading Strategy API <https://tradingstrategy.ai/blog/announcing-defi-vault-top-lists-and-api>`__, enabling users to benchmark GRVT vaults against :term:`DeFi` vaults on :term:`Ethereum`, other blockchains, and native vaults on other perpetual futures exchanges.
+
+        More:
+
+        - `GRVT vaults on Trading Strategy <https://tradingstrategy.ai/trading-view/vaults/protocols/grvt>`__
+
+        - `About GRVT <https://help.grvt.io/en/articles/9588408-getting-started>`__
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
+        - :term:`Vault`
+
+        - :term:`GRVT Strategy`
+
+        - :term:`GRVT Liquidity Provider`
+
+        - :term:`Order book`
+
+        - :term:`Self-custodial`
+
+        - :term:`Hyperliquid Provider Vault`
+
+        - :term:`MegaVault`
+
+    GRVT Strategy
+
+        A GRVT Strategy is a :term:`vault` on the :term:`GRVT` :term:`perpetual future` :term:`DEX` that allows verified strategy managers to run professionally managed investment strategies on-chain. GRVT calls its vault system "Strategies" and it serves as a compliant peer-to-peer on-chain investment marketplace.
+
+        GRVT Strategies are :term:`non-custodial` and built on :term:`ZKsync` technology. Smart contract logic automates the entire investment lifecycle — from accepting deposits to distributing profits. Strategy managers undergo verification, distinguishing the platform from traditional :term:`DeFi` vaults where operator identity is often opaque.
+
+        **How it works**
+
+        - When investors deposit USDT, they receive **shares** representing ownership, minted based on the strategy's current net asset value (NAV)
+        - Shares are burned upon redemption and their value fluctuates with strategy performance
+        - Positions are updated with a four-hour delay to protect trader edge while giving investors visibility
+        - Managers control trading but cannot withdraw investor funds
+
+        **Fee structure**
+
+        - *Management fees (0–4%)*: A continuous daily fee based on total assets under management
+        - *Performance fees (0–40%)*: Charged only on profits, calculated on entry/exit price differences at redemption
+
+        **Strategy types** on the platform range from AI-driven trading vaults and market-neutral yield strategies to professionally managed thematic portfolios and DeFi-focused strategies.
+
+        Unlike traditional :term:`DeFi` vaults that expose strategy logic publicly and lack manager identity verification, GRVT adds verified managers, auditable strategies, and curated recommendations.
+
+        More:
+
+        - `GRVT Strategies announcement <https://grvt.io/blog/grvt-strategies-peer-to-peer-on-chain-investment-marketplace/>`__
+
+        - `What is GRVT Strategies? <https://help.grvt.io/en/articles/11424324-what-is-grvt-strategies>`__
+
+        See also
+
+        - :term:`GRVT`
+
+        - :term:`Vault`
+
+        - :term:`Trading strategy`
+
+        - :term:`Non-custodial`
+
+        - :term:`GRVT Liquidity Provider`
+
+    GRVT Liquidity Provider
+
+        GRVT Liquidity Provider (GLP) is the in-house :term:`market making` :term:`vault` on the :term:`GRVT` :term:`perpetual future` :term:`DEX`. GLP provides liquidity across GRVT's trading pairs through automated market-making strategies, similar to :term:`Hyperliquid Provider Vault` (HLP) on Hyperliquid and :term:`MegaVault` on dYdX.
+
+        Users can deposit capital into the GLP vault and earn yield from the market-making activity. The vault acts as a counterparty to trades on the platform, earning profits from bid-ask spreads, trading fees, and funding rate payments.
+
+        As a protocol-operated vault, GLP is one of several :term:`GRVT Strategy` vaults available on the platform, but is distinguished by being managed by the GRVT team itself rather than third-party strategy managers.
+
+        More:
+
+        - `GRVT Liquidity Provider (GLP) on Trading Strategy <https://tradingstrategy.ai/trading-view/vaults/grvt-liquidity-provider-glp>`__
+
+        See also
+
+        - :term:`GRVT`
+
+        - :term:`GRVT Strategy`
+
+        - :term:`Vault`
+
+        - :term:`Market making`
+
+        - :term:`Liquidity`
+
+        - :term:`Market neutral <Market neutral strategy>`
+
+        - :term:`Delta neutral`
+
+        - :term:`Hyperliquid Provider Vault`
+
+        - :term:`MegaVault`
+
     Hierarchical Risk Parity
 
         In :term:`quantitative finance` and :term:`portfolio construction`, Hierarchical Risk Parity (HRP) is a portfolio optimization that aims to allocate risk more effectively across assets compared to traditional methods like :term:`mean-variance optimisation`.
