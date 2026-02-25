@@ -1606,3 +1606,14 @@ For each method, the author provides the exact formulas, worked examples, and ho
 By Goshawk Trades (Mounir).
 
 `Read the article <https://x.com/GoshawkTrades/status/2024873947414904842>`__
+
+The Overfitting Problem in Quant Finance
+-----------------------------------------
+
+A deep dive into why most impressive backtests are statistical illusions, covering the mathematical foundations of overfitting detection in quantitative trading. The post walks through walk-forward analysis and Walk-Forward Efficiency (WFE), explains how serial correlation can inflate annualized Sharpe ratios by over 65%, and introduces López de Prado's Probabilistic Sharpe Ratio and Deflated Sharpe Ratio as tools for accounting for multiple testing bias.
+
+The post then covers Combinatorial Purged Cross-Validation (CPCV) as a more robust backtesting methodology that removes overlapping training data and adds embargo periods to block serial correlation leakage, producing a full distribution of out-of-sample Sharpe ratios instead of a single number. The key takeaway: with 5 years of daily data and more than roughly 45 strategy variations tested, finding a fake winner with a strong Sharpe ratio is virtually guaranteed — and the t-statistic bar for claiming a real edge should be 3.0, not the traditional 1.96.
+
+By Alekzz (@AIexey_Stark), commenting on an `article by gemchanger <https://x.com/gemchange_ltd/status/2026300422483271733>`__ about Sharpe ratio illusions and prediction markets.
+
+`Read the article <https://x.com/AIexey_Stark/status/2026373039839936982>`__
