@@ -560,3 +560,16 @@ By Srijan Sood, Kassiani Papasotiriou, Marius Vaiciulis, and Tucker Balch (J.P. 
 Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2025841104478687644>`__.
 
 `Read the paper <https://arxiv.org/abs/2602.17098>`__
+
+Janus-Q: End-to-End Event-Driven Trading via Hierarchical-Gated Reward Modeling
+---------------------------------------------------------------------------------
+
+This paper proposes Janus-Q, an end-to-end event-driven trading framework that treats financial news events as primary decision units rather than auxiliary signals. The system operates in two stages: first, constructing a large-scale dataset of 62,400 Chinese equity news articles annotated with 10 fine-grained event types, sentiment labels, associated stocks, and event-driven Cumulative Abnormal Returns (CAR); second, performing decision-oriented fine-tuning that combines supervised learning (SFT with LoRA) with reinforcement learning (Group Relative Policy Optimization) guided by a Hierarchical Gated Reward Model (HGRM). The HGRM decomposes trading rewards into interpretable components — a hard gate that blocks all downstream rewards when direction prediction is wrong, a soft gate for event type consistency, and additional terms for trading PnL, magnitude accuracy, and reasoning quality.
+
+Janus-Q achieves a Sharpe ratio of 1.31 on the Chinese A-share test period (November 2024 to January 2025), improving the Sharpe ratio by up to 102.0% over the strongest competing LLM baseline (QwQ-32B at 0.65) while increasing direction accuracy by over 17.5% (58.7% vs 50.0% for the best baseline). Event type classification accuracy reaches 80.1%. Ablation studies show that removing SFT is the most damaging change (Sharpe collapses to -5.28), while GRPO contributes a consistent 13% Sharpe improvement. All market index benchmarks (CSI 300/500/1000) produced negative Sharpe ratios during the test period, and all time-series and financial-domain LLM baselines also underperformed significantly. The model uses a two-day holding period with event-type-weighted position allocation.
+
+By Xiang Li, Zikai Wei, Yiyan Qi, Wanyun Zhou, Xiang Liu, Penglei Sun, Yongqi Zhang, and Xiaowen Chu (The Hong Kong University of Science and Technology (Guangzhou), International Digital Economy Academy).
+
+Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2026208445213385144>`__.
+
+`Read the paper <https://arxiv.org/abs/2602.19919>`__
