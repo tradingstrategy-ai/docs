@@ -585,3 +585,16 @@ By Chen, Huang & Jiang.
 Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2026337576387289360>`__: "Not all value is created equal. The fresh rotations matter most."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6151286>`__
+
+Multiples for Valuation: Go High, Go Low, Ignore the Middle
+------------------------------------------------------------
+
+This paper examines whether valuation multiples such as D/P (dividend-to-price), P/E (price-to-earnings), and CAPE (cyclically adjusted P/E) can forecast stock returns, and under what conditions they are most useful. Using US data spanning 1871–2025, the author finds that multiples are far more useful at predicting forward returns when they are at relatively high or low levels than when they sit in the middle of their historical range.
+
+The key finding is that the predictive power of valuation multiples is concentrated at the extremes. When multiples fall into the top or bottom quartile of their historical distribution, the in-sample correlation with subsequent approximately ten-year returns is substantially higher, with R² reaching up to 0.70. Out-of-sample forecasts generated from extreme multiples also significantly outperform those derived from mid-range multiples. The practical implication is that investors should pay close attention to valuations when they are unusually stretched in either direction, but can largely ignore them when they are near the middle of their historical range.
+
+By Javier Estrada (IESE Business School).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2027063861971415486>`__: "Do multiples predict returns? Valuations Only Matter at Extremes."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6152048>`__
