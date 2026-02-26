@@ -1617,3 +1617,14 @@ The post then covers Combinatorial Purged Cross-Validation (CPCV) as a more robu
 By Alekzz (@AIexey_Stark), commenting on an `article by gemchanger <https://x.com/gemchange_ltd/status/2026300422483271733>`__ about Sharpe ratio illusions and prediction markets.
 
 `Read the article <https://x.com/AIexey_Stark/status/2026373039839936982>`__
+
+Systematic Allocation in International Equity Regimes
+-----------------------------------------------------
+
+A research article examining systematic tactical allocation between US equities and international markets (EAFE and Emerging Markets) using momentum-based signals. The study uses a 56-year dataset (1969–2025) to test whether a signals-based framework can systematically time exposure to EAFE equities amid changing macroeconomic conditions.
+
+Two strategies are tested: a pure spread momentum approach using rate-of-change signals across 6, 12, 24, and 36-month lookback periods, and a trend-conditioned approach applying simple moving average filters for allocation signals. The research finds intermediate-term windows (12–36 months) generate optimal risk-adjusted returns by balancing signal responsiveness against noise, and that systematic overlays can generate alpha orthogonal to equity-market betas — particularly during major secular market transitions.
+
+By Cyril Dujava, Quantpedia. Mentioned by Radovan Vojtko in `this discussion <https://x.com/quantpedia/status/2026951652809244711>`__.
+
+`Read the article <https://quantpedia.com/systematic-allocation-in-international-equity-regimes/>`__
