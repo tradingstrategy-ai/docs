@@ -1629,12 +1629,12 @@ By Cyril Dujava, Quantpedia. Mentioned by Radovan Vojtko in `this discussion <ht
 
 `Read the article <https://quantpedia.com/systematic-allocation-in-international-equity-regimes/>`__
 
-How Jump Trading, Jane Street, and a Guy With $10K Fight Over the Same Polymarket Order Book
----------------------------------------------------------------------------------------------
+How to Simulate Like a Quant Desk: Every Model, Every Formula, Runnable Code
+-----------------------------------------------------------------------------
 
-A breakdown of the applied quantitative trading stack on Polymarket, examining how institutional players like Jump Trading and Jane Street compete alongside retail traders on the same prediction market order books. The article dissects the market-making models these firms deploy: Avellaneda-Stoikov adapted for binary settlement, Guéant-Lehalle-Fernandez-Tapia (GLFT) inventory bounds, Glosten-Milgrom adverse selection filtering, and VPIN kill switches.
+A comprehensive, progressive tutorial on quantitative simulation techniques for prediction markets, structured as a narrative that builds from basic Monte Carlo to production-grade systems. The article starts with a simple coin flip analogy for Polymarket contracts, then develops increasingly sophisticated methods: Monte Carlo estimation of binary contract probabilities with confidence intervals, importance sampling for pricing extreme tail-risk contracts (achieving 100-10,000x variance reduction), and Sequential Monte Carlo particle filters for real-time probability updating during live events like election night.
 
-The analysis covers how bots like the one linked to Jane Street (operating under the address "JaneStreetIndia") earned hundreds of thousands of dollars through high-frequency strategies on markets such as "15-Minute Price Range," placing dual-directional bets where the total cost is less than the $1 payout. The article connects the academic theory — particularly Stoikov's work on how optimal quotes degrade under real order flow and inventory pressure — to the practical mechanics of competing on Polymarket's order book.
+The article then covers variance reduction techniques (antithetic variates, control variates, stratified sampling) that stack multiplicatively, copula-based dependency modeling for correlated prediction market portfolios (comparing Gaussian, Student-t, Clayton, and Gumbel copulas with vine copula extensions), and agent-based market simulation using zero-intelligence traders and Kyle's lambda for price impact. Each section includes runnable Python code. The final section outlines a five-layer production stack from WebSocket data ingestion through risk management and monitoring.
 
 By gemchanger.
 
