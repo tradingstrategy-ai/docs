@@ -1628,3 +1628,14 @@ Two strategies are tested: a pure spread momentum approach using rate-of-change 
 By Cyril Dujava, Quantpedia. Mentioned by Radovan Vojtko in `this discussion <https://x.com/quantpedia/status/2026951652809244711>`__.
 
 `Read the article <https://quantpedia.com/systematic-allocation-in-international-equity-regimes/>`__
+
+How Jump Trading, Jane Street, and a Guy With $10K Fight Over the Same Polymarket Order Book
+---------------------------------------------------------------------------------------------
+
+A breakdown of the applied quantitative trading stack on Polymarket, examining how institutional players like Jump Trading and Jane Street compete alongside retail traders on the same prediction market order books. The article dissects the market-making models these firms deploy: Avellaneda-Stoikov adapted for binary settlement, Guéant-Lehalle-Fernandez-Tapia (GLFT) inventory bounds, Glosten-Milgrom adverse selection filtering, and VPIN kill switches.
+
+The analysis covers how bots like the one linked to Jane Street (operating under the address "JaneStreetIndia") earned hundreds of thousands of dollars through high-frequency strategies on markets such as "15-Minute Price Range," placing dual-directional bets where the total cost is less than the $1 payout. The article connects the academic theory — particularly Stoikov's work on how optimal quotes degrade under real order flow and inventory pressure — to the practical mechanics of competing on Polymarket's order book.
+
+By gemchanger.
+
+`Read the article <https://x.com/gemchange_ltd/status/2027744530124951831>`__
