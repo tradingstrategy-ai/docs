@@ -1639,3 +1639,14 @@ The article then covers variance reduction techniques (antithetic variates, cont
 By gemchanger.
 
 `Read the article <https://x.com/gemchange_ltd/status/2027744530124951831>`__
+
+Why Low Beta Improves Value in US Small Caps
+--------------------------------------------
+
+A research note examining whether combining low-beta filtering with value factor selection produces superior risk-adjusted returns across US and European equity universes. Using Portfolio123 infrastructure and FactSet data across nine long-only universes segmented by geography and market capitalisation, the study compares top-30 value stock portfolios constructed separately from the low-beta and high-beta halves of each universe over January 2005 to February 2026.
+
+The central finding is that low-beta value portfolios deliver higher Sharpe ratios in 8 of 9 universes tested. The effect is most dramatic in US Small Caps, where Low Beta Value nearly doubles the CAGR of High Beta Value (19.9% vs 10.2%) with a Sharpe of 0.68 vs 0.27. The study offers structural explanations for why this effect does not replicate in European Small Caps, attributing the asymmetry to differences in market depth, value trap concentration, and speculative retail activity between US and European small-cap segments.
+
+By Ivan Blanco. Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2028513162149155197>`__.
+
+`Read the article <https://www.ivanblanco.ai/notes/low-beta-value-factor>`__
