@@ -573,3 +573,16 @@ By Xiang Li, Zikai Wei, Yiyan Qi, Wanyun Zhou, Xiang Liu, Penglei Sun, Yongqi Zh
 Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2026208445213385144>`__.
 
 `Read the paper <https://arxiv.org/abs/2602.19919>`__
+
+Deep Learning for Financial Time Series: A Large-Scale Benchmark of Risk-Adjusted Performance
+----------------------------------------------------------------------------------------------
+
+This paper presents a comprehensive benchmark of modern deep learning architectures for financial time-series prediction and position sizing, with a primary focus on Sharpe ratio optimization. The study evaluates linear models, recurrent networks, transformer-based architectures, state-space models, and recent sequence-representation approaches on a daily futures dataset spanning commodities, equity indices, bonds, and FX from 2010 to 2025. The evaluation goes beyond average returns to include statistical significance, downside and tail risk measures, breakeven transaction cost analysis, robustness to random seed selection, and computational efficiency.
+
+The key finding is that architectures maintaining explicit recurrent state representations consistently outperform purely attention-based models across most performance dimensions, including downside protection and tail behavior. Variable Selection Networks (VSN) combined with gating mechanisms provide a second critical inductive bias by allowing models to dynamically attend to relevant input features, mitigating noise in low signal-to-noise financial data. Among the models tested, VLSTM (VSN+LSTM) achieves the highest overall Sharpe ratio of 2.39 with a 26.3% CAGR, a HAC t-statistic of 8.81, and a hit rate of 58.8%. VxLSTM (VSN+xLSTM) exhibits the lowest maximum drawdown at -11.8% with the best Calmar ratio of 1.64. LPatchTST (LSTM+PatchTST) delivers a Sharpe of 2.32 with a -17.4% max drawdown and a Calmar of 1.47. xLSTM demonstrates the largest breakeven transaction cost buffer across assets, indicating the greatest robustness to trading frictions. State-space models (Mamba2) and pure attention models (iTransformer) rank near the bottom, while a passive long-only benchmark achieves only a 0.48 Sharpe with -30.8% max drawdown over the same period.
+
+By Adir Saly-Kaufmann, Kieran Wood, Jan Peter-Calliess, and Stefan Zohren (Machine Learning Research Group, University of Oxford; Oxford-Man Institute of Quantitative Finance).
+
+Mentioned by Sepp Hochreiter in `this discussion <https://x.com/HochreiterSepp/status/2028721510232277255>`__: "xLSTM excels in Finance as TiRex does."
+
+`Read the paper <https://arxiv.org/abs/2603.01820>`__
