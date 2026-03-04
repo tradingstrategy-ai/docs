@@ -1661,3 +1661,14 @@ The article presents a volatility-adjusted sizing formula: Position Size = (Acco
 By Algomatic Trading.
 
 `Read the article <https://x.com/AlgomaticTrade/status/2028899660539281487>`__
+
+The Concentration Game: Understanding Portfolio Effects of U.S. Equity Market Concentration
+-------------------------------------------------------------------------------------------
+
+A research piece from D. E. Shaw examining how rising concentration in the S&P 500 affects equity portfolio management and alpha generation. The ten largest constituents now represent over 40% of the index's weight — the highest level in decades. Unlike the late 1990s dot-com era, which was driven primarily by valuation expansion, today's concentration reflects realized economic growth where both prices and earnings have increased substantially for mega-cap companies.
+
+The article explores the risk implications: the top ten stocks now contribute over 50% of the S&P 500's total volatility, with aggregate volatility 1.5 times the index itself and betas above 1.0. For active managers, concentration constrains alpha generation through reduced transfer coefficients (long-only constraints limit the ability to express negative views on large holdings) and narrower breadth (increased correlation among remaining stocks reduces independent forecasting opportunities). The authors note that full reversion to pre-2020 concentration levels would require the remaining index constituents to return over 160%, suggesting markets may remain concentrated for an extended period.
+
+By The D. E. Shaw Group.
+
+`Read the article <https://www.deshaw.com/library/concentration-game>`__
