@@ -1650,3 +1650,14 @@ The central finding is that low-beta value portfolios deliver higher Sharpe rati
 By Ivan Blanco. Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2028513162149155197>`__.
 
 `Read the article <https://www.ivanblanco.ai/notes/low-beta-value-factor>`__
+
+Why Volatility-Adjusted Sizing Matters More Than You Think
+-----------------------------------------------------------
+
+An article on why most traders fail not because of bad signals but because of broken position sizing. The core argument is that trading a fixed number of contracts regardless of market conditions means volatility implicitly decides your risk — when volatility doubles, so does the danger of your position.
+
+The article presents a volatility-adjusted sizing formula: Position Size = (Account × Risk%) / (ATR × Multiplier), where ATR (Average True Range) measures current market volatility. This approach automatically scales positions down in high-volatility environments and up in low-volatility ones, keeping risk per trade consistent regardless of market regime. The piece also covers regime-based thinking for volatility states (low, normal, elevated, extreme) and practical guidelines for implementation, including starting with 0.5% risk per trade and adding 10-day ATR smoothing to avoid whipsaws.
+
+By Algomatic Trading.
+
+`Read the article <https://x.com/AlgomaticTrade/status/2028899660539281487>`__
