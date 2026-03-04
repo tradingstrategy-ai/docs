@@ -598,3 +598,18 @@ By Javier Estrada (IESE Business School).
 Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2027063861971415486>`__: "Do multiples predict returns? Valuations Only Matter at Extremes."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6152048>`__
+
+Covariance Implied Risk Factors
+-------------------------------
+
+This paper examines the role of heteroskedasticity in extracting latent risk factors from asset returns. Standard principal component analysis (PCA) suffers from distortions when assets exhibit heterogeneous idiosyncratic variances, causing estimated factors to reflect clusters of idiosyncratic risk rather than true systematic risk. The author applies heteroskedastic PCA (heteroPCA) to correct for this bias by iteratively replacing the diagonal of the sample covariance matrix with estimates implied by the off-diagonal structure.
+
+HeteroPCA delivers substantially better out-of-sample cross-sectional pricing performance compared to standard PCA across multiple equity portfolio sorts. The identified factors exhibit clearer economic interpretability, and the implied stochastic discount factor achieves lower Hansen-Jagannathan distances. The method trades off slightly worse time-series fit for much stronger cross-sectional pricing power, a tradeoff the author argues is economically favorable.
+
+Key results: On AP-Tree portfolios, heteroPCA achieves out-of-sample Sharpe ratios of 0.46 (Tree10) and 0.55 (Tree40), compared to 0.18 and 0.26 from standard PCA. Across double-sorted portfolios, heteroPCA consistently outperforms: Size & Book-to-Market Sharpe ratio 0.28 vs 0.15, Size & Accruals 0.21 vs 0.13, Size & Investment 0.32 vs 0.20, and Size & Idiosyncratic Volatility 0.35 vs 0.21. Sharpe ratio gains often exceed 50% relative to standard PCA. RMS pricing errors are also lower, with heteroPCA reducing RMS alpha from 0.85-0.90 to 0.72-0.80 on AP-Tree portfolios.
+
+By Mohammed Mehdi Kaebi (Insper Institute of Education and Research).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2029237686410612736>`__: "Your PCA might be lying to you. Standard PCA distorts latent factors when assets have different idiosyncratic variances. The fix? Heteroskedastic PCA."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136149>`__
