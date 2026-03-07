@@ -908,11 +908,24 @@ and algorithmic trading.
 
         The expected return for the money that is considered (almost) risk-free.
 
-        In traditional finance, the risk-free rate is considered to be treasury note or government bond yield, although you still have some risks like the sovereignty risk.
+        In traditional finance, the risk-free rate is typically derived from government-issued debt instruments.
+        In the United States, the :term:`US Treasury note` yield is the standard proxy for the risk-free rate.
+        In the eurozone, the :term:`ECB key interest rate` serves as a reference.
+        Although these are considered risk-free, they still carry some residual risks such as sovereignty risk.
 
-        In :term:`decentralised finance`, a risk-free rate is considered to be an US dollar :term:`lending pool` rate, like one you would get from :term:`Aave` :term:`USDC` pool.
+        In :term:`decentralised finance`, a risk-free rate is considered to be a US dollar :term:`lending pool` rate, like one you would get from :term:`Aave` :term:`USDC` pool.
+
+        Historical risk-free rate data can be obtained programmatically from the
+        `FRED API <https://fred.stlouisfed.org/docs/api/fred/>`__ (e.g. the DGS10 series for the 10-year Treasury yield)
+        or the `ECB Data API <https://data.ecb.europa.eu/help/api/overview>`__ for eurozone rates.
 
         See also
+
+        - :term:`US Treasury note`
+
+        - :term:`ECB key interest rate`
+
+        - :term:`Benchmark`
 
         - :term:`Stablecoin`
 
@@ -921,6 +934,51 @@ and algorithmic trading.
         - :term:`Passive strategy`
 
         - :term:`Drawdown`
+
+    US Treasury note
+
+        A US Treasury note (T-note) is a marketable debt security issued by the United States government
+        with a fixed interest rate and a maturity between 2 and 10 years. Treasury notes pay interest
+        semiannually and are backed by the full faith and credit of the US government.
+
+        Treasury note yields are widely used as the :term:`risk-free rate` benchmark in financial models
+        such as the Capital Asset Pricing Model (CAPM) and discounted cash flow (DCF) analysis.
+        The 10-year Treasury yield is the most commonly referenced maturity for this purpose.
+
+        Treasury yield data is available programmatically through the
+        `FRED API <https://fred.stlouisfed.org/docs/api/fred/>`__
+        using series such as DGS10 (10-year), DGS5 (5-year), and DGS2 (2-year).
+
+        See also
+
+        - :term:`Risk-free rate`
+
+        - :term:`Benchmark`
+
+    ECB key interest rate
+
+        The European Central Bank (ECB) key interest rate is the set of policy rates used by the ECB
+        to steer monetary policy in the eurozone. The three main rates are:
+
+        - The **main refinancing operations rate** — the rate at which banks can borrow from the ECB for one week.
+
+        - The **deposit facility rate** — the rate banks receive for overnight deposits with the ECB. This is the primary tool for steering monetary policy since 2022.
+
+        - The **marginal lending facility rate** — the rate for overnight borrowing from the ECB.
+
+        These rates serve as the eurozone equivalent of the :term:`risk-free rate` and influence
+        all borrowing costs across the euro area.
+
+        ECB rate decisions and historical data are available through the
+        `ECB Data API <https://data.ecb.europa.eu/help/api/overview>`__.
+
+        See also
+
+        - :term:`Risk-free rate`
+
+        - :term:`US Treasury note`
+
+        - :term:`Benchmark`
 
     Drawdown
 

@@ -586,3 +586,14 @@ By Adir Saly-Kaufmann, Kieran Wood, Jan Peter-Calliess, and Stefan Zohren (Machi
 Mentioned by Sepp Hochreiter in `this discussion <https://x.com/HochreiterSepp/status/2028721510232277255>`__: "xLSTM excels in Finance as TiRex does."
 
 `Read the paper <https://arxiv.org/abs/2603.01820>`__
+
+Same Error, Different Function: The Optimizer as an Implicit Prior in Financial Time Series
+--------------------------------------------------------------------------------------------
+
+This paper demonstrates that neural networks applied to financial time series operate in a regime of underspecification, where models with identical out-of-sample error learn qualitatively different functions. Using large-scale volatility forecasting for S&P 500 stocks, the authors show that different model-training-pipeline pairs achieving the same test loss produce divergent non-linear response profiles and temporal dependencies depending on optimizer choice. These differences have material portfolio consequences: volatility-ranked portfolios constructed from models with equivalent predictive accuracy trace a near-vertical Sharpe-turnover frontier, exhibiting nearly 3x turnover dispersion at comparable Sharpe ratios. The paper concludes that in underspecified settings, the optimizer acts as a consequential source of inductive bias, and model evaluation should extend beyond scalar loss to encompass functional and decision-level implications.
+
+By Federico Vittorio Cortesi, Giuseppe Iannone, Giulia Crippa, Tomaso Poggio, and Pierfrancesco Beneventano.
+
+Mentioned by Pierfrancesco Beneventano in `this discussion <https://x.com/PierBeneventano/status/2029973886687740316>`__: "Your optimizer is your trading strategy!"
+
+`Read the paper <https://arxiv.org/abs/2603.02620>`__

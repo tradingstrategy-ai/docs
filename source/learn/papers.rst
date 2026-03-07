@@ -613,3 +613,16 @@ By Mohammed Mehdi Kaebi (Insper Institute of Education and Research).
 Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2029237686410612736>`__: "Your PCA might be lying to you. Standard PCA distorts latent factors when assets have different idiosyncratic variances. The fix? Heteroskedastic PCA."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136149>`__
+
+Asset Allocation: From Markowitz to Deep Reinforcement Learning
+---------------------------------------------------------------
+
+This paper benchmarks nine asset allocation strategies spanning traditional Modern Portfolio Theory and deep reinforcement learning. The traditional methods include the tangency portfolio, minimum variance, risk parity, and equal weight. The DRL methods include A2C, PPO, DDPG, SAC, and TD3. Each strategy is evaluated across both bullish and bearish market environments using real stock data.
+
+Traditional MPT-based approaches deliver stable, consistent results without requiring a training phase. The tangency portfolio achieves the highest Sharpe and Calmar ratios across scenarios. DRL agents can surpass traditional methods in bull markets at their best (SAC achieved 179% annual return and a 2.58 Sharpe ratio), but exhibit high variance across runs due to stochastic optimization. In their worst runs, DRL agents fail to outperform the simple equal weight baseline. In bear markets the performance gap between traditional and DRL approaches narrows substantially, and DRL results become less reliable. The author suggests that more training data, additional technical indicators, and architectures like transformers could help stabilize DRL performance.
+
+By Ricard Durall (Open University of Catalonia).
+
+Mentioned by Jungle Rock in `this discussion <https://x.com/JungleRockRes/status/2030015840024707096>`__.
+
+`Read the paper <https://arxiv.org/abs/2208.07158>`__
