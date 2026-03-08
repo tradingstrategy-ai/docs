@@ -935,6 +935,8 @@ and algorithmic trading.
 
         - :term:`Drawdown`
 
+        - :term:`FDIC national rate`
+
     US Treasury note
 
         A US Treasury note (T-note) is a marketable debt security issued by the United States government
@@ -954,6 +956,8 @@ and algorithmic trading.
         - :term:`Risk-free rate`
 
         - :term:`Benchmark`
+
+        - :term:`FDIC national rate`
 
     ECB key interest rate
 
@@ -979,6 +983,37 @@ and algorithmic trading.
         - :term:`US Treasury note`
 
         - :term:`Benchmark`
+
+        - :term:`FDIC national rate`
+
+    FDIC national rate
+
+        The FDIC national rate is the official national average interest rate
+        for savings accounts, published by the Federal Deposit Insurance Corporation (FDIC).
+        It is calculated as the weighted average of rates paid by all insured depository
+        institutions and credit unions, with rates weighted by each institution's share of
+        domestic deposits.
+
+        The national rate is published monthly and is available on FRED as the
+        `SNDR series <https://fred.stlouisfed.org/series/SNDR>`__.
+        The FDIC also publishes a **national rate cap**, calculated as the higher of:
+        (1) the national rate plus 75 basis points, or
+        (2) 120% of the current yield on similar-maturity US Treasury obligations plus 75 basis points.
+
+        The FDIC began publishing the national rate on May 18, 2009. Data from May 2009
+        through March 2021 used branch-weighted averages without credit unions.
+        From April 2021 onward, the methodology was updated to use deposit-share weighting
+        and includes credit unions.
+
+        See also
+
+        - :term:`Risk-free rate`
+
+        - :term:`US Treasury note`
+
+        - :term:`ECB key interest rate`
+
+        - :term:`Annual Percentage Yield (APY)`
 
     Drawdown
 
