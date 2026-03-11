@@ -1683,3 +1683,16 @@ The post also addresses how variance drag diminishes for individual positions wi
 By Ptuomov.
 
 `Read the post <https://x.com/ptuomov/status/2031639817574834344>`__
+
+Fooled by Randomness, Over-fitting And Selection Bias
+-----------------------------------------------------
+
+Software programs that combine technical indicators with entry and exit conditions to design trading strategies can produce impressive equity curves — but due to data-mining bias, it is very difficult to distinguish random strategies from those with genuine predictive power. This article demonstrates how selection bias leads traders astray: when many strategy variations are tested, the best-performing one is almost certainly a statistical fluke rather than evidence of a real edge.
+
+The post offers practical suggestions for minimizing the probability of having found a random strategy, including testing whether the underlying generation process is deterministic, stripping exit logic to evaluate entry timing intelligence, checking if performance degrades with small parameter changes, and comparing strategy results against random entry benchmarks. The core message is that without rigorous controls for data-mining bias, most backtested strategies are simply artifacts of randomness and overfitting.
+
+Mentioned by `Michael Harris (@mikeharrisNY) <https://x.com/mikeharrisNY/status/2031735775356674454>`__ in a discussion about the explosion of overfitted strategy results posted by "pseudo quants."
+
+By Michael Harris.
+
+`Read the blog post <https://www.priceactionlab.com/Blog/2012/06/fooled-by-randomness-through-selection-bias/>`__
