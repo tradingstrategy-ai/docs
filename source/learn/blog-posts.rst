@@ -1672,3 +1672,14 @@ The article explores the risk implications: the top ten stocks now contribute ov
 By The D. E. Shaw Group.
 
 `Read the article <https://www.deshaw.com/library/concentration-game>`__
+
+Volatility Drag, the Kelly Criterion, and Portfolio Position Sizing
+--------------------------------------------------------------------
+
+A post examining the relationship between volatility drag, the Kelly criterion, and optimal portfolio construction. The key insight is that the highest expected compound growth rate is achieved when portfolio volatility equals the Sharpe ratio — which corresponds to Kelly criterion sizing. However, this may not be optimal for all investors: more risk-averse investors (with relative risk aversion greater than 1) should take less risk, while less risk-averse investors should take more.
+
+The post also addresses how variance drag diminishes for individual positions within a diversified portfolio. Because the risk penalty to idiosyncratic risk scales with the square of the portfolio weight (-1/2 * RRA * idiosyncratic variance * w^2), a 10% allocation reduces the importance of a component's idiosyncratic variance by a factor of 100. This makes volatility drag concerns far less relevant for individual holdings within a well-diversified, rebalanced portfolio.
+
+By Ptuomov.
+
+`Read the post <https://x.com/ptuomov/status/2031639817574834344>`__
