@@ -597,3 +597,25 @@ By Federico Vittorio Cortesi, Giuseppe Iannone, Giulia Crippa, Tomaso Poggio, an
 Mentioned by Pierfrancesco Beneventano in `this discussion <https://x.com/PierBeneventano/status/2029973886687740316>`__: "Your optimizer is your trading strategy!"
 
 `Read the paper <https://arxiv.org/abs/2603.02620>`__
+
+Interpretable ML for High-Frequency Execution
+-----------------------------------------------
+
+This paper addresses the problem of optimal order placement in high-frequency trading: whether to post a passive limit order or cross the spread with a market order. Using high-quality tick data from both digital asset centralized exchanges (BTC-USD) and Euronext equities, the authors train a neural network to infer the fill probability function for limit orders at a fixed horizon, employing a weighted loss function to handle censored data from orders that are cancelled before being filled.
+
+SHAP analysis reveals that signed order flow and signed traded volume (net aggressive volume over recent events) are among the most important features for predicting fill probability in BTC-USD, with crypto pairs showing more dynamic flow sensitivity than equities due to small-tick order books. The practical framework estimates cleanup costs through market feature functions and avoids hypothetical order insertion in backtests, instead testing with orders that realistically impact price formation. This directly informs execution strategies: the model helps decide between market and limit orders based on flow-implied fill probability and adverse-move risk.
+
+By Timothée Fabre and Vincent Ragel.
+
+`Read the paper <https://arxiv.org/abs/2307.04863>`__
+
+Explainable Patterns in Cryptocurrency Microstructure
+------------------------------------------------------
+
+This paper documents stable cross-asset patterns in cryptocurrency limit-order-book microstructure using data from Binance Futures perpetual contracts (BTC, LTC, ETC, ENJ, ROSE) at 1-second frequency from January 2022 through October 2025. Using a unified CatBoost modeling pipeline with a direction-aware GMADL objective and time-series cross-validation, the authors show that feature rankings and partial effects are remarkably stable across assets spanning an order of magnitude in market capitalization, despite heterogeneous liquidity and volatility.
+
+Order-flow imbalance emerges as one of the most stable, high-SHAP-importance features for predicting 3-second mid-price returns, exhibiting a monotone (with concavity) effect on returns consistent across all assets studied. The paper connects these SHAP structures to classic microstructure theory — adverse selection, Kyle-type price impact, and spread dynamics. Analysis of a major flash crash reveals divergent taker and maker strategy performance that empirically validates adverse selection theory. The results suggest a portable microstructure representation useful for developing universal feature libraries across cryptocurrency markets.
+
+By Bartosz Bieganowski and Robert Ślepaczuk (University of Warsaw).
+
+`Read the paper <https://arxiv.org/abs/2602.00776>`__

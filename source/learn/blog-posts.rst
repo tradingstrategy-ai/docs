@@ -1709,3 +1709,25 @@ Mentioned by `Lev (@LeafiestParapet) <https://x.com/LeafiestParapet/status/20322
 By Lev.
 
 `Read the thread <https://twitter-thread.com/t/2032226896834863165>`__
+
+Order Flow Analysis of Cryptocurrency Markets
+-----------------------------------------------
+
+An analysis of Level II order book data from the BitMEX XBTUSD perpetual swap contract, examining how order flow imbalance influences price changes in cryptocurrency markets. The post defines and compares two measures: order flow imbalance (OFI), computed from changes in best bid/ask prices and quantities, and trade flow imbalance (TFI), computed from actual executed trades classified as buyer- or seller-initiated.
+
+The key finding is that trade flow imbalance explains up to approximately 75% of price changes at hourly horizons — substantially higher than OFI at longer timescales. The analysis notes that crypto order books are particularly noisy due to spoofing and rapid cancellations, making trade-based measures more reliable than order-book-based ones. The relationship between flow imbalance and price change is linear, confirming classic microstructure price impact models in the crypto context. This work was later published as a formal paper in the Digital Finance journal (2019).
+
+By Ed Silantyev.
+
+`Read the blog post <https://medium.com/@eliquinox/order-flow-analysis-of-cryptocurrency-markets-b479a0216ad8>`__
+
+Order Flow Imbalance — A High Frequency Trading Signal
+--------------------------------------------------------
+
+A step-by-step walkthrough of calculating order flow imbalance (OFI) from order book data and evaluating it as a high-frequency trading signal. Using Bitcoin data from Coinbase, the post builds a linear regression model to predict short-term returns from OFI — the net pressure from changes in bid/ask prices and quantities.
+
+The OFI metric shows statistical significance in predicting price direction with an out-of-sample R² of approximately 3% (comparable to academic benchmarks) and a hit ratio of 53%. However, the standalone Sharpe ratio of 0.12 is far below profitable thresholds, and transaction costs would eliminate any edge. The practical takeaway is that OFI is better suited as an input to market-making or execution algorithms — informing quote placement and order timing — rather than as a standalone directional signal.
+
+By Dean Markwick.
+
+`Read the blog post <https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html>`__

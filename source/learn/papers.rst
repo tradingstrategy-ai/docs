@@ -648,3 +648,14 @@ Price deviations across countries co-move and widen during periods of large Bitc
 By Igor Makarov and Antoinette Schoar. Published in Journal of Financial Economics (2020), vol 135, issue 2, pp 293-319.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171204>`__
+
+Order Flow and Cryptocurrency Returns
+--------------------------------------
+
+This paper investigates the role of order flow in explaining and predicting cryptocurrency returns. The authors construct an aggregate "world" order flow measure from 11 major fiat currencies across multiple exchanges and test its explanatory power on a cross-section of 82 cryptocurrencies using panel regressions with controls for established return predictors.
+
+World order flow explains approximately 11% of daily and 20% of weekly cross-sectional cryptocurrency returns, with strong evidence of permanent price impact — indicating that order flow carries genuine information rather than transient liquidity effects. The paper demonstrates that order flow dominates macroeconomic fundamentals for out-of-sample prediction, especially when using non-linear machine learning models. Long-short portfolios constructed from ML forecasts conditioning on daily order flow achieve an alpha of up to 0.79% per day with an annualized Sharpe ratio of 3.63.
+
+By Alexia Anastasopoulos, Nikola Gradojevic, Jiaao Liu, Alex Maynard, and Christos Tsiakas. Published in Journal of Financial Markets (2026).
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5020002>`__
