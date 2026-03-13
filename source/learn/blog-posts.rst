@@ -1731,3 +1731,67 @@ The OFI metric shows statistical significance in predicting price direction with
 By Dean Markwick.
 
 `Read the blog post <https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html>`__
+
+Dynamic Asset Allocation for Practitioners, Part 3: Risk-Adjusted Momentum
+---------------------------------------------------------------------------
+
+A comprehensive study testing 13 different risk-adjusted momentum indicators across 16,116 simulation variations to determine whether accounting for volatility and drawdowns improves momentum-based asset allocation. The metrics tested include Sharpe ratio, Omega ratio, Sortino ratio, Calmar ratio, DVR (Sharpe x R-squared of equity curve), VaR, CVaR, max loss ratio, average drawdown ratio, high-low differential, Ulcer Performance Index, gain-to-pain ratio, and fractal efficiency.
+
+The key finding is that all 13 methods delivered virtually identical median results with an average pairwise correlation of 0.945, suggesting investors inherently exhibit risk awareness when expressing momentum preferences. However, risk-adjusted approaches showed much smaller dispersion than pure price momentum, and aggregating all approaches into a combined index delivered superior risk-adjusted performance with a Sharpe ratio of 1.29 — outperforming any single metric alone. The research demonstrates that diversifying across multiple highly correlated risk-adjusted momentum indicators provides measurable risk-reduction benefits without sacrificing returns.
+
+By ReSolve Asset Management.
+
+`Read the blog post <https://investresolve.com/dynamic-asset-allocation-for-practitioners-part-3-risk-adjusted-momentum/>`__
+
+Dynamic Asset Allocation for Practitioners Part 2: Risk-Adjusted Momentum
+--------------------------------------------------------------------------
+
+The second installment in a series on dynamic asset allocation, investigating how 13 risk-adjusted momentum metrics compare to raw momentum for portfolio construction. The research tests across a 10-asset universe spanning commodities, gold, US/European/Japanese/emerging market stocks, international REITs, and treasuries from 1995 onward, using multiple portfolio concentrations (2–5 holdings) and systematic asset removal to minimise selection bias.
+
+The DVR and return-to-max-loss ratio delivered the highest Sharpe ratios, while the Ulcer Performance Index achieved the best return-to-maximum-drawdown performance. A counterintuitive finding: risk-adjusted momentum portfolios exhibited lower Sharpe ratios than raw momentum systems from Part 1, suggesting that disaggregating risk management from momentum signals may produce better results. The gain-to-pain ratio demonstrated the greatest consistency across different asset universes and concentrations.
+
+By Adam Butler, GestaltU.
+
+`Read the blog post <https://www.gestaltu.com/2013/06/dynamic-asset-allocation-for-practitioners-part-2-risk-adjusted-momentum.html/>`__
+
+Risk-Adjusted Momentum Oscillator (RAMO)
+-----------------------------------------
+
+An open-source TradingView indicator that combines traditional momentum calculation with real-time risk assessment, addressing a gap in conventional momentum indicators by incorporating drawdown metrics into momentum calculations. The core innovation is a self-regulating system that automatically adjusts signal sensitivity based on current risk conditions using the formula: Risk_Factor = 1 - (Current_Drawdown / Maximum_Drawdown × Scaling_Factor), with a floor of 0.05 to prevent complete signal suppression.
+
+The indicator supports three momentum calculation modes (rate of change, price momentum, log returns) and employs adaptive EMA smoothing where the alpha parameter adjusts based on volatility percentile — faster response during volatile periods, stability during calm markets. Z-score normalisation clamps values to [-3.5, 3.5] for outlier handling. Additional features include momentum acceleration (second derivative) for early trend change detection, linear regression prediction for leading signals, and volume-based exhaustion detection for identifying potential reversals on declining volume. The risk environment classification (low/medium/high based on drawdown depth) filters long signals during high-risk conditions.
+
+By EdgeTools.
+
+`Read the blog post <https://www.tradingview.com/script/EdEL00bP-Risk-Adjusted-Momentum-Oscillator/>`__
+
+Mastering the Calmar Ratio for Risk Analysis
+---------------------------------------------
+
+An educational article from Interactive Brokers' Quant News covering the Calmar ratio — a risk-adjusted performance metric that divides annualised return by maximum drawdown. The post explains the ratio's calculation, interpretation, and practical applications for evaluating trading strategies and fund performance, with guidance on what constitutes good, acceptable, and poor Calmar values.
+
+The article positions the Calmar ratio alongside other risk metrics like the Sharpe ratio, Sortino ratio, and Sterling ratio, discussing when each is most appropriate. The Calmar ratio is particularly useful for drawdown-averse investors and strategies where peak-to-trough equity decline is the primary risk concern, though its sensitivity to a single worst drawdown event is noted as a limitation compared to metrics like the Burke ratio or Ulcer Performance Index that incorporate multiple drawdowns.
+
+`Read the blog post <https://www.interactivebrokers.com/campus/ibkr-quant-news/mastering-the-calmar-ratio-for-risk-analysis/>`__
+
+Beyond the Average: Exploring Omega Ratio and Calmar Ratio
+-----------------------------------------------------------
+
+An article exploring two sophisticated investment performance metrics that go beyond traditional measures like the Sharpe ratio. The Omega ratio considers the probability of achieving a threshold return level (minimum acceptable return), dividing gains above the threshold by losses below it and capturing the full return distribution without assuming normality. The Calmar ratio compares annualised compound returns to maximum drawdown, typically over a three-year period.
+
+The key distinction is that the Omega ratio separates "good and bad volatility" by differentiating upside potential from downside risk, while the Calmar ratio specifically emphasises downside protection during market declines. Unlike the Sharpe ratio which uses risk-free rates as benchmarks, the Omega approach allows investors to set their own minimum acceptable return, making it a more personalised measure. Neither metric is inherently superior — the Calmar ratio suits conservative investors focused on stability and capital preservation, while the Omega ratio captures outsized gain potential without penalising volatility as heavily.
+
+By FasterCapital.
+
+`Read the blog post <https://www.fastercapital.com/content/Omega-Ratio--Beyond-the-Average--Exploring-Omega-Ratio-and-Calmar-Ratio.html>`__
+
+Advanced Trading Metrics: A 2026 Comprehensive Guide
+------------------------------------------------------
+
+A definitive guide examining five essential risk-adjusted metrics for evaluating algorithmic trading strategies: Sharpe ratio, Sortino ratio, Calmar ratio, SQN (System Quality Number), and K-ratio. Each metric is presented with exact formulas, worked examples, professional benchmarks, and honest assessments of when to use or avoid them. The article also covers additional advanced metrics including Omega ratio, Ulcer Index, MAR ratio, and Information and Treynor ratios.
+
+The guide provides a metric selection framework by trading profile: Calmar for conservative traders (direct return-to-drawdown measurement), Sortino for trend followers (recognises positive volatility as desirable), SQN for scalpers and high-frequency traders (values consistency and opportunity frequency), Sharpe for institutional fund managers (industry reporting standard), and K-ratio combined with SQN for system developers (detects overfitting and suspicious equity curves). A key warning: live Sharpe ratios typically run 30–50% lower than backtests, and the author provides a non-negotiable validation checklist requiring Sharpe >1.0, Sortino >1.5, Calmar >0.8, SQN >2.0, and K-ratio >1.5.
+
+By Rubén Villahermosa, Algo Strategy Analyzer.
+
+`Read the blog post <https://algostrategyanalyzer.com/en/blog/advanced-trading-metrics/>`__

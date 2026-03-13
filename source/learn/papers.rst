@@ -659,3 +659,14 @@ World order flow explains approximately 11% of daily and 20% of weekly cross-sec
 By Alexia Anastasopoulos, Nikola Gradojevic, Jiaao Liu, Alex Maynard, and Christos Tsiakas. Published in Journal of Financial Markets (2026).
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5020002>`__
+
+Risk-adjusted Momentum Strategy Construction and Industry Heterogeneity Analysis Based on STARR Indicator
+----------------------------------------------------------------------------------------------------------
+
+This paper proposes a risk-adjusted momentum strategy using the STARR (Stable Tail-adjusted Return Ratio) indicator — a metric that replaces standard deviation in the Sharpe ratio with Conditional Value at Risk (CVaR) to better capture downside tail risk. The study constructs both Sharpe-based and STARR-based momentum factors across industry-level ETFs from the S&P 500 and Nikkei 225, applying mean-variance optimisation to monthly data spanning 2010–2025.
+
+The STARR-based strategy demonstrates superior downside risk control compared to conventional Sharpe-based momentum, particularly during extreme market conditions such as the COVID-19 crisis. Performance varies significantly across sectors and volatility regimes, confirming meaningful industry heterogeneity in momentum returns. The strategy maintains robustness through alternative parameter configurations and cross-market validation between U.S. and Japanese equities, suggesting that incorporating downside-sensitive metrics like CVaR into momentum signal construction can enhance risk-adjusted returns and improve portfolio stability in diverse market environments.
+
+By Xupeng Zhang (McGill University).
+
+`Read the paper <https://www.researchgate.net/publication/394351939_Risk-adjusted_Momentum_Strategy_Construction_and_Industry_Heterogeneity_Analysis_Based_on_STARR_Indicator>`__
