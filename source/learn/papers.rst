@@ -626,3 +626,25 @@ By Ricard Durall (Open University of Catalonia).
 Mentioned by Jungle Rock in `this discussion <https://x.com/JungleRockRes/status/2030015840024707096>`__.
 
 `Read the paper <https://arxiv.org/abs/2208.07158>`__
+
+Order Flow and Exchange Rate Dynamics
+--------------------------------------
+
+This paper challenges traditional macroeconomic models of exchange rate determination, which typically produce poor forecasting results. Instead, the authors introduce a microstructure-based approach incorporating order flow — the net of buyer-initiated and seller-initiated trades — as a key determinant of exchange rate movements. Their model achieves R² statistics above 50% for daily exchange-rate changes in the DM/$ spot market, vastly outperforming standard macro models and providing superior short-horizon forecasts compared to random walk models.
+
+The central empirical result is that $1 billion of net dollar purchases increases the DM price of a dollar by about 1 pfennig. This finding established order flow as a primary driver of FX price formation and has become a foundational reference for understanding flow-driven dynamics in other asset classes, including cryptocurrencies.
+
+By Martin D.D. Evans and Richard K. Lyons. Published in Journal of Political Economy (2002), vol 110(1), pp 170-180.
+
+`Read the paper <https://www.nber.org/papers/w7317>`__
+
+Trading and Arbitrage in Cryptocurrency Markets
+-------------------------------------------------
+
+This paper studies the efficiency and price formation of cryptocurrency markets. The authors document large, recurrent arbitrage opportunities across exchanges, with price deviations much larger across countries than within countries, highlighting the role of capital controls in limiting arbitrage capital flows. The common component of signed volume on each exchange explains approximately 80% of Bitcoin returns, while idiosyncratic components help explain arbitrage spreads between exchanges.
+
+Price deviations across countries co-move and widen during periods of large Bitcoin appreciation, with countries exhibiting higher Bitcoin premia over the US price seeing the largest arbitrage deviations. The paper provides foundational evidence that Bitcoin's price formation is heavily flow-driven, resembling foreign exchange markets more than equities.
+
+By Igor Makarov and Antoinette Schoar. Published in Journal of Financial Economics (2020), vol 135, issue 2, pp 293-319.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171204>`__
