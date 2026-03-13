@@ -1696,3 +1696,16 @@ Mentioned by `Michael Harris (@mikeharrisNY) <https://x.com/mikeharrisNY/status/
 By Michael Harris.
 
 `Read the blog post <https://www.priceactionlab.com/Blog/2012/06/fooled-by-randomness-through-selection-bias/>`__
+
+Bitcoin Price Formation and Signed Order Flow
+----------------------------------------------
+
+Bitcoin prices are strongly shaped by who is aggressively buying and selling — 60% of the variation in its daily returns can be explained by signed order flow. Unlike stocks, which have multiple price anchors beyond trade imbalances, Bitcoin's order flow explains substantially more variance. In this respect, Bitcoin resembles currencies more than equities: foreign exchange pairs show R-squared values exceeding 50%, indicating similarly heavy flow-driven dynamics.
+
+The analysis, using Binance futures data, replicates prior research that found signed flow previously explained 85% of Bitcoin's variability. While order flow's explanatory power has decreased over time, it remains significant at 60% on average, with shorter timeframes revealing ranges from 40% to 80%. Bitcoin exhibits "reflexive, regime-like behavior" with "bursts, pauses, and cascades" driven by flow, positioning, and market depth rather than gradual fundamentals.
+
+Mentioned by `Lev (@LeafiestParapet) <https://x.com/LeafiestParapet/status/2032226896834863165>`__ in a discussion about Bitcoin's flow-driven price dynamics.
+
+By Lev.
+
+`Read the thread <https://twitter-thread.com/t/2032226896834863165>`__
