@@ -2648,6 +2648,12 @@ and algorithmic trading.
 
         - :term:`Maximum drawdown`
 
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Calmar ratio`
+
         - :term:`Quantstats`
 
         - :ref:`Profitability calculations <profitability>`
@@ -3790,6 +3796,8 @@ and algorithmic trading.
 
         - :term:`Sortino`
 
+        - :term:`Calmar ratio`
+
         - :term:`Risk-adjusted return`
 
         - :term:`Quantitative finance`
@@ -3838,7 +3846,74 @@ and algorithmic trading.
 
         - :term:`Sharpe`
 
+        - :term:`Calmar ratio`
+
         - :term:`Risk-adjusted return`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Trading strategy`
+
+        - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+    Calmar ratio
+
+        The Calmar ratio is a :term:`risk-adjusted return` measure that evaluates the performance of an investment relative to its :term:`maximum drawdown` risk. It was created by Terry W. Young and first published in 1991 in his newsletter *Calmar Report* (the name "Calmar" is derived from his company's name, California Managed Accounts Reports).
+
+        The Calmar ratio is calculated by dividing the :term:`Compound Annual Growth Rate (CAGR)` by the absolute value of the maximum drawdown over the same period. The standard measurement window is 36 months (3 years). The formula is:
+
+        `Calmar Ratio = CAGR / |Maximum Drawdown|`
+
+        For example, if a strategy has a CAGR of 15% and a maximum drawdown of -10%, the Calmar ratio is 1.5. A higher Calmar ratio indicates better risk-adjusted performance. As a rough guide, a Calmar ratio above 1.0 is considered acceptable, above 2.0 is good, and above 3.0 is excellent.
+
+        **Usage and application**
+
+        The Calmar ratio is widely used by fund-of-funds managers, allocators, and :term:`hedge fund` evaluators to compare managers and strategies on a drawdown-adjusted basis. It is particularly popular in the managed futures (CTA) industry where drawdown control is a primary concern. It is also useful for:
+
+        - Screening and ranking trading strategies by capital preservation quality
+        - Comparing strategies with different return profiles on a common risk basis
+        - Monitoring whether a live strategy is degrading relative to its historical profile
+
+        **When it works well**
+
+        - Strategies where capital preservation and drawdown control are paramount (e.g., trend-following, CTA, systematic macro)
+        - Comparing strategies with similar time horizons and return distributions
+        - Evaluating strategies over longer periods (3+ years) where the maximum drawdown is statistically meaningful
+        - Portfolios where investors have low tolerance for peak-to-trough losses
+
+        **When it doesn't work well**
+
+        - Short track records where the maximum drawdown may not yet reflect the true risk of the strategy
+        - Strategies that have not yet experienced a major market stress event — the Calmar ratio may overstate quality
+        - It relies on a single worst-case drawdown event, which makes it sensitive to outliers and sample-dependent
+        - It does not account for drawdown duration or recovery time — a 20% drawdown recovered in 2 months is treated the same as one that took 2 years to recover
+        - Illiquid or infrequently priced assets can have artificially smooth returns, inflating the ratio
+        - It ignores the frequency of drawdowns — a strategy with one large drawdown may score the same as one with many moderate drawdowns
+
+        **Relationship with other ratios**
+
+        The Calmar ratio belongs to a family of :term:`risk-adjusted return` measures, each using a different definition of risk:
+
+        - :term:`Sharpe` ratio uses total :term:`volatility` (standard deviation) as the risk measure. The Sharpe ratio penalises both upside and downside volatility equally, while the Calmar ratio focuses exclusively on the worst peak-to-trough loss. A strategy can have a high Sharpe ratio but a poor Calmar ratio if it experiences rare but severe drawdowns.
+        - :term:`Sortino` ratio uses downside deviation as the risk measure, making it more sensitive to negative returns than Sharpe but still based on return dispersion rather than drawdown magnitude. Sortino captures the frequency and severity of negative returns, while Calmar captures the single worst cumulative loss episode.
+        - Sterling ratio is similar to Calmar but uses the average of the N largest drawdowns (often minus 10%) instead of the single maximum drawdown, making it less sensitive to a single outlier event.
+        - MAR ratio (Managed Account Reports ratio) is essentially the same formula as Calmar but is sometimes computed over different time windows or using different annualisation conventions.
+
+        In practice, these ratios are complementary. The :term:`Sharpe` and :term:`Sortino` ratios describe the consistency of returns, while the Calmar ratio describes the severity of the worst loss. A comprehensive strategy evaluation should consider multiple ratios together.
+
+        See also
+
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
+        - :term:`Drawdown`
 
         - :term:`Quantitative finance`
 
@@ -4673,13 +4748,13 @@ and algorithmic trading.
 
         See also
 
+        - :term:`Calmar ratio`
+
         - :term:`Risk-adjusted return`
 
         - :term:`Equity curve`
 
         - :term:`Drawdown`
-
-        - :term:`Risk-adjusted return`
 
     Take Profit
 
