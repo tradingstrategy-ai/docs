@@ -101,6 +101,8 @@ By Elliot L. Epstein, Rose Wang, Jaewon Choi, and Markus Pelger. Also published 
 
 The attention mechanism embeds 39 firm characteristics (past returns, value, trading frictions, profitability, investment, intangibles) through a key matrix, computing factor portfolio weights via scaled dot-product attention between learned query vectors and embedded characteristics. Factors whose loadings are interpretable and closely related to industry sectors emerge naturally. A LongConv sequence model with 32 convolutions extracts time-series signals from residuals, and the system is trained to maximize net Sharpe ratio incorporating 5 bps transaction costs and 1 bp shorting costs plus an explained variance regularization term. A notable finding is that "weak factors" explaining less cross-sectional variation are important for identifying temporal mispricing, and jointly optimizing factor construction with the trading objective is crucial for reducing turnover and short positions.
 
+Mentioned by `@quantbeckman in this discussion <https://x.com/quantbeckman/status/2032724928307331339>`__.
+
 `Read the paper <https://arxiv.org/abs/2510.11616>`__
 
 A Deep Learning Approach for Trading Factor Residuals
