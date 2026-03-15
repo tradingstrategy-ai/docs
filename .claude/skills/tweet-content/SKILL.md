@@ -1,6 +1,7 @@
 ---
 name: tweet-content
-description: Pick a random item from the trading content collection and compose a tweet about it on X
+description: Pick a random item from the trading content collection and compose a tweet about it on X.
+disable-model-invocation: true
 ---
 
 # Tweet trading content
