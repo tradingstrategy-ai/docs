@@ -1795,3 +1795,14 @@ The guide provides a metric selection framework by trading profile: Calmar for c
 By Rubén Villahermosa, Algo Strategy Analyzer.
 
 `Read the blog post <https://algostrategyanalyzer.com/en/blog/advanced-trading-metrics/>`__
+
+The Quant Playbook for Polymarket
+----------------------------------
+
+A comprehensive guide to six quantitative formulas that hedge funds use to extract edge from prediction markets like Polymarket. The playbook covers the LMSR (Logarithmic Market Scoring Rule) pricing model that powers Polymarket's AMM, the Kelly Criterion for optimal position sizing, Expected Value gap analysis for detecting mispricings, KL-Divergence for scanning correlated market arbitrage, Bregman Projection for multi-outcome arbitrage optimisation, and Bayesian updating for dynamic probability adjustment in fast-moving markets.
+
+Each formula is presented with mathematical definitions, practical examples from real Polymarket contracts, Python code for implementation, and risk warnings. The author also outlines a system integration pipeline covering data setup via Polygon API, backtesting with walk-forward validation, deployment with cron jobs and Telegram alerts, and risk management using fractional Kelly sizing with drawdown stops.
+
+Mentioned by `0xRicker in this discussion <https://x.com/0xRicker/status/2032798292128522327>`__.
+
+`Read the post <https://x.com/0xRicker/status/2032798292128522327>`__
