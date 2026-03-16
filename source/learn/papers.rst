@@ -670,3 +670,18 @@ The STARR-based strategy demonstrates superior downside risk control compared to
 By Xupeng Zhang (McGill University).
 
 `Read the paper <https://www.researchgate.net/publication/394351939_Risk-adjusted_Momentum_Strategy_Construction_and_Industry_Heterogeneity_Analysis_Based_on_STARR_Indicator>`__
+
+Scale Dependent Dynamics in Equity Market Phase Space
+-----------------------------------------------------
+
+This paper extends the stochastic damped harmonic oscillator (SDHO) framework to longer timescales and investigates why the transition from mean-reversion to momentum occurs at the 2-3 month horizon where the Jegadeesh-Titman momentum anomaly begins. Using phase-space analysis on 32 years of SPY daily prices, 154 years of Shiller S&P 500 data, and 308 years of Bank of England UK equity data, the authors show that mean-reversion strength decays as a power law with observation horizon, following k(tau) = A * tau^(-alpha).
+
+The paper identifies the Voronoi-Delaunay tessellation as mathematically equivalent to the finite-volume discretization of the Fokker-Planck equation on irregular phase-space data, connecting the empirical dynamics to non-equilibrium statistical mechanics. A 2x2x2 factorial analysis on both SPY daily data and ES futures minute data (5.38 million observations) resolves an apparent R-squared discrepancy between overlapping and non-overlapping sampling, finding that the sampling effect accounts for 92-97% of the apparent improvement across six futures markets spanning five asset classes. A null-model test shows that the power-law decay arises from temporal coarse-graining of stationary SDHO dynamics rather than from scale-dependent coupling constants, though the practical implications for momentum and mean-reversion strategies remain the same.
+
+Key metrics: the mean-reversion coefficient follows k(tau) = 1.61 * tau^(-1.13) with R-squared = 0.99 across 34 measurements spanning 462 combined years of data. Mean-reversion remains strictly positive (k > 0 in 34/34 measurements) but decays to negligible levels at the momentum horizon. All six futures markets tested cluster within a narrow parameter band (R-squared in [0.56, 0.60], omega in [1.11, 1.22]), suggesting a common dynamical equilibrium across liquid markets.
+
+Mentioned by `Symplectic.Research <https://x.com/QuantSymplectic>`__ in `this discussion <https://x.com/QuantSymplectic/status/2033529584986022067>`__.
+
+By Bruce H. Dean (Independent Researcher), March 2026.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6380118>`__
