@@ -585,6 +585,8 @@ By Adir Saly-Kaufmann, Kieran Wood, Jan Peter-Calliess, and Stefan Zohren (Machi
 
 Mentioned by Sepp Hochreiter in `this discussion <https://x.com/HochreiterSepp/status/2028721510232277255>`__: "xLSTM excels in Finance as TiRex does."
 
+Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2033451586446405946>`__: "There is a research-budget effect. The headline results come from averaging the top 10 seeds from 50 runs, selected by validation loss, and they also use top-seed ensembling to reduce turnover."
+
 `Read the paper <https://arxiv.org/abs/2603.01820>`__
 
 Same Error, Different Function: The Optimizer as an Implicit Prior in Financial Time Series
