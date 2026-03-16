@@ -3901,6 +3901,10 @@ and algorithmic trading.
 
         In practice, these ratios are complementary. The :term:`Sharpe` and :term:`Sortino` ratios describe the consistency of returns, while the Calmar ratio describes the severity of the worst loss. A comprehensive strategy evaluation should consider multiple ratios together.
 
+        **When Calmar can be misleading**
+
+        The :term:`Sharpe` ratio is more stable because it uses the whole return path, not one extreme drawdown event. The Calmar ratio is more aligned with "good return for pain taken", but it is very easy for the Calmar ratio to become dominated by the *absence* of one bad episode rather than by genuinely superior behaviour. A strategy that happened to dodge a single market crash will show an inflated Calmar, while a strategy that endured the crash but recovered quickly — and was otherwise stronger — will appear worse. For shorter track records, consider the :term:`Ulcer Index` and :term:`Martin ratio`, which integrate all drawdown episodes and are therefore less hostage to a single extreme event.
+
         See also
 
         - :term:`Sharpe`
@@ -3920,6 +3924,12 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+        - :term:`Ulcer Index`
+
+        - :term:`Martin ratio`
+
+        - :term:`Longest drawdown duration`
 
     Sentiment analysis
 
@@ -7107,3 +7117,452 @@ and algorithmic trading.
         - :term:`JSON-RPC`
 
         - :term:`Fork`
+
+    Ulcer Index
+
+        The Ulcer Index (UI) is a :term:`volatility` indicator that measures downside risk by quantifying both the depth and duration of percentage :term:`drawdown` from previous highs. It was developed by Peter Martin and Byron McCann in 1987 and first published in their 1989 book *The Investor's Guide to Fidelity Funds*. The name stems from the idea that sustained price declines cause the kind of stress that gives investors stomach ulcers — making it an intuitive, pain-weighted measure of portfolio suffering.
+
+        Unlike standard deviation, which treats upside and downside moves symmetrically, the Ulcer Index focuses exclusively on drawdowns. It is calculated as the square root of the mean of the squared percentage drawdowns from the most recent peak. The squaring effect penalises large drawdowns proportionately more than small ones, so a strategy that suffers a single deep plunge scores far worse than one with many shallow dips of the same cumulative magnitude. This makes the Ulcer Index particularly useful for evaluating long-only portfolios and strategies where investors welcome upside :term:`volatility` but fear sustained losses.
+
+        In practice, the Ulcer Index excels on short track records where the :term:`Calmar ratio` can be misleading. Because the Calmar ratio depends on a single :term:`maximum drawdown` event, it can swing dramatically with one additional bad month. The Ulcer Index, by contrast, integrates *all* drawdown episodes over the measurement window, providing a smoother and more representative picture of the investor's actual pain. A lower Ulcer Index indicates less drawdown stress. Typical 14-period readings for the S&P 500 range from 2–5 in calm markets to 15+ during crises.
+
+        **Formula**
+
+        .. code-block:: text
+
+            Percent_Drawdown_i = (Close_i - Max_Close) / Max_Close × 100
+            Ulcer Index = sqrt( (1/N) × Σ Percent_Drawdown_i² )
+
+        where ``Max_Close`` is the highest close over the look-back period and *N* is the number of periods.
+
+        **Pros**
+
+        - Captures both depth and duration of drawdowns in a single number
+        - Penalises sustained losses more heavily than brief dips
+        - Better suited than the :term:`Calmar ratio` for short histories where a single max-drawdown event dominates
+        - Focuses on downside only, unlike standard deviation
+
+        **Cons**
+
+        - Less widely known than :term:`Sharpe` or :term:`Sortino`, so comparing across managers can be harder
+        - Sensitive to the look-back window chosen
+        - Does not directly account for :term:`tail risk <Expected shortfall>` beyond drawdown mechanics
+
+        `Read more on Wikipedia <https://en.wikipedia.org/wiki/Ulcer_index>`__.
+
+        `Ulcer Index on StockCharts <https://chartschool.stockcharts.com/table-of-contents/technical-indicators-and-overlays/technical-indicators/ulcer-index>`__.
+
+        `Portfolio Charts — Ulcer Index explanation <https://portfoliocharts.com/2017/11/01/the-ulcer-index-is-a-helpful-way-to-quantify-portfolio-pain/>`__.
+
+        See also
+
+        - :term:`Martin ratio`
+
+        - :term:`Drawdown`
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Calmar ratio`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Sortino`
+
+    Martin ratio
+
+        The Martin ratio, also known as the Ulcer Performance Index (UPI) or Return-to-Ulcer ratio, is a :term:`risk-adjusted return` measure that divides excess return by the :term:`Ulcer Index` rather than by standard deviation (as the :term:`Sharpe` ratio does) or downside deviation (as the :term:`Sortino` ratio does). It was introduced by Peter Martin alongside the Ulcer Index to provide a reward-to-pain metric that reflects how investors actually experience losses — not as abstract variance but as sustained drawdown suffering.
+
+        The formula is straightforward: ``Martin Ratio = (Portfolio Return − Risk-Free Rate) / Ulcer Index``. Because the Ulcer Index captures both the magnitude and the persistence of every drawdown episode, the Martin ratio penalises strategies that spend long periods underwater more heavily than those that recover quickly. This makes it especially valuable for comparing managed-futures (CTA) strategies, trend-following systems, and any approach where capital preservation is paramount.
+
+        Compared to the :term:`Calmar ratio`, which relies on a single worst-case :term:`maximum drawdown`, the Martin ratio uses the full distribution of drawdown events. This means it is far less sample-dependent and more stable across rolling windows. On short track records — where a lucky avoidance of one crisis can inflate the Calmar ratio — the Martin ratio provides a more honest assessment. It is also more granular than the :term:`Sortino` ratio because it weights sustained drawdowns more heavily than isolated bad months that quickly reverse.
+
+        **Formula**
+
+        .. code-block:: text
+
+            Martin Ratio = (R_p - R_f) / Ulcer Index
+
+        where ``R_p`` is the portfolio return, ``R_f`` is the risk-free rate, and the :term:`Ulcer Index` measures drawdown pain.
+
+        **Pros**
+
+        - Integrates all drawdown episodes, not just the single worst one
+        - More stable than :term:`Calmar ratio` on short histories
+        - Penalises sustained time underwater, matching investor psychology
+        - Easy to compute once the :term:`Ulcer Index` is available
+
+        **Cons**
+
+        - Less widely adopted in industry reporting than :term:`Sharpe` or :term:`Sortino`
+        - Not included by default in many :term:`backtest` frameworks, requiring custom implementation
+        - Shares the Ulcer Index's sensitivity to look-back window length
+
+        `Peter Martin's original description of UPI <https://www.tangotools.com/ui/ui.htm>`__.
+
+        `Ulcer Performance Index on Wikipedia <https://en.wikipedia.org/wiki/Ulcer_index>`__.
+
+        `Allocate Smartly — UPI portfolio optimisation <https://allocatesmartly.com/maximum-ulcer-performance-index-upi-portfolios/>`__.
+
+        See also
+
+        - :term:`Ulcer Index`
+
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Calmar ratio`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Maximum Drawdown`
+
+    Expected shortfall
+
+        Expected Shortfall (ES), also known as Conditional Value at Risk (CVaR), Average Value at Risk (AVaR), or Expected Tail Loss (ETL), is a :term:`risk-adjusted return` measure that quantifies the average loss in the worst *q*% of scenarios. While Value at Risk (VaR) answers "what is the most I can lose at a given confidence level?", Expected Shortfall goes further and asks "if losses exceed that VaR threshold, how bad are they on average?" This makes it a true :term:`tail risk <volatility>` measure — it looks beyond the cliff edge rather than merely identifying where it is.
+
+        Expected Shortfall is a *coherent* risk measure, meaning it satisfies the mathematical properties of sub-additivity, monotonicity, positive homogeneity, and translation invariance. VaR, by contrast, is not sub-additive: two portfolios can each have acceptable VaR individually, yet their combination can have a worse VaR than the sum of the parts. This theoretical superiority is one reason the Basel Committee's Fundamental Review of the Trading Book (FRTB) framework shifted bank capital requirements from VaR at 99% to Expected Shortfall at the 97.5% confidence level.
+
+        For algorithmic :term:`trading strategy` evaluation, a useful derived metric is the *Return-to-CVaR ratio* — the annualised return divided by the Expected Shortfall at a chosen quantile (typically 95% or 99%). This ratio directly measures how much return a strategy earns per unit of tail risk assumed, and it is far more informative than raw :term:`Sharpe` for strategies with skewed or fat-tailed return distributions. Strategies that look attractive on a Sharpe basis can reveal hidden fragility when measured against CVaR, because occasional catastrophic losses drag the Expected Shortfall up even if day-to-day volatility appears benign.
+
+        **Formula**
+
+        .. code-block:: text
+
+            ES_α = -(1 / (1-α)) × ∫ from α to 1 of VaR_γ dγ
+
+        In discrete terms: sort returns from worst to best, take the worst (1−α)% of them, and compute their average. For example, ES at the 95% level is the average of the worst 5% of returns.
+
+        **Pros**
+
+        - Captures the severity of tail losses, not just their threshold
+        - Coherent risk measure (sub-additive), unlike VaR
+        - Adopted by Basel FRTB for bank capital requirements
+        - Return-to-CVaR ratio is more informative than :term:`Sharpe` for fat-tailed strategies
+
+        **Cons**
+
+        - Requires more data than VaR to estimate accurately, especially at extreme quantiles
+        - Harder to :term:`backtest` reliably because tail events are rare by definition
+        - Estimation can be sensitive to distributional assumptions (historical vs. parametric vs. Monte Carlo)
+        - Less intuitive to communicate to non-technical stakeholders than simple drawdown metrics
+
+        `Expected Shortfall on Wikipedia <https://en.wikipedia.org/wiki/Expected_shortfall>`__.
+
+        `Man Group — Covering Your Tail: The Case for Expected Shortfall <https://www.man.com/insights/covering-your-tail-expected-shortfall>`__.
+
+        `QuantInsti — CVaR calculation in Python and Excel <https://blog.quantinsti.com/cvar-expected-shortfall/>`__.
+
+        See also
+
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Volatility`
+
+        - :term:`Drawdown`
+
+    Probabilistic Sharpe ratio
+
+        The Probabilistic Sharpe Ratio (PSR), introduced by Marcos López de Prado in 2012, computes the probability that a strategy's true :term:`Sharpe` ratio exceeds a given benchmark threshold, accounting for the uncertainty inherent in finite samples. A raw Sharpe of 1.5 means nothing if it was measured over 20 trades with heavy-tailed returns — PSR quantifies exactly how confident you should be that the observed Sharpe is not a statistical fluke. This makes it an essential diagnostic for anyone evaluating :term:`backtest` results or comparing :term:`trading strategy` candidates.
+
+        The key insight is that the standard error of the Sharpe ratio depends not only on the sample size but also on the skewness and kurtosis of returns. Strategies with negative skew (occasional large losses) or high kurtosis (fat tails) require much longer track records before their Sharpe estimates become reliable. PSR incorporates all four moments of the return distribution into a single probability statement. A related concept is the *Minimum Track Record Length (MinTRL)* — the smallest number of observations needed for the measured Sharpe to be statistically significant at a given confidence level. López de Prado showed that for typical hedge fund return distributions, MinTRL can easily exceed several years of monthly data.
+
+        Building on PSR, Bailey and López de Prado introduced the *Deflated Sharpe Ratio (DSR)*, which further corrects for multiple-testing bias. When a researcher tries hundreds of parameter combinations and reports only the best one, the winning Sharpe is inflated by selection bias. DSR adjusts the PSR threshold upward based on the number of independent trials, providing a more honest assessment of whether a strategy genuinely outperforms or merely won a data-mining lottery. Together, PSR and DSR form a rigorous statistical framework that belongs in every quant's :term:`overfitting` detection toolkit.
+
+        **Formula**
+
+        .. code-block:: text
+
+            PSR(SR*) = Φ( (SR̂ - SR*) / σ̂(SR̂) )
+
+            where σ̂(SR̂) = sqrt( (1 - γ₃·SR̂ + (γ₄-1)/4·SR̂²) / (N-1) )
+
+        ``SR̂`` is the estimated Sharpe, ``SR*`` is the benchmark Sharpe, ``Φ`` is the standard normal CDF, ``γ₃`` is skewness, ``γ₄`` is kurtosis, and ``N`` is the sample size.
+
+        **Pros**
+
+        - Provides a probability, not just a point estimate, making Sharpe comparisons statistically rigorous
+        - Accounts for non-normality (skewness and kurtosis) that inflates naive Sharpe estimates
+        - The Deflated Sharpe Ratio extension corrects for multiple-testing / data-mining bias
+        - Defines Minimum Track Record Length — how long you must observe before trusting a Sharpe
+
+        **Cons**
+
+        - Requires estimates of skewness and kurtosis, which are themselves noisy in small samples
+        - Does not replace domain judgment — a high PSR on a fundamentally flawed strategy is still meaningless
+        - The correction assumes independent trials, which may not hold when parameter sets are correlated
+        - Adds analytical complexity that can be a barrier for practitioners unfamiliar with the framework
+
+        `López de Prado — The Sharpe Ratio Efficient Frontier (SSRN) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1821643>`__.
+
+        `Bailey & López de Prado — The Deflated Sharpe Ratio (SSRN) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551>`__.
+
+        `QuantConnect — Probabilistic Sharpe Ratio <https://www.quantconnect.com/research/17112/probabilistic-sharpe-ratio/>`__.
+
+        `Portfolio Optimizer — PSR and Minimum Track Record Length <https://portfoliooptimizer.io/blog/the-probabilistic-sharpe-ratio-hypothesis-testing-and-minimum-track-record-length-for-the-difference-of-sharpe-ratios/>`__.
+
+        See also
+
+        - :term:`Sharpe`
+
+        - :term:`Overfitting`
+
+        - :term:`Backtest`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Sortino`
+
+    Longest drawdown duration
+
+        The longest drawdown duration (also called maximum drawdown duration) is the maximum time elapsed between two consecutive peaks in a strategy's :term:`equity curve`. While :term:`maximum drawdown` measures *depth* — how far the portfolio fell — longest drawdown duration measures *time* — how long the investor had to endure being underwater before recovering to a new high. Many practitioners and allocators argue that duration is psychologically harder to bear than depth: a −5% drawdown that lasts 36 months can feel worse and cause more redemptions than a sharp −17% drop that recovers in six months.
+
+        Bailey and López de Prado's *Triple Penance Rule* (2014) provides a useful heuristic: on average, recovery from a drawdown takes approximately 2–3 times longer than the drawdown's formation period. So if a strategy spent 4 months declining to its trough, expect roughly 8–12 months to claw back to a new high. This asymmetry means that a strategy's longest drawdown duration is typically much larger than investors anticipate from looking at depth alone. Reporting both the longest duration and the *average recovery time* (mean time from trough back to previous peak across all drawdown episodes) gives a fuller picture of the investor experience.
+
+        For strategy comparison and allocation decisions, drawdown duration metrics complement depth-based ratios like the :term:`Calmar ratio` and the :term:`Ulcer Index`. A strategy might have a modest maximum drawdown of −8% but a longest duration of 18 months — signalling that it grinds sideways for extended periods, which can be disastrous for impatient capital. Conversely, a volatile strategy with a deeper −20% max drawdown but a longest duration of only 3 months may be easier to stick with. Reporting duration alongside depth helps allocators match strategies to their investors' realistic patience horizons.
+
+        **Pros**
+
+        - Captures the psychological and operational pain of being underwater for extended periods
+        - Complements depth-based metrics like :term:`maximum drawdown` and :term:`Calmar ratio`
+        - The Triple Penance Rule provides a useful heuristic for setting recovery expectations
+        - Helps allocators filter out strategies that grind sideways for months despite moderate depth
+
+        **Cons**
+
+        - Highly sample-dependent — a longer backtest almost always produces a longer maximum duration
+        - Does not distinguish between a flat, low-volatility underwater period and a wild, choppy one
+        - Requires clearly defined peak detection, which can vary with return frequency (daily vs. monthly)
+        - Less standardised across reporting platforms than depth-based drawdown metrics
+
+        `RCM Alternatives — How Deep, How Long? <https://www.rcmalternatives.com/2013/10/the-2-important-drawdown-measurements-how-deep-how-long/>`__.
+
+        `Morgan Stanley — Drawdowns and Recoveries <https://www.morganstanley.com/im/publication/insights/articles/article_drawdownsandrecoveries_ltr.pdf>`__.
+
+        `MetricGate — Drawdown Analysis <https://metricgate.com/docs/drawdown-analysis/>`__.
+
+        See also
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Drawdown`
+
+        - :term:`Average recovery time`
+
+        - :term:`Calmar ratio`
+
+        - :term:`Ulcer Index`
+
+        - :term:`Equity curve`
+
+    Average recovery time
+
+        Average recovery time is the mean number of periods it takes a :term:`trading strategy` or portfolio to climb from the trough of a :term:`drawdown` back to its previous :term:`equity curve` peak, averaged across all drawdown episodes in the measurement window. While the :term:`longest drawdown duration` captures the single worst-case underwater spell, average recovery time provides a more representative view of how quickly a strategy typically heals after losses. Together with :term:`maximum drawdown` depth and longest duration, it forms a three-dimensional picture of drawdown risk: how deep, how long at worst, and how long on average.
+
+        The *Triple Penance Rule* by Bailey and López de Prado (2014) offers a rough guide: recovery from a drawdown tends to take 2–3× as long as the drawdown's formation. A strategy that declines over 5 trades should expect roughly 10–15 trades to recover. This asymmetry arises because recovering from a −20% loss requires a +25% gain — losses and gains are not symmetric in percentage terms. Strategies with high :term:`volatility` may recover faster in calendar time but can also form deeper troughs, while low-volatility strategies recover slowly even from shallow dips, leading to surprisingly long average recovery times.
+
+        For allocators, average recovery time is a practical due-diligence metric. A strategy that claims a low :term:`maximum drawdown` but has a long average recovery time may be frustrating to hold in practice: capital sits idle or slowly bleeds, opportunity cost mounts, and investor patience erodes. Comparing average recovery time across strategies with similar return profiles reveals which ones bounce back efficiently versus which ones spend most of their life grinding back to break-even. It is especially useful alongside :term:`exposure-adjusted CAGR`, since a strategy with low time-in-market may show clean returns but glacially slow recoveries when it *is* invested.
+
+        **Pros**
+
+        - Provides a more representative view of recovery behaviour than worst-case duration alone
+        - Helps identify strategies that grind sideways even with moderate drawdown depth
+        - Pairs well with :term:`longest drawdown duration` for a full duration risk profile
+        - Intuitive for allocators: directly answers "how long will I typically wait to get back to even?"
+
+        **Cons**
+
+        - Averaging can mask bimodal recovery patterns (quick recoveries mixed with very slow ones)
+        - Sensitive to how drawdown episodes are defined (threshold, frequency of returns)
+        - A short backtest may not contain enough episodes for a stable average
+        - Does not capture the *path* of recovery — a V-shaped bounce and a slow grind both count equally
+
+        See also
+
+        - :term:`Longest drawdown duration`
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Drawdown`
+
+        - :term:`Equity curve`
+
+        - :term:`Calmar ratio`
+
+        - :term:`Risk-adjusted return`
+
+    Exposure-adjusted CAGR
+
+        Exposure-adjusted CAGR is the :term:`Compound Annual Growth Rate (CAGR)` normalised by the fraction of time a :term:`trading strategy` actually holds positions in the market. It is calculated as ``CAGR / Exposure``, where exposure (also called :term:`time in market`) is expressed as a decimal between 0 and 1. A strategy that achieves a 15% CAGR but is only invested 50% of the time has an exposure-adjusted CAGR of 30%, reflecting its true capital efficiency. Without this adjustment, a low-exposure strategy can appear deceptively attractive — or deceptively boring — relative to a fully invested benchmark.
+
+        The metric matters because idle cash is not free. A strategy that is only 27% invested might show a modest 8% CAGR and low :term:`drawdown`, but its exposure-adjusted CAGR of ~30% reveals that the alpha signal is actually powerful when active. Conversely, it also reveals the opportunity cost: that 73% of the time, capital sits uninvested and could be deployed elsewhere (in a risk-free asset, a second uncorrelated strategy, or even :term:`yield farming` on stablecoins). Exposure-adjusted CAGR helps allocators decide whether to run a low-exposure strategy standalone or to stack it with complementary strategies that fill the idle periods.
+
+        In :term:`backtest` evaluation, exposure-adjusted CAGR is essential for fair comparison. Ranking strategies purely by raw CAGR conflates signal quality with exposure level. A trend-following system that sits in cash during sideways markets will always show a lower raw CAGR than a buy-and-hold benchmark, even if its per-exposure returns are far superior. By normalising for time in market, the metric creates a level playing field. It pairs naturally with :term:`turnover` analysis — high exposure-adjusted CAGR combined with low :term:`turnover` and low :term:`cost drag` is the hallmark of an efficient, implementable strategy.
+
+        **Formula**
+
+        .. code-block:: text
+
+            Exposure-Adjusted CAGR = CAGR / Exposure
+
+            where Exposure = fraction of periods with open positions (0 to 1)
+
+        **Pros**
+
+        - Reveals true capital efficiency by normalising returns for time in market
+        - Enables fair comparison between strategies with different exposure levels
+        - Highlights hidden alpha in low-exposure strategies that look modest on raw CAGR
+        - Quantifies opportunity cost of idle capital
+
+        **Cons**
+
+        - Assumes uninvested capital earns zero, which may not reflect reality (cash can earn risk-free rate)
+        - Can inflate apparent quality of strategies that trade very rarely — a single lucky trade at 1% exposure produces a huge adjusted CAGR
+        - Does not account for the practical difficulty of deploying idle capital elsewhere
+        - Should always be reported alongside raw CAGR and exposure level, never in isolation
+
+        See also
+
+        - :term:`CAGR`
+
+        - :term:`Time in Market`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Backtest`
+
+        - :term:`Turnover`
+
+        - :term:`Equity curve`
+
+    Turnover
+
+        In :term:`portfolio construction`, turnover measures how frequently a strategy replaces its holdings over a given period. It is typically expressed as the fraction of the portfolio's total value that is bought or sold during the period. A turnover of 100% (or 1.0×) means the entire portfolio was effectively replaced once; a turnover of 500% means it was replaced five times. For two-sided measurement, turnover counts both buys and sells; the one-sided convention counts only one direction. The specific convention matters when comparing numbers across platforms and papers.
+
+        Turnover is one of the most important reality checks for any :term:`backtest`. A strategy that looks spectacular on paper may be completely unimplementable if it requires daily full-portfolio :term:`rebalance` cycles. Every trade incurs costs — commissions, bid-ask spreads, market impact, and slippage — and these compound multiplicatively against returns. The relationship is roughly linear at low turnover but becomes punishing at high levels: López de Prado and others have documented that across quantitative strategies, higher turnover systematically erodes cents-per-share profitability. A useful heuristic from Kakushadze (2015) is that the number of independent alpha signals in a portfolio is bounded by volume / turnover — meaning that high-turnover strategies need vastly more liquidity to sustain their edge.
+
+        Closely related to turnover are *rebalance volume* (the dollar or share volume needed to execute each rebalance) and :term:`cost drag` (the cumulative performance reduction from transaction costs). Together, these three metrics form a "fragility triangle" that separates robust live strategies from :term:`overfitting` paper optima. A strategy should be evaluated with realistic turnover, estimated costs, and rebalance volumes *before* its Sharpe or CAGR are considered. The best practice is to simulate execution with volume-dependent market-impact models (e.g., Almgren–Chriss) and report net-of-cost returns alongside gross returns.
+
+        **Formula**
+
+        .. code-block:: text
+
+            One-sided Turnover = (1/2) × Σ |w_i,t - w_i,t-1|
+
+            where w_i,t is the weight of asset i at time t
+
+        **Pros**
+
+        - Directly quantifies implementation burden and cost exposure
+        - Catches :term:`overfitting` — overfit strategies tend to have unnaturally high turnover
+        - Easy to compute from any backtest with position weights
+        - Pairs naturally with :term:`cost drag` analysis for net-of-cost evaluation
+
+        **Cons**
+
+        - One-sided vs. two-sided conventions can cause confusion when comparing across sources
+        - Raw turnover does not distinguish between high-cost and low-cost trades (e.g., large-cap vs. small-cap)
+        - A low-turnover strategy is not automatically good — it may simply be stale or unresponsive
+        - Does not capture timing of trades within a rebalance period (e.g., concentrated vs. spread execution)
+
+        `Kakushadze — Performance v. Turnover (arXiv) <https://arxiv.org/pdf/1509.08110>`__.
+
+        See also
+
+        - :term:`Rebalance`
+
+        - :term:`Cost drag`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Overfitting`
+
+        - :term:`Backtest`
+
+        - :term:`Risk-adjusted return`
+
+    Cost drag
+
+        Cost drag is the cumulative reduction in a :term:`trading strategy`'s performance caused by transaction costs — commissions, bid-ask spreads, slippage, market impact, borrowing costs for shorts, and exchange fees. It represents the gap between a strategy's gross (paper) returns and its net (implementable) returns. For high-:term:`turnover` strategies, cost drag can easily consume 30–60% of gross alpha, turning a seemingly attractive :term:`backtest` into a net-negative live system. This makes cost drag one of the most important diagnostics for separating robust strategies from fragile paper optima.
+
+        The components of cost drag interact in non-obvious ways. Bid-ask spread costs scale linearly with :term:`turnover`, but market impact costs scale *super-linearly* with trade size relative to available volume — meaning that doubling position size more than doubles the impact cost. For small-cap or illiquid instruments, even modest :term:`rebalance` volumes can move the market against the strategy. Models like Almgren–Chriss provide a framework for estimating these costs as a function of trade size, urgency, and daily volume. The practical implication is that strategies optimised for maximum gross :term:`Sharpe` often have very different optimal parameters when costs are included, because the cost-minimising and alpha-maximising objectives are in tension.
+
+        In strategy development, cost drag analysis should be performed *during* the optimisation process, not as an afterthought. Reporting gross and net returns side by side, along with the :term:`turnover` and average cost-per-trade assumptions, allows allocators to assess whether a strategy's edge survives implementation. A strategy with a gross Sharpe of 2.0 but 400% annual turnover in illiquid mid-caps may net a Sharpe below 1.0. Conversely, a strategy with a gross Sharpe of 1.2 and 50% annual turnover in liquid large-caps may net a Sharpe of 1.1 — making it the superior live choice despite appearing weaker on paper. This is why cost drag, :term:`turnover`, and rebalance volume should always be considered as a group.
+
+        **Pros**
+
+        - Reveals the true implementability of a strategy by bridging the gross-to-net gap
+        - Catches "paper optima" that look great in :term:`backtest` but cannot survive real trading
+        - Forces realistic assumptions about execution quality into the research process
+        - Helps size positions and set rebalance frequency to maximise net (not gross) returns
+
+        **Cons**
+
+        - Accurate cost estimation requires detailed market microstructure data (spreads, volumes, impact)
+        - Cost models can themselves be overfit to historical conditions that may not persist
+        - Costs vary significantly across brokers, venues, and market regimes — a single estimate may not generalise
+        - Non-obvious interactions between impact, timing, and order routing make precise estimation difficult
+
+        See also
+
+        - :term:`Turnover`
+
+        - :term:`Rebalance`
+
+        - :term:`Overfitting`
+
+        - :term:`Backtest`
+
+        - :term:`Sharpe`
+
+        - :term:`Risk-adjusted return`
+
+    Walk-forward analysis
+
+        Walk-forward analysis (WFA) is a :term:`backtest` validation methodology that tests a :term:`trading strategy` by repeatedly optimising parameters on an in-sample window, then evaluating performance on the immediately following out-of-sample window, and rolling both windows forward through time. Unlike a single train/test split, WFA produces a chain of out-of-sample results that together reveal whether the strategy's edge persists across different market regimes — or whether it was merely :term:`overfitting` to a particular historical period. It is widely considered the gold standard for parameter validation in quantitative trading.
+
+        A key output of walk-forward analysis is the *walk-forward efficiency* (WFE): the ratio of annualised out-of-sample return to annualised in-sample return. A WFE above 50% is generally considered acceptable, meaning the strategy retains at least half its optimised performance when applied to unseen data. Below 50%, the strategy is likely overfit. Closely related is the *walk-forward win rate across slices* — the proportion of out-of-sample windows where the optimised parameter set remains in the top quartile of all tested configurations. A strategy that wins 70%+ of slices demonstrates genuine parameter stability; one that wins only 30% is fragile and sample-dependent, regardless of its aggregate performance.
+
+        The practical design of walk-forward analysis involves several critical choices. The in-sample window must be long enough to capture meaningful market cycles but not so long that it includes stale, irrelevant data. The out-of-sample window must be long enough to produce statistically meaningful results but not so long that the parameters grow stale before re-optimisation. Common splits include 2–5 years in-sample with 3–12 months out-of-sample. The number of parameters being optimised also matters: more parameters require longer in-sample windows and produce lower walk-forward efficiency, reinforcing the principle that simpler models generalise better. WFA should be combined with :term:`probabilistic Sharpe ratio` analysis and :term:`cost drag` estimation for a complete robustness assessment.
+
+        **Pros**
+
+        - The strongest single defence against :term:`overfitting` — forces strategies to prove themselves on unseen data
+        - Produces multiple out-of-sample evaluations, enabling statistical assessment of parameter stability
+        - Walk-forward efficiency and slice win rate provide clear, quantitative robustness metrics
+        - Mimics how real traders operate — periodically re-optimising as new data arrives
+
+        **Cons**
+
+        - Computationally expensive — each slice requires a full optimisation cycle
+        - Results are sensitive to window length, step size, and re-optimisation frequency choices
+        - Can still be overfit if the walk-forward design itself is tuned (meta-overfitting)
+        - Shorter out-of-sample windows may not contain enough data for reliable performance estimation
+
+        `Interactive Brokers — Deep Dive into Walk Forward Analysis <https://www.interactivebrokers.com/campus/ibkr-quant-news/the-future-of-backtesting-a-deep-dive-into-walk-forward-analysis/>`__.
+
+        `QuantInsti — Walk-Forward Optimization <https://blog.quantinsti.com/walk-forward-optimization-introduction/>`__.
+
+        `Walk-forward optimization on Wikipedia <https://en.wikipedia.org/wiki/Walk_forward_optimization>`__.
+
+        `AmiBroker — Walk-forward testing guide <https://www.amibroker.com/guide/h_walkforward.html>`__.
+
+        See also
+
+        - :term:`Overfitting`
+
+        - :term:`Backtest`
+
+        - :term:`Probabilistic Sharpe ratio`
+
+        - :term:`Sharpe`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Turnover`
