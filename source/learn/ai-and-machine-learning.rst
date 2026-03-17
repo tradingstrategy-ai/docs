@@ -621,3 +621,18 @@ Order-flow imbalance emerges as one of the most stable, high-SHAP-importance fea
 By Bartosz Bieganowski and Robert Ślepaczuk (University of Warsaw).
 
 `Read the paper <https://arxiv.org/abs/2602.00776>`__
+
+E-TRENDS: Enhanced LSTM Trend Forecasting for Equities
+------------------------------------------------------
+
+This paper proposes an LSTM-based framework for forecasting next-day trend differences for the top 30 S&P 500 equities, validated across market cycles from 2005 to 2025. The authors provide a formal proof that differencing reduces estimator variance without inflating bias beyond the local slope of the trend, grounding the approach in bias-variance theory. The model uses rolling means, volatilities, t-statistic trend signals, RSI, and MACD as features, and compares two loss functions: standard MSE and a direct Sharpe-ratio loss that optimizes economic performance.
+
+The LSTM is benchmarked against OLS, Ridge, Lasso, and LightGBM regressors. Across the 30-stock universe, the LSTM is the only model that achieves a positive total PnL gain over baseline (+0.28), while OLS (-7.52), Ridge (-3.22), Lasso (-2.14), and LightGBM (-2.19) all underperform. The LSTM outperforms the baseline in 21 out of 30 tickers (70%). Subperiod analysis shows the largest Sharpe gain (+0.45) during the COVID crisis, demonstrating regime adaptability. The paper includes a reproducible Google Colab notebook.
+
+Key metrics (NVDA case study): out-of-sample Sharpe ratio of 1.10 versus 0.85 for the baseline trend-following strategy, 15% RMSE reduction, 62% directional accuracy (up from 56%), and cumulative returns of 150% versus 100% over the out-of-sample period. Across the full universe, total portfolio P&L moves from -2.15 to +0.28 of initial capital. Transaction costs are modelled at 2 bps round-trip.
+
+Mentioned by `Piotr Pomorski <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2033831393977934205>`__: "If moving average cross is not a benchmark then something's off."
+
+By Harris Buchanan (Saint Andrew University) and Eric Benhamou (AI for Alpha, Paris Dauphine University).
+
+`Read the paper <https://arxiv.org/abs/2603.14453>`__
