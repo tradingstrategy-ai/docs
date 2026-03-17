@@ -331,7 +331,7 @@ and algorithmic trading.
 
         - :term:`Machine learning`
 
-        - :term:`Decentralised finace`
+        - :term:`Decentralised finance`
 
         - :term:`Smart contract`
 
@@ -7375,7 +7375,7 @@ and algorithmic trading.
 
     Cascading liquidation
 
-        Cascading liquidation, also known as a liquidation cascade, refers to a chain reaction in cryptocurrency markets where an initial wave of forced position closures triggers further :term:`liquidations <liquidadtion>`, often resulting in rapid and amplified price declines. This phenomenon is particularly prevalent in leveraged trading environments, such as :term:`perpetual futures <perpetual future>` or margin trading on crypto exchanges, where traders borrow funds to amplify their positions. When the market moves against these positions (e.g., a sharp price drop for long positions), accounts fall below required margin levels, prompting automated liquidations to repay borrowed funds. The selling pressure from these closures pushes prices even lower, hitting more liquidation thresholds and creating a self-reinforcing downward spiral.
+        Cascading liquidation, also known as a liquidation cascade, refers to a chain reaction in cryptocurrency markets where an initial wave of forced position closures triggers further :term:`liquidations <liquidation>`, often resulting in rapid and amplified price declines. This phenomenon is particularly prevalent in leveraged trading environments, such as :term:`perpetual futures <perpetual future>` or margin trading on crypto exchanges, where traders borrow funds to amplify their positions. When the market moves against these positions (e.g., a sharp price drop for long positions), accounts fall below required margin levels, prompting automated liquidations to repay borrowed funds. The selling pressure from these closures pushes prices even lower, hitting more liquidation thresholds and creating a self-reinforcing downward spiral.
 
         ** How cascading liquidations occur**
 
@@ -7976,5 +7976,371 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Turnover`
+
+    Blockchain
+
+        A blockchain is a distributed, immutable ledger technology that records transactions across a decentralised network of computers. Each transaction is cryptographically secured and permanently recorded in blocks, making the transaction history transparent and tamper-proof. In the context of :term:`decentralised finance`, blockchains serve as the foundational infrastructure where :term:`smart contracts <smart contract>` execute financial transactions, manage :term:`tokens <token>` and operate :term:`protocols <protocol>` without intermediaries. Popular blockchains for DeFi include :term:`Ethereum`, :term:`BNB Smart Chain`, :term:`Avalanche` and various :term:`Layer 2` networks.
+
+        See also
+
+        - :term:`Smart contract`
+
+        - :term:`EVM`
+
+        - :term:`EVM-compatible`
+
+        - :term:`Onchain`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
+        - :term:`Wallet`
+
+        - :term:`Protocol`
+
+    Ethereum
+
+        Ethereum is the world's leading :term:`smart contract` platform and the primary infrastructure for :term:`decentralised finance` and :term:`algorithmic trading` protocols. As a :term:`proof-of-stake` :term:`blockchain`, Ethereum enables self-executing smart contracts that automate complex financial transactions without intermediaries. The network hosts the largest concentration of trading :term:`liquidity pools <liquidity pool>`, :term:`lending protocols <lending protocol>` and :term:`decentralised exchanges <decentralised exchange>`. Transactions are settled on the mainnet or on :term:`Layer 2` scaling solutions, with :term:`gas fees <gas fee>` denominated in :term:`Ether` (ETH).
+
+        See also
+
+        - :term:`Ether`
+
+        - :term:`EVM`
+
+        - :term:`EVM-compatible`
+
+        - :term:`Smart contract`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Gas fee`
+
+        - :term:`Layer 2`
+
+    ZKsync
+
+        ZKsync is an :term:`Ethereum` :term:`Layer 2` scaling solution built on zero-knowledge rollup technology that enables fast, low-cost transactions while inheriting Ethereum's security. Unlike optimistic rollups which require a 7-day challenge period, ZKsync achieves near-instant finality through cryptographic proofs. ZKsync Era is :term:`EVM-compatible`, allowing existing Ethereum :term:`smart contracts <smart contract>` to run with minimal modification. Key :term:`decentralised finance` protocols on ZKsync include the :term:`GRVT` perpetual futures exchange.
+
+        See also
+
+        - :term:`Ethereum`
+
+        - :term:`EVM-compatible`
+
+        - :term:`Layer 2`
+
+        - :term:`GRVT`
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
+    Hedge fund
+
+        A hedge fund is a pooled investment vehicle that employs sophisticated strategies to generate returns, often including :term:`leveraged <leverage>` positions, derivatives, :term:`short-selling <shorting>` and :term:`algorithmic trading` methods. Hedge funds are major practitioners of :term:`high-frequency trading`, :term:`factor investing` and systematic :term:`quantitative analysis` approaches that rely on data analysis and :term:`machine learning` models. They are distinguished from mutual funds by their ability to use :term:`leverage`, take :term:`short positions <shorting>` and pursue :term:`market neutral strategies <market neutral strategy>`.
+
+        See also
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Quantitative analysis`
+
+        - :term:`Trading strategy`
+
+        - :term:`Market neutral strategy`
+
+        - :term:`High-frequency trading`
+
+        - :term:`Alpha generation platform`
+
+        - :term:`Factor investing`
+
+    Liquidity provision
+
+        Liquidity provision is the act of depositing assets into a :term:`liquidity pool`, typically on an :term:`AMM`-based :term:`decentralised exchange`, to facilitate trading and earn :term:`swap fees <swap fee>`. When users provide liquidity, they receive LP tokens representing their share of the pool and become exposed to :term:`impermanent loss` if the deposited asset prices diverge. Liquidity provision is a :term:`passive strategy` that allows anyone to participate in :term:`market making` and earn trading fees without specialised infrastructure. Advanced forms include concentrated :term:`liquidity <CLMM>` provision, where capital is deployed within specific price ranges for greater efficiency.
+
+        See also
+
+        - :term:`Liquidity provider`
+
+        - :term:`Liquidity pool`
+
+        - :term:`AMM`
+
+        - :term:`CLMM`
+
+        - :term:`Swap fee`
+
+        - :term:`Market making`
+
+        - :term:`Impermanent loss`
+
+        - :term:`Delta neutral`
+
+    Moving average
+
+        A moving average is a :term:`technical indicator` that smooths price data by computing a constantly updated average price over a specified time period. The two primary types are the Simple Moving Average (SMA), which weights all prices equally, and the :term:`EMA` (Exponential Moving Average), which gives more weight to recent prices and reacts faster to price changes. Moving averages are foundational in :term:`algorithmic trading` strategies, including :term:`trend-following` and crossover approaches where a shorter-period moving average crossing above or below a longer-period moving average signals trade entries or exits.
+
+        See also
+
+        - :term:`EMA`
+
+        - :term:`Technical indicator`
+
+        - :term:`Trading strategy`
+
+        - :term:`Trend`
+
+        - :term:`Trend-following`
+
+        - :term:`Mean reversion`
+
+    Volatility basket
+
+        A volatility basket is a :term:`portfolio construction` approach that groups multiple assets together, typically weighted by their individual :term:`volatility` characteristics, to create a diversified trading position. The combined volatility of the basket is often lower than that of individual assets traded separately due to diversification effects. Volatility baskets are commonly used in :term:`algorithmic trading` to manage risk exposure while capturing returns across a set of correlated or uncorrelated assets.
+
+        See also
+
+        - :term:`Volatility`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Trading strategy`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Exposure`
+
+    Impermanent loss
+
+        Impermanent loss is the temporary decline in value that occurs when a :term:`liquidity provider` deposits assets into an :term:`AMM` :term:`liquidity pool`, compared to simply holding those assets. It arises when the prices of pooled tokens diverge from their initial ratio, causing the AMM's constant product formula to rebalance holdings in a way that leaves the LP with less value than if they had held the assets outside the pool. The loss is called "impermanent" because it can be reversed if token prices return to their original ratio before the LP withdraws, though in practice losses often become permanent. LPs earn :term:`swap fees <swap fee>` which can offset impermanent loss in stable or low-volatility markets.
+
+        See also
+
+        - :term:`AMM`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Liquidity pool`
+
+        - :term:`Liquidity provision`
+
+        - :term:`Swap fee`
+
+        - :term:`Bonding curve`
+
+        - :term:`Loss-Versus-Rebalancing (LVR)`
+
+    Funding rate
+
+        A funding rate is a periodic fee exchanged between long and short position holders in :term:`perpetual future` contracts to keep the derivative's price anchored to the underlying asset's :term:`spot market` price. When the perpetual contract trades above the spot price, longs pay shorts; when below, shorts pay longs. These payments typically occur every 8 hours and are calculated based on the premium between futures and spot prices. Funding rates enable :term:`delta neutral` :term:`cash and carry` strategies, where traders earn passive income by simultaneously holding opposite positions in spot and perpetual markets while remaining hedged against price movements.
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`Cash and carry`
+
+        - :term:`Delta neutral`
+
+        - :term:`Spot market`
+
+        - :term:`Leverage`
+
+        - :term:`Ethena`
+
+    Collateral
+
+        Collateral is an asset deposited as security to borrow funds in :term:`decentralised finance` :term:`lending protocols <lending protocol>` and :term:`leveraged <leverage>` trading. In DeFi lending, collateral must typically exceed the borrowed amount (overcollateralisation), with protocols enforcing a loan-to-value (LTV) ratio that determines maximum borrowable amounts, commonly 60-80% depending on asset risk. When collateral value drops below protocol thresholds relative to outstanding debt, positions trigger automatic :term:`liquidation`, where the collateral is sold to repay loans and protect the protocol from insolvency.
+
+        See also
+
+        - :term:`Lending protocol`
+
+        - :term:`Leverage`
+
+        - :term:`Liquidation`
+
+        - :term:`Aave`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Lending pool`
+
+        - :term:`Recursive looping`
+
+    Flash loan
+
+        A flash loan is an uncollateralised loan in :term:`decentralised finance` that must be borrowed and repaid within a single atomic :term:`blockchain` transaction. Flash loans enable traders and protocols to access large amounts of capital instantly without upfront :term:`collateral`, provided they repay the loan amount plus a fee before the transaction completes. If the borrower cannot repay, the entire transaction reverts automatically, eliminating credit risk for the lender. Common use cases include arbitrage across :term:`decentralised exchanges <decentralised exchange>`, :term:`liquidations <liquidation>` of undercollateralised positions and :term:`collateral` swaps.
+
+        See also
+
+        - :term:`Lending protocol`
+
+        - :term:`Aave`
+
+        - :term:`Smart contract`
+
+        - :term:`MEV`
+
+        - :term:`Liquidation`
+
+        - :term:`Decentralised finance`
+
+    DAO
+
+        A Decentralised Autonomous Organisation (DAO) is a :term:`protocol`-governed entity managed collectively by its :term:`token` holders through :term:`onchain` voting, without centralised leadership. DAOs use :term:`smart contracts <smart contract>` to enforce governance rules, manage treasuries and execute decisions transparently. In :term:`decentralised finance`, DAOs govern major protocols like MakerDAO and :term:`Uniswap`, allowing token holders to vote on fee structures, treasury allocation, risk parameters and protocol upgrades. The governance structure creates transparent, community-driven oversight that reduces single points of failure compared to :term:`traditional finance`.
+
+        See also
+
+        - :term:`Protocol`
+
+        - :term:`Smart contract`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
+        - :term:`Non-custodial`
+
+        - :term:`Onchain`
+
+    Staking
+
+        Staking is the process of locking cryptocurrency into a :term:`smart contract` to participate in :term:`blockchain` network validation, particularly on :term:`proof-of-stake` networks like :term:`Ethereum`. Stakers deposit assets as :term:`collateral` and earn rewards for validating transactions and proposing blocks. Unlike :term:`yield farming`, staking directly secures the blockchain network rather than earning fees from :term:`liquidity provision`. Liquid staking derivatives allow users to earn staking rewards while retaining access to their capital through tradable derivative tokens, making staking yields composable with other :term:`DeFi` strategies.
+
+        See also
+
+        - :term:`Proof-of-stake`
+
+        - :term:`Ether`
+
+        - :term:`Ethereum`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Yield farming`
+
+        - :term:`Real yield`
+
+        - :term:`Annual Percentage Yield (APY)`
+
+    Layer 2
+
+        Layer 2 (L2) solutions are secondary :term:`blockchain` networks built on top of a base layer like :term:`Ethereum` that process transactions off-chain before settling results in compressed batches on the main chain. They enable higher throughput and lower :term:`gas fees <gas fee>` by shifting computational load off-chain while inheriting the security of the underlying blockchain. Common types include optimistic rollups (used by Arbitrum and Optimism) and zero-knowledge rollups (used by :term:`ZKsync`). Layer 2 networks are increasingly important for :term:`decentralised finance` as they make trading, :term:`swaps <swap>` and strategy execution more cost-effective.
+
+        See also
+
+        - :term:`Ethereum`
+
+        - :term:`EVM-compatible`
+
+        - :term:`Gas fee`
+
+        - :term:`ZKsync`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Onchain`
+
+    Depeg
+
+        A depeg occurs when a :term:`stablecoin` loses its intended peg to an underlying asset, typically the US dollar, causing it to trade meaningfully away from its target price. Depegs can result from liquidity shocks, reserve backing issues, smart contract failures or loss of market confidence. Notable examples include the TerraUSD (UST) collapse in 2022, where the algorithmic stablecoin fell from $1 to near zero, and temporary :term:`USDC` depegs during banking crises. Depeg risk is a critical consideration for :term:`trading strategies <trading strategy>` that hold or rely on stablecoin positions.
+
+        See also
+
+        - :term:`Stablecoin`
+
+        - :term:`USDC`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Trading strategy`
+
+    Wrapped token
+
+        A wrapped token is a :term:`token` that represents an equivalent amount of a native cryptocurrency from another :term:`blockchain`, enabling assets to be used on non-native chains. Examples include WBTC (Wrapped Bitcoin on Ethereum) and WETH (Wrapped Ether), which maintain a 1:1 ratio with their underlying assets through custodians or :term:`smart contracts <smart contract>`. Wrapped tokens are :term:`ERC-20` compatible and increase cross-chain utility and :term:`liquidity` by allowing assets to participate in :term:`decentralised finance` applications on chains where they are not natively available.
+
+        See also
+
+        - :term:`Token`
+
+        - :term:`ERC-20`
+
+        - :term:`Bridge`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Smart contract`
+
+    Bridge
+
+        A cross-chain bridge is a :term:`protocol` that facilitates asset transfers between different :term:`blockchains <blockchain>` using lock-and-mint or burn-and-mint mechanisms. Bridges allow users to move :term:`tokens <token>` from one chain to another, typically creating :term:`wrapped tokens <wrapped token>` on the destination chain. While bridges enable cross-chain :term:`DeFi` composability, they represent significant security risks; bridge exploits have resulted in billions of dollars in losses. Users should carefully evaluate bridge security, audits and trust assumptions before transferring assets.
+
+        See also
+
+        - :term:`Wrapped token`
+
+        - :term:`Smart contract`
+
+        - :term:`Blockchain`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Token`
+
+    Sandwich attack
+
+        A sandwich attack is a type of :term:`MEV` exploitation on :term:`decentralised exchanges <decentralised exchange>` where an attacker places two transactions around a victim's trade: a frontrun transaction before and a backrun transaction after. The attacker's frontrun trade moves the market price against the victim, causing greater :term:`slippage`, and the backrun trade captures the profit from the artificially created price difference. Sandwich attacks are automated by bots monitoring the public mempool for pending :term:`swap` transactions. Setting tight :term:`slippage` tolerances can limit the profitability of sandwich attacks.
+
+        See also
+
+        - :term:`MEV`
+
+        - :term:`Frontrunning`
+
+        - :term:`Slippage`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Swap`
+
+    Frontrunning
+
+        Frontrunning is a :term:`MEV` strategy where an automated bot monitors the public mempool for pending transactions and places its own transaction ahead by paying higher :term:`gas fees <gas fee>` to gain execution priority. In :term:`decentralised finance`, frontrunners exploit advance knowledge of upcoming trades to profit from the price movements those trades will cause. While frontrunning is illegal in :term:`traditional finance`, its status in decentralised markets remains a subject of debate. Solutions to mitigate frontrunning include private mempools, commit-and-reveal schemes and protocols like MEV Blocker.
+
+        See also
+
+        - :term:`MEV`
+
+        - :term:`Sandwich attack`
+
+        - :term:`Slippage`
+
+        - :term:`Gas fee`
+
+        - :term:`Decentralised exchange`
+
+    Proof-of-stake
+
+        Proof-of-stake (PoS) is a :term:`blockchain` consensus mechanism where validators are selected to propose and validate new blocks based on the amount of cryptocurrency they :term:`stake <staking>` as :term:`collateral`. Validators earn rewards from newly minted tokens and transaction fees for honest participation, but face "slashing" penalties if they act maliciously or go offline. :term:`Ethereum` transitioned from proof-of-work to proof-of-stake in September 2022 ("The Merge"), reducing energy consumption by over 99%. Proof-of-stake enables :term:`staking` as a passive income strategy and forms the economic security foundation for :term:`decentralised finance` applications built on top.
+
+        See also
+
+        - :term:`Staking`
+
+        - :term:`Ethereum`
+
+        - :term:`Ether`
+
+        - :term:`Blockchain`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Real yield`
 
         - :term:`Trading strategy`
