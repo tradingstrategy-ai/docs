@@ -698,3 +698,16 @@ No quantitative backtest metrics are presented — the post is a qualitative fra
 Mentioned by `Amy O. Khaldoun <https://www.linkedin.com/in/amykhaldoun>`__ (Vess3l, Quant Consultant) in `this LinkedIn post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__.
 
 `Read the post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__
+
+Dynamic Factor Allocation via Momentum-Based Regime Switching
+-------------------------------------------------------------
+
+This paper presents a systematic framework for dynamically allocating across five equity factors — Value, Size, Momentum, Quality, and Growth — using a momentum-based regime switching model. The authors use a z-score normalization approach with only two hyperparameters to classify Bull and Bear regimes for each factor through normalized trend signals. Regime identification is statistically significant across all factors, with Size and Growth showing strong significance (p < 0.01). The key insight is asymmetric: Bull regimes exhibit systematic positive forward returns, while Bear regimes show no significant pattern, supporting an approach that overweights factors in Bull regimes and underweights or avoids those in Bear regimes.
+
+The factor timing strategy is validated through ETF-based backtesting over the 1998–2025 period, demonstrating practical implementability with only modest performance degradation from tracking error and expense ratios. The framework uses a Black-Litterman-style integration to combine regime signals with portfolio construction.
+
+Key metrics: the strategy achieves a Sharpe ratio of 0.66 compared to 0.59 for an equal-weighted benchmark, with annualized returns of 13.0% versus 11.3%. The calendar year hit rate is 78.6%, with turnover of approximately 3x annually. Cross-sectional validation confirms Bull regime significance (t = 1.98, p = 0.047).
+
+By Jim Tai, Stephanie Leung, and Justin Jimenez (StashAway), February 2026.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6224058>`__
