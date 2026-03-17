@@ -125,6 +125,10 @@ and algorithmic trading.
 
         - :term:`GMX`
 
+        - :term:`Bonding curve`
+
+        - :term:`CLMM`
+
     CLMM
 
         CLMM stands for Concentrated Liquidity Market Maker.
@@ -265,6 +269,12 @@ and algorithmic trading.
         - :term:`Test set`
 
         - :term:`Dataset`
+
+        - :term:`Benchmark`
+
+        - :term:`Volatility`
+
+        - :term:`Pine Script`
 
     Decentralised exchange
 
@@ -733,6 +743,10 @@ and algorithmic trading.
 
         - :term:`Market neutral strategy`
 
+        - :term:`Liquidity pool`
+
+        - :term:`Quote token`
+
         - :term:`Token distribution`
 
         - :term:`Liquidity mining`
@@ -773,6 +787,12 @@ and algorithmic trading.
 
         - :term:`Best trading strategy`
 
+        - :term:`Exposure`
+
+        - :term:`Volatility`
+
+        - :term:`High-frequency trading`
+
     High-frequency trading
 
         High-frequency trading, or HFT for short, is a :term:`trading strategy` where you compete with technical speed.
@@ -789,6 +809,8 @@ and algorithmic trading.
         - :term:`Algorithmic trading`
 
         - :term:`Market neutral strategy`
+
+        - :term:`Decentralised finance`
 
     Directional strategy
 
@@ -812,6 +834,12 @@ and algorithmic trading.
         - :term:`Portfolio construction`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Bull market`
+
+        - :term:`Bear market`
 
     Active strategy
 
@@ -879,6 +907,12 @@ and algorithmic trading.
         - :term:`Vault`
 
         - :term:`Protocol`
+
+        - :term:`AMM`
+
+        - :term:`Lending protocol`
+
+        - :term:`Traditional finance`
 
     Traditional finance
 
@@ -1039,20 +1073,42 @@ and algorithmic trading.
 
         A stablecoin is a type of cryptocurrency whose value is tied to an asset such as the U.S. dollar or gold to maintain a stable price.
         Stablecoins aim to provide price stability and reduce volatility compared to other cryptocurrencies.
+        They are implemented as :term:`ERC-20` :term:`tokens <token>` on various :term:`blockchains <blockchain>` and
+        managed by :term:`smart contracts <smart contract>`.
+
+        Stablecoins are widely used in :term:`DeFi` as the :term:`quote token` in :term:`trading pairs <trading pair>`,
+        as deposits in :term:`lending protocols <Aave>`, and as the base asset in :term:`liquidity pools <liquidity pool>`
+        and :term:`vaults <vault>`.
 
         Example stablecoins include
 
-        - Circle USD - :term:`USDC`.
+        - Circle USD - :term:`USDC`
 
         - Binance dollar - BUSD
 
         - Tether dollar - USDT
 
+        - :term:`USDF` (yield-bearing)
+
+        `Browse stablecoin vaults on Trading Strategy <https://tradingstrategy.ai/trading-view/vaults/stablecoins>`__.
+
         See also
 
         - :term:`ERC-20`
 
+        - :term:`Token`
+
         - :term:`Wallet`
+
+        - :term:`Quote token`
+
+        - :term:`DeFi`
+
+        - :term:`RWA`
+
+        - :term:`DEX`
+
+        - :term:`Vault`
 
     Pine Script
 
@@ -1073,6 +1129,10 @@ and algorithmic trading.
         - :term:`Trading Strategy Framework`
 
         - :term:`Python`
+
+        - :term:`TradingView`
+
+        - :term:`Bollinger Bands`
 
     TradingView
 
@@ -1100,11 +1160,23 @@ and algorithmic trading.
         On Trading Strategy, the available liquidity is usually expressed as the US dollar amount of one side of the pair. For example adding 100 BNB + 5000 USD to the liquidity
         is presented as 5000 USD available liquidity.
 
-        See also :term:`price impact` and :term:`slippage`.
-
         `Read more about slippage and price impact on Paradigm's post <https://research.paradigm.xyz/amm-price-impact>`_.
 
         `Read more about XY liquidity model <https://medium.com/phoenix-finance/understanding-the-xyk-model-of-pooled-liquidity-7340fdc20d9c>`_.
+
+        See also
+
+        - :term:`Price impact`
+
+        - :term:`Slippage`
+
+        - :term:`AMM`
+
+        - :term:`Uniswap`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Decentralised exchange`
 
     Price impact
 
@@ -1150,7 +1222,13 @@ and algorithmic trading.
 
         `See ParaSwap's excellent documentation on slippage <https://doc.paraswap.network/price-impact-slippage>`_.
 
-        See also :term:`Price impact`.
+        See also
+
+        - :term:`Price impact`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`MEV`
 
     Mid Price
 
@@ -1247,6 +1325,10 @@ and algorithmic trading.
         - :term:`Wallet`
 
         - :term:`Trading strategy`
+
+        - :term:`ERC-7540`
+
+        - :term:`Enzyme protocol`
 
     Technical indicator
 
@@ -1397,8 +1479,7 @@ and algorithmic trading.
 
         - :term:`Portfolio construction`
 
-        - :term:`Trading strategy
-
+        - :term:`Trading strategy`
 
     Native token
 
@@ -1485,6 +1566,12 @@ and algorithmic trading.
 
         - :term:`Trading pair`
 
+        - :term:`AMM`
+
+        - :term:`Price impact`
+
+        - :term:`Order book`
+
     Mercenary capital
 
         In :term:`decentralised finance`, mercenary capital is a term used to refer to cryptocurrency investment and trading funds
@@ -1504,6 +1591,8 @@ and algorithmic trading.
         - :term:`Token distribution`
 
         - :term:`Real yield`
+
+        - :term:`Decentralised finance`
 
     Poetry
 
@@ -1657,6 +1746,14 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+        - :term:`Slippage`
+
+        - :term:`EVM`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Uniswap`
+
     Rebase token
 
         Rebase tokens, also known as elastic tokens, are cryptocurrencies whose supply is algorithmically adjusted in order to control its price. They adjust their circulating supply in response to price fluctuation and are designed in a way that the circulating token supply adjusts (increases or decreases) automatically according to a predetermined formula.
@@ -1680,7 +1777,17 @@ and algorithmic trading.
         techniques and wash trading to believe that the trading pair is robust with good momentum
         and volume.
 
-        See also: term:`token tax`.
+        See also
+
+        - :term:`Token tax`
+
+        - :term:`Decentralised finance`
+
+        - :term:`ERC-20`
+
+        - :term:`Quote token`
+
+        - :term:`Trading strategy`
 
     Decentralised finance
 
@@ -1730,6 +1837,12 @@ and algorithmic trading.
 
         - :term:`Composability`
 
+        - :term:`Lending protocol`
+
+        - :term:`Aave`
+
+        - :term:`Uniswap`
+
     Algorithmic trading
 
         Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions accounting for variables such as time, price, and volume.
@@ -1745,6 +1858,10 @@ and algorithmic trading.
         - :term:`Automated trading strategy`
 
         - :term:`Machine learning`
+
+        - :term:`Python`
+
+        - :term:`Backtest`
 
     Automated trading strategy
 
@@ -1849,6 +1966,7 @@ and algorithmic trading.
 
         - :term:`EMA`
 
+        - :term:`Algorithmic trading`
 
     Swing trading
     
@@ -1885,6 +2003,8 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Trading strategy`
+
+        - :term:`Leverage`
 
     Shorting
     
@@ -2142,6 +2262,10 @@ and algorithmic trading.
 
         - :term:`Wallet`
 
+        - :term:`ERC-20`
+
+        - :term:`Stablecoin`
+
     Protocol
 
         In :term:`decentralised finance`, a protocol is :term:`non-custodial` financial service.
@@ -2393,6 +2517,16 @@ and algorithmic trading.
         A common reserve currency for :term:`decentralised finance` strategies
         is :term:`USDC` :term:`stablecoin`.
 
+        See also
+
+        - :term:`USDC`
+
+        - :term:`Stablecoin`
+
+        - :term:`Trading strategy`
+
+        - :term:`Decentralised finance`
+
     Curl
 
         cURL (Client URL) is a command-line tool that enables data exchange between a device and a server through a terminal.
@@ -2431,6 +2565,8 @@ and algorithmic trading.
 
         - :term:`AMM`
 
+        - :term:`Wallet`
+
     Swap fee
 
         Swap fee is the part cost of a trade on :term:`AMM` markets.
@@ -2460,6 +2596,12 @@ and algorithmic trading.
         - :term:`XY Liquidity Model`
 
         - :term:`Bonding curve`
+
+        - :term:`Protocol fee`
+
+        - :term:`Price impact`
+
+        - :term:`Slippage`
 
     Protocol fee
 
@@ -2813,6 +2955,8 @@ and algorithmic trading.
 
         - :term:`Native token`
 
+        - :term:`Decentralised exchange`
+
     Airdrop
 
         In :term:`decentralised finance`, airdop is a method to :term:`distritube tokens <token distribution>`
@@ -2877,6 +3021,14 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Token`
+
+        - :term:`Price impact`
+
+        - :term:`Airdrop`
+
+        - :term:`Liquidity mining`
+
+        - :term:`Yield farming`
 
     Aave
 
@@ -3016,6 +3168,10 @@ and algorithmic trading.
 
         - :term:`Wallet`
 
+        - :term:`RWA`
+
+        - :term:`Decentralised finance`
+
     RWA
 
         In :term:`decentralised finance`, RWA stands for Real World Asset.
@@ -3065,6 +3221,10 @@ and algorithmic trading.
         - :term:`Aave`
 
         - :term:`Oracle`
+
+        - :term:`NFT`
+
+        - :term:`Onchain`
 
     WalletConnect
 
@@ -3127,6 +3287,14 @@ and algorithmic trading.
 
         - :term:`OHLCV`
 
+        - :term:`Python`
+
+        - :term:`Historical market data`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Jupyter notebook`
+
     Trading Strategy Protocol
 
         Trading Strategy Protocol is an :term:`algorithmic trading` solutions for :term:`decentralised finance`
@@ -3154,6 +3322,18 @@ and algorithmic trading.
         - :term:`Automated trading strategy`
 
         - :term:`Technical analysis`
+
+        - :term:`AMM`
+
+        - :term:`Lending protocol`
+
+        - :term:`Non-custodial`
+
+        - :term:`Backtest`
+
+        - :term:`Python`
+
+        - :term:`Vault`
 
     Trading Strategy Framework
 
@@ -3226,6 +3406,12 @@ and algorithmic trading.
         - :term:`RWA`
 
         - :term:`Decentralised finance`
+
+        - :term:`Lending protocol`
+
+        - :term:`EVM-Compatible`
+
+        - :term:`Token`
 
     HyperSDK
 
@@ -3444,6 +3630,10 @@ and algorithmic trading.
 
         - :term:`Algorithmic trading`
 
+        - :term:`Stop loss`
+
+        - :term:`Factor investing`
+
     Portfolio
 
         In :term:`quantitative finance`, portfolio means the list of assets that a :term:`trading strategy` is currently holding.
@@ -3473,6 +3663,10 @@ and algorithmic trading.
         - :term:`Quantitative finance`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Rebalance`
+
+        - :term:`Trading pair`
 
     Alpha model
 
@@ -3536,6 +3730,14 @@ and algorithmic trading.
 
         - :term:`Best trading strategy`
 
+        - :term:`Quantitative finance`
+
+        - :term:`Technical indicator`
+
+        - :term:`OHLCV`
+
+        - :term:`Factor investing`
+
     Trading signal
 
         A signal that predicts the future price movement.
@@ -3547,6 +3749,14 @@ and algorithmic trading.
         - :term:`Binary signal`
 
         - :term:`Alpha signal` in :term:`portfolio construction` :term:`trading strategies <trading strategy>`
+
+        See also
+
+        - :term:`Alpha signal`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Trading strategy`
 
     Stop loss
 
@@ -3596,6 +3806,12 @@ and algorithmic trading.
 
         - :term:`MEV`
 
+        - :term:`Trading strategy`
+
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
     Market order
 
         A market order is a trade where a trader order is instantly fulfilled whatever is the availability liquidity and price
@@ -3622,6 +3838,10 @@ and algorithmic trading.
         - :term:`AMM`
 
         - :term:`Decentralised exchange`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Swap`
 
     Market trade
 
@@ -3672,6 +3892,8 @@ and algorithmic trading.
         - :term:`Alpha model`
 
         - :term:`Trading strategy`
+
+        - :term:`Alpha signal`
 
     JSON
 
@@ -3742,6 +3964,10 @@ and algorithmic trading.
         - :term:`Protocol fee`
 
         - :term:`MEV`
+
+        - :term:`Airdrop`
+
+        - :term:`NFT`
 
     Transaction cost
 
@@ -3931,6 +4157,8 @@ and algorithmic trading.
 
         - :term:`Longest drawdown duration`
 
+        - :term:`Volatility`
+
     Sentiment analysis
 
         In :term:`quantitative finance`, Sentiment analysis, also known as opinion mining, is a technique used to analyze and classify the sentiment or emotion expressed in a piece of text. This can be done by using natural language processing and machine learning algorithms to identify and extract subjective information from the text, such as opinions, emotions, and attitudes.
@@ -4094,6 +4322,10 @@ and algorithmic trading.
 
         - :term:`Hyperparameter optimization`
 
+        - :term:`Algorithmic trading`
+
+        - :term:`Risk-adjusted return`
+
     Hyperparameter optimization
 
         Hyperparameter optimization refers to the process of finding the optimal set of hyperparameters for a machine learning model or trading algorithm. Hyperparameters are external configuration settings that cannot be learned directly from the data and must be set before the training process begins.
@@ -4173,6 +4405,10 @@ and algorithmic trading.
         - :term:`Decentralised finance`
 
         - :term:`Ether`
+
+        - :term:`Avalanche`
+
+        - :term:`BNB Chain`
 
     Crystallisation
 
@@ -4318,6 +4554,8 @@ and algorithmic trading.
 
         - :term:`Trading Strategy Framework`
 
+        - :term:`Python`
+
     Tactical asset allocation
 
         In :term:`quantitative finance`, Tactical Asset Allocation (TAA) is an investment strategy in finance that involves actively adjusting the allocation of assets within a portfolio to take advantage of short-term market opportunities or to manage risk.
@@ -4341,6 +4579,8 @@ and algorithmic trading.
         - :term:`Factor investing`
 
         - :term:`Alpha signal`
+
+        - :term:`Quantitative finance`
 
     Cross validation
 
@@ -4671,6 +4911,10 @@ and algorithmic trading.
 
         - :term:`Total value locked (TVL)`
 
+        - :term:`Price impact`
+
+        - :term:`Slippage`
+
     Total value locked (TVL)
 
         In :term:`decentralised finance`, total value locked (TVL) refers to the amount of the assets
@@ -4765,6 +5009,10 @@ and algorithmic trading.
         - :term:`Equity curve`
 
         - :term:`Drawdown`
+
+        - :term:`Quantitative finance`
+
+        - :term:`Portfolio`
 
     Take Profit
 
@@ -5190,6 +5438,10 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
+        - :term:`Yield farming`
+
+        - :term:`Delta neutral`
+
     APR
 
         See :term:`Annual Percentage Rate (APR)`
@@ -5216,6 +5468,12 @@ and algorithmic trading.
         - :term:`Compound Annual Growth Rate (CAGR)`
 
         - :term:`Risk-adjusted return`
+
+        - :term:`Yield farming`
+
+        - :term:`Delta neutral`
+
+        - :term:`Decentralised finance`
     APY
 
         See :term:`Annual Percentage Yield (APY)`
@@ -5245,6 +5503,8 @@ and algorithmic trading.
         - :term:`Profitability`
 
         - :term:`Strategy decay`
+
+        - :term:`Benchmark`
 
     Strategy decay
 
@@ -5312,6 +5572,12 @@ and algorithmic trading.
 
         - :term:`Risk-adjusted return`
 
+        - :term:`Bull market`
+
+        - :term:`Bear market`
+
+        - :term:`Volatility`
+
     Regime filter
 
         In a :term:`trading strategy`, a regime filter tells the current :term:`market regime`.
@@ -5343,6 +5609,10 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Best trading strategy`
+
+        - :term:`Bull market`
+
+        - :term:`Bear market`
 
     Benchmark
 
@@ -5386,6 +5656,12 @@ and algorithmic trading.
         - :term:`Buy and hold`
 
         - :term:`Best trading strategy`
+
+        - :term:`Equity curve`
+
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
 
     Buy and hold
 
@@ -5458,6 +5734,12 @@ and algorithmic trading.
 
         - :term:`Training set`
 
+        - :term:`Alpha`
+
+        - :term:`Machine learning`
+
+        - :term:`Dataset`
+
     Machine learning
 
         Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed to perform specific tasks.
@@ -5496,6 +5778,12 @@ and algorithmic trading.
         - :term:`Grid search`
 
         - :term:`Benchmark`
+
+        - :term:`Volatility`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`High-frequency trading`
 
     Trade frequency
 
@@ -5564,6 +5852,10 @@ and algorithmic trading.
 
         - :term:`Best trading strategy`
 
+        - :term:`Ethena`
+
+        - :term:`Ether`
+
     Carry trade
 
         See :term:`cash and carry`.
@@ -5625,6 +5917,8 @@ and algorithmic trading.
         The most infamous case of non-real yield was Terra's Anchor protocol that promised "guaranteed 20% :term:`Annual Percentage Yield (APY)`".
         The yield was funded from Terra's treasury and then the treasury and token value collapsed, it took Anchor depositors with it.
 
+        See also
+
         - :term:`Decentralised finance`
 
         - :term:`Protocol`
@@ -5632,6 +5926,8 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - :term:`Mercenary capital`
+
+        - :term:`Annual Percentage Yield (APY)`
 
     Composability
 
@@ -5714,6 +6010,12 @@ and algorithmic trading.
         - :term:`OHLCV`
 
         - :term:`Average Directional Index (ADX)`
+
+        - :term:`Volatility`
+
+        - :term:`Stop loss`
+
+        - :term:`Position sizing`
 
     Money Flow Index (MFI)
 
@@ -5883,6 +6185,12 @@ and algorithmic trading.
 
         - :term:`GMX`
 
+        - :term:`Delta neutral`
+
+        - :term:`Decentralised exchange`
+
+        - :term:`Liquidity`
+
     Credit market
 
         Credit markets are a key component of the financial system where various forms of debt are traded.
@@ -5927,6 +6235,10 @@ and algorithmic trading.
 
         - :term:`Market making`
 
+        - :term:`Delta neutral`
+
+        - :term:`Liquidity`
+
     Reinforced learning
 
         Reinforcement learning is a type of :term:`machine learning` where an agent learns to make decisions by interacting with an environment.
@@ -5943,6 +6255,8 @@ and algorithmic trading.
         - :term:`Machine learning`
 
         - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
 
     FinRL
 
@@ -5994,6 +6308,8 @@ and algorithmic trading.
 
         - :term:`MEV`
 
+        - :term:`Uniswap`
+
     Delta hedged
 
         Delta hedging is a technique used in :term:`quantitative finance` to manage risk associated with options trading.
@@ -6026,6 +6342,8 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Demeter`
+
+        - :term:`Ethena`
 
     Gamma hedged
 
@@ -6099,6 +6417,8 @@ and algorithmic trading.
 
         - :term:`GMX`
 
+        - :term:`Decentralised finance`
+
     Demeter
 
         Demeter is a :term:`liquidity provision` :term:`backtest` framework for :term:`Uniswap`, :term:`Aave`
@@ -6129,6 +6449,18 @@ and algorithmic trading.
         - :term:`High-frequency trading`
 
         - :term:`Uniswap`
+
+        - :term:`Aave`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Python`
+
+        - :term:`CLMM`
+
+        - :term:`Delta hedged`
+
+        - :term:`Gamma hedged`
 
     Lagoon
 
@@ -6246,6 +6578,8 @@ and algorithmic trading.
 
         - :term:`Trading strategy`
 
+        - :term:`EMA`
+
     Binary signal
 
         In :term:`algorithmic trading`, a binary signal is a type of :term:`trading signal` that provides a simple, discrete output with only two possible states—typically represented as 0 or 1, yes or no, or buy or sell. Unlike continuous signals, which vary smoothly over time and offer a range of values, binary signals are straightforward and event-driven, indicating a clear action or condition based on predefined criteria.
@@ -6270,6 +6604,8 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - :term:`Trading strategy`
+
+        - :term:`Trend-following`
 
     Discrete signal
 
@@ -6364,6 +6700,14 @@ and algorithmic trading.
 
         - :term:`AMM`
 
+        - :term:`Decentralised finance`
+
+        - :term:`DEX`
+
+        - :term:`High-frequency trading`
+
+        - :term:`Mean reversion`
+
     GRVT
 
         GRVT (pronounced "gravity") is a :term:`perpetual future` :term:`DEX` built on :term:`ZKsync` technology. GRVT operates as a hybrid exchange combining an off-chain order matching engine with on-chain settlement for high performance and transparency.
@@ -6401,6 +6745,12 @@ and algorithmic trading.
         - :term:`Hyperliquid Provider Vault`
 
         - :term:`MegaVault`
+
+        - :term:`ZKsync`
+
+        - :term:`GMX`
+
+        - :term:`Market making`
 
     GRVT Strategy
 
@@ -6442,6 +6792,12 @@ and algorithmic trading.
 
         - :term:`GRVT Liquidity Provider`
 
+        - :term:`ZKsync`
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
     GRVT Liquidity Provider
 
         GRVT Liquidity Provider (GLP) is the in-house :term:`market making` :term:`vault` on the :term:`GRVT` :term:`perpetual future` :term:`DEX`. GLP provides liquidity across GRVT's trading pairs through automated market-making strategies, similar to :term:`Hyperliquid Provider Vault` (HLP) on Hyperliquid and :term:`MegaVault` on dYdX.
@@ -6473,6 +6829,10 @@ and algorithmic trading.
         - :term:`Hyperliquid Provider Vault`
 
         - :term:`MegaVault`
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
 
     Hierarchical Risk Parity
 
@@ -6545,6 +6905,8 @@ and algorithmic trading.
         - :term:`Mean-variance optimisation`
 
         - :term:`Covariance matrix`
+
+        - :term:`Portfolio construction`
 
     Covariance matrix
 
@@ -6676,6 +7038,10 @@ and algorithmic trading.
 
         - :term:`AMM`
 
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
     Velvet Capital
 
         `Velvet Capital <https://www.velvet.capital/>`__ is a :term:`vault` :term:`protocol` for :term:`EVM` blockchains.
@@ -6693,6 +7059,10 @@ and algorithmic trading.
         - :term:`Protocol`
 
         - :term:`EVM`
+
+        - :term:`BNB Smart Chain`
+
+        - :term:`EVM-compatible`
 
     GMX
 
@@ -6749,6 +7119,18 @@ and algorithmic trading.
 
         - :term:`EVM`
 
+        - :term:`DEX`
+
+        - :term:`AMM`
+
+        - :term:`Order book`
+
+        - :term:`Leverage`
+
+        - :term:`Smart contract`
+
+        - :term:`Liquidity provider`
+
     CCXT
 
         In :term:`quantitative finance`, CCXT is a popular software development library for abstracting integration
@@ -6790,6 +7172,12 @@ and algorithmic trading.
         - :term:`CEX`
 
         - :term:`DEX`
+
+        - :term:`Trading strategy`
+
+        - :term:`Algorithmic trading`
+
+        - :term:`Perpetual future`
 
     Hemi
 
@@ -6926,6 +7314,12 @@ and algorithmic trading.
 
         - :term:`Delta hedged`
 
+        - :term:`Decentralised finance`
+
+        - :term:`Vault`
+
+        - :term:`ERC-4626`
+
     Selling volatility
 
         In :term:`quantitative finance`, "selling volatility" (also known as being "short volatility" or "short vol" or "selling vol") refers to implementing :term:`trading strategies <trading strategy>` that profit when market :term:`volatility` decreases, remains stable, or when realized (actual) volatility turns out lower than the implied volatility priced into financial instruments. This is often done by selling options contracts, such as calls, puts, straddles, or strangles, where the seller collects a premium upfront. If the underlying asset's price doesn't move significantly (i.e., low volatility), the options may expire worthless, allowing the seller to retain the premium as profit. However, this approach carries substantial risk, as a sudden spike in volatility can lead to large losses—often described as "picking up pennies in front of a steamroller." Other methods include shorting volatility futures (e.g., VIX futures), exchange-traded products like inverse volatility ETFs, or variance swaps. These strategies are common in hedge funds and proprietary trading desks, where quantitative models forecast volatility to identify overpriced implied vol for selling.
@@ -7058,6 +7452,10 @@ and algorithmic trading.
 
         - :term:`Cascading liquidation`
 
+        - :term:`Yield farming`
+
+        - :term:`Decentralised finance`
+
     FreqTrade
 
         FreqTrade is a popualr open-source :term:`algorithmic trading` software written in :term:`Python` for cryptocurrency markets. It allows users to develop, :term:`backtest`, and deploy automated trading strategies across multiple exchanges.
@@ -7075,6 +7473,8 @@ and algorithmic trading.
         - :term:`CCXT`
 
         - :term:`DEX`
+
+        - :term:`Backtest`
 
     Mainnet fork
 
@@ -7117,6 +7517,10 @@ and algorithmic trading.
         - :term:`JSON-RPC`
 
         - :term:`Fork`
+
+        - :term:`Decentralised finance`
+
+        - :term:`Liquidity`
 
     Ulcer Index
 
@@ -7167,6 +7571,8 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Sortino`
+
+        - :term:`Sharpe`
 
     Martin ratio
 
@@ -7266,6 +7672,10 @@ and algorithmic trading.
         - :term:`Volatility`
 
         - :term:`Drawdown`
+
+        - :term:`Trading strategy`
+
+        - :term:`Backtest`
 
     Probabilistic Sharpe ratio
 
@@ -7566,3 +7976,5 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Turnover`
+
+        - :term:`Trading strategy`
