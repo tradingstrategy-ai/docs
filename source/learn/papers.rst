@@ -685,3 +685,16 @@ Mentioned by `Symplectic.Research <https://x.com/QuantSymplectic>`__ in `this di
 By Bruce H. Dean (Independent Researcher), March 2026.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6380118>`__
+
+Vault Allocation Strategies
+---------------------------
+
+This post examines the quantitative limitations of current crypto vault allocation strategies in DeFi. The author argues that most vault strategies marketed as "yield optimization" are in practice rule-of-thumb routing engines rather than proper quantitative portfolio construction. The analysis identifies five structural weaknesses: absence of formal optimization frameworks (no mean-variance or drawdown minimization, just "higher APY wins"), weak risk modeling relying on caps and allowlists rather than distributions and tail scenarios, ignored correlation across risk factors, static or reactive allocation with little predictive signal, and under-modeled liquidity where withdrawal queues are not priced into allocation decisions.
+
+The post concludes that current vaults are constrained routing engines with basic risk controls sitting on top of structural yield sources (emissions, lending demand, structural carry), not quantitative funds. The author proposes that the next generation of vaults should incorporate proper objective functions, factor-aware allocation, correlation modeling, and liquidity-adjusted returns to move from the "rules-based allocator" phase to a true "quant portfolio" phase.
+
+No quantitative backtest metrics are presented — the post is a qualitative framework analysis rather than an empirical study with performance results.
+
+Mentioned by `Amy O. Khaldoun <https://www.linkedin.com/in/amykhaldoun>`__ (Vess3l, Quant Consultant) in `this LinkedIn post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__.
+
+`Read the post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__
