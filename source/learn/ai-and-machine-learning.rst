@@ -636,3 +636,18 @@ Mentioned by `Piotr Pomorski <https://x.com/PtrPomorski>`__ in `this discussion 
 By Harris Buchanan (Saint Andrew University) and Eric Benhamou (AI for Alpha, Paris Dauphine University).
 
 `Read the paper <https://arxiv.org/abs/2603.14453>`__
+
+A Controlled Comparison of Deep Learning Architectures for Multi-Horizon Financial Forecasting: Evidence from 918 Experiments
+-----------------------------------------------------------------------------------------------------------------------------
+
+This paper provides a large-scale, controlled evaluation of nine deep learning architectures for multi-horizon price forecasting across cryptocurrency, forex, and equity index markets. The architectures benchmarked span four major families — Transformers (Autoformer, iTransformer, PatchTST, TimesNet, TimeXer), MLP (DLinear, N-HiTS), CNN (ModernTCN), and RNN (LSTM) — evaluated at 4-hour and 24-hour forecast horizons. The study's central methodological contribution is a five-stage reproducibility protocol: fixed-seed Bayesian hyperparameter optimisation, configuration freezing per asset class, multi-seed retraining, uncertainty aggregation, and statistical validation, yielding 918 controlled experiments.
+
+The results reveal a clear three-tier ranking structure. ModernTCN, a modern CNN variant, dominates across asset classes, followed by PatchTST. Architecture choice explains nearly all performance variance, while seed randomness is negligible. Rankings remain stable across forecast horizons despite 2–2.5× error amplification from 4-hour to 24-hour predictions. A key finding is that directional accuracy remains near 50% across all configurations, indicating that MSE-trained models lack directional forecasting skill at hourly resolution — a significant limitation for trading signal generation.
+
+Key metrics: ModernTCN achieves a mean rank of 1.333 with a 75% first-place rate across all 918 experiments, followed by PatchTST at mean rank 2.000. Directional accuracy is consistently ~50% across all models and asset classes. No Sharpe ratio or PnL metrics are reported; evaluation is based on MSE/MAE forecasting error only.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/2034560815097950478>`__.
+
+By Nabeel Ahmad Saidd, March 2026.
+
+`Read the paper <https://arxiv.org/abs/2603.16886>`__
