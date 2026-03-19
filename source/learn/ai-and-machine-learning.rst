@@ -651,3 +651,33 @@ Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussi
 By Nabeel Ahmad Saidd, March 2026.
 
 `Read the paper <https://arxiv.org/abs/2603.16886>`__
+
+Developing Cryptocurrency Trading Strategy Based on Autoencoder-CNN-GANs Algorithms
+-------------------------------------------------------------------------------------
+
+This paper proposes a deep learning pipeline for cryptocurrency trading that chains three architectures: a denoising autoencoder filters random noise from raw contract price data, a 1D convolutional layer reduces dimensionality and extracts key features, and a Generative Adversarial Network (GAN) processes the cleaned representation before passing it to a fully connected classification head. The model is trained via cross-validation to identify feature patterns that precede large price moves, then deployed in real-time to place trades only at moments of high prediction confidence in both the direction and magnitude of the anticipated move.
+
+The framework targets large price fluctuation events rather than continuous forecasting, treating the problem as a directional classification task. By separating the noise-removal (autoencoder + CNN) and pattern-generation (GAN) stages, the authors argue that each component focuses on a distinct sub-problem: signal cleaning versus distributional feature synthesis. Empirical results confirm that this pipeline achieves meaningful predictive performance on cryptocurrency data, validating the use of generative models for uncovering latent structure in financial time series.
+
+Key metrics: The abstract reports "a certain level of predictive performance" without providing specific Sharpe ratio, return, or accuracy figures. Evaluation is primarily qualitative confirmation that the combined architecture outperforms simpler baselines on cryptocurrency price prediction.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/1928508914947022870>`__.
+
+By Zhuohuan Hu, Richard Yu, Zizhou Zhang, Haoran Zheng, Qianying Liu, and Yining Zhou, December 2024.
+
+`Read the paper <https://arxiv.org/abs/2412.18202>`__
+
+An Advanced Ensemble Deep Learning Framework for Stock Price Prediction Using VAE, Transformer, and LSTM Model
+--------------------------------------------------------------------------------------------------------------
+
+This paper proposes an ensemble framework for stock price prediction that combines three complementary neural architectures: a Variational Autoencoder (VAE) for learning compressed linear representations of high-dimensional data, a Transformer for capturing long-range dependencies and non-linear patterns in price sequences, and an LSTM for modelling short-term temporal dynamics and local fluctuations. The framework uses a rich set of technical indicators as inputs and scales predictors dynamically based on current market conditions. The design philosophy is to exploit the structural strengths of each component — VAE handles dimensionality and noise, Transformer handles long-term context, LSTM handles sequential recency — and combine them into a single prediction signal.
+
+The ensemble is benchmarked against individual model baselines (standalone VAE, Transformer, and LSTM) as well as classical forecasting methods across multiple stock datasets. The combined framework consistently outperforms all single-model comparisons, demonstrating both higher accuracy and greater reliability. The authors position it as applicable to algorithmic trading, risk analysis, and financial decision-making.
+
+Key metrics: The framework demonstrates "consistently high accuracy and reliability" and "exceptional directional performance" versus individual models and classical forecasting, but no specific Sharpe, return, RMSE, or directional accuracy numbers are reported in the abstract. The primary evidence is cross-dataset benchmarking showing ensemble superiority over component models.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/1906641283126378733>`__.
+
+By Anindya Sarkar and G. Vadivu, March 2025.
+
+`Read the paper <https://arxiv.org/abs/2503.22192>`__
