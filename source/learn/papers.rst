@@ -711,3 +711,18 @@ Key metrics: the strategy achieves a Sharpe ratio of 0.66 compared to 0.59 for a
 By Jim Tai, Stephanie Leung, and Justin Jimenez (StashAway), February 2026.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6224058>`__
+
+AlgoXpert Alpha Research Framework: A Rigorous IS WFA OOS Protocol for Mitigating Overfitting in Quantitative Strategies
+-------------------------------------------------------------------------------------------------------------------------
+
+Transitioning a strategy from backtest to live trading is a common failure point for quantitative systems due to parameter overfitting, selection bias, and sensitivity to regime changes. This paper presents the AlgoXpert Alpha Research Framework, a standardised three-stage evaluation protocol: In-Sample (IS) analysis that targets stable parameter regions rather than single optima; Walk-Forward Analysis (WFA) with rolling windows and purge gaps to prevent information leakage, governed by majority-pass and catastrophic-veto rules; and Out-of-Sample (OOS) testing under strict parameter lock with no further tuning.
+
+The framework applies a defense-in-depth structure with three layers: structural safeguards (cliff veto), execution controls (spread and leverage guards), and equity protection mechanisms (circuit breakers and a kill switch). A case study on USDJPY M5 intraday data demonstrates how to detect overfitting through performance decay and drawdown behaviour across chronological stages. A post-validation comparison of four alpha variants (v1–v4) reveals rank reversal when the optimisation objective changes from maximising Sharpe ratio to minimising maximum drawdown — illustrating the fundamental trade-off between risk-adjusted performance and tail risk control.
+
+Key metrics: The paper compares four alpha variants in a USDJPY M5 case study. Rank reversal between variants is observed when switching the objective from Sharpe maximisation to max drawdown minimisation. No single aggregate Sharpe/return figure is presented; the framework is methodological rather than a performance report of a specific strategy.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/2031642071665131616>`__.
+
+By The Anh Pham, Bao Chan Nguyen, and Nguyet Nguyen Thi, March 2026.
+
+`Read the paper <https://arxiv.org/abs/2603.09219>`__
