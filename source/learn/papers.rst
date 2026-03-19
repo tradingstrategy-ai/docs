@@ -726,3 +726,18 @@ Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussi
 By The Anh Pham, Bao Chan Nguyen, and Nguyet Nguyen Thi, March 2026.
 
 `Read the paper <https://arxiv.org/abs/2603.09219>`__
+
+Optimizing Portfolio Performance through Clustering and Sharpe Ratio-Based Optimization: A Comparative Backtesting Approach
+---------------------------------------------------------------------------------------------------------------------------
+
+This paper introduces a two-stage portfolio construction framework that combines K-Means clustering with Sharpe ratio-based weight optimisation. In the first stage, a universe of financial assets is segmented into clusters based on historical log-returns, grouping together assets with similar return characteristics. In the second stage, each cluster is treated as a sub-portfolio and Sharpe ratio maximisation is applied within each cluster to derive optimal weights — directly incorporating the return/volatility trade-off rather than relying on mean-variance optimisation's sensitivity to expected return estimates.
+
+The framework is evaluated through a backtesting study across multiple asset classes, comparing the cumulative returns of optimised per-cluster portfolios against a traditional equal-weighted benchmark. The approach allows targeted portfolio construction within homogeneous asset groups while maintaining diversification across clusters.
+
+Key metrics: Optimised portfolios outperform the equal-weighted benchmark in cumulative return terms across the backtest period. Specific Sharpe ratio, max drawdown, and annualised return figures are not reported in the abstract; the primary comparison is cumulative return trajectories per cluster versus the equal-weighted baseline.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/1882220409203962241>`__.
+
+By Keon Vin Park, January 2025.
+
+`Read the paper <https://arxiv.org/abs/2501.12074>`__
