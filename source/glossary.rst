@@ -4984,11 +4984,9 @@ and algorithmic trading.
 
     Maximum Drawdown
 
-        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a :term:`portfolio`, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period.
+        In :term:`quantitative finance`, maximum drawdown (MDD) refers to the maximum loss from a peak to a trough of a :term:`portfolio`, before a new peak is attained. It is a measure of the largest loss that an investment portfolio has experienced over a specified time period. Unlike :term:`volatility`, which treats upside and downside moves symmetrically, maximum drawdown captures the actual worst-case loss an investor would have experienced — the pain of watching capital evaporate from its highest point.
 
-        Maximum drawdown is an important metric in risk management as it helps investors understand the potential downside risk of an investment. It is often used to assess the risk of a portfolio and to compare different investment strategies.
-
-        For example, suppose an investment portfolio has a maximum drawdown of 20%. This means that the portfolio has experienced a loss of 20% from its peak value before a new peak is reached. In other words, the portfolio has lost 20% of its value at some point in the past.
+        Maximum drawdown is one of the most widely used risk metrics in strategy evaluation and fund due diligence because it directly answers the question: *"How much money could I have lost?"* It is a concrete, intuitive number that does not require statistical assumptions about return distributions.
 
         Maximum drawdown is typically expressed as a percentage of the portfolio's value. It can be calculated using the following formula:
 
@@ -4996,11 +4994,46 @@ and algorithmic trading.
 
             MDD = \frac{P - T}{P}
 
-        where P is the peak value of the portfolio and T is the trough value.
+        where P is the peak value of the portfolio and T is the trough value. The drawdown at any point in time is the decline from the running maximum (high-water mark) to the current value. The maximum drawdown is the largest such decline observed over the entire period.
 
-        As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns. For example, if a strategy has an annual return of 30%, the maximum drawdown should not exceed 10%.
+        For example, suppose an investment portfolio grows from $100 to $150, then falls to $120, recovers to $160, then drops to $110 before eventually reaching $170. The drawdowns are: $150 → $120 (20%), and $160 → $110 (31.25%). The maximum drawdown is 31.25%.
+
+        As a rule of thumb, the maximum drawdown should not be more than 1/3 of the strategy annual returns. For example, if a strategy has an annual return of 30%, the maximum drawdown should not exceed 10%. This heuristic is closely related to the :term:`Calmar ratio` — a ratio above 3.0 is considered excellent.
+
+        **Advantages of maximum drawdown**
+
+        - Intuitive and easy to explain: it represents the worst peak-to-trough loss, which is immediately meaningful to any investor regardless of statistical background
+        - Distribution-free: unlike :term:`volatility` or Value at Risk, it makes no assumptions about return distributions (normality, stationarity, etc.) and works equally well for fat-tailed or skewed return streams
+        - Captures compounding losses: because it measures cumulative peak-to-trough decline rather than single-period returns, it reflects the real damage of consecutive losing periods, which standard deviation misses
+        - Directly tied to investor psychology: maximum drawdown maps closely to the emotional experience of loss. An investor who sees a 40% decline on their statement feels the drawdown, not the standard deviation
+        - Useful for :term:`position sizing <position sizing>` and leverage decisions: knowing the historical worst-case loss helps calibrate how much leverage or capital to allocate to a strategy
+        - Foundation for key ratios: maximum drawdown is the denominator in the :term:`Calmar ratio` and related measures, making it central to :term:`risk-adjusted return` analysis
+
+        **Limitations of maximum drawdown**
+
+        - Single-event dependency: MDD is determined by exactly one worst episode. A strategy that suffered a single large drawdown in an anomalous period will be permanently penalised, even if its behaviour was excellent otherwise. This makes MDD sample-dependent and sensitive to the specific time window chosen
+        - No information about frequency: a strategy with one 30% drawdown and a strategy with ten 25% drawdowns have similar MDD values, but very different risk profiles. MDD says nothing about how often drawdowns occur
+        - Ignores recovery time: a 20% drawdown recovered in 2 weeks is treated identically to a 20% drawdown that took 3 years to recover. Drawdown duration matters enormously to investors in practice
+        - Path-dependent and non-stationary: MDD can only increase or stay the same as more data is observed — it never shrinks. This means longer track records will almost always show larger MDD, making cross-strategy comparisons unfair if track record lengths differ
+        - Backward-looking: the maximum drawdown observed in a :term:`backtest` or historical period may understate the true worst case. The next drawdown could always be larger, especially if the strategy has not been tested through a major crisis
+        - Look-ahead bias in backtests: MDD in backtests may be artificially low if the backtest period does not include severe market stress events, or if the strategy was optimised (consciously or not) to avoid the specific drawdowns in the sample
+        - Does not distinguish between drawdown causes: a drawdown from a market-wide crash and one from strategy-specific failure look the same in the metric, but have very different implications for future risk
+
+        **Practical usage**
+
+        Maximum drawdown is most valuable when combined with complementary metrics:
+
+        - Pair MDD with the :term:`Calmar ratio` to normalise drawdown against returns achieved
+        - Use the :term:`Ulcer Index` to capture the frequency and duration of all drawdown episodes, not just the worst one
+        - Use the :term:`Martin ratio` for a risk-adjusted measure that integrates all drawdown pain, making it less hostage to a single extreme event
+        - Compare the :term:`Sharpe` ratio (return per unit of total volatility) and :term:`Sortino` ratio (return per unit of downside volatility) alongside MDD to get a complete picture of risk
+        - Examine the :term:`equity curve` visually to understand drawdown context — when drawdowns occurred, how long recovery took, and whether drawdown behaviour is improving or degrading over time
+
+        No single risk metric tells the full story. Maximum drawdown answers *"what was the worst loss?"* but not *"how often do bad losses happen?"* or *"how long until recovery?"*. A robust strategy evaluation uses MDD as one pillar alongside volatility-based and drawdown-duration-based measures.
 
         See also
+
+        - :term:`Drawdown`
 
         - :term:`Calmar ratio`
 
@@ -5008,11 +5041,23 @@ and algorithmic trading.
 
         - :term:`Equity curve`
 
-        - :term:`Drawdown`
+        - :term:`Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Ulcer Index`
+
+        - :term:`Martin ratio`
+
+        - :term:`Volatility`
 
         - :term:`Quantitative finance`
 
         - :term:`Portfolio`
+
+        - :term:`Backtest`
+
+        - :term:`Longest drawdown duration`
 
     Take Profit
 
