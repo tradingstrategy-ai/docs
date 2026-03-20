@@ -756,3 +756,18 @@ By Mario Bajo Traver (Bank of Spain) and Alejandro Rodriguez Dominguez (Universi
 Mentioned by Piotr Pomorski in `this discussion <https://x.com/PtrPomorski/status/2034695649007214896>`__: "Something on sharpe ratio for temporal stability."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6344658>`__
+
+Cross-Sectional Skewness
+------------------------
+
+This paper investigates what distribution best characterizes the time series and cross section of individual stock returns. The authors estimate the degree of cross-sectional return skewness relative to a flexible benchmark that nests many standard models in the literature, including lognormal, stochastic volatility, and jump-diffusion specifications. The central finding is a striking asymmetry across horizons: cross-sectional skewness in monthly returns far exceeds what the benchmark model predicts, while cross-sectional skewness in long-run returns is substantially below what the model predicts.
+
+The resolution lies in fat-tailed idiosyncratic events — rare, firm-specific jumps that generate extreme short-term returns but whose effects attenuate over longer holding periods. The authors show that incorporating power-law-distributed idiosyncratic shocks into the return-generating process is necessary to reconcile both the excess short-horizon skewness and the deficit of long-horizon skewness observed in the data. This has direct implications for asset pricing and portfolio construction: models that ignore fat-tailed idiosyncratic risk will systematically misprice lottery-like payoffs at short horizons and underestimate diversification benefits at longer horizons.
+
+Key metrics: This is a theoretical and empirical asset pricing paper rather than a backtested trading strategy. The primary quantitative results concern the magnitude of cross-sectional skewness relative to model predictions across different return horizons. No annualised return, Sharpe ratio, or drawdown figures are reported. The paper's contribution is to the understanding of return distributions and the role of rare idiosyncratic events in shaping cross-sectional risk.
+
+By Sangmin Oh (Columbia Business School) and Jessica A. Wachter (Wharton / NBER / SEC). Published in Review of Asset Pricing Studies 12(1):155-198, March 2022.
+
+Mentioned by Darren (@ReformedTrader) in `this discussion <https://x.com/ReformedTrader/status/2034719148690087962>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3079715>`__
