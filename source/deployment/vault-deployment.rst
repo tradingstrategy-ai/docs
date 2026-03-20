@@ -361,61 +361,21 @@ When the Lagoon vault is deployed, you need to make a test deposit to have some 
 
 - Assume your deployer key has some denomination token like USDC/USDT to deposit
 - We will perform a test deposit of 10 USD to the vault
-- Then we will sync the vault
+- The command will approve, deposit, settle the vault on-chain, and update the state file
+
+You need to set ``VAULT_ADAPTER_ADDRESS`` to the trading strategy module address from the vault deployment output.
+
+First simulate the deposit:
 
 .. code-block:: shell
 
-    # Perform a test deposit
-    docker compose run base-ath console
+    docker compose run base-ath lagoon-first-deposit --deposit-amount=10 --simulate
 
-Then with `%cpaste`:
+Then perform the actual deposit:
 
-.. code-block:: python
+.. code-block:: shell
 
-        from decimal import Decimal
-
-        from eth_defi.trace import assert_transaction_success_with_explanation
-        from eth_defi.etherscan.config import get_etherscan_tx_link
-
-        deposit_amount = Decimal(10.0)  # USD
-
-        vault = sync_model.vault
-        deposit_token = vault.denomination_token
-        wallet = hot_wallet
-
-        balance = deposit_token.fetch_balance_of(wallet.address)
-        print(f"Hot wallet balance: {balance} {deposit_token.symbol}")
-        assert balance > deposit_amount, "Asset manager has no balance to deposit"
-
-        # 1. Approve
-        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_token.approve(vault.address, deposit_amount))
-        print(f"Approving with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
-        assert_transaction_success_with_explanation(web3, tx_hash)
-
-        # 2. Put to deposit queue
-        raw_amount = deposit_token.convert_to_raw(deposit_amount)
-        deposit_func = vault.request_deposit(hot_wallet.address, raw_amount)
-        tx_hash = wallet.transact_and_broadcast_with_contract(deposit_func)
-        print(f"requestDeposit() with : {get_etherscan_tx_link(web3.eth.chain_id, tx_hash.hex())}")
-        assert_transaction_success_with_explanation(web3, tx_hash)
-
-        # 3. Add reserve currency
-        reserve_asset = strategy_universe.get_asset_by_address(deposit_token.address)
-        state.portfolio.initialise_reserves(reserve_asset, reserve_token_price=1.0)
-
-        # 4. Sync deposits as the asset manager
-        end_block = execution_model.get_safe_latest_block()
-        timestamp = datetime.datetime.utcnow()
-        sync_model.hot_wallet.sync_nonce(web3)
-        sync_model.sync_treasury(
-            strategy_cycle_ts=timestamp,
-            state=state,
-            end_block=end_block,
-            post_valuation=True,
-        )
-
-        # 5. Store results
-        store.sync(state)
+    docker compose run base-ath lagoon-first-deposit --deposit-amount=10
 
 Performing a test trade
 -----------------------

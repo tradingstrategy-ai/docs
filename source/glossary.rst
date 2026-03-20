@@ -4280,6 +4280,12 @@ and algorithmic trading.
 
         - :term:`Options`
 
+        - :term:`Perpetual future`
+
+        - :term:`Open interest`
+
+        - :term:`Funding rate`
+
     Options
 
         In :term:`quantitative finance`, Options are financial
@@ -4409,6 +4415,8 @@ and algorithmic trading.
         - :term:`Avalanche`
 
         - :term:`BNB Chain`
+
+        - :term:`HyperEVM`
 
     Crystallisation
 
@@ -5142,7 +5150,9 @@ and algorithmic trading.
         - :term:`Unrealised profit and loss`
 
         - :term:`Closed position`
-        
+
+        - :term:`Open interest`
+
         - :term:`Longing`
 
         - :term:`Shorting`
@@ -5154,10 +5164,49 @@ and algorithmic trading.
         - :term:`Realised profit and loss`
 
         - :term:`Open position`
-        
+
         - :term:`Longing`
 
         - :term:`Shorting`
+
+    Open interest
+
+        Open interest is the total number of outstanding derivative contracts — such as :term:`futures` or :term:`perpetual future` contracts — that have not been settled or closed. Each open contract has both a buyer (long) and a seller (short), so one contract equals one unit of open interest. Open interest increases when a new buyer and a new seller enter a trade, and decreases when an existing long and an existing short close their positions against each other.
+
+        Open interest is a key measure of market activity and liquidity. Rising open interest alongside rising prices typically signals new money entering the market and strengthening the current trend, while declining open interest suggests positions are being unwound. In cryptocurrency :term:`perpetual future` markets, a rapid spike in open interest can indicate excessive :term:`leverage` building up, often preceding :term:`liquidation` cascades when the market reverses.
+
+        Open interest differs from trading volume: volume counts every contract traded during a period (including contracts that are opened and closed within the same session), whereas open interest only counts contracts that remain :term:`open <open position>` at the end of the period.
+
+        **Relationship between open interest and funding rate**
+
+        Open interest and :term:`funding rate` are deeply interconnected in :term:`perpetual future` markets — open interest measures *how many* contracts are open, while funding rate reflects *the directional imbalance* between longs and shorts holding those contracts.
+
+        - *Rising open interest + rising funding rate*: New leveraged :term:`long <longing>` positions are being opened faster than :term:`short <shorting>` positions. Demand to go long pushes the perp price above spot, widening the premium and driving funding higher. This is a classic :term:`bull market` signal but also a warning of crowded positioning — if the price reverses, these overleveraged longs face :term:`liquidation`, which forcefully closes their positions, causing open interest to collapse and funding to reset or go negative.
+        - *Rising open interest + falling/negative funding rate*: New short positions are being opened aggressively. The perp price trades below spot (backwardation), and shorts must pay longs. This pattern appears during sharp sell-offs or when traders are hedging spot exposure.
+        - *Falling open interest + normalising funding rate*: Positions are being unwound on both sides. As longs and shorts close against each other, the directional imbalance decreases and funding converges toward the baseline rate. This often follows a :term:`liquidation` cascade or the end of a strong trend.
+        - *High open interest + extreme funding rate*: A dangerous combination. Large open interest means many contracts are outstanding, and an extreme funding rate means one side is heavily dominant. The cost of holding the crowded side (paying high funding) erodes margin, while a price reversal can trigger a liquidation chain reaction — each forced closure pushes the price further against remaining positions, triggering more liquidations in a cascading effect that rapidly drains open interest.
+
+        Traders and :term:`market neutral <market neutral strategy>` strategists monitor both metrics together: open interest reveals the magnitude of market exposure, while the funding rate reveals which side is paying for the privilege of holding that exposure.
+
+        See also
+
+        - :term:`Perpetual future`
+
+        - :term:`Futures`
+
+        - :term:`Funding rate`
+
+        - :term:`Leverage`
+
+        - :term:`Liquidation`
+
+        - :term:`Open position`
+
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
+        - :term:`Spot market`
 
     Realised risk
 
@@ -5885,6 +5934,10 @@ and algorithmic trading.
 
         - :term:`Perpetual future`
 
+        - :term:`Funding rate`
+
+        - :term:`Open interest`
+
         - :term:`Trading strategy`
 
         - :term:`Market neutral strategy`
@@ -6460,7 +6513,13 @@ and algorithmic trading.
 
         - :term:`Lending protocol`
 
+        - :term:`Funding rate`
+
+        - :term:`Open interest`
+
         - :term:`GMX`
+
+        - :term:`Hyperliquid`
 
         - :term:`Decentralised finance`
 
@@ -6530,6 +6589,10 @@ and algorithmic trading.
         - :term:`ERC-7540`
 
         - :term:`ERC-4626`
+
+        - :term:`HyperEVM`
+
+        - :term:`Hyperliquid`
 
     ERC-7540
 
@@ -6707,11 +6770,11 @@ and algorithmic trading.
 
     Hyperliquid Provider Vault
 
-        Hyperliquid Provider (HLP) is a :term:`decentralised finance` market making :term:`vault` on Hyperliquid :term:`DEX`.
+        Hyperliquid Provider (HLP) is a :term:`decentralised finance` market making :term:`vault` on :term:`Hyperliquid` :term:`DEX`.
 
-        Hyperliquidity Provider (HLP) is a protocol vault that does :term:`market making` and liquidations and receives a portion of trading fees.
+        Hyperliquidity Provider (HLP) is a protocol vault that does :term:`market making` and :term:`liquidations <liquidation>` and receives a portion of trading fees. HLP operates as a native :term:`HyperCore` vault, with deposits and strategy execution managed entirely on :term:`Hyperliquid`’s high-performance trading engine.
 
-        The HLP vault operates as a community-owned :term:`liquidity` pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across Hyperliquid’s trading pairs. These strategies involve
+        The HLP vault operates as a community-owned :term:`liquidity` pool. Users deposit :term:`USDC` (a stablecoin) into the vault, which then uses those funds to run automated market-making strategies across :term:`Hyperliquid`’s trading pairs. These strategies involve
 
         - Placing buy and sell orders on the order book to provide liquidity
 
@@ -6752,6 +6815,240 @@ and algorithmic trading.
         - :term:`High-frequency trading`
 
         - :term:`Mean reversion`
+
+        - :term:`Hyperliquid`
+
+        - :term:`HyperEVM`
+
+        - :term:`HyperCore`
+
+    Hyperliquid
+
+        `Hyperliquid <https://hyperliquid.xyz/>`__ is a layer 1 :term:`blockchain` and :term:`perpetual future` :term:`DEX` purpose-built for high-performance onchain trading. Hyperliquid runs its own consensus (HyperBFT) and achieves sub-second block times with throughput exceeding 100,000 orders per second, making it one of the fastest CLOB-based :term:`decentralised exchanges <decentralised exchange>`.
+
+        **Architecture**
+
+        Hyperliquid's architecture is split into two interconnected layers:
+
+        - :term:`HyperCore` — the native high-performance trading engine that processes :term:`order book` matching, :term:`perpetual future` settlement, :term:`funding rate` payments, :term:`liquidations <liquidation>`, and :term:`vault` operations. HyperCore runs on its own optimised consensus and is not :term:`EVM`-based.
+
+        - :term:`HyperEVM` — an :term:`EVM-compatible` execution environment (chain ID 999) that runs alongside HyperCore as part of the same layer 1. HyperEVM enables general-purpose :term:`smart contracts <smart contract>` and :term:`DeFi` applications while interacting with HyperCore through system :term:`precompiles <precompile>` and the :term:`HyperCore Writer` contract.
+
+        The two layers share the same validator set and consensus but maintain separate state and execution models. Assets can be bridged between HyperEVM and HyperCore in seconds through the CoreDepositWallet system contract.
+
+        **Key features**
+
+        - CLOB-based :term:`order book` with on-chain matching — all orders, cancellations, and trades settle on the L1
+        - :term:`Perpetual futures <perpetual future>` with up to 50x :term:`leverage` and hourly :term:`funding rate` intervals
+        - Native :term:`vault` system where users can deposit :term:`USDC` into strategy vaults managed on HyperCore (see :term:`Hyperliquid Provider Vault`)
+        - :term:`Spot market` trading alongside perpetuals
+        - No gas fees for HyperCore operations — users pay through the bid-ask spread
+        - :term:`HyperEVM` for general-purpose :term:`DeFi` with :term:`Solidity` :term:`smart contracts <smart contract>`
+
+        **Dual-block architecture**
+
+        :term:`HyperEVM` uses a dual-block system: small blocks (~2-3M gas, every ~1 second) for normal transactions and large blocks (30M gas, every ~1 minute) for contract deployments and heavy computation. Addresses must opt into the large block mempool to deploy contracts exceeding the small block gas limit.
+
+        See also
+
+        - :term:`HyperEVM`
+
+        - :term:`HyperCore`
+
+        - :term:`HyperCore Writer`
+
+        - :term:`Hyperliquid Provider Vault`
+
+        - :term:`Perpetual future`
+
+        - :term:`DEX`
+
+        - :term:`Order book`
+
+        - :term:`Funding rate`
+
+        - :term:`EVM`
+
+        - :term:`Vault`
+
+        - :term:`Lagoon`
+
+        - :term:`GRVT`
+
+    HyperEVM
+
+        HyperEVM is the :term:`EVM-compatible` execution environment within the :term:`Hyperliquid` layer 1 :term:`blockchain`. HyperEVM runs as chain ID 999 on mainnet (998 on testnet) and enables general-purpose :term:`Solidity` :term:`smart contracts <smart contract>` and :term:`DeFi` applications alongside Hyperliquid's native :term:`HyperCore` trading engine.
+
+        HyperEVM is not a separate :term:`layer 2` or sidechain — it is an integral part of the Hyperliquid L1, sharing the same validator set and consensus (HyperBFT) as :term:`HyperCore`. This means HyperEVM inherits the security and finality guarantees of the underlying L1 while providing a familiar :term:`EVM` environment for developers.
+
+        **Interaction with HyperCore**
+
+        :term:`Smart contracts <smart contract>` on HyperEVM can interact with HyperCore through two mechanisms:
+
+        - **Precompiles** — read-only system contracts at reserved addresses (e.g., ``0x0802`` for vault equity) that return HyperCore state. Precompile reads within the same block as a :term:`HyperCore Writer` action return stale data from the start of the block.
+
+        - :term:`HyperCore Writer` (``CoreWriter``) — a system contract at ``0x3333...3333`` that queues write actions (vault deposits, token transfers, position management) for asynchronous execution on HyperCore. CoreWriter actions are **not atomic** — an action can succeed on HyperEVM but later fail on HyperCore with no revert propagation.
+
+        **Dual-block architecture**
+
+        HyperEVM produces two types of blocks under a unified block number sequence:
+
+        - *Small blocks* (~2-3M gas limit, every ~1 second) — for normal transactions
+        - *Large blocks* (30M gas limit, every ~1 minute) — for contract deployments and heavy computation
+
+        Addresses must opt into the large block mempool via HyperCore's ``evmUserModify`` action to deploy contracts that exceed the small block gas limit.
+
+        **Asset bridging**
+
+        :term:`USDC` can be bridged from HyperEVM to HyperCore spot accounts via the CoreDepositWallet system contract. The bridge is asynchronous — USDC is deducted from the EVM balance immediately, but the HyperCore balance updates in the next block. Smart contract addresses (such as `Safe <https://safe.global/>`__ multisigs) must first be activated on HyperCore before bridge deposits will clear.
+
+        **Vault integration**
+
+        :term:`Lagoon` :term:`ERC-4626` vaults can be deployed on HyperEVM and connected to HyperCore native vaults through the :term:`HyperCore Writer`. A guarded `Safe <https://safe.global/>`__ multisig executes a two-phase deposit flow: first bridging USDC from EVM to HyperCore spot, then moving it through spot-to-perp and into the target vault. Withdrawals reverse the process in a single multicall.
+
+        **RPC endpoints**
+
+        HyperEVM JSON-RPC endpoints can be unreliable. Multiple fallback RPC URLs should be used. HyperEVM extends standard JSON-RPC with custom methods: ``eth_bigBlockGasPrice``, ``eth_usingBigBlocks``, ``eth_getSystemTxsByBlockHash``, and ``eth_getSystemTxsByBlockNumber``.
+
+        See also
+
+        - :term:`Hyperliquid`
+
+        - :term:`HyperCore`
+
+        - :term:`HyperCore Writer`
+
+        - :term:`EVM`
+
+        - :term:`EVM-Compatible`
+
+        - :term:`Smart contract`
+
+        - :term:`Lagoon`
+
+        - :term:`Vault`
+
+        - :term:`USDC`
+
+        - :term:`DeFi`
+
+        - :term:`Solidity`
+
+    HyperCore
+
+        HyperCore is the native high-performance trading engine at the heart of the :term:`Hyperliquid` layer 1 :term:`blockchain`. HyperCore handles :term:`order book` matching, :term:`perpetual future` settlement, :term:`funding rate` payments, :term:`liquidations <liquidation>`, vault operations, and spot trading — all on its own optimised consensus (HyperBFT) rather than the :term:`EVM`.
+
+        HyperCore runs as a logically separate chain (chain ID 9999) from :term:`HyperEVM` (chain ID 999), but both share the same validator set and consensus. HyperCore processes over 100,000 orders per second with sub-second finality, achieving centralised-exchange-grade performance while remaining fully onchain.
+
+        **How HyperCore differs from EVM chains**
+
+        HyperCore is **not** an :term:`EVM` environment. It does not execute :term:`Solidity` :term:`smart contracts <smart contract>` or use gas-based transaction pricing. Instead, users interact with HyperCore through:
+
+        - The Hyperliquid exchange API (REST/WebSocket) for placing orders, managing positions, and querying state
+        - :term:`HyperEVM` :term:`smart contracts <smart contract>` that write to HyperCore via the :term:`HyperCore Writer` system contract
+        - Precompile reads on :term:`HyperEVM` that expose HyperCore state (vault equity, clearinghouse state, etc.)
+
+        **Asynchronous execution model**
+
+        Write actions sent from :term:`HyperEVM` to HyperCore through the :term:`HyperCore Writer` are **not atomic**. When ``sendRawAction()`` succeeds on HyperEVM, it only means the action was queued. HyperCore validators process queued actions with a few seconds' delay. An action can succeed on EVM but later fail on HyperCore, with no revert propagation back to EVM.
+
+        This asynchronous model means:
+
+        - Deposits can partially fail (USDC bridged but vault deposit rejected)
+        - Precompile reads in the same block as a write action return stale data
+        - Funds may briefly "disappear" from both EVM and HyperCore balances during bridging
+
+        **Native vaults**
+
+        HyperCore supports native vaults where users can deposit :term:`USDC` to participate in automated :term:`trading strategies <trading strategy>`. The :term:`Hyperliquid Provider Vault` (HLP) is the protocol's flagship vault for :term:`market making` and :term:`liquidations <liquidation>`. User-created vaults have a 1-day lock-up period; protocol vaults (HLP) have a 4-day lock-up. Vault deposits require a minimum of 5 USDC.
+
+        **Account activation**
+
+        Smart contract addresses (such as `Safe <https://safe.global/>`__ multisigs on :term:`HyperEVM`) must be explicitly activated on HyperCore before bridged USDC deposits will clear. Activation uses ``CoreDepositWallet.depositFor()`` and incurs a ~1 USDC account creation fee. Without activation, deposited USDC gets permanently stuck in EVM escrow.
+
+        See also
+
+        - :term:`Hyperliquid`
+
+        - :term:`HyperEVM`
+
+        - :term:`HyperCore Writer`
+
+        - :term:`Hyperliquid Provider Vault`
+
+        - :term:`Order book`
+
+        - :term:`Perpetual future`
+
+        - :term:`Funding rate`
+
+        - :term:`Liquidation`
+
+        - :term:`Vault`
+
+        - :term:`USDC`
+
+    HyperCore Writer
+
+        HyperCore Writer, also known as ``CoreWriter``, is a system :term:`smart contract` on :term:`HyperEVM` at the fixed address ``0x3333333333333333333333333333333333333333``. It is the sole mechanism for :term:`HyperEVM` :term:`smart contracts <smart contract>` to write state changes to :term:`HyperCore`, the native trading engine of the :term:`Hyperliquid` layer 1.
+
+        CoreWriter exposes a single function ``sendRawAction(bytes)`` that accepts encoded action payloads. Each action is identified by an action ID:
+
+        - **Action 2 (vaultTransfer)** — deposit or withdraw from a :term:`HyperCore` native :term:`vault`
+        - **Action 6 (spotSend)** — bridge tokens from HyperCore back to :term:`HyperEVM` (withdrawal to EVM)
+        - **Action 7 (transferUsdClass)** — move :term:`USDC` between spot and perpetual accounts on HyperCore
+
+        Other action IDs exist for placing :term:`limit orders <limit order>`, staking, and cancellations, but are typically restricted by :term:`vault` guard contracts.
+
+        **Asynchronous, non-atomic execution**
+
+        CoreWriter actions are **queued**, not executed atomically. When ``sendRawAction()`` succeeds on :term:`HyperEVM`, it only means the action entered the queue. :term:`HyperCore` validators process the queue with a few seconds' delay. An action can succeed on EVM but silently fail on HyperCore, with no revert propagation. This requires careful verification of HyperCore state via precompile reads in subsequent blocks.
+
+        When an EVM block finishes execution, all queued CoreWriter actions are processed sequentially on HyperCore (~47k gas per action) — implicit batching at the block level.
+
+        **Guard integration**
+
+        In the :term:`Trading Strategy Protocol` vault architecture, a TradingStrategyModuleV0 guard contract whitelists specific CoreWriter action IDs and target vault addresses. The guard ensures that only authorised vault deposits/withdrawals, USDC class transfers, and spot sends to approved receivers can be executed through the `Safe <https://safe.global/>`__ multisig. All other CoreWriter actions (limit orders, staking, cancellations) are rejected by the guard.
+
+        The guard uses ``multicall(bytes[])`` to batch multiple ``performCall`` invocations into a single EVM transaction, enabling atomic-looking deposit and withdrawal flows on the EVM side (even though HyperCore execution remains asynchronous).
+
+        See also
+
+        - :term:`HyperCore`
+
+        - :term:`HyperEVM`
+
+        - :term:`Hyperliquid`
+
+        - :term:`Smart contract`
+
+        - :term:`Vault`
+
+        - :term:`Lagoon`
+
+        - :term:`USDC`
+
+        - :term:`Precompile`
+
+    Precompile
+
+        A precompile (or precompiled contract) is a :term:`smart contract` whose logic is implemented natively in the :term:`blockchain` node software rather than in :term:`EVM` bytecode. Precompiles are deployed at fixed, low-numbered addresses and execute much faster and cheaper than equivalent :term:`Solidity` code because they bypass EVM interpretation entirely.
+
+        On :term:`Ethereum`, standard precompiles (addresses ``0x01``–``0x0a``) provide cryptographic primitives like ``ecrecover`` (ECDSA signature recovery), SHA-256 hashing, modular exponentiation, and elliptic curve operations. These operations would be prohibitively expensive if implemented in EVM bytecode.
+
+        Some :term:`EVM-compatible` chains extend the precompile set for chain-specific functionality. For example, :term:`HyperEVM` uses precompiles to expose read-only views of :term:`HyperCore` state — such as the vault equity precompile at ``0x0802``, which returns vault equity and lock-up status from the native trading engine. These precompile reads return data from the start of the current block, meaning they show stale state if a :term:`HyperCore Writer` action was submitted in the same block.
+
+        See also
+
+        - :term:`Smart contract`
+
+        - :term:`EVM`
+
+        - :term:`HyperEVM`
+
+        - :term:`HyperCore`
+
+        - :term:`Solidity`
 
     GRVT
 
@@ -8180,11 +8477,58 @@ and algorithmic trading.
 
     Funding rate
 
-        A funding rate is a periodic fee exchanged between long and short position holders in :term:`perpetual future` contracts to keep the derivative's price anchored to the underlying asset's :term:`spot market` price. When the perpetual contract trades above the spot price, longs pay shorts; when below, shorts pay longs. These payments typically occur every 8 hours and are calculated based on the premium between futures and spot prices. Funding rates enable :term:`delta neutral` :term:`cash and carry` strategies, where traders earn passive income by simultaneously holding opposite positions in spot and perpetual markets while remaining hedged against price movements.
+        A funding rate is a periodic fee exchanged between :term:`long <longing>` and :term:`short <shorting>` position holders in :term:`perpetual future` contracts to keep the derivative's price anchored to the underlying asset's :term:`spot market` price. Funding rates enable :term:`delta neutral` :term:`cash and carry` strategies, where traders earn passive income by simultaneously holding opposite positions in spot and perpetual markets while remaining hedged against price movements.
+
+        **How it works**
+
+        - *Positive funding rate*: The perpetual contract trades above the spot price (contango). :term:`Long <longing>` position holders pay :term:`short <shorting>` position holders. This is the most common state during :term:`bull markets <bull market>`, when demand from leveraged longs exceeds shorts.
+        - *Negative funding rate*: The perpetual contract trades below the spot price (backwardation). Short position holders pay long position holders. This typically occurs during sharp sell-offs or bearish sentiment when shorts outnumber longs.
+
+        **Calculation**
+
+        On most cryptocurrency :term:`perpetual future` exchanges, the funding rate is composed of two parts:
+
+        - *Interest rate component*: A fixed base rate representing the cost of holding the position (often 0.01% per period on many exchanges).
+        - *Premium/discount component*: Derived from the difference between the perpetual contract's mark price and the spot index price. When the perp trades at a premium to spot, this component is positive; when at a discount, it is negative.
+
+        The funding payment a trader receives or pays is: ``Funding Payment = Position Size × Funding Rate``. Only traders holding :term:`open positions <open position>` at the moment of the funding snapshot are affected — if you open and close a position between funding intervals, you pay or receive nothing.
+
+        **Funding intervals and rate conventions**
+
+        Exchanges express funding rates at different intervals, which makes direct comparison tricky:
+
+        - *Hourly rate*: Some exchanges like :term:`Hyperliquid` and dYdX charge funding every hour. A typical hourly rate might be 0.001% to 0.005%.
+        - *8-hour rate*: The most common interval, used by Binance, Bybit, and OKX. A typical 8-hour rate is 0.01% (the default/baseline). Funding is settled three times per day.
+        - *Annualised rate (APR)*: To compare across intervals and against other yield sources, funding rates are often annualised. An 8-hour rate of 0.01% annualises to approximately ``0.01% × 3 × 365 = 10.95% APR``. An hourly rate of 0.00125% annualises to ``0.00125% × 24 × 365 = 10.95% APR``. Annualised rates make it easy to benchmark funding yield against :term:`lending protocol` rates, staking yields, or traditional fixed income.
+
+        During extreme market conditions, annualised funding rates can spike to 100%+ APR or go deeply negative, creating both risks and opportunities for :term:`market neutral <market neutral strategy>` strategies.
+
+        **How order book activity drives the funding rate**
+
+        The funding rate is ultimately determined by the trading activity on the :term:`order book`. When bullish traders place aggressive market buy orders and raise their limit buy (bid) prices on the perpetual contract, they push the perp's mark price above the spot index — widening the premium and increasing the funding rate. Conversely, when bearish traders hit the bid with market sell orders or stack limit sell (ask) orders at lower prices, they drive the mark price below spot, pushing funding negative.
+
+        The balance of resting :term:`limit orders <limit order>` on the book also matters: a thick wall of bids below the current price supports the premium and keeps funding elevated, while heavy ask-side liquidity above the price suppresses it. On CLOB-based perpetual :term:`DEXes <decentralised exchange>` like :term:`Hyperliquid`, :term:`GRVT`, and dYdX, this :term:`order book` dynamic is transparent and fully visible on-chain, whereas on centralised exchanges the same mechanics operate but with less visibility into order flow.
+
+        **Relationship between funding rate and open interest**
+
+        Funding rate and :term:`open interest` are two sides of the same coin in :term:`perpetual future` markets. Open interest tells you *how much* capital is committed to open contracts, while funding rate tells you *which direction* that capital is leaning — and how much the dominant side is paying for its conviction.
+
+        - *High open interest amplifies funding rate impact*: When open interest is large, even a modest funding rate transfers substantial value between longs and shorts each interval. For example, at 0.01% per 8 hours on $10 billion of open interest, $1 million changes hands every funding period. This creates a strong economic incentive for the paying side to close positions, which acts as a self-correcting mechanism pulling the perp price back toward spot.
+        - *Funding rate drives open interest changes*: Persistently high positive funding attracts new :term:`short <shorting>` positions from arbitrageurs and :term:`cash and carry` traders who collect funding income, increasing open interest. Conversely, very high funding costs drive overleveraged :term:`longs <longing>` to close, decreasing open interest. Negative funding has the reverse effect — it attracts new longs and pushes out shorts.
+        - *Divergence as a warning signal*: When open interest rises rapidly while funding stays flat or low, it may indicate that both sides are entering equally (balanced new positioning). But when open interest rises alongside extreme funding, it signals a dangerous one-sided buildup. :term:`Liquidation` cascades in these conditions are especially violent because the large open interest provides fuel for a chain reaction of forced closures.
+        - *Post-liquidation reset*: After a :term:`liquidation` cascade, both metrics normalise together — open interest drops as positions are forcefully closed, and funding rate resets toward baseline as the directional imbalance is cleared. This often marks a local bottom (after long liquidations) or local top (after short liquidations).
+
+        :term:`Delta neutral` strategies like :term:`Ethena` continuously monitor both open interest and funding rate to size their positions and assess the sustainability of funding yield — high funding is only profitable if it persists, and high open interest on one side is a leading indicator that it may not.
 
         See also
 
         - :term:`Perpetual future`
+
+        - :term:`Futures`
+
+        - :term:`Open interest`
+
+        - :term:`Order book`
 
         - :term:`Cash and carry`
 
@@ -8194,7 +8538,15 @@ and algorithmic trading.
 
         - :term:`Leverage`
 
+        - :term:`Longing`
+
+        - :term:`Shorting`
+
+        - :term:`Open position`
+
         - :term:`Ethena`
+
+        - :term:`Hyperliquid`
 
     Collateral
 
