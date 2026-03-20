@@ -681,3 +681,18 @@ Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussi
 By Anindya Sarkar and G. Vadivu, March 2025.
 
 `Read the paper <https://arxiv.org/abs/2503.22192>`__
+
+Algorithms for Asset Allocators: Review
+----------------------------------------
+
+This paper presents a taxonomy and review of machine learning areas relevant to the Asset Allocator domain — endowment funds, pension funds, and sovereign wealth funds — which typically operate on longer time horizons than other investor types and often serve socially important purposes. Despite managing large quantities of assets globally, allocators have historically fallen under the radar in the financial data science literature due to limited datasets, long feedback loops, and a complex variety of underlying investment characteristics.
+
+The review maps out applications of machine learning and computational statistics algorithms across three use cases: investment analysis, portfolio management, and workflow productivity enhancement. The authors argue that the data challenge faced by allocators is one of the most complex problems within asset management, but that the recent period has seen growing interest in applying data science methods across the entire industry, including this domain. The paper further examines private equity investing as a case study, drawing transferable learnings for the broader allocator space.
+
+Key metrics: This is a review and taxonomy paper rather than an empirical study, so no specific performance metrics (Sharpe ratio, returns, drawdown) are reported. The contribution is a structured mapping of ML techniques to allocator-specific challenges and use cases.
+
+Mentioned by `PtrPomorski <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2034966181745238308>`__.
+
+By Chloe Taysom, Nick Firoozye, and Philip Treleaven, February 2026.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6245160>`__
