@@ -388,11 +388,32 @@ First make sure
 
 - Your hot wallet has native gas token for transaction fees
 
-- Use `--simulate` switch to do the first stab: this will fork the mainnet and simulate the transaction
-  in Anvil, so you do not spend gas if there are bugs in your `decide_trades()`
+- Use ``--simulate`` switch to do the first stab: this will fork the mainnet and simulate the transaction
+  in Anvil, so you do not spend gas if there are bugs in your ``decide_trades()``
 
-You can perform a test trade that checks that the trade routing works, opening and closing positions is possible.
-This command will buy and sell a single trading pair from the strategy, worth of 1 USD.
+Using trade-ui (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``trade-ui`` command provides an interactive terminal interface for selecting a trading pair
+and performing a test trade. It displays all pairs in the strategy universe with prices,
+and lets you choose the trade direction (buy and sell, buy only, sell only) and amount.
+
+.. code-block:: shell
+
+    docker compose run \
+        base-ath \
+        trade-ui \
+        --simulate
+
+The TUI shows a navigable table of all pairs. Use arrow keys to select a pair, press Enter,
+then choose the trade mode and amount in the dialog. The command handles universe loading,
+routing setup, and trade execution automatically.
+
+Using perform-test-trade
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Alternatively, you can use the ``perform-test-trade`` command for non-interactive, scriptable test trades.
+This is useful for CI pipelines or when you know the exact pair you want to test.
 
 .. code-block:: shell
 
@@ -668,7 +689,16 @@ Finishing the transition
 
 Upgrade the strategy source code, have new assets enabled in ``create_trading_universe()`` Python function.
 
-Run ``perform-test-trade --simulate`` to make sure the new guard works with the new assets.
+Run ``trade-ui --simulate`` to interactively test that the new guard works with the new assets:
+
+.. code-block:: shell
+
+    docker compose run \
+        base-ath \
+        trade-ui \
+        --simulate
+
+Or use ``perform-test-trade`` for non-interactive testing of all vault pairs:
 
 .. code-block:: shell
 
