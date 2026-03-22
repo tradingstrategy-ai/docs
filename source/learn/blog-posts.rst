@@ -1806,3 +1806,14 @@ Each formula is presented with mathematical definitions, practical examples from
 Mentioned by `0xRicker in this discussion <https://x.com/0xRicker/status/2032798292128522327>`__.
 
 `Read the post <https://x.com/0xRicker/status/2032798292128522327>`__
+
+Using AI to Improve the ADX Indicator for Breakout Trading
+-----------------------------------------------------------
+
+A video walkthrough demonstrating how AI-suggested modifications to the ADX (Average Directional Index) indicator can dramatically improve a breakout trading strategy's performance. Thomas Nissendal ("Mr. Breakout") takes an e-mini futures strategy built with his breakout trading formula and replaces its traditionally calibrated ADX filter with an AI-proposed approach: applying a simple moving average directly on ADX values with unified period lengths.
+
+The iterative process shows how raw AI suggestions rarely work out of the box — the initial improvement was promising but insufficient, and trading experience was needed to refine the idea through steps like unifying the ADX and moving average periods and optimising with large increments to avoid overfitting. The final result nearly doubled net profit (from $87K to $200K), cut maximum drawdown almost in half (from $23K to $13K), and improved average trade size and profit factor. The author cautions that robustness testing (stress testing, walk-forward analysis) is still required before live deployment, but rates the AI-enhanced ADX moving average concept at 100% for inclusion in his trading arsenal.
+
+By Thomas Nissendal, Breakout Trading Academy.
+
+`Watch the video <https://www.youtube.com/watch?v=I1BWjv-03QQ>`__
