@@ -771,3 +771,18 @@ By Sangmin Oh (Columbia Business School) and Jessica A. Wachter (Wharton / NBER 
 Mentioned by Darren (@ReformedTrader) in `this discussion <https://x.com/ReformedTrader/status/2034719148690087962>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3079715>`__
+
+Beyond delta neutrality: Confidence-scaled hedging with machine learning forecasts
+----------------------------------------------------------------------------------
+
+This paper studies whether machine learning forecasts can enhance option portfolio performance by relaxing strict delta neutrality. The authors propose a confidence-scaled hedging framework that dynamically adjusts hedge ratios based on the classification confidence of ML models. Rather than targeting a delta of zero, the framework applies a parameter α as a multiplier to the hedge ratio: when delta is positive and the model anticipates an upward move, the hedge is reduced to retain more directional exposure; when delta is negative and a decline is predicted, the hedge magnitude is similarly reduced. This creates a mechanism for translating model confidence directly into portfolio positioning.
+
+The study uses option and underlying ETF data to evaluate the framework empirically. The key finding is that moderate confidence scaling improves Sharpe ratios relative to a strict delta-neutral benchmark, while aggressive scaling increases volatility and weakens long-term returns. The results demonstrate that ML forecasts can be translated into economically meaningful improvements in risk-adjusted performance, provided the confidence scaling parameter is calibrated carefully.
+
+Key metrics: moderate confidence scaling improves Sharpe ratios versus the delta-neutral benchmark; aggressive scaling increases portfolio volatility and degrades long-term returns. The framework introduces a single tunable parameter α that governs the trade-off between return enhancement and increased risk exposure. No specific numeric Sharpe or return figures are disclosed in the abstract.
+
+Mentioned by `Nam Nguyen, Ph.D. <https://www.linkedin.com/in/namnguyento>`__ (Quantitative Strategist and Derivatives Specialist) in `this LinkedIn discussion <https://www.linkedin.com/posts/namnguyento_options-riskmanagement-volatility-share-7441870249068564481-y4yh>`__.
+
+By Boyan Li and Chongfeng Wu. Published in Finance Research Letters, 2025.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1544612325023475>`__
