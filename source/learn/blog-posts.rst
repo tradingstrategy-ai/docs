@@ -1817,3 +1817,14 @@ The iterative process shows how raw AI suggestions rarely work out of the box �
 By Thomas Nissendal, Breakout Trading Academy.
 
 `Watch the video <https://www.youtube.com/watch?v=I1BWjv-03QQ>`__
+
+Basic Trend Following: Primer
+------------------------------
+
+A practical walkthrough for constructing a basic trend-following program layered on top of a diversified beta benchmark. The author argues that a simple trend program stacked on beta is one of the most defensible investment approaches available: intuitive, empirically grounded, and designed to outperform a passive allocation over a full market cycle.
+
+The construction follows four steps: (1) **Benchmark selection** — a 60/15/15/10 allocation across stocks, bonds, gold, and bitcoin, reflecting the Paul Tudor Jones-style portfolio while retaining bonds as a defensive asset; (2) **Two-speed, binary trend signal** — using 1-month and 6-month lookback windows, taking a full position when both are positive, a half position when signals conflict, and going flat when both are negative; (3) **Risk parity** weighting to equalise risk contribution across assets; and (4) **Dynamic leverage with a maximum volatility cap** to adjust exposure based on realised volatility. Shorts are deliberately excluded — the assets in the benchmark tend to drift upward over time, and successfully shorting them requires a more tactical approach. The 1-month and 6-month lookbacks are not mathematically optimal but are chosen to align with common investor behavioural tendencies.
+
+By `@AahanPrometheus <https://x.com/AahanPrometheus>`__ (Prometheus Macro).
+
+`Read the thread <https://threadreaderapp.com/thread/2020234019108266368.html>`__
