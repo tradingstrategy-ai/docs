@@ -1828,3 +1828,16 @@ The construction follows four steps: (1) **Benchmark selection** — a 60/15/15/
 By `@AahanPrometheus <https://x.com/AahanPrometheus>`__ (Prometheus Macro).
 
 `Read the thread <https://threadreaderapp.com/thread/2020234019108266368.html>`__
+
+Funding Rate Suppression Detection in Crypto Derivatives Markets
+-----------------------------------------------------------------
+
+A detailed analysis of funding rate manipulation on centralised crypto exchanges, with a focus on the BEAT token on Binance. The author identifies a stark anomaly: a 2:1 long/short ratio that should produce elevated positive funding, yet the rate sits pinned at 0.005% — flat and unresponsive to market conditions.
+
+To systematically detect this behaviour, Margin Syndicate built a Funding Rate Suppression Detector with four layers: (1) **Cross-sectional analysis** — comparing a token's funding rate against its long/short imbalance relative to every other token on the exchange to flag statistical outliers; (2) **Event response** — checking whether funding moves after liquidation events (e.g. 179K in shorts liquidated with no rate movement suggests instant replacement); (3) **Variance analysis** — identifying tokens with near-zero funding variance over 24+ periods while the rest of the exchange fluctuates normally; and (4) **Cross-exchange comparison** — detecting divergences between venues (e.g. 0.60 short ratio on OKX vs 2.31 long ratio on Binance for the same token).
+
+In a `follow-up discussion <https://www.linkedin.com/feed/update/urn:li:ugcPost:7441884273613246464?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7441884273613246464%2C7441891124870500352%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287441891124870500352%2Curn%3Ali%3AugcPost%3A7441884273613246464%29>`__, the author maps these findings to MiCA Article 91 market manipulation provisions — covering wash trading ($5M reported volume vs $240 organic), artificial price positioning, dissemination of misleading volume figures, and cross-exchange manipulation via coordinated positions across venues. The mechanics are broken down: running opposing positions to keep the long/short ratio flat, timing around 8-hour settlement windows, instantly replacing liquidated shorts, and pinning the rate at a level too low to attract arbitrage traders but not negative enough to raise automated flags.
+
+By Steven Paterson, `Margin Syndicate <https://marginsyndicate.co.uk/>`__.
+
+`Read the post <https://www.linkedin.com/posts/steven-paterson-10a1619_why-is-the-funding-rate-on-binance-for-beat-ugcPost-7441884273613246464--e41>`__
