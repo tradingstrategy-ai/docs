@@ -1841,3 +1841,14 @@ In a `follow-up discussion <https://www.linkedin.com/feed/update/urn:li:ugcPost:
 By Steven Paterson, `Margin Syndicate <https://marginsyndicate.co.uk/>`__.
 
 `Read the post <https://www.linkedin.com/posts/steven-paterson-10a1619_why-is-the-funding-rate-on-binance-for-beat-ugcPost-7441884273613246464--e41>`__
+
+Building a NASDAQ Pivot Point Breakout Strategy
+------------------------------------------------
+
+A step-by-step walkthrough of prototyping, robustness-testing, and cross-validating a pivot point breakout strategy on E-mini NASDAQ (NQ) futures. The setup is minimalist: calculate the daily Pivot S1 from the 4 PM Chicago close, add 2.2× ATR above it, and go long on a breakout — exiting at the close, trading only Mondays and Tuesdays. No indicators or filters beyond the day-of-week restriction.
+
+The robustness testing is thorough. The Space metric (how many pivot-level and multiplier combinations produce positive results) scored 92% on R1 and 86% on S1. The selected 2.2× multiplier ranked first on walk-forward unseen data over three years, and neighbouring values (2.0, 2.4) remained profitable — evidence of a stable parameter region rather than a curve-fitted outlier. Cross-validation across five additional index futures (S&P, Dow, Nikkei, S&P 400, Russell) showed all six passing on both all-time and recent-year data, with Nikkei outperforming NASDAQ. The day-of-week filter was driven by data: Friday was consistently destructive and Thursday marginal, so restricting to Monday–Tuesday improved both average trade quality and net-profit-to-drawdown ratio.
+
+Mentioned by `@onlybreakouts <https://x.com/onlybreakouts>`__ (Breakout Trading Academy) in `this discussion <https://x.com/onlybreakouts/status/2037229660803604972>`__.
+
+`Watch the video <https://www.youtube.com/watch?v=PFI0xLCUx_4>`__
