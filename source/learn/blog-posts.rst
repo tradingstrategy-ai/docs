@@ -1852,3 +1852,14 @@ The robustness testing is thorough. The Space metric (how many pivot-level and m
 Mentioned by `@onlybreakouts <https://x.com/onlybreakouts>`__ (Breakout Trading Academy) in `this discussion <https://x.com/onlybreakouts/status/2037229660803604972>`__.
 
 `Watch the video <https://www.youtube.com/watch?v=PFI0xLCUx_4>`__
+
+ML-Optimized Dynamic Position Sizing for Trading Strategies
+------------------------------------------------------------
+
+A practical demonstration of how machine learning can enhance a baseline trading strategy — not by changing the entry/exit logic, but by optimising position sizing. In a walk-forward out-of-sample test, the baseline and ML-optimised versions share a nearly identical 70% win rate and similar trade counts, yet the ML version delivers +83% higher total return (in R-multiples) while cutting maximum drawdown by 46%.
+
+The edge comes from dynamic, conviction-weighted position sizing. The ML model assigns a probability to each trade and scales risk accordingly: 1.0R at 50–60% conviction, ramping to 2.5R above 70%. Crucially, the model also scales *down* in low-conviction environments, staying small during losing streaks and pressing only when the statistical edge is highest. The result is an asymmetric risk profile — bigger bets on the best setups, smaller exposure during drawdowns — demonstrating that ML's value in systematic trading can lie in bet sizing rather than signal generation. Built with a custom Python pipeline using Scikit-Learn.
+
+Mentioned by `@Eddie_Fibonacci <https://x.com/Eddie_Fibonacci>`__ in `this discussion <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__.
+
+`Read the post <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__
