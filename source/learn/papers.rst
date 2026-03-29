@@ -799,3 +799,16 @@ Mentioned by `Piotr Pomorski (@PtrPomorski) <https://x.com/PtrPomorski>`__ in `t
 By Zhichen Xu, Nick Firoozye, Andreas Koukorinis, Philip Treleaven, and Wilbur Zhu. Department of Computer Science, University College London.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6225198>`__
+
+Early Birds Get the Vol: Morning Volatility Uncertainty and Variance Risk Premium
+----------------------------------------------------------------------------------
+
+This paper documents that morning volatility-of-volatility (VVIX), measured at 10:00 EST during the U.S.–European market overlap, strongly predicts next-day variance asset returns. The predictive power peaks with t-statistics reaching 5.6 and adjusted R-squared of 2.6%, but diminishes after 11:00 EST. The authors attribute this to limited attention and slow-moving beliefs: elevated morning VVIX signals heightened uncertainty, yet prices do not fully adjust until the following day, making variance assets temporarily "too cheap". Conversely, low morning VVIX makes the usual negative variance risk premium more pronounced. Intraday returns show a flat relationship with morning VVIX on high-uncertainty days, while close-to-close returns exhibit strong predictability — consistent with delayed price adjustment rather than a standard risk premium.
+
+A long-short trading strategy that buys variance assets following high morning VVIX and sells following low morning VVIX achieves annualised Sharpe ratios of 1.51 to 2.87 across SPX straddles, VIX straddles, variance swaps, and VIX futures (using the 75th percentile threshold). VIX futures deliver a Sharpe of 2.09, nearly four times the unconditional benchmark of 0.54. The long-only leg is particularly strong, with Sharpe ratios of 2.52 (SPX straddles), 2.41 (VIX straddles), and 3.24 (VIX futures) at the 75th percentile. The short-only leg generates Sharpes of 1.46 to 2.37. Results remain economically meaningful after transaction costs.
+
+Mentioned by `Piotr Pomorski (@PtrPomorski) <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2037954400719626309>`__: "this one is good".
+
+By Rodrigo Hizmeri and Mattia Bevilacqua.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6212458>`__
