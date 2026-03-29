@@ -786,3 +786,16 @@ Mentioned by `Nam Nguyen, Ph.D. <https://www.linkedin.com/in/namnguyento>`__ (Qu
 By Boyan Li and Chongfeng Wu. Published in Finance Research Letters, 2025.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1544612325023475>`__
+
+Advanced Signal Filtering for Mean Reversion Trading
+-----------------------------------------------------
+
+This paper develops a regime-aware mean-reversion trading framework in which adaptive neural signal filters determine the latent fair price of an asset. The core idea is that the spot price is driven by high-frequency noise around a smooth "fair value", and the spread between the two creates buy/sell opportunities. The authors introduce a novel optimisation objective — the Local Average Filtering Objective (LAFO) — which interpolates between pointwise fitting and global averaging, yielding a controllable low-pass filter. Penalty terms restore identifiability, encode structural regime assumptions, and stabilise the extracted signal. Modern neural network architectures — including recurrent, convolutional, and state-space models — are shown to approximate solutions within this framework.
+
+On S&P 500 intraday data (2-minute frequency), the neural filters dramatically outperform traditional EMA baselines. The best-performing model, a 2-layer CNN, achieved an annualised Sharpe Ratio of 11.05, a Sortino Ratio of 39.13, a hit rate of 47.9%, and positive excess returns of 10.5% after transaction costs of 3 bps. WaveNet (Sharpe 8.01, Sortino 24.17) and a Deep Kalman Filter (Sharpe 4.92, Sortino 12.89) also produced strong risk-adjusted returns, while standard EMA filters yielded deeply negative Sharpe ratios. The results demonstrate that appropriate signal extraction is central to mean-reversion profitability.
+
+Mentioned by `Piotr Pomorski (@PtrPomorski) <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2038223897640968316>`__.
+
+By Zhichen Xu, Nick Firoozye, Andreas Koukorinis, Philip Treleaven, and Wilbur Zhu. Department of Computer Science, University College London.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6225198>`__
