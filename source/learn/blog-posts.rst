@@ -1863,3 +1863,14 @@ The edge comes from dynamic, conviction-weighted position sizing. The ML model a
 Mentioned by `@Eddie_Fibonacci <https://x.com/Eddie_Fibonacci>`__ in `this discussion <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__.
 
 `Read the post <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__
+
+Intraday Market Making on Cointegrated Equity Pairs with Avellaneda-Stoikov and Kalman Filter
+----------------------------------------------------------------------------------------------
+
+A hands-on walkthrough of building an intraday market-making system that applies the Avellaneda-Stoikov optimal quoting framework to cointegrated equity pairs (WFC/AXP), with dynamic hedge ratio estimation via Kalman Filter on 619K minute bars. The pipeline covers pair selection via cointegration testing across S&P 100 constituents, Kalman Filter with EM calibration for hedge ratios, Avellaneda-Stoikov optimal quoting with fee floors, and out-of-sample validation with phantom fill prevention.
+
+The author emphasises the gap between mathematical elegance and market reality — the first version produced a Sharpe of -11 before six structural bugs were identified and fixed. Out-of-sample results (2024–2026, net of costs) show a Sharpe Ratio of 1.21, net PnL of +$4,870 on $100K notional (peak capital deployed ~$36K, yielding 13.56% over 27 months or ~5.9% annualised), and a maximum drawdown of -2.49% with the model active on 100% of bars. Full source code is available on GitHub.
+
+By `Duarte Abraços <https://www.linkedin.com/in/duarte-abracos>`__.
+
+`Read the post <https://www.linkedin.com/posts/duarte-abracos_quantitativefinance-algorithmictrading-marketmaking-share-7443324306358505472-vSu1>`__
