@@ -1874,3 +1874,14 @@ The author emphasises the gap between mathematical elegance and market reality �
 By `Duarte Abraços <https://www.linkedin.com/in/duarte-abracos>`__.
 
 `Read the post <https://www.linkedin.com/posts/duarte-abracos_quantitativefinance-algorithmictrading-marketmaking-share-7443324306358505472-vSu1>`__
+
+Liminal and Rysk: Two Approaches to Yield Generation on Hyperliquid
+--------------------------------------------------------------------
+
+A detailed comparison of two DeFi protocols building yield-generating products on Hyperliquid's perpetual futures infrastructure: Liminal and Rysk Finance. Liminal automates delta-neutral carry strategies by holding spot and shorting perpetuals to capture funding rate payments — a technique long used by professional trading desks. Since crypto perpetual funding rates are positive 85–90% of the time (longs pay shorts), Liminal positions users on the receiving end. The neutral funding rate on Hyperliquid has historically averaged around 10.95% annualised, with rates spiking significantly during high-leverage demand periods. Users deposit stablecoins and receive yield-bearing xTokens (xHYPE, xBTC) that appreciate as funding accumulates, with composability across DeFi lending markets enabling stacked yields.
+
+Rysk takes a different approach, generating yield from options volatility premiums through covered calls and cash-secured puts. The protocol uses a Request for Quote (RFQ) system where market makers compete in 2-second auctions to price options, with settlement handled on-chain. Covered calls on BTC offer 10–142% annualised depending on strike distance, while cash-secured puts pay users a premium for committing to buy at a lower price — effectively monetising conviction while waiting. All options are European-style, physically settled, and fully collateralised. The article provides concrete examples with current pricing, making it a practical primer on how both funding rate capture and options writing work as systematic yield strategies in crypto derivatives markets.
+
+Mentioned by `@0xMacroGuy <https://x.com/0xMacroguy>`__ in `this discussion <https://x.com/0xMacroguy/status/2038991439162413164>`__.
+
+`Read the article <https://x.com/0xMacroguy/status/2038991439162413164>`__
