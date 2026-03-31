@@ -696,3 +696,16 @@ Mentioned by `PtrPomorski <https://x.com/PtrPomorski>`__ in `this discussion <ht
 By Chloe Taysom, Nick Firoozye, and Philip Treleaven, February 2026.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6245160>`__
+
+Empirical Asset Pricing via Learning-to-Rank
+---------------------------------------------
+
+This paper applies learning-to-rank (L2R) methods from information retrieval to the cross-section of stock returns. Unlike traditional return forecast or probability forecast models that rank stocks based on absolute predicted values, L2R models directly optimise relative rankings among stocks. The authors compare three approaches — return forecasting, probability forecasting, and listwise learning-to-rank — using both gradient-boosted decision trees (GBDT) and three-layer neural networks (NN3) on U.S. equities from 1994 to 2024. They also apply the ranking philosophy to simpler models such as ordered logit, which perform comparably to the most sophisticated ML return and probability forecast models.
+
+The GBDT-based listwise L2R models deliver the strongest results: long-short portfolios achieve average monthly excess returns of 1.88%, 1.55%, and 2.35% with annualised Sharpe ratios of 0.71, 0.63, and 1.18 across the three L2R variants, compared to 0.35–0.53 Sharpe for standard GBDT return and probability forecast models. L2R models also exhibit materially lower maximum drawdowns — the NN3-based listwise model has a maximum drawdown of 41% versus 54% for the return forecast model and 63% for the probability forecast model. The outperformance stems from better identification of top and bottom decile stocks and improved hedging, rather than superior return point estimates. Combining forecasts with L2R does not consistently improve on L2R alone.
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-learning-to-rank-vs-predicting-share-7442569151061250048-oqt4>`__.
+
+By Yan Lin, Yihong Su, and Zhaobo Zhu.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6348379>`__
