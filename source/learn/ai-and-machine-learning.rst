@@ -704,8 +704,19 @@ This paper applies learning-to-rank (L2R) methods from information retrieval to 
 
 The GBDT-based listwise L2R models deliver the strongest results: long-short portfolios achieve average monthly excess returns of 1.88%, 1.55%, and 2.35% with annualised Sharpe ratios of 0.71, 0.63, and 1.18 across the three L2R variants, compared to 0.35–0.53 Sharpe for standard GBDT return and probability forecast models. L2R models also exhibit materially lower maximum drawdowns — the NN3-based listwise model has a maximum drawdown of 41% versus 54% for the return forecast model and 63% for the probability forecast model. The outperformance stems from better identification of top and bottom decile stocks and improved hedging, rather than superior return point estimates. Combining forecasts with L2R does not consistently improve on L2R alone.
 
-Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-learning-to-rank-vs-predicting-share-7442569151061250048-oqt4>`__.
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-learning-to-rank-vs-predicting-share-7442569151061250048-oqt4>`__. See also the related post on `Learning to Rank for Long-Short Equity Portfolio Construction <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__ which covers the ListFold approach to L2R in Chinese equities.
 
 By Yan Lin, Yihong Su, and Zhaobo Zhu.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6348379>`__
+
+Learning to Rank for Long-Short Equity Portfolio Construction
+--------------------------------------------------------------
+
+An overview of Learning-to-Rank (L2R) methods applied to quantitative equity portfolio construction. The post explains the three main L2R approaches — pointwise (scoring individual items), pairwise (comparing item pairs), and listwise (optimising entire ranked lists) — and highlights their emerging use in finance, where the goal is to predict ranked stock lists rather than individual stock returns directly.
+
+The post references the ListFold paper by Chen, Li, and Qiao, which introduces a listwise L2R loss function specifically designed for long-short strategies by emphasising both top and bottom rankings. Applied to 68 factors on China's A-share market (2006–2019), ListFold achieved approximately 38% annual return with a Sharpe ratio of 2.0. The implementation is open-sourced on GitHub. See also the related paper `Empirical Asset Pricing via Learning-to-Rank <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6348379>`__ (Lin, Su, Zhu) which compares L2R to return and probability forecast models on U.S. equities and finds similar L2R advantages.
+
+By `Sione Palu <https://www.linkedin.com/in/sione-palu-62912a85/>`__.
+
+`Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__
