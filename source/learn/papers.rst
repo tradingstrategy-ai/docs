@@ -823,3 +823,16 @@ In Monte Carlo simulations on five S&P/ASX 50 assets with CAPM-derived expected 
 By Anas Abdelhakmi and Andrew Lim. National University of Singapore.
 
 `Read the paper <https://arxiv.org/abs/2404.18822>`__
+
+The Market Maker's Dilemma: Navigating the Fill Probability vs. Post-Fill Returns Trade-Off
+--------------------------------------------------------------------------------------------
+
+This paper presents results from a live trading experiment on the Binance Bitcoin perpetual futures market, the most liquid crypto market globally. The authors submitted 232,897 minimum-sized maker orders over one week in a continuous quoting mode (always maintaining orders at top-of-book on both sides), of which 127,051 filled and 105,846 were cancelled unfilled. The experiment reveals a fundamental negative correlation between an order's fill probability and its post-fill returns: conditions that make fills more likely (such as adverse order book imbalance where the opposite queue is large and the near-side queue is small) are precisely the conditions that predict poor post-fill returns due to price persistence.
+
+The paper demonstrates the consequences with a naive market making strategy that continuously quotes at the touch and rebalances to zero inventory after each fill. This strategy lost nearly 60% in three days, producing an annualised Sharpe ratio of −109 with an average holding time of 11 seconds and an average loss of 0.44 basis points per roundtrip. The authors then model "reversals" — situations where the order book imbalance falsely predicts the next price move — using logistic regression and random forest classifiers on features including queue sizes, recent price moves, and time-of-day effects. A balanced-inventory strategy that only trades when the model predicts a reversal with probability exceeding the 0.24 threshold improves the Sharpe ratio to 11.97 (logistic regression) while maintaining 327 roundtrips per day. The authors caution that these Sharpe ratios apply to minimum-sized orders and would degrade with larger position sizes.
+
+Mentioned by `Alcibiades (@0xAlcibiades) <https://x.com/0xAlcibiades>`__ in `this discussion <https://x.com/0xAlcibiades/status/2039679872000573594>`__: "Fill probability and post-fill returns are negatively correlated. Their naive MM strategy hits a Sharpe of −109 without rebates. The only regime where maker orders are profitable is when order book imbalance falsely predicts the next price move."
+
+By Jakob Albers, Mihai Cucuringu, Sam Howison, and Alexander Y. Shestopaloff.
+
+`Read the paper <https://arxiv.org/abs/2502.18625>`__
