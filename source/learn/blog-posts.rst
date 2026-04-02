@@ -1885,3 +1885,14 @@ Rysk takes a different approach, generating yield from options volatility premiu
 Mentioned by `@0xMacroGuy <https://x.com/0xMacroguy>`__ in `this discussion <https://x.com/0xMacroguy/status/2038991439162413164>`__.
 
 `Read the article <https://x.com/0xMacroguy/status/2038991439162413164>`__
+
+Fat Tails in Crypto Markets and Implications for Market Making
+--------------------------------------------------------------
+
+A concise analysis of why standard Gaussian assumptions fail in crypto market microstructure and what this means for market making strategies. Standard financial literature models order arrivals as Poisson, uses Geometric Brownian motion for optimal control, and assumes normally distributed returns — but crypto markets, especially at high frequency, exhibit kurtosis an order of magnitude above Gaussian assumptions.
+
+The post explains how fat-tailed distributions interact with crypto-specific dynamics: in markets with points or liquidity incentives where daily volume runs 10–20x open interest, prices behave like an Ornstein–Uhlenbeck process, which is part of why medium-frequency mean reversion works in perpetual futures. For market makers, fill sizes are extremely fat-tailed with larger fills carrying negative 5-second markouts, meaning naive linear-cost models produce equity curves that only go down. The practical takeaway: market making requires a convex payoff structure with respect to risk — a super-linear premium for taking it on and a sub-linear cost for exiting — along with contrarian treatment of signals like order imbalance by estimating reversal probabilities.
+
+By `Alcibiades <https://x.com/0xAlcibiades>`__.
+
+`Read the post <https://x.com/0xAlcibiades/status/2039679350572728376>`__
