@@ -1896,3 +1896,16 @@ The post explains how fat-tailed distributions interact with crypto-specific dyn
 By `Alcibiades <https://x.com/0xAlcibiades>`__.
 
 `Read the post <https://x.com/0xAlcibiades/status/2039679350572728376>`__
+
+Most-Predictive: Which Microstructure Metric Best Forecasts Short-Term Crypto Returns
+--------------------------------------------------------------------------------------
+
+An interactive notebook from Aperiodic that tackles a deceptively simple question: across the full catalog of crypto microstructure metrics — order flow, book imbalance, funding rates, trade size distributions, spread dynamics — which single metric is the most predictive of short-term returns? The notebook provides a reproducible framework for ranking dozens of pre-aggregated metrics by their forecasting power across instruments and horizons, letting users run the same analysis to surface similar signals on their own.
+
+The approach works because crypto perpetual futures have a relatively transparent microstructure where aggressive (taker) order flow is the primary short-term price driver. Market makers continuously adjust quotes in response to net buy/sell pressure, so metrics that capture directional flow imbalance — the difference between taker buy and taker sell volume — tend to carry strong predictive signal over intrabar and multi-bar horizons. Unlike derived indicators built on price alone, order flow metrics observe the cause (aggressive trading activity) rather than the effect (price movement), giving them a structural information advantage. The notebook demonstrates this empirically: flow-based features dominate book-state and derivatives-based features in out-of-sample predictive power, consistent with the broader academic literature on order flow and cryptocurrency returns. For practitioners, the key takeaway is that a single, well-constructed order flow metric can outperform complex multi-factor models for short-horizon alpha, especially in instruments with high taker-driven volume like BTC and ETH perpetuals.
+
+Mentioned by `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive/>`__ in `this discussion <https://www.linkedin.com/posts/almostintuitive_its-kind-of-an-open-secret-in-crypto-microstructure-share-7444821512399781888-EEfI>`__: "It's kind of an open secret in crypto microstructure: one metric predicts short-term returns better than almost anything else."
+
+By `Aperiodic <https://aperiodic.io>`__.
+
+`Run the notebook <https://aperiodic.io/notebooks/most-predictive>`__
