@@ -1968,3 +1968,14 @@ The team's approach treats turnover as a first-class citizen in their research m
 By Mark Aron Szulyovszky and Daniel Szemerey.
 
 `Read the blog post <https://blog.unravel.finance/p/research-bits-1-the-most-underrated>`__
+
+The Delta-Neutral Funding Rate Mechanics Problem: Entry Rate vs. Settlement Rate
+---------------------------------------------------------------------------------
+
+A Twitter thread by @zirodelta examining a key flaw in delta-neutral funding rate strategies: the assumption that the rate you enter at is the rate you receive. Ethena's $3B AUM delta-neutral strategy proved the core thesis — short the perp, hold spot, collect funding — but leaves open a crucial mechanics problem: funding periods run every 1–8 hours depending on the exchange, and the published rate is continuously recalculated within that window. If you enter at 0.03% per 8h but the rate drifts to 0.01% before settlement, you settle at the time-weighted average, not the entry rate. Ethena hedges this across many symbols, but does not eliminate the basis — it hedges it with size.
+
+The thread argues that sharp Sharpe ratios in delta-neutral backtests are misleading: if you backtest using the published 8h rate and assume that is what you receive, you are overstating yield. Direction is predictable (89% of extreme rates mean-revert within 24 hours across a dataset of 9.4M settlements), but magnitude is not — Ornstein-Uhlenbeck describes the direction of travel, not the landing point. The thread introduces "Settled," a protocol designed to address magnitude uncertainty through binary outcomes resolving against actual settled rates. The analogy drawn is to interest rate swaps, which decoupled direction from duration risk; funding rate derivatives do the same one layer down.
+
+By `@zirodelta <https://x.com/zirodelta>`__.
+
+`Read the thread <https://twitter-thread.com/t/2040067413002289243>`__
