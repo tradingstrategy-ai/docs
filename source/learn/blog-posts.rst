@@ -1913,3 +1913,58 @@ Mentioned by `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive
 By `Aperiodic <https://aperiodic.io>`__.
 
 `Run the notebook <https://aperiodic.io/notebooks/most-predictive>`__
+
+Cross-Sectional Alpha Factors in Crypto: 2+ Sharpe Ratio Without Overfitting
+-----------------------------------------------------------------------------
+
+An in-depth examination of how traditional quantitative finance factor models — originally developed for equities by Fama and French — can be adapted to cryptocurrency markets to generate alpha. The authors argue these factors still qualify as alpha in crypto because the market hasn't fully arbitraged them away. The methodology involves constructing long/short factor portfolios across the top 50 digital assets by market cap: ranking tokens daily by a chosen metric, going long the top 20% and short the bottom 20% to isolate factor exposure while maintaining zero directional market exposure.
+
+The research focuses on two primary factors: cross-sectional momentum (which operates on ~30-day horizons in crypto, much shorter than the 6–12 months typical in equities) and carry (exploiting perpetual futures funding rate differentials using open-interest-weighted composite rates across exchanges). By combining momentum and carry into a multi-factor portfolio, the researchers achieve a 2+ Sharpe ratio. Key practical challenges addressed include survivorship bias from delisted tokens, extreme volatility dispersion between Bitcoin and memecoins, and limited reliable data before 2020. The authors apply inverse volatility weighting and volume filters to manage these issues, and find that diversification benefits plateau at roughly six factors with achievable Sharpe ratios around 2.5 for single portfolios.
+
+By Mark Aron Szulyovszky and Daniel Szemerey.
+
+`Read the blog post <https://blog.unravel.finance/p/cross-sectional-alpha-factors-in>`__
+
+The Unreasonable Effectiveness of Volatility Targeting — and Where It Falls Short
+----------------------------------------------------------------------------------
+
+Part 1 of an investigative series on how quantitative risk management can enhance risk-adjusted returns. The post explores volatility targeting — a technique for maintaining consistent portfolio volatility through active exposure adjustments using inverse volatility scaling, where exposure decreases as an asset becomes more volatile. The author describes it as "among the very few effective, universal techniques in quantitative finance," alongside diversification.
+
+A central paradox emerges: while high-volatility periods historically produce higher forward returns, volatility targeting paradoxically improves risk-adjusted performance by reducing exposure during these periods. The explanation lies in volatility drag — the mathematical distinction between cumulative returns (multiplicative) and average returns (additive). Applying volatility targeting to the S&P 500 typically yields 10–20% improvements in risk-adjusted returns. However, the author identifies critical blind spots: low-volatility regimes can mask systemic risks when market liquidity structurally declines, leverage across the financial system remains elevated, or implied volatility reaches historically suppressed levels. The August 2024 market disruption exemplified how synchronized de-leveraging events can overwhelm volatility-targeting protections. The post proposes incorporating forward-looking, exogenous risk factors alongside historical volatility metrics. An open-source Python package called "risklab" is referenced for transparent implementation.
+
+By Mark Aron Szulyovszky.
+
+`Read the blog post <https://blog.unravel.finance/p/the-unreasonable-effectiveness-of>`__
+
+How Speculative Money Flows into Crypto
+---------------------------------------
+
+A framework for understanding and predicting speculative capital flows into cryptocurrency markets, structured across three concentric layers. The outermost layer examines macro/global factors including momentum spillover effects from other asset classes — particularly cloud computing sector momentum as a leading indicator for Bitcoin — and Bitcoin-Gold correlation as a proxy for institutional safe-haven perception. The middle layer tracks ecosystem entry points via stablecoin market capitalization, stablecoin exchange inflows (capital "parked for purchasing"), and Bitcoin spot ETF netflows representing institutional interest.
+
+The innermost layer monitors internal leverage metrics: perpetual futures funding rates, liquidation volumes, long/short position ratios, and margin borrowing rates. The author recommends reducing directional exposure when speculative flows decelerate and proactively cutting positions during over-leveraged periods before liquidation cascades. These signals prove even more effective on smaller-cap, more speculative assets like Ethereum. The key insight is that traditional volatility-based risk management is insufficient given crypto's leverage concentration and lack of circuit-breakers — incorporating exogenous money-flow and liquidity metrics provides a superior risk framework for digital asset portfolio management.
+
+By Mark Aron Szulyovszky.
+
+`Read the blog post <https://blog.unravel.finance/p/how-speculative-money-flows-into>`__
+
+Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics
+--------------------------------------------------------------------------------------
+
+An announcement and technical overview of Aperiodic, a cryptocurrency data platform designed to democratize access to institutional-grade market microstructure metrics. The authors identify a significant gap in the crypto data market where existing platforms provide incomplete solutions: building quantitative strategies requires point-in-time data, comprehensive liquidity metrics, unique microstructure indicators, full exchange coverage without survivorship bias, and locally-timestamped time series — and existing providers typically offer only one or two of these.
+
+Aperiodic provides over 100 metrics including deep L2 order book imbalances across multiple depth levels, flow entropy (Shannon entropy measuring order flow predictability — low entropy indicates structured, trend-friendly markets; high entropy suggests choppy, mean-reverting conditions), slippage against live order books, Kyle Lambda (price impact per unit of signed order flow), and large trade reversal metrics distinguishing informed flow from uninformed liquidity-driven flow. The platform delivers pre-signed parquet files enabling unlimited concurrent downloads, with a lightweight Python wrapper for simplified access. This eliminates the need for organizations to independently purchase, store, and maintain terabytes of raw tick data.
+
+By Mark Aron Szulyovszky and Daniel Szemerey.
+
+`Read the blog post <https://blog.unravel.finance/p/aperiodic-democratizing-crypto-order>`__
+
+Research Bits #1: The Most Underrated Metric in (Factor) Research
+-----------------------------------------------------------------
+
+A short research piece highlighting a critical but often overlooked insight in quantitative factor research: portfolio turnover deserves equal consideration alongside information coefficient (IC) when evaluating trading factors. The authors argue that "high IC is essential, but not sufficient by itself" — high-turnover and low-turnover factors operate as fundamentally different instruments and should not be directly compared without accounting for implementation costs and statistical significance.
+
+The team's approach treats turnover as a first-class citizen in their research methodology by standardizing factors to target a specific daily turnover threshold (30–40% for high-turnover factors) before examining performance metrics. This prevents selection bias favoring high-turnover strategies and enables meaningful cross-factor comparisons. The practical example uses their highest-variance factor, Altair, which without smoothing exhibits approximately 100% daily turnover — impractical once transaction costs are included. Applying a 20-day moving average reduces turnover to target levels while preserving the underlying signal. The key takeaway is that enforcing turnover constraints upfront rather than through post-hoc performance analysis helps researchers avoid overfitting and produce comparable, deployable strategies.
+
+By Mark Aron Szulyovszky and Daniel Szemerey.
+
+`Read the blog post <https://blog.unravel.finance/p/research-bits-1-the-most-underrated>`__
