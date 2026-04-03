@@ -836,3 +836,18 @@ Mentioned by `Alcibiades (@0xAlcibiades) <https://x.com/0xAlcibiades>`__ in `thi
 By Jakob Albers, Mihai Cucuringu, Sam Howison, and Alexander Y. Shestopaloff.
 
 `Read the paper <https://arxiv.org/abs/2502.18625>`__
+
+Expected Returns with Cash Flow Trends and Cycles
+--------------------------------------------------
+
+This paper argues that cash flow growth contains a permanent trend component, rendering the price-dividend ratio a noisy proxy for expected returns. Using an Extended Kalman Filter to jointly estimate trend growth, cash flow cycles, and expected returns, the authors demonstrate that cash flow noise generates severe attenuation bias in standard predictive regressions — making valuation ratios appear far weaker than they truly are.
+
+By decomposing the price-dividend ratio into discount-rate variation (the return-predicting signal) and cash-flow dynamics (the noise), and then purging this noise, return predictability is substantially restored. Discount-rate variation dominates price-dividend movements at short and medium horizons, while trend growth dominates at longer horizons.
+
+The cleaned signal delivers out-of-sample R² of approximately 9% at the one-year horizon and 22% at the five-year horizon, where traditional valuation ratios uniformly fall short at every tested horizon.
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-valuation-ratios-arent-share-7442576675743256576-pQjJ/>`__: "Valuation ratios aren't weak predictors. They're noisy ones. There's a difference."
+
+By Sebastian Hillenbrand and Odhrain McCarthy.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6332619>`__
