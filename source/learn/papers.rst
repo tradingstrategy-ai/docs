@@ -866,3 +866,16 @@ Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in 
 By Irene Aldridge and Wenke Du.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5630550>`__
+
+Flow Toxicity and Liquidity in a High Frequency World
+-----------------------------------------------------
+
+Order flow is toxic when it adversely selects market makers, who may be unaware they are providing liquidity at a loss. This paper by David Easley, Marcos López de Prado, and Maureen O'Hara introduces the Volume-Synchronized Probability of Informed Trading (VPIN) — a real-time, high-frequency metric for estimating the probability that order flow is driven by informed participants. Unlike the earlier PIN model, which requires maximum-likelihood estimation of unobservable parameters, VPIN operates in volume time rather than clock time and uses a novel Bulk Volume Classification (BVC) procedure to classify trade volume as buy- or sell-initiated without requiring tick-level quote data. The metric is updated continuously as volume buckets fill, making it directly applicable to high-frequency and algorithmic trading environments.
+
+The paper's central empirical contribution is the application of VPIN to the May 6, 2010 Flash Crash. The authors demonstrate that the cumulative distribution function of VPIN (CDF(VPIN)) reached its 0.97 threshold more than one hour before the crash, signalling historically elevated order flow toxicity well before the market collapsed. As informed traders concentrated activity on the sell side, market makers faced severe adverse selection. The resulting withdrawal of liquidity amplified the crash dynamics. Beyond the Flash Crash, the authors show that VPIN serves as a useful short-term indicator of toxicity-induced volatility. Practitioner-calibrated thresholds place sustained readings above 0.85 (90th–95th percentile) as operationally significant for liquidity risk monitoring. Subsequent debate — notably by Andersen and Bondarenko (2014) — has questioned the precise timing and predictive power of VPIN around the Flash Crash, arguing that elevated readings occurred partly after the event and reflect a mechanical relationship with trading intensity. The original authors have responded and refined their analysis, but the controversy underscores the importance of understanding VPIN's assumptions before deploying it in production.
+
+Published in the Review of Financial Studies, Vol. 25, No. 5, pp. 1457–1493, 2012.
+
+Mentioned by `0xAlcibiades <https://x.com/0xAlcibiades>`__ in `this discussion <https://x.com/0xAlcibiades/status/2040056013189943678>`__: "In 2010 Easley, Lopez de Prado, and O'Hara built a way to measure this. VPIN."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1695596>`__
