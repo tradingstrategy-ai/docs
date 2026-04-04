@@ -851,3 +851,18 @@ Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in 
 By Sebastian Hillenbrand and Odhrain McCarthy.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6332619>`__
+
+Crypto Contagion
+----------------
+
+An empirical study of how the relationship between cryptocurrencies and US equity markets underwent a fundamental structural shift following the introduction of crypto ETFs. Using a risk-sharing model of crypto contagion combined with jump diffusion analysis and double machine learning, the authors isolate actual shock transmission between crypto and equity markets — not merely rolling correlations — across the pre- and post-ETF regimes for Bitcoin (BTC-USD) and Ethereum (ETH-USD).
+
+Before ETF launch, the main cryptocurrencies moved in the opposite direction from US market returns: a 1% crypto move corresponded to approximately -0.07% in S&P 500 returns, making crypto a standalone risk factor with genuine portfolio diversification benefits. After ETF introduction, this relationship inverted entirely — cryptocurrencies now move in tandem with equity markets, functioning as high-beta equity exposure. The diversification benefit that previously justified crypto allocations in multi-asset portfolios is largely eliminated. The authors attribute this regime shift to a fundamental change in the investor base and information environment: crypto ETFs aggregate focused information about cryptocurrency innovations within the protections of the US regulatory framework, attracting institutional investors who previously used spot crypto markets for price discovery. The cryptocurrencies themselves are consequently evolving toward entities comparable to ordinary corporations, with ETFs serving as a proxy for investor sentiment about blockchain innovation.
+
+The regime-shift finding has significant implications for systematic portfolio construction: crypto should no longer be modelled as an independent risk factor but as leveraged equity exposure. The pre-ETF negative beta with US equities — the source of the diversification case — has not just weakened but structurally reversed.
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_crypto-looks-like-high-beta-equity-now-share-7444288683232382976-ZLX6>`__: "For a systematic multi-asset portfolio, the data suggest crypto is no longer a genuine diversifier; it looks like high-beta equity."
+
+By Irene Aldridge and Wenke Du.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5630550>`__
