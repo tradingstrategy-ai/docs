@@ -879,3 +879,16 @@ Published in the Review of Financial Studies, Vol. 25, No. 5, pp. 1457–1493, 2
 Mentioned by `0xAlcibiades <https://x.com/0xAlcibiades>`__ in `this discussion <https://x.com/0xAlcibiades/status/2040056013189943678>`__: "In 2010 Easley, Lopez de Prado, and O'Hara built a way to measure this. VPIN."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1695596>`__
+
+Geopolitical Risk in Currency Markets
+--------------------------------------
+
+This paper by Alessandro Melone (Ohio State University) and Andreas Stathopoulos (UNC Chapel Hill) documents that geopolitical risk is a priced factor in the cross-section of currency returns. The authors sort currencies into five portfolios based on the rolling forecast coefficient of their excess returns on Caldara and Iacoviello's (2022) Global Geopolitical Threats (GPT) index. The resulting long-short strategy, GHML (Geopolitical High Minus Low), invests in currencies with high geopolitical exposure and shorts those with low exposure. GHML is nearly orthogonal to standard currency risk factors (DOL and CAR), representing a genuinely new source of systematic variation in FX markets.
+
+The paper further links geopolitical risk factor loadings to international capital flows: countries that attract higher-than-average net capital flows during geopolitical turmoil have currencies that hedge geopolitical risk ("safe havens"), while countries experiencing capital outflows have geopolitically risky currencies ("danger zones"). Safe haven currencies carry a GHML loading 0.32 lower than danger zone currencies. Importantly, geopolitical factor loadings are unrelated to policy uncertainty measures like the Economic Policy Uncertainty (EPU) index or the Trade Policy Uncertainty (TPU) index, establishing geopolitical risk as a distinct phenomenon.
+
+Key metrics: The GHML strategy yields an annualised excess return of 3.28%, with an annualised standard deviation of 8.37% and a Sharpe ratio of 0.39. After controlling for dollar (DOL) and carry (CAR) factors, the annualised alpha is 2.76%, with the regression adjusted R-squared for GHML at just 2% — confirming the factor is essentially unexplained by existing currency risk models. Portfolio GHML loadings increase monotonically from -0.49 (Portfolio 1) to 0.51 (Portfolio 5). The sample covers 41 developed and emerging market currencies from February 1988 to December 2024 (443 monthly observations).
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-geopolitical-risk-is-a-priced-share-7442578033414410240-Qbes>`__: "New research: geopolitical risk is a priced factor in the cross-section of currency returns."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6438919>`__
