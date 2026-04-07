@@ -1979,3 +1979,16 @@ The thread argues that sharp Sharpe ratios in delta-neutral backtests are mislea
 By `@zirodelta <https://x.com/zirodelta>`__.
 
 `Read the thread <https://twitter-thread.com/t/2040067413002289243>`__
+
+David Varadi's Growth and Inflation Sector Timing: A Wildcard Strategy
+----------------------------------------------------------------------
+
+A review of David Varadi's tactical sector rotation strategy that times stock market sector exposure based on growth and inflation regimes. The strategy operates within a "four seasons" framework using two signals: the current trend of the S&P 500 as a forward-looking proxy for economic growth, and a novel "Sector-Implied Expected Inflation" indicator constructed from the ratio of two hypothetical portfolios — one holding sectors with positive inflation beta (Energy, Industrials, Financials, Materials) and another with negative inflation beta (Utilities, Healthcare, Staples). At the close of each trading day, the strategy determines the current regime and buys the corresponding sector ETF: Technology (XLK) in growth-up/inflation-down environments, Energy (XLE) in growth-up/inflation-up, and other sectors for stagflation and deflation scenarios. Despite daily rebalancing potential, the strategy averages fewer than 6 position changes per year.
+
+Backtested from 1991 to present (net of 0.1% trading friction per trade), the strategy shows strong absolute returns but extreme volatility — it holds a single sector at all times, making it a concentrated risk asset rather than a total portfolio solution. In 2025 it experienced a 24% drawdown mid-year before recovering to 39% YTD gains. The monthly correlation to the S&P 500 is 0.60, and the average pairwise correlation to other tactical strategies is 0.41. The article notes the strategy would have reduced broad market drawdowns but has failed to outperform the broad market since 2008. Allocate Smartly tracks a modified version with reduced turnover. Areas for further research include testing direct inflation measures like TIPS breakeven rates and beta-adjusting the inflation expectation portfolios, since the positive inflation portfolio exhibits significantly higher market beta.
+
+By Allocate Smartly.
+
+Mentioned by `Quantocracy <https://x.com/Quantocracy>`__ in `this discussion <https://x.com/Quantocracy/status/2041392422543069477>`__.
+
+`Read the blog post <https://allocatesmartly.com/david-varadis-growth-and-inflation-sector-timing-a-wildcard-strategy/>`__
