@@ -892,3 +892,16 @@ Key metrics: The GHML strategy yields an annualised excess return of 3.28%, with
 Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-geopolitical-risk-is-a-priced-share-7442578033414410240-Qbes>`__: "New research: geopolitical risk is a priced factor in the cross-section of currency returns."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6438919>`__
+
+Dynamic Mean-Variance Portfolio Allocation under Regime-Switching Jump-Diffusions with Absorbing Barriers
+----------------------------------------------------------------------------------------------------------
+
+This paper by Artur Sepp develops an analytical framework for dynamic mean-variance portfolio allocation that incorporates regime-switching dynamics, jump-diffusion processes, and absorbing wealth-floor barriers. The model treats market crashes as jumps in asset prices and wealth floors as absorbing barriers — hard lower bounds on portfolio value that the allocation must respect at all times. By combining these features within a single tractable setting, the paper bridges goal-based investing (where a minimum acceptable wealth level must be preserved) with quantitative portfolio theory under realistic market dynamics that include both diffusive risk and sudden regime-dependent crashes.
+
+The main contribution is a set of fully analytical results: closed-form expressions for terminal wealth densities, the cost of imposing floor protection, and optimal de-risking glide paths that describe how the portfolio allocation shifts from risky to safe assets as wealth approaches the floor or as market conditions deteriorate. All solutions are derived in closed form, avoiding the need for Monte Carlo simulation or numerical PDE methods, which makes the framework directly applicable to institutional portfolio construction and risk budgeting.
+
+Note: Key performance metrics (annualised return, Sharpe ratio, drawdown statistics) were not available for extraction at the time of writing — the SSRN page could not be accessed programmatically.
+
+Mentioned by `Artur Sepp <https://x.com/ArturSepp>`__ in `this discussion <https://x.com/ArturSepp/status/2041520208582455581>`__: "A wealth floor is a barrier. A market crash is a jump. Result: analytical terminal wealth densities, floor protection costs & de-risking glide paths — all analytic."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6534579>`__
