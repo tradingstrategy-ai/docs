@@ -1992,3 +1992,14 @@ By Allocate Smartly.
 Mentioned by `Quantocracy <https://x.com/Quantocracy>`__ in `this discussion <https://x.com/Quantocracy/status/2041392422543069477>`__.
 
 `Read the blog post <https://allocatesmartly.com/david-varadis-growth-and-inflation-sector-timing-a-wildcard-strategy/>`__
+
+$576K in My First 8 Months Shorting Small Caps, and the Subtle Mistake that Cut It in Half
+------------------------------------------------------------------------------------------
+
+An X article by trader Walter Ego (@ItsWalterEgo) drawing on his background of over 10 years as a professional poker player to explain how premature profit-taking — the trading equivalent of skipping "thin value bets" in poker — systematically degrades strategy returns. The core argument is that taking partial profits at fixed R-multiple targets (2:1, 3:1, etc.) truncates a strategy's return distribution at precisely the points where outsized gains compound most. In poker, GTO solvers revealed that checking back marginal hands instead of betting for thin value left significant money on the table; analogously, backtesting showed that early exit rules consistently reduced terminal returns across both short-selling and trend-following strategies, despite producing smoother-looking equity curves.
+
+The author tested this across two different strategy types: his primary approach of shorting small-cap exhaustion moves, where he generated $576K in his first eight months, and a set of trend-following systems inspired by traders like Mark Minervini and Qullamaggie. In both cases, introducing partial profit-taking at fixed levels reduced long-term returns without materially improving risk-adjusted performance. Instead of managing risk at the individual trade level through premature exits, the author advocates controlling drawdowns at the portfolio level through position sizing. Using Monte Carlo simulations on his observed return distribution, he calibrated a 5% Kelly fraction that keeps maximum drawdown within a 15% tolerance with high probability. The conclusion is that the discomfort of holding through the uncertain middle portion of a trade — the zone where most traders choose to interfere — is exactly where most of the money is made.
+
+By Walter Ego.
+
+`Read the article <https://x.com/ItsWalterEgo/status/2041489120183087458>`__
