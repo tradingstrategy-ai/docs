@@ -916,3 +916,47 @@ By Carlos Morales (Independent).
 Mentioned by Carlos Morales Martínez in `this LinkedIn discussion <https://www.linkedin.com/posts/carlos-morales-martinez_factorinvesting-quantitativefinance-systematicinvesting-share-7447946008820486144-lCg5>`__: "Most quant investors combine value and momentum into one composite ranking. It seems logical: put everything in one model, let the system pick the best stocks. But my research shows the opposite works better."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6255159>`__
+
+The Price Impact of Order Book Events
+-------------------------------------
+
+This paper studies the price impact of order book events — limit orders, market orders, and cancellations — using the NYSE TAQ data for 50 U.S. stocks. Rama Cont, Arseniy Kukanov, and Sasha Stoikov show that price changes are mainly driven by the *order flow imbalance* (OFI), defined as the net of buy-side minus sell-side activity at the best bid and ask. They find a linear relation between OFI and contemporaneous price changes, with a slope that varies inversely with market depth. The relationship is stable across stocks, sample periods, and intraday time scales, in contrast to the noisier "square-root" price impact law based on volume alone.
+
+Our summary: rather than modelling price impact as a function of traded volume, the authors argue that the relevant state variable for high-frequency price dynamics is the imbalance in the *full* event stream at the top of book. Cancellations and limit-order arrivals carry as much information as executions, and aggregating them into a signed flow gives a compact, linear predictor of mid-price moves. This reframes microstructure prediction around a directly observable ladder quantity that can be computed from raw Level-1/Level-2 feeds, and provides a theoretical bridge explaining why the classical volume-based square-root law appears at coarser horizons.
+
+Key metrics: using 50 NYSE stocks over April–June 2008, the authors report a linear regression of 10-second mid-price changes on OFI with R² values typically in the 50–70% range across stocks, far exceeding the explanatory power of trade volume alone. The OFI price-impact coefficient is inversely proportional to average market depth, with the relationship holding across time-of-day buckets and different aggregation intervals from seconds to minutes.
+
+`Read the paper <https://arxiv.org/abs/1011.6402>`__
+
+Queue Imbalance as a One-Tick-Ahead Price Predictor in a Limit Order Book
+-------------------------------------------------------------------------
+
+Martin D. Gould and Julius Bonart investigate whether bid/ask queue imbalance at the top of a limit order book can predict the direction of the next mid-price move. Using LOBSTER data for 10 liquid Nasdaq stocks, they build both a binary classifier for the sign of the next mid-price change and a probabilistic classifier estimating the probability of an upward move, fitted via logistic regression on the queue imbalance ratio. They document a strongly statistically significant relationship between imbalance and subsequent price direction, especially for large-tick stocks where the queue state dominates short-horizon dynamics.
+
+Our summary: the authors formalise the common HFT intuition that "the thin side gets picked off first" as a rigorous, testable one-tick-ahead predictor. Rather than using raw queue *sizes*, they show the correct state variable is the normalised *ratio* I = Qᵇ / (Qᵇ + Qᵃ), and that a simple logistic regression on this single scalar already captures much of the predictable short-term structure. They also test a semi-parametric local logistic regression variant that fits the relationship non-parametrically, which yields modest improvements at the cost of more computation. The result is a minimal, transparent baseline that any microstructure model should beat before adding complexity.
+
+Key metrics: for large-tick stocks, the logistic queue-imbalance classifier outperforms the null baseline substantially, achieving strong McFadden pseudo-R² values and classification accuracies well above 50% on the next mid-price move. For small-tick stocks, the improvement is more modest, reflecting the diminished role of top-of-book state when price levels are finely spaced. Local logistic regression adds a small but statistically meaningful boost over standard logistic regression across the universe.
+
+`Read the paper <https://arxiv.org/abs/1512.03492>`__
+
+The Micro-Price: A High-Frequency Estimator of Future Prices
+------------------------------------------------------------
+
+Sasha Stoikov defines the *micro-price* as the limit of a sequence of martingale mid-price estimates conditioned on the order book state. Formally, Pᵗᵐⁱᶜʳᵒ = lim Pᵗⁱ, where Pᵗⁱ = E[M_{τᵢ} | ℱₜ] and τ₁, …, τₙ are the (random) times at which the mid-price next changes. The order book state is summarised by the triple (Mₜ, Iₜ, Sₜ) — mid-price, imbalance Iₜ = Qᵇ/(Qᵇ+Qᵃ), and bid-ask spread Sₜ — and assumed to form a Markov process whose dynamics are independent of the price level. Under these assumptions, the micro-price is a Markovian, martingale, and computationally tractable adjustment to the mid-price.
+
+Our summary: the paper provides a principled answer to the question "what is the fair value of an asset given its order book?" The mid-price is not a martingale because of the bid-ask bounce, and the volume-weighted mid-price *Mʷ = I·Pᵃ + (1−I)·Pᵇ* produces counter-intuitive behaviour (e.g., the "fair" price can move *down* after a cancellation on the ask side). Stoikov's micro-price fixes both issues by iterating the conditional expectation until convergence, yielding a fair value that lives between the bid and ask and reacts smoothly to changes in imbalance and spread. The resulting estimator can be pre-computed as a table indexed by (I, S) and used as a continuous predictive signal rather than a discrete trading trigger. Empirically, it is a better short-term predictor than either the mid-price or the weighted mid-price and serves as a standard building block for high-frequency market making and execution models.
+
+Key metrics: Stoikov reports empirical results on Nasdaq data for liquid stocks showing that the micro-price dominates both the mid-price and the weighted mid-price as a predictor of future mid-price realisations at horizons of a few ticks. The micro-price adjustment can be material — a significant fraction of the spread for imbalanced books — and is reported as a smooth, bounded function of imbalance that vanishes at the extremes.
+
+`Read the paper <https://www.tandfonline.com/doi/full/10.1080/14697688.2018.1489139>`__
+
+Deep Order Flow Imbalance: Extracting Alpha at Multiple Horizons from the Limit Order Book
+------------------------------------------------------------------------------------------
+
+Petter N. Kolm, Jeremy Turiel, and Nicholas Westray apply deep learning to high-frequency return prediction for 115 Nasdaq-listed stocks using the full depth of the limit order book. Their central finding is that models trained on *order flow* features (stationary increments at each level of the book) significantly outperform models trained on raw order book *states* (volumes at each level). They show that simple LSTM and feed-forward neural network architectures trained on multi-level order-flow imbalance features deliver superior predictive performance to more elaborate architectures fed raw state, and the predictions remain useful across multiple forecasting horizons.
+
+Our summary: the paper generalises the Cont–Kukanov–Stoikov OFI idea by (a) extending order flow imbalance beyond the top of book to all quoted levels, (b) making the features properly stationary so that neural networks can learn from them without collapsing, and (c) comparing forecasting performance across horizons rather than at a single fixed lag. The result is a practical recipe for feature engineering in deep microstructure models: instead of feeding raw book snapshots into a network and hoping it learns the right invariance, construct multi-level OFI features first and let the network focus on the nonlinear dynamics. The authors also document cross-sectional heterogeneity — some stocks are "information-rich" with higher predictability, and useful stock-specific forecasts extend to roughly two average price changes.
+
+Key metrics: across 115 Nasdaq stocks, deep OFI models achieve materially higher out-of-sample R² than models trained on raw book states at short horizons (seconds to tens of seconds). Forecasting performance degrades gracefully with horizon but remains significant out to approximately two average mid-price moves per stock. LSTM variants give a modest lift over feed-forward networks once the input is already stationary OFI, suggesting most of the predictable signal lives in the feature construction rather than the architecture.
+
+`Read the paper <https://ideas.repec.org/a/bla/mathfi/v33y2023i4p1044-1081.html>`__
