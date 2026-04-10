@@ -719,4 +719,17 @@ The post references the ListFold paper by Chen, Li, and Qiao, which introduces a
 
 By `Sione Palu <https://www.linkedin.com/in/sione-palu-62912a85/>`__.
 
+Few-Shot Learning Patterns in Financial Time-Series for Trend-Following Strategies
+-----------------------------------------------------------------------------------
+
+Forecasting models for systematic trading strategies do not adapt quickly when financial market conditions rapidly change, as was seen in the advent of the COVID-19 pandemic in 2020, causing many forecasting models to take loss-making positions. To deal with such situations, the authors propose a novel time-series trend-following forecaster that can quickly adapt to new market conditions, referred to as regimes. They leverage recent developments from the deep learning community and use few-shot learning.
+
+The paper introduces the Cross Attentive Time-Series Trend Network — X-Trend — which takes positions by attending over a context set of historical financial time-series regimes. Instead of relying solely on a single fitted model, X-Trend transfers trends from similar patterns in the context set to make forecasts and then takes positions for a new, distinct target regime. The context set is built from change-point-detection segmented sequences, and a cross-attention mechanism matches the current target window against historical regimes, allowing interpretable inspection of which past patterns are driving any given forecast. The architecture is trained directly on Sharpe-ratio loss and supports both few-shot adaptation (rapidly adjusting to new regimes on known assets) and zero-shot transfer (taking positions on previously unseen assets).
+
+By quickly adapting to new financial regimes, X-Trend increases Sharpe ratio by 18.9% over a neural forecaster and 10-fold over a conventional Time-Series Momentum (TSMOM) strategy during the turbulent 2018–2023 period. The strategy recovers from the COVID-19 drawdown roughly twice as quickly as the neural-forecaster baseline. In the zero-shot setting, applied to novel unseen financial assets, X-Trend achieves a 5-fold Sharpe ratio increase versus a neural time-series trend forecaster over the same period. Across 2018–2023 the reference TSMOM and MACD baselines post Sharpe ratios of 0.23 and 0.27 respectively, while the Sharpe-optimised neural baseline reaches 2.27 and the best X-Trend variants reach 2.38–2.43. The cross-attention mechanism additionally allows interpretation of the relationship between forecasts and matched patterns in the context set.
+
+By Kieran Wood, Samuel Kessler, Stephen J. Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
+
+`Read the paper <https://arxiv.org/abs/2310.10500>`__
+
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__
