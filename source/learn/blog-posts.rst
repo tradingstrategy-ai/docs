@@ -2003,3 +2003,14 @@ The author tested this across two different strategy types: his primary approach
 By Walter Ego.
 
 `Read the article <https://x.com/ItsWalterEgo/status/2041489120183087458>`__
+
+Factor Models and Fama-MacBeth: Explaining Variance vs. Pricing Risk
+--------------------------------------------------------------------
+
+A LinkedIn post by Andreas Steiner revisiting a subtle but important distinction in empirical asset pricing: a factor that explains variance in returns is not necessarily priced by the market. The Fama-MacBeth two-pass procedure addresses exactly this distinction and remains one of the most important tools in quantitative finance more than fifty years after its introduction. The first pass estimates each stock's sensitivity to the candidate factors via time-series regression, and the second pass regresses the cross-section of realised returns on those sensitivities period-by-period to extract a factor risk premium, averaged over time and tested with Newey-West standard errors to correct for serial correlation.
+
+The post walks through a worked example using Swiss blue chip stocks. Factors are extracted via PCA from the return covariance matrix, and the Marchenko-Pastur bound provides a principled cutoff for which eigenvalues carry information — six factors clear the noise threshold of 117.24 in this sample. The Fama-MacBeth results are telling: the intercept is negative and significant (a well-documented anomaly), but none of the six factor premia are statistically significant, with large error bars crossing zero in every case. The factors structure the covariance matrix well, but the sample offers no strong evidence that they carry a priced risk premium. The broader lesson is that PCA tells you the directions of maximum variance while Fama-MacBeth tells you whether investors are actually compensated for bearing risk in those directions — two independent questions that only the full two-pass procedure can answer. Exposing yourself to factor risk is necessary but not sufficient to earn factor risk premia, turning the "factor zoo" (Cochrane, 2011) into what Steiner calls a "factor shop".
+
+By Andreas Steiner.
+
+`Read the LinkedIn post <https://www.linkedin.com/posts/andreassteiner_factor-models-are-central-to-empirical-asset-share-7446952080881213440-alFv>`__.
