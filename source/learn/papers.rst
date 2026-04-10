@@ -960,3 +960,146 @@ Our summary: the paper generalises the Cont–Kukanov–Stoikov OFI idea by (a) 
 Key metrics: across 115 Nasdaq stocks, deep OFI models achieve materially higher out-of-sample R² than models trained on raw book states at short horizons (seconds to tens of seconds). Forecasting performance degrades gracefully with horizon but remains significant out to approximately two average mid-price moves per stock. LSTM variants give a modest lift over feed-forward networks once the input is already stationary OFI, suggesting most of the predictable signal lives in the feature construction rather than the architecture.
 
 `Read the paper <https://ideas.repec.org/a/bla/mathfi/v33y2023i4p1044-1081.html>`__
+
+Crypto Carry
+------------
+
+Maik Schmeling, Andreas Schrimpf, and Karamfil Todorov (BIS Working Paper 1087) analyse the dynamics of the carry — the difference between futures and spot prices — in bitcoin and ether derivatives. They document that crypto carry can exceed 40% per annum with substantial time variation and trace this to two forces: demand from smaller trend-chasing investors seeking leveraged long exposure, and limited arbitrage capital due to regulatory, funding, and margin frictions on the short side.
+
+Our summary: this is the most rigorous academic treatment of the crypto cash-and-carry basis and its predictive content. Interest-rate differentials explain almost none of the variation in crypto carry; the dominant driver is a time-varying convenience yield linked to speculative demand for long leverage. Crucially, high carry is not a free lunch — it acts as a crash-risk premium. The paper explicitly shows that a 10% rise in standardised carry predicts roughly a 22% increase in short-futures liquidations as a fraction of total open interest over the following month, and is associated with richer option-implied crash-risk insurance. This reframes the perp-spot basis not just as an arbitrage target but as a state variable for tail risk.
+
+Key metrics: the authors report crypto carry reaching peaks above 40% annualised across bitcoin and ether futures venues (CME and crypto-native exchanges). Predictive regressions of one-month-ahead short-side liquidations (scaled by open interest) on standardised carry produce statistically significant positive coefficients, implying ~2.2% liquidation response per 1% carry standardisation. Similar predictive content shows up in option skew changes. The carry premium is orders of magnitude larger than in traditional FX carry trades, and the drivers are structurally different.
+
+`Read the paper <https://www.bis.org/publ/work1087.pdf>`__
+
+Fundamentals of Perpetual Futures
+---------------------------------
+
+Songrun He, Asaf Manela, Omri Ross, and Victor von Wachter derive no-arbitrage prices for perpetual futures contracts in both frictionless and cost-adjusted markets. Unlike fixed-maturity futures, perpetual futures have no expiry date, so the usual convergence argument that pins the price to spot at maturity does not apply. Instead, alignment with spot is enforced only by the periodic funding mechanism. The paper derives explicit bounds on the perp-spot deviation in the presence of trading costs and funding frictions, and empirically characterises those deviations across major crypto venues.
+
+Our summary: this paper provides the theoretical backbone for treating the perp-spot basis and funding rate as joint predictive signals. The key result is that perpetual futures are not guaranteed to track spot, so any persistent basis deviation is informative. Deviations are larger in crypto than in traditional FX perpetual analogues, comove strongly across coins (suggesting a common market-wide factor), and decline over time as markets mature — both of which are testable predictions for any trading model that uses basis features. The authors further show that the size of the current deviation is itself a predictor of the next funding payment, which ties the two signals together in a theoretically grounded way.
+
+Key metrics: the authors construct an explicit arbitrage strategy — going long (or short) spot and taking the opposite side in the perpetual — that captures funding payments on BitMEX, Binance, FTX, and OKX. The reported Sharpe ratios of the arbitrage portfolio are high across all exchanges, with the cross-venue strategy delivering materially better risk-adjusted returns than any single-venue implementation. Measured deviations of perp prices from their no-arbitrage values are an order of magnitude larger in crypto than in perpetual-style FX contracts.
+
+`Read the paper <https://arxiv.org/abs/2212.06888>`__
+
+Perpetual Futures Pricing
+-------------------------
+
+Damien Ackerer, Julien Hugonnier, and Urban Jermann derive closed-form no-arbitrage prices for linear, inverse, and quanto perpetual futures contracts in both discrete and continuous time. The paper provides the first fully tractable pricing framework that accounts for the random-maturity nature of perpetuals (the funding mechanism can be viewed as a stream of infinitesimal settlements) and for the distinct payoff geometries of the three main contract types used in crypto derivatives markets.
+
+Our summary: this is the canonical theoretical reference for anyone modelling perpetuals. The authors show that under standard diffusion assumptions, the perpetual-spot basis and the funding rate together encode information about expected spot returns and convenience yields, formalising the intuition behind all the empirical basis/funding predictability papers. Their framework allows a clean decomposition of observed basis into a "fair" component implied by the funding mechanism and a deviation term that can be interpreted as either an arbitrage opportunity or a risk premium. The paper is calibrated to bitcoin perpetual data and provides an explicit benchmark against which to measure empirical dislocations.
+
+Key metrics: under the authors' calibration to BTC perpetuals, observed funding rates and basis deviations line up well with the model's predictions in normal market conditions but diverge in stress episodes. The divergence itself carries information content, consistent with the crash-prediction findings of Schmeling et al. and Gornall et al.
+
+`Read the paper <https://finance.wharton.upenn.edu/~jermann/AHJ-main-10.pdf>`__
+
+Anatomy of Cryptocurrency Perpetual Futures Returns
+----------------------------------------------------
+
+Yi Cao, Pengfei Luo, Yuhan Cheng, and Yizhe Dong (University of Edinburgh) develop a cost-of-carry model tailored specifically to perpetual contracts and use it to decompose perpetual futures returns into a spot premium, a log basis, and an expected funding spread. They then run the most comprehensive horse race to date of candidate return predictors in the cross-section of crypto perpetuals, testing 134 signals drawn from the basis, momentum, volume, size, and volatility literatures.
+
+Our summary: this is the paper to cite when arguing that basis is the dominant cross-sectional predictor in crypto perpetual futures. Of the 134 candidates tested, 48 deliver statistically significant cross-sectional spreads at the 5% level, and every single one of them is spanned by a two-factor model built from a basis factor and a price–volume factor. In other words, after controlling for basis and price–volume, no other signal in their universe carries incremental predictive power. This is a strong empirical argument for placing the perp-spot basis at the centre of any cross-sectional crypto strategy and treating other signals as secondary.
+
+Key metrics: cross-sectional sorts on basis deliver statistically significant long-short spreads in perpetual futures returns, and the basis factor is the single strongest predictor among the 134 candidates tested. The two-factor (basis + price–volume) model prices all 48 significant anomalies with zero significant alphas. The paper does not report a single headline Sharpe but documents the basis factor as economically and statistically dominant.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6365329>`__
+
+An Empirical Investigation on Risk Factors in Cryptocurrency Futures
+--------------------------------------------------------------------
+
+Yeguang Chi, Wenyan Hao, Jiangdong Hu, and Zhenkai Ran (Journal of Futures Markets 2023) test basis, momentum, and basis-momentum factors — borrowed from the commodity futures literature — in the cross-section of cryptocurrency futures from 2017 to 2021. They construct long-short factor portfolios sorted on each signal and measure their premia at daily, weekly, and monthly frequencies.
+
+Our summary: the paper confirms that basis is the strongest single predictor of cross-sectional crypto futures returns, echoing Cao et al. A novel finding is that the basis-momentum factor — a robust premium in commodities — has a statistically significant raw return in crypto but is entirely subsumed by the basis factor once you control for it. Most importantly for implementation, the predictive content of basis is high-frequency: daily factor returns are strongest, weekly returns are weaker, and monthly returns are insignificant. This matters a lot for anyone building a basis-factor strategy — the alpha lives at daily or faster horizons.
+
+Key metrics: daily long-short portfolios sorted on basis deliver statistically significant excess returns and Sharpe ratios that exceed momentum and basis-momentum factors in the same universe. The basis premium shrinks monotonically as the rebalancing frequency drops from daily to weekly to monthly, with the monthly premium indistinguishable from zero. Commodity-style basis-momentum has zero incremental alpha after controlling for basis.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4657014>`__
+
+The Risk and Return of Cryptocurrency Carry Trade
+--------------------------------------------------
+
+Zhenzhen Fan, Feng Jiao, Lei Lu, and Xin Tong build a cryptocurrency carry trade analogous to the classical FX carry trade, going long high-funding-rate coins and shorting low-funding-rate coins on perpetual futures markets. They run the strategy across a broad universe of perpetual contracts and decompose the returns to understand which leg is doing the work and how well the returns are explained by standard crypto risk factors.
+
+Our summary: this is the cleanest cross-sectional implementation of "funding rate as a predictive signal" in the literature. The carry trade works, but the returns are heavily concentrated on the short leg — i.e., the money comes from *receiving* funding on contracts where funding is extreme, not from the long side. The returns are not spanned by standard crypto factors (BTC, size, momentum, volatility), so funding is capturing a genuinely distinct premium. The paper also highlights important differences from FX carry: crypto carry is more volatile, more prone to crashes, and structurally dependent on exchange-specific funding caps.
+
+Key metrics: the cross-sectional funding-rate carry strategy delivers roughly 43.4% annualised return with a Sharpe ratio of about 0.74, with the short leg contributing the majority of both the return and the alpha. The strategy loads significantly on a crypto illiquidity factor and retains positive alpha against a five-factor model built from standard crypto risk factors.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666425>`__
+
+The Crypto Carry Trade
+----------------------
+
+Nicolas Christin, Bryan Routledge, Kyle Soska, and Ariel Zetlin-Jones (Carnegie Mellon) study the long-spot, short-perpetual cash-and-carry trade in bitcoin. They document very large in-sample Sharpe ratios for the strategy and attribute the profits to differences of opinion between leveraged long speculators and capital-constrained arbitrageurs, amplified by exchange funding caps.
+
+Our summary: this is the paper that first quantified just how large the cash-and-carry carry can be in crypto, and it is the reference point for anyone who claims that "funding rate = free money". The authors carefully separate USDT-settled perps (where carry is richest) from coin-settled perps (where the premium is smaller but still very large) and show that the USDT/coin gap maps directly onto differences in collateral constraints and funding caps. They also decompose carry into a mark-price premium plus an interest component, which lines up with the Ackerer–Hugonnier–Jermann pricing framework. The reported Sharpes are in-sample and benefit from not fully accounting for liquidation risk and exchange risk — but even after generous haircuts, the strategy is extraordinarily profitable relative to traditional carry trades.
+
+Key metrics: in-sample annualised Sharpe ratios of approximately 12.8 for USDT-settled bitcoin perpetuals and 7.0 for coin-settled bitcoin perpetuals. Returns are tightly linked to the level and stickiness of the funding rate and are constrained by exchange-imposed funding caps. Tick-level data from Binance and BitMEX.
+
+`Read the paper <https://www.andrew.cmu.edu/user/azj/files/CarryTrade.v1.0.pdf>`__
+
+Perpetual Futures and Basis Risk: Evidence from Cryptocurrency
+--------------------------------------------------------------
+
+Will Gornall, Martin Rinaldi, and Yizhou Xiao compare perpetual versus quarterly bitcoin futures contracts and argue that the small, frequent funding payments embedded in perpetuals materially reduce basis risk during market crises. They develop a tractable model of capital-constrained arbitrage and test its predictions on BitMEX, Binance, and CME futures around large spot moves.
+
+Our summary: this paper is the best explanation of *why* perpetuals dominate crypto derivatives volume. Dated futures are structurally fragile in crises because the basis is sensitive to the remaining time to expiry and to collateral availability, so during stress episodes the quarterly basis can blow out by 8–10%, eating through all of the expected carry in a single day. Perpetuals, by contrast, settle PnL continuously via funding payments, which damps the basis dislocation to around 3% in the same stress episodes. The practical implication for basis-trading strategies is that perpetuals are a far better instrument than quarterlies for cash-and-carry during volatile regimes, and funding-rate-based entry rules inherit this crisis-resilient property.
+
+Key metrics: during large spot moves, quarterly bitcoin futures dislocate from spot by 8–10%, while perpetuals dislocate by only ~3%. Drawdowns of common cash-and-carry arbitrage strategies are cut by more than half when implemented on perpetuals instead of quarterlies. The comparison holds across BitMEX, Binance, and CME.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5036933>`__
+
+Predictability of Funding Rates
+-------------------------------
+
+Emre Inan runs an out-of-sample forecasting study of perpetual futures funding rates on bitcoin contracts traded on Binance and Bybit. Using double-autoregressive (DAR) models, the paper evaluates forecast quality against a no-change benchmark across multiple horizons and tests for regime-dependence of predictability.
+
+Our summary: most of the crypto basis literature treats the funding rate as a contemporaneous signal (carry, cross-section). This paper instead asks the simpler but important question: can you predict the *next* funding rate from its own history? The answer is yes — DAR models outperform the random-walk benchmark in both forecast error and directional accuracy across Binance and Bybit BTC perpetual contracts. The predictability is time-varying, suggesting regime dependence, which matches the stylised fact that funding rates mean-revert slowly in range-bound regimes and jump sharply around trend reversals. This is a useful building block for any strategy that needs a forward estimate of funding.
+
+Key metrics: DAR-based forecasts beat the no-change benchmark in RMSE, MAE, and directional accuracy across multiple horizons on both Binance and Bybit. Predictability varies through the sample — stronger in stable regimes, weaker during stress — consistent with regime-dependent funding-rate dynamics.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5576424>`__
+
+Arbitrage Opportunities and Efficiency Tests in Crypto Derivatives
+------------------------------------------------------------------
+
+Carol Alexander, Xi Chen, Jun Deng, and Tianyi Wang test joint efficiency of bitcoin and ether options and perpetual futures markets using a fiat-currency-free put–call parity relation. They identify the determinants and time-variation of cross-market arbitrage profits and quantify how arbitrage profitability has evolved as crypto derivatives markets have matured.
+
+Our summary: the paper extends the basis/funding predictability toolkit to include options. Their put–call parity relation ties together spot, perpetual futures, and options on a single instrument and provides a unified framework for detecting mispricings across all three markets. The arbitrage strategies that exploit these mispricings remain profitable after slippage, especially during high-volume and congestion regimes, although the opportunities are shrinking over time as liquidity improves. BTC markets are measurably more efficient than ETH markets. For a basis-trading model, this paper provides a rigorous benchmark against which to measure whether observed deviations represent tradable alpha or just execution friction.
+
+Key metrics: arbitrage strategies linking perpetuals and options remain profitable even after slippage, especially in high-volume and congestion regimes. BTC derivatives markets are more efficient than ETH, and efficiency is improving over time, particularly for options with maturity ≥ 15 days. Deribit-sourced option data combined with perp data from major venues.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4495548>`__
+
+The Relationship Between Arbitrage in Futures and Spot Markets and Bitcoin Price Movements
+------------------------------------------------------------------------------------------
+
+Takahiro Hattori and Ryo Ishida use intraday CBOE bitcoin futures and Gemini spot data to reconstruct the actual cash-and-carry condition faced by arbitrageurs in real time. They test how arbitrage profit opportunities vary across calm and crash regimes and relate the dislocation to capital constraints on the short side.
+
+Our summary: this paper documents the uncomfortable truth about basis-based trading in crypto: the basis becomes most attractive exactly when you are least able to trade it. In normal markets, cash-and-carry opportunities are rare and small. During bitcoin crashes, the basis blows out dramatically — but exactly those episodes are when arbitrage capital is constrained, margin requirements jump, and liquidation risk is highest. This is a textbook limits-to-arbitrage story applied to crypto, and it mirrors Gornall et al.'s finding that quarterlies dislocate much more than perpetuals during crises. For anyone building a basis-trading strategy, the practical lesson is to size for the tails, not the averages.
+
+Key metrics: the paper documents statistically significant widening of cash-and-carry arbitrage spreads during bitcoin crash episodes, with the basis reaching levels many standard deviations above normal-regime values. Arbitrage is typically unavailable outside these stress regimes. High-frequency CBOE-Gemini matched-pair data.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3209625>`__
+
+The Two-Tiered Structure of Cryptocurrency Funding Rate Markets
+---------------------------------------------------------------
+
+This study builds a high-frequency panel of perpetual funding rates spanning 26 exchanges (11 centralised, 15 decentralised) covering 749 symbols and roughly 35.7 million 1-minute observations over 8 days. It studies price discovery and arbitrage between CEX and DEX funding markets using Hasbrouck-style information share decompositions and transaction-cost-adjusted arbitrage backtests.
+
+Our summary: this is the first paper to rigorously quantify the directional information flow between CEX and DEX funding rates. CEX funding leads DEX funding with no detectable reverse causality — about a 61% higher integration on the CEX side — meaning any cross-venue basis signal should be interpreted as CEX setting the mark and DEX adjusting to it. The paper also documents that roughly 17% of observations exhibit ≥20 basis point arbitrage spreads between venues, but only about 40% of the largest opportunities yield positive PnL after transaction costs. For anyone building a multi-venue funding-rate strategy, this provides both a benchmark (how much alpha is theoretically available) and a sobering check (how much survives execution).
+
+Key metrics: CEX funding markets lead DEX markets with ~61% higher price discovery integration; ~17% of 1-minute observations show ≥20bp cross-venue arbitrage spreads; only ~40% of the top opportunities yield positive transaction-cost-adjusted PnL. High-frequency panel of 26 exchanges and 749 symbols.
+
+`Read the paper <https://www.mdpi.com/2227-7390/14/2/346>`__
+
+Exploring Risk and Return Profiles of Funding Rate Arbitrage on CEX and DEX
+---------------------------------------------------------------------------
+
+This paper reports an empirical study of delta-neutral funding-rate arbitrage strategies implemented on both centralised (Binance, BitMEX) and decentralised (Drift, ApolloX) perpetual venues across BTC, ETH, XRP, BNB, and SOL. The strategies long spot and short perpetuals (or vice versa) to harvest funding payments while eliminating directional price risk.
+
+Our summary: this paper documents some of the highest in-sample Sharpe ratios ever reported for a crypto trading strategy, driven by the very wide funding spreads available on DEX venues that have lower competition and thinner arbitrage capital. It's a useful reference point for the upper bound of what funding-rate harvesting can deliver under favourable conditions — but the reported numbers should be read with care, because the sample period is short, the DEX venues are niche, and the strategy's capacity is limited by each venue's liquidity. That said, the paper makes the useful point that the CEX/DEX funding-rate gap is a structural feature driven by market maturity rather than a transient inefficiency.
+
+Key metrics: reported Sharpe ratios of approximately 23.55 on Drift and 6.50 on ApolloX for funding-rate arbitrage strategies, versus ~2.89 for a HODL benchmark. Up to 115.9% return over six months with maximum drawdown around 1.92%. Backtests cover BTC, ETH, XRP, BNB, and SOL perpetual contracts.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S2096720925000818>`__
