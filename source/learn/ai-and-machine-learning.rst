@@ -747,4 +747,70 @@ By Kieran Wood, Sven Giegerich, Stephen Roberts, and Stefan Zohren (Oxford-Man I
 
 `Source code on GitHub <https://github.com/kieranjwood/trading-momentum-transformer>`__
 
+DeepLOB: Deep Convolutional Neural Networks for Limit Order Books
+-----------------------------------------------------------------
+
+Zihao Zhang, Stefan Zohren, and Stephen Roberts (Oxford-Man Institute) develop a large-scale deep learning model to predict price movements directly from raw limit order book (LOB) data. The architecture uses Inception-like convolutional filters to capture the spatial structure of the order book (bid/ask × levels × price/quantity) followed by an LSTM layer to capture longer-term temporal dependencies. Published in IEEE Transactions on Signal Processing (2019).
+
+Our summary: DeepLOB is the reference deep model for LOB price-direction classification. The convolutional front-end is specifically designed around the structured ``(levels × bid/ask × price/quantity)`` tensor that LOB snapshots naturally form, so the model can exploit spatial invariances that a plain MLP would miss. The LSTM back-end then aggregates over the time axis. The most important and underappreciated finding is that the model generalises across instruments: features learned on one set of stocks transfer, with minimal degradation, to completely unseen stocks, indicating that the network has learned genuinely *universal* microstructural features rather than instrument-specific quirks. The authors also perform a sensitivity analysis that highlights which LOB levels drive the predictions, partially de-black-boxing the architecture.
+
+Key metrics: DeepLOB achieves state-of-the-art results on the FI-2010 benchmark dataset with significant F1 gains over prior CNN and LSTM baselines. On a year of London Stock Exchange quotes for a variety of instruments, it delivers a remarkably stable out-of-sample prediction accuracy and transfers successfully to instruments not seen during training — evidence of universal feature extraction.
+
+`Read the paper <https://arxiv.org/abs/1808.03668>`__
+
+Multi-Horizon Forecasting for Limit Order Books
+------------------------------------------------
+
+Zihao Zhang and Stefan Zohren (Oxford-Man Institute) design multi-horizon forecasting models for LOB data using encoder-decoder architectures with sequence-to-sequence and attention mechanisms. Unlike single-output classifiers, their models generate a *forecasting path* — predicted mid-price moves at multiple future horizons jointly. The paper also experiments with training on Graphcore Intelligent Processing Units (IPUs) for hardware acceleration.
+
+Our summary: this paper addresses a key weakness of classification-style LOB forecasters like DeepLOB and TransLOB — they only predict at a single fixed horizon, which is a strong constraint on how the model can be used in production. By switching to an encoder-decoder with attention, the authors generate a full sequence of future predictions in one pass, and they show this matches single-horizon SOTA at short horizons while outperforming it at longer horizons where iterative single-step prediction would compound errors. The IPU vs GPU hardware comparison is a useful practical note: training recurrent encoder-decoder models on IPUs delivers significant speedups over GPUs for this specific workload, which is relevant if you want to scale the model across many instruments.
+
+Key metrics: matches SOTA at short horizons and outperforms them at longer horizons by avoiding iterative single-step compounding; significant training-time speedups reported on Graphcore IPUs versus GPUs for the encoder-decoder workload.
+
+`Read the paper <https://arxiv.org/abs/2105.10430>`__
+
+Transformers for Limit Order Books (TransLOB)
+-----------------------------------------------
+
+James Wallbridge introduces a deep learning architecture combining a causal dilated convolutional feature extractor with a masked self-attention (transformer) back-end for limit order book price-movement classification. TransLOB is widely cited as the first clean transformer-family architecture for the LOB forecasting task.
+
+Our summary: TransLOB is the point where transformer attention enters the LOB literature. The causal dilated convolution front-end gives the model a large receptive field over recent LOB history cheaply, and the masked self-attention layer then allows flexible temporal aggregation without the vanishing-gradient problems of pure LSTM architectures. The paper shows that on the standard FI-2010 benchmark, this combination outperforms the prior CNN+LSTM family (including DeepLOB). TransLOB set a new SOTA for its era and is the model against which later LOB transformer variants (TLOB, LiT) are benchmarked.
+
+Key metrics: reported to significantly outperform prior CNN and LSTM baselines — including DeepLOB — and to set a new state-of-the-art on the FI-2010 benchmark dataset. Architecture: causal dilated convolutional feature extractor → masked self-attention encoder → classification head.
+
+`Read the paper <https://arxiv.org/abs/2003.00130>`__
+
+TLOB: A Novel Transformer Model with Dual Attention for LOB Price Trend Prediction
+----------------------------------------------------------------------------------
+
+Leonardo Berti and Gjergji Kasneci (Technical University of Munich) propose TLOB, a transformer architecture that applies two separate self-attention mechanisms to LOB data — one across price *levels* (spatial) and one across time (temporal). The model is evaluated on FI-2010, Nasdaq equity LOB data, and Bitcoin LOB data across multiple prediction horizons, and also used to measure how stock-price predictability has evolved over time.
+
+Our summary: TLOB is the state-of-the-art LOB transformer at the time of writing (2025) and one of the few deep LOB papers to explicitly include cryptocurrency data. Its dual-attention design recognises that the two axes of an LOB tensor — levels and time — carry very different structure and benefit from separate attention mechanisms rather than being flattened into a single sequence. Beyond the raw SOTA claim, the paper contributes two important practical findings. First, the authors measure a −6.68 F1-score decline in stock LOB predictability over the historical window studied, quantitative evidence that the low-hanging fruit of the deep LOB literature is genuinely diminishing over time. Second — and this is the warning label — when the label definition is made economically realistic by requiring the predicted mid-price move to exceed the bid-ask spread, *classification performance deteriorates significantly* across all models tested. This aligns with the Briola-Bartolucci-Aste observation that high classification F1 does not translate directly into profitable signals.
+
+Key metrics: TLOB outperforms SOTA baselines (including DeepLOB and TransLOB) on every dataset and horizon tested — FI-2010, Nasdaq equities, and Bitcoin LOB data. F1 scores on stock LOB prediction decline by approximately 6.68 points over time. Performance deteriorates significantly when the mid-price trend label requires the move to exceed the average spread.
+
+`Read the paper <https://arxiv.org/abs/2502.15757>`__
+
+LiT: Limit Order Book Transformer
+---------------------------------
+
+Yue Xiao, Carmine Ventre, and Haochen Li (King's College London) with collaborators from Birkbeck, UCL, and SOAS introduce LiT, a transformer architecture for LOB forecasting that dispenses with the convolutional front-end entirely and instead uses structured patch-based tokenisation plus pure self-attention to capture spatial and temporal features. Published in Frontiers in Artificial Intelligence (2025).
+
+Our summary: LiT is the "transformer only" LOB model — no convolutions, no recurrence, just self-attention over patches of the LOB tensor. This is the LOB analogue of Vision Transformers (ViT) for images. The authors show that LiT consistently beats traditional ML baselines (XGBoost, logistic regression) as well as SOTA deep baselines (DeepLOB, TransLOB, TLOB) on multiple LOB datasets and forecasting horizons. A practically useful contribution is the distribution-shift evaluation: LiT retains robust performance when lightly fine-tuned on new data, which matters for production deployment where market microstructure evolves. Ablations show that narrower temporal windows with deeper spatial coverage give the best forecasts, which is a useful prior for anyone tuning a similar architecture.
+
+Key metrics: LiT consistently outperforms traditional ML and SOTA deep learning baselines across multiple LOB datasets and prediction horizons; remains robust under distributional shift after lightweight fine-tuning; ablation favours narrower temporal windows with deeper spatial coverage.
+
+`Read the paper <https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1616485/full>`__
+
+Exploring Microstructural Dynamics in Cryptocurrency Limit Order Books: Better Inputs Matter More Than Stacking Another Hidden Layer
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Haochuan Wang investigates whether the gains claimed by complex deep learning models on crypto LOB forecasting actually come from architectural depth or from data pre-processing. The paper compares logistic regression, XGBoost, and deep models (DeepLOB, Conv1D+LSTM) on BTC/USDT LOB data using two filtering pipelines (Kalman and Savitzky-Golay) and both binary and ternary price-movement targets across multiple sampling intervals.
+
+Our summary: this paper is a strong piece of negative evidence against the "just stack more layers" school of LOB modelling. The author shows that with careful data pre-processing (Kalman or Savitzky-Golay smoothing), proper denoising, and good hyperparameter tuning, *simpler* models — logistic regression and XGBoost — match or exceed DeepLOB and Conv1D+LSTM on BTC/USDT LOB out-of-sample accuracy while being orders of magnitude faster at inference and much more interpretable. The headline message is "better inputs matter more than stacking another hidden layer", which is particularly important in the crypto setting where data is noisier and latency is at a premium. For anyone starting a new LOB research project, this paper is the argument for beginning with a well-engineered linear/GBT baseline before moving to deep models.
+
+Key metrics: with proper preprocessing and hyperparameter tuning, logistic regression and XGBoost match or exceed DeepLOB and Conv1D+LSTM on BTC/USDT LOB classification, at a fraction of the inference cost and with full interpretability. Tested with both Kalman and Savitzky-Golay filters, binary and ternary targets, and multiple sampling intervals.
+
+`Read the paper <https://arxiv.org/abs/2506.05764>`__
+
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__

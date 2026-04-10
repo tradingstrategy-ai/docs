@@ -1103,3 +1103,179 @@ Our summary: this paper documents some of the highest in-sample Sharpe ratios ev
 Key metrics: reported Sharpe ratios of approximately 23.55 on Drift and 6.50 on ApolloX for funding-rate arbitrage strategies, versus ~2.89 for a HODL benchmark. Up to 115.9% return over six months with maximum drawdown around 1.92%. Backtests cover BTC, ETH, XRP, BNB, and SOL perpetual contracts.
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S2096720925000818>`__
+
+Multi-Level Order-Flow Imbalance in a Limit Order Book
+------------------------------------------------------
+
+Ke Xu, Martin D. Gould, and Sam D. Howison (University of Oxford) define *multi-level order-flow imbalance* (MLOFI) as a vector quantity that tracks the net buy-sell flow at each quoted price level of a limit order book, not just the best bid and ask. Using high-resolution Nasdaq data for 6 liquid stocks, they fit a simple linear regression of the contemporaneous mid-price change onto the stacked MLOFI vector and measure how out-of-sample goodness-of-fit changes as deeper book levels are added.
+
+Our summary: this is the canonical extension of Cont–Kukanov–Stoikov's top-of-book OFI to the full book depth. The methodology is deliberately simple — a linear model, no deep learning — and the point is to isolate the marginal information content of each additional price level. The authors find monotonic R² improvements for every one of the 6 stocks tested as levels are added, which is strong evidence that resting liquidity deeper in the book carries real information about the short-term price-formation process and is not just noise. For any microstructure model, the practical takeaway is to feature-engineer MLOFI across all levels rather than truncating at the top of book.
+
+Key metrics: out-of-sample R² monotonically improves with each additional price level for all 6 Nasdaq stocks tested, with the marginal contribution diminishing but remaining positive well beyond the top of book. The linear MLOFI model is shown to meaningfully outperform best-level OFI.
+
+`Read the paper <https://arxiv.org/abs/1907.06230>`__
+
+Deep Limit Order Book Forecasting
+---------------------------------
+
+Antonio Briola, Silvia Bartolucci, and Tomaso Aste (University College London) use state-of-the-art deep learning models to forecast short-horizon mid-price moves from limit order book data for a heterogeneous set of Nasdaq stocks. They release ``LOBFrame``, an open-source codebase for large-scale LOB processing and deep model benchmarking, and they introduce a novel operational evaluation metric based on the probability of accurately forecasting *complete transactions* rather than mid-price moves.
+
+Our summary: this is the paper to cite whenever someone claims a high-accuracy deep LOB model. The authors show that (a) standard classification metrics (F1, accuracy) on mid-price direction systematically *overstate* the economic usefulness of a forecaster, and (b) the same architecture performs very differently across stocks with different microstructural regimes, so one-size-fits-all benchmarking is misleading. Their proposed operational metric asks "given the forecast, what is the probability of capturing a complete round-trip transaction at a reasonable spread?" — a framing that aligns the model with actual trading P&L rather than label guessing. The stark headline from the paper is that "high forecasting power does not necessarily correspond to actionable trading signals", which should be the warning label on every deep LOB result.
+
+Key metrics: the paper reports that forecasting performance varies strongly with stock-level microstructural regime and that standard classification metrics routinely overstate actionability. The operational transaction-forecasting metric is substantially harder to beat and brings deep model performance closer to economic reality.
+
+`Read the paper <https://arxiv.org/abs/2403.09267>`__
+
+Cross-Impact of Order Flow Imbalance in Equity Markets
+------------------------------------------------------
+
+Rama Cont, Mihai Cucuringu, and Chao Zhang (Oxford) investigate cross-asset order-flow-imbalance effects in a multi-asset equity setting. They propose a systematic way to combine OFIs at the top levels of the limit order book into an *integrated OFI* variable and test whether lagged cross-asset OFIs add predictive power for future returns beyond the contemporaneous impact of own-asset OFI.
+
+Our summary: this paper answers an important but previously neglected question — is the OFI of stock A useful for predicting the return of stock B? The authors show first that integrating OFI across multiple LOB levels (following the MLOFI line of work) dominates a best-level-only construction, and second that once you have properly integrated multi-level own-OFI, cross-asset *contemporaneous* cross-impact vanishes — sparse single-asset models explain as much as dense cross-impact models. However, *lagged* cross-asset OFI does improve short-horizon return forecasting, and that lead-lag information decays rapidly. Practical takeaway: for contemporaneous price-impact modelling, focus on own-asset multi-level OFI; for short-horizon return prediction, a small amount of lagged cross-sectional OFI adds value.
+
+Key metrics: integrated multi-level OFI materially outperforms best-level OFI for contemporaneous impact; lagged cross-asset OFIs add meaningful forecasting power over short horizons with rapid decay. Published in Quantitative Finance Vol 23 Issue 10 (2023), pp 1373–1393.
+
+`Read the paper <https://arxiv.org/abs/2112.13213>`__
+
+Bitcoin Wild Moves: Evidence from Order Flow Toxicity and Price Jumps
+---------------------------------------------------------------------
+
+Atiwat Kitvanitphasu, Khine Kyaw, Tanakorn Likitapiwat, and Sirimon Treepongkaruna study the dynamic relationship between order-flow toxicity (measured via VPIN) and Bitcoin price jumps using high-frequency data in a vector autoregression framework. Published in Research in International Business and Finance (2026), the paper integrates behavioural finance with market microstructure to understand how informed trading drives jumps and how traders respond.
+
+Our summary: this is the single most directly relevant paper for "can microstructure features predict future large crypto moves?" Unlike the bulk of the OFI/LOB literature, which is pinned to horizons of seconds to a few price changes, this paper explicitly shows that VPIN *predicts* future Bitcoin price jumps in a VAR framework — not just contemporaneously. It also documents positive serial correlation in both VPIN and jump size (so both toxicity and jumps cluster), time-of-day and day-of-week patterns, and weak reverse feedback from jumps into VPIN. The jump detection is robust to the Jiang–Oomen test that explicitly accounts for microstructure noise. For a strategy trying to nowcast or short-horizon-forecast BTC crashes or breakouts, this is the primary academic anchor.
+
+Key metrics: VPIN Granger-causes Bitcoin jump occurrence and size in a bipolar VAR; positive autocorrelation in VPIN and in jump magnitudes; significant time-of-day / day-of-week seasonality in VPIN levels; results are robust across Lee–Mykland and Jiang–Oomen jump detection tests.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0275531925004192>`__
+
+High-Frequency Jump Analysis of the Bitcoin Market
+---------------------------------------------------
+
+Olivier Scaillet, Adrien Treccani, and Christopher Trevisan use the leaked Mt. Gox database — covering June 2011 through November 2013 with trader identifiers at a tick-transaction level — to study the jump dynamics of Bitcoin. The data provides a rare opportunity to observe an emerging retail-focused, highly speculative and unregulated market at the individual-trader level.
+
+Our summary: this is the foundational jump-clustering paper for Bitcoin and a primary reference for anyone modelling crypto microstructure tail events. The authors document that jumps are frequent and temporally clustered, and they identify specific microstructure precursors — elevated order-flow imbalance, an increased share of aggressive (liquidity-taking) traders, and a widening bid-ask spread — that predict jump arrivals. Jumps cause short-term spikes in activity and illiquidity and, importantly, are associated with persistent changes in the price level, so the price does not mean-revert through them. The finding that OFI and aggressive-trader share predict jumps provides early academic support for the intuition that current feature-engineering projects try to operationalise.
+
+Key metrics: jumps are frequent and cluster in time; OFI, aggressive-trader share, and widening bid-ask spread all predict jump arrivals with statistically significant coefficients; jumps correspond to short-term illiquidity spikes and persistent (non-reverting) price moves.
+
+`Read the paper <https://arxiv.org/abs/1704.08175>`__
+
+Good and Bad Self-Excitation in Bitcoin: Asymmetric Self-Exciting Jumps
+-----------------------------------------------------------------------
+
+Chuanhai Zhang, Zhengjun Zhang, Mengyu Xu, and Zhe Peng (Economic Modelling, 2023) model asymmetric self-exciting jump clustering in Bitcoin returns using a bivariate Hawkes-type jump process that separates positive ("good") and negative ("bad") jumps. The paper studies how each jump type contributes to subsequent jump intensity.
+
+Our summary: this paper formalises the intuition that Bitcoin's tail risk is skewed — bad news begets more bad news faster than good news begets more good news. The bivariate Hawkes setup allows separate branching ratios for good and bad jumps and tests whether they are different. The empirical answer is clear: negative self-excitation is strictly stronger than positive self-excitation, with longer persistence. The asymmetry is much more pronounced in bear regimes than in bull regimes. For any strategy that wants to exploit jump clustering, this paper is the reference for why a single symmetric Hawkes process misses structurally important behaviour, and why the downside jump channel deserves its own modelling.
+
+Key metrics: negative jumps trigger substantially more subsequent volatility than positive jumps; the asymmetry holds in bear markets and is muted in bull markets; aftershocks of bad self-excitation persist longer than those of good self-excitation.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0264999322003613>`__
+
+Nowcasting Bitcoin's Crash Risk with Order Imbalance
+-----------------------------------------------------
+
+Dimitrios Koutmos (Texas A&M – Corpus Christi) and Wang Chun Wei (Realindex Investments) build an early-warning system for Bitcoin price crashes using generalized extreme value (GEV) and logistic regression models. Their feature set integrates order-flow imbalance with blockchain-activity and network-value controls, on daily Bitcoin data from 1 April 2013 to 15 January 2023 (3,577 days).
+
+Our summary: this is the clearest-cut empirical study of order imbalance as a *crash predictor* on Bitcoin at the daily horizon. The authors define a crash as a daily return at least one standard deviation below the mean (~−3.57%), giving 318 crash days or 8.89% of the sample. They show that adding OFI to a crash-nowcasting model dramatically improves explanatory power over models that use only blockchain / network fundamentals. The best logistic specification (model 3.5) reaches a McFadden pseudo-R² of 30.74%, with the GEV variant at 29.95% — both extremely high for a binary daily crash model. This is strong empirical backing for the idea that daily-aggregated order imbalance is an input to a BTC tail-risk timing model, even if it is not a timing signal for normal market moves.
+
+Key metrics: McFadden pseudo-R² of 30.74% (logistic) and 29.95% (GEV) on the best specification; 318 crash days out of 3,577 (8.89% base rate); OFI materially improves crash nowcasting versus on-chain and network-value controls alone. Published in Review of Quantitative Finance and Accounting (2023).
+
+`Read the paper <https://pmc.ncbi.nlm.nih.gov/articles/PMC10040314/>`__
+
+Where Is the Price of Bitcoin Determined? Price Discovery in a Fragmented Market
+--------------------------------------------------------------------------------
+
+Riccardo Cosenza and Simon Stalder investigate price discovery for Bitcoin across regulated and unregulated spot and perpetual-futures venues using high-frequency data in both fiat and stablecoin markets. They apply Hasbrouck information shares, Gonzalo–Granger component shares, and Putniņš information-leadership shares in a trivariate VECM with FX, as well as bivariate VECMs with prices converted to a common currency.
+
+Our summary: this is the reference paper for the question "which venue sets the Bitcoin price?" The answer is blunt: unregulated crypto-native venues (primarily Binance spot and perpetual futures) dominate price discovery during the vast majority of trading hours. Regulated venues like Coinbase gain relative importance around specific fixing windows, notably the NY 4pm fixing used as an ETF NAV reference, but outside those windows they follow. Lower transaction costs, higher volume, and higher volatility all enhance a venue's price-discovery share. For any cross-venue aggregation strategy, this paper tells you where to look (Binance) and which intervals may exhibit different dynamics (NY afternoon). It also raises real regulatory concerns about the reference price for Bitcoin ETFs.
+
+Key metrics: Binance's information share dominates across most hours of the trading day; Coinbase's share rises around the NY 4pm fixing; information-leadership shares align with the intuition that lower-cost, higher-volume, higher-volatility venues lead price formation.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4983566>`__
+
+Pricing Efficiency and Arbitrage in the Bitcoin Spot and Futures Markets
+------------------------------------------------------------------------
+
+Seungho Lee, Nabil El Meslmani, and Lorne N. Switzer (Concordia University) study Bitcoin pricing efficiency using spot prices alongside all CBOE and CME futures contracts traded from January 2018 to March 2019. They test cost-of-carry and no-arbitrage conditions and the predictive content of the futures basis for subsequent spot moves.
+
+Our summary: this is the empirical complement to He–Manela–Ross–von Wachter's theoretical perpetuals-pricing work, focused on the dated futures era (CBOE XBT, CME BTC). The authors find that the futures basis has some predictive power for future spot-price changes and for the risk premium but is a *biased* predictor, so it cannot be used as a clean standalone signal. Cointegration tests confirm that futures prices are biased predictors of spot. Arbitrage deviations are persistent and, crucially, *widen substantially* around Bitcoin-specific events — security incidents (hacks) and alt-coin launches — which is the same limits-to-arbitrage pattern documented by Hattori–Ishida. Published in Research in International Business and Finance Vol 53 (2020).
+
+Key metrics: basis has predictive power for future spot moves but is a biased predictor; cointegration/VECM tests confirm the bias; no-arbitrage deviations widen around hacks and alt-coin launches, matching the capital-constraints-in-crises pattern seen in other basis-crypto studies.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0275531919309808>`__
+
+The 10 Reasons Most Machine Learning Funds Fail
+-----------------------------------------------
+
+Marcos López de Prado (Journal of Portfolio Management 2018) distils the ten most common methodological mistakes that cause quantitative ML funds to fail in practice. The paper is the canonical practitioner reference for the methodology family that follows: information-driven bars, triple-barrier labelling, meta-labelling, sample uniqueness, purged K-fold cross-validation, combinatorial purged CV, deflated Sharpe ratio, and probability of backtest overfitting.
+
+Our summary: this is the single most important methodological paper for anyone doing serious machine-learning research on financial time series. It is prescriptive rather than empirical — the value is in the enumeration of pitfalls and the recipes to fix them. The ten pitfalls and their proposed remedies are: (1) the "Sisyphus" lone-PM research model → an assembly-line meta-strategy paradigm; (2) research-through-backtesting → feature-importance-driven research; (3) fixed chronological time bars → volume / dollar / information-driven bars; (4) integer differentiation → fractional differentiation; (5) fixed-time-horizon labelling → triple-barrier labelling; (6) learning direction and size jointly → meta-labelling; (7) ignoring the non-IID structure of financial data → uniqueness-weighted sample and sequential bootstrap; (8) leaky cross-validation → purging and embargoing; (9) walk-forward backtesting → Combinatorial Purged Cross-Validation (CPCV); (10) in-sample-maximised backtests → Deflated Sharpe Ratio. Every item on this list corresponds to a quantifiable source of bias or overfitting, and every one has a concrete fix. If a research project does not systematically address at least the last five items, its reported Sharpe is almost certainly inflated.
+
+Key metrics: this is a methodological paper with no single headline number. The operational claim is that the vast majority of quantitative ML strategies fail out-of-sample because of one or more of the ten pitfalls, and that the listed corrections (CPCV, DSR, PBO, triple-barrier, meta-labelling, sample uniqueness) are individually necessary.
+
+`Read the paper <https://www.garp.org/hubfs/Whitepapers/a1Z1W0000054x6lUAA.pdf>`__
+
+The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality
+------------------------------------------------------------------------------------------------
+
+David H. Bailey (Lawrence Berkeley National Lab / UC Davis) and Marcos López de Prado (Cornell) introduce the Deflated Sharpe Ratio (DSR) — a closed-form correction to the standard Sharpe ratio that accounts for (i) selection bias under multiple testing when many trial strategies are evaluated, and (ii) non-normal return distributions via higher-moment terms (skewness and kurtosis). Published in The Journal of Portfolio Management (2014).
+
+Our summary: the Sharpe ratio is a very unreliable performance metric in any research pipeline that tests more than a handful of candidate strategies. DSR addresses the root problem by computing the probability that the observed Sharpe of the *selected* strategy exceeds a given benchmark Sharpe, conditional on the number of trials, the cross-sectional variance of trial Sharpes, and the skewness and kurtosis of the selected strategy's returns. The result is a single probability that can be thresholded and compared across projects with very different research budgets. In practice, DSR is the mandatory deflator for any parameter-sweep or grid-search backtest; without it, reported Sharpes are systematically optimistic. DSR is one of the ten fixes enumerated in "10 Reasons Most Machine Learning Funds Fail" and is a direct prerequisite for publishable quantitative research.
+
+Key metrics: methodological paper; provides the closed-form DSR formula and worked examples. The operational benefit is a probability-valued confidence statement about the true Sharpe, calibrated to the search budget used to find the strategy.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551>`__
+
+The Probability of Backtest Overfitting
+---------------------------------------
+
+David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu propose a general framework — Probability of Backtest Overfitting (PBO) — to assess the likelihood that a strategy selected as best in-sample will underperform the median strategy out-of-sample. They introduce Combinatorially Symmetric Cross-Validation (CSCV) as a model-free, non-parametric estimator of PBO. Published in the Journal of Computational Finance (2017).
+
+Our summary: this is the companion paper to the Deflated Sharpe Ratio and the practical workhorse behind any honest evaluation of a multi-trial backtest. The authors demonstrate that standard hold-out and walk-forward evaluations are structurally unreliable for strategy selection — they consistently underestimate the true risk that the selected strategy is a lucky survivor of multiple testing. CSCV fixes this by partitioning the time series into S equally-sized blocks and exhaustively evaluating every combinatorially-symmetric assignment of blocks into in-sample and out-of-sample halves. For each configuration, it measures whether the IS winner underperforms the OOS median; the fraction of configurations in which this happens is the PBO estimate. The approach is model-free (no assumption about return distributions), non-parametric, and reasonably compute-efficient, and it directly quantifies overfitting risk as a single probability.
+
+Key metrics: PBO is defined as the probability that the IS-best strategy underperforms the OOS-median strategy; CSCV gives reasonable empirical PBO estimates across examples in the paper; naive hold-out is shown to be systematically unreliable for strategy selection.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2326253>`__
+
+Clustered Feature Importance
+-----------------------------
+
+Marcos López de Prado introduces Clustered Feature Importance (CFI) to address a major failure mode of standard Mean-Decrease-Impurity (MDI) and Mean-Decrease-Accuracy (MDA) feature-importance measures: the "substitution effect" that distorts importances when two or more features share predictive power. The methodology groups correlated / redundant features into clusters using the Optimal Number of Clusters (ONC) algorithm and then computes importance at the cluster level. Subsequently incorporated into *Machine Learning for Asset Managers* (Cambridge, 2020).
+
+Our summary: any research pipeline that selects features by MDI or MDA is vulnerable to collinear-feature substitution — two correlated features will split the true importance between them, causing both to appear weakly important and potentially getting dropped. CFI is the right fix: cluster correlated features first, then compute importance on the clusters, either by shuffling all members of a cluster jointly (clustered MDA) or by aggregating impurity decreases across cluster members (clustered MDI). The cluster count is data-driven via ONC, which uses a silhouette-t-statistic elbow over candidate k values. The result is a feature-importance ranking that correctly identifies the importance of *groups* of substitutable features instead of being diluted by their collinearity. For microstructure feature libraries where OFI, book imbalance, and CVD are heavily correlated, CFI is essentially mandatory.
+
+Key metrics: methodological paper; CFI is demonstrated to be robust to both linear and non-linear substitution effects and to recover the correct ranking of relevant feature groups in simulations where standard MDI/MDA fail.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3517595>`__
+
+Does Meta-Labeling Add to Signal Efficacy?
+------------------------------------------
+
+Ashutosh Singh and Jacques Francois Joubert (Hudson & Thames, 2022) empirically evaluate whether meta-labelling — a secondary machine-learning classifier layered on top of a primary trading signal to predict whether to *act* on that signal — improves signal efficacy. They combine event-based sampling (CUSUM) with triple-barrier labels and test on S&P 500 E-mini futures tick data from July 2011 to February 2019.
+
+Our summary: meta-labelling is one of the ten fixes in López de Prado's "10 Reasons" paper, and this whitepaper is the best compact empirical demonstration that the fix actually works. Two primary strategies are tested; for both, adding a meta-label classifier improves classification precision and accuracy substantially, and the improvements carry over (albeit more modestly) to the held-out test set. The intuition is that the primary signal decides the *side* of the trade, while the meta-label classifier decides the *size* — specifically whether to take the trade at all or skip it. Skipping low-confidence primary signals filters out a large share of false positives and dramatically reduces the noise in the P&L stream without requiring any change to the primary strategy itself.
+
+Key metrics: Strategy 1 validation set — accuracy improves 20% → 77%, precision 0.21 → 0.39; Strategy 1 test (OOS) — accuracy 17% → 63%, precision 0.17 → 0.20. Strategy 2 validation — accuracy 37% → 56%, precision 0.37 → 0.42. Portfolio-level Sharpe and drawdown metrics also improve out-of-sample.
+
+`Read the paper <https://hudsonthames.org/wp-content/uploads/2022/04/Does-Meta-Labeling-Add-to-Signal-Efficacy.pdf>`__
+
+Algorithmic Crypto Trading Using Information-Driven Bars, Triple-Barrier Labeling and Deep Learning
+---------------------------------------------------------------------------------------------------
+
+Przemysław Grądzki, Piotr Wójcik (University of Warsaw), and Stefan Lessmann (Humboldt-Universität zu Berlin) apply the full López de Prado methodological pipeline — information-driven sampling, triple-barrier labels, meta-labelling — to Bitcoin and Ethereum trading, combined with a deep learning classifier. Published in Financial Innovation (2025).
+
+Our summary: this is the clearest end-to-end empirical application of the AFML pipeline to crypto. The authors benchmark fixed-time bars against CUSUM filters, range bars, volume bars and dollar bars, and replace next-bar return prediction with triple-barrier labelling that uses volatility-scaled up/down barriers and a time-out. The result is that information-driven sampling meaningfully outperforms time bars on both classification and trading metrics for BTC and ETH, and that the triple-barrier labels produce targets better aligned with realised trading outcomes than standard next-bar classification. For a crypto strategy that wants a credible methodological anchor, this paper is the empirical reference point: it shows that every piece of the AFML pipeline adds economic value when applied correctly to the right data.
+
+Key metrics: information-driven bars (CUSUM, dollar, volume) improve both classification metrics and backtest-level trading metrics relative to time bars on BTC and ETH; end-to-end pipeline produces positive net-of-cost results. Specific numerical Sharpe / F1 values are in the paper tables.
+
+`Read the paper <https://link.springer.com/article/10.1186/s40854-025-00866-w>`__
+
+Stock Price Prediction Using Triple-Barrier Labeling and Raw OHLCV Data: Evidence from Korean Markets
+-----------------------------------------------------------------------------------------------------
+
+Sungwoo Kang shows that simple deep learning models trained on raw OHLCV data can match more elaborate models — including XGBoost with engineered technical features — when the prediction target is created using an optimised triple-barrier labelling scheme. Evaluated on the Korean equity universe 2006–2024.
+
+Our summary: this paper is a useful data point for two questions. First, it confirms that triple-barrier labelling extends beyond the high-frequency microstructure domain where it is usually demonstrated — it works at multi-day horizons on daily equity data. Second, it shows that feature engineering and labelling choices often matter more than model complexity: an LSTM fed only raw OHLCV matches a heavily-engineered XGBoost baseline once the label is defined sensibly. The authors identify the optimal triple-barrier configuration as a 29-day holding-period window with 9% barrier width, which they select to balance the label distribution. The best LSTM configuration is small (hidden size 8, window size 100), which is a useful reminder that model depth is rarely the bottleneck on financial time series.
+
+Key metrics: optimal triple-barrier configuration of 29-day window with 9% barriers; best LSTM configuration has window size 100 and hidden size 8; LSTM on raw OHLCV matches XGBoost with technical indicators; full OHLCV input outperforms close-only or close+volume variants.
+
+`Read the paper <https://arxiv.org/abs/2504.02249>`__
