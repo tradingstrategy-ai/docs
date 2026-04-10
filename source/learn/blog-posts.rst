@@ -2014,3 +2014,16 @@ The post walks through a worked example using Swiss blue chip stocks. Factors ar
 By Andreas Steiner.
 
 `Read the LinkedIn post <https://www.linkedin.com/posts/andreassteiner_factor-models-are-central-to-empirical-asset-share-7446952080881213440-alFv>`__.
+
+A Dirty Long Vol VIX Trade
+--------------------------
+
+A Substack post by Robot James outlining a simple systematic long volatility trade in VIX futures and VIX ETPs. The core idea is that customer positioning in the VIX complex tends to be lopsided and sticky — retail traders and "tourists" systematically slam VIX futures, especially on upticks of volatility — which causes VIX futures to trade too cheap relative to fair value when unexpected bad news hits the market. The post argues that these positioning-driven dislocations create tradeable inefficiencies because VIX futures are volatile and positively skewed, and the crowded short side creates predictable under-reaction effects around shocks.
+
+The proposed trade uses SPX options to determine whether VIX futures look cheap relative to underlying SPX volatility (since "it's all SPX vol at the end of the day") and takes long exposure to VIX futures or ETPs when they screen as significantly underpriced. The approach is framed as a dead simple rules-based long-vol setup that exploits sticky customer positioning rather than trying to forecast volatility directly. The full trade specification and backtest details are behind a paywall for paid subscribers.
+
+By Robot James.
+
+Mentioned by `Robot James <https://x.com/therobotjames>`__ in `this tweet <https://x.com/therobotjames/status/2042442029561770344>`__, where he describes it as a way to trade the tendency of VIX futures to "get dead cheap when unexpected bad news hits" in an "incredibly simple systematic way".
+
+`Read the blog post <https://robotjames.substack.com/p/a-dirty-long-vol-vix-trade>`__.
