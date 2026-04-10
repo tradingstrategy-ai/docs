@@ -208,32 +208,6 @@ This paper revisits and extends the results presented in 2005 by Wilcox and Crit
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5084316>`__
 
 
-Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture
-------------------------------------------------------------------------------------
-
-We introduce the Momentum Transformer,
-an attention-based deep-learning architecture, which out-
-performs benchmark time-series momentum and mean-
-reversion trading strategies. Unlike state-of-the-art Long
-Short-Term Memory (LSTM) architectures, which are
-sequential in nature and tailored to local processing, an
-attention mechanism provides our architecture with a
-direct connection to all previous time-steps. Our archi-
-tecture, an attention-LSTM hybrid, enables us to learn
-longer-term dependencies, improves performance when
-considering returns net of transaction costs and naturally
-adapts to new market regimes, such as during the SARS-
-CoV-2 crisis. Via the introduction of multiple attention
-heads, we can capture concurrent regimes, or temporal
-dynamics, which are occurring at different timescales.
-The Momentum Transformer is inherently interpretable,
-providing us with greater insights into our deep-learning
-momentum trading strategy, including the importance of
-different factors over time and the past time-steps which
-are of the greatest significance to the model.
-
-`Read the paper <https://arxiv.org/pdf/2112.08534>`__
-
 Catching Crypto Trends; A Tactical Approach for Bitcoin and Altcoins
 --------------------------------------------------------------------
 

@@ -732,4 +732,19 @@ By Kieran Wood, Samuel Kessler, Stephen J. Roberts, and Stefan Zohren (Oxford-Ma
 
 `Read the paper <https://arxiv.org/abs/2310.10500>`__
 
+Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture
+-------------------------------------------------------------------------------------
+
+The authors introduce the Momentum Transformer, an attention-based deep-learning architecture, which outperforms benchmark time-series momentum and mean-reversion trading strategies. Unlike state-of-the-art Long Short-Term Memory (LSTM) architectures, which are sequential in nature and tailored to local processing, an attention mechanism provides the architecture with a direct connection to all previous time-steps. The architecture, an attention-LSTM hybrid, enables learning of longer-term dependencies, improves performance when considering returns net of transaction costs and naturally adapts to new market regimes, such as during the SARS-CoV-2 crisis. Via the introduction of multiple attention heads, the model captures concurrent regimes, or temporal dynamics, occurring at different timescales. The Momentum Transformer is inherently interpretable, providing insights into the deep-learning momentum trading strategy, including the importance of different factors over time and the past time-steps that are of the greatest significance to the model.
+
+The model combines an LSTM encoder for local temporal features with a multi-head self-attention block that attends over the full history of an asset's returns and volatility-scaled features. This hybrid design addresses two weaknesses of pure LSTM-based deep momentum networks: limited long-range context and slow adaptation to regime shifts. The paper also introduces a Change Point Detection (CPD) module that flags regime transitions, and shows the Momentum Transformer adapts to the 2020 COVID shock materially faster than LSTM baselines while keeping turnover — and therefore transaction costs — lower.
+
+Backtested on a portfolio of 50 of the most liquid continuous futures contracts from 1990–2020, the Momentum Transformer delivers a Sharpe ratio of roughly 2.33 after rescaling to 15% volatility, outperforming classical TSMOM and MACD benchmarks (Sharpe ~0.4–1.0) as well as the LSTM-based Deep Momentum Network baseline (Sharpe ~1.7–2.0). The advantage widens once transaction costs are included: at 3bps costs the Momentum Transformer retains a Sharpe of ~1.9 versus ~1.2 for the LSTM baseline, driven by lower turnover. During the 2020 COVID regime change, the Momentum Transformer recovers substantially faster than the LSTM-based forecaster.
+
+By Kieran Wood, Sven Giegerich, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
+
+`Read the paper <https://arxiv.org/abs/2112.08534>`__
+
+`Source code on GitHub <https://github.com/kieranjwood/trading-momentum-transformer>`__
+
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__
