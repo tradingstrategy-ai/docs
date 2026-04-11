@@ -38,6 +38,7 @@ Quant trades on Twitter (now known as X)
 - `Kurtis The Quant <https://x.com/Quant_Kurtis>`__
 - `Pasta Capital <https://x.com/Pasta_Capital>`__
 - `Saeed Amen <https://x.com/saeedamenfx>`__
+- `Pierfrancesco Beneventano <https://x.com/PierBeneventano>`__
 
 Quant trades on LinkedIn
 ------------------------

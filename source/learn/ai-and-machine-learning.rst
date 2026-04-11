@@ -814,3 +814,29 @@ Key metrics: with proper preprocessing and hyperparameter tuning, logistic regre
 `Read the paper <https://arxiv.org/abs/2506.05764>`__
 
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__
+
+Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection
+----------------------------------------------------------------------------------------------------
+
+This paper extends the Deep Momentum Network line of research by inserting an online changepoint detection (CPD) module into the signal pipeline. The core idea is that classical and deep trend-following systems both struggle around violent turning points, where a slow momentum signal is still leaning the wrong way just as the market starts reversing. The authors use the CPD module to estimate both the location and the severity of a regime break, then let the network learn when to stay slow, when to flip quickly into a fast mean-reversion mode, and when to switch back.
+
+Our summary: this is the most useful "Path B" paper after the original Deep Momentum Networks work because it tackles the exact failure mode that makes trend systems look fragile in crises: regime transitions. Instead of replacing momentum with a different signal family, it builds a gating layer on top of the existing momentum engine. Conceptually, it is a hybrid of slow trend capture plus tactical reversal response, which is much closer to how a discretionary CTA would actually think about crash periods than a pure one-regime model.
+
+Key metrics: on the 1995-2020 backtest, adding the CPD module improves Sharpe ratio by roughly one-third relative to the base DMN pipeline. Over the more difficult 2015-2020 subperiod, the improvement rises to about two-thirds, which is exactly the period where many traditional momentum strategies struggled.
+
+By Kieran Wood, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
+
+`Read the paper <https://arxiv.org/abs/2105.13727>`__
+
+Building Cross-Sectional Systematic Strategies By Learning to Rank
+------------------------------------------------------------------
+
+This paper applies learning-to-rank methods to cross-sectional portfolio construction. Instead of forecasting returns or class labels asset by asset and then sorting those outputs afterwards, the model is trained directly on the ranking problem itself. Using cross-sectional momentum as the case study, the authors compare pairwise and listwise ranking approaches against more conventional regression and classification pipelines.
+
+Our summary: this is the clean cross-sectional counterpart to the deep momentum literature. The paper's main contribution is not just "better ML", but better objective alignment: if the portfolio only cares about relative ordering across instruments, then the learning problem should optimize relative ordering directly. That makes it especially relevant for cross-sectional crypto and equity research, where the final portfolio is usually long the best-ranked names and short or underweight the worst-ranked ones. It is also a natural bridge from classical factor sorting to modern ranking losses.
+
+Key metrics: the abstract reports that learning-to-rank methods materially improve ranking accuracy and deliver approximately a threefold boost in Sharpe ratios versus traditional cross-sectional momentum approaches built from standard regression or classification outputs.
+
+By Daniel Poh, Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
+
+`Read the paper <https://arxiv.org/abs/2012.07149>`__

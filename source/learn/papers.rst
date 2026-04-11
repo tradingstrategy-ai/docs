@@ -88,12 +88,13 @@ Momentum is one of the most widespread, persistent, and puz- zling phenomenon in
 Dissecting Investment Strategies in the Cross Section and Time Series
 ---------------------------------------------------------------------
 
-We contrast the time-series and cross-sectional performance of three popular investment
-strategies: carry, momentum and value. While considerable research has examined the perfor-
-mance of these strategies in either a directional or cross-asset settings, we offer some insights
-on the market conditions that favor the application of a particular setting.
+Jamil Baz, Nicolas Granger, Campbell R. Harvey, Nicolas Le Roux, and Sandy Rattray compare time-series and cross-sectional implementations of carry, momentum, and value across asset classes. Rather than treating the two portfolio constructions as interchangeable wrappers around the same anomaly, the paper studies when each representation works best and how the underlying market environment changes the relative edge.
 
-`Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
+Our summary: this is one of the clearest practitioner-academic bridges in the momentum literature. The important contribution is not merely that both time-series and cross-sectional versions can work, but that they load on different economic structures. Time-series approaches are better aligned with persistent directional trends, while cross-sectional portfolios often shine when dispersion across assets is more informative than the market's aggregate direction. For anyone designing trend systems, this paper is a reminder that "signal" and "portfolio construction" are inseparable design choices.
+
+Key metrics: the paper does not reduce the result to a single headline Sharpe ratio because the focus is comparative across carry, momentum, and value in both time-series and cross-sectional form. Its main empirical claim is that market conditions materially affect which implementation dominates, and that the choice is strategy- and regime-dependent rather than universal.
+
+`Read the paper <https://www.cmegroup.com/education/files/dissecting-investment-strategies-in-the-cross-section-and-time-series.pdf>`__.
 
 Can Day Trading Really Be Profitable?
 -------------------------------------
@@ -1279,3 +1280,135 @@ Our summary: this paper is a useful data point for two questions. First, it conf
 Key metrics: optimal triple-barrier configuration of 29-day window with 9% barriers; best LSTM configuration has window size 100 and hidden size 8; LSTM on raw OHLCV matches XGBoost with technical indicators; full OHLCV input outperforms close-only or close+volume variants.
 
 `Read the paper <https://arxiv.org/abs/2504.02249>`__
+
+Time Series Momentum
+--------------------
+
+Tobias J. Moskowitz, Yao Hua Ooi, and Lasse Heje Pedersen (Journal of Financial Economics, 2012) document a remarkably broad time-series momentum effect across 58 liquid futures and forward contracts spanning equity indices, sovereign bonds, currencies, and commodities. Using a security's own past return rather than its return relative to peers, they show that return persistence is strong from one to twelve months and then partially reverses at longer horizons.
+
+Our summary: this is the canonical modern TSMOM paper. It matters because it separates "trend following" from the usual cross-sectional winner-minus-loser construction and shows that a security's own lagged return has predictive power across very different asset classes. The paper also argues that most of the effect comes from positive auto-covariance rather than lead-lag structure across assets, and it links the profits to speculators effectively riding the trend while hedgers absorb the other side. If you need one foundational citation for multi-asset trend following, this is it.
+
+Key metrics: the paper reports positive 12-month time-series momentum profits for all 58 contracts in the sample. A diversified TSMOM portfolio earns a Sharpe ratio greater than 1 on an annual basis, roughly 2.5x the Sharpe ratio of the equity market, with little correlation to passive asset-class benchmarks or standard pricing factors.
+
+`Read the paper <https://pages.stern.nyu.edu/~lpederse/papers/TimeSeriesMomentum.pdf>`__
+
+A Century of Evidence on Trend-Following Investing
+--------------------------------------------------
+
+Brian K. Hurst, Yao Hua Ooi, and Lasse H. Pedersen (Journal of Portfolio Management, 2017) extend the trend-following evidence far beyond the modern futures era by constructing a time-series momentum strategy back to 1880. The paper asks whether the strong post-1985 performance of managed futures and trend-following strategies is just a recent lucky sample or a deeper empirical regularity that survives very different macro regimes.
+
+Our summary: this is the long-horizon historical companion to Moskowitz, Ooi, and Pedersen. Its main value is not a novel signal, but historical durability. By stitching together much older data sources, it shows that trend following survives wars, inflation shocks, monetary regime changes, and long stretches where traditional assets behave very differently from the late-20th-century sample. That makes it one of the most important papers for anyone trying to argue that trend is a structural phenomenon rather than a short backtest artifact.
+
+Key metrics: the authors construct a trend-following strategy back to 1880 and report that it remains consistently profitable over the next 110 years. The paper explicitly confirms that the post-1985 results from the modern multi-asset futures sample are not an isolated fluke.
+
+`Read the paper <https://www.aqr.com/Insights/Research/Journal-Article/A-Century-of-Evidence-on-Trend-Following-Investing>`__
+
+Two Centuries of Trend Following
+--------------------------------
+
+Y. Lempériere, C. Deremble, P. Seager, M. Potters, and J.-P. Bouchaud push the historical evidence even further by studying trend-following strategies across commodities, currencies, stock indices, and bonds using both futures data since 1960 and spot series that go back to 1800 for some assets. The paper's framing is explicitly anomaly-focused: are long-horizon trend returns statistically strong enough to count as one of the major persistent irregularities in financial markets?
+
+Our summary: this paper is the strongest statistical durability argument in the trend-following literature. The long sample lets the authors separate two issues that often get conflated: whether trends exist at all, and whether modern trend strategies have decayed. Their answer is nuanced: long trends remain statistically robust, but shorter trends have weakened in the recent era. The paper also documents signal saturation for very strong trends, consistent with the idea that fundamental traders only start leaning against price moves once the trend becomes extreme.
+
+Key metrics: the paper reports an overall t-statistic of about 5 for excess returns since 1960 and about 10 since 1800, after accounting for the upward drift of markets. The authors describe the effect as stable across both time and asset classes.
+
+`Read the paper <https://arxiv.org/abs/1404.3274>`__
+
+Time Series Momentum and Volatility Scaling
+-------------------------------------------
+
+Abby Y. Kim, Yiuman Tse, and John K. Wald (Journal of Financial Markets, 2016) revisit the Moskowitz-Ooi-Pedersen result and ask how much of the observed alpha is really driven by the momentum signal itself versus the volatility-scaling overlay that accompanies the strategy. They compare volatility-scaled and unscaled versions of TSMOM and buy-and-hold portfolios at the contract, sector, and aggregate portfolio levels.
+
+Our summary: this is the paper that forced the TSMOM literature to treat signal and position sizing as separate objects. The central result is uncomfortable but important: much of what looks like "momentum alpha" in managed futures-style backtests is actually the effect of volatility targeting or risk parity-style scaling. That does not make TSMOM useless, but it does mean any honest evaluation has to attribute performance carefully rather than crediting the sign signal for the whole package.
+
+Key metrics: the paper finds that large TSMOM alphas are largely driven by volatility scaling. Unscaled TSMOM alphas look similar to unscaled buy-and-hold alphas, and scaled TSMOM alphas look similar to scaled buy-and-hold alphas, with the pattern holding at the individual-contract, sector, and portfolio levels.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S1386418116301379>`__
+
+Is Momentum Really Momentum?
+----------------------------
+
+Robert Novy-Marx (Journal of Financial Economics, 2012) argues that the classic momentum effect is driven much more by intermediate-horizon returns than by very recent continuation. In his formulation, what investors usually call "momentum" often looks more like an echo from returns earned roughly 12 to 7 months before portfolio formation than a clean near-term persistence effect.
+
+Our summary: this paper matters because it reframes momentum from a single monolithic anomaly into a term-structure question. If intermediate-horizon returns do the heavy lifting while the most recent month is polluted by reversal, then naive short-lookback momentum rules are badly specified from the start. That is exactly why this paper remains important background for anyone experimenting with very short-horizon trend signals: it explains why some "momentum" setups fail even when the broader anomaly is real.
+
+Key metrics: Novy-Marx finds that strategies based on firms' performance 12 to 7 months before formation are more profitable than strategies based on the recent 6 to 2 months, especially among the largest and most liquid stocks. He also shows that similar intermediate-horizon patterns appear in international equity indices, commodities, and currencies.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0304405X11001152>`__
+
+Time Series Momentum: Is It There?
+----------------------------------
+
+Dashan Huang, Jiangyuan Li, Liyao Wang, and Guofu Zhou (Journal of Financial Economics, 2020) reexamine the Moskowitz-Ooi-Pedersen evidence using the same broad futures data set but a more skeptical statistical lens. They argue that pooled regressions overstate the strength of TSMOM because of fixed-effect issues, persistent predictors, and the interaction between volatility scaling and heterogeneous asset means.
+
+Our summary: this is the main empirical challenge paper in the TSMOM debate. The authors' point is not that trend-following strategies cannot make money, but that the specific claim of statistically reliable return predictability from past 12-month returns is much weaker than it first appears once you examine assets individually and use bootstrap-adjusted inference. Even if one ultimately disagrees with the conclusion, this paper is essential because it raises the methodological bar for what counts as convincing TSMOM evidence.
+
+Key metrics: in asset-by-asset regressions, 47 of 55 assets have t-statistics below 1.65 and only 3 assets deliver significant out-of-sample R^2 at the 10% level. In pooled regressions the headline t-statistic is 4.34, but the paper reports bootstrap critical values of 12.53 and 4.83, implying the pooled result is not statistically significant under their more conservative tests.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0304405X19301953>`__
+
+Risks and Returns of Cryptocurrency
+-----------------------------------
+
+Yukun Liu and Aleh Tsyvinski (Review of Financial Studies, 2021) provide one of the foundational asset-pricing treatments of major cryptocurrencies. Studying Bitcoin, Ripple, and Ethereum, they show that crypto returns are largely distinct from stocks, currencies, and precious metals, and are better explained by crypto-native drivers such as user adoption, network activity, investor attention, and trend effects.
+
+Our summary: this paper is the bridge between "crypto as a weird asset" and "crypto as an asset class that deserves its own factor language." The most important takeaway is not merely that crypto is different, but that the relevant predictors are different in a systematic way. That makes this paper foundational for any crypto momentum or factor research stack: it says you should not expect stock-market factors to do most of the explanatory work.
+
+Key metrics: the paper reports a strong time-series momentum effect in major cryptocurrencies and finds that investor-attention proxies significantly forecast future returns, while exposures to most common stock, currency, commodity, and macro factors are weak or absent.
+
+`Read the paper <https://academic.oup.com/rfs/article/34/6/2689/5912024>`__
+
+Common Risk Factors in Cryptocurrency
+-------------------------------------
+
+Yukun Liu, Aleh Tsyvinski, and Xi Wu develop a cryptocurrency factor model for the cross-section of crypto returns. Starting from a large universe of coins from 2014 to 2018, they construct crypto analogues of stock-market price and market-based factors and test whether a small number of them can explain the cross-section of expected returns.
+
+Our summary: this is the canonical crypto factor-model paper. The headline result is that a three-factor model built from cryptocurrency market, size, and momentum factors explains most of the successful zero-investment strategies in the sample. For research design, the important lesson is that crypto needs its own factor architecture: stock-market factor models do not price these returns well, but crypto-native market, size, and momentum factors go much further.
+
+Key metrics: 9 of 25 candidate crypto factors generate statistically significant long-short excess returns. The paper reports weekly excess returns of about 2.7%, 3.3%, 4.1%, and 2.5% for one-, two-, three-, and four-week momentum strategies, and shows that a crypto market-size-momentum three-factor model explains the excess returns of all nine successful strategies. Momentum among above-median-size coins reaches 4.2% weekly versus 0.6% for below-median-size coins.
+
+`Read the paper <https://www.nber.org/papers/w25882>`__
+
+Bitcoin Intraday Time-Series Momentum
+-------------------------------------
+
+Dehua Shen, Andrew Urquhart, and Pengfei Wang study whether Bitcoin exhibits an intraday time-series momentum effect despite trading continuously around the clock. Because Bitcoin has no natural exchange open and close like equities, the paper defines effective trading sessions using volume spikes and then tests whether returns early in the trading day predict returns later in the same day.
+
+Our summary: this is the closest academic match for sub-daily BTC trend-following questions. The paper shows that intraday momentum in Bitcoin is not just a stylized-fact curiosity; it has practical trading content and seems strongest when market activity is elevated. Equally important, the authors test competing mechanisms and conclude the effect is more consistent with liquidity provision, disposition effects, and aversion to overnight risk than with a simple late-information story.
+
+Key metrics: the first half-hour of Bitcoin trading significantly predicts the last half-hour in both in-sample and out-of-sample tests. The effect is strongest during sessions with the highest trading volume or volatility, and the authors report substantial economic gains from intraday momentum-based trading, especially during Bitcoin downturns.
+
+`Read the paper <https://centaur.reading.ac.uk/100181/3/21Sep2021Bitcoin%20Intraday%20Time-Series%20Momentum.R2.pdf>`__
+
+Value and Momentum Everywhere
+-----------------------------
+
+Clifford S. Asness, Tobias J. Moskowitz, and Lasse H. Pedersen (Journal of Finance, 2013) study value and momentum jointly across eight diverse markets and asset classes. Instead of treating value and momentum as stock-specific anomalies, they show that both premia appear broadly across global equities, equity index futures, government bonds, currencies, and commodities, and that their returns exhibit a strong common cross-asset factor structure.
+
+Our summary: this is the canonical paper for understanding momentum as a global style rather than a niche equity effect. The most important finding is the correlation structure: value strategies are positively related to one another across markets, momentum strategies are also positively related across markets, and value and momentum are negatively related to each other both within and across asset classes. That makes the paper foundational for multi-style portfolio construction, because it explains why combining value and momentum is so powerful and why studying them jointly reveals global risks that disappear when each is examined in isolation.
+
+Key metrics: the paper reports consistent value and momentum premia across all eight markets and asset classes studied and documents a diversified global value-plus-momentum portfolio with a high Sharpe ratio. It also shows that value and momentum returns correlate more strongly across asset classes than passive market exposures themselves, supporting the case for common global style factors.
+
+`Read the paper <https://www.aqr.com/insights/research/journal-article/value-and-momentum-everywhere>`__
+
+Cryptocurrencies and Momentum
+-----------------------------
+
+Klaus Grobys and Niranjan Sapkota (Economics Letters, 2019) test whether the classic momentum anomaly survives in a broad cryptocurrency universe. Using monthly data on 143 cryptocurrencies from 2014 to 2018, they examine both cross-sectional and time-series-style momentum specifications motivated by the traditional asset-pricing literature.
+
+Our summary: this is one of the clean negative-result papers in the crypto momentum literature, which is exactly why it is useful. Earlier crypto studies often worked with small samples, short windows, or the largest coins only, making it easy to overstate the anomaly. Grobys and Sapkota show that once the universe broadens, the classic momentum signal becomes much less convincing and in some specifications even turns negative. That makes this paper an important counterweight to the more bullish crypto-momentum evidence and a useful reminder that sample design matters enormously in digital assets.
+
+Key metrics: across the 2014-2018 sample, the authors report no statistically significant evidence of profitable traditional momentum payoffs. For the broad 143-coin universe, winner-minus-loser returns are close to zero and generally insignificant; some trimmed-sample specifications are negative rather than positive.
+
+`Read the paper <https://osuva.uwasa.fi/bitstream/handle/10024/10391/Osuva_Grobys_Sapkota_2019.pdf>`__
+
+A Factor Model for Cryptocurrency Returns
+-----------------------------------------
+
+Daniele Bianchi and Mykola Babiak develop a latent-factor model for cryptocurrency returns using Instrumented Principal Component Analysis (IPCA). Rather than relying only on a small set of hand-crafted observable factors, the model extracts latent risk drivers from a large cross-section of cryptocurrency pairs while allowing factor loadings to vary with observable characteristics such as liquidity, size, reversal, and downside risk.
+
+Our summary: this paper is the natural next step after the early crypto factor literature. Whereas Liu-Tsyvinski-Wu establish that crypto has its own factor structure, Bianchi and Babiak ask whether a more flexible latent-factor model can describe that structure better than fixed observable factors. The answer is yes: crypto returns appear to have a richer, time-varying risk architecture than simple bottom-up factor portfolios can capture. For practitioners, the paper is especially interesting because it frames crypto risk premia as a dynamic latent-state problem rather than a static factor-zoo exercise.
+
+Key metrics: the paper reports total and predictive R^2 of 17.2% and 2.9% for individual daily returns under the IPCA model, versus 9.6% and -0.02% for a benchmark six-factor observable model. The main drivers of expected returns are liquidity, size, reversal, and both market and downside risks. The results remain robust across individual assets, characteristic-sorted portfolios, pre- and post-COVID subsamples, and weekly data.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3935934>`__
