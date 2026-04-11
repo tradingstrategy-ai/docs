@@ -2027,3 +2027,16 @@ By Robot James.
 Mentioned by `Robot James <https://x.com/therobotjames>`__ in `this tweet <https://x.com/therobotjames/status/2042442029561770344>`__, where he describes it as a way to trade the tendency of VIX futures to "get dead cheap when unexpected bad news hits" in an "incredibly simple systematic way".
 
 `Read the blog post <https://robotjames.substack.com/p/a-dirty-long-vol-vix-trade>`__.
+
+The Fokker-Planck Equation: The Deterministic Twin of a Stochastic Process
+--------------------------------------------------------------------------
+
+A LinkedIn post by Titouan Baraud (Vol.6 of his Journal of a (Mini) Quant series, QPRS) arguing that while Black-Scholes prices an option, it says nothing about where the underlying will be tomorrow. For that, you need a probability density — a function that tells you, at every point in space and time, how probable it is that your process ends up there. That density evolves according to the Fokker-Planck equation, which Baraud frames as the "deterministic twin" of a stochastic process: whereas an SDE describes a single random path, Fokker-Planck describes the entire cloud of possible paths at once, tracking how probability mass flows forward in time, pushed by drift and spread by diffusion.
+
+The post argues that every model used in quantitative finance — Black-Scholes, Heston, Vasicek, SABR — has a Fokker-Planck equation running underneath it: calibrating a local volatility surface implicitly inverts one, pricing a barrier option by PDE solves one, and running a Monte Carlo simulation approximates its solution one path at a time. Vol.6 of the Journal of a (Mini) Quant covers the equation, its derivation from Itô's lemma, the duality with Feynman-Kac, the stationary distribution, and where it lives inside standard models.
+
+By Titouan Baraud.
+
+The comments on the LinkedIn post challenge the framing. Carlo Acerbi (ADIA, Risknowledge SA, LARIX Risk Consulting, EPFL Lausanne) argues that "None of these models tell you 'where the underlying will be tomorrow'" and that the post conflates the risk-neutral measure ℚ (induced from no-arbitrage of derivatives prices) with the real-world measure ℙ, calling this "probably the most common mistake in quantitative finance". Baraud concedes the point in reply, clarifying that Black-Scholes prices under ℚ and says nothing about ℙ, and that Fokker-Planck describes the density evolution under whichever measure one works in. Separately, Bernard Gourion (Head of Research and Development and Quantitative Watch) challenges Baraud to prove that Black-Scholes is also a model with stochastic discrete dividends; Baraud responds that the standard Black-Scholes framework assumes a continuous deterministic dividend yield, and that extending it to stochastic discrete dividends requires adjusting the forward price and modifying the underlying SDE, since the lognormality assumption no longer holds cleanly across ex-dividend dates.
+
+`Read the LinkedIn post <https://www.linkedin.com/posts/titouan-baraud_quantfinance-fokkerplanck-stochasticcalculus-ugcPost-7448101214195441664-aAGi>`__.
