@@ -1412,3 +1412,124 @@ Our summary: this paper is the natural next step after the early crypto factor l
 Key metrics: the paper reports total and predictive R^2 of 17.2% and 2.9% for individual daily returns under the IPCA model, versus 9.6% and -0.02% for a benchmark six-factor observable model. The main drivers of expected returns are liquidity, size, reversal, and both market and downside risks. The results remain robust across individual assets, characteristic-sorted portfolios, pre- and post-COVID subsamples, and weekly data.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3935934>`__
+
+Dynamic Trading with Predictable Returns and Transaction Costs
+---------------------------------------------------------------
+
+Nicolae B. Gârleanu and Lasse H. Pedersen (NBER Working Paper 15205, 2009; Journal of Finance, 2013) derive a closed-form optimal portfolio strategy when security returns are predictable and trading is costly. The optimal policy rests on two principles: "aim in front of the target" and "trade partially towards the current aim." The updated portfolio combines existing holdings with an aim portfolio that is itself a weighted average of the current Markowitz-optimal allocation and expected future allocations, with slower-decaying predictors receiving more weight.
+
+Our summary: this is the canonical paper linking alpha signals, transaction costs, and optimal rebalancing in a tractable multi-period framework. Its most important insight is that with trading costs the optimal response to a signal is never to jump to the frictionless target portfolio; instead the investor trades partially toward a moving aim that already looks past the current signal and anticipates where the portfolio should be once the signal decays. That reframes position sizing as a control problem rather than a single-period optimization and it is the standard reference for any modern execution-aware portfolio construction pipeline.
+
+Key metrics: the authors derive the optimal trading rule in closed form and validate it on commodity futures, showing that the dynamic cost-aware policy produces better risk-adjusted returns than static Markowitz strategies that ignore transaction costs, as well as than static strategies that apply costs naively without considering predictor persistence.
+
+`Read the paper <https://www.nber.org/papers/w15205>`__
+
+Incorporating Signals into Optimal Trading
+-------------------------------------------
+
+Charles-Albert Lehalle and Eyal Neuman (Finance and Stochastics, 2019) extend the optimal execution literature to include exogenous Markovian predictive signals alongside transient market impact. Building on the framework of Gatheral, Schied, and Slynko, they prove existence of an optimal strategy when a trader must liquidate a position while reacting to a signal that itself follows a Markov process, and they derive explicit solutions for the case of an Ornstein-Uhlenbeck signal. The paper also shows that the model reduces to the Cartea-Jaimungal framework in certain limits.
+
+Our summary: this paper is the natural companion to Gârleanu-Pedersen on the execution side. Rather than treating the trading schedule and the signal as separate problems, Lehalle and Neuman show that once you admit a predictive signal plus market-impact costs, the optimal trading rule is inherently continuous and state-dependent — there is no clean cutoff between "execution" and "alpha capture." It is the standard reference for anyone building signal-aware execution engines and it explains why simple rules like "trade when signal > threshold" leave money on the table relative to a properly continuous controller.
+
+Key metrics: the authors empirically validate the model on nine months of tick-by-tick data from 13 European stocks and show that order book imbalance has predictive power for future price moves and exhibits mean-reverting dynamics consistent with the Ornstein-Uhlenbeck assumption used in the theoretical solution.
+
+`Read the paper <https://doi.org/10.1007/s00780-019-00382-7>`__
+
+On the Effect of Alpha Decay and Transaction Costs on the Multi-period Optimal Trading Strategy
+------------------------------------------------------------------------------------------------
+
+Chutian Ma and Paul Smith (2025) study portfolio optimization for a single asset with long and short positions where transaction costs make frequent rebalancing unattractive and historical signal values carry predictive content. To capture alpha decay explicitly, they frame the problem as an infinite-horizon Markov Decision Process and contribute a modified value iteration algorithm with a convergence proof, along with first-order approximations and asymptotic expansions for the optimal policy under small transaction costs.
+
+Our summary: this is a recent refinement of the Gârleanu-Pedersen line of work, shifting the frame from closed-form linear-Gaussian solutions to dynamic programming under signal decay. The contribution is less a new economic insight than a set of rigorous tools for computing and approximating the optimal policy when the signal process is explicit. For practitioners this matters because alpha decay is almost always the binding constraint in post-cost portfolio design, and the asymptotic formulas let you reason about how aggressively to trade as a function of the decay rate without simulating the full MDP.
+
+Key metrics: the paper establishes convergence of the modified value iteration scheme and derives first-order approximations valid in the small-cost regime, characterising the optimal trading policy in closed-form asymptotics rather than reporting live backtest numbers.
+
+`Read the paper <https://arxiv.org/abs/2502.04284>`__
+
+The Kelly Criterion and the Stock Market
+-----------------------------------------
+
+Edward O. Thorp presents a practitioner-oriented introduction to the Kelly criterion and its application to portfolio sizing in the stock market. The paper walks through the derivation of the log-optimal betting fraction, extends it from discrete bets to continuous-time and multi-asset settings, and discusses practical concerns such as finite horizons, drawdown behavior, and the effect of estimation error on the optimal leverage.
+
+Our summary: this is the classic starting point for conviction-based sizing. Thorp's pedagogical goal is to demystify why maximizing expected log wealth is the right long-run objective under very mild assumptions, and to show how the same logic applies whether you are sizing a blackjack bet or a long-short equity book. The most important lesson for a modern quant reader is not the headline formula but the discussion of fractional Kelly: even Thorp, who built his career on log-optimal sizing, argues that leverage below full Kelly is almost always the right practical choice once you factor in estimation error, non-normal returns, and drawdown tolerance.
+
+Key metrics: the paper develops the Kelly formula and its fractional-Kelly variants analytically rather than from a backtest, and illustrates with worked examples how full-Kelly leverage interacts with expected growth rate, variance, and drawdown for realistic stock-market parameters.
+
+`Read the paper <https://www.edwardothorp.com/wp-content/uploads/2016/11/TheKellyCriterionAndTheStockMarket.pdf>`__
+
+Portfolio Choice and the Bayesian Kelly Criterion
+--------------------------------------------------
+
+Sid Browne and Ward Whitt (Advances in Applied Probability, 1996) extend the Kelly log-optimal framework to a Bayesian setting where the investor is uncertain not only about future outcomes but also about the parameters of the return-generating process. They derive the optimal investment policy when the investor updates beliefs about unknown parameters over time and characterize how posterior uncertainty should translate into conservative deviations from the full-information Kelly bet.
+
+Our summary: this paper is the formal bridge between Kelly sizing and parameter uncertainty. Its most important contribution is showing that leverage should reflect what you have actually learned, not just your current point estimate of edge — posterior variance directly dampens the optimal fraction invested. That is exactly the economic intuition behind modern fractional-Kelly practice, and it remains the cleanest reference for anyone who wants to justify under-betting relative to plug-in Kelly without appealing to heuristic safety margins.
+
+Key metrics: the paper is analytical rather than empirical and characterizes the optimal Bayesian Kelly policy in closed form for canonical prior-likelihood pairs, showing that full-information Kelly is recovered only in the limit of infinite learning and that finite-sample optimal bets are strictly smaller.
+
+`Read the paper <https://www.cambridge.org/core/journals/advances-in-applied-probability/article/abs/portfolio-choice-and-the-bayesian-kelly-criterion/1B56265028071E0876F812C483B5B5ED>`__
+
+Leverage and Uncertainty
+------------------------
+
+Mihail Turlakov (2016) studies how uncertainty beyond conventional risk should shape leverage decisions. The paper derives a fractional Kelly criterion for a single asset when returns have fat tails driven by rare, hard-to-quantify events, and then extends the analysis to multi-asset portfolios, showing how the Kelly lens provides a sharper interpretation of Risk Parity style allocations once fat-tailed asset classes are included.
+
+Our summary: this paper motivates fractional Kelly as the natural response to model uncertainty rather than as an ad hoc safety factor. The key idea is that under fat tails and Knightian uncertainty, the optimal leverage falls well below plug-in Kelly, and the size of the haircut can be linked explicitly to the tail exponent and the degree of model confusion. For practitioners it is a useful complement to Browne-Whitt: Browne-Whitt justifies under-betting via posterior variance in a clean Bayesian world, while Turlakov justifies under-betting via tails and uncertainty in a dirtier, more realistic one.
+
+Key metrics: the paper is primarily analytical and derives fractional-Kelly formulas under fat-tailed distributions and multi-asset Risk Parity-style constructions, rather than reporting empirical Sharpe or drawdown numbers.
+
+`Read the paper <https://arxiv.org/abs/1612.07194>`__
+
+Wasserstein-Kelly Portfolios
+----------------------------
+
+Jonathan Yu-Meng Li (2023) proposes a robust version of Kelly portfolio optimization based on Wasserstein distributionally robust optimization. The investor chooses a log-optimal portfolio against the worst-case distribution within a Wasserstein ball around the empirical return distribution, turning the Kelly problem into a tractable convex program that is computationally efficient while explicitly addressing estimation error in the input distribution.
+
+Our summary: this paper is a practical answer to the biggest weakness of Kelly sizing — sensitivity to the input distribution. Rather than asking the user to pick a fractional-Kelly multiplier or a tail exponent by hand, the Wasserstein-Kelly formulation lets the radius of the ambiguity ball do that work automatically, and the resulting program remains convex. It is a good modern reference for anyone who wants to keep the growth-optimal framing of Kelly but cannot accept how aggressively plug-in Kelly bets on noisy estimates.
+
+Key metrics: empirical tests on financial data show that the Wasserstein-Kelly portfolio outperforms the traditional plug-in Kelly portfolio in out-of-sample evaluation across multiple metrics and delivers noticeably more stable allocations over time.
+
+`Read the paper <https://arxiv.org/abs/2302.13979>`__
+
+Volatility-Managed Portfolios
+------------------------------
+
+Alan Moreira and Tyler Muir (Journal of Finance, 2017) show that managed portfolios which scale down exposure when volatility is high and scale up when volatility is low produce large alphas, higher Sharpe ratios, and large utility gains for mean-variance investors. They document the effect across the market factor, value, momentum, profitability, return on equity, investment, and betting-against-beta factors, as well as the currency carry trade. The mechanism is simple: changes in volatility are not offset by proportional changes in expected returns, so volatility timing adds value even without forecasting returns.
+
+Our summary: this is the canonical reference for the idea that cutting risk in high-volatility regimes improves risk-adjusted performance almost universally across equity and macro factors. What makes the result powerful is its breadth — the same volatility-scaling overlay helps nearly every standard factor portfolio. For practitioners, the paper justifies the common CTA and risk-parity practice of volatility targeting as an ex-post optimal behaviour, and it is the natural companion to the Kim-Tse-Wald paper on TSMOM and volatility scaling, which asks how much of trend-following alpha is really the vol-scaling overlay rather than the direction signal.
+
+Key metrics: volatility-managed versions of the market, value, momentum, and other factor portfolios produce statistically significant alphas relative to their unmanaged counterparts, with material improvements in Sharpe ratios. The effect is robust across the full sample (1926–2015 for equity factors) and across international markets and asset classes.
+
+`Read the paper <https://conference.nber.org/confer/2016/LTAMs16/Moreira_Muir.pdf>`__
+
+Dynamic Time Series Momentum of Cryptocurrencies
+--------------------------------------------------
+
+Oliver Borgards (North American Journal of Economics and Finance, 2021) investigates momentum effects across twenty cryptocurrencies relative to US equities using a dynamic modelling framework that evaluates momentum periods following formation periods at both daily and intraday frequencies. The paper documents that formation periods frequently precede momentum periods across all time scales, and that cryptocurrencies exhibit notably stronger and longer momentum periods than equities.
+
+Our summary: this paper provides strong evidence that time-series momentum in crypto is not only present but qualitatively different from the equity version — stronger, longer-lasting, and more exploitable. The author attributes the amplification to the difficulty of valuing intrinsic worth in crypto assets, which attracts more noise traders and delays mean-reversion. A momentum-based trading strategy outperforms buy-and-hold for both asset classes, but only the cryptocurrency strategy delivers superior risk-adjusted returns and diminished downside exposure. The identification of critical price thresholds where volatility spikes temporarily and triggers directional price movements is a useful practical detail for signal design.
+
+Key metrics: the paper reports that momentum strategies outperform buy-and-hold for both cryptocurrencies and the stock market index, but only crypto momentum strategies generate higher risk-adjusted returns and lower downside exposure than a passive investment. Formation periods are followed by momentum periods at both daily and intraday frequencies across all twenty cryptocurrencies studied.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1062940821000590>`__
+
+A Trend Factor for the Cross Section of Cryptocurrency Returns
+---------------------------------------------------------------
+
+Christian Fieberg, Gerrit Liedtke, Thorsten Poddig, Thomas Walker, and Adam Zaremba (Journal of Financial and Quantitative Analysis) propose CTREND, a new trend factor for cryptocurrency returns that aggregates price and volume information across different time horizons. Using data on more than 3,000 coins and machine learning methods to exploit information from various technical indicators, they show that the resulting signal reliably predicts cryptocurrency returns, cannot be subsumed by known factors, and remains robust across different subperiods, market states, and alternative research designs.
+
+Our summary: this is one of the most thorough cross-sectional crypto trend studies to date. The key practical finding is that the signal survives transaction costs and persists in big and liquid coins — answering the perennial concern that crypto momentum results depend on trading micro-caps that cannot actually be traded. By using ML to combine multiple technical indicators across horizons rather than relying on a single lookback, the paper also demonstrates that the crypto trend premium has a richer information structure than simple price momentum. An asset pricing model that incorporates CTREND outperforms competing factor models, making it a strong candidate for any crypto factor framework.
+
+Key metrics: the CTREND factor generates statistically significant returns that survive transaction costs and remain robust in large and liquid coins. The effect persists across different subperiods and market states, and an asset pricing model incorporating CTREND provides a superior explanation of cryptocurrency returns compared to competing factor models.
+
+`Read the paper <https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4C1509ACBA33D5DCAF0AC24379148178/S0022109024000747a.pdf/a-trend-factor-for-the-cross-section-of-cryptocurrency-returns.pdf>`__
+
+Quantitative Evaluation of Volatility-Adaptive Trend-Following Models in Cryptocurrency Markets
+-------------------------------------------------------------------------------------------------
+
+Ioannis Karassavidis, Lampros Kateris, and Maximos Ioannidis (SSRN, 2025) present a trend-following framework that adapts to volatility in high-frequency cryptocurrency markets, focusing on Bitcoin and Ethereum. The proposed system uses multi-horizon moving averages to detect trends, employs a multi-timeframe RSI filter to confirm momentum, and uses ATR scaling to manage risk based on current volatility, with trade exits combining ATR-based trailing stops and EMA slope reversal detection.
+
+Our summary: this paper is notable for how closely its architecture maps to the kind of volatility-adaptive trend system that practitioners actually build. The combination of moving-average trend detection, RSI momentum confirmation, and ATR-based position sizing and exits is a design pattern that shows up repeatedly in production crypto trend-following systems. The paper evaluates these components quantitatively on BTC and ETH, addressing the extreme volatility, heavy-tailed return distributions, and structural inefficiencies that make crypto a natural but challenging test bed for momentum-based strategies.
+
+Key metrics: the paper provides quantitative evaluation of the volatility-adaptive trend-following model on BTC and ETH, reporting performance across different configurations of the moving-average, RSI, and ATR components under realistic market conditions.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5821842>`__
