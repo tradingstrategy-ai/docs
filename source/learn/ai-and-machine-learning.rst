@@ -529,6 +529,8 @@ This paper introduces Deep Momentum Networks, a hybrid approach that injects dee
 
 Backtesting on a portfolio of 88 continuous futures contracts from 1995 to 2015, the Sharpe-optimised LSTM achieves a Sharpe ratio of 2.91, a Sortino ratio of 4.29, and a Calmar ratio of 2.16 when rescaled to a 15% volatility target, with annualised returns of 45.1% and a maximum drawdown of 20.9%. This represents a more than 2x improvement over the best traditional benchmark (Sgn(Returns), Sharpe 1.39). The win rate reaches 59.6%. However, the high turnover of the raw LSTM signal makes it sensitive to transaction costs — at 10bps costs the unregularised LSTM Sharpe collapses to -5.31. With the proposed turnover regularisation, the LSTM recovers to a Sharpe of 0.91 at 10bps costs, remaining competitive with traditional benchmarks.
 
+Datasets: the exact paper backtest uses 88 ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The paper does not release the panel itself. If you want a close scriptable substitute from the same Oxford research line, the later official repo for the Momentum Transformer downloads the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
+
 By Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
 
 Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/status/2025129088302621068>`__.
@@ -728,9 +730,13 @@ The paper introduces the Cross Attentive Time-Series Trend Network — X-Trend �
 
 By quickly adapting to new financial regimes, X-Trend increases Sharpe ratio by 18.9% over a neural forecaster and 10-fold over a conventional Time-Series Momentum (TSMOM) strategy during the turbulent 2018–2023 period. The strategy recovers from the COVID-19 drawdown roughly twice as quickly as the neural-forecaster baseline. In the zero-shot setting, applied to novel unseen financial assets, X-Trend achieves a 5-fold Sharpe ratio increase versus a neural time-series trend forecaster over the same period. Across 2018–2023 the reference TSMOM and MACD baselines post Sharpe ratios of 0.23 and 0.27 respectively, while the Sharpe-optimised neural baseline reaches 2.27 and the best X-Trend variants reach 2.38–2.43. The cross-attention mechanism additionally allows interpretation of the relationship between forecasts and matched patterns in the context set.
 
+Datasets: the paper backtests on 50 liquid backwards-ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The current `x-trend` repository is still a placeholder and does not yet ship data loaders, but it explicitly builds on the earlier Momentum Transformer codebase, whose README shows how to fetch a similar futures panel from the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
+
 By Kieran Wood, Samuel Kessler, Stephen J. Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
 `Read the paper <https://arxiv.org/abs/2310.10500>`__
+
+`Source code on GitHub (placeholder repository) <https://github.com/kieranjwood/x-trend>`__
 
 Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture
 -------------------------------------------------------------------------------------
@@ -740,6 +746,8 @@ The authors introduce the Momentum Transformer, an attention-based deep-learning
 The model combines an LSTM encoder for local temporal features with a multi-head self-attention block that attends over the full history of an asset's returns and volatility-scaled features. This hybrid design addresses two weaknesses of pure LSTM-based deep momentum networks: limited long-range context and slow adaptation to regime shifts. The paper also introduces a Change Point Detection (CPD) module that flags regime transitions, and shows the Momentum Transformer adapts to the 2020 COVID shock materially faster than LSTM baselines while keeping turnover — and therefore transaction costs — lower.
 
 Backtested on a portfolio of 50 of the most liquid continuous futures contracts from 1990–2020, the Momentum Transformer delivers a Sharpe ratio of roughly 2.33 after rescaling to 15% volatility, outperforming classical TSMOM and MACD benchmarks (Sharpe ~0.4–1.0) as well as the LSTM-based Deep Momentum Network baseline (Sharpe ~1.7–2.0). The advantage widens once transaction costs are included: at 3bps costs the Momentum Transformer retains a Sharpe of ~1.9 versus ~1.2 for the LSTM baseline, driven by lower turnover. During the 2020 COVID regime change, the Momentum Transformer recovers substantially faster than the LSTM-based forecaster.
+
+Datasets: the paper results are reported on 50 liquid continuous futures extracted from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The official repo uses the free `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ instead and includes scripts to download the data and build features.
 
 By Kieran Wood, Sven Giegerich, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
@@ -824,9 +832,13 @@ Our summary: this is the most useful "Path B" paper after the original Deep Mome
 
 Key metrics: on the 1995-2020 backtest, adding the CPD module improves Sharpe ratio by roughly one-third relative to the base DMN pipeline. Over the more difficult 2015-2020 subperiod, the improvement rises to about two-thirds, which is exactly the period where many traditional momentum strategies struggled.
 
+Datasets: the paper backtest uses the same commercial futures universe family as the Oxford momentum papers, while the shared official repo reproduces the workflow with the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ and provides download plus feature-generation scripts. If you want the exact institutional data source used across the paper line, the authors also reference the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__.
+
 By Kieran Wood, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
 `Read the paper <https://arxiv.org/abs/2105.13727>`__
+
+`Source code on GitHub <https://github.com/kieranjwood/slow-momentum-fast-reversion>`__
 
 Building Cross-Sectional Systematic Strategies By Learning to Rank
 ------------------------------------------------------------------
@@ -836,6 +848,8 @@ This paper applies learning-to-rank methods to cross-sectional portfolio constru
 Our summary: this is the clean cross-sectional counterpart to the deep momentum literature. The paper's main contribution is not just "better ML", but better objective alignment: if the portfolio only cares about relative ordering across instruments, then the learning problem should optimize relative ordering directly. That makes it especially relevant for cross-sectional crypto and equity research, where the final portfolio is usually long the best-ranked names and short or underweight the worst-ranked ones. It is also a natural bridge from classical factor sorting to modern ranking losses.
 
 Key metrics: the abstract reports that learning-to-rank methods materially improve ranking accuracy and deliver approximately a threefold boost in Sharpe ratios versus traditional cross-sectional momentum approaches built from standard regression or classification outputs.
+
+Datasets: the study constructs monthly portfolios from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__, using actively traded NYSE common stocks (share codes 10 and 11) from 1980 to 2019 with prices above $1 and valid one-year trading histories.
 
 By Daniel Poh, Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
 
@@ -895,3 +909,113 @@ Our summary: this is probably the closest paper here in spirit to X-Trend's "use
 Key metrics: on the top-5 cryptocurrencies, CryptoPulse reports MAE/MSE/CORR of 0.0607/0.0095/0.9961 for BTC, 0.0529/0.0065/0.9937 for ETH, and 0.0563/0.0103/0.9949 for BNB. On broader aggregates it reports MAE 0.0905 for the top 10, 0.0758 for the top 15, and 0.0774 for the top 20, with the paper stating improvements in MAE of 10.4%-63.8% and in MSE of 17.2%-69.0% versus the best comparison method, while outperforming ten baselines overall.
 
 `Read the paper <https://arxiv.org/abs/2502.19349>`__
+
+QuantNet: Transferring Learning Across Systematic Trading Strategies
+--------------------------------------------------------------------
+
+Adriano Koshiyama, Sebastian Flennerhag, Stefano B. Blumberg, Nick Firoozye, and Philip Treleaven propose QuantNet, a transfer-learning architecture for systematic trading that learns market-agnostic patterns jointly with market-specific trading policies. Each market is assigned an encoder-decoder pair, while a shared global model captures transferable structure across markets and feeds that information back into local trading decisions.
+
+Our summary: QuantNet is one of the earliest clean attempts to do transfer learning for end-to-end trading rather than training a separate model per market. The big idea is that many local alpha signals are too weak and noisy to learn well in isolation, but become learnable once a shared latent representation is trained across a large cross-section of markets. Conceptually it sits upstream of later trend and ranking papers: not yet a specialist CTA architecture, but very relevant if you want to transfer signal structure across countries, assets, or strategy families.
+
+Key metrics: evaluated on 3,103 assets across 58 global equity markets, QuantNet delivers 51% higher Sharpe ratio and 69% higher Calmar ratio than the best baseline. Relative to the non-transfer-learning variant, the paper reports further improvements of 15% in Sharpe and 41% in Calmar. The abstract also notes that code is available in the appendix.
+
+Datasets: all 58 market datasets were obtained through `Bloomberg <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__, so reproducing the exact panel requires Bloomberg access rather than a free public dump. The paper also publishes an `asset and exchange list <https://www.dropbox.com/s/eobhg2w8ithbgsp/AssetsExchangeList.xlsx?dl=0>`__ for the markets it used.
+
+`Read the paper <https://arxiv.org/abs/2004.03445>`__
+
+`Related implementation on GitHub <https://github.com/alexandrebrilhante/quantnet>`__
+
+Enhancing Cross-Sectional Currency Strategies by Context-Aware Learning to Rank with Self-Attention
+----------------------------------------------------------------------------------------------------
+
+Daniel Poh, Bryan Lim, Stefan Zohren, and Stephen Roberts adapt Transformer-style self-attention to the ranking stage of cross-sectional currency strategies. Instead of accepting the initial globally learned ranking at face value, the model uses the top- and bottom-ranked instruments as local context and then re-ranks the slate to account for regime-specific distributional shifts at the rebalancing date.
+
+Our summary: this paper is important because it shifts attention from the forecast model to the portfolio-construction bottleneck itself. The method is especially useful during risk-off episodes, when globally trained rankers can become brittle precisely when ranking accuracy matters most. It is one of the clearest examples of using self-attention not for raw price forecasting, but for contextual portfolio refinement, and it provides a strong design pattern for cross-sectional crypto or macro momentum systems.
+
+Key metrics: on a universe of 31 currencies, the context-aware re-ranking approach increases Sharpe ratio by around 30% and improves several other performance measures relative to the base ranking strategy. The paper also reports better Sharpe ratios when performance is conditioned separately on normal and risk-off market states.
+
+Datasets: the paper uses daily USD exchange-rate data for 31 currencies from the `Bank for International Settlements <https://www.bis.org/statistics/xrusd.htm>`__ over 2000-2020, and it conditions risk-off states using `Cboe VIX historical data <https://www.cboe.com/tradable_products/vix/vix_historical_data/>`__.
+
+`Read the paper <https://arxiv.org/abs/2105.10019>`__
+
+Transfer Ranking in Finance: Applications to Cross-Sectional Momentum with Data Scarcity
+----------------------------------------------------------------------------------------
+
+Daniel Poh, Stephen Roberts, and Stefan Zohren introduce Fused Encoder Networks, a transfer-ranking architecture designed for settings where the target market has too little history to support a stable standalone model. The framework combines a source encoder trained on a larger related dataset with a target encoder focused on the small market of interest, while self-attention allows interactions across instruments to influence both training and inference.
+
+Our summary: this is one of the most relevant papers here for crypto. The demonstration problem is cross-sectional momentum over the top ten cryptocurrencies by market capitalisation, which makes it a rare serious ML paper on crypto portfolio construction rather than just coin-by-coin prediction. The paper's core message is that transfer learning can rescue ranking models in data-scarce markets, and that using attention over the instrument set itself matters materially once the universe is small and heterogeneous.
+
+Key metrics: on the top ten cryptocurrencies, the Fused Encoder Networks deliver roughly a three-fold boost in Sharpe ratio over classical momentum and an improvement of about 50% over the best benchmark model without transaction costs. The paper also reports that the model continues to outperform baselines after accounting for the high transaction costs associated with crypto trading.
+
+Datasets: the target crypto panel uses daily close data from `CoinMarketCap <https://coinmarketcap.com/>`__ for the top ten cryptocurrencies by market capitalisation, downsampled to weekly frequency over 2016-2021. The source transfer panel uses 30 USD FX pairs derived from `BIS exchange-rate data <https://www.bis.org/statistics/xrusd.htm>`__, and risk-off labels use `Cboe VIX historical data <https://www.cboe.com/tradable_products/vix/vix_historical_data/>`__.
+
+`Read the paper <https://arxiv.org/abs/2208.09968>`__
+
+Constructing Time-Series Momentum Portfolios with Deep Multi-Task Learning
+--------------------------------------------------------------------------
+
+Joel Ong and Dorien Herremans propose a deep multi-task learning approach to time-series momentum that jointly learns the trading policy and several auxiliary volatility-related tasks, such as realised-volatility forecasting under multiple estimators. The goal is to stop treating signal generation and volatility estimation as independent modules and instead let the network learn both together.
+
+Our summary: this is the strongest published non-Oxford line I found on ML-based trend following. The paper keeps close contact with the actual portfolio-construction problem by combining end-to-end TSMOM training with auxiliary tasks that improve volatility awareness. It is a practical bridge between classical volatility-targeted trend following and more modern representation learning, and it is especially useful if you want a model that remains recognisably "trend following" rather than becoming an opaque generic forecaster.
+
+Key metrics: in backtests from January 2000 to December 2020 on a diversified portfolio of continuous futures contracts, the model outperforms existing TSMOM strategies even after accounting for transaction costs of up to 3 basis points. The paper also reports that adding the auxiliary volatility tasks materially improves portfolio performance versus the single-task baseline.
+
+Datasets: the paper uses the commercial Stevens Continuous Futures feed obtained through `Nasdaq Data Link <https://data.nasdaq.com/>`__ from January 1990 to December 2020. The public repo does not ship the data because of licensing; its README recommends either a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or commercial vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG to build backward-ratio continuous futures locally.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0957417423010898>`__
+
+`Source code on GitHub <https://github.com/joelowj/mtl-tsmom>`__
+
+Deep Inception Networks: A General End-to-End Framework for Multi-asset Quantitative Strategies
+------------------------------------------------------------------------------------------------
+
+Tom Liu, Stephen Roberts, and Stefan Zohren introduce Deep Inception Networks (DINs), a family of end-to-end systematic trading models that extract both time-series and cross-sectional features directly from daily returns without hand-crafted signals. DINs extend the Deep Momentum Network line by predicting portfolio-level position sizes directly and by regularising not only turnover but also systemic market-correlation exposure.
+
+Our summary: DIN is one of the more ambitious papers in this literature because it moves from "learn a better single-asset momentum signal" to "learn the whole multi-asset portfolio construction problem end to end." The paper is also useful for its interpretability angle: it explicitly discusses using attention layers and Variable Selection Networks to explain the model's decisions when the feature set becomes large and dynamic.
+
+Key metrics: on futures data, DIN models outperform traditional time-series and cross-sectional benchmarks, remain robust across a range of transaction costs, and perform consistently across random seeds. The paper also reports that the framework generalises across asset classes and supports customisable feature spaces when going beyond the baseline daily-return setting.
+
+Datasets: DIN evaluates four official data sources: 50 cross-asset futures from the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, EURO STOXX 50 equities from `Compustat on WRDS <https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/compustat/>`__, cryptocurrency spot data from `CoinMarketCap <https://coinmarketcap.com/>`__, and FX spot rates from the `Federal Reserve H.10 release <https://www.federalreserve.gov/releases/h10/>`__. The futures dataset is the main one used for the headline trend-following comparison.
+
+`Read the paper <https://arxiv.org/abs/2307.05522>`__
+
+(Re-)Imag(in)ing Price Trends
+-----------------------------
+
+Jingwen Jiang, Bryan Kelly, and Dacheng Xiu revisit trend predictability using machine-learning image analysis. Instead of testing predefined chart rules such as momentum or reversal, they convert stock-level price histories into chart images and use convolutional neural networks to discover whatever visual patterns are most predictive of future returns.
+
+Our summary: this paper is not a CTA trend-following paper in the narrow futures sense, but it is one of the most important ML papers on price trends full stop. The main contribution is methodological: if trend information is richer than a few hand-crafted lookbacks, then representing price history as an image and learning the pattern space directly is a natural move. The finding that short-horizon patterns transfer to longer horizons and from U.S. stocks to international markets makes it especially interesting as a general trend-learning reference.
+
+Key metrics: the authors report more accurate return predictions and more profitable investment strategies than traditional price-momentum and reversal-style benchmarks, with robustness across specifications. The paper also highlights context independence: patterns learned on U.S. stocks transfer effectively to international data, and short-term patterns remain useful at longer horizons.
+
+Datasets: the U.S. sample uses daily stock data from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__ for NYSE, AMEX, and NASDAQ firms from 1993 to 2019. The international transfer tests use daily stock data from `LSEG Datastream <https://www.lseg.com/en/data-analytics/financial-data/company-data/pricing-reference-data/datastream-macroeconomic-analysis>`__ for most markets and `CSMAR <https://cn.gtadata.com/>`__ for mainland China, so reproducing the full paper requires institutional data subscriptions rather than a single public download.
+
+`Read the paper <https://doi.org/10.1111/jofi.13268>`__
+
+DeepUnifiedMom: Unified Time-series Momentum Portfolio Construction via Multi-Task Learning with Multi-Gate Mixture of Experts
+-------------------------------------------------------------------------------------------------------------------------------
+
+Joel Ong and Dorien Herremans introduce DeepUnifiedMom, a unified momentum framework built around multi-task learning and a multi-gate mixture-of-experts architecture. Rather than treating different momentum horizons as separate models, DeepUnifiedMom tries to capture the whole spectrum of time-series momentum opportunities within one portfolio-construction engine.
+
+Our summary: this paper is the natural sequel to the authors' earlier multi-task TSMOM work. The key conceptual advance is the explicit attempt to unify multiple momentum time frames under one model rather than stitching together separate fast, medium, and slow signals. That makes it particularly relevant for researchers who think the real edge lies in dynamically weighting multiple momentum horizons rather than in choosing one canonical lookback.
+
+Key metrics: across equity indices, fixed income, foreign exchange, and commodities, the paper reports that DeepUnifiedMom consistently outperforms benchmark models even after transaction costs. The abstract frames the improvement as broad rather than asset-class-specific, with better risk-adjusted returns across the diversified multi-asset portfolio.
+
+Datasets: the paper uses 49 continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__ from 1990 to 2023. The public repo does not ship the data because of licensing; its README recommends reconstructing continuous futures from a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or purchasing equivalent vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG.
+
+`Read the paper <https://arxiv.org/abs/2406.08742>`__
+
+`Source code on GitHub <https://github.com/joelowj/unified_mom_mmoe>`__
+
+DeePM: Regime-Robust Deep Learning for Systematic Macro Portfolio Management
+----------------------------------------------------------------------------
+
+Kieran Wood, Stephen J. Roberts, and Stefan Zohren propose DeePM (Deep Portfolio Manager), a structured macro portfolio model trained end to end to maximise a robust risk-adjusted utility. DeePM combines a directed-delay mechanism to handle asynchronous information arrival, a macroeconomic graph prior to regularise cross-asset structure, and a worst-window robust objective designed to improve behaviour in the most adverse historical subperiods.
+
+Our summary: this is the most interesting new public paper I found after the Momentum Transformer and X-Trend line. DeePM pushes the literature from better trend signals toward robust macro portfolio management under regime instability. The architecture is unusually explicit about three real trading problems that many finance ML papers ignore: ragged information timing, low signal-to-noise ratios, and the need to optimise not just average Sharpe but resilience in the worst windows.
+
+Key metrics: in large-scale backtests from 2010 to 2025 on 50 diversified futures with realistic transaction costs, DeePM achieves net risk-adjusted returns roughly twice those of classical trend-following strategies and passive benchmarks. The paper also reports an improvement of roughly 50% over the Momentum Transformer baseline while remaining resilient through the CTA winter of the 2010s, the COVID shock, and the post-2020 inflation regime.
+
+Datasets: DeePM uses daily OHLC histories for 50 futures and FX contracts from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, then constructs ratio-adjusted continuous return series and derives all features from close prices only. The paper does not link a public data release, so reproducing the exact setup requires Pinnacle or an equivalent futures vendor that lets you build backward-ratio continuous contracts.
+
+`Read the paper <https://arxiv.org/abs/2601.05975>`__

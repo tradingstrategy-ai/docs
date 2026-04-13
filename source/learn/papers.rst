@@ -1534,6 +1534,17 @@ Key metrics: the paper provides quantitative evaluation of the volatility-adapti
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5821842>`__
 
+Demystifying Managed Futures
+----------------------------
+
+Brian Hurst, Yao Hua Ooi, and Lasse Heje Pedersen decompose managed-futures returns to show that the category's long-run performance can be explained to a surprisingly large degree by a simple, systematic time-series momentum rule applied across major asset classes. The paper reframes managed futures not as an opaque collection of discretionary macro bets, but as a transparent and largely replicable exposure to trend following plus a small amount of implementation-specific variation.
+
+Our summary: this is one of the most useful bridge papers between academic TSMOM and practitioner CTA portfolios. Its importance is not that it proposes a new signal, but that it explains what managed futures funds have historically been doing in a way that can be tested, replicated, and compared with academic trend strategies. If you want to connect the "trend following works" literature to actual fund returns, this is one of the key references.
+
+Key metrics: the paper reports that a simple trend-following strategy across 58 liquid futures and forwards explains a large share of managed-futures industry returns and reproduces much of the category's diversification and crisis-performance characteristics. The replication is especially strong during major equity drawdowns, supporting the claim that trend following is a core driver of managed-futures convexity.
+
+`Read the paper <https://www.aqr.com/Insights/Research/Journal-Article/Demystifying-Managed-Futures>`__
+
 Rethinking Trend Following: Optimal Regime-Dependent Allocation
 ---------------------------------------------------------------
 
