@@ -840,3 +840,58 @@ Key metrics: the abstract reports that learning-to-rank methods materially impro
 By Daniel Poh, Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
 
 `Read the paper <https://arxiv.org/abs/2012.07149>`__
+
+DAM: A Universal Dual Attention Mechanism for Multimodal Timeseries Cryptocurrency Trend Forecasting
+------------------------------------------------------------------------------------------------------
+
+Yihang Fu, Mingyu Zhou, and Luyao Zhang propose DAM, a multimodal crypto forecasting architecture that combines market time-series with both news and social-media sentiment processed through CryptoBERT. The design uses two attention stages: one to model information within each modality and another to fuse information across modalities before passing the representation into an LSTM forecaster.
+
+Our summary: this is not an X-Trend clone, but it is one of the clearest crypto papers in the same broad family of "context-aware" architectures. Instead of retrieving historical regimes with cross-attention, DAM conditions price forecasts on multiple external context streams and explicitly models how financial variables and sentiment interact. That makes it relevant if you want a crypto trend model that is richer than pure price-only transformers, especially when market narrative and crowd positioning matter as much as the chart itself.
+
+Key metrics: on the Bitcoin dataset used in the paper, DAM-LSTM reports MAE 719.82, stationary-input MAE 431.86, and MAPE 0.0297. The paper reports roughly 20% improvement over the same LSTM architecture with simple concatenation and also shows the dual-attention version beating ablations that remove either intra-modal or cross-modal attention.
+
+`Read the paper <https://arxiv.org/abs/2405.00522>`__
+
+Temporal Fusion Transformer-Based Trading Strategy for Multi-Crypto Assets Using On-Chain and Technical Indicators
+-------------------------------------------------------------------------------------------------------------------
+
+Ming Che Lee introduces a Temporal Fusion Transformer (TFT)-based multi-asset cryptocurrency trading framework that combines technical indicators with on-chain features such as SOPR, TVL, active addresses, exchange net flow, Realized Cap HODL Waves, and the Crypto Fear and Greed Index. The paper moves beyond pure forecasting by translating TFT outputs into daily buy/hold/sell signals and evaluating the resulting trading strategy.
+
+Our summary: among the crypto papers added here, this is one of the most practical bridges from transformer forecasting to deployable trading rules. It is not X-Trend-style few-shot regime retrieval, but it shares the same intuition that richer context helps the model adapt to fast-changing crypto conditions. The main contribution is the combination of interpretable attention with on-chain state variables, which gives the model a broader market picture than simple OHLCV trend systems.
+
+Key metrics: across BTC, ETH, USDT, XRP, and BNB over 2022-2024, the TFT achieves the best average predictive scores among the tested baselines with RMSE 327.28, MAE 217.86, MAPE 3.18%, and R2 0.9432. The derived trading strategy posts a cumulative return of 38.6% and a Sharpe ratio of 1.06, beating LSTM (34.2%, Sharpe 0.98), GRU (31.5%, Sharpe 0.91), SVR (18.7%, Sharpe 0.61), buy-and-hold (28.1%), and naive momentum (26.4%).
+
+`Read the paper <https://www.mdpi.com/2079-8954/13/6/474>`__
+
+Helformer: an attention-based deep learning model for cryptocurrency price forecasting
+--------------------------------------------------------------------------------------
+
+T. O. Kehinde, Oluyinka J. Adedokun, Akpan Joseph, Kareem Morenikeji Kabirat, Hammed Adebayo Akano, and Oludolapo A. Olanrewaju introduce Helformer, a crypto forecasting architecture that combines Holt-Winters exponential smoothing with a Transformer-style attention stack and an LSTM component in place of the standard feed-forward block. The model is tuned with Optuna and then tested both on Bitcoin and, via transfer learning, across 15 additional cryptocurrencies.
+
+Our summary: Helformer is one of the strongest crypto-specific transformer-family papers in this file if you care about transfer across assets. That transfer angle is the closest thing here to X-Trend's zero-shot or few-shot generalisation story, even though the architecture is very different. Rather than retrieving analogous regimes from a context set, Helformer decomposes trend and seasonality directly and then shows that patterns learned on BTC travel surprisingly well to other coins.
+
+Key metrics: on optimized BTC forecasting, Helformer reports RMSE 7.7534, MAPE 0.0148%, MAE 5.9252, and near-perfect fit statistics (R2 and EVS both reported as 1). In the BTC trading backtest, the model achieves excess return 925.29%, volatility 0.0178, maximum drawdown approximately -0.00001943, and Sharpe ratio 18.0604, far ahead of the plain Transformer and buy-and-hold baselines. The transfer-learning section also reports strong cross-asset trading results, including ETH excess return 854.88% with Sharpe 16.46 and DOGE excess return 1354.79%.
+
+`Read the paper <https://journalofbigdata.springeropen.com/articles/10.1186/s40537-025-01135-4>`__
+
+Crypto foretell: a novel hybrid attention-correlation based forecasting approach for cryptocurrency
+---------------------------------------------------------------------------------------------------
+
+Rabbiya Younas, Hafiz Muhammad Raza Ur Rehman, and Gyu Sang Choi present a hybrid Transformer-based framework for cryptocurrency forecasting that combines self-attention with auto-correlation in a dual-branch architecture. One branch focuses on longer-range temporal structure, while the other is designed to preserve shorter-horizon dynamics that standard Transformer variants often blur away.
+
+Our summary: this is one of the better "multi-timescale crypto transformer" papers and is conceptually adjacent to X-Trend because it explicitly separates long-horizon and short-horizon structure instead of forcing one mechanism to do everything. It is still a forecasting model rather than a regime-matching trend follower, but its hybrid branch design is a useful reference if you want a crypto architecture that can respond to both slow trend persistence and fast local reversals.
+
+Key metrics: across 10 cryptocurrencies and multiple frequencies, the full proposed model reports MAE 1.3235, MSE 6.4343, MAPE 5.2670%, RMSE 1.4053, and Max Error 3.0506. The paper states these results outperform Autoformer, Informer, and FEDformer, and paired t-tests versus deep-learning baselines report statistically significant gains with p-values below 0.05.
+
+`Read the paper <https://link.springer.com/article/10.1186/s40537-025-01291-7>`__
+
+CryptoPulse: Short-Term Cryptocurrency Forecasting with Dual-Prediction and Cross-Correlated Market Indicators
+----------------------------------------------------------------------------------------------------------------
+
+Amit Kumar and Taoran Ji introduce CryptoPulse, a short-horizon crypto forecasting system that combines two prediction paths: one conditioned on the macro market environment represented by major cryptocurrencies, and another conditioned on the target asset's own price dynamics and technical indicators. The model then refines and fuses these predictions using market sentiment from cryptocurrency news, with sentiment labels generated through an LLM prompting pipeline.
+
+Our summary: this is probably the closest paper here in spirit to X-Trend's "use contextual information outside the single target series" idea, even though it is aimed at next-day forecasting rather than medium-term trend following. Instead of attending over a library of historical regimes, CryptoPulse attends to cross-coin structure, technical state, and sentiment, then learns how to combine those views. If someone wanted to build an X-Trend-inspired crypto system, CryptoPulse is a strong adjacent reference point.
+
+Key metrics: on the top-5 cryptocurrencies, CryptoPulse reports MAE/MSE/CORR of 0.0607/0.0095/0.9961 for BTC, 0.0529/0.0065/0.9937 for ETH, and 0.0563/0.0103/0.9949 for BNB. On broader aggregates it reports MAE 0.0905 for the top 10, 0.0758 for the top 15, and 0.0774 for the top 20, with the paper stating improvements in MAE of 10.4%-63.8% and in MSE of 17.2%-69.0% versus the best comparison method, while outperforming ten baselines overall.
+
+`Read the paper <https://arxiv.org/abs/2502.19349>`__
