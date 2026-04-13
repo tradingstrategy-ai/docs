@@ -1886,6 +1886,17 @@ Mentioned by `@0xMacroGuy <https://x.com/0xMacroguy>`__ in `this discussion <htt
 
 `Read the article <https://x.com/0xMacroguy/status/2038991439162413164>`__
 
+Attack of the MM (1): Market Maker Inventory-Based Quoting Systems
+------------------------------------------------------------------
+
+A crypto market microstructure explainer on why prices often move against retail traders immediately after they buy or sell illiquid altcoins. The core argument is that this behavior is usually not "whale manipulation" but a natural consequence of inventory-based quoting: when aggressive retail flow pushes a market maker off balance, the maker adjusts quotes to reduce inventory risk and adverse selection exposure.
+
+The post walks through the main mechanics using the Avellaneda-Stoikov framework: quote skewing to attract offsetting flow, spread widening when inventory imbalance worsens, and reservation-price shifts as inventory changes. It also emphasizes why retail traders are especially vulnerable in small-cap markets, where thin liquidity and concentrated market orders make them the dominant source of toxic flow. A practical takeaway is to split entries into smaller increments so you work with the market maker's quoting adjustments instead of paying the full adverse-move cost in one trade.
+
+By `Dave.0xU <https://x.com/bc1qDave>`__.
+
+`Read the post <https://x.com/bc1qDave/status/2004000120132850068>`__
+
 Fat Tails in Crypto Markets and Implications for Market Making
 --------------------------------------------------------------
 
@@ -2040,3 +2051,14 @@ By Titouan Baraud.
 The comments on the LinkedIn post challenge the framing. Carlo Acerbi (ADIA, Risknowledge SA, LARIX Risk Consulting, EPFL Lausanne) argues that "None of these models tell you 'where the underlying will be tomorrow'" and that the post conflates the risk-neutral measure ℚ (induced from no-arbitrage of derivatives prices) with the real-world measure ℙ, calling this "probably the most common mistake in quantitative finance". Baraud concedes the point in reply, clarifying that Black-Scholes prices under ℚ and says nothing about ℙ, and that Fokker-Planck describes the density evolution under whichever measure one works in. Separately, Bernard Gourion (Head of Research and Development and Quantitative Watch) challenges Baraud to prove that Black-Scholes is also a model with stochastic discrete dividends; Baraud responds that the standard Black-Scholes framework assumes a continuous deterministic dividend yield, and that extending it to stochastic discrete dividends requires adjusting the forward price and modifying the underlying SDE, since the lognormality assumption no longer holds cleanly across ex-dividend dates.
 
 `Read the LinkedIn post <https://www.linkedin.com/posts/titouan-baraud_quantfinance-fokkerplanck-stochasticcalculus-ugcPost-7448101214195441664-aAGi>`__.
+
+Three Dead Simple Edges in Macro ETFs
+-------------------------------------
+
+A Substack post by Robot James presenting three straightforward systematic trading edges in macro ETFs, specifically SPY and TLT. The core thesis is that forced flows — situations where market participants must trade regardless of price — create predictable, tradeable dislocations. The post focuses on rebalancing flows as the primary mechanism: the vast wealth management industry running 60/40 stock/bond portfolios creates massive, synchronized rebalancing activity, mostly concentrated around month-end, which temporarily distorts prices.
+
+The first strategy explicitly detailed is an end-of-month SPY/TLT rebalance flow trade: on trading day 15 of each month, compare month-to-date returns for SPY and TLT, then go long whichever has underperformed (the asset rebalancers are likely buying into) and hold until month-end. The post promises two additional similar edges, all framed as simple rules-based setups that exploit structural forced flows rather than forecasting. The full strategy details for all three edges are available to paid subscribers.
+
+By Robot James.
+
+`Read the blog post <https://robotjames.substack.com/p/three-dead-simple-edges-in-macro>`__.
