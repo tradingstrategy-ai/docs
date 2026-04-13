@@ -1533,3 +1533,14 @@ Our summary: this paper is notable for how closely its architecture maps to the 
 Key metrics: the paper provides quantitative evaluation of the volatility-adaptive trend-following model on BTC and ETH, reporting performance across different configurations of the moving-average, RSI, and ATR components under realistic market conditions.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5821842>`__
+
+Rethinking Trend Following: Optimal Regime-Dependent Allocation
+---------------------------------------------------------------
+
+Valeriy Zakamulin proposes a theoretical and empirical framework for trend following in which detected market regimes are treated as conditioning information and regime-specific exposures are chosen by directly maximizing the unconditional Sharpe ratio. Instead of taking standard time-series momentum and dynamic-speed momentum rules as fixed portfolio policies, the paper separates regime detection from position sizing and studies whether Sharpe-optimal allocation across Bull, Bear, Correction, and Rebound states improves out-of-sample performance. The empirical tests cover U.S. equity portfolios, 14 international equity markets, and 18 diversified portfolio datasets from Kenneth French's data library.
+
+Our summary: the key contribution here is not a new momentum signal but a clean argument that much of the literature hard-codes the economically important part of the strategy: how much to hold once a regime is identified. Zakamulin shows that canonical trend-following rules often overcommit to symmetric long/short exposures, especially full short positions in bear markets, and that much of the performance improvement comes from letting the exposure map itself be estimated from data. That makes this paper especially relevant for practitioners who already have regime labels or momentum signals and want a principled way to translate them into portfolio weights.
+
+Key metrics: the paper reports annualized out-of-sample Sharpe ratios rather than profit, drawdown, or win-rate statistics. On the total U.S. equity market, the two-regime optimal-allocation strategy improves Sharpe from 0.494 to 0.727 over 2004-2025, while the four-regime version improves Sharpe from 0.507 to 0.735 versus Dynamic Speed Momentum. Across 14 international markets, average Sharpe rises from 0.054 to 0.295 in the two-regime comparison and from 0.192 to 0.319 in the four-regime comparison. Across 18 diversified Kenneth French portfolio datasets, average Sharpe improves from 0.208 to 0.506 in the two-regime case and from 0.496 to 0.628 in the four-regime case, with estimated bear-regime weights typically close to zero rather than -1.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6376479>`__
