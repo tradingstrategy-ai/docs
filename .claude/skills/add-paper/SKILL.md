@@ -58,6 +58,8 @@ Description paragraph(s) here fom the paper itself. Keep it informative but conc
 
 Our summary of the contents.
 
+Used data and code availability for reproduction.
+
 Key metrics.
 
 `Read the paper <https://canonical-url-here>`__

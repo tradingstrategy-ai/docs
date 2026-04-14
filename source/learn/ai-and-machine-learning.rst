@@ -529,7 +529,7 @@ This paper introduces Deep Momentum Networks, a hybrid approach that injects dee
 
 Backtesting on a portfolio of 88 continuous futures contracts from 1995 to 2015, the Sharpe-optimised LSTM achieves a Sharpe ratio of 2.91, a Sortino ratio of 4.29, and a Calmar ratio of 2.16 when rescaled to a 15% volatility target, with annualised returns of 45.1% and a maximum drawdown of 20.9%. This represents a more than 2x improvement over the best traditional benchmark (Sgn(Returns), Sharpe 1.39). The win rate reaches 59.6%. However, the high turnover of the raw LSTM signal makes it sensitive to transaction costs — at 10bps costs the unregularised LSTM Sharpe collapses to -5.31. With the proposed turnover regularisation, the LSTM recovers to a Sharpe of 0.91 at 10bps costs, remaining competitive with traditional benchmarks.
 
-Datasets: the exact paper backtest uses 88 ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The paper does not release the panel itself. If you want a close scriptable substitute from the same Oxford research line, the later official repo for the Momentum Transformer downloads the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
+Datasets: the exact paper backtest uses 88 ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The exact paper dataset is not publicly released. If you want a close scriptable substitute from the same Oxford research line, the later official repo for the Momentum Transformer downloads the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
 
 By Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
 
@@ -730,7 +730,7 @@ The paper introduces the Cross Attentive Time-Series Trend Network — X-Trend �
 
 By quickly adapting to new financial regimes, X-Trend increases Sharpe ratio by 18.9% over a neural forecaster and 10-fold over a conventional Time-Series Momentum (TSMOM) strategy during the turbulent 2018–2023 period. The strategy recovers from the COVID-19 drawdown roughly twice as quickly as the neural-forecaster baseline. In the zero-shot setting, applied to novel unseen financial assets, X-Trend achieves a 5-fold Sharpe ratio increase versus a neural time-series trend forecaster over the same period. Across 2018–2023 the reference TSMOM and MACD baselines post Sharpe ratios of 0.23 and 0.27 respectively, while the Sharpe-optimised neural baseline reaches 2.27 and the best X-Trend variants reach 2.38–2.43. The cross-attention mechanism additionally allows interpretation of the relationship between forecasts and matched patterns in the context set.
 
-Datasets: the paper backtests on 50 liquid backwards-ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The current `x-trend` repository is still a placeholder and does not yet ship data loaders, but it explicitly builds on the earlier Momentum Transformer codebase, whose README shows how to fetch a similar futures panel from the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
+Datasets: the paper backtests on 50 liquid backwards-ratio-adjusted continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The exact paper dataset is not publicly released, and the current `x-trend` repository is still a placeholder that does not yet ship data loaders. It explicitly builds on the earlier Momentum Transformer codebase, whose README shows how to fetch a similar futures panel from the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__.
 
 By Kieran Wood, Samuel Kessler, Stephen J. Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
@@ -747,7 +747,7 @@ The model combines an LSTM encoder for local temporal features with a multi-head
 
 Backtested on a portfolio of 50 of the most liquid continuous futures contracts from 1990–2020, the Momentum Transformer delivers a Sharpe ratio of roughly 2.33 after rescaling to 15% volatility, outperforming classical TSMOM and MACD benchmarks (Sharpe ~0.4–1.0) as well as the LSTM-based Deep Momentum Network baseline (Sharpe ~1.7–2.0). The advantage widens once transaction costs are included: at 3bps costs the Momentum Transformer retains a Sharpe of ~1.9 versus ~1.2 for the LSTM baseline, driven by lower turnover. During the 2020 COVID regime change, the Momentum Transformer recovers substantially faster than the LSTM-based forecaster.
 
-Datasets: the paper results are reported on 50 liquid continuous futures extracted from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The official repo uses the free `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ instead and includes scripts to download the data and build features.
+Datasets: the paper results are reported on 50 liquid continuous futures extracted from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__. The exact paper dataset is not publicly released. The official repo uses the free `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ instead and includes scripts to download the data and build features.
 
 By Kieran Wood, Sven Giegerich, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
@@ -832,7 +832,7 @@ Our summary: this is the most useful "Path B" paper after the original Deep Mome
 
 Key metrics: on the 1995-2020 backtest, adding the CPD module improves Sharpe ratio by roughly one-third relative to the base DMN pipeline. Over the more difficult 2015-2020 subperiod, the improvement rises to about two-thirds, which is exactly the period where many traditional momentum strategies struggled.
 
-Datasets: the paper backtest uses the same commercial futures universe family as the Oxford momentum papers, while the shared official repo reproduces the workflow with the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ and provides download plus feature-generation scripts. If you want the exact institutional data source used across the paper line, the authors also reference the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__.
+Datasets: the paper backtest uses the same commercial futures universe family as the Oxford momentum papers. The exact paper dataset is not publicly released. The shared official repo reproduces the workflow with the `Nasdaq Data Link CHRIS continuous futures dataset <https://data.nasdaq.com/data/CHRIS-wiki-continuous-futures/documentation>`__ and provides download plus feature-generation scripts. If you want the exact institutional data source used across the paper line, the authors also reference the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__.
 
 By Kieran Wood, Stephen Roberts, and Stefan Zohren (Oxford-Man Institute, University of Oxford).
 
@@ -849,7 +849,7 @@ Our summary: this is the clean cross-sectional counterpart to the deep momentum 
 
 Key metrics: the abstract reports that learning-to-rank methods materially improve ranking accuracy and deliver approximately a threefold boost in Sharpe ratios versus traditional cross-sectional momentum approaches built from standard regression or classification outputs.
 
-Datasets: the study constructs monthly portfolios from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__, using actively traded NYSE common stocks (share codes 10 and 11) from 1980 to 2019 with prices above $1 and valid one-year trading histories.
+Datasets: the study constructs monthly portfolios from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__, using actively traded NYSE common stocks (share codes 10 and 11) from 1980 to 2019 with prices above $1 and valid one-year trading histories. The paper does not bundle a downloadable copy of the panel; WRDS access is required to recreate it exactly.
 
 By Daniel Poh, Bryan Lim, Stefan Zohren, and Stephen Roberts (University of Oxford, Oxford-Man Institute of Quantitative Finance).
 
@@ -919,7 +919,7 @@ Our summary: QuantNet is one of the earliest clean attempts to do transfer learn
 
 Key metrics: evaluated on 3,103 assets across 58 global equity markets, QuantNet delivers 51% higher Sharpe ratio and 69% higher Calmar ratio than the best baseline. Relative to the non-transfer-learning variant, the paper reports further improvements of 15% in Sharpe and 41% in Calmar. The abstract also notes that code is available in the appendix.
 
-Datasets: all 58 market datasets were obtained through `Bloomberg <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__, so reproducing the exact panel requires Bloomberg access rather than a free public dump. The paper also publishes an `asset and exchange list <https://www.dropbox.com/s/eobhg2w8ithbgsp/AssetsExchangeList.xlsx?dl=0>`__ for the markets it used.
+Datasets: all 58 market datasets were obtained through `Bloomberg <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__. The exact paper dataset is not publicly released, so reproducing the panel requires Bloomberg access rather than a free public dump. The paper does publish an `asset and exchange list <https://www.dropbox.com/s/eobhg2w8ithbgsp/AssetsExchangeList.xlsx?dl=0>`__ for the markets it used.
 
 `Read the paper <https://arxiv.org/abs/2004.03445>`__
 
@@ -960,7 +960,7 @@ Our summary: this is the strongest published non-Oxford line I found on ML-based
 
 Key metrics: in backtests from January 2000 to December 2020 on a diversified portfolio of continuous futures contracts, the model outperforms existing TSMOM strategies even after accounting for transaction costs of up to 3 basis points. The paper also reports that adding the auxiliary volatility tasks materially improves portfolio performance versus the single-task baseline.
 
-Datasets: the paper uses the commercial Stevens Continuous Futures feed obtained through `Nasdaq Data Link <https://data.nasdaq.com/>`__ from January 1990 to December 2020. The public repo does not ship the data because of licensing; its README recommends either a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or commercial vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG to build backward-ratio continuous futures locally.
+Datasets: the paper uses the commercial Stevens Continuous Futures feed obtained through `Nasdaq Data Link <https://data.nasdaq.com/>`__ from January 1990 to December 2020. The exact paper dataset is not redistributed, and the public repo does not ship the data because of licensing. Its README recommends either a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or commercial vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG to build backward-ratio continuous futures locally.
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S0957417423010898>`__
 
@@ -975,7 +975,7 @@ Our summary: DIN is one of the more ambitious papers in this literature because 
 
 Key metrics: on futures data, DIN models outperform traditional time-series and cross-sectional benchmarks, remain robust across a range of transaction costs, and perform consistently across random seeds. The paper also reports that the framework generalises across asset classes and supports customisable feature spaces when going beyond the baseline daily-return setting.
 
-Datasets: DIN evaluates four official data sources: 50 cross-asset futures from the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, EURO STOXX 50 equities from `Compustat on WRDS <https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/compustat/>`__, cryptocurrency spot data from `CoinMarketCap <https://coinmarketcap.com/>`__, and FX spot rates from the `Federal Reserve H.10 release <https://www.federalreserve.gov/releases/h10/>`__. The futures dataset is the main one used for the headline trend-following comparison.
+Datasets: DIN evaluates four official data sources: 50 cross-asset futures from the `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, EURO STOXX 50 equities from `Compustat on WRDS <https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/compustat/>`__, cryptocurrency spot data from `CoinMarketCap <https://coinmarketcap.com/>`__, and FX spot rates from the `Federal Reserve H.10 release <https://www.federalreserve.gov/releases/h10/>`__. The exact combined paper panel is not publicly released, and the futures plus Compustat components require paid or institutional access. The futures dataset is the main one used for the headline trend-following comparison.
 
 `Read the paper <https://arxiv.org/abs/2307.05522>`__
 
@@ -988,7 +988,7 @@ Our summary: this paper is not a CTA trend-following paper in the narrow futures
 
 Key metrics: the authors report more accurate return predictions and more profitable investment strategies than traditional price-momentum and reversal-style benchmarks, with robustness across specifications. The paper also highlights context independence: patterns learned on U.S. stocks transfer effectively to international data, and short-term patterns remain useful at longer horizons.
 
-Datasets: the U.S. sample uses daily stock data from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__ for NYSE, AMEX, and NASDAQ firms from 1993 to 2019. The international transfer tests use daily stock data from `LSEG Datastream <https://www.lseg.com/en/data-analytics/financial-data/company-data/pricing-reference-data/datastream-macroeconomic-analysis>`__ for most markets and `CSMAR <https://cn.gtadata.com/>`__ for mainland China, so reproducing the full paper requires institutional data subscriptions rather than a single public download.
+Datasets: the U.S. sample uses daily stock data from `CRSP via WRDS <https://wrds-www.wharton.upenn.edu/pages/get-data/crsp/>`__ for NYSE, AMEX, and NASDAQ firms from 1993 to 2019. The international transfer tests use daily stock data from `LSEG Datastream <https://www.lseg.com/en/data-analytics/financial-data/company-data/pricing-reference-data/datastream-macroeconomic-analysis>`__ for most markets and `CSMAR <https://cn.gtadata.com/>`__ for mainland China. The exact paper datasets are not publicly released, so reproducing the full study requires institutional data subscriptions rather than a single public download.
 
 `Read the paper <https://doi.org/10.1111/jofi.13268>`__
 
@@ -1001,7 +1001,7 @@ Our summary: this paper is the natural sequel to the authors' earlier multi-task
 
 Key metrics: across equity indices, fixed income, foreign exchange, and commodities, the paper reports that DeepUnifiedMom consistently outperforms benchmark models even after transaction costs. The abstract frames the improvement as broad rather than asset-class-specific, with better risk-adjusted returns across the diversified multi-asset portfolio.
 
-Datasets: the paper uses 49 continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__ from 1990 to 2023. The public repo does not ship the data because of licensing; its README recommends reconstructing continuous futures from a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or purchasing equivalent vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG.
+Datasets: the paper uses 49 continuous futures from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__ from 1990 to 2023. The exact paper dataset is not publicly released, and the public repo does not ship the data because of licensing; its README recommends reconstructing continuous futures from a `Bloomberg Terminal <https://www.bloomberg.com/professional/solution/bloomberg-terminal/>`__ or purchasing equivalent vendor data such as `Pinnacle Data <https://pinnacledata2.com/clc.html>`__ or CQG.
 
 `Read the paper <https://arxiv.org/abs/2406.08742>`__
 
@@ -1016,6 +1016,6 @@ Our summary: this is the most interesting new public paper I found after the Mom
 
 Key metrics: in large-scale backtests from 2010 to 2025 on 50 diversified futures with realistic transaction costs, DeePM achieves net risk-adjusted returns roughly twice those of classical trend-following strategies and passive benchmarks. The paper also reports an improvement of roughly 50% over the Momentum Transformer baseline while remaining resilient through the CTA winter of the 2010s, the COVID shock, and the post-2020 inflation regime.
 
-Datasets: DeePM uses daily OHLC histories for 50 futures and FX contracts from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, then constructs ratio-adjusted continuous return series and derives all features from close prices only. The paper does not link a public data release, so reproducing the exact setup requires Pinnacle or an equivalent futures vendor that lets you build backward-ratio continuous contracts.
+Datasets: DeePM uses daily OHLC histories for 50 futures and FX contracts from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, then constructs ratio-adjusted continuous return series and derives all features from close prices only. The exact paper dataset is not publicly released, so reproducing the setup requires Pinnacle or an equivalent futures vendor that lets you build backward-ratio continuous contracts.
 
 `Read the paper <https://arxiv.org/abs/2601.05975>`__
