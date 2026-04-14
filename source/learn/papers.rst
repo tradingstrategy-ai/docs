@@ -1555,3 +1555,93 @@ Our summary: the key contribution here is not a new momentum signal but a clean 
 Key metrics: the paper reports annualized out-of-sample Sharpe ratios rather than profit, drawdown, or win-rate statistics. On the total U.S. equity market, the two-regime optimal-allocation strategy improves Sharpe from 0.494 to 0.727 over 2004-2025, while the four-regime version improves Sharpe from 0.507 to 0.735 versus Dynamic Speed Momentum. Across 14 international markets, average Sharpe rises from 0.054 to 0.295 in the two-regime comparison and from 0.192 to 0.319 in the four-regime comparison. Across 18 diversified Kenneth French portfolio datasets, average Sharpe improves from 0.208 to 0.506 in the two-regime case and from 0.496 to 0.628 in the four-regime case, with estimated bear-regime weights typically close to zero rather than -1.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6376479>`__
+
+Realized Volatility Forecasting with Neural Networks
+----------------------------------------------------
+
+Andrea Bucci compares feed-forward and recurrent neural-network architectures for realized-volatility forecasting, with particular emphasis on LSTM and NARX models against more traditional econometric baselines. The paper argues that volatility is a natural fit for neural methods because the target exhibits both long memory and nonlinear dependence, and evaluates whether those properties can be captured more effectively by recurrent architectures than by classical linear or semiparametric alternatives.
+
+Our summary: this is one of the cleaner early references showing that neural nets can be genuinely useful for volatility forecasting rather than just fashionable. The important point is not simply that an LSTM beats a benchmark once, but that architectures designed to retain long-range temporal information consistently help when the volatility process becomes more unstable. If you want a compact bridge from the HAR/GARCH world into sequence models, this is a good starting point.
+
+Key metrics: the paper reports that recurrent neural networks outperform the traditional econometric competitors in realized-volatility forecasting, with LSTM and NARX delivering the strongest results. The advantage is especially visible in highly volatile periods, where modelling long-range dependence improves forecast accuracy further.
+
+`Read the paper <https://academic.oup.com/jfec/article/18/3/502/5856840>`__
+
+A Machine Learning Approach to Volatility Forecasting
+-----------------------------------------------------
+
+Kim Christensen, Mathias Siggaard, and Bezirgen Veliyev study realized-variance forecasting for Dow Jones Industrial Average constituents using a broad set of machine-learning methods, including regularized regressions, tree models, and neural networks, benchmarked against the HAR family. A key design choice is that the ML models are not given an unfair advantage through exhaustive tuning: the authors deliberately keep implementation simple and then ask whether generic ML still improves materially on the standard realized-volatility toolkit.
+
+Our summary: the paper is useful because it shows that the gains from ML do not have to come from exotic feature sets or aggressive optimisation. Even with only daily, weekly, and monthly realized-variance lags, ML competes strongly and often wins, which suggests the main edge comes from learning a richer persistence structure than linear HAR models can express. The variable-importance discussion is also valuable because it pushes the paper beyond black-box forecasting into interpretation.
+
+Key metrics: the authors report that ML beats the HAR lineage even when the predictor set is restricted to daily, weekly, and monthly realized-variance lags, and that the gains become larger at longer forecast horizons. They also find that ML is better at extracting incremental predictive information when richer predictor sets are introduced.
+
+`Read the paper <https://academic.oup.com/jfec/article/21/5/1680/6612759>`__
+
+Volatility Forecasting with Machine Learning and Intraday Commonality
+---------------------------------------------------------------------
+
+Chao Zhang, Yihuang Zhang, Mihai Cucuringu, and Zhongmin Qian forecast intraday realized volatility by pooling information across stocks and explicitly exploiting commonality in intraday volatility together with a market-volatility proxy. The paper moves beyond single-series forecasting and tests whether cross-sectional structure can be used to train models that generalize not just within a stock, but across previously unseen names as well.
+
+Our summary: this is one of the more practically interesting volatility papers because it treats volatility as a partially shared phenomenon rather than a completely separate process for each asset. That framing matters in production settings where you want a single model to transfer across a universe instead of maintaining one bespoke forecaster per stock. The additional intraday-to-daily setup is also useful if you care about pre-trade risk or transaction-cost analysis rather than only end-of-day portfolio reporting.
+
+Key metrics: the paper reports that neural networks outperform linear regressions and tree-based models for intraday realized-volatility forecasting and that the gains remain robust when applied to stocks absent from the training set. The proposed methodology also beats strong out-of-sample baselines that rely only on past daily realized volatility.
+
+`Read the paper <https://academic.oup.com/jfec/article/22/2/492/7081291>`__
+
+HARNet: A Convolutional Neural Network for Realized Volatility Forecasting
+--------------------------------------------------------------------------
+
+Rafael Reisenhofer, Xandro Bayer, and Nikolaus Hautsch introduce HARNet, a convolutional architecture designed as a structured deep-learning extension of the classic HAR model. The model uses a hierarchy of dilated convolutions so the receptive field grows quickly without a comparable blow-up in parameters, and it is initialized so that before training it reproduces the corresponding HAR forecast exactly, making the transition from econometric baseline to neural refinement unusually transparent.
+
+Our summary: HARNet is compelling because it does not ask practitioners to abandon the HAR intuition that has worked well for realized-volatility forecasting. Instead it starts from HAR, then adds learnable nonlinear filters on top of the same multi-horizon logic. That makes it one of the better examples of a finance-aware deep architecture: the gains come from extending a sensible domain prior rather than replacing it with an unconstrained network.
+
+Key metrics: across three stock-market indexes, the paper shows that HARNet improves meaningfully on its HAR baselines in realized-volatility forecasting. The authors also report that training with a QLIKE loss materially stabilizes optimisation, and their filter analysis finds that yesterday's volatility contributes far more than older observations, with relevance decaying roughly linearly across prior weeks.
+
+Code and data: the authors provide an official TensorFlow implementation at `GitHub <https://github.com/mdsunivie/HARNet>`__, including preset experiment configurations and a sample dataset (`MAN_data.csv`) sourced from the Oxford-Man Institute, so the paper is one of the easier volatility studies here to reproduce or extend.
+
+`Read the paper <https://arxiv.org/abs/2205.07719>`__
+
+DeepVol: Volatility Forecasting from High-Frequency Data with Dilated Causal Convolutions
+------------------------------------------------------------------------------------------
+
+Fernando Moreno-Pino and Stefan Zohren propose DeepVol, a dilated-causal-convolution model that forecasts next-day volatility directly from raw high-frequency intraday data rather than relying on precomputed realized measures alone. The paper is motivated by the idea that once the data are compressed into handcrafted realized-volatility features, some predictive information may already have been discarded, especially in the shape and timing of intraday volatility bursts.
+
+Our summary: this is the closest match to the "raw input" version of volatility forecasting. The main contribution is not just a different architecture, but the end-to-end stance that the model should learn directly from intraday sequences instead of from manually aggregated volatility proxies. That makes DeepVol especially relevant if you want to test whether representation learning can substitute for feature engineering in volatility work.
+
+Key metrics: using two years of NASDAQ-100 intraday data, the paper reports that DeepVol delivers more accurate day-ahead volatility forecasts and more accurate risk measures than traditional benchmarks. The authors also find that a one-day receptive field with 5-minute sampling gives the best overall forecasting accuracy in their setup, while longer receptive fields make forecasts more conservative.
+
+`Read the paper <https://arxiv.org/abs/2210.04797>`__
+
+Comparing Deep Learning Models for the Task of Volatility Prediction Using Multivariate Data
+---------------------------------------------------------------------------------------------
+
+Wenbo Ge, Pooia Lalbakhsh, Leigh Isai, Artem Lensky, and Hanna Suominen compare several deep-learning forecasters for multivariate volatility prediction across five assets: the S&P 500, NASDAQ 100, gold, silver, and oil. The paper benchmarks multilayer perceptrons, recurrent networks, temporal convolutional networks, and the Temporal Fusion Transformer against GARCH-style baselines in a common forecasting setup, with the goal of understanding whether newer sequence architectures actually justify their added complexity.
+
+Our summary: the value of this paper is comparative rather than methodological. It is useful when you already accept that deep models can forecast volatility and instead want to know which class of architecture tends to work best once you move from univariate to multivariate inputs. In that sense it serves as a practical model-selection paper, and it aligns with a broader recent pattern in time-series forecasting where TFT and TCN-style models often dominate plain recurrent baselines.
+
+Key metrics: the study compares volatility forecasts for five major financial assets and reports that the Temporal Fusion Transformer delivers the strongest overall performance among the tested deep-learning models, with temporal convolutional architectures typically next best. The paper frames these gains in terms of improved forecast accuracy relative to both GARCH baselines and simpler neural alternatives.
+
+`Read the paper <https://arxiv.org/abs/2306.12446>`__
+
+Introducing NBEATSx to realized volatility forecasting
+------------------------------------------------------
+
+Hugo Gobato Souto and Amir Moradi apply NBEATSx, a neural basis expansion model with exogenous variables, to daily stock realized-volatility forecasting over multiple horizons. They compare the architecture with LSTM, TCN, HAR, GARCH, and GJR-GARCH models across six stock indexes, three error measures, four statistical tests, and several robustness checks, making the paper unusually systematic for a single-model introduction.
+
+Our summary: this is one of the stronger "modern forecasting architecture" papers in the volatility literature because the evaluation is broad and the results are reported in both accuracy and robustness terms. NBEATSx is attractive here not simply because it is newer than LSTM or TCN, but because its basis-expansion structure appears to work well when volatility persistence and exogenous effects both matter. The caveat from the paper is also useful: the gains are clearer in developed-market indexes than in developing-market ones.
+
+Key metrics: across six stock indexes, NBEATSx produces statistically more accurate and more robust forecasts than the competing models. On average, the paper reports 13% and 8% better accuracy for medium- and long-term forecasts, plus robustness improvements of 43%, 60%, and 59% for short-, medium-, and long-term horizons respectively.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0957417423033043>`__
+
+The Hybrid Forecast of S&P 500 Volatility ensembled from VIX, GARCH and LSTM models
+------------------------------------------------------------------------------------
+
+Natalia Roszyk and Robert Ślepaczuk compare four approaches to forecasting S&P 500 volatility: a standalone GARCH model, a standalone LSTM, a hybrid LSTM-GARCH specification, and a hybrid model that also incorporates the VIX. The paper uses daily S&P 500 and VIX data from January 3, 2000 through December 21, 2023 and asks whether combining a classical volatility model with a neural sequence model and an implied-volatility signal produces a more useful risk forecast.
+
+Our summary: the paper is a good example of the hybrid direction in current volatility research. Rather than framing ML and econometrics as mutually exclusive choices, it treats them as complementary components: GARCH supplies a disciplined volatility structure, LSTM adds nonlinear sequence modelling, and VIX contributes a market-implied state variable. For practitioners, that is often a more realistic setup than trying to replace the entire econometric stack with a pure neural model.
+
+Key metrics: over the 2000-2023 sample, the authors report that the hybrid LSTM models outperform the standalone GARCH benchmark, and that adding VIX further improves forecasting performance beyond the plain LSTM-GARCH combination. The comparison is based on one-step-ahead daily volatility forecasts over a long sample containing both calm and stressed market regimes.
+
+`Read the paper <https://arxiv.org/abs/2407.16780>`__
