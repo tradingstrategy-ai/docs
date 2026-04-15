@@ -19,28 +19,6 @@ Practical details: primary language Python with shell scripts; install with ``pi
 
 `View repository <https://github.com/mdsunivie/HARNet>`__
 
-Volatility-HARNet
------------------
-
-Fork of the official HARNet TensorFlow implementation for realized-volatility forecasting. It keeps the HARNet paper citation, package layout, preset configuration files, and experiment commands from the upstream project.
-
-Our summary: useful mainly as a lightweight fork/copy to inspect differences against the official repository, rather than as an independent extension. The notable practical difference in its README is that it asks the user to download the Oxford-Man realized library manually and save it as ``HARNet/data/MAN_data.csv`` for compatibility with the default config files.
-
-Practical details: GitHub reports Python and shell content, though no primary language is detected in the repository summary. Install with ``pip install -e HARNet/`` and run the same HAR/HARNet config commands as the official repo, including ``run_all.sh``. It is an MIT-licensed fork of ``mdsunivie/HARNet`` with no open issues, no stars or forks, and last push on 2023-04-08.
-
-`View repository <https://github.com/laraiv12/Volatility-HARNet>`__
-
-HARNet Fork by ShabbirHasan1
-----------------------------
-
-Fork of the official HARNet TensorFlow implementation for realized-volatility forecasting. It mirrors the upstream README, package structure, preset configuration files, and included Oxford-Man sample data.
-
-Our summary: this is another HARNet copy rather than a separate research line. It can still be useful as an alternate fork reference, but the official ``mdsunivie/HARNet`` repository remains the primary source unless this fork has local changes relevant to a specific experiment.
-
-Practical details: Python and shell repository content; install with ``pip install -e HARNet/`` and run configs through the ``harnet`` command or ``/bin/bash run_all.sh``. It is an MIT-licensed fork of ``mdsunivie/HARNet`` with no open issues, no stars or forks, and last push on 2023-07-16.
-
-`View repository <https://github.com/ShabbirHasan1/HARNet>`__
-
 HAR-RV
 ------
 

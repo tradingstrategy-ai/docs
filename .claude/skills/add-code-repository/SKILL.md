@@ -40,11 +40,19 @@ Add a new code repository to the documentation collection.
 
    **For pages requiring browser**: Use `navigate`, then `javascript_tool` or `get_page_text` to extract README and metadata. If CAPTCHA appears, ask the user to complete it manually.
 
-4. **Check for duplicates**:
+4. **Handle forks carefully**:
+   - Detect whether the repository is a fork or mirror of another mainline repository.
+   - If it is a fork, identify the upstream/mainline repository and compare the fork against it before adding anything.
+   - Look for material differences such as new features, changed examples, added datasets, active maintenance, meaningful bug fixes, a different research direction, or clearer/reproducible packaging.
+   - If there are meaningful differences, document only those major differences from the mainline repository. Make clear that it is a fork and why this fork is worth listing separately.
+   - If there are no meaningful differences from the mainline repository, skip the fork. Do not add duplicate or low-value fork entries.
+   - If the mainline repository is not already documented and is the better canonical source, add the mainline repository instead of the fork.
+
+5. **Check for duplicates**:
    - Search `source/learn/code-repositories.rst` for the repository name, owner/name slug, and canonical URL.
    - IMPORTANT: If the repository already exists, do not add it again.
 
-5. **Add to `source/learn/code-repositories.rst`**:
+6. **Add to `source/learn/code-repositories.rst`**:
    - Add the new entry at the END of the file before any blank lines at the very end.
    - Use this exact format:
 
@@ -74,11 +82,11 @@ Practical details: primary language, install or run instructions if available, e
 Mentioned by XXX in `this discussion <https://discussion-url-here>`__: summary of what people say about it.
 ```
 
-6. **Commit and push**:
+7. **Commit and push**:
    - Stage only the modified documentation file.
    - Commit with message: `Add: {Repository Name}`.
    - Push to the master branch.
 
-7. **Do not save PDF snapshots**:
+8. **Do not save PDF snapshots**:
    - Repository pages are live code resources.
    - Do not run the PDF generation workflow used by paper or article skills.
