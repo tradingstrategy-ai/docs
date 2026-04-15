@@ -37,6 +37,7 @@ Algorithmic trading learning resources
    python
    jupyter-notebook
    algorithmic-trading-frameworks
+   code-repositories
    communities
    charting-solutions
    additional-resources
