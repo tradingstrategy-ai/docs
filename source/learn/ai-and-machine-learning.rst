@@ -1019,3 +1019,18 @@ Key metrics: in large-scale backtests from 2010 to 2025 on 50 diversified future
 Datasets: DeePM uses daily OHLC histories for 50 futures and FX contracts from the commercial `Pinnacle Data CLC Database <https://pinnacledata2.com/clc.html>`__, then constructs ratio-adjusted continuous return series and derives all features from close prices only. The exact paper dataset is not publicly released, so reproducing the setup requires Pinnacle or an equivalent futures vendor that lets you build backward-ratio continuous contracts.
 
 `Read the paper <https://arxiv.org/abs/2601.05975>`__
+
+Do LLMs Make Markets More Efficient?
+-------------------------------------
+
+Runjing Lu, Yongxin Xu, and Luka Vulicevic study whether large language models have changed short-horizon price discovery in equity markets. The paper uses outages at major LLM providers as plausibly exogenous shocks to LLM availability and measures how post-news drift changes when these tools are unavailable. The central finding is that LLM availability eliminates at least 46% to 61% of next-day post-news drift, with no offsetting reversal, suggesting that LLMs accelerate the incorporation of public information into prices.
+
+Our summary: this is a clean event-study framing of a question that matters directly for systematic managers: if many market participants now use LLMs to process public text quickly, slow information-diffusion signals should decay faster. The outage design is attractive because it looks for temporary failures in the information-processing layer rather than just correlating LLM adoption with changing anomaly returns. It also highlights a market-structure risk: if LLM supply is concentrated, provider outages can temporarily reduce market-wide information processing capacity.
+
+Code and data: no public replication package is linked from the accessible author page, Crossref metadata, or SSRN metadata. The paper appears to rely on LLM provider outage events and a long-short news-sentiment strategy; reproducing it would require the precise outage sample, equity news-sentiment data, and return construction details from the full paper.
+
+Key metrics: LLM availability reduces next-day return predictability after news by 46% to 61%. During provider outages, predictability roughly doubles or triples, and investors insulated from major LLM outages can earn more than twice the day t + 1 returns of the long-short news-sentiment strategy following outage events. Runjing Lu's `discussion of the paper <https://www.linkedin.com/posts/runjing-lu-b5881361_what-happens-to-stock-markets-when-llms-go-activity-7439418213555220480-4ZEZ>`__ says this can amount to up to 60 bps on the following day and more than 600 bps annualised when outages occur every few weeks. The accessible abstract does not report Sharpe ratio, max drawdown, or win-rate statistics.
+
+Mentioned by Ivan Blanco in this `LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-are-llms-making-equity-share-7449355315436900352-qKiz>`__, where he frames the result as evidence that slow public-information signals are decaying faster than they did a few years ago.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6417099>`__
