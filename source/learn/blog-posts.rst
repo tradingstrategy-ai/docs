@@ -2062,3 +2062,67 @@ The first strategy explicitly detailed is an end-of-month SPY/TLT rebalance flow
 By Robot James.
 
 `Read the blog post <https://robotjames.substack.com/p/three-dead-simple-edges-in-macro>`__.
+
+Training a Transformer Model to Predict 1-Minute Stock Prices, Part 2
+---------------------------------------------------------------------
+
+A practical Medium tutorial on using a Transformer-style forecasting model, including Temporal Fusion Transformer ideas, for short-horizon stock-price prediction. The post focuses on one-minute stock data and walks through the modeling setup, training workflow, and how forecasts can be interpreted with confidence intervals.
+
+The article is useful as an applied bridge from TFT papers to notebook-level experimentation. Its value is educational rather than evidentiary: it helps readers understand how to structure high-frequency data and model outputs, but it should not be read as proof that one-minute TFT forecasts survive realistic execution costs, slippage, and market-impact constraints.
+
+By Itay Bittan.
+
+`Read the blog post <https://medium.com/@itay1542/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-2-0169ed80dfae>`__.
+
+Training a Transformer Model to Predict 1-Minute Stock Prices, Part 3
+---------------------------------------------------------------------
+
+The third part of the one-minute stock-price Transformer tutorial continues the practical implementation thread, expanding on architecture choices, data preparation, and code-level details for building a short-horizon market forecasting model.
+
+For systematic traders, the post is most useful as a worked example of how a deep sequence model is wired into a financial time-series workflow. The same caveat applies as with most tutorial material: model fit and attractive plots are not enough for a tradable strategy unless the full pipeline includes walk-forward validation, realistic fills, transaction costs, and a robust signal-to-position mapping.
+
+By Itay Bittan.
+
+`Read the blog post <https://readmedium.com/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-3-41cf84841d0b>`__.
+
+Temporal Fusion Transformers in FinTorch
+----------------------------------------
+
+FinTorch provides a tutorial-style implementation of Temporal Fusion Transformers for financial time-series forecasting. The walkthrough demonstrates how TFT can be applied to stock-tick style data, with attention to model setup and practical deep-learning workflow rather than to a full trading-system backtest.
+
+This is a useful hands-on companion to the original TFT paper because it is explicitly finance-oriented. It is best treated as implementation guidance: the tutorial can help readers structure data and experiments, but the resulting forecasts still need independent walk-forward testing before being used for trading or risk management.
+
+By FinTorch.
+
+`Read the tutorial <https://fintorch.readthedocs.io/en/latest/tutorials/tft/tft.html>`__.
+
+Transformer Models for Financial Time Series
+--------------------------------------------
+
+This article discusses Transformer-family models for financial time series, including the motivation for moving beyond recurrent architectures such as LSTMs. It frames attention mechanisms and architectures like TFT as tools for learning longer-range dependencies and richer feature interactions in market data.
+
+The piece is useful as practitioner context for why TFT is appealing in trading research: it can combine multiple covariates, provide multi-horizon forecasts, and offer some interpretability. It is not a substitute for a peer-reviewed comparison or a reproducible trading backtest, but it is a readable overview for researchers deciding whether to test Transformer models in a finance pipeline.
+
+By Nordvarg.
+
+`Read the blog post <https://nordvarg.com/blog/transformer-models-financial-timeseries>`__.
+
+Transformer Models for Price Prediction: Beyond LSTM
+----------------------------------------------------
+
+TradingMaster's article introduces Transformer models for price prediction and contrasts them with LSTM-style recurrent models. It discusses how attention-based architectures, including TFT-style workflows, can be used with market features and PyTorch Forecasting-style tooling.
+
+The article is useful for readers who want a trading-oriented conceptual overview before reading code or papers. Its limitations are the usual ones for strategy-facing blog material: the real question is not just forecast accuracy, but whether the forecast can be converted into a robust signal after accounting for costs, latency, turnover, and adverse selection.
+
+By TradingMaster.
+
+`Read the blog post <https://tradingmaster.app/blog/transformer-models-for-price-prediction>`__.
+
+Time-Series Forecasting: Deep Learning vs Statistics - Who Comes Out on Top?
+----------------------------------------------------------------------------
+
+This article compares deep-learning forecasting models with classical statistical approaches, including discussion of Temporal Fusion Transformer as an interpretable deep time-series model. The framing is broader than trading, but the comparison is directly relevant to financial forecasting where simple baselines often remain hard to beat.
+
+For trading researchers, the most useful takeaway is methodological humility. TFT and related deep models are flexible, but they should be benchmarked against strong statistical baselines and simple market-specific rules rather than only against weaker neural models. This is especially important in volatility forecasting, where GARCH, HAR, and realized-volatility baselines are durable competitors.
+
+`Read the article <https://readmedium.com/time-series-forecasting-deep-learning-vs-statistics-who-wins-c568389d02df>`__.

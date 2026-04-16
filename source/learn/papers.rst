@@ -1645,3 +1645,29 @@ Our summary: the paper is a good example of the hybrid direction in current vola
 Key metrics: over the 2000-2023 sample, the authors report that the hybrid LSTM models outperform the standalone GARCH benchmark, and that adding VIX further improves forecasting performance beyond the plain LSTM-GARCH combination. The comparison is based on one-step-ahead daily volatility forecasts over a long sample containing both calm and stressed market regimes.
 
 `Read the paper <https://arxiv.org/abs/2407.16780>`__
+
+Forecasting realized volatility in turbulent times using temporal fusion transformers
+-------------------------------------------------------------------------------------
+
+Johannes Frank studies Temporal Fusion Transformers for realized-volatility forecasting on S&P 500 stocks during volatile market periods. The paper compares TFT forecasts with long short-term memory networks, random forests, and GARCH-style models, using weekly and monthly data, multiple feature sets, and different pooling approaches including sectoral pooling.
+
+Our summary: this is one of the cleanest finance-specific TFT volatility papers because it asks the model-selection question directly: does TFT add value over established volatility models and simpler machine-learning alternatives? The most useful design detail is pooling. Instead of training each stock entirely separately, the paper shows that shared information across groups, especially sectors, can improve the volatility forecasts produced by ML models.
+
+Key metrics: the paper finds that TFT performs very well for financial volatility forecasting and outperforms LSTM and random forest models when pooling methods are used. Sectoral pooling substantially improves predictive performance across the machine-learning approaches. The paper focuses on forecast accuracy rather than a trading strategy, so it does not report Sharpe ratio, annualized return, or maximum drawdown.
+
+Code and data: the paper is available as FAU Discussion Paper in Economics 03/2023 through RePEc and EconStor. A public code package was not identified during this pass.
+
+`Read the paper <https://ideas.repec.org/p/zbw/iwqwdp/032023.html>`__
+
+A GARCH-temporal fusion transformer model for the volatility prediction of exchange traded funds
+------------------------------------------------------------------------------------------------
+
+Lorenzo Petrosino, Luca Bacco, Giuliano Salvati, Mario Merone, and Marco Papi propose a hybrid volatility model that combines traditional GARCH econometrics with a Temporal Fusion Transformer. The study forecasts volatility for exchange traded funds composed of S&P 500 assets across sectors, using historical volatility and Garman-Klass volatility as target proxies.
+
+Our summary: this is the strongest "econometrics plus TFT" volatility reference in the current batch. Instead of treating deep learning and GARCH as substitutes, it uses GARCH-derived structure alongside TFT's multi-horizon covariate modeling. That makes it especially relevant for practitioners who already trust GARCH-style volatility pipelines but want to test whether attention-based neural forecasting can improve nonlinear and cross-feature behavior.
+
+Key metrics: the paper reports that the hybrid GARCH-TFT model significantly outperforms alternative models when forecasting the Garman-Klass proxy and performs comparably to standalone TFT for historical volatility. The dataset covers January 1, 2002 to October 31, 2023 and is sourced from Yahoo Finance. The article evaluates forecast accuracy rather than a trading strategy, so it does not report Sharpe ratio, annualized return, or maximum drawdown.
+
+Code and data: the authors cite a public companion repository at `GitHub <https://github.com/lbacco/garch-tft>`__. The article page states that the market data can be obtained using Yahoo Finance.
+
+`Read the paper <https://link.springer.com/article/10.1007/s00521-025-11468-z>`__

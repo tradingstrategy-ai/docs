@@ -1034,3 +1034,68 @@ Key metrics: LLM availability reduces next-day return predictability after news 
 Mentioned by Ivan Blanco in this `LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-are-llms-making-equity-share-7449355315436900352-qKiz>`__, where he frames the result as evidence that slow public-information signals are decaying faster than they did a few years ago.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6417099>`__
+
+Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting
+------------------------------------------------------------------------------------
+
+Bryan Lim, Sercan O. Arik, Nicolas Loeff, and Tomas Pfister introduce the Temporal Fusion Transformer (TFT), a multi-horizon forecasting architecture that combines recurrent local processing, gating layers, variable-selection networks, static covariate encoders, and interpretable self-attention. The model is designed for settings where forecasts depend on a mixture of static attributes, known future inputs, and observed historical variables.
+
+Our summary: this is the foundational TFT paper and the starting point for almost all later trading, price prediction, and volatility applications. Its relevance to finance is structural rather than asset-specific: markets often have many noisy covariates, regime-dependent feature importance, and a need for probabilistic multi-step forecasts. TFT's built-in quantile outputs and variable-importance diagnostics make it especially attractive for risk sizing and model debugging, although the paper itself evaluates general forecasting benchmarks rather than a trading strategy.
+
+Key metrics: across multiple public forecasting datasets, TFT outperforms strong statistical and neural baselines in multi-horizon prediction accuracy. The paper reports interpretability results through static covariate importance, time-varying feature importance, and attention analysis rather than financial metrics such as Sharpe ratio, drawdown, or turnover.
+
+Code and data: Google Research provides the original TensorFlow implementation in its public `TFT repository <https://github.com/google-research/google-research/tree/master/tft>`__. The benchmark datasets are general time-series datasets rather than market-specific data.
+
+`Read the paper <https://arxiv.org/abs/1912.09363>`__
+
+Causality-driven multivariate stock movement forecasting
+--------------------------------------------------------
+
+Kai Zhao and coauthors propose a multivariate stock movement forecasting framework that combines Dynamic Transfer Entropy with Temporal Fusion Transformers. The method first estimates directional information flow between stocks and then feeds those causality-aware relationships, together with market data and news sentiment features, into a TFT-style forecasting model.
+
+Our summary: this paper is a useful stock-market application because it treats equities as an interacting system rather than as independent univariate price series. That is a good fit for TFT: the model can use exogenous information and variable-selection mechanisms while the causality layer supplies a finance-specific structure for cross-stock influence. The approach is most relevant for researchers building multi-asset equity forecasts or sentiment-aware stock movement classifiers.
+
+Key metrics: the paper reports that the causality-driven TFT framework outperforms the compared baseline models for stock movement prediction. The evaluation focuses on forecasting/classification performance rather than portfolio-level trading metrics, so the result should be treated as predictive evidence rather than proof of an executable trading edge.
+
+Code and data: the article is open access through PLOS ONE. The model uses stock market data and sentiment/news inputs; a standalone public replication repository was not identified during this pass.
+
+`Read the paper <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302197>`__
+
+A Novel Hybrid Temporal Fusion Transformer Graph Neural Network Model for Stock Market Prediction
+-------------------------------------------------------------------------------------------------
+
+Christopher J. Lynch, Mozhgan Derakhshan, and James Lynch combine Temporal Fusion Transformers with graph neural networks for stock-market prediction. The paper tests whether adding graph-based relational structure between assets improves on standalone time-series models, using major U.S. market instruments including AAPL, JPM, NVDA, and SPY.
+
+Our summary: this is one of the more natural extensions of TFT for equities because stock returns are rarely independent. TFT handles multi-horizon temporal structure and covariates, while the graph component gives the model a way to represent relationships between instruments. For trading research, the paper is most useful as a design reference for combining asset-level forecasts with cross-sectional structure.
+
+Key metrics: the hybrid TFT-GNN reports the best overall forecasting accuracy in the paper's comparison, with RMSE 2.1662 and R2 0.9645 versus standalone TFT RMSE 2.3369 and R2 0.9577. The paper emphasizes forecast accuracy, not a full transaction-cost-aware trading backtest with Sharpe, drawdown, and turnover.
+
+Code and data: the paper is published open access by MDPI. The study uses major liquid U.S. equities and index data; no public replication package was identified in the article metadata during this pass.
+
+`Read the paper <https://www.mdpi.com/2673-9909/5/4/176>`__
+
+Stock Price Prediction Based on Temporal Fusion Transformer
+-----------------------------------------------------------
+
+Xiaoyu Hu applies Temporal Fusion Transformers to stock price prediction in one of the earlier finance-specific TFT papers. The work frames stock forecasting as a multi-feature time-series problem and compares the TFT approach against more traditional forecasting setups for market data.
+
+Our summary: this paper is useful mainly as an early citation showing how quickly TFT moved from general forecasting into stock-price prediction. It is less practically compelling than later work that includes trading rules, graph structure, on-chain data, or volatility targets, but it belongs in the reading trail because many subsequent stock TFT projects cite it as a starting point.
+
+Key metrics: the paper reports improved stock prediction performance from the TFT model relative to the baselines considered in the conference study. It does not provide the kind of full trading-performance attribution needed for strategy evaluation, such as annualized return, Sharpe ratio, maximum drawdown, or transaction-cost sensitivity.
+
+Code and data: the canonical citation is the 2021 IEEE MLBDBI conference paper. A public replication repository was not identified during this pass.
+
+`Read the paper <https://doi.org/10.1109/MLBDBI54094.2021.00019>`__
+
+Sentiment-Aware Transformer for Cryptocurrency Volatility Prediction Using Multi-Source Market and News Sentiment
+-----------------------------------------------------------------------------------------------------------------
+
+This paper studies cryptocurrency volatility prediction with a Transformer-family model that combines market variables with multiple sentiment sources. The architecture is inspired by Temporal Fusion Transformer ideas, especially the use of attention and heterogeneous covariates, but it is better read as adjacent sentiment-aware volatility research rather than a canonical TFT implementation.
+
+Our summary: the paper is relevant because it points to the same practical conclusion as the stronger TFT crypto and volatility papers: price-only inputs are usually too thin for unstable digital-asset markets. Combining market state, sentiment, and attention-based feature weighting is a plausible direction for volatility forecasting and risk control. The caveat is that this source is not as central as the original TFT paper, the Lee crypto trading paper, or the GARCH-TFT ETF volatility paper.
+
+Key metrics: the paper reports forecasting improvements from adding multi-source sentiment features to the Transformer-style volatility model. It focuses on predictive accuracy for volatility rather than a complete trading or portfolio-sizing backtest with Sharpe, drawdown, and turnover.
+
+Code and data: the article is available through JESSI. No public code repository was identified during this pass.
+
+`Read the paper <https://journal.unm.ac.id/index.php/JESSI/article/view/10604>`__
