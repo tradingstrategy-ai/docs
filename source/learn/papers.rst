@@ -1686,3 +1686,81 @@ Key metrics: Deep Momentum outperforms traditional momentum and naïve machine l
 Mentioned by Ivan Blanco (`@iblanco_finance <https://x.com/iblanco_finance/status/2046250537914384442>`__) in `this discussion <https://x.com/iblanco_finance/status/2046250537914384442>`__: "Momentum stocks don't just win or lose, they polarize. The distribution shape tells you more than the mean."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4452964>`__
+
+The role of implied volatility in forecasting future realized volatility and jumps in foreign exchange, stock, and bond markets
+------------------------------------------------------------------------------------------------------------------------------
+
+Thomas Busch, Bent Jesper Christensen, and Morten Ørregaard Nielsen examine whether model-free implied volatility derived from options prices adds forecasting information beyond the realized continuous and jump variation components already used in HAR-type models. The study covers three major asset classes—foreign exchange (EUR/USD, JPY/USD, GBP/USD), equity (S&P 500), and fixed income (30-year US Treasury bond)—and uses high-frequency intraday data to construct realized volatility, realized bipower variation, and the jump component.
+
+Our summary: this is the canonical reference for HAR-X models that incorporate implied volatility. The central result is that implied volatility contains information about future realized volatility that is incremental to the continuous and jump components of past realized volatility, and this holds consistently across FX, equity, and bond markets. The paper also shows that implied volatility is informative about future jump activity, not just total realized variance. For practitioners building HAR-based volatility forecasters, this paper provides the direct empirical justification for including an IV term alongside standard HAR lags.
+
+Data and code: the study uses high-frequency tick data for three FX rates, the S&P 500, and 30-year Treasury futures. No public code repository was identified. Published in Journal of Econometrics, Volume 160, Issue 1, 2011, pages 48–57.
+
+Key metrics: implied volatility adds statistically significant incremental forecasting power for realized volatility across all five assets. The gains are strongest for the continuous variation component and for future jump activity. Results are reported in terms of out-of-sample R-squared and Mincer-Zarnowitz regression coefficients rather than trading performance metrics.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0304407610000564>`__
+
+Advances in forecasting realized volatility: a review of methodologies
+-----------------------------------------------------------------------
+
+Radmir Mishelevich Leushuis and Nicolai Petkov survey all models used to forecast realized volatility in the academic literature from 2000 to the first half of 2024. The review covers classical linear models (HAR and extensions), machine learning approaches, and deep learning architectures, comparing their empirical performance across markets and evaluation metrics.
+
+Our summary: this is the most comprehensive recent survey of the realized volatility forecasting literature and a useful orientation for practitioners deciding which model class to test. The headline finding is that a hybrid CNN-LSTM tops the out-of-sample accuracy leaderboard, but the survey is careful to note that deep models do not universally dominate—HAR and its extensions remain strong baselines. The paper catalogs HAR extensions that have been shown to improve forecasts in specific contexts: signed and negative semivariance, jumps, implied volatility, overnight returns, realized volatility-of-volatility, and asymmetry and leverage effects. Results vary significantly by market, evaluation horizon, and loss function, and no single extension wins uniformly.
+
+Data and code: the survey covers published academic results across multiple asset classes and markets. No single dataset or code repository; individual papers cited within should be consulted for reproduction details. Published in Financial Innovation, 2025.
+
+Key metrics: the top-performing hybrid CNN-LSTM model outperforms all standalone linear, ML, and deep learning benchmarks in out-of-sample forecast accuracy as measured in the reviewed studies. HAR extensions involving semivariance, jumps, and implied volatility show the most consistent gains; overnight return and vol-of-vol extensions show more mixed results.
+
+`Read the paper <https://link.springer.com/article/10.1186/s40854-025-00809-5>`__
+
+Transaction activity and bitcoin realized volatility
+----------------------------------------------------
+
+Konstantinos Gkillas, Maria Tantoula, and Manolis Tzagarakis investigate whether Bitcoin transaction activity improves out-of-sample realized volatility forecasts beyond standard HAR and random forest models. The paper decomposes Bitcoin's high-frequency realized volatility into its continuous and jump variation components and tests whether on-chain transaction flow data carries additional predictive information.
+
+Our summary: this is a short but directly relevant paper for anyone building HAR-type Bitcoin volatility models with exogenous inputs. The main result is that transaction activity, combined with the jump component, improves out-of-sample forecasts in both the HAR and random forest frameworks. On-chain activity is a natural candidate because Bitcoin trading volume and transaction counts are publicly available at high frequency and capture information about market participation that is not embedded in price-based realized volatility measures alone.
+
+Data and code: Bitcoin high-frequency price data and on-chain transaction data. Published in Operations Research Letters, Volume 49, Issue 5, 2021, pages 715–719 (DOI: 10.1016/j.orl.2021.06.016).
+
+Key metrics: incorporating transaction activity and jump variation improves out-of-sample forecast accuracy for Bitcoin realized volatility relative to baseline HAR and RF models. Results are reported using standard forecast evaluation metrics; no Sharpe ratio or drawdown metrics are reported as the paper focuses on volatility forecasting accuracy rather than a trading strategy.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0167637721001000>`__
+
+Forecasting Bitcoin realized volatility by measuring the spillover effect among cryptocurrencies
+------------------------------------------------------------------------------------------------
+
+Yue Qiu, Yifan Wang, and Tian Xie study whether cross-cryptocurrency spillover variables improve HAR-type realized volatility forecasts for Bitcoin. The paper constructs spillover measures from Ethereum, Litecoin, and other major cryptocurrencies and embeds them as exogenous regressors in an augmented HAR framework.
+
+Our summary: the paper addresses a feature that is specific to crypto markets: Bitcoin's realized volatility is not independent of the broader crypto ecosystem. When major altcoins move sharply, Bitcoin volatility often follows, and the authors show that this spillover information is statistically significant and improves out-of-sample forecasts. For practitioners running Bitcoin volatility models, this suggests that cross-asset realized volatility from correlated cryptocurrencies is a more natural exogenous input than general macro or equity spillovers, because the timing and magnitude of crypto co-movements are tightly coupled.
+
+Data and code: high-frequency price data for Bitcoin and multiple altcoins. Published in Economics Letters, Volume 208, November 2021 (DOI: 10.1016/j.econlet.2021.110092).
+
+Key metrics: the HAR model augmented with cross-cryptocurrency spillover variables outperforms the standard HAR benchmark in out-of-sample Bitcoin realized volatility forecasting. Results are reported using mean squared error and related accuracy metrics; no trading strategy performance metrics are reported.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0165176521003694>`__
+
+Assessing the Risk of Bitcoin Futures Market: New Evidence
+----------------------------------------------------------
+
+Anupam Dutta proposes an augmented HAR model for forecasting the realized volatility of Bitcoin futures that incorporates time-varying jump intensity estimated through a GARCH-jump process. The paper tests whether jump-induced volatility carries information about future realized variance beyond what is already captured by the continuous path component and the Bitcoin implied volatility index.
+
+Our summary: the paper is notable for two reasons. First, it provides one of the cleaner demonstrations that jump volatility and leverage effects add predictive information to HAR-RV for Bitcoin futures specifically—a crypto context where jumps are frequent and large. Second, the novel finding that jump-induced volatility is informative incrementally to Bitcoin's own IV index is practically important: it means that even after conditioning on the market's forward-looking volatility expectation, high-frequency jump realizations still contain residual information. For HAR practitioners building Bitcoin volatility models, this supports including a jump component in addition to IV.
+
+Data and code: Bitcoin futures high-frequency price data and the Bitcoin implied volatility index. Published in Annals of Data Science, 2024 (DOI: 10.1007/s40745-024-00517-4).
+
+Key metrics: the augmented HAR model with GARCH-jump-derived volatility and leverage effects outperforms standard HAR-type models in both in-sample and out-of-sample analyses. Jump-induced volatility provides incremental out-of-sample predictive power relative to the Bitcoin IV index. Results are reported in forecast accuracy terms; no annualized return or Sharpe metrics are reported.
+
+`Read the paper <https://link.springer.com/article/10.1007/s40745-024-00517-4>`__
+
+GNAR-HARX Models for Realised Volatility: Incorporating Exogenous Predictors and Network Effects
+-------------------------------------------------------------------------------------------------
+
+Tom Ó Nualláin introduces a hybrid modelling framework that combines Generalised Network Autoregressive (GNAR) structure with Heterogeneous Autoregressive (HAR) dynamics and exogenous predictors. The model forecasts realized volatility across ten international stock indices using approximately 16 years of daily data from 2005 to 2020, evaluating performance under both QLIKE loss and mean squared error.
+
+Our summary: this paper is a direct empirical warning about the metric-dependency of exogenous variable results in HAR-type models—a pattern that maps closely onto practitioner experience. The best QLIKE model is a local GNAR-HAR without any exogenous variables, while the best MSE model is a GNAR-HARX that includes implied volatility. Exogenous variables help on mean squared error while hurting or not improving on QLIKE, which is exactly the split seen when broader feature packs are added to HAR-type models in crypto and equity contexts. The network structure finding—that fully connected cross-market graphs outperform dynamically estimated graphical lasso networks—is also useful for anyone attempting cross-asset spillover modelling.
+
+Data and code: daily realized volatility for ten international stock indices, 2005–2020. The paper is available on arXiv (arXiv:2510.24443). Code availability not confirmed at time of writing.
+
+Key metrics: the local GNAR-HAR without exogenous variables achieves the lowest QLIKE score. The GNAR-HARX with implied volatility achieves the lowest MSE. GNAR-HAR(X) specifications outperform univariate HAR(X) benchmarks across both metrics. Fully connected networks consistently outperform graphical lasso networks. No trading strategy performance metrics are reported.
+
+`Read the paper <https://arxiv.org/abs/2510.24443>`__
