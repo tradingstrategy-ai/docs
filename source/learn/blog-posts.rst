@@ -2126,3 +2126,14 @@ This article compares deep-learning forecasting models with classical statistica
 For trading researchers, the most useful takeaway is methodological humility. TFT and related deep models are flexible, but they should be benchmarked against strong statistical baselines and simple market-specific rules rather than only against weaker neural models. This is especially important in volatility forecasting, where GARCH, HAR, and realized-volatility baselines are durable competitors.
 
 `Read the article <https://readmedium.com/time-series-forecasting-deep-learning-vs-statistics-who-wins-c568389d02df>`__.
+
+Fractional Differencing: How to Save Time Series Memory
+--------------------------------------------------------
+
+Zaur T explains fractional differencing, a technique from Marcos Lopez de Prado's Advances in Financial Machine Learning, and walks through implementing it from first principles in Python and Polars. The core problem is that standard differencing—computing returns via `.diff()` or `.pct_change()`—makes a financial time series stationary but destroys its historical memory. Today's price is not random; it is shaped by institutional momentum, past events, and sequential trades, and eliminating that context leaves a machine learning model with amnesia. Fractional differencing solves this by applying an exponent between 0 and 1 rather than an integer, generating a weighted average of all historical prices with slowly decaying coefficients that never fully reach zero.
+
+The post builds the math from the Backward Shift operator and the Binomial Theorem, derives Newton's generalization for non-integer exponents, and explains the morphing ratio that avoids factorial overflow for decimal powers. The author then implements the algorithm in Polars with a per-ticker window function to prevent look-ahead bleed between assets. Two statistical traps receive careful attention: hardcoding ADF test lags (which confuses institutional momentum with non-stationarity) and computing the optimal d on the full dataset (which leaks future volatility into the training window). The solution is to find a global d on the training split only, then apply it blindly to the test period. At d=0.4, the transformed series passes the ADF stationarity test while retaining 85.47% of the original price memory.
+
+By Zaur T, Notes on ML.
+
+`Read the blog post <https://zaurtarunov.substack.com/p/fractional-differencing>`__.
