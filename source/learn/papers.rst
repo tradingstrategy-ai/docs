@@ -1671,3 +1671,18 @@ Key metrics: the paper reports that the hybrid GARCH-TFT model significantly out
 Code and data: the authors cite a public companion repository at `GitHub <https://github.com/lbacco/garch-tft>`__. The article page states that the market data can be obtained using Yahoo Finance.
 
 `Read the paper <https://link.springer.com/article/10.1007/s00521-025-11468-z>`__
+
+Bimodality Everywhere: International Evidence of Deep Momentum
+--------------------------------------------------------------
+
+Chulwoo Han and Chang Qin examine the prevalence of bimodality in momentum returns across 45 countries and evaluate Deep Momentum, a machine learning strategy designed to exploit the bimodal structure of momentum return distributions. The study finds that momentum portfolios do not produce normally distributed returns: past winners either soar or crash, with very few outcomes in between. This bimodal pattern is documented across a wide range of equity markets, is persistent over time, and is negatively correlated with momentum profits, individualism, and disposition effects, while positively correlated with turnover and volatility.
+
+Our summary: this paper connects the well-known momentum crash literature to a concrete distributional explanation. Bimodality is not just a curiosity—it is a systematic property of momentum returns that varies across countries, and that variation predicts where traditional momentum will struggle. The Deep Momentum strategy, which conditions on the shape of the return distribution rather than just past returns, consistently outperforms both standard momentum and naïve machine learning approaches. The finding that a global model pooled across all 45 countries outperforms country-specific models is also practically important: it suggests that sharing information across markets is worth the complexity, particularly for countries with shorter data histories.
+
+Data and code: the study covers equity markets across 45 countries. No public code repository was identified at the time of writing. The paper is available on SSRN.
+
+Key metrics: Deep Momentum outperforms traditional momentum and naïve machine learning strategies consistently across the 45-country sample. Outperformance is strongest in countries with higher bimodality, larger sample sizes, and higher volatility. The global pooled model beats country-specific models for both global and country-level portfolio construction. Results are presented country-by-country rather than as a single aggregate Sharpe ratio or annualized return figure.
+
+Mentioned by Ivan Blanco (`@iblanco_finance <https://x.com/iblanco_finance/status/2046250537914384442>`__) in `this discussion <https://x.com/iblanco_finance/status/2046250537914384442>`__: "Momentum stocks don't just win or lose, they polarize. The distribution shape tells you more than the mean."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4452964>`__
