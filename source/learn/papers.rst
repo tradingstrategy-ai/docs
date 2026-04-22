@@ -1764,3 +1764,18 @@ Data and code: daily realized volatility for ten international stock indices, 20
 Key metrics: the local GNAR-HAR without exogenous variables achieves the lowest QLIKE score. The GNAR-HARX with implied volatility achieves the lowest MSE. GNAR-HAR(X) specifications outperform univariate HAR(X) benchmarks across both metrics. Fully connected networks consistently outperform graphical lasso networks. No trading strategy performance metrics are reported.
 
 `Read the paper <https://arxiv.org/abs/2510.24443>`__
+
+Is Return Seasonality Due to Risk or Mispricing? Evidence from Anomaly Seasonality
+-----------------------------------------------------------------------------------
+
+Jiaqi Wang reexamines return seasonality in anomaly portfolios using 125 anomaly long-short portfolios and 1,238 corresponding raw portfolios constructed from U.S. equities. The central question is whether the well-documented seasonal patterns in anomaly returns—where certain factors tend to perform well in the same calendar months year after year—reflect genuine time-varying risk premiums or are mechanically inherited from stock-level seasonality through characteristic-based portfolio construction.
+
+Our summary: the paper's main contribution is demonstrating an asymmetric spanning relationship that resolves the interpretation of anomaly seasonality. A seasonality factor constructed directly from individual stocks fully spans the seasonality present in anomaly portfolios, but anomaly-based seasonality factors cannot price seasonality strategies in individual stocks. This means the causation runs from stocks to anomalies, not the other way around: when you sort stocks into portfolios based on characteristics like value or momentum, the seasonal patterns of the individual stocks carry through into the portfolio returns, creating the illusion that the anomaly itself has seasonal risk premiums. For practitioners, this is an important diagnostic: if a factor strategy shows strong calendar-month patterns, those patterns may not represent a tradeable seasonal edge in the factor itself but rather a mechanical artefact of which stocks happen to load on that factor. Before adding a seasonal timing overlay to a factor strategy, one should check whether the seasonality survives controls for stock-level seasonal effects.
+
+Data and code: U.S. equity data covering 125 anomaly long-short portfolios and 1,238 raw portfolios. The paper is 72 pages and available on SSRN. No public code repository was identified at time of writing.
+
+Key metrics: the raw seasonality strategy generates 1.45% monthly alpha. After controlling for anomaly-based factors, alpha drops to 0.86–1.23%. After controlling for a proper stock-level seasonality factor, alpha collapses to 0.27%, indicating that most of what appears to be anomaly seasonality is subsumed by individual stock seasonality. Significant seasonality at annual lags is found across anomaly returns, but the spanning tests show this is inherited rather than intrinsic.
+
+Mentioned by Ivan Blanco (`@iblanco_finance <https://www.linkedin.com/in/iblanco-finance/>`__) in `this discussion <https://www.linkedin.com/feed/update/urn:li:activity:7452728873336811521/>`__: "Most anomalies are just seasonality in disguise. A lot of what the literature calls anomaly seems to be the same calendar effect wearing different costumes."
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6441120>`__
