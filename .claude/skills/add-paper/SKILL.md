@@ -1,7 +1,6 @@
 ---
 name: add-paper
 description: Add a new research paper to the documentation collection. Use when user provides a URL to a paper or tweet linking to one.
-argument-hint: [url]
 ---
 
 # Add new paper
