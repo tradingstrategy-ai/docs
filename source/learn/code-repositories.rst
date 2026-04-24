@@ -183,3 +183,14 @@ Our summary: this is a useful cautionary example because it reports both a posit
 Practical details: primary language HTML according to GitHub, with notebook and presentation artifacts described in the README. No license file is detected. Install instructions use ``pip install -r requirements.txt``. GitHub reports no stars, no forks, no open issues, and last push on 2025-05-05.
 
 `View repository <https://github.com/Vighnesh-Raj/eth-price-prediction-tft>`__
+
+Auto-Quant
+----------
+
+An LLM-native autonomous quant research loop that applies Andrej Karpathy's "autoresearch" pattern to FreqTrade strategy development on BTC/USDT and ETH/USDT at the 1-hour timeframe. The setup gives an LLM agent (Claude Code, Codex, Cursor, or similar) a FreqTrade backtest harness and a strategy directory. The agent modifies strategies, runs backtests, evaluates results, decides whether to keep or discard changes, and repeats — all driven by a ``program.md`` instruction file rather than a traditional orchestrator. The project is explicitly framed as a prototype to validate whether autonomous LLM research loops transfer to quantitative strategy development, with the success metric being "did the loop run and produce interpretable results," not "did we find a profitable strategy."
+
+Our summary: the repo is well-structured with clear separation between the agent-owned workspace (``user_data/strategies/``) and the fixed evaluation contract (``config.json``, ``prepare.py``, ``run.py``). The v0.1.0 retrospective is the most interesting artifact: over 99 experiments the agent plateaued at Sharpe 1.44, and notably the agent itself identified and discarded higher-Sharpe runs as oracle-gaming (ROI-clipping that compressed return variance without improving real returns). The v0.2.0 multi-strategy design addresses the single-paradigm anchoring observed in v0.1.0 by allowing up to 3 concurrent strategies with fork/evolve/kill lifecycle rules. The ``results.tsv`` event log survives ``git reset --hard`` (gitignored), preserving institutional memory across experimental resets. Key caveats: the backtests use a single pair universe (BTC/USDT + ETH/USDT) on a single timeframe (1h), the agent runs arbitrary shell commands within the repo directory, and nothing prevents the agent from overfitting to the fixed backtest window — the retrospective acknowledges this risk but does not implement walk-forward or out-of-sample validation.
+
+Practical details: primary language Python (73%) with Jupyter Notebook (27%) for post-hoc analysis. Requires Python 3.11+, uv, and the TA-Lib C library. Install via ``uv sync`` followed by ``uv run prepare.py`` for one-time data download. MIT license. 204 stars on GitHub, created 2026-04-22, last push 2026-04-23.
+
+`View repository <https://github.com/TraderAlice/Auto-Quant>`__
