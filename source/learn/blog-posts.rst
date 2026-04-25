@@ -2253,3 +2253,14 @@ The strategy's remarkable Sharpe of 1.40 with only -7.2% max drawdown warrants p
 By AI Data Lab (in Japanese).
 
 `Read the report <https://aidatalab.jp/jp/papers/alquist_israel_moskowitz2018/output/report.html>`__.
+
+Market Open Trend Strategy: Long Only Nasdaq
+---------------------------------------------
+
+A simple yet effective intraday trend-following strategy for Nasdaq futures that captures upward market trends by entering at the 9:30 AM market open. The strategy uses two filters before entry: price must be above yesterday's open (momentum filter) and above VWAP anchored at the 18:00 session open. Position sizing is adaptive, scaled by distance to VWAP — the closer price is to VWAP, the larger the position. Exits occur either at market close (4:00 PM) or on a 5-minute close below VWAP, whichever comes first.
+
+The 15-year NQ backtest with cost and slippage included shows robust performance. The author also presents a compounding variant using percentage-based sizing (33% to 100% of account) instead of fixed contracts, which dramatically improves returns through compounding gains. The post includes a discussion of potential overfitting concerns: whether trading only the long side constitutes overfitting even when both long and short are profitable, and whether delaying entry by 15 minutes to avoid opening volatility is a legitimate filter or curve-fitting.
+
+Mentioned by Rob (@BostonRobTrades) in `this discussion <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
+
+`Read the post <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
