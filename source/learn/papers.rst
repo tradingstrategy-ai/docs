@@ -1794,3 +1794,81 @@ Key metrics (optimised high-volume pairs, out-of-sample 2015-2024): annualised r
 Mentioned by Nam Nguyen, Ph.D. (`@namnguyento <https://www.linkedin.com/in/namnguyento/>`__) in `this discussion <https://www.linkedin.com/posts/namnguyento_arbitrage-trading-quantitativefinance-share-7453094800922275840-Qm_T>`__: "The paper revisits the age-old strategy of pairs trading and incorporates volume analysis into the framework. Trading volume is a dominant performance driver, with high-volume pairs consistently outperforming low-volume counterparts."
 
 `Read the paper <https://gupea.ub.gu.se/items/dc1a29d8-4290-42c7-bf97-ee82eb7251d9>`__
+
+A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle
+-------------------------------------------------------------------------------------------
+
+James D. Hamilton introduces the Markov-switching autoregressive model, where the parameters of an autoregression are governed by a discrete-state Markov process whose realizations are not directly observed. The framework allows the mean growth rate of a nonstationary series to shift between states, with the timing and duration of regimes inferred from the data via maximum likelihood. The paper applies the model to postwar U.S. real GNP growth, identifying distinct expansion and contraction regimes that align closely with NBER business cycle dates. Published in Econometrica, Vol. 57, No. 2, March 1989, pp. 357-384.
+
+Our summary: this is the foundational paper for all regime-switching time-series models in economics and finance. Every subsequent application of Markov-switching to volatility, asset returns, or macro variables traces back to this framework. The key insight for quantitative finance is that a single linear model often masks fundamentally different dynamics across market states, and the Hamilton filter provides a principled, real-time way to estimate which regime the market is in at each point. The paper also demonstrates that regime probabilities can be computed as filtered estimates using only past data, making the approach feasible for point-in-time forecasting without look-ahead bias.
+
+Data and code: the paper uses quarterly U.S. real GNP data from 1951 to 1984. No public code repository exists for the original paper, though Hamilton's Markov-switching methodology has since been implemented in numerous packages including statsmodels (Python), MSwM (R), and MS_Regress (MATLAB).
+
+Key metrics: the paper does not report trading metrics. The two-state model recovers recession and expansion timing that closely matches NBER reference dates, with estimated mean growth rates of approximately -3.6% (annualized) in contractions and +1.2% in expansions. The transition probability matrix implies average expansion duration of about 10 quarters and average contraction duration of about 4 quarters.
+
+`Read the paper <https://www.econometricsociety.org/publications/econometrica/1989/03/01/new-approach-economic-analysis-nonstationary-time-series-and>`__
+
+Autoregressive Conditional Heteroskedasticity and Changes in Regime
+-------------------------------------------------------------------
+
+James D. Hamilton and Raul Susmel extend the Markov regime-switching framework to ARCH volatility models, allowing the parameters governing conditional heteroskedasticity to shift between discrete states. The paper models weekly returns on U.S. stock indices, permitting the ARCH intercept and persistence parameters to change with an unobserved Markov state, thereby capturing the observation that financial volatility appears to have distinct high and low regimes rather than a single stationary ARCH process. Published in the Journal of Econometrics, Vol. 64, 1994, pp. 307-333.
+
+Our summary: this paper is the direct bridge between Hamilton's 1989 regime-switching framework and modern volatility modeling. By allowing ARCH parameters to switch between states, it formalizes the intuition that volatility clustering is not uniform over time but instead governed by latent market regimes. For realized-volatility forecasting and crypto volatility work, the Hamilton-Susmel model is the ancestor of all Markov-switching GARCH variants, including the MSGARCH models later applied to Bitcoin by Ardia, Bluteau, and Rüede. The important practical point is that regime shifts in volatility persistence can cause single-regime ARCH models to overstate persistence and understate the speed of volatility mean reversion within each regime.
+
+Data and code: the paper uses weekly U.S. stock return data. No public code from the original paper, but RATS programs for estimating the Hamilton-Susmel Markov-switching ARCH model are available through the EconPapers software archive, and modern implementations exist in the MSGARCH R package and the statsmodels Markov-switching module in Python.
+
+Key metrics: the paper does not report trading strategy metrics. The key empirical finding is that a two-state or three-state Markov-switching ARCH model significantly improves the fit for weekly stock returns relative to a standard single-regime ARCH specification. The high-volatility regime has substantially larger ARCH intercepts and different persistence characteristics compared to the low-volatility regime.
+
+`Read the paper <https://econpapers.repec.org/article/eeeeconom/v_3a64_3ay_3a1994_3ai_3a1-2_3ap_3a307-333.htm>`__
+
+A Simple Approximate Long-Memory Model of Realized Volatility
+-------------------------------------------------------------
+
+Fulvio Corsi proposes the Heterogeneous Autoregressive model of Realized Volatility (HAR-RV), an additive cascade of volatility components defined over daily, weekly, and monthly horizons. The model captures the empirically observed long-memory behavior of realized volatility through a parsimonious structure that is nothing more than a constrained AR model with three regressors: yesterday's daily RV, last week's average daily RV, and last month's average daily RV. Despite having no true long-memory mechanism, the HAR-RV successfully reproduces slow hyperbolic decay in the autocorrelation function, fat tails, and multi-scaling properties of financial returns. Published in the Journal of Financial Econometrics, Vol. 7, No. 2, 2009, pp. 174-196.
+
+Our summary: this is the single most important baseline paper for anyone forecasting realized volatility. The HAR-RV is the benchmark that every subsequent model — HARNet, regime-switching HAR, machine-learning volatility forecasters — must beat. Its power comes from the Heterogeneous Market Hypothesis insight that traders operating at different frequencies (daily, weekly, monthly) create a cascade of volatility components. The model's practical appeal is that it requires only simple OLS estimation, is trivially reproducible, and still outperforms many far more complex alternatives. For our repo's volatility forecasting work, HAR-RV is the anchor: if a new method cannot beat HAR-RV out of sample, it is not useful regardless of in-sample fit.
+
+Data and code: the original paper uses S&P 500 realized volatility data. No public code repository exists for the original paper, but HAR-RV implementations are available in the HARModel R package, numerous Python notebooks including deep-hedger-Peng/HAR-RV on GitHub, and are a standard component of the Oxford-Man realized volatility library workflows.
+
+Key metrics: the paper does not report trading metrics. The HAR-RV model outperforms standard AR, ARFIMA, and GARCH models in out-of-sample realized-volatility forecasting for the S&P 500 across daily, weekly, and monthly horizons, with particularly strong performance at longer horizons where the long-memory approximation matters most. Simulation results confirm that the model reproduces the empirical scaling behavior and fat-tailed return distributions of financial data.
+
+`Read the paper <https://academic.oup.com/jfec/article-abstract/7/2/174/856522>`__
+
+A Multiple Regime Smooth Transition Heterogeneous Autoregressive Model for Long Memory and Asymmetries
+------------------------------------------------------------------------------------------------------
+
+Michael McAleer and Marcelo C. Medeiros extend the HAR-RV model to a nonlinear multiple-regime framework using logistic smooth-transition functions. The resulting model can simultaneously capture long-memory behavior through the HAR cascade structure and asymmetric, nonlinear volatility dynamics through regime-dependent coefficients. The paper develops a sequence of specification tests to determine the number of regimes and presents an estimation procedure for the smooth-transition HAR model. Published in the Journal of Econometrics, Vol. 147, No. 1, 2008, pp. 104-119.
+
+Our summary: this is the first systematic extension of HAR to nonlinear regimes, and it answers a question that matters for applied volatility forecasting: does adding regime-dependent behavior to HAR improve on the linear version? The smooth-transition mechanism allows the model coefficients to change gradually as a function of an observable transition variable (such as past volatility level), which is more realistic than abrupt switching for capturing how markets transition between calm and turbulent states. For our repo, this paper provides the econometric foundation for testing whether HAR-based volatility forecasts improve when augmented with regime features, especially the soft-probability approach where regime weights change smoothly rather than switching discretely.
+
+Data and code: the paper uses daily realized volatility data for S&P 500 and other major equity indices. A PDF of the original paper is available from the authors' university pages. No dedicated public code repository was identified, though the smooth-transition HAR specification can be implemented using the tsDyn R package or custom estimation in Python.
+
+Key metrics: the paper does not report trading strategy metrics. The multiple-regime smooth-transition HAR model improves in-sample fit relative to the linear HAR baseline, particularly for capturing sign and size asymmetries in volatility dynamics. The specification test sequence identifies statistically significant nonlinearity and regime structure in the realized-volatility series for the assets studied.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0304407608001280>`__
+
+Forecasting Realised Volatility Using Regime-Switching Models
+-------------------------------------------------------------
+
+Yi Ding, Dimos S. Kambouroudis, and David G. McMillan extend standard AR and HAR models for realised-volatility forecasting to include nonlinearity through two broad regime-switching approaches: smooth transition and Markov switching. Using daily data for eight international stock markets over 2007-2021, the paper provides a comprehensive comparison using both statistical forecast evaluation metrics and economic (risk management) based metrics including Value-at-Risk and Expected Shortfall. Published in the International Review of Economics & Finance, Vol. 101, 2025.
+
+Our summary: this is the most up-to-date comparison of regime-switching approaches applied to HAR-style realized-volatility forecasting, and it directly addresses the question of whether regime features add out-of-sample value. The headline finding is nuanced: regime-switching models do improve both in-sample fit and out-of-sample forecasts, but the out-of-sample gains are less clear-cut at the daily horizon and become stronger at longer horizons. This matches the pattern in our repo where regime descriptors look attractive marginally but face a high bar once the asset's own lagged volatility path is already known. The paper also finds that the abrupt-transition technique of Markov switching is preferred to smooth transition, which is useful guidance for choosing between the two nonlinear approaches.
+
+Data and code: daily realized-volatility data for eight international stock markets over 2007-2021. An earlier version is available as a working paper from the University of Southampton and University of Stirling. No public code repository was identified.
+
+Key metrics: regime-switching HAR models outperform linear HAR in-sample and generally out-of-sample, with Markov-switching preferred over smooth transition. Daily-horizon gains are less clear-cut than weekly and monthly, which is an important caveat for high-frequency forecasting applications. Economic evaluation using VaR and ES metrics supports the statistical forecast comparison results.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S105905602500334X>`__
+
+Regime Changes in Bitcoin GARCH Volatility Dynamics
+----------------------------------------------------
+
+David Ardia, Keven Bluteau, and Maxime Rüede apply Markov-switching GARCH (MSGARCH) models to Bitcoin daily returns and find strong statistical evidence of regime changes in the volatility dynamics. The paper compares single-regime GARCH, EGARCH, GJR-GARCH, and TGARCH specifications against their two-state Markov-switching counterparts, testing both Normal and Student-t innovation distributions. The regime-switching models consistently outperform single-regime specifications for one-step-ahead Value-at-Risk forecasting. Published in Finance Research Letters, Vol. 29, 2019, pp. 266-271.
+
+Our summary: this is the cleanest direct evidence that crypto volatility is genuinely regime-switching rather than merely persistent. The paper is short and focused, and the result is actionable: a two-state MSGARCH model produces better VaR forecasts than any single-regime GARCH variant for Bitcoin. For our repo, the practical implication is that regime-switching is not just a theoretical nicety for crypto but delivers measurable risk-management improvements. The finding also supports using soft regime probabilities (the filtered state probabilities from the Markov-switching model) as features in downstream models like TFT, rather than treating volatility as a single homogeneous process. The authors later released the MSGARCH R package, making this one of the more reproducible crypto volatility results.
+
+Data and code: daily Bitcoin returns from Bitstamp exchange. The authors provide the MSGARCH R package on CRAN, which implements the full family of single-regime and Markov-switching GARCH models used in the paper, making the results fully reproducible.
+
+Key metrics: MSGARCH models significantly outperform single-regime GARCH for Bitcoin one-day VaR forecasting. The two-state model identifies a low-volatility and a high-volatility regime with markedly different GARCH parameters. Likelihood ratio tests reject the null of a single regime across all GARCH specifications and innovation distributions tested.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S1544612318303970>`__
