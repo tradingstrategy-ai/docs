@@ -35,6 +35,8 @@ Add a new research paper to the documentation collection.
 
    **For pages requiring browser**: Use `navigate` to open the page, then `get_page_text` or `read_page` to extract content. If CAPTCHA appears, ask the user to complete it manually.
 
+   **If the paper is behind a paywall or the browser cannot access the full text** (e.g., publisher blocks scraping, login wall, or PDF-only access): Use the `fetch-paper` skill to retrieve the PDF via Sci-Hub. Pass the DOI or paper URL to `/fetch-paper`. Once the PDF is downloaded to `articles/`, read it locally to extract the title, description, and full text needed for summarisation, then continue with step 4.
+
 4. **Determine category**: Based on the extracted content, automatically determine the category:
    - **Trading/Finance** (goes to `source/learn/papers.rst`) - for papers about algorithmic trading, portfolio optimization, market microstructure, momentum strategies, risk management, etc.
    - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for papers primarily about machine learning, deep learning, reinforcement learning, or AI techniques applied to trading
