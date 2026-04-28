@@ -24,3 +24,6 @@ source/**.html
 _tags
 dist
 **/node_modules
+
+# Downloaded paper PDFs
+articles/*.pdf

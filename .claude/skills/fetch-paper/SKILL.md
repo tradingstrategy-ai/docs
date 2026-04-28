@@ -5,7 +5,9 @@ description: Fetch a non-accessible paper PDF via Sci-Hub. Use when a paper is b
 
 # Fetch paper via Sci-Hub
 
-Download a paper PDF that is behind a paywall using Sci-Hub (https://sci-hub.ru/).
+Download a paper PDF that is behind a paywall using Sci-Hub.
+
+Use a background subagent for the steps. If you are downloading multiple papers, use max 4 concurrent subagents.
 
 ## Input
 
@@ -14,82 +16,59 @@ Download a paper PDF that is behind a paywall using Sci-Hub (https://sci-hub.ru/
 
 ## Steps
 
-1. **Check browser is activated**:
-   - Call `tabs_context_mcp` to verify browser connection
-   - If it fails, ask the user to enable browser:
-     - VS Code: Ensure Chrome extension is connected
-     - CLI: Run `claude --chrome` or type `/chrome`
-
-2. **Determine the identifier**:
+1. **Determine the identifier**:
    - If the input is a DOI (starts with `10.`), use it directly
    - If the input is an arXiv URL, extract the arXiv ID (e.g., `2301.12345`)
    - If the input is a publisher URL (e.g., ScienceDirect, Springer, Wiley, SSRN), use the full URL
    - If the input is already a DOI URL (`doi.org/10.xxx`), extract the DOI part
 
-3. **Navigate to Sci-Hub**:
-   - Use `navigate` to go to `https://sci-hub.ru/{identifier}`
-     - For DOIs: `https://sci-hub.ru/10.1016/j.jfineco.2023.01.001`
-     - For URLs: `https://sci-hub.ru/https://www.sciencedirect.com/...`
-     - For arXiv IDs: `https://sci-hub.ru/arXiv:2301.12345`
+2. **Use the fetch-scihub.sh script**:
+   The script handles all Sci-Hub interaction (multiple mirrors, CAPTCHA bypass via headless Chrome, PDF extraction and verification).
 
-4. **Handle CAPTCHA if needed**:
-   - Use `javascript_tool` to check for CAPTCHA presence:
-     ```javascript
-     !!document.querySelector('img[id="captcha"], .captcha, input[name="captcha"]')
-     ```
-   - If CAPTCHA is present, ask the user to complete it manually in the visible Chrome window
-   - Wait for user confirmation before proceeding
+   ```bash
+   ./scripts/fetch-scihub.sh "<doi-or-url>" "articles/<filename>.pdf"
+   ```
 
-5. **Locate the PDF**:
-   - Use `javascript_tool` to find the PDF embed or download link:
-     ```javascript
-     (() => {
-       const embed = document.querySelector('embed[type="application/pdf"], iframe[src*=".pdf"], #pdf');
-       if (embed) return embed.src || embed.getAttribute('src');
-       const link = document.querySelector('a[onclick*="location.href"], #buttons a, a[href*=".pdf"]');
-       if (link) return link.href || link.getAttribute('onclick')?.match(/location\.href='([^']+)'/)?.[1];
-       return null;
-     })()
-     ```
-   - If no PDF is found, check if Sci-Hub shows an error message:
-     ```javascript
-     document.querySelector('#smile, .container p, #main p')?.innerText
-     ```
-   - If the paper is not available on Sci-Hub, inform the user and suggest alternatives (arXiv, author's website, institutional access)
+   The script will:
+   - Try curl first (fast path, works when no CAPTCHA)
+   - Fall back to headless Chrome (bypasses JS-based CAPTCHAs on most mirrors)
+   - Try multiple mirrors: sci-hub.st, sci-hub.ru, sci-hub.se
+   - Resolve ScienceDirect PII URLs to DOIs via CrossRef
+   - Verify the downloaded file is a valid PDF > 10KB
 
-6. **Extract the PDF URL**:
-   - The PDF URL may be protocol-relative (starting with `//`), prepend `https:` if needed
-   - The URL typically looks like `https://sci-hub.ru/downloads/...` or `https://twin.sci-hub.ru/...`
+3. **If fetch-scihub.sh fails**, try alternative approaches:
+   - If the user has browser MCP available, use `navigate` to go to `https://sci-hub.st/{identifier}`, ask user to solve CAPTCHA if needed, then extract PDF URL via `javascript_tool` and download with curl
+   - Try the arXiv preprint: search for the paper title on arXiv
+   - Suggest the user download manually from their institutional access
 
-7. **Download the PDF**:
-   - Generate the filename: slugify the paper title (lowercase, replace spaces/special chars with dashes, remove consecutive dashes)
-   - If no title is available, derive from the DOI or use the identifier
-   - Download using `curl` via Bash:
-     ```bash
-     curl -L -o articles/FILENAME.pdf "PDF_URL"
-     ```
-   - If curl fails (some Sci-Hub mirrors require browser cookies), fall back to browser-based download:
-     1. Use `navigate` to open the direct PDF URL in the browser
-     2. Use `javascript_tool` to extract the PDF as base64 or use headless Chrome:
-        ```bash
-        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-          --headless --no-pdf-header-footer \
-          --print-to-pdf=articles/FILENAME.pdf \
-          "PDF_URL"
-        ```
+4. **Generate the filename** (if not provided):
+   - Slugify the paper title: lowercase, replace spaces/special chars with dashes, remove consecutive dashes
+   - If no title is available, derive from the DOI
 
-8. **Verify the download**:
-   - Check the file exists and has a reasonable size (> 10KB):
-     ```bash
-     ls -la articles/FILENAME.pdf
-     ```
-   - If the file is too small or is HTML instead of PDF, the download likely failed — retry with the browser fallback method
-   - Verify it's actually a PDF:
-     ```bash
-     file articles/FILENAME.pdf
-     ```
+5. **Verify the download**:
+   ```bash
+   ls -la articles/FILENAME.pdf
+   file articles/FILENAME.pdf
+   ```
+   - File must be > 10KB and identified as PDF
 
-9. **Report result**:
+6. **Report result**:
    - Tell the user the PDF was saved to `articles/FILENAME.pdf`
    - If the paper title was extracted, display it
-   - Ask if the user also wants to add the paper to the documentation collection (invoke the `add-paper` skill if yes)
+
+## Batch fetching
+
+For fetching many papers at once, use the batch script:
+
+```bash
+# Dry run — see what needs fetching
+./scripts/fetch-missing-papers.sh --dry-run
+
+# Fetch with 2 parallel jobs (default)
+./scripts/fetch-missing-papers.sh
+
+# Fetch with 4 parallel jobs
+./scripts/fetch-missing-papers.sh --parallel 4
+```
+
+The batch script has a mapping of filename → DOI for known papers. Add new entries to the `PAPERS` associative array in the script.
