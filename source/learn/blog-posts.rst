@@ -2264,3 +2264,14 @@ The 15-year NQ backtest with cost and slippage included shows robust performance
 Mentioned by Rob (@BostonRobTrades) in `this discussion <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
 
 `Read the post <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
+
+Why Your Volatility Forecast Matters More Than You Think
+--------------------------------------------------------
+
+Concretum Research, working with academics Walter Distaso and Antonio Mele, introduces NextVoL, a volatility forecasting framework designed for volatility targeting strategies. The core thesis builds on Charlie Munger's observation about compounding: investor behavior during volatility spikes, not lack of returns, interrupts long-term wealth accumulation. Volatility targeting mitigates this by scaling exposure inversely with predicted volatility. The article walks through why the forecasting methodology matters as much as the targeting mechanism itself, and introduces three innovations: short-horizon smoothing to reduce noise from transient spikes, dynamic overnight adjustment accounting for regime-dependent variance composition, and stabilization mechanisms for persistent deviation correction.
+
+Testing seven forecasting approaches on SPY data from 2008 to 2025, NextVoL achieves 10.11% realized volatility against a 10% target, a volatility-of-volatility of just 0.26 (nearly half that of competitors), and a Sharpe ratio of 0.79 (highest among tested methods). It ranks first or second in 16 of 18 calendar years. Notably, the VIX-based approach systematically underdelivers by approximately 22% due to the embedded volatility risk premium, making it a poor foundation for targeting despite its popularity. The practical implications extend to structured product design: lower volatility-of-volatility translates to tighter option pricing, cheaper hedging costs, and improved participation rates for capital-protected notes and fixed-index annuities.
+
+By Concretum Research.
+
+`Read the blog post <https://concretumgroup.substack.com/p/why-your-volatility-forecast-matters>`__.
