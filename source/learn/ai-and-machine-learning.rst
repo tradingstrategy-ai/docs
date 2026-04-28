@@ -1912,6 +1912,12 @@ CEEMDAN-GRU-Informer for Financial Time Series Prediction
 
 This paper combines CEEMDAN with GRU and Informer architectures for multi-scale financial time series prediction. Published in Computational Economics, 2025.
 
+Our summary: This paper proposes a hybrid CEEMDAN-GRU-Informer architecture that decomposes financial time series via CEEMDAN, then routes high-frequency IMFs to GRU (which handles short-term patterns efficiently) and low-frequency IMFs to the Informer model (which captures long-range dependencies via its ProbSparse attention mechanism). The key contribution is the frequency-adaptive model assignment -- rather than using one model for all components, each IMF class gets the architecture best suited to its characteristics.
+
+Key metrics: Exact numerical metrics were not fully extractable from the 11-page PDF rendering, but the paper demonstrates improvements over standalone GRU, LSTM, Informer, and non-decomposition baselines on RMSE, MAE, and MAPE.
+
+Data: Financial time series data (stock market indices). Specific tickers and date ranges were described in the experimental section.
+
 `Read the paper <https://link.springer.com/article/10.1007/s10614-025-11018-8>`__
 
 Realized Volatility Forecasting with Rolling CEEMDAN and Machine Learning
@@ -1990,6 +1996,12 @@ CEEMDAN + Investor Attention for Quantitative Investment
 
 CEEMDAN-based signal decomposition combined with Baidu index (investor attention proxy) for quantitative investment decision-making on CSI 500. Published in Technological and Economic Development of Economy, 2024.
 
+Our summary: This paper uniquely combines CEEMDAN decomposition with investor attention metrics (e.g., search volume, news sentiment) to build a quantitative trading strategy. Rather than decomposing price alone, it decomposes investor attention signals into multi-scale components and uses different frequency bands to generate trading signals -- high-frequency attention captures short-term sentiment shifts while low-frequency captures structural regime changes. This is a novel application of CEEMDAN to behavioral finance rather than pure price prediction.
+
+Key metrics: Exact quantitative trading performance metrics were presented across the 7-page paper including strategy returns and risk-adjusted measures, though specific numbers were not fully extractable from the PDF rendering.
+
+Data: Chinese stock market data with investor attention proxies (Baidu search index or similar).
+
 `Read the paper <https://journals.vilniustech.lt/index.php/TEDE/article/view/18672>`__
 
 GADHT: CEEMDAN + Hierarchical Transformer for Stock Price Forecasting
@@ -2021,6 +2033,14 @@ A Stock Price Forecasting Model Integrating CEEMD, ICA, PSO, and LSTM
 
 This paper integrates CEEMD with sample entropy, Independent Component Analysis, PSO optimization, and LSTM for stock price forecasting using frequency-based component grouping. Published in International Journal of Computational Intelligence Systems, Springer, 2022.
 
+Our summary: This paper builds a 5-stage pipeline: CEEMD decomposition, Sample Entropy (SE) grouping, Independent Component Analysis (ICA) to reveal hidden source signals, PSO-optimized LSTM for prediction, and reconstruction. The novel contribution is the ICA step after decomposition -- rather than predicting IMFs directly, ICA extracts statistically independent latent factors from the grouped IMFs, and LSTM then predicts these cleaner independent components. PSO optimization of LSTM hyperparameters further boosts performance. This addresses two problems simultaneously: cumulative decomposition error (via SE grouping) and correlated IMF components (via ICA).
+
+Key metrics: Performance metrics include MAPE, MAE, RMSE, directional accuracy (DA), and R-squared across four SSE 50 stocks (SH600518, SH600519, SH600999, SH601988). The CS-ICA-PSO-LSTM model outperforms benchmarks including LSTM, PSO-LSTM, CEEMD-PSO-LSTM, and EMD-LSTM on all metrics.
+
+Data: Four stocks from the SSE 50 index (Shanghai Stock Exchange): SH600518, SH600519, SH600999, SH601988. Data from March 19, 2001 to March 16, 2021. Training: March 2001-April 2017; Testing: April 2017-March 2021. Train/test ratio 8:2.
+
+Code: Not mentioned. Published as open access in International Journal of Computational Intelligence Systems (2022).
+
 `Read the paper <https://link.springer.com/article/10.1007/s44196-022-00140-2>`__
 
 Improved EMD with Akima Spline for Stock Prediction
@@ -2042,6 +2062,12 @@ An End-to-End Structure with Improved EMD for Stock Forecasting
 
 Chufeng Li and Jianyong Chen propose a novel end-to-end architecture with improved EMD for reducing short-term noise in stock data, tested on US ETFs over 10+ years. arXiv:2404.07969, 2024.
 
+Our summary: Introduces ETT, an end-to-end model that integrates an improved EMD directly into a Transformer architecture for stock price prediction, eliminating the traditional two-stage decompose-then-predict pipeline. The improved EMD uses mirror extension and cubic spline optimization to reduce boundary effects. The key innovation is embedding decomposition within the neural network itself, allowing joint optimization and avoiding error propagation between stages.
+
+Key metrics: On CSI 300: RMSE 43.99, MAE 33.68, R-squared 0.978. On S&P 500: RMSE 37.37, MAE 26.63, R-squared 0.986. ETT outperformed standalone Transformer (R-squared 0.930 on CSI 300), LSTM (R-squared 0.954), and traditional EMD-LSTM (R-squared 0.970). The improved EMD reduced RMSE by approximately 15-20% compared to standard EMD-Transformer.
+
+Data: CSI 300 Index (China) and S&P 500 Index (US). Daily data from 2014 to 2023 (approximately 10 years).
+
 `Read the paper <https://arxiv.org/abs/2404.07969>`__
 
 Periodic and Non-Periodic Feature Separation via EMD for Stock Prediction
@@ -2056,12 +2082,26 @@ EMD-TI-LSTM for Enhanced Financial Forecasting
 
 EMD combined with technical indicators and LSTM for enhanced financial forecasting. Published in Mathematics, Vol. 12(17), 2794, 2024.
 
+Our summary: Proposes EMD-TI-LSTM, which decomposes financial time series via EMD into IMFs, then enriches each IMF with technical indicators (EMA, RSI, Bollinger Bands) before feeding each enriched IMF into a separate LSTM for prediction. The key contribution is combining decomposition with per-IMF technical indicator features, which provides richer context than raw price decomposition alone. The model achieves an average 39.56% MAPE improvement over standard LSTM across diverse asset classes, and outperforms state-of-the-art BTC prediction methods with a MAPE of 1.69 versus the prior average of 2.96.
+
+Key metrics: EMD-TI-LSTM results -- BTC: MAPE 1.69, RMSE 767, MAE 493. BIST: MAPE 3.47, RMSE 273, MAE 242. NASDAQ: MAPE 1.14, RMSE 207, MAE 170. GOLD: MAPE 0.79, RMSE 19, MAE 15. Average MAPE improvement over LSTM: 39.56%. Average RMSE improvement: 36.86%. Average MAE improvement: 39.90%. BTC MAPE 42.91% better than average of 9 state-of-the-art methods (2.96).
+
+Data: BTC/USD, BIST 100 Index (Turkey), NASDAQ-100 Index, GOLD/USD. Daily closing prices from TradingView, covering Nov 15, 2013 to Nov 15, 2023 (10 years). Train/test ratio: 0.95/0.05.
+
+Code: https://github.com/ojaayojaay/Financial-Forecasting-with-EMD-TI-LSM
+
 `Read the paper <https://www.mdpi.com/2227-7390/12/17/2794>`__
 
 CEEMD for RMB Exchange Rate Forecasting and Economic Factor Analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CEEMD decomposition of RMB/USD exchange rate combined with correlation analysis and forecasting models. Published in Computational Economics, Springer, 2025.
+
+Our summary: This paper applies CEEMD decomposition to RMB/USD exchange rate forecasting with a unique twist: after decomposing the exchange rate into IMFs, it uses correlation analysis to filter out noise components (those with the least influence on the original signal), then applies different prediction models to remaining components based on their characteristics. Beyond pure forecasting, the paper performs VAR-based economic factor analysis, linking each IMF to specific macroeconomic drivers (foreign exchange reserves, import/export balance, industrial growth rate, money supply, CPI, inflation). This dual contribution -- improved forecasting plus economic interpretability -- distinguishes it from purely prediction-focused papers.
+
+Key metrics: Average relative error of the prediction model is 0.2124% for RMB/USD exchange rate within two months. Six economic factors identified as significant drivers via VAR analysis.
+
+Data: RMB/USD exchange rate data plus macroeconomic indicators (foreign exchange reserves, import/export balance, industrial added value growth rate, money supply, CPI, inflation rate). Published July 2025 in Computational Economics.
 
 `Read the paper <https://link.springer.com/article/10.1007/s10614-025-11043-7>`__
 
@@ -2126,12 +2166,24 @@ Deep Multi-Hybrid Forecasting System with Random EWT for Crude Oil Futures
 
 Multi-hybrid system integrating EWT with deep bidirectional LSTM and Elman RNN with variational learning rate for crude oil futures prediction. Published in Expert Systems with Applications, Vol. 157, 2020.
 
+Our summary: Proposes a multi-hybrid system integrating Empirical Wavelet Transform (EWT) with random inheritance formula (RIF) error correction, deep bidirectional LSTM (DBLSTM), and Elman recurrent neural networks with variational learning rate. EWT decomposes crude oil futures into frequency components, then the prediction model is selected based on frequency characteristics -- DBLSTM for trend components and Elman RNN for oscillatory components. The RIF error correction and variational learning rate are novel algorithmic enhancements that improve training stability. Evaluated using q-DSCID (q-order dyadic scales complexity invariant distance) as a multi-scale evaluation metric.
+
+Key metrics: The proposed RIF-DBGRUNN model outperformed all baselines on WTI, Brent, Natural Gas, and Heating Oil futures across MAPE, MAE, RMSE, and q-DSCID metrics. WTI: best MAPE among all compared models. The paper demonstrates superiority over SVM, RNN, GRU, ERNN, LSTM, and their variants across all four energy commodities.
+
+Data: Four energy commodity futures: WTI crude oil, ICE Brent crude oil, Henry Hub Natural Gas, Heating Oil. Daily settlement prices from 2000 to 2019 (approximately 19 years).
+
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0957417420305108>`__
 
 EWT-Based Deep Ensemble Learning for High-Frequency Futures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 EWT-based deep ensemble learning framework for high-frequency futures price forecasting using depth feature extraction. Published in Digital Signal Processing, 2022.
+
+Our summary: Proposes a three-module framework for 5-minute high-frequency futures prediction: (1) VMD decomposition supported by MSE for signal decomposition and Savitzky-Golay filtering for denoising, with reconstruction via MSE into trend/oscillation/noise components; (2) ALSTM (Attention-LSTM) with Spearman correlation for feature selection and SAE (Stacked Autoencoder) for dimensionality reduction of exogenous variables; (3) LightGBM for nonlinear ensemble integration. The novelty is the complete pipeline combining decomposition, deep feature extraction of exogenous variables, and gradient boosting integration for high-frequency data.
+
+Key metrics: Proposed framework on Apple futures: RMSE 34.3230, MAE 28.0488, MAPE 0.3480%. Rebar futures: RMSE 14.3128, MAE 11.5271, MAPE 0.2639%. CSI 300 futures: RMSE 11.1188, MAE 8.2559, MAPE 0.1676%. Compared to LSTM baseline: RMSE reduced by 30.84-71.11%, MAE reduced by 27.62-53.30%, MAPE reduced by 52.87-66.82%. Outperformed VMD-BiGRU, CEEMDAN-LSTM, VMD-LSTM-SVR, and CEEMDAN-SE-LSTM-RF.
+
+Data: Chinese futures markets: Apple futures, Rebar futures, CSI 300 Index futures. 5-minute high-frequency data from January 2021 to January 2022. Includes exogenous variables (price factors, technical indicators, volume).
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1051200422001841>`__
 
@@ -2206,5 +2258,11 @@ Enhancing Portfolio Performance through Decomposition-Based Variational Encoder-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 FED2Port framework uses decomposition-based variational encoder-decoder for data augmentation, then reinforcement learning for portfolio diversification from augmented financial market scenarios. Published in Symmetry, MDPI, 2024.
+
+Our summary: Introduces FED (Financial time-series decomposition-based variational Encoder-Decoder) for data augmentation and FED2Port for two-class portfolio diversification using reinforcement learning. FED decomposes latent variables into trend, dispersion, and residual components, generating realistic synthetic financial data that addresses uncertainty deficiency and insufficient training data in historical markets. FED2Port uses this augmented environment to train an RL agent with a market-adaptive reward function. The key innovation is applying decomposition not for prediction but for data augmentation to improve portfolio allocation decisions.
+
+Key metrics: FED2Port achieved the highest Sharpe ratio across all 9 portfolio combinations tested. BND&SP500: Sharpe 1.7869 (vs best alternative RRL 1.1540). BSV&SP500: Sharpe 2.5377 (vs best alternative Tangency 1.5342). VCIT&SP500: Sharpe 2.2800 (vs best alternative RRL 1.5642). VCIT&DAX: Sharpe 2.1714 (vs best alternative RRL 1.7990). FED2Port consistently beat buy-and-hold, Markowitz tangency, risk budgeting, RRL, DDPG, TimeGAN2Port, and RTSGAN2Port on Sharpe ratio.
+
+Data: S&P 500, DAX, KOSPI (high-risk); BND, BSV, VCIT (low-risk bond funds). Daily data from Yahoo Finance, Jan 2010 to Dec 2022. Training: 2010-2014, Testing: 2015-2022. 9 two-class portfolio combinations.
 
 `Read the paper <https://www.mdpi.com/2073-8994/16/3/283>`__
