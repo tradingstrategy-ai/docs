@@ -207,3 +207,14 @@ Practical details: Python 100%. No formal install instructions — clone and run
 Mentioned by Vivek V Rao in `this post <https://x.com/VivekVRao1/status/2048044236537246008>`__: VIX and log(VIX) are mean-reverting AR(1) processes whose noise has positive skew and excess kurtosis, fit progressively better by Laplace, then SGED, then level-varying SGED where the shape parameters change with VIX level.
 
 `View repository <https://github.com/vivek-v-rao/Conditional-Skew>`__
+
+AutomataGPT
+-----------
+
+Decoder-only transformer trained to perform forward prediction and inverse rule inference for two-dimensional binary deterministic cellular automata (CA) on toroidal grids. The repository covers three tasks: predicting the next CA state given a rule matrix and initial condition, inferring the rule matrix from an initial condition and an observed future state, and approximating continuous dynamical systems (Allen-Cahn phase-field equation) with inferred CA surrogates by binarizing continuous fields. Pre-trained checkpoints and training datasets are hosted on HuggingFace at ``lamm-mit/AutomataGPT``.
+
+Our summary: the codebase is the companion implementation for the paper `AutomataGPT: Transformer-Based Forecasting and Ruleset Inference for Two-Dimensional Cellular Automata <https://arxiv.org/abs/2506.17333>`__ (Advanced Science, Berkovich, David, and Buehler, MIT). The repo's main value is the trained checkpoints and the evaluation scripts (``evaluate_model.py`` for forward prediction, ``evaluate_inverse_model.py`` for inverse inference), which reproduce the paper's 98.5% forward accuracy and 82% exact rule-matrix matching. The ``Experiments/Exp4_PDE_to_CA_v6.ipynb`` notebook is the most scientifically interesting artifact: it shows the full Allen-Cahn frame-spacing study and the PDE-to-CA workflow where a continuous phase-field trajectory is binarized, fed to the inverse model, and the inferred CA rules are used to generate a surrogate trajectory. The architecture uses ``x-transformers`` with rotary position embeddings and flash attention. The main practical limitation for financial users is that the tokenization and rule-matrix format are specific to binary deterministic 2D CA — applying this to financial time-series data would require a significant reformulation of the input representation.
+
+Practical details: primary language Python; conda environment files for both Windows (``AutomataGPT.yml``) and Linux (``AutomataGPT_linux.yml``). Install with ``conda env create -f AutomataGPT_linux.yml && conda activate automatagpt``, then ``git lfs pull`` to retrieve large files. Datasets (``CA_datasets/``) and checkpoints (``model_parameters/``) are gitignored locally and must be downloaded from HuggingFace separately using ``huggingface_hub.snapshot_download``. Apache 2.0 license. Repository by the lamm-mit lab (Markus J. Buehler group, MIT).
+
+`View repository <https://github.com/lamm-mit/AutomataGPT>`__

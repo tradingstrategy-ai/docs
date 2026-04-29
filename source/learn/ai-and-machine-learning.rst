@@ -2266,3 +2266,16 @@ Key metrics: FED2Port achieved the highest Sharpe ratio across all 9 portfolio c
 Data: S&P 500, DAX, KOSPI (high-risk); BND, BSV, VCIT (low-risk bond funds). Daily data from Yahoo Finance, Jan 2010 to Dec 2022. Training: 2010-2014, Testing: 2015-2022. 9 two-class portfolio combinations.
 
 `Read the paper <https://www.mdpi.com/2073-8994/16/3/283>`__
+
+AutomataGPT: Transformer-Based Forecasting and Ruleset Inference for Two-Dimensional Cellular Automata
+------------------------------------------------------------------------------------------------------
+
+Jaime A. Berkovich, Noah S. David, and Markus J. Buehler (MIT) train a decoder-only transformer on approximately one million simulated trajectories spanning 100 distinct two-dimensional binary deterministic cellular automata rule sets. The model is evaluated on two tasks: forward prediction of the next CA state given a rule matrix and initial condition, and inverse inference of the rule matrix given only the initial condition and a future state. A third application converts continuous dynamical systems — specifically the Allen-Cahn phase-field equation — into CA surrogates by binarizing continuous fields and inferring local update rules that replicate the observed spatiotemporal dynamics. The work is published in Advanced Science and the preprint is on arXiv (2506.17333).
+
+Our summary: the paper's central bet is that large-scale synthetic pretraining over a wide region of rule space transfers to unseen rules at test time, avoiding the need for manual feature engineering or domain-specific rule design. The tokenization scheme is key: grid states are flattened to token sequences, rule matrices are appended as structured tokens, and the model operates entirely in discrete token space. This makes the architecture applicable to any system that can be expressed as a binary 2D lattice update, which is a large class of reaction-diffusion, traffic, and spatial game models. The Allen-Cahn experiment is the most striking: a purely synthetic-data-trained model correctly infers local CA rules that reproduce phase separation dynamics from a continuous PDE, suggesting that transformer pretraining over cellular automata rule space may be a viable path to learning surrogate simulators for partial differential equations without physics-specific inductive biases. Limitations: the experiments use 16×16 grids, radius-1 and radius-2 neighborhoods, and 100-ruleset training pools — scaling to larger grids, longer horizons, or physically realistic PDE regimes remains an open question. Code and checkpoints are available at `github.com/lamm-mit/AutomataGPT <https://github.com/lamm-mit/AutomataGPT>`__.
+
+Data and code: approximately one million CA trajectories generated synthetically (no real-world data). Training datasets and pre-trained model checkpoints available on HuggingFace at ``lamm-mit/AutomataGPT``. Apache 2.0 license.
+
+Key metrics: one-step forward prediction accuracy of 98.5% on unseen rule sets; rule reconstruction functional accuracy up to 96%; exact rule-matrix match accuracy of 82%. The inverse model generalizes to unseen rule sets it was not trained on (extrapolation setting), with performance degrading gracefully rather than collapsing.
+
+`Read the paper <https://arxiv.org/abs/2506.17333>`__
