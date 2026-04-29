@@ -2275,3 +2275,16 @@ Testing seven forecasting approaches on SPY data from 2008 to 2025, NextVoL achi
 By Concretum Research.
 
 `Read the blog post <https://concretumgroup.substack.com/p/why-your-volatility-forecast-matters>`__.
+
+8 Reasons to Stop Using MACD (and Use This Instead) – with Alex Spiroglou
+--------------------------------------------------------------------------
+
+MACD is one of the most widely used momentum indicators in technical analysis, but it carries a structural flaw that makes its readings incomparable across markets, securities, and time periods. The traditional MACD measures the gap between two exponential moving averages in absolute price terms, which means a reading of 10 on the S&P 500 tells you something entirely different from a reading of 10 on natural gas or gold. In this post, Alex Spiroglou — who won the 2022 Charles H. Dow Award for his research on MACD-V — walks through eight concrete reasons why the standard MACD misleads traders, and presents MACD-V as a volatility-normalized replacement that solves these problems systematically.
+
+MACD-V divides the traditional MACD reading by the 26-period Average True Range (ATR) and scales by 100: MACD-V = [(12-EMA − 26-EMA) / ATR(26)] × 100. This normalization removes the effect of price level and absolute volatility, making readings genuinely comparable across assets and time. A reading of 1.5 on gold means the same thing as a reading of 1.5 on crude oil or the German Bund — overbought and oversold thresholds become universal across asset classes, timeframes, and decades. The indicator effectively transforms MACD from a price-denominated momentum gauge into a volatility-denominated one, eliminating the market-specific calibration problem that makes standard MACD unsuitable for systematic multi-market trading systems.
+
+By Andrew Swanscott, Better System Trader.
+
+Mentioned by `@bettersystrader <https://x.com/bettersystrader>`__ in `this discussion <https://x.com/bettersystrader/status/2048781012541280395>`__.
+
+`Read the blog post <https://bettersystemtrader.com/8-reasons-to-stop-using-macd-and-use-this-instead-with-alex-spiroglou/>`__.
