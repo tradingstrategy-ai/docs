@@ -1917,3 +1917,16 @@ Key metrics: TradeFM achieves 2-3x lower distributional error than Compound Hawk
 Mentioned by Iqbal Zainal (`@yllvar <https://www.linkedin.com/in/yllvar/>`__) in `this discussion <https://www.linkedin.com/posts/yllvar_technical-research-publication-ugcPost-7452713814543761408-KFAI/>`__: "The 2.0 Sharpe Trap can be mitigated with TradeFM."
 
 `Read the paper <https://arxiv.org/abs/2602.23784v1>`__
+
+Pairs Trading - Selection via Scoring Systems
+---------------------------------------------
+
+Lukas Reichmann develops a cointegration-based pairs trading selection framework that replaces the usual single-factor squared-sum-of-distances ranking with an aggregated score built from statistically significant panel-regression coefficients. The paper estimates which inter-pair characteristics predict future mean-reversion activity, then uses those coefficients to rank candidate stock pairs. It evaluates both extended and updated trading windows, compares 20-pair and 50-pair selections, and tests performance across crisis and non-crisis periods. Published in Finance Research Letters, Vol. 93, March 2026, article 109642.
+
+Our summary: the paper is useful because it treats pair selection as a forecasting problem rather than a purely descriptive closeness screen. The score combines training-period mean reversion, squared spread distance, spread volatility, shared industry classification, momentum-rank distance, and volume correlation, then applies the resulting ranking out of sample. This addresses a common weakness of SSD-based selection: it often prefers pairs with tight, low-variance spreads that look stable but offer limited trading opportunity. The practical result is nuanced. The regression score improves returns and risk-adjusted performance versus the SSD benchmark, but the strategy still fails to beat the S&P 500 during a market regime dominated by COVID disruption and mega-cap index performance.
+
+Data and code: the study uses Refinitiv Eikon stock-level data for all firms that were S&P 500 constituents at any point between 2010 and 2023. Regression scoring is calibrated on 2010-2019 data and applied to trading from 2020-2023, with an alternative test starting in July 2021 to reduce direct COVID-period effects. Data is available on request; no public code repository was identified.
+
+Key metrics: the best-reported configuration uses lambda = 2 with six-month training and six-month trading periods. Including the COVID period, the updated 20-pair scoring strategy earns a 20.59% cumulative gross return and 11.33% net return after transaction costs, versus 4.06% gross and -5.49% net for the SSD 20-pair benchmark. Per six-month trading period, the 20-pair scoring strategy earns 2.57% gross and 1.42% net with 3.34% volatility, a 0.5160 gross Sharpe, and a 0.1691 net-of-cost Sharpe. The extended 20-pair scoring variant earns 20.16% gross and 10.96% net, with a 0.5024 gross Sharpe and 0.1558 net Sharpe. Transaction costs are modeled as 10 bps commission plus 15 bps market impact, adjusted for two trades per pair. The scoring method delivers roughly 17% higher post-cost returns than the baseline, but does not beat the reference index, which gained about 46% over the same period.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S154461232600173X>`__
