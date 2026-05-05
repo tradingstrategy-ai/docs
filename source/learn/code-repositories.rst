@@ -218,3 +218,29 @@ Our summary: the codebase is the companion implementation for the paper `Automat
 Practical details: primary language Python; conda environment files for both Windows (``AutomataGPT.yml``) and Linux (``AutomataGPT_linux.yml``). Install with ``conda env create -f AutomataGPT_linux.yml && conda activate automatagpt``, then ``git lfs pull`` to retrieve large files. Datasets (``CA_datasets/``) and checkpoints (``model_parameters/``) are gitignored locally and must be downloaded from HuggingFace separately using ``huggingface_hub.snapshot_download``. Apache 2.0 license. Repository by the lamm-mit lab (Markus J. Buehler group, MIT).
 
 `View repository <https://github.com/lamm-mit/AutomataGPT>`__
+
+FinRL: Financial Reinforcement Learning
+---------------------------------------
+
+FinRL provides a framework that supports various markets, SOTA DRL algorithms, benchmarks of many quant finance tasks, live trading, etc.
+
+Reinforcement learning (RL) trains an agent to solve tasks by trial and error, while DRL uses deep neural networks as function approximators. DRL balances exploration (of uncharted territory) and exploitation (of current knowledge), and has been recognized as a competitive edge for automated trading. DRL framework is powerful in solving dynamic decision making problems by learning through interactions with an unknown environment, thus exhibiting two major advantages: portfolio scalability and market model independence. Automated trading is essentially making dynamic decisions, namely to decide where to trade, at what price, and what quantity, over a highly stochastic and complex stock market. Taking many complex financial factors into account, DRL trading agents build a multi-factor model and provide algorithmic trading strategies, which are difficult for human traders.
+
+`Visit Python project page <https://github.com/AI4Finance-Foundation/FinRL>`__.
+
+Universal Portfolios
+--------------------
+
+The purpose of this Python package is to put together different Online Portfolio Selection (OLPS) algorithms and provide unified tools for their analysis.
+
+In short, the purpose of OLPS is to choose portfolio weights in every period to maximize its final wealth. Examples of such portfolios could be the Markowitz portfolio or the Universal portfolio. There is currently an active research in the area of online portfolios and even though the results are mostly theoretical, algorithms for practical use start to appear.
+
+Several state-of-the-art algorithms are implemented, based on my understanding of the available literature. Contributions or corrections are more than welcomed.
+
+- Examples contains two Python Notebooks:
+    - Online Portfolios : explains the basic use of the library. Script sequence, various options, method arguments, and a strategy template to get you started.
+    - Modern Portfolio Theory : goes deeper into the OLPS principle and the tools developped in this library to approach it.
+- `universal.algos` hosts the implementations of various OLPS algorithms from the literature
+- `universal.result` computes the portfolio wealth from the weights and various metrics on the strategy's performance.
+
+`Visit Python project page <https://github.com/Marigold/universal-portfolios>`__.

@@ -42,6 +42,7 @@ Algorithmic trading learning resources
    market-regimes
    volatility
    time-series
+   signal-decomposition
 
 .. toctree::
    :maxdepth: 1
@@ -70,7 +71,6 @@ Algorithmic trading learning resources
    books
    courses
    tutorials
-   ai-and-machine-learning
    python
    jupyter-notebook
    algorithmic-trading-frameworks
