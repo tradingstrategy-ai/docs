@@ -27,3 +27,25 @@ There are several top tier universities offering courses on the blockchaine educ
 
 `See this Cointelegraph post for details <https://cointelegraph-com.cdn.ampproject.org/c/s/cointelegraph.com/news/crypto-and-blockchain-education-becomes-priority-at-top-universities/amp>`__.
 
+Master AI-Driven Algorithmic Trading
+------------------------------------
+
+This is an intense online training program about Python techniques for algorithmic trading. By signing up to this program you get access to 150+ hours of live/recorded instruction, 1,200+ pages PDF as well as 5,000+ lines of Python code and 60+ Jupyter Notebooks (read the 16 week study plan). Master AI-Driven Algorithmic Trading, get started today.
+
+`Read more <https://home.tpq.io/certificates/pyalgo/>`__.
+
+Crypto Trading Using FinRL
+--------------------------
+
+Explaining crypto trading using FinRL.
+
+`Watch the video <https://www.youtube.com/watch?v=aJAbgJf6AFM&feature=youtu.be>`__
+
+Stock Trading AI with FinRL in Python
+-------------------------------------
+
+- Wrangling
+- Trading and fitting
+- Backtesting against mean-variance optimised portfolio
+
+`Watch the video <https://www.youtube.com/watch?v=OrqffjqkklM&list=WL&index=1>`__
