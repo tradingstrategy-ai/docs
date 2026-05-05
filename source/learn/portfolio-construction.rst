@@ -1,0 +1,182 @@
+.. meta::
+   :description: Research papers and posts on portfolio optimization, hierarchical risk parity, correlation estimation, and allocation frameworks.
+
+Portfolio Construction
+~~~~~~~~~~~~~~~~~~~~~~
+
+Portfolio construction is the discipline of combining individual trading signals and assets into a coherent portfolio that optimizes risk-adjusted returns while respecting practical constraints. The field has evolved from Markowitz's foundational mean-variance framework — still the theoretical baseline — through hierarchical risk parity, factor-based allocation, and deep reinforcement learning approaches. A persistent challenge in portfolio construction is that estimated expected returns and covariances are noisy, causing naive optimization to amplify estimation errors and produce unstable, concentrated portfolios.
+
+This collection covers the full portfolio construction toolkit: Markowitz-based optimization with regularization and constraints, hierarchical risk parity (HRP) that avoids matrix inversion, clustering-based approaches for cardinality-constrained portfolios, dynamic Black-Litterman models, and the practical challenges of volatility targeting in multi-asset portfolios. Key themes include the trade-off between model complexity and estimation robustness, the role of correlation in position sizing, and how portfolio construction decisions can matter as much as the underlying signal quality.
+
+Related topics include :doc:`Risk Management <./risk-management>` for position sizing and drawdown control, :doc:`Volatility Modeling <./volatility>` for the covariance inputs to portfolio optimization, and :doc:`Equity Factors <./equity-factors>` for factor-based allocation frameworks.
+
+Building Diversified Portfolios that Outperform Out-of-Sample
+--------------------------------------------------------------
+
+The paper introducing Hierarchical Risk Parity (HRP), a portfolio allocation algorithm that uses hierarchical clustering of the asset correlation matrix to create more stable and diversified portfolios than classical mean-variance optimization. HRP avoids the matrix inversion that amplifies estimation errors in standard approaches, producing portfolios that consistently outperform out-of-sample.
+
+By Marcos López de Prado.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678>`__
+
+Clustering in Cardinality-Constrained Portfolio Optimization
+------------------------------------------------------------
+
+This paper combines cardinality constraints with the classical Markowitz mean-variance model, using spectral clustering to group stocks by their return characteristics. The clustering step reduces dimensionality and achieves an optimal balance of risk and return while keeping the portfolio manageable in terms of number of holdings.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4914246>`__.
+
+Optimal Allocation to Cryptocurrencies in Diversified Portfolios
+-----------------------------------------------------------------
+
+This paper applies four quantitative methods for optimal allocation to Bitcoin and Ether within alternative and balanced portfolios. Using roll-forward historical simulations, all four allocation methods produce a persistent positive allocation to Bitcoin and Ether with a median allocation of about 2.7%, emphasizing the diversification benefits of cryptocurrencies as an asset class.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4217841>`__
+
+Efficient Portfolio Estimation in Large Risky Asset Universes
+--------------------------------------------------------------
+
+This paper develops a constrained sparse regression approach for large-dimensional portfolio optimization that produces stable, interpretable portfolio weights without requiring full covariance matrix estimation. The method handles universes of hundreds or thousands of assets while maintaining the convexity properties needed for tractable optimization.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851174>`__
+
+Covariance Implied Risk Factors
+---------------------------------
+
+This paper develops a heteroskedastic PCA approach that extracts equity risk factors from the covariance structure of returns, allowing factor loadings to vary with market conditions. The method identifies more stable and predictive risk factors than standard PCA, providing better covariance matrix estimates for portfolio construction.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827687>`__
+
+Asset Allocation: From Markowitz to Deep Reinforcement Learning
+----------------------------------------------------------------
+
+This paper benchmarks nine portfolio allocation strategies ranging from classical Markowitz mean-variance optimization to deep reinforcement learning approaches, providing a comprehensive comparison of their risk-adjusted performance across different market environments.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851166>`__
+
+Optimizing Portfolio Performance through Clustering and Sharpe Ratio-Based Optimization
+----------------------------------------------------------------------------------------
+
+This paper combines K-means clustering of assets with Sharpe ratio-based optimization at the cluster level, creating a two-stage approach that first groups correlated assets and then optimizes across clusters. The method improves diversification and out-of-sample performance compared to single-stage optimization.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851175>`__
+
+Dynamic Black-Litterman
+------------------------
+
+This paper extends the Black-Litterman framework to a continuous-time dynamic setting, allowing investor views to evolve and the model to adapt to changing market conditions. The dynamic formulation provides a principled way to incorporate time-varying beliefs about expected returns while maintaining the model's property of producing well-diversified portfolios.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851176>`__
+
+Dynamic Mean-Variance Portfolio Allocation under Regime-Switching Jump-Diffusions with Absorbing Barriers
+----------------------------------------------------------------------------------------------------------
+
+This paper solves the dynamic mean-variance portfolio allocation problem under a regime-switching jump-diffusion model with absorbing barriers representing ruin. The optimal allocation policy depends on the current regime and adapts to regime transitions, providing a rigorous framework for regime-aware portfolio construction.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827694>`__
+
+Why Mean-Variance Optimization Breaks Down
+------------------------------------------
+
+Mean-Variance Optimization (MVO) is a central framework for portfolio construction, yet practitioners quickly encounter a paradox: the mathematically "optimal" portfolio built from estimated inputs is often unstable, highly leveraged, and disappoints out-of-sample. This is not a minor implementation detail—it is a structural consequence of combining a high-dimensional optimizer with noisy estimates of expected returns and covariances.
+
+This article develops MVO from first principles and explains, in a mathematically explicit way, why raw MVO tends to maximize estimation error. It surveys the spectrum of practical fixes organized around two levers: improving or regularizing the inputs, and constraining or regularizing the optimizer. The unifying theme is that almost every successful fix works by injecting bias in exchange for a large reduction in variance of the resulting portfolio weights.
+
+By VertoxQuant.
+
+`Read the post <https://www.vertoxquant.com/p/why-mean-variance-optimization-breaks>`__
+
+Fixing Position Sizing by Accounting for Inter-Asset Correlations
+-----------------------------------------------------------------
+
+A practical account of discovering and fixing a crude volatility targeting formula that was causing the portfolio to miss its risk targets. The author found that a simplistic position sizing approach was capping the portfolio too aggressively, resulting in realized volatility at roughly half of the intended target.
+
+The article walks through the correlation fix that resolved the discrepancy, explaining how accounting for inter-asset correlations in the volatility targeting formula allowed the portfolio to properly hit its intended risk profile.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/i-wasted-months-sizing-positions>`__.
+
+How Binary Signals Create Inefficient Capital Allocation in Multi-Asset Frameworks
+-----------------------------------------------------------------------------------
+
+An exploration of a bug encountered while building scalable trading infrastructure designed to handle multiple asset classes, exchanges, and strategy types from a centralized codebase. When testing a binary signal implementation, the system was producing a very low gross exposure profile with a mean of just 10.9% and a median of 5%.
+
+The article explains how binary signals (on/off) can create inefficient capital allocation when combined with position sizing rules in a multi-asset framework. The author demonstrates how to rethink signal handling to improve exposure efficiency.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/binary-signal-efficiency-when-scalable>`__.
+
+Strategic Drag: Accepting Lower Returns for Better Risk-Adjusted Performance
+----------------------------------------------------------------------------
+
+Research Article #69 from Trading Research Hub. Explores the concept of "strategic drag" in systematic trading, which refers to the intentional acceptance of reduced raw returns in exchange for improved risk-adjusted performance. The article examines how deliberate constraints on a trading strategy can paradoxically improve its overall utility.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/the-art-of-strategic-drag-research>`__.
+
+Building Uncorrelated Strategy Portfolios and Detecting Edge Decay
+------------------------------------------------------------------
+
+An article exploring the author's evolving approach to seeking trading edge and the uncomfortable reality that many carefully constructed strategies will fail in live trading. The article contrasts the comfort of established time-tested strategies like trend-following and mean reversion with the challenges of developing new data-driven approaches. It discusses building robust, uncorrelated trading systems and the importance of rapid edge decay detection.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/in-search-of-alpha-navigating-the>`__.
+
+Using Rolling Correlation to Hit Volatility Targets in Crypto Trend Following
+------------------------------------------------------------------------------
+
+A practical discussion on incorporating correlation estimates into position sizing for a long/short crypto trend following portfolio. The author was targeting 40% annualised volatility but consistently hitting only 20%, because the sizing formula assumed perfect correlation among positions.
+
+The fix involved adding a rolling correlation estimate to the sizing formula. The author found R² values of 0.25–0.4 for correlation predictability in crypto — consistent with assumptions in Rob Carver's work — and confirmed that using the rolling correlation estimate allowed the portfolio to consistently hit its volatility target.
+
+By pedma7.
+
+`Read the post <https://x.com/pedma7/status/2020946617344389474>`__.
+
+Portfolio Backtest and Trading Techniques
+------------------------------------------
+
+This post explores why combining multiple independent trading strategies into a capital-aware portfolio is more effective than searching for a single "holy grail" strategy. The author argues that over-optimizing, constant tweaking, and adding complex rules create great backtests that fail in live markets.
+
+The real key is building a team of robust strategies that work well together across different market conditions. By mixing strategies across different assets, timeframes, frequencies, and styles, and ensuring they have low correlation, traders can create a portfolio that compounds returns while dramatically reducing drawdowns, referencing Parrondo's Paradox where combining "losing" strategies can create a winning approach.
+
+By Build Alpha.
+
+`Read the blog post <https://www.buildalpha.com/portfolio-backtest-trading/>`__.
+
+Understanding Covariance Matrices for Systematic Portfolio Allocation
+----------------------------------------------------------------------
+
+An educational article explaining the covariance matrix and its role in systematic portfolio allocation. The article breaks down this key quantitative concept in accessible terms, explaining why understanding asset correlations is essential for managing portfolio risk.
+
+The article demonstrates how high correlations between portfolio holdings increase the risk that the entire portfolio moves adversely during market stress. It covers how to construct and interpret a covariance matrix, and how this information can be used to build more diversified portfolios.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/what-is-a-covariance-matrix-for-optimal>`__.
+
+Building a Multi-Asset Trading Model from Scratch
+-------------------------------------------------
+
+Part of a series on building a multi-strategy portfolio from scratch, this article covers the practical challenges of managing a multi-asset trading model. The author documents the process of developing and deploying an automated strategy portfolio.
+
+The article addresses real-world implementation challenges including data management, signal aggregation across assets, and the operational complexity that grows as more instruments are added to a systematic trading portfolio.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/handling-a-multi-asset-model>`__.
+
+Volatility Drag, the Kelly Criterion, and Portfolio Position Sizing
+--------------------------------------------------------------------
+
+A post examining the relationship between volatility drag, the Kelly criterion, and optimal portfolio construction. The key insight is that the highest expected compound growth rate is achieved when portfolio volatility equals the Sharpe ratio — which corresponds to Kelly criterion sizing.
+
+The post also addresses how variance drag diminishes for individual positions within a diversified portfolio. Because the risk penalty to idiosyncratic risk scales with the square of the portfolio weight, a 10% allocation reduces the importance of a component's idiosyncratic variance by a factor of 100.
+
+By Ptuomov.
+
+`Read the post <https://x.com/ptuomov/status/2031639817574834344>`__

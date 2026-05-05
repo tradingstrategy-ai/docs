@@ -24,6 +24,46 @@ Algorithmic trading learning resources
 
 .. toctree::
    :maxdepth: 1
+   :caption: Strategy Research
+
+   momentum
+   trend-following
+   mean-reversion
+   statistical-arbitrage
+   carry-trade
+   technical-indicators
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Market Analysis
+
+   order-flow
+   market-microstructure
+   market-regimes
+   volatility
+   time-series
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Methods & Systems
+
+   machine-learning
+   portfolio-construction
+   risk-management
+   backtesting
+   algorithmic-trading
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Asset Classes
+
+   cryptocurrency
+   equity-factors
+   defi-amm
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Reference
 
    influencers
    conference-presentations
@@ -31,9 +71,6 @@ Algorithmic trading learning resources
    courses
    tutorials
    ai-and-machine-learning
-   papers
-   papers-stat-arb
-   blog-posts
    python
    jupyter-notebook
    algorithmic-trading-frameworks
