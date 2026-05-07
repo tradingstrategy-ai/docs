@@ -423,6 +423,13 @@ from reconstructed equity curves and deposit/withdrawal histories. The process i
 See `eth_defi.hyperliquid.combined_analysis <https://web3-ethereum-defi.tradingstrategy.ai/api/hyperliquid/_autosummary_hyperliquid/eth_defi.hyperliquid.combined_analysis.html>`__
 for the Hypercore share price derivation.
 
+Vault technical risk
+--------------------
+
+The data contains vault technical risk labels. These are based on the beta vault technical risk framework.
+
+See `this blog post for details <https://tradingstrategy.ai/blog/announcing-vault-technical-risk-framework-beta>`__.
+
 Stablecoin vs. crypto-denominated vaults
 ----------------------------------------
 
