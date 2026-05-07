@@ -1,29 +1,19 @@
 Vault data
 ==========
 
-This document describes `the format of DeFi vault data <https://tradingstrategy.ai/trading-view/vaults>`__.
+This document describes `the vault data format <https://tradingstrategy.ai/trading-view/vaults>`__ available over Trading Strategy API.
 
-- Available data includes real time summaries of the vaults and historical performance data
-- The summary data is available as JSON blob
-- Separate API endpoints are available for stablecoin vaults only (500+) and all vaults (25,000+)
-- See the `DeFi dataset page <https://tradingstrategy.ai/trading-view/backtesting>`__ on how to get an API key and the download link for the data
-- See `risk levels and categories here <https://tradingstrategy.ai/blog/announcing-vault-technical-risk-framework-beta>`__
-- Metrics are computed by `calculate_lifetime_metrics() <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/eth_defi.research.vault_metrics.calculate_lifetime_metrics.html>`__
+Vault datasets are
 
-Currently over twenty `EVM chains <https://tradingstrategy.ai/glossary/evm-compatible>`__ are covered.
+1. Vault metadata and real-time summaries
+2. Historical returns data
 
-Summary data description
-------------------------
+Vault metadata format
+---------------------
 
-Here is the description of the summary JSON data for all vaults.
-Each vault record is a single row produced by
-`calculate_vault_record() <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/eth_defi.research.vault_metrics.calculate_vault_record.html>`__.
+The vault metadata contains descriptions of all vaults. 
 
-See also
-
-- `CAGR <https://tradingstrategy.ai/glossary/cagr>`__
-- `Sharpe Ratio <https://tradingstrategy.ai/glossary/sharpe>`__
-- `TVL <https://tradingstrategy.ai/glossary/total-value-locked-tvl>`__
+The vault metadata is served as a JSON file.
 
 The field descriptions:
 
@@ -49,23 +39,23 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``lifetime_return``                  | Lifetime Return (Gross)   | All‑time gross return from first to last price as a decimal fraction (e.g., 0.10 = 10%).                                           |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``lifetime_return_net``              | Lifetime Return (Net)     | All‑time net return after fees as a decimal fraction. Present only when fee data is available.                                      |
+| ``lifetime_return_net``              | Lifetime Return (Net)     | All‑time net return after fees as a decimal fraction. Present only when fee data is available.                                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``cagr``                             | CAGR (Gross)              | Annualised gross return (Compound Annual Growth Rate) over the full history.                                                        |
+| ``cagr``                             | CAGR (Gross)              | Annualised gross return (Compound Annual Growth Rate) over the full history.                                                       |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``cagr_net``                         | CAGR (Net)                | Annualised net return after fees over the full history.                                                                             |
+| ``cagr_net``                         | CAGR (Net)                | Annualised net return after fees over the full history.                                                                            |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``three_months_returns``             | 3M Return (Gross)         | Absolute gross return over the last \~90 days as a decimal fraction.                                                               |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``three_months_returns_net``         | 3M Return (Net)           | Absolute net return over the last \~90 days after fees as a decimal fraction.                                                      |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``three_months_cagr``                | 3M CAGR (Gross)           | Annualised gross return computed from the last \~90 days window.                                                                    |
+| ``three_months_cagr``                | 3M CAGR (Gross)           | Annualised gross return computed from the last \~90 days window.                                                                   |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``three_months_cagr_net``            | 3M CAGR (Net)             | Annualised net return after fees computed from the last \~90 days window.                                                           |
+| ``three_months_cagr_net``            | 3M CAGR (Net)             | Annualised net return after fees computed from the last \~90 days window.                                                          |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``three_months_sharpe``              | 3M Sharpe Ratio (Gross)   | Sharpe ratio over the last \~90 days using daily returns annualised to 365. Higher indicates better risk‑adjusted performance.      |
+| ``three_months_sharpe``              | 3M Sharpe Ratio (Gross)   | Sharpe ratio over the last \~90 days using daily returns annualised to 365. Higher indicates better risk‑adjusted performance.     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``three_months_sharpe_net``          | 3M Sharpe Ratio (Net)     | Net Sharpe ratio over the last \~90 days. Currently calculated from the same daily series as gross and may be identical.            |
+| ``three_months_sharpe_net``          | 3M Sharpe Ratio (Net)     | Net Sharpe ratio over the last \~90 days. Currently calculated from the same daily series as gross and may be identical.           |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``three_months_volatility``          | 3M Volatility (Ann.)      | Annualised volatility over the last \~90 days: daily standard deviation scaled by sqrt(365).                                       |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,13 +63,13 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``one_month_returns_net``            | 1M Return (Net)           | Absolute net return over the last \~30 days after fees as a decimal fraction.                                                      |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``one_month_cagr``                   | 1M CAGR (Gross)           | Annualised gross return computed from the last \~30 days window.                                                                    |
+| ``one_month_cagr``                   | 1M CAGR (Gross)           | Annualised gross return computed from the last \~30 days window.                                                                   |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``one_month_cagr_net``               | 1M CAGR (Net)             | Annualised net return after fees computed from the last \~30 days window.                                                           |
+| ``one_month_cagr_net``               | 1M CAGR (Net)             | Annualised net return after fees computed from the last \~30 days window.                                                          |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``denomination``                     | Denomination              | Underlying denomination token (e.g., USDC). Indicates the unit of account for share price and TVL.                                 |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``normalised_denomination``          | Normalised Denomination   | Canonical token symbol after normalisation (e.g., ``USDC.e`` → ``USDC``).                                                         |
+| ``normalised_denomination``          | Normalised Denomination   | Canonical token symbol after normalisation (e.g., ``USDC.e`` → ``USDC``).                                                          |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``denomination_slug``                | Denomination Slug         | Lower‑case slug of the normalised denomination, used for filtering.                                                                |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,25 +83,25 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``years``                            | Age (Years)               | Vault observation window length in years from first to last data point.                                                            |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``mgmt_fee``                         | Management Fee            | Annual management fee as a decimal (e.g., 0.02 = 2%). May be missing if not detected.                                             |
+| ``mgmt_fee``                         | Management Fee            | Annual management fee as a decimal (e.g., 0.02 = 2%). May be missing if not detected.                                              |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``perf_fee``                         | Performance Fee           | Performance fee as a decimal (e.g., 0.20 = 20% of profits). May be missing if not detected.                                       |
+| ``perf_fee``                         | Performance Fee           | Performance fee as a decimal (e.g., 0.20 = 20% of profits). May be missing if not detected.                                        |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``deposit_fee``                      | Deposit Fee               | Fee applied on deposits as a decimal (e.g., 0.01 = 1%). May be null if no fee.                                                    |
+| ``deposit_fee``                      | Deposit Fee               | Fee applied on deposits as a decimal (e.g., 0.01 = 1%). May be null if no fee.                                                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``withdraw_fee``                     | Withdrawal Fee            | Fee applied on withdrawals as a decimal (e.g., 0.01 = 1%). May be null if no fee.                                                 |
+| ``withdraw_fee``                     | Withdrawal Fee            | Fee applied on withdrawals as a decimal (e.g., 0.01 = 1%). May be null if no fee.                                                  |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``fee_mode``                         | Fee Mode                  | How fees are applied: ``externalised`` (charged at deposit/withdraw) or ``internalised`` (deducted from NAV).                      |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``fee_internalised``                 | Fee Internalised          | Boolean shorthand: ``true`` if fees are deducted from NAV (share price already reflects fees).                                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``fee_label``                        | Fee Label                 | Human‑readable fee summary, e.g., ``2% / 20%`` or including deposit/withdrawal fees if present.                                   |
+| ``fee_label``                        | Fee Label                 | Human‑readable fee summary, e.g., ``2% / 20%`` or including deposit/withdrawal fees if present.                                    |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``lockup``                           | Lock‑up (Estimated)       | Estimated lock‑up period before funds can be withdrawn. May be zero or missing.                                                    |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``event_count``                      | Deposit/Withdraw Events   | Total number of observed deposit and redeem events for the vault.                                                                  |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``protocol``                         | Protocol                  | Name of the protocol implementing the vault (e.g., Yearn, Beefy).                                                                 |
+| ``protocol``                         | Protocol                  | Name of the protocol implementing the vault (e.g., Yearn, Beefy).                                                                  |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``risk``                             | Risk (Category)           | Technical risk classification object; renderable to a human label via its API.                                                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,9 +129,11 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``last_share_price``                 | Last Share Price          | Most recent share price observation in the denomination currency.                                                                  |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``features``                         | Detected Features         | List of detected vault features (e.g., ERC‑4626/7540 capabilities) as feature names.                                              |
+| ``features``                         | Detected Features         | List of detected vault features (e.g., ERC‑4626/7540 capabilities) as feature names.                                               |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``flags``                            | Vault Flags               | Set of `VaultFlag <https://web3-ethereum-defi.tradingstrategy.ai/api/vault/_autosummary_vault/eth_defi.vault.flag.VaultFlag.html>`__ values indicating vault status (e.g., ``deposit``, ``redeem``, ``paused``, ``morpho_issues``). |
+| ``flags``                            | Vault Flags               | Set of `VaultFlag <https://web3-ethereum-defi.tradingstrategy.ai/api/vault/_autosummary_vault/                                     |
+|                                      |                           | eth_defi.vault.flag.VaultFlag.html>`__ values indicating vault status (e.g., ``deposit``, ``redeem``, ``paused``,                  |
+|                                      |                           | ``morpho_issues``).                                                                                                                |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``notes``                            | Notes                     | Human‑readable note text for the vault (e.g., risk warnings, Morpho flag summaries). May be ``null``.                              |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,7 +149,7 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``redemption_next_open``             | Redemption Next Open      | Estimated timestamp when redemptions will next open. ``null`` if unknown or already open.                                          |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``available_liquidity``              | Available Liquidity       | Available liquidity for withdrawals in the denomination currency (lending vaults). ``null`` if not applicable.                      |
+| ``available_liquidity``              | Available Liquidity       | Available liquidity for withdrawals in the denomination currency (lending vaults). ``null`` if not applicable.                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``utilisation``                      | Utilisation               | Current utilisation ratio (0.0–1.0) for lending vaults. ``null`` if not applicable.                                                |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +163,8 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``cumulative_volume``                | Cumulative Volume         | Cumulative trading volume of the vault (Hypercore). ``null`` for other protocols.                                                  |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``netflow``                          | Netflow Metrics           | List of `NetflowMetrics <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/eth_defi.research.vault_metrics.html>`__ objects for 1d, 7d, 30d deposit/withdrawal flows. ``null`` if not available.      |
+| ``netflow``                          | Netflow Metrics           | List of `NetflowMetrics <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/                         |
+|                                      |                           | eth_defi.research.vault_metrics.html>`__ objects for 1d, 7d, 30d deposit/withdrawal flows. ``null`` if not available.              |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``description``                      | Description               | Long‑form vault description from offchain metadata (Euler, Lagoon, etc.). ``null`` if not available.                               |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -179,13 +172,15 @@ The field descriptions:
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``manual_review_status``             | Manual Review Status      | Manual review decision (e.g., ``"ok"``, ``"avoid"``). Currently used for Hyperliquid vaults. ``null`` if not reviewed.             |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``other_data``                       | Protocol Extension Data   | Protocol‑specific extension dict. See `other_data and Morpho flags`_ below. Empty lists for non‑Morpho vaults.                    |
+| ``other_data``                       | Protocol Extension Data   | Protocol‑specific extension dict. See `other_data and Morpho flags`_ below. Empty lists for non‑Morpho vaults.                     |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``period_results``                   | Period Results            | List of `PeriodMetrics <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/eth_defi.research.vault_metrics.PeriodMetrics.html>`__ objects for 1W, 1M, 3M, 6M, 1Y, and lifetime windows. See `Structured period metrics`_ below. |
+| ``period_results``                   | Period Results            | List of `PeriodMetrics <https://web3-ethereum-defi.tradingstrategy.ai/api/research/_autosummary_research/                          |
+|                                      |                           | eth_defi.research.vault_metrics.PeriodMetrics.html>`__ objects for 1W, 1M, 3M, 6M, 1Y, and lifetime windows.                       |
+|                                      |                           | See `Structured period metrics`_ below.                                                                                            |
 +--------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Structured period metrics
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to the legacy flat fields (``three_months_cagr``, ``one_month_returns``, etc.), each vault record
 includes a ``period_results`` list containing
@@ -231,11 +226,11 @@ Each ``PeriodMetrics`` object contains:
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``tvl_high``                         | Maximum TVL observed during the period.                                                                                            |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``ranking_overall``                  | Rank among all vaults (1 = best), based on CAGR. Requires minimum $50,000 TVL.                                                    |
+| ``ranking_overall``                  | Rank among all vaults (1 = best), based on CAGR. Requires minimum $50,000 TVL.                                                     |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``ranking_chain``                    | Rank among vaults on the same chain (1 = best). Requires minimum $10,000 TVL.                                                     |
+| ``ranking_chain``                    | Rank among vaults on the same chain (1 = best). Requires minimum $10,000 TVL.                                                      |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``ranking_protocol``                 | Rank among vaults in the same protocol (1 = best). Requires minimum $10,000 TVL.                                                  |
+| ``ranking_protocol``                 | Rank among vaults in the same protocol (1 = best). Requires minimum $10,000 TVL.                                                   |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``avg_utilisation``                  | Average utilisation over the period (lending vaults only, 0.0–1.0).                                                                |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -249,8 +244,8 @@ Rankings are calculated by
 and use net CAGR (falling back to gross when net is unavailable). Vaults are excluded from rankings if they are
 blacklisted, have zero/NaN CAGR, or fall below the TVL thresholds.
 
-``other_data`` and Morpho flags
--------------------------------
+``other_data`` field for vault-protocol specific metadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``other_data`` field is a protocol‑specific extension dict included in every vault record.
 Currently it is populated only for **Morpho** vaults; all other protocols return empty lists.
@@ -267,11 +262,14 @@ dataclass:
 +======================================+====================================================================================================================================+
 | ``morpho_vault_flags``               | List of vault‑level governance warning type strings from the Morpho Blue API. Example: ``["not_whitelisted", "short_timelock"]``.  |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``morpho_market_flags``              | List of market‑level risk warning type strings from the vault’s underlying Morpho market allocations. Example: ``["bad_debt_unrealized"]``. |
+| ``morpho_market_flags``              | List of market‑level risk warning type strings from the vault’s underlying Morpho market allocations.                              |
+|                                      | Example: ``["bad_debt_unrealized"]``.                                                                                              |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``morpho_red_flags``                 | Combined RED‑level warning types across vault and market warnings. Non‑empty when ``morpho_issues`` is in ``flags``. Example: ``["bad_debt_unrealized", "short_timelock"]``. |
+| ``morpho_red_flags``                 | Combined RED‑level warning types across vault and market warnings. Non‑empty when ``morpho_issues`` is in ``flags``.               |
+|                                      | Example: ``["bad_debt_unrealized", "short_timelock"]``.                                                                            |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``morpho_yellow_flags``              | Combined YELLOW‑level warning types. YELLOW flags do not trigger ``morpho_issues``. Example: ``["bad_debt_realized", "not_whitelisted"]``. |
+| ``morpho_yellow_flags``              | Combined YELLOW‑level warning types. YELLOW flags do not trigger ``morpho_issues``.                                                |
+|                                      | Example: ``["bad_debt_realized", "not_whitelisted"]``.                                                                             |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 When any RED‑level flags are present, the vault is automatically blacklisted
@@ -279,15 +277,16 @@ When any RED‑level flags are present, the vault is automatically blacklisted
 `VaultFlag.morpho_issues <https://web3-ethereum-defi.tradingstrategy.ai/api/vault/_autosummary_vault/eth_defi.vault.flag.VaultFlag.html>`__
 flag is added to the ``flags`` set.
 
-For `any questions join Discord <https://tradingstrategy.ai/community>`__.
-
 Historical vault data
 ---------------------
 
-In addition to the summary metrics described above, historical time series data is available
-for each vault. The data contains one row per vault per time sample, with a ``DatetimeIndex``
-in naive UTC. EVM vaults are typically sampled hourly; native protocol vaults
-(Hypercore, GRVT, Lighter, Hibachi) may have daily or irregular intervals.
+Historical vault data is the past performance metrics of a vault.
+
+- TVL
+- Total supply (as in the share token count)
+- Returns (also known as :term:`CAGR`, :term:`APY`)
+
+Historical data is served as a compressed Parquet file.
 
 General columns (all protocols)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -297,23 +296,25 @@ These columns are present for every vault regardless of protocol.
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | Column                               | Description                                                                                                                        |
 +======================================+====================================================================================================================================+
-| ``chain``                            | EVM chain id. Native protocols use synthetic ids: ``9999`` (Hypercore), ``9998`` (Lighter), ``9997`` (Hibachi), ``325`` (GRVT).     |
+| ``chain``                            | EVM chain id. Native protocols use synthetic ids: ``9999`` (Hypercore), ``9998`` (Lighter), ``9997`` (Hibachi), ``325`` (GRVT).    |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``address``                          | Vault address, lowercase. Format varies: ``0x…`` (EVM, Hypercore), ``vlt:…`` (GRVT), ``lighter-pool-…`` (Lighter), ``hibachi-vault-…`` (Hibachi). |
+| ``address``                          | Vault address, lowercase. Format varies: ``0x…`` (EVM, Hypercore), ``vlt:…`` (GRVT), ``lighter-pool-…`` (Lighter),                 |
+|                                      | ``hibachi-vault-…`` (Hibachi).                                                                                                     |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``block_number``                     | Block number of the on-chain read. Synthetic sequence number for native protocols.                                                 |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``timestamp``                        | Naive UTC timestamp (also the DatetimeIndex).                                                                                      |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``share_price``                      | Share price in denomination token units. Read from contract for ERC-4626; from API for GRVT, Lighter, Hibachi; internally calculated for Hypercore (see note below). |
+| ``share_price``                      | Share price in denomination token units. Read from contract for ERC-4626; from API for GRVT, Lighter, Hibachi;                     |
+|                                      | internally calculated for Hypercore (see note below).                                                                              |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``total_assets``                     | Total assets under management (TVL) in denomination token units.                                                                   |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``total_supply``                     | Total supply of vault share tokens.                                                                                                |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``performance_fee``                  | Performance fee at time of read (e.g. 0.20 = 20%). NaN if unknown.                                                                |
+| ``performance_fee``                  | Performance fee at time of read (e.g. 0.20 = 20%). NaN if unknown.                                                                 |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``management_fee``                   | Management fee at time of read (e.g. 0.02 = 2%). NaN if unknown.                                                                  |
+| ``management_fee``                   | Management fee at time of read (e.g. 0.02 = 2%). NaN if unknown.                                                                   |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``errors``                           | Comma-separated RPC error messages (e.g. ``"total_supply call failed"``), or empty string. Always empty for native protocols.      |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -364,7 +365,9 @@ and NaN for other protocols.
 +======================================+====================================================================================================================================+
 | ``available_liquidity``              | Available liquidity for immediate withdrawal in denomination token units.                                                          |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``utilisation``                      | Utilisation ratio (0.0–1.0). **Caution:** this measures capital deployment, not redeemable liquidity. Multi-market aggregators (Morpho, Euler Earn, IPOR) can show high utilisation yet have substantial instantly redeemable liquidity in underlying markets. |
+| ``utilisation``                      | Utilisation ratio (0.0–1.0). **Caution:** this measures capital deployment, not redeemable liquidity. Multi-market                 |
+|                                      | aggregators (Morpho, Euler Earn, IPOR) can show high utilisation yet have substantial instantly redeemable liquidity               |
+|                                      | in underlying markets.                                                                                                             |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Hypercore only columns
@@ -399,9 +402,9 @@ These columns are populated for native protocols with daily deposit/withdrawal d
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | ``daily_withdrawal_count``           | Number of withdrawal events in the latest day.                                                                                     |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``daily_deposit_usd``               | Total USD deposited in the latest day.                                                                                             |
+| ``daily_deposit_usd``                | Total USD deposited in the latest day.                                                                                             |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| ``daily_withdrawal_usd``            | Total USD withdrawn in the latest day.                                                                                             |
+| ``daily_withdrawal_usd``             | Total USD withdrawn in the latest day.                                                                                             |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Hypercore share price
@@ -420,17 +423,9 @@ from reconstructed equity curves and deposit/withdrawal histories. The process i
 See `eth_defi.hyperliquid.combined_analysis <https://web3-ethereum-defi.tradingstrategy.ai/api/hyperliquid/_autosummary_hyperliquid/eth_defi.hyperliquid.combined_analysis.html>`__
 for the Hypercore share price derivation.
 
-Stablecoin vs. non-stablecoin
------------------------------
+Stablecoin vs. crypto-denominated vaults
+----------------------------------------
 
-For vault data covering all vaults
+Currently only stablecoin-denominated vault data is available.
 
-- There are thousands of entries
-- Most of the vaults are denominated in non-stablecoin assets (e.g., ETH, BTC, altcoins)
-- Most of the vaults are stale - they never had any meaningful TVL
-
-For non-stablecoin vaults, any return data (CAGR, Sharpe, etc.) is incorrect.
-
-- These numbers reflect more of the performance of the underlying asset
-- Small cap asset denominated vaults do not have reliable exchange rate for their denomination asset
-
+Raw data for BTC-nominated and ETH-nominated vault is collected, but not published yet. Ask if needed.
