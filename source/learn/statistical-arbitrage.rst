@@ -354,3 +354,21 @@ The article demonstrates how the BTC-ETH correlation fluctuates with market cond
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/navigating-the-waves-of-correlation>`__.
+
+Pairs Trading with VectorBT® PRO
+----------------------------------
+
+A comprehensive tutorial on designing and developing a pairs trading strategy using VectorBT® PRO, covering four distinct implementation approaches each suited to a specific purpose. Topics include spread construction, signal generation, parameterization, chunking, and infinite parameter search. The tutorial integrates Optuna for strategy optimization and fine-tuning, and includes allocation analysis demonstrating how different parameter configurations affect portfolio outcomes.
+
+By Oleg Polakow (VectorBT® PRO).
+
+`Read the tutorial <https://vectorbt.pro/tutorials/pairs-trading/>`__.
+
+Quickly Make a Pairs Trading Strategy with 500 Stocks
+------------------------------------------------------
+
+A practical guide to building a market-neutral pairs trading strategy using VectorBT Pro and the full S&P 500 universe. The article walks through collecting historical price data via VectorBT's YFData, computing cointegration p-values across all pair combinations, selecting the most statistically significant pairs, and running OLS regression to generate z-score-based entry and exit signals. The backtest uses VectorBT Pro's cash sharing and position sizing features.
+
+By PyQuant News.
+
+`Read the article <https://www.pyquantnews.com/the-pyquant-newsletter/quickly-make-pairs-trading-strategy-500-stocks>`__.
