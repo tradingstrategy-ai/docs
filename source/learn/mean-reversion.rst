@@ -110,3 +110,18 @@ The article explains the rationale for running multiple strategy types simultane
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/navigating-the-market-a-dynamic-approach>`__.
+
+Short-Term Reversal Persists Globally — If Properly Measured
+-------------------------------------------------------------
+
+This paper by Stosik and Zaremba investigates why the classic short-term reversal anomaly appears to have weakened globally and shows that the signal remains alive once properly measured. The authors study 64 countries and find that the standard short-term reversal signal — based on raw past returns — earns just +0.05% per month, effectively dead. However, when the reversal signal is measured relative to industry peers rather than raw price moves, the picture changes dramatically.
+
+The key insight is that mean reversion did not disappear — it moved inside industries. By stripping out the industry component and focusing on stock-specific reversals within sectors, the authors recover a strong and economically significant signal. The industry-adjusted reversal strategy delivers +0.53% per month with a Sharpe ratio of 0.74. This suggests that much of the raw reversal signal was being contaminated by industry momentum, which moves in the opposite direction and masks the underlying mean-reversion dynamics at the individual stock level.
+
+The paper serves as a practical reminder for anyone running factor work: when a known anomaly appears dead, the first place to check is whether the measurement still aligns with the original economic logic. In this case, decomposing returns into industry and stock-specific components reveals that the short-term reversal premium remains robust and tradeable.
+
+Key metrics: standard reversal +0.05% monthly return, industry-adjusted reversal +0.53% monthly return, Sharpe ratio 0.74. Data covers 64 countries.
+
+Mentioned by Ivan Blanco Sanchez in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-finding-short-term-share-7457319174034436096-ocSC>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6630998>`__
