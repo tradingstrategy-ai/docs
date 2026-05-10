@@ -223,3 +223,18 @@ A Quantitative Trading Strategy Based on A Position Management Model
 This paper presents a quantitative trading strategy that integrates ARIMA-based return forecasting with a systematic position management model for gold and bitcoin. The framework translates probabilistic return forecasts into position sizing decisions that account for forecast confidence and current market conditions.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851167>`__
+
+Logistic Regression-Based Systematic Trading: Performance on the S&P 500
+------------------------------------------------------------------------
+
+Conrad O. Voigt (Stetson University) examines the performance of a Logistic Regression-Based Systematic Trading (LRST) strategy applied to S&P 500 stocks from January 1985 to July 2024. The strategy uses logistic regression to predict binary stock price movements - whether a stock's next-month return will exceed the cross-sectional median - based on 20-day and 12-month cumulative returns as features. The model employs a rolling 10-year window, re-estimating parameters every month to adapt to changing market conditions. Each month, the 20 stocks with the highest predicted probability of outperformance are selected into an equally weighted portfolio.
+
+The LRST strategy delivered strong long-term performance, particularly during the 1990s and early 2000s, but struggled significantly in the 2021-2024 period when it consistently trailed the S&P 500. The author attributes this recent underperformance to the rise of algorithmic trading, macroeconomic shifts, and structural market changes that the simple logistic regression model was not designed to capture. The paper concludes that while the approach shows promise, incorporating additional predictive variables such as sentiment indicators and advanced ML techniques like LSTMs could improve robustness.
+
+The data was sourced from Bloomberg and includes stocks added to or removed from the S&P 500 during the study period to mitigate survivorship bias. No code repository is provided.
+
+Key metrics (1984-2024): annualised return 24.61% (vs 12.88% for S&P 500), annualised standard deviation 26.11%, Sharpe ratio 0.7738 (vs 0.7254), Sortino ratio 0.7514, max monthly return 35.18%, min monthly return -32.47%, monthly downside deviation 7.76%.
+
+Mentioned by `Nam Nguyen in this discussion <https://www.linkedin.com/posts/namnguyento_evaluating-a-logistic-regression-trading-share-7458519268922503168-NSA5>`__.
+
+`Read the paper <https://conradvoigt.github.io/Logistic%20Regression%20Based%20Trading%20on%20the%20S&P%20500.pdf>`__
