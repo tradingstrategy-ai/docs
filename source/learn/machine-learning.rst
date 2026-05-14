@@ -1228,3 +1228,29 @@ Data: Bitcoin price, on-chain metrics, and technical analysis indicators. Publis
 Key metrics: SVM achieves 83% accuracy and 82% F1-Score for price direction prediction. Best regression model achieves RMSE 1,531.3 and R² 0.9856 for magnitude prediction. Boruta-SVM is the most profitable model through backtesting, with classification models generally outperforming regression models in trading profitability.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0952197625010875>`__
+
+Deep Learning for Short-Term Equity Trend Forecasting: A Behavior-Driven Multi-Factor Approach
+-----------------------------------------------------------------------------------------------
+
+Yuqi Luan (UZH ETH, 2025) presents a dual-task MLP framework that jointly forecasts five-day forward returns (regression) and price direction (binary classification) using 40 behavioral alpha factors derived from price-volume patterns. The factors are organised into three behavioural categories: bottom reversal signals (RSI bounce strength, MACD cross strength), volume-price divergence (abnormal price-volume relationships), and momentum/herding patterns. The dual-task architecture uses a shared representation with two hidden layers (64 and 32 neurons with ReLU and dropout), splitting into a regression head (identity activation) and a classification head (sigmoid activation), trained with a combined loss: L_total = L_reg + 0.5 * L_cls. The framework is benchmarked against CNN and SVM baselines.
+
+Our summary: this paper directly addresses the question of whether jointly predicting return magnitude and direction improves trading performance versus single-task models. The answer is clearly yes: the dual-task MLP achieves an IC of 0.034 (3x the CNN's 0.014 and SVM's 0.011), an ICIR of 0.162, and a Sharpe ratio of 1.61 versus 1.15 for CNN and 0.77 for SVM. The joint loss formulation forces the shared representation to learn features that are informative for both tasks, which acts as an implicit regulariser. The most practically relevant finding is the model's resilience during the January 2025 market downturn — the directional classification head appears to provide a stabilising signal during drawdowns. Limitations include the absence of transaction cost modelling and the relatively simple MLP architecture (no attention or recurrent components).
+
+Data: individual equity stocks with daily price-volume data; training data before 2023, validation/test from 2023 onward. 40 technical alpha factors as inputs. No public code repository.
+
+Key metrics: dual-task MLP achieves IC 0.034, ICIR 0.162, annualised return 53.49%, annualised volatility 33.21%, Sharpe ratio 1.61. Top-5 stock cumulative return exceeds 800% over 5 years. CNN achieves Sharpe 1.15, SVM achieves Sharpe 0.77.
+
+`Read the paper <https://arxiv.org/abs/2508.14656>`__
+
+Stock Market Forecasting Using a Multi-Task Approach Integrating Long Short-Term Memory and the Random Forest Framework
+------------------------------------------------------------------------------------------------------------------------
+
+Sihoon Lee and Ohbyung Kwon (2022) propose LSTM-Forest with Multi-task (LFM), a framework that integrates LSTM and Random Forest in a multi-task architecture jointly performing stock return regression and return direction classification. The LSTM component captures temporal dependencies in sequential market data, while the Random Forest component addresses overfitting and provides variable importance analysis for interpretability. The multi-task formulation — predicting both the magnitude and sign of returns simultaneously — improves both predictive accuracy and trading profitability compared to single-task alternatives. The framework is tested on three international indices: S&P 500, Shanghai Stock Exchange (SSE), and KOSPI 200.
+
+Our summary: this is one of the earliest papers to demonstrate that multi-task learning with joint direction classification and return regression outperforms single-task models for stock forecasting. The key contribution is showing that the classification task acts as a regulariser for the regression task and vice versa — the model learns that return magnitude and direction are correlated but distinct signals, and jointly modelling them produces better representations than either task alone. The Random Forest integration provides a practical advantage: variable importance analysis reveals which features drive predictions, offering interpretability that pure LSTM models lack. The cross-market evaluation across US, Chinese, and Korean indices demonstrates generalisability.
+
+Data: S&P 500, SSE, and KOSPI 200 daily data. Published in Applied Soft Computing, Vol. 114, 2022. No public code repository.
+
+Key metrics: LFM reduces RMSE by 25.53% (S&P 500), 22.75% (SSE), and 16.29% (KOSPI 200) versus baseline Random Forest. Balanced accuracy for return direction classification improves by 7.37, 1.68, and 3.79 percentage points respectively. LFM produces the highest trading profits even after transaction costs, outperforming the long-only benchmark.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1568494621009947>`__
