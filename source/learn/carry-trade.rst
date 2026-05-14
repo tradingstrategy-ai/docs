@@ -105,3 +105,14 @@ With multiple sUSDe expirations trading on Pendle, the market reveals implied yi
 By Luke Leasure.
 
 `Read the article <https://x.com/0xMether/article/2016201886395990198>`__
+
+Predictability of Funding Rates: Out-of-Sample Evidence from Bitcoin Perpetuals
+-------------------------------------------------------------------------------
+
+Emre Inan (2025) investigates the out-of-sample predictability of perpetual futures funding rates, focusing on Bitcoin contracts traded on Binance and Bybit. The study generates one-step-ahead point forecasts from a set of double autoregressive (DAR) models, which jointly model the conditional mean and conditional variance of funding rates. The DAR specification is well-suited to funding rates because they exhibit both time-varying levels and time-varying volatility — the conditional variance itself follows an autoregressive process that differs from standard GARCH-type models.
+
+Our summary: this paper provides clean out-of-sample evidence that funding rates are predictable, which has direct implications for the profitability and timing of delta-neutral carry strategies. If funding rates are forecastable, carry positions can be sized and timed more aggressively when the model predicts persistently positive (or negative) rates, rather than relying on the current observed rate as the best forecast. The DAR framework is a natural fit because funding rates are bounded, mean-reverting, and exhibit regime-dependent volatility that standard linear models miss.
+
+Data: Bitcoin perpetual futures funding rate data from Binance and Bybit.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5576424>`__

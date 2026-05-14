@@ -238,3 +238,16 @@ Testing seven forecasting approaches on SPY data from 2008 to 2025, NextVoL achi
 By Concretum Research.
 
 `Read the blog post <https://concretumgroup.substack.com/p/why-your-volatility-forecast-matters>`__.
+
+Forecasting Realized Volatility in Turbulent Times using Temporal Fusion Transformers
+-------------------------------------------------------------------------------------
+
+Johannes Frank (Friedrich-Alexander University Erlangen-Nuremberg, 2023) analyses the performance of temporal fusion transformers in forecasting annualised weekly and monthly realized volatility (RV) of 355 individual stocks listed in the S&P 500 from January 2000 to June 2022. The TFT is trained on three different feature sets: company-specific data only (F1), extended with S&P 500 index returns and VIX (F2), and further augmented with macroeconomic variables including the effective federal funds rate, 30-year Treasury yield, Economic Policy Uncertainty index, credit spreads, and sectoral employment data (F3). Models are trained using three approaches — individual (per-stock), sectoral pooling, and overall pooling — and benchmarked against LSTM, Random Forest, and GARCH(1,1)/GARCH-X models using RMSE and Diebold-Mariano tests.
+
+Our summary: this is one of the first rigorous applications of TFT to realized volatility forecasting for individual equities at scale. The headline finding is that TFT significantly outperforms LSTM, Random Forest, and GARCH benchmarks, with the advantage becoming strongest under pooling. The most important practical insight is that sectoral and overall pooling substantially improve all ML models — the data-hungry TFT architecture particularly benefits from the larger training samples that pooling provides. The best-performing configuration uses the F2 feature set (company data plus S&P 500 returns and VIX) with overall pooling on weekly data, achieving mean RMSE of 0.0699. The inclusion of macroeconomic variables (F3) consistently reduces forecast errors relative to company-only features (F1) but does not reliably beat F2.
+
+Data: Refinitiv daily stock data for 355 S&P 500 constituents (January 2000-June 2022), 5,660 trading days. 70/30 train-test split with 10% validation holdout. Macroeconomic data from FRED and PolicyUncertainty.com. No public code repository. FAU Discussion Papers in Economics 03/2023.
+
+Key metrics: TFT with overall pooling and F2 features achieves mean RMSE 0.0699 (weekly) and 0.1003 (monthly). Relative RMSE versus TFT: Random Forest 1.58-1.63x and LSTM 1.19-1.27x on weekly data with pooling, confirming TFT superiority. TFT consistently beats GARCH(1,1) and GARCH-X regardless of training approach and frequency.
+
+`Read the paper <https://ideas.repec.org/p/zbw/iwqwdp/032023.html>`__

@@ -1178,3 +1178,53 @@ Data: daily Bitcoin transaction data from Kaggle, DataHub, and DataWorld (Septem
 Key metrics: ADE-TFT with 8 hidden layers achieves RMSE 167.12 and MAPE 23.17%, outperforming ARIMA (RMSE 302.53, MAPE 42.24%), GRU (RMSE 381.34, MAPE 49.81%), and LSTM (RMSE 603.68, MAPE 87.41%). The paper does not report trading strategy metrics such as Sharpe ratio or drawdown.
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S2405844024161737>`__
+
+Temporal Fusion Transformer-Based Trading Strategy for Multi-Crypto Assets Using On-Chain and Technical Indicators
+-------------------------------------------------------------------------------------------------------------------
+
+Ming-Che Lee (2025) introduces a TFT-based forecasting framework that integrates on-chain behavioural metrics with classical technical indicators to forecast five major cryptocurrencies — BTC, ETH, USDT, XRP, and BNB — and translates model outputs into a signal-based trading strategy generating daily buy, hold, or sell signals. On-chain features include Spent Output Profit Ratio (SOPR), Total Value Locked (TVL), active addresses, exchange net flow, Realized Cap HODL Waves, and the Crypto Fear and Greed Index, combined with RSI and MACD as technical signals.
+
+Our summary: this paper is notable for combining on-chain and technical indicator feature sets within a TFT architecture specifically designed for multi-asset crypto trading rather than single-asset forecasting. The attention mechanism of TFT provides interpretability about which on-chain signals drive predictions, which is valuable for understanding whether behavioural blockchain metrics add genuine forecasting value beyond price-derived technical indicators. The benchmark comparison against LSTM, GRU, SVR, and XGBoost using standard regression metrics provides a clean evaluation of the TFT advantage in the crypto domain.
+
+Data: daily data for BTC, ETH, USDT, XRP, and BNB with on-chain metrics from blockchain data providers. No public code repository.
+
+`Read the paper <https://www.mdpi.com/2079-8954/13/6/474>`__
+
+Boosting the Accuracy of Stock Market Prediction via Multi-Layer Hybrid MTL Structure
+-------------------------------------------------------------------------------------
+
+Yuxi Hong (Harbin Institute of Technology, 2025) proposes a multi-layer hybrid multi-task learning framework that combines a Transformer encoder for feature extraction, a Bidirectional GRU for temporal dependency capture, and a Kolmogorov-Arnold Network (KAN) for nonlinear approximation enhancement. The architecture uses multi-head self-attention with 4 heads, replaces traditional weight parameters with B-spline edge functions in the KAN layer, and processes sequences bidirectionally through the BiGRU component. The multi-task setup simultaneously predicts trading volume and trading amount as auxiliary objectives to improve the primary price prediction task.
+
+Our summary: the main contribution is architectural — showing that combining Transformer attention, KAN nonlinearity, and bidirectional recurrent processing in a multi-task framework outperforms each component individually and recent competitive methods. The ablation study is the most informative part: removing any single component degrades performance, and the KAN layer provides the largest marginal improvement. However, the paper's practical trading value is limited — it reports only regression accuracy metrics without trading strategy evaluation, the stock universe and time period are not clearly specified, and there is no analysis of transaction costs, slippage, or out-of-sample walk-forward testing.
+
+Data: stock market data with opening price, closing price, highest price, lowest price, trading volume, and trading amount. No public code repository.
+
+Key metrics: MAE 18.41, RMSE 21.00, MAPE 0.031, R² 0.968 for the full model; cross-validation average test R² 0.9831. Inference time 0.0193 seconds per prediction. The model outperforms KAN-only (R² 0.916), Transformer-only (R² 0.935), and BiGRU-only (R² 0.940) baselines.
+
+`Read the paper <https://arxiv.org/abs/2501.09760>`__
+
+Deep Learning for Bitcoin Price Direction Prediction: Models and Trading Strategies Empirically Compared
+--------------------------------------------------------------------------------------------------------
+
+Oluwadamilare Omole and David Enke (Missouri University of Science and Technology, 2024) compare deep learning architectures for Bitcoin price direction prediction, benchmarking CNN-LSTM, Long- and Short-term Time-series Network (LSTNet), Temporal Convolutional Network (TCN), and ARIMA on on-chain blockchain data. The study applies three feature-selection methods — Boruta, Genetic Algorithm, and Light Gradient Boosting Machine — to address the curse of dimensionality from a large on-chain feature set, and evaluates the resulting models both on classification accuracy and on profitability through backtested trading strategies.
+
+Our summary: the paper's main finding is that Boruta feature selection paired with CNN-LSTM consistently outperforms other model-selection combinations, achieving 82.44% directional accuracy. The practical contribution is the systematic comparison of feature selection methods for on-chain data — showing that the choice of feature selector matters as much as the choice of model architecture. The trading strategy evaluation adds credibility by connecting classification performance to actual backtest returns, though the single-asset (Bitcoin) scope limits generalisability.
+
+Data: Bitcoin on-chain data with multiple blockchain metrics. Published in Financial Innovation (Springer). No public code repository.
+
+Key metrics: Boruta-CNN-LSTM achieves 82.44% directional accuracy for Bitcoin price prediction, outperforming all other model-feature selection combinations. Boruta-SVM emerges as the most profitable model through backtesting, though classification models generally produced positive returns while regression models yielded losses or minimal gains.
+
+`Read the paper <https://link.springer.com/article/10.1186/s40854-024-00643-1>`__
+
+Using Machine and Deep Learning Models, On-Chain Data, and Technical Analysis for Predicting Bitcoin Price Direction and Magnitude
+----------------------------------------------------------------------------------------------------------------------------------
+
+Oluwadamilare Omole and David Enke (Missouri University of Science and Technology, 2025) extend their earlier directional prediction work to simultaneously predict both Bitcoin price direction and magnitude using a comprehensive set of ML and DL models — SVM, Random Forest, Gradient Boosting Machines, LSTM, CNN-LSTM, GRU, Temporal Convolutional Network, and LSTNet — with inputs spanning Bitcoin price data, on-chain blockchain metrics, and technical analysis indicators. The study uses Boruta feature selection and evaluates both classification (direction) and regression (magnitude) performance, followed by backtesting to assess trading profitability.
+
+Our summary: the key finding is an asymmetry between classification and regression usefulness for trading. SVM achieves the best directional accuracy at 83%, and classification-based trading strategies generally produce positive returns. But regression models — despite achieving low RMSE and high R² for magnitude prediction — yield losses or minimal gains when translated into trading strategies. This is an important practical insight: accurate magnitude forecasting does not automatically translate into profitable trading, likely because small prediction errors at decision boundaries matter more than aggregate regression accuracy.
+
+Data: Bitcoin price, on-chain metrics, and technical analysis indicators. Published in Engineering Applications of Artificial Intelligence, Vol. 154, 2025. No public code repository.
+
+Key metrics: SVM achieves 83% accuracy and 82% F1-Score for price direction prediction. Best regression model achieves RMSE 1,531.3 and R² 0.9856 for magnitude prediction. Boruta-SVM is the most profitable model through backtesting, with classification models generally outperforming regression models in trading profitability.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0952197625010875>`__
