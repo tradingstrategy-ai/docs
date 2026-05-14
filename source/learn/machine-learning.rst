@@ -1126,3 +1126,55 @@ his project deploys a systematic, AI-driven framework to develop and evaluate qu
 By Jose Francisco Salazar Guillen, St Edward's University and other collaborators.
 
 `Visit Github repository <https://github.com/FranQuant/AI-based-Trading-Strategies/tree/308151561093960aed7c721a7370d5f8fa15fbd5>`__
+
+Deciphering Momentum and Reversal Effects: An Interpretative Approach Using Temporal Fusion Transformers
+--------------------------------------------------------------------------------------------------------
+
+Håkon Høge and Magnus Tanem (Norwegian University of Science and Technology, 2023) apply Temporal Fusion Transformers to predict S&P 500 stock returns and derive an Adaptive Momentum (AMOM) trading strategy. The thesis frames stock return prediction as a binary classification task and leverages the TFT's interpretable attention mechanism to decompose which historical features drive momentum and reversal signals. The model uses 20-day and 12-month cumulative returns alongside market-wide indicators as inputs, with a rolling training window to capture evolving market dynamics.
+
+The key contribution is linking TFT interpretability to the momentum-reversal literature: the attention weights reveal that the model shifts between momentum and reversal regimes depending on market conditions, providing empirical support for adaptive factor timing. The Adaptive Momentum strategy derived from TFT predictions generates statistically significant returns, though the authors note that transaction costs and capacity constraints are not fully modeled.
+
+Data: S&P 500 stock universe. Master thesis, not peer-reviewed.
+
+Key metrics: average monthly TFT portfolio return of 2.66%, Adaptive Momentum (AMOM) strategy return of 1.62% per month, both statistically significant. The thesis does not report annualised Sharpe ratios or maximum drawdown figures.
+
+`Read the paper <https://hdl.handle.net/11250/3102821>`__
+
+Multi-Sensor Temporal Fusion Transformer for Stock Performance Prediction: An Adaptive Sharpe Ratio Approach
+------------------------------------------------------------------------------------------------------------
+
+Jingyun Yang (Carnegie Mellon University), Pan Li, Yiwen Cui, Xu Han, and Mengjie Zhou introduce TFT-ASRO, a multi-task Temporal Fusion Transformer that simultaneously predicts returns, volatility, and Sharpe ratios. The model employs a custom Sharpe ratio loss function for direct risk-adjusted performance optimization, integrating multi-level features including price, volume, sentiment, and cross-asset signals. Uncertainty quantification is provided through Monte Carlo dropout and quantile regression.
+
+The paper frames stock prediction as a multi-sensor fusion problem, where each data stream (price, volume, sentiment, technical indicators) acts as a separate sensor. The attention mechanism reveals that price sensors contribute approximately 45% of predictive value, volume 25%, sentiment 20%, and technical indicators 10%. The model shows particular strength during volatile market periods where baseline models degrade.
+
+Data: US historical stock prices from Kaggle (1980-2020), split into training (1980-2015), validation (2016-2018), and test (2019-2020). No public code repository.
+
+Key metrics: 13.6% MAE reduction and 14.7% RMSE reduction versus vanilla Transformer baseline, directional accuracy 73.4%, Spearman correlation 0.723 between predicted and actual Sharpe ratios. Simulated trading strategy achieves annualised Sharpe ratio of 1.84 versus 0.73 for S&P 500 buy-and-hold. Results look ambitious and should be treated as hypothesis fuel rather than proven alpha.
+
+`Read the paper <https://pmc.ncbi.nlm.nih.gov/articles/PMC11820675/>`__
+
+Hybrid CNN-LSTM Integrated with Temporal Fusion Transformer for Accurate and Interpretable Stock Market Forecasting
+-------------------------------------------------------------------------------------------------------------------
+
+Ankita Tiwari, Chin-Shiuh Shieh, MVV Prasad Kantipudi, and Shilpa Choidhary propose a three-stage architecture that combines CNN feature extraction, LSTM temporal encoding, and Temporal Fusion Transformer attention with variable selection networks. The CNN-LSTM bridge extracts compact temporal representations, while the TFT component integrates static covariates and dynamic features through gated residual networks and multi-head attention. The model produces quantile forecasts, enabling confidence-based trading rules where positions are taken only when prediction intervals clear zero with sufficient confidence.
+
+The trading strategy derived from the model claims strong outperformance on Apple (AAPL) stock, though the single-stock evaluation and the magnitude of reported returns warrant skepticism. The model remained in cash approximately 79% of the time when confidence was low, which is an interesting selective-trading feature. Statistical validation via Diebold-Mariano and paired t-tests confirms improvements over baseline models.
+
+Data: Apple Inc. (AAPL) daily stock data from 2012-2025, with chronological splits (training 2012-2022, validation 2023, test 2024-September 2025). No public code repository.
+
+Key metrics: daily RMSE 0.0107 (scaled), MAE 0.0084. The model-driven trading strategy reports +807% return over January 2024-September 2025 versus +38% for buy-and-hold, though these single-stock results on a strongly trending stock during a bull market should be interpreted cautiously.
+
+`Read the paper <https://www.iieta.org/node/22067>`__
+
+Interpretable Multi-Horizon Time Series Forecasting of Cryptocurrencies by Leverage Temporal Fusion Transformer
+----------------------------------------------------------------------------------------------------------------
+
+Arslan Farooq, M. Irfan Uddin, Muhammad Adnan, Ala Abdulsalam Alarood, Eesa Alsolami, and Safa Habibullah develop an Advanced Deep Learning-Enhanced Temporal Fusion Transformer (ADE-TFT) for Bitcoin price forecasting. The model combines the standard TFT architecture with Adaptive Differential Evolution for hyperparameter optimisation, and integrates NLP-based sentiment analysis via NLTK and SpaCy. The workflow includes preprocessing with IQR-based outlier detection, Box-Cox normalisation, and z-score standardisation.
+
+The paper's main contribution is demonstrating that evolutionary hyperparameter optimisation substantially improves TFT forecasting accuracy on cryptocurrency data, particularly as model complexity (hidden layers) increases. The attention weight analysis provides interpretability by identifying which input features and time steps drive predictions. However, the work focuses on price level forecasting rather than directional event classification or tradable signal generation.
+
+Data: daily Bitcoin transaction data from Kaggle, DataHub, and DataWorld (September 2014-November 2022), with 70/15/15 train/validation/test split. No public code repository.
+
+Key metrics: ADE-TFT with 8 hidden layers achieves RMSE 167.12 and MAPE 23.17%, outperforming ARIMA (RMSE 302.53, MAPE 42.24%), GRU (RMSE 381.34, MAPE 49.81%), and LSTM (RMSE 603.68, MAPE 87.41%). The paper does not report trading strategy metrics such as Sharpe ratio or drawdown.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S2405844024161737>`__
