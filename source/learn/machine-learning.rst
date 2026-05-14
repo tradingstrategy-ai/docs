@@ -1254,3 +1254,16 @@ Data: S&P 500, SSE, and KOSPI 200 daily data. Published in Applied Soft Computin
 Key metrics: LFM reduces RMSE by 25.53% (S&P 500), 22.75% (SSE), and 16.29% (KOSPI 200) versus baseline Random Forest. Balanced accuracy for return direction classification improves by 7.37, 1.68, and 3.79 percentage points respectively. LFM produces the highest trading profits even after transaction costs, outperforming the long-only benchmark.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1568494621009947>`__
+
+Multi-scale Two-way Deep Neural Network for Stock Trend Prediction
+------------------------------------------------------------------
+
+Guang Liu, Yuzhao Mao, Qi Sun, Hailong Huang, Weiguo Gao, Xuan Li, JianPing Shen, Ruifan Li, and Xiaojie Wang (PingAn Life Insurance and Beijing University of Posts and Telecommunications, 2020) propose MTDNN, a two-way end-to-end architecture that learns multi-scale patterns from stock data through two complementary pathways: a wavelet-based path using Discrete Wavelet Transform with XGBoost to capture frequency-domain multi-scale features, and a downsampling-based path using a Recurrent Convolutional Neural Network (RCNN) with a novel key operation to capture temporally cascaded multi-scale spatial features. The two pathways are fused through fully connected layers for three-class stock trend prediction (up, down, stationary). The paper also publishes CSI-2016, a new one-minute-level Chinese stock index dataset spanning 170,000 samples from January to December 2016.
+
+Our summary: this paper's main contribution is demonstrating that multi-scale information from complementary decomposition approaches (spectral via DWT, temporal via downsampling) provides meaningfully better stock trend prediction than any single-scale method. The two-way architecture achieves SOTA on FI-2010 (a standard limit order book benchmark) and their CSI-2016 dataset. The ablation study is the most informative section: it systematically tests all combinations of single-scale vs. multi-scale and single-pathway vs. two-way, showing that each component adds value. The RCNN key operation — which concatenates CNN features from different downsampling scales with zero-padding to create time-aligned multi-scale representations — is a clean engineering contribution. Published at IJCAI-20 (Special Track on AI in FinTech), a tier-1 AI conference, with code available.
+
+Data: FI-2010 (4.5M limit order book events from 5 stocks, 10 consecutive days, 144-D features) and CSI-2016 (170,000 one-minute samples from SSE Composite, Shenzhen SME, and ChiNext indices, January-December 2016, 6-D OHLCV+amount features). Code: https://github.com/marscrazy/MTDNN
+
+Key metrics: FI-2010: 81.12% accuracy and 81.05% F1 (SOTA, beating DeepLOB's 80.35% F1 and BL-GAM-RHN-7's 80.88% F1). CSI-2016: 63.07% accuracy and 61.65% F1, outperforming all single-scale baselines including CNN (51.81% F1), LSTM (51.96% F1), and adapted multi-scale models.
+
+`Read the paper <https://www.ijcai.org/proceedings/2020/628>`__
