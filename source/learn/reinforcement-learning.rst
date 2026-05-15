@@ -26,6 +26,8 @@ Ben Hambly, Renyuan Xu, and Huining Yang (Mathematical Finance, 2023) provide th
 
 Our summary: this is the survey to read if you want to understand where RL fits in the broader landscape of quantitative finance. Published in Mathematical Finance — the top journal in the field — it provides the theoretical depth that practitioner-oriented surveys lack. The most valuable sections are the comparisons between RL and classical solutions for the same problems: optimal execution (RL vs Almgren-Chriss), portfolio allocation (RL vs Merton), and option pricing (RL vs Black-Scholes). These comparisons clarify when RL is genuinely useful versus when it is unnecessary complexity.
 
+Key findings from surveyed papers: RL improves Implementation Shortfall over Almgren-Chriss by up to 10.3% on average for optimal execution; RL market-making agents achieve 20-30% higher terminal wealth while exposing to only ~60% of inventory risk compared to benchmarks; PPO achieves best performance among RL algorithms for European options hedging in terms of both PnL and training time.
+
 `Read the paper <https://arxiv.org/abs/2112.04553>`__
 
 Reinforcement Learning for Quantitative Trading: A Survey
@@ -87,7 +89,11 @@ Market Making via Reinforcement Learning
 
 Thomas Spooner, John Fearnley, Rahul Savani, and Andreas Koukorinis (AAMAS 2018) apply temporal-difference RL to the market-making problem using a high-fidelity limit order book simulation. The RL agent learns to dynamically adjust bid and ask quotes to maximise profit while controlling inventory risk through a custom reward function. The state representation uses tile coding for value function approximation, enabling efficient learning from the high-dimensional LOB state. The agent outperforms both fixed-spread benchmarks and online learning baselines.
 
-Our summary: this paper demonstrates that RL can learn effective market-making policies in realistic environments — a practically important result because market making requires balancing multiple competing objectives (capturing spread, managing inventory, avoiding adverse selection) that are difficult to optimise analytically. The tile-coding approach is notably simpler than deep RL alternatives but achieves strong performance, suggesting that for market making the state representation matters more than the function approximator complexity.
+Our summary: this paper demonstrates that RL can learn effective market-making policies in realistic environments — a practically important result because market making requires balancing multiple competing objectives (capturing spread, managing inventory, avoiding adverse selection) that are difficult to optimise analytically. The tile-coding approach is notably simpler than deep RL alternatives but achieves strong performance, suggesting that for market making the state representation matters more than the function approximator complexity. The key innovation is the asymmetrically dampened reward function that penalises inventory accumulation directionally, producing dramatically lower mean absolute position (near-zero inventory) compared to all benchmarks while maintaining positive PnL.
+
+Data: 10 equities across 5 European venues (including HSBA.L, GSK.L, VOD.L, ING.AS, SAN.MC) from 4 sectors, 8 months of millisecond-resolution LOB data (January-August 2010), 5 levels of depth. Code: https://github.com/tspooner/rl_markets
+
+Key metrics: the consolidated agent (SARSA + asymmetric dampening + LCTC state) achieves positive normalised daily PnL on 7/10 stocks (e.g. 15.43 on HSBA.L, 7.32 on GSK.L, 5.67 on SAN.MC in units of 10^4) while maintaining near-zero mean absolute position — outperforming both fixed-spread strategies and the MMMW online learning benchmark which suffers from excessive inventory (MAP 4,684-8,865 units).
 
 `Read the paper <https://arxiv.org/abs/1804.04216>`__
 
@@ -98,6 +104,10 @@ Yuchen Fang, Kan Ren, Weiqing Liu, Dong Zhou, Weinan Zhang, Jiang Bian, Yong Yu,
 
 Our summary: the oracle distillation approach is elegant — rather than directly training an RL agent on noisy market data (where the reward signal is weak and delayed), the oracle teacher provides a clean supervision signal. The student learns "what would the optimal trader have done in this situation?" which is a much clearer learning objective than maximising long-term cumulative reward from scratch. This technique could be applied beyond execution to any trading problem where a hindsight-optimal policy can be computed.
 
+Data: China A-shares market, minute-level price-volume data. Training: 3,566 instruments with 1,654,385 orders (January 2017-February 2019). Test: 855 CSI 800 instruments with 33,176 orders (May-June 2019). Code: https://seqml.github.io/opd/
+
+Key metrics: OPD achieves 6.17 BPs price advantage (p < 0.01) versus TWAP baseline (0 BPs), outperforming DDQN (4.15 BPs) and PPO (2.52 BPs). Gain-loss ratio of 1.35 versus 1.07 for DDQN. All model-based methods (TWAP, Almgren-Chriss, VWAP) are outperformed by learning-based methods.
+
 `Read the paper <https://arxiv.org/abs/2103.10860>`__
 
 FinRL-Meta: Market Environments and Benchmarks for Data-Driven Financial Reinforcement Learning
@@ -107,6 +117,10 @@ Xiao-Yang Liu et al. (NeurIPS 2022, Datasets and Benchmarks Track) address the c
 
 Our summary: FinRL-Meta solves the reproducibility crisis in financial RL. Most papers use custom environments with undisclosed data processing, making comparison impossible. By providing standardised environments with consistent data pipelines, the platform enables apples-to-apples algorithm comparison — essential for determining whether reported improvements are genuine or artifacts of different data preprocessing. Published at NeurIPS (Datasets and Benchmarks Track), which validates its contribution to the field's infrastructure.
 
+Data: 30 DJIA stocks from Yahoo Finance; training January 2009-June 2020, testing July 2020-March 2022. Supports 30+ data sources including Alpaca, WRDS, Binance, Polygon. Code: https://github.com/AI4Finance-Foundation/FinRL-Meta
+
+Key metrics: ensemble strategy (A2C+PPO+DDPG with quarterly rolling window) achieves 25.9% annual return, Sharpe ratio 1.53, Calmar ratio 2.27, and max drawdown -11.4% on DJIA stocks — outperforming individual agents (A2C Sharpe 1.37, PPO 0.99, DDPG 0.88) and the DJIA index itself (Sharpe 1.32, 19.7% annual return).
+
 `Read the paper <https://arxiv.org/abs/2211.03107>`__
 
 Adversarial Deep Reinforcement Learning in Portfolio Management
@@ -114,6 +128,10 @@ Adversarial Deep Reinforcement Learning in Portfolio Management
 
 Zhipeng Liang, Hao Chen, Junhao Zhu, Kangkang Jiang, and Yanran Li (2018) compare DDPG, PPO, and Policy Gradient for portfolio management on China A-shares and propose an adversarial training method that improves training efficiency and strategy robustness. The adversarial component introduces perturbations to the market environment during training, forcing the agent to learn policies that are robust to distribution shifts — a critical concern in financial markets where the training distribution rarely matches the deployment distribution.
 
-Our summary: the adversarial training contribution is the paper's main value. Financial markets are non-stationary, and RL agents trained on historical data frequently fail when market dynamics change. By training against adversarially perturbed environments, the agent learns strategies that degrade gracefully rather than catastrophically when the market regime shifts. The comparison of DDPG, PPO, and PG on the same Chinese market data also provides a useful practical guide for algorithm selection in Asian equity markets.
+Our summary: the adversarial training contribution is the paper's main value. Financial markets are non-stationary, and RL agents trained on historical data frequently fail when market dynamics change. By training against adversarially perturbed environments (Gaussian noise N(0, 0.002) added to price data), the agent learns strategies that degrade gracefully rather than catastrophically when the market regime shifts. The comparison of DDPG, PPO, and PG on the same Chinese market data also provides a useful practical guide for algorithm selection in Asian equity markets.
+
+Data: China A-shares market, portfolios of 5 randomly selected assets with minimum 1,200 trading days history, ~2015-2018. Transaction cost 0.25% per trade. Code: https://github.com/qq303067814/Reinforcement-learning-in-portfolio-management-
+
+Key metrics: across 25 experiments, adversarial training improves average daily return (t-test p = 0.0076, 99% confidence) and Sharpe ratio (p = 0.0338, 95% confidence) compared to non-adversarial training. PG agent statistically outperforms Uniform Constant Rebalanced Portfolio on both daily return (p = 0.039) and Sharpe ratio (p = 0.013). Best feature combination: closing + high prices.
 
 `Read the paper <https://arxiv.org/abs/1808.09940>`__
