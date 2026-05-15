@@ -141,3 +141,14 @@ The article emphasizes the importance of distinguishing between systems that wor
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/navigating-market-seas-the-art-and>`__.
+
+Architecting Market Regime Clusters for Adaptive Portfolio Construction
+-----------------------------------------------------------------------
+
+A practical guide to implementing market regime clustering as infrastructure for adaptive portfolio construction. The article argues that classical quantitative models fail because they assume stationary markets, and proposes unsupervised learning approaches to partition financial time series into distinct states with unique risk-return distributions. The recommended feature stack goes well beyond raw returns — rolling skewness and kurtosis, volatility cones, cross-asset dynamics (CDX vs VIX), and microstructure signatures (mid-price autocorrelation, bid-ask imbalance) — with manifold learning (t-SNE or autoencoders) for dimensionality reduction before clustering.
+
+Three algorithmic approaches are compared: Gaussian Mixture Models for soft clustering that reflects gradual transitions, HDBSCAN for non-parametric density-based detection with transition states classified as noise, and Jump-Diffusion Hidden Markov Models for capturing instantaneous regime shifts. The article identifies three canonical regimes — Low-Vol Growth (suited for leveraged risk-parity), High-Vol Inflation (requiring minimum-variance pivots), and Tail Crash (triggering convexity overlays). A particularly sharp observation is that widely adopted "Risk-Off" signals can become self-fulfilling prophecies, ceasing to be leading indicators and instead becoming coordinating mechanisms for liquidation. The validation framework uses BIC optimisation, Viterbi path analysis, MST comparisons, and a "Regime Coherence Test" on realised volatility.
+
+By Systan.
+
+`Read the article <https://systan.dev/article/architecting-market-regime-clusters-for-adaptive-portfolio-construction>`__.
