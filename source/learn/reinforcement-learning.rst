@@ -135,3 +135,69 @@ Data: China A-shares market, portfolios of 5 randomly selected assets with minim
 Key metrics: across 25 experiments, adversarial training improves average daily return (t-test p = 0.0076, 99% confidence) and Sharpe ratio (p = 0.0338, 95% confidence) compared to non-adversarial training. PG agent statistically outperforms Uniform Constant Rebalanced Portfolio on both daily return (p = 0.039) and Sharpe ratio (p = 0.013). Best feature combination: closing + high prices.
 
 `Read the paper <https://arxiv.org/abs/1808.09940>`__
+
+Code Repositories
+-----------------
+
+TensorTrade
+^^^^^^^^^^^
+
+Open-source RL framework for training, evaluating, and deploying robust trading agents. TensorTrade provides a modular component architecture with pluggable exchanges, action schemes, and reward schemes, enabling rapid prototyping of RL trading strategies. Integrates with Stable Baselines for algorithm selection (PPO, A2C, DQN) and supports both backtesting and live trading on stocks and crypto. The modular design means each component (data feed, broker, reward function, action space) can be swapped independently, which is essential for systematic experimentation.
+
+Our summary: TensorTrade is the most mature general-purpose RL trading framework outside the FinRL ecosystem. Its main advantage is the clean separation of concerns — the environment, agent, and evaluation components are fully decoupled, making it straightforward to test the same agent across different markets or the same market with different reward functions. For practitioners, this is the closest thing to a production-ready RL trading toolkit. The 6,250 stars and active maintenance (last push February 2026) reflect genuine community adoption. Apache-2.0 license.
+
+`View repository <https://github.com/tensortrade-org/tensortrade>`__
+
+ElegantRL
+^^^^^^^^^
+
+Massively parallel deep reinforcement learning library that serves as the algorithm layer for the FinRL ecosystem. ElegantRL implements a comprehensive set of single-agent algorithms (DDPG, TD3, SAC, PPO, DQN, Double DQN, D3QN) and multi-agent algorithms (QMIX, VDN, MADDPG, MAPPO, MATD3), with scaling support for hundreds of GPU nodes. The library uses Isaac Gym-style vectorised environments for parallel training, enabling the throughput needed for financial RL where sample efficiency is critical due to limited historical data.
+
+Our summary: ElegantRL addresses the computational bottleneck in financial RL — training agents on realistic market environments requires millions of episodes, and single-threaded simulation is prohibitively slow. The multi-agent support (QMIX, MAPPO) is particularly relevant for market simulation research where multiple RL agents interact in a shared order book. 4,328 stars, active through February 2026. Python, custom license.
+
+`View repository <https://github.com/AI4Finance-Foundation/ElegantRL>`__
+
+Deep Hedging (Official Implementation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Official implementation of the vanilla Deep Hedging engine by Hans Buehler (J.P. Morgan), the lead author of the seminal Deep Hedging paper. The repository provides sample notebooks demonstrating the framework for hedging derivatives portfolios under market frictions using deep reinforcement learning. This is the reference implementation that practitioners and researchers use to reproduce and extend the Deep Hedging results.
+
+Our summary: this is the canonical codebase for Deep Hedging — written by the paper's author at J.P. Morgan. The Jupyter notebook format makes it accessible for experimentation, though the code is conceptual rather than production-grade. For anyone implementing deep hedging in practice, this is the starting point. 339 stars, GPL-3.0 license, last push January 2026.
+
+`View repository <https://github.com/hansbuehler/deephedging>`__
+
+AlphaTrade (JAX-LOB)
+^^^^^^^^^^^^^^^^^^^^
+
+First GPU-accelerated limit order book simulator designed specifically for large-scale reinforcement learning training. AlphaTrade uses JAX to process thousands of order books in parallel on GPU, achieving up to 75x faster per-message processing compared to CPU-based LOB simulators. The simulator supports end-to-end RL training for optimal execution strategies directly on GPU without CPU-GPU data transfer bottlenecks. Published at ACM ICAIF 2023.
+
+Our summary: the computational cost of realistic LOB simulation has been the primary bottleneck preventing RL agents from achieving sufficient training data for order execution and market making. AlphaTrade removes this bottleneck by moving the entire simulation-training loop to GPU. The 75x speedup is transformative — it enables the kind of large-scale experimentation needed to determine whether RL execution agents genuinely outperform TWAP/VWAP baselines or are merely overfitting to specific market conditions. 141 stars, active through March 2026.
+
+`View repository <https://github.com/KangOxford/AlphaTrade>`__
+
+JaxMARL-HFT
+^^^^^^^^^^^^
+
+First GPU-accelerated open-source multi-agent reinforcement learning environment for high-frequency trading on market-by-order data. Built on top of JAX-LOB, JaxMARL-HFT enables training multiple interacting agents (order execution + market making) in a shared LOB environment with up to 240x training speedup and 350K environment steps per second. Uses IPPO (Independent Proximal Policy Optimization) for multi-agent training. Published at ACM ICAIF 2024.
+
+Our summary: multi-agent RL for HFT is arguably the most realistic formulation of the market making and execution problems — real markets have multiple strategic agents interacting, and single-agent RL ignores the game-theoretic dynamics. JaxMARL-HFT makes this computationally tractable for the first time. The 240x speedup over CPU baselines enables research that was previously infeasible. 56 stars, Apache-2.0 license, active through March 2026.
+
+`View repository <https://github.com/vmohl/JaxMARL-HFT>`__
+
+PGPortfolio
+^^^^^^^^^^^
+
+Reference implementation of "A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem" (Jiang, Xu, Liang, 2017) — one of the most cited papers in DRL portfolio management. The repository implements the Ensemble of Identical Independent Evaluators (EIIE) topology with Policy Gradient optimisation, Portfolio-Vector Memory (PVM), and Online Stochastic Batch Learning (OSBL). Tested on cryptocurrency markets with 30-minute trading intervals.
+
+Our summary: PGPortfolio is the foundational implementation for policy-gradient portfolio management. The EIIE architecture — where each asset is evaluated by an identical but independently parameterised network — became the standard design pattern for DRL portfolio agents. The 1,850 stars reflect its influence. While the code is no longer actively maintained (last push 2021), the architecture and training methodology remain relevant as a baseline. GPL-3.0 license.
+
+`View repository <https://github.com/ZhengyaoJiang/PGPortfolio>`__
+
+TDQN: An Application of Deep Reinforcement Learning to Algorithmic Trading
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Official experimental code for the TDQN (Trading Deep Q-Network) paper by Thibaut Theate and Damien Ernst. The repository implements the complete evaluation framework described in the paper: artificial trajectory generation for data augmentation, proper temporal train/validation/test splits, statistical significance testing, and Sharpe ratio maximisation as the reward function. Tested on 30 highly-liquid stocks with transaction costs.
+
+Our summary: this implementation is valuable not just for the TDQN algorithm but for the rigorous evaluation methodology — it is one of the few RL trading codebases that implements proper temporal validation and statistical testing out of the box. Any researcher building an RL trading system should use this evaluation framework as a minimum standard. 214 stars, Python.
+
+`View repository <https://github.com/ThibautTheate/An-Application-of-Deep-Reinforcement-Learning-to-Algorithmic-Trading>`__
