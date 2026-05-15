@@ -49,6 +49,7 @@ Algorithmic trading learning resources
    :caption: Methods & Systems
 
    machine-learning
+   reinforcement-learning
    portfolio-construction
    risk-management
    backtesting
