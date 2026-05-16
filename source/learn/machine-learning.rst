@@ -1267,3 +1267,16 @@ Data: FI-2010 (4.5M limit order book events from 5 stocks, 10 consecutive days, 
 Key metrics: FI-2010: 81.12% accuracy and 81.05% F1 (SOTA, beating DeepLOB's 80.35% F1 and BL-GAM-RHN-7's 80.88% F1). CSI-2016: 63.07% accuracy and 61.65% F1, outperforming all single-scale baselines including CNN (51.81% F1), LSTM (51.96% F1), and adapted multi-scale models.
 
 `Read the paper <https://www.ijcai.org/proceedings/2020/628>`__
+
+AlphaGlass: Interpretable Characteristic-Based Portfolio Choice
+---------------------------------------------------------------
+
+Sebastian Bell, Ali Kakhbod, Martin Lettau, and Abdolreza Nazemi (NBER Working Paper 35186, May 2026) propose AlphaGlass, an inherently interpretable machine-learning framework for constructing portfolios that directly optimizes investment objectives. AlphaGlass maps stock characteristics into additive signals with sparse pairwise interactions using a Generalized Additive Model (GAM) structure, then converts these signals into long-short portfolios through a differentiable rank-and-mask layer that approximates conventional quantile sorting. This end-to-end design allows the model to optimize objectives such as the Sharpe ratio or mean-variance utility while keeping portfolio weights interpretable and traceable to specific characteristics and interactions.
+
+Our summary: this paper's key contribution is resolving the tension between ML performance and economic interpretability in portfolio construction. Unlike standard predict-then-sort pipelines (Random Forest, neural networks), AlphaGlass jointly estimates signals and optimizes the portfolio objective in a single differentiable step. The additive GAM structure means every position can be decomposed into characteristic-level and interaction-level contributions — the model cannot hide overfitting in opaque nonlinearities. The most important univariate drivers identified are industry sales concentration (herf), operating leverage dynamics (pchsale_pchxsga), 12-month momentum (mom12m), and industry-adjusted employee changes (chempia). Crucially, AlphaGlass is the only model tested that produces positive Sharpe ratios across all size quintiles, whereas Random Forest, neural nets, and EBM collapse to near-zero Sharpe for large-cap stocks.
+
+Data: U.S. equities from CRSP/Compustat, 91 firm characteristics, 2000-2021. Training uses a 10-year window, 2-year validation, and 10-year test period. No public code repository.
+
+Key metrics: out-of-sample monthly long-short (decile 10-1) Sharpe ratio of 0.47, with monthly mean return of 1.10% and standard deviation of 2.35%. Outperforms benchmark models out-of-sample: Random Forest SR 0.14, neural network SR 0.34, Explainable Boosting Machine SR 0.30. When excluding small stocks (bottom size quintile), AlphaGlass retains SR of 0.43 while competitors drop to 0.12 (NN, RF) and 0.13 (EBM). Positive Sharpe ratios across all five size quintiles (0.27-0.40 for quintiles 2-5).
+
+`Read the paper <https://www.nber.org/papers/w35186>`__
