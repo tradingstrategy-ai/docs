@@ -217,3 +217,14 @@ The article presents a framework for signal validation that goes beyond simple b
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/research-article-35-building-robust>`__.
+
+AlphaGlass and the End of Backtest Theater
+------------------------------------------
+
+Milos Maricic argues that interpretability is becoming the only honest measure of out-of-sample edge, and that institutional allocators should demand characteristic-level attribution from quant managers pitching ML-driven equity strategies. The post centers on AlphaGlass (Bell, Kakhbod, Lettau, Nazemi; NBER), a characteristic-based portfolio model that forces every expected-return contribution to trace to a firm characteristic or low-order interaction, eliminating the overfitting that black-box optimizers conceal in-sample.
+
+Beyond AlphaGlass, the post reviews an arXiv survey of LLM stock-forecasting papers, identifying three systematic failure modes — illiquidity premia, data leakage from pretrained models, and horizon misspecification — that inflate published signal quality. It also covers multi-agent LLM universe filtering, LLM-driven bubble dynamics, chain-of-thought reasoning that still coordinates on speculative equilibria, and an ECB working paper on architecture-level systemic risk from AI adoption. The overarching message: managers who cannot decompose returns into economically interpretable drivers are selling backtest theater.
+
+By Milos Maricic.
+
+`Read the blog post <https://thespecification.substack.com/p/alphaglass-and-the-end-of-backtest>`__.
