@@ -1280,3 +1280,68 @@ Data: U.S. equities from CRSP/Compustat, 91 firm characteristics, 2000-2021. Tra
 Key metrics: out-of-sample monthly long-short (decile 10-1) Sharpe ratio of 0.47, with monthly mean return of 1.10% and standard deviation of 2.35%. Outperforms benchmark models out-of-sample: Random Forest SR 0.14, neural network SR 0.34, Explainable Boosting Machine SR 0.30. When excluding small stocks (bottom size quintile), AlphaGlass retains SR of 0.43 while competitors drop to 0.12 (NN, RF) and 0.13 (EBM). Positive Sharpe ratios across all five size quintiles (0.27-0.40 for quintiles 2-5).
 
 `Read the paper <https://www.nber.org/papers/w35186>`__
+
+A Review of Large Language Models for Stock Price Forecasting from a Hedge-Fund Perspective
+-------------------------------------------------------------------------------------------
+
+Olivia Zhang and Zhilin Zhang (IEEE Conference on Artificial Intelligence, May 2026) survey recent applications of LLMs in quantitative finance for stock prediction, covering sentiment extraction from financial news and social media, factual analysis of financial reports and earnings-call transcripts, tokenization and symbolization of stock price series, and construction of multi-agent trading systems. The review is organized from a hedge-fund perspective, emphasizing practical pitfalls that academic literature frequently understates.
+
+Our summary: this paper's primary value is as a systematic catalog of failure modes in LLM-based stock forecasting. The authors identify three critical frictions that inflate published signal quality. First, illiquidity premia — many LLM strategies show impressive returns on small-cap and micro-cap names where transaction cost assumptions are unrealistic for production trading. Second, data leakage — pretrained LLMs absorb financial news, earnings transcripts, and analyst commentary published after the claimed trading window, creating unaudited forward-looking contamination. Third, horizon misspecification — models that appear to predict next-day returns often predict horizons coinciding with news-release cadence rather than executable trading cadence. The review also highlights that most LLM sentiment pipelines are fragile across macro regimes (the same headline can imply opposite market directions depending on context), that evaluation metrics like MSE and accuracy are poorly aligned with real-world trading objectives, and that most studies are evaluated over windows too short to cover a full market cycle. This is a useful due-diligence checklist for allocators evaluating managers pitching LLM-driven alpha.
+
+Data: survey paper reviewing the LLM stock forecasting literature; no original empirical data. No code repository.
+
+Key metrics: methodological review — no original trading results. Notes that one reviewed tokenization approach reports 119% annual return and Sharpe ratio of 6.5, but flags these as subject to illiquidity and data-leakage constraints that would not survive production deployment.
+
+`Read the paper <https://arxiv.org/abs/2605.05211>`__
+
+Signal or Noise in Multi-Agent LLM-based Stock Recommendations?
+---------------------------------------------------------------
+
+George Fatouros and Kostas Metaxas (Alpha Tensor Technologies, April 2026) present the first portfolio-level validation of MarketSenseAI, a deployed multi-agent LLM equity system. The system routes four specialist agents — News, Fundamentals, Dynamics, and Macro — through a synthesis agent that produces monthly equity theses and ordinal recommendations (strong sell to strong buy) for each stock in its coverage universe. All signals are generated live at each observation date, eliminating look-ahead bias.
+
+Our summary: this paper is valuable as a transparent, live-signal case study of multi-agent LLM equity selection — something the field badly lacks. The Monte Carlo portfolio test is well-designed: it matches the actual portfolio on every dimension (universe composition, date timing, position count) except stock selection, with 10,000 random draws. The NNLS embedding attribution reveals that agent contributions are heterogeneous and context-dependent — no single agent dominates, and the dominant agent rotates with market regime (Fundamentals leads on S&P 500, Macro on S&P 100, Dynamics acts as episodic momentum signal). The paper is honest about limitations: the S&P 100 result does not reach statistical significance (p=0.17), and the authors make no claim that LLM systems generically outperform markets. The practical insight for allocators is that the strong-buy signal functions best as a dynamic universe filter upstream of portfolio construction rather than as a standalone alpha source.
+
+Data: S&P 500 cohort (467 stocks, 19 months, Sep 2024 - Mar 2026) and S&P 100 cohort (94 stocks, 35 months, May 2023 - Mar 2026). Live-generated signals via MarketSenseAI platform. No public code.
+
+Key metrics: S&P 500 strong-buy portfolio earns +2.18%/month vs passive equal-weight benchmark of +1.15%/month, +25.2 percentage-point compound excess, ranking at 99.7th percentile of 10,000 Monte Carlo null portfolios (p=0.003). S&P 100 delivers +30.5 percentage-point compound excess but p=0.17. Cross-sectional Information Coefficient (ICIR) of +0.489 (p=0.024) on S&P 500.
+
+`Read the paper <https://arxiv.org/abs/2604.17327>`__
+
+Dissecting AI Trading: Behavioral Finance and Market Bubbles
+------------------------------------------------------------
+
+Shumiao Ouyang (University of Oxford) and Pengfei Sui (Chinese University of Hong Kong, April 2026) study how autonomous LLM agents form expectations and trade in simulated experimental asset markets. Using a multi-period open-call auction populated entirely by LLM agents, the paper documents three main findings: AI agents exhibit classic behavioral finance patterns (disposition effect, extrapolative beliefs), these individual behaviors aggregate into equilibrium dynamics that replicate classic experimental bubble findings (Smith et al., 1988), and targeted prompt interventions can causally amplify or suppress bubble formation.
+
+Our summary: this paper's key contribution is demonstrating that prompt engineering functions as a market-stability control, not merely a UX preference. The twenty-mechanism scoring framework that analyzes agent reasoning text is the most informative part — it reveals that during bubbles, agents explicitly articulate speculative strategies like momentum chasing and riding the bubble. The causal intervention results are striking: prompts designed to suppress specific behavioral biases significantly reduce bubble magnitude, while prompts designed to amplify them exacerbate bubble formation. The implication for allocators building AI-driven trading infrastructure is direct: whoever writes the prompts controls bubble mechanics. For regulators, the paper suggests that "cognitive guardrails" at the prompt level could be a policy lever for systemic stability.
+
+Data: simulated experimental asset market with LLM agents (20 main trading periods, 100 units cash, 4 shares initial endowment, 5% risk-free rate, stochastic dividends). No real market data. No public code repository.
+
+Key metrics: simulation-based study — no real-market trading metrics. Documents that LLM agents reproduce the disposition effect and recency-weighted extrapolative beliefs observed in human experimental markets. Demonstrates that targeted prompt modifications materially change bubble magnitude in both directions (amplification and suppression).
+
+`Read the paper <https://arxiv.org/abs/2604.18373>`__
+
+AI Bubbles with Large Language Models
+--------------------------------------
+
+Alvaro Cartea, Patrick Chang, Nan Chen, and Mingyue Zhong (March 2026) examine whether LLM agents equipped with stronger chain-of-thought reasoning avoid speculative bubble equilibria. The paper studies sequential bubble games where agents decide whether to participate in or withdraw from asset price bubbles, testing whether more capable reasoning models improve market efficiency or instead coordinate on speculative equilibria through framing-sensitive belief formation.
+
+Our summary: this paper pushes the Ouyang and Sui findings further by showing that more sophisticated reasoning does not prevent bubble participation — it can actually facilitate it. Agents with stronger chain-of-thought capabilities still coordinate on speculative bubble equilibria, with their reasoning traces revealing framing-sensitive belief formation rather than genuine price discovery. This result inverts the common assumption that more capable models improve market efficiency. The implication for institutional allocators is that treating model sophistication as a safeguard against bubble participation misprices risk in the opposite direction from what intuition suggests. The finding that reasoning traces reveal framing sensitivity rather than fundamental analysis suggests that LLM agents are generating sophisticated rationalizations for momentum-chasing behavior rather than independently arriving at valuation-based decisions.
+
+Data: simulation-based experimental market with LLM agents in sequential bubble games. No real market data. No public code repository.
+
+Key metrics: simulation-based study — no real-market trading metrics. Key finding is that stronger chain-of-thought reasoning does not reduce bubble participation; reasoning traces reveal framing-sensitive belief formation rather than genuine price discovery.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426761>`__
+
+Ex Machina: Financial Stability in the Age of Artificial Intelligence
+---------------------------------------------------------------------
+
+Kartik Anand, Sophia Kazinnik, Agnese Leonello, and Ettore Panetti (ECB Working Paper No. 3225 / CEPR Discussion Paper No. 20681, September 2025) study AI investor behavior in a canonical mutual fund redemption game with economic and strategic uncertainty, comparing Q-learning and LLM investors. The paper examines whether different AI architectures generate systematically different outcomes for financial stability.
+
+Our summary: this paper's key contribution is demonstrating that AI architecture is itself a risk variable for financial stability — not an implementation detail. Q-learning agents coordinate well among themselves but exhibit a "hot stove effect": rare negative experiences from staying invested weigh disproportionately on future decisions, producing excessive early redemption that amplifies fund fragility even when fundamentals do not justify it. LLM agents internalize the equilibrium structure of the problem and better align with theoretical predictions, but their belief heterogeneity weakens coordination, making their redemptions less predictable. The information structure matters too: when LLM investors receive private signals rather than observing fundamentals directly, they become more consistent in their behavior, reducing disagreement across agents. The implication is twofold: Q-learning adoption at scale risks amplifying redemption cascades under stress, while LLM adoption fragments belief formation in ways that break the predictability regulators rely upon for stress testing. Allocators and regulators treating AI architecture as an implementation detail misprice systemic risks in both directions.
+
+Data: simulation-based experimental setup in a stylized mutual fund redemption game with economic and strategic uncertainty. No real market data. No public code repository.
+
+Key metrics: simulation-based study — no real-market trading metrics. Q-learning agents exhibit excessive redemption under default risk (hot stove effect) even when staying invested is optimal. LLM agents better internalize equilibrium structure but generate unpredictable coordination patterns due to belief heterogeneity.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5543139>`__
