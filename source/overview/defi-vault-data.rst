@@ -244,6 +244,8 @@ Rankings are calculated by
 and use net CAGR (falling back to gross when net is unavailable). Vaults are excluded from rankings if they are
 blacklisted, have zero/NaN CAGR, or fall below the TVL thresholds.
 
+.. _other_data and Morpho flags:
+
 ``other_data`` field for vault-protocol specific metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

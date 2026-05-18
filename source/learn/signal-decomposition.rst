@@ -40,7 +40,7 @@ Naveed ur Rehman and Hania Aftab extend VMD to multichannel data, proposing Mult
 
 Our summary: MVMD is significant for financial applications because markets generate multivariate data (price, volume, volatility, sentiment) that share common cyclical structures. Decomposing each series independently with standard VMD loses cross-variable frequency alignment. MVMD preserves this alignment, which recent papers (MVMD-NT-TiF, VD-MoGRU) have exploited for improved stock index prediction by jointly decomposing price and volume series.
 
-`Read the paper <https://arxiv.org/abs/1907.04509>`__
+`Read the paper <https://arxiv.org/abs /1907.04509>`__
 
 Short-Time Variational Mode Decomposition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
