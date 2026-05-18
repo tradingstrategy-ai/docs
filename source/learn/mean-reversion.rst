@@ -125,3 +125,55 @@ Key metrics: standard reversal +0.05% monthly return, industry-adjusted reversal
 Mentioned by Ivan Blanco Sanchez in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-finding-short-term-share-7457319174034436096-ocSC>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6630998>`__
+
+Revisiting Trend-Following and Mean-Reversion Strategies in Bitcoin
+--------------------------------------------------------------------
+
+This paper by Matúš Padyšák and Radovan Vojtko (Quantpedia) examines whether Bitcoin exhibits trend-following or mean-reversion patterns by analyzing price behavior relative to local maxima and minima over 10-50 day lookback periods. Using Gemini exchange data from November 2015 to August 2024, the authors find that both effects coexist: Bitcoin tends to continue trending upwards when at local highs (momentum) and to bounce back when at local lows (mean reversion).
+
+Our summary: the paper's practical value lies in showing that trend-following and mean-reversion are not mutually exclusive in crypto — they operate at different parts of the price cycle. The combined strategy that buys at both local maxima (riding momentum) and local minima (catching reversals) dramatically reduces drawdowns compared to passive holding while maintaining strong risk-adjusted returns. The 10-day lookback consistently outperforms longer windows, suggesting Bitcoin's dynamics favor shorter timeframes.
+
+Data: Bitcoin prices from Gemini exchange, November 2015 to August 2024. No code provided.
+
+Key metrics: combined strategy annualized return 98.43%, volatility 47.75%, maximum drawdown -37.67%, return/volatility ratio 2.06. Compare to Bitcoin buy-and-hold: volatility 74.35%, maximum drawdown -83.65%.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4955617>`__
+
+Asymmetric Mean Reversion of Bitcoin Price Returns
+---------------------------------------------------
+
+This paper by Shaen Corbet (DCU Business School) and Paraskevi Katsiampa (Sheffield Hallam University) is the first study to examine mean reversion in cryptocurrency markets. Using Bitcoin data from July 2010 to February 2018 across minutely, hourly, daily, and weekly frequencies (3,994,142 minutely observations at the highest frequency), the authors apply Asymmetric Nonlinear Autoregressive (ANAR) models to test whether Bitcoin price returns exhibit asymmetric reverting patterns similar to those documented in equity markets.
+
+Our summary: the key finding is that negative Bitcoin returns revert faster and more strongly than positive returns — a pattern consistent with the overreaction hypothesis. The asymmetry is more pronounced in the post-$1,000 sub-period and at higher data frequencies (minutely), becoming more symmetrical at lower frequencies (weekly). Positive returns show positive serial correlation (momentum persistence), while serial correlation with prior negative returns decreases and can turn negative — confirming that downside moves snap back while upside moves tend to continue. Higher-order ANAR models reveal that positive returns have higher persistence than negative returns, further supporting asymmetric reverting behavior.
+
+Data: Bitcoin prices from July 2010 to February 2018 at minutely, hourly, daily, and weekly frequencies. Published in International Review of Financial Analysis (2019). No code provided.
+
+Key metrics: this is a statistical study documenting asymmetric mean reversion patterns rather than a trading strategy, so no trading performance metrics are reported. The paper establishes the empirical foundation that negative crypto returns revert faster than positive returns.
+
+`Read the paper <https://doi.org/10.1016/j.irfa.2018.10.004>`__
+
+Trading Multiple Mean Reversion
+---------------------------------
+
+This paper by Elena Boguslavskaya, Mikhail Boguslavsky, and Dmitry Muravey addresses the portfolio construction problem for multiple mean-reverting assets. The authors formulate an optimal control problem for an agent trading several Ornstein-Uhlenbeck mean-reverting assets simultaneously, assuming power utility preferences. They derive a semi-explicit solution that enables analysis of parameter specification errors and optimal portfolio properties.
+
+Our summary: the paper's key theoretical contribution is answering whether zero mean-reversion assets should be included in a portfolio alongside mean-reverting ones, and how to optimally allocate across multiple mean-reverting processes with different speeds and volatilities. The semi-explicit solution form makes the framework practical for real portfolio construction in pairs trading and stat-arb contexts. The analysis of parameter misspecification is particularly relevant for practitioners, as mean-reversion speed estimates are notoriously noisy in practice.
+
+Data: theoretical framework with analytical solutions. No empirical backtesting data. No code provided.
+
+Key metrics: this is a theoretical paper providing closed-form solutions rather than empirical trading results. The framework enables optimal position sizing across multiple mean-reverting spreads under power utility.
+
+`Read the paper <https://arxiv.org/abs/2009.09816>`__
+
+Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit
+-------------------------------------------------------------------------
+
+This paper by Tim Leung and Xin Li studies optimal timing strategies for trading a mean-reverting price spread modeled as an Ornstein-Uhlenbeck process. The authors formulate the problem as an optimal double stopping problem to determine when to enter and exit positions while accounting for transaction costs. They extend the analysis to incorporate stop-loss constraints, deriving the optimal price intervals for market entry and exit.
+
+Our summary: the paper provides the mathematical foundation for optimal entry and exit timing in mean-reversion strategies. The key practical insight is that the optimal entry region is a bounded price interval that lies strictly above the stop-loss level, and higher stop-loss levels correlate with lower optimal take-profit thresholds. This creates a direct trade-off between drawdown control and profit targets that mean-reversion traders must navigate. The framework is widely applicable to pairs trading, stat-arb, and any strategy trading OU-modeled spreads.
+
+Data: analytical framework with numerical solutions. Published in International Journal of Theoretical and Applied Finance, Vol. 18, No. 3 (2015). No code provided.
+
+Key metrics: this is a theoretical paper providing optimal stopping rules rather than empirical trading results. The framework derives closed-form entry/exit boundaries as functions of OU parameters, transaction costs, and stop-loss levels.
+
+`Read the paper <https://arxiv.org/abs/1411.5062>`__

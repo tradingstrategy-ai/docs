@@ -372,3 +372,16 @@ A practical guide to building a market-neutral pairs trading strategy using Vect
 By PyQuant News.
 
 `Read the article <https://www.pyquantnews.com/the-pyquant-newsletter/quickly-make-pairs-trading-strategy-500-stocks>`__.
+
+Optimal Market-Neutral Multivariate Pair Trading on the Cryptocurrency Platform
+---------------------------------------------------------------------------------
+
+This paper by Hongshen Yang and Avinash Malik introduces the Optimal Trading Technique (OTT), a novel arbitrage methodology for multivariate pair trading in cryptocurrency markets. The method creates a bucket of fiat currencies (USD, CAD, GBP, EUR) quoted against ETH on the Kraken exchange to exploit pricing anomalies arising from independent fiat-crypto trades. A bi-objective convex optimization model balances profitability against risk using a tunable volatility penalty parameter (lambda), while maintaining market neutrality by requiring equal ETH quantities bought and sold.
+
+Our summary: the paper demonstrates that cross-currency arbitrage on a single crypto exchange can generate consistent profits without requiring external shorting or margin. The strategy operates within the initial principal, trading the price differences between ETH quoted in different fiat currencies. The 5-minute interval with moderate risk aversion (lambda=1) provides the best risk-adjusted performance, and the strategy remains profitable even during the 2022 bear market when ETH declined 61.84%. The high trading frequency (12,166 trades over the test period) with 54.4% win rate and average 5-hour holding period characterizes it as a high-frequency stat-arb approach.
+
+Data: ETH prices in USD/CAD/GBP/EUR from Kraken, training January 2018 to January 2020, testing January 2021 to October 2022. Published in International Journal of Financial Studies. No code provided.
+
+Key metrics: 15.49% annualized return at lambda=1 (5-min interval), Sharpe ratio 0.68 full-cycle, 2.66 in bull market, 0.16 in bear market. At lambda=0.5: 37.74% annualized return, Sharpe 1.11. Win rate 54.4%, win/loss ratio 1.19, average holding period 5.09 hours. Bear market return +4.99% versus buy-and-hold -61.84%. Portfolio volatility reduced from 0.961 (buy-and-hold) to 0.104 (OTT lambda=2).
+
+`Read the paper <https://arxiv.org/abs/2405.15461>`__
