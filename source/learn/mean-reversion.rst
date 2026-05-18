@@ -177,3 +177,16 @@ Data: analytical framework with numerical solutions. Published in International 
 Key metrics: this is a theoretical paper providing optimal stopping rules rather than empirical trading results. The framework derives closed-form entry/exit boundaries as functions of OU parameters, transaction costs, and stop-loss levels.
 
 `Read the paper <https://arxiv.org/abs/1411.5062>`__
+
+Testing for Mean Reversion in Bitcoin Returns with Gibbs-Sampling-Augmented Randomization
+------------------------------------------------------------------------------------------
+
+This paper by Douglas Eduardo Turatti, Fernando Henrique P.S. Mendes, and João Frois Caldeira tests whether Bitcoin log-returns exhibit mean reversion using the autoregression test based on Gibbs-sampling-augmented randomization. The methodology employs Markov-switching models to handle heteroskedastic disturbances with a mixture distribution, addressing a key gap in the literature since Bitcoin had not previously been tested for mean reversion using robust methods that account for time-varying volatility.
+
+Our summary: the paper's key finding is that Bitcoin is mean *averting* — not mean reverting — for different return horizons, model specifications, and sub-sample periods from 2010 to 2019. This is an important counter-finding to the common assumption that crypto prices revert to a mean. The explosive characteristic of Bitcoin in the sample period suggests that momentum or trend-following may dominate over mean reversion at the horizons tested. This result complements Corbet and Katsiampa's asymmetric mean reversion finding by suggesting that while short-term negative returns may revert, the overall price process is not mean-reverting.
+
+Data: Bitcoin returns from 2010 to 2019. Published in Finance Research Letters, Vol. 34 (2020). No code provided.
+
+Key metrics: this is a statistical testing paper rather than a trading strategy. The main result is the rejection of the mean reversion hypothesis in favor of mean aversion across multiple specifications.
+
+`Read the paper <https://doi.org/10.1016/j.frl.2019.07.025>`__

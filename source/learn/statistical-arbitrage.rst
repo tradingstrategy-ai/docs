@@ -385,3 +385,29 @@ Data: ETH prices in USD/CAD/GBP/EUR from Kraken, training January 2018 to Januar
 Key metrics: 15.49% annualized return at lambda=1 (5-min interval), Sharpe ratio 0.68 full-cycle, 2.66 in bull market, 0.16 in bear market. At lambda=0.5: 37.74% annualized return, Sharpe 1.11. Win rate 54.4%, win/loss ratio 1.19, average holding period 5.09 hours. Bear market return +4.99% versus buy-and-hold -61.84%. Portfolio volatility reduced from 0.961 (buy-and-hold) to 0.104 (OTT lambda=2).
 
 `Read the paper <https://arxiv.org/abs/2405.15461>`__
+
+Statistical Arbitrage within Crypto Markets using PCA
+------------------------------------------------------
+
+This paper by Jay Jung (2025) explores the application of Principal Component Analysis to statistical arbitrage trading in cryptocurrency markets. The methodology follows the classical Avellaneda-Lee framework: constructing eigenportfolios from PCA on crypto returns, estimating the Ornstein-Uhlenbeck process for residual mean reversion, and implementing a walk-forward validation framework. The study tests whether the well-documented PCA-based stat-arb approach that works in equities can transfer to the crypto domain.
+
+Our summary: the paper's main finding is negative — the PCA-based eigenportfolio approach may not be robust in the cryptocurrency market. This is a practically important result because it suggests that crypto's factor structure, driven by a dominant market factor (BTC) with rapidly shifting altcoin correlations, does not produce stable mean-reverting residuals the way equity PCA residuals do. The author notes room for improvement, potentially through adaptive PCA windows or alternative factor extraction methods. The result aligns with the broader observation that equity stat-arb frameworks require significant modification for crypto markets.
+
+Data: cryptocurrency market data. Published on SSRN (March 2025). No code availability noted.
+
+Key metrics: the paper reports that performance metrics indicate the approach is not robust in crypto markets. Specific Sharpe ratios and returns are not highlighted as the results are largely negative.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5263475>`__
+
+Deep Reinforcement Learning Applied to Statistical Arbitrage Investment Strategy on Cryptomarket
+-------------------------------------------------------------------------------------------------
+
+This paper by Vergara and Kristjanpoller integrates cointegration tests with Deep Reinforcement Learning into a statistical arbitrage framework for cryptocurrency markets. The approach constructs cointegrated long-short portfolios from crypto pairs and trains DRL agents (including Deep Q-Network, PPO, and A2C variants) to detect and act on temporary price divergences. The framework is evaluated on 30-minute interval data and benchmarked against classical cointegration-based and SVM baselines.
+
+Our summary: the paper demonstrates that DRL agents, particularly the Deep Q-Network variant, consistently outperform classical cointegration-based and SVM-based stat-arb baselines in crypto markets, even after incorporating transaction costs. The framework addresses the extreme volatility challenge in crypto by learning adaptive trading policies rather than relying on fixed threshold rules. The positive out-of-sample results across multiple DRL algorithms suggest that the approach captures nonlinear spread dynamics that parametric models miss.
+
+Data: cryptocurrency data at 30-minute intervals. Published in Applied Soft Computing, Vol. 153: 111255 (March 2024). No code availability noted.
+
+Key metrics: DRL agents generate out-of-sample returns ranging from 79.52% to 112.82% without transaction costs, outperforming the Bitcoin benchmark return of 32.51%. Strategies maintain positive returns after transaction costs, with the DRL agent outperforming the standard arbitrage strategy.
+
+`Read the paper <https://doi.org/10.1016/j.asoc.2024.111255>`__
