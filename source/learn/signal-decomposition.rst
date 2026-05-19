@@ -1158,3 +1158,14 @@ Key metrics: FED2Port achieved the highest Sharpe ratio across all 9 portfolio c
 Data: S&P 500, DAX, KOSPI (high-risk); BND, BSV, VCIT (low-risk bond funds). Daily data from Yahoo Finance, Jan 2010 to Dec 2022. Training: 2010-2014, Testing: 2015-2022. 9 two-class portfolio combinations.
 
 `Read the paper <https://www.mdpi.com/2073-8994/16/3/283>`__
+
+How Hedge Funds Use The Kalman Filter To Read Hidden Markets In Real Time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A practical breakdown of how hedge funds use the Kalman Filter to estimate hidden market states in real time. The article presents the Kalman Filter as a recursive Bayesian state-space model that infers unobservable market variables — such as true asset value, latent momentum, or regime state — from noisy price observations. Unlike static regression or moving average approaches, the Kalman Filter dynamically updates its estimates as each new data point arrives, making it well-suited for real-time trading systems where market conditions shift continuously.
+
+The article shares an implementable quant framework for applying the Kalman Filter to trading, covering the predict-update cycle, state transition and observation models, and how to calibrate noise covariance parameters for financial data. This connects to the broader signal decomposition literature: the Kalman Filter can be viewed as optimally separating signal (true state) from noise in a sequential filtering framework, complementing frequency-domain decomposition methods like VMD and EMD covered elsewhere in this collection.
+
+Mentioned by `Phosphen (@phosphenq) <https://x.com/phosphenq/status/2056438562451513660>`__ on X.
+
+`Read the article <https://x.com/i/article/2056414759554015232>`__
