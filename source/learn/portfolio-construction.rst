@@ -180,3 +180,18 @@ The post also addresses how variance drag diminishes for individual positions wi
 By Ptuomov.
 
 `Read the post <https://x.com/ptuomov/status/2031639817574834344>`__
+
+Robust Optimization of Strategic and Tactical Asset Allocation for Multi-Asset Portfolios
+------------------------------------------------------------------------------------------
+
+Artur Sepp, Ivan Ossa, and Mika Kastenholz present the ROSAA framework — a unified pipeline for strategic and tactical asset allocation of multi-asset portfolios. The paper addresses the practical challenges institutional investors face when constructing portfolios across heterogeneous asset classes with varying liquidity, rebalancing frequencies, and incomplete return histories. The framework integrates factor model covariance estimation, risk-budgeted strategic asset allocation (SAA), alpha signal computation, and tactical asset allocation (TAA) with tracking error constraints into a single coherent pipeline.
+
+Our summary: The key methodological contribution is the Hierarchical Clustering Group LASSO (HCGL) factor covariance estimator, which builds sparse, structured covariance matrices for heterogeneous multi-asset universes by clustering assets and applying group LASSO regularization to factor loadings. For SAA, the framework uses constrained risk budgeting with group allocation limits, avoiding the instability of traditional mean-variance optimization. For TAA, an alpha-over-tracking-error optimization tilts the portfolio toward tactical signals while maintaining a risk budget relative to the strategic benchmark. The framework handles real-world complications including NaN-aware rolling backtesting for assets with missing data, drift-aware turnover accounting that measures trades against drifted holdings rather than stale baselines, and mixed-frequency rebalancing for illiquid positions.
+
+Code: The ``optimalportfolios`` Python package on GitHub (`ArturSepp/OptimalPortfolios <https://github.com/ArturSepp/OptimalPortfolios>`__) is the reference implementation. It includes solvers for minimum variance, constrained risk budgeting, maximum diversification, maximum Sharpe, alpha-over-tracking-error, and CARA utility under Gaussian mixture, with end-to-end backtesting examples.
+
+Published in the Journal of Portfolio Management, 2026, Volume 52, Issue 4, Pages 86-120.
+
+Mentioned by `Artur Sepp on LinkedIn <https://www.linkedin.com/posts/artursepp_quantitativefinance-assetallocation-factorinvesting-ugcPost-7462115172703420416-eS1t>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5250221>`__
