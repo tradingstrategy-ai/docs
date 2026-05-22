@@ -194,4 +194,19 @@ Research into whether IPOs offer a tradable edge, backed by a fully backtested m
 
 By Peter, CrackingMarkets.
 
-`Read the blog post <https://www.crackingmarkets.com/finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system/>`__.
+`Read the blog post <https://www.crackingmarkets.com/finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system/>`__
+
+Economic Uncertainty and the Beta Anomaly in G10 Countries
+-----------------------------------------------------------
+
+This paper extends the finding that the beta anomaly — whereby low-beta stocks outperform high-beta stocks on a risk-adjusted basis — is conditional on the macroeconomic uncertainty regime. Building on Cao, Wu, and Wu's work published in Management Science showing the effect in US equities, the authors test whether the same mechanism holds across G10 economies. Using the global Economic Policy Uncertainty (EPU) index over 1997–2025, they partition each market into high- and low-uncertainty regimes. Across most G10 markets, the negative relationship between market beta and CAPM alpha is significant only during low-uncertainty periods and weakens or disappears when uncertainty is high.
+
+The core mechanism is that during calm periods, investors are more risk-tolerant and over-allocate to high-beta stocks, bidding up their prices and depressing subsequent returns. When uncertainty rises, risk appetite diminishes, easing this overpricing effect and restoring the risk-return relation closer to CAPM predictions. The original US study found the Fama-French 3-factor alpha of the high-minus-low beta portfolio is -0.95% per month in low-uncertainty periods and insignificantly positive (+0.32%) in high-uncertainty periods. Evidence from mutual fund flows and trade-induced beta changes confirms the investor behaviour channel: actively managed funds reduce market risk exposure during high uncertainty, while index funds show no such pattern. The finding is robust to alternative uncertainty indices, beta estimation methods, and sample periods.
+
+The study uses stock market data from G10 countries (US, UK, Japan, Germany, France, Canada, Italy, Switzerland, Netherlands, and their equivalents) with the macroeconomic uncertainty index of Jurado, Ludvigson, and Ng (2015) and the global EPU index. No code is provided for reproduction.
+
+Key metrics from the US study: low-beta stocks outperform high-beta by roughly 1% per month during calm regimes. The high-minus-low beta portfolio alpha is -0.95% monthly in low-uncertainty periods versus +0.32% (insignificant) in high-uncertainty periods.
+
+By Yigit Atilgan, K. Ozgur Demirtas, A. Doruk Gunaydin, and Aynur Dilan Tosun. Mentioned by Ivan Blanco in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-the-beta-anomaly-only-share-7463217469998985217-BrW3>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6729938>`__.
