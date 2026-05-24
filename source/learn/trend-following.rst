@@ -288,3 +288,14 @@ Key metrics: the unleveraged 200-day Moving Average timing strategy achieves an 
 Mentioned by `@MatiasScalbi <https://x.com/MatiasScalbi>`__ in `this discussion <https://x.com/MatiasScalbi/status/2049285538096538017>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2741701>`__
+
+How to Manage an Intraday Trend Trade
+--------------------------------------
+
+Concretum Research examines how minor implementation details significantly impact trading strategy performance. The team tests an intraday trend-following system based on ATR band breakouts across four distinct exit mechanisms: Session Open, Session Midline, VWAP, and Parabolic SAR. Using the iShares Semiconductor ETF (SOXX) from January 2012 to May 2026, all configurations proved profitable with Sharpe ratios between 0.92-1.16, though exhibiting different risk-return tradeoffs.
+
+Rather than selecting one exit policy, the authors recommend "ensembling" — allocating risk across all logically sound specifications. Annual Sharpe rankings rotate across years with no consistent winner, suggesting that superior performance in one metric often sacrifices performance in another. This approach embraces uncertainty about which configuration performs best going forward, avoiding fragile single-point choices and reducing potential decision points that could require future revision under market pressure.
+
+By Concretum Research.
+
+`Read the blog post <https://concretumgroup.substack.com/p/how-to-manage-an-intraday-trend-trade>`__
