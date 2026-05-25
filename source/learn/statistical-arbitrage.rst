@@ -411,3 +411,16 @@ Data: cryptocurrency data at 30-minute intervals. Published in Applied Soft Comp
 Key metrics: DRL agents generate out-of-sample returns ranging from 79.52% to 112.82% without transaction costs, outperforming the Bitcoin benchmark return of 32.51%. Strategies maintain positive returns after transaction costs, with the DRL agent outperforming the standard arbitrage strategy.
 
 `Read the paper <https://doi.org/10.1016/j.asoc.2024.111255>`__
+
+Cluster-Based Pairs Trading: Combining Unsupervised Learning with Cointegration Filtering
+------------------------------------------------------------------------------------------
+
+This paper by Fuwen Gan and Ramy Mizrachi develops a market-neutral pairs trading strategy on a universe of 304 highly liquid ETFs, testing whether statistically robust performance can be achieved under realistic constraints on data availability and computation. Returns are standardized cross-sectionally and decomposed via PCA; the authors compare specifications that keep versus remove the first principal component (market mode). Density-based clustering (HDBSCAN and OPTICS) forms ETF neighborhoods, and within each cluster, candidate spreads are selected via Engle-Granger cointegration together with Hurst exponent filtering, Ornstein-Uhlenbeck half-life bounds, and excursion requirements. A rolling backtest with 12-month formation and 6-month trading windows trades all surviving spreads in an equally weighted, dollar-neutral portfolio using simple z-score entry/exit rules.
+
+Our summary: the paper's central contribution is a fully reproducible, end-to-end empirical pipeline intentionally constrained to free daily ETF data and a single machine — asking how far a careful practitioner can go toward recovering the statistical arbitrage returns documented in the literature. The multi-stage filtering pipeline (ADF cointegration at 5%, Hurst exponent between 0.20-0.48, OU half-life between 3-25 trading days, plus excursion requirements) is particularly well-documented and provides a reusable template for pair selection. All four clustering specifications substantially outperform the S&P 500, Dow Jones, and Nasdaq benchmarks on both cumulative return and Sharpe ratio, with OPTICS on PC1-removed returns delivering the best risk-adjusted performance.
+
+Data: daily adjusted prices from Yahoo Finance for 304 ETFs with common history from November 6, 2013 to November 10, 2025. Trading period: December 16, 2014 to November 24, 2025. Implemented with open-source Python libraries. Mentored at Rice University Department of Statistics by Dr. Michael Jackson, Dr. Elizabeth McGuffey, and Zechariah Zhu.
+
+Key metrics (best specification — OPTICS with PC1 removed): 963.78% cumulative return, annualized Sharpe ratio 2.4935, maximum drawdown -8.74%, win rate 44.21%. HDBSCAN with PC1 removed achieved the highest cumulative return at 1020.34% with Sharpe 2.0755 but deeper drawdown of -28.39%. All specifications beat S&P 500 (302.03% cumulative, Sharpe 0.80), Dow Jones (170.93%, Sharpe 0.61), and Nasdaq (542.53%, Sharpe 0.88) over the same period.
+
+`Read the paper <https://repository.rice.edu/server/api/core/bitstreams/e947dc21-5ed8-4be3-ab2d-40eb833770f1/content>`__
