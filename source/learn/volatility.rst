@@ -251,3 +251,44 @@ Data: Refinitiv daily stock data for 355 S&P 500 constituents (January 2000-June
 Key metrics: TFT with overall pooling and F2 features achieves mean RMSE 0.0699 (weekly) and 0.1003 (monthly). Relative RMSE versus TFT: Random Forest 1.58-1.63x and LSTM 1.19-1.27x on weekly data with pooling, confirming TFT superiority. TFT consistently beats GARCH(1,1) and GARCH-X regardless of training approach and frequency.
 
 `Read the paper <https://ideas.repec.org/p/zbw/iwqwdp/032023.html>`__
+
+Volatility Calibration: Structural Rigidity vs. Local Adaptivity
+-----------------------------------------------------------------
+
+Alexander Nevolin discusses the central tension in volatility surface calibration: balancing structural rigidity against local adaptivity. Too much rigidity suppresses genuine market signals, while excessive flexibility absorbs microstructure noise. The post contrasts two approaches: rigid prior geometry from classical parametric models (SSVI/SABR), which create globally smooth, low-dimensional surfaces where the admissible manifold acts as a filter preventing unwanted deformations; and flexible prior geometry from arbitrage-constrained deep learning, which relaxes geometric restrictions while maintaining no-arbitrage constraints, allowing higher-dimensional deformations.
+
+Nevolin categorizes observed market data into three types — genuine outliers rejected by both approaches, inference-sensitive anomalies handled differently by each method, and prior-sensitive local propagation where flexibility introduces non-local consequences. He advocates for hybrid modeling that preserves analytical geometry as a backbone while learning residual deformations, referencing two recent papers: "Meta-Learning Neural Process for Implied Volatility Surfaces with SABR-induced Priors" (Zhuang & Wu, 2025) and "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula" (Reghai, Tarsissi, Biau & Lipton, 2026).
+
+By Alexander Nevolin.
+
+`Read the post <https://www.linkedin.com/posts/alexander-nevolin-0ba0105_in-volatility-calibration-the-central-challenge-share-7465334001436774400-NU34/>`__
+
+Meta-Learning Neural Process for Implied Volatility Surfaces with SABR-induced Priors
+--------------------------------------------------------------------------------------
+
+Jirong Zhuang and Xuan Wu (University of Macau) propose two principles for implied volatility surface (IVS) reconstruction: a meta-learning framework that trains across multiple trading days to learn a procedure mapping sparse option quotes to complete surfaces via conditional prediction, eliminating daily recalibration; and structural priors via transfer learning by pre-training on SABR-generated synthetic data then fine-tuning on historical market data. Their model, Volatility Neural Process (VolNP), uses an attention-based Neural Process architecture to produce a complete IVS from a sparse context set in a single forward pass.
+
+Our summary: VolNP is a compelling example of the hybrid direction in volatility surface modeling — combining the structural discipline of a classical parametric model (SABR) with the flexibility of neural networks. The SABR pre-training acts as a physics-informed prior that regularises the network in data-sparse regions (long maturities, deep out-of-the-money strikes), while the meta-learning formulation across trading days means the model learns a general calibration procedure rather than memorising a single day's surface. The result is a method that generalises better to new market conditions without the fragility of daily recalibration.
+
+Data: SPX options data. Published on arXiv (September 2025, arXiv:2509.11928).
+
+Key metrics: on SPX options, VolNP outperforms SABR, SSVI, and Gaussian process baselines. The SABR-induced prior reduces RMSE by approximately 40% relative to an ablation trained only on market data and suppresses large errors, with pronounced gains at long maturities where quotes are sparse.
+
+Mentioned by Alexander Nevolin in `this discussion <https://www.linkedin.com/posts/alexander-nevolin-0ba0105_in-volatility-calibration-the-central-challenge-share-7465334001436774400-NU34/>`__.
+
+`Read the paper <https://arxiv.org/abs/2509.11928>`__
+
+A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula
+---------------------------------------------------------------------------------
+
+Adil Reghai, Lama Tarsissi, Gérard Biau, and Alex Lipton present a hybrid approach combining Hagan's classical SABR analytical approximation with a neural network that learns the residual error. Rather than replacing the analytical formula entirely, the network is trained to correct higher-order effects absent from asymptotic expansions. The key innovation is augmenting the neural network input with geometric features derived from the SABR stochastic differential equations, maintaining interpretability while capturing effects that analytical approximations miss.
+
+Our summary: this paper exemplifies the hybrid paradigm that Alexander Nevolin advocates — preserving the analytical backbone (Hagan's SABR formula) while learning residual deformations with a lightweight neural network. The geometry-aware input representation is the critical design choice: by feeding the network features derived from the SDE structure rather than raw parameters, the model converges faster and generalises better across parameter regimes, including stressed scenarios where pure analytical approximations break down. The lightweight correction is designed to be suitable for real-time trading applications where latency matters.
+
+Data: numerical experiments across realistic and stressed SABR parameter domains. Published on arXiv (May 2026, arXiv:2605.06604). 33 pages, 17 figures.
+
+Key metrics: the geometry-aware residual correction demonstrates improved accuracy and robustness compared to both pure analytical methods and standard neural network approaches across realistic and stressed parameter domains.
+
+Mentioned by Alexander Nevolin in `this discussion <https://www.linkedin.com/posts/alexander-nevolin-0ba0105_in-volatility-calibration-the-central-challenge-share-7465334001436774400-NU34/>`__.
+
+`Read the paper <https://arxiv.org/abs/2605.06604>`__
