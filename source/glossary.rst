@@ -4032,6 +4032,74 @@ and algorithmic trading.
 
         - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
 
+    HAC Sharpe
+
+        HAC Sharpe is a :term:`Sharpe` ratio where the denominator is estimated using a :term:`Heteroskedasticity and Autocorrelation Consistent (HAC)` long-run variance estimator instead of the ordinary sample standard deviation.
+
+        It is used in :term:`quantitative finance`, :term:`backtesting <backtest>` and :term:`trading strategy` research when strategy returns are not independent and identically distributed. This is common when a strategy holds positions for multiple bars, uses rolling signals, trades overlapping portfolios, smooths exposures, or reports high-frequency returns from positions that change more slowly than the reporting interval.
+
+        A plain :term:`Sharpe` ratio can overstate :term:`risk-adjusted return` when returns are positively autocorrelated, because the usual sample standard deviation does not fully capture serial dependence. HAC Sharpe uses a Newey-West style long-run variance estimate that allows both changing return variance and return autocorrelation. The result is usually a more conservative and more defensible Sharpe estimate for autocorrelated strategy PnL streams.
+
+        HAC Sharpe is not automatically "better" in every setting. For simple buy-and-hold returns sampled at a horizon where observations are close to independent, the ordinary :term:`Sharpe` ratio may be easier to interpret. HAC Sharpe is better when the research question is whether an apparent edge survives more realistic time-series uncertainty.
+
+        Literature and references:
+
+        - Whitney K. Newey and Kenneth D. West, `A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix <https://doi.org/10.2307/1913610>`__, Econometrica, 1987.
+
+        - Andrew W. Lo, `The Statistics of Sharpe Ratios <https://doi.org/10.2469/faj.v58.n4.2453>`__, Financial Analysts Journal, 2002.
+
+        - Newey and West, `NBER Technical Working Paper version <https://www.nber.org/papers/t0055>`__.
+
+        See also
+
+        - :term:`Sharpe`
+
+        - :term:`Heteroskedasticity and Autocorrelation Consistent (HAC)`
+
+        - :term:`Sortino`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Volatility`
+
+        - :term:`Backtest`
+
+        - :term:`Quantitative finance`
+
+    Heteroskedasticity and Autocorrelation Consistent (HAC)
+
+        Heteroskedasticity and Autocorrelation Consistent (HAC) refers to a family of statistical estimators that produce covariance or standard-error estimates that remain consistent when observations have non-constant variance and serial correlation.
+
+        Heteroskedasticity means the variance of a return or model error changes over time. Autocorrelation means neighbouring observations are statistically related. Both are common in financial time series, especially in :term:`volatility` clusters, rolling :term:`technical indicator` signals, overlapping returns, and :term:`algorithmic trading` strategy PnL.
+
+        HAC estimators are used because many familiar statistics assume independent observations with constant variance. If those assumptions are false, the point estimate can look precise even when the uncertainty estimate is too optimistic. HAC adjusts the estimated variance for both effects, making inference more robust.
+
+        The best-known HAC estimator in finance and econometrics is the Newey-West estimator. It estimates a long-run variance by combining the usual variance with lagged autocovariances, usually with weights that decline as the lag increases. This idea is often used when calculating :term:`HAC Sharpe`, regression t-statistics, model standard errors, and other time-series diagnostics.
+
+        HAC is not a cure for :term:`overfitting`, look-ahead bias, bad data, or a poorly designed :term:`backtest`. It only improves the uncertainty estimate once the return series or model residuals are otherwise valid.
+
+        Literature and references:
+
+        - Whitney K. Newey and Kenneth D. West, `A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix <https://doi.org/10.2307/1913610>`__, Econometrica, 1987.
+
+        - Whitney K. Newey and Kenneth D. West, `Automatic Lag Selection in Covariance Matrix Estimation <https://doi.org/10.2307/2297912>`__, Review of Economic Studies, 1994.
+
+        - Halbert White, `A Heteroskedasticity-Consistent Covariance Matrix Estimator and a Direct Test for Heteroskedasticity <https://www.econometricsociety.org/publications/econometrica/browse/1980/05/01/heteroskedasticity-consistent-covariance-matrix-estimator-and>`__, Econometrica, 1980.
+
+        See also
+
+        - :term:`HAC Sharpe`
+
+        - :term:`Sharpe`
+
+        - :term:`Volatility`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Backtest`
+
+        - :term:`Quantitative finance`
+
     Sortino
 
         The Sortino ratio is a :term:`risk-adjusted return` measure that is used to evaluate the return of an investment relative to its downside risk, as measured by the standard deviation of negative returns. It was developed by Frank A. Sortino, a financial researcher and academic.
