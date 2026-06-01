@@ -246,6 +246,19 @@ By Martyn Tinsley.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6324079>`__
 
+Algo Advantage 053 — Martyn Tinsley: Walk Forward Correlation, A New Tool for Robust Strategy Design
+-----------------------------------------------------------------------------------------------------
+
+Part 2 of a two-part Algo Advantage podcast presentation with Martyn Tinsley, hosted by Simon M. Part 1 (episode 052, "Beyond the BackTest") establishes the foundational principles for disciplined strategy research — data integrity as model risk rather than clerical overhead, restraint in model design ("simple models have an underrated virtue: they fail transparently"), stress testing over optimisation, and implementation realism from inception — and builds toward Part 2's introduction of the Walk Forward Correlation (WFC) methodology that is the subject of Tinsley's `SSRN working paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6324079>`__.
+
+Episode 053 develops WFC in detail. Rather than asking whether a single best-performing parameter set survives out-of-sample testing — which can succeed through pure chance — WFC examines whether the entire optimisation surface demonstrates consistency between in-sample and out-of-sample results. The diagnostic asks whether "the optimisation process itself was informative" across all parameter combinations, not just lucky winners. The methodology computes correlation (Pearson or alternative rank-based measures) between in-sample and out-of-sample performance across the full parameter grid: high positive correlation signals structural stability, low or negative correlations suggest over-fitting or regime instability.
+
+A critical caveat surfaced in the discussion: WFC measures *predictive consistency*, not *profitability* — a system can rank parameters identically across periods yet still lose money. The practitioner heuristic Tinsley emphasises is to evaluate the parameter space geometry holistically: look for "smooth topologies" where parameter changes produce proportional performance shifts, because chaotic surfaces with sharp performance cliffs typically mask over-fitting even when WFC looks acceptable. Genuine edge is signalled by the combination of (1) positive out-of-sample performance, (2) high WFC, and (3) smooth optimisation surfaces — not by any single one of these in isolation. The episode is the most accessible practitioner-level explanation of the WFC framework and pairs naturally with the SSRN paper for anyone implementing it.
+
+Hosted by Simon M with guest Martyn Tinsley. The same episode is mirrored on YouTube at `youtu.be/ji2ms6fCGvI <https://www.youtube.com/watch?v=ji2ms6fCGvI>`__ and as written show notes on `Algo Advantage Substack <https://algoadvantage.substack.com/p/053-martyn-tinsley-walk-forward-correlation>`__.
+
+`Listen to the podcast <https://www.algoadvantage.io/podcast/053-martyn-tinsley-2/>`__
+
 Walk-Forward Optimization (WFO): A Framework for More Reliable Backtesting
 ---------------------------------------------------------------------------
 
