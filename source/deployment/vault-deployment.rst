@@ -150,7 +150,7 @@ An example `deploy/deploy-base-ath.sh` script
 
     #!/bin/bash
     #
-    # Deploy Lagoon vault for a strategy defined in docker-compose.yml
+    # Deploy Lagoon vault for a strategy defined in docker compose.yml
     #
     # Set up
     # - Gnosis Safe
@@ -252,11 +252,11 @@ Example output:
 Set up live execution environment
 ---------------------------------
 
-Create a `trade-executor` :term:`Docker` instance using `docker-compose` that will run the live trading.
+Create a `trade-executor` :term:`Docker` instance using `docker compose` that will run the live trading.
 
 - You have set up an :term:`environment file` for the vault live trading
 
-- You have set up a `docker-compose` configuration entry for your live trade executor,
+- You have set up a `docker compose` configuration entry for your live trade executor,
   see :ref:`strategy deploment` for details
 
 You will need to create
@@ -269,7 +269,7 @@ You will need to create
 
 - Final environment variables file
 
-- `docker-compose.yml` entry
+- `docker compose.yml` entry
 
 Example public environment variables entry:
 
@@ -305,19 +305,19 @@ Remember to slice files together:
 
     cat ~/strategies/env/base-ath.env ~/secrets/base-ath-secrets.env > ~/secrets/base-ath-final.env
 
-Setting up docker-compose entry
+Setting up docker compose entry
 -------------------------------
 
 See :ref:`docker compose example`.
 
-Test docker-compose entry
+Test docker compose entry
 -------------------------
 
 You can check the trade executor with:
 
 .. code-block:: shell
 
-    docker-compose run base-ath --help
+    docker compose run base-ath --help
 
 This gives:
 
@@ -367,7 +367,7 @@ You can run the backtest on the live trade executor with:
 
 .. code-block:: shell
 
-    docker-compose run base-ath backtest
+    docker compose run base-ath backtest
 
 Check wallet
 ------------
@@ -376,7 +376,7 @@ Check that your vault has deposits for test trade.
 
 .. code-block:: shell
 
-    docker-compose run base-ath check-wallet
+    docker compose run base-ath check-wallet
 
 Initialise the vault
 --------------------
@@ -392,7 +392,7 @@ This will initialise the state file for the strategy executor.
 .. code-block:: shell
 
     # Use the deployment block number earlier
-    docker-compose run base-ath init
+    docker compose run base-ath init
 
 First vault deposit
 -------------------
@@ -520,7 +520,7 @@ Launch the trade executor in daemon mode:
 
 .. code-block:: shell
 
-    docker-compose up -d base-ath
+    docker compose up -d base-ath
 
 Checking logs
 -------------
@@ -531,7 +531,7 @@ You can also check the latest logs from Docker:
 
 .. code-block:: shell
 
-    docker-compose logs --tail=200 base-ath
+    docker compose logs --tail=200 base-ath
 
 Backup trade-executor configuration
 -----------------------------------
