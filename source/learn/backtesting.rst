@@ -228,3 +228,66 @@ Beyond AlphaGlass, the post reviews an arXiv survey of LLM stock-forecasting pap
 By Milos Maricic.
 
 `Read the blog post <https://thespecification.substack.com/p/alphaglass-and-the-end-of-backtest>`__.
+
+Walk Forward Correlation: A Diagnostic for Over-Fitting and Structural Edge in Trading Strategy Optimisation
+-------------------------------------------------------------------------------------------------------------
+
+Martyn Tinsley (SSRN working paper, 2025) introduces Walk Forward Correlation (WFC) as a diagnostic for separating genuine structural edge from over-fitting in optimised trading strategies. Whereas the older Walk Forward Efficiency (WFE) metric of Pardo (1992, 2008) compares the in-sample and out-of-sample performance of a single chosen parameter set, WFC evaluates the entire optimisation surface: it computes performance metrics for all parameter combinations on both the in-sample (IS) and out-of-sample (OOS) datasets and reports the Pearson correlation between IS and OOS performance across the full n-dimensional parameter space.
+
+The interpretation is direct. A high positive WFC means the IS performance landscape is predictive of the OOS landscape — the optimiser is detecting something real, and over-fitting has been effectively constrained. A WFC near zero means IS performance contains no information about OOS behaviour, implying either over-fitting or the absence of any structural edge. A negative WFC is a strong rejection signal: the IS-best parameters are systematically the OOS-worst, a classic over-fitting signature that ordinary WFE cannot detect because it collapses to a single number for the chosen parameter set.
+
+Our summary: WFC sits in the same diagnostic family as Bailey, Borwein, López de Prado & Zhu's Probability of Backtest Overfitting (PBO) and Combinatorially Symmetric Cross-Validation (CSCV) — all of them test the optimiser rather than the optimised winner — but it is much cheaper to compute and easier to interpret. Recommended workflow: run walk-forward optimisation, compute WFC on the parameter grid as a first-line filter (reject if WFC is near zero or negative), then follow up with PBO/CSCV for a probability estimate and the Deflated Sharpe Ratio for selection-bias-adjusted significance. Caveats: WFC is sensitive to the choice of performance metric (return vs. Sharpe vs. Sortino can give different answers), depends on a single IS/OOS split unlike CSCV's combinatorial averaging, says nothing about non-stationarity or lookahead-leakage contamination, and lacks published critical values — practitioners should bootstrap a null distribution for their specific parameter grid. The paper is a practitioner SSRN working paper rather than a peer-reviewed academic publication and should be used alongside, not in place of, the established PBO/DSR machinery.
+
+Data: a methodological paper, no proprietary dataset is required. WFC can be computed on any backtest that produces a parameter grid with both IS and OOS performance metrics. No public source code is released, but the metric is a single line of NumPy/Pandas — ``np.corrcoef(is_metric_vector, oos_metric_vector)[0,1]`` across the flattened parameter grid — making it trivially reproducible.
+
+Key metrics: WFC is itself the headline metric. Interpretation guideline from the paper: WFC > 0.5 indicates strong predictive value of the IS landscape for OOS, WFC near zero indicates no edge or severe over-fitting, and WFC < 0 indicates active anti-prediction (over-fitting to in-sample noise). No formal critical-value table is provided; significance should be assessed by bootstrapping a null distribution on shuffled OOS data.
+
+By Martyn Tinsley.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6324079>`__
+
+Algo Advantage 053 — Martyn Tinsley: Walk Forward Correlation, A New Tool for Robust Strategy Design
+-----------------------------------------------------------------------------------------------------
+
+Part 2 of a two-part Algo Advantage podcast presentation with Martyn Tinsley, hosted by Simon M. Part 1 (episode 052, "Beyond the BackTest") establishes the foundational principles for disciplined strategy research — data integrity as model risk rather than clerical overhead, restraint in model design ("simple models have an underrated virtue: they fail transparently"), stress testing over optimisation, and implementation realism from inception — and builds toward Part 2's introduction of the Walk Forward Correlation (WFC) methodology that is the subject of Tinsley's `SSRN working paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6324079>`__.
+
+Episode 053 develops WFC in detail. Rather than asking whether a single best-performing parameter set survives out-of-sample testing — which can succeed through pure chance — WFC examines whether the entire optimisation surface demonstrates consistency between in-sample and out-of-sample results. The diagnostic asks whether "the optimisation process itself was informative" across all parameter combinations, not just lucky winners. The methodology computes correlation (Pearson or alternative rank-based measures) between in-sample and out-of-sample performance across the full parameter grid: high positive correlation signals structural stability, low or negative correlations suggest over-fitting or regime instability.
+
+A critical caveat surfaced in the discussion: WFC measures *predictive consistency*, not *profitability* — a system can rank parameters identically across periods yet still lose money. The practitioner heuristic Tinsley emphasises is to evaluate the parameter space geometry holistically: look for "smooth topologies" where parameter changes produce proportional performance shifts, because chaotic surfaces with sharp performance cliffs typically mask over-fitting even when WFC looks acceptable. Genuine edge is signalled by the combination of (1) positive out-of-sample performance, (2) high WFC, and (3) smooth optimisation surfaces — not by any single one of these in isolation. The episode is the most accessible practitioner-level explanation of the WFC framework and pairs naturally with the SSRN paper for anyone implementing it.
+
+Hosted by Simon M with guest Martyn Tinsley. The same episode is mirrored on YouTube at `youtu.be/ji2ms6fCGvI <https://www.youtube.com/watch?v=ji2ms6fCGvI>`__ and as written show notes on `Algo Advantage Substack <https://algoadvantage.substack.com/p/053-martyn-tinsley-walk-forward-correlation>`__.
+
+`Listen to the podcast <https://www.algoadvantage.io/podcast/053-martyn-tinsley-2/>`__
+
+Walk-Forward Optimization (WFO): A Framework for More Reliable Backtesting
+---------------------------------------------------------------------------
+
+A practitioner introduction to walk-forward optimisation that contrasts the rolling-window WFO approach with the static optimise-once / validate-once backtest. The post illustrates WFO with a portfolio allocation example spanning 2010–2025, where a five-year training window advances yearly to create sequential optimisation-validation pairs. The author argues that WFO provides a more realistic assessment of strategy performance by continuously re-optimising on recent data while always validating on truly unseen periods, more closely mirroring how a live trader actually adapts their parameters over time.
+
+The post is balanced about limitations. WFO reduces over-fitting risk and improves data efficiency compared to a single hold-out, but window-size selection itself introduces bias (a form of meta-overfitting), market regime changes are detected only reactively rather than predictively, and the computational cost of running the full sweep at every window step is substantially higher than a single backtest. The piece is a useful first reference for the practical mechanics of WFO before reaching for the heavier statistical machinery of PBO/CSCV or the Deflated Sharpe Ratio.
+
+By Ajay Pawar, QuantInsti.
+
+`Read the blog post <https://blog.quantinsti.com/walk-forward-optimization-introduction/>`__
+
+Walk-Forward Analysis vs. Backtesting: Pros, Cons, and Best Practices
+----------------------------------------------------------------------
+
+A Surmount blog post comparing traditional backtesting against walk-forward analysis as validation methodologies. Traditional backtesting offers speed and simplicity but is vulnerable to strategies becoming "exquisitely adapted to past market noise rather than capturing genuine, repeatable patterns." Walk-forward analysis addresses this by repeatedly re-optimising on historical periods and testing on subsequent unseen data, simulating realistic trading conditions, but introduces its own pitfalls — most notably "meta-overfitting" when practitioners iteratively adjust window sizes and fitness functions until results look favourable.
+
+The post advocates a layered validation framework rather than treating WFA as a silver bullet: traditional backtesting for rapid concept elimination, walk-forward analysis for multi-regime robustness confirmation, hold-out testing on permanently reserved data, and finally paper trading in live markets. Specific configuration guidance is given — optimisation windows typically spanning 2–4 years and validation periods 3–6 months — together with a recommendation to document all iterations and maintain an audit trail to prevent unconscious data mining. The piece is short but unusually disciplined about acknowledging that no historical validation fully substitutes for forward testing that reveals execution challenges invisible in backtests.
+
+By Surmount.
+
+`Read the blog post <https://surmount.ai/blogs/walk-forward-analysis-vs-backtesting-pros-cons-best-practices>`__
+
+Backtesting Series – Episode 2: Cross-Validation Techniques
+------------------------------------------------------------
+
+A Bocconi Students Investment Club (BSIC) explainer on cross-validation methodologies adapted for trading-strategy evaluation. The post covers K-fold validation with temporal-order preservation to prevent look-ahead bias and walks through why naive K-fold is problematic in finance: serial dependencies in asset returns violate the independence assumption, and repeated model refinement on the same folds tends to produce false discoveries — strategies that appear profitable by chance rather than by genuine predictive power.
+
+The piece then walks through walk-forward backtesting as the standard remedy — training on history, testing on subsequent periods, and expanding the training window forward through time — noting that while this approach respects temporal ordering and eliminates look-ahead bias, it uses less training data per fold and remains vulnerable to over-fitting to specific historical segments. The post closes by introducing Giuseppe Paleologo's Rademacher Anti-Serum methodology as a mathematically rigorous alternative that provides lower bounds on strategy performance by quantifying data-snooping and estimation error directly, offering practitioners a more principled framework than either K-fold or walk-forward alone.
+
+By BSIC (Bocconi Students Investment Club).
+
+`Read the blog post <https://bsic.it/backtesting-series-episode-2-cross-validation-techniques/>`__
