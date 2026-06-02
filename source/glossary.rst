@@ -8741,3 +8741,21 @@ and algorithmic trading.
         - :term:`Real yield`
 
         - :term:`Trading strategy`
+
+    DVOL
+
+        DVOL (Deribit Implied Volatility Index) is a :term:`volatility` index that measures the 30-day forward-looking annualized implied volatility of Bitcoin and Ethereum :term:`options`. It is calculated using a variance swap methodology applied to options across the two expiries nearest to 30 days, with the resulting variance interpolated and smoothed via an exponential moving average. DVOL serves a similar role for crypto markets as the VIX does for equities, providing a single number that captures the market's expectation of future price swings.
+
+        Traders use DVOL and DVOL futures to gain pure exposure to volatility movements independent of directional price risk, enabling strategies such as volatility hedging, :term:`selling volatility`, and mean reversion trading on vol levels. DVOL is published by the Deribit exchange.
+
+        `Read more about DVOL <https://insights.deribit.com/exchange-updates/dvol-deribit-implied-volatility-index/>`__.
+
+        See also
+
+        - :term:`Volatility`
+
+        - :term:`Options`
+
+        - :term:`Selling volatility`
+
+        - :term:`Delta hedged`

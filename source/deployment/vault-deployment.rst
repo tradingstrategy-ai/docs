@@ -53,6 +53,46 @@ Strategy name and id
 
 See ref:`strategy metadata` for details.
 
+Multichain gas distribution
+---------------------------
+
+A multichain Lagoon vault follows a hub and spoke model.
+
+- The hub vault is deployed on the primary chain. The hub has Lagoon vault, Gnosis safe, TradingStrategyModuleV0 and related smart contracts.
+
+- A spoke is deployed on each satellite chain in the strategy universe. Each spoke has only Gnosis Safe and TradingStrategyModuleV0 smart contracts.
+
+- The deployer hot wallet needs native gas token on every chain where a spoke is created.
+
+Before deploying a multichain vault, distribute gas funds to all chains used by the strategy.
+The ``distribute-gas-funds`` command reads the strategy universe, checks which chains need
+native gas token, and bridges gas to the hot wallet on those chains.
+
+First do a dry run:
+
+.. code-block:: shell
+
+    docker compose run \
+        -e DRY_RUN=true \
+        -e MIN_GAS_USD=5 \
+        -e TOP_UP_GAS_USD=20 \
+        base-ath \
+        distribute-gas-funds
+
+Then perform the gas distribution:
+
+.. code-block:: shell
+
+    docker compose run \
+        -e MIN_GAS_USD=5 \
+        -e TOP_UP_GAS_USD=20 \
+        base-ath \
+        distribute-gas-funds
+
+The Docker Compose entry must have ``STRATEGY_FILE``, ``PRIVATE_KEY``,
+``TRADING_STRATEGY_API_KEY`` and ``JSON_RPC_*`` environment variables configured
+for all chains used by the multichain strategy.
+
 Create a Lagoon vault
 ---------------------
 
