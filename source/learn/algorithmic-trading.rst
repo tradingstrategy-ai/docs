@@ -238,3 +238,14 @@ Key metrics (1984-2024): annualised return 24.61% (vs 12.88% for S&P 500), annua
 Mentioned by `Nam Nguyen in this discussion <https://www.linkedin.com/posts/namnguyento_evaluating-a-logistic-regression-trading-share-7458519268922503168-NSA5>`__.
 
 `Read the paper <https://conradvoigt.github.io/Logistic%20Regression%20Based%20Trading%20on%20the%20S&P%20500.pdf>`__
+
+Regime-Adaptive Ensemble Strategy: From Backtest to Live Paper Trading
+----------------------------------------------------------------------
+
+Brayton Beam documents the launch of his quantitative trading strategy (V3.5) into a paper trading account after a year of development. The system is a regime-adaptive ensemble of four factor experts (momentum, value, low-volatility, and defensive), with per-regime blending governed by independent classifiers: VIX percentile, yield curve, Fed cycle, and a structural-break detector. A 12-month half-life reconsolidation EMA per expert-regime cell serves as the model's memory of which experts work in which regimes. Conditional 1.25x leverage fires only on calm-bull "flow days" where five independent signals align.
+
+The 13.5-year backtest on S&P 500 phantom-filtered top-15 stocks (2012-2025) reports a 31.20% in-sample CAGR (29.37% walk-forward), Sharpe ratio of 1.48, and max drawdown of -30.21%. Six of seven validation tests pass: walk-forward with annual CPI re-tune, parameter perturbation, Monte Carlo simulation (P(Sharpe > 1) = 94%), execution realism with realistic costs, feature ablation, and cross-universe validation. The regime holdout test flagged a Risk-On dependency which the author identifies as an architectural feature — per-ticker alpha autocorrelation captured by the reconsolidation EMA, orthogonal to standard factor exposures (Ken French MOM correlation -0.06, value +0.04). On Day 1, 43 positions filled cleanly and the model correctly de-levered into an Inflationary regime rather than mechanically applying leverage.
+
+By Brayton Beam.
+
+`Read the post <https://www.linkedin.com/posts/brayton-beam-93633b293_quant-algorithmictrading-systematicinvesting-share-7467215494857580544-BXSZ/>`__
