@@ -348,3 +348,18 @@ Key metrics: gross annualised performance of the baseline TSMOM strategy is 16.1
 By Nick Baltas and Robert Kosowski.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2140091>`__
+
+Momentum Factor Investing: Evidence and Evolution
+--------------------------------------------------
+
+Baltussen, Dom, Van Vliet, and Vidojevic (Erasmus School of Economics / Northern Trust Asset Management, October 2025) present a comprehensive review and empirical analysis of the momentum factor across domestic and global stock markets spanning up to 159 years of data (1866-2024). The paper establishes momentum as an "eternal feature of financial markets" by demonstrating its robustness across multiple sample periods, 46 countries, and over 4,000 different portfolio construction specifications. Beyond traditional price momentum, the authors document that momentum is fundamentally multi-dimensional — present in firm fundamentals (earnings surprises, analyst revisions, news sentiment), firm-specific residual returns, anchor-based measures (52-week high), industry and network peer returns, and factor returns themselves.
+
+The paper's central contribution is showing that combining these diverse momentum signals into a multi-dimensional composite produces superior risk-adjusted returns that cannot be explained by traditional price momentum alone. The authors also address crash risk — momentum's primary weakness — demonstrating that risk-managed approaches using volatility scaling substantially reduce maximum drawdowns while preserving or enhancing returns. On the question of post-publication decay, the paper finds no statistically significant evidence that momentum profits have diminished since the original Jegadeesh and Titman (1993) publication, further supported by 61 years of pre-CRSP out-of-sample data where arbitrage was impossible. The behavioral explanation — investor underreaction and gradual information diffusion — is favored over risk-based explanations.
+
+Data uses CRSP (1927-2024), a pre-CRSP hand-collected dataset (1866-1926), and JKP international data covering 46 countries (1990-2024). No source code is provided, but the methodology is fully specified and reproducible with standard academic datasets.
+
+Key metrics for the winner-minus-loser long-short portfolio: annualised return of 9.24% VW / 9.75% EW over the full CRSP sample (1927-2024) with t-statistics of 4.31 and 4.66. Over the deepest 159-year sample (1866-2024), returns average 8.83% VW / 8.95% EW with t-statistics around 5. The median Sharpe ratio across 4,096 portfolio design choices equals 0.61 (range 0.38-0.94). Global momentum premium: 7.77% (world), 7.57% (ex-US), 6.20% (emerging markets), positive in all 31 countries with continuous data. Maximum drawdown for standard price momentum is -88.41% VW. Risk-managed momentum (RM_MOM) increases annualised return to 17.87% while reducing max drawdown to -49.37%. The multi-dimensional EW_ALL composite achieves 9.65% EW annualised with a t-statistic of 8.22 and lower volatility (11.62%) versus standard price momentum (20.71%).
+
+Mentioned by Darren (@ReformedTrader) in `this discussion <https://x.com/ReformedTrader/status/2061840582050464215>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5561720>`__
