@@ -195,3 +195,18 @@ Published in the Journal of Portfolio Management, 2026, Volume 52, Issue 4, Page
 Mentioned by `Artur Sepp on LinkedIn <https://www.linkedin.com/posts/artursepp_quantitativefinance-assetallocation-factorinvesting-ugcPost-7462115172703420416-eS1t>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5250221>`__
+
+From Classical Optimization to Bayesian Integration: A Comprehensive Analysis of Systematic Portfolio Management
+-----------------------------------------------------------------------------------------------------------------
+
+This paper compares five portfolio construction approaches — mean-variance optimization, constrained optimization, Fama-French five-factor regression modeling, Monte Carlo simulation, and the Black-Litterman model — using ten U.S. stocks (TSLA, WMT, BAC, GS, LLY, MRK, GOOG, META, AAPL, XOM) over September 2023 to December 2025. The study examines how constraints, risk factors, simulated approximations, and market views affect portfolio allocation, performance, and stability.
+
+The paper provides a structured walkthrough of each method's mechanics and trade-offs. Unconstrained mean-variance optimization produces concentrated "corner portfolios" dominated by AAPL (29%), XOM (28%), and GOOG (22%). Adding a 15% maximum weight constraint redistributes allocations across more assets and, surprisingly, improves out-of-sample performance. Fama-French five-factor regressions (both OLS and robust) characterize the constrained portfolio as defensive large-cap value with a profitability tilt (R² = 0.715). The Monte Carlo section demonstrates that simulation can approximate optimization results but struggles with box constraints due to the curse of dimensionality. The Black-Litterman model, incorporating investor views and market equilibrium, produces the most diversified and stable allocations by anchoring weights to market capitalization and adjusting only where views are strong.
+
+The study uses daily adjusted closing prices from Yahoo Finance. Estimation period is September 2023 to September 2025, with out-of-sample testing from October to December 2025. The optimization is implemented using the ``cvxpy`` library. No code repository is provided.
+
+Key out-of-sample metrics (October–December 2025): the constrained GMV portfolio achieved a 16.77% cumulative return, Sharpe ratio of 5.36, and maximum drawdown of -3.18%, outperforming the unconstrained GMV portfolio (15.85% return, 5.05 Sharpe, -2.76% max drawdown). The constrained portfolio's market beta was 0.81, with statistically significant loadings on value (HML = 0.20) and profitability (RMW = 0.12) factors, and no significant alpha. The estimated market risk aversion coefficient for the Black-Litterman model was δ = 6.79.
+
+Mentioned by `Piotr Pomorski in this discussion <https://x.com/PtrPomorski/status/2061858884575199620>`__.
+
+`Read the paper <https://arxiv.org/abs/2605.29413>`__
