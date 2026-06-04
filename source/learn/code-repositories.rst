@@ -261,3 +261,14 @@ Our summary: a well-structured teaching repository that walks through the core q
 Practical details: primary language Jupyter Notebook with Python (numpy, pandas, scipy, matplotlib, yfinance, arch). Three assignment folders: ``A1 - Portfolio VaR and ES`` (notebook + PDF report), ``A2 - Model Validation`` (PDF report only), ``A3 - PCA/FA/Copula/EVT`` (notebook + PDF report). No license file. No included datasets (data is downloaded via yfinance). Created 2026-05-31, single contributor.
 
 `View repository <https://github.com/Milanpeter-77/Coursework-Financial-Risk-Models>`__
+
+.. _giotto-tda-toolkit:
+
+giotto-tda: A Topological Data Analysis Toolkit for Machine Learning and Data Exploration
+------------------------------------------------------------------------------------------
+
+A Python library that integrates high-performance topological data analysis (TDA) with machine learning via a scikit-learn-compatible API. The library provides persistent homology computation, persistence diagrams and landscapes, Vietoris-Rips and cubical complex construction, and a plotting API for topological summaries. The C++ backend handles the computational bottleneck of persistence calculations while the Python layer exposes familiar fit/transform interfaces.
+
+Relevant to financial applications because TDA is increasingly used for crash detection (see :ref:`tda-landscapes-of-crashes` in :doc:`./time-series`) and regime identification in multivariate return series. The scikit-learn compatibility means persistence features can be plugged directly into standard ML pipelines. Published in JMLR 22, 2021. By Tauzin, Lupo, Tunstall, Burella Pérez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess.
+
+`View repository <https://github.com/giotto-ai/giotto-tda>`__

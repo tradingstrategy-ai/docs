@@ -91,3 +91,25 @@ This article compares deep-learning forecasting models with classical statistica
 For trading researchers, the most useful takeaway is methodological humility. TFT and related deep models are flexible, but they should be benchmarked against strong statistical baselines and simple market-specific rules rather than only against weaker neural models. This is especially important in volatility forecasting, where GARCH, HAR, and realized-volatility baselines are durable competitors.
 
 `Read the article <https://readmedium.com/time-series-forecasting-deep-learning-vs-statistics-who-wins-c568389d02df>`__.
+
+.. _multifractal-model-asset-returns:
+
+A Multifractal Model of Asset Returns
+--------------------------------------
+
+Mandelbrot, Fisher, and Calvet introduce the Multifractal Model of Asset Returns (MMAR), which deforms calendar time through a multifractal trading time to capture two empirical facts the Gaussian random walk misses: returns exhibit long memory (volatility clusters in runs of calm and storm), and tails remain heavy at every horizon. The model generates the key stylized facts of financial returns — fat tails, volatility clustering, and long-range dependence — from a single mechanism rather than bolting each on separately.
+
+The test is the scaling function: take the q-th moment of absolute returns over intervals of length Δt and measure how it grows. For a plain random walk, the scaling exponent ζ(q) = q/2 is linear. For real markets, ζ(q) bends into a concave curve, meaning small and large moves scale by different rules. That curvature is the empirical content of "multifractal." The model describes the statistics of wildness — it does not forecast. Published as Cowles Foundation Discussion Paper No. 1164, Yale University, 1997.
+
+`Read the paper <https://users.math.yale.edu/~bbm3/web_pdfs/Cowles1164.pdf>`__
+
+.. _tda-landscapes-of-crashes:
+
+Topological Data Analysis of Financial Time Series: Landscapes of Crashes
+--------------------------------------------------------------------------
+
+Gidea and Katz apply persistent homology — a tool from topological data analysis — to sliding windows of daily returns from major U.S. stock market indices around the 2000 dot-com crash and the 2007–2009 financial crisis. They embed each window as a point cloud in high-dimensional space and track the birth and death of topological features (loops, voids) as the resolution parameter varies. The persistent features are summarised as "persistence landscapes," and their Lp-norms serve as a single time series measuring topological complexity.
+
+The headline finding is that persistence landscape norms exhibit a strong rising trend for approximately 250 trading days prior to both crashes, suggesting TDA can serve as an early-warning indicator. The appropriate scepticism: this is demonstrated in-sample on two well-known events. A turbulence indicator that lit up before the two crashes everyone already studies has not yet proven it will light up before the next one without crying wolf in between. TDA gives a turbulence diagnostic, not a forecast. Published on arXiv, 2017.
+
+`Read the paper <https://arxiv.org/abs/1703.04385>`__

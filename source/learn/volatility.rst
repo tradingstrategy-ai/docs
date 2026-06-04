@@ -292,3 +292,14 @@ Key metrics: the geometry-aware residual correction demonstrates improved accura
 Mentioned by Alexander Nevolin in `this discussion <https://www.linkedin.com/posts/alexander-nevolin-0ba0105_in-volatility-calibration-the-central-challenge-share-7465334001436774400-NU34/>`__.
 
 `Read the paper <https://arxiv.org/abs/2605.06604>`__
+
+.. _persistence-market-sentiment:
+
+On the Persistence of Market Sentiment: A Multifractal Fluctuation Analysis
+----------------------------------------------------------------------------
+
+Schadner applies multifractal detrended fluctuation analysis (MF-DFA) to U.S. and European stock market sentiment derived from financial option data and surveys. The paper measures sentiment the way Mandelbrot measured prices (see :ref:`multifractal-model-asset-returns` in :doc:`./time-series`) and finds the same fingerprint: long memory, fat tails, and pronounced multifractality.
+
+The key asymmetry: investor fear is associated with overreaction (anti-persistent sentiment), while optimism drifts closer to a random walk. The expected Hurst exponent fluctuates strongly, implying nonlinear dynamics in return expectations. The paper argues that while heavy-tailed distributions are known to destabilise markets, this nonlinear behaviour is a potentially greater amplifier of market meltdowns — crashes are more structured than rallies. The multifractal spectrum width is substantial in both markets, confirming that no single persistence parameter characterises sentiment dynamics. Published in Physica A, Volume 581, 2021.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0378437121005343>`__

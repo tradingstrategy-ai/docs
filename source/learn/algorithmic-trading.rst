@@ -249,3 +249,40 @@ The 13.5-year backtest on S&P 500 phantom-filtered top-15 stocks (2012-2025) rep
 By Brayton Beam.
 
 `Read the post <https://www.linkedin.com/posts/brayton-beam-93633b293_quant-algorithmictrading-systematicinvesting-share-7467215494857580544-BXSZ/>`__
+
+Market Data Is Social Data: From Fractals to Topological Data Analysis
+----------------------------------------------------------------------
+
+A price is what two strangers agreed on for one instant before they disagreed again. This post argues that market data is fundamentally social data, and any model that ignores the human participants gets the tail behaviour wrong. It walks through four frameworks that all converge on the same conclusion.
+
+First, the Gaussian random walk fails on four counts: real moves are larger than predicted, volatility clusters in time, price changes carry exploitable structure, and the distribution itself drifts across decades. Mandelbrot's multifractal model (1997) keeps the randomness but changes the geometry — the scaling exponent ζ(q) bends into a curve for real markets, meaning small and large moves follow different rules, and heavy tails are baked into the scaling rather than patched on. Second, sentiment analysis (Bollen et al. 2010) showed Twitter mood correlating with DJIA direction at 87.6% accuracy, but the post is properly skeptical: one sample, one period, no transaction costs — the mechanism (attention clusters cause volatility clusters) is more durable than the headline number. Third, topological data analysis (Gidea & Katz 2018) treats price history as a point cloud and measures its shape via persistent homology; persistence landscapes spiked before the 2000 and 2008 crashes, but this is an in-sample demonstration on known events, not a validated forecast. Fourth, Schadner (2021) applies multifractal fluctuation analysis to sentiment itself and finds the same fingerprint: long memory, fat tails, with persistence strongest when fear dominates — crashes are more structured than rallies.
+
+The post's bottom line: all four lenses agree markets are social, fat-tailed, memory-laden, and prone to phase transitions. None of them is selling a forecast. The fractal-to-topology arc is a reason to respect the tails and size for them, not a crystal ball.
+
+Related papers added alongside this post: :ref:`multifractal-model-asset-returns` in :doc:`./time-series`, :ref:`twitter-mood-predicts-stock-market` and :ref:`wisdom-of-twitter-crowds` below, :ref:`tda-landscapes-of-crashes` in :doc:`./time-series`, :ref:`giotto-tda-toolkit` in :doc:`./code-repositories`, and :ref:`persistence-market-sentiment` in :doc:`./volatility`.
+
+By Ali H. Askar (Aligrithm).
+
+`Read the blog post <https://aligrithm.com/market-data-is-social-data-from-fractals-to-topological-data-analysis/>`__.
+
+.. _twitter-mood-predicts-stock-market:
+
+Twitter Mood Predicts the Stock Market
+--------------------------------------
+
+Bollen, Mao, and Zeng analyse whether collective mood states derived from Twitter feeds can predict the Dow Jones Industrial Average. They parse tweets through OpinionFinder (positive/negative) and Google-Profile of Mood States (six dimensions: Calm, Alert, Sure, Vital, Kind, Happy), then test Granger causality and a Self-Organizing Fuzzy Neural Network on daily DJIA changes.
+
+The headline result is 87.6% accuracy predicting daily DJIA direction, with a 6% reduction in Mean Average Percentage Error when the "Calm" dimension is included. The result should be treated with appropriate scepticism: it is one sample of one period (Feb–Dec 2008), one market, no transaction costs, and every degree of freedom that sentiment pipelines quietly burn. What survives the scepticism is the mechanism — volatility clusters because attention clusters — not the specific accuracy number. Published in the Journal of Computational Science, Volume 2, Issue 1, 2011.
+
+`Read the paper <https://arxiv.org/abs/1010.3003>`__
+
+.. _wisdom-of-twitter-crowds:
+
+The Wisdom of Twitter Crowds: Predicting Stock Market Reactions to FOMC Meetings via Twitter Feeds
+--------------------------------------------------------------------------------------------------
+
+Azar and Lo investigate whether Twitter sentiment contains predictive information about stock market reactions to Federal Open Market Committee (FOMC) meetings. The paper addresses the natural scepticism about social media data quality — anyone can tweet about markets regardless of expertise — and shows that despite the noise, aggregate Twitter sentiment around FOMC announcements does carry signal about subsequent market moves.
+
+The key contribution is demonstrating that the "wisdom of crowds" effect operates even in the noisy, self-selected population of financial Twitter: aggregation across many low-quality signals can still produce useful information. Published in The Journal of Portfolio Management, Volume 42, Issue 5, 2016.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756815>`__
