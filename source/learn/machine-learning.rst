@@ -1345,3 +1345,18 @@ Data: simulation-based experimental setup in a stylized mutual fund redemption g
 Key metrics: simulation-based study — no real-market trading metrics. Q-learning agents exhibit excessive redemption under default risk (hot stove effect) even when staying invested is optimal. LLM agents better internalize equilibrium structure but generate unpredictable coordination patterns due to belief heterogeneity.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5543139>`__
+
+Macro-aware time series forecasting via hierarchical mixed-frequency attention models
+-------------------------------------------------------------------------------------
+
+Daniel Cunha Oliveira, Kieran Wood, Stefan Zohren, Mihai Cucuringu, and Andre Fujita (arXiv, May 2026) introduce HANET, a Hierarchical Attention Network for macro-aware financial forecasting. The model combines an LSTM backbone with hierarchical cross-attention that matches monthly macroeconomic contexts to daily trading signals, allowing the network to condition forecasts on long-run macro regimes without flattening low-frequency macro variables into noisy daily features.
+
+Our summary: the paper's central contribution is architectural rather than simply "add more macro data." HANET treats regime selection as attention over historical macro contexts: queries and keys are computed on a monthly macro grid, while values preserve daily market information for trading. This is tested on 55 liquid futures across commodities, bonds/rates, FX, and equity indices, using two systematic tasks: time-series momentum and time-series carry. The ablations are the most important evidence. A naive LSTM with the same macro PCA inputs concatenated to daily features collapses, while HANET improves both return and risk metrics. Shuffling the macro history also degrades performance, showing that the temporal ordering of macro regimes is carrying information rather than merely adding parameters or regularization.
+
+Data: daily futures data from Pinnacle across 55 instruments, with monthly macroeconomic features spanning 44 years. Out-of-sample tests cover 2005-2024 and portfolios are volatility-targeted to 10% annualized. The paper includes experimental configuration details but does not provide a public code repository.
+
+Key metrics: on the time-series momentum task, HANET reports 22.45% annualized mean return, 11.31% volatility, Sharpe 1.99, Sortino 2.50, and -15.87% maximum drawdown, versus the LSTM benchmark at 13.73% mean return, Sharpe 1.19, and -14.16% maximum drawdown. The naive LSTM Macro PCA Augmented baseline falls to 0.64% annualized return and Sharpe 0.06; HANET with shuffled macro PCA drops to 9.41% and Sharpe 0.81. On carry, HANET reports 9.49% annualized return, Sharpe 0.91, Sortino 1.28, and -17.71% maximum drawdown, beating the LSTM benchmark's 7.80% return and 0.76 Sharpe. Transaction-cost tests show the momentum HANET remains above 1.60 net Sharpe at 1 bp per trade, while the carry version remains around 0.60 net Sharpe even at 10 bps due to a longer average holding period.
+
+Mentioned by Quantitativo in this discussion: `0.06 Sharpe vs. 1.99 Sharpe <https://substack.com/@quantitativo/note/c-269603641?r=1tl0w>`__.
+
+`Read the paper <https://arxiv.org/abs/2606.00624>`__
