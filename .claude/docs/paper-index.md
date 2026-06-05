@@ -16,7 +16,8 @@ Each entry is a JSON object:
   "included_in_index_at": "2026-06-05",
   "filename": "paper-title.pdf" or null,
   "downloaded_at": "2026-06-05" or null,
-  "download_failure_reason": null or "ssrn_paywall" or "publisher_paywall" or "requires_browser" or "not_attempted" or "not_a_paper"
+  "download_failure_reason": null or "ssrn_paywall" or "publisher_paywall" or "requires_browser" or "not_attempted" or "not_a_paper",
+  "short_description": "One paragraph describing the paper's methodology and key finding." or null
 }
 ```
 
@@ -33,6 +34,7 @@ Each entry is a JSON object:
 | `filename` | string \| null | PDF filename in `articles/` directory, or null if not downloaded |
 | `downloaded_at` | string \| null | ISO date when PDF was saved |
 | `download_failure_reason` | string \| null | Why the PDF is missing (null = downloaded OK) |
+| `short_description` | string \| null | One paragraph (2-3 sentences) describing methodology and key finding |
 
 ### `download_failure_reason` values
 
@@ -63,7 +65,8 @@ index.append({
     "included_in_index_at": str(date.today()),
     "filename": "new-paper-title.pdf",        # or null if not downloaded
     "downloaded_at": str(date.today()),         # or null
-    "download_failure_reason": None             # or reason string
+    "download_failure_reason": None,            # or reason string
+    "short_description": "One paragraph describing methodology and key finding."
 })
 
 # Keep sorted by source_file then title
@@ -87,10 +90,11 @@ Some older PDFs use author-based names (e.g., `ackerer-hugonnier-jermann-perpetu
 
 ## Current stats (as of 2026-06-05)
 
-- **625 entries** across 25 `.rst` files
-- **362 with PDFs** (58%)
-- **263 without PDFs**: 103 require browser, 76 SSRN paywall, 75 not attempted, 24 not papers, 23 publisher paywall
-- **~111 orphan PDFs** in `articles/` not yet matched to entries (mostly author-named files)
+- **736 entries** total (625 from .rst files + 111 orphan PDFs cataloged)
+- **473 with PDFs** (64%)
+- **111 entries with `short_description`** populated (from orphan PDF reading)
+- **111 orphan entries** (`source_file: null`) — PDFs exist but not yet referenced in any .rst file
+- Entries without PDFs categorized by reason: `requires_browser` (103), `ssrn_paywall` (76), `not_attempted` (75), `not_a_paper` (24), `publisher_paywall` (23)
 
 ## Bulk operations
 

@@ -90,7 +90,8 @@ IMPORTANT. If the paper already exists, do not add it again. Check `articles/ind
      "included_in_index_at": "YYYY-MM-DD",
      "filename": "slugified-title.pdf",
      "downloaded_at": "YYYY-MM-DD",
-     "download_failure_reason": null
+     "download_failure_reason": null,
+     "short_description": "One paragraph (2-3 sentences) describing methodology and key finding."
    }
    ```
 
