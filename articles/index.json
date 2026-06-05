@@ -30,9 +30,9 @@
     "download_page": "https://www.tradingresearchub.com/p/building-a-crypto-market-scanner",
     "source_file": "algorithmic-trading.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "downloading-stock-etf-market-data-with-python-and-alpaca-api.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -90,9 +90,9 @@
     "download_page": "https://www.nber.org/papers/w15205",
     "source_file": "algorithmic-trading.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimal-mean-reversion-trading-transaction-costs-stop-loss.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -174,9 +174,9 @@
     "download_page": "https://arxiv.org/abs/2502.04284",
     "source_file": "algorithmic-trading.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimal-mean-reversion-trading-transaction-costs-stop-loss.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -294,9 +294,9 @@
     "download_page": "https://www.tradingresearchub.com/p/understanding-edge-decay-systematic",
     "source_file": "algorithmic-trading.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -846,9 +846,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2695101",
     "source_file": "carry-trade.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -942,9 +942,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5576424",
     "source_file": "carry-trade.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "inan-predictability-of-funding-rates.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -1122,9 +1122,9 @@
     "download_page": "https://github.com/mdsunivie/HARNet",
     "source_file": "code-repositories.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "harnet-a-convolutional-neural-network-for-realized-volatility-forecasting.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -1290,9 +1290,9 @@
     "download_page": "https://www.youtube.com/watch?v=OrqffjqkklM&list=WL&index=1",
     "source_file": "courses.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "downloading-stock-etf-market-data-with-python-and-alpaca-api.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -1494,9 +1494,9 @@
     "download_page": "https://angeris.github.io/papers/routing-algorithm.pdf",
     "source_file": "defi-amm.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimal-make-take-fees-in-a-multi-market-maker-environment.pdf",
-    "downloaded_at": "2026-04-07",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2022,9 +2022,9 @@
     "download_page": "https://github.com/alexkalinins/cnn-lstm-stock",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2034,9 +2034,9 @@
     "download_page": "https://www.iosrjournals.org/iosr-jef/papers/Vol16-Issue1/Ser-3/H1601035970.pdf",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2046,9 +2046,9 @@
     "download_page": "https://arxiv.org/abs/1706.10059",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2106,9 +2106,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S09574174230",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2154,9 +2154,9 @@
     "download_page": "https://www.preprints.org/manuscript/202410.1852/v1",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2178,9 +2178,9 @@
     "download_page": "https://digital-library.theiet.org/doi/full/10.1049/joe.2019.1203",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "bitcoin-price-forecasting-vmd-lstm.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2250,9 +2250,9 @@
     "download_page": "https://fenix.tecnico.ulisboa.pt/downloadFile/563345090417208/FinalThesis.pdf",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "volatility-forecasting-with-machine-learning-and-intraday-commonality.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2262,9 +2262,9 @@
     "download_page": "http://cs230.stanford.edu/projects_spring_2021/reports/74.pdf",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2274,9 +2274,9 @@
     "download_page": null,
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2286,9 +2286,9 @@
     "download_page": "https://github.com/NigelCusc/DDPG_TD3_PortfolioOptimization_tensorflow-1.15.4?tab=readme-ov-file",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2310,9 +2310,9 @@
     "download_page": "https://arxiv.org/abs/2206.03386",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deepvol-volatility-forecasting-from-high-frequency-data-with-dilated-causal-convolutions.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2346,9 +2346,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "dynamic-asset-allocation-part-3-risk-adjusted-momentum.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2394,9 +2394,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S2405918821000155#sec4",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2418,9 +2418,9 @@
     "download_page": "https://journalofbigdata.springeropen.com/articles/10.1186/s40537-025-01127-4",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2430,9 +2430,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "multi-step-stock-prediction-vmd-mfrfnn.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2454,9 +2454,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950660",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2478,9 +2478,9 @@
     "download_page": "https://www.researchgate.net/publication/383710710_Portfolio_Optimization_Strategies_New_Approaches_Based_on_Machine_Learning_Forecasting",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimizing-portfolio-performance-through-clustering-and-sharpe-ratio-based-optimization.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2490,9 +2490,9 @@
     "download_page": "https://www.diva-portal.org/smash/get/diva2:1778251/FULLTEXT03",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "volatility-forecasting-with-machine-learning-and-intraday-commonality.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2502,9 +2502,9 @@
     "download_page": "https://arxiv.org/pdf/2305.14378",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "enhancing-time-series-momentum-strategies-using-deep-neural-networks.pdf",
-    "downloaded_at": "2026-02-21",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2526,9 +2526,9 @@
     "download_page": "https://www.academia.edu/79674814/Reinforcement_Learning_Approaches_to_Optimal_Market_Making?email_work_card=reading-history",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2550,9 +2550,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851170",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2622,9 +2622,9 @@
     "download_page": "https://medium.com/@simomenaldo/limit-order-book-structure-2aed9971e998",
     "source_file": "market-microstructure.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "briola-bartolucci-aste-deep-limit-order-book-forecasting.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2838,9 +2838,9 @@
     "download_page": "https://www.linkedin.com/posts/bongani-mayaba-b359b7107_regimedetection-hiddenmarkovmodels-quantfinance-share-7452618889789628416-7snd/",
     "source_file": "market-regimes.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "regime-detection-with-hidden-markov-models-for-adaptive-strategy-allocation.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2862,9 +2862,9 @@
     "download_page": "https://www.tradingresearchub.com/p/optimizing-trading-strategies-mastering",
     "source_file": "market-regimes.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "regime-detection-with-hidden-markov-models-for-adaptive-strategy-allocation.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2958,9 +2958,9 @@
     "download_page": "https://www.crackingmarkets.com/buying-short-term-dips-in-stocks/",
     "source_file": "mean-reversion.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "buying-short-term-dips-in-stocks-realtest-code.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3114,9 +3114,9 @@
     "download_page": "https://www.tradingresearchub.com/p/a-delta-neutral-cross-sectional-momentum",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3210,9 +3210,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3681439",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3234,9 +3234,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2140091",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "enhancing-time-series-momentum-strategies-using-deep-neural-networks.pdf",
-    "downloaded_at": "2026-02-21",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3246,9 +3246,9 @@
     "download_page": "https://www.gestaltu.com/2013/06/dynamic-asset-allocation-for-practitioners-part-2-risk-adjusted-momentum.html/",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "dynamic-asset-allocation-part-3-risk-adjusted-momentum.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3270,9 +3270,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3901012",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3474,9 +3474,9 @@
     "download_page": "https://x.com/PKycek/status/1966803799278055516",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "simple-monthly-momentum-strategy-us-stocks.pdf",
-    "downloaded_at": "2026-02-10",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3510,9 +3510,9 @@
     "download_page": "https://pages.stern.nyu.edu/~lpederse/papers/TimeSeriesMomentum.pdf",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3522,9 +3522,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2599874",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3534,9 +3534,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2657404",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3594,9 +3594,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S0275531925004192",
     "source_file": "order-flow.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "bitcoin-price-formation-signed-order-flow.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3834,9 +3834,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4914246",
     "source_file": "portfolio-construction.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimizing-portfolio-performance-through-clustering-and-sharpe-ratio-based-optimization.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -3954,9 +3954,9 @@
     "download_page": "https://www.tradingresearchub.com/p/the-art-of-strategic-drag-research",
     "source_file": "portfolio-construction.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "the-sharpe-stability-ratio-temporal-consistency-of-risk-adjusted-performance.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4014,9 +4014,9 @@
     "download_page": "https://arxiv.org/abs/1808.09940",
     "source_file": "reinforcement-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4026,9 +4026,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417421000737",
     "source_file": "reinforcement-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4062,9 +4062,9 @@
     "download_page": "https://ojs.aaai.org/index.php/AAAI/article/view/16144",
     "source_file": "reinforcement-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4134,9 +4134,9 @@
     "download_page": "https://ojs.aaai.org/index.php/AAAI/article/view/5462",
     "source_file": "reinforcement-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-reinforcement-learning-for-optimal-portfolio-allocation.pdf",
-    "downloaded_at": "2026-02-23",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4266,9 +4266,9 @@
     "download_page": "https://www.tradingresearchub.com/p/the-optimal-betting-method-for-responsible",
     "source_file": "risk-management.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "volatility-drag-kelly-criterion-portfolio-position-sizing.pdf",
-    "downloaded_at": "2026-03-11",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4278,9 +4278,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851178",
     "source_file": "risk-management.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "volatility-drag-kelly-criterion-portfolio-position-sizing.pdf",
-    "downloaded_at": "2026-03-11",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4302,9 +4302,9 @@
     "download_page": "https://www.tradingresearchub.com/p/exploring-the-effect-of-stop-losses",
     "source_file": "risk-management.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimal-mean-reversion-trading-transaction-costs-stop-loss.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4374,9 +4374,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136401",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4398,9 +4398,9 @@
     "download_page": "https://www.aimspress.com/article/doi/10.3934/mbe.2020367",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4410,9 +4410,9 @@
     "download_page": "https://onlinelibrary.wiley.com/doi/10.1155/2020/6431712",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4434,9 +4434,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S095070512030798X",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4470,9 +4470,9 @@
     "download_page": "https://link.springer.com/article/10.1007/s44196-022-00140-2",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4482,9 +4482,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0950705122006645",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4494,9 +4494,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417423022108",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4506,9 +4506,9 @@
     "download_page": "https://link.springer.com/article/10.1007/s00500-023-08441-0",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4518,9 +4518,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417416300562",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4530,9 +4530,9 @@
     "download_page": "https://www.mdpi.com/2076-3417/15/10/5630",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "short-time-variational-mode-decomposition.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4578,9 +4578,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417424030896",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4698,9 +4698,9 @@
     "download_page": "https://link.springer.com/article/10.1007/s10614-025-11018-8",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "sgvmd-arima-time-series-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4710,9 +4710,9 @@
     "download_page": "https://www.ajol.info/index.php/swj/article/view/312643",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4854,9 +4854,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417420305108",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "a-controlled-comparison-of-deep-learning-architectures-for-multi-horizon-financial-forecasting.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4914,9 +4914,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3573243",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4926,9 +4926,9 @@
     "download_page": "https://arxiv.org/abs/2408.16707",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4962,9 +4962,9 @@
     "download_page": "https://www.mdpi.com/2073-8994/16/3/283",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "optimizing-portfolio-performance-through-clustering-and-sharpe-ratio-based-optimization.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4974,9 +4974,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S106294082500186X",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "downloading-stock-etf-market-data-with-python-and-alpaca-api.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5034,9 +5034,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3595914",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5082,9 +5082,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1544612323006268",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "realized-volatility-forecasting-with-neural-networks.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5094,9 +5094,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1062940821000553",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5118,9 +5118,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S095741742201017X",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5130,9 +5130,9 @@
     "download_page": "https://www.researchsquare.com/article/rs-7875740/v1",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5154,9 +5154,9 @@
     "download_page": "https://www.nature.com/articles/s41598-025-94173-0",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "bitcoin-price-forecasting-vmd-lstm.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5214,9 +5214,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S1059056025000784",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5274,9 +5274,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0301420722003294",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "multi-step-stock-prediction-vmd-mfrfnn.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5310,9 +5310,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1544612326003065",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "a-controlled-comparison-of-deep-learning-architectures-for-multi-horizon-financial-forecasting.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5322,9 +5322,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1544612325004593",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "realized-volatility-forecasting-with-neural-networks.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5370,9 +5370,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1568494623003745",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5442,9 +5442,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S131915781931314X",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "bitcoin-price-forecasting-vmd-lstm.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5454,9 +5454,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S2590005625002309",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5466,9 +5466,9 @@
     "download_page": "https://doi.org/10.2139/ssrn.5159413",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5538,9 +5538,9 @@
     "download_page": "https://link.springer.com/article/10.1007/s10614-024-10732-z",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "realized-volatility-forecasting-with-neural-networks.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5550,9 +5550,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0378437119318795",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "harnet-a-convolutional-neural-network-for-realized-volatility-forecasting.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5598,9 +5598,9 @@
     "download_page": "https://onlinelibrary.wiley.com/doi/10.1155/jama/7706431",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "vmd-snns-stock-market-index-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5610,9 +5610,9 @@
     "download_page": "https://link.springer.com/article/10.1007/s10614-025-11137-2",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5622,9 +5622,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417425036449",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "ice2de-multi-level-stock-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5694,9 +5694,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3913330",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "short-time-variational-mode-decomposition.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5742,9 +5742,9 @@
     "download_page": "https://arxiv.org/abs/2408.16122",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5802,9 +5802,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0950705119304204",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "bitcoin-price-forecasting-vmd-lstm.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5814,9 +5814,9 @@
     "download_page": "https://www.mdpi.com/2504-3900/10/4/227",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "sgvmd-arima-time-series-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5826,9 +5826,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225015267",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "multi-step-stock-prediction-vmd-mfrfnn.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5982,9 +5982,9 @@
     "download_page": "https://arxiv.org/abs/2305.06961",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "developing-cryptocurrency-trading-strategy-based-on-autoencoder-cnn-gans.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6006,9 +6006,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3862004",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-rl-statistical-arbitrage-cryptomarket.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6054,9 +6054,9 @@
     "download_page": "https://arxiv.org/abs/2109.10662",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "cluster-based-pairs-trading-combining-unsupervised-learning-with-cointegration-filtering.pdf",
-    "downloaded_at": "2026-05-25",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6078,9 +6078,9 @@
     "download_page": "https://arxiv.org/abs/2508.14784",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "oceemdan-deep-learning-exchange-rate.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6090,9 +6090,9 @@
     "download_page": "https://arxiv.org/abs/2311.10718",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-rl-statistical-arbitrage-cryptomarket.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6102,9 +6102,9 @@
     "download_page": "https://thesis.eur.nl/pub/47732/Bruijn-de.pdf",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "order-flow-imbalance-high-frequency-trading-signal.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6258,9 +6258,9 @@
     "download_page": "https://www.mdpi.com/1911-8074/12/1/31",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "trading-and-arbitrage-in-cryptocurrency-markets.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6270,9 +6270,9 @@
     "download_page": "https://arxiv.org/abs/2406.10695",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "developing-cryptocurrency-trading-strategy-based-on-autoencoder-cnn-gans.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6282,9 +6282,9 @@
     "download_page": "https://arxiv.org/abs/2508.14762",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "statistical-arbitrage-crypto-markets-pca.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6294,9 +6294,9 @@
     "download_page": "https://arxiv.org/abs/2512.02037",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6594,9 +6594,9 @@
     "download_page": "https://readmedium.com/time-series-forecasting-deep-learning-vs-statistics-who-wins-c568389d02df",
     "source_file": "time-series.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6618,9 +6618,9 @@
     "download_page": "https://nordvarg.com/blog/transformer-models-financial-timeseries",
     "source_file": "time-series.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6630,9 +6630,9 @@
     "download_page": "https://tradingmaster.app/blog/transformer-models-for-price-prediction",
     "source_file": "time-series.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6690,9 +6690,9 @@
     "download_page": "https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/",
     "source_file": "trend-following.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "revisiting-trend-following-mean-reversion-bitcoin.pdf",
-    "downloaded_at": "2026-05-18",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6906,9 +6906,9 @@
     "download_page": "https://www.tradingresearchub.com/p/research-article-32-turtle-trading",
     "source_file": "trend-following.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "trading-and-arbitrage-in-cryptocurrency-markets.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6930,9 +6930,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3257397",
     "source_file": "trend-following.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "rethinking-trend-following-optimal-regime-dependent-allocation.pdf",
-    "downloaded_at": "2026-04-13",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -7098,9 +7098,9 @@
     "download_page": "https://ideas.repec.org/p/zbw/iwqwdp/032023.html",
     "source_file": "volatility.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "role-of-implied-volatility-in-forecasting-realized-volatility-busch-christensen-nielsen.pdf",
-    "downloaded_at": "2026-04-22",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -7158,9 +7158,9 @@
     "download_page": "https://medium.com/@simomenaldo/realized-volatility-and-har-models-a-new-paradigm-for-volatility-forecasting-4a660f2530f3",
     "source_file": "volatility.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "role-of-implied-volatility-in-forecasting-realized-volatility-busch-christensen-nielsen.pdf",
-    "downloaded_at": "2026-04-22",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
