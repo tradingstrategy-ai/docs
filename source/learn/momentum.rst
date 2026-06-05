@@ -363,3 +363,57 @@ Key metrics for the winner-minus-loser long-short portfolio: annualised return o
 Mentioned by Darren (@ReformedTrader) in `this discussion <https://x.com/ReformedTrader/status/2061840582050464215>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5561720>`__
+
+Real-Time Profitability of Published Anomalies: An Out-of-Sample Test
+----------------------------------------------------------------------
+
+Jing-Zhi Huang and Zhijian Huang test whether published stock market anomalies remain profitable out-of-sample in real time. The paper constructs a long-only strategy that each year recursively selects the best past-performing anomaly from a pool of published anomalies over a given training period — effectively applying momentum to anomalies themselves.
+
+The key finding is that this recursive best-performer strategy outperforms the equity market even after transaction costs, suggesting that published anomalies exhibit performance persistence. The result is relevant to meta-strategy research: if individual anomalies show momentum, then dynamically rotating capital toward recently profitable strategies has an empirical basis. The paper also addresses data-snooping bias, a critical concern when selecting among many anomalies. Published in the Quarterly Journal of Finance, 2014.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1571706>`__
+
+Time-Series and Cross-Sectional Momentum in Anomaly Returns
+-------------------------------------------------------------
+
+Wang, Yan, and Zheng document strong evidence of both time-series and cross-sectional momentum in the long-short returns of a comprehensive sample of stock market anomalies. Strategies that exploit this persistence — going long recently profitable anomalies and short recently unprofitable ones — deliver significant abnormal returns that are robust to the standard stock-level momentum effect and cannot be explained by traditional asset-pricing models.
+
+The momentum in anomaly returns is more pronounced when arbitrage capital is scarcer or market liquidity is lower, consistent with limits-to-arbitrage explanations. This paper provides the direct empirical foundation for the meta-strategy approach of rotating across trading strategies based on recent performance. Published in European Financial Management, Volume 27, 2021.
+
+`Read the paper <https://onlinelibrary.wiley.com/doi/abs/10.1111/eufm.12290>`__
+
+Factor Momentum and the Momentum Factor
+-----------------------------------------
+
+Ehsani and Linnainmaa show that momentum in individual stock returns emanates from momentum in factor returns. Most factors are positively autocorrelated: the average factor earns a monthly return of 6 basis points following a year of losses and 51 basis points following a positive year. A factor momentum strategy that goes long recent winner factors and short recent loser factors is highly profitable and subsumes the standard stock momentum factor.
+
+The central implication is that momentum may not be a distinct risk factor — it times other factors. This reframes the meta-strategy question: allocating to recently winning strategies may work because the underlying factors those strategies capture are themselves persistent. Published in the Journal of Finance, 2022.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3014521>`__
+
+Two Centuries of Multi-Asset Momentum
+--------------------------------------
+
+Geczy and Samonov extend momentum tests to the longest available histories of global financial asset returns — 215 years (1800–2014) — covering equities, bonds, currencies, commodities, sectors, and individual stocks. The paper confirms the significance of the momentum premium both within and across asset classes over this extended sample, making it one of the most comprehensive out-of-sample validations of momentum as a pervasive market phenomenon.
+
+The breadth of the evidence — spanning multiple countries, asset classes, and two centuries of data — strengthens the case that momentum is a robust empirical regularity rather than a sample-specific artifact. The multi-asset perspective is directly relevant to meta-strategy construction, where the question is whether momentum operates at the strategy level just as it does across individual securities and asset classes.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2607730>`__
+
+Is There Momentum in Factor Premia? Evidence from International Equity Markets
+--------------------------------------------------------------------------------
+
+Zaremba and Shemer examine whether momentum exists in the returns of factor premia — market, value, size, momentum, low-risk, and quality — across 24 international equity markets from 1990 to 2016. They find strong evidence that top-performing factors continue to outperform the worst-performing factors, both within individual equity markets and in a cross-country framework.
+
+However, the paper also shows that momentum in factor premia is largely explained by the classic stock-level momentum effect, raising questions about whether factor momentum is a distinct phenomenon or a manifestation of the same underlying force. This is a cautionary result for meta-strategy builders who assume factor-level momentum provides independent diversification. Published in Research in International Business and Finance, Volume 46, 2018.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3332927>`__
+
+Factor Performance 2010-2019: A Lost Decade?
+----------------------------------------------
+
+Blitz examines whether the 2010–2019 decade represents a structural break in factor investing, documenting that value, size, and low-volatility factors all underperformed during this period while momentum remained profitable but with elevated crash risk. The paper investigates potential explanations including crowding, changes in market structure, and the prolonged low-interest-rate environment.
+
+The practical implications are significant for meta-strategy builders: factor performance exhibits extended regime dependence, and a momentum overlay that rotates into recently winning factors would have concentrated into the few factors that worked (momentum, quality) while avoiding the many that didn't. The paper serves as a cautionary case study on the risks of performance chasing at the factor level and the importance of understanding whether decay is temporary or permanent. Published in the Journal of Portfolio Management, 2020.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3562242>`__
