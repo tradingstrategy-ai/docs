@@ -210,3 +210,14 @@ Key out-of-sample metrics (October–December 2025): the constrained GMV portfol
 Mentioned by `Piotr Pomorski in this discussion <https://x.com/PtrPomorski/status/2061858884575199620>`__.
 
 `Read the paper <https://arxiv.org/abs/2605.29413>`__
+
+Building Meta-Strategies with Quantpedia API
+---------------------------------------------
+
+Meta-strategies apply portfolio construction rules to universes of trading strategies rather than individual securities. Instead of allocating capital across stocks or ETFs, a meta-strategy allocates across strategy return streams, treating each strategy's equity curve as a portfolio component. This post demonstrates the approach using the Quantpedia API to filter, retrieve, and allocate across a universe of 118 strategies (filtered for simple implementation, ETF-based instruments, and available QuantConnect source code).
+
+The case study applies cross-sectional momentum to strategies: each month, all strategies are ranked by trailing 6-month cumulative returns, the top 10% are selected with equal weights, and the portfolio rebalances. The momentum meta-strategy is compared against equal-weight allocation and naive risk parity across the same universe. The post notes the core trade-off: broad equal-weight portfolios offer diversification but no responsiveness to performance shifts, while momentum overlays provide dynamism but concentrate exposure and increase drawdown risk during regime changes. The underlying research question — whether published anomalies and systematic strategies exhibit performance persistence — is supported by references to Huang's out-of-sample anomaly testing, Wang/Yan/Zheng on momentum in anomaly returns, and Ehsani's work on factor momentum.
+
+By Quantpedia.
+
+`Read the blog post <https://quantpedia.com/building-meta-strategies-with-quantpedia-api/>`__.
