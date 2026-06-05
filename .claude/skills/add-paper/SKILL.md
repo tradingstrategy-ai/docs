@@ -76,13 +76,33 @@ Important formatting notes:
 
 If the source of the link is discussion like a tweet, then include a paragraph with a link to that tweet and with the comment "Mentioned by XXX in this discussion" and this is what people say about it".
 
-IMPORTANT. If the paper already exists, do not add it again.
+IMPORTANT. If the paper already exists, do not add it again. Check `articles/index.json` by searching for the title or URL before adding.
 
-6. **Commit and push**:
-   - Stage the modified file
+6. **Update the paper index**: After adding the entry to the `.rst` file and downloading the PDF, update `articles/index.json`. See `.claude/docs/paper-index.md` for the full schema. Append a new entry:
+
+   ```json
+   {
+     "title": "Paper Title",
+     "authors": "Author1, Author2",
+     "publication_year": 2026,
+     "download_page": "https://canonical-url",
+     "source_file": "target-file.rst",
+     "included_in_index_at": "YYYY-MM-DD",
+     "filename": "slugified-title.pdf",
+     "downloaded_at": "YYYY-MM-DD",
+     "download_failure_reason": null
+   }
+   ```
+
+   If the PDF could not be downloaded, set `filename` and `downloaded_at` to `null` and set `download_failure_reason` to the appropriate reason (`ssrn_paywall`, `publisher_paywall`, `requires_browser`, `not_attempted`).
+
+   Keep the array sorted by `source_file` then `title`.
+
+7. **Commit and push**:
+   - Stage the modified `.rst` file, the PDF (if downloaded), and `articles/index.json`
    - Commit with message: "Add: {Paper Title}"
    - Push to master branch
 
-7. **Save as PDF**: Follow the procedure in **README-browser.md > PDF Generation > How it works** with:
+8. **Save as PDF**: Follow the procedure in **README-browser.md > PDF Generation > How it works** with:
    - SELECTOR: `'article' || '.abstract-text' || '#abstract' || 'main'`
    - FILENAME: `<slugified-title>.pdf`
