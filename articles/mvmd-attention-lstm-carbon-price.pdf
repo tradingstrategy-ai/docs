@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title translate = "ru:title">Sci-Hub: статьи по запросу не найдены</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width">
+    </head>
+    <body>
+
+        <style>
+
+    @import url('/styles/Atkinson.css');
+    @import url('/styles/Overpass.css');
+
+    html { font-size: 12px }
+
+    @media only screen and (min-width: 1400px) { html { font-size: 13px } }
+    @media only screen and (min-width: 1600px) { html { font-size: 14px } }
+    @media only screen and (min-width: 1800px) { html { font-size: 16px } }
+    @media only screen and (min-width: 2048px) { html { font-size: 18px } }
+
+    @media only screen and (max-height: 600px) { html { font-size: 10px } }
+
+    body {font-family: 'Atkinson Hyperlegible Mono', 'Overpass Mono', monospace; background-color: white; margin: 0; padding: 0 }
+
+    a {text-decoration: none; color: #c9211e}
+
+    fixed-width {margin: 0 auto; padding: 2.33rem; max-width: 2048px; overflow-x: hidden; display: block }
+
+    .vertical,
+    row-split     { display: flex; flex-direction: column; align-items: center }
+    column-split  { display: flex; align-items: flex-start; width: 100% }
+    column-center { flex-grow: 1 }
+
+    mobile-content { display: none }
+    mobile-content.wide column-split > * { margin-left: 2rem }
+    mobile-content.wide .picture { overflow: hidden; max-height: 30rem; }
+
+    block-rounded { border: dotted 2px #ccc; border-radius: 2rem; flex-grow: 1; margin: 0; place-items: center; display: grid; font-size: 1.33rem }
+    block-space   { margin-top: 3rem; display: block }
+
+    header-small  { font-size: 1.66rem; font-weight: bold; margin: 1rem; color: #c9211e}
+
+    block-rounded.info    { display: block; padding: 2.88rem; font-size: 1.22rem }
+    block-rounded.info h1 { font-size: 1.66rem; color: #333;  margin-bottom: 2rem; font-weight: bold; color: #333 }
+
+    block-date       { display: block; padding: 1rem; margin-right: 1.88rem;  max-width: fit-content; max-height: fit-content; text-align: center; color: white; border-radius: 1rem; font-size: 1.66rem; font-weight: bold; }
+
+    block-date.black { background-color: black; }
+    block-date.red   { background-color: #c9211e; }
+    block-date.white { border: dotted 2px #c9211e; background-color: white; color: #c9211e }
+    block-date.gray  { border: none; border-radius: 0; border-bottom:  dotted 2px #333; background-color: white; color: #333; font-weight: normal; }
+
+    block-date .number { font-size: 2rem }
+
+    span.rotate { animation: spin 3s linear infinite; display: inline-block; font-size: 1.88rem; }
+    @keyframes spin { from { transform: rotate(0deg) }  to { transform: rotate(360deg) } }
+
+    .yes { display: inline-block }
+    .no  { display: none }
+
+    @media only screen and (max-width: 1024px)
+    {
+        fixed-width { padding: 1.88rem }
+
+        column-split   { justify-content: space-around; align-items: center }
+        mobile-content { display: block; margin: 3rem 3rem 0 0 }
+    }
+
+    @media only screen and (max-width: 640px)
+    {
+        fixed-width { padding: 0.88rem }
+
+        mobile-content.wide { display: none }
+        mobile-content { margin-right: 0; }
+
+        block-rounded { margin: 0 1rem;  }
+    }
+
+    @media only screen and (max-width: 480px)
+    {
+        fixed-width { padding: 0 }
+    }
+
+</style>
+
+<script>
+
+    function local(id) { return document.querySelector(".messages ." + id).innerText  }
+
+</script>
+
+        <style>
+
+            body { display: grid; place-items: center; min-height: 100vh;  }
+            div  { text-align: center }
+            img  { margin-bottom: 3rem; width: 640px; max-width: 77vw; border-radius: 1rem; }
+
+            div.notfound { margin: 4rem 4.88rem; font-size: 1.55rem;  max-width: 640px; }
+        
+            div.request { margin: 1rem 4.88rem; max-width: 640px; word-wrap: break-word; }
+            div.request { font-size: 1.66rem; margin-top: 1.88rem; }
+            div.request a { color: #888 }
+
+            @media only screen and (min-width: 1200px) { div.center   { display: flex; align-items: center; font-size: 1.23rem; } }
+            @media only screen and (min-width: 1800px) { div.notfound { font-size: 1.22rem; } }
+
+        </style>
+
+        <div class = "center">
+            
+            <img src = "/pictures/notfound.webp">
+
+            <div>
+                <div class = "request">
+                    <a target = "_blank" href = "{url}">www.sciencedirect.com/science/article/abs/pii/S156849462400317X</a>
+                </div>
+
+                <div class = "notfound" translate = "ru:notfound">Научных статей по Вашему запросу у меня нет :(</div>
+        
+            </div>
+    
+    </body>
+</html>
