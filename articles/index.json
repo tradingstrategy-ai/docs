@@ -24,30 +24,6 @@
     "short_description": null
   },
   {
-    "title": "Building Regime-Robust Trading Systems Through Market Cycle Analysis",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/navigating-market-seas-the-art-and",
-    "source_file": "algorithmic-trading.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
-    "title": "Building Systematic Trading Infrastructure: From Backtests to Live Deployment",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/building-systematic-trading-infrastructure",
-    "source_file": "algorithmic-trading.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "regime-adaptive-ensemble-strategy-from-backtest-to-live-paper-trading.pdf",
-    "downloaded_at": "2026-06-02",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Building a Crypto Market Scanner in Python with Binance API",
     "authors": "Pedma",
     "publication_year": null,
@@ -69,6 +45,30 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "Building Regime-Robust Trading Systems Through Market Cycle Analysis",
+    "authors": "Pedma",
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/navigating-market-seas-the-art-and",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "Building Systematic Trading Infrastructure: From Backtests to Live Deployment",
+    "authors": "Pedma",
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/building-systematic-trading-infrastructure",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": null,
     "short_description": null
   },
   {
@@ -253,15 +253,15 @@
   },
   {
     "title": "The Wisdom of Twitter Crowds: Predicting Stock Market Reactions to FOMC Meetings via Twitter Feeds",
-    "authors": "Azar and Lo",
+    "authors": "Pablo D. Azar, Andrew W. Lo",
     "publication_year": 2016,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756815",
     "source_file": "algorithmic-trading.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "twitter-mood-predicts-stock-market.pdf",
+    "filename": "wisdom-of-twitter-crowds.pdf",
     "downloaded_at": "2026-06-05",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Tests whether aggregated Twitter sentiment around FOMC meetings predicts equity returns. Published in J. Portfolio Management, Vol. 42, No. 5, 2016."
   },
   {
     "title": "Transitioning from Discretionary to Systematic Crypto Trading",
@@ -720,18 +720,6 @@
     "short_description": null
   },
   {
-    "title": "ML for Trading",
-    "authors": "Stefan Jansen",
-    "publication_year": null,
-    "download_page": "https://github.com/stefan-jansen/machine-learning-for-trading",
-    "source_file": "books.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_a_paper",
-    "short_description": null
-  },
-  {
     "title": "Machine Learning for Algorithmic Trading",
     "authors": "Stefan Jansen",
     "publication_year": null,
@@ -756,6 +744,18 @@
     "short_description": null
   },
   {
+    "title": "ML for Trading",
+    "authors": "Stefan Jansen",
+    "publication_year": null,
+    "download_page": "https://github.com/stefan-jansen/machine-learning-for-trading",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": null
+  },
+  {
     "title": "Practical Guide to Applied Conformal Prediction",
     "authors": null,
     "publication_year": null,
@@ -768,10 +768,10 @@
     "short_description": null
   },
   {
-    "title": "Python For Finance: Algorithmic Trading",
-    "authors": null,
+    "title": "Python for Data Analysis",
+    "authors": "Wes McKinney",
     "publication_year": null,
-    "download_page": "https://www.datacamp.com/community/tutorials/finance-python-trading",
+    "download_page": "https://wesmckinney.com/book/",
     "source_file": "books.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -780,10 +780,10 @@
     "short_description": null
   },
   {
-    "title": "Python for Data Analysis",
-    "authors": "Wes McKinney",
+    "title": "Python For Finance: Algorithmic Trading",
+    "authors": null,
     "publication_year": null,
-    "download_page": "https://wesmckinney.com/book/",
+    "download_page": "https://www.datacamp.com/community/tutorials/finance-python-trading",
     "source_file": "books.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -1080,6 +1080,18 @@
     "short_description": null
   },
   {
+    "title": "giotto-tda: A Topological Data Analysis Toolkit for Machine Learning and Data Exploration",
+    "authors": "Tauzin, Lupo, Tunstall, Burella Pérez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess",
+    "publication_year": 2021,
+    "download_page": "https://github.com/giotto-ai/giotto-tda",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "giotto-tda-toolkit.pdf",
+    "downloaded_at": "2026-06-05",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
     "title": "Google Research TFT",
     "authors": "Lim, Arik, Loeff, and Pfister",
     "publication_year": null,
@@ -1116,6 +1128,18 @@
     "short_description": null
   },
   {
+    "title": "index_fund_volatility",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://github.com/vladkramarov/index_fund_volatility",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": null
+  },
+  {
     "title": "NeuralForecast",
     "authors": null,
     "publication_year": null,
@@ -1132,6 +1156,18 @@
     "authors": null,
     "publication_year": null,
     "download_page": "https://github.com/sktime/pytorch-forecasting",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": null
+  },
+  {
+    "title": "qlikeHAR Replications",
+    "authors": "M. Puke and K. Schweikert",
+    "publication_year": null,
+    "download_page": "https://github.com/marius-cp/qlikeHAR_replications",
     "source_file": "code-repositories.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -1188,58 +1224,22 @@
     "short_description": null
   },
   {
-    "title": "Universal Portfolios",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://github.com/Marigold/universal-portfolios",
-    "source_file": "code-repositories.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_a_paper",
-    "short_description": null
-  },
-  {
-    "title": "giotto-tda: A Topological Data Analysis Toolkit for Machine Learning and Data Exploration",
-    "authors": "Tauzin, Lupo, Tunstall, Burella Pérez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess",
-    "publication_year": 2021,
-    "download_page": "https://github.com/giotto-ai/giotto-tda",
-    "source_file": "code-repositories.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "giotto-tda-toolkit.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "index_fund_volatility",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://github.com/vladkramarov/index_fund_volatility",
-    "source_file": "code-repositories.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_a_paper",
-    "short_description": null
-  },
-  {
-    "title": "qlikeHAR Replications",
-    "authors": "M. Puke and K. Schweikert",
-    "publication_year": null,
-    "download_page": "https://github.com/marius-cp/qlikeHAR_replications",
-    "source_file": "code-repositories.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_a_paper",
-    "short_description": null
-  },
-  {
     "title": "tft-stocks",
     "authors": null,
     "publication_year": null,
     "download_page": "https://github.com/MuralidharB/tft-stocks",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": null
+  },
+  {
+    "title": "Universal Portfolios",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://github.com/Marigold/universal-portfolios",
     "source_file": "code-repositories.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -1275,11 +1275,11 @@
     "title": "Master AI-Driven Algorithmic Trading",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://home.tpq.io/certificates/pyalgo/",
+    "download_page": null,
     "source_file": "courses.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "janus-q-end-to-end-event-driven-trading-via-hierarchical-gated-reward-modeling.pdf",
-    "downloaded_at": "2026-02-25",
+    "filename": null,
+    "downloaded_at": null,
     "download_failure_reason": null,
     "short_description": null
   },
@@ -1320,10 +1320,10 @@
     "short_description": null
   },
   {
-    "title": "ASRI: An Aggregated Systemic Risk Index for Cryptocurrency Markets",
+    "title": "An Investor's Guide to Crypto",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150726",
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4124576",
     "source_file": "cryptocurrency.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -1332,10 +1332,10 @@
     "short_description": null
   },
   {
-    "title": "An Investor's Guide to Crypto",
+    "title": "ASRI: An Aggregated Systemic Risk Index for Cryptocurrency Markets",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4124576",
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150726",
     "source_file": "cryptocurrency.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -1875,7 +1875,7 @@
     "title": "Optimal Factor Timing in a High-Dimensional Setting",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358",
+    "download_page": null,
     "source_file": "equity-factors.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -2064,18 +2064,6 @@
     "short_description": null
   },
   {
-    "title": "AI Bubbles with Large Language Models",
-    "authors": "Alvaro Cartea, Patrick Chang, Nan Chen, and Mingyue Zhong",
-    "publication_year": 2026,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426761",
-    "source_file": "machine-learning.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "ai-bubbles-with-large-language-models.pdf",
-    "downloaded_at": "2026-05-16",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Adaptive Multi-Signal Position Sizing for Crypto Trading",
     "authors": "Pedma",
     "publication_year": null,
@@ -2088,10 +2076,22 @@
     "short_description": null
   },
   {
+    "title": "AI Bubbles with Large Language Models",
+    "authors": "Alvaro Cartea, Patrick Chang, Nan Chen, and Mingyue Zhong",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426761",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "ai-bubbles-with-large-language-models.pdf",
+    "downloaded_at": "2026-05-16",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
     "title": "Algorithmic Crypto Trading Using Information-Driven Bars, Triple-Barrier Labeling and Deep Learning",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851169",
+    "download_page": null,
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "gradzki-wojcik-lessmann-algorithmic-crypto-triple-barrier-dl.pdf",
@@ -2160,18 +2160,6 @@
     "short_description": null
   },
   {
-    "title": "BITCOIN-USD Trading Using SVM to Detect The Current day's Trend in The Market",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET",
-    "source_file": "machine-learning.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
     "title": "Beyond delta neutrality: Confidence-scaled hedging with machine learning forecasts",
     "authors": null,
     "publication_year": null,
@@ -2196,10 +2184,10 @@
     "short_description": null
   },
   {
-    "title": "Can Machines Time Markets? The Virtue of Complexity in Return Prediction",
+    "title": "BITCOIN-USD Trading Using SVM to Detect The Current day's Trend in The Market",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://www.aqr.com/Insights/Research/Alternative-Thinking/Can-Machines-Time-Markets-The-Virtue-of-Complexity-in-Return-Prediction",
+    "download_page": "https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET",
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -2220,10 +2208,22 @@
     "short_description": null
   },
   {
+    "title": "Can Machines Time Markets? The Virtue of Complexity in Return Prediction",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.aqr.com/Insights/Research/Alternative-Thinking/Can-Machines-Time-Markets-The-Virtue-of-Complexity-in-Return-Prediction",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Clustered Feature Importance",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851167",
+    "download_page": null,
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "lopez-de-prado-clustered-feature-importance.pdf",
@@ -2331,7 +2331,7 @@
     "title": "Does Meta-Labeling Add to Signal Efficacy?",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851168",
+    "download_page": null,
     "source_file": "machine-learning.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "singh-joubert-meta-labeling-signal-efficacy.pdf",
@@ -2532,18 +2532,6 @@
     "short_description": null
   },
   {
-    "title": "Signal Validation Techniques Inspired by Robert Carver's Systematic Trading",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/research-article-35-building-robust",
-    "source_file": "machine-learning.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
     "title": "Signal or Noise in Multi-Agent LLM-based Stock Recommendations?",
     "authors": "George Fatouros and Kostas Metaxas",
     "publication_year": 2026,
@@ -2564,18 +2552,6 @@
     "included_in_index_at": "2026-06-05",
     "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
     "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "The 10 Reasons Most Machine Learning Funds Fail",
-    "authors": "Marcos López de Prado",
-    "publication_year": 2018,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3104816",
-    "source_file": "machine-learning.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "lopez-de-prado-10-reasons-ml-funds-fail.pdf",
-    "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -2832,30 +2808,6 @@
     "short_description": null
   },
   {
-    "title": "Building Regime-Robust Trading Systems Through Market Cycle Analysis",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/navigating-market-seas-the-art-and",
-    "source_file": "market-regimes.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
-    "title": "Clustering Market Regimes Using the Wasserstein Distance",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3830626",
-    "source_file": "market-regimes.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": null
-  },
-  {
     "title": "Detecting VIX Term Structure Regimes",
     "authors": "Cristian Velasquez",
     "publication_year": null,
@@ -2865,18 +2817,6 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
-    "title": "Dynamic Asset Allocation with Asset-Specific Regime Forecasts",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358",
-    "source_file": "market-regimes.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "dynamic-asset-allocation-part-3-risk-adjusted-momentum.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
     "short_description": null
   },
   {
@@ -2892,18 +2832,6 @@
     "short_description": null
   },
   {
-    "title": "Forecasting Market Regimes with the sUSDe Term Structure",
-    "authors": "Luke Leasure",
-    "publication_year": null,
-    "download_page": "https://x.com/0xMether/article/2016201886395990198",
-    "source_file": "market-regimes.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
     "title": "Regime Detection with HMM: Critical Analysis",
     "authors": "Bongani Mayaba",
     "publication_year": null,
@@ -2913,18 +2841,6 @@
     "filename": "regime-detection-with-hidden-markov-models-for-adaptive-strategy-allocation.pdf",
     "downloaded_at": "2026-04-24",
     "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Regularised jump models for regime identification and feature selection",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4950423",
-    "source_file": "market-regimes.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
     "short_description": null
   },
   {
@@ -3001,15 +2917,15 @@
   },
   {
     "title": "Buy the Dip",
-    "authors": "Peter, CrackingMarkets",
-    "publication_year": null,
+    "authors": "Peter",
+    "publication_year": 2024,
     "download_page": "https://www.crackingmarkets.com/buy-the-dip/",
     "source_file": "mean-reversion.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "buy-the-dip-weekly.pdf",
+    "filename": "buy-the-dip.pdf",
     "downloaded_at": "2026-02-18",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "CrackingMarkets blog post presenting a systematic approach to buying short-term corrections within longer-term uptrends."
   },
   {
     "title": "Buy the Dip Weekly",
@@ -3432,18 +3348,6 @@
     "short_description": null
   },
   {
-    "title": "Momentum Factor Investing: Evidence and Evolution",
-    "authors": "Baltussen, Dom, Van Vliet, and Vidojevic",
-    "publication_year": 2025,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5561720",
-    "source_file": "momentum.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "momentum-factor-investing-evidence-and-evolution.pdf",
-    "downloaded_at": "2026-06-03",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Momentum and trend following trading strategies for currencies and bitcoin",
     "authors": null,
     "publication_year": null,
@@ -3452,6 +3356,18 @@
     "included_in_index_at": "2026-06-05",
     "filename": "few-shot-learning-patterns-in-financial-time-series-for-trend-following-strategies.pdf",
     "downloaded_at": "2026-04-10",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Momentum Factor Investing: Evidence and Evolution",
+    "authors": "Baltussen, Dom, Van Vliet, and Vidojevic",
+    "publication_year": 2025,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5561720",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "momentum-factor-investing-evidence-and-evolution.pdf",
+    "downloaded_at": "2026-06-03",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -3476,18 +3392,6 @@
     "included_in_index_at": "2026-06-05",
     "filename": "ndx-momentum.pdf",
     "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Nonlinear Time Series Momentum",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950660",
-    "source_file": "momentum.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "time-series-cross-sectional-momentum-anomaly-returns.pdf",
-    "downloaded_at": "2026-06-05",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -3555,7 +3459,7 @@
     "title": "Risk-adjusted Momentum Strategy Construction and Industry Heterogeneity Analysis Based on STARR Indicator",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4401552",
+    "download_page": null,
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "risk-adjusted-momentum-strategy-starr-indicator.pdf",
@@ -3597,18 +3501,6 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
-    "title": "Systematic Regime Detection for Momentum Strategy Timing",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/optimizing-trading-strategies-mastering",
-    "source_file": "momentum.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "regime-detection-with-hidden-markov-models-for-adaptive-strategy-allocation.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
     "short_description": null
   },
   {
@@ -3816,18 +3708,6 @@
     "short_description": null
   },
   {
-    "title": "Order Flow Imbalance — A High Frequency Trading Signal",
-    "authors": "Dean Markwick",
-    "publication_year": 2022,
-    "download_page": "https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html",
-    "source_file": "order-flow.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "order-flow-imbalance-high-frequency-trading-signal.pdf",
-    "downloaded_at": "2026-03-13",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Order Flow and Cryptocurrency Returns",
     "authors": null,
     "publication_year": null,
@@ -3847,6 +3727,18 @@
     "source_file": "order-flow.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "order-flow-and-exchange-rate-dynamics.pdf",
+    "downloaded_at": "2026-03-13",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Order Flow Imbalance — A High Frequency Trading Signal",
+    "authors": "Dean Markwick",
+    "publication_year": 2022,
+    "download_page": "https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "order-flow-imbalance-high-frequency-trading-signal.pdf",
     "downloaded_at": "2026-03-13",
     "download_failure_reason": null,
     "short_description": null
@@ -3888,15 +3780,15 @@
     "short_description": null
   },
   {
-    "title": "Asset Allocation: From Markowitz to Deep Reinforcement Learning",
-    "authors": null,
+    "title": "Building a Multi-Asset Trading Model from Scratch",
+    "authors": "Pedma",
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851166",
+    "download_page": "https://www.tradingresearchub.com/p/handling-a-multi-asset-model",
     "source_file": "portfolio-construction.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "asset-allocation-from-markowitz-to-deep-reinforcement-learning.pdf",
-    "downloaded_at": "2026-03-06",
-    "download_failure_reason": null,
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
     "short_description": null
   },
   {
@@ -3936,18 +3828,6 @@
     "short_description": null
   },
   {
-    "title": "Building a Multi-Asset Trading Model from Scratch",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/handling-a-multi-asset-model",
-    "source_file": "portfolio-construction.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
     "title": "Clustering in Cardinality-Constrained Portfolio Optimization",
     "authors": null,
     "publication_year": null,
@@ -3960,18 +3840,6 @@
     "short_description": null
   },
   {
-    "title": "Covariance Implied Risk Factors",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827687",
-    "source_file": "portfolio-construction.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "covariance-implied-risk-factors.pdf",
-    "downloaded_at": "2026-03-04",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Dynamic Black-Litterman",
     "authors": null,
     "publication_year": null,
@@ -3980,18 +3848,6 @@
     "included_in_index_at": "2026-06-05",
     "filename": "dynamic-black-litterman.pdf",
     "downloaded_at": "2026-03-31",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Dynamic Mean-Variance Portfolio Allocation under Regime-Switching Jump-Diffusions with Absorbing Barriers",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827694",
-    "source_file": "portfolio-construction.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "dynamic-mean-variance-portfolio-allocation-regime-switching-jump-diffusions.pdf",
-    "downloaded_at": "2026-04-07",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -4177,15 +4033,15 @@
   },
   {
     "title": "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading",
-    "authors": "Yue Deng, Feng Bao, Youyong Kong, Zhiquan Ren, and Qionghai Dai",
-    "publication_year": 2017,
+    "authors": "Yue Deng, Feng Bao, Youyong Kong, Zhiquan Ren, Qionghai Dai",
+    "publication_year": 2016,
     "download_page": "https://ieeexplore.ieee.org/document/7407387/",
     "source_file": "reinforcement-learning.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
+    "filename": "drrl-financial-signal.pdf",
+    "downloaded_at": "2026-05-15",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Recurrent deep neural network combining deep learning for market feature representation with RL for trading action selection. Published in IEEE TNNLS, 2016."
   },
   {
     "title": "Deep Hedging",
@@ -4341,18 +4197,6 @@
     "filename": "omega-ratio-and-calmar-ratio.pdf",
     "downloaded_at": "2026-03-13",
     "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Credit Spread News and Financial Market Risk",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827684",
-    "source_file": "risk-management.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
     "short_description": null
   },
   {
@@ -4597,15 +4441,15 @@
   },
   {
     "title": "A Novel Hybrid Framework for Stock Price Prediction Integrating Adaptive Signal Decomposition and Multi-Scale Feature Extraction",
-    "authors": null,
+    "authors": "Junqi Su, Raymond Y. K. Lau, Yuefeng Du, Jia Yu, Hui Zhang",
     "publication_year": 2025,
     "download_page": "https://www.mdpi.com/2076-3417/15/23/12450",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "advanced-ensemble-deep-learning-framework-stock-price-prediction-vae-transformer-lstm.pdf",
-    "downloaded_at": "2026-03-19",
+    "filename": "cpo-vmd-informer-stock-prediction.pdf",
+    "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "CVASD-MDCM-Informer framework using CPO-tuned VMD and multi-scale dilated convolution within Informer transformer. Published in Applied Sciences (MDPI, 2025)."
   },
   {
     "title": "A Novel Hybrid Model for Financial Forecasting Based on CEEMDAN-SE and ARIMA-CNN-LSTM",
@@ -4752,6 +4596,30 @@
     "short_description": null
   },
   {
+    "title": "Carbon Emission Price Point-Interval Forecasting Based on Multivariate VMD and Attention-LSTM",
+    "authors": "L. Zeng et al.",
+    "publication_year": 2024,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S156849462400317X",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "mvmd-attention-lstm-carbon-price.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Carbon Price Forecasting Based on CEEMDAN and LSTM",
+    "authors": "Feite Zhou, Zhehao Huang, and Changhong Zhang",
+    "publication_year": 2022,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0306261922000782",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "ceemdan-lstm-carbon-price.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
     "title": "CEEMD for RMB Exchange Rate Forecasting and Economic Factor Analysis",
     "authors": null,
     "publication_year": 2025,
@@ -4867,30 +4735,6 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "ceemdan-vmd-cnn-bilstm-crude-oil.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Carbon Emission Price Point-Interval Forecasting Based on Multivariate VMD and Attention-LSTM",
-    "authors": "L. Zeng et al.",
-    "publication_year": 2024,
-    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S156849462400317X",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "mvmd-attention-lstm-carbon-price.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Carbon Price Forecasting Based on CEEMDAN and LSTM",
-    "authors": "Feite Zhou, Zhehao Huang, and Changhong Zhang",
-    "publication_year": 2022,
-    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0306261922000782",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "ceemdan-lstm-carbon-price.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5029,15 +4873,15 @@
   },
   {
     "title": "Dual-Uncertainty Modeling in Financial Time-Series via VMD-LSTM with Concrete Dropout and VMD-WGAN",
-    "authors": "Jeonggyu Huh, Dajin Kim, Minseok Jung, and Seungwon Jeong",
+    "authors": "Jeonggyu Huh, Dajin Kim, Minseok Jung, Seungwon Jeong",
     "publication_year": 2025,
     "download_page": "https://www.aimspress.com/article/doi/10.3934/nhm.2025061",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
+    "filename": "dual-uncertainty-vmd-lstm-wgan.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Dual-uncertainty framework using VMD-LSTM with concrete dropout (epistemic) and WGAN (aleatoric) on S&P 500 and FTSE 100. Published in Networks and Heterogeneous Media, 2025."
   },
   {
     "title": "EMD-TI-LSTM for Enhanced Financial Forecasting",
@@ -5048,30 +4892,6 @@
     "included_in_index_at": "2026-06-05",
     "filename": "e-trends-enhanced-lstm-trend-forecasting-for-equities.pdf",
     "downloaded_at": "2026-03-17",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "EWT with Echo State Network for Time Series Forecasting",
-    "authors": null,
-    "publication_year": 2021,
-    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S156849462100034X",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "vmd-linear-embeddings-time-series-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "EWT-Based Deep Ensemble Learning for High-Frequency Futures",
-    "authors": null,
-    "publication_year": 2022,
-    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1051200422001841",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "ewt-deep-ensemble-hf-futures.pdf",
-    "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -5167,6 +4987,30 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "vmd-ann-ensemble-futures.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "EWT with Echo State Network for Time Series Forecasting",
+    "authors": null,
+    "publication_year": 2021,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S156849462100034X",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "vmd-linear-embeddings-time-series-forecasting.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "EWT-Based Deep Ensemble Learning for High-Frequency Futures",
+    "authors": null,
+    "publication_year": 2022,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1051200422001841",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "ewt-deep-ensemble-hf-futures.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5268,18 +5112,6 @@
     "short_description": null
   },
   {
-    "title": "Forecasting Volatility by Using Variational Mode Decomposition and Machine Learning Models",
-    "authors": "Wiem Ben Romdhane and Heni Boubaker",
-    "publication_year": 2025,
-    "download_page": "https://www.researchsquare.com/article/rs-7875740/v1",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Forecasting the Realized Volatility of Stock Price Index: CEEMDAN and LSTM",
     "authors": "Ying Liao et al.",
     "publication_year": 2022,
@@ -5287,6 +5119,18 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "vmd-lstm-stock-price-index-forecasting.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Forecasting Volatility by Using Variational Mode Decomposition and Machine Learning Models",
+    "authors": "Wiem Ben Romdhane and Heni Boubaker",
+    "publication_year": 2025,
+    "download_page": "https://www.researchsquare.com/article/rs-7875740/v1",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "variational-mode-decomposition-original.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5358,10 +5202,10 @@
     "download_page": "https://jfin-swufe.springeropen.com/articles/10.1186/s40854-022-00336-7",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "comparing-deep-learning-models-for-the-task-of-volatility-prediction-using-multivariate-data.pdf",
-    "downloaded_at": "2026-04-14",
+    "filename": "vmd-lmh-bilstm-bitcoin-algo-trading.pdf",
+    "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "VMD-based low/mid/high frequency separation with BiLSTM for Bitcoin price prediction and trading signals. Published in Financial Innovation, 2022."
   },
   {
     "title": "Hybrid ML Models for Volatility Prediction in Financial Risk Management",
@@ -5418,10 +5262,10 @@
     "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S1877750315300466",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
+    "filename": "vmd-intraday-stock-lahmiri-2016.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "VMD with PSO-optimized BPNN for intraday stock forecasting. Published in Journal of Computational Science, 2016."
   },
   {
     "title": "MEEMD-LSTM for Multi-Step Precious Metal Price Prediction",
@@ -5431,18 +5275,6 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "multi-step-stock-prediction-vmd-mfrfnn.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "MVO-BiGRU for Monthly FX Rate Forecasting",
-    "authors": null,
-    "publication_year": 2024,
-    "download_page": "https://www.mdpi.com/2227-9091/12/9/139",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "mvo-bigru-monthly-fx-rate.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5544,6 +5376,18 @@
     "short_description": null
   },
   {
+    "title": "Multivariate Variational Mode Decomposition",
+    "authors": "Naveed ur Rehman and Hania Aftab",
+    "publication_year": 2019,
+    "download_page": "https://arxiv.org/abs /1907.04509",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "multivariate-variational-mode-decomposition.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
     "title": "Multivariate VMD with DFT and Lightweight Mixture-of-Experts (VD-MoGRU)",
     "authors": null,
     "publication_year": 2025,
@@ -5556,13 +5400,13 @@
     "short_description": null
   },
   {
-    "title": "Multivariate Variational Mode Decomposition",
-    "authors": "Naveed ur Rehman and Hania Aftab",
-    "publication_year": 2019,
-    "download_page": "https://arxiv.org/abs /1907.04509",
+    "title": "MVO-BiGRU for Monthly FX Rate Forecasting",
+    "authors": null,
+    "publication_year": 2024,
+    "download_page": "https://www.mdpi.com/2227-9091/12/9/139",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "multivariate-variational-mode-decomposition.pdf",
+    "filename": "mvo-bigru-monthly-fx-rate.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5688,18 +5532,6 @@
     "short_description": null
   },
   {
-    "title": "RV-FELM: Futures Commodity Price Forecasting Based on RIME-VMD and FA-ELM",
-    "authors": null,
-    "publication_year": 2024,
-    "download_page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11400918/",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "rime-vmd-felm-commodity-futures.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Realized Volatility Forecasting with Rolling CEEMDAN and Machine Learning",
     "authors": "Y. Zhang, Y. Peng, and Y. Song",
     "publication_year": 2025,
@@ -5720,6 +5552,18 @@
     "included_in_index_at": "2026-06-05",
     "filename": "harnet-a-convolutional-neural-network-for-realized-volatility-forecasting.pdf",
     "downloaded_at": "2026-04-14",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "RV-FELM: Futures Commodity Price Forecasting Based on RIME-VMD and FA-ELM",
+    "authors": null,
+    "publication_year": 2024,
+    "download_page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11400918/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "rime-vmd-felm-commodity-futures.pdf",
+    "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -5790,22 +5634,22 @@
     "download_page": "https://link.springer.com/article/10.1007/s11045-022-00828-w",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "multivariate-variational-mode-decomposition.pdf",
+    "filename": "successive-multivariate-vmd.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Extends VMD to handle multivariate/multichannel signals by successive decomposition into band-limited multivariate modes. Published in Multidimensional Systems and Signal Processing, 2022."
   },
   {
     "title": "Successive Variational Mode Decomposition",
-    "authors": "M. Nazari and S.M. Sakhaei",
+    "authors": "Mojtaba Nazari, Seyed Mahmoud Sakhaei",
     "publication_year": 2020,
     "download_page": "https://www.sciencedirect.com/science/article/pii/S0165168420301535",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
+    "filename": "svmd-original-nazari-2020.pdf",
+    "downloaded_at": "2026-04-28",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Introduces SVMD, an adaptive decomposition extracting modes one by one without predetermining count, overcoming a key VMD limitation. PDF may be corrupted."
   },
   {
     "title": "Take Bitcoin into Your Portfolio: A Novel Ensemble Portfolio Optimization Framework",
@@ -5875,6 +5719,30 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "two-stage-vmd-bitcoin-technical-analysis.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Variational Mode Decomposition",
+    "authors": "Konstantin Dragomiretskiy and Dominique Zosso",
+    "publication_year": 2014,
+    "download_page": "https://ieeexplore.ieee.org/document/6655981/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "variational-mode-decomposition-original.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Variational Mode Decomposition and Linear Embeddings are What You Need For Time-Series Forecasting",
+    "authors": "Hafizh Raihan Kurnia Putra, Novanto Yudistira, and Tirana Noor Fatyanosa",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2408.16122",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "variational-mode-decomposition-original.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -5971,30 +5839,6 @@
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "vmdnet-leakage-free-vmd-forecasting.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Variational Mode Decomposition",
-    "authors": "Konstantin Dragomiretskiy and Dominique Zosso",
-    "publication_year": 2014,
-    "download_page": "https://ieeexplore.ieee.org/document/6655981/",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "Variational Mode Decomposition and Linear Embeddings are What You Need For Time-Series Forecasting",
-    "authors": "Hafizh Raihan Kurnia Putra, Novanto Yudistira, and Tirana Noor Fatyanosa",
-    "publication_year": 2024,
-    "download_page": "https://arxiv.org/abs/2408.16122",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "variational-mode-decomposition-original.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
@@ -6408,30 +6252,6 @@
     "short_description": null
   },
   {
-    "title": "Statistical Arbitrage Pairs Trading Strategies: Review and Outlook",
-    "authors": "Christopher Krauss",
-    "publication_year": null,
-    "download_page": "https://www.econstor.eu/bitstream/10419/116783/1/833997289.pdf",
-    "source_file": "statistical-arbitrage.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
-    "title": "Statistical Arbitrage Risk Premium by Machine Learning",
-    "authors": "Leung and Tam",
-    "publication_year": null,
-    "download_page": "https://arxiv.org/abs/2103.09987",
-    "source_file": "statistical-arbitrage.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
     "title": "Statistical Arbitrage in Cryptocurrency Markets",
     "authors": "Nick Fischer, Christopher Krauss, and Alexander Deinert",
     "publication_year": null,
@@ -6504,6 +6324,30 @@
     "short_description": null
   },
   {
+    "title": "Statistical Arbitrage Pairs Trading Strategies: Review and Outlook",
+    "authors": "Christopher Krauss",
+    "publication_year": null,
+    "download_page": "https://www.econstor.eu/bitstream/10419/116783/1/833997289.pdf",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Statistical Arbitrage Risk Premium by Machine Learning",
+    "authors": "Leung and Tam",
+    "publication_year": null,
+    "download_page": "https://arxiv.org/abs/2103.09987",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Statistical Arbitrage within Crypto Markets using PCA",
     "authors": "Jay Jung",
     "publication_year": 2025,
@@ -6537,18 +6381,6 @@
     "filename": "8-reasons-to-stop-using-macd-spiroglou.pdf",
     "downloaded_at": "2026-04-29",
     "download_failure_reason": null,
-    "short_description": null
-  },
-  {
-    "title": "A Counter-Intuitive RSI Strategy Delivering 602% Returns at Half the Drawdown",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/the-contrarian-rsi-strategy-602-returns",
-    "source_file": "technical-indicators.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
     "short_description": null
   },
   {
@@ -6612,18 +6444,6 @@
     "short_description": null
   },
   {
-    "title": "SMA Crossovers in Crypto: Why Simpler Trend Signals Outperform Complex Models",
-    "authors": "Pedma",
-    "publication_year": null,
-    "download_page": "https://www.tradingresearchub.com/p/the-edge-of-simplicity-trend-following",
-    "source_file": "technical-indicators.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
     "title": "Seasonality in Bitcoin Intraday Trend Trading",
     "authors": "Concretum Research",
     "publication_year": null,
@@ -6633,6 +6453,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
+    "short_description": null
+  },
+  {
+    "title": "SMA Crossovers in Crypto: Why Simpler Trend Signals Outperform Complex Models",
+    "authors": "Pedma",
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/the-edge-of-simplicity-trend-following",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
     "short_description": null
   },
   {
@@ -6735,7 +6567,7 @@
     "title": "On Covariance Estimation of Non-Synchronously Observed Diffusion Processes",
     "authors": null,
     "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851172",
+    "download_page": null,
     "source_file": "time-series.rst",
     "included_in_index_at": "2026-06-05",
     "filename": null,
@@ -6769,15 +6601,15 @@
   },
   {
     "title": "Topological Data Analysis of Financial Time Series: Landscapes of Crashes",
-    "authors": "Gidea and Katz",
+    "authors": "Marian Gidea, Yuri Katz",
     "publication_year": 2017,
     "download_page": "https://arxiv.org/abs/1703.04385",
     "source_file": "time-series.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": "deep-learning-financial-time-series-sliding-window-vmd.pdf",
-    "downloaded_at": "2026-04-27",
+    "filename": "tda-landscapes-of-crashes.pdf",
+    "downloaded_at": "2026-06-05",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Applies persistent homology to US stock index returns, finding persistence landscape norms exhibit strong growth ~250 trading days prior to the 2000 and 2008 crashes."
   },
   {
     "title": "Transformer Models for Financial Time Series",
@@ -6913,18 +6745,6 @@
   },
   {
     "title": "Demystifying Managed Futures",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2041960",
-    "source_file": "trend-following.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": null
-  },
-  {
-    "title": "Demystifying Managed Futures",
     "authors": "Brian Hurst, Yao Hua Ooi, and Lasse Heje Pedersen",
     "publication_year": 2013,
     "download_page": "http://docs.lhpedersen.com/DemystifyingManagedFutures.pdf",
@@ -7053,18 +6873,6 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
-    "short_description": null
-  },
-  {
-    "title": "Rethinking Trend Following: Optimal Regime-Dependent Allocation",
-    "authors": null,
-    "publication_year": null,
-    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3411948",
-    "source_file": "trend-following.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "rethinking-trend-following-optimal-regime-dependent-allocation.pdf",
-    "downloaded_at": "2026-04-13",
-    "download_failure_reason": null,
     "short_description": null
   },
   {
@@ -7344,18 +7152,6 @@
     "short_description": null
   },
   {
-    "title": "Realized Volatility Forecasting with Neural Networks",
-    "authors": "Andrea Bucci",
-    "publication_year": null,
-    "download_page": "https://academic.oup.com/jfec/article/18/3/502/5856840",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "realized-volatility-forecasting-with-neural-networks.pdf",
-    "downloaded_at": "2026-04-14",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Realized Volatility and HAR Models: A New Paradigm for Volatility Forecasting",
     "authors": "Simone Menaldo",
     "publication_year": null,
@@ -7364,6 +7160,18 @@
     "included_in_index_at": "2026-06-05",
     "filename": "role-of-implied-volatility-in-forecasting-realized-volatility-busch-christensen-nielsen.pdf",
     "downloaded_at": "2026-04-22",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Realized Volatility Forecasting with Neural Networks",
+    "authors": "Andrea Bucci",
+    "publication_year": null,
+    "download_page": "https://academic.oup.com/jfec/article/18/3/502/5856840",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "realized-volatility-forecasting-with-neural-networks.pdf",
+    "downloaded_at": "2026-04-14",
     "download_failure_reason": null,
     "short_description": null
   },
@@ -7506,18 +7314,6 @@
     "download_page": null,
     "source_file": null,
     "included_in_index_at": "2026-06-05",
-    "filename": "ceemdan-lstm-stock-index.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "DCE framework combining VMD, SOM clustering, and KELM for forex forecasting. Published in J. Management Science and Engineering, 2019."
-  },
-  {
-    "title": "A Decomposition Clustering Ensemble Learning Approach for Forecasting Foreign Exchange Rates",
-    "authors": "Yunjie Wei, Shaolong Sun, Jian Ma, Shouyang Wang, Kin Keung Lai",
-    "publication_year": 2019,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
     "filename": "vmd-som-kelm-forex.pdf",
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
@@ -7534,18 +7330,6 @@
     "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
     "short_description": "A practitioner post describing a tactical long-volatility trade in VIX futures exploiting sticky customer positioning and tourist trading behavior, going long VX30 when a value metric falls below a z-score threshold."
-  },
-  {
-    "title": "A Novel Hybrid Framework for Stock Price Prediction Integrating Adaptive Signal Decomposition and Multi-Scale Feature Extraction",
-    "authors": "Junqi Su, Raymond Y. K. Lau, Yuefeng Du, Jia Yu, Hui Zhang",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "cpo-vmd-informer-stock-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "CVASD-MDCM-Informer framework using CPO-tuned VMD and multi-scale dilated convolution within Informer transformer. Published in Applied Sciences (MDPI, 2025)."
   },
   {
     "title": "A Novel Hybrid Model (EMD-TI-LSTM) for Enhanced Financial Forecasting",
@@ -7692,18 +7476,6 @@
     "short_description": "Multi-scale signal decomposition combined with deep learning for Bitcoin price forecasting, decomposing price series into frequency components before applying neural networks."
   },
   {
-    "title": "Buy the Dip",
-    "authors": "Peter",
-    "publication_year": 2024,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "buy-the-dip.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets blog post presenting a systematic approach to buying short-term corrections within longer-term uptrends."
-  },
-  {
     "title": "Buying Short-Term Dips in Stocks [backtester]",
     "authors": "Peter",
     "publication_year": 2025,
@@ -7714,6 +7486,18 @@
     "downloaded_at": "2026-02-18",
     "download_failure_reason": null,
     "short_description": "CrackingMarkets interactive backtester for a mechanical dip-buying system in uptrending stocks, with historical outperformance vs buy-and-hold from 1995 to 2024."
+  },
+  {
+    "title": "Can Safety and Profitability Coexist? Performance Analysis of Pairs Trading among S&P 500 Stocks",
+    "authors": "Mustafa Hussein",
+    "publication_year": 2025,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "can-safety-and-profitability-coexist-pairs-trading-sp500.pdf",
+    "downloaded_at": "2026-04-24",
+    "download_failure_reason": null,
+    "short_description": "Master's thesis analyzing cointegration-based pairs trading on S&P 500 stocks, investigating whether market-neutral stat arb can deliver both capital safety and profitability."
   },
   {
     "title": "CEEMDAN-DeepAR Hybrid Model for Cryptocurrency Volatility Forecasting",
@@ -7774,18 +7558,6 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": "CEEMDAN decomposition with transformer attention for stock trend prediction, capturing local and global temporal dependencies."
-  },
-  {
-    "title": "Can Safety and Profitability Coexist? Performance Analysis of Pairs Trading among S&P 500 Stocks",
-    "authors": "Mustafa Hussein",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "can-safety-and-profitability-coexist-pairs-trading-sp500.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
-    "short_description": "Master's thesis analyzing cointegration-based pairs trading on S&P 500 stocks, investigating whether market-neutral stat arb can deliver both capital safety and profitability."
   },
   {
     "title": "Comparing Affordable Intraday Data Sources: TradeStation vs. Polygon vs. Alpaca",
@@ -7872,18 +7644,6 @@
     "short_description": "VMD-based decomposition-ensemble for realized volatility prediction. Published in Computational Economics, June 2025."
   },
   {
-    "title": "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading",
-    "authors": "Yue Deng, Feng Bao, Youyong Kong, Zhiquan Ren, Qionghai Dai",
-    "publication_year": 2016,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "drrl-financial-signal.pdf",
-    "downloaded_at": "2026-05-15",
-    "download_failure_reason": null,
-    "short_description": "Recurrent deep neural network combining deep learning for market feature representation with RL for trading action selection. Published in IEEE TNNLS, 2016."
-  },
-  {
     "title": "Deep Multi-Hybrid Forecasting System with Random EWT Extraction for Crude Oil Futures",
     "authors": "Bin Wang, Jun Wang",
     "publication_year": 2020,
@@ -7930,18 +7690,6 @@
     "downloaded_at": "2026-04-15",
     "download_failure_reason": null,
     "short_description": "Exploits exogenous LLM provider outages to causally identify that LLM availability eliminates 46-61% of post-news price drift by t+1, establishing LLMs as first-order participants in short-horizon price discovery."
-  },
-  {
-    "title": "Dual-Uncertainty Modeling in Financial Time-Series via VMD-LSTM with Concrete Dropout and VMD-WGAN",
-    "authors": "Jeonggyu Huh, Dajin Kim, Minseok Jung, Seungwon Jeong",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "dual-uncertainty-vmd-lstm-wgan.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Dual-uncertainty framework using VMD-LSTM with concrete dropout (epistemic) and WGAN (aleatoric) on S&P 500 and FTSE 100. Published in Networks and Heterogeneous Media, 2025."
   },
   {
     "title": "Empirical Asset Pricing via Learning to Rank",
@@ -8136,18 +7884,6 @@
     "short_description": "First-principles guide building from coin flips to institutional-grade simulation for prediction market contracts and trading systems, with runnable code."
   },
   {
-    "title": "Hybrid Data Decomposition-Based Deep Learning for Bitcoin Prediction and Algorithm Trading",
-    "authors": null,
-    "publication_year": 2022,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "vmd-lmh-bilstm-bitcoin-algo-trading.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "VMD-based low/mid/high frequency separation with BiLSTM for Bitcoin price prediction and trading signals. Published in Financial Innovation, 2022."
-  },
-  {
     "title": "Hybrid Deep Learning for Bitcoin Price Forecasting via Signal Decomposition",
     "authors": null,
     "publication_year": null,
@@ -8256,18 +7992,6 @@
     "short_description": "Intraday market-making on WFC/AXP using Avellaneda-Stoikov with Kalman Filter hedge ratios. OOS Sharpe 1.21, net PnL +$4,870 on $100K, max DD -2.49%."
   },
   {
-    "title": "Intraday Stock Price Forecasting Based on Variational Mode Decomposition",
-    "authors": "Salim Lahmiri",
-    "publication_year": 2016,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "vmd-intraday-stock-lahmiri-2016.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "VMD with PSO-optimized BPNN for intraday stock forecasting. Published in Journal of Computational Science, 2016."
-  },
-  {
     "title": "Intraday Volatility Breakout Blueprint",
     "authors": "Peter",
     "publication_year": 2025,
@@ -8302,42 +8026,6 @@
     "downloaded_at": "2026-03-31",
     "download_failure_reason": null,
     "short_description": "Compares two DeFi protocols generating yield on Hyperliquid perpetuals exchange through different mechanisms (options vaults vs liquidity provision)."
-  },
-  {
-    "title": "MEEMD-LSTM Precious Metals Price Forecasting",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "meemd-lstm-precious-metals.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Multi-scale Extreme-point EMD with LSTM for gold and silver price forecasting, decomposing into high/low frequency components."
-  },
-  {
-    "title": "MEMD-TCN Stock Index Forecasting",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "memd-tcn-stock-index.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Multivariate EMD with TCN for stock index forecasting, jointly decomposing multiple financial series into aligned intrinsic mode functions."
-  },
-  {
-    "title": "MVMD-NT-TIF Stock Price Prediction",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "mvmd-nt-tif-stock-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Multivariate VMD with novel time-frequency features for multi-scale stock prediction."
   },
   {
     "title": "Margin Syndicate Q4 2025 Performance Report",
@@ -8376,6 +8064,30 @@
     "short_description": "Uses percentage-based Renko charts to expose alternating up/down brick patterns in mean-reverting regimes, arguing 70% of market time is ranging."
   },
   {
+    "title": "MEEMD-LSTM Precious Metals Price Forecasting",
+    "authors": null,
+    "publication_year": null,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "meemd-lstm-precious-metals.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": "Multi-scale Extreme-point EMD with LSTM for gold and silver price forecasting, decomposing into high/low frequency components."
+  },
+  {
+    "title": "MEMD-TCN Stock Index Forecasting",
+    "authors": null,
+    "publication_year": null,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "memd-tcn-stock-index.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": "Multivariate EMD with TCN for stock index forecasting, jointly decomposing multiple financial series into aligned intrinsic mode functions."
+  },
+  {
     "title": "Multi-Feature Stock Price Prediction by LSTM Based on VMD and TMFG",
     "authors": null,
     "publication_year": 2025,
@@ -8410,6 +8122,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": "Multi-scale GARCH combined with GNN capturing cross-asset dependencies at multiple time scales for realized volatility prediction."
+  },
+  {
+    "title": "MVMD-NT-TIF Stock Price Prediction",
+    "authors": null,
+    "publication_year": null,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "mvmd-nt-tif-stock-prediction.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": "Multivariate VMD with novel time-frequency features for multi-scale stock prediction."
   },
   {
     "title": "Non-Ferrous Metals Price Forecasting Based on VMD and LSTM Network",
@@ -8484,18 +8208,6 @@
     "short_description": "Quantile-based VMD decomposition compared across ANN, LSTM, and GRU architectures for financial volatility forecasting with tail risk focus."
   },
   {
-    "title": "RGARCH-VMD Bitcoin Volatility Forecasting",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "rgarch-vmd-bitcoin-volatility.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Realized GARCH combined with VMD to forecast Bitcoin realized volatility by separating high and low frequency components."
-  },
-  {
     "title": "Realized Volatility Forecasting with Rolling CEEMDAN and Machine Learning Models",
     "authors": null,
     "publication_year": 2025,
@@ -8556,6 +8268,18 @@
     "short_description": "Challenges pre-filtering stock universe before ML training. Training on full universe and post-filtering predictions unlocks latent signal."
   },
   {
+    "title": "RGARCH-VMD Bitcoin Volatility Forecasting",
+    "authors": null,
+    "publication_year": null,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "rgarch-vmd-bitcoin-volatility.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": "Realized GARCH combined with VMD to forecast Bitcoin realized volatility by separating high and low frequency components."
+  },
+  {
     "title": "Risk Forecasting in the Crude Oil Market: A Multiscale CNN Approach",
     "authors": "Yingchao Zou, Lean Yu, Geoffrey K.F. Tso, Kaijian He",
     "publication_year": 2019,
@@ -8604,42 +8328,6 @@
     "short_description": "VMD with Ecosystem-Based Optimization and RBF neural networks for KOSPI prediction. Published in Computational Economics, October 2025."
   },
   {
-    "title": "Successive Multivariate Variational Mode Decomposition",
-    "authors": null,
-    "publication_year": 2022,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "successive-multivariate-vmd.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "Extends VMD to handle multivariate/multichannel signals by successive decomposition into band-limited multivariate modes. Published in Multidimensional Systems and Signal Processing, 2022."
-  },
-  {
-    "title": "Successive Variational Mode Decomposition",
-    "authors": "Mojtaba Nazari, Seyed Mahmoud Sakhaei",
-    "publication_year": 2020,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "svmd-original-nazari-2020.pdf",
-    "downloaded_at": "2026-04-28",
-    "download_failure_reason": null,
-    "short_description": "Introduces SVMD, an adaptive decomposition extracting modes one by one without predetermining count, overcoming a key VMD limitation. PDF may be corrupted."
-  },
-  {
-    "title": "TLOB: A Novel Transformer Model with Dual Attention for Price Trend Prediction with Limit Order Book Data",
-    "authors": "Leonardo Berti, Gjergji Kasneci",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "berti-kasneci-tlob-dual-attention.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
-    "short_description": "Proposes TLOB, a transformer with dual attention for spatial and temporal LOB dependencies. On FI-2010 benchmark, exceeds SOTA by 3.7 F1-score and shows stock predictability has declined 6.68 F1-score over time."
-  },
-  {
     "title": "Take Bitcoin into Your Portfolio: A Novel Ensemble Portfolio Optimization Framework for Broad Commodity Assets",
     "authors": null,
     "publication_year": 2021,
@@ -8676,18 +8364,6 @@
     "short_description": "Investigates how inverse volatility scaling improves risk-adjusted returns, explores the seeming paradox, and identifies the strategy's blindspots."
   },
   {
-    "title": "The Wisdom of Twitter Crowds: Predicting Stock Market Reactions to FOMC Meetings via Twitter Feeds",
-    "authors": "Pablo D. Azar, Andrew W. Lo",
-    "publication_year": 2016,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "wisdom-of-twitter-crowds.pdf",
-    "downloaded_at": "2026-06-05",
-    "download_failure_reason": null,
-    "short_description": "Tests whether aggregated Twitter sentiment around FOMC meetings predicts equity returns. Published in J. Portfolio Management, Vol. 42, No. 5, 2016."
-  },
-  {
     "title": "Three Dead Simple Edges in Macro ETFs",
     "authors": "Robot James",
     "publication_year": 2026,
@@ -8700,16 +8376,16 @@
     "short_description": "Three simple systematic trading edges for SPY and TLT based on understanding structural sources of edge in markets."
   },
   {
-    "title": "Topological Data Analysis of Financial Time Series: Landscapes of Crashes",
-    "authors": "Marian Gidea, Yuri Katz",
-    "publication_year": 2017,
+    "title": "TLOB: A Novel Transformer Model with Dual Attention for Price Trend Prediction with Limit Order Book Data",
+    "authors": "Leonardo Berti, Gjergji Kasneci",
+    "publication_year": 2025,
     "download_page": null,
     "source_file": null,
     "included_in_index_at": "2026-06-05",
-    "filename": "tda-landscapes-of-crashes.pdf",
-    "downloaded_at": "2026-06-05",
+    "filename": "berti-kasneci-tlob-dual-attention.pdf",
+    "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
-    "short_description": "Applies persistent homology to US stock index returns, finding persistence landscape norms exhibit strong growth ~250 trading days prior to the 2000 and 2008 crashes."
+    "short_description": "Proposes TLOB, a transformer with dual attention for spatial and temporal LOB dependencies. On FI-2010 benchmark, exceeds SOTA by 3.7 F1-score and shows stock predictability has declined 6.68 F1-score over time."
   },
   {
     "title": "Transaction Activity and Bitcoin Realized Volatility",
@@ -8736,18 +8412,6 @@
     "short_description": "TransLOB: Transformer with causal convolution and masked self-attention for LOB price prediction, significantly outperforming CNN/LSTM on FI-2010 benchmark."
   },
   {
-    "title": "VMD Multi-Feature GRU Financial Prediction",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "vmd-mf-gru-financial-prediction.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": "VMD with multi-feature GRU for financial time series prediction."
-  },
-  {
     "title": "VMD and Elastic Net for Stock Price Prediction",
     "authors": null,
     "publication_year": null,
@@ -8770,6 +8434,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": "VMD decomposition with neuromorphic spiking neural network for stock market prediction."
+  },
+  {
+    "title": "VMD Multi-Feature GRU Financial Prediction",
+    "authors": null,
+    "publication_year": null,
+    "download_page": null,
+    "source_file": null,
+    "included_in_index_at": "2026-06-05",
+    "filename": "vmd-mf-gru-financial-prediction.pdf",
+    "downloaded_at": "2026-04-27",
+    "download_failure_reason": null,
+    "short_description": "VMD with multi-feature GRU for financial time series prediction."
   },
   {
     "title": "VMD-Attention-GRU Stock Index Prediction",
