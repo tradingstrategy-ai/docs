@@ -3780,6 +3780,18 @@
     "short_description": null
   },
   {
+    "title": "A Levered ETF Anomaly Explained",
+    "authors": "Stephen W. Bianchi, Lisa R. Goldberg",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2604.27287",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-07",
+    "filename": "a-levered-etf-anomaly-explained.pdf",
+    "downloaded_at": "2026-06-07",
+    "download_failure_reason": null,
+    "short_description": "Decomposes the counterintuitive underperformance of 2x and 3x leveraged S&P 500 ETFs during 2022-2023 into volatility drag from compounding (two-thirds) and a timing effect from the negative covariance between realized leverage deviations and index returns (one-third)."
+  },
+  {
     "title": "Building Diversified Portfolios that Outperform Out-of-Sample",
     "authors": "Marcos López de Prado",
     "publication_year": null,

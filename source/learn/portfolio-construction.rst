@@ -223,3 +223,18 @@ The underlying research question — whether published anomalies exhibit perform
 By Quantpedia.
 
 `Read the blog post <https://quantpedia.com/building-meta-strategies-with-quantpedia-api/>`__.
+
+A Levered ETF Anomaly Explained
+--------------------------------
+
+Between January 2022 and December 2023, the S&P 500 Index rose 0.076%, yet the ProShares Ultra S&P500 (SSO, 2x leverage) lost 11.09% and the ProShares UltraPro S&P500 (UPRO, 3x leverage) lost 28.24%. This paper by Bianchi and Goldberg decomposes this counterintuitive underperformance into two components: volatility drag from compounding and a timing effect from leverage deviations.
+
+The authors derive a closed-form approximation relating geometric return G to arithmetic return E and volatility V: G ~ (1+E)exp(-V^2/2) - 1. With annualized index arithmetic return of 1.92% and volatility of 19.40%, this formula alone predicts negative geometric returns for levered products. However, this "ideal constant leverage" estimate only explains roughly two-thirds of the actual shortfall. The remaining third arises from the covariance between the ETFs' daily return ratios (realized leverage) and the index return. This covariance is consistently negative for SSO (-2.242) and UPRO (-5.643), meaning leverage tends to decrease when returns are positive and increase when returns are negative -- a detrimental timing drag. The authors emphasize that levered ETFs are path-dependent volatility trades, not simple long-horizon leveraged exposure.
+
+The study uses CRSP daily ETF return data (price returns, excluding dividends) for the S&P 500 Index, VOO, SSO, and UPRO over 501 trading days (January 3, 2022 to December 29, 2023). No code is provided.
+
+Key metrics over the 501-day sample: S&P 500 cumulative return +0.076%, annualized volatility 19.40%, risk-adjusted return 0.099; SSO cumulative return -11.09%, annualized volatility 38.77%, risk-adjusted return 0.043; UPRO cumulative return -28.24%, annualized volatility 58.01%, risk-adjusted return 0.005. The ideal constant leverage model estimated SSO geometric return at -3.625% and UPRO at -10.580%, while the empirical estimate incorporating the covariance term yielded -5.694% and -15.226%, closely matching actual geometric returns of -5.707% and -15.288% respectively.
+
+Mentioned by `Ivan Blanco on LinkedIn <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-sp-flat-2-etfs-share-7467881965510295552-G92N/>`__. He emphasizes that "these are path-dependent volatility trades, not long-horizon leveraged exposure" and cautions against using leveraged ETFs as a simple way to increase beta exposure.
+
+`Read the paper <https://arxiv.org/abs/2604.27287>`__
