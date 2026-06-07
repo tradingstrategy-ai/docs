@@ -85,7 +85,7 @@
   },
   {
     "title": "Dynamic Trading with Predictable Returns and Transaction Costs",
-    "authors": "Nicolae B. Gârleanu and Lasse H. Pedersen",
+    "authors": "Nicolae B. G\u00e2rleanu and Lasse H. Pedersen",
     "publication_year": 2013,
     "download_page": "https://www.nber.org/papers/w15205",
     "source_file": "algorithmic-trading.rst",
@@ -348,7 +348,7 @@
     "short_description": null
   },
   {
-    "title": "Algo Advantage 053 — Martyn Tinsley: Walk Forward Correlation, A New Tool for Robust Strategy Design",
+    "title": "Algo Advantage 053 \u2014 Martyn Tinsley: Walk Forward Correlation, A New Tool for Robust Strategy Design",
     "authors": "Martyn Tinsley",
     "publication_year": null,
     "download_page": "https://www.algoadvantage.io/podcast/053-martyn-tinsley-2/",
@@ -384,7 +384,7 @@
     "short_description": null
   },
   {
-    "title": "Backtesting Series – Episode 2: Cross-Validation Techniques",
+    "title": "Backtesting Series \u2013 Episode 2: Cross-Validation Techniques",
     "authors": "BSIC (Bocconi Students Investment Club)",
     "publication_year": null,
     "download_page": "https://bsic.it/backtesting-series-episode-2-cross-validation-techniques/",
@@ -517,7 +517,7 @@
   },
   {
     "title": "The 10 Reasons Most Machine Learning Funds Fail",
-    "authors": "Marcos López de Prado",
+    "authors": "Marcos L\u00f3pez de Prado",
     "publication_year": 2018,
     "download_page": "https://www.garp.org/hubfs/Whitepapers/a1Z1W0000054x6lUAA.pdf",
     "source_file": "backtesting.rst",
@@ -541,7 +541,7 @@
   },
   {
     "title": "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality",
-    "authors": "David H. Bailey and Marcos López de Prado",
+    "authors": "David H. Bailey and Marcos L\u00f3pez de Prado",
     "publication_year": 2014,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551",
     "source_file": "backtesting.rst",
@@ -565,7 +565,7 @@
   },
   {
     "title": "The Probability of Backtest Overfitting",
-    "authors": "David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu",
+    "authors": "David H. Bailey, Jonathan M. Borwein, Marcos L\u00f3pez de Prado, and Qiji Jim Zhu",
     "publication_year": 2017,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2326253",
     "source_file": "backtesting.rst",
@@ -649,7 +649,7 @@
   },
   {
     "title": "Advances in Financial Machine Learning",
-    "authors": "Marcos López de Prado",
+    "authors": "Marcos L\u00f3pez de Prado",
     "publication_year": null,
     "download_page": "https://www.amazon.com/Advances-Financial-Machine-Learning-Marcos/dp/1119482089",
     "source_file": "books.rst",
@@ -1201,7 +1201,7 @@
   },
   {
     "title": "giotto-tda: A Topological Data Analysis Toolkit for Machine Learning and Data Exploration",
-    "authors": "Tauzin, Lupo, Tunstall, Burella Pérez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess",
+    "authors": "Tauzin, Lupo, Tunstall, Burella P\u00e9rez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess",
     "publication_year": 2021,
     "download_page": "https://github.com/giotto-ai/giotto-tda",
     "source_file": "code-repositories.rst",
@@ -1920,7 +1920,7 @@
     "short_description": null
   },
   {
-    "title": "Small-Cap × Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)",
+    "title": "Small-Cap \u00d7 Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)",
     "authors": "AI Data Lab",
     "publication_year": null,
     "download_page": "https://aidatalab.jp/jp/papers/alquist_israel_moskowitz2018/output/report.html",
@@ -3013,7 +3013,7 @@
   },
   {
     "title": "Revisiting Trend-Following and Mean-Reversion Strategies in Bitcoin",
-    "authors": "Matúš Padyšák and Radovan Vojtko",
+    "authors": "Mat\u00fa\u0161 Pady\u0161\u00e1k and Radovan Vojtko",
     "publication_year": null,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4955617",
     "source_file": "mean-reversion.rst",
@@ -3036,7 +3036,7 @@
     "short_description": null
   },
   {
-    "title": "Short-Term Reversal Persists Globally — If Properly Measured",
+    "title": "Short-Term Reversal Persists Globally \u2014 If Properly Measured",
     "authors": "Stosik and Zaremba",
     "publication_year": null,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6630998",
@@ -3049,7 +3049,7 @@
   },
   {
     "title": "Testing for Mean Reversion in Bitcoin Returns with Gibbs-Sampling-Augmented Randomization",
-    "authors": "Douglas Eduardo Turatti, Fernando Henrique P.S. Mendes, and João Frois Caldeira",
+    "authors": "Douglas Eduardo Turatti, Fernando Henrique P.S. Mendes, and Jo\u00e3o Frois Caldeira",
     "publication_year": 2020,
     "download_page": "https://doi.org/10.1016/j.frl.2019.07.025",
     "source_file": "mean-reversion.rst",
@@ -3708,7 +3708,7 @@
     "short_description": null
   },
   {
-    "title": "Order Flow Imbalance — A High Frequency Trading Signal",
+    "title": "Order Flow Imbalance \u2014 A High Frequency Trading Signal",
     "authors": "Dean Markwick",
     "publication_year": 2022,
     "download_page": "https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html",
@@ -3793,7 +3793,7 @@
   },
   {
     "title": "Building Diversified Portfolios that Outperform Out-of-Sample",
-    "authors": "Marcos López de Prado",
+    "authors": "Marcos L\u00f3pez de Prado",
     "publication_year": null,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678",
     "source_file": "portfolio-construction.rst",
@@ -4020,6 +4020,18 @@
     "short_description": null
   },
   {
+    "title": "Yau's Affine Normal Descent: Algorithmic Framework and Convergence Analysis",
+    "authors": "Yi-Shuai Niu, Artan Sheshmani, Shing-Tung Yau",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2603.28448",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-07",
+    "filename": "yaus-affine-normal-descent-algorithmic-framework-and-convergence-analysis.pdf",
+    "downloaded_at": "2026-06-07",
+    "download_failure_reason": null,
+    "short_description": "This paper introduces YAND, a geometric optimization framework where search directions are derived from the equi-affine normal of level-set hypersurfaces, making them invariant under volume-preserving affine transformations. YAND achieves one-step convergence on convex quadratics (matching Newton's method), proves robust under arbitrarily ill-conditioned affine scalings, and establishes global, linear, and quadratic local convergence guarantees for general smooth objectives."
+  },
+  {
     "title": "Adversarial Deep Reinforcement Learning in Portfolio Management",
     "authors": "Zhipeng Liang, Hao Chen, Junhao Zhu, Kangkang Jiang, and Yanran Li",
     "publication_year": 2018,
@@ -4189,7 +4201,7 @@
   },
   {
     "title": "Advanced Trading Metrics: A 2026 Comprehensive Guide",
-    "authors": "Rubén Villahermosa, Algo Strategy Analyzer",
+    "authors": "Rub\u00e9n Villahermosa, Algo Strategy Analyzer",
     "publication_year": 2026,
     "download_page": "https://algostrategyanalyzer.com/en/blog/advanced-trading-metrics/",
     "source_file": "risk-management.rst",
@@ -6192,7 +6204,7 @@
     "short_description": null
   },
   {
-    "title": "Pairs Trading with VectorBT® PRO",
+    "title": "Pairs Trading with VectorBT\u00ae PRO",
     "authors": "Oleg Polakow",
     "publication_year": null,
     "download_page": "https://vectorbt.pro/tutorials/pairs-trading/",
@@ -6384,7 +6396,7 @@
     "short_description": null
   },
   {
-    "title": "8 Reasons to Stop Using MACD (and Use This Instead) – with Alex Spiroglou",
+    "title": "8 Reasons to Stop Using MACD (and Use This Instead) \u2013 with Alex Spiroglou",
     "authors": "Andrew Swanscott",
     "publication_year": null,
     "download_page": "https://bettersystemtrader.com/8-reasons-to-stop-using-macd-and-use-this-instead-with-alex-spiroglou/",
@@ -7009,7 +7021,7 @@
   },
   {
     "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
-    "authors": "Adil Reghai, Lama Tarsissi, Gérard Biau, and Alex Lipton",
+    "authors": "Adil Reghai, Lama Tarsissi, G\u00e9rard Biau, and Alex Lipton",
     "publication_year": 2026,
     "download_page": "https://arxiv.org/abs/2605.06604",
     "source_file": "volatility.rst",
@@ -7189,7 +7201,7 @@
   },
   {
     "title": "Regime Changes in Bitcoin GARCH Volatility Dynamics",
-    "authors": "David Ardia, Keven Bluteau, and Maxime Rüede",
+    "authors": "David Ardia, Keven Bluteau, and Maxime R\u00fcede",
     "publication_year": 2019,
     "download_page": "https://www.sciencedirect.com/science/article/pii/S1544612318303970",
     "source_file": "volatility.rst",
@@ -7213,7 +7225,7 @@
   },
   {
     "title": "The Hybrid Forecast of S&P 500 Volatility Ensembled from VIX, GARCH and LSTM Models",
-    "authors": "Natalia Roszyk and Robert Ślepaczuk",
+    "authors": "Natalia Roszyk and Robert \u015alepaczuk",
     "publication_year": null,
     "download_page": "https://arxiv.org/abs/2407.16780",
     "source_file": "volatility.rst",
