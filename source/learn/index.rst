@@ -22,9 +22,11 @@ We have compiled resources for learning algorithmic trading, decentralised finan
 Algorithmic trading learning resources
 --------------------------------------
 
+Strategy Research
+~~~~~~~~~~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
-   :caption: Strategy Research
 
    momentum
    trend-following
@@ -33,9 +35,11 @@ Algorithmic trading learning resources
    carry-trade
    technical-indicators
 
+Market Analysis
+~~~~~~~~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
-   :caption: Market Analysis
 
    order-flow
    market-microstructure
@@ -44,9 +48,11 @@ Algorithmic trading learning resources
    time-series
    signal-decomposition
 
+Methods & Systems
+~~~~~~~~~~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
-   :caption: Methods & Systems
 
    machine-learning
    reinforcement-learning
@@ -55,17 +61,21 @@ Algorithmic trading learning resources
    backtesting
    algorithmic-trading
 
+Asset Classes
+~~~~~~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
-   :caption: Asset Classes
 
    cryptocurrency
    equity-factors
    defi-amm
 
+Reference
+~~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
-   :caption: Reference
 
    influencers
    conference-presentations

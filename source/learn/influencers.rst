@@ -39,6 +39,11 @@ Quant trades on Twitter (now known as X)
 - `Pasta Capital <https://x.com/Pasta_Capital>`__
 - `Saeed Amen <https://x.com/saeedamenfx>`__
 - `Pierfrancesco Beneventano <https://x.com/PierBeneventano>`__
+- `Quantpedia <https://x.com/quantpedia>`__
+- `Quant Beckman <https://x.com/quantbeckman>`__
+- `Vivek V Rao <https://x.com/VivekVRao1>`__
+- `Peter (CrackingMarkets) <https://www.crackingmarkets.com>`__
+- `Simone Menaldo <https://medium.com/@simomenaldo>`__
 
 Quant trades on LinkedIn
 ------------------------
@@ -48,7 +53,6 @@ Quant trades on LinkedIn
 - `Kurtis Hemmerling <https://www.linkedin.com/in/hemmerlingkurtis/>`__
 - `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 - `Doug Busch <https://www.linkedin.com/in/doug-busch-cmt-8531471b/>`__
-- `Lou Lindley <https://www.linkedin.com/in/lou-lindley-31072a255/>`__
 - `Aditya Narayan Garnaik <https://www.linkedin.com/in/aditya-narayan-garnaik-b551b5212/>`__
 - `Petr Podhajsky <https://www.linkedin.com/in/petr-podhajsky/>`__
 
@@ -62,6 +66,15 @@ Macro trades on Twitter
 - `Kacper Piotr Kaminski <https://x.com/Kacper_PK_CH>`__
 - `David Woo <https://x.com/Davidwoounbound>`__
 - `Ralph Sueppel <https://x.com/macro_synergy>`__
+
+Podcasts
+--------
+
+- `The Algorithmic Advantage <https://www.algoadvantage.io/podcast/>`__ - Long-form interviews with master traders and quantitative finance professionals,
+  covering topics like momentum, mean-reversion, trend-following, risk management, backtesting, and AI/ML in trading.
+  (`YouTube <https://youtube.com/@AlgoAdvantage>`__,
+  `Spotify <https://open.spotify.com/show/1BwtKXBYrPRu1O1R3s3Sa8>`__,
+  `Apple Podcasts <https://podcasts.apple.com/us/podcast/the-algorithmic-advantage/id1703013320>`__)
 
 Macro trades on LinkedIn
 ------------------------
