@@ -187,3 +187,16 @@ Key metrics: under a mean-reverting mid-price with a correct 2% directional bet,
 Mentioned by Ruuj in `this discussion <https://x.com/RuujSs/status/2064055379177492772>`__.
 
 `Read the paper <https://arxiv.org/abs/1206.4810>`__
+
+Why Hyperliquid Lags Binance: Perp DEX Lead-Lag Analysis
+---------------------------------------------------------
+
+Arrakis Finance ran a modified Hayashi-Yoshida lead-lag estimator across three crypto perpetual swap venues — Hyperliquid, Binance Futures USDT-M, and Lighter — covering the top 29 crypto assets by market cap over a 16-day window ending 26 February 2026. The method takes two asynchronous trade tapes, shifts one in time across a grid from −2,000 ms to +2,000 ms in 100 ms steps, and reads off the shift where the cross-correlation peaks. Fills are split into bid-side and ask-side streams to suppress bid-ask bounce noise at sub-second resolution.
+
+The results are unambiguous: Binance led Hyperliquid for all 29 assets (median lag ~700 ms), Lighter led Hyperliquid for 27 of 29 assets, and Binance led Lighter for 23 of 29 assets (median lag ~100 ms). The three pairwise lags satisfy transitivity with a median residual of only −33 ms, confirming that the lag is structural rather than an artefact of any single pair. The article traces Hyperliquid's ~700 ms lag to its on-chain matching architecture: every fill waits for HyperBFT consensus finality (~200 ms per block), and a maker-taker round-trip spanning two consecutive blocks adds another ~500 ms. Lighter avoids this by matching off-chain in a Sequencer and enforcing decentralisation at the settlement layer via zk-proofs to Ethereum, buying speed at the cost of relocating the trust boundary from matching to settlement. The article discusses three potential architectural changes Hyperliquid could adopt — tighter BFT pipelining, a pre-confirmation layer, and decoupling matching from consensus — each with its own trust-assumption trade-offs.
+
+Discussed by `ltrd (@ltrd_) in this thread <https://x.com/ltrd_/status/2064064213601923519>`__, who cautions that the 100 ms analysis window is too coarse for HFT-grade conclusions: crypto venue latency is already sophisticated enough that 10/50/100 ms bins measure exchange clock drift more than genuine price discovery. ltrd argues that Lighter does not truly "lead" Hyperliquid in any trading sense — the apparent lead is an artefact of faster matching engine execution rather than independent information arrival — and that Binance's leadership over Lighter on assets like ETH is masked by the coarse binning.
+
+By Arrakis Finance (@web3_pastel).
+
+`Read the blog post <https://arrakis.finance/blog/crypto-price-discovery>`__
