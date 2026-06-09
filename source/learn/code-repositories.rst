@@ -272,3 +272,16 @@ A Python library that integrates high-performance topological data analysis (TDA
 Relevant to financial applications because TDA is increasingly used for crash detection (see :ref:`tda-landscapes-of-crashes` in :doc:`./time-series`) and regime identification in multivariate return series. The scikit-learn compatibility means persistence features can be plugged directly into standard ML pipelines. Published in JMLR 22, 2021. By Tauzin, Lupo, Tunstall, Burella Pérez, Caorsi, Reise, Medina-Mardones, Dassatti, and Hess.
 
 `View repository <https://github.com/giotto-ai/giotto-tda>`__
+
+Volatility-Surface-Construction
+--------------------------------
+
+End-to-end implied volatility surface construction from a raw SPY options chain. The repository implements a Newton-Raphson IV solver with Brent fallback, SVI parametrisation following Gatheral (2004), arbitrage-free constraint checking (both calendar spread and butterfly), 3D surface visualisation, Greeks surfaces, and term structure modelling. The pipeline starts from 209 options across 19 strikes and 11 expiries, computes implied volatilities from scratch, fits SVI parameters per expiry slice, and produces a full suite of charts including a Bloomberg-style animated dashboard.
+
+Our summary: a clean, self-contained teaching implementation that walks through the three structural phenomena visible in every equity vol surface — volatility skew (7D OTM put IV ~40% vs OTM call ~14%), term structure (ATM IV declining from 22% at 7 days to 17% at 365 days), and maturity-dependent smile curvature. The SVI calibration achieves RMSE below 0.001 across all 11 expiry slices with Nelder-Mead optimisation and 50 random restarts. The source modules (``bs_engine.py``, ``svi_model.py``, ``surface_analytics.py``) are well-factored and expose standard vol surface analytics — skew, risk reversal, butterfly spread — as standalone functions. Useful as a reference for anyone building vol surface infrastructure or learning derivatives pricing from first principles. The repository references Gatheral's *The Volatility Surface* (2006), Gatheral and Jacquier's arbitrage-free SVI paper (2014), and the foundational Black-Scholes, Dupire, and Heston papers.
+
+Practical details: Python (NumPy, SciPy, Matplotlib). Five Jupyter notebooks covering IV solving, 3D surface construction, heatmaps, SVI calibration, and Greeks/term structure. Includes sample data (``options_chain.csv``, ``iv_surface.csv``, ``term_structure.csv``) and pre-rendered result charts. No license file. Created by Niraj Neupane (Quantitative Risk Analyst, MS Financial Economics, University of Wisconsin–Madison).
+
+Mentioned by `Niraj Neupane in this LinkedIn post <https://www.linkedin.com/feed/update/urn:li:activity:7470038147985301504/>`__: walks through the three phenomena the surface encodes — skew, term structure, and smile curvature — with the specific numbers from the SPY chain, and asks what practitioners use for vol surface construction (SVI, SABR, local vol, or proprietary).
+
+`View repository <https://github.com/nirajneupane17/Volatility-Surface-Construction>`__
