@@ -286,3 +286,14 @@ Azar and Lo investigate whether Twitter sentiment contains predictive informatio
 The key contribution is demonstrating that the "wisdom of crowds" effect operates even in the noisy, self-selected population of financial Twitter: aggregation across many low-quality signals can still produce useful information. Published in The Journal of Portfolio Management, Volume 42, Issue 5, 2016.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2756815>`__
+
+Forecasting Model Selection by Time Horizon
+--------------------------------------------
+
+A practitioner's heuristic for choosing forecasting models in crypto and other fast-moving markets: use XGBoost for horizons of 5 minutes and below, and Ridge regression for 15 minutes and above. The rationale is that short horizons benefit from the non-linear feature interactions XGBoost captures, while longer horizons reward the regularisation and stability of Ridge. As an intermediate approach, fitting non-parametric regressions per feature on top of Ridge can capture non-linearities without the overfitting risk of a full gradient-boosted model. A further refinement is to add a hypothesis test before fitting: only fit the non-parametric model for a given feature if the hypothesis validates, reducing the degrees of freedom burned and keeping the model closer to the simpler Ridge baseline.
+
+This is a concise distillation of practical experience rather than a formal study, but it aligns with a well-known pattern in quantitative finance: simpler models tend to dominate at longer horizons where noise overwhelms complex interactions, while tree-based models can exploit richer structure in high-frequency data where the signal-to-noise ratio is higher.
+
+Mentioned by `Stat Arb (@quant_arb) in this discussion <https://x.com/quant_arb/status/2064277274451697953>`__.
+
+`Read the post <https://x.com/quant_arb/status/2064277274451697953>`__
