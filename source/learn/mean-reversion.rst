@@ -190,3 +190,16 @@ Data: Bitcoin returns from 2010 to 2019. Published in Finance Research Letters, 
 Key metrics: this is a statistical testing paper rather than a trading strategy. The main result is the rejection of the mean reversion hypothesis in favor of mean aversion across multiple specifications.
 
 `Read the paper <https://doi.org/10.1016/j.frl.2019.07.025>`__
+
+Enhanced Mean Reversion: Continuous Basket Methodology for Crypto Cross-Sectional Factors
+------------------------------------------------------------------------------------------
+
+Mark Aron Szulyovszky (Aperiodic) outlines a distinction between different meanings of "mean reversion" in quantitative finance and introduces Aperiodic's Enhanced Mean Reversion factor for crypto markets. In a cross-sectional factor context, mean reversion is about identifying baskets of mean-reverting assets in a walk-forward manner, using a range of transformations and lookback periods to compute an aggregate mean-reversion score for each asset. Traditional pairs trading and statistical arbitrage approaches typically construct baskets with a fixed number of assets where membership is binary — an asset is either in the basket or not.
+
+Aperiodic's framework departs from this by using a continuous methodology: each asset has a probability of being part of a basket rather than a hard inclusion/exclusion boundary. When signals are aggregated to create a cross-sectional score, the mean-reversion signal is multiplied by the probability of the asset belonging to every basket. The Enhanced Mean Reversion factor (AF-MRX) ensembles multiple new transformations and basket-definition methodologies. The factor is constructed as a rank-weighted long/short portfolio of the top 40 crypto assets by market cap, with positions scaled by inverse rolling volatility and hourly point-in-time updates. Since inception (January 2020), the factor has returned +170% with a Sharpe ratio of 1.80 and maximum drawdown of -14.3%, though the author notes the caveats of working with smaller sample sizes in crypto — while the number of tradable assets is close to infinite, the liquid universe is considerably smaller.
+
+See the `Enhanced Mean Reversion factsheet <https://factors.aperiodic.io/catalog/mean_reversion_enhanced>`__ on Aperiodic Factors for live performance, methodology details, and downloadable data. See also Aperiodic's related `Enhanced Momentum factor (AF-MOMX) <https://factors.aperiodic.io/catalog/momentum_enhanced>`__, which exploits the opposite side of the cross-sectional spectrum.
+
+By Mark Aron Szulyovszky (Aperiodic).
+
+`Read the post <https://www.linkedin.com/posts/almostintuitive_mean-reversion-means-a-lot-of-different-share-7470090273981730817-QQ2a/>`__
