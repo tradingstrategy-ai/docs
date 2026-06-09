@@ -172,3 +172,18 @@ Key metrics: average market impact across all trades is 9.97 basis points, mean 
 By Andrea Frazzini, Ronen Israel, and Tobias J. Moskowitz.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3229719>`__
+
+High-Frequency Market-Making with Inventory Constraints and Directional Bets
+-----------------------------------------------------------------------------
+
+This paper by Pietro Fodra and Mauricio Labadie extends the classical Avellaneda-Stoikov market-making framework ("High-frequency trading in a limit-order book", Quantitative Finance 2008) and the Gueant-Lehalle-Fernandez-Tapia model ("Dealing with inventory risk", 2011) to a general class of non-martingale mid-price processes. The authors solve for optimal bid and ask quotes under both linear and exponential PNL utility functions, using stochastic control and Hamilton-Jacobi-Bellman equations. A key innovation is an inventory-risk-aversion parameter that penalises the market-maker for ending the day with non-zero inventory, giving her direct control over inventory risk and indirect control over the moments of her PNL distribution (variance, skewness, kurtosis, VaR).
+
+Our summary: the paper's central contribution is enabling a market-maker to place directional bets on price trends while mathematically controlling inventory risk. When the mid-price follows a mean-reverting Ornstein-Uhlenbeck process rather than a martingale, the market-maker places non-symmetric limit orders -- tightening her bid and widening her ask when she expects prices to fall, and vice versa. The framework derives closed-form solutions for optimal quotes under both utility functions and provides explicit formulas for the optimal spread and indifference price as functions of the drift, volatility, mean-reversion speed, inventory risk aversion, and current inventory level. The paper also generalises to arbitrary penalty functions on terminal inventory.
+
+The authors use simulated data with an Ornstein-Uhlenbeck mid-price process (parameters: k=100, A=1500, n=1000 limit orders per day, daily volatility 5%, mean-reversion speed a=1). 100,000 Monte Carlo simulations were run across three directional-bet scenarios (price down 2%, flat, up 2%) and three inventory-penalty levels. No real market data or code is provided; the framework is fully analytical with closed-form solutions that can be implemented by practitioners.
+
+Key metrics: under a mean-reverting mid-price with a correct 2% directional bet, the mean-reverting strategy without inventory penalty achieves a mean PNL of 14.29 versus the martingale benchmark's 11.04 (a 29% increase), but at the cost of enormous inventory risk (inventory std dev 418 vs 33). Adding a small inventory penalty (eta=0.0001) brings inventory std dev down to 1.54 while maintaining a mean PNL of 11.58 and improving the Sharpe ratio to 7.51 (vs 1.04 without penalty). Under the exponential utility with the same penalty, the Sharpe ratio reaches 24.65 with tight inventory control. With higher inventory penalty (eta=0.001), the linear ABM benchmark achieves Sharpe 31.06 and the exponential ABM reaches 27.47, all with inventory 90% quantile of [-3,3]. The paper demonstrates that the market-maker can increase average PNL by more than 15% versus the martingale benchmark while carrying higher risk, or sacrifice 5% of benchmark PNL to more than double her Sharpe ratio.
+
+Mentioned by Ruuj in `this discussion <https://x.com/RuujSs/status/2064055379177492772>`__.
+
+`Read the paper <https://arxiv.org/abs/1206.4810>`__
