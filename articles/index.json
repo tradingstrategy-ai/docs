@@ -3708,6 +3708,18 @@
     "short_description": "This paper proposes a hybrid CNN-LSTM neural network model for stock market time-series prediction, extracting spatial features via CNN before passing them to LSTM for temporal modeling. The combined architecture achieves high accuracy even when trained on real-time data, outperforming standalone LSTM and other baseline models on standard performance metrics."
   },
   {
+    "title": "Profitability of Machine Learning Models in Forecasting the S&P 500 Index",
+    "authors": "Dennis Olson, Salah Nusair, Emilios Galariotis",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.1007/s10796-026-10693-8",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-06-11",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Evaluates fifteen ML models (incl. XGBoost, elastic nets, ensembles) on daily S&P 500 data 1970-2024 with rolling 10-year walk-forward training. Best models earn up to 24% annual abnormal returns pre-1987 but only ~9% after, and once realistic transaction costs are applied profits largely vanish post-1987 — consistent with the Adaptive Market Hypothesis. Notably honest on costs and lookahead, but reports best-of-fifteen models without a clear data-snooping correction."
+  },
+  {
     "title": "Regularised jump models for regime identification and feature selection",
     "authors": null,
     "publication_year": null,
