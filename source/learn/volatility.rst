@@ -303,3 +303,14 @@ Schadner applies multifractal detrended fluctuation analysis (MF-DFA) to U.S. an
 The key asymmetry: investor fear is associated with overreaction (anti-persistent sentiment), while optimism drifts closer to a random walk. The expected Hurst exponent fluctuates strongly, implying nonlinear dynamics in return expectations. The paper argues that while heavy-tailed distributions are known to destabilise markets, this nonlinear behaviour is a potentially greater amplifier of market meltdowns — crashes are more structured than rallies. The multifractal spectrum width is substantial in both markets, confirming that no single persistence parameter characterises sentiment dynamics. Published in Physica A, Volume 581, 2021.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0378437121005343>`__
+
+The Implied Volatility Edge: Why a Structural Edge Is Rarely a Constant Edge
+----------------------------------------------------------------------------
+
+Gilberto Pellerano builds a real-time stochastic differential equation (SDE) engine in Python to visualise a hard truth about quant finance: having a mathematically verifiable edge does not guarantee a smooth, predictable P&L. The simulation contrasts a baseline pure Geometric Brownian Motion path (the Black-Scholes world of continuous prices and constant volatility) against a "real market" path fed the same Gaussian shocks but injected with two harsh realities — stochastic volatility that clusters into calm and stressed regimes, and Poisson jumps implemented as Merton jump-diffusion with a martingale compensator so jumps add genuine variance without dragging price to zero.
+
+Because of those jumps and fat tails, the market demands a Volatility Risk Premium (VRP): implied volatility prices higher than realized volatility on roughly 70-80% of days, so systematically selling volatility to harvest the spread is a true structural edge. The post's central lesson comes from the short-vol P&L panel: weeks of slowly grinding upward collecting premium are punctuated by violent drawdowns when a Poisson jump triggers, giving back large chunks of profit in seconds. The edge is real over a large sample but aggressively discontinuous in the short term — surviving the jumps and sizing the book so a non-constant edge does not wipe you out is what actually pays. The environment is built entirely in Python (pygame for 60fps interactive rendering, math/random for the SDE core, imageio/threading for async MP4 encoding) rather than static charting libraries.
+
+By Gilberto Pellerano.
+
+`Read the post <https://www.linkedin.com/posts/gilberto-pellerano-46b4b0174_i-built-an-implied-volatility-edge-simulation-ugcPost-7470861515563380736-UkJA/>`__
