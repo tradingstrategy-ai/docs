@@ -212,3 +212,29 @@ Official experimental code for the TDQN (Trading Deep Q-Network) paper by Thibau
 Our summary: this implementation is valuable not just for the TDQN algorithm but for the rigorous evaluation methodology — it is one of the few RL trading codebases that implements proper temporal validation and statistical testing out of the box. Any researcher building an RL trading system should use this evaluation framework as a minimum standard. 214 stars, Python.
 
 `View repository <https://github.com/ThibautTheate/An-Application-of-Deep-Reinforcement-Learning-to-Algorithmic-Trading>`__
+
+A Tutorial on Thompson Sampling
+-------------------------------
+
+This monograph by Daniel Russo, Benjamin Van Roy, Abbas Kazerouni, Ian Osband and Zheng Wen ("A Tutorial on Thompson Sampling," *Foundations and Trends in Machine Learning* 11(1):1-96, 2018; arXiv:1707.02038) is the standard reference for Thompson sampling — the Bayesian algorithm for online sequential decision-making that underlies the multi-armed-bandit framing of strategy selection and capital allocation. Thompson sampling maintains a posterior over each action's payoff and, at each step, samples once from each posterior and plays the best sampled arm, which automatically balances exploiting what is currently known against exploring to gather information. The tutorial covers the core algorithm, why it works, and practical approximate posterior-sampling methods (Laplace approximation, MCMC, and the bootstrap) for the non-conjugate cases that arise in practice.
+
+Our summary: for a systematic trader this is the entry point to treating "which of my strategies should get capital right now?" as a bandit problem. Rather than hard-switching on recent performance, Thompson sampling allocates in proportion to the posterior probability that each strategy is best — naturally exploring uncertain-but-promising strategies while concentrating on proven ones, and gracefully handling non-stationarity. Note the tutorial itself is general (it does not cover trading); the trading/allocation application is developed in companion work such as Zhu et al. (2019) below. Read this for the mechanism and the approximate-sampling toolbox, then adapt the reward model to your P&L.
+
+Data and code: a tutorial monograph with worked examples (news recommendation, shortest path, etc.); accompanying code is referenced in the text. No trading data.
+
+Key metrics: not applicable — a methods tutorial. Its value is the algorithm, the regret intuition, and the practical posterior-approximation recipes.
+
+`Read the paper <https://arxiv.org/abs/1707.02038>`__
+
+Adaptive Portfolio by Solving Multi-armed Bandit via Thompson Sampling
+----------------------------------------------------------------------
+
+This paper by Mengying Zhu, Xiaolin Zheng, Yan Wang, Yuyuan Li and Qianqiao Liang (2019, arXiv:1911.05309; IJCAI) applies Thompson sampling directly to portfolio selection by framing classic allocation strategies as the arms of a multi-armed bandit. Because Markowitz mean-variance optimization is fragile to parameter estimation and naive baselines (equal-weight, value-weight) sometimes win in particular periods, the authors treat several classic strategies as "strategic arms" and use Thompson sampling to choose among them online, maximizing reward through the exploration-exploitation trade-off. They add a reward function parameterized by the investor's risk preference so the same machinery adapts to different investment styles.
+
+Our summary: this is the practitioner-facing complement to the Russo et al. tutorial — a concrete instance of Bayesian-bandit capital allocation *across strategies* rather than across assets. The "strategies-as-arms" design is exactly the pattern a systematic desk wants: stop trying to forecast which model is best and instead let posterior sampling rotate capital toward whichever strategic arm is currently winning, adapting as regimes shift. The evaluation is on equity-market datasets rather than crypto, so treat it as a transferable template; whether Bayesian-bandit allocation beats simpler heuristics (equal-weight, momentum-of-strategies) on live crypto books is still an open question worth testing.
+
+Data and code: experiments on representative real-world equity-market datasets; no public code released.
+
+Key metrics: the authors report superiority of the Thompson-sampling portfolio strategy across multiple real-world datasets on a range of evaluation criteria (return and risk-adjusted measures) versus classic single-strategy baselines; specific Sharpe/return tables are dataset-dependent and reported in the paper.
+
+`Read the paper <https://arxiv.org/abs/1911.05309>`__

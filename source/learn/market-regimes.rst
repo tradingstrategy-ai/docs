@@ -532,3 +532,29 @@ Key metrics: in the three-state simulation the continuous jump model improves on
 Critical view: having now read the full paper (retrieved via the open SSRN working-paper version), the contribution holds up — probabilistic regime membership plus a simplex-vertex mode-loss penalty, with a clean optimal-transport link back to the discrete jump penalty, is a principled generalization, and the simulation design honestly stresses misspecification and small-sample/imbalanced regimes where the gains are claimed. Two caveats temper the practical reading. First, the headline advantage is in probability calibration (ROC-AUC) rather than hard-label accuracy (BAC is only ~2% better than the already-strong discrete model), so the payoff depends on actually using the probabilities downstream — the paper demonstrates better estimates but stops short of a portfolio or risk backtest, which it leaves to future work. Second, the hundreds-fold compute overhead is a real deployment consideration for large state spaces. As a regime-identification method it is well validated; its economic value awaits the portfolio application the authors flag.
 
 `Read the paper <https://link.springer.com/article/10.1007/s10479-024-06035-z>`__
+
+Bayesian Online Changepoint Detection
+-------------------------------------
+
+This paper by Ryan Prescott Adams and David J.C. MacKay (2007, arXiv:0710.3742) is the foundational reference for online, Bayesian regime-change detection and one of the most widely implemented algorithms in the streaming-data toolkit. Assuming the data-generating parameters before and after a changepoint are independent, the authors derive an *exact* online algorithm that maintains the posterior distribution over the current "run length" — the time elapsed since the most recent changepoint — updated with each new observation via a simple message-passing recursion. Because it is causal and recursive, it is directly suited to live market feeds: at every tick you get a full posterior over "how long has the current regime lasted," and a spike in changepoint probability flags a regime break in real time.
+
+Our summary: this is the Bayesian counterpart to the statistical jump models elsewhere in this collection — both answer "has the regime just changed?" but BOCD does it with an explicit, exact posterior over run length rather than a penalized clustering objective. For a systematic trader it is a small, beautiful, directly implementable algorithm (well-supported in open-source libraries) that you can wire to volatility, spread, or correlation series to gate strategy parameters. The one practical caveat is computational: vanilla BOCD's cost grows with the number of run-length hypotheses, so streaming deployment needs pruning/truncation of the run-length distribution. Essential full read; pair it with a heavy-tailed observation model for crypto.
+
+Data and code: a methods paper with illustrative examples (including financial data); finance is explicitly named as an application. Reference implementations exist in R ("ocp") and many open-source Python libraries.
+
+Key metrics: this is an inference-method paper, not a trading backtest — there are no Sharpe/return figures. Its value is the exact run-length posterior and the O(run-length) message-passing recursion that makes online regime detection tractable.
+
+`Read the paper <https://arxiv.org/abs/0710.3742>`__
+
+Particle Filters for Markov-Switching Stochastic Volatility Models
+------------------------------------------------------------------
+
+This paper by Yong Bao, Carl Chiarella and Boda Kang (2012, SSRN 2163902; later a chapter in the *Oxford Handbook of Computational Economics and Finance*, OUP 2018) tackles sequential Bayesian estimation of regime-switching stochastic-volatility models — covering both regime detection and the particle-filter/sequential-Monte-Carlo machinery in one place. The authors build an auxiliary particle filter (ASIR) for Markov-switching stochastic volatility that estimates the regime transition probabilities online via a continually updated Dirichlet distribution, so both the latent volatility state and the switching dynamics are learned sequentially as data arrive.
+
+Our summary: the key practical result is about *when* particle methods stay accurate. Their stated improvement over the earlier Carvalho-Lopes (2006/2007) approach — Liu-West kernel smoothing combined with the Pitt-Shephard auxiliary particle filter — is accuracy when the probability of switching from one regime to a *different* regime is high. Kernel smoothing degrades in exactly that high-transition setting, whereas the Dirichlet/APF combination accommodates it. The authors note such frequent regime flips are common in energy, commodity and FX markets — and the same is conspicuously true of crypto, which makes this a relevant template for regime-aware volatility estimation there. Methodological/theoretical; read it for the filter construction (and the honest discussion of effective sample size in Table 4) rather than a trading track record.
+
+Data and code: methodological study with simulation and empirical illustrations; an open working-paper version is hosted by UTS (QFR research paper 299). No public code.
+
+Key metrics: the paper reports filtering accuracy and effective-sample-size comparisons against the kernel-smoothing benchmark rather than trading P&L; the headline is robustness under high regime-transition probabilities.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2163902>`__

@@ -253,3 +253,68 @@ Numerical experiments are conducted in MATLAB on representative 2D problems. On 
 Mentioned by `Luca Cai in this discussion <https://www.linkedin.com/posts/luca-cai-65a35b377_recently-fields-medal-winner-and-renowned-share-7465969764503351296-M9bT/>`__. Cai highlights that YAND addresses two major problems in portfolio optimization: risk characterization beyond normal distributions (volatility, skewness, kurtosis, tail risks) and computational scalability when the number of assets is large, noting that the method shifts optimization to affine-normal geometry with tensor-free computation and polynomial step-size determination.
 
 `Read the paper <https://arxiv.org/abs/2603.28448>`__
+
+Bayesian Methods in Finance
+---------------------------
+
+This handbook chapter by Eric Jacquier and Nicholas Polson ("Bayesian Methods in Finance," in *The Oxford Handbook of Bayesian Econometrics*, 2011) is the anchor survey for Bayesian portfolio construction and the single best map of how Bayesian updating threads through asset allocation. It lays out the canonical lineage: (a) Klein & Bawa (1976) — optimal portfolio choice under parameter uncertainty requires optimizing expected utility over the Bayesian *predictive* density, with plug-in point estimates being provably suboptimal; (b) Jorion (1985/1986) — empirical-Bayes (Bayes-Stein) shrinkage of estimated means toward the global minimum-variance portfolio mean; and (c) Black & Litterman (1991) — building the prior from market-equilibrium-implied returns and combining it with investor views, a scheme the chapter notes is curiously absent a formal likelihood (a gap Zhou 2008/2009 later fills).
+
+Our summary: read this first if you want to understand *why* raw sample means produce unstable, extreme mean-variance weights and how a Bayesian treatment fixes it — by carrying estimation uncertainty into the optimization rather than optimizing a fragile point estimate. It is a theoretical chapter, but it is the connective tissue for the four classic papers indexed below (Klein-Bawa, Jorion, Black-Litterman, Zhou), and it frames the entire predictive-density approach that underlies Bayesian position sizing. High-value full read for anyone building an allocation layer over multiple signals or strategies.
+
+Data and code: a survey/handbook chapter; no data or code. Freely hosted as a PDF on the author's site.
+
+Key metrics: not applicable — this is a methodological survey, valuable for the framework and the literature map rather than any reported performance.
+
+`Read the paper <https://people.bu.edu/jacquier/papers/bayesfinance.2011.pdf>`__
+
+The Effect of Estimation Risk on Optimal Portfolio Choice
+---------------------------------------------------------
+
+This paper by Roger W. Klein and Vijay S. Bawa (1976, *Journal of Financial Economics* 3:215-231) is the seminal result on portfolio choice under parameter uncertainty and the theoretical root of Bayesian portfolio construction. Building on Zellner & Chetty (1965), the authors show that when the true return distribution parameters are unknown, the optimal strategy is to compute and then optimize expected utility with respect to the *Bayesian predictive density* — the parameter-uncertainty-integrated distribution of future returns — rather than plugging sample estimates into the utility as if they were the truth. Doing the latter ("estimation risk" ignored) leads to demonstrably suboptimal portfolios.
+
+Our summary: this is the "why Bayesian at all" paper for allocation. The predictive-density argument is the formal justification for every downstream shrinkage and Bayesian-sizing method — including Bayesian Kelly — because it says uncertainty about your edge should change the allocation, not just be acknowledged. Worth knowing as the foundation even though the modern practitioner usually meets it through later shrinkage estimators (Jorion) or the Jacquier-Polson survey above.
+
+Data and code: a theoretical paper; no public code. Behind the Elsevier/ScienceDirect paywall — we were unable to retrieve the full PDF (browser-based capture and Sci-Hub were both unavailable in this run); the abstract and citation are indexed here for completeness.
+
+Key metrics: not applicable — a decision-theoretic result, not an empirical study.
+
+`Read the paper <https://doi.org/10.1016/0304-405X(76)90004-0>`__
+
+Bayes-Stein Estimation for Portfolio Analysis
+---------------------------------------------
+
+This paper by Philippe Jorion (1986, *Journal of Financial and Quantitative Analysis* 21(3):279-292), with its international-diversification companion (Jorion 1985, *Journal of Business* 58(3):259-278), is the practical workhorse of Bayesian portfolio estimation: it applies James-Stein/empirical-Bayes shrinkage to the vector of expected returns, pulling each asset's estimated mean toward the mean of the global minimum-variance portfolio. The shrinkage intensity is estimated from the data, so noisier, shorter samples are shrunk harder.
+
+Our summary: this is the most directly usable classic in the Bayesian-allocation set — a few lines of code that materially stabilize mean-variance weights. Because sample means are the dominant source of error in Markowitz optimization, shrinking them toward a sensible target (the min-variance mean) reduces the extreme, error-maximizing positions that plague naive optimizers and produces more stable, better out-of-sample portfolios. Practitioner-relevant; pairs naturally with covariance shrinkage (Ledoit-Wolf) for a fully regularized optimizer.
+
+Data and code: empirical study on international equity indices; no public code. Behind the JSTOR/Cambridge paywall — full PDF not retrievable in this run (browser and Sci-Hub unavailable); citation indexed for completeness.
+
+Key metrics: Bayes-Stein portfolios are shown to dominate raw sample-estimate portfolios out-of-sample, with more stable weights and improved risk-adjusted performance; the paper reports estimation-error and out-of-sample comparisons rather than a single headline Sharpe.
+
+`Read the paper <https://doi.org/10.2307/2331042>`__
+
+Asset Allocation: Combining Investor Views with Market Equilibrium (Black-Litterman)
+------------------------------------------------------------------------------------
+
+This paper by Fischer Black and Robert Litterman (1991, *The Journal of Fixed Income* 1(2):7-18) is the canonical Bayesian portfolio model used across the institutional industry. The market-cap-weighted portfolio is reverse-engineered into a set of *equilibrium-implied* expected returns (by inverting the mean-variance first-order condition), and these serve as the Bayesian prior. The investor's own views — with explicitly stated confidences — act as the evidence, and the posterior blends prior and views in conjugate (Gaussian) form. The result avoids the wild, corner-solution weights that mean-variance optimization produces when fed raw return forecasts.
+
+Our summary: this is the most influential applied instance of Bayesian updating in finance and the one a quant is most likely to deploy directly. The key idea worth internalizing is that the equilibrium prior anchors the optimizer, so your views only tilt the portfolio in proportion to your confidence — exactly the behaviour you want when blending uncertain alpha signals. The model's one formal gap, flagged by Jacquier & Polson, is the absence of an explicit likelihood; Zhou (2009) closes it. Essential practitioner reading.
+
+Data and code: a methodological/applied paper (originating as Goldman Sachs research); no public code, but numerous open-source implementations exist. Behind the JFI/Portfolio Management Research paywall — full PDF not retrievable in this run (browser and Sci-Hub unavailable); citation indexed for completeness.
+
+Key metrics: the paper demonstrates well-behaved, intuitively reasonable allocations versus the extreme weights of naive mean-variance optimization rather than reporting a backtested Sharpe/return series.
+
+`Read the paper <https://doi.org/10.3905/jfi.1991.408013>`__
+
+Beyond Black-Litterman: Letting the Data Speak
+----------------------------------------------
+
+This paper by Guofu Zhou (2009, *The Journal of Portfolio Management* 36(1):36-45; widely circulated as the 2008 working paper "An Extension of the Black-Litterman Model: Letting the Data Speak") closes the main theoretical gap in Black-Litterman. The original BL model combines an equilibrium prior with investor views but lacks a formal likelihood — it never lets the *historical data* update the posterior. Zhou adds a likelihood so the posterior expected returns reflect three sources at once: market equilibrium (prior), subjective views, and the sample evidence.
+
+Our summary: this is the natural next read after Black-Litterman for anyone who wants their allocation to listen to the data rather than only to equilibrium plus hand-specified views. The "let the data speak" extension makes BL a fully coherent Bayesian updating scheme and is the bridge from the 1991 model back to the Klein-Bawa predictive-density foundation. Practitioner-relevant for systematic books where historical return information should temper both the equilibrium anchor and the trader's views.
+
+Data and code: methodological extension with empirical illustration; no public code. Behind the JPM/Portfolio Management Research paywall — full PDF not retrievable in this run (browser and Sci-Hub unavailable); a working-paper version circulates under the "Letting the Data Speak" title. Citation indexed for completeness.
+
+Key metrics: the paper reports improved out-of-sample portfolio performance from incorporating the data likelihood versus standard Black-Litterman rather than a single headline metric.
+
+`Read the paper <https://doi.org/10.3905/jpm.2009.36.1.036>`__

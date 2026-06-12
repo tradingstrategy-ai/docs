@@ -186,3 +186,16 @@ The guide provides a metric selection framework by trading profile: Calmar for c
 By Rubén Villahermosa, Algo Strategy Analyzer.
 
 `Read the blog post <https://algostrategyanalyzer.com/en/blog/advanced-trading-metrics/>`__
+
+Optimal Betting Under Parameter Uncertainty: Improving the Kelly Criterion
+--------------------------------------------------------------------------
+
+This paper by Rose D. Baker and Ian G. McHale (2013, *Decision Analysis* 10(3):189-199) addresses the single biggest practical flaw in applying the Kelly criterion to real trading: Kelly assumes the edge (win probability / expected return) is known exactly, but in practice it is *estimated* from limited, noisy data. The authors derive the optimal bet fraction under that parameter uncertainty by integrating over the posterior distribution of the edge, and show it is systematically *smaller* than the naive Kelly stake computed from a point estimate — the less data you have, the more you should shrink the bet.
+
+Our summary: this is the Bayesian-Kelly paper a systematic trader actually needs. It formalizes the folklore "use fractional Kelly" by deriving *how* fractional your sizing should be as a function of how uncertain your edge estimate is — turning an arbitrary 1/2- or 1/4-Kelly fudge into a principled shrinkage driven by the posterior. For crypto strategies, where edges are estimated on short, non-stationary samples and overbetting is ruinous, this is exactly the right framing: size from the posterior over your edge, not from the point estimate. Highly practitioner-relevant; pairs conceptually with the predictive-density foundation (Klein-Bawa) in the portfolio-construction file.
+
+Data and code: a decision-theoretic paper with illustrative examples (including sports-betting and investment settings); no public code. Behind the INFORMS/*Decision Analysis* paywall — full PDF not retrievable in this run (browser and Sci-Hub unavailable); citation indexed for completeness.
+
+Key metrics: the contribution is the closed-form/​numerical optimal bet fraction under parameter uncertainty and its shrinkage relative to full Kelly; the paper quantifies the growth-rate penalty of ignoring estimation risk rather than reporting a trading backtest.
+
+`Read the paper <https://doi.org/10.1287/deca.2013.0271>`__

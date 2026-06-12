@@ -113,3 +113,16 @@ Gidea and Katz apply persistent homology — a tool from topological data analys
 The headline finding is that persistence landscape norms exhibit a strong rising trend for approximately 250 trading days prior to both crashes, suggesting TDA can serve as an early-warning indicator. The appropriate scepticism: this is demonstrated in-sample on two well-known events. A turbulence indicator that lit up before the two crashes everyone already studies has not yet proven it will light up before the next one without crying wolf in between. TDA gives a turbulence diagnostic, not a forecast. Published on arXiv, 2017.
 
 `Read the paper <https://arxiv.org/abs/1703.04385>`__
+
+Bayesian Forecasting in Economics and Finance: A Modern Review
+--------------------------------------------------------------
+
+This survey by Gael M. Martin, David T. Frazier, Worapree Maneesoonthorn, Rubén Loaiza-Maya, Florian Huber, Gary Koop, John Maheu, Didier Nibbering and Anastasios Panagiotelis (*International Journal of Forecasting* 40(2):811-839, 2024; arXiv:2212.03471) is the recommended modern anchor for the whole Bayesian-in-trading literature: a peer-reviewed, state-of-the-art overview of Bayesian forecasting written with explicit attention to computation and implementation. It covers the modern toolkit — MCMC, variational and approximate Bayesian methods — and, most relevant to state-space trading models, gives a full algorithmic treatment of sequential Monte Carlo / particle filtering, including particle marginal Metropolis-Hastings (PMMH, Andrieu et al. 2011) for estimating models where the likelihood is only available through a particle filter.
+
+Our summary: if you read one survey to orient yourself in Bayesian time-series methods for trading, make it this one. Unlike older reviews it is deliberately implementation-aware ("sufficient computational detail to assist the reader with implementation"), which is what a developer actually needs to go from equations to working filters. The SMC/PMMH material directly supports the regime-switching stochastic-volatility and nonlinear-spread models elsewhere in this collection (Bao-Chiarella-Kang, Zhang). Theoretical survey, but the most practically useful one for building Bayesian estimation into a systematic stack.
+
+Data and code: a review article with algorithmic appendices (PMMH given as Algorithm 3); no single dataset or repository, but it points to the standard computational methods and references.
+
+Key metrics: not applicable — a survey. Value is breadth, currency (2024), and the implementation-oriented treatment of SMC/particle methods.
+
+`Read the paper <https://arxiv.org/abs/2212.03471>`__

@@ -432,3 +432,55 @@ Data: daily adjusted prices from Yahoo Finance for 304 ETFs with common history 
 Key metrics (best specification — OPTICS with PC1 removed): 963.78% cumulative return, annualized Sharpe ratio 2.4935, maximum drawdown -8.74%, win rate 44.21%. HDBSCAN with PC1 removed achieved the highest cumulative return at 1020.34% with Sharpe 2.0755 but deeper drawdown of -28.39%. All specifications beat S&P 500 (302.03% cumulative, Sharpe 0.80), Dow Jones (170.93%, Sharpe 0.61), and Nasdaq (542.53%, Sharpe 0.88) over the same period.
 
 `Read the paper <https://repository.rice.edu/server/api/core/bitstreams/e947dc21-5ed8-4be3-ab2d-40eb833770f1/content>`__
+
+Pairs Trading
+-------------
+
+This paper by Robert J. Elliott, John van der Hoek and William P. Malcolm (2005, *Quantitative Finance* 5(3):271-276) is the seminal state-space formulation of pairs trading and the analytical foundation for every Kalman-filter pairs strategy that followed. The authors model the spread between two cointegrated assets as a mean-reverting Gaussian Markov chain — a discrete-time Ornstein-Uhlenbeck process — observed in Gaussian noise. The hidden mean-reverting state is estimated recursively with the Kalman filter, and the model parameters are calibrated by the EM algorithm. The trading rule is Bayesian-predictive: compare the observed spread against the filter's one-step-ahead forecast and trade the divergence (go long the spread when the observation falls below prediction, short when above), optionally beyond a threshold.
+
+Our summary: this is the paper that recast pairs trading from an ad-hoc distance/z-score heuristic into a principled latent-state estimation problem. The contribution is conceptual and methodological rather than empirical — there is no large backtest — but it is short, rigorous and directly implementable, and it gives you the exact recursions (predict/update plus EM) underpinning the dynamic hedge-ratio and spread-filtering machinery that practitioners now treat as standard. For a systematic trader this is essential background reading: every later refinement (probability-triggered signals, nonlinear/non-Gaussian filtering, neural KalmanNet hybrids) is positioned explicitly against this model. It sits in the Bayesian-updating lineage alongside de Moura et al. (2016), Zhang (2020) and Milstein et al. (2024) below.
+
+Data and code: an illustrative empirical example only; no public code. The mathematics (Sections 2-3) is the deliverable.
+
+Key metrics: the paper does not report Sharpe/return/drawdown statistics — it establishes the model and estimation procedure rather than a performance study. Its value is the framework, not a track record.
+
+`Read the paper <https://www.tandfonline.com/doi/abs/10.1080/14697680500149370>`__
+
+A Pairs Trading Strategy Based on Linear State Space Models and the Kalman Filter
+---------------------------------------------------------------------------------
+
+This paper by Bernardo de Moura Pizzinga, Adrian Pizzinga and Jorge P. Zubelli (2016, *Quantitative Finance* 16(10):1559-1573) builds a pairs trading strategy entirely on linear state-space models of the spread, with a distinctive Bayesian signal mechanism. Instead of trading a z-score threshold or a time-varying hedge ratio, the Kalman filter is used to compute the *conditional probability* that the spread will revert to its long-term mean, and a position is opened only when that probability is large. The hedge ratio itself is a static cointegration coefficient; the filter models the spread dynamics.
+
+Our summary: this is the most direct practitioner expression of "trade on the posterior, not the point estimate." Turning the entry signal into an explicit reversion probability is attractive because it gives a natural, interpretable knob for selectivity — you only act when the model is confident — and it composes cleanly with position sizing. The authors are commendably honest that the empirical evidence is limited (a small number of spreads), so treat the backtest as illustration rather than proof. Worth reading in full for the probability-triggered design, which transfers well to crypto pairs where false reversions are costly.
+
+Data and code: backtests on U.S. (XOM-LUV) and Brazilian (VALE5-BRAP4) equity pairs; no public code. The authors caveat the evidence as limited.
+
+Key metrics: even a single-spread portfolio is reported to outperform major equity benchmarks over the test windows; the paper emphasises the probability-based signal mechanism over a comprehensive performance study, and headline Sharpe/drawdown figures are not the focus.
+
+`Read the paper <https://www.tandfonline.com/doi/abs/10.1080/14697688.2016.1164886>`__
+
+A Kalman Filter Approach to Pairs Trading with Non-Gaussian Heteroskedastic and Nonlinear Mean-Reverting Spread
+---------------------------------------------------------------------------------------------------------------
+
+This paper by Yaoge Zhang (2020, arXiv:2005.09794) extends Kalman-filter pairs trading beyond the linear-Gaussian world that Elliott et al. (2005) and de Moura et al. (2016) assume. The latent mean-reverting spread is given two realistic features that break exact Kalman filtering: (1) non-Gaussian, heteroskedastic innovations (Student-t / GED shocks with ARCH/APARCH state-dependent volatility), and (2) nonlinear mean reversion (an Aït-Sahalia-type nonlinear drift). Because exact filtering is no longer available, the author develops a Quasi Monte Carlo Kalman filter that approximates the filtering distribution with a Gaussian mixture, then uses the filtered spread as the live trading indicator and a Monte Carlo procedure to select the optimal trading rule.
+
+Our summary: this is the most directly relevant Kalman variant for crypto, where spreads are fat-tailed, volatility-clustered, and reverting at a state-dependent rate — exactly the conditions that violate the textbook linear-Gaussian assumptions. The QMC-Kalman approximation is the practical contribution: it keeps the recursive-filtering workflow while accommodating the heavy tails and nonlinearity. Caveat: this is an unrefereed preprint, so validate the implementation carefully before trusting it with capital.
+
+Data and code: methodological study with simulated and equity-spread illustrations; no public code released.
+
+Key metrics: the paper centres on the filtering methodology and trading-rule selection rather than a headline Sharpe/return table; its value is the non-Gaussian/nonlinear filter design relevant to high-volatility markets.
+
+`Read the paper <https://arxiv.org/abs/2005.09794>`__
+
+Neural Augmented Kalman Filtering with Bollinger Bands for Pairs Trading (KBPT)
+-------------------------------------------------------------------------------
+
+This paper by Amit Milstein, Haoran Deng, Guy Revach, Hai Morgenstern and Nir Shlezinger (arXiv:2210.15448; *IEEE Transactions on Signal Processing*, 2024) is the strongest recent hybrid of Bayesian filtering and deep learning for trading, and a clean illustration of the "model-based deep learning" school applied to stat-arb. It first frames the standard approach — a linear state-space model of the pair processed by a Kalman filter and traded with Bollinger Bands (KF-BB) — as the model-based baseline policy. It then proposes KBPT, which formulates an extended state-space model that assumes only *partial* cointegration and augments the Kalman filter with a KalmanNet neural network (two of the authors are the original KalmanNet inventors), learning the parts of the dynamics that are hard to specify while keeping the interpretable filtering/trading structure.
+
+Our summary: this is the paper to read on how to graft a neural network onto a Kalman filter without throwing away the state-space interpretability that makes pairs trading tractable. The partial-cointegration extended model is the conceptual advance — real pairs drift apart in ways pure cointegration misses — and KalmanNet learns that residual structure from data. It beats both the classic model-based KF-BB policy and a purely data-driven deep-RL (DDQN) benchmark. The main limitation is evaluation scope: only three unique pairs (CHF-EUR, AUD-ZAR, EWC-EWA), so the superiority claim, while consistent, rests on a narrow test bed.
+
+Data and code: evaluated on FX and ETF pairs (CHF-EUR, AUD-ZAR, EWC-EWA); KalmanNet architecture from the authors' prior open-source work.
+
+Key metrics: KBPT is reported to systematically yield higher cumulative revenue than both the model-based KF-BB policy and the data-driven DDQN deep-RL benchmark across the tested pairs; the paper reports relative revenue improvements rather than annualised Sharpe/drawdown tables.
+
+`Read the paper <https://arxiv.org/abs/2210.15448>`__

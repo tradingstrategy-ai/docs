@@ -4032,6 +4032,18 @@
     "short_description": null
   },
   {
+    "title": "Bayesian Online Changepoint Detection",
+    "authors": "Ryan Prescott Adams, David J.C. MacKay",
+    "publication_year": 2007,
+    "download_page": "https://arxiv.org/abs/0710.3742",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "bayesian-online-changepoint-detection.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Foundational online regime-change detection: derives an exact recursive algorithm maintaining the posterior over the current run length (time since last changepoint) via message passing, suitable for streaming market data. Widely implemented; vanilla cost grows with run-length hypotheses so streaming use needs pruning."
+  },
+  {
     "title": "Detecting VIX Term Structure Regimes",
     "authors": "Cristian Velasquez",
     "publication_year": null,
@@ -4090,6 +4102,18 @@
     "downloaded_at": "2026-06-12",
     "download_failure_reason": null,
     "short_description": "Introduces the statistical jump model: state inference as clustering of temporal features while penalizing jumps, controlling the transition rate. Foundational to the sparse/continuous jump-model literature; on S&P 500 long-short the jump estimator reaches Sharpe 1.434 vs 0.673 (MLE) with far lower turnover."
+  },
+  {
+    "title": "Particle Filters for Markov-Switching Stochastic Volatility Models",
+    "authors": "Yong Bao, Carl Chiarella, Boda Kang",
+    "publication_year": 2012,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2163902",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "bao-chiarella-kang-particle-filter-markov-switching-sv.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Auxiliary particle filter (ASIR) for Markov-switching stochastic volatility that estimates regime transition probabilities online via a continually updated Dirichlet distribution. Improves on Carvalho-Lopes kernel smoothing precisely when regime-transition probabilities are high — common in energy, commodity, FX and crypto markets."
   },
   {
     "title": "Regime Detection with HMM: Critical Analysis",
@@ -5064,6 +5088,54 @@
     "short_description": "Decomposes the counterintuitive underperformance of 2x and 3x leveraged S&P 500 ETFs during 2022-2023 into volatility drag from compounding (two-thirds) and a timing effect from the negative covariance between realized leverage deviations and index returns (one-third)."
   },
   {
+    "title": "Asset Allocation: Combining Investor Views with Market Equilibrium (Black-Litterman)",
+    "authors": "Fischer Black, Robert Litterman",
+    "publication_year": 1991,
+    "download_page": "https://doi.org/10.3905/jfi.1991.408013",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "The canonical Bayesian portfolio model: equilibrium-implied returns (reverse-engineered from market-cap weights) form the prior, investor views with stated confidences are the evidence, and the conjugate posterior blends them — avoiding the extreme weights of naive mean-variance optimization. The most widely deployed instance of Bayesian updating in finance."
+  },
+  {
+    "title": "Bayes-Stein Estimation for Portfolio Analysis",
+    "authors": "Philippe Jorion",
+    "publication_year": 1986,
+    "download_page": "https://doi.org/10.2307/2331042",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Applies James-Stein/empirical-Bayes shrinkage to estimated expected returns, pulling each asset's mean toward the global minimum-variance portfolio mean with data-driven intensity. The practical workhorse of Bayesian portfolio estimation; dominates raw sample-estimate portfolios out-of-sample with more stable weights."
+  },
+  {
+    "title": "Bayesian Methods in Finance",
+    "authors": "Eric Jacquier, Nicholas Polson",
+    "publication_year": 2011,
+    "download_page": "https://people.bu.edu/jacquier/papers/bayesfinance.2011.pdf",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "bayesian-methods-in-finance.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Anchor handbook survey of Bayesian portfolio construction, mapping the canonical lineage: Klein-Bawa predictive-density optimization under parameter uncertainty, Jorion Bayes-Stein shrinkage, and Black-Litterman equilibrium priors (noting its missing likelihood, later fixed by Zhou). The best single map of how Bayesian updating threads through asset allocation."
+  },
+  {
+    "title": "Beyond Black-Litterman: Letting the Data Speak",
+    "authors": "Guofu Zhou",
+    "publication_year": 2009,
+    "download_page": "https://doi.org/10.3905/jpm.2009.36.1.036",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Closes the main gap in Black-Litterman by adding a formal likelihood so the posterior reflects three sources — market equilibrium prior, subjective views, and historical-data evidence — making BL a fully coherent Bayesian updating scheme. The natural next read after the original Black-Litterman model."
+  },
+  {
     "title": "Building Diversified Portfolios that Outperform Out-of-Sample",
     "authors": "Marcos López de Prado",
     "publication_year": null,
@@ -5244,6 +5316,18 @@
     "short_description": null
   },
   {
+    "title": "The Effect of Estimation Risk on Optimal Portfolio Choice",
+    "authors": "Roger W. Klein, Vijay S. Bawa",
+    "publication_year": 1976,
+    "download_page": "https://doi.org/10.1016/0304-405X(76)90004-0",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Seminal result on portfolio choice under parameter uncertainty: when return parameters are unknown, the optimal strategy is to optimize expected utility over the Bayesian predictive density rather than plug in point estimates. The theoretical root of Bayesian portfolio construction and Bayesian position sizing."
+  },
+  {
     "title": "Understanding Covariance Matrices for Systematic Portfolio Allocation",
     "authors": "Pedma",
     "publication_year": null,
@@ -5302,6 +5386,30 @@
     "downloaded_at": "2026-06-07",
     "download_failure_reason": null,
     "short_description": "This paper introduces YAND, a geometric optimization framework where search directions are derived from the equi-affine normal of level-set hypersurfaces, making them invariant under volume-preserving affine transformations. YAND achieves one-step convergence on convex quadratics (matching Newton's method), proves robust under arbitrarily ill-conditioned affine scalings, and establishes global, linear, and quadratic local convergence guarantees for general smooth objectives."
+  },
+  {
+    "title": "A Tutorial on Thompson Sampling",
+    "authors": "Daniel Russo, Benjamin Van Roy, Abbas Kazerouni, Ian Osband, Zheng Wen",
+    "publication_year": 2018,
+    "download_page": "https://arxiv.org/abs/1707.02038",
+    "source_file": "reinforcement-learning.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "a-tutorial-on-thompson-sampling.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Standard reference for Thompson sampling, the Bayesian algorithm for online sequential decisions that underlies multi-armed-bandit strategy selection and capital allocation. Covers the core posterior-sampling mechanism and practical approximations (Laplace, MCMC, bootstrap) for non-conjugate cases. General ML tutorial; trading application developed in companion work."
+  },
+  {
+    "title": "Adaptive Portfolio by Solving Multi-armed Bandit via Thompson Sampling",
+    "authors": "Mengying Zhu, Xiaolin Zheng, Yan Wang, Yuyuan Li, Qianqiao Liang",
+    "publication_year": 2019,
+    "download_page": "https://arxiv.org/abs/1911.05309",
+    "source_file": "reinforcement-learning.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "adaptive-portfolios-thompson-sampling.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Applies Thompson sampling to portfolio selection by treating classic allocation strategies as the arms of a multi-armed bandit, rotating capital online toward whichever strategic arm is currently winning, with a risk-preference-parameterized reward. A concrete practitioner instance of Bayesian-bandit capital allocation across strategies (IJCAI 2019)."
   },
   {
     "title": "Adversarial Deep Reinforcement Learning in Portfolio Management",
@@ -5566,6 +5674,18 @@
     "downloaded_at": null,
     "download_failure_reason": "not_attempted",
     "short_description": null
+  },
+  {
+    "title": "Optimal Betting Under Parameter Uncertainty: Improving the Kelly Criterion",
+    "authors": "Rose D. Baker, Ian G. McHale",
+    "publication_year": 2013,
+    "download_page": "https://doi.org/10.1287/deca.2013.0271",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Derives the optimal Kelly bet fraction when the edge is estimated rather than known, by integrating over the posterior of the edge. The result is systematically smaller than naive Kelly — the less data, the more you shrink — turning ad-hoc fractional Kelly into principled posterior-driven sizing. The Bayesian-Kelly reference for position sizing under uncertainty."
   },
   {
     "title": "Portfolio Choice and the Bayesian Kelly Criterion",
@@ -7176,6 +7296,18 @@
     "short_description": "This paper models the cointegration spread between Brent, WTI, and Shanghai crude oil futures as a mean-reverting regime-switching process driven by a hidden Markov chain, using online filter-based parameter estimators for strategy implementation. The analysis finds that arbitrage strategies involving Shanghai futures are profitable even under conservative transaction costs, and that incorporating the three-contract system enables arbitrage even when pairwise cointegration is not detected."
   },
   {
+    "title": "A Kalman Filter Approach to Pairs Trading with Non-Gaussian Heteroskedastic and Nonlinear Mean-Reverting Spread",
+    "authors": "Yaoge Zhang",
+    "publication_year": 2020,
+    "download_page": "https://arxiv.org/abs/2005.09794",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "qmc-kalman-filter-pairs-trading.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Extends Kalman pairs trading beyond linear-Gaussian assumptions: the latent spread has non-Gaussian heteroskedastic innovations and nonlinear mean reversion, handled by a Quasi Monte Carlo Kalman filter (Gaussian-mixture approximation). The filtered spread is the trading indicator. Relevant to fat-tailed crypto spreads; unrefereed preprint."
+  },
+  {
     "title": "A Markowitz Approach to Managing a Dynamic Basket of Moving-Band Statistical Arbitrages",
     "authors": "Kasper Johansson, Thomas Schmelzer, and Stephen Boyd",
     "publication_year": null,
@@ -7186,6 +7318,18 @@
     "downloaded_at": "2026-06-05",
     "download_failure_reason": null,
     "short_description": "This paper applies the Markowitz optimization framework to manage a dynamic portfolio of moving-band statistical arbitrages (MBSAs), showing how to optimally size and combine multiple MBSA positions over time. Illustrated on recent historical data, the method achieves strong risk-adjusted returns that are essentially uncorrelated with the market."
+  },
+  {
+    "title": "A Pairs Trading Strategy Based on Linear State Space Models and the Kalman Filter",
+    "authors": "Bernardo de Moura Pizzinga, Adrian Pizzinga, Jorge P. Zubelli",
+    "publication_year": 2016,
+    "download_page": "https://www.tandfonline.com/doi/abs/10.1080/14697688.2016.1164886",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Pairs trading built on linear state-space models where the Kalman filter computes the conditional probability that the spread reverts to its long-term mean; trades trigger only on large reversion probabilities. A directly practitioner-oriented Bayesian signal design; authors caveat the empirical evidence as limited."
   },
   {
     "title": "A Survey of Statistical Arbitrage Pairs Trading: Non-ML Methods, 2016-2023",
@@ -7416,6 +7560,18 @@
     "short_description": "This paper challenges the common belief that LLMs are unsuitable for financial return prediction by applying the Chronos model to large-cap US stocks and constructing long/short statistical arbitrage portfolios. Performance simulations demonstrate that fine-tuned LLMs can identify market inefficiencies in near-random time series and generate alpha, with significant room for improvement remaining relative to benchmark models."
   },
   {
+    "title": "Neural Augmented Kalman Filtering with Bollinger Bands for Pairs Trading (KBPT)",
+    "authors": "Amit Milstein, Haoran Deng, Guy Revach, Hai Morgenstern, Nir Shlezinger",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2210.15448",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "kalmannet-aided-bollinger-bands-pairs-trading.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Hybrid model-based deep learning for pairs trading: frames Kalman-filter + Bollinger Bands (KF-BB) as the model-based baseline, then proposes KBPT, an extended partial-cointegration state-space model augmented with a KalmanNet neural network. Reported to beat both classic KF-BB and a DDQN deep-RL benchmark across FX/ETF pairs (IEEE TSP 2024)."
+  },
+  {
     "title": "On Statistical Arbitrage Under a Conditional Factor Model of Equity Returns",
     "authors": "Trent Spears, Stefan Zohren, and Stephen Roberts",
     "publication_year": null,
@@ -7450,6 +7606,18 @@
     "downloaded_at": "2026-05-18",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Pairs Trading",
+    "authors": "Robert J. Elliott, John van der Hoek, William P. Malcolm",
+    "publication_year": 2005,
+    "download_page": "https://www.tandfonline.com/doi/abs/10.1080/14697680500149370",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "pairs-trading-elliott-van-der-hoek-malcolm.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Seminal state-space formulation of pairs trading: the spread is modeled as a mean-reverting Gaussian Markov chain (discrete OU process) observed in noise, estimated recursively by Kalman filter with EM calibration, and traded against the filter's one-step-ahead prediction. The analytical foundation for all Kalman-filter pairs strategies."
   },
   {
     "title": "Pairs Trading - Selection via Scoring Systems",
@@ -7834,6 +8002,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "Bayesian Forecasting in Economics and Finance: A Modern Review",
+    "authors": "Gael M. Martin, David T. Frazier, Worapree Maneesoonthorn, Ruben Loaiza-Maya, Florian Huber, Gary Koop, John Maheu, Didier Nibbering, Anastasios Panagiotelis",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2212.03471",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "bayesian-forecasting-in-economics-and-finance-a-modern-review.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Peer-reviewed, implementation-aware modern survey of Bayesian forecasting (IJF 2024). Covers MCMC, variational/approximate Bayes, and — most relevant to state-space trading models — a full algorithmic treatment of sequential Monte Carlo / particle filtering including particle marginal Metropolis-Hastings (PMMH). The recommended modern anchor for Bayesian time-series methods in trading."
   },
   {
     "title": "Cointegration and Error Correction Models",
