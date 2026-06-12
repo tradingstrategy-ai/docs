@@ -7634,14 +7634,14 @@
   {
     "title": "Statistical Arbitrage in the U.S. Equities Market",
     "authors": "Marco Avellaneda and Jeong-Hyun Lee",
-    "publication_year": null,
+    "publication_year": 2008,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1153505",
     "source_file": "statistical-arbitrage.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": null
+    "filename": "statistical-arbitrage-in-the-us-equities-market.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Decomposes U.S. stock returns into systematic and idiosyncratic components using PCA eigenportfolios or sector ETFs, models the residuals as Ornstein-Uhlenbeck processes, and trades contrarian s-score signals market-neutrally across stocks above USD 1 billion capitalisation. Net of 10 bps round-trip costs, PCA strategies average Sharpe 1.44 over 1997-2007 (decaying to 0.9 after 2003), volume-weighted trading-time ETF signals reach Sharpe 1.51 over 2003-2007, and a dedicated August 2007 chapter validates the Khandani-Lo unwinding theory of the quant meltdown."
   },
   {
     "title": "Statistical Arbitrage within Crypto Markets using PCA",
