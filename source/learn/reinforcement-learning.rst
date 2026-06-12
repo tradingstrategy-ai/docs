@@ -136,6 +136,17 @@ Key metrics: across 25 experiments, adversarial training improves average daily 
 
 `Read the paper <https://arxiv.org/abs/1808.09940>`__
 
+No-Trade Bands vs Deep Hedging: Hedging Options Under Transaction Costs
+----------------------------------------------------------------------
+
+Under Black–Scholes, continuous rebalancing is theoretically optimal, but once trading frictions are introduced it becomes economically unrealistic: hedging reduces P&L variance while every rebalance incurs transaction costs, and their interplay creates a no-trade region whose width is governed by risk aversion. This post contrasts two ways of solving the problem. The classical Whalley & Wilmott approach analytically derives a no-trade band around the Black–Scholes hedge under GBM and small transaction-cost asymptotics — inside the band the expected variance reduction is too small to justify trading costs, so the hedge is left unchanged, and as maturity approaches Gamma concentration forces reactions to ever-smaller price moves, collapsing the band.
+
+Differentiable Deep Hedging reformulates hedging as an end-to-end differentiable stochastic control problem closely related to reinforcement learning and policy optimization: a neural network learns an inventory-aware hedge policy directly from simulated market states, with transaction costs and terminal P&L accumulated pathwise on the forward pass and gradients of terminal risk backpropagated to optimize the policy. Strikingly, under similar GBM assumptions and a variance-minimization objective, the learned hedge/no-hedge regions resemble the classical Whalley–Wilmott geometry even though the network is never given those boundaries. The deep approach generalises further — the market state can include realized volatility, order flow, liquidity, spreads, and latent regimes; it extends beyond Black–Scholes (e.g. wider no-trade regions in mean-reverting markets); and alternative objectives such as CVaR yield different hedge geometries. The trade-offs are real: it is computationally expensive, sensitive to training assumptions, prone to overfitting, and exposed to the simulation-to-reality gap, though recent work pushes toward ambiguity-averse and distributionally robust policies.
+
+By Sofien Kaabar, CFA (crediting Alexander Nevolin as the source).
+
+`Read the post <https://www.linkedin.com/posts/sofienkaabar_under-blackscholes-continuous-rebalancing-share-7467650816829652992-EVti/>`__
+
 Code Repositories
 -----------------
 
