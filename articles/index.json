@@ -4056,6 +4056,42 @@
     "short_description": null
   },
   {
+    "title": "Feature selection in jump models",
+    "authors": "Peter Nystrup, Petter N. Kolm, Erik Lindström",
+    "publication_year": 2021,
+    "download_page": "https://www.sciencedirect.com/science/article/pii/S0957417421009647",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "feature-selection-in-jump-models.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Extends the jump model with joint feature selection via coordinate descent, producing the sparse jump model (SJM). Robust to noise in high dimensions; on text segmentation it locates breakpoints within 0.48 words on average versus 35 for the standard jump model."
+  },
+  {
+    "title": "Identifying patterns in financial markets: extending the statistical jump model for regime identification",
+    "authors": "Afşar Onat Aydınhan, Petter N. Kolm, John M. Mulvey, Yizhan Shu",
+    "publication_year": 2024,
+    "download_page": "https://link.springer.com/article/10.1007/s10479-024-06035-z",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Extends the statistical jump model into a continuous jump model: the discrete hidden state becomes a probability vector over regimes, with a novel mode-loss penalty pushing estimates to simplex vertices. Reports outperformance over traditional regime-switching, pronounced under imbalanced regimes and limited history."
+  },
+  {
+    "title": "Learning hidden Markov models with persistent states by penalizing jumps",
+    "authors": "Peter Nystrup, Erik Lindström, Henrik Madsen",
+    "publication_year": 2020,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0957417420301329",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "learning-hidden-markov-models-with-persistent-states-by-penalizing-jumps.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Introduces the statistical jump model: state inference as clustering of temporal features while penalizing jumps, controlling the transition rate. Foundational to the sparse/continuous jump-model literature; on S&P 500 long-short the jump estimator reaches Sharpe 1.434 vs 0.673 (MLE) with far lower turnover."
+  },
+  {
     "title": "Regime Detection with HMM: Critical Analysis",
     "authors": "Bongani Mayaba",
     "publication_year": null,
@@ -4102,6 +4138,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "What drives cryptocurrency returns? A sparse statistical jump model approach",
+    "authors": "Federico P. Cortese, Petter N. Kolm, Erik Lindström",
+    "publication_year": 2023,
+    "download_page": "https://link.springer.com/article/10.1007/s42521-023-00085-x",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-12",
+    "filename": "what-drives-cryptocurrency-returns-a-sparse-statistical-jump-model-approach.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Applies the sparse statistical jump model to 400+ candidate features for the five largest cryptocurrencies (2018-2022). A three-state bull/neutral/bear model fits best; key drivers are return EMAs, trend/reversal signals, market activity and public attention (first moments, not volatility)."
   },
   {
     "title": "Advanced Signal Filtering for Mean Reversion Trading",
