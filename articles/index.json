@@ -4074,10 +4074,10 @@
     "download_page": "https://link.springer.com/article/10.1007/s10479-024-06035-z",
     "source_file": "market-regimes.rst",
     "included_in_index_at": "2026-06-12",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
-    "short_description": "Extends the statistical jump model into a continuous jump model: the discrete hidden state becomes a probability vector over regimes, with a novel mode-loss penalty pushing estimates to simplex vertices. Reports outperformance over traditional regime-switching, pronounced under imbalanced regimes and limited history."
+    "filename": "identifying-patterns-in-financial-markets-extending-the-statistical-jump-model-for-regime-identification.pdf",
+    "downloaded_at": "2026-06-12",
+    "download_failure_reason": null,
+    "short_description": "Extends the statistical jump model into a continuous jump model: the discrete hidden state becomes a probability vector over regimes, with a novel mode-loss penalty (linked to the discrete jump penalty via optimal transport) pushing estimates to simplex vertices. On three-state simulations it improves ROC-AUC by ~4% and BAC by ~2% over the discrete model and beats Baum-Welch HMMs, with gains largest for imbalanced, persistent, short series; demonstrated on the Nasdaq index over 1996-2005 and 2013-2022."
   },
   {
     "title": "Learning hidden Markov models with persistent states by penalizing jumps",
