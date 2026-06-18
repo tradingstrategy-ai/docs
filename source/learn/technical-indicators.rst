@@ -154,3 +154,14 @@ By Jeremy Hsu.
 Mentioned by `Jeremy Hsu <https://www.linkedin.com/in/jerm04>`__ in `this discussion <https://www.linkedin.com/posts/jerm04_most-trading-strategies-fail-because-they-share-7423958468975407104-pZ7E>`__: "Most trading strategies fail because they assume the wrong probability model."
 
 `Read the blog post <https://mrjerm.github.io/project_kintoun.html>`__.
+
+How Often Do Stocks Hit 7-12+ ATR Above SMA50? A 10-Year Study
+--------------------------------------------------------------
+
+Denis Hamel measures how far US stocks extend above their 50-day simple moving average, expressed in ATR units — the standard ``(Close - SMA50) / ATR(14)`` distance — and turns the empirical distribution of those extensions into a profit-taking framework. The study spans roughly 10 years of daily bars (2016–2026) across 5,998 US common stocks and over 10 million stock-days, counting each continuous run above the SMA50 as a single "leg" (recorded at its peak ATR-distance) to avoid the double-counting that per-day tallies produce. A "CLEAN" filter removes artifacts that masquerade as trends: gap events (any single day with a >25% move, catching biotech FDA pops, reverse-merger spikes, penny pumps) and post-event "pinning" (acquisitions or post-bankruptcy names trading flat while the SMA50 catches up).
+
+The headline rule is "trim hard at 7 ATR, hold a small runner above 11." Three of every five tradable US stocks reached at least 7 ATR over the decade, two-fifths hit 8, a quarter hit 9, while 15+ ATR is a ~1.2% tail and 20+ is essentially never (4 names in 10 years). Roughly two-thirds of legs that touch 7 ATR die there, which is the math behind an aggressive first-touch trim. The pattern is remarkably stable across liquidity tiers measured by point-in-time dollar volume (heavy $50M+, medium $10–50M, light $1–10M) — the peak-distance distribution has the same steep drop after 7 and a very thin tail past 11 — except that lightly-traded names carry a genuinely fatter right tail and deserve a slightly larger runner. The scale-out logic is elegant: the histogram of leg peaks *is* the sell distribution, so selling proportionally at each level harvests the expected move without leaving anything undefined. Even the most-watched momentum names rarely break 10 ATR (TSLA 10.21 in the 2020 COVID rally, AAPL 10.11, NFLX 10.02, NVDA 8.94 in the 2023–24 AI leg), reinforcing the case for trimming when a position gets there.
+
+By Denis Hamel.
+
+`Read the X article <https://x.com/denis__hamel/status/2056088634382537028>`__.
