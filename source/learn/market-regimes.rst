@@ -558,3 +558,16 @@ Data and code: methodological study with simulation and empirical illustrations;
 Key metrics: the paper reports filtering accuracy and effective-sample-size comparisons against the kernel-smoothing benchmark rather than trading P&L; the headline is robustness under high regime-transition probabilities.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2163902>`__
+
+Kalman Filters vs Hidden Markov Models: Continuous Drivers vs Discrete Regimes
+-----------------------------------------------------------------------------
+
+A concise explanation of when to reach for a Kalman filter versus a Hidden Markov Model (HMM) for latent-state estimation in markets. The framing: an HMM is a probabilistic model of the discrete regimes themselves, whereas a Kalman filter is a probabilistic model of the underlying continuous drivers. The two tools answer different questions about the same data — one classifies which state the market is in, the other tracks a smoothly evolving hidden quantity.
+
+The post contrasts the assumptions and trade-offs of each. Kalman filters assume linearity in both the state dynamics and the observation model, which buys closed-form Gaussian solutions and a natural fit with mean-variance portfolio optimization, but limits them to continuous, well-behaved drivers. HMMs operate over a discrete, finite state space with a Markov chain governing transitions and flexible emission distributions, imposing no linearity assumption — so they can capture jumps, shocks, and non-Gaussian behavior. The author frames HMMs as a "less is more" choice: minimal parametric structure traded for flexibility against the messiness of real markets.
+
+By Andreas Steiner.
+
+In the discussion, Prof. Dr. Holger von Jouanne-Diedrich points to a complementary read framing the `Kalman filter as a form of Bayesian updating <https://blog.ephorie.de/kalman-filter-as-a-form-of-bayesian-updating>`__.
+
+`Read the post <https://www.linkedin.com/posts/andreassteiner_what-is-the-difference-between-a-kalman-filter-share-7472556387206828032-mNxW/>`__.
