@@ -199,3 +199,14 @@ Data and code: a decision-theoretic paper with illustrative examples (including 
 Key metrics: the contribution is the closed-form/​numerical optimal bet fraction under parameter uncertainty and its shrinkage relative to full Kelly; the paper quantifies the growth-rate penalty of ignoring estimation risk rather than reporting a trading backtest.
 
 `Read the paper <https://doi.org/10.1287/deca.2013.0271>`__
+
+How Much Should We Get Paid for Skew Risk? Not as Much as You Think!
+-------------------------------------------------------------------
+
+Rob Carver challenges the long-standing trend-following defence that positive skewness compensates for a lower Sharpe ratio — and the mirror-image claim that negatively-skewed strategies (option selling, carry) must earn a large Sharpe premium. He builds a framework that prices skew in Sharpe-ratio terms by maximising the geometric mean of returns across different quantiles of the outcome distribution, then reads off indifference curves that hold long-run growth constant as Sharpe and skew vary together.
+
+The method is deliberately brute-force: synthetic returns are generated with controlled skewness and kurtosis at a fixed Sharpe ratio, bootstrapped across leverage levels, and the leverage that maximises geometric return is found at the median (for a Kelly investor) and at the 10th percentile (for a conservative investor). The headline result is that skew is worth far less than the industry assumes — at most around 4 Sharpe basis points to move all the way from a skew of -3 to +3, with lower-tail risk worth perhaps 5 basis points and conservative investors valuing skew even less. Optimal leverage does rise with positive skew, but only modestly. The practical takeaway: understanding skew still matters for sizing leverage, but you should not sacrifice meaningful risk-adjusted return chasing it — while remaining wary of strategies (LTCM-style) that hide severe negative skew behind low volatility.
+
+By Rob Carver.
+
+`Read the blog post <https://qoppac.blogspot.com/2025/02/how-much-should-we-get-paid-for-skew.html>`__
