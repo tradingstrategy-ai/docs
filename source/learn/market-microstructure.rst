@@ -200,3 +200,14 @@ Discussed by `ltrd (@ltrd_) in this thread <https://x.com/ltrd_/status/206406421
 By Arrakis Finance (@web3_pastel).
 
 `Read the blog post <https://arrakis.finance/blog/crypto-price-discovery>`__
+
+The Contemporaneous Power of Dealer Gamma: Why Gamma Positioning Momentum Explains Same-Day Equity Returns Better Than Its GEX Level
+----------------------------------------------------------------------------------------------------------------------------------
+
+ALPresi Research investigates how options-dealer gamma positioning shapes intraday S&P 500 price action, drawing a sharp distinction between the *level* of gamma exposure (GEX) and its daily *rate of change*. The thesis is that what moves prices on a given day is the flow — how much hedging pressure dealers are applying right now — rather than the static stock of positioning. The study uses 15 years of daily S&P 500 returns paired with aggregate dealer gamma metrics built on Squeezemetrics' Gamma Exposure framework, constructing the positioning level, a normalized level, and a momentum (daily-change) series.
+
+A stationarity diagnostic is central to the argument: gamma positioning momentum is strongly stationary, while the positioning level is non-stationary, especially after 2020 — which undermines naive regressions on the level. Empirically, momentum explains roughly 17.7% of same-day return variation with a significant positive correlation, versus only ~6.6% for the level. Sorting days into momentum quintiles shows a monotonic pattern, with the strongest-positive-momentum days (Q5) averaging +0.95% and the strongest-negative (Q1) averaging −0.82%. An error-correction/cointegration analysis points to a long-run equilibrium relationship, though regime shifts around 2020 limit firm conclusions. The practical implication is that the change in dealer hedging pressure, not the absolute GEX level, is the better contemporaneous descriptor of same-day equity moves.
+
+By ALPresi Quants, ALPresi Research.
+
+`Read the blog post <https://alpresiresearch.com/blog/the-contemporaneous-power-of-dealer-gamma-why-gamma-positioning-momentum-explains-same-day-equity-returns-better-than-its-gex-level/>`__
