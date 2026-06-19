@@ -8827,3 +8827,229 @@ and algorithmic trading.
         - :term:`Selling volatility`
 
         - :term:`Delta hedged`
+
+    Fama-French factors
+
+        The Fama-French factors are a set of equity :term:`risk factors <factor investing>` introduced by Eugene Fama and Kenneth French to explain the cross-section of stock returns beyond the single market factor of the :term:`CAPM <Capital asset pricing model>`. The original 1993 three-factor model adds **SMB** (Small Minus Big, a size premium) and **HML** (High Minus Low, a :term:`value <Value factor>` premium based on book-to-market) to the market factor. The 2015 five-factor model further adds **RMW** (Robust Minus Weak profitability) and **CMA** (Conservative Minus Aggressive investment).
+
+        Each factor is constructed as a :term:`long-short <Long-short>` portfolio: for example HML is long cheap (high book-to-market) stocks and short expensive ones. Fama and French maintain free monthly data libraries that researchers use as benchmarks and building blocks.
+
+        Example: in Green Lark's :term:`Sharpe`-optimal long-only blend of ten beta-hedged Fama-French and :term:`AQR` factors (1963-2026), the optimiser dropped every plain Fama-French factor in favour of the refined :term:`AQR` versions such as :term:`HML-Devil`.
+
+        Literature and references:
+
+        - Eugene F. Fama and Kenneth R. French, `Common Risk Factors in the Returns on Stocks and Bonds <https://doi.org/10.1016/0304-405X(93)90023-5>`__, Journal of Financial Economics, 1993.
+
+        - Eugene F. Fama and Kenneth R. French, `A Five-Factor Asset Pricing Model <https://doi.org/10.1016/j.jfineco.2014.10.010>`__, Journal of Financial Economics, 2015.
+
+        - `Kenneth French Data Library <https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html>`__.
+
+        See also
+
+        - :term:`Factor investing`
+
+        - :term:`Value factor`
+
+        - :term:`HML-Devil`
+
+        - :term:`AQR`
+
+    AQR
+
+        AQR Capital Management is a quantitative asset manager co-founded by Cliff Asness, John Liew and others in 1998, known for academically grounded :term:`factor investing` research. Beyond managing money, AQR publishes a widely cited public data library of refined factor returns that improve on the classic :term:`Fama-French factors`.
+
+        AQR's signature factors include :term:`QMJ <Quality Minus Junk (QMJ)>` (quality), :term:`HML-Devil` (an improved value factor), :term:`UMD <Up Minus Down (UMD)>` (momentum) and :term:`BAB <Betting Against Beta (BAB)>` (low-beta). These often dominate the raw Fama-French versions in :term:`portfolio construction` because of cleaner construction and better risk-adjusted returns.
+
+        Example: a :term:`mean-variance <Mean-Variance Optimisation>` Sharpe-optimal long-only portfolio of ten beta-hedged Fama-French and AQR factors allocated entirely to AQR factors — :term:`QMJ <Quality Minus Junk (QMJ)>` 37%, :term:`HML-Devil` 31%, :term:`UMD <Up Minus Down (UMD)>` 25%, :term:`BAB <Betting Against Beta (BAB)>` 7% — reaching :term:`Sharpe` 1.50 versus 1.00 for an equal-weight blend.
+
+        Literature and references:
+
+        - `AQR Data Sets and Factor Library <https://www.aqr.com/Insights/Datasets>`__.
+
+        See also
+
+        - :term:`Fama-French factors`
+
+        - :term:`Quality Minus Junk (QMJ)`
+
+        - :term:`HML-Devil`
+
+        - :term:`Betting Against Beta (BAB)`
+
+    Quality Minus Junk (QMJ)
+
+        QMJ is a :term:`factor <factor investing>` from :term:`AQR` that goes long high-quality stocks and short low-quality ("junk") stocks. Quality is defined as a composite of profitability, growth, safety (low risk) and payout — companies that are profitable, stable, growing and shareholder-friendly. The factor captures the empirical finding that high-quality firms earn higher risk-adjusted returns than junk, even though investors arguably should pay a premium for quality.
+
+        Example: QMJ carried the largest weight (37%) in Green Lark's :term:`Sharpe`-optimal long-only factor portfolio.
+
+        Literature and references:
+
+        - Clifford S. Asness, Andrea Frazzini and Lasse Heje Pedersen, `Quality Minus Junk <https://doi.org/10.1007/s11142-018-9470-2>`__, Review of Accounting Studies, 2019.
+
+        See also
+
+        - :term:`AQR`
+
+        - :term:`Factor investing`
+
+        - :term:`Betting Against Beta (BAB)`
+
+    HML-Devil
+
+        HML-Devil is :term:`AQR`'s improved version of the classic Fama-French :term:`HML value factor <Value factor>`. The original HML ranks stocks on book-to-market using a book value and a price both lagged to the prior fiscal year-end, so the price in the ratio can be stale by up to 18 months. HML-Devil instead uses the most recent (current) price together with the lagged book value, which makes the value signal more timely. Andrea Frazzini and Cliff Asness titled the paper "The Devil in HML's Details" because this seemingly minor construction choice materially changes the factor's returns.
+
+        HML-Devil is a strong diversifier for :term:`momentum <Momentum>`: because it reacts to current prices, it loads against recent winners and tends to rally during a :term:`momentum crash`, making it a natural hedge for a momentum-heavy book even when its standalone :term:`Sharpe` is modest.
+
+        Example: despite a weak standalone Sharpe, HML-Devil received a large 31% weight in the optimal long-only portfolio precisely because it hedges the heavy :term:`UMD <Up Minus Down (UMD)>` momentum exposure — it was very useful in the post-GFC momentum crash of 2009.
+
+        Literature and references:
+
+        - Clifford S. Asness and Andrea Frazzini, `The Devil in HML's Details <https://doi.org/10.3905/jpm.2013.39.4.049>`__, Journal of Portfolio Management, 2013.
+
+        See also
+
+        - :term:`Value factor`
+
+        - :term:`Fama-French factors`
+
+        - :term:`Momentum crash`
+
+        - :term:`AQR`
+
+    Up Minus Down (UMD)
+
+        UMD (also called MOM or WML, Winners Minus Losers) is the academic :term:`momentum <Momentum>` factor: a :term:`long-short <Long-short>` portfolio that is long stocks with the strongest trailing returns (typically the past 12 months, skipping the most recent month) and short the weakest. It captures the well-documented tendency of recent winners to keep outperforming recent losers over the following months.
+
+        UMD is one of the most robust factors across markets and asset classes, but it is prone to severe, sudden reversals known as :term:`momentum crashes <Momentum crash>`, which is why it is usually paired with a :term:`value <Value factor>` hedge such as :term:`HML-Devil`.
+
+        Example: UMD held a 25% weight in the Sharpe-optimal long-only factor portfolio, the dominant directional bet that the value sleeve was chosen to hedge.
+
+        Literature and references:
+
+        - Narasimhan Jegadeesh and Sheridan Titman, `Returns to Buying Winners and Selling Losers <https://doi.org/10.1111/j.1540-6261.1993.tb04702.x>`__, Journal of Finance, 1993.
+
+        - Mark M. Carhart, `On Persistence in Mutual Fund Performance <https://doi.org/10.1111/j.1540-6261.1997.tb03808.x>`__, Journal of Finance, 1997.
+
+        See also
+
+        - :term:`Momentum`
+
+        - :term:`Momentum crash`
+
+        - :term:`HML-Devil`
+
+    Betting Against Beta (BAB)
+
+        BAB is a :term:`factor <factor investing>` from :term:`AQR` that exploits the low-beta anomaly: low-:term:`beta <Beta-hedged>` assets earn higher risk-adjusted returns than high-beta assets, contrary to the :term:`CAPM <Capital asset pricing model>`. The BAB factor goes long a leveraged basket of low-beta securities and short a de-leveraged basket of high-beta securities, so that each leg has a market beta of one. The economic story is that leverage-constrained investors bid up high-beta assets to chase returns, leaving low-beta assets cheap.
+
+        Example: BAB took the smallest weight (7%) in Green Lark's Sharpe-optimal long-only factor portfolio.
+
+        Literature and references:
+
+        - Andrea Frazzini and Lasse Heje Pedersen, `Betting Against Beta <https://doi.org/10.1016/j.jfineco.2013.10.005>`__, Journal of Financial Economics, 2014.
+
+        See also
+
+        - :term:`AQR`
+
+        - :term:`Beta-hedged`
+
+        - :term:`Factor investing`
+
+    Beta-hedged
+
+        A position or factor is beta-hedged when its exposure to the broad market (its :term:`market beta <Capital asset pricing model>`) has been neutralised, typically by shorting an index or futures in proportion to the position's beta. What remains is the idiosyncratic or factor-specific return, stripped of the general up-and-down of the market.
+
+        Beta-hedging matters in :term:`factor investing` research because comparing raw factor returns can be misleading if some factors carry hidden market exposure. Hedging out beta isolates the pure factor premium, making :term:`Sharpe` ratios comparable across factors. It is the factor-research analogue of :term:`delta hedging <Delta hedged>` in options.
+
+        Example: the ten Fama-French and AQR factors in Green Lark's study were each beta-hedged before the :term:`mean-variance <Mean-Variance Optimisation>` optimisation, so the optimiser allocated across clean factor premia rather than across disguised market exposure.
+
+        See also
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Delta hedged`
+
+        - :term:`Capital asset pricing model`
+
+        - :term:`Factor investing`
+
+    Momentum crash
+
+        A momentum crash is a sudden, severe drawdown in a :term:`momentum <Momentum>` strategy (such as :term:`UMD <Up Minus Down (UMD)>`) that occurs when beaten-down "loser" stocks rebound violently, usually during a sharp market reversal following a panic. Because momentum is short the losers, a rebound rally inflicts large losses precisely when the broad market is recovering.
+
+        The canonical example is spring 2009: after the Global Financial Crisis bottom in March 2009, the most distressed stocks rallied hardest, and momentum strategies suffered one of their worst drawdowns on record. Momentum crashes are partly predictable — they tend to follow bear markets and high-volatility regimes — which motivates dynamic scaling and pairing momentum with a :term:`value <Value factor>` hedge like :term:`HML-Devil`.
+
+        Example: Green Lark notes that HML-Devil "is very useful" in the post-GFC momentum crash of 2009, which is why a value factor earns a large weight alongside a heavy momentum position.
+
+        Literature and references:
+
+        - Kent Daniel and Tobias J. Moskowitz, `Momentum Crashes <https://doi.org/10.1016/j.jfineco.2015.12.002>`__, Journal of Financial Economics, 2016.
+
+        See also
+
+        - :term:`Momentum`
+
+        - :term:`Up Minus Down (UMD)`
+
+        - :term:`HML-Devil`
+
+        - :term:`Drawdown`
+
+    Value factor
+
+        The value factor captures the long-run tendency of cheap stocks — those with a low price relative to fundamentals such as book value, earnings or cash flow — to outperform expensive ("growth") stocks. In the :term:`Fama-French factors` model it is represented by **HML** (High Minus Low book-to-market), a :term:`long-short <Long-short>` portfolio long cheap stocks and short expensive ones.
+
+        Value is strongly negatively correlated with :term:`momentum <Momentum>`, which makes the two classic complements in :term:`portfolio construction`: value typically performs well exactly when momentum suffers a :term:`momentum crash`. Refined implementations such as :term:`AQR`'s :term:`HML-Devil` improve the original HML by using current rather than stale prices.
+
+        Example: Green Lark's Sharpe-optimal long-only factor portfolio gave the value sleeve (:term:`HML-Devil`) a 31% weight specifically to hedge its large momentum position.
+
+        Literature and references:
+
+        - Eugene F. Fama and Kenneth R. French, `The Cross-Section of Expected Stock Returns <https://doi.org/10.1111/j.1540-6261.1992.tb04398.x>`__, Journal of Finance, 1992.
+
+        - Clifford S. Asness, Tobias J. Moskowitz and Lasse Heje Pedersen, `Value and Momentum Everywhere <https://doi.org/10.1111/jofi.12021>`__, Journal of Finance, 2013.
+
+        See also
+
+        - :term:`Fama-French factors`
+
+        - :term:`HML-Devil`
+
+        - :term:`Momentum`
+
+        - :term:`Factor investing`
+
+    Long-short
+
+        A long-short portfolio holds long positions in assets expected to rise and short positions in assets expected to fall, so its return comes from the spread between the two legs rather than from the direction of the overall market. Academic :term:`factors <factor investing>` such as :term:`HML <Value factor>`, :term:`UMD <Up Minus Down (UMD)>` and :term:`QMJ <Quality Minus Junk (QMJ)>` are constructed as long-short portfolios, going long the high-ranked decile and short the low-ranked decile.
+
+        When the long and short legs are sized so that net market exposure is roughly zero, the portfolio is also :term:`market neutral <Market neutral strategy>` and :term:`beta-hedged`. A long-only portfolio, by contrast, can only take positive weights and cannot short — an important constraint in the optimisation that produced Green Lark's all-:term:`AQR` factor blend.
+
+        See also
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Beta-hedged`
+
+        - :term:`Factor investing`
+
+    Capital asset pricing model
+
+        The Capital Asset Pricing Model (CAPM) is the foundational asset-pricing theory stating that an asset's expected return is determined solely by its **beta** — its sensitivity to the overall market. Beta of 1 moves with the market; below 1 is less volatile, above 1 more volatile. Under CAPM the only compensated risk is market risk, and any return not explained by beta is called :term:`alpha <Alpha>`.
+
+        Decades of research document violations of CAPM that motivate :term:`factor investing`: the :term:`size and value premia <Fama-French factors>`, the :term:`momentum <Momentum>` effect, and the low-beta anomaly behind :term:`BAB <Betting Against Beta (BAB)>` all earn returns CAPM cannot explain. **Beta** in CAPM is also what gets neutralised when a factor is :term:`beta-hedged`.
+
+        Literature and references:
+
+        - William F. Sharpe, `Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk <https://doi.org/10.1111/j.1540-6261.1964.tb02865.x>`__, Journal of Finance, 1964.
+
+        See also
+
+        - :term:`Beta-hedged`
+
+        - :term:`Alpha`
+
+        - :term:`Factor investing`
+
+        - :term:`Betting Against Beta (BAB)`
