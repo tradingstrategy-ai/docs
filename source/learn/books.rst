@@ -142,6 +142,17 @@ Mentioned by NoBodyNose in `this discussion <https://x.com/vladijakobi/status/20
 
 `Buy the book <https://www.amazon.com/Algorithmic-Crypto-Playbook-Systematic-Strategies-ebook/dp/B0GFDY5T3M>`__
 
+Machine Learning for Trading: Integrate GenAI, Causal Inference, and Reinforcement Learning into Real World Trading Systems
+--------------------------------------------------------------------------------------------------------------------------
+
+The 3rd edition of Stefan Jansen's *Machine Learning for Trading* (formerly *Machine Learning for Algorithmic Trading*) — a ground-up rebuild organised around a single end-to-end workflow: how a research idea is defined and developed iteratively into a strategy you can actually run. Across 27 chapters in six workflow-aligned parts — Financial Data, Research Design and Feature Engineering, Model Development, Strategy Implementation, Advanced AI, and Production — it takes practitioners from data sourcing through feature engineering, modelling, backtesting, portfolio construction, transaction-cost and risk management, all the way to live execution and MLOps.
+
+This edition substantially expands the prior ones. New material includes synthetic financial data (TimeGAN, Tail-GAN, Sig-CWGAN, diffusion models); a wider model toolkit spanning gradient boosting (XGBoost, LightGBM, CatBoost), modern deep time-series architectures (PatchTST, iTransformer, TSMixer, TCN, Mamba) and newer tabular/latent-factor models (TabPFN, TabM, conditional autoencoders); dedicated chapters on transaction costs and risk management; causal machine learning (Double ML, Bayesian structural time series, causal discovery); reinforcement learning for execution, market making and deep hedging; and a full generative-AI track (RAG over SEC filings, knowledge graphs and Graph RAG, and autonomous multi-agent research systems). It emphasises methodological rigour with tools such as the Deflated Sharpe Ratio, White's Reality Check, and conformal prediction, and carries nine multi-asset case studies through the same pipeline.
+
+The book is Python-based and pairs with an actively maintained companion code repository on GitHub and the ml4trading.io site, which provides concept primers, reusable agent skills, and production libraries. It is the latest edition of the earlier *Machine Learning for Algorithmic Trading* listed below.
+
+`Buy the book <https://www.amazon.com/Machine-Learning-Trading-Integrate-Reinforcement-dp-1803246979/dp/1803246979?&linkCode=sl2&tag=ml4trading-20&linkId=65b3155cf78bb94e3d23ebf486dbdd59&language=en_US&ref_=as_li_ss_tl>`__
+
 Further reading lists
 =====================
 
