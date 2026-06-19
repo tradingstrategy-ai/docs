@@ -210,3 +210,16 @@ Key metrics from the US study: low-beta stocks outperform high-beta by roughly 1
 By Yigit Atilgan, K. Ozgur Demirtas, A. Doruk Gunaydin, and Aynur Dilan Tosun. Mentioned by Ivan Blanco in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-the-beta-anomaly-only-share-7463217469998985217-BrW3>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6729938>`__.
+
+The Sharpe-Optimal Long-Only Factor Portfolio Ends Up All AQR
+-------------------------------------------------------------
+
+A short X thread from Green Lark presenting a striking result from mean-variance optimisation over a universe of ten beta-hedged Fama-French and AQR equity factors (1963-2026). When you solve for the long-only portfolio that maximises the Sharpe ratio (here defined plainly as the mean-to-standard-deviation ratio of returns), every Fama-French factor falls out and the optimiser allocates exclusively to AQR factors: QMJ 37%, HML-Devil 31%, UMD 25%, and BAB 7%. The resulting blend posts a Sharpe of 1.50 (t-stat 11.9) versus 1.00 for the naive equal-weight portfolio of the same components.
+
+A few terms are worth unpacking. *Fama-French (FF)* refers to the academic factor set built by Eugene Fama and Kenneth French (market, size/SMB, value/HML, and later profitability and investment). *AQR* is the quant asset manager AQR Capital, whose research desk publishes refined versions of these factors. *QMJ (Quality Minus Junk)* goes long high-quality, profitable, stable companies and short "junk". *UMD (Up Minus Down)* is the classic momentum factor, long recent winners and short recent losers. *BAB (Betting Against Beta)* goes long low-beta and short high-beta assets, levering up the safer leg. *HML-Devil* is AQR's improved value factor (Asness-Frazzini) that updates the price in the book-to-market ratio more frequently than the original HML, fixing a stale-price flaw. *Beta-hedged* means each factor's market exposure has been stripped out so the comparison is of pure factor premia.
+
+The author's key observation is that HML-Devil earns a large 31% weight despite a weak standalone Sharpe. The reason is correlation, not standalone strength: value is a powerful hedge for momentum. In a momentum crash — the canonical example being spring 2009, when beaten-down "junk" stocks violently rebounded off the GFC bottom and momentum strategies suffered their worst drawdown on record — value rallies hard. An optimiser that is heavily long momentum (UMD) therefore pays up for value as insurance, which is exactly the complement the author says they are hunting for. This is the deeper lesson of the post: in portfolio construction a factor earns its weight from its covariance with everything else, not from its own Sharpe ratio, so a mediocre standalone factor can be indispensable as a hedge.
+
+In the replies, eq (@derimonkeyfin) asks whether "Sharpe-optimal" means a mean-variance optimisation, and Green Lark confirms it is, clarifying the objective is the mean-to-standard-deviation ratio. Posted by Green Lark (@the_green_lark) in `this discussion <https://x.com/the_green_lark/status/2067925013575929937>`__.
+
+`Read the post <https://x.com/the_green_lark/status/2067925013575929937>`__.
