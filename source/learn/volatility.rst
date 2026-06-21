@@ -314,3 +314,18 @@ Because of those jumps and fat tails, the market demands a Volatility Risk Premi
 By Gilberto Pellerano.
 
 `Read the post <https://www.linkedin.com/posts/gilberto-pellerano-46b4b0174_i-built-an-implied-volatility-edge-simulation-ugcPost-7470861515563380736-UkJA/>`__
+
+OTM Crypto Options Performance Screener: The "Lottery Ticket" Experiment
+-----------------------------------------------------------------------
+
+Pawel Lachowicz, PhD (CEO of Halcyon Waters) runs a continuous, live experiment screening cheap out-of-the-money (OTM) crypto options on Deribit and publishes the realised results on his Cayo Largo dashboard. In derivatives trading, cheap OTM options with high convexity per dollar are sometimes called "lottery tickets" for their asymmetric risk profile: a small fixed loss (the premium) against a large potential gain from gamma repricing or volatility expansion. Every option shown is an *expired* contract scored across six dimensions — gamma efficiency, vega efficiency, volatility regime, catalyst strength, cheapness, and liquidity — so there are no forward-looking signals, only outcomes. The framing question is whether the probability of winning this "OTM lottery" is better or worse than a classical 6-from-49 lotto.
+
+The screener data (cayolargo.fi/options-otm-performance, BTC-focused with ETH, SOL, XRP, AVAX and TRX also tracked), captured here, covers **244 expired options** with **51 winners of 2x or more, a 20.9% overall win rate**, and a **best return of 93.33x**. The outcome distribution is the core of the lottery-ticket thesis: 30 JACKPOT outcomes (avg 45.17x), 4 BIG WINs (avg 5.71x), 17 WINNERs (avg 2.97x), 44 BREAKEVEN (avg 1.31x) and 149 LOSSes (avg 0.65x) — i.e. roughly 61% of trades lose money, but the rare jackpots are large enough to carry the aggregate payoff. The dealer-gamma regime is the key conditioning variable: in the entry-versus-exit regime transition matrix, near-flip ("FLIP") entries win 21% (31/148), positive-gamma entries win 28% (11/40), and negative-gamma entries only 16% (9/56). The regime breakdown shows the dominant winning cohort is NEAR_FLIP / NORMAL-IV / FAIR-VRP (135 candidates, 21% win rate, 8.96x average return), while the NEGATIVE_GAMMA / NORMAL / FAIR cohort had a lower 15% win rate but a still-high 5.18x average return. Daily performance is heavily clustered: late-May to early-June produced the outsized payoffs (1 Jun: 50% win rate, 43.30x average, 93.33x best; 31 May: 64% win rate, 38.33x average; 30 May: 58% win rate, 25.04x average), whereas much of mid-June was flat-to-negative. The dashboard also charts score-versus-return, dimension importance, the days-to-expiry sweet spot, the optimal OTM-distance range, a rolling 7-day win rate, coin beta comparison, and touched-strike (gamma repricing versus intrinsic value).
+
+These aggregate figures sit slightly below the more optimistic headline numbers in the launch post, which cited a win rate reaching 35% for options expiring within 10–15 days and BTC jackpot winners with a 46.3x factor — a reminder that the dataset is live and the read changes with the sample and the recent regime.
+
+By Pawel Lachowicz, PhD.
+
+Mentioned by Pawel Lachowicz, PhD in `this LinkedIn discussion <https://www.linkedin.com/posts/pawel-lachowicz_we-are-running-a-continuous-experiment-with-share-7474011664561123328-8kb4/>`__: cheap OTM crypto options on Deribit behave like lottery tickets, the win rate reaches 35% for options expiring within 10–15 days, the near-flip gamma regime powers most winning trades, and BTC records jackpot winners with a 46.3x factor.
+
+`View the OTM options screener <https://cayolargo.fi/options-otm-performance>`__
