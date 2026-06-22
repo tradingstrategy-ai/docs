@@ -1377,3 +1377,14 @@ Key metrics: without transaction costs, the best models earn up to ~24% annualis
 Mentioned by Nam Nguyen in `this LinkedIn discussion <https://www.linkedin.com/posts/namnguyento_trading-machinelearning-quantitativefinance-share-7470526353537142785-6IbG>`__, where Thijs van den Berg notes two pitfalls relevant to the critique above: the index is up more often than down (so an unconditional "always long" already scores >50% accuracy), and comparing many methods guarantees some look good by chance.
 
 `Read the paper <https://doi.org/10.1007/s10796-026-10693-8>`__
+
+Can Machine Learning Predict Bitcoin? Seven Models, One Honest Answer
+--------------------------------------------------------------------
+
+The introductory post of a seven-part experimental series in which Jerome Etienne benchmarks seven progressively complex models on Bitcoin price forecasting, asking a deliberately narrow question: across the full spectrum of model classes, which ones actually clear the random-walk floor, and by how much? The lineup runs from a naive last-value baseline and ARIMA, through XGBoost and an LSTM, to a Temporal Fusion Transformer and zero-shot foundation models (Chronos, TimesFM) plus fine-tuned variants. Every model predicts log-returns for BTCUSDT on 4-hour bars and is tested on the identical out-of-sample window (2024-10-01 to 2024-12-01 UTC, 366 bars), scored on six metrics — MAE, RMSE, MAPE, directional accuracy, cumulative return, and annualized Sharpe — with a single frozen train/test split and a long/flat (no-shorting) strategy.
+
+The framing is the value here: rather than claiming "deep learning wins" or "Bitcoin is unpredictable," the series is built to deliver an honest, like-for-like comparison, and it previews six recurring lessons that recur across the experiments. Capacity does not equal skill — bigger models do not always score better, and the large foundation models lose to simple statistical models on unseen data. Point-error and trading metrics measure different things, so a model can underperform on MAE yet win on Sharpe, and in-sample selection metrics do not reliably rank out-of-sample trading performance. A NaN metric is treated as a feature — the model signalling it has no opinion — and, most soberingly, every positive Sharpe is regime-conditional to the specific test period (the post-election 2024 rally). The companion code is on GitHub at `transformer_bitcoin_ai <https://github.com/jeromeetienne/transformer_bitcoin_ai>`__, with the individual experiment write-ups and a cross-experiment synthesis report in the repository.
+
+By Jerome Etienne.
+
+`Read the blog post <https://jeromeetienne.github.io/blog/2026-05-25-post-00-presentation-of-the-project.html>`__
