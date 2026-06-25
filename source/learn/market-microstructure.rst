@@ -211,3 +211,34 @@ A stationarity diagnostic is central to the argument: gamma positioning momentum
 By ALPresi Quants, ALPresi Research.
 
 `Read the blog post <https://alpresiresearch.com/blog/the-contemporaneous-power-of-dealer-gamma-why-gamma-positioning-momentum-explains-same-day-equity-returns-better-than-its-gex-level/>`__
+
+Stop Calculating Correlations, Start Calculating Market Curvature
+-----------------------------------------------------------------
+
+Nathaniel Brodetsky argues that most quant systems "trade noise and call it a strategy" because the model is flawed from the start: taking raw prices, building a correlation matrix, and feeding it to a machine-learning model throws away the structure that actually matters. In his framing the instruments in a book are not independent scalar variables — they are linked by cross-impact, margin, and order-routing constraints, and are better described as sections of a vector bundle over a curved manifold. A correlation matrix is then only the flat, linear shadow of that curved geometry; the curvature itself is what you are really trading.
+
+The mechanism the post describes is a pipeline from microstructure to differential geometry: the order book is turned into a dynamic graph, which in the continuum limit becomes a Riemannian manifold; order flow on that graph is run through a Hodge decomposition into three orthogonal components, of which only the co-exact part (divergence-free, loop-like flow that is "topologically protected from diffusion") is traded. The claim is that this co-exact circulation is an arbitrage signal — a book-topology invariant rather than an indicator or a pattern — and that when a non-zero holonomy appears the system opens a position before a conventional trader even registers the "correlation breakdown" as noise. The author reports that a full cycle (snapshot of the book to signal) runs in under 1 ms on a single GPU using "pure linear algebra on the device, no ML, no lookahead."
+
+Editorial note: this is a provocative LinkedIn manifesto, not a peer-reviewed result, and its latency and profitability claims are unverified. The underlying idea, however, is not new — that arbitrage is the *curvature* (or *holonomy*) of a connection on a fibre bundle over the market is a genuine, decades-old research program (Ilinski's gauge theory of arbitrage; Farinelli's geometric arbitrage theory), and the Hodge/Helmholtz decomposition of flows on a graph is a well-established technique (HodgeRank). The glossary below links the post's vocabulary to that literature so the terms can be read against their sources.
+
+Key terms and literature:
+
+- **Cross-impact** — Trading one instrument moves the prices of *other* instruments; it is the off-diagonal structure of the price-impact matrix, and one of the reasons the post says instruments are not independent. See Benzaquen, Mastromatteo, Eisler & Bouchaud, `Dissecting cross-impact on stock markets: an empirical analysis <https://arxiv.org/abs/1609.02395>`__ (2016).
+
+- **Order flow** — The signed stream of limit orders, market orders, and cancellations at the book; over short horizons the dominant driver of price changes via order-flow imbalance. The post applies its decomposition to this flow. See Cont, Kukanov & Stoikov, `The Price Impact of Order Book Events <https://arxiv.org/abs/1011.6402>`__ (Journal of Financial Econometrics, 2014).
+
+- **Vector bundle / section / fibre bundle** — A geometric object that attaches a vector space (a "fibre") to each point of a base space; a *section* selects one vector per point. Calling instruments "sections of a vector bundle" means each instrument's state lives in a fibre that varies smoothly across the market rather than being a free-standing scalar. The financial use is developed in the gauge-theory references below; standard text: M. Nakahara, *Geometry, Topology and Physics*.
+
+- **Riemannian manifold / curvature** — A smooth space equipped with a metric (a local notion of distance and angle), whose *curvature* measures how far it bends away from flat Euclidean space. The post's line "correlation is a flat approximation of a geometric curve" is the claim that a correlation matrix is the linearised, zero-curvature shadow of this geometry. Standard text: M. do Carmo, *Riemannian Geometry*.
+
+- **Gauge connection / Yang–Mills curvature** — In gauge theory a *connection* specifies how to parallel-transport (compare) quantities defined at different points, and its *curvature* — the Yang–Mills field strength — measures the path-dependence of that transport. The post computes this curvature directly. Original paper: C. N. Yang & R. Mills, `Conservation of Isotopic Spin and Isotopic Gauge Invariance <https://doi.org/10.1103/PhysRev.96.191>`__ (Phys. Rev. 96, 191, 1954).
+
+- **Gauge theory of arbitrage / holonomy** — The conceptual core, and the part with a real academic lineage: parallel-transporting capital around a closed loop of trades (FX conversions, discounting) and *not* returning to your starting value is a non-zero *holonomy*, which is exactly an arbitrage profit — so arbitrage is the curvature of the market's connection. See K. Ilinski, `Physics of Finance / Gauge Theory of Arbitrage <https://arxiv.org/abs/hep-th/9710148>`__ (1997), and S. Farinelli, `Geometric Arbitrage Theory and Market Dynamics <https://arxiv.org/abs/0910.1671>`__ (2009–2021), which writes arbitrage as the curvature of a principal fibre bundle and parameterises arbitrage strategies by holonomy.
+
+- **Hodge (Helmholtz–Hodge) decomposition — exact, co-exact, harmonic** — Any flow defined on the edges of a graph splits orthogonally into three pieces: a *gradient/exact* part (a pure potential flow), a *co-exact* part (divergence-free rotational/curl flow — closed loops), and a small *harmonic* part. The post keeps only the co-exact loop component. Canonical reference for the discrete, graph version: Jiang, Lim, Yao & Ye, `Statistical ranking and combinatorial Hodge theory <https://arxiv.org/abs/0811.1067>`__ (HodgeRank; Mathematical Programming, 2011), which builds on the graph Helmholtzian / vector Laplacian.
+
+- **Topological invariant / TQFT** — A quantity that does not change under continuous deformation of the underlying object; the author claims his signal is a *book-topology invariant* — robust to noise — rather than a fragile fitted pattern, and his profile headline references *Topological Quantum Field Theory (TQFT)*. Foundational reference: M. Atiyah, `Topological quantum field theories <https://doi.org/10.1007/BF02698547>`__ (Publ. Math. IHÉS 68, 1988).
+
+By Nathaniel Brodetsky (Independent Quant Architect), posted on LinkedIn.
+
+`Read the blog post <https://www.linkedin.com/posts/nathaniel-brodetsky-a08a511b5_most-quant-systems-trade-noise-and-call-it-ugcPost-7475250913813786624-B1y4/>`__
