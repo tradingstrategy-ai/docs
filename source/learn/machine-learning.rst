@@ -1388,3 +1388,40 @@ The framing is the value here: rather than claiming "deep learning wins" or "Bit
 By Jerome Etienne.
 
 `Read the blog post <https://jeromeetienne.github.io/blog/2026-05-25-post-00-presentation-of-the-project.html>`__
+
+Engineering Orthogonal Alpha Through Structural Sterilization
+-------------------------------------------------------------
+
+Bongani Mayaba (Quantitative Finance / ML Engineer) argues that in 2026 the edge in systematic trading is no longer finding a new price anomaly but "structural sterilization" — deliberately stripping a candidate signal of every exposure that a cheap factor or ETF already provides, so that what remains is genuinely uncorrelated (orthogonal) risk. His framing: a backtest showing a 3.0 Sharpe on SPY while carrying 50% correlation to the momentum factor is not alpha, it is "an expensive leveraged beta recreation." The team stopped optimising for *predictive* features and started optimising for *orthogonal* ones, and reports their Sharpe doubled as a result.
+
+The post lays out a three-step research workflow. (1) A "Correlation to Nowhere" test: before measuring a signal's information coefficient, regress it against five macro regimes (Growth, Inflation, Risk Appetite, Liquidity, Tail Risk) and reject anything a five-factor linear decomposition can explain — only the pure residual reaches the backtest. (2) Time-series structure over point-in-time price: instead of fitting the stale end-of-day closing-auction print, decompose the limit order book with functional principal components (fPCA) to model the *shape* of liquidity, treating the curvature of the book (gamma imbalance) as signal and raw OHLCV as "exhaust fumes." (3) Gated networks for regime qualification: rather than one monolithic stationary model, use a Mixture of Experts whose gating network reads the volatility surface in real time and shifts weight from mean-reversion stat-arb features to momentum/trend features when the VIX futures term structure inverts into backwardation. The closing thesis: "the goal is not to predict the future... [it] is to own risk that cannot be replicated by an ETF."
+
+Key terms, why they matter here, and references:
+
+- **Orthogonal vs. predictive features / structural sterilization** — Two signals can both "predict" returns yet be the same underlying bet if they load on the same factor. *Orthogonalising* a signal means regressing out known exposures and keeping the residual, so the remaining return is uncorrelated with existing factors — the post's whole premise. The residual-arbitrage approach is formalised in Avellaneda & Lee's PCA stat-arb (see :doc:`Statistical Arbitrage <./statistical-arbitrage>`), and the factor model used to define "explained" variance is Fama & French's `five-factor model <https://doi.org/10.1016/j.jfineco.2014.10.010>`__ (2015).
+
+- **Alpha vs. (leveraged) beta** — *Beta* is return earned for bearing a common, replicable risk factor; *alpha* is the return left over after those exposures are removed. The author's point — a high Sharpe with high momentum correlation is "leveraged beta," not alpha — is exactly the alpha/beta decomposition that motivates factor-neutral portfolios.
+
+- **Momentum factor** — The empirical tendency of recent winners to keep outperforming recent losers, a priced risk factor since Jegadeesh & Titman, `Returns to Buying Winners and Selling Losers <https://doi.org/10.1111/j.1540-6261.1993.tb04702.x>`__ (1993), later bolted onto the Fama-French stack by Carhart (1997). It is the canonical "thing your novel signal is probably secretly long," which is why the post benchmarks against it first.
+
+- **Sharpe ratio** — Mean excess return divided by its volatility; the standard risk-adjusted performance number (W. Sharpe, "The Sharpe Ratio," *Journal of Portfolio Management*, 1994). "Sharpe doubled" is the post's headline claim, and the surrounding warning is that a high Sharpe is meaningless if it comes from concentrated factor beta.
+
+- **Information Coefficient (IC)** — The correlation between a signal's forecast and the realised return; the core skill term in Grinold's Fundamental Law of Active Management (*Journal of Portfolio Management*, 1989), where Information Ratio ≈ IC × √breadth. The post deliberately checks factor-orthogonality *before* looking at IC, because a high IC that is just a macro proxy will not survive out of sample.
+
+- **Macro regimes / PMI surprise index** — "Growth, Inflation, Risk Appetite, Liquidity, Tail Risk" are macro risk factors; a *PMI surprise* is the gap between the realised `ISM Manufacturing PMI <https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/>`__ and consensus expectations. A signal with high R² to PMI surprises is, in the post's words, "a noisy proxy for the economic cycle" rather than independent alpha.
+
+- **Limit order book (LOB) / fPCA / curvature of the book** — The LOB is the live ladder of resting bids and offers (survey: Gould et al., `Limit Order Books <https://arxiv.org/abs/1012.0349>`__, 2013). *Functional principal component analysis* (Ramsay & Silverman, *Functional Data Analysis*, Springer) treats the depth profile as a curve and extracts its dominant modes of shape, so "curvature" / *gamma imbalance* captures convexity in liquidity that the scalar mid-price ("the mean is noise") throws away.
+
+- **Mixture of Experts (MoE) / gating network** — An ensemble of specialised sub-models whose outputs are blended by a trainable *gating network* that routes each input to the right expert — originally Jacobs, Jordan, Nowlan & Hinton, `Adaptive Mixtures of Local Experts <https://doi.org/10.1162/neco.1991.3.1.79>`__ (1991), and at scale Shazeer et al., `Outrageously Large Neural Networks: The Sparsely-Gated MoE Layer <https://arxiv.org/abs/1701.06538>`__ (2017). The post's claim that "the model selection is the alpha" is the MoE idea applied to regimes: the gate, not any single expert, is where the edge lives.
+
+- **Volatility surface / VIX term structure / backwardation** — The *volatility surface* is implied volatility across strike and expiry (Gatheral, *The Volatility Surface*, Wiley, 2006); the *VIX futures term structure* is normally upward-sloping (contango) and inverts to *backwardation* under stress. The gating network uses that inversion as a regime switch from mean-reversion toward trend — a widely used stress indicator.
+
+- **Mean-reversion stat-arb vs. momentum/trend** — The two strategy families the gate toggles between: mean-reversion bets on convergence (see :doc:`Mean Reversion <./mean-reversion>` and :doc:`Statistical Arbitrage <./statistical-arbitrage>`), trend bets on continuation (see :doc:`Trend Following <./trend-following>`). They tend to pay off in opposite regimes, which is why regime-conditioning the weighting matters.
+
+- **Backtest overfitting / CSCV / PBO** *(raised in the comments)* — Searching across many signals and models makes some look good purely by chance. *Combinatorially Symmetric Cross-Validation* estimates the *Probability of Backtest Overfitting* — Bailey, Borwein, López de Prado & Zhu, `The Probability of Backtest Overfitting <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2326253>`__ (2015) — and ties directly to the López de Prado methodology covered at the top of this collection.
+
+Mentioned by Shreyas Thakur in the post's comments, who notes he "used cscv pbo to counter overfit"; Nick Cantrell adds that targeting capital preservation outperformed chasing alpha in his own backtests.
+
+By Bongani Mayaba (Quantitative Finance / ML Engineer), posted on LinkedIn.
+
+`Read the blog post <https://www.linkedin.com/posts/bongani-mayaba-b359b7107_quantresearch-machinelearning-alternativedata-share-7472627433007910912-Kk59/>`__
