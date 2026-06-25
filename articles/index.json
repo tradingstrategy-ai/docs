@@ -4044,6 +4044,18 @@
     "short_description": "Foundational online regime-change detection: derives an exact recursive algorithm maintaining the posterior over the current run length (time since last changepoint) via message passing, suitable for streaming market data. Widely implemented; vanilla cost grows with run-length hypotheses so streaming use needs pruning."
   },
   {
+    "title": "Continuous Hidden Markov Models for Equity Returns: Heavy-Tail Emission Families and Regime-Conditional Value-at-Risk",
+    "authors": "Abdulrahman Alswaidan, Cade Jin, Jeffrey D. Varner",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2606.23492",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-06-25",
+    "filename": "continuous-hidden-markov-models-for-equity-returns-heavy-tail-emission-families.pdf",
+    "downloaded_at": "2026-06-25",
+    "download_failure_reason": null,
+    "short_description": "A continuous-emission hidden Markov model (CHMM) with Gaussian, Student-t, Laplace, and generalized-error emissions, fitted by a unified EM framework, used as a synthetic generator of daily equity returns. The paper reframes the classic low-state HMM failure to reproduce slow absolute-return autocorrelation decay as distributional (heavy tails) rather than temporal, and shows the fitted model yields a regime-conditional Value-at-Risk passing the Christoffersen conditional-coverage test plus a Student-t copula for multi-asset composition."
+  },
+  {
     "title": "Detecting VIX Term Structure Regimes",
     "authors": "Cristian Velasquez",
     "publication_year": null,
