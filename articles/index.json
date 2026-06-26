@@ -8628,6 +8628,18 @@
     "short_description": null
   },
   {
+    "title": "Normalizing volatility transform for Normal implied volatility",
+    "authors": "Vladimir Lucic, Parviz Rakhmonov",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6990518",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-06-26",
+    "filename": "normalizing-volatility-transform-for-normal-implied-volatility.pdf",
+    "downloaded_at": "2026-06-26",
+    "download_failure_reason": null,
+    "short_description": "Introduces a normalizing volatility transform (NVT), f(k)=k/sigma(k), for the Normal (Bachelier) implied volatility model and uses it to characterise static arbitrage. Proves conditions for the absence of vertical-spread, butterfly, large-strike and calendar arbitrage, shows the Normal case needs an extra put-price condition versus the log-normal setting, and that an arbitrage-free surface requires the total normal implied volatility to be non-decreasing in maturity."
+  },
+  {
     "title": "On the Persistence of Market Sentiment: A Multifractal Fluctuation Analysis",
     "authors": "Schadner",
     "publication_year": 2021,
