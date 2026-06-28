@@ -4812,6 +4812,18 @@
     "short_description": null
   },
   {
+    "title": "The Intramonth Momentum Cycle",
+    "authors": "Daniel Nathan, Matti Suominen, Joni Tasa",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426026",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-06-28",
+    "filename": "the-intramonth-momentum-cycle.pdf",
+    "downloaded_at": "2026-06-28",
+    "download_failure_reason": null,
+    "short_description": "Using CRSP daily momentum decile portfolios over 1980-2025, the authors show that U.S. equity momentum returns concentrate in a six-trading-day window ending four days before month-end, where $1 invested in the value-weighted Winners-Minus-Losers portfolio grows to $18.78 versus only $2.37 during the rest of the month. The concentration is entirely loser-driven and is traced to predictable month-end cash demand: investors liquidate the most 'dispensable' loser stocks to raise liquidity, with bottom-decile losers underperforming the market by 7.9 basis points per day and about 70% of that underperformance reversing within a week. A 19-market replication and settlement-cycle reforms (T+2-to-T+1) confirm that momentum largely reflects predictable liquidity demand rather than under-reaction or priced risk."
+  },
+  {
     "title": "Time Series Momentum",
     "authors": "Tobias J. Moskowitz, Yao Hua Ooi, and Lasse Heje Pedersen",
     "publication_year": null,
