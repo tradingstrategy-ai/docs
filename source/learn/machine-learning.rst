@@ -1425,3 +1425,18 @@ Mentioned by Shreyas Thakur in the post's comments, who notes he "used cscv pbo 
 By Bongani Mayaba (Quantitative Finance / ML Engineer), posted on LinkedIn.
 
 `Read the blog post <https://www.linkedin.com/posts/bongani-mayaba-b359b7107_quantresearch-machinelearning-alternativedata-share-7472627433007910912-Kk59/>`__
+
+Systematic FX trading with regression learning and transaction cost analysis
+----------------------------------------------------------------------------
+
+Macrosynergy demonstrates how regression-based statistical learning can combine macro factors into composite trading signals for systematic developed-market FX forward trading, while explicitly accounting for transaction costs. The approach uses sequential learning: at each point in time the model type and its parameters are chosen using only the data available up to that date — through cross-validation scored on a Sortino ratio — so that signals are generated without hindsight bias. Ten conceptual macro factors (relative indicators such as excess core inflation versus inflation expectations, and real GDP growth versus real consumption, across a panel of eight developed-market currency areas) are winsorized at three standard deviations and fed into linear models, including ordinary and time-weighted least squares, with variants such as non-negative least squares and elastic net able to drop factors that lack plausible predictive power.
+
+A distinctive contribution is the transaction-cost workflow: the authors use large language model prompts to retrieve key cost parameters and feed them into Python functions that impute realistic costs as a function of the notional amount traded. This turns an otherwise abstract backtest into a capacity-aware one, making explicit how risk-adjusted performance erodes as position sizes grow and where the practical limits of the strategy lie.
+
+The study is fully reproducible through an attached Jupyter notebook built on the J.P. Morgan Macrosynergy Quantamental System (JPMaQS); running it requires access to J.P. Morgan DataQuery, which is available to institutional clients (including free trials) and through an academic support program.
+
+Key metrics: over 1997-2026 the standard least-squares signal produced a Sharpe ratio of 0.6 and a Sortino ratio of 0.8 before costs, with a Sharpe stability ratio of 2.7 (an over-99% probability of generating systematic risk-adjusted returns). A representative trading book returned 6.1% annualised at 10.7% annualised volatility (about USD 15 million average annual PnL), with near-zero correlation to the S&P 500 future, the 10-year US Treasury, and EURUSD forwards. Transaction costs trimmed the annualised return only modestly — from 6.1% to 5.8% (roughly 0.3%, or about USD 750,000 per year) — and the after-cost Sharpe ratio declined from around 0.54-0.56 for USD 50 million positions per unit signal to about 0.48 for USD 250 million positions.
+
+Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/PtrPomorski/status/2071321989114151372>`__, who calls it "another goldmine from Macrosynergy" and agrees with the factor selection, while noting it is striking that the strategy's correlation with market performance is near zero across most currencies.
+
+`Read the article <https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/>`__

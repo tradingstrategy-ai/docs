@@ -3768,6 +3768,18 @@
     "short_description": null
   },
   {
+    "title": "Systematic FX trading with regression learning and transaction cost analysis",
+    "authors": "Macrosynergy",
+    "publication_year": 2026,
+    "download_page": "https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-06-29",
+    "filename": "systematic-fx-trading-with-regression-learning-and-transaction-cost-analysis.pdf",
+    "downloaded_at": "2026-06-29",
+    "download_failure_reason": null,
+    "short_description": "Macrosynergy shows how regression-based sequential statistical learning can combine ten macro factors into composite signals for systematic developed-market FX forward trading without hindsight bias, paired with a transaction-cost workflow that uses LLM prompts to retrieve cost parameters for Python-based cost imputation. Over 1997-2026 the standard least-squares signal delivered a Sharpe ratio of 0.6 and a Sortino ratio of 0.8 before costs (Sharpe stability ratio 2.7), with a representative book returning 6.1% annualised at 10.7% volatility and near-zero correlation to equities, bonds, and EURUSD forwards; transaction costs reduced the return only modestly to 5.8%. The study is fully reproducible via an attached Jupyter notebook built on J.P. Morgan's JPMaQS macro-quantamental data."
+  },
+  {
     "title": "Using AI to Improve the ADX Indicator for Breakout Trading",
     "authors": null,
     "publication_year": null,
