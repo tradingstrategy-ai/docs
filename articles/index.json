@@ -3456,6 +3456,18 @@
     "short_description": "This master's thesis investigates data resampling techniques combined with ensembles of machine learning algorithms for cryptocurrency investment decision-making. The study applies various resampling strategies to address class imbalance in cryptocurrency return prediction, evaluating ensemble classifiers to improve the robustness and profitability of trading signals across multiple cryptocurrencies."
   },
   {
+    "title": "Data-Driven Duration Management — Term Structure Forecasting Using Machine Learning",
+    "authors": "Tobias Lausser, Joao Eduardo Vuolo, Rudi Zagst",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2606.26815",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-06-30",
+    "filename": "data-driven-duration-management-term-structure-forecasting-using-machine-learning.pdf",
+    "downloaded_at": "2026-06-30",
+    "download_failure_reason": null,
+    "short_description": "This paper benchmarks classical term-structure models (Dynamic Nelson-Siegel, PCA with AR/VAR factor dynamics) against neural network architectures for forecasting U.S. and European zero-coupon government bond yield curves, evaluating forecasts with both statistical accuracy (RMSE, MAE, directional accuracy) and an economic bond-trading strategy (Information Ratio, Omega ratio, Maximum Drawdown). Neural networks consistently outperform traditional models on both fronts; the best U.S. model is a direct-forecasting NN combining DNS factors with an autoencoder for macroeconomic features, while the best European model is a factor-based NN on PCA rate factors without macro inputs. All six selected NN models beat a five-year constant-duration benchmark with a positive Information Ratio, whereas classical models were filtered out for failing to produce actionable trading signals."
+  },
+  {
     "title": "Deep Learning Applying on Stock Trading",
     "authors": null,
     "publication_year": null,
