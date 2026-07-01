@@ -385,3 +385,16 @@ As a detection and characterisation study rather than a trading backtest, the th
 Mentioned by Nam Nguyen (Quantitative Strategist and Derivatives Specialist) in `this LinkedIn discussion <https://www.linkedin.com/feed/update/urn:li:activity:7468587901644128256/>`__ — later reposted by Sahand Haji Ali Ahmad — where he summarises the paper as a regime-classification approach built on the entire volatility surface, highlighting that most daily changes are noise while several recurring, meaningfully interpretable patterns can be detected.
 
 `Read the paper <https://aaltodoc.aalto.fi/items/791152a4-a4a7-4c0d-92cd-530272aea533>`__
+
+A devilish question for option sellers: Which VRP is higher?
+-----------------------------------------------------------
+
+Kris Abdelmessih (Moontower) poses a deceptively simple question to option sellers — between two names, which has the higher volatility risk premium (VRP)? — and uses it to expose how much the answer depends on how you measure the premium and, more fundamentally, on the difference between volatility and variance. The structural belief that implied volatility sits above realized volatility (so options are "overpriced" and the edge is in selling them) is granted, but the article argues that turning that belief into risk-adjusted, opportunity-cost-aware position sizing is far subtler than the usual "harvest the VRP" framing suggests.
+
+Using HYG (a low-vol high-yield bond ETF) as a running example, the piece contrasts two ways to quote the premium: as a ratio (IV/RV), which eases cross-sectional comparison but flatters low-vol names, and as a spread (IV − RV), which compares edge more fairly. The deeper point is that a short option position's P&L is governed by variance, not volatility: the net P&L is approximately ½·Γ·S²·(σ²_RV − σ²_IV) per day, so it is the gap in squared vols that pays. Combined with the at-the-forward approximations that theta scales with σ while gamma scales with 1/σ, this means a low-vol name simultaneously has less theta and more gamma — the two forces in the "gamma-theta tug of war".
+
+The consequence is that theta-neutral sizing does not deliver equal edge. To collect the same daily theta on a 10-vol name versus a 50-vol name you trade 5× the contracts, but to equalize the variance edge you would need 25× — the square of the theta ratio. Abdelmessih derives how rich a low-vol name must be to match: a 10-vol name would need to trade near 17.9 vol (a 79% ratio premium) to equal a 50-vol name priced at a 20% premium. The practical takeaways are that variance is the "V" that matters, that ratio screens mislead by making structurally disadvantaged low-vol names look rich, that vol-point spreads are a sounder ranking tool (though they too break down at very low vols), and that harvesting low-vol premium is costlier because it demands far more contracts and more gamma hedging. His HYG conclusion is counterintuitive: its options are genuinely rich versus realized vol, yet on a variance-edge basis a 2-3 point spread is actually cheap next to a 50-vol name trading at 60.
+
+By Kris Abdelmessih (Moontower), published as an article on X (originally published April 2026).
+
+`Read the article <https://x.com/KrisAbdelmessih/status/2072016147126579363>`__
