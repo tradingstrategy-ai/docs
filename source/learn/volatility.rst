@@ -357,3 +357,16 @@ This is a short (7-page) derivatives-pricing theory paper rather than an empiric
 Mentioned by Parviz Rakhmonov in `this LinkedIn discussion <https://www.linkedin.com/posts/parvizrakhmonov_normalizing-volatility-transform-for-normal-share-7476028780189253632-Nc6s/>`__, where he explains that the paper bridges the gap by introducing the normalizing volatility transform and linking it naturally to the volatility transforms introduced earlier by Masaaki Fukasawa in the log-normal setting, investigating large-strike arbitrage conditions in detail and showing that the Normal case requires an extra condition on put option prices.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6990518>`__
+
+Harvesting the Variance Risk Premium: A Backtest Across Expiry-Day, Stop-Loss and Lot-Scaling Dimensions
+-------------------------------------------------------------------------------------------------------
+
+Rohit Trehan investigates whether the variance risk premium — the persistent tendency for option-implied volatility to exceed subsequently realized volatility — can be converted into a tradeable edge by a retail options seller. The study takes the premium's existence as given and backtests a family of short-volatility strategies on one-minute options-chain and index data spanning 1 September 2024 to 14 June 2026, with implied volatilities and Greeks computed under standard assumptions and all results reported net of a deliberately conservative model of transaction costs, taxes, and related charges.
+
+The backtest is organized across three dimensions: expiry-day treatment (all days, excluding expiry days, or expiry days only), stop-loss application, and lot-scaling. The headline result concerns scale rather than signal — at a single lot, most setups that look profitable on gross expectancy turn net-negative once costs are applied, because the fixed per-trade charges swamp the small per-lot edge. Net-positive expectancy emerges only as position size is scaled up and those fixed costs are amortized across a larger notional, which raises the question of whether the per-lot edge can ever clear the per-lot marginal cost for a small trader.
+
+The strategies also respond poorly to stop-losses — tightening them reduced performance on this sample — and the author ranks setups using win rate, expectancy, Sharpe, Calmar, cumulative-PnL linearity (R-squared), skew, and kurtosis, weighting expectancy, win rate, R-squared, and kurtosis most heavily. The conclusion is candid: the edge is real, but so are the barriers to capturing it for a retail participant, and the author frames the work as a first pass, leaving statistical-significance testing and more sophisticated execution and risk-management refinements for future analysis.
+
+By Rohit Trehan.
+
+`Read the blog post <https://rohittrehan.substack.com/p/harvesting-the-variance-risk-premium>`__

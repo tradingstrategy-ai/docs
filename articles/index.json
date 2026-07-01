@@ -8640,6 +8640,18 @@
     "short_description": null
   },
   {
+    "title": "Harvesting the Variance Risk Premium: A Backtest Across Expiry-Day, Stop-Loss and Lot-Scaling Dimensions",
+    "authors": "Rohit Trehan",
+    "publication_year": 2026,
+    "download_page": "https://rohittrehan.substack.com/p/harvesting-the-variance-risk-premium",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-01",
+    "filename": "harvesting-the-variance-risk-premium-a-backtest-across-expiry-day-stop-loss-and-lot-scaling-dimensions.pdf",
+    "downloaded_at": "2026-07-01",
+    "download_failure_reason": null,
+    "short_description": "A cost-aware backtest of short-volatility strategies designed to harvest the variance risk premium (option-implied volatility exceeding subsequently realized volatility) in short-dated index options, run on one-minute options-chain and index data from September 2024 to June 2026 across expiry-day, stop-loss, and lot-scaling dimensions. The main finding is that positive gross expectancy is erased by transaction costs and taxes at a single lot and only becomes net-positive once positions are scaled up to amortize fixed per-trade costs; the strategies also respond poorly to stop-losses. The author concludes the edge is real but the barriers to capturing it are equally real for retail traders."
+  },
+  {
     "title": "Introducing NBEATSx to Realized Volatility Forecasting",
     "authors": "Hugo Gobato Souto and Amir Moradi",
     "publication_year": null,
