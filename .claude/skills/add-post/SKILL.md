@@ -83,12 +83,33 @@ Add a new blog post or article to the documentation collection.
 
 If the source of the link is a discussion like a tweet, then include a paragraph with a link to that tweet with the comment "Mentioned by XXX in this discussion" and include what they say about it.
 
-6. **Commit and push**:
-   - Stage the modified file
-   - Commit with message: "Add: {Blog Post Title}"
-   - Push to master branch
-
-7. **Save as PDF**: Follow the procedure in **README-browser.md > Saving PDFs > How it works** using:
+6. **Save as PDF**: Follow the procedure in **README-browser.md > Saving PDFs > How it works** using:
    - URL: the blog post URL
    - FILENAME: `<slugified-title>.pdf`
    - Save to `articles/` directory
+
+7. **Update the article index**: After adding the entry to the `.rst` file and saving the PDF, update `articles/index.json`. See `.claude/docs/paper-index.md` for the full schema. Append a new entry:
+
+   ```json
+   {
+     "title": "Blog Post Title",
+     "authors": "Author Name or Publication",
+     "publication_year": 2026,
+     "download_page": "https://canonical-url",
+     "source_file": "target-file.rst",
+     "included_in_index_at": "YYYY-MM-DD",
+     "filename": "slugified-title.pdf",
+     "downloaded_at": "YYYY-MM-DD",
+     "download_failure_reason": null,
+     "short_description": "One paragraph (2-3 sentences) describing what the post covers and its key takeaway."
+   }
+   ```
+
+   Use the same `source_file` you added the entry to (e.g. the topic file such as `volatility.rst`), not a literal `blog-posts.rst`. If the PDF could not be saved, set `filename` and `downloaded_at` to `null` and set `download_failure_reason` to the appropriate reason (`requires_browser`, `paywall`, `not_attempted`).
+
+   Keep the array sorted by `source_file` then `title`.
+
+8. **Commit and push**:
+   - Stage the modified `.rst` file, the PDF (force-add with `git add -f`, since `articles/*.pdf` is gitignored), and `articles/index.json`
+   - Commit with message: "Add: {Blog Post Title}"
+   - Push to master branch
