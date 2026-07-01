@@ -8592,6 +8592,18 @@
     "short_description": null
   },
   {
+    "title": "Detecting Structural Evolution of Implied Volatility Surface Using Gradient-Based Features",
+    "authors": "Shakhin Dzhafarov",
+    "publication_year": 2025,
+    "download_page": "https://aaltodoc.aalto.fi/items/791152a4-a4a7-4c0d-92cd-530272aea533",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-01",
+    "filename": "detecting-structural-evolution-of-implied-volatility-surface-using-gradient-based-features.pdf",
+    "downloaded_at": "2026-07-01",
+    "download_failure_reason": null,
+    "short_description": "An Aalto University master's thesis that develops a model-free method for detecting structural changes in the S&P 500 implied volatility surface by computing local gradients (partial derivatives of implied volatility with respect to moneyness and maturity) and clustering their daily changes with HDBSCAN. Using SPX option data from 2007 to 2025, it finds that the majority of daily surface changes are noise while a small number of recurring clusters (up to 18 observations each) capture distinct, interpretable skew and term-structure regimes, providing a framework for monitoring regime shifts across the entire volatility surface."
+  },
+  {
     "title": "Early Birds Get the Vol: Morning Volatility Uncertainty and Variance Risk Premium",
     "authors": null,
     "publication_year": null,

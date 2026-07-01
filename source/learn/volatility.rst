@@ -370,3 +370,18 @@ The strategies also respond poorly to stop-losses — tightening them reduced pe
 By Rohit Trehan.
 
 `Read the blog post <https://rohittrehan.substack.com/p/harvesting-the-variance-risk-premium>`__
+
+Detecting Structural Evolution of Implied Volatility Surface Using Gradient-Based Features
+-----------------------------------------------------------------------------------------
+
+This Aalto University master's thesis (subtitle: *A Machine Learning Approach to Market Regime Detection*) develops a model-free methodology for detecting and interpreting structural changes in the implied volatility (IV) surface over time. Rather than fitting a parametric surface model, Shakhin Dzhafarov characterises the surface through local gradients — the partial derivatives of implied volatility with respect to moneyness and maturity — and quantifies how those gradients change from day to day at a grid of points on the surface. The daily gradient-change vectors, together with the concurrent move in the underlying index, become the features fed into an unsupervised clustering algorithm.
+
+The clustering uses HDBSCAN (Hierarchical Density-Based Spatial Clustering of Applications with Noise), chosen because it does not require the number of clusters to be specified in advance and, crucially, explicitly labels points as noise. This matches the economic intuition of the problem: most days the volatility surface merely wiggles, and only occasionally does it undergo a genuine structural transformation. The clusters that survive correspond to recognizable, recurring dynamics — specific changes in volatility skew and in the term structure across different maturity and moneyness levels — giving practitioners a flexible, entire-surface framework for monitoring and interpreting regime shifts in options markets.
+
+The study uses implied volatilities of S&P 500 index options across several moneyness and maturity levels spanning 2007 to 2025. It is an academic thesis, and no accompanying code repository is published.
+
+As a detection and characterisation study rather than a trading backtest, the thesis reports no annualised return, Sharpe ratio, drawdown, or win rate. Its quantitative results are structural: the great majority of daily IV-surface changes are classified as noise, reflecting how infrequently true structural shifts occur, so the identified clusters are small — with sizes of up to 18 daily observations — yet each captures a distinct and interpretable skew or term-structure regime.
+
+Mentioned by Nam Nguyen (Quantitative Strategist and Derivatives Specialist) in `this LinkedIn discussion <https://www.linkedin.com/feed/update/urn:li:activity:7468587901644128256/>`__ — later reposted by Sahand Haji Ali Ahmad — where he summarises the paper as a regime-classification approach built on the entire volatility surface, highlighting that most daily changes are noise while several recurring, meaningfully interpretable patterns can be detected.
+
+`Read the paper <https://aaltodoc.aalto.fi/items/791152a4-a4a7-4c0d-92cd-530272aea533>`__
