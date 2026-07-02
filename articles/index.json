@@ -3180,6 +3180,18 @@
     "short_description": "This paper develops a backtesting framework for concentrated liquidity market makers (CLMMs) on Uniswap V3 using a parametric model to approximate the liquidity distribution within pools. Testing on historical 2023 data across altcoin, stablecoin, and USDC/ETH pools with various fee levels, the framework achieves less than 1% error in modeling pool rewards, demonstrating its utility for LP revenue estimation and strategy evaluation."
   },
   {
+    "title": "Earning Yield on Bitcoin via Leveraged WBTC/cbBTC Liquidity Provision on Fluid",
+    "authors": "letsgetonchain (@letsgetonchain)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/letsgetonchain/status/2072659542194688441",
+    "source_file": "liquidity-provision.rst",
+    "included_in_index_at": "2026-07-02",
+    "filename": "earning-yield-on-bitcoin-via-leveraged-wbtc-cbbtc-liquidity-provision-on-fluid.pdf",
+    "downloaded_at": "2026-07-02",
+    "download_failure_reason": null,
+    "short_description": "An X thread by letsgetonchain explaining a leveraged \"looping\" liquidity-provision strategy that earns ~16% trailing 30-day APY on Bitcoin by providing WBTC/cbBTC liquidity on the Fluid DEX using smart-collateral and smart-debt primitives. The yield comes from ~0.7% average trading-fee APY amplified by ~18x leverage; liquidation risk is minimal because both tokens are oracle-marked at 1 BTC, with the main risk being a spike in BTC borrow rates on Fluid."
+  },
+  {
     "title": "Opportunity Costs and Profitability: Insights into LP Behavior",
     "authors": null,
     "publication_year": null,

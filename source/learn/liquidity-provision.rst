@@ -67,3 +67,16 @@ tools to mirror CLMM pool liquidity dynamics, this framework can be further leve
 enhancement and risk evaluation for LPs operating within decentralized exchanges.
 
 `Read the paper <https://arxiv.org/pdf/2410.09983>`__
+
+Earning Yield on Bitcoin via Leveraged WBTC/cbBTC Liquidity Provision on Fluid
+-----------------------------------------------------------------------------
+
+In this X thread, letsgetonchain walks through what they argue may be one of the best risk-adjusted yields available on Bitcoin: roughly 16% trailing 30-day APY (and more than 11% realized over the trailing year) earned by providing WBTC ↔ cbBTC liquidity on the Fluid DEX. The strategy is a leveraged "looping" position built from Fluid's smart-collateral and smart-debt primitives: the trader supplies a WBTC/cbBTC collateral position and borrows a WBTC/cbBTC debt position against it, recycling the borrow back into more collateral to lever up the underlying liquidity-provision exposure. Because BTC borrow demand on Fluid is low, the spread between supply and borrow APY is only about −0.20%, and a trading-fee APY of roughly 0.1% on the pair offsets most of that bleed — the trader earns fees on both the collateral and the debt legs.
+
+The core yield comes from DEX trading fees, which have averaged about 0.7% APY on the WBTC ↔ cbBTC pair over the past twelve months; leverage (the thread's trade calculator shows around 18.3x producing a net ~15% APY) multiplies that thin fee stream into a double-digit return. The author argues the risk profile is unusually benign for a leveraged position: both WBTC and cbBTC are marked at 1 BTC by the oracle, so a temporary secondary-market depeg between the two wrapped-BTC tokens never touches the oracle input and cannot by itself force a liquidation. The one genuine risk is a spike in BTC borrow rates on Fluid — which happened in February 2026 when smart debt concentrated into cbBTC and spiked its utilization — but tighter borrow caps have since made a repeat less likely. Entry and exit costs, normally a major drag on high-turnover looping strategies where the amount swapped is large relative to the equity supplied, are near zero here because the LP shares are borrowed in the pool's prevailing ratio, which makes short holding periods feasible.
+
+The thread closes on the capital-efficiency argument for Fluid's design: supplying the same WBTC/cbBTC pair on Uniswap yields under 2% APY, and although Uniswap holds more than $25m of BTC TVL in these pools versus Fluid's under $10m, Fluid generated more than half of the previous day's WBTC ↔ cbBTC volume on Ethereum — evidence that smart-collateral/smart-debt leverage lets much less capital do far more market-making work. Throughout, the author points to the analytics tool Creddit (@credditxyz) for analyzing the sustainability of these looping strategies, inspecting the oracle setup, and simulating entry/exit costs for a given loop.
+
+Posted as a thread by letsgetonchain (@letsgetonchain, whose bio reads "everything onchain capital markets"). One reply from @litocoen jokes, "ffs you just made me deposit now you re diluting my yield," underscoring the thread's remark that only limited spare capacity remains in the strategy.
+
+`Read the thread <https://x.com/letsgetonchain/status/2072659542194688441>`__
