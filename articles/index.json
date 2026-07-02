@@ -8628,6 +8628,18 @@
     "short_description": null
   },
   {
+    "title": "Faster Volatility Estimators and the Gross-versus-Net Trap",
+    "authors": "DeltaDog (@the_delta_dog)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/the_delta_dog/status/2072687672800190870",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-02",
+    "filename": "faster-volatility-estimators-and-the-gross-versus-net-trap.pdf",
+    "downloaded_at": "2026-07-02",
+    "download_failure_reason": null,
+    "short_description": "A progress-note X thread from DeltaDog on building a risk model, finding that fast, short-lookback EWMA realized-volatility estimators consistently beat slow ones on daily data. The follow-up discussion warns this \"faster always wins\" result may be an artifact of unrealistically low modelled trading costs — the net (after-cost) equity curve tracks the gross (before-cost) one too closely to penalise the fast estimators' higher turnover, so a practitioner may deliberately blend in slower estimators for robustness."
+  },
+  {
     "title": "Forecasting Realised Volatility Using Regime-Switching Models",
     "authors": "Yi Ding, Dimos S. Kambouroudis, and David G. McMillan",
     "publication_year": 2025,

@@ -398,3 +398,16 @@ The consequence is that theta-neutral sizing does not deliver equal edge. To col
 By Kris Abdelmessih (Moontower), published as an article on X (originally published April 2026).
 
 `Read the article <https://x.com/KrisAbdelmessih/status/2072016147126579363>`__
+
+Faster Volatility Estimators and the Gross-versus-Net Trap
+----------------------------------------------------------
+
+DeltaDog (@the_delta_dog), a discretionary trader working his way into systematic "going quant" territory, shares a progress note from building the volatility component of a risk model on daily data. He tests a family of estimators — a mix of slow and fast exponentially weighted moving averages (EWMAs) of squared log returns, plus high-low range combinations — and finds that the faster, shorter-lookback estimators consistently win. His representative example is ``sqrt(ewma(diff(log(close), 1)^2, 10))``: the square root of an EWMA (span ~10) of one-day squared log returns, i.e. a short, highly responsive realized-volatility estimate. A fast estimator reacts quickly to changing conditions and adjusts position sizes sooner, whereas a slow estimator smooths volatility over a longer window and lags regime changes.
+
+The important caveat is the author's own follow-up about the difference between **gross** and **net**. In backtesting, *gross* refers to the strategy's performance (returns, PnL, or the resulting equity-curve volatility) computed *before* trading frictions, while *net* is the same quantity computed *after* subtracting transaction costs — commissions, bid-ask spread, and slippage. Faster volatility estimators re-size positions more often, so they generate higher turnover and should therefore lose more to costs on a net basis. DeltaDog flags that in his chart the net line tracks the gross line almost perfectly — "my cost and execution assumptions is a joke when net is tracking gross like this. its just a chart" — meaning his modelled costs are so low that turnover is barely penalised, which is exactly why the high-churn fast estimators keep winning even after costs. When net stops tracking gross, the fast estimators' turnover disadvantage would begin to bite.
+
+This is the crux of the follow-up discussion and the "fast always wins" remark. pedma (@pedma7) replies that in his own work "faster always wins" too, but questions whether that will hold once costs are realistic; he is considering deliberately "taking the hit" and blending in slower estimators anyway for robustness, or adding a rolling adjustment as the strategy matures. DeltaDog agrees he is tempted to try "something fancier" but doubts it is worth it for now. The exchange captures a recurring quant dilemma: a more responsive signal that looks strictly better in-sample may owe its apparent edge to under-modelled trading costs, so a practitioner may deliberately choose a slower, more cost-tolerant estimator as insurance for the day realistic frictions are applied.
+
+Shared by DeltaDog (@the_delta_dog) in `this discussion on X <https://x.com/the_delta_dog/status/2072687672800190870>`__.
+
+`Read the post <https://x.com/the_delta_dog/status/2072687672800190870>`__
