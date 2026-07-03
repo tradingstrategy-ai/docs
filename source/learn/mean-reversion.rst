@@ -203,3 +203,18 @@ See the `Enhanced Mean Reversion factsheet <https://factors.aperiodic.io/catalog
 By Mark Aron Szulyovszky (Aperiodic).
 
 `Read the post <https://www.linkedin.com/posts/almostintuitive_mean-reversion-means-a-lot-of-different-share-7470090273981730817-QQ2a/>`__
+
+Profiting From Sector Dispersion: The Case for Trading Sector & Industry ETFs
+----------------------------------------------------------------------------
+
+Concretum Research (Carlo Zarattini and colleagues) present a deliberately simple systematic model for exploiting cross-sectional dispersion among US sector and industry ETFs. Motivated by the current intensity of the sector-rotation debate — semiconductors after an essentially unprecedented run, software-related names after a sharp drop, and biotech breaking to a fresh multi-year high — the piece builds a rules-based strategy that actively times three iShares ETFs (SOXX for semiconductors, IGV for expanded tech-software, and IBB for biotechnology), rotating exposure to capture temporary price dislocations between them while remaining profitable under conservative transaction-cost assumptions.
+
+Our summary: the strategy is framed as a baseline rather than an optimised product — the authors stress that experienced quantitative researchers can layer a number of standard refinements on top of the core entry/exit logic. The intuition is cross-sectional mean reversion: when one sector stretches too far relative to its peers, the model leans against the dislocation, harvesting the dispersion that sector-rotation narratives create. The article also uses the case study to introduce a "delicate" methodological point the authors consider central to the analysis and implementation of many short-term trading strategies (developed behind the paywall), signalling that realistic execution and cost modelling — results are reported net of USD 0.0035 per share — are treated as first-order concerns rather than afterthoughts.
+
+Data and reproduction: the backtest actively times SOXX, IGV, and IBB over roughly 2016–2026 (per the equity-curve chart in the announcement), reporting results net of fees at USD 0.0035 per share. The full trading rules, portfolio-construction details, and the methodological discussion sit behind Concretum's paid Substack; no code repository is provided, and the free preview exposes only the setup and the headline metrics.
+
+Key metrics: the net-of-fee portfolio is reported to achieve a CAGR of 24.6%, a Sharpe ratio of 1.17, and a maximum drawdown of roughly 20%, materially smoothing the equity curve relative to buying and holding any single one of the three sector ETFs.
+
+Mentioned by Carlo Zarattini (Founder of Concretum Group, co-founder of R-Candles.com) in `this LinkedIn discussion <https://www.linkedin.com/posts/carlozarattini_a-systematic-approach-to-sector-dispersion-share-7478841533954379776--B0e/>`__, where he describes it as "a simple systematic trading model designed to exploit temporary price dislocations while remaining attractive even under conservative transaction-cost assumptions," intended as an ideal starting point for developing more sophisticated tactical sector-dispersion models.
+
+`Read the research piece <https://concretumgroup.substack.com/p/profiting-from-sector-dispersion>`__

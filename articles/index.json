@@ -4356,6 +4356,18 @@
     "short_description": null
   },
   {
+    "title": "Profiting From Sector Dispersion: The Case for Trading Sector & Industry ETFs",
+    "authors": "Carlo Zarattini (Concretum Research)",
+    "publication_year": 2026,
+    "download_page": "https://concretumgroup.substack.com/p/profiting-from-sector-dispersion",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-07-03",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Concretum Research (Carlo Zarattini) present a deliberately simple systematic model that exploits cross-sectional dispersion by actively timing three sector ETFs — SOXX (semiconductors), IGV (software), and IBB (biotech) — to lean against temporary price dislocations. The net-of-fee portfolio (fees at USD 0.0035/share) is reported to deliver a 24.6% CAGR, a 1.17 Sharpe, and a ~20% maximum drawdown; the full rules sit behind a paid Substack."
+  },
+  {
     "title": "Revisiting Trend-Following and Mean-Reversion Strategies in Bitcoin",
     "authors": "Matúš Padyšák and Radovan Vojtko",
     "publication_year": null,
