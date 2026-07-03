@@ -8676,6 +8676,18 @@
     "short_description": null
   },
   {
+    "title": "Gammega at +3.5σ: When Spot and IV Pull Apart",
+    "authors": "Cayo Largo Research",
+    "publication_year": 2026,
+    "download_page": "https://cayolargo.fi/research/gammega-price-driven-gamma-instability",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-03",
+    "filename": "gammega-at-35-sigma-when-spot-and-iv-pull-apart.pdf",
+    "downloaded_at": "2026-07-03",
+    "download_failure_reason": null,
+    "short_description": "Cayo Largo Research analyzes a BTC options episode where spot rallied while 30-day ATM IV fell, causing Gammega, a fourth-order Greek tied to Gamma vol-sensitivity, to rise before first-order Gamma exposure reacted. The note argues that this cross-derivative stress can reveal gamma instability hours before standard Greek dashboards flag the risk."
+  },
+  {
     "title": "HARNet: A Convolutional Neural Network for Realized Volatility Forecasting",
     "authors": "Rafael Reisenhofer, Xandro Bayer, and Nikolaus Hautsch",
     "publication_year": null,

@@ -411,3 +411,14 @@ This is the crux of the follow-up discussion and the "fast always wins" remark. 
 Shared by DeltaDog (@the_delta_dog) in `this discussion on X <https://x.com/the_delta_dog/status/2072687672800190870>`__.
 
 `Read the post <https://x.com/the_delta_dog/status/2072687672800190870>`__
+
+Gammega at +3.5σ: When Spot and IV Pull Apart
+----------------------------------------------
+
+Cayo Largo Research documents a BTC options episode in which Gammega, a fourth-order Greek defined as the second derivative of Gamma with respect to implied volatility, rose sharply while spot rallied and 30-day ATM IV drifted lower. The note uses Cayo Largo's 37-Greek heatmap and Gammega time-series for the BTC ATM 8-30d Deribit cohort to show that higher-order surface stress appeared before it became visible in the first-order Gamma exposure most desks monitor.
+
+The key observation is the sequencing: Gammega began lighting up around 18:20 UTC on May 23, 2026, Gamma followed roughly five hours later, and the signal persisted into May 25 as Gammega moved beyond +3.5 sigma. The article argues that spot and IV moving in opposite directions can bend the gamma surface through cross-derivative effects even without an obvious volatility shock. Zomma, Zomanna, and Gamma are used to explain why the stress showed up in Gamma's vol-sensitivity rather than in the delta-vol coupling, making Gammega an early warning signal for gamma instability in crypto options.
+
+By Cayo Largo Research.
+
+`Read the research note <https://cayolargo.fi/research/gammega-price-driven-gamma-instability>`__
