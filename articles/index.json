@@ -8400,6 +8400,18 @@
     "short_description": null
   },
   {
+    "title": "Is Trend Still Your Friend? A Microstructural Account of the Demise of Short-Term Trend-Following",
+    "authors": "Jutta G. Kurth, Zoltan Eisler, Adam Rej, Jean-Philippe Bouchaud",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2607.01550",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-07-04",
+    "filename": "is-trend-still-your-friend-microstructural-account-demise-short-term-trend-following.pdf",
+    "downloaded_at": "2026-07-04",
+    "download_failure_reason": null,
+    "short_description": "Kurth, Eisler, Rej and Bouchaud (CFM) explain the post-2009 demise of short-term trend-following using a cross-section of ~100 liquid futures over 1995-2025. Their central finding is that the volatility-normalised tick size separates degraded from surviving trends: post-2008 trend PnL collapsed on small-tick contracts (fast EWM-5-20 Sharpe fell from ~0.84 to 0.12) while holding up on large-tick ones, which they attribute to HFT-dominated market making breaking the self-fulfilling price-impact loop that sustains trend."
+  },
+  {
     "title": "Leverage for the Long Run - A Systematic Approach to Managing Risk and Magnifying Returns in Stocks",
     "authors": "Michael A. Gayed and Charlie Bilello",
     "publication_year": null,
