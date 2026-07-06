@@ -484,3 +484,16 @@ Data and code: evaluated on FX and ETF pairs (CHF-EUR, AUD-ZAR, EWC-EWA); Kalman
 Key metrics: KBPT is reported to systematically yield higher cumulative revenue than both the model-based KF-BB policy and the data-driven DDQN deep-RL benchmark across the tested pairs; the paper reports relative revenue improvements rather than annualised Sharpe/drawdown tables.
 
 `Read the paper <https://arxiv.org/abs/2210.15448>`__
+
+Crypto Pair Trading, Relative Value, and Basket Short Legs
+-----------------------------------------------------------
+
+Flip (@trevor_flipper) discusses the practical risk management of crypto pair trading and relative-value baskets, using HYPE/SOL and LIT/ETH as examples. The post argues that when the short leg is already in a major downtrend, a trader does not necessarily need to close the spread just because it has moved favorably; instead, Flip describes rebalancing when the position drifts two to three standard deviations from entry while keeping the trade on if the relative thesis has not materially changed.
+
+The main implementation advice is to avoid using a single altcoin as the isolated short leg of a pair or basket trade. Because individual altcoins can experience abrupt idiosyncratic moves, the post recommends using a diversified basket of roughly 20 short legs when shorting alts, and points to Pear Protocol and Lighter's atomic orders as tools for putting on these trades. The broader thesis is that as crypto assets with durable revenues continue to compound, relative-value trading should become increasingly useful.
+
+Mentioned by Flip in `this X discussion <https://x.com/trevor_flipper/status/2073754934210695484>`__. The post quotes KoolKrypto, who warns that pairing or shorting HYPE/LIT can be dangerous because single announcements can move either asset sharply, and argues that tokenholder-revenue leaders still represent a small share of total crypto market capitalization.
+
+By Flip (@trevor_flipper).
+
+`Read the post <https://x.com/trevor_flipper/status/2073754934210695484>`__

@@ -7512,6 +7512,18 @@
     "short_description": null
   },
   {
+    "title": "Crypto Pair Trading, Relative Value, and Basket Short Legs",
+    "authors": "Flip (@trevor_flipper)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/trevor_flipper/status/2073754934210695484",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-07-06",
+    "filename": "crypto-pair-trading-relative-value-and-basket-short-legs.pdf",
+    "downloaded_at": "2026-07-06",
+    "download_failure_reason": null,
+    "short_description": "Flip discusses crypto pair trading and relative-value basket construction using HYPE/SOL and LIT/ETH as examples. The post recommends rebalancing favorable spreads only when they drift materially from entry, avoiding isolated altcoin short legs, and using diversified short baskets because single-token announcements can create sharp idiosyncratic moves."
+  },
+  {
     "title": "Deep Learning Statistical Arbitrage",
     "authors": "Jorge Guijarro-Ordonez, Markus Pelger, and Greg Zanotti",
     "publication_year": 2025,
