@@ -223,3 +223,18 @@ The author's key observation is that HML-Devil earns a large 31% weight despite 
 In the replies, eq (@derimonkeyfin) asks whether "Sharpe-optimal" means a mean-variance optimisation, and Green Lark confirms it is, clarifying the objective is the mean-to-standard-deviation ratio. Posted by Green Lark (@the_green_lark) in `this discussion <https://x.com/the_green_lark/status/2067925013575929937>`__.
 
 `Read the post <https://x.com/the_green_lark/status/2067925013575929937>`__.
+
+Skewness Managed Portfolios
+---------------------------
+
+This paper studies whether extreme, positively skewed stock returns drive the performance of cross-sectional anomaly portfolios. Using common-stock data from CRSP, Compustat, and the Open Source Asset Pricing database from July 1963 to December 2024, the authors examine 18 well-known anomalies and show that right-tail outliers systematically help or hurt long-short factors depending on whether high-skewness stocks sit in the long or short leg.
+
+Our summary: the paper turns skewness from a diagnostic into a portfolio-construction rule. Each month, realized skewness is forecast from lagged firm characteristics including realized volatility, prior returns, momentum, size, industry, and exchange indicators. The skewness-managed version of each anomaly keeps the original anomaly sort but selects high-expected-skewness stocks for the long leg and low-expected-skewness stocks for the short leg. The adjustment produces significant abnormal returns even when tested against the original anomaly portfolios and standard factor models, implying that linear factor models miss an interaction between higher moments and firm characteristics.
+
+Data and code: the empirical sample uses CRSP common stocks, Compustat, Chen and Zimmermann's Open Source Asset Pricing database, NBER recession indicators, VIX, credit spreads, Ludvigson-Ng macro factors, and Hasbrouck transaction-cost estimates. The paper describes the construction in detail but does not provide a public code repository.
+
+Key metrics: across the 18 anomalies, skewness management raises annual returns by an average of 5.45 percentage points and Sharpe ratios by 0.12. The largest return gains are Value/BM (+9.75 percentage points) and Investment (+9.04 percentage points); spanning-regression alphas average about 6.7% annually and are significant for 14 of 18 anomalies. After transaction-cost estimates, average improvement falls to 1.58 percentage points but remains significant for Size, BM, and Investment. An equal-weighted managed anomaly portfolio grows $1 to about $530 by December 2024 versus $22 for the standard portfolio, with the incremental premium averaging 20.4% annually in NBER recessions versus 3.7% in expansions.
+
+By Rui Gong, John Lynch, and Richard Ogden.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6913978>`__

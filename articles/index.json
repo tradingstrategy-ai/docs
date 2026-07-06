@@ -3120,6 +3120,18 @@
     "short_description": null
   },
   {
+    "title": "Skewness Managed Portfolios",
+    "authors": "Rui Gong, John Lynch, and Richard Ogden",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6913978",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-07-06",
+    "filename": "skewness-managed-portfolios.pdf",
+    "downloaded_at": "2026-07-06",
+    "download_failure_reason": null,
+    "short_description": "Gong, Lynch, and Ogden forecast stock-level skewness from lagged firm characteristics and use it to tilt 18 long-short anomaly portfolios toward high-expected-skewness long legs and low-expected-skewness short legs. The skewness-managed portfolios raise annual returns by an average of 5.45 percentage points, improve Sharpe ratios by 0.12, and retain significant alphas after standard factor-model and transaction-cost tests."
+  },
+  {
     "title": "Small-Cap × Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)",
     "authors": "AI Data Lab",
     "publication_year": null,
