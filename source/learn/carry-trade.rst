@@ -116,3 +116,16 @@ Our summary: this paper provides clean out-of-sample evidence that funding rates
 Data: Bitcoin perpetual futures funding rate data from Binance and Bybit.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5576424>`__
+
+Crypto Factor Leadership and the Seven-Factor Composite
+-------------------------------------------------------
+
+Daniel Szemerey reports a first-half 2026 update on Aperiodic's cross-sectional crypto factors. The best single factor, Polaris, returned +15.35%, while Enhanced Carry returned +12.06%; but the main point is portfolio construction rather than leaderboard chasing. The seven-factor blend returned +9.25% year to date with a 1.80 Sharpe ratio, 9.9% volatility, and a 6.1% maximum drawdown, capturing most of the upside from the winning factor while avoiding the need to forecast which signal would lead.
+
+Entry discussion: Enhanced Carry is the carry sleeve most directly connected to this file. It is not just a naive harvest of perpetual funding payments; the post says its return was largely driven by the predictive signal embedded in funding rates. In practice, that means ranking assets by cross-sectional funding pressure, using a composite across venues, and building a market-neutral long/short book that benefits when expensive-to-own perpetuals subsequently underperform cheaper or negative-funding assets. Supply Velocity is the on-chain supply-risk sleeve: assets with faster token supply growth or inflationary pressure are expected to lag assets with cleaner supply dynamics, although the factor cooled to +4.29% after a much stronger prior year. Margin Risk is a derivatives crowding and liquidation-overhang signal: assets with more positions near forced liquidation thresholds can underperform less leveraged assets because modest price moves can trigger mechanical selling or short-covering cascades. Altair and Relative Illiquidity are liquidity/microstructure signals; Retail Flow is a contrarian flow signal that rebounded as retail positioning shifted. The useful lesson is that these sleeves are economically different enough to diversify one another, so the composite can be more robust than any single "best" factor.
+
+Mentioned by Daniel Szemerey in `this LinkedIn discussion <https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/>`__, where he also links to `Aperiodic Factors <https://factors.aperiodic.io/>`__ for the live factor board.
+
+By Daniel Szemerey.
+
+`Read the post <https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/>`__
