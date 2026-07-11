@@ -8148,6 +8148,18 @@
     "short_description": null
   },
   {
+    "title": "Matrix Profiles for Pattern Recognition in Financial Time Series",
+    "authors": "Andreas Steiner",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/andreassteiner_coulnt-resist-to-starting-on-another-topic-share-7481611775717654528-HPLK/",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-07-11",
+    "filename": "matrix-profiles-for-pattern-recognition-in-financial-time-series.pdf",
+    "downloaded_at": "2026-07-11",
+    "download_failure_reason": null,
+    "short_description": "Andreas Steiner demonstrates a Matrix Profile-based pattern-recognition engine for financial time series, built as a transparent Excel toolkit (ApaLibNET) rather than a black-box ML model. Using daily prices of a Swiss insurer, it computes per-window nearest-neighbour distances to surface recurring motifs and discords (anomalies), compares standardised 10-bar shapes, and overlays profile values on cumulative returns to reveal regime signatures and recurring micro-structures."
+  },
+  {
     "title": "On Covariance Estimation of Non-Synchronously Observed Diffusion Processes",
     "authors": null,
     "publication_year": null,

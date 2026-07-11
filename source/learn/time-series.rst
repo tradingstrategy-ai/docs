@@ -126,3 +126,14 @@ Data and code: a review article with algorithmic appendices (PMMH given as Algor
 Key metrics: not applicable — a survey. Value is breadth, currency (2024), and the implementation-oriented treatment of SMC/particle methods.
 
 `Read the paper <https://arxiv.org/abs/2212.03471>`__
+
+Matrix Profiles for Pattern Recognition in Financial Time Series
+----------------------------------------------------------------
+
+Andreas Steiner demonstrates a Matrix Profile-based pattern-recognition engine for financial data, built as a transparent, inspectable toolkit inside Excel (via his ApaLibNET add-in) rather than a black-box ML model. The worked example runs on the daily prices of a major listed Swiss insurance company. For every fixed-length window in the return series (here 10 bars), the Matrix Profile computes a distance (profile value) to the window's nearest neighbour elsewhere in the series and records that neighbour's index. Low profile values flag recurring local patterns (motifs); high values mark discords — unusual sequences of returns with no close historical analogue — while the nearest-neighbour index lets you pull out concrete "pattern pairs" instead of abstract statistics.
+
+The post walks through turning those pairs into side-by-side windows of data in both raw and standardised form, making it visually clear that the method compares shapes rather than levels: 10-bar paths that look strikingly similar once mean and volatility are removed, answering the literal question "when did the market trade through a similar micro-path?". Charts overlay profile values against cumulative returns so motif-rich and anomaly-rich periods line up with the market's trajectory, and show the most similar patterns in raw and standardised space — surfacing regime signatures and recurring micro-structures that are hard to spot with traditional tools. Steiner's stated goal is to bring state-of-the-art time-series motif and anomaly detection to non-programmers, deliberately restricting himself to the more rudimentary methods to keep the toolkit understandable.
+
+By Andreas Steiner.
+
+`Read the post <https://www.linkedin.com/posts/andreassteiner_coulnt-resist-to-starting-on-another-topic-share-7481611775717654528-HPLK/>`__.
