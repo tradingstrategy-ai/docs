@@ -4,12 +4,22 @@
 
 set -euo pipefail
 
-REMOTE="mikko@vitalik7-tailscale:./code/docs"
+REMOTE_HOST="mikko@vitalik7-tailscale"
+REMOTE_DIR="./code/docs"
 
-rsync -av --inplace articles "$REMOTE/"
+# Remove nested copies created when a remote articles/articles directory is
+# pulled back into the local articles directory.
+rm -rf articles/articles
+ssh "$REMOTE_HOST" "rm -rf '$REMOTE_DIR/articles/articles'"
+
+rsync -av --inplace \
+  --include='*/' \
+  --include='*.pdf' \
+  --exclude='*' \
+  articles/ "$REMOTE_HOST:$REMOTE_DIR/articles/"
 
 rsync -av --inplace --ignore-existing \
   --include='*/' \
   --include='*.pdf' \
   --exclude='*' \
-  "$REMOTE/articles/" articles/
+  "$REMOTE_HOST:$REMOTE_DIR/articles/" articles/
