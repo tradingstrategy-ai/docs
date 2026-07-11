@@ -2676,6 +2676,18 @@
     "short_description": null
   },
   {
+    "title": "Shannon's Demon on Shitters: Volatility Harvesting on Crypto Perps",
+    "authors": "Margin Syndicate",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/shannons-demon-on-shitters-weve-spent-share-7481639070234882048-9tlm/",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-11",
+    "filename": "shannons-demon-on-shitters-volatility-harvesting-on-crypto-perps.pdf",
+    "downloaded_at": "2026-07-11",
+    "download_failure_reason": null,
+    "short_description": "Margin Syndicate describes a constant-mix / Shannon's-demon rebalancing structure run at derivatives leverage on netted margin across crypto alts, where a constant-gross long+short position rebalances to a target ratio at every price threshold so volatility itself becomes the revenue line. It runs in three regime-driven configurations: a neutral 50/50 book that harvests chop, a signal book with a directional tilt (e.g. 60/40) on confirmation, and a depressed-asset book with a modest long tilt on beaten-down names where negative funding pays you to wait."
+  },
+  {
     "title": "The Low-Volatility Factor in Cryptocurrency Asset Selection",
     "authors": "Pedma",
     "publication_year": null,
