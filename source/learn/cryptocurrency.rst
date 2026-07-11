@@ -140,3 +140,14 @@ The three books share one structure and differ only in the target ratio. **The n
 By Margin Syndicate.
 
 `Read the blog post <https://www.linkedin.com/posts/shannons-demon-on-shitters-weve-spent-share-7481639070234882048-9tlm/>`__.
+
+Systematic BTC Options Report: Performance Model and Forward Projections
+-----------------------------------------------------------------------
+
+A six-page report from Margin Syndicate documenting a performance model and forward Monte Carlo projection for their systematic BTC options strategy. The system executes systematic short-volatility strategies on BTC options via Deribit — short strangles, iron condors, bear call spreads, bull put spreads, jade lizards, and calendar spreads — selected dynamically from market-regime signals including IV rank, 25-delta skew, gamma exposure (GEX), and proprietary options-flow analysis. Positions are sized at roughly 1.2% capital per trade, delta-hedged via perpetual futures to maintain portfolio delta-neutrality, and run on 5-minute cycles with continuous position monitoring, assignment detection, and orphan recovery. The report is explicit that it contains a modeled track record (parameters observed from live production logs, extrapolated over a two-month window) plus forward Monte Carlo projections, and that neither section represents audited live trading returns.
+
+The modeled parameters are disclosed up front: $50,000 initial capital on Deribit (BTC-settled), 7–21 day target DTE, adaptive IV-rank threshold, observed theta of about $167/day, current DVOL of 81.5%, a maker win rate of 81.73%, and 25-delta skew of +10.1%. Headline figures cited from the model and simulation are a Sharpe ratio of 5.83, a maximum drawdown of -1.33%, and a six-month median projected return of +13%, built from a 10,000-path simulation using fat-tail dynamics (Student-t, df=5) and volatility clustering. The report frames itself as a full methodology disclosure "built for transparency," and repeatedly cautions that past modeled or projected performance is not indicative of future results.
+
+By Margin Syndicate.
+
+`Read the report <https://www.linkedin.com/posts/marginsyndicate_systematic-btc-options-report-activity-7427047791161430018-BtoP>`__.
