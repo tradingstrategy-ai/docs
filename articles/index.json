@@ -2616,6 +2616,18 @@
     "short_description": null
   },
   {
+    "title": "January 2026 Syndicate API Report: Performance Reporting Update",
+    "authors": "Margin Syndicate",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/marginsyndicate_january-2026-syndicate-api-report-activity-7423618633160880128-ycSl",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-11",
+    "filename": "january-2026-syndicate-api-report.pdf",
+    "downloaded_at": "2026-07-11",
+    "download_failure_reason": null,
+    "short_description": "A three-page Margin Syndicate investor report covering January 2026 (+12.3%, traded half the month under constrained liquidity), announcing a switch of primary performance reporting to the third-party Quant.Space platform. Quant.Space-verified metrics over ~14 months include 454% cumulative return, 329.1% CAGR, Sharpe 1.88, Sortino 2.81, Calmar 7.38, and -44.6% max drawdown, with a 90.22% exit-maker rate across 221,929 trades."
+  },
+  {
     "title": "Low-volatility strategies for highly liquid cryptocurrencies",
     "authors": null,
     "publication_year": null,

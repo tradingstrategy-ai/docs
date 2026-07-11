@@ -151,3 +151,14 @@ The modeled parameters are disclosed up front: $50,000 initial capital on Deribi
 By Margin Syndicate.
 
 `Read the report <https://www.linkedin.com/posts/marginsyndicate_systematic-btc-options-report-activity-7427047791161430018-BtoP>`__.
+
+January 2026 Syndicate API Report: Performance Reporting Update
+--------------------------------------------------------------
+
+A three-page investor performance report from Margin Syndicate Limited covering January 2026, when the system traded only half the month due to constrained liquidity and elevated volatility — conditions in which their "Sigma hedging" system dynamically adjusted exposure to control drawdowns. January delivered +12.3%. The report doubles as an announcement that the desk is transitioning its primary performance reporting to Quant.Space, an institutional-grade third-party analytics platform, to align with standardised, independently verifiable risk-adjusted metrics rather than the compound-return methodology used in its earlier Allo reports.
+
+The verified metrics (Quant.Space, reporting period 27 November 2024 to 30 January 2026, ~14 months) are: cumulative return 454.0%, CAGR 329.1%, Sharpe 1.88, Sortino 2.81, Calmar 7.38, maximum drawdown -44.6%, and annualised volatility 113.1%. Trailing returns are +12.3% MTD, +32.1% three-month, and +104.8% six-month, with a best month of +44.1% and worst of -11.2%; execution quality shows a 90.22% exit-maker rate across 221,929 total trades. The narrative emphasises the Calmar ratio as the headline — strong returns without blow-up risk — and includes a methodology note explaining that historical Allo figures used (mathematically correct) compound returns for continuity, while CAGR is presented as the standardised figure for cross-strategy benchmarking.
+
+By Margin Syndicate.
+
+`Read the report <https://www.linkedin.com/posts/marginsyndicate_january-2026-syndicate-api-report-activity-7423618633160880128-ycSl>`__.
