@@ -1,7 +1,7 @@
 ---
 name: add-code-repository
 description: Add a new code repository to the documentation collection. Use when user provides a URL to a GitHub, GitLab, Bitbucket, source repository, or a discussion linking to one.
-argument-hint: [url]
+argument-hint: "[url]"
 ---
 
 # Add code repository
