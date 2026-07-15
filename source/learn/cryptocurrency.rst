@@ -162,3 +162,14 @@ The verified metrics (Quant.Space, reporting period 27 November 2024 to 30 Janua
 By Margin Syndicate.
 
 `Read the report <https://www.linkedin.com/posts/marginsyndicate_january-2026-syndicate-api-report-activity-7423618633160880128-ycSl>`__.
+
+Update on the Majors: Moving Grid Capital Off BTC and ETH
+---------------------------------------------------------
+
+Steven Paterson (Margin Syndicate) explains a structural, regime-driven reallocation: moving grid-trading capital off BTC and ETH — not pausing it, moving it — while running overlay delta control to wind the existing grids down to completion. The rationale is not performance but market structure: BTC and ETH have started trading identically to ES and Nasdaq futures, with the same flow, operator behaviour, and construction — days of one-sided pressure into short clusters, a managed topside sweep, then distribution into the chasers. Watching all four charts on the same day, he argues, is watching one book.
+
+That regime has a clear winner and loser. Short volatility gets paid because the whipsaw stays inside a managed range and theta collects, while grid strategies get destroyed because they need independent, two-sided price action — a preconstructed up-then-down program fills the entire ladder on the wrong side at each turn. So the allocation follows the structure: options carry the majors, grids trade alts. Alt perpetuals still have independent operators, idiosyncratic funding regimes and genuine two-sided volatility, which is where a mean-reversion system's edge lives. The closing note is a discipline point — the system was built for mean reversion, the majors stopped offering it, and rather than argue with the tape they move the capital to where the structure still pays.
+
+By Steven Paterson.
+
+`Read the post <https://www.linkedin.com/posts/steven-paterson-10a1619_update-on-the-majors-question-were-moving-ugcPost-7483227216928043008-zJGl/>`__.

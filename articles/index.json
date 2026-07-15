@@ -2724,6 +2724,18 @@
     "short_description": null
   },
   {
+    "title": "Update on the Majors: Moving Grid Capital Off BTC and ETH",
+    "authors": "Steven Paterson",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/steven-paterson-10a1619_update-on-the-majors-question-were-moving-ugcPost-7483227216928043008-zJGl/",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-15",
+    "filename": "update-on-the-majors-moving-grid-capital-off-btc-and-eth.pdf",
+    "downloaded_at": "2026-07-15",
+    "download_failure_reason": null,
+    "short_description": "Steven Paterson (Margin Syndicate) explains a structural reallocation of grid-trading capital off BTC and ETH because the majors now trade identically to ES and Nasdaq futures — a managed short-vol regime that pays theta but destroys grids, which need independent two-sided price action. The resulting split: options carry the majors while grids trade alt perpetuals, where independent operators, idiosyncratic funding and genuine two-sided volatility keep a mean-reversion edge alive."
+  },
+  {
     "title": "A Simple Market Making Bot for 01 Exchange",
     "authors": null,
     "publication_year": null,
