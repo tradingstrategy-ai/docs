@@ -9053,3 +9053,98 @@ and algorithmic trading.
         - :term:`Factor investing`
 
         - :term:`Betting Against Beta (BAB)`
+
+    Tokenised fund
+
+        A tokenised fund is a regulated investment fund whose shares are issued and
+        recorded as :term:`tokens <token>` on a blockchain, instead of (or in parallel to)
+        entries in a traditional transfer agent's share register.
+        Investors hold fund shares as :term:`ERC-20`-style token balances at their
+        blockchain addresses, and share transfers settle :term:`onchain`.
+
+        **Fund**: a fund is a pooled investment vehicle — money from many investors is
+        combined and managed according to a mandate, with each investor owning shares
+        that represent a proportional claim on the pool's assets. The share price is
+        set by the fund's net asset value (NAV). Traditional examples include mutual
+        funds, money market funds and :term:`hedge funds <hedge fund>`.
+
+        **Tokenisation**: tokenisation means representing ownership of an asset as a
+        blockchain token. The legal asset (fund share, bond, real estate) continues to
+        exist in the real world — the token is its transferable ownership record.
+        Tokenised funds are one of the fastest-growing classes of
+        :term:`real-world assets (RWA) <RWA>`, because tokenisation gives fund shares
+        properties they never had before: near-instant 24/7 transferability, use as
+        :term:`collateral` in :term:`decentralised finance`, programmability via
+        :term:`smart contracts <smart contract>`, and settlement without layers of
+        intermediaries.
+
+        Notable examples:
+
+        - **BUIDL (BlackRock USD Institutional Digital Liquidity Fund)** — launched in
+          March 2024 by BlackRock with Securitize as tokenisation platform and transfer
+          agent. BUIDL holds cash, US Treasury bills and repurchase agreements
+          (see :term:`US Treasury note`), targets a stable $1 token value, and accrues
+          daily dividends paid out monthly as new tokens. Originally on
+          :term:`Ethereum`, it expanded to multiple chains and quickly became the
+          largest tokenised fund, crossing $1 billion in assets. Circle offers a
+          facility to redeem BUIDL tokens for the USDC :term:`stablecoin`, making it
+          near-instantly liquid.
+
+        - **JLTXX (JPMorgan OnChain Liquidity-Token Money Market Fund)** — launched in
+          May 2026 by J.P. Morgan Asset Management on the public Ethereum blockchain,
+          its second tokenised money market fund. JLTXX is backed by US Treasuries and
+          repos, accepts both cash and :term:`stablecoins <stablecoin>` for
+          subscriptions, and is designed to support stablecoin issuers under the US
+          GENIUS Act. It is available to qualified institutional investors
+          (minimum investment $1 million) via the Morgan Money platform, and grew to
+          roughly $700 million in onchain assets within two months of launch.
+
+        **Similarities with vaults**: like a :term:`vault`, a tokenised fund pools
+        assets from multiple investors, is managed according to a strategy or mandate,
+        and issues onchain share tokens whose value tracks the underlying assets —
+        conceptually both are "deposit assets, receive shares" structures, and both may
+        expose deposits and redemptions through the same token standards, such as
+        :term:`ERC-4626` or the asynchronous :term:`ERC-7540` extension.
+
+        **Differences from vaults**: a vault is a :term:`self-custodial`
+        :term:`smart contract` structure — the rules live in code, anyone (in
+        permissionless vaults) can deposit or withdraw at any time, and the assets under
+        management are typically other onchain tokens. A tokenised fund is a regulated,
+        :term:`custodial` legal entity: the underlying assets (e.g. Treasury bills) are
+        held offchain by a custodian, the token is a representation of a legal share
+        register entry, transfers are usually restricted to KYC-verified, whitelisted
+        addresses, NAV is computed by a fund administrator rather than read from
+        onchain prices, and investors' rights come from securities law rather than
+        from smart contract code. In short: a vault's trust anchor is code, a
+        tokenised fund's trust anchor is regulation — with the token as the
+        distribution and settlement layer. Vault protocols such as :term:`Lagoon` and
+        :term:`Enzyme protocol` increasingly blur this line by wrapping regulated
+        share classes and offchain strategies into onchain vault interfaces.
+
+        See also
+
+        - :term:`RWA`
+
+        - :term:`Vault`
+
+        - :term:`ERC-4626`
+
+        - :term:`ERC-7540`
+
+        - :term:`Stablecoin`
+
+        - :term:`US Treasury note`
+
+        - :term:`Hedge fund`
+
+        - :term:`Token`
+
+        - :term:`ERC-20`
+
+        - :term:`Self-custodial`
+
+        - :term:`Custodial`
+
+        - :term:`Onchain`
+
+        - :term:`Decentralised finance`
