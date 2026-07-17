@@ -8184,6 +8184,18 @@
     "short_description": null
   },
   {
+    "title": "Forecasting with Hyper-Trees",
+    "authors": "Alexander März, Kashif Rasul",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2405.07836",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-07-17",
+    "filename": "forecasting-with-hyper-trees.pdf",
+    "downloaded_at": "2026-07-17",
+    "download_failure_reason": null,
+    "short_description": "März and Rasul repurpose gradient boosted decision trees from forecasting time series directly to learning the parameters of classical time series models (AR, ARMA, ETS, STL, VAR) as functions of features, transferring the hypernetwork concept to GBDTs. The approach gains extrapolation, cross-series learning, time-varying interpretable parameters and full GBDT tabular functionality; a hybrid Hyper-TreeNet (GBDT encoder + shallow MLP decoder) keeps runtime flat as parameter counts grow. On public benchmarks Hyper-Tree-AR wins Air Passengers across all metrics and is the most accurate model on Rossmann Store Sales, beating conventional GBDTs on their home turf."
+  },
+  {
     "title": "Fractional Differencing: How to Save Time Series Memory",
     "authors": "Zaur T, Notes on ML",
     "publication_year": null,
