@@ -242,3 +242,14 @@ Key terms and literature:
 By Nathaniel Brodetsky (Independent Quant Architect), posted on LinkedIn.
 
 `Read the blog post <https://www.linkedin.com/posts/nathaniel-brodetsky-a08a511b5_most-quant-systems-trade-noise-and-call-it-ugcPost-7475250913813786624-B1y4/>`__
+
+Are Tick, Volume and Dollar Bars Truly Information-Driven? Validating Bar Sampling on SIP Data
+----------------------------------------------------------------------------------------------
+
+Ahmed Nabil (Prometheus-IQ) empirically stress-tests the standard claim — following López de Prado — that tick, volume and dollar bars are superior to arbitrary time bars, asking whether they are truly "information-driven" on a modern US equity tape. Using a three-month SIP trade dataset, he shows the trade-size distribution is heavily left-skewed with 70.8% odd-lot prints (noisy transactions with no aggressive trading sign) alongside massive right-tail institutional block trades exceeding one million shares. Standard volume-bar sampling fails on this tape: share rank and dollar rank disagree severely across his portfolio (AAPL ranks 2nd by shares but 5th by dollars with a median print of ~$4,088; ASML ranks 5th by shares but 1st by dollars at ~$6,584 median). Tick sampling fares no better — an AAPL trade carries far less economic value than an ASML trade (median 13 shares / ~$3,859 vs 4 shares / ~$6,735), yet tick bars treat both as exactly "1 tick", measuring pure transaction frequency on an internalized, odd-lot-heavy tape rather than economic or information flow.
+
+Standard dollar bars get a "yes and no": they capture transacted value well — speeding up when the tape is heavy, slowing when quiet — but blindly pool all volume and so fail to isolate asymmetric information flow. The post's answer is the dollar-runs bar, which closes not on total transacted value but when the directional persistence of signed order flow becomes statistically surprising. Compared to standard dollar bars, three properties stand out: dynamic frequency (bars generate only when signed print expectations are exceeded, tracking shifting information density), order-flow direction (runs isolate the true asymmetry between buy and sell sequences), and event detection (runs capture structural order-book changes before a standard dollar bar breaches its threshold, visible in the theta-to-expectation ratio). The post is part of a data-driven series validating the sampling layer of an ML trading pipeline rather than taking textbook prescriptions on faith.
+
+By Ahmed Nabil.
+
+`Read the post <https://www.linkedin.com/posts/ai-ahmed_ticks-volume-and-dollar-bars-are-mathematically-ugcPost-7485089005194166273-UEF-/>`__.

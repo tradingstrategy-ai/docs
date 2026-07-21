@@ -3900,6 +3900,18 @@
     "short_description": null
   },
   {
+    "title": "Are Tick, Volume and Dollar Bars Truly Information-Driven? Validating Bar Sampling on SIP Data",
+    "authors": "Ahmed Nabil",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/ai-ahmed_ticks-volume-and-dollar-bars-are-mathematically-ugcPost-7485089005194166273-UEF-/",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-21",
+    "filename": "are-tick-volume-and-dollar-bars-truly-information-driven.pdf",
+    "downloaded_at": "2026-07-21",
+    "download_failure_reason": null,
+    "short_description": "Ahmed Nabil empirically tests whether tick, volume and dollar bars are truly information-driven using a three-month SIP trade dataset, showing 70.8% odd-lot prints and severe share-rank vs dollar-rank mismatches break volume and tick sampling on a modern internalized tape. He argues for dollar-runs bars, which close when the directional persistence of signed order flow becomes statistically surprising, isolating buy/sell asymmetry and detecting structural order-book changes before standard dollar bars breach their thresholds."
+  },
+  {
     "title": "Bid-Ask Spread Decomposition",
     "authors": "Simone Menaldo",
     "publication_year": null,
