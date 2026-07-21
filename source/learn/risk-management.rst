@@ -210,3 +210,14 @@ The method is deliberately brute-force: synthetic returns are generated with con
 By Rob Carver.
 
 `Read the blog post <https://qoppac.blogspot.com/2025/02/how-much-should-we-get-paid-for-skew.html>`__
+
+The Excess Return Stayed at Home, the Defence Travelled Better
+--------------------------------------------------------------
+
+Michael Trequattrini reports on adding a defensive overlay to a balanced portfolio core (built in earlier work with inverse volatility and volatility targeting), motivated by the observation that market crises are not interchangeable: in 2008 treasuries protected the portfolio, in 2022 they became one of its main sources of losses, and during covid the main challenge was the speed of the shock. Because no single defensive signal handles all three, the overlay combines two different types of information — structural fragility, measured through equity-bond correlation, changes in that correlation and equity volatility; and the portfolio trend, measured by comparing the core portfolio's NAV with its moving average. The final rule, called D3, does not try to decide which signal is correct: it simply selects the more defensive exposure suggested by the two.
+
+The empirical arc is a clean walk-forward transferability test. In the US development sample, D3 cut maximum drawdown from approximately -16.2% to -9.6%. The specification was then frozen and tested on other markets without changing the rules: in emerging markets it reduced maximum drawdown from approximately -21% to -12.5% while improving the Sortino ratio from 0.75 to 1.00. By contrast, a more ambitious strategy designed to improve Sharpe failed its test in developed markets outside the US. The headline conclusion — defence transfers better than excess return — is that the ability to reduce deep losses appears more stable across markets than the ability to consistently generate higher CAGR or Sharpe, and a strategy that reduces the probability investors abandon it at the worst moment can be more useful than one with higher average returns. As the author puts it, the most robust result was not a steeper equity curve but an equity curve that was harder to break.
+
+By Michael Trequattrini.
+
+`Read the post <https://www.linkedin.com/posts/mich97_the-excess-return-stayed-at-home-the-defence-ugcPost-7485282498445340672-0E_s/>`__.

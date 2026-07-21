@@ -5856,6 +5856,18 @@
     "short_description": null
   },
   {
+    "title": "The Excess Return Stayed at Home, the Defence Travelled Better",
+    "authors": "Michael Trequattrini",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/mich97_the-excess-return-stayed-at-home-the-defence-ugcPost-7485282498445340672-0E_s/",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-07-21",
+    "filename": "the-excess-return-stayed-at-home-the-defence-travelled-better.pdf",
+    "downloaded_at": "2026-07-21",
+    "download_failure_reason": null,
+    "short_description": "Michael Trequattrini adds a defensive overlay (D3) to a balanced portfolio core, combining a structural-fragility signal (equity-bond correlation, its changes, and equity volatility) with a portfolio-trend signal (NAV vs its moving average), always taking the more defensive of the two. Frozen after US development (max drawdown -16.2% to -9.6%) and tested unchanged elsewhere, it cut emerging-market drawdown from -21% to -12.5% and lifted Sortino from 0.75 to 1.00, while a Sharpe-seeking variant failed out-of-sample — concluding that defence transfers across markets better than excess return."
+  },
+  {
     "title": "The Hidden Costs and Return Erosion of Stop Losses in Systematic Trading",
     "authors": "Pedma",
     "publication_year": null,
