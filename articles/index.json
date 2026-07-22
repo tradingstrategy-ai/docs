@@ -2976,6 +2976,18 @@
     "short_description": null
   },
   {
+    "title": "Bank Stocks and Multifactor Models",
+    "authors": "James W. Kolari, Wei Liu, Huiling Liao, Hilal Anwar Butt",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6984958",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-07-22",
+    "filename": "bank-stocks-and-multifactor-models.pdf",
+    "downloaded_at": "2026-07-22",
+    "download_failure_reason": null,
+    "short_description": "Kolari, Liu, Liao and Butt use Fama-MacBeth cross-sectional regressions on CRSP daily bank-stock returns (1986-2023) to test whether multifactor models built for nonfinancial stocks can price bank stocks, comparing the CAPM and five multifactor models against the two-factor Mean Variance Pricing (MVP) model (market beta risk plus market-return-dispersion 'zeta' risk). Adding size, value, profitability, investment and momentum factors substantially improves pricing, but the parsimonious two-factor MVP model outperforms on goodness-of-fit and factor-loading significance, reaching an out-of-sample R-squared near 99% on size-sorted bank portfolios with zeta t-statistics above 4 — implying bank stocks are less anomalous than previously believed."
+  },
+  {
     "title": "Combining Three Academic Factor Strategies to Compress Drawdown and Multiply Returns",
     "authors": "AI Data Lab",
     "publication_year": null,
