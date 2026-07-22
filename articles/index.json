@@ -8016,6 +8016,18 @@
     "short_description": null
   },
   {
+    "title": "100 Trading Indicators Tested Across 4,100+ Strategies",
+    "authors": "Tomas Nesnidal",
+    "publication_year": 2026,
+    "download_page": "https://breakoutos.com/blog/research-indicator-study",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-07-22",
+    "filename": "100-trading-indicators-tested-across-4100-strategies.pdf",
+    "downloaded_at": "2026-07-22",
+    "download_failure_reason": null,
+    "short_description": "Tomas Nesnidal tests 100 indicator conditions across 4,115 NASDAQ and Bitcoin breakout strategies with in-sample and out-of-sample validation. The study finds that simple volatility and participation measures, especially bar range relative to ATR, dominate breakout filters, while oscillators such as RSI and stochastics consistently degrade performance."
+  },
+  {
     "title": "8 Reasons to Stop Using MACD (and Use This Instead) – with Alex Spiroglou",
     "authors": "Andrew Swanscott",
     "publication_year": null,

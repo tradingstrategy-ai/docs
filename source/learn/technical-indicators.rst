@@ -165,3 +165,16 @@ The headline rule is "trim hard at 7 ATR, hold a small runner above 11." Three o
 By Denis Hamel.
 
 `Read the X article <https://x.com/denis__hamel/status/2056088634382537028>`__.
+
+100 Trading Indicators Tested Across 4,100+ Strategies
+------------------------------------------------------
+
+Tomas Nesnidal tests 100 indicator conditions across 4,115 breakout strategies: 3,500 NASDAQ strategies and 615 Bitcoin strategies, both using 60-minute data and in-sample/out-of-sample splits. The study is designed to avoid the usual "one indicator, one hand-picked strategy" trap by applying each filter across many baseline breakout systems and scoring whether it improves net profit, return ratio, win percentage, average trade, and maximum drawdown.
+
+The main result is that simple volatility and participation measures dominate. Bar range relative to ATR is the best overall individual filter, reducing NASDAQ maximum drawdown by 40%, improving net profit by 60%, and carrying the strongest robustness score into unseen data. Volume indicators work especially well on NASDAQ, where volume data is cleaner, while Bitcoin is led by volatility filters such as standard deviation; crypto volume filters are weaker out-of-sample, likely because exchange fragmentation and wash trading make the data noisier. The sharp negative result is on oscillators: RSI, stochastics, and related overbought/oversold tools consistently rank near the bottom for breakout trading because they are built for mean-reversion logic, not continuation after range expansion.
+
+By Tomas Nesnidal.
+
+Mentioned by `Breakout Trading Academy (@onlybreakouts) in this X discussion <https://x.com/onlybreakouts/status/2062596797936075062>`__, where the thread summarizes the article as evidence that bar range relative to ATR, volume, and other simple volatility/participation filters beat more complex indicator conditions across thousands of breakout strategies.
+
+`Read the blog post <https://breakoutos.com/blog/research-indicator-study>`__
