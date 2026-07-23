@@ -3696,6 +3696,18 @@
     "short_description": null
   },
   {
+    "title": "Financial Machine Learning Part 0: Bars",
+    "authors": "Maks Ivanov",
+    "publication_year": 2019,
+    "download_page": "https://medium.com/data-science/financial-machine-learning-part-0-bars-745897d4e4ba",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "financial-machine-learning-part-0-bars.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "The opening post of a series applying López de Prado's Advances in Financial Machine Learning to real data, giving a hands-on, code-first tour of time, tick, volume and dollar bars on Bitcoin (XBT) trade data with per-bar VWAP. Its memorable illustration: tick bars reveal a ~10% flash rally and flash crash hidden in the time-bar representation, motivating activity-based sampling. Archived as an original summary card."
+  },
+  {
     "title": "From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses",
     "authors": null,
     "publication_year": null,

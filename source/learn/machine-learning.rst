@@ -1481,3 +1481,14 @@ Our summary: this is the clearest short explainer of the imbalance-bar mechanism
 By Gerard Martínez (Towards Data Science).
 
 `Read the blog post <https://medium.com/data-science/information-driven-bars-for-financial-machine-learning-imbalance-bars-dda9233058f0>`__.
+
+Financial Machine Learning Part 0: Bars
+---------------------------------------
+
+Maks Ivanov's Towards Data Science post is the opening instalment of a series applying the methods of López de Prado's *Advances in Financial Machine Learning* to real (and occasionally synthetic) datasets, and it starts exactly where the book does: with bars. It is a hands-on, code-first tour of the four standard bar types — time, tick, volume and dollar — built on Bitcoin (XBT) trade data, computing a VWAP per bar and comparing the resulting series. The pedagogical payoff is a concrete, memorable illustration of why the choice of sampling clock matters: plotting tick bars against time bars on the same Bitcoin data surfaces a roughly 10% flash rally and flash crash that were entirely hidden inside the time-bar representation — events that, depending on your strategy, are either a mean-reversion opportunity or a slippage cost.
+
+Our summary: this is the friendliest practical entry point in the collection for the "stop using time bars" idea, pairing directly with :ref:`The Volume Clock <the-volume-clock>` (the theory) and the imbalance-bars tutorial (the next step). It motivates each bar type from the shortcomings of the previous one — time bars oversample quiet periods and undersample active ones; tick bars fix the activity mismatch but treat a single 1,000-contract trade the same as ten 100-contract trades; volume bars fix that but are distorted by price level; dollar bars sample on traded value and are the most robust to splits and large price moves. Because it works through actual crypto data with code, it doubles as a template a developer can adapt, and it is a good primer to read before the more mechanical imbalance/run bars or a library like mlfinlab.
+
+By Maks Ivanov (Towards Data Science).
+
+`Read the blog post <https://medium.com/data-science/financial-machine-learning-part-0-bars-745897d4e4ba>`__.
