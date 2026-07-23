@@ -1212,6 +1212,18 @@
     "short_description": null
   },
   {
+    "title": "A London-Session Continuation Model: 9.5 Years, 3 Markets, Frozen Rules",
+    "authors": "Oscar-K-Trader (@OKTrader14)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/OKTrader14/status/2079969531133415929",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "london-session-continuation-model-95-years-3-markets.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Oscar-K-Trader (@OKTrader14) shares an X thread on a mechanical, ICT-style London-session continuation model backtested over 9.5 years across three markets (EURUSD, NAS100, GER40): take higher-timeframe bias, wait for a pullback that sweeps liquidity into a 4H/1H fair-value gap, enter on the retest of a 5-minute structure shift with stop past the sweep, fixed R-target and flat by night. It is a deliberately low-win-rate, asymmetric-payoff design (44% win rate, 62% of 1,343 trades reach +0.5R, 41% reach +1R) reporting +251% trading through news (+163% sitting out FOMC/CPI/NFP), ~12% max drawdown and a worst day of -1.61%."
+  },
+  {
     "title": "A Quantitative Trading Strategy Based on A Position Management Model",
     "authors": null,
     "publication_year": null,

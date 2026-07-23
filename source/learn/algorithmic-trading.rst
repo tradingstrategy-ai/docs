@@ -297,3 +297,16 @@ This is a concise distillation of practical experience rather than a formal stud
 Mentioned by `Stat Arb (@quant_arb) in this discussion <https://x.com/quant_arb/status/2064277274451697953>`__.
 
 `Read the post <https://x.com/quant_arb/status/2064277274451697953>`__
+
+A London-Session Continuation Model: 9.5 Years, 3 Markets, Frozen Rules
+----------------------------------------------------------------------
+
+Oscar-K-Trader (@OKTrader14), a Netherlands-based day trader, shares a mechanical London-session continuation model summarised as "my whole trading style in one chart" — a single systematic strategy backtested over 9.5 years across three markets (the charts reference EURUSD, NAS100 and GER40). It is an ICT/"smart money"-style intraday setup, but frozen into fixed rules and run as a strategy tester rather than traded discretionarily. The stated appeal is transparency: real backtest trade lists with the equity curves attached, "not a signal service — just the system, with the receipts."
+
+The rules, as described in the thread: take the higher-timeframe bias, wait for a pullback that sweeps liquidity into a 4H/1H fair-value gap, let the 5-minute structure shift back in the direction of the trend, and enter on the retest of that structure shift. The stop goes past the liquidity sweep, the target is a fixed R multiple, and every position is closed flat by night (no overnight risk). The edge is explicitly an asymmetric-payoff, low-win-rate design: across 1,343 trades, 62% move at least +0.5R in favour and 41% reach a full +1R, while the win rate is only 44% "low on purpose" — the winners are larger than the losers, which the author frames as "the whole game." A follow-up notes the indicator and strategy tester are built and a fully mechanical worked example was posted for a trade on 16 July.
+
+The headline performance, on one account trading all three tickers: +251% trading through news events, or +163% if you sit out every FOMC / CPI / NFP day, with a maximum drawdown of about 12% and a worst single day over the full 9.5 years of −1.61%. As with any single-author, self-reported backtest of a discretionary-style setup rendered mechanical, the usual caveats apply — the numbers are the author's own and the concern is how faithfully the "frozen rules" capture what was historically a judgement-based read of liquidity and structure — but the thread is unusually specific about trade counts, R-distribution and the news-on/news-off split.
+
+Posted by `Oscar-K-Trader (@OKTrader14) in this thread <https://x.com/OKTrader14/status/2079969531133415929>`__.
+
+`Read the thread <https://x.com/OKTrader14/status/2079969531133415929>`__
