@@ -1503,3 +1503,14 @@ Our summary: this sits alongside the imbalance-bars and "FML Part 0" tutorials a
 By QuantBeckman.
 
 `Read the blog post <https://www.quantbeckman.com/p/what-are-your-bars-hiding-from-you>`__.
+
+Why Time Bars Are Not Enough
+----------------------------
+
+Lucas of the Quantreo newsletter makes the practitioner's case against time bars in a compact, code-backed post subtitled "From Ticks to Insight: Building Bars That Respect Market Microstructure." The core argument is the one shared across this bar-sampling material: most traders use 1-minute, 5-minute or hourly bars simply because that is every charting tool's default, but markets move in *activity*, not time — the first hour of trading may see thousands of transactions while overnight sees almost none, so fixed-time sampling oversamples quiet periods and undersamples peak volatility. The post then walks up the ladder of alternatives — tick bars, volume/VWAP bars, and imbalance bars — with short "when to use" guidance for each (e.g. volume bars when volume is the key signal, for assets with irregular liquidity, or for execution-timing/slippage-sensitive strategies) and Python snippets drawn from Quantreo's own open-source ``quantreo`` bar-building library.
+
+Our summary: this is the most concise "why not time bars" primer in the collection and a good first read before the deeper treatments — it complements the theory in :ref:`The Volume Clock <the-volume-clock>` and the more detailed imbalance-bar and dollar-bar tutorials. Its distinguishing practical feature is that the examples are runnable against a maintained library (``ticks_to_volume_bars`` and friends), so it doubles as a pointer to tooling rather than pseudocode. Being a free newsletter post, it is broad rather than deep, and stops at introducing imbalance bars rather than working through their trickier calibration.
+
+By Lucas (Quantreo).
+
+`Read the blog post <https://www.newsletter.quantreo.com/p/why-time-bars-are-not-enough>`__.

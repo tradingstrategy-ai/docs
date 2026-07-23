@@ -3972,6 +3972,18 @@
     "short_description": "Sokolovsky et al. propose Volume-Centred Range Bars, a volume-price event-based market representation designed to make non-stationary financial time series more suitable for machine-learning pipelines, evaluated statistically with gradient-boosted trees and SHAP. The volume-based representation classifies price patterns significantly better than a price-levels baseline (especially on liquid instruments), and tree-derived feature interactions closely match SHAP interaction values, validating SHAP interpretation in the financial-markets setting."
   },
   {
+    "title": "Why Time Bars Are Not Enough",
+    "authors": "Lucas (Quantreo)",
+    "publication_year": 2025,
+    "download_page": "https://www.newsletter.quantreo.com/p/why-time-bars-are-not-enough",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "why-time-bars-are-not-enough.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "A concise, code-backed Quantreo newsletter post arguing that time bars are the wrong default because markets move in activity, not time — fixed-time sampling oversamples quiet periods and undersamples peak volatility. It walks through tick, volume/VWAP and imbalance bars with 'when to use' guidance and runnable Python from Quantreo's open-source bar-building library. Archived as an original summary card."
+  },
+  {
     "title": "XGBoost for Classifying Ethereum Short-term Return Based on Technical Factor",
     "authors": null,
     "publication_year": null,
