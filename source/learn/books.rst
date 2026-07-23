@@ -153,6 +153,24 @@ The book is Python-based and pairs with an actively maintained companion code re
 
 `Buy the book <https://www.amazon.com/Machine-Learning-Trading-Integrate-Reinforcement-dp-1803246979/dp/1803246979?&linkCode=sl2&tag=ml4trading-20&linkId=65b3155cf78bb94e3d23ebf486dbdd59&language=en_US&ref_=as_li_ss_tl>`__
 
+Trades, Quotes and Prices: Financial Markets Under the Microscope
+----------------------------------------------------------------
+
+Jean-Philippe Bouchaud, Julius Bonart, Jonathan Donier, and Martin Gould (Cambridge University Press, 2018) provide the definitive empirical account of market microstructure — the discipline that explains how individual trades, quotes, and order-flow interact to form prices. Informed by years of practical trading experience at Capital Fund Management and built throughout on high-frequency data, it works from the smallest scale (the arrival of individual orders and the dynamics of the limit order book) up to macro-scale questions of liquidity, price impact, and market stability. Core topics include the statistical properties of order flow, linear and square-root (nonlinear) price impact, propagator/response-function models, the mechanics of market and limit orders, and why large trades move prices the way they do.
+
+For readers of this collection it is the "why event-time" backbone behind tick, volume, and dollar bars: it is the rigorous, data-driven treatment of how order flow drives prices that motivates sampling by market activity rather than by the clock, and it pairs naturally with the volume-clock and transaction-clock papers catalogued under market microstructure.
+
+`Buy the book <https://www.amazon.com/Trades-Quotes-Prices-Financial-Microscope/dp/110715605X>`__.
+
+Market Microstructure Theory
+----------------------------
+
+Maureen O'Hara (Blackwell, 1995) wrote the classic theoretical reference on market microstructure — the study of how the trading mechanism itself affects price formation. The book gives a comprehensive treatment of the two main modelling traditions: inventory-based models, in which market makers adjust quotes to manage position risk, and information-based models, in which prices evolve as market makers learn from a potentially informed order flow (sequential-trade models in the Glosten-Milgrom tradition and strategic-informed-trading models in the Kyle tradition), including rational-expectations and learning frameworks.
+
+It is the theoretical foundation beneath the Probability of Informed Trading (PIN) and its volume-clock descendant VPIN, and therefore underpins the order-flow-toxicity and information-driven-bar material elsewhere in this collection. A dense, mathematical text best read as the canonical theory companion to the more empirical *Trades, Quotes and Prices*.
+
+`Buy the book <https://www.amazon.com/Market-Microstructure-Theory-Maureen-OHara/dp/1557864438>`__.
+
 Further reading lists
 =====================
 
