@@ -3996,6 +3996,18 @@
     "short_description": null
   },
   {
+    "title": "A Subordinated Stochastic Process Model with Finite Variance for Speculative Prices",
+    "authors": "Peter K. Clark",
+    "publication_year": 1973,
+    "download_page": "https://www.jstor.org/stable/1913889",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "a-subordinated-stochastic-process-model-with-finite-variance-for-speculative-prices.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Clark's founding 'business time' paper: he models speculative prices as a subordinated stochastic process — Brownian motion evaluated in a random operational time directed by trading volume (a lognormal subordinator) — so that random variation in activity per calendar interval produces fat-tailed but finite-variance returns, an alternative to Mandelbrot's infinite-variance stable family. Bayes and Kolmogorov-Smirnov tests on cotton futures favour the finite-variance subordinated model. It is the theoretical root of the volume clock (Easley-López de Prado-O'Hara) and transaction clock (Ané-Geman) behind tick/volume/dollar bars."
+  },
+  {
     "title": "Are Tick, Volume and Dollar Bars Truly Information-Driven? Validating Bar Sampling on SIP Data",
     "authors": "Ahmed Nabil",
     "publication_year": 2026,

@@ -283,3 +283,18 @@ Used data and code: tick-by-tick transaction data (from Reuters) on two Nasdaq t
 Key metrics: not a trading-strategy paper — the result is distributional. The headline is that returns re-indexed by the cumulative number of trades are "virtually normal," and that the trade-count clock outperforms the volume clock at recovering normality, establishing the number of trades as the economic time change linking order flow to price dynamics.
 
 `Read the paper <https://onlinelibrary.wiley.com/doi/abs/10.1111/0022-1082.00286>`__
+
+.. _clark-subordinated-stochastic-process:
+
+A Subordinated Stochastic Process Model with Finite Variance for Speculative Prices
+----------------------------------------------------------------------------------
+
+Peter K. Clark (Econometrica, 1973) is the founding paper of the "business time" / volume-clock idea in finance — the theoretical root beneath tick, volume and dollar bars, cited by both :ref:`The Volume Clock <the-volume-clock>` and :ref:`Ané-Geman <order-flow-transaction-clock-normality>`. Clark takes S. Bochner's concept of a *subordinated* stochastic process and proposes it as a model for speculative prices. The empirical problem he addresses is that daily price changes are leptokurtic (fat-tailed): compared with a normal distribution of the same variance, they have too many small and too many large observations. Mandelbrot (1963) had explained this non-normality with the stable-Paretian family, which has *infinite* variance; Clark offers a competing explanation that preserves finite variance.
+
+Our summary: the central and enduring idea is that calendar time is the wrong clock. In Clark's model the price process is Brownian motion (so price changes are normal) but it is evaluated not in clock time but in a random "operational" or "business" time — a directing process he links to trading volume, modelled as a lognormal subordinator. Because the amount of information/activity per calendar interval varies randomly, the observed unconditional distribution of price changes is a *mixture* of normals with different variances, which is exactly what produces fat tails while keeping variance finite. This is the same mechanism that later work formalises as the volume clock (Easley-López de Prado-O'Hara) and the transaction clock (Ané-Geman), and it is the reason activity-based bars produce better-behaved, more nearly-Gaussian returns than time bars. Read it as the origin of the whole event-based-sampling lineage; the modern refinements mostly argue about *which* activity measure (volume vs. number of trades) is the right subordinator.
+
+Used data and code: Clark tests the lognormal-normal subordinated distribution against members of the stable family on cotton futures price data, using discrete Bayes' tests and Kolmogorov-Smirnov goodness-of-fit tests. A 1973 theoretical/econometric paper with no accompanying code.
+
+Key metrics: not a trading-strategy paper — the result is distributional. The headline finding is that finite-variance distributions subordinate to the normal fit the cotton-futures price data better than the infinite-variance stable family, establishing subordination (a volume-directed time change) as a viable, finite-variance account of fat-tailed returns. Econometrica, Vol. 41, No. 1 (January 1973), pp. 135-155.
+
+`Read the paper <https://www.jstor.org/stable/1913889>`__
