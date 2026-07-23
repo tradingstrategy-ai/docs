@@ -1492,3 +1492,14 @@ Our summary: this is the friendliest practical entry point in the collection for
 By Maks Ivanov (Towards Data Science).
 
 `Read the blog post <https://medium.com/data-science/financial-machine-learning-part-0-bars-745897d4e4ba>`__.
+
+Tick, Dollar and Volume Bars: Smarter Sampling of Financial Data (with code)
+---------------------------------------------------------------------------
+
+A detailed, code-first QuantBeckman newsletter piece on how to turn a raw, high-frequency stream of timestamped trades into model-ready bars — framed around the question that titles it, "what are your bars hiding from you?". The framing analogy is memorable: sampling at fixed time intervals is like a security camera that photographs the scene every minute regardless of activity, whereas event-based sampling is like a motion-activated camera that records only when something significant happens — a certain volume traded, a price move, or a dollar value exchanged. The post argues that this sampling decision is the first and most profound obstacle in a quant pipeline, made before any strategy design, and works through time bars, tick bars, volume bars, VWAP bars and dollar bars with accompanying Python code.
+
+Our summary: this sits alongside the imbalance-bars and "FML Part 0" tutorials as the practical, implementation-focused corner of the bar-sampling material, and complements the theory in :ref:`The Volume Clock <the-volume-clock>`. It is explicit about the limitations of each approach and about the engineering reality that raw tick data, while maximally granular, is computationally heavy and statistically awkward, so the goal of bar construction is to compress the stream (t, p, v) into representations with better statistical properties for modelling. Useful as a hands-on reference for building a sampling layer, with the caveat that it is a paid/premium newsletter post, so the full code and later sections sit behind a subscription.
+
+By QuantBeckman.
+
+`Read the blog post <https://www.quantbeckman.com/p/what-are-your-bars-hiding-from-you>`__.
