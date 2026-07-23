@@ -3708,6 +3708,18 @@
     "short_description": null
   },
   {
+    "title": "Information-Driven Bars for Financial Machine Learning: Imbalance Bars",
+    "authors": "Gerard Martínez",
+    "publication_year": 2019,
+    "download_page": "https://medium.com/data-science/information-driven-bars-for-financial-machine-learning-imbalance-bars-dda9233058f0",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "information-driven-bars-imbalance-bars.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "A practical Towards Data Science tutorial on imbalance bars (tick/volume/dollar: TIB/VIB/DIB), the most information-driven member of the López de Prado bar family. It explains the mechanism — accumulate signed-tick imbalance and close a bar when it breaches an expected threshold (EWMA of bar size times EWMA of imbalance proportion), so aggressive one-sided flow samples faster — and is candid about implementation pitfalls. Archived as an original summary card rather than a reproduction of the source article."
+  },
+  {
     "title": "Intelligent Algorithmic Trading Strategy Using Reinforcement Learning and Directional Change",
     "authors": null,
     "publication_year": null,

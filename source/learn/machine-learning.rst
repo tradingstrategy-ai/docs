@@ -1470,3 +1470,14 @@ Used data and code: the study uses intraday market data across several instrumen
 Key metrics: a classification-performance and interpretability study rather than a trading-P&L one — the headline results are a statistically significant classification improvement of the volume-centred range-bar representation over the price-levels representation (strongest on liquid instruments) and the demonstrated agreement between tree-derived and SHAP feature interactions.
 
 `Read the paper <https://arxiv.org/abs/2103.12419>`__
+
+Information-Driven Bars for Financial Machine Learning: Imbalance Bars
+---------------------------------------------------------------------
+
+Gerard Martínez walks through **imbalance bars**, the most information-driven member of the López de Prado bar family, in a practical Towards Data Science tutorial that follows on from his earlier pieces on tick, volume and dollar bars. The motivation, quoting *Advances in Financial Machine Learning* (2018), is to "sample more frequently when new information arrives to the market" — by synchronising sampling with the arrival of informed traders, you can potentially act before prices reach a new equilibrium. Imbalance bars apply to tick, volume or dollar data to produce tick (TIB), volume (VIB) and dollar (DIB) imbalance bars respectively.
+
+Our summary: this is the clearest short explainer of the imbalance-bar mechanism, useful as a companion to the theory in :ref:`The Volume Clock <the-volume-clock>` and the sampling debate in the collection's tick-bars posts. The construction works off signed ticks (the tick rule assigns +1/−1 to each trade by price direction): you accumulate the signed imbalance θ trade by trade, and close a new bar the moment the cumulative imbalance breaches an *expected* threshold, at which point θ resets to zero and a fresh threshold is computed. That expected threshold is the product of an EWMA of recent bar sizes (the expected number of ticks per bar) and an EWMA of the imbalance proportion — so a run of same-signed, aggressive trades trips a bar quickly, while balanced two-sided flow lets it run. The post is candid about the practical pitfalls: reference implementations disagree, TIBs are sensitive to how the "expected candle size" EWMA is defined, and the recursive threshold can be numerically finicky — it points readers to community GitHub discussions for working code. A good on-ramp before using a library such as mlfinlab.
+
+By Gerard Martínez (Towards Data Science).
+
+`Read the blog post <https://medium.com/data-science/information-driven-bars-for-financial-machine-learning-imbalance-bars-dda9233058f0>`__.
