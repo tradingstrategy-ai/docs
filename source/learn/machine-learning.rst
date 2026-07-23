@@ -1455,3 +1455,18 @@ Key metrics: all six neural-network models selected for in-depth analysis beat t
 Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/PtrPomorski/status/2071919929570525205>`__, who remarks that "fixed income forecast is always on top".
 
 `Read the paper <https://arxiv.org/abs/2606.26815>`__
+
+.. _volume-centred-range-bars:
+
+Volume-Centred Range Bars: An Interpretable Market Representation for Machine Learning
+-------------------------------------------------------------------------------------
+
+Artur Sokolovsky, Luca Arnaboldi, Jaume Bacardit, and Thomas Gross (arXiv:2103.12419, 2021, revised 2022; later published in *Machine Learning with Applications*) propose Volume-Centred Range Bars (VCRB), a volume-price market representation designed specifically to make non-stationary financial time series more amenable to machine-learning pipelines. Rather than sampling prices on a fixed time grid, the representation is built around range bars centred on volume, so that each observation reflects a comparable amount of market activity and price movement — a concrete, ML-oriented instance of the event-based sampling paradigm argued for in :ref:`The Volume Clock <the-volume-clock>`. The authors evaluate the representation statistically (rather than via a single backtested strategy) using gradient-boosted trees and explainability tools, framing the work around four research questions: whether the representation enables more efficient ML model design, whether it beats a price-levels representation, whether it does better on liquid instruments, and whether SHAP feature interactions are trustworthy in this setting.
+
+Our summary: the paper's value is twofold. First, it gives empirical support for the "stop using time bars" thesis at the level a practitioner cares about — pattern-classification performance. The volume-based representation successfully classifies financial time-series patterns and does so significantly better than the price-levels baseline, with the edge concentrated on more liquid financial instruments (consistent with the idea that activity-clock sampling needs enough trades to be well-behaved). Second, it is a careful piece of explainable-ML methodology: the authors derive feature interactions directly from the tree ensembles and show they closely match SHAP interaction values, concluding that SHAP interactions are reliable in the financial-markets setting — a useful validation for anyone using SHAP to interpret microstructure or bar-based features. The main caveat is that the contribution is a representation and its statistical evaluation, not a costed trading strategy, so it demonstrates classifiability and interpretability rather than net-of-cost profitability.
+
+Used data and code: the study uses intraday market data across several instruments of differing liquidity and a boosting-tree (XGBoost-style) classification pipeline with SHAP-based interpretation; it is an arXiv preprint with a peer-reviewed journal version. Keywords the authors list: Applied ML, Volume Profiles, Boosting Trees, Explainable ML, Computational Finance.
+
+Key metrics: a classification-performance and interpretability study rather than a trading-P&L one — the headline results are a statistically significant classification improvement of the volume-centred range-bar representation over the price-levels representation (strongest on liquid instruments) and the demonstrated agreement between tree-derived and SHAP feature interactions.
+
+`Read the paper <https://arxiv.org/abs/2103.12419>`__

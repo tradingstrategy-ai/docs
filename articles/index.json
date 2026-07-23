@@ -3924,6 +3924,18 @@
     "short_description": null
   },
   {
+    "title": "Volume-Centred Range Bars: An Interpretable Market Representation for Machine Learning",
+    "authors": "Artur Sokolovsky, Luca Arnaboldi, Jaume Bacardit, Thomas Gross",
+    "publication_year": 2021,
+    "download_page": "https://arxiv.org/abs/2103.12419",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "volume-centred-range-bars-interpretable-representation.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Sokolovsky et al. propose Volume-Centred Range Bars, a volume-price event-based market representation designed to make non-stationary financial time series more suitable for machine-learning pipelines, evaluated statistically with gradient-boosted trees and SHAP. The volume-based representation classifies price patterns significantly better than a price-levels baseline (especially on liquid instruments), and tree-derived feature interactions closely match SHAP interaction values, validating SHAP interpretation in the financial-markets setting."
+  },
+  {
     "title": "XGBoost for Classifying Ethereum Short-term Return Based on Technical Factor",
     "authors": null,
     "publication_year": null,
