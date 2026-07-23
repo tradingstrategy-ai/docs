@@ -4056,6 +4056,18 @@
     "short_description": null
   },
   {
+    "title": "Order Flow, Transaction Clock, and Normality of Asset Returns",
+    "authors": "Thierry Ané, Hélyette Geman",
+    "publication_year": 2000,
+    "download_page": "https://onlinelibrary.wiley.com/doi/abs/10.1111/0022-1082.00286",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "order-flow-transaction-clock-and-normality-of-asset-returns.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Ané and Geman show that normality of asset returns can be recovered through a stochastic time change, extending Clark (1973): the cumulative number of trades is a better stochastic clock than volume for generating virtually normal returns, and the clock can be modelled nonparametrically as a jump diffusion. Using tick-by-tick data on Cisco and Intel, the paper provides the statistical foundation for tick/information-driven bars — re-indexing returns by trade count collapses the fat-tailed calendar-time distribution toward Gaussian (a later comment by Murphy-Izzeldin notes higher moments are not perfectly recovered)."
+  },
+  {
     "title": "Strategic Trading Models",
     "authors": "Simone Menaldo",
     "publication_year": null,
