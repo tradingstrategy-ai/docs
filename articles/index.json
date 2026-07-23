@@ -2712,6 +2712,18 @@
     "short_description": "A six-page Margin Syndicate report presenting a performance model and forward Monte Carlo projection for a systematic short-volatility BTC options strategy on Deribit (short strangles, iron condors, spreads), delta-hedged via perps on 5-minute cycles. Modeled from live production parameters, it reports a Sharpe of 5.83, max drawdown of -1.33%, and a six-month median projected return of +13% from a 10,000-path fat-tail (Student-t) simulation, while stressing the figures are modeled/projected rather than audited live returns."
   },
   {
+    "title": "Systematic Market-Neutral Crypto: A Readable Statistical Signal",
+    "authors": "Talha Çağrı Kotcioğlu",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/feed/update/urn:li:activity:7475257732896309248/",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "systematic-market-neutral-crypto-readable-statistical-signal.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Talha Çağrı Kotcioğlu shares a live-deployed market-neutral crypto strategy (Sharpe 3.45, Sortino 4.42, profit factor 1.80, max drawdown 7.2%) built and validated on two years of tick-level data with all costs baked in, no ML and no leverage, tolerant of up to one hour of execution delay. Per the author's comments, its edge is a crash-convex 'pre-sizing and parity choosing' mechanism that tilts heavily onto shorts ahead of stress so liquidation cascades drive PnL while flat markets bleed ~1-2%; the discussion also collects strong skeptic pushback that a two-year backtest with six-month out-of-sample is under one market cycle and prone to regime breakdown."
+  },
+  {
     "title": "The Low-Volatility Factor in Cryptocurrency Asset Selection",
     "authors": "Pedma",
     "publication_year": null,
