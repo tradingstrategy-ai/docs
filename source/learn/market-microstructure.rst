@@ -253,3 +253,18 @@ Standard dollar bars get a "yes and no": they capture transacted value well — 
 By Ahmed Nabil.
 
 `Read the post <https://www.linkedin.com/posts/ai-ahmed_ticks-volume-and-dollar-bars-are-mathematically-ugcPost-7485089005194166273-UEF-/>`__.
+
+.. _the-volume-clock:
+
+The Volume Clock: Insights into the High-Frequency Paradigm
+----------------------------------------------------------
+
+David Easley, Marcos López de Prado, and Maureen O'Hara (Journal of Portfolio Management, 2012) argue that what truly sets high-frequency trading (HFT) apart is not raw speed but a change of paradigm: strategic decisions made in a **volume-clock metric** — event-based time — rather than chronological ("wall clock") time. Their claim is that even if the speed advantage disappeared, HFT would persist because it exploits the structural weaknesses of low-frequency traders (LFTs) who still think in calendar time. This is the conceptual foundation for the whole family of information-driven bars: instead of sampling the tape at fixed time intervals, you divide the session into equal-activity buckets (e.g. 20,000-share or 200,000-contract increments) and let the sampling clock run fast when the market is active and slow when it is quiet.
+
+Our summary: this is the anchor reference for *why* tick, volume, and dollar bars exist, and it traces the lineage explicitly — Mandelbrot & Taylor (1967) proposed a transaction clock, Clark (1970, 1973) a volume clock, and Ané & Geman (2000) showed the trade count recovers normality (all three of which are catalogued alongside this entry). The authors spell out three statistical advantages of working in volume time: it removes most intra-session seasonality, it partially recovers Normality and the IID assumption, and it fixes the random/asynchronous-transaction problem that corrupts correlation estimates on high-frequency data. The paper then connects sampling to microstructure risk: it reviews PIN and introduces the volume-clock reasoning behind VPIN (order-flow toxicity), catalogues predatory HFT species (quote stuffers, quote danglers, liquidity squeezers, pack hunters), and uses the 6 May 2010 flash crash as the cautionary case. A memorable microstructure detail — more than 50% of E-mini S&P 500 trades are for a single contract, and size-100 trades are ~17× more frequent than size-99 or size-101 because of round-number GUI buttons — directly foreshadows the odd-lot and print-size pathologies that later empirical bar-sampling studies (e.g. the SIP-data validation post in this collection) grapple with. It closes with defensive options for LFTs: adopt volume-time sampling, monitor toxicity, and avoid predictable execution footprints.
+
+Used data and code: a conceptual/methodological article rather than a backtest; it draws on the authors' companion empirical work on VPIN and the E-mini S&P 500 futures for its trade-size and toxicity evidence. No code repository accompanies the paper, but the volume-clock and VPIN constructions are widely reimplemented (e.g. in open-source financial-ML libraries).
+
+Key metrics: not a trading-performance paper, so there are no Sharpe/return figures — its contributions are the volume-clock paradigm itself, the statistical case for event-based sampling (seasonality removal, partial recovery of Normality/IID, better high-frequency correlation estimates), and the VPIN toxicity framework. JEL: D52, D53, G02.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2034858>`__

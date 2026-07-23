@@ -4080,6 +4080,18 @@
     "short_description": null
   },
   {
+    "title": "The Volume Clock: Insights into the High-Frequency Paradigm",
+    "authors": "David Easley, Marcos López de Prado, Maureen O'Hara",
+    "publication_year": 2012,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2034858",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-23",
+    "filename": "the-volume-clock-insights-into-the-high-frequency-paradigm.pdf",
+    "downloaded_at": "2026-07-23",
+    "download_failure_reason": null,
+    "short_description": "Easley, López de Prado and O'Hara argue HFT's defining feature is operating in a volume-clock (event-based time) metric rather than speed, providing the conceptual foundation for tick/volume/dollar information-driven bars. Sampling in volume time removes intra-session seasonality, partially recovers Normality and the IID assumption, and fixes the asynchronous-transaction problem in high-frequency correlation estimation; the paper traces the lineage to Mandelbrot-Taylor, Clark and Ané-Geman, introduces VPIN order-flow toxicity, and uses the 2010 flash crash as its cautionary case."
+  },
+  {
     "title": "TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure",
     "authors": null,
     "publication_year": null,
