@@ -432,3 +432,16 @@ The study is purely empirical, built on CRSP daily decile portfolios (sorted on 
 Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/PtrPomorski/status/2070894673603014898>`__, where the paper was shared as new research on the calendar timing of momentum returns.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426026>`__
+
+Corrections Within Momentum: A Simple Robust Entry Rule
+-------------------------------------------------------
+
+A concise practitioner sketch of a strategy that combines a momentum filter with a mean-reversion entry. The rule has just three conditions: measure momentum on an asset, enter during a correction using a limit order, and exit after a fixed number of days. The design philosophy is to keep the logic simple and robust across asset classes rather than over-fitting a complex signal.
+
+The author lays out the intuition behind each parameter. Stronger momentum makes the signal more reliable, and a deeper correction makes the entry stronger — deeper corrections increase exposure to the mean-reversion effect, while shallower corrections lean more on the underlying momentum factor. In other words, the strategy trades the pullback within an established uptrend, sizing conviction by how far price has retraced. An accompanying equity curve is shown on a universe of the top 50 coins by volume, constructed survivorship-bias-free.
+
+Mentioned by Pavel Kýček (CEO at ROBUXIO) in `this LinkedIn discussion <https://www.linkedin.com/posts/pavelkycek_we-build-our-portfolios-on-simple-robust-share-7486422653424013314-f1b_/>`__, where he frames it as an example of building portfolios on simple, robust ideas and shows the resulting crypto equity curve.
+
+By Pavel Kýček.
+
+`Read the post <https://www.linkedin.com/posts/pavelkycek_we-build-our-portfolios-on-simple-robust-share-7486422653424013314-f1b_/>`__.

@@ -4800,6 +4800,18 @@
     "short_description": null
   },
   {
+    "title": "Corrections Within Momentum: A Simple Robust Entry Rule",
+    "authors": "Pavel Kýček",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/pavelkycek_we-build-our-portfolios-on-simple-robust-share-7486422653424013314-f1b_/",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-07-24",
+    "filename": "corrections-within-momentum-simple-robust-entry-rule.pdf",
+    "downloaded_at": "2026-07-24",
+    "download_failure_reason": null,
+    "short_description": "A concise practitioner sketch of a three-condition strategy that pairs a momentum filter with a mean-reversion entry: measure momentum, enter on a limit order during a correction, and exit after a fixed number of days. Deeper corrections lean on mean reversion while shallower ones rely on the momentum factor; an equity curve is shown on a survivorship-bias-free top-50-by-volume crypto universe."
+  },
+  {
     "title": "Cryptocurrencies and Momentum",
     "authors": null,
     "publication_year": null,
