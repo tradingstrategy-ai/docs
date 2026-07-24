@@ -2100,6 +2100,18 @@
     "short_description": null
   },
   {
+    "title": "Funding Monitor: Why Settlement Intervals Break Perpetual Carry Math",
+    "authors": "Mikko Ohtamaa",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/funding-monitor-update-settlement-interval-share-7485997110203490304-Zx3m/",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-07-24",
+    "filename": "funding-monitor-settlement-interval-detection-across-17-venues.pdf",
+    "downloaded_at": "2026-07-24",
+    "download_failure_reason": null,
+    "short_description": "A practitioner note on how perpetual-futures settlement intervals corrupt carry math: the same headline funding rate costs very different amounts per day depending on settlement frequency, yet most aggregators assume 8h everywhere. Documents hardening interval detection across 17 venues, fixing live Blofin and KuCoin bugs by making observed settlement history outrank venue spec, and adding a structural median-based fallback so no adapter can silently default to 8h."
+  },
+  {
     "title": "Geopolitical Risk in Currency Markets",
     "authors": null,
     "publication_year": null,

@@ -129,3 +129,16 @@ Mentioned by Daniel Szemerey in `this LinkedIn discussion <https://www.linkedin.
 By Daniel Szemerey.
 
 `Read the post <https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/>`__
+
+Funding Monitor: Why Settlement Intervals Break Perpetual Carry Math
+--------------------------------------------------------------------
+
+A practitioner note on a subtlety that quietly corrupts carry calculations across perpetual futures venues: the settlement interval. The same headline funding rate means very different things depending on how often it is charged. A perp paying -0.10% per settlement costs 0.3%/day on an 8-hour cycle but 1.2%/day at four times the settlement frequency — identical headline rate, several times the real carry cost. Most funding-rate aggregators do not standardise for this, so tooling that assumes an 8-hour cycle everywhere produces carry math that is fiction precisely on the venues where the most extreme rates live.
+
+The post documents hardening settlement-interval detection across 17 venues and fixing two live bugs. On Blofin, the venue's bulk spec was transiently flipping confirmed 1-hour contracts back to 8-hour, and the writer chain trusted the spec over observed settlement history; the fix inverts the authority chain so that settlement history outranks venue spec, which outranks the adapter default, enforced consistently across the detector, poller, backfill and drift monitor with a job lock against racing writers. On KuCoin, the per-symbol adapter hard-coded 8 hours and ignored the granularity field from the contracts endpoint. Venues lacking an authoritative spec field (Bitunix, HTX, CoinEx, Crypto.com, WhiteBIT) now fall back structurally to a detector-derived interval from settlement-timestamp medians, so no future adapter can silently default to 8 hours. The practical takeaway for anyone trading funding: check what your data source assumes about settlement frequency, because the answer is usually "8h" and usually wrong.
+
+Mentioned by Mikko Ohtamaa (Margin Syndicate / Trading Strategy) in `this LinkedIn discussion <https://www.linkedin.com/posts/funding-monitor-update-settlement-interval-share-7485997110203490304-Zx3m/>`__, where he links to the `Funding Monitor <https://marginsyndicate.co.uk/funding-monitor>`__ tool showing a live funding matrix across venues.
+
+By Mikko Ohtamaa.
+
+`Read the post <https://www.linkedin.com/posts/funding-monitor-update-settlement-interval-share-7485997110203490304-Zx3m/>`__.
