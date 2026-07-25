@@ -8856,6 +8856,18 @@
     "short_description": "This AQR paper presents a framework to decompose trend-following performance into (1) the magnitude of market moves, (2) the strategy's ability to profit from those moves, and (3) diversification across markets. The authors find that recent below-average trend performance is primarily explained by smaller average global market moves rather than reduced ability to profit from trends or lack of diversification, suggesting trend following may recover in environments with more pronounced market movements."
   },
   {
+    "title": "30 Industry-Relevant Quant Finance Projects",
+    "authors": "Mehul Mehta",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/mehul-mehta4_if-youre-targeting-quant-research-market-share-7486600553821564929-OO-y/",
+    "source_file": "tutorials.rst",
+    "included_in_index_at": "2026-07-25",
+    "filename": "30-industry-relevant-quant-finance-projects.pdf",
+    "downloaded_at": "2026-07-25",
+    "download_failure_reason": null,
+    "short_description": "A curated list of 30 intermediate-to-advanced quant finance project ideas for candidates targeting quant research, market risk, model validation, derivatives pricing, or credit roles. Projects are grouped into market risk, derivatives pricing, volatility modeling, fixed income, credit risk, and quantitative research, plus a bonus tier of advanced systems (XVA, copula risk, Longstaff-Schwartz exotics, Black-Litterman, HMM regimes), with the advice to build projects that demonstrate depth rather than familiarity."
+  },
+  {
     "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
     "authors": "Adil Reghai, Lama Tarsissi, Gérard Biau, and Alex Lipton",
     "publication_year": 2026,

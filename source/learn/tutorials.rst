@@ -73,3 +73,15 @@ A blog outlining an example trading strategy creating Uniswap V3 :term:`liquidit
 which is :term:`delta hedged` using :term:`Aave` :term:`lending protocol`.
 
 `Read post <https://medium.com/zelos-research/how-to-implement-uniswap-delta-neutral-strategy-with-lending-protocol-eee10371a77f>`__.
+30 Industry-Relevant Quant Finance Projects
+-------------------------------------------
+
+A curated list of 30 project ideas, ranging from intermediate to advanced, aimed at candidates targeting quant research, market risk, model validation, derivatives pricing, or credit roles. The projects are grouped by domain and are designed to demonstrate depth rather than surface familiarity: build them end to end and they double as portfolio pieces for interviews.
+
+The list spans six areas. Market Risk covers historical-simulation and parametric VaR (EWMA/GARCH), Monte Carlo VaR with full revaluation, stress testing (2008, COVID-19, inflation shock) and VaR backtesting (Kupiec, Christoffersen, Basel traffic light). Derivatives Pricing runs from Black-Scholes and binomial trees (CRR, Leisen-Reimer) through Monte Carlo for Asian/barrier/lookback options, finite-difference schemes (explicit, implicit, Crank-Nicolson) and implied-volatility-surface / SVI calibration. Volatility Modeling includes GARCH/EGARCH/GJR-GARCH, Heston, Dupire local volatility, SABR and realized-volatility forecasting from high-frequency data. Fixed Income covers SOFR/OIS and Treasury curve construction, bond risk (duration, convexity, key-rate duration), swap pricing, and Hull-White/Vasicek short-rate models. Credit Risk spans PD models (logistic regression, XGBoost), IFRS 9 expected credit loss, LGD via Jacob-Frye, CreditMetrics portfolio VaR and survival analysis (Kaplan-Meier, Cox). Quantitative Research closes with cointegration pairs trading, multi-factor investing, ML return prediction (XGBoost, LightGBM, LSTM), ARIMA/SARIMA/VAR forecasting and a reinforcement-learning trading agent (DQN/PPO) with transaction costs. A bonus tier lists advanced systems used at hedge funds and banks — XVA engines, copula portfolio risk, Longstaff-Schwartz exotics, Black-Litterman, HMM regime detection, and limit-order-book microstructure analysis.
+
+Mentioned by Mehul Mehta (Lead Quant at OCC) in `this LinkedIn discussion <https://www.linkedin.com/posts/mehul-mehta4_if-youre-targeting-quant-research-market-share-7486600553821564929-OO-y/>`__, where he advises building projects that demonstrate depth rather than just familiarity.
+
+By Mehul Mehta.
+
+`Read the post <https://www.linkedin.com/posts/mehul-mehta4_if-youre-targeting-quant-research-market-share-7486600553821564929-OO-y/>`__.
