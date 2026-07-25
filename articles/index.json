@@ -1620,6 +1620,18 @@
     "short_description": null
   },
   {
+    "title": "Cohort-Level Bid/Ask Depth for Realistic Options Backtests",
+    "authors": "Halcyon Waters",
+    "publication_year": 2026,
+    "download_page": "https://x.com/Halcyon_Waters/status/2080981156393046040",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-07-25",
+    "filename": "cohort-level-bid-ask-depth-for-realistic-options-backtests.pdf",
+    "downloaded_at": "2026-07-25",
+    "download_failure_reason": null,
+    "short_description": "A short practitioner note arguing that iron condor and other multi-leg options backtests overstate returns when they assume execution at the mid price, since every leg must cross the bid/ask spread. Cayo Largo (Halcyon Waters) backtests against cohort-level bid/ask depth captured across Deribit, Derive and Thalex so that modelled fills reflect what a trade would actually execute at rather than an idealised midpoint."
+  },
+  {
     "title": "Data Mining for Trading Alphas: Navigating Overfitting Risks",
     "authors": "Pedma",
     "publication_year": null,

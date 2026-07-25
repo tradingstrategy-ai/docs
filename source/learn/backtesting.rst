@@ -291,3 +291,14 @@ The piece then walks through walk-forward backtesting as the standard remedy —
 By BSIC (Bocconi Students Investment Club).
 
 `Read the blog post <https://bsic.it/backtesting-series-episode-2-cross-validation-techniques/>`__
+
+Cohort-Level Bid/Ask Depth for Realistic Options Backtests
+----------------------------------------------------------
+
+A short practitioner note arguing that most iron condor (and options strategy) backtests overstate returns because they assume execution at the mid price. In reality a multi-leg options structure has to cross the bid/ask spread on every leg, and the fillable price depends on available depth, not the theoretical mid. Cayo Largo backtests against cohort-level bid/ask depth captured across Deribit, Derive, and Thalex, so the fills reflect what a trade of a given size would actually have executed at rather than an idealised midpoint.
+
+The distinction matters most for spread-sensitive, multi-leg structures like iron condors, where four legs each pay half-spread; using mid quietly credits the strategy with liquidity that was never there, and the error compounds across rebalances. Sourcing depth per cohort (grouped by instrument, expiry, or moneyness) across several venues lets a backtest model the realistic top-of-book — and, where depth is thin, the slippage into deeper levels — producing fill assumptions that survive contact with live trading.
+
+Mentioned by Halcyon Waters (@Halcyon_Waters), a crypto options data provider built by ex-bank quants, in `this discussion <https://x.com/Halcyon_Waters/status/2080981156393046040>`__, where they note that "Most iron condor backtests use mid price" and describe testing against cohort-level bid/ask depth across Deribit, Derive and Thalex to model realistic fills.
+
+`Read the post <https://x.com/Halcyon_Waters/status/2080981156393046040>`__.
