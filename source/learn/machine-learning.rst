@@ -1514,3 +1514,14 @@ Our summary: this is the most concise "why not time bars" primer in the collecti
 By Lucas (Quantreo).
 
 `Read the blog post <https://www.newsletter.quantreo.com/p/why-time-bars-are-not-enough>`__.
+
+Portfolio Optimization with Macro Factors and Neural Networks
+-------------------------------------------------------------
+
+A Macrosynergy research piece presenting a practical method for optimizing equity portfolios using point-in-time macroeconomic information and sequential statistical learning. Neural networks learn portfolio weights directly from a full historical panel of macroeconomic divergence factors and return data, without requiring stock-by-stock theoretical priors for model construction. Crucially, the signals of multiple candidate networks are combined dynamically: at each point in time their outputs are weighted according to their estimated out-of-sample performance, so the ensemble adapts as some architectures prove more reliable than others.
+
+The method is applied to allocation across U.S. equity sectors. Even in its most restrictive form the allocation generates notable economic value-added without hindsight; given full freedom to adjust sector weights and the option to hold a safe-haven Treasury bond, the macro-factor learning approach doubles long-term wealth generation, and it also produces profitable signals for a long-short equity sector strategy. The article emphasises point-in-time discipline throughout (via J.P. Morgan's JPMaQS data) so that no future information leaks into the training panel, and it ships an accompanying Jupyter notebook that allows full audit and replication of the results against DataQuery/JPMaQS.
+
+By Rushil Gholkar and Ralph Sueppel (Macrosynergy).
+
+`Read the blog post <https://macrosynergy.com/research/portfolio-optimization-with-macro-factors-and-neural-networks/>`__.

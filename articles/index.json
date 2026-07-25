@@ -3864,6 +3864,18 @@
     "short_description": null
   },
   {
+    "title": "Portfolio Optimization with Macro Factors and Neural Networks",
+    "authors": "Rushil Gholkar, Ralph Sueppel (Macrosynergy)",
+    "publication_year": 2026,
+    "download_page": "https://macrosynergy.com/research/portfolio-optimization-with-macro-factors-and-neural-networks/",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-07-25",
+    "filename": "portfolio-optimization-with-macro-factors-and-neural-networks.pdf",
+    "downloaded_at": "2026-07-25",
+    "download_failure_reason": null,
+    "short_description": "A Macrosynergy research piece using neural networks to learn U.S. equity sector portfolio weights directly from a point-in-time panel of macroeconomic divergence factors, with candidate networks combined dynamically by estimated out-of-sample performance. Applied to sector allocation, the macro-factor learning approach doubles long-term wealth generation when allowed to shift weights and hold safe-haven Treasuries, and yields profitable long-short sector signals; a JPMaQS-based Jupyter notebook allows full replication."
+  },
+  {
     "title": "Predicting Cryptocurrency Prices with Machine Learning Algorithms: A Comparative Analysis",
     "authors": null,
     "publication_year": null,
