@@ -299,19 +299,19 @@ Key metrics: not a trading-strategy paper — the result is distributional. The 
 
 `Read the paper <https://www.jstor.org/stable/1913889>`__
 
-Lecture Notes on Market Microstructure and Algorithmic Trading
-----------------------------------------------------------------
+Predictive Order Flow Imbalance: Cross-Asset Microstructure Alpha
+------------------------------------------------------------------
 
-Fayçal Drissi's 2024 University of Oxford Mathematical Institute lecture notes develop a unified, optimisation-based treatment of high-frequency market microstructure. Starting from price-time-priority limit order books and over-the-counter quoting, they derive optimal routing, Almgren--Chriss execution in discrete and continuous time, signal-aware and transient-impact execution, limit-order trading, market making, portfolio liquidation, and cointegration-based statistical arbitrage. The models use convex analysis, stochastic control, dynamic programming, and Riccati equations, with closed-form or numerically tractable policies where possible.
+Kethan S E tests whether Order Flow Imbalance (OFI), constructed from Level-1 NBBO quote data, forecasts intraday returns across twelve U.S. equities, ETFs, and index futures. The study uses 6,991,908 ten-second bars from 249 trading days between 29 April 2024 and 25 April 2025, and evaluates Ridge-regression signals in 84 walk-forward test folds. A two-state Hidden Markov Model separates calm and stressed market regimes, while the research also tests a depth-aware OFI measure using a 40-day NVDA Nasdaq ITCH market-by-order sample.
 
-Our summary: the practical strength of the notes is the consistent translation from a trading decision to a parsimonious model, objective function, and implementable feedback policy. In particular, they show how inventory, fill probability, market impact, resilience, predictive signals, and cross-asset mean reversion alter an execution schedule or a market maker's quotes. The final examples compare Ornstein--Uhlenbeck-aware execution with classical Almgren--Chriss liquidation and demonstrate a BNP Paribas/Société Générale pairs-trading policy driven by a cointegration estimate.
+Our summary: the paper makes the useful distinction between a statistically detectable microstructure effect and a tradeable one. OFI has small but positive forward predictive content, with the strongest cross-asset result at the ten-minute horizon, but the short-horizon edge is overwhelmed by realistic spread-crossing costs. The paper therefore frames longer holding periods, regime filtering, and passive execution as the levers that could turn research alpha into economic alpha, while treating the Level-2 comparison and HMM improvements as exploratory.
 
-Used data and code: the instructional examples use Nasdaq limit-order-book fill-probability estimates, one-minute CME Canadian-dollar futures (CDU1) data for 11--13 August 2021, and one-minute BNP Paribas and Société Générale prices for 9--13 August 2021. The course page supplies the notes and slides, but no maintained public code or packaged data repository, so reproducing the figures requires sourcing the market data and implementing the documented models.
+Used data and code: the Level-1 data come from Massive.com (Polygon.io) and the depth comparison uses Databento XNAS ITCH Market-By-Order data for NVDA. Neither the raw commercial datasets nor a public code repository accompanies the paper; reproducing the results requires licensed data and reimplementation of the documented feature, walk-forward validation, HMM, and transaction-cost pipelines.
 
-Key metrics: this is a lecture-note course rather than a strategy-performance study, so it reports no annualised return, Sharpe ratio, maximum drawdown, or win rate. Its concrete calibration liquidates 2,250 CDU1 futures contracts (about 5% of average daily volume) over one day, using an estimated mean-reversion speed of 5.1 per day, $243.67 daily volatility, and a $0.005 temporary-impact parameter per contract-day; the estimated average spread is approximately $5 per contract. The paired-stock example estimates a cointegration vector of (1, -3.46) for BNP and Société Générale and displays the resulting inventory and PnL trajectories rather than aggregating them into backtest metrics.
+Key metrics: pooled out-of-sample IC is +0.0044 (t = 3.26, p = 0.0016), while the final March--April 2025 holdout has IC +0.0022, gross Sharpe 2.491, and net Sharpe +0.246. The equal-weight cross-asset portfolio's gross Sharpe of +0.981 becomes -1.726 after costs; at ten-second execution, estimated costs are 819 bp per day, 164 times the roughly 5 bp gross edge. In the SPY $1m holding-period sweep, the net Sharpe is -45.5 at ten seconds but +0.114 at 30 minutes, the stated minimum viable holding period; NVDA is the sole instrument with positive mean net Sharpe across all folds (+0.140).
 
-Mentioned by Kethan S in `this LinkedIn discussion <https://www.linkedin.com/posts/kethan-s-654751408_quantresearch-marketmicrostructure-algorithmictrading-share-7487719487975137281-fUpR/>`__ as a quant-research resource on market microstructure and algorithmic trading.
+Kethan S shared this working paper in `this LinkedIn discussion <https://www.linkedin.com/posts/kethan-s-654751408_quantresearch-marketmicrostructure-algorithmictrading-share-7487719487975137281-fUpR/>`__.
 
-By Fayçal Drissi.
+By Kethan S E.
 
-`Read the paper <https://fdr0903.github.io/teaching/2023_hft>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7053198>`__

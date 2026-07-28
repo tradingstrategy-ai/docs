@@ -4104,18 +4104,6 @@
     "short_description": null
   },
   {
-    "title": "Lecture Notes on Market Microstructure and Algorithmic Trading",
-    "authors": "Fayçal Drissi",
-    "publication_year": 2024,
-    "download_page": "https://fdr0903.github.io/teaching/2023_hft",
-    "source_file": "market-microstructure.rst",
-    "included_in_index_at": "2026-07-28",
-    "filename": "lecture-notes-on-market-microstructure-and-algorithmic-trading.pdf",
-    "downloaded_at": "2026-07-28",
-    "download_failure_reason": null,
-    "short_description": "Oxford lecture notes that derive optimal execution, limit-order trading, market making, and multi-asset statistical-arbitrage policies from market-microstructure models. They combine closed-form and numerical stochastic-control solutions with instructional examples on Nasdaq fill probabilities, CME Canadian-dollar futures, and BNP Paribas/Société Générale cointegration. The notes emphasize execution quality and inventory control rather than reporting portfolio-level strategy returns."
-  },
-  {
     "title": "Limit Order Book Structure",
     "authors": "Simone Menaldo",
     "publication_year": null,
@@ -4174,6 +4162,18 @@
     "downloaded_at": "2026-07-23",
     "download_failure_reason": null,
     "short_description": "Ané and Geman show that normality of asset returns can be recovered through a stochastic time change, extending Clark (1973): the cumulative number of trades is a better stochastic clock than volume for generating virtually normal returns, and the clock can be modelled nonparametrically as a jump diffusion. Using tick-by-tick data on Cisco and Intel, the paper provides the statistical foundation for tick/information-driven bars — re-indexing returns by trade count collapses the fat-tailed calendar-time distribution toward Gaussian (a later comment by Murphy-Izzeldin notes higher moments are not perfectly recovered)."
+  },
+  {
+    "title": "Predictive Order Flow Imbalance: Cross-Asset Microstructure Alpha",
+    "authors": "Kethan S E",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7053198",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "predictive-order-flow-imbalance-cross-asset-microstructure-alpha.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Tests Level-1 order-flow imbalance as an intraday alpha signal across twelve U.S. equity, ETF, and futures instruments using walk-forward Ridge regressions and a two-state HMM regime model. The signal has small but statistically positive out-of-sample information coefficients, yet at ten-second execution its gross edge is overwhelmed by bid-ask crossing costs. A holding-period analysis identifies 30 minutes as the minimum viable horizon under the stated cost model, while passive execution and richer order-book depth remain proposed extensions."
   },
   {
     "title": "Strategic Trading Models",
