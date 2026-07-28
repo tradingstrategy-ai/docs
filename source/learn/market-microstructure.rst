@@ -298,3 +298,20 @@ Used data and code: Clark tests the lognormal-normal subordinated distribution a
 Key metrics: not a trading-strategy paper — the result is distributional. The headline finding is that finite-variance distributions subordinate to the normal fit the cotton-futures price data better than the infinite-variance stable family, establishing subordination (a volume-directed time change) as a viable, finite-variance account of fat-tailed returns. Econometrica, Vol. 41, No. 1 (January 1973), pp. 135-155.
 
 `Read the paper <https://www.jstor.org/stable/1913889>`__
+
+Lecture Notes on Market Microstructure and Algorithmic Trading
+----------------------------------------------------------------
+
+Fayçal Drissi's 2024 University of Oxford Mathematical Institute lecture notes develop a unified, optimisation-based treatment of high-frequency market microstructure. Starting from price-time-priority limit order books and over-the-counter quoting, they derive optimal routing, Almgren--Chriss execution in discrete and continuous time, signal-aware and transient-impact execution, limit-order trading, market making, portfolio liquidation, and cointegration-based statistical arbitrage. The models use convex analysis, stochastic control, dynamic programming, and Riccati equations, with closed-form or numerically tractable policies where possible.
+
+Our summary: the practical strength of the notes is the consistent translation from a trading decision to a parsimonious model, objective function, and implementable feedback policy. In particular, they show how inventory, fill probability, market impact, resilience, predictive signals, and cross-asset mean reversion alter an execution schedule or a market maker's quotes. The final examples compare Ornstein--Uhlenbeck-aware execution with classical Almgren--Chriss liquidation and demonstrate a BNP Paribas/Société Générale pairs-trading policy driven by a cointegration estimate.
+
+Used data and code: the instructional examples use Nasdaq limit-order-book fill-probability estimates, one-minute CME Canadian-dollar futures (CDU1) data for 11--13 August 2021, and one-minute BNP Paribas and Société Générale prices for 9--13 August 2021. The course page supplies the notes and slides, but no maintained public code or packaged data repository, so reproducing the figures requires sourcing the market data and implementing the documented models.
+
+Key metrics: this is a lecture-note course rather than a strategy-performance study, so it reports no annualised return, Sharpe ratio, maximum drawdown, or win rate. Its concrete calibration liquidates 2,250 CDU1 futures contracts (about 5% of average daily volume) over one day, using an estimated mean-reversion speed of 5.1 per day, $243.67 daily volatility, and a $0.005 temporary-impact parameter per contract-day; the estimated average spread is approximately $5 per contract. The paired-stock example estimates a cointegration vector of (1, -3.46) for BNP and Société Générale and displays the resulting inventory and PnL trajectories rather than aggregating them into backtest metrics.
+
+Mentioned by Kethan S in `this LinkedIn discussion <https://www.linkedin.com/posts/kethan-s-654751408_quantresearch-marketmicrostructure-algorithmictrading-share-7487719487975137281-fUpR/>`__ as a quant-research resource on market microstructure and algorithmic trading.
+
+By Fayçal Drissi.
+
+`Read the paper <https://fdr0903.github.io/teaching/2023_hft>`__
