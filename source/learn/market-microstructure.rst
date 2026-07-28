@@ -315,3 +315,16 @@ Kethan S shared this working paper in `this LinkedIn discussion <https://www.lin
 By Kethan S E.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7053198>`__
+
+HFT Arbitrage in Commodities
+----------------------------
+
+Brett Harrison's practitioner explainer on how high-frequency trading firms arbitrage commodity futures, split into two structurally different regimes. Intra-exchange arbitrage is fully hedged, enjoys favorable margin, and is won on sub-microsecond latency; inter-exchange arbitrage is relative-value rather than true arbitrage, latency-sensitive, capital-intensive, and held until the spread mean-reverts. The piece is a compact tour of why a single commodity is really a whole *complex* of instruments and how that structure creates the opportunity set.
+
+For intra-exchange, a product spans outright futures across 20-plus expirations, micro contracts with smaller multipliers on the same underlying, calendar spreads between outrights, and related intercommodity spreads. The exchange matching engine lists order books for all of them while creating implied liquidity in both directions — implying spreads from outrights and outrights from spreads — so the permutations of contracts and spreads present many simultaneous arbitrage opportunities, with low margin thanks to the clearing house's netting of offsets. Competing here requires sub-microsecond tick-to-trade latency, FPGAs across the entire stack, logic that fires orders before all bytes of a tick are even processed, and predictive models of known microstructure idiosyncrasies. Inter-exchange is different in kind: a futures contract is specific to its exchange (DCM) and clearing house (DCO) and is not fungible across venues the way an equity is (equities all clear at NSCC and are held at DTC), so an oil contract on two exchanges carries incompatible clearing and delivery. The edge is statistical/relative-value, requires paying for the fastest data path between venues (microwave, millimeter-wave, or subsea fiber), and is less crowded because holding the spread to mean reversion ties up considerable capital. Harrison closes with the economic point: the HFT profit is compensation for keeping futures curves and related spreads internally consistent, which is what lets commercial hedgers forecast storage, financing, and convenience costs across expirations far into the future.
+
+Posted by Brett Harrison (@BrettHarrison) in `this discussion <https://x.com/BrettHarrison/status/2081735840766595298>`__.
+
+By Brett Harrison.
+
+`Read the post <https://x.com/BrettHarrison/status/2081735840766595298>`__.

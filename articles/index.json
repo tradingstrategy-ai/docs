@@ -4068,6 +4068,18 @@
     "short_description": null
   },
   {
+    "title": "HFT Arbitrage in Commodities",
+    "authors": "Brett Harrison",
+    "publication_year": 2026,
+    "download_page": "https://x.com/BrettHarrison/status/2081735840766595298",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "hft-arbitrage-in-commodities.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Brett Harrison's practitioner explainer on how HFT firms arbitrage commodity futures across two regimes. Intra-exchange arbitrage exploits the full instrument complex (20+ expirations, micros, calendar and intercommodity spreads, plus exchange-implied liquidity) with low netted margin and is won on sub-microsecond FPGA latency; inter-exchange arbitrage is relative-value across non-fungible contracts on different DCM/DCO venues, requiring fast microwave/subsea data paths and capital to hold spreads to mean reversion. The HFT profit is framed as compensation for keeping futures curves internally consistent for hedgers."
+  },
+  {
     "title": "High-Frequency Market-Making with Inventory Constraints and Directional Bets",
     "authors": "Pietro Fodra, Mauricio Labadie",
     "publication_year": 2012,
