@@ -6216,6 +6216,18 @@
     "short_description": null
   },
   {
+    "title": "A Learning-Based Contrarian Trading Strategy via a Dual-Classifier Model",
+    "authors": "Szu-Hao Huang, Shang-Hong Lai, Shih-Hsien Tai",
+    "publication_year": 2011,
+    "download_page": "https://scholar.nycu.edu.tw/en/publications/a-learning-based-contrarian-trading-strategy-via-a-dual-classifie/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "ACM TIST paper building a contrarian (mean-reversion) strategy on a ~381-feature classification problem combining wavelet coefficients, return-distribution statistics and technical indicators, with two classifiers jointly deciding entry and exit. An early precedent for using wavelet coefficients as features alongside conventional alpha signals rather than trading a denoised price directly."
+  },
+  {
     "title": "A New Crude Oil Price Forecasting Model Based on Variational Mode Decomposition",
     "authors": null,
     "publication_year": 2021,
@@ -6384,6 +6396,18 @@
     "short_description": null
   },
   {
+    "title": "Boundary Problem and Data Leakage: A Caveat for Wavelet-Based Forecasting",
+    "authors": "Ryo Hasumi, Yuto Kajita",
+    "publication_year": 2018,
+    "download_page": "https://www.researchgate.net/publication/329443818_Boundary_problem_and_data_leakage_A_caveat_for_wavelet-based_forecasting",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Essential methodological caveat: naive full-sample wavelet denoising uses observations near the endpoint that contain future information (the boundary problem), so decomposing a whole series before the train/test split silently leaks the future and produces spuriously high precision. Argues that many wavelet-forecasting papers under-report their processing; the remedy is strictly past-only (one-sided) denoising with per-fold parameter selection and walk-forward evaluation."
+  },
+  {
     "title": "CEEMD for RMB Exchange Rate Forecasting and Economic Factor Analysis",
     "authors": null,
     "publication_year": 2025,
@@ -6540,6 +6564,18 @@
     "short_description": null
   },
   {
+    "title": "Combining Wavelet Decomposition with Machine Learning to Forecast Gold Returns",
+    "authors": "Marian Risse",
+    "publication_year": 2019,
+    "download_page": "https://www.sciencedirect.com/science/article/pii/S0169207019300020",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "International Journal of Forecasting paper combining discrete wavelet decomposition with support vector regression to forecast gold returns, using time- and frequency-domain wavelet predictors and evaluating both forecast accuracy and an economic trading rule. Key finding: the importance of short- versus long-scale features shifts over time, arguing for rolling validation and regime-aware feature selection rather than a fixed wavelet configuration."
+  },
+  {
     "title": "Comparing CEEMDAN, VMD, and EPT for Bitcoin Forecasting",
     "authors": null,
     "publication_year": 2025,
@@ -6658,6 +6694,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Discrete Wavelet Transform-Based Prediction of the National Stock Exchange Fifty Index",
+    "authors": "Dhanya Jothimani, Ravi Shankar, Surendra S. Yadav",
+    "publication_year": 2016,
+    "download_page": "https://arxiv.org/abs/1605.07278",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "discrete-wavelet-transform-prediction-nse-fifty-index.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Hybrid MODWT + machine-learning approach to forecasting India's Nifty 50 index: the series is decomposed into subseries via the Maximal Overlap DWT (which avoids downsampling and keeps coefficients timestamp-aligned), each subseries is predicted with ANN or SVR, and forecasts are aggregated. Trading rules built on the MODWT-SVR forecasts delivered a return on investment exceeding buy-and-hold, and the MODWT hybrids beat plain ANN and SVR."
   },
   {
     "title": "Dual-Uncertainty Modeling in Financial Time-Series via VMD-LSTM with Concrete Dropout and VMD-WGAN",
@@ -6828,6 +6876,18 @@
     "short_description": null
   },
   {
+    "title": "Financial Trading with Feature Preprocessing and Recurrent Reinforcement Learning",
+    "authors": "Lin Li",
+    "publication_year": 2021,
+    "download_page": "https://arxiv.org/abs/2109.05283",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "financial-trading-feature-preprocessing-recurrent-rl.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Trades assets automatically by preprocessing technical indicators with PCA and the Discrete Wavelet Transform before feeding them to a Recurrent Reinforcement Learning agent. Because the pipeline is indicators -> PCA/DWT -> RRL, it isolates the marginal value of wavelet preprocessing; the reported evidence is that it makes the RRL strategy more effective and robust and mitigates drawbacks of trading with RRL alone. A clean baseline for testing whether DWT adds value beyond technical indicators and PCA."
+  },
+  {
     "title": "Forecasting Airtel Stock Prices Through Decomposition and Integration: A Novel VMD-GARCH-LSTM Framework",
     "authors": "John Kamwele Mutinda et al.",
     "publication_year": 2025,
@@ -6850,6 +6910,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Forecasting East Asian Indices Futures via a Novel Hybrid of Wavelet-PCA Denoising and ANN",
+    "authors": "Jacinta Chan Phooi M'ng, Mohammadali Mehralizadeh",
+    "publication_year": 2016,
+    "download_page": "https://pubmed.ncbi.nlm.nih.gov/27248692/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "forecasting-east-asian-indices-futures-wavelet-pca-ann.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Open-access PLoS ONE study combining wavelet, PCA and ANN (WPCA-NN) with a multivariate denoising step that removes common noise across OHLC channels before forecasting. Evaluated on Hang Seng, NIKKEI 225, MSCI Singapore, KOSPI 200 and TAIEX futures (2005-2014) with technical indicators, WPCA-NN annual mean returns exceed a threshold buy-and-hold across all out-of-sample windows, contradicting the random-walk hypothesis. One of the stronger papers because it measures trading profitability, not just forecast error."
   },
   {
     "title": "Forecasting Exchange Rate Using VMD and Entropy Theory",
@@ -7056,6 +7128,18 @@
     "short_description": "VMD with PSO-optimized BPNN for intraday stock forecasting. Published in Journal of Computational Science, 2016."
   },
   {
+    "title": "Learning to Trade in Financial Time Series Using Wavelet Transformation and Deep Reinforcement Learning",
+    "authors": "Jimin Lee, Hayeong Koh, Hi Jun Choe",
+    "publication_year": 2021,
+    "download_page": "https://yonsei.elsevierpure.com/en/publications/learning-to-trade-in-financial-time-series-using-high-frequency-t",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Applied Intelligence paper feeding wavelet-decomposed high-frequency inputs into an LSTM-based deep reinforcement-learning agent that outputs trading/allocation decisions directly. A direct wavelet-to-policy design where the multiscale representation is the RL state; results are sensitive to transaction-cost modelling and warrant cost-aware replication."
+  },
+  {
     "title": "MEEMD-LSTM for Multi-Step Precious Metal Price Prediction",
     "authors": null,
     "publication_year": 2022,
@@ -7162,6 +7246,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Multiresolution Forecasting for Futures Trading Using Wavelet Decompositions",
+    "authors": "B. L. Zhang, R. Coggins, M. A. Jabri, D. Dersch, B. Flower",
+    "publication_year": 2001,
+    "download_page": "https://pubmed.ncbi.nlm.nih.gov/18249912/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "multiresolution-forecasting-futures-trading-wavelet.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Foundational IEEE TNN paper applying wavelet multiresolution decomposition to futures forecasting: each wavelet scale is modelled by a separate MLP with Bayesian ARD selecting short past windows at fine scales and long windows at coarse scales, then forecasts are recombined via the inverse transform or a second perceptron and passed to a money-management system. Establishes the 'one model per scale' template for wavelet-based algotrading."
   },
   {
     "title": "Multivariate EMD with TCN for Stock Index Forecasting",
@@ -7416,6 +7512,18 @@
     "short_description": null
   },
   {
+    "title": "Strictly Chronological CNN Embeddings with Gradient-Boosted Trees for Next-Day Log-Return Forecasting",
+    "authors": "Zezhi Bao, Xiaofei Li, Menghuan Shi, Yueen Huang, Junjie Du",
+    "publication_year": 2026,
+    "download_page": "https://www.mdpi.com/2073-8994/18/3/416",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "strictly-chronological-cnn-embeddings-gbt-log-return.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Leakage-aware CNN-LightGBM hybrid for one-step-ahead daily log-return prediction: a last-step CNN embedding is transferred to a gradient-boosted tree via explicit standardization, with training-only standardization and a recency-aware fit-latest-W rule to handle drift. Return predictors are anchored on a strictly one-sided (past-only) wavelet-denoised close series. On NIFTY50 with walk-forward selection it shows statistically reliable accuracy gains over Naive0 and a positive long-or-cash trading rule, with out-of-sample checks on HDFC and INDA. A concrete answer to the boundary-problem/data-leakage caveat."
+  },
+  {
     "title": "Successive Multivariate Variational Mode Decomposition",
     "authors": "Nazari et al.",
     "publication_year": 2022,
@@ -7642,6 +7750,30 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "WaveLSFormer: A Learnable Wavelet Transformer for Long-Short Equity Trading",
+    "authors": "Shuozhe Li, Du Cheng, Leqi Liu",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2601.13435",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "wavelsformer-learnable-wavelet-transformer-long-short.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "A learnable wavelet-based long-short Transformer that jointly performs multi-scale decomposition and return-oriented decision learning, trained end-to-end on a trading objective with risk-aware regularization. A learnable filter bank (guided by spectral regularizers) and a low-guided high-frequency injection module produce a market-neutral long/short portfolio rescaled to a fixed risk budget. Promising direction: learn the scales end-to-end rather than fixing a wavelet family, though as a recent preprint it needs independent cost-aware replication."
+  },
+  {
+    "title": "Wavelet Denoised-ResNet CNN and LightGBM Method to Predict Forex Rate of Change",
+    "authors": "Yiqi Zhao, Matloob Khushi",
+    "publication_year": 2021,
+    "download_page": "https://arxiv.org/abs/2102.04861",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-28",
+    "filename": "wavelet-denoised-resnet-lightgbm-forex.pdf",
+    "downloaded_at": "2026-07-28",
+    "download_failure_reason": null,
+    "short_description": "Hybrid tree/deep-feature model predicting Forex rate of change five intervals ahead: prices are wavelet-denoised, a 30-interval technical-indicator matrix is passed through a ResNet to extract image features, and those features plus indicators feed a LightGBM predictor. On 5-minute USDJPY it reports MAE 0.240977e-3, MSE 0.156e-6, RMSE 0.395185e-3, beating baselines; code at mkhushi.github.io. Reports forecasting error rather than a full cost-aware backtest."
   },
   {
     "title": "A Deep Learning Approach for Trading Factor Residuals",

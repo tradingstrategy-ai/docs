@@ -1169,3 +1169,124 @@ The article shares an implementable quant framework for applying the Kalman Filt
 Mentioned by `Phosphen (@phosphenq) <https://x.com/phosphenq/status/2056438562451513660>`__ on X.
 
 `Read the article <https://x.com/i/article/2056414759554015232>`__
+
+Multiresolution Forecasting for Futures Trading Using Wavelet Decompositions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Zhang, Coggins, Jabri, Dersch and Flower (IEEE Transactions on Neural Networks, 2001) investigate a financial time-series forecasting strategy that exploits the multiresolution property of the wavelet transform. A financial series is decomposed into an overcomplete, shift-invariant, scale-related representation, and in transform space each individual wavelet series is modelled by a separate multilayer perceptron (MLP). The Bayesian method of automatic relevance determination is used to choose short past windows (short-term history) as inputs to the MLPs at lower scales and long past windows (long-term history) at higher scales.
+
+Our summary: this is the foundational "one model per scale" template for wavelet-based algotrading — decompose, forecast each frequency band independently, then recombine. The individual forecasts are recombined either by the linear reconstruction property of the inverse transform (with the chosen autocorrelation-shell representation) or by a second perceptron that learns the weight of each scale in predicting the original series. Crucially, the forecasts are then passed to a money-management system to generate actual trades, making this one of the earliest end-to-end multiscale-to-execution designs rather than a pure forecast-error study.
+
+Data and reproduction: futures price series; the paper predates public code release (IEEE TNN, 2001). Full text obtained via DOI 10.1109/72.935090.
+
+`Read the paper <https://pubmed.ncbi.nlm.nih.gov/18249912/>`__
+
+A Learning-Based Contrarian Trading Strategy via a Dual-Classifier Model
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Szu-Hao Huang, Shang-Hong Lai and Shih-Hsien Tai (ACM Transactions on Intelligent Systems and Technology, 2011) build a learning-based contrarian trading strategy around a dual-classifier model. Wavelet-transform coefficients are combined with return-distribution statistics and conventional technical indicators to form a large (roughly 381-feature) classification problem, from which two classifiers jointly decide entry and exit for a mean-reversion (contrarian) strategy.
+
+Our summary: this paper is a useful precedent for the modern practice of treating wavelet coefficients as *features alongside* ordinary alpha signals rather than as a denoised price to be traded directly. Splitting the decision across two classifiers is an early form of the ensemble/stacked design that recurs in later wavelet-plus-ML work, and the heavy feature engineering (wavelet + distributional + technical) anticipates the multiscale feature representation that is the most durable use of wavelets in trading.
+
+Data and reproduction: equity price data with wavelet, distributional and technical-indicator features; no public code repository. PDF is behind the ACM paywall.
+
+`Read the paper <https://scholar.nycu.edu.tw/en/publications/a-learning-based-contrarian-trading-strategy-via-a-dual-classifie/>`__
+
+Forecasting East Asian Indices Futures via a Novel Hybrid of Wavelet-PCA Denoising and ANN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Jacinta Chan Phooi M'ng and Mohammadali Mehralizadeh (PLoS ONE, 2016) combine wavelet decomposition, principal component analysis (PCA), and an artificial neural network into a hybrid forecasting model (WPCA-NN). The key idea is an enhanced denoising process that treats the open-high-low-close data as a multivariate signal and removes common noise across the four channels before forecasting, rather than denoising each series in isolation.
+
+Our summary: this is one of the stronger papers in the wavelet-trading literature precisely because it evaluates trading profitability and abnormal returns, not merely forecast error. Applied to Hong Kong's Hang Seng, Japan's NIKKEI 225, Singapore's MSCI, South Korea's KOSPI 200, and Taiwan's TAIEX index futures over 2005-2014, and using a panel of technical indicators (RSI, MACD, MACD Signal, Stochastic Fast %K, Stochastic Slow %K, Stochastic %D, Ultimate Oscillator), the model's annual mean returns exceed a threshold buy-and-hold across validation, test, and evaluation periods — evidence against the random-walk hypothesis and consistent with the technical-analysis literature.
+
+Data and reproduction: five East Asian index-futures series, 2005-2014; open-access paper (DOI 10.1371/journal.pone.0156338). Key metrics: WPCA-NN annual mean returns exceed threshold buy-and-hold in all out-of-sample windows.
+
+`Read the paper <https://pubmed.ncbi.nlm.nih.gov/27248692/>`__
+
+Discrete Wavelet Transform-Based Prediction of the National Stock Exchange Fifty Index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Dhanya Jothimani, Ravi Shankar and Surendra S. Yadav (2016) propose a hybrid approach integrating a decomposition model — the Maximal Overlap Discrete Wavelet Transform (MODWT) — with machine-learning models (ANN and SVR) to predict India's National Stock Exchange Fifty (Nifty 50) index. In the first phase the series is decomposed into a smaller number of subseries via MODWT; in the second phase each subseries is predicted with ANN or SVR; the predicted subseries are then aggregated into the final forecast.
+
+Our summary: MODWT is the attractive decomposition choice here because, unlike the ordinary DWT, it does not downsample and keeps coefficients aligned to timestamps, which makes it well-suited for feature engineering on financial series. The paper's headline practical result is a trading evaluation, not just an accuracy comparison: the return on investment from trading rules built on the MODWT-SVR forecasts exceeded a buy-and-hold strategy, and MODWT-ANN/MODWT-SVR outperformed plain ANN and SVR.
+
+Data and reproduction: NSE Fifty (Nifty 50) index series; arXiv preprint 1605.07278. Key metric: MODWT-SVR trading-rule ROI > buy-and-hold.
+
+`Read the paper <https://arxiv.org/abs/1605.07278>`__
+
+Combining Wavelet Decomposition with Machine Learning to Forecast Gold Returns
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Marian Risse (International Journal of Forecasting, 2019) combines discrete wavelet decomposition with support vector regression to forecast gold returns, deriving both time-domain and frequency-domain predictors from the wavelet transform and testing them in both a statistical forecasting evaluation and an economic trading evaluation.
+
+Our summary: the most important takeaway for practitioners is that the relative importance of short- and long-scale features changes over time — a direct argument for rolling validation and regime-aware feature selection rather than a single fixed wavelet configuration. The paper is a clean example of using wavelet coefficients as engineered predictors fed into a kernel model, and of validating on economic value (a trading rule) in addition to forecast error, which is the standard this collection favours.
+
+Data and reproduction: gold return series with DWT-derived time/frequency predictors and SVR; published version behind the Elsevier paywall (DOI 10.1016/j.ijforecast.2018.11.008), with an earlier working-paper version on SSRN (3059293).
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0169207019300020>`__
+
+Learning to Trade in Financial Time Series Using Wavelet Transformation and Deep Reinforcement Learning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Jimin Lee, Hayeong Koh and Hi Jun Choe (Applied Intelligence, 2021) apply wavelet transformation to high-frequency financial time series and feed the decomposed inputs into an LSTM-based deep reinforcement learning agent that learns allocation/trading decisions directly.
+
+Our summary: this is a direct "wavelet-to-policy" design — rather than forecasting price and then sizing a position, the wavelet-decomposed multiscale representation becomes the state input to a reinforcement-learning policy that outputs trades. It is an appealing architecture, but reinforcement-learning trading results are especially sensitive to transaction-cost modelling and require rigorous, cost-aware replication before the reported edge can be trusted; readers should check how frictions and slippage were handled.
+
+Data and reproduction: high-frequency financial series with wavelet-decomposed inputs and LSTM-based RL; published version behind the Springer paywall (DOI 10.1007/s10489-021-02218-4).
+
+`Read the paper <https://yonsei.elsevierpure.com/en/publications/learning-to-trade-in-financial-time-series-using-high-frequency-t>`__
+
+Financial Trading with Feature Preprocessing and Recurrent Reinforcement Learning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Lin Li (2021) trades financial assets automatically using feature-preprocessing techniques together with a Recurrent Reinforcement Learning (RRL) algorithm. Technical indicators extracted from market data are preprocessed by Principal Component Analysis (PCA) and the Discrete Wavelet Transform (DWT) and then fed into the RRL agent to make trading decisions.
+
+Our summary: this paper is a clean baseline for the exact question a practitioner should ask before adopting wavelets — does DWT add value *beyond* technical indicators and PCA? Because the pipeline is technical-indicators → PCA/DWT → RRL, it isolates the marginal contribution of wavelet preprocessing. The reported evidence is that the preprocessing makes the RRL strategy more effective and robust and mitigates drawbacks of trading with RRL alone, which supports wavelets as a denoising/feature step rather than as a standalone signal.
+
+Data and reproduction: asset market data with technical indicators; arXiv preprint 2109.05283.
+
+`Read the paper <https://arxiv.org/abs/2109.05283>`__
+
+Wavelet Denoised-ResNet CNN and LightGBM Method to Predict Forex Rate of Change
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yiqi Zhao and Matloob Khushi (2021) propose a Wavelet Denoised-ResNet with LightGBM model to predict the Forex rate of change five intervals into the future — far enough ahead to leave time to execute trades. All prices are denoised by wavelet transform; a matrix of 30 time intervals is built from technical indicators, image features are extracted by feeding that matrix into a ResNet, and the technical indicators plus ResNet image features are finally fed to LightGBM.
+
+Our summary: this is a good example of a hybrid tree/deep-feature architecture — a CNN (ResNet) to learn representations from a wavelet-denoised indicator matrix, and a gradient-boosted tree (LightGBM) as the predictor on top. It supports the pattern of combining deep feature extraction with tree-based prediction, though it reports forecasting errors rather than a full execution-grade backtest with costs, so the "window of opportunity for algorithmic trading" claim is a forecasting result rather than a demonstrated net-of-cost strategy.
+
+Data and reproduction: 5-minute USDJPY; code available from the authors (mkhushi.github.io). Key metrics: prediction 25 minutes ahead with MAE 0.240977e-3, MSE 0.156e-6, RMSE 0.395185e-3, outperforming baseline models.
+
+`Read the paper <https://arxiv.org/abs/2102.04861>`__
+
+WaveLSFormer: A Learnable Wavelet Transformer for Long-Short Equity Trading
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Shuozhe Li, Du Cheng and Leqi Liu (2026) propose WaveLSFormer, a learnable wavelet-based long-short Transformer that jointly performs multi-scale decomposition and return-oriented decision learning. Unlike standard forecasting that optimises prediction error and needs a separate position-sizing step, the model directly outputs a market-neutral long/short portfolio and is trained end-to-end on a trading objective with risk-aware regularization. A learnable wavelet front-end generates low- and high-frequency components via an end-to-end trained filter bank guided by spectral regularizers, and a low-guided high-frequency injection (LGHI) module refines low-frequency representations with high-frequency cues while controlling training stability; the output portfolio is rescaled to satisfy a fixed risk budget.
+
+Our summary: this is the most promising current direction in the collection — instead of picking a fixed wavelet family and level a priori, the model *learns* the filter bank (the scales) end-to-end, optimised directly for risk-adjusted return rather than reconstruction or forecast accuracy. The end-to-end trading objective and explicit risk budgeting are exactly what earlier forecast-error studies lacked; the caveat is that, as a recent preprint, its edge still needs independent, cost-aware replication before being taken at face value.
+
+Data and reproduction: five years of hourly data across related equities; arXiv preprint 2601.13435. Objective: risk-adjusted long-short return with spectral and risk-aware regularization.
+
+`Read the paper <https://arxiv.org/abs/2601.13435>`__
+
+Boundary Problem and Data Leakage: A Caveat for Wavelet-Based Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ryo Hasumi and Yuto Kajita (2018) issue an essential methodological warning for the entire wavelet-forecasting literature: naive application of the wavelet decomposition to a time series easily produces data leakage. Standard full-sample wavelet denoising uses observations near the endpoint that include future information (the boundary problem), so backtests that decompose the whole series once, then split into train and test, silently leak the future into the past and report extremely — and spuriously — high precision.
+
+Our summary: this is the single most important caveat to read before trusting any wavelet-trading result, including several of the papers catalogued above. The authors note that many wavelet-forecasting papers do not disclose enough about how the series was processed to rule out leakage. The practical remedy is strictly past-only (one-sided) denoising: recompute every wavelet feature at time *t* using only data through *t*, select the wavelet family, level and threshold inside each training fold, walk forward, and report net Sharpe, turnover, drawdown and cost sensitivity rather than RMSE or directional accuracy alone.
+
+Data and reproduction: methodological/working paper; full text hosted on ResearchGate (Cloudflare-protected, not machine-downloadable).
+
+`Read the paper <https://www.researchgate.net/publication/329443818_Boundary_problem_and_data_leakage_A_caveat_for_wavelet-based_forecasting>`__
+
+Strictly Chronological CNN Embeddings with Gradient-Boosted Trees for Next-Day Log-Return Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Zezhi Bao, Xiaofei Li, Menghuan Shi, Yueen Huang and Junjie Du (Symmetry, 2026) tackle one-step-ahead daily log-return prediction under low signal-to-noise, heavy-tailed innovations and distribution drift. They propose a CNN-LightGBM hybrid that transfers a last-step CNN embedding to a gradient-boosted tree regressor through explicit embedding standardization, and reduce train-to-evaluation mismatch with split-wise, training-only standardization and a recency-aware "fit-latest-W" rule.
+
+Our summary: this paper is the concrete, leakage-aware answer to the boundary-problem caveat above — its return-related predictors are anchored on a *one-sided* (strictly past-only) wavelet-denoised close series, while other market channels are kept in raw form to preserve episodic extremes, and it evaluates with walk-forward model selection. That discipline is exactly what a credible wavelet backtest requires. On NIFTY50 it shows statistically reliable accuracy gains over a Naive0 benchmark and competitive performance against deep sequence baselines, with supplementary out-of-sample evidence on HDFC and INDA, and a long-or-cash decision rule that yields positive returns.
+
+Data and reproduction: NIFTY50 (plus HDFC and INDA) daily data with walk-forward selection; open-access (DOI 10.3390/sym18030416). Key result: statistically reliable accuracy gains over Naive0 and a positive long-or-cash trading rule under a strictly chronological protocol.
+
+`Read the paper <https://www.mdpi.com/2073-8994/18/3/416>`__
