@@ -277,3 +277,48 @@ Machine Learning for Algorithmic Trading
 A book by Stefan Jansen alongside the ZipLine reloaded and community forum.
 
 `Read more <https://ml4trading.io/>`__.
+
+Wavelet Methods for Time Series Analysis
+----------------------------------------
+
+Percival and Walden's *Wavelet Methods for Time Series Analysis* (Cambridge University Press, 2000; paperback 2006) is the standard reference for the discrete side of wavelet analysis: the DWT and MODWT algorithms, wavelet variance and covariance, multiresolution analysis, and boundary handling, with worked examples and exercises. It is the canonical citation for MODWT as used in nearly every finance wavelet paper, and the authoritative source for correctly counting boundary-affected coefficients — precisely the quantity a leakage-aware, live wavelet pipeline needs.
+
+By Donald B. Percival and Andrew T. Walden.
+
+`View the book <https://doi.org/10.1017/CBO9780511841040>`__.
+
+An Introduction to Wavelets and Other Filtering Methods in Finance and Economics
+--------------------------------------------------------------------------------
+
+Gençay, Selçuk and Whitcher (Academic Press, 2002) give a proof-light treatment aimed at economists: a unified view of filtering methods, then wavelet variance and correlation, multiresolution analysis, and empirical applications in finance and macroeconomics. It is the bridge between Percival and Walden's signal-processing formalism and finance-shaped questions — scale-by-scale variance and correlation, which is the natural framing for multi-horizon features on a perpetual-futures book.
+
+By Ramazan Gençay, Faruk Selçuk and Brandon Whitcher.
+
+`View the book <https://www.amazon.com/Introduction-Wavelets-Filtering-Methods-Economics/dp/0122796705>`__.
+
+A Wavelet Tour of Signal Processing: The Sparse Way
+---------------------------------------------------
+
+Mallat's *A Wavelet Tour of Signal Processing: The Sparse Way* (3rd edition, Academic Press, 2009) is the reference theory text: Fourier, wavelet and time-frequency bases, fast orthogonal and biorthogonal algorithms, thresholding and sparse approximation, extended to dictionaries, curvelets and bandlets. It is the authority on thresholding and denoising theory — precisely the step that goes wrong when applied naively to a price series, so it is the book to consult before building any denoise-then-predict feature.
+
+By Stéphane Mallat.
+
+`View the book <https://www.amazon.com/Wavelet-Tour-Signal-Processing-Sparse/dp/0123743702>`__.
+
+An Introduction to Wavelet Theory in Finance: A Wavelet Multiscale Approach
+---------------------------------------------------------------------------
+
+In and Kim (World Scientific, 2013) provide a finance-focused introduction: spectral background, the MODWT, wavelet variance, covariance and correlation, and then finance applications. It is the most direct textbook treatment of scale-wise covariance and correlation — the machinery behind multi-horizon cross-sectional signals across a universe of instruments.
+
+By Francis In and Sangbae Kim.
+
+`View the book <https://doi.org/10.1142/8431>`__.
+
+Wavelet Applications in Economics and Finance
+---------------------------------------------
+
+Edited by Gallegati and Semmler (Springer, Dynamic Modeling and Econometrics vol. 20, 2014), this collection covers wavelet and spectral methods for nonlinear and dynamic processes — business cycles, asset prices, financial econometrics and forecasting — opening with a Ramsey retrospective. It is the fastest way to see which finance sub-problems wavelets have been applied to, and which chapters make genuine forecasting claims rather than descriptive ones.
+
+Edited by Marco Gallegati and Willi Semmler.
+
+`View the book <https://doi.org/10.1007/978-3-642-40008-3>`__.

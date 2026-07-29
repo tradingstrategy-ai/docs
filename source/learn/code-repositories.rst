@@ -348,3 +348,48 @@ Practical details: Python (LightGBM + PyTorch; GPU recommended but not required 
 Mentioned by Alexander März in `this LinkedIn discussion <https://www.linkedin.com/posts/alexander-m%C3%A4rz_hypertrees-forecasting-share-7483515255164387328-BWjm/>`__, announcing the v0.2.0 release and noting the framework "combines the strengths of GBDTs on tabular data with the inductive bias of classical forecasting models".
 
 `View repository <https://github.com/StatMixedML/Hyper-Trees>`__
+
+PyWavelets
+----------
+
+PyWavelets (``pywt``) is the de-facto Python wavelet library — the one already present in this repository's environment — providing DWT/IDWT, wavelet packets, the continuous wavelet transform, and, most relevant for time-series feature work, the stationary wavelet transform (``pywt.swt``/``iswt``), which is the undecimated, MODWT-equivalent transform. So no third-party MODWT package is strictly required to build shift-invariant multiresolution features.
+
+Our summary: the important gotcha for any trading use is boundary handling. The default extension mode ``mode='symmetric'`` is a two-sided extension at the newest bar, which quietly injects a boundary artefact exactly where you predict; it must be replaced with causal handling and per-bar recomputation to avoid the leakage the wavelet-forecasting literature repeatedly diagnoses. The library is well-documented and stable (JOSS paper, Lee, Gommers, Wasilewski, Wohlfahrt and O'Leary, 2019).
+
+`View repository <https://github.com/PyWavelets/pywt>`__
+
+ssqueezepy
+----------
+
+ssqueezepy provides forward and inverse CWT/STFT with synchrosqueezing, Generalized Morse Wavelets, and ridge extraction, ported from the MATLAB Synchrosqueezing Toolbox. Synchrosqueezing sharpens a time-frequency representation by reassigning energy to the instantaneous frequency, yielding amplitude/frequency ridges.
+
+Our summary: ridges are a richer feature set than plain band energies and are the main reason to reach for this library — it is the only mainstream Python route to synchrosqueezing. For a low-signal-to-noise perp panel, instantaneous-frequency ridges are a candidate feature that captures where energy concentrates in time-frequency space rather than merely how much sits in each fixed band.
+
+`View repository <https://github.com/OverLordGoldDragon/ssqueezepy>`__
+
+Kymatio
+-------
+
+Kymatio is a GPU-accelerated library for the 1D/2D/3D wavelet scattering transform (Andreux et al., JMLR 2020; arXiv:1812.11214). Scattering is a convolutional network with *fixed* wavelet and lowpass filters and modulus non-linearities, producing a representation that is stable to deformations and invariant to translation.
+
+Our summary: because nothing is learned, a scattering transform has no overfitting surface — which makes it an attractive first feature bank for a low-signal-to-noise perpetual-futures panel where a learnable front-end would be prone to fitting noise. It is the fixed-basis counterpart to the learnable-wavelet architectures (mWDN, AdaWaveNet, WaveLSFormer) and a sensible baseline to try before committing to end-to-end learned filters.
+
+`View repository <https://github.com/kymatio/kymatio>`__
+
+ptwt — PyTorch Wavelet Toolbox
+------------------------------
+
+ptwt provides differentiable, GPU-enabled fast wavelet transforms in PyTorch, extending PyWavelets with gradient support throughout (Wolter et al., JMLR 2024).
+
+Our summary: this is the practical dependency if a branch pursues an end-to-end learnable wavelet front-end — the mWDN / AdaWaveNet / WaveLSFormer style — rather than precomputed features, because it makes the transform itself part of the autograd graph. For fixed precomputed features PyWavelets suffices; ptwt earns its place only once the wavelet filters are trained jointly with the model.
+
+`View repository <https://github.com/v0lta/PyTorch-Wavelet-Toolbox>`__
+
+MODWT-MARS
+----------
+
+MODWT-MARS is a small, readable reference implementation that decomposes stock closing prices with MODWT multiresolution analysis and feeds the coefficients to a Multivariate Adaptive Regression Splines (MARS) model.
+
+Our summary: its value is as a concrete MODWT-MRA-to-model wiring example — the shortest thing to read when you want to see the plumbing from decomposition to predictor. It is also a concrete artefact to audit for the decompose-the-whole-series-first bug before copying the pattern: check whether the MODWT is applied once over the full series (leaky) or recomputed per decision date, because the repository's usefulness as a template depends entirely on that ordering.
+
+`View repository <https://github.com/Nicholas-Picini/MODWT-MARS>`__

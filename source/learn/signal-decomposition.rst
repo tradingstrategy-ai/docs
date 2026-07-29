@@ -1425,3 +1425,61 @@ Wang, Chen, Zhu and Xu (Digital Signal Processing, 2022) build a VMD-based pipel
 Our summary: this is another decompose-then-split leak — the decomposition precedes the 60/20/20 split, and the centred Savitzky-Golay filter (window 19) uses samples up to t+9 by construction, roughly 45 minutes of future information on 5-minute bars. The reusable, causally-safe ideas are entropy-based band consolidation and the non-linear (rather than additive) recombination of per-band forecasts via a gradient-boosted ensemble.
 
 `Read the paper <https://doi.org/10.1016/j.dsp.2022.103567>`__
+
+A Practical Guide to Wavelet Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Torrence and Compo (Bulletin of the American Meteorological Society, 1998) give the step-by-step recipe for the continuous wavelet transform with an ENSO example: basis choice, the scale-to-Fourier-frequency relation, significance testing against a red-noise background, and — critically for trading — edge effects on finite series and the cone of influence.
+
+Our summary: this is one of the most-cited wavelet primers in any field, and its operational value here is the cone of influence — the concrete tool for marking which coefficients near the most-recent edge of a finite series are contaminated by boundary effects. That makes it directly usable for a live crypto feature, where the newest bar is exactly the one you must trade on and exactly the one the boundary problem corrupts. Read it alongside the leakage papers (B1, B2) as the practical companion that tells you *which* coefficients to distrust.
+
+`Read the paper <https://psl.noaa.gov/people/gilbert.p.compo/Torrence_compo1998.pdf>`__
+
+Wavelets in Economics and Finance: Past and Future
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ramsey (Studies in Nonlinear Dynamics & Econometrics, 2002) offers a retrospective that frames wavelets as a "lens" for relationships invisible in the pure time domain — localized shocks, abrupt regime changes, and time-varying frequency and amplitude.
+
+Our summary: this is the clearest statement of *why* one would decompose by scale in a financial context, which makes it the right thing to read before building features — it forces an honest hypothesis about what scale structure you expect and why, rather than decomposing reflexively. Catalogued from its abstract, as the full text is paywalled.
+
+`Read the paper <https://doi.org/10.2202/1558-3708.1090>`__
+
+Application of the Cross Wavelet Transform and Wavelet Coherence to Geophysical Time Series
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Grinsted, Moore and Jevrejeva (Nonlinear Processes in Geophysics, 2004) introduce the cross-wavelet transform and wavelet coherence with phase-angle statistics for lead/lag inference and Monte Carlo significance testing against a red-noise background.
+
+Our summary: although written for geophysics, this is the methodological engine behind essentially every finance wavelet-coherence paper — the accompanying MATLAB toolbox is what the Bitcoin/gold and Bitcoin/S&P coherence studies (C2, C3) actually run. It is the reference for phase-angle lead/lag reading and for testing coherence significance, both of which are needed if scale-band co-movement is to become a tradable cross-asset feature rather than a descriptive picture.
+
+`Read the paper <https://doi.org/10.5194/npg-11-561-2004>`__
+
+The Continuous Wavelet Transform: Moving Beyond Uni- and Bivariate Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Aguiar-Conraria and Soares (Journal of Economic Surveys, 2014) survey continuous-wavelet-transform theory and implementation and generalise coherency to *partial* and *multiple* wavelet coherency — controlling for a third series in the time-frequency domain.
+
+Our summary: partial wavelet coherence is the tool that answers a genuinely market-neutral question — "does this altcoin still co-move with a factor once Bitcoin is partialled out, at this particular horizon?" That is exactly the conditional, scale-resolved dependence a cross-sectional perp book cares about, and this survey is the clearest treatment of it. An earlier primer version is freely available.
+
+`Read the paper <https://doi.org/10.1111/joes.12012>`__
+
+Forecasting Market Indices Using Stacked Autoencoders and LSTM (a leakage critique)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Jonathan Kinlay's practitioner critique of Bao, Yue and Rao (2017, PLoS ONE 12(7) e0180944) and its claim of 90–95% one-day directional accuracy from Haar-DWT plus stacked autoencoders plus LSTM — a level Kinlay notes would be extraordinary given that even 60% would be outstanding.
+
+Our summary: this is the shortest, bluntest thing to hand anyone who asks "why can't we just denoise the price first?" Kinlay identifies two specific defects that inflate the headline number — the DWT is applied to the *entire dataset before* the train/test split, and the test data is standardised using test-set statistics — and reports that his own replication with gradient-boosted trees on the autoencoded features scored roughly 50%, with another public repository also failing to replicate. It is the informal, hands-on counterpart to the formal leakage papers (Hasumi & Kajita, Quilty & Adamowski) in this collection.
+
+By Jonathan Kinlay.
+
+`Read the post <https://jonathankinlay.com/2022/08/forecasting-market-indices-using-stacked-autoencoders-lstm/>`__
+
+Financial Signal Processing in Python IX: Wavelet Data Denoising
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sofien Kaabar walks through wavelet soft-thresholding with the universal threshold in PyWavelets (``db8``), adding cycle-spinning (averaging over circularly-shifted copies) to mitigate the translation sensitivity of the critically-sampled DWT.
+
+Our summary: the tutorial's real value is the caveats it states honestly. The critically-sampled DWT is not translation-invariant, so small shifts change which coefficients survive thresholding; finite signals need explicit edge handling; and the method targets *measurement* noise, which suits globally smooth signals — whereas a random walk is intrinsically rough rather than noisy. That last point is the practical case against denoised-price features on perpetual futures, and a useful sanity check before building any wavelet-denoising step into a price pipeline.
+
+By Sofien Kaabar.
+
+`Read the post <https://abouttrading.substack.com/p/financial-signal-processing-in-python-dd0>`__

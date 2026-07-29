@@ -1860,6 +1860,18 @@
     "short_description": null
   },
   {
+    "title": "A Wavelet Tour of Signal Processing: The Sparse Way",
+    "authors": "Stéphane Mallat",
+    "publication_year": 2009,
+    "download_page": "https://www.amazon.com/Wavelet-Tour-Signal-Processing-Sparse/dp/0123743702",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "The reference theory text (3rd ed.): Fourier, wavelet and time-frequency bases, fast orthogonal/biorthogonal algorithms, thresholding and sparse approximation, extended to dictionaries, curvelets and bandlets. The authority on thresholding/denoising theory, precisely the step that goes wrong when applied naively to a price series."
+  },
+  {
     "title": "Advanced Futures Trading Strategies",
     "authors": "Robert Carver",
     "publication_year": null,
@@ -1894,6 +1906,30 @@
     "downloaded_at": null,
     "download_failure_reason": "not_a_paper",
     "short_description": null
+  },
+  {
+    "title": "An Introduction to Wavelet Theory in Finance: A Wavelet Multiscale Approach",
+    "authors": "Francis In, Sangbae Kim",
+    "publication_year": 2013,
+    "download_page": "https://doi.org/10.1142/8431",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A finance-focused introduction: spectral background, MODWT, wavelet variance/covariance/correlation, then finance applications. The most direct textbook treatment of scale-wise covariance and correlation, the machinery behind multi-horizon cross-sectional signals."
+  },
+  {
+    "title": "An Introduction to Wavelets and Other Filtering Methods in Finance and Economics",
+    "authors": "Ramazan Gençay, Faruk Selçuk, Brandon Whitcher",
+    "publication_year": 2002,
+    "download_page": "https://www.amazon.com/Introduction-Wavelets-Filtering-Methods-Economics/dp/0122796705",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A proof-light treatment for economists: a unified view of filtering methods, then wavelet variance and correlation, multiresolution analysis, and empirical finance/macro applications. The bridge between Percival-Walden's signal-processing formalism and finance-shaped questions of scale-by-scale variance and correlation."
   },
   {
     "title": "Beating the Financial Futures Market",
@@ -2038,6 +2074,30 @@
     "downloaded_at": "2026-03-15",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Wavelet Applications in Economics and Finance",
+    "authors": "Marco Gallegati, Willi Semmler (eds.)",
+    "publication_year": 2014,
+    "download_page": "https://doi.org/10.1007/978-3-642-40008-3",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "An edited collection on wavelet and spectral methods for nonlinear/dynamic processes (business cycles, asset prices, financial econometrics, forecasting), opening with a Ramsey retrospective. The fastest way to see which finance sub-problems wavelets have addressed and which chapters make forecasting rather than descriptive claims."
+  },
+  {
+    "title": "Wavelet Methods for Time Series Analysis",
+    "authors": "Donald B. Percival, Andrew T. Walden",
+    "publication_year": 2000,
+    "download_page": "https://doi.org/10.1017/CBO9780511841040",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "The standard reference for the discrete side of wavelet analysis: DWT and MODWT algorithms, wavelet variance and covariance, multiresolution analysis, and boundary handling. The canonical citation for MODWT in finance wavelet papers and the authoritative source for correctly counting boundary-affected coefficients, exactly what a leakage-aware live pipeline needs."
   },
   {
     "title": "An Empirical Investigation on Risk Factors in Cryptocurrency Futures",
@@ -2364,6 +2424,30 @@
     "short_description": null
   },
   {
+    "title": "Kymatio: Scattering Transforms in Python",
+    "authors": "Mathieu Andreux et al.",
+    "publication_year": 2020,
+    "download_page": "https://github.com/kymatio/kymatio",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "kymatio-scattering-transforms-python.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "GPU-accelerated 1D/2D/3D wavelet scattering transform. Scattering is a convolutional network with fixed wavelet + lowpass filters and modulus non-linearities, producing a representation stable to deformations and invariant to translation. Because nothing is learned there is no overfitting surface, an attractive first feature bank for a low-signal-to-noise perp panel."
+  },
+  {
+    "title": "MODWT-MARS",
+    "authors": "Nicholas Picini",
+    "publication_year": null,
+    "download_page": "https://github.com/Nicholas-Picini/MODWT-MARS",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A small, readable reference implementation that decomposes stock closes with MODWT-MRA and feeds the coefficients to a MARS model. Useful as a MODWT-MRA-to-model wiring example and a concrete artefact to audit for the decompose-the-whole-series-first bug before copying the pattern."
+  },
+  {
     "title": "NeuralForecast",
     "authors": null,
     "publication_year": null,
@@ -2386,6 +2470,18 @@
     "downloaded_at": null,
     "download_failure_reason": "not_a_paper",
     "short_description": null
+  },
+  {
+    "title": "PyWavelets",
+    "authors": "Gregory R. Lee, Ralf Gommers, Filip Wasilewski, Kai Wohlfahrt, Aaron O'Leary",
+    "publication_year": 2019,
+    "download_page": "https://github.com/PyWavelets/pywt",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "The de-facto Python wavelet library providing DWT/IDWT, wavelet packets, CWT, and the stationary wavelet transform (pywt.swt/iswt, the undecimated MODWT-equivalent), so no third-party MODWT package is required. Gotcha for trading: the default mode='symmetric' is a two-sided extension at the newest bar and must be replaced with causal handling plus per-bar recomputation."
   },
   {
     "title": "QuantTraderDL",
@@ -2472,6 +2568,18 @@
     "short_description": null
   },
   {
+    "title": "ptwt — PyTorch Wavelet Toolbox",
+    "authors": "Moritz Wolter et al.",
+    "publication_year": 2024,
+    "download_page": "https://github.com/v0lta/PyTorch-Wavelet-Toolbox",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "Differentiable, GPU-enabled fast wavelet transforms in PyTorch, extending PyWavelets with gradient support throughout. The practical dependency for an end-to-end learnable wavelet front-end (mWDN/AdaWaveNet/WaveLSFormer style) rather than precomputed features; for fixed features PyWavelets suffices."
+  },
+  {
     "title": "qlikeHAR Replications",
     "authors": "M. Puke and K. Schweikert",
     "publication_year": null,
@@ -2482,6 +2590,18 @@
     "downloaded_at": null,
     "download_failure_reason": "not_a_paper",
     "short_description": null
+  },
+  {
+    "title": "ssqueezepy",
+    "authors": "John Muradeli (OverLordGoldDragon)",
+    "publication_year": null,
+    "download_page": "https://github.com/OverLordGoldDragon/ssqueezepy",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "Forward/inverse CWT/STFT with synchrosqueezing, Generalized Morse Wavelets and ridge extraction, ported from the MATLAB Synchrosqueezing Toolbox. Synchrosqueezing reassigns energy to instantaneous frequency to give amplitude/frequency ridges, a richer feature set than band energies and the only mainstream Python route to it."
   },
   {
     "title": "tft-stocks",
@@ -6348,6 +6468,18 @@
     "short_description": null
   },
   {
+    "title": "A Practical Guide to Wavelet Analysis",
+    "authors": "Christopher Torrence, Gilbert P. Compo",
+    "publication_year": 1998,
+    "download_page": "https://psl.noaa.gov/people/gilbert.p.compo/Torrence_compo1998.pdf",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "practical-guide-wavelet-analysis-torrence-compo.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "The step-by-step CWT recipe with an ENSO example: basis choice, scale-to-Fourier-frequency relation, red-noise significance testing, and edge effects on finite series with the cone of influence. The cone of influence is the concrete tool for marking which coefficients near the most-recent edge are contaminated, directly operational for a live crypto feature."
+  },
+  {
     "title": "A Stock Price Forecasting Model Integrating CEEMD, ICA, PSO, and LSTM",
     "authors": null,
     "publication_year": 2022,
@@ -6490,6 +6622,18 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": null
+  },
+  {
+    "title": "Application of the Cross Wavelet Transform and Wavelet Coherence to Geophysical Time Series",
+    "authors": "Aslak Grinsted, John C. Moore, Svetlana Jevrejeva",
+    "publication_year": 2004,
+    "download_page": "https://doi.org/10.5194/npg-11-561-2004",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "cross-wavelet-coherence-geophysical-grinsted.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Introduces the cross-wavelet transform and wavelet coherence with phase-angle statistics for lead/lag inference and Monte Carlo significance testing against red noise. The accompanying MATLAB toolbox is what essentially every finance coherence paper actually runs; the reference for phase-angle reading and coherence significance if scale-band co-movement is to become a tradable feature."
   },
   {
     "title": "Bitcoin Price Forecasting Based on Hybrid VMD and LSTM Network",
@@ -7008,6 +7152,18 @@
     "short_description": null
   },
   {
+    "title": "Financial Signal Processing in Python IX: Wavelet Data Denoising",
+    "authors": "Sofien Kaabar",
+    "publication_year": 2024,
+    "download_page": "https://abouttrading.substack.com/p/financial-signal-processing-in-python-dd0",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A tutorial on wavelet soft-thresholding with the universal threshold in PyWavelets (db8), adding cycle-spinning to mitigate the critically-sampled DWT's translation sensitivity. Valuable for its honest caveats: the DWT is not translation-invariant, finite signals need edge handling, and the method targets measurement noise suiting smooth signals, whereas a random walk is intrinsically rough, the practical case against denoised-price features on perps."
+  },
+  {
     "title": "Financial Time Series Analysis and Forecasting with HHT Feature Generation and Machine Learning",
     "authors": "Tim Leung and Theodore Zhao",
     "publication_year": 2020,
@@ -7078,6 +7234,18 @@
     "downloaded_at": "2026-04-28",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Forecasting Market Indices Using Stacked Autoencoders and LSTM",
+    "authors": "Jonathan Kinlay",
+    "publication_year": 2022,
+    "download_page": "https://jonathankinlay.com/2022/08/forecasting-market-indices-using-stacked-autoencoders-lstm/",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "kinlay-forecasting-market-indices-stacked-autoencoders-lstm.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "A practitioner critique of Bao, Yue & Rao (2017) and its claim of 90-95% one-day directional accuracy from Haar-DWT + stacked autoencoders + LSTM. Identifies two defects that inflate the number (DWT applied to the whole dataset before the split; test data standardised with test-set statistics) and reports that a gradient-boosted-tree replication scored ~50%. The shortest answer to 'why can't we just denoise the price first?'"
   },
   {
     "title": "Forecasting Realized Volatility of Chinese Crude Oil Futures with Secondary Decomposition",
@@ -7752,6 +7920,18 @@
     "short_description": null
   },
   {
+    "title": "The Continuous Wavelet Transform: Moving Beyond Uni- and Bivariate Analysis",
+    "authors": "Luís Aguiar-Conraria, Maria Joana Soares",
+    "publication_year": 2014,
+    "download_page": "https://doi.org/10.1111/joes.12012",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "A survey of CWT theory and implementation, generalising coherency to partial and multiple wavelet coherency (controlling for a third series in time-frequency space). Partial coherence answers whether an altcoin still co-moves with a factor once Bitcoin is partialled out at a given horizon, a market-neutral-relevant question for perps. An earlier primer version is freely available."
+  },
+  {
     "title": "Time-Series Forecasting Using SVMD-LSTM: A Hybrid Approach for Stock Market Prediction",
     "authors": "Sanskar Agarwal, Shivam Sharma, Kazi Newaj Faisal, Rishi Raj Sharma, and Marek T. Malinowski",
     "publication_year": 2025,
@@ -8038,6 +8218,18 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": "Multiresolution filtering-and-prediction built on the redundant a trous transform, compared to a Kalman filter, capturing short-range and long-term dependence with few estimated parameters. The a trous transform is causal-friendly, making this the classic answer to obtaining multiresolution features without using future samples and the ancestor of later keep-only-the-last-coefficient causal designs."
+  },
+  {
+    "title": "Wavelets in Economics and Finance: Past and Future",
+    "authors": "James B. Ramsey",
+    "publication_year": 2002,
+    "download_page": "https://doi.org/10.2202/1558-3708.1090",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "A retrospective framing wavelets as a lens for relationships invisible in the time domain: localized shocks, abrupt regime changes, time-varying frequency and amplitude. The clearest statement of why one would decompose by scale in finance, useful for writing an honest hypothesis before building features. Catalogued from abstract."
   },
   {
     "title": "A Deep Learning Approach for Trading Factor Residuals",

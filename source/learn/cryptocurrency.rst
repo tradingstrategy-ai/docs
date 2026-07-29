@@ -197,7 +197,7 @@ Our summary: this is one of the very few high-frequency (rather than daily) cryp
 `Read the paper <https://arxiv.org/abs/2411.14058>`__
 
 Algorithmic Complexity vs. Market Efficiency: Wavelet–Transformer Architectures for Cryptocurrency Forecasting
--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 
 Aldan Jay and Rafael Berlanga (Algorithms, 2026) ask whether sophisticated deep learning justifies its cost for short-term crypto forecasting. They evaluate a 2.1M-parameter wavelet-enhanced transformer that decomposes the Crypto Fear and Greed Index with a 4-level Daubechies-4 DWT into five bands (D1–D4, A4) and fuses them with twelve technical indicators, using a leakage-safe rolling decomposition (the transform is recomputed inside each 60-day input window, so no future data touches a coefficient used at time t). Benchmarking is done with Diebold–Mariano tests using HAC-corrected variance against an O(1) naive-persistence baseline.
 
@@ -224,7 +224,7 @@ Our summary: the useful, reusable output is an empirically-grounded scale bandin
 `Read the paper <https://doi.org/10.1186/s40854-023-00495-1>`__
 
 Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Phiri (Eurasian Economic Review, 2022) embeds a Dickey-Fuller random-walk test into time-frequency space via the complex continuous wavelet transform, on daily Bitcoin from 2010-07-19 to 2022-03-03.
 
