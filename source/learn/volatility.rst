@@ -449,3 +449,22 @@ Clements et al. (Journal of Forecasting, 2026) apply hierarchical forecast recon
 Our summary: this addresses the missing piece whenever you forecast each scale band separately and then sum them — without reconciliation, the per-band forecasts can silently contradict the aggregate forecast, which is a real hazard for the "one model per scale" designs that recur throughout this collection. Reconciliation forces coherence between the band-level and total-level predictions. The entry is catalogued from the bibliographic record (Wiley full text was inaccessible), so the author list and detailed results are unverified.
 
 `Read the paper <https://doi.org/10.1002/for.70113>`__
+
+.. _volatility-forecasting-horse-race-garch-har-tree:
+
+Volatility Forecasting with Machine Learning: A Horse Race Across GARCH, HAR, and Tree-Based Models
+---------------------------------------------------------------------------------------------------
+
+Akram Khan (2026) runs a controlled horse race between seven volatility-forecasting configurations on S&P 500 realized volatility from January 2004 through November 2025: three GARCH variants (GARCH, EGARCH, GJR-GARCH), the HAR-RV model of Corsi (2009), gradient-boosted trees (LightGBM, XGBoost), and an equal-weight ensemble of LightGBM, HAR-RV and GARCH(1,1). Every model sees the same data, the same 35-feature panel and the same expanding-window protocol, evaluated over a January 2022 to November 2025 test period (980 trading days) that spans the 2022 bear market, the 2023 rally, the 2024–2025 rate normalisation and a 19.4% drawdown year. QLIKE is the primary loss, alongside RMSE and Mincer–Zarnowitz R², with Diebold–Mariano two-sided p-values for all key pairs.
+
+Our summary: this is a disciplined, reproducibility-first study whose main message is a null result — no model separates from the field at conventional significance. On the full sample the equal-weight ensemble has the lowest point-estimate QLIKE (0.3431) and GJR-GARCH is the best individual model (0.3447), but the ensemble's edge over GJR-GARCH is not statistically significant (DM p = 0.90). The more interesting finding is a subperiod reversal: in the structurally out-of-distribution 2022 high-volatility regime the parametric GARCH family wins (EGARCH best at QLIKE 0.2346) while LightGBM ranks last, whereas in the calmer 2023–2025 period the tree models lead and HAR-RV is last — the GARCH variants adapt more gracefully to a regime their 2004–2021 training never saw, while the 35-feature trees do better once conditions normalise. LightGBM split-importance shows VIX is the dominant feature, the leverage effect enters through three return-based features (~19% of split count together), and long-horizon RV signals dominate short-horizon ones.
+
+Data and reproduction: S&P 500 (^GSPC) and VIX daily OHLCV from Yahoo Finance, 2004–Nov 2025; a 35-feature engineered panel with forward targets. The paper ships full LaTeX source, data-collection and modelling scripts, per-day forecasts of all seven models, and an end-to-end audit that re-derives every paper number, released under permissive licences (CC BY 4.0 paper, CC0 data, MIT code) at :ref:`the companion repository <volatility-forecasting-horse-race-repo>`. It self-scores 2 on the Reproducibility Disclosure Score rubric of Khan (2026), "Machine Learning in Quantitative Finance: A Systematic Review" (SSRN 6562398).
+
+Key metrics (full test sample, QLIKE): Ensemble 0.3431, GJR-GARCH 0.3447, XGBoost 0.3553, LightGBM 0.3632, EGARCH 0.3748, GARCH(1,1) 0.3806, HAR-RV 0.4198; GJR-GARCH has the best RMSE (0.0734) and MZ R² (0.3802). Subperiod QLIKE: 2022 EGARCH 0.2346 (best) vs LightGBM 0.3429 (worst); 2023–2025 XGBoost 0.3693 (best) vs HAR-RV 0.4568 (worst). Ensemble-vs-GJR-GARCH DM p = 0.90 (not significant).
+
+Mentioned by Vivek V Rao (@VivekVRao1) in `this discussion <https://x.com/VivekVRao1/status/2082448506350895316>`__, who highlights the paper's finding that "no model separates from the field at conventional significance levels" and adds that he has found NAGARCH — which shifts the news-impact curve — to outperform GJR-GARCH, which instead twists it so that squared returns from negative returns boost volatility more than from positive returns.
+
+By Akram Khan.
+
+`Read the paper <https://ssrn.com/abstract=6663418>`__

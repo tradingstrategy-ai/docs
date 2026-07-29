@@ -2616,6 +2616,30 @@
     "short_description": null
   },
   {
+    "title": "vol-eval — Volatility Forecast Evaluation Toolkit",
+    "authors": "Akram Khan",
+    "publication_year": 2026,
+    "download_page": "https://github.com/ayk5511/vol-eval",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A Python 3.10+ package for evaluating volatility forecasts, implementing standard losses (QLIKE, MSE, MAE, Mincer-Zarnowitz R2) plus the significance and superiority tests a rigorous comparison needs: Diebold-Mariano, the Model Confidence Set, Hansen's SPA test, and White's Reality Check. The general-purpose evaluation layer extracted from the horse-race study; the multiple-comparison-aware tests are what stop a 'best' model from being a data-snooping artefact. MIT-licensed."
+  },
+  {
+    "title": "volatility-forecasting — Horse Race Across GARCH, HAR, and Tree-Based Models",
+    "authors": "Akram Khan",
+    "publication_year": 2026,
+    "download_page": "https://github.com/ayk5511/volatility-forecasting",
+    "source_file": "code-repositories.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "The reproducibility package for Akram Khan's (2026) GARCH/HAR/tree volatility horse-race paper (SSRN 6663418): LaTeX source, data-collection and modelling scripts, a 35-feature panel, per-day forecasts of all seven models, and every metric table. The pipeline runs on a laptop in under five minutes and includes an end-to-end audit script that re-derives every numerical claim in the paper and exits 0 only on a full pass. Permissive licences (CC BY 4.0 paper, CC0 data, MIT code)."
+  },
+  {
     "title": "Crypto Trading Using FinRL",
     "authors": null,
     "publication_year": null,
@@ -9886,6 +9910,18 @@
     "downloaded_at": "2026-04-14",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Volatility Forecasting with Machine Learning: A Horse Race Across GARCH, HAR, and Tree-Based Models",
+    "authors": "Akram Khan",
+    "publication_year": 2026,
+    "download_page": "https://ssrn.com/abstract=6663418",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "volatility-forecasting-horse-race-garch-har-tree.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "A controlled horse race of seven volatility-forecasting configurations (GARCH/EGARCH/GJR-GARCH, HAR-RV, LightGBM, XGBoost, and an equal-weight ensemble) on S&P 500 realized volatility, 2004-2025 with a 980-day out-of-sample test (2022-2025), scored by QLIKE, RMSE and Mincer-Zarnowitz R2 with Diebold-Mariano tests. Main result is a null: no model separates at conventional significance (ensemble QLIKE 0.3431 vs GJR-GARCH 0.3447, DM p=0.90). A subperiod reversal shows the GARCH family winning the out-of-distribution 2022 high-vol regime while tree models lead in calmer 2023-2025. Fully reproducible with code, data and an audit script."
   },
   {
     "title": "Volatility Modeling: A Deep Dive into the ARCH Family",

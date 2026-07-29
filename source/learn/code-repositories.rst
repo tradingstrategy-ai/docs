@@ -393,3 +393,25 @@ MODWT-MARS is a small, readable reference implementation that decomposes stock c
 Our summary: its value is as a concrete MODWT-MRA-to-model wiring example — the shortest thing to read when you want to see the plumbing from decomposition to predictor. It is also a concrete artefact to audit for the decompose-the-whole-series-first bug before copying the pattern: check whether the MODWT is applied once over the full series (leaky) or recomputed per decision date, because the repository's usefulness as a template depends entirely on that ordering.
 
 `View repository <https://github.com/Nicholas-Picini/MODWT-MARS>`__
+
+.. _volatility-forecasting-horse-race-repo:
+
+volatility-forecasting — Horse Race Across GARCH, HAR, and Tree-Based Models
+----------------------------------------------------------------------------
+
+The reproducibility package accompanying Akram Khan's (2026) paper :ref:`Volatility Forecasting with Machine Learning: A Horse Race Across GARCH, HAR, and Tree-Based Models <volatility-forecasting-horse-race-garch-har-tree>` (SSRN 6663418). It contains the LaTeX source, the data-collection and modelling scripts, the engineered 35-feature panel, per-day out-of-sample forecasts of all seven model configurations, and the full suite of metrics used to populate every table in the paper.
+
+Our summary: this is an unusually disciplined reproducibility artefact — the whole pipeline runs on a single laptop in under five minutes from a clean Python 3.11+ environment (yfinance, pandas, numpy, scipy, scikit-learn, lightgbm, xgboost, arch), and ``code/06_audit.py`` is an end-to-end audit that re-derives every numerical claim in the paper from the parquet panel, recomputes the bold-cell winner of every table, re-runs the Diebold–Mariano tests, and verifies prose-level numbers, exiting 0 only on a full pass. It is a good template for how to publish a forecasting study so that reviewers can independently confirm each reported figure. Licences are permissive (CC BY 4.0 for the paper, CC0 for the data, MIT for the code); the repository is small and new (5 stars, last pushed May 2026).
+
+Mentioned by Vivek V Rao (@VivekVRao1) in `this discussion <https://x.com/VivekVRao1/status/2082448506350895316>`__.
+
+`View repository <https://github.com/ayk5511/volatility-forecasting>`__
+
+vol-eval — Volatility Forecast Evaluation Toolkit
+-------------------------------------------------
+
+A companion Python package (3.10+) by Akram Khan for evaluating volatility forecasts. It implements the standard loss functions — QLIKE, MSE, MAE and Mincer–Zarnowitz R² — together with the significance and superiority tests that a rigorous forecast comparison needs: the Diebold–Mariano test, the Model Confidence Set, Hansen's Superior Predictive Ability (SPA) test, and White's Reality Check.
+
+Our summary: this is the general-purpose evaluation layer extracted from the horse-race study above, and it is the useful part to reuse independently of that specific paper. Having the Model Confidence Set, SPA and Reality Check alongside plain Diebold–Mariano in one place matters because multiple-comparison-aware tests are exactly what stop a "best" model from being an artefact of data snooping when many candidates are ranked — the discipline the horse-race paper itself applies to conclude that no model separates at conventional significance. MIT-licensed.
+
+`View repository <https://github.com/ayk5511/vol-eval>`__
