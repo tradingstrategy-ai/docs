@@ -431,3 +431,21 @@ Baruník and Vácha (Quantitative Finance, 2015; arXiv 1202.1854) build a realiz
 Our summary: this is the most rigorous existing recipe for scale-decomposed realized variance, and it is directly transplantable to perpetual-futures volatility estimation. The method is validated in simulation across noise levels, jump sizes, and long-memory fractional stochastic-volatility models, and applied to forex-futures volatility through the financial crisis. Its practical value for a fee-sensitive book is that it hands you jump-robust variance measured per horizon, which is the right input for scale-band volatility features rather than a single aggregate realized variance.
 
 `Read the paper <https://arxiv.org/abs/1202.1854>`__
+
+Forecasting Realized Volatility Using HAR Models and Wavelet Decomposition: A Volatility-Timing Perspective
+-----------------------------------------------------------------------------------------------------------
+
+Clements and Vatsa (North American Journal of Economics and Finance, 2026) wavelet-decompose realized volatility into short, medium and long components and fit a HAR model per component, evaluating not on forecast error but on portfolio outcomes.
+
+Our summary (from the abstract): the notable result is that forecasts from the *low-frequency* component consistently deliver better portfolio outcomes — lower turnover and higher investor utility without added risk — beating both return-based decompositions and a benchmark HAR. Evaluating on turnover and utility rather than RMSE is exactly the right evaluation shape for a fee-sensitive perpetual-futures book, where a marginally better point forecast that churns the portfolio is worse than useless. This is the volatility-side analogue of the "measure the economic edge, not the error" discipline this collection favours.
+
+`Read the paper <https://doi.org/10.1016/j.najef.2026.102605>`__
+
+Enhancing Volatility Prediction: A Wavelet-Based Hierarchical Forecast Reconciliation Approach
+----------------------------------------------------------------------------------------------
+
+Clements et al. (Journal of Forecasting, 2026) apply hierarchical forecast reconciliation across a wavelet decomposition hierarchy, so that scale-level forecasts aggregate coherently up to the total.
+
+Our summary: this addresses the missing piece whenever you forecast each scale band separately and then sum them — without reconciliation, the per-band forecasts can silently contradict the aggregate forecast, which is a real hazard for the "one model per scale" designs that recur throughout this collection. Reconciliation forces coherence between the band-level and total-level predictions. The entry is catalogued from the bibliographic record (Wiley full text was inaccessible), so the author list and detailed results are unverified.
+
+`Read the paper <https://doi.org/10.1002/for.70113>`__

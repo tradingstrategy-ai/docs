@@ -2580,6 +2580,18 @@
     "short_description": null
   },
   {
+    "title": "Algorithmic Complexity vs. Market Efficiency: Evaluating Wavelet-Transformer Architectures for Cryptocurrency Price Forecasting",
+    "authors": "Aldan Jay, Rafael Berlanga",
+    "publication_year": 2026,
+    "download_page": "https://www.mdpi.com/1999-4893/19/2/101",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "algorithmic-complexity-market-efficiency-wavelet-transformer-crypto.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "A 2.1M-parameter wavelet-enhanced transformer decomposing the Crypto Fear and Greed Index (4-level db4 DWT, five bands) with a leakage-safe rolling decomposition, benchmarked with HAC-corrected Diebold-Mariano tests against O(1) naive persistence. No model (incl. ARIMA, XGBoost, LSTM, vanilla Transformer) significantly beats naive at 1 day (DM +19.13, p<0.001); wavelet-transformer RMSE USD 2005 vs USD 1986 naive at ~3909x cost. Positional encoding is the only critical component; cross-asset transfer fails catastrophically. Leakage-clean, hence the modest effect size; the bar a wavelet-crypto branch must clear. Code and data public."
+  },
+  {
     "title": "An Investor's Guide to Crypto",
     "authors": null,
     "publication_year": null,
@@ -2602,6 +2614,30 @@
     "downloaded_at": "2026-03-13",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Bitcoin and S&P500: Co-movements of High-Order Moments in the Time-Frequency Domain",
+    "authors": "Elie Bouri, Ladislav Kristoufek, Nehme Azoury",
+    "publication_year": 2022,
+    "download_page": "https://doi.org/10.1371/journal.pone.0277924",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "bitcoin-sp500-comovements-high-order-moments.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Applies wavelet coherence and partial wavelet coherence to the returns, volatility, skewness and kurtosis of Bitcoin and the S&P 500, daily 2011-2022 (2,716 obs). Co-movement is moment- and frequency-dependent: essentially disconnected before 2018, connected from 2018-19, volatility linkage spiking during COVID at medium scales, skew/kurtosis linkage strongest at mid/long scales, with US economic policy uncertainty intermediating. Argues for separate scale-band features per moment rather than one denoised price."
+  },
+  {
+    "title": "Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?",
+    "authors": "Andrew Phiri",
+    "publication_year": 2022,
+    "download_page": "https://doi.org/10.1007/s40822-022-00214-8",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Embeds a Dickey-Fuller random-walk test in time-frequency space via the complex continuous wavelet transform, daily Bitcoin 2010-2022. Reports predictability concentrating at higher frequencies (2-16 day cycles), in Nov-Feb, in bubble periods, around halvings, and during COVID announcements. The closest thing in the crypto-wavelet corpus to a direct statement of where in scale space a signal lives, pointing at short scales rather than the low-frequency trend most papers trade."
   },
   {
     "title": "Common Risk Factors in Cryptocurrency",
@@ -2628,6 +2664,18 @@
     "short_description": null
   },
   {
+    "title": "Crypto Trend Prediction Based on Wavelet Transform and Deep Learning Algorithm",
+    "authors": "Parameswaran, Ramachandran, Shukla",
+    "publication_year": 2024,
+    "download_page": "https://doi.org/10.1016/j.procs.2024.04.112",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Computes wavelet coefficients, feeds them to a Bi-LSTM that predicts the coefficients 16 days ahead, then inverse-transforms to a price path; case study on SHIB. A clean example of the forecast-in-coefficient-space design and of its failure mode: inverse-transforming a 16-day coefficient forecast reintroduces the boundary problem because the reconstruction near the edge depends on future-spanning coefficients."
+  },
+  {
     "title": "Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing",
     "authors": null,
     "publication_year": null,
@@ -2650,6 +2698,30 @@
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
     "short_description": null
+  },
+  {
+    "title": "Diversification Evidence of Bitcoin and Gold from Wavelet Analysis",
+    "authors": "Md Fahim Bhuiyan (Bhuiyan, Husain, Zhang)",
+    "publication_year": 2023,
+    "download_page": "https://doi.org/10.1186/s40854-023-00495-1",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "diversification-bitcoin-gold-wavelet.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Combines the continuous wavelet transform (LA(8) filter) with DCC-MGARCH on Bitcoin, gold and six equity indices, daily 2014-2022 (2,183 obs). Bitcoin shows low coherence with all six indices in the 2-16 day band across all periods; 16-64 day diversification is conditional and weakens in crises; 64-256 day is mixed. Supplies a literature-backed 2-16 / 16-64 / 64-256 day scale banding for daily crypto features."
+  },
+  {
+    "title": "Fractal Dynamics and Wavelet Analysis: Deep Volatility and Return Properties of Bitcoin, Ethereum and Ripple",
+    "authors": "Valerio Celeste, Shaen Corbet, Constantin Gurdgiev",
+    "publication_year": 2019,
+    "download_page": "https://doi.org/10.1016/j.qref.2019.09.011",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Rescaled-range (Hurst) plus wavelet analysis of long memory and cyclical persistence across Bitcoin, Ethereum and Ripple. Reports long memory and cyclical persistence/anti-persistence across Bitcoin's full history but not for Ethereum or Ripple, a caution against assuming BTC-fitted scale structure transfers to altcoins, directly relevant to a cross-sectional perp universe and the case for channel-clustering models."
   },
   {
     "title": "January 2026 Syndicate API Report: Performance Reporting Update",
@@ -6372,6 +6444,18 @@
     "short_description": "Uses a lifting-scheme decomposition so the wavelet transform itself is adaptive and learnable, evaluated on forecasting, imputation and a new super-resolution task across ten datasets. The lifting scheme is the most principled route to learnable wavelets because it guarantees perfect reconstruction, making it preferable to unconstrained learned FIR filters."
   },
   {
+    "title": "Addressing the Incorrect Usage of Wavelet-Based Hydrological and Water Resources Forecasting Models",
+    "authors": "John M. Quilty, Jan Adamowski",
+    "publication_year": 2018,
+    "download_page": "https://doi.org/10.1016/j.jhydrol.2018.05.003",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "The canonical statement of the wavelet-forecasting leakage bug, from hydrology rather than finance. Argues a large published body of wavelet models cannot be used for real forecasting due to three failure sources (future data at decision time, poor level/filter choice, careless calibration/validation splits) and that incorrect models often beat what is realistically achievable. Proposes boundary-corrected coefficients as the named Wavelet Data-Driven Forecasting Framework (WDDFF)."
+  },
+  {
     "title": "Algorithm Optimization Model of Trading Strategy Based on CEEMDAN-SE-LSTM",
     "authors": null,
     "publication_year": 2022,
@@ -6696,6 +6780,18 @@
     "short_description": null
   },
   {
+    "title": "Deep Multi-Hybrid Forecasting System with Random EWT Extraction and Variational Learning Rate Algorithm for Crude Oil Futures",
+    "authors": "Jujie Wang, Yanfeng Wang",
+    "publication_year": 2020,
+    "download_page": "https://doi.org/10.1016/j.eswa.2020.113686",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "EWT segments the Fourier spectrum into six components: the low-frequency trend goes to a deep bidirectional LSTM, five high-frequency components to an Elman RNN with a variational learning rate, and a random-inheritance error-correction step downweights older samples. Reports R2 0.9977 (Brent)/0.9966 (WTI), SMAPE 0.34% on daily WTI/Brent futures, but never mentions leakage while decomposing the full sample before a 1500/500 split; treat the numbers as evidence of a leak, not a benchmark. Portable ideas: frequency-routed model selection and causal time-decay loss weighting."
+  },
+  {
     "title": "Deep Multi-Hybrid Forecasting System with Random EWT for Crude Oil Futures",
     "authors": null,
     "publication_year": 2020,
@@ -6706,6 +6802,18 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": null
+  },
+  {
+    "title": "Depth Feature Extraction-Based Deep Ensemble Learning Framework for High Frequency Futures Price Forecasting",
+    "authors": "Jujie Wang, Zhenzhen Zhuang and colleagues (Wang, Chen, Zhu, Xu)",
+    "publication_year": 2022,
+    "download_page": "https://doi.org/10.1016/j.dsp.2022.103567",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "A VMD-based pipeline (often misfiled as EWT): VMD then Savitzky-Golay denoising and multi-scale-entropy band consolidation, Spearman-screened exogenous variables compressed by a stacked autoencoder, attention-LSTM per component, and a LightGBM non-additive ensemble. On CSI 300, rebar and apple 5-minute futures reports MAPE 0.348/0.264/0.168%, but decomposition precedes the split and the centred SG filter (window 19) uses ~45 min of future on 5m bars. Reusable causally-safe ideas: entropy band consolidation and non-linear per-band recombination."
   },
   {
     "title": "Disaggregating VIX",
@@ -6826,6 +6934,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Enhancing Algorithmic Trading with Wavelet-Based Deep Reinforcement Learning",
+    "authors": null,
+    "publication_year": 2025,
+    "download_page": "https://doi.org/10.1007/s00521-025-11581-z",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "A Neural Computing & Applications study assessing wavelet families as front-ends to deep reinforcement-learning trading agents, on the wavelet-plus-RL branch alongside Lee/Koh/Choe and Lin Li. Catalogued from the bibliographic record only; data, markets and results are unverified and should not be cited until the full text is read."
   },
   {
     "title": "Enhancing Financial Time Series Forecasting with CEEMDAN-Informer-LSTM",
@@ -7476,6 +7596,18 @@
     "short_description": null
   },
   {
+    "title": "Research on Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition",
+    "authors": "Yang, Li, Jiang",
+    "publication_year": 2024,
+    "download_page": "https://www.nature.com/articles/s41598-024-80018-9",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "information-leakage-time-series-emd.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Extends the leakage analysis to the EMD family (EMD, EEMD, VMD, CEEMDAN) and proposes three causal replacements: SW-EMD (paired sliding windows), STMP-EMD (decompose once to train then re-decompose the trailing window per step, cheapest correct option) and MTMP-EMD (re-decompose and retrain per step, most accurate). A second independent leakage-delta framework alongside Hasumi & Kajita; the widely-quoted +1.958% RMSE figure measures improvement over a plain LSTM, not the leakage delta."
+  },
+  {
     "title": "Risk Forecasting in the Crude Oil Market: A Multiscale Convolutional Neural Network Approach",
     "authors": "Yingchao Zou, Lean Yu, Geoffrey K.F. Tso, and Kaijian He",
     "publication_year": 2020,
@@ -7666,6 +7798,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Using Wavelets for Time Series Forecasting: Does It Pay Off?",
+    "authors": "Stephan Schlüter, Carola Deuschle",
+    "publication_year": 2010,
+    "download_page": "https://www.econstor.eu/handle/10419/36698",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Compares classical forecasting against denoise-then-ARIMA and decompose-then-per-band-ARIMA across four datasets with time-varying seasonalities, concluding that wavelets do improve forecast quality with the preferred route depending on data and horizon. Despite the sceptical title this is a positive result and should not be miscited as negative evidence; the freely-hosted EconStor PDF is behind a bot-check."
   },
   {
     "title": "VMD-CEEMDAN-GRU-ATCN for Exchange Rate",
@@ -7882,6 +8026,18 @@
     "downloaded_at": "2026-07-28",
     "download_failure_reason": null,
     "short_description": "Hybrid tree/deep-feature model predicting Forex rate of change five intervals ahead: prices are wavelet-denoised, a 30-interval technical-indicator matrix is passed through a ResNet to extract image features, and those features plus indicators feed a LightGBM predictor. On 5-minute USDJPY it reports MAE 0.240977e-3, MSE 0.156e-6, RMSE 0.395185e-3, beating baselines; code at mkhushi.github.io. Reports forecasting error rather than a full cost-aware backtest."
+  },
+  {
+    "title": "Wavelet-Based Combined Signal Filtering and Prediction",
+    "authors": "Olivier Renaud, Jean-Luc Starck, Fionn Murtagh",
+    "publication_year": 2005,
+    "download_page": "https://doi.org/10.1109/TSMCB.2005.850182",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Multiresolution filtering-and-prediction built on the redundant a trous transform, compared to a Kalman filter, capturing short-range and long-term dependence with few estimated parameters. The a trous transform is causal-friendly, making this the classic answer to obtaining multiresolution features without using future samples and the ancestor of later keep-only-the-last-coefficient causal designs."
   },
   {
     "title": "A Deep Learning Approach for Trading Factor Residuals",
@@ -9264,6 +9420,18 @@
     "short_description": null
   },
   {
+    "title": "Enhancing Volatility Prediction: A Wavelet-Based Hierarchical Forecast Reconciliation Approach",
+    "authors": "A. E. Clements et al.",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.1002/for.70113",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Applies hierarchical forecast reconciliation across a wavelet decomposition hierarchy so scale-level forecasts aggregate coherently to the total. Addresses the missing piece when forecasting each scale band separately and summing, where band forecasts can silently contradict the aggregate. Catalogued from the bibliographic record; author list and results unverified."
+  },
+  {
     "title": "Faster Volatility Estimators and the Gross-versus-Net Trap",
     "authors": "DeltaDog (@the_delta_dog)",
     "publication_year": 2026,
@@ -9286,6 +9454,18 @@
     "downloaded_at": "2026-04-26",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Forecasting Realized Volatility Using HAR Models and Wavelet Decomposition: A Volatility-Timing Perspective",
+    "authors": "A. E. Clements, Y. Vatsa",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.1016/j.najef.2026.102605",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Wavelet-decomposes realized volatility into short/medium/long components and fits a HAR per component, evaluating on portfolio outcomes rather than forecast error. Forecasts from the low-frequency component consistently deliver better outcomes (lower turnover, higher utility, no added risk), beating return-based decompositions and benchmark HAR. Evaluating on turnover and utility is the right shape for a fee-sensitive perp book."
   },
   {
     "title": "Forecasting Realized Volatility in Turbulent Times using Temporal Fusion Transformers",

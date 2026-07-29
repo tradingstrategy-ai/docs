@@ -1362,3 +1362,66 @@ Zhou, Xiong, Zhang, Xia and Xie (2025) combine wavelet-domain MLPs with a channe
 Our summary: the channel-clustering Mixture-of-Experts is the natural architecture for a cross-sectional perpetual-futures universe, where different coins exhibit different scale behaviour and a single shared model averages them together. It connects to the fractal-dynamics evidence (Celeste et al., C5) that BTC-fitted scale structure does not automatically transfer to altcoins — a reason to let experts specialise by cluster.
 
 `Read the paper <https://arxiv.org/abs/2508.08825>`__
+
+Addressing the Incorrect Usage of Wavelet-Based Hydrological Forecasting Models
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Quilty and Adamowski (Journal of Hydrology, 2018) give the canonical statement of the wavelet-forecasting leakage bug, written from hydrology rather than finance — which is likely why finance keeps rediscovering it independently. They argue that a large published body of wavelet-based forecasting models "cannot be used for real forecasting" because of three failure sources: using future data not available at decision time; inappropriate decomposition level and filter choice; and careless calibration/validation partitioning.
+
+Our summary: this pairs directly with Hasumi & Kajita (B1) as the second pillar of the leakage literature, and it goes further by proposing a named remedy rather than only a warning — boundary-corrected coefficients formalised as the Wavelet Data-Driven Forecasting Framework (WDDFF). The blunt consequence the authors document is that incorrectly developed models "often result in much better performance than what is realistically achievable," which is exactly the tell to watch for on any wavelet trading branch: an implausibly good number is evidence of a leak, not of alpha.
+
+`Read the paper <https://doi.org/10.1016/j.jhydrol.2018.05.003>`__
+
+Research on Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yang, Li and Jiang (Scientific Reports, 2024) extend the leakage analysis to the "class EMD" family (EMD, EEMD, VMD, CEEMDAN) rather than wavelets, and propose three causal replacements described concretely enough to implement: SW-EMD (paired sliding windows, one sample per component), STMP-EMD (decompose once to train, then re-decompose the trailing window at each prediction step with a single training pass — the cheapest correct option), and MTMP-EMD (re-decompose and retrain per step — most accurate but very computationally intensive).
+
+Our summary: the value here is a second independent leakage-delta framework alongside Hasumi & Kajita, plus a taxonomy of causal fixes that transfers in spirit to wavelets even though the paper does not claim to. Two cautions for anyone lifting numbers from it: the fixed-component-count constraint that SW/STMP require, and the fact that the widely-quoted +1.958% RMSE figure measures improvement over a plain LSTM baseline, not the leakage delta itself.
+
+`Read the paper <https://www.nature.com/articles/s41598-024-80018-9>`__
+
+Enhancing Algorithmic Trading with Wavelet-Based Deep Reinforcement Learning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A Neural Computing & Applications (2025) study assessing wavelet families as front-ends to deep reinforcement-learning trading agents. It is catalogued here for completeness on the wavelet-plus-RL branch alongside the Lee/Koh/Choe and Lin Li papers.
+
+Our summary: this entry is listed from the bibliographic record and a single indexed line only — the data, markets and results could not be verified, so no result from it should be cited until the full text is read. Its relevance is as a pointer to the ongoing line of work treating the wavelet decomposition as a state-representation step for an RL policy rather than as a denoiser or a forecaster.
+
+`Read the paper <https://doi.org/10.1007/s00521-025-11581-z>`__
+
+Using Wavelets for Time Series Forecasting: Does It Pay Off?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Schlüter and Deuschle (IWQW Discussion Paper 04/2010) compare classical forecasting against two wavelet routes — denoise-then-ARIMA, and decompose-then-per-band-ARIMA — across four datasets, motivated by seasonalities whose period and intensity vary over time. They conclude that wavelets do improve forecast quality, with the preferred route depending on data characteristics and horizon.
+
+Our summary: despite the sceptical title, this is a *positive* result and should not be miscited as negative evidence — a correction worth stating explicitly because the title invites the opposite reading. It is a clean, careful early benchmark of the two canonical ways to use wavelets in forecasting, and its "it depends on horizon and data" conclusion is the honest framing to carry into any modern wavelet experiment.
+
+`Read the paper <https://www.econstor.eu/handle/10419/36698>`__
+
+Wavelet-Based Combined Signal Filtering and Prediction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Renaud, Starck and Murtagh (IEEE Transactions on Systems, Man, and Cybernetics — Part B, 2005) build a multiresolution filtering-and-prediction method on the redundant à trous transform, compared against a Kalman filter, and show that multiresolution prediction captures both short-range and long-term dependence with few estimated parameters.
+
+Our summary: the à trous (redundant, undecimated) transform is causal-friendly, which makes this the classic answer to the practical question "how do I get multiresolution features without using future samples?" It is the methodological ancestor of the causal, keep-only-the-last-coefficient designs that later leakage-aware papers (Zhang et al. 2001, Bao et al. 2026) converge on, and a good reference for the sparse-parameterisation argument in favour of scale-decomposed prediction.
+
+`Read the paper <https://doi.org/10.1109/TSMCB.2005.850182>`__
+
+Deep Multi-Hybrid Forecasting System with Random EWT Extraction for Crude Oil Futures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wang and Wang (Expert Systems with Applications, 2020) segment the Fourier spectrum into six components with the Empirical Wavelet Transform (EWT): the low-frequency trend is routed to a deep bidirectional LSTM, the five high-frequency components to an Elman RNN with a "variational learning rate," and a random-inheritance-formula error-correction step downweights older samples. Applied to WTI and Brent daily futures (1500 train / 500 test, 2011/12–2019), it reports R² 0.9977 (Brent) / 0.9966 (WTI) and SMAPE 0.34%.
+
+Our summary: treat those headline numbers as unusable as a benchmark. The words "leakage" and "look-ahead" never appear, the decomposition figures span the full 2000-point sample while the split is only 1500/500, and R² near 0.998 on daily oil is precisely the pattern the leakage literature (B1–B3) diagnoses — matching it would itself be evidence of a leak. The genuinely portable ideas are frequency-routed model selection (different model per band) and the causal time-decay loss weighting.
+
+`Read the paper <https://doi.org/10.1016/j.eswa.2020.113686>`__
+
+Depth Feature Extraction-Based Deep Ensemble Learning for High-Frequency Futures Price Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wang, Chen, Zhu and Xu (Digital Signal Processing, 2022) build a VMD-based pipeline (often misfiled as EWT): Variational Mode Decomposition followed by Savitzky-Golay denoising and multi-scale-entropy band consolidation, with exogenous variables screened by Spearman correlation and compressed by a stacked autoencoder, an attention-LSTM per component, and a LightGBM ensemble that combines the component forecasts non-additively. Applied to CSI 300, rebar and apple futures at 5-minute frequency (2021), it reports MAPE 0.3480 / 0.2639 / 0.1676%.
+
+Our summary: this is another decompose-then-split leak — the decomposition precedes the 60/20/20 split, and the centred Savitzky-Golay filter (window 19) uses samples up to t+9 by construction, roughly 45 minutes of future information on 5-minute bars. The reusable, causally-safe ideas are entropy-based band consolidation and the non-linear (rather than additive) recombination of per-band forecasts via a gradient-boosted ensemble.
+
+`Read the paper <https://doi.org/10.1016/j.dsp.2022.103567>`__

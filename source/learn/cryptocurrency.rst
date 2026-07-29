@@ -195,3 +195,57 @@ Kikuchi (2024) applies wavelet analysis to high-frequency cryptocurrency prices 
 Our summary: this is one of the very few high-frequency (rather than daily) crypto wavelet studies, which matters because the intraday bar regime is where a perpetual-futures book actually operates, and most of the wavelet-crypto literature works on daily data. The paper is read here from its abstract; it names neither the specific coins nor the sampling frequency, so the finding is directional — that predictability concentrates at particular horizons — rather than a directly reusable recipe. It complements the daily-scale evidence (Phiri, Bhuiyan et al.) that any crypto wavelet signal tends to live at shorter scales.
 
 `Read the paper <https://arxiv.org/abs/2411.14058>`__
+
+Algorithmic Complexity vs. Market Efficiency: Wavelet–Transformer Architectures for Cryptocurrency Forecasting
+-------------------------------------------------------------------------------------------------------------
+
+Aldan Jay and Rafael Berlanga (Algorithms, 2026) ask whether sophisticated deep learning justifies its cost for short-term crypto forecasting. They evaluate a 2.1M-parameter wavelet-enhanced transformer that decomposes the Crypto Fear and Greed Index with a 4-level Daubechies-4 DWT into five bands (D1–D4, A4) and fuses them with twelve technical indicators, using a leakage-safe rolling decomposition (the transform is recomputed inside each 60-day input window, so no future data touches a coefficient used at time t). Benchmarking is done with Diebold–Mariano tests using HAC-corrected variance against an O(1) naive-persistence baseline.
+
+Our summary: this is the bar any wavelet-crypto trading branch has to clear, and it is a sobering one. No model — the wavelet-transformer, ARIMA, XGBoost, LSTM, or a vanilla Transformer — significantly beats naive persistence at the 1-day horizon (DM = +19.13, p < 0.001, naive preferred). The wavelet-transformer's RMSE is USD 2005 versus USD 1986 for naive (ratio 1.010) at roughly 3909× the inference cost, a negative return on computational investment. Ablation identifies positional encoding as the only critical component (its removal degrades RMSE by 30%); multi-seed CV is 0.77%; the naive advantage shrinks with horizon (DM 19.13 at 1 day to 6.81 at 30 days); and cross-asset transfer fails catastrophically (ETH RMSE USD 421,600, BNB USD 2.8M) because the FGI is Bitcoin-centric. The paper concludes in favour of weak-form efficiency at horizons up to 30 days, and — importantly for this collection — it is *leakage-clean*, which is exactly why its effect size is modest. Code and data are public.
+
+`Read the paper <https://www.mdpi.com/1999-4893/19/2/101>`__
+
+Bitcoin and S&P 500: Co-movements of High-Order Moments in the Time-Frequency Domain
+------------------------------------------------------------------------------------
+
+Bouri, Kristoufek and Azoury (PLoS ONE, 2022) apply wavelet coherence and partial wavelet coherence not just to returns but to the volatility, skewness and kurtosis of Bitcoin and the S&P 500, on daily data from 2011-08-19 to 2022-01-14 (2,716 observations).
+
+Our summary: the finding that matters for feature design is that co-movement is both moment- and frequency-dependent. The two markets are essentially disconnected before 2018, materially connected from 2018–19, with volatility linkage spiking during COVID at medium-term scales and skewness/kurtosis linkage strongest at mid-to-long scales; partial coherence conditioning on US economic policy uncertainty shows EPU intermediates the relationship. The practical implication is to build separate scale-band features per moment rather than collapsing everything into one denoised price series.
+
+`Read the paper <https://doi.org/10.1371/journal.pone.0277924>`__
+
+Diversification Evidence of Bitcoin and Gold from Wavelet Analysis
+------------------------------------------------------------------
+
+Bhuiyan, Husain and Zhang (Financial Innovation, 2023) combine the continuous wavelet transform (LA(8) filter) with DCC-MGARCH on Bitcoin, gold and six equity indices, on daily data from 2014-01-07 to 2022-05-31 (2,183 observations).
+
+Our summary: the useful, reusable output is an empirically-grounded scale banding for daily crypto features. Bitcoin shows low coherence with all six indices in the 2–16 day band across every sub-period; 16–64 day diversification is conditional and weakens in crises; and 64–256 day behaviour is mixed. That 2–16 / 16–64 / 64–256 day decomposition is a literature-backed default for how to bucket scales when engineering daily wavelet features on crypto.
+
+`Read the paper <https://doi.org/10.1186/s40854-023-00495-1>`__
+
+Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?
+--------------------------------------------------------------------------------
+
+Phiri (Eurasian Economic Review, 2022) embeds a Dickey-Fuller random-walk test into time-frequency space via the complex continuous wavelet transform, on daily Bitcoin from 2010-07-19 to 2022-03-03.
+
+Our summary (from the abstract): predictability concentrates at higher frequencies — 2–16 day cycles — and clusters in November–February, in bubble periods, around halvings, and during COVID announcements. This is the closest thing in the crypto-wavelet corpus to a direct statement of *where in scale space* a signal might live, and it points at short scales rather than the low-frequency trend that most denoise-then-trade papers actually target. That directional finding is worth pairing with Bhuiyan et al.'s scale banding when deciding which bands to feed a model.
+
+`Read the paper <https://doi.org/10.1007/s40822-022-00214-8>`__
+
+Fractal Dynamics and Wavelet Analysis: Deep Volatility and Return Properties of Bitcoin, Ethereum and Ripple
+------------------------------------------------------------------------------------------------------------
+
+Celeste, Corbet and Gurdgiev (Quarterly Review of Economics and Finance, 2019/2020) combine rescaled-range (Hurst exponent) analysis with wavelet analysis to study long memory and cyclical persistence across the full histories of Bitcoin, Ethereum and Ripple.
+
+Our summary (from the abstract): the headline is that long memory and cyclical persistence/anti-persistence are found across Bitcoin's history but *not* replicated for Ethereum or Ripple. That is a direct caution against assuming a BTC-fitted scale structure transfers to altcoins — which matters immediately for any cross-sectional perpetual-futures universe, and connects to the argument for channel-clustering models (WaveTS, F8) that let different coins have different scale behaviour rather than sharing one fitted decomposition.
+
+`Read the paper <https://doi.org/10.1016/j.qref.2019.09.011>`__
+
+Crypto Trend Prediction Based on Wavelet Transform and Deep Learning Algorithm
+------------------------------------------------------------------------------
+
+Parameswaran, Ramachandran and Shukla (Procedia Computer Science, 2024) compute wavelet coefficients, feed them to a Bi-LSTM that predicts the *coefficients* 16 days ahead, and then inverse-transform the forecast back to a price path, with a case study on SHIB.
+
+Our summary: this is a clean example of the forecast-in-coefficient-space design — and of its characteristic failure mode. Inverse-transforming a 16-day-ahead coefficient forecast reintroduces exactly the boundary problem that Hasumi & Kajita (B1) and Quilty & Adamowski (B2) warn about, because the reconstruction near the forecast edge depends on coefficients that themselves span future data. It is worth reading as an illustration of why predicting coefficients and inverting is not a free lunch, rather than as a validated strategy.
+
+`Read the paper <https://doi.org/10.1016/j.procs.2024.04.112>`__
