@@ -186,3 +186,12 @@ Because the post is a live-deployment announcement rather than a full methodolog
 By Talha Çağrı Kotcioğlu.
 
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7475257732896309248/>`__.
+
+Wavelet Analysis of Cryptocurrencies — Non-Linear Dynamics in High Frequency Domains
+------------------------------------------------------------------------------------
+
+Kikuchi (2024) applies wavelet analysis to high-frequency cryptocurrency prices to test weak-form market efficiency, reporting cyclical persistence at different frequencies and arguing for causal structure at specific investment horizons rather than uniformly across scales.
+
+Our summary: this is one of the very few high-frequency (rather than daily) crypto wavelet studies, which matters because the intraday bar regime is where a perpetual-futures book actually operates, and most of the wavelet-crypto literature works on daily data. The paper is read here from its abstract; it names neither the specific coins nor the sampling frequency, so the finding is directional — that predictability concentrates at particular horizons — rather than a directly reusable recipe. It complements the daily-scale evidence (Phiri, Bhuiyan et al.) that any crypto wavelet signal tends to live at shorter scales.
+
+`Read the paper <https://arxiv.org/abs/2411.14058>`__

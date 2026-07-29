@@ -422,3 +422,12 @@ The key observation is the sequencing: Gammega began lighting up around 18:20 UT
 By Cayo Largo Research.
 
 `Read the research note <https://cayolargo.fi/research/gammega-price-driven-gamma-instability>`__
+
+Realized Wavelet-Based Estimation of Integrated Variance and Jumps in the Presence of Noise
+-------------------------------------------------------------------------------------------
+
+Baruník and Vácha (Quantitative Finance, 2015; arXiv 1202.1854) build a realized-variance estimator using smooth wavelets and the Maximal Overlap Discrete Wavelet Transform (MODWT) inside the two-scale realized variance framework, so it uses all available ticks and stays feasible under microstructure noise. The decomposition simultaneously isolates jumps and splits realized variation into arbitrary investment horizons.
+
+Our summary: this is the most rigorous existing recipe for scale-decomposed realized variance, and it is directly transplantable to perpetual-futures volatility estimation. The method is validated in simulation across noise levels, jump sizes, and long-memory fractional stochastic-volatility models, and applied to forex-futures volatility through the financial crisis. Its practical value for a fee-sensitive book is that it hands you jump-robust variance measured per horizon, which is the right input for scale-band volatility features rather than a single aggregate realized variance.
+
+`Read the paper <https://arxiv.org/abs/1202.1854>`__

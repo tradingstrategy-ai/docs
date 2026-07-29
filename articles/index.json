@@ -2784,6 +2784,18 @@
     "short_description": "Steven Paterson (Margin Syndicate) explains a structural reallocation of grid-trading capital off BTC and ETH because the majors now trade identically to ES and Nasdaq futures — a managed short-vol regime that pays theta but destroys grids, which need independent two-sided price action. The resulting split: options carry the majors while grids trade alt perpetuals, where independent operators, idiosyncratic funding and genuine two-sided volatility keep a mean-reversion edge alive."
   },
   {
+    "title": "Wavelet Analysis of Cryptocurrencies: Non-Linear Dynamics in High Frequency Domains",
+    "authors": "Tomoshiro Kikuchi",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2411.14058",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "wavelet-analysis-cryptocurrencies-nonlinear-hf.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Applies wavelet analysis to high-frequency crypto prices to test weak-form efficiency, reporting cyclical persistence at different frequencies and arguing for causal structure at specific horizons. One of very few high-frequency (rather than daily) crypto wavelet studies, the regime a perp book actually trades; read from abstract, it does not name the coins or sampling frequency."
+  },
+  {
     "title": "A Simple Market Making Bot for 01 Exchange",
     "authors": null,
     "publication_year": null,
@@ -6348,6 +6360,18 @@
     "short_description": null
   },
   {
+    "title": "AdaWaveNet: Adaptive Wavelet Network for Time Series Analysis",
+    "authors": "Han Yu, Peikun Guo, Akane Sano",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2405.11124",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "adawavenet-adaptive-wavelet-network.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Uses a lifting-scheme decomposition so the wavelet transform itself is adaptive and learnable, evaluated on forecasting, imputation and a new super-resolution task across ten datasets. The lifting scheme is the most principled route to learnable wavelets because it guarantees perfect reconstruction, making it preferable to unconstrained learned FIR filters."
+  },
+  {
     "title": "Algorithm Optimization Model of Trading Strategy Based on CEEMDAN-SE-LSTM",
     "authors": null,
     "publication_year": 2022,
@@ -7248,6 +7272,18 @@
     "short_description": null
   },
   {
+    "title": "Multilevel Wavelet Decomposition Network for Interpretable Time Series Analysis (mWDN)",
+    "authors": "Jingyuan Wang, Ze Wang, Jianfeng Li, Junjie Wu",
+    "publication_year": 2018,
+    "download_page": "https://arxiv.org/abs/1806.08946",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "multilevel-wavelet-decomposition-network-mwdn.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "The original learnable-wavelet paper: embeds a multilevel DWT inside a neural network so filter parameters are fine-tuned by backprop while retaining wavelet frequency semantics, with Residual Classification Flow and multi-frequency LSTM heads. Evaluated on 40 UCR datasets plus a user-volume dataset; the ancestor of the learnable-filter-bank line including WaveLSFormer and the cleanest fixed-vs-learned wavelet ablation baseline."
+  },
+  {
     "title": "Multiresolution Forecasting for Futures Trading Using Wavelet Decompositions",
     "authors": "B. L. Zhang, R. Coggins, M. A. Jabri, D. Dersch, B. Flower",
     "publication_year": 2001,
@@ -7450,6 +7486,18 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": null
+  },
+  {
+    "title": "SWIFT: Mapping Sub-Series with Wavelet Decomposition Improves Time Series Forecasting",
+    "authors": "Wenxuan Xie, Fanpu Cao",
+    "publication_year": 2025,
+    "download_page": "https://arxiv.org/abs/2501.16178",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "swift-wavelet-subseries-forecasting.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Uses the wavelet transform for lossless downsampling, a learnable filter for cross-band fusion, then a single shared linear layer; SWIFT-Linear matches strong baselines with ~25% of a single-layer time-domain model's parameters. Evidence that the wavelet front-end, not model capacity, carries the lift, which is the key ablation to run before adding a transformer."
   },
   {
     "title": "Sentiment-VMD-MTL: An Enhanced Risk-Aware Multi-Task Learning Framework with Dual-Source Sentiment",
@@ -7740,6 +7788,30 @@
     "short_description": "This paper integrates VMD preprocessing with simple linear models for time-series forecasting, evaluating the combined approach across 13 diverse datasets including ETTm2, M4, and Southeast Asian air quality data. The DLinear+VMD model achieves the lowest RMSE across all datasets in multivariate forecasting (average 0.019), demonstrating that VMD with simple linear models consistently outperforms complex neural network architectures."
   },
   {
+    "title": "W-Transformers: A Wavelet-Based Transformer Framework for Univariate Time Series Forecasting",
+    "authors": "Lena Sasal, Tanujit Chakraborty, Abdenour Hadid",
+    "publication_year": 2022,
+    "download_page": "https://arxiv.org/abs/2209.03945",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "w-transformers-wavelet-transformer-univariate.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Applies MODWT and trains local Transformer encoders on each decomposed level to handle non-stationarity and long-range non-linear dependence. Notable for deliberately choosing the shift-invariant, non-downsampling MODWT, a citable precedent for the correct transform in a rolling or live pipeline."
+  },
+  {
+    "title": "WFTNet: Exploiting Global and Local Periodicity in Long-Term Time Series Forecasting",
+    "authors": "Peiyuan Liu, Beiliang Wu, Naiqi Li, Tao Dai, Fengmao Lei, Jigang Bao, Yong Jiang, Shu-Tao Xia",
+    "publication_year": 2023,
+    "download_page": "https://arxiv.org/abs/2309.11319",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "wftnet-global-local-periodicity-forecasting.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Combines the Fourier transform (global periodicity) and the continuous wavelet transform (local frequency structure) in WFTBlocks that lift a 1D series into 2D, with a Periodicity-Weighted Coefficient balancing global and local contributions. Directly addresses Fourier's blindness to locally-stable structure, relevant when crypto periodicity is only locally stationary."
+  },
+  {
     "title": "WOA-VMD-FE-Transformer for Crude Oil Prices",
     "authors": "L. Yu, X. Zhang, Y. Lin et al.",
     "publication_year": 2025,
@@ -7752,6 +7824,18 @@
     "short_description": null
   },
   {
+    "title": "Wave-Mask/Mix: Exploring Wavelet-Based Augmentations for Time Series Forecasting",
+    "authors": "Dogan Aksu, Jaydip Sen and colleagues (Arabi, Bakhshaliyev, Coskuner, Madhusudhanan, Uckardes)",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2408.10951",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "wave-mask-mix-wavelet-augmentations.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Two DWT-based augmentations: WaveMask drops selected per-level coefficients and WaveMix swaps coefficients between instances, adjusting frequency content while preserving temporal dependency and helping cold-start settings. Structurally immune to look-ahead because it only perturbs training inputs and never test-time features, making it an attractive fallback if wavelet features fail validation."
+  },
+  {
     "title": "WaveLSFormer: A Learnable Wavelet Transformer for Long-Short Equity Trading",
     "authors": "Shuozhe Li, Du Cheng, Leqi Liu",
     "publication_year": 2026,
@@ -7762,6 +7846,30 @@
     "downloaded_at": "2026-07-28",
     "download_failure_reason": null,
     "short_description": "A learnable wavelet-based long-short Transformer that jointly performs multi-scale decomposition and return-oriented decision learning, trained end-to-end on a trading objective with risk-aware regularization. A learnable filter bank (guided by spectral regularizers) and a low-guided high-frequency injection module produce a market-neutral long/short portfolio rescaled to a fixed risk budget. Promising direction: learn the scales end-to-end rather than fixing a wavelet family, though as a recent preprint it needs independent cost-aware replication."
+  },
+  {
+    "title": "WaveTS: Wavelet Mixture of Experts for Time Series Forecasting",
+    "authors": "Yiyan Zhou, Yumeng Xiong, Yiyan Zhang, Xiaohui Xia, Wei Xie",
+    "publication_year": 2025,
+    "download_page": "https://arxiv.org/abs/2508.08825",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "wavets-wavelet-mixture-of-experts.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Combines wavelet-domain MLPs with a channel-clustering Mixture-of-Experts gating across series; the multi-channel WaveTS-M shows the larger gains. The channel-clustering MoE is the natural architecture for a cross-sectional perp universe where coins differ in scale behaviour, connecting to fractal-dynamics evidence that BTC scale structure does not transfer to altcoins."
+  },
+  {
+    "title": "WaveToken: Enhancing Foundation Models for Time Series Forecasting via Wavelet-Based Tokenization",
+    "authors": "Luca Masserano, Abdul Fatir Ansari, Boran Han, et al. (Amazon)",
+    "publication_year": 2024,
+    "download_page": "https://arxiv.org/abs/2412.05244",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "wavetoken-wavelet-tokenization-foundation-models.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "Builds a discrete vocabulary by scaling, wavelet-decomposing, thresholding and quantizing coefficients, then pre-trains an autoregressive foundation model to forecast them. With only 1,024 tokens it reports the best average ranking across 42 datasets in-domain and zero-shot. Uses wavelets as a tokenizer rather than a denoiser, avoiding the denoising-leakage surface entirely."
   },
   {
     "title": "Wavelet Denoised-ResNet CNN and LightGBM Method to Predict Forex Rate of Change",
@@ -9298,6 +9406,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "Realized Wavelet-Based Estimation of Integrated Variance and Jumps in the Presence of Noise",
+    "authors": "Jozef Baruník, Lukáš Vácha",
+    "publication_year": 2015,
+    "download_page": "https://arxiv.org/abs/1202.1854",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-07-29",
+    "filename": "realized-wavelet-integrated-variance-jumps-noise.pdf",
+    "downloaded_at": "2026-07-29",
+    "download_failure_reason": null,
+    "short_description": "A realized-variance estimator using smooth wavelets and MODWT inside the two-scale realized variance framework, using all ticks and remaining feasible under microstructure noise while simultaneously isolating jumps and splitting realized variation into arbitrary horizons. Validated in simulation across noise/jump/long-memory settings and applied to forex-futures volatility through the crisis; the most rigorous recipe for scale-decomposed realized variance, transplantable to perp vol."
   },
   {
     "title": "Regime Changes in Bitcoin GARCH Volatility Dynamics",

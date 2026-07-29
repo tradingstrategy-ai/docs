@@ -1290,3 +1290,75 @@ Our summary: this paper is the concrete, leakage-aware answer to the boundary-pr
 Data and reproduction: NIFTY50 (plus HDFC and INDA) daily data with walk-forward selection; open-access (DOI 10.3390/sym18030416). Key result: statistically reliable accuracy gains over Naive0 and a positive long-or-cash trading rule under a strictly chronological protocol.
 
 `Read the paper <https://www.mdpi.com/2073-8994/18/3/416>`__
+
+Multilevel Wavelet Decomposition Network for Interpretable Time Series Analysis (mWDN)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wang, Wang, Li and Wu (KDD 2018) embed a multilevel discrete wavelet decomposition *inside* a neural network so that all filter parameters are fine-tuned by backpropagation while the layers retain their wavelet frequency semantics. Two downstream heads are built on the decomposition: a Residual Classification Flow for classification and a multi-frequency LSTM for forecasting, evaluated across 40 UCR datasets plus a real user-volume dataset.
+
+Our summary: this is the original learnable-wavelet paper and the direct ancestor of the whole "learnable filter bank" line that culminates in WaveLSFormer (A5 above). Because it keeps the wavelet structure but lets the filters adapt, it is also the cleanest baseline for the fixed-versus-learned ablation — the question of whether learning the basis actually beats a standard wavelet. Note that mWDN as published applies the transform inside the network without an explicit causal/boundary discipline, so a live trading port must add per-bar recomputation.
+
+`Read the paper <https://arxiv.org/abs/1806.08946>`__
+
+W-Transformers: A Wavelet-Based Transformer Framework for Univariate Time Series Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sasal, Chakraborty and Hadid (2022) apply the Maximal Overlap Discrete Wavelet Transform (MODWT) and train local Transformer encoders on each decomposed level, explicitly targeting non-stationarity and long-range non-linear dependence in univariate series.
+
+Our summary: the notable design choice is the deliberate use of MODWT — shift-invariant and without downsampling — which is exactly the right transform for a rolling or live pipeline where coefficients must stay aligned to timestamps. It is a citable precedent for pairing a scale decomposition with per-band sequence models rather than one monolithic model on the raw series.
+
+`Read the paper <https://arxiv.org/abs/2209.03945>`__
+
+WFTNet: Exploiting Global and Local Periodicity in Long-Term Time Series Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Liu et al. (arXiv 2023; ICASSP 2024) combine the Fourier transform (for global periodicity) and the continuous wavelet transform (for local frequency structure) inside WFTBlocks that lift a 1D series into a 2D representation, with a Periodicity-Weighted Coefficient balancing the global and local contributions.
+
+Our summary: this directly addresses the standard complaint that Fourier captures global cycles but misses locally-stable structure — a relevant limitation when crypto periodicity (funding cadence, session effects, halving windows) is only locally stationary. The Fourier/wavelet split is a useful template for feature construction when both a stable global period and a drifting local one are present.
+
+`Read the paper <https://arxiv.org/abs/2309.11319>`__
+
+AdaWaveNet: Adaptive Wavelet Network for Time Series Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yu, Guo and Sano (arXiv 2024; TMLR 2025) use a lifting-scheme decomposition so the transform itself is adaptive and learnable rather than a fixed basis, evaluated on forecasting, imputation, and a newly-introduced super-resolution task across ten datasets.
+
+Our summary: the lifting scheme is the most principled route to a learnable wavelet because it guarantees *perfect reconstruction* by construction — a meaningful advantage over ad-hoc learned FIR filters, which can drift away from an invertible transform. If a pipeline commits to adaptive wavelets, the lifting scheme is preferable to unconstrained learned filters for exactly this reason.
+
+`Read the paper <https://arxiv.org/abs/2405.11124>`__
+
+Wave-Mask/Mix: Wavelet-Based Augmentations for Time Series Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Arabi, Bakhshaliyev, Coskuner, Madhusudhanan and Uckardes (2024) propose two DWT-based data augmentations: WaveMask drops selected coefficients per decomposition level, and WaveMix swaps coefficients between training instances. Both adjust frequency content while preserving temporal dependency, and are also tested in cold-start settings; code is public.
+
+Our summary: the key property for this domain is that these augmentations are *structurally immune to look-ahead* — they only perturb training inputs and never touch test-time features, so they add none of the leakage surface that denoise-then-predict opens. That makes wavelet augmentation an attractive fallback if wavelet *features* themselves fail out-of-sample validation.
+
+`Read the paper <https://arxiv.org/abs/2408.10951>`__
+
+WaveToken: Wavelet-Based Tokenization for Time Series Foundation Models
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Masserano, Ansari, Han et al. (Amazon, 2024) build a discrete vocabulary by scaling, wavelet-decomposing, thresholding, and quantizing coefficients, then pre-train an autoregressive foundation model to forecast those coefficients. With only 1,024 tokens it reports the best average ranking across 42 datasets on three metrics, both in-domain and zero-shot.
+
+Our summary: this uses wavelets as a *tokenizer* rather than a denoiser, which sidesteps the denoising-leakage surface entirely — there is no smoothed price to accidentally contaminate with future data. It is also directly compatible with a forecast-model track built on foundation models, making it one of the more transferable ideas in the modern-architecture group.
+
+`Read the paper <https://arxiv.org/abs/2412.05244>`__
+
+SWIFT: Mapping Sub-Series with Wavelet Decomposition Improves Time Series Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Xie and Cao (2025) use the wavelet transform for lossless downsampling, a learnable filter for cross-band fusion, and then a single shared linear layer for prediction. SWIFT-Linear achieves competitive accuracy with roughly 25% of the parameters of a single-layer time-domain linear model.
+
+Our summary: the important evidence here is the ablation implication — that the *wavelet front-end, not model capacity, carries the lift*. That is precisely the control experiment to run before adding an expensive transformer to any wavelet pipeline: if a shared linear layer on wavelet sub-series already captures most of the gain, the capacity is not where the signal is.
+
+`Read the paper <https://arxiv.org/abs/2501.16178>`__
+
+WaveTS: Wavelet Mixture of Experts for Time Series Forecasting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Zhou, Xiong, Zhang, Xia and Xie (2025) combine wavelet-domain MLPs with a channel-clustering Mixture-of-Experts gating across series; the multi-channel variant WaveTS-M shows the larger gains over the single-channel baseline.
+
+Our summary: the channel-clustering Mixture-of-Experts is the natural architecture for a cross-sectional perpetual-futures universe, where different coins exhibit different scale behaviour and a single shared model averages them together. It connects to the fractal-dynamics evidence (Celeste et al., C5) that BTC-fitted scale structure does not automatically transfer to altcoins — a reason to let experts specialise by cluster.
+
+`Read the paper <https://arxiv.org/abs/2508.08825>`__
