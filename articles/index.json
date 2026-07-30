@@ -9372,6 +9372,18 @@
     "short_description": "Kurth, Eisler, Rej and Bouchaud (CFM) explain the post-2009 demise of short-term trend-following using a cross-section of ~100 liquid futures over 1995-2025. Their central finding is that the volatility-normalised tick size separates degraded from surviving trends: post-2008 trend PnL collapsed on small-tick contracts (fast EWM-5-20 Sharpe fell from ~0.84 to 0.12) while holding up on large-tick ones, which they attribute to HFT-dominated market making breaking the self-fulfilling price-impact loop that sustains trend."
   },
   {
+    "title": "Is Trend Still Your Friend? — Quantpedia's Review of the Microstructural Trend-Following Study",
+    "authors": "Quantpedia",
+    "publication_year": 2026,
+    "download_page": "https://quantpedia.com/is-trend-still-your-friend-a-microstructural-account-of-the-demise-of-short-term-trend-following/",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-07-30",
+    "filename": "is-trend-still-your-friend-quantpedia-review.pdf",
+    "downloaded_at": "2026-07-30",
+    "download_failure_reason": null,
+    "short_description": "Quantpedia's practitioner review of Kurth, Eisler, Rej and Bouchaud's paper on the post-2008 demise of short-term trend-following (already catalogued from arXiv:2607.01550). It distils the core finding that volatility-normalised tick size, not asset class or liquidity, separates degraded from surviving trends, and the mechanism: HFT market makers withdrawing liquidity in front of directional flow on small-tick contracts break the self-reinforcing impact loop that sustains trends."
+  },
+  {
     "title": "Leverage for the Long Run - A Systematic Approach to Managing Risk and Magnifying Returns in Stocks",
     "authors": "Michael A. Gayed and Charlie Bilello",
     "publication_year": null,

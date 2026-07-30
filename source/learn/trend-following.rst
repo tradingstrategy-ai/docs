@@ -338,6 +338,8 @@ By Abhilash Babu, Brendan Hoffman, Ari Levine, Yao Hua Ooi, Sarah Schroeder, and
 
 `Read the paper <https://images.aqr.com/-/media/AQR/Documents/Journal-Articles/JPM-You-Cant-Always-Trend-When-You-Want.pdf>`__
 
+.. _is-trend-still-your-friend-paper:
+
 Is Trend Still Your Friend? A Microstructural Account of the Demise of Short-Term Trend-Following
 ------------------------------------------------------------------------------------------------
 
@@ -352,3 +354,14 @@ Key metrics: this is a diagnostic study, so the headline numbers are Sharpe rati
 Mentioned by Jean-Philippe Bouchaud (Capital Fund Management and Académie des Sciences) in `this LinkedIn discussion <https://www.linkedin.com/posts/jean-philippe-bouchaud-bb08a15_is-short-trend-still-your-friend-microstructure-share-7479079220518793216-fx_d/>`__, where he summarises the central result as the volatility-normalised tick size distinguishing degraded from surviving trends, and frames it through a self-fulfilling impact loop broken by the post-crisis shift to HFT-dominated market making on small-tick contracts.
 
 `Read the paper <https://arxiv.org/abs/2607.01550>`__
+
+Is Trend Still Your Friend? — Quantpedia's Review of the Microstructural Trend-Following Study
+----------------------------------------------------------------------------------------------
+
+Quantpedia's research write-up of Kurth, Eisler, Rej and Bouchaud's paper :ref:`Is Trend Still Your Friend? A Microstructural Account of the Demise of Short-Term Trend-Following <is-trend-still-your-friend-paper>`, which is catalogued in full above. The post distils the paper's core argument for a practitioner audience: across roughly 100 liquid futures contracts over 1995–2025, the post-2008 collapse in trend-following performance is highly selective, and the decisive variable is not asset class, liquidity, electronification, or crowding but volatility-normalised tick size.
+
+The review restates the paper's mechanism clearly. Trend-following is sustained by a self-reinforcing feedback loop — trend signals generate directional trading, that trading moves prices through market impact, the move strengthens the signal, and later trend followers pile in — so both the persistence of trends and the profitability of trading them depend on aggressive directional flow translating into meaningful price impact. Quantpedia summarises the authors' explanation for the breakdown: on small-tick contracts, where order books are dense and spreads tight, high-frequency market makers increasingly withdraw liquidity in front of predictable directional order flow, choking off the impact channel, while large-tick contracts retain enough residual depth for the loop to keep working. The takeaway for practitioners is that modern trend portfolios are governed by market microstructure rather than by traditional asset classifications, so tick-size regime — not sector or liquidity — is the axis on which surviving trend exposure should be selected. See the entry above for the full data description and Sharpe-by-signal-speed metrics.
+
+By Quantpedia.
+
+`Read the blog post <https://quantpedia.com/is-trend-still-your-friend-a-microstructural-account-of-the-demise-of-short-term-trend-following/>`__.
