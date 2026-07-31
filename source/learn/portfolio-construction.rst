@@ -318,3 +318,20 @@ Data and code: methodological extension with empirical illustration; no public c
 Key metrics: the paper reports improved out-of-sample portfolio performance from incorporating the data likelihood versus standard Black-Litterman rather than a single headline metric.
 
 `Read the paper <https://doi.org/10.3905/jpm.2009.36.1.036>`__
+
+When Simplicity Beats Optimization: Evidence from Factor Timing, Volatility Management, and the 1/N Benchmark
+-------------------------------------------------------------------------------------------------------------
+
+Xuan Feng (EDHEC Business School, forthcoming in Financial Markets and Portfolio Management, 2026) examines whether volatility management and factor-based mean-variance optimization improve out-of-sample portfolio performance relative to simple diversification benchmarks. Using nine equity factors from 1976 to 2025, the study compares recursive factor mean-variance portfolios, volatility-managed factors, equal-weight 1/N portfolios, and volatility-managed 1/N portfolios across multiple rolling windows, subperiods, and VIX regimes.
+
+Our summary: this is a clean out-of-sample re-examination of the recurring "can you beat 1/N?" question, applied specifically to the modern factor-timing and volatility-management toolkit. The headline is negative for optimization: although volatility management improves the Sharpe ratios of several individual factors in isolation, those gains do not survive at the portfolio level once estimation risk and recursive (real-time) implementation are imposed. Optimized factor portfolios generally fail to beat simple diversified benchmarks, and dynamic factor-selection strategies are undermined by parameter instability and look-ahead bias. The mechanism is the familiar one that is easy to forget in a backtest: every optimization step estimates parameters, every estimate carries error, and out-of-sample that estimation error tends to consume whatever edge the in-sample optimization promised. The practical takeaway is that 1/N is not a naive strawman but a genuinely hard benchmark once estimation risk is on the table — which, as the accompanying discussion notes, makes the already-"modest" expected gains from factor timing even harder to bank in practice.
+
+Data and reproduction: nine equity factors, 1976–2025, evaluated over multiple rolling windows, subperiods and VIX regimes; the comparison set is recursive factor MVO, volatility-managed factors, 1/N, and volatility-managed 1/N. Published in Financial Markets and Portfolio Management (DOI 10.1007/s11408-026-00499-8); SSRN preprint abstract 7005278, 44 pages. No public code package is referenced.
+
+Key metrics: this is a horse-race study rather than a single-strategy backtest, so the result is comparative — volatility management raises the Sharpe ratios of several individual factors, but neither recursive factor mean-variance optimization nor dynamic factor timing produces robust portfolio-level Sharpe improvement over the 1/N and volatility-managed 1/N benchmarks out-of-sample, across rolling windows, subperiods and VIX regimes.
+
+Mentioned by Ivan Blanco (Founder & CIO at Noax Capital, Associate Professor of Finance at CUNEF) in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-nine-factors-50-years-share-7488530728323026944-Fy69/>`__, where he frames the result as making the "modest" expected improvements from factor timing even more important, and notes that 1/N "is not a naive baseline — it's a hard one to beat once estimation risk is on the table."
+
+By Xuan Feng.
+
+`Read the paper <https://ssrn.com/abstract=7005278>`__

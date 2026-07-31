@@ -5952,6 +5952,18 @@
     "short_description": null
   },
   {
+    "title": "When Simplicity Beats Optimization: Evidence from Factor Timing, Volatility Management, and the 1/N Benchmark",
+    "authors": "Xuan Feng",
+    "publication_year": 2026,
+    "download_page": "https://ssrn.com/abstract=7005278",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-07-31",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "Xuan Feng (EDHEC) tests whether volatility management and factor mean-variance optimization beat simple diversification, using nine equity factors from 1976-2025 across rolling windows, subperiods and VIX regimes. Although volatility management raises the Sharpe ratios of individual factors, neither recursive factor MVO nor dynamic factor timing robustly beats equal-weight 1/N (or volatility-managed 1/N) out-of-sample once estimation risk and recursive implementation are imposed; dynamic factor-selection suffers instability and look-ahead bias. Concludes 1/N is a hard benchmark, not a naive one."
+  },
+  {
     "title": "Why Mean-Variance Optimization Breaks Down",
     "authors": "VertoxQuant",
     "publication_year": null,
