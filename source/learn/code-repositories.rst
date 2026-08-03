@@ -415,3 +415,14 @@ A companion Python package (3.10+) by Akram Khan for evaluating volatility forec
 Our summary: this is the general-purpose evaluation layer extracted from the horse-race study above, and it is the useful part to reuse independently of that specific paper. Having the Model Confidence Set, SPA and Reality Check alongside plain Diebold–Mariano in one place matters because multiple-comparison-aware tests are exactly what stop a "best" model from being an artefact of data snooping when many candidates are ranked — the discipline the horse-race paper itself applies to conclude that no model separates at conventional significance. MIT-licensed.
 
 `View repository <https://github.com/ayk5511/vol-eval>`__
+
+PyDerivatives
+-------------
+
+PyDerivatives is Julian Beatty’s Python research toolkit for option pricing and the empirical analysis of option-implied objects. It provides methods for call-price and implied-volatility surfaces, risk-neutral and physical densities, pricing kernels, static-arbitrage repair, and an econometrics module; its model catalogue includes Black--Scholes, Heston, Bates, Kou, Heston--Kou, and Double Heston--Kou variants.
+
+Our summary: it is most useful to researchers who want a broad, inspectable option-surface workflow rather than a narrowly focused pricer. The repository combines a substantial Python package with a demonstration notebook, example plots, and bundled demo data. The scope is ambitious and actively evolving, so users should validate the method and input-data assumptions for a particular empirical study rather than treating every estimator as interchangeable.
+
+Practical details: the README gives ``pip install pyderivatives`` as the install command; the current ``pyproject.toml`` specifies Python 3.11--3.12 and dependencies including NumPy, pandas, SciPy, CVXPY, statsmodels, ARCH, Plotly, and pycwt. Its package metadata declares MIT, although GitHub does not currently recognize a repository-level licence file. It is not a fork or archived; the latest visible commit is from July 2026. The maintainer describes the toolkit as a replication and extension of Zhang, Bouri, Xu, and Zhang’s `crude-oil implied-moments paper <https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X>`__, adding physical-density and pricing-kernel analysis alongside updated econometric tests.
+
+`View repository <https://github.com/Julian-Beatty/Pyderivatives>`__
