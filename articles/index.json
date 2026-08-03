@@ -9864,6 +9864,18 @@
     "short_description": null
   },
   {
+    "title": "The asymmetric relationship between returns and implied higher moments: Evidence from the crude oil market",
+    "authors": "Xinxin Zhang, Elie Bouri, Yahua Xu, and Gongqiu Zhang",
+    "publication_year": 2022,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-08-03",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Using USO ETF option data and quantile regressions, this study examines how crude-oil returns relate asymmetrically to changes in option-implied volatility, skewness, and kurtosis. Negative returns have stronger effects on implied volatility and kurtosis, especially in upper quantiles, while positive returns more strongly affect implied skewness at lower quantiles."
+  },
+  {
     "title": "The Hybrid Forecast of S&P 500 Volatility Ensembled from VIX, GARCH and LSTM Models",
     "authors": "Natalia Roszyk and Robert Ślepaczuk",
     "publication_year": null,

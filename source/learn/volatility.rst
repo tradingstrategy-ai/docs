@@ -468,3 +468,16 @@ Mentioned by Vivek V Rao (@VivekVRao1) in `this discussion <https://x.com/VivekV
 By Akram Khan.
 
 `Read the paper <https://ssrn.com/abstract=6663418>`__
+
+The asymmetric relationship between returns and implied higher moments: Evidence from the crude oil market
+----------------------------------------------------------------------------------------------------------------
+
+Xinxin Zhang, Elie Bouri, Yahua Xu, and Gongqiu Zhang (``Energy Economics``, 2022) investigate whether returns have an asymmetric relationship with changes in option-implied volatility, skewness, and kurtosis in the crude-oil market. Using United States Oil Fund (USO) option data, they estimate the implied higher moments and use quantile regressions to allow the relationship to vary with the state of the market and with investor heterogeneity.
+
+The results distinguish the three moments rather than treating “the leverage effect” as a single phenomenon. Negative returns have a stronger effect than positive returns on implied volatility and kurtosis, particularly in their upper quantiles. For implied skewness, positive returns dominate at lower quantiles: contemporaneous positive returns are followed by greater skewness risk, whereas more negative returns are followed by less. This makes the paper a useful empirical benchmark for any option-surface workflow that recovers and studies higher risk-neutral moments.
+
+Data and reproduction: the study uses USO ETF option data; the publisher page does not provide a data or code release, and the closed-access full text was not downloadable for this collection. `PyDerivatives <https://github.com/Julian-Beatty/Pyderivatives>`__, a related research toolkit, is explicitly positioned by its maintainer as a replication and extension of this analysis, with option-implied density and moment tools alongside broader pricing-kernel functionality.
+
+Key metrics: this is an econometric relationship study, not a tradable-strategy backtest, so it reports no annualised return, Sharpe ratio, maximum drawdown, or win rate. Its key empirical results are the signs and quantile-dependent strengths of the return–implied-moment relationships described above.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X>`__
