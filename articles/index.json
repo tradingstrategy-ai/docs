@@ -9792,6 +9792,18 @@
     "short_description": "Introduces a normalizing volatility transform (NVT), f(k)=k/sigma(k), for the Normal (Bachelier) implied volatility model and uses it to characterise static arbitrage. Proves conditions for the absence of vertical-spread, butterfly, large-strike and calendar arbitrage, shows the Normal case needs an extra put-price condition versus the log-normal setting, and that an arbitrage-free surface requires the total normal implied volatility to be non-decreasing in maturity."
   },
   {
+    "title": "On Volatility-Managed Portfolios: The Role of Conditional Factor Correlations",
+    "authors": "Pedro Barroso, Paulo F. Maio, Haoxu Wang",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6997339",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-08-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "Barroso, Maio and Wang re-examine the Moreira and Muir (2017) volatility-management result across the same nine equity factors over 1967-2024, and find only three (momentum, ROE, betting-against-beta) deliver robustly significant positive alphas. Evidence for portfolios of factors is far stronger: the volatility-scaled mean-variance-efficient combination of the Fama-French five factors is significantly positive even without leverage. They attribute the gap to conditional correlations among factors, reframing volatility scaling as partly a correlation-management tool best judged at the portfolio level."
+  },
+  {
     "title": "On the Persistence of Market Sentiment: A Multifractal Fluctuation Analysis",
     "authors": "Schadner",
     "publication_year": 2021,
