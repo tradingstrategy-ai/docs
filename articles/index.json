@@ -6504,6 +6504,18 @@
     "short_description": null
   },
   {
+    "title": "A Persistence-Based Wold-Type Decomposition for Stationary Time Series",
+    "authors": "Fulvio Ortu, Federico Severino, Andrea Tamoni, Claudio Tebaldi",
+    "publication_year": 2020,
+    "download_page": "https://doi.org/10.3982/QE994",
+    "source_file": "signal-decomposition.rst",
+    "filename": "persistence-based-wold-type-decomposition.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Derives an Extended Wold Decomposition that splits a weakly stationary series into uncorrelated components indexed by persistence scale, using an isometric scaling operator over process innovations, and induces a persistence-based variance decomposition. In a currency-market application, three components at semiannual, annual and biannual frequencies capture much of daily realized variance and forecast competitively against Corsi's HAR model, while showing that HAR's daily, weekly and monthly regressors actually proxy for phenomena spanning half a year to two years.",
+    "included_in_index_at": "2026-08-05"
+  },
+  {
     "title": "A Practical Guide to Wavelet Analysis",
     "authors": "Christopher Torrence, Gilbert P. Compo",
     "publication_year": 1998,
@@ -6922,6 +6934,18 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Decomposing and Reconstructing Time-Series Momentum with Discrete Wavelet Transform",
+    "authors": "Patrik Akrenius",
+    "publication_year": 2016,
+    "download_page": "https://aaltodoc.aalto.fi/items/b8ae5d15-08fc-4cb8-a595-7fff116c607d",
+    "source_file": "signal-decomposition.rst",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Aalto University master's thesis that replicates the Moskowitz, Ooi and Pedersen (2012) time-series momentum portfolios on monthly S&P 500 returns from 1965-2015, then substitutes wavelet-decomposed signals for the raw return signal to isolate which time scales carry momentum and to denoise the input. Reports roughly seven times the in-sample return of the standard TSMOM strategy at the cost of much higher turnover. The result is in-sample only and the boundary-handling scheme is unreported, so it is vulnerable to wavelet look-ahead leakage; the full text is not openly published.",
+    "included_in_index_at": "2026-08-05"
   },
   {
     "title": "Decomposition Hybrid Methods for Crude Oil Price Forecasting: A Comprehensive Comparison",
@@ -7524,6 +7548,18 @@
     "short_description": null
   },
   {
+    "title": "Momentum Strategies with L1 Filter",
+    "authors": "Tung-Lam Dao",
+    "publication_year": 2014,
+    "download_page": "https://arxiv.org/abs/1403.4069",
+    "source_file": "signal-decomposition.rst",
+    "filename": "momentum-strategies-with-l1-filter.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Develops L1 trend filtering, which yields a piecewise-linear trend with a cross-validated number of breaks, as a momentum signal built on a two-time-scale model of global and local trends. Backtests local-trend, global-trend and blended models on the S&P 500 over 1998-2010: the global trend performs best (6.95% annualised, Sharpe 0.19, 31.02% drawdown) and the local-trend-only model worst (3.17%, Sharpe -0.01), against a benchmark index Sharpe of -0.06. Serves as the non-wavelet control for multi-scale momentum designs, without the boundary-leakage hazard.",
+    "included_in_index_at": "2026-08-05"
+  },
+  {
     "title": "Multi-Level Perspectives in Stock Price Forecasting: ICE2DE-MDL",
     "authors": "Zinnet Duygu Aksehir and Erdal Kilic",
     "publication_year": 2024,
@@ -7860,6 +7896,18 @@
     "short_description": null
   },
   {
+    "title": "Spectral Factor Models",
+    "authors": "Federico M. Bandi, Shomesh E. Chaudhuri, Andrew W. Lo, Andrea Tamoni",
+    "publication_year": 2021,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3275567",
+    "source_file": "signal-decomposition.rst",
+    "filename": "spectral-factor-models.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Represents a risk factor as a sum of orthogonal Wold components capturing cycles of different length, defining spectral betas that may vary across frequency; traditional factor models are the restricted case forcing them equal. Empirically a single business-cycle market component covering 32-64 month cycles prices the 25 Fama-French size and book-to-market portfolios, 25 size and momentum portfolios and 48 anomaly portfolios, and is not rejected against the Fama-French five-factor or Hou-Xue-Zhang four-factor models under misspecification-robust tests. Provides the asset-pricing rationale for scale-specific signals.",
+    "included_in_index_at": "2026-08-05"
+  },
+  {
     "title": "Stock Market Index Prediction Using CEEMDAN-LSTM-BPNN Decomposition Ensemble",
     "authors": "John Kamwele Mutinda and Abebe Geletu",
     "publication_year": 2025,
@@ -7978,6 +8026,18 @@
     "downloaded_at": "2026-05-14",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Trend Filtering Methods for Momentum Strategies",
+    "authors": "Benjamin Bruder, Tung-Lam Dao, Jean-Charles Richard, Thierry Roncalli",
+    "publication_year": 2011,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2289097",
+    "source_file": "signal-decomposition.rst",
+    "filename": "trend-filtering-methods-for-momentum-strategies.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Lyxor survey of econometric trend estimators framed as the signal-construction problem inside a momentum strategy, covering moving averages, Hodrick-Prescott, Kalman, L1/L2 penalised filtering, singular spectrum analysis and wavelet denoising, each illustrated on the S&P 500. Treats calibration as a first-class problem via prediction error and benchmark-estimator approaches. It is a methods catalogue rather than a horse race, and reports no strategy backtest or performance metrics.",
+    "included_in_index_at": "2026-08-05"
   },
   {
     "title": "Tutorial on Empirical Mode Decomposition for Non-Stationary Time Series",
@@ -9240,6 +9300,18 @@
     "short_description": null
   },
   {
+    "title": "Breaking Bad Trends",
+    "authors": "Christian L. Goulding, Campbell R. Harvey, Michele G. Mazzoleni",
+    "publication_year": 2023,
+    "download_page": "https://doi.org/10.1080/0015198X.2023.2270084",
+    "source_file": "trend-following.rst",
+    "filename": "breaking-bad-trends.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Quantifies how trend breaks damage trend-following returns across 43 futures assets over 1990-2022, showing that median static 12-month trend returns turn negative for assets with six or more turning points in a year and that the post-GFC upward shift in turning-point frequency helps explain the strategy's decline. A state-dependent dynamic blend of fast and slow signals earns Sharpe 0.80 versus 0.64 for static 12-month trend, with a smaller worst drawdown (-13.2% versus -18.8%) but higher turnover (399% versus 229% annualised).",
+    "included_in_index_at": "2026-08-05"
+  },
+  {
     "title": "Catching Crypto Trends: A Tactical Approach for Bitcoin and Altcoins",
     "authors": null,
     "publication_year": null,
@@ -9406,6 +9478,18 @@
     "downloaded_at": "2026-04-29",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Momentum Turning Points",
+    "authors": "Christian L. Goulding, Campbell R. Harvey, Michele G. Mazzoleni",
+    "publication_year": 2023,
+    "download_page": "https://doi.org/10.1016/j.jfineco.2023.06.001",
+    "source_file": "trend-following.rst",
+    "filename": "momentum-turning-points.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Characterises four market cycles (Bull, Correction, Bear, Rebound) from agreement between slow 12-month and fast 1-month time-series momentum signals, and shows analytically and empirically that intermediate-speed blends beat the average Sharpe of their constituents. On US market returns 1969-2018 the equal blend reaches Sharpe 0.51 versus 0.41 slow, 0.34 fast and 0.38 for the market, with maximum drawdown improving from -54.4% to -34.4%. Decomposes TSMOM alpha into roughly two-thirds market timing and one-third volatility timing.",
+    "included_in_index_at": "2026-08-05"
   },
   {
     "title": "Quantitative Evaluation of Volatility-Adaptive Trend-Following Models in Cryptocurrency Markets",
