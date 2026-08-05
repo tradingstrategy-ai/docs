@@ -9798,10 +9798,10 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6997339",
     "source_file": "volatility.rst",
     "included_in_index_at": "2026-08-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": "Barroso, Maio and Wang re-examine the Moreira and Muir (2017) volatility-management result across the same nine equity factors over 1967-2024, and find only three (momentum, ROE, betting-against-beta) deliver robustly significant positive alphas. Evidence for portfolios of factors is far stronger: the volatility-scaled mean-variance-efficient combination of the Fama-French five factors is significantly positive even without leverage. They attribute the gap to conditional correlations among factors, reframing volatility scaling as partly a correlation-management tool best judged at the portfolio level."
+    "filename": "on-volatility-managed-portfolios-the-role-of-conditional-factor-correlations.pdf",
+    "downloaded_at": "2026-08-05",
+    "download_failure_reason": null,
+    "short_description": "Barroso, Maio and Wang rebuild the nine volatility-managed equity factors of Moreira and Muir (2017) on a unified 1967-2024 sample with Bonferroni correction and a no-leverage constraint, and find only momentum, ROE and betting-against-beta retain robustly significant alphas. Every mean-variance-efficient factor portfolio still benefits, including the Fama-French five-factor MVE portfolio (1.23% annualized alpha, t = 3.49) whose constituents mostly do not. Replacing conditional factor correlations with zero or unconditional correlations collapses that alpha to 0.60% (t = 1.72), showing volatility management works on multi-factor books mainly by cutting exposure when factors become more correlated, not when they become more volatile."
   },
   {
     "title": "On the Persistence of Market Sentiment: A Multifractal Fluctuation Analysis",
