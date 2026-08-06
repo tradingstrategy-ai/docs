@@ -316,7 +316,7 @@ By Gilberto Pellerano.
 `Read the post <https://www.linkedin.com/posts/gilberto-pellerano-46b4b0174_i-built-an-implied-volatility-edge-simulation-ugcPost-7470861515563380736-UkJA/>`__
 
 OTM Crypto Options Performance Screener: The "Lottery Ticket" Experiment
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 Pawel Lachowicz, PhD (CEO of Halcyon Waters) runs a continuous, live experiment screening cheap out-of-the-money (OTM) crypto options on Deribit and publishes the realised results on his Cayo Largo dashboard. In derivatives trading, cheap OTM options with high convexity per dollar are sometimes called "lottery tickets" for their asymmetric risk profile: a small fixed loss (the premium) against a large potential gain from gamma repricing or volatility expansion. Every option shown is an *expired* contract scored across six dimensions — gamma efficiency, vega efficiency, volatility regime, catalyst strength, cheapness, and liquidity — so there are no forward-looking signals, only outcomes. The framing question is whether the probability of winning this "OTM lottery" is better or worse than a classical 6-from-49 lotto.
 
@@ -359,7 +359,7 @@ Mentioned by Parviz Rakhmonov in `this LinkedIn discussion <https://www.linkedin
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6990518>`__
 
 Harvesting the Variance Risk Premium: A Backtest Across Expiry-Day, Stop-Loss and Lot-Scaling Dimensions
--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 Rohit Trehan investigates whether the variance risk premium — the persistent tendency for option-implied volatility to exceed subsequently realized volatility — can be converted into a tradeable edge by a retail options seller. The study takes the premium's existence as given and backtests a family of short-volatility strategies on one-minute options-chain and index data spanning 1 September 2024 to 14 June 2026, with implied volatilities and Greeks computed under standard assumptions and all results reported net of a deliberately conservative model of transaction costs, taxes, and related charges.
 
@@ -372,7 +372,7 @@ By Rohit Trehan.
 `Read the blog post <https://rohittrehan.substack.com/p/harvesting-the-variance-risk-premium>`__
 
 Detecting Structural Evolution of Implied Volatility Surface Using Gradient-Based Features
------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 This Aalto University master's thesis (subtitle: *A Machine Learning Approach to Market Regime Detection*) develops a model-free methodology for detecting and interpreting structural changes in the implied volatility (IV) surface over time. Rather than fitting a parametric surface model, Shakhin Dzhafarov characterises the surface through local gradients — the partial derivatives of implied volatility with respect to moneyness and maturity — and quantifies how those gradients change from day to day at a grid of points on the surface. The daily gradient-change vectors, together with the concurrent move in the underlying index, become the features fed into an unsupervised clustering algorithm.
 
@@ -387,7 +387,7 @@ Mentioned by Nam Nguyen (Quantitative Strategist and Derivatives Specialist) in 
 `Read the paper <https://aaltodoc.aalto.fi/items/791152a4-a4a7-4c0d-92cd-530272aea533>`__
 
 A devilish question for option sellers: Which VRP is higher?
------------------------------------------------------------
+------------------------------------------------------------
 
 Kris Abdelmessih (Moontower) poses a deceptively simple question to option sellers — between two names, which has the higher volatility risk premium (VRP)? — and uses it to expose how much the answer depends on how you measure the premium and, more fundamentally, on the difference between volatility and variance. The structural belief that implied volatility sits above realized volatility (so options are "overpriced" and the edge is in selling them) is granted, but the article argues that turning that belief into risk-adjusted, opportunity-cost-aware position sizing is far subtler than the usual "harvest the VRP" framing suggests.
 
@@ -435,9 +435,13 @@ Our summary: this is the most rigorous existing recipe for scale-decomposed real
 Forecasting Realized Volatility Using HAR Models and Wavelet Decomposition: A Volatility-Timing Perspective
 -----------------------------------------------------------------------------------------------------------
 
-Clements and Vatsa (North American Journal of Economics and Finance, 2026) wavelet-decompose realized volatility into short, medium and long components and fit a HAR model per component, evaluating not on forecast error but on portfolio outcomes.
+Adam Clements (Queensland University of Technology) and Puneet Vatsa (University of the Sunshine Coast; *North American Journal of Economics and Finance* 83, 102605, March 2026) wavelet-decompose realized volatility into short-, medium- and long-term components, fit a separate HAR model to each, and then judge the forecasts inside a volatility-timing portfolio rather than on statistical loss. The decomposition uses the Maximum Overlap Discrete Wavelet Transform with a Haar filter under reflecting boundary conditions — a detail that matters, since MODWT is shift-invariant and reflecting boundaries are the standard mitigation for the endpoint problem that invalidates many wavelet forecasting results.
 
-Our summary (from the abstract): the notable result is that forecasts from the *low-frequency* component consistently deliver better portfolio outcomes — lower turnover and higher investor utility without added risk — beating both return-based decompositions and a benchmark HAR. Evaluating on turnover and utility rather than RMSE is exactly the right evaluation shape for a fee-sensitive perpetual-futures book, where a marginally better point forecast that churns the portfolio is worse than useless. This is the volatility-side analogue of the "measure the economic edge, not the error" discipline this collection favours.
+Our summary: the headline is that the low-frequency component wins, and the reason it wins is more interesting than the fact. HAR-L does **not** produce lower portfolio volatility than plain HAR — it produces materially lower **turnover** at comparable risk, and that is where the utility gain comes from. Volatility forecasts drive portfolio weights, so a forecast that jitters forces the book to churn; stripping the high-frequency component removes revisions that were never worth acting on. This is the volatility-side analogue of the discipline this collection favours: measure the economic edge, not the error. The authors state the corollary explicitly — the forecasts delivering the greatest welfare gains may not minimise conventional statistical loss functions, so a horse race won on RMSE or QLIKE can select the wrong model for a fee-sensitive book. The finding is robust across two designs that usually break such results: forecasting portfolio weights directly rather than volatility, and substituting jump-robust volatility estimates. Attempting to exploit the *medium*-frequency component does not help, so this is not a general "more decomposition is better" claim — it is specifically the slow band that carries the actionable content, which matches Bandi et al. on the pricing side and the L1-filter result on the trend side.
+
+Data and reproduction: realized volatility for the 20 largest equities in the S&P 500 from 31 January 2000 to 31 December 2024, giving 6,166 daily observations. Evaluation uses a utility-based framework in the manner of Fleming et al. (2001, 2003) and Bollerslev et al. (2018), assuming quadratic utility with constant relative risk aversion γ, with results reported at 1-day and 5-day horizons. Significance is assessed with a bootstrap using 999 samples and an average block length of 22 trading days. All inputs are standard published series; no code release is advertised. Published open access.
+
+Key metrics: results are reported as pairwise utility gains from switching between forecasts rather than as strategy returns, so there is no annualised return, Sharpe ratio or drawdown figure. The substantive numbers are that HAR-L consistently delivers higher investor utility than benchmark HAR at the 5% significance level, achieves lower portfolio turnover relative to HAR, and produces comparable portfolio volatility — the gain is turnover reduction at unchanged risk, not risk reduction. Medium-frequency forecasts do not improve on HAR.
 
 `Read the paper <https://doi.org/10.1016/j.najef.2026.102605>`__
 

@@ -131,7 +131,7 @@ Mentioned by Ivan Blanco in `this discussion <https://www.linkedin.com/posts/iva
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6279178>`__
 
 Shannon's Demon on Shitters: Volatility Harvesting on Crypto Perps
------------------------------------------------------------------
+------------------------------------------------------------------
 
 Margin Syndicate describes an execution structure built around constant-mix rebalancing — the mechanism behind Shannon's demon — run at derivatives leverage on netted margin across the crypto altcoin universe. The core position is constant-gross and two-legged, holding both a long and a short simultaneously and rebalancing back to a target ratio at every price threshold. Each rebalance banks the winning leg's profit and reloads it, so the source of return is oscillation rather than direction: at leverage on margin, volatility itself becomes the revenue line. The stated philosophy is explicitly non-predictive — the same structure is run in three configurations, and which configuration applies is a reaction to the current regime, not a forecast of the next one.
 
@@ -142,7 +142,7 @@ By Margin Syndicate.
 `Read the blog post <https://www.linkedin.com/posts/shannons-demon-on-shitters-weve-spent-share-7481639070234882048-9tlm/>`__.
 
 Systematic BTC Options Report: Performance Model and Forward Projections
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 A six-page report from Margin Syndicate documenting a performance model and forward Monte Carlo projection for their systematic BTC options strategy. The system executes systematic short-volatility strategies on BTC options via Deribit — short strangles, iron condors, bear call spreads, bull put spreads, jade lizards, and calendar spreads — selected dynamically from market-regime signals including IV rank, 25-delta skew, gamma exposure (GEX), and proprietary options-flow analysis. Positions are sized at roughly 1.2% capital per trade, delta-hedged via perpetual futures to maintain portfolio delta-neutrality, and run on 5-minute cycles with continuous position monitoring, assignment detection, and orphan recovery. The report is explicit that it contains a modeled track record (parameters observed from live production logs, extrapolated over a two-month window) plus forward Monte Carlo projections, and that neither section represents audited live trading returns.
 
@@ -153,7 +153,7 @@ By Margin Syndicate.
 `Read the report <https://www.linkedin.com/posts/marginsyndicate_systematic-btc-options-report-activity-7427047791161430018-BtoP>`__.
 
 January 2026 Syndicate API Report: Performance Reporting Update
---------------------------------------------------------------
+---------------------------------------------------------------
 
 A three-page investor performance report from Margin Syndicate Limited covering January 2026, when the system traded only half the month due to constrained liquidity and elevated volatility — conditions in which their "Sigma hedging" system dynamically adjusted exposure to control drawdowns. January delivered +12.3%. The report doubles as an announcement that the desk is transitioning its primary performance reporting to Quant.Space, an institutional-grade third-party analytics platform, to align with standardised, independently verifiable risk-adjusted metrics rather than the compound-return methodology used in its earlier Allo reports.
 
@@ -175,7 +175,7 @@ By Steven Paterson.
 `Read the post <https://www.linkedin.com/posts/steven-paterson-10a1619_update-on-the-majors-question-were-moving-ugcPost-7483227216928043008-zJGl/>`__.
 
 Systematic Market-Neutral Crypto: A Readable Statistical Signal
---------------------------------------------------------------
+---------------------------------------------------------------
 
 Talha Çağrı Kotcioğlu shares a newly deployed market-neutral crypto strategy along with its headline metrics: Sharpe 3.45, Sortino 4.42, profit factor 1.80, and a maximum drawdown of 7.20%. The pitch is deliberately anti-black-box — no machine learning, "a statistical signal you can read top to bottom" — built and validated on two years of tick-level data with every cost baked in (taker fees, conservative slippage, and funding). It is long/short so it does not need the market to rise, uses no leverage, and is explicitly not HFT: the author says it is resistant to up to one hour of execution delay. In his backtest chart (two years, fully costed, validated out-of-sample) the equity curve shows an in-sample Sharpe of about 3.5 and out-of-sample Sharpe of about 3.3, with Sharpe by period of 3.5 (research), 3.9 (validation), 2.8 (2026) and 3.3 (clean out-of-sample), and a drawdown that peaked near 7% but stayed controlled throughout. It rode through every major liquidation cascade in the window, and the author's stated concern is capacity, which is why he deployed it live to measure how it holds up.
 
@@ -244,8 +244,12 @@ Our summary (from the abstract): the headline is that long memory and cyclical p
 Crypto Trend Prediction Based on Wavelet Transform and Deep Learning Algorithm
 ------------------------------------------------------------------------------
 
-Parameswaran, Ramachandran and Shukla (Procedia Computer Science, 2024) compute wavelet coefficients, feed them to a Bi-LSTM that predicts the *coefficients* 16 days ahead, and then inverse-transform the forecast back to a price path, with a case study on SHIB.
+Sumesh Eratt Parameswaran, Vidhyalavanya Ramachandran and Swati Shukla (*Procedia Computer Science* 235, 1179–1189, 2024; ICMLDE 2023) use the wavelet transform to split a non-stationary crypto price series into uncorrelated components, extract features from the resulting coefficients, and train a Bi-LSTM to predict the **coefficients** 16 days ahead. The forecast coefficients are then inverse-transformed back into a price path. SHIB is the case study, chosen for its extreme appreciation from launch, with historical data pulled from Yahoo Finance via the ``yfinance`` Python API. Accuracy is reported as RMSE against a non-wavelet baseline.
 
-Our summary: this is a clean example of the forecast-in-coefficient-space design — and of its characteristic failure mode. Inverse-transforming a 16-day-ahead coefficient forecast reintroduces exactly the boundary problem that Hasumi & Kajita (B1) and Quilty & Adamowski (B2) warn about, because the reconstruction near the forecast edge depends on coefficients that themselves span future data. It is worth reading as an illustration of why predicting coefficients and inverting is not a free lunch, rather than as a validated strategy.
+Our summary: this is a clean example of the forecast-in-coefficient-space design, and of its characteristic failure mode — which is why it is catalogued here as an instructive case rather than as a validated method. Reconstructing a price path from forecast coefficients reintroduces exactly the boundary problem documented in the leakage entries of :doc:`Signal Decomposition <./signal-decomposition>`: the inverse transform near the edge of the window draws on coefficients whose in-sample values were computed from data spanning the forecast region, so the reconstruction can look far more accurate than any causal implementation would be. The 16-day horizon compounds this, since the boundary region of a multi-level decomposition grows with the filter length and level count, and a 16-day-ahead reconstruction sits almost entirely inside it. Two further limits on how far the result travels: SHIB is selected precisely because of an extraordinary historical run, which is survivorship selection at the asset level, and RMSE on a price path is a weak proxy for whether a directional trade would have made money.
+
+Data and reproduction: SHIB daily history from Yahoo Finance via the ``yfinance`` API, with the wavelet decomposition and Bi-LSTM described in the paper but no code release. Published open access under a Creative Commons licence, so the full text is freely available. The paper does not state the boundary-handling scheme for the wavelet transform, which is the detail that would determine whether the result survives a causal reimplementation.
+
+Key metrics: the paper reports a lower RMSE for the wavelet-plus-Bi-LSTM scheme than for the comparison without decomposition, over a 16-day-ahead horizon on SHIB. It reports no directional accuracy, return, Sharpe ratio, drawdown or transaction-cost treatment, so there is no tradable performance figure to cite — the contribution is the architecture, not an evaluated strategy.
 
 `Read the paper <https://doi.org/10.1016/j.procs.2024.04.112>`__
