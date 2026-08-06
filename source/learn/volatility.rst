@@ -482,6 +482,21 @@ Key metrics: this is an econometric relationship study, not a tradable-strategy 
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X>`__
 
+The Edge In Buying Straddles For The Weekend
+---------------------------------------------
+
+Thalex examines a counterintuitive options backtest: rather than continuously rolling a long straddle, buy at 08:00 UTC on Saturday and sell at 08:00 UTC on Monday. The post contrasts this two-day holding period with a weekly Friday-to-expiry long-straddle roll, whose expected negative carry reflects the variance risk premium: option sellers normally collect enough implied-volatility premium that theta outweighs buyers’ gamma over time.
+
+On its two years of historical data, Thalex reports that the weekend version has a markedly more positive and less outlier-dependent P&L profile. Greek attribution identifies vega as the driver: vega contributes about +55k of P&L while gamma and theta together give back about 22k, and vega P&L is positive in 97% of the sampled weekends. The proposed mechanism is intraweek seasonality: weekend variance consumes more slowly than weekday variance, reducing theta decay, while implied volatility tends to reprice higher into Monday as trading activity and information flow resume. An entry-time sweep shows broadly similar results around the 08:00 UTC entry, with 10:00--13:00 UTC looking still better, which is a useful robustness check against a single chosen timestamp.
+
+The evidence is exploratory rather than a fully reproducible trading claim: raw data, contract-selection rules, execution costs, and an out-of-sample test are not published, and the reported history covers only two years. Still, it is a clear example of decomposing an options backtest into Greeks and then testing whether an apparent timing edge survives small perturbations to its entry rule.
+
+By Thalex.
+
+Shared by Thalex (@ThalexGlobal) in `this X post <https://x.com/ThalexGlobal/status/2085290122983907651>`__, which links to the article.
+
+`Read the article <https://x.com/i/article/2085245276281880576>`__
+
 On Volatility-Managed Portfolios: The Role of Conditional Factor Correlations
 ------------------------------------------------------------------------------
 

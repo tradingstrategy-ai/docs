@@ -9972,6 +9972,18 @@
     "short_description": "Using USO ETF option data and quantile regressions, this study examines how crude-oil returns relate asymmetrically to changes in option-implied volatility, skewness, and kurtosis. Negative returns have stronger effects on implied volatility and kurtosis, especially in upper quantiles, while positive returns more strongly affect implied skewness at lower quantiles."
   },
   {
+    "title": "The Edge In Buying Straddles For The Weekend",
+    "authors": "Thalex",
+    "publication_year": 2026,
+    "download_page": "https://x.com/i/article/2085245276281880576",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-08-06",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Thalex reports a two-year options backtest in which buying a long straddle on Saturday morning and selling on Monday morning produced positive P&L primarily through vega rather than gamma. It attributes the result to slower weekend variance consumption and a Monday implied-volatility repricing, while using an entry-time sweep as a basic data-mining check."
+  },
+  {
     "title": "The Hybrid Forecast of S&P 500 Volatility Ensembled from VIX, GARCH and LSTM Models",
     "authors": "Natalia Roszyk and Robert Ślepaczuk",
     "publication_year": null,
