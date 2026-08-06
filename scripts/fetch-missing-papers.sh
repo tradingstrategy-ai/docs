@@ -124,11 +124,17 @@ echo "$needs_fetch" | while IFS='|' read -r name doi; do
     echo "[$idx] $name ($doi)"
 
     (
-        if "$FETCH" "$doi" "$outfile" >/dev/null 2>&1; then
-            echo "  ✓ $name"
-        else
-            echo "  ✗ $name (failed)"
-        fi
+        rc=0
+        "$FETCH" "$doi" "$outfile" >/dev/null 2>&1 || rc=$?
+        case "$rc" in
+            0) echo "  ✓ $name" ;;
+            # 2 = Altcha wall. Not a real failure: the paper is almost certainly
+            # retrievable, but only through the interactive browser handoff,
+            # which cannot run in parallel. Collect these and do them by hand.
+            2) echo "  ⚠ $name (needs browser handoff: $doi)" ;;
+            3) echo "  ✗ $name (not in Sci-Hub)" ;;
+            *) echo "  ✗ $name (failed)" ;;
+        esac
     ) &
 
     job_count=$((job_count + 1))
