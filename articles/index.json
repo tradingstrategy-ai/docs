@@ -2814,9 +2814,9 @@
     "download_page": "https://doi.org/10.1016/j.procs.2024.04.112",
     "source_file": "cryptocurrency.rst",
     "included_in_index_at": "2026-07-29",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
+    "filename": "crypto-trend-prediction-wavelet-deep-learning.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "Computes wavelet coefficients, feeds them to a Bi-LSTM that predicts the coefficients 16 days ahead, then inverse-transforms to a price path; case study on SHIB. A clean example of the forecast-in-coefficient-space design and of its failure mode: inverse-transforming a 16-day coefficient forecast reintroduces the boundary problem because the reconstruction near the edge depends on future-spanning coefficients."
   },
   {
@@ -6402,9 +6402,9 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136401",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
+    "filename": "ga-vmd-convlstm-stock-index-decision-support.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": null
   },
   {
@@ -6462,9 +6462,9 @@
     "download_page": "https://scholar.nycu.edu.tw/en/publications/a-learning-based-contrarian-trading-strategy-via-a-dual-classifie/",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-07-28",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
+    "filename": "learning-based-contrarian-dual-classifier.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "ACM TIST paper building a contrarian (mean-reversion) strategy on a ~381-feature classification problem combining wavelet coefficients, return-distribution statistics and technical indicators, with two classifiers jointly deciding entry and exit. An early precedent for using wavelet coefficients as features alongside conventional alpha signals rather than trading a denoised price directly."
   },
   {
@@ -6870,9 +6870,9 @@
     "download_page": "https://www.sciencedirect.com/science/article/pii/S0169207019300020",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-07-28",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
+    "filename": "combining-wavelet-decomposition-ml-gold-returns.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "International Journal of Forecasting paper combining discrete wavelet decomposition with support vector regression to forecast gold returns, using time- and frequency-domain wavelet predictors and evaluating both forecast accuracy and an economic trading rule. Key finding: the importance of short- versus long-scale features shifts over time, arguing for rolling validation and regime-aware feature selection rather than a fixed wavelet configuration."
   },
   {
@@ -7506,9 +7506,9 @@
     "download_page": "https://yonsei.elsevierpure.com/en/publications/learning-to-trade-in-financial-time-series-using-high-frequency-t",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-07-28",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
+    "filename": "learning-to-trade-wavelet-deep-rl.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "Applied Intelligence paper feeding wavelet-decomposed high-frequency inputs into an LSTM-based deep reinforcement-learning agent that outputs trading/allocation decisions directly. A direct wavelet-to-policy design where the multiscale representation is the RL state; results are sensitive to transaction-cost modelling and warrant cost-aware replication."
   },
   {
@@ -8082,9 +8082,9 @@
     "download_page": "https://www.econstor.eu/handle/10419/36698",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-07-29",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
+    "filename": "using-wavelets-time-series-forecasting-pay-off.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "Compares classical forecasting against denoise-then-ARIMA and decompose-then-per-band-ARIMA across four datasets with time-varying seasonalities, concluding that wavelets do improve forecast quality with the preferred route depending on data and horizon. Despite the sceptical title this is a positive result and should not be miscited as negative evidence; the freely-hosted EconStor PDF is behind a bot-check."
   },
   {
@@ -9786,9 +9786,9 @@
     "download_page": "https://doi.org/10.1016/j.najef.2026.102605",
     "source_file": "volatility.rst",
     "included_in_index_at": "2026-07-29",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
+    "filename": "har-wavelet-decomposition-volatility-timing.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "Wavelet-decomposes realized volatility into short/medium/long components and fits a HAR per component, evaluating on portfolio outcomes rather than forecast error. Forecasts from the low-frequency component consistently deliver better outcomes (lower turnover, higher utility, no added risk), beating return-based decompositions and benchmark HAR. Evaluating on turnover and utility is the right shape for a fee-sensitive perp book."
   },
   {
