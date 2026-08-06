@@ -9,8 +9,8 @@ REMOTE_DIR="./code/docs"
 
 # Remove nested copies created when a remote articles/articles directory is
 # pulled back into the local articles directory.
-rm -rf articles/articles
-ssh "$REMOTE_HOST" "rm -rf '$REMOTE_DIR/articles/articles'"
+# rm -rf articles/articles
+# ssh "$REMOTE_HOST" "rm -rf '$REMOTE_DIR/articles/articles'"
 
 rsync -av --inplace \
   --include='*/' \

@@ -40,7 +40,30 @@ Use `/chrome` anytime to check status, manage permissions, or reconnect.
 
 ## Permission Popups
 
-When using browser tools, Claude may ask for permission to visit specific domains. **Approve these prompts** to allow browser automation. You can also pre-approve domains in the Chrome extension settings.
+There are **two independent permission layers**, and silencing one does not
+silence the other:
+
+| Layer | Where it appears | What it asks | How to stop it |
+| --- | --- | --- | --- |
+| Claude Code permissions | Terminal / VS Code | "Run `mcp__claude-in-chrome__computer`?" | Add `mcp__claude-in-chrome` to `permissions.allow` in a settings file |
+| Chrome extension | In the browser | "Allow Claude to work on this domain?" | Choose the persistent "always allow" option, or pre-approve domains in the extension settings |
+
+For the Claude Code layer, the server name alone allows every tool on that
+server. There is **no** `mcp__server__*` wildcard — `mcp__claude-in-chrome__*`
+matches nothing. Either form works:
+
+```json
+{ "permissions": { "allow": ["mcp__claude-in-chrome"] } }        // whole server
+{ "permissions": { "allow": ["mcp__claude-in-chrome__navigate"] } }  // one tool
+```
+
+Settings are read at session start, so a new rule needs `/config` or a restart
+before it takes effect.
+
+The extension layer is **per-domain**, which is why a research session that
+touches many hosts prompts repeatedly. Pre-approving the domains in the "Sites
+Requiring Browser" table below removes most of the friction. Some confirmations
+for genuinely consequential actions are deliberately not suppressible.
 
 ## Available MCP Tools
 
@@ -76,20 +99,49 @@ Skills that require browser should start with:
 
 ### Sites Requiring Browser
 
-These sites block WebFetch and require browser automation:
+These sites block WebFetch/curl and require browser automation:
 
-- **Medium.com** - Blocks automated requests
-- **Substack.com** - Requires JavaScript
-- **papers.ssrn.com** - May show CAPTCHA
-- **x.com / twitter.com** - Requires authentication
+| Site | Why | Notes |
+| --- | --- | --- |
+| **medium.com** | Blocks automated requests | |
+| **substack.com** | Requires JavaScript | Posts are usually public; `--print-to-pdf` works without login |
+| **papers.ssrn.com** | Cloudflare challenge | Usually clears itself; download button works once through |
+| **x.com / twitter.com** | Requires authentication | |
+| **www.sciencedirect.com** | Cloudflare CAPTCHA + session-bound PDF URLs | Even open-access PDFs need the browser |
+| **www.econstor.eu** | Anubis proof-of-work wall | Browser passes it; curl gets a challenge page |
+| **link.springer.com** | Abstract is free, PDF paywalled | Abstract pages are often rich enough to catalogue from |
+| **sci-hub.\*** | Altcha proof-of-work wall | See `fetch-paper` skill for the storage-URL handoff |
+| **researchgate.net** | Login wall, blocks scraping | Treat as unobtainable |
 
-### CAPTCHA Handling
+### Blocker Handling
 
-When a CAPTCHA appears:
+Not every "are you a robot" page is a CAPTCHA. Identify which one you have
+before deciding what to do — this matters, because asking the user to solve
+something unsolvable wastes their time.
 
-1. The browser window is visible (uses your Chrome session)
-2. Ask the user to complete it manually
-3. Continue extraction after user confirms
+| Blocker | How it looks | What to do |
+| --- | --- | --- |
+| **Proof-of-work** (Altcha, Anubis) | A progress bar or "verifying" text with **nothing to click** | Do not ask the user — there is no challenge to solve. The browser clears it on its own; curl never will. |
+| **Cloudflare Turnstile** | "Are you a robot?" with a checkbox widget | Wait 10–20s and re-screenshot — it frequently auto-clears. If it truly needs a click, ask the user. |
+| **Image/puzzle CAPTCHA** | Grid of images, distorted text | Ask the user to complete it manually, then continue. |
+
+Never attempt to solve or bypass a real CAPTCHA yourself.
+
+### Clicking Reliably
+
+**Always take a screenshot immediately before clicking, and click from that
+screenshot's coordinates.** Pages reflow after their initial render and stale
+coordinates silently hit the wrong element — the click "succeeds" and nothing
+happens, which is easy to misread as a broken tool.
+
+Observed on SSRN: a "this is a preprint" banner appears a second after load and
+pushes the download button down by ~50px. Two clicks were silently lost to this
+before it was diagnosed. If a click produces no effect, re-screenshot and
+compare positions before retrying.
+
+After a click that should navigate, call `tabs_context_mcp` to read the
+resulting URL — that is how you capture redirect targets (e.g. Sci-Hub's storage
+URL) that are not visible in the page DOM.
 
 ### Example Skill Pattern
 
@@ -194,11 +246,15 @@ For authenticated/paywalled pages, use the MCP browser to extract the full HTML 
 
 | Approach                              | Problem                                                        |
 | ------------------------------------- | -------------------------------------------------------------- |
-| html2pdf.js via MCP `javascript_tool` | Downloads silently dropped — Chrome suppresses in MCP context  |
+| Chrome PDF-viewer download button     | Opens a native save dialog automation cannot drive             |
 | `Cmd+P` / `window.print()`           | Opens native dialog, blocks MCP browser extension              |
 | CDP `Page.printToPDF`                 | Not accessible from `javascript_tool` (page context only)      |
-| Base64 transfer via `javascript_tool` | Blocked by MCP tool                                            |
+| Base64 transfer via `javascript_tool` | Output too large; use the blob download above instead          |
 | `wkhtmltopdf`                         | Removed from Homebrew, no longer maintained                    |
+
+An earlier version of this table claimed blob / `<a download>` downloads are
+silently dropped in the MCP context. That was **wrong** — see the blob-download
+section above, which is now the preferred method for an existing PDF.
 
 ## Troubleshooting
 
@@ -208,4 +264,8 @@ For authenticated/paywalled pages, use the MCP browser to extract the full HTML 
 | Extension not detected           | Check `chrome://extensions`, restart Chrome           |
 | Tab errors                       | Call `tabs_context_mcp` to refresh tab IDs            |
 | Dialog blocking                  | Avoid triggering JS alerts; dismiss manually if stuck |
-| Permission denied                | Approve domain in popup or Chrome extension settings  |
+| Permission denied                | Approve domain in popup or Chrome extension settings; see Permission Popups |
+| Click does nothing               | Page reflowed — re-screenshot and click fresh coordinates |
+| `[BLOCKED: Cookie/query string data]` | JS returned a cookie or query-string URL. Do the work inside the snippet and return only a status string |
+| Downloaded "PDF" is HTML         | Verify `head -c 5 file.pdf` is `%PDF`. Never test with `file x.pdf \| grep -i pdf` — that matches the *filename* |
+| `chrome://` navigation refused   | MCP cannot open browser-internal URLs; inspect extension settings manually |
