@@ -124,13 +124,49 @@ Without this, the PDF save step in skills will fail when trying to move files fr
 
 Use headless Chrome `--print-to-pdf` from the command line via Bash.
 
-### Why not html2pdf.js via MCP browser?
+### Fetching an existing PDF from a curl-hostile host
 
-The MCP Chrome extension's `javascript_tool` executes in a context where **programmatic downloads are silently dropped** by Chrome. Even with `isTrusted=true` clicks via the `computer` tool, blob/data-URI downloads never reach disk. This affects all download methods (html2pdf.js `.save()`, `<a download>` clicks, `window.location` blob URLs). The root cause is likely Chrome's tab group or extension execution environment suppressing download events.
+**Verified working 2026-08-06** — this supersedes an earlier note claiming
+programmatic downloads are always dropped by Chrome. A blob download triggered
+from `javascript_tool` *does* reach `~/Downloads`, and it is the best tool for a
+site that already serves a real PDF but blocks curl (proof-of-work walls such as
+EconStor's Anubis, or session-bound URLs such as ScienceDirect's).
 
-### How it works
+Run this on a page of the **same origin** as the PDF:
 
-Use headless Chrome `--print-to-pdf` via the Bash tool:
+```javascript
+const r = await fetch('/path/to/file.pdf');   // same-origin: cookies ride along
+const b = await r.blob();
+const sig = new TextDecoder().decode(await b.slice(0,5).arrayBuffer());
+let status = 'not-pdf:' + sig;
+if (sig.startsWith('%PDF')) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(b);
+  a.download = 'name.pdf';
+  document.body.appendChild(a); a.click(); a.remove();
+  status = 'downloaded ' + b.size + ' bytes';
+}
+status
+```
+
+Then `mv ~/Downloads/name.pdf articles/`.
+
+Notes learned the hard way:
+
+- It beats clicking Chrome's own PDF-viewer download button, which opens a
+  **native save dialog** that automation cannot drive.
+- Always check the `%PDF` signature before saving — challenge pages return HTML
+  with a 200 status.
+- ScienceDirect: click **View PDF** first, then run this on the resulting tab.
+  Fetching the `/pdf` link directly only returns an interstitial.
+- Do not return `document.cookie` or full query-string URLs from
+  `javascript_tool`; that output is blocked. You never need to — use
+  `location.pathname + location.search` inside the snippet instead.
+
+### Generating a PDF from a page that has none
+
+For blog posts and tutorials, use headless Chrome `--print-to-pdf` via the Bash
+tool. Add `--virtual-time-budget=15000` so lazy-loaded content renders:
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \

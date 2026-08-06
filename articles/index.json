@@ -7141,7 +7141,7 @@
   },
   {
     "title": "Enhancing Algorithmic Trading with Wavelet-Based Deep Reinforcement Learning",
-    "authors": null,
+    "authors": "Antonio José Martínez Casares",
     "publication_year": 2025,
     "download_page": "https://doi.org/10.1007/s00521-025-11581-z",
     "source_file": "signal-decomposition.rst",
@@ -7149,7 +7149,7 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
-    "short_description": "A Neural Computing & Applications study assessing wavelet families as front-ends to deep reinforcement-learning trading agents, on the wavelet-plus-RL branch alongside Lee/Koh/Choe and Lin Li. Catalogued from the bibliographic record only; data, markets and results are unverified and should not be cited until the full text is read."
+    "short_description": "Crosses four wavelet families (Daubechies, Symlets, Coiflets, Biorthogonal) with three deep RL algorithms (PPO, A2C, DQN) on S&P 500 futures, applying level-2 decomposition with soft thresholding to the DIX, GEX and VIX microstructure indicators rather than to price. Best cell is coif4+DQN at Sharpe 0.96 and 112.5% total return, with the three indicators combined beating any single one by 18.7% in Sharpe; reported drawdowns of 0.28-0.34 undercut XGBoost/RF/logistic baselines at 0.39-0.42. Code is released on GitHub, but the full text is paywalled so the tables and protocol are unverified, and the headline figure is the best of a 12-cell grid search."
   },
   {
     "title": "Enhancing Financial Time Series Forecasting with CEEMDAN-Informer-LSTM",
@@ -7218,9 +7218,9 @@
     "download_page": "https://abouttrading.substack.com/p/financial-signal-processing-in-python-dd0",
     "source_file": "signal-decomposition.rst",
     "included_in_index_at": "2026-07-29",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
+    "filename": "financial-signal-processing-python-ix-wavelet-denoising.pdf",
+    "downloaded_at": "2026-08-06",
+    "download_failure_reason": null,
     "short_description": "A tutorial on wavelet soft-thresholding with the universal threshold in PyWavelets (db8), adding cycle-spinning to mitigate the critically-sampled DWT's translation sensitivity. Valuable for its honest caveats: the DWT is not translation-invariant, finite signals need edge handling, and the method targets measurement noise suiting smooth signals, whereas a random walk is intrinsically rough, the practical case against denoised-price features on perps."
   },
   {
