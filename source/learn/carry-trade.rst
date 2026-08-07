@@ -155,3 +155,16 @@ Originally posted in Chinese.
 By SK (@StepOneAi).
 
 `Read the post <https://x.com/StepOneAi/status/2085417405875167278>`__.
+
+How Exchanges Actually Compute Funding: Settlement Periods and Weighting
+------------------------------------------------------------------------
+
+Part of a series on high-frequency market-making infrastructure, this instalment covers market data conventions for funding rates. It opens with a failure the author describes as mundane but instructive: pulling funding rates for different contracts into one table and comparing them horizontally produced unstable conclusions, because in the same market conditions and at similar deviations some contracts' rates ran high while others barely moved. The initial reading was that sentiment simply differed across contracts. Reading the venue documentation showed the real cause — they were not comparing the same quantity at all. A funding rate is not a reading that emerges naturally from the market; it is a measurement the venue performs according to a published rule, and that rule contains configurable, occasionally adjusted components that were being treated as constants.
+
+Entry discussion: the structural form is broadly consistent across major perpetuals — funding equals the average of the premium index plus a clamped interest-rate term — so the divergence hides inside the average. The premium index is sampled at a fixed interval and time-weighted over the settlement period, giving n = settlement period / sampling interval points. Two parameters are then easy to get wrong. First, the settlement period is a variable rather than a default eight hours: venues set it per contract and adjust it under certain conditions, and the existence of a dedicated funding-interval field in some APIs is itself evidence that it moves — yet funding history endpoints typically return only rate and timestamp, so aligning a historical series on an assumed 8-hour grid will misalign across any period change. Second, and more easily missed, "time-weighted average" does not pin down the weight function. The author documents at least two variants: documentation that stops at the phrase itself without publishing a formula, and documentation giving an explicitly linear ramp, (P₁×1 + P₂×2 + ... + Pₙ×n) / (1+2+...+n), under which the final sample carries n times the weight of the first — with 8 hours of one-minute samples, n is 480. The practical consequence is that any intuition about how much a pre-settlement deviation moves the final rate is venue-specific: where weights are explicitly back-loaded the closing segment dominates, and where the shape is unpublished you know only that it is time-weighted and have to measure the shape empirically.
+
+Originally posted in Chinese. The author notes that all specific terms cited should be checked against the documentation for the contract you actually trade.
+
+By SK (@StepOneAi).
+
+`Read the post <https://x.com/StepOneAi/status/2085796207847514449>`__.

@@ -2220,6 +2220,18 @@
     "short_description": null
   },
   {
+    "title": "How Exchanges Actually Compute Funding: Settlement Periods and Weighting",
+    "authors": "SK (@StepOneAi)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/StepOneAi/status/2085796207847514449",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-08-07",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An instalment in a high-frequency market-making infrastructure series explaining why funding rates from different venues are not directly comparable: a funding rate is a venue-defined measurement, not an emergent market reading, and its rule set contains adjustable parts often mistaken for constants. Two traps are documented — the settlement period is per-contract and occasionally adjusted rather than a fixed 8 hours, while funding history endpoints return only rate and timestamp, so assuming an 8-hour grid misaligns the series; and 'time-weighted average' does not fix the weight function, with some venues publishing a linear ramp under which the final sample carries n times the weight of the first (n = 480 for 8 hours of one-minute samples). The takeaway is that intuitions about how pre-settlement deviations move the final rate are venue-specific and must be measured where the weight shape is unpublished."
+  },
+  {
     "title": "Model-Free RL Framework for Portfolio Allocation with Carry Trade Signals",
     "authors": null,
     "publication_year": null,
@@ -9972,18 +9984,6 @@
     "short_description": null
   },
   {
-    "title": "The asymmetric relationship between returns and implied higher moments: Evidence from the crude oil market",
-    "authors": "Xinxin Zhang, Elie Bouri, Yahua Xu, and Gongqiu Zhang",
-    "publication_year": 2022,
-    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-08-03",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "publisher_paywall",
-    "short_description": "Using USO ETF option data and quantile regressions, this study examines how crude-oil returns relate asymmetrically to changes in option-implied volatility, skewness, and kurtosis. Negative returns have stronger effects on implied volatility and kurtosis, especially in upper quantiles, while positive returns more strongly affect implied skewness at lower quantiles."
-  },
-  {
     "title": "The Edge In Buying Straddles For The Weekend",
     "authors": "Thalex",
     "publication_year": 2026,
@@ -10018,6 +10018,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "The asymmetric relationship between returns and implied higher moments: Evidence from the crude oil market",
+    "authors": "Xinxin Zhang, Elie Bouri, Yahua Xu, and Gongqiu Zhang",
+    "publication_year": 2022,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S014098832200127X",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-08-03",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "Using USO ETF option data and quantile regressions, this study examines how crude-oil returns relate asymmetrically to changes in option-implied volatility, skewness, and kurtosis. Negative returns have stronger effects on implied volatility and kurtosis, especially in upper quantiles, while positive returns more strongly affect implied skewness at lower quantiles."
   },
   {
     "title": "Understanding Multivariate GARCH Models",
