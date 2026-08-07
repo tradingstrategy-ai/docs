@@ -142,3 +142,16 @@ Mentioned by Mikko Ohtamaa (Margin Syndicate / Trading Strategy) in `this Linked
 By Mikko Ohtamaa.
 
 `Read the post <https://www.linkedin.com/posts/funding-monitor-update-settlement-interval-share-7485997110203490304-Zx3m/>`__.
+
+Denoising Funding Rate Signals with Z-Scores, Open Interest and Price
+---------------------------------------------------------------------
+
+A practitioner thread on why a raw funding rate is a poor trading factor on its own, and what to do about it. The core problem is that funding baselines differ structurally across tokens: retail-favoured coins sit at elevated rates more or less permanently, so ranking the cross-section on absolute funding measures "how retail a token is" rather than how crowded it currently is. The fix proposed is to normalise first and rank second — compute a rolling Z-score of funding within each token's own history to strip out its baseline, then run the cross-sectional rank on those standardised values. The same argument applies across venues: because Binance, Bybit, OKX and Hyperliquid each produce slightly different rates, the more rigorous construction is an open-interest-weighted composite funding index, and the dispersion between venues is itself treated as a sentiment signal rather than noise to be averaged away.
+
+Entry discussion: the more interesting half is the cross-validation, which addresses a real ambiguity in funding-based carry and crowding signals. Identical high funding can correspond to opposite market structures and opposite forward returns, and open interest is what disambiguates them: high funding with rising OI means new longs are being opened and crowding is still accumulating, whereas high funding with falling OI means existing positions are being unwound and the crowding is clearing. Adding price as a third dimension sharpens it further — funding that stays high while price chops sideways or grinds lower indicates longs paying an expensive carry to sit in a losing position, which is a much stronger directional tell than any single dimension. The closing caveat is a useful one for anyone sizing this: crowding factors of this type decay quickly, so they are largely inaccessible to CTA-style programs rebalancing at daily or slower frequency and fit short- to medium-horizon swing strategies instead.
+
+Originally posted in Chinese.
+
+By SK (@StepOneAi).
+
+`Read the post <https://x.com/StepOneAi/status/2085417405875167278>`__.
