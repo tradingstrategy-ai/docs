@@ -3696,6 +3696,18 @@
     "short_description": null
   },
   {
+    "title": "AI Factor R&D Experience so Far: Model and Universe Configurations Compared",
+    "authors": "Andreas Himmelreich",
+    "publication_year": 2026,
+    "download_page": "https://x.com/GfI_Himmelreich/status/2086036103924986045",
+    "source_file": "machine-learning.rst",
+    "filename": "ai-factor-rd-experience-model-universe-configurations.pdf",
+    "included_in_index_at": "2026-08-08",
+    "downloaded_at": "2026-08-08",
+    "download_failure_reason": null,
+    "short_description": "Practitioner field note listing six AI factor model configurations taken into portfolios, indexed by target normalisation (Rank & Date vs ZScore & Date), universe, and learner (LightGBM, XGBoost, ExtraTrees). The through-line is that regularisation strength determines feasible portfolio concentration: unregularised LightGBM is spiky and needs 30-50 stocks, regularised boosters support 20-30, and a 50/50 booster-plus-ExtraTrees ranking gives 10-30 stocks at roughly 250% annual turnover. Outlier-targeting models (top 0.1%) run 750-1,400% turnover yet reportedly still beat Portfolio123's variable slippage model. Self-reported, with no sample period or Sharpe given."
+  },
+  {
     "title": "Adaptive Multi-Signal Position Sizing for Crypto Trading",
     "authors": "Pedma",
     "publication_year": null,

@@ -528,6 +528,8 @@ Mentioned by Quant Beckman in `this discussion <https://x.com/quantbeckman/statu
 
 `Read the paper <https://arxiv.org/abs/1904.04912>`__
 
+.. _train-wide-filter-smart:
+
 Rethinking the ML Pipeline: Why "Train Wide, Filter Smart" is a Game-Changer for AI Factor Models
 ---------------------------------------------------------------------------------------------------
 
@@ -1379,7 +1381,7 @@ Mentioned by Nam Nguyen in `this LinkedIn discussion <https://www.linkedin.com/p
 `Read the paper <https://doi.org/10.1007/s10796-026-10693-8>`__
 
 Can Machine Learning Predict Bitcoin? Seven Models, One Honest Answer
---------------------------------------------------------------------
+---------------------------------------------------------------------
 
 The introductory post of a seven-part experimental series in which Jerome Etienne benchmarks seven progressively complex models on Bitcoin price forecasting, asking a deliberately narrow question: across the full spectrum of model classes, which ones actually clear the random-walk floor, and by how much? The lineup runs from a naive last-value baseline and ARIMA, through XGBoost and an LSTM, to a Temporal Fusion Transformer and zero-shot foundation models (Chronos, TimesFM) plus fine-tuned variants. Every model predicts log-returns for BTCUSDT on 4-hour bars and is tested on the identical out-of-sample window (2024-10-01 to 2024-12-01 UTC, 366 bars), scored on six metrics — MAE, RMSE, MAPE, directional accuracy, cumulative return, and annualized Sharpe — with a single frozen train/test split and a long/flat (no-shorting) strategy.
 
@@ -1442,7 +1444,7 @@ Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/Pt
 `Read the article <https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/>`__
 
 Data-Driven Duration Management — Term Structure Forecasting Using Machine Learning
-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 Lausser, Vuolo, and Zagst compare traditional econometric and machine learning approaches for forecasting the term structure of U.S. and European zero-coupon government bonds. Classical models — Dynamic Nelson-Siegel (DNS) and Principal Component Analysis (PCA) combined with AR/VAR factor dynamics — are benchmarked against a range of neural network (NN) architectures, including factor-based networks (which forecast DNS or PCA factors), direct zero-rate-forecasting networks, and autoencoder (AE) variants that compress either the rate curve or a set of macroeconomic inputs. The study spans the U.S. Treasury market and AAA-rated euro-area bonds from the ECB across seven maturities, with models retrained at two-year intervals and hyperparameters tuned via Bayesian Optimization and Hyperband (BOHB).
 
@@ -1459,7 +1461,7 @@ Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/Pt
 .. _volume-centred-range-bars:
 
 Volume-Centred Range Bars: An Interpretable Market Representation for Machine Learning
--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 Artur Sokolovsky, Luca Arnaboldi, Jaume Bacardit, and Thomas Gross (arXiv:2103.12419, 2021, revised 2022; later published in *Machine Learning with Applications*) propose Volume-Centred Range Bars (VCRB), a volume-price market representation designed specifically to make non-stationary financial time series more amenable to machine-learning pipelines. Rather than sampling prices on a fixed time grid, the representation is built around range bars centred on volume, so that each observation reflects a comparable amount of market activity and price movement — a concrete, ML-oriented instance of the event-based sampling paradigm argued for in :ref:`The Volume Clock <the-volume-clock>`. The authors evaluate the representation statistically (rather than via a single backtested strategy) using gradient-boosted trees and explainability tools, framing the work around four research questions: whether the representation enables more efficient ML model design, whether it beats a price-levels representation, whether it does better on liquid instruments, and whether SHAP feature interactions are trustworthy in this setting.
 
@@ -1472,7 +1474,7 @@ Key metrics: a classification-performance and interpretability study rather than
 `Read the paper <https://arxiv.org/abs/2103.12419>`__
 
 Information-Driven Bars for Financial Machine Learning: Imbalance Bars
----------------------------------------------------------------------
+----------------------------------------------------------------------
 
 Gerard Martínez walks through **imbalance bars**, the most information-driven member of the López de Prado bar family, in a practical Towards Data Science tutorial that follows on from his earlier pieces on tick, volume and dollar bars. The motivation, quoting *Advances in Financial Machine Learning* (2018), is to "sample more frequently when new information arrives to the market" — by synchronising sampling with the arrival of informed traders, you can potentially act before prices reach a new equilibrium. Imbalance bars apply to tick, volume or dollar data to produce tick (TIB), volume (VIB) and dollar (DIB) imbalance bars respectively.
 
@@ -1494,7 +1496,7 @@ By Maks Ivanov (Towards Data Science).
 `Read the blog post <https://medium.com/data-science/financial-machine-learning-part-0-bars-745897d4e4ba>`__.
 
 Tick, Dollar and Volume Bars: Smarter Sampling of Financial Data (with code)
----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 A detailed, code-first QuantBeckman newsletter piece on how to turn a raw, high-frequency stream of timestamped trades into model-ready bars — framed around the question that titles it, "what are your bars hiding from you?". The framing analogy is memorable: sampling at fixed time intervals is like a security camera that photographs the scene every minute regardless of activity, whereas event-based sampling is like a motion-activated camera that records only when something significant happens — a certain volume traded, a price move, or a dollar value exchanged. The post argues that this sampling decision is the first and most profound obstacle in a quant pipeline, made before any strategy design, and works through time bars, tick bars, volume bars, VWAP bars and dollar bars with accompanying Python code.
 
@@ -1525,3 +1527,18 @@ The method is applied to allocation across U.S. equity sectors. Even in its most
 By Rushil Gholkar and Ralph Sueppel (Macrosynergy).
 
 `Read the blog post <https://macrosynergy.com/research/portfolio-optimization-with-macro-factors-and-neural-networks/>`__.
+
+AI Factor R&D Experience so Far: Model and Universe Configurations Compared
+------------------------------------------------------------------------------
+
+A short practitioner field note in which Andreas Himmelreich lists six configurations of AI factor models he has taken through research and into portfolios, organised by target normalisation ("Rank & Date" versus "ZScore & Date" in the Portfolio123 sense), universe (large versus small cap), learner (LightGBM, XGBoost, ExtraTrees), and the resulting portfolio characteristics. It is a summary of accumulated experience rather than a study — no equity curves, Sharpe ratios or sample periods are given — but it is unusually specific about the part most write-ups omit: which configuration suits which portfolio concentration, and what turnover each one implies.
+
+The progression is the interesting part. Rank-normalised targets on small caps with LightGBM and buy/sell rules applied at the portfolio-strategy level are described as clean, stable and easy to implement; ExtraTrees is used on large-cap universes with ZScore targets. Within ZScore-normalised small caps, the note draws a direct line from regularisation to feasible concentration: unregularised LightGBM is "very spiky" and needs 30–50 stocks for the law of large numbers to smooth it out, whereas regularised LightGBM or XGB is smoother and supports concentrated 20–30 stock portfolios. Blending a regularised booster with ExtraTrees 50/50 inside a single ranking system is presented as the best balance — 10–30 stocks at roughly 250% annual turnover, which the author frames as a good trade between concentration and capacity.
+
+The final configuration is the one worth dwelling on. Targeting the top 0.1% outliers on small caps produces 10–20 stock models with turnover of 750%–1,400% annually, and the author's validation claim is that these still beat Portfolio123's variable slippage model. That is a meaningful test to cite, because a variable slippage model scales the assumed cost with liquidity and trade size rather than applying a flat basis-point haircut, so clearing it at four-figure turnover on small caps is a genuine hurdle rather than a cosmetic one. The obvious caveat is that this is a single practitioner's self-reported result on an unstated sample, with the outlier models' intellectual property explicitly withheld, so it should be read as a direction worth testing rather than a validated result. For anyone building tree-ensemble factor models, the transferable content is the mapping from regularisation strength to viable portfolio size, and the reminder that turnover is the binding constraint long before signal quality is.
+
+By Andreas Himmelreich (Systematic AI Investing Portfolios).
+
+Mentioned by Andreas Himmelreich in `this discussion <https://x.com/GfI_Himmelreich/status/2086036103924986045>`__, summarising his AI factor research to date. See also his longer article :ref:`Rethinking the ML Pipeline: Why "Train Wide, Filter Smart" is a Game-Changer for AI Factor Models <train-wide-filter-smart>` above, which covers the buy-filter and normalisation interaction referenced implicitly here.
+
+`Read the post <https://x.com/GfI_Himmelreich/status/2086036103924986045>`__.
