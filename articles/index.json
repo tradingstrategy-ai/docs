@@ -2196,6 +2196,30 @@
     "short_description": "A practitioner note on how perpetual-futures settlement intervals corrupt carry math: the same headline funding rate costs very different amounts per day depending on settlement frequency, yet most aggregators assume 8h everywhere. Documents hardening interval detection across 17 venues, fixing live Blofin and KuCoin bugs by making observed settlement history outrank venue spec, and adding a structural median-based fallback so no adapter can silently default to 8h."
   },
   {
+    "title": "Funding Rate Data Caliber, Part Three: Capped Values Are Censored Observations",
+    "authors": "SK (@StepOneAi)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/StepOneAi/status/2085971924727865757",
+    "source_file": "carry-trade.rst",
+    "filename": "funding-rate-data-caliber-part-three-censoring.pdf",
+    "short_description": "Identifies funding-rate caps as statistical censoring rather than truncation - the rows exist but values are flattened to the boundary - which is insidious because the data passes every completeness check. Catalogues hard boundaries across trading data (rate caps, price protection bands, tick precision, fixed-depth order book endpoints) and their consequences: optimistic tail estimates, systematically low volatility especially in extreme markets, and biased regression coefficients. Notes the censoring threshold is itself a moving curve when tied to maintenance margin rates, so correcting for it requires a recorded parameter history.",
+    "included_in_index_at": "2026-08-08",
+    "downloaded_at": "2026-08-08",
+    "download_failure_reason": null
+  },
+  {
+    "title": "Funding Rate Data Caliber, Part Two: The Premium Index Measures Depth, Not the Book",
+    "authors": "SK (@StepOneAi)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/StepOneAi/status/2085800169686396937",
+    "source_file": "carry-trade.rst",
+    "filename": "funding-rate-data-caliber-part-two-premium-index-depth.pdf",
+    "short_description": "Shows the premium index is built from impact prices - the average execution price after consuming a fixed Impact Margin Notional (IMN) - rather than mid or best price, so it measures deviation at a depth rather than at the book. IMN is either a hardcoded contract-spec constant or derived as a fixed margin amount divided by the highest leverage tier's initial margin rate, meaning contracts with higher maximum leverage are sampled deeper and are not comparable across contracts. Because leverage and margin tiers are adjustable, and adjustments cluster in volatile high-open-interest periods, the measurement position itself moves when it matters most.",
+    "included_in_index_at": "2026-08-08",
+    "downloaded_at": "2026-08-08",
+    "download_failure_reason": null
+  },
+  {
     "title": "Geopolitical Risk in Currency Markets",
     "authors": null,
     "publication_year": null,
@@ -2226,9 +2250,9 @@
     "download_page": "https://x.com/StepOneAi/status/2085796207847514449",
     "source_file": "carry-trade.rst",
     "included_in_index_at": "2026-08-07",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
+    "filename": "how-exchanges-actually-compute-funding.pdf",
+    "downloaded_at": "2026-08-08",
+    "download_failure_reason": null,
     "short_description": "An instalment in a high-frequency market-making infrastructure series explaining why funding rates from different venues are not directly comparable: a funding rate is a venue-defined measurement, not an emergent market reading, and its rule set contains adjustable parts often mistaken for constants. Two traps are documented — the settlement period is per-contract and occasionally adjusted rather than a fixed 8 hours, while funding history endpoints return only rate and timestamp, so assuming an 8-hour grid misaligns the series; and 'time-weighted average' does not fix the weight function, with some venues publishing a linear ramp under which the final sample carries n times the weight of the first (n = 480 for 8 hours of one-minute samples). The takeaway is that intuitions about how pre-settlement deviations move the final rate are venue-specific and must be measured where the weight shape is unpublished."
   },
   {
@@ -9574,6 +9598,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "The Intraday Seasonality of Market Trends",
+    "authors": "Concretum Research",
+    "publication_year": 2026,
+    "download_page": "https://concretumgroup.substack.com/p/the-intraday-seasonality-of-market",
+    "source_file": "trend-following.rst",
+    "filename": "intraday-seasonality-of-market-trends.pdf",
+    "short_description": "Tests when during the session the S&P 500 is most likely to generate intraday trend-following profits, using an ensemble of six intraday trend models on SPY so results reflect market behaviour rather than one model's rules. The stated finding is that intraday trend profits have not disappeared but have weakened during certain parts of the session, with the authors suggesting traders revisit position-management assumptions that worked until 2023. Paywalled: the archived PDF and this entry cover the free preview only, so the model definitions and all supporting results are unverified.",
+    "included_in_index_at": "2026-08-08",
+    "downloaded_at": "2026-08-08",
+    "download_failure_reason": null
   },
   {
     "title": "Trend Following in Strategic Asset Allocation: A Long-Horizon Analysis",

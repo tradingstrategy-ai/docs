@@ -156,6 +156,8 @@ By SK (@StepOneAi).
 
 `Read the post <https://x.com/StepOneAi/status/2085417405875167278>`__.
 
+.. _how-exchanges-compute-funding:
+
 How Exchanges Actually Compute Funding: Settlement Periods and Weighting
 ------------------------------------------------------------------------
 
@@ -168,3 +170,33 @@ Originally posted in Chinese. The author notes that all specific terms cited sho
 By SK (@StepOneAi).
 
 `Read the post <https://x.com/StepOneAi/status/2085796207847514449>`__.
+
+Funding Rate Data Caliber, Part Two: The Premium Index Measures Depth, Not the Book
+------------------------------------------------------------------------------------
+
+Part two of SK's series moves from the outer averaging layer to the quantity being averaged. Part one is catalogued above as :ref:`How Exchanges Actually Compute Funding: Settlement Periods and Weighting <how-exchanges-compute-funding>`. The premium index is not computed from the mid-price or the best bid and offer. It is built from impact prices — ``P = [max(0, Impact Bid − index price) − max(0, index price − Impact Ask)] / index price`` — where Impact Bid and Impact Ask are the average execution prices obtained by consuming a fixed nominal amount, the Impact Margin Notional (IMN). The design intent is defensive and sensible: measuring at depth prevents a single thin resting order from moving the funding rate.
+
+The complication is how IMN is set, and the post identifies two incompatible conventions. Under the first, IMN is a configuration value — a hardcoded notional in the contract specification, unrelated to other parameters and announced separately when changed. Under the second, it is derived: ``IMN = a fixed margin amount / initial margin rate of the highest leverage tier``. Because the initial margin rate sits in the denominator, higher maximum leverage means a lower margin rate, a larger notional, and therefore deeper sampling. On a venue using the derived convention, two contracts on the same underlying are measured at different depths purely because their leverage tiers differ — which is exactly the cross-contract comparison failure that opened part one. The post adds two refinements. Depth here is an absolute notional, so the same IMN consumes only a few levels in a liquid book but penetrates far into a thin one, and relative to book thickness the ordering can reverse; judging the true sampling depth requires comparing IMN against the contract's actual book. And the measurement position moves: leverage and margin tiers are adjustable, so one tier change gives IMN a new value even though neither the market nor the order book has changed.
+
+Our summary: the most useful observation is the timing one, and the author is careful to label it an observation rather than a rule — tier adjustments cluster in periods of amplified volatility and rising open interest, precisely when rates are under most scrutiny and the book is least stable. That means the measurement instrument changes at the moment the measurement matters most, which is a nasty property for any model calibrated on historical funding data. The operational conclusion follows directly from the two conventions: whether IMN is a constant has opposite answers depending on the venue, and that answer determines whether a parameter history is required or merely nice to have. Anyone building a cross-venue funding dataset has to resolve this per venue by reading contract specifications line by line, because no API will tell them.
+
+Mentioned by SK (@StepOneAi) in `this discussion <https://x.com/StepOneAi/status/2085800169686396937>`__. Written in Chinese; the text used here is X's English translation.
+
+By SK (@StepOneAi).
+
+`Read the post <https://x.com/StepOneAi/status/2085800169686396937>`__.
+
+Funding Rate Data Caliber, Part Three: Capped Values Are Censored Observations
+--------------------------------------------------------------------------------
+
+Part three generalises beyond funding rates, and is the most broadly applicable of the three. It follows :ref:`part one <how-exchanges-compute-funding>` and part two above. It begins with another debugging story: tail estimates from funding-rate history kept coming out too small relative to lived experience, and inspecting the raw sequence revealed batches of exactly identical values repeating at the same number. That is not coincidence — it is a cap. The post then makes the statistical distinction precisely. **Censoring** means the observation exists and is recorded, but only as a boundary value, with the true magnitude unknown. **Truncation** means out-of-range observations never enter the sample at all. Funding-rate caps are censoring, which the author argues is the more insidious of the two: the data looks complete, every row has a value, nothing is missing, and no pipeline will raise an error.
+
+The post then catalogues how widespread hard boundaries are in trading data: funding rate caps, matching price protection bands and limit ranges, prices generated when protection mechanisms trigger, precision truncation below the minimum tick, and — the one it singles out — depth endpoints that return a fixed number of levels. Total book volume computed from a fixed level count is itself an observation censored at the last level, so it structurally cannot answer how deep the market is. Four consequences follow. Extreme quantiles and tail indices are biased optimistic because the distribution's extremes get shifted onto the boundary. Volatility is biased low, since censoring removes variance, and the bias is worst in extreme markets where accuracy matters most. Regression coefficients are biased when a censored variable is the dependent variable, with the direction depending on the censoring proportion. And the threshold itself moves: designs that tie the cap to the maintenance margin rate, roughly ``capped F = clamp(F, −k × maintenance margin rate, +k × maintenance margin rate)``, inherit adjustability from both the margin tiers and the per-contract multiple k, so the censoring point is a curve over time rather than a constant.
+
+Our summary: this is the entry in the series with the widest reach, because the censoring problem it describes is not specific to crypto or to funding. Any risk model fitted on capped data will understate tails and volatility exactly where the estimate matters, and the failure is silent because censored data passes every completeness check. The structural parallel the author draws to part two is the sharp one: in both cases something assumed constant is actually a variable hanging off the leverage parameters — in part two it moves the measurement position, here it moves the truncation position. The practical requirement is correspondingly stricter than simply flagging capped rows: you need to know what the threshold was at each point in time, and while flagged values can be spotted by looking for repeats, a moving threshold can only be recovered from a parameter history you chose to record in advance.
+
+Mentioned by SK (@StepOneAi) in `this discussion <https://x.com/StepOneAi/status/2085971924727865757>`__. Written in Chinese; the text used here is X's English translation.
+
+By SK (@StepOneAi).
+
+`Read the post <https://x.com/StepOneAi/status/2085971924727865757>`__.
