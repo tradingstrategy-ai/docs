@@ -1084,15 +1084,6 @@ Data: Chinese futures markets: Apple futures, Rebar futures, CSI 300 Index futur
 Survey and Methodology Papers
 -----------------------------
 
-Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This critical paper analyzes information leakage (lookahead bias) in EMD-based time series prediction. When the full series is decomposed before train/test splitting, future information leaks into training data, inflating accuracy. The paper proposes three mitigation strategies: sliding window EMD, single-training-multiple-decomposition, and multiple-training-multiple-decomposition. Published in Scientific Reports, Nature, 2024.
-
-Our summary: this is one of the most important methodological papers in the decomposition-forecasting literature. Many published VMD/EMD results are overly optimistic because they decompose the entire dataset (including test data) before splitting. Any practitioner using decomposition-based forecasting must implement one of the mitigation strategies proposed here to avoid deploying models with artificially inflated accuracy.
-
-`Read the paper <https://www.nature.com/articles/s41598-024-80018-9>`__
-
 VMDNet: Temporal Leakage-Free Variational Mode Decomposition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1385,9 +1376,13 @@ Our summary: this pairs directly with Hasumi & Kajita (B1) as the second pillar 
 Research on Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yang, Li and Jiang (Scientific Reports, 2024) extend the leakage analysis to the "class EMD" family (EMD, EEMD, VMD, CEEMDAN) rather than wavelets, and propose three causal replacements described concretely enough to implement: SW-EMD (paired sliding windows, one sample per component), STMP-EMD (decompose once to train, then re-decompose the trailing window at each prediction step with a single training pass — the cheapest correct option), and MTMP-EMD (re-decompose and retrain per step — most accurate but very computationally intensive).
+Xinyi Yang, Jingyi Li and Xuchu Jiang (*Scientific Reports*, 2024) extend the leakage analysis to the "class EMD" family (EMD, EEMD, VMD, CEEMDAN) rather than wavelets. Their diagnosis is that the standard decompose-integrate-predict pipeline is structurally defective: when decomposition happens *before* the train/test split, information from the test set enters the decomposition and the reported accuracy is, in the authors' word, illusionary. They propose three causal replacements, described concretely enough to implement: **SW-EMD** (paired sliding windows, one sample per component), **STMP-EMD** (decompose once to train, then re-decompose the trailing window at each prediction step with a single training pass — the cheapest correct option), and **MTMP-EMD** (re-decompose and retrain at every step — most accurate, very computationally intensive). These are combined with a bidirectional multiscale temporal convolutional network, BiLSTM and a cosine-similarity attention mechanism.
 
-Our summary: the value here is a second independent leakage-delta framework alongside Hasumi & Kajita, plus a taxonomy of causal fixes that transfers in spirit to wavelets even though the paper does not claim to. Two cautions for anyone lifting numbers from it: the fixed-component-count constraint that SW/STMP require, and the fact that the widely-quoted +1.958% RMSE figure measures improvement over a plain LSTM baseline, not the leakage delta itself.
+Our summary: this is one of the most consequential methodological papers in the decomposition-forecasting literature, because a large share of published VMD and EMD results decompose the entire dataset before splitting and are therefore optimistic by construction. Anyone running a decompose-then-predict pipeline should implement one of these three strategies before believing their own backtest — and STMP-EMD is the pragmatic default, since it recovers causality at roughly the cost of a single training run. The value alongside the boundary-problem entry is that it supplies a second, independent leakage framework plus a taxonomy of fixes that transfers in spirit to wavelets, even though the paper does not claim wavelet coverage. Three cautions for anyone lifting numbers from it. SW-EMD and STMP-EMD both require a fixed component count, which constrains adaptive decompositions. The widely quoted +1.958% RMSE figure measures improvement over a plain LSTM baseline, **not** the size of the leakage effect itself. And most importantly for this collection, the empirical validation is on water-quality series, not markets — the leakage argument is general and applies directly to financial pipelines, but no financial result is demonstrated here.
+
+Data and reproduction: experiments predict three water-quality indicators — pH, dissolved oxygen and KMnO₄ — rather than financial series, using the three proposed decomposition strategies against CEEMDAN and mainstream LSTM baselines. Open access in *Scientific Reports*, so the full text and figures are freely available; no code release is advertised. The three strategies are specified procedurally and are straightforward to port to any decompose-then-predict pipeline.
+
+Key metrics: the proposed models improve RMSE by 1.958% and MAPE by 0.853% against a mainstream LSTM benchmark on the water-quality task. Note again that these are accuracy gains of the corrected pipeline over a baseline model, not a measurement of how much leakage inflates a naive pipeline — the paper's contribution is the causal construction, not a leakage-delta estimate.
 
 `Read the paper <https://www.nature.com/articles/s41598-024-80018-9>`__
 

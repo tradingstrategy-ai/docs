@@ -7524,18 +7524,6 @@
     "short_description": null
   },
   {
-    "title": "Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition",
-    "authors": null,
-    "publication_year": 2024,
-    "download_page": "https://www.nature.com/articles/s41598-024-80018-9",
-    "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "information-leakage-emd-time-series.pdf",
-    "downloaded_at": "2026-04-27",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Intraday Stock Price Forecasting Based on Variational Mode Decomposition",
     "authors": "Salim Lahmiri",
     "publication_year": 2016,
@@ -7885,15 +7873,15 @@
   },
   {
     "title": "Research on Information Leakage in Time Series Prediction Based on Empirical Mode Decomposition",
-    "authors": "Yang, Li, Jiang",
+    "authors": "Xinyi Yang, Jingyi Li, Xuchu Jiang",
     "publication_year": 2024,
     "download_page": "https://www.nature.com/articles/s41598-024-80018-9",
     "source_file": "signal-decomposition.rst",
-    "included_in_index_at": "2026-07-29",
+    "included_in_index_at": "2026-06-05",
     "filename": "information-leakage-time-series-emd.pdf",
     "downloaded_at": "2026-07-29",
     "download_failure_reason": null,
-    "short_description": "Extends the leakage analysis to the EMD family (EMD, EEMD, VMD, CEEMDAN) and proposes three causal replacements: SW-EMD (paired sliding windows), STMP-EMD (decompose once to train then re-decompose the trailing window per step, cheapest correct option) and MTMP-EMD (re-decompose and retrain per step, most accurate). A second independent leakage-delta framework alongside Hasumi & Kajita; the widely-quoted +1.958% RMSE figure measures improvement over a plain LSTM, not the leakage delta."
+    "short_description": "Shows that the standard decompose-integrate-predict pipeline leaks test-set information when decomposition precedes the train/test split, making reported accuracy illusionary, and proposes three causal replacements for the EMD family (EMD, EEMD, VMD, CEEMDAN): SW-EMD (paired sliding windows), STMP-EMD (decompose once to train, then re-decompose the trailing window per step - the cheapest correct option), and MTMP-EMD (re-decompose and retrain per step). Reports 1.958% RMSE and 0.853% MAPE improvement over a mainstream LSTM baseline, though note that is a model comparison rather than a leakage-delta measurement, and the experiments are on water-quality series (pH, DO, KMnO4) rather than markets."
   },
   {
     "title": "Risk Forecasting in the Crude Oil Market: A Multiscale Convolutional Neural Network Approach",
