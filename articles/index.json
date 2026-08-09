@@ -3408,6 +3408,18 @@
     "short_description": null
   },
   {
+    "title": "Estimation of Factors Using Higher-Order Multi-Cumulants in Weak Factor Models",
+    "authors": "Guanglin Huang, Wanbo Lu, Kris Boudt",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.1080/07350015.2026.2671240",
+    "source_file": "equity-factors.rst",
+    "filename": "estimation-of-factors-higher-order-multi-cumulants-weak-factor-models.pdf",
+    "included_in_index_at": "2026-08-09",
+    "downloaded_at": "2026-08-09",
+    "download_failure_reason": null,
+    "short_description": "Proposes Higher-order multi-cumulant Factor Analysis (HFA), which estimates latent factors and loadings from the eigendecomposition of a higher-order multi-cumulant matrix rather than the covariance matrix, so that non-Gaussianity in the factors becomes an exploitable resource when factors are too weak for PCA to recover. An adaptive variant (AHFA) automates the choice and reduces to PCA when higher-order structure is absent. On FRED-MD (124 US macro series, 1959-2018) forecasting the monthly S&P 500 equity premium, HFA4 reaches full-sample out-of-sample R2 of 0.055 versus 0.025 for PCA, and holds 0.044 in the crisis period where PCA turns negative - but the advantage depends on the factor-count criterion and largely disappears under JJR. R code is in the hofa package; catalogued from the freely available SSRN working paper (abstract 3599632) since the Journal of Business & Economic Statistics version is paywalled."
+  },
+  {
     "title": "Expected Returns with Cash Flow Trends and Cycles",
     "authors": null,
     "publication_year": null,
