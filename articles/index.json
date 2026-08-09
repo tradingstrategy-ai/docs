@@ -5784,6 +5784,18 @@
     "short_description": "Closes the main gap in Black-Litterman by adding a formal likelihood so the posterior reflects three sources — market equilibrium prior, subjective views, and historical-data evidence — making BL a fully coherent Bayesian updating scheme. The natural next read after the original Black-Litterman model."
   },
   {
+    "title": "Breadth, Correlation, and Sizing: What the Strategy Report Does Not Show",
+    "authors": "Build Alpha (@buildalpha)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/buildalpha/status/2085708012161814584",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-08-09",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A weekly recap tying four Build Alpha posts into one argument: the Fundamental Law (IR = IC x sqrt(N)) means edge comes from breadth not signal strength, effective breadth N/(1+(N-1)rho) caps diversification at 1/rho regardless of how many systems you own, a candidate strategy must clear Sp x (sqrt(2+2c)-1) to improve the book, and contracts should scale as (Equity x Risk%)/(ATR x PointValue). The worked cases are sharp: a 0.70 Sharpe strategy at 0.80 correlation drags a 1.00 Sharpe book to 0.90 despite winning standalone, and an unchanged position carried ten times its intended risk when ES ATR went from 20 to 200 in Q1 2020. The unifying takeaway is that the number deciding the outcome never appears on the strategy report, because standalone metrics describe a strategy in isolation and nothing is traded in isolation."
+  },
+  {
     "title": "Building Diversified Portfolios that Outperform Out-of-Sample",
     "authors": "Marcos López de Prado",
     "publication_year": null,

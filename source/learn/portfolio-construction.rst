@@ -335,3 +335,16 @@ Mentioned by Ivan Blanco (Founder & CIO at Noax Capital, Associate Professor of 
 By Xuan Feng.
 
 `Read the paper <https://ssrn.com/abstract=7005278>`__
+
+Breadth, Correlation, and Sizing: What the Strategy Report Does Not Show
+------------------------------------------------------------------------
+
+A weekly recap from Build Alpha tying together four separate posts into a single argument about portfolio-level thinking. The four relations are the Fundamental Law of Active Management, IR ≈ IC × √N, where edge comes from breadth rather than signal strength — fifty signals at IC 0.05 deliver roughly three times the risk-adjusted edge of one signal at IC 0.10; the effective-breadth formula N_eff = N / (1 + (N−1)ρ), which caps how much diversification you can actually buy, since effective bets converge to 1/ρ and stop, so at ρ = 0.30 no number of systems gets you past about 3.3 real bets; an admission threshold for new strategies, Sₛ > Sₚ × (√(2 + 2c) − 1), which prices a candidate by its correlation to the existing book rather than by its own backtest; and volatility-based position sizing, Contracts = (Equity × Risk%) / (ATR × PointValue).
+
+Entry discussion: the admission threshold is the one most likely to change behaviour, because it formalises an uncomfortable result — a genuinely profitable strategy can still make the book worse. The worked example is a 0.70 Sharpe candidate at 0.80 correlation to a 1.00 Sharpe book, which drags the combined result down to 0.90 despite being a winner standalone; the threshold says the candidate would have needed roughly 0.90 Sharpe to break even at that correlation, so the decision hinges on a number that appears nowhere on its own strategy report. The sizing point is the same argument applied to risk rather than return: fixed contract counts are implicitly a leveraged bet on calm markets, and when ES ATR moved from 20 to 200 during Q1 2020, an unchanged two-contract position carried ten times the risk it was originally sized for. The thread the author draws through all four is that the quantity determining the outcome is never on the report itself — Sharpe does not tell you portfolio value, strategy count does not tell you breadth, and contract count does not tell you risk, because standalone metrics describe a strategy in isolation and nothing is traded in isolation.
+
+The post is a summary of four posts published over the preceding week; the individual posts are not linked from it.
+
+By Build Alpha (@buildalpha).
+
+`Read the post <https://x.com/buildalpha/status/2085708012161814584>`__.
