@@ -9156,6 +9156,18 @@
     "short_description": null
   },
   {
+    "title": "An Empirical Study of the Conformal Information Gap",
+    "authors": "Peter Cotton",
+    "publication_year": 2026,
+    "download_page": "https://github.com/microprediction/conformalprediction/blob/main/papers/frontier/frontier.pdf",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-08-10",
+    "filename": "an-empirical-study-of-the-conformal-information-gap.pdf",
+    "downloaded_at": "2026-08-10",
+    "download_failure_reason": null,
+    "short_description": "Shows that under logarithmic loss the cost of replacing full information X by a retained representation T(X) decomposes exactly into a conditional mutual information I(Z; X | T) - the irreducible 'information gap' - plus a within-representation regret, and applies the decomposition to conformal prediction, where residual pooling fixes the representation by construction. A nested transform-grammar ablation on 572 FRED change-series attributes 44% of the mean 0.49 nats/observation architecture gain to conditional scale (improving 95% of series), and a matched-predictor grid shows scale-normalized empirical pooling beating raw pooling on 90% of series under a quantile-approximated CRPS. A simulation confirms the split: raw and normalized split conformal both hit nominal marginal coverage while raw pooling covers only 77% of the most volatile quartile."
+  },
+  {
     "title": "Bayesian Forecasting in Economics and Finance: A Modern Review",
     "authors": "Gael M. Martin, David T. Frazier, Worapree Maneesoonthorn, Ruben Loaiza-Maya, Florian Huber, Gary Koop, John Maheu, Didier Nibbering, Anastasios Panagiotelis",
     "publication_year": 2024,
@@ -9298,6 +9310,30 @@
     "downloaded_at": null,
     "download_failure_reason": "not_attempted",
     "short_description": null
+  },
+  {
+    "title": "Transforms All the Way Down: Automatic Online Distributional Forecasting by Conjugation",
+    "authors": "Peter Cotton",
+    "publication_year": 2026,
+    "download_page": "https://github.com/microprediction/skaters/blob/main/papers/skaters-jss.pdf",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-08-10",
+    "filename": "transforms-all-the-way-down-automatic-online-distributional-forecasting-by-conjugation.pdf",
+    "downloaded_at": "2026-08-10",
+    "download_failure_reason": null,
+    "short_description": "The methods paper for the skaters library: an online univariate distributional forecaster built by conjugation, where invertible transforms nest onto a single distributional leaf fitted by a proper scoring rule and the collection collapses into one tuning-free forecast function, laplace. Benchmarked against twelve distributional baselines on 5,402 continuous non-price FRED change-series, laplace wins the per-series held-out log-likelihood race against eleven of them on 82-98% of series; the exception is a GARCH(1,1)-t, a near-tie that resolves along a martingality axis, with GARCH-t winning 9 to 1 on 2,500 asset-price series - a split the paper reports rather than averages away."
+  },
+  {
+    "title": "skaters: Online Distributional Time-Series Forecasting by Conjugation, in Python and JavaScript",
+    "authors": "Peter Cotton",
+    "publication_year": 2026,
+    "download_page": "https://github.com/microprediction/skaters/blob/main/papers/joss/paper.md",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-08-10",
+    "filename": "skaters-online-distributional-time-series-forecasting-by-conjugation.pdf",
+    "downloaded_at": "2026-08-10",
+    "download_failure_reason": null,
+    "short_description": "The short Journal of Open Source Software software paper for the skaters package, stating the design contract: every forecaster is a pure function (y, state) -> (dists, state) with explicit dictionary state, so conjugation is function composition and models checkpoint as JSON or move across language boundaries mid-stream. Its state-of-the-field section positions the package against statsmodels, darts, Prophet, GluonTS and river as the only online predictive-density forecaster available as a single dependency-free function that runs unchanged in a browser. Reports tail calibration of 99.85% empirical coverage for a nominal 99.9% interval on 142 economic series, and carries an explicit LLM-assistance disclosure."
   },
   {
     "title": "$576K in My First 8 Months Shorting Small Caps, and the Subtle Mistake that Cut It in Half",
