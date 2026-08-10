@@ -155,6 +155,8 @@ Mentioned by Alexander März in `this LinkedIn discussion <https://www.linkedin.
 
 `Read the paper <https://arxiv.org/abs/2405.07836>`__
 
+.. _the-sandwich-laplace-coordinates:
+
 The Sandwich: Running Any Forecasting Model in Laplace's Coordinates
 --------------------------------------------------------------------
 
