@@ -9228,6 +9228,18 @@
     "short_description": null
   },
   {
+    "title": "The Sandwich: Running Any Forecasting Model in Laplace's Coordinates",
+    "authors": "Peter Cotton",
+    "publication_year": 2026,
+    "download_page": "https://skaters.microprediction.org/sandwich.html",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-08-10",
+    "filename": "the-sandwich-running-any-forecasting-model-in-laplaces-coordinates.pdf",
+    "downloaded_at": "2026-08-10",
+    "download_failure_reason": null,
+    "short_description": "Documents the skaters library's 'laplace sandwich': wrap any forecaster by fitting it on the Rosenblatt-transformed z stream produced by the laplace forecaster, then map the density back through the exact Jacobian, with no retraining. Measured lifts show ETS, AutoARIMA, GARCH and Prophet moving from roughly two nats behind plain laplace to parity on FRED-30, Prophet closing 97% of its density gap across 921 pre-registered series, and TabFM/PyMC filling reaching positive epsilons on repeat-heavy series. Anomaly-detector results mark the boundary: DSPOT's UCR accuracy nearly doubles, RRCF is a wash, and a matrix-profile discord detector is hurt because whitening destroys its templates."
+  },
+  {
     "title": "Time Series Fundamentals",
     "authors": "Simone Menaldo",
     "publication_year": null,
