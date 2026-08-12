@@ -4476,6 +4476,18 @@
     "short_description": "Ané and Geman show that normality of asset returns can be recovered through a stochastic time change, extending Clark (1973): the cumulative number of trades is a better stochastic clock than volume for generating virtually normal returns, and the clock can be modelled nonparametrically as a jump diffusion. Using tick-by-tick data on Cisco and Intel, the paper provides the statistical foundation for tick/information-driven bars — re-indexing returns by trade count collapses the fat-tailed calendar-time distribution toward Gaussian (a later comment by Murphy-Izzeldin notes higher moments are not perfectly recovered)."
   },
   {
+    "title": "Per-Level Toxicity Avoidance Learned from a Market Maker's Public Hyperliquid Wallet",
+    "authors": "Takopi (@OctopusTakopi)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/OctopusTakopi/status/2087212750334459907",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-08-12",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An X post reporting a live market-making model on the Binance SOL perpetual whose per-level toxicity-avoidance component was learned from Wintermute's publicly visible Hyperliquid wallet, with the code generated entirely by an AI agent primed on the author's earlier market-making codebase. The accompanying analysis explains toxic flow as per-fill adverse selection measured by markout, why toxicity must be modelled per price level rather than as a single spread multiplier, and why an on-chain order book turns a professional market maker's fills, quote placements, and absences into a labelled training set unavailable on anonymised centralised-exchange tapes. It also sets out the transfer risks: a cloned policy is tuned to another venue's fees, latency, and flow mix, only the on-chain leg of a hedged multi-venue book is visible, and a five-minute screen recording is not evidence of net profitability."
+  },
+  {
     "title": "Predictive Order Flow Imbalance: Cross-Asset Microstructure Alpha",
     "authors": "Kethan S E",
     "publication_year": 2026,
