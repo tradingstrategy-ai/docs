@@ -218,3 +218,18 @@ Key metrics: the net-of-fee portfolio is reported to achieve a CAGR of 24.6%, a 
 Mentioned by Carlo Zarattini (Founder of Concretum Group, co-founder of R-Candles.com) in `this LinkedIn discussion <https://www.linkedin.com/posts/carlozarattini_a-systematic-approach-to-sector-dispersion-share-7478841533954379776--B0e/>`__, where he describes it as "a simple systematic trading model designed to exploit temporary price dislocations while remaining attractive even under conservative transaction-cost assumptions," intended as an ideal starting point for developing more sophisticated tactical sector-dispersion models.
 
 `Read the research piece <https://concretumgroup.substack.com/p/profiting-from-sector-dispersion>`__
+
+Larry Connors' R3 Strategy (It Still Works)
+--------------------------------------------
+
+Quantified Strategies backtests the R3 strategy from Chapter 4 of Larry Connors' 2009 book *High Probability ETF Trading*, checking whether the published edge survived the twelve years after publication. R3 is a short-term mean-reversion system built on the 2-day RSI: the close must be above the 200-day moving average, the 2-day RSI must fall three days in a row with the first drop starting from a reading below 60, and the 2-day RSI must be below 10 on the entry day. The position is exited on the close once the 2-day RSI rises above 70. Connors also proposed an aggressive variant that adds a second unit whenever the position trades below the entry price, but that version is not tested here.
+
+Our summary: replicated on Connors' basket of 20 liquid ETFs (plus GDX, GDXJ, TLT, XLP, and XME added by the author) from inception to December 2020, the strategy still works but has decayed — roughly half the ETFs performed worse over the twelve years since publication, and the author could not reproduce Connors' fill counts exactly despite both using dividend-adjusted data. On SPY the win rate is 90% but there are only 96 trades since 1993. Run as a portfolio across all 25 ETFs from 2000 to 2020, capped at five concurrent positions and 20% equity per position, R3 produced 992 trades, a 75% win ratio, 0.68% average gain per trade, a profit factor of 2.08, a 6.47% CAGR, and a -16% maximum drawdown concentrated in the August 2011 sovereign debt crisis. A QQQ/SPY-only version raises the profit factor to 3.37 but drops the CAGR to 2.69% because the strategy is only in the market 4.5% of the time — the classic mean-reversion trade-off between high per-trade quality and low capital utilisation.
+
+Data and reproduction: Amibroker backtests on 25 dividend-adjusted ETFs from inception (1993 for SPY) through December 2020, with no commissions or slippage included. The full Amibroker code sits behind the site's membership, so the rules are reproducible from the article text but the exact implementation is not published.
+
+Key metrics: all-ETF portfolio — 992 trades, 75% win ratio, 0.68% average gain per trade, profit factor 2.08, CAGR 6.47%, max drawdown -16%. SPY alone — 90% win rate over 96 trades. QQQ/SPY portfolio — profit factor 3.37, CAGR 2.69%, 4.5% time in market.
+
+By Oddmund Groette (QuantifiedStrategies.com).
+
+`Read the blog post <https://www.quantifiedstrategies.com/larry-connors-r3-strategy/>`__

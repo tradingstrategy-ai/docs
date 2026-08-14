@@ -4932,6 +4932,18 @@
     "short_description": null
   },
   {
+    "title": "Larry Connors' R3 Strategy (It Still Works)",
+    "authors": "Oddmund Groette (QuantifiedStrategies.com)",
+    "publication_year": 2020,
+    "download_page": "https://www.quantifiedstrategies.com/larry-connors-r3-strategy/",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-08-14",
+    "filename": "larry-connors-r3-strategy.pdf",
+    "downloaded_at": "2026-08-14",
+    "download_failure_reason": null,
+    "short_description": "A backtest of Larry Connors' R3 mean-reversion strategy from High Probability ETF Trading (2009), which buys when the 2-day RSI falls three days in a row below 10 while price is above the 200-day moving average, and exits when the 2-day RSI rises above 70. Tested on 25 liquid ETFs through December 2020, the portfolio version produced 992 trades with a 75% win ratio, 2.08 profit factor, 6.47% CAGR and -16% max drawdown. The edge still works twelve years after publication but has decayed, with roughly half the ETFs performing worse than in Connors' original results."
+  },
+  {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
     "authors": "Tim Leung and Xin Li",
     "publication_year": 2015,
