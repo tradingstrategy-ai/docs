@@ -9756,6 +9756,18 @@
     "short_description": null
   },
   {
+    "title": "VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence",
+    "authors": "David Mesicek (Alpha Architect)",
+    "publication_year": 2026,
+    "download_page": "https://alphaarchitect.com/vix-trend-following-out-of-sample/",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-08-15",
+    "filename": "vix-and-trend-following-revisited-out-of-sample.pdf",
+    "downloaded_at": "2026-08-15",
+    "download_failure_reason": null,
+    "short_description": "An out-of-sample retest of Alpha Architect's 2017 idea that the VIX should set the lookback length of a trend-following momentum signal, run on an ETF proxy (SPY, VXF, EFA, AGG, BIL) from August 2017 through June 2026. The concentrated VIX Top 1 variant delivered 14.09% net CAGR versus 9.87% for a fixed ten-month benchmark, with a higher Sharpe (1.03 vs 0.81) and smaller drawdown, and the edge survived transaction costs up to 50 bps. The caveats matter more than the headline: over 80% of the excess return came from the elevated-but-not-extreme 'Yellow' regime, the strategy beat its benchmark in only 13% of months, the two-asset version added nothing, and neither the t-test (p = 0.17) nor the Wilcoxon test (p = 0.42) reaches significance."
+  },
+  {
     "title": "Volatility Targeting: Transforming a -70% Drawdown Strategy into 1,328% Returns",
     "authors": "Pedma",
     "publication_year": null,
