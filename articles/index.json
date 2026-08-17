@@ -1860,6 +1860,18 @@
     "short_description": null
   },
   {
+    "title": "Why Published Trading Edges Still Work Decades Later",
+    "authors": "D. Martin (@dmartin_trading)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/dmartin_trading/status/2089351541203562918",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-08-17",
+    "filename": "why-published-trading-edges-still-work-decades-later.pdf",
+    "downloaded_at": "2026-08-17",
+    "download_failure_reason": null,
+    "short_description": "An X post arguing that strategies published decades ago still work because durable edges rest on one of four foundations: structural (institutional flows, hedging, rebalancing, forced buying and selling), behavioral (repeated investor mistakes), risk premium (compensation for tolerating a payoff others cannot), or capital constraint (profitable at small size but too small to interest institutions). The takeaway is that publishing such a strategy does not crowd it out, and that research should ask what persistent market behavior a strategy harvests rather than hunting for secret indicators. Illustrated with a 1990s Larry Williams strategy returning roughly +82R long and short from 2008 to 2025, though the rules, trade count and cost assumptions are not disclosed."
+  },
+  {
     "title": "A Wavelet Tour of Signal Processing: The Sparse Way",
     "authors": "Stéphane Mallat",
     "publication_year": 2009,

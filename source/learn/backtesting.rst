@@ -302,3 +302,20 @@ The distinction matters most for spread-sensitive, multi-leg structures like iro
 Mentioned by Halcyon Waters (@Halcyon_Waters), a crypto options data provider built by ex-bank quants, in `this discussion <https://x.com/Halcyon_Waters/status/2080981156393046040>`__, where they note that "Most iron condor backtests use mid price" and describe testing against cohort-level bid/ask depth across Deribit, Derive and Thalex to model realistic fills.
 
 `Read the post <https://x.com/Halcyon_Waters/status/2080981156393046040>`__.
+
+Why Published Trading Edges Still Work Decades Later
+------------------------------------------------------
+
+A short essay on why a strategy whose rules were published in a book decades ago can still be profitable today, and what that implies for how research should be conducted. The author's starting observation is that several strategies in his own portfolio use almost the exact same rules as ones published decades ago, yet still work — which he argues is not a paradox once you ask *why* an edge exists rather than whether it is secret.
+
+The post proposes a four-part taxonomy of durable edge. A **structural edge** exists because of how markets are organised — institutional flows, hedging, rebalancing, execution constraints, and forced buying and selling. A **behavioral edge** exists because investors repeatedly make the same mistakes: underreacting, overreacting, chasing performance, panicking, anchoring, and herding. A **risk premium** compensates you for accepting a risk, drawdown profile, or payoff structure that other investors are unwilling or unable to tolerate. A **capital constrained edge** is profitable at small size but lacks the capacity to matter to institutions managing billions.
+
+Our summary: the practical conclusion is a useful corrective to the secrecy instinct common among retail systematic traders — if an edge rests on any of these four foundations, publishing it does not destroy it, because none of the four mechanisms are undone by more people knowing about them. Institutions almost certainly discovered some version of the underlying effect long before you did, and the ones that could arbitrage it away either already have or are structurally prevented from doing so at the sizes they run. The author's reframing of the research question is the part worth keeping: instead of searching for secret indicators and magical combinations of rules, ask what persistent market behavior or economic phenomenon a strategy is actually harvesting. That question is also a practical overfitting filter — a strategy with no answer to it is far more likely to be a data-mining artifact than one with a clear structural or behavioral mechanism behind it.
+
+Evidence offered: a single chart showing a popular Larry Williams strategy published in the 1990s, traded long and short from 2008-01-01 to 2025-12-31, with a cumulative result of roughly +82R. The equity curve is choppy and roughly flat through 2008–2010 before climbing steadily, with the steepest gains concentrated near the end of the sample. The author attributes its persistence to a behavioral edge. Note the limits of this as evidence: the specific strategy rules are not stated in the post, results are shown in R multiples with no stated risk per trade, trade count, drawdown, or cost assumptions, and the chart is a single illustrative case rather than a systematic test of the taxonomy.
+
+Mentioned by D. Martin (@dmartin_trading), a systematic trader, in `this discussion <https://x.com/dmartin_trading/status/2089351541203562918>`__, where he writes that "for most retail traders, sharing a strategy is unlikely to suddenly make the edge disappear or become 'too crowded'" and that "if you find a system that consistently makes money, it's probably not a secret."
+
+By D. Martin.
+
+`Read the post <https://x.com/dmartin_trading/status/2089351541203562918>`__.
