@@ -171,6 +171,50 @@ It is the theoretical foundation beneath the Probability of Informed Trading (PI
 
 `Buy the book <https://www.amazon.com/Market-Microstructure-Theory-Maureen-OHara/dp/1557864438>`__.
 
+Statistics 101: From Data Analysis and Predictive Modeling to Measuring Distribution and Determining Probability
+-----------------------------------------------------------------------------------------------------------------
+
+David Borman (Adams Media, 2018) wrote a plain-language crash course in statistics aimed at readers with no formal background in the subject. It works through descriptive statistics, data analysis, probability, distributions, sampling, and the basics of predictive modeling, keeping the mathematics light and leaning on worked examples rather than derivations. It is part of the Adams *101* general-reference series, not a finance text — there is no trading content in it at all.
+
+Its place in this collection is as a prerequisite rather than a trading book. Systematic trading is applied statistics: expectancy, sample size, distribution shape, and the difference between a real effect and noise are the concepts that decide whether a backtest means anything. A trader who cannot reason about those ideas has no defence against the overfitting problems documented throughout the :doc:`backtesting <./backtesting>` material here.
+
+Mentioned by D. Martin (@dmartin_trading) in `this discussion <https://x.com/dmartin_trading/status/2090076324186489203>`__, where he calls it "an essential book" because "statistics is at the core of systematic trading," notes that "the author does a great job of making the information easy to digest," and estimates it can be finished in one to three weeks.
+
+`Buy the book <https://www.amazon.com/dp/1507208170>`__
+
+Trading Systems and Methods, 6th Edition
+------------------------------------------
+
+Perry J. Kaufman (Wiley Trading, 2019) maintains what is probably the most comprehensive single-volume reference on systematic trading. Now in its sixth edition and running well over a thousand pages, it covers the full development lifecycle: data preparation and statistics, charting and pattern recognition, trend systems and moving averages, momentum and oscillators, seasonality and cycles, arbitrage and spreads, multiple time frames, portfolio construction and allocation, risk control and position sizing, system testing and optimisation, and the practical problems of running strategies once they are live. It ships with a companion website of spreadsheets and TradeStation/Excel code for the systems described.
+
+The book's value is its breadth and its neutrality — Kaufman documents how each family of methods works, what conditions it depends on, and where it fails, rather than advocating a single approach. It functions well as a reference to be consulted by topic rather than read cover to cover, and it is a natural companion to the strategy families catalogued here under :doc:`trend following <./trend-following>`, :doc:`momentum <./momentum>`, and :doc:`mean reversion <./mean-reversion>`.
+
+Mentioned by D. Martin (@dmartin_trading) in `this discussion <https://x.com/dmartin_trading/status/2090076324186489203>`__, where he calls it "the best book I have ever come across," says it "comprehensively covers every necessary topic involved in developing and managing trading systems," and adds that "if you could only read one book from this list, it would be this."
+
+`Buy the book <https://www.amazon.com/Trading-Systems-Methods-Wiley/dp/1119605350>`__
+
+Testing and Tuning Market Trading Systems: Algorithms in C++
+--------------------------------------------------------------
+
+Timothy Masters (Apress, 2018) presents the statistical machinery for evaluating trading systems honestly, with working C++ implementations for every technique. The book covers pre-processing and indicator construction, permutation tests for assessing whether performance could have arisen by chance, walk-forward and cross-validation analysis, bias-corrected estimation of future performance, the multiple-comparisons problem that arises when many systems or parameter sets are tested, and methods for detecting when a strategy has stopped working.
+
+Chapter 5, *Estimating Future Performance*, is the one most worth the price of entry: it addresses the gap between in-sample backtest results and what a system will realistically deliver going forward, which is precisely the question that optimisation-heavy and AI-assisted research tends to answer far too optimistically. This is a dense, technical text — it is the rigorous counterpart to the Deflated Sharpe Ratio and Probability of Backtest Overfitting material in :doc:`Backtesting & Research Methodology <./backtesting>`.
+
+Mentioned by D. Martin (@dmartin_trading) in `this discussion <https://x.com/dmartin_trading/status/2090076324186489203>`__, where he is candid that it is "a heavy read" and that "most of it is irrelevant to the average trader" — he has read only Chapters 1, 5 and 7, which "touch on extremely important concepts in a way I haven't seen in other books," and singles out Chapter 5 as "particularly important" for anyone developing strategies with AI.
+
+`Buy the book <https://www.amazon.com/dp/148424172X>`__
+
+Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts
+------------------------------------------------------------------------------
+
+Annie Duke (Portfolio, 2018), a former professional poker player with a background in cognitive psychology, argues that most consequential decisions resemble poker rather than chess: the outcome depends on both skill and luck, and information is always incomplete. The central idea is *resulting* — the error of judging a decision by how it turned out rather than by whether it was well reasoned given what was knowable at the time. Duke reframes beliefs as probabilistic bets, examines how hindsight bias and motivated reasoning corrupt learning from outcomes, and describes practical habits for separating signal from noise, including truth-seeking peer groups and scenario planning.
+
+It is not a trading book and contains no strategies, but the failure mode it targets is endemic to systematic trading. Judging a strategy by a short run of profitable trades, abandoning a sound system during a normal drawdown, or crediting skill for what was variance are all forms of resulting — and they are the reasons traders override rules that were correct. It pairs naturally with the process-versus-outcome discipline that the :doc:`risk management <./risk-management>` material here assumes.
+
+Mentioned by D. Martin (@dmartin_trading) in `this discussion <https://x.com/dmartin_trading/status/2090076324186489203>`__, where he notes it "is not directly a trading book, but it does a good job of teaching you how to make good decisions under uncertainty."
+
+`Buy the book <https://www.amazon.com/dp/0735216355>`__
+
 Further reading lists
 =====================
 

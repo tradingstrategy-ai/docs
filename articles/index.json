@@ -2076,6 +2076,30 @@
     "short_description": null
   },
   {
+    "title": "Statistics 101: From Data Analysis and Predictive Modeling to Measuring Distribution and Determining Probability",
+    "authors": "David Borman",
+    "publication_year": 2018,
+    "download_page": "https://www.amazon.com/dp/1507208170",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-08-19",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A plain-language crash course in statistics for readers with no formal background, covering descriptive statistics, probability, distributions, sampling and basic predictive modeling with worked examples rather than derivations. It contains no trading content; its relevance is as a prerequisite, since expectancy, sample size and telling a real effect from noise are what decide whether a backtest means anything. Recommended by D. Martin as foundational reading before using AI for strategy development."
+  },
+  {
+    "title": "Testing and Tuning Market Trading Systems: Algorithms in C++",
+    "authors": "Timothy Masters",
+    "publication_year": 2018,
+    "download_page": "https://www.amazon.com/dp/148424172X",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-08-19",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A technical treatment of how to evaluate trading systems honestly, with working C++ implementations: permutation tests for whether performance could have arisen by chance, walk-forward and cross-validation analysis, bias-corrected estimates of future performance, the multiple-comparisons problem, and detecting when a strategy has stopped working. Chapter 5, Estimating Future Performance, addresses the gap between in-sample backtest results and realistic forward expectations, which is the question optimisation-heavy and AI-assisted research answers far too optimistically."
+  },
+  {
     "title": "The Algorithmic Crypto Playbook",
     "authors": "Pavel Kycek",
     "publication_year": null,
@@ -2086,6 +2110,30 @@
     "downloaded_at": "2026-03-15",
     "download_failure_reason": null,
     "short_description": null
+  },
+  {
+    "title": "Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts",
+    "authors": "Annie Duke",
+    "publication_year": 2018,
+    "download_page": "https://www.amazon.com/dp/0735216355",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-08-19",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "A former professional poker player argues that consequential decisions resemble poker rather than chess — outcomes depend on both skill and luck, and information is always incomplete. The central concept is 'resulting', the error of judging a decision by its outcome rather than by whether it was well reasoned given what was knowable. Not a trading book, but the failure mode is endemic to systematic trading: judging a strategy on a short run of trades, abandoning a sound system in a normal drawdown, or crediting skill for variance."
+  },
+  {
+    "title": "Trading Systems and Methods, 6th Edition",
+    "authors": "Perry J. Kaufman",
+    "publication_year": 2019,
+    "download_page": "https://www.amazon.com/Trading-Systems-Methods-Wiley/dp/1119605350",
+    "source_file": "books.rst",
+    "included_in_index_at": "2026-08-19",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": "The most comprehensive single-volume reference on systematic trading, covering data preparation, charting and pattern recognition, trend and momentum systems, seasonality and cycles, arbitrage, multiple time frames, portfolio allocation, risk control, system testing and live operation, with a companion website of spreadsheets and code. Its value is breadth and neutrality: Kaufman documents how each family of methods works and where it fails rather than advocating one approach. D. Martin calls it the single book to read if you could only read one."
   },
   {
     "title": "Wavelet Applications in Economics and Finance",
