@@ -2184,6 +2184,18 @@
     "short_description": null
   },
   {
+    "title": "Basis Trading and HIP-3 Spread Capture",
+    "authors": "Pallas Fund",
+    "publication_year": 2026,
+    "download_page": "https://app.pallas.fund/thesis/basis-trading-hip-3",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-08-20",
+    "filename": "basis-trading-and-hip-3-spread-capture.pdf",
+    "downloaded_at": "2026-08-20",
+    "download_failure_reason": null,
+    "short_description": "Pallas Fund's investment thesis for a delta-neutral vault capturing spreads and funding differentials between Hyperliquid Core and HIP-3 builder perpetual markets, framed on Grossman-Stiglitz equilibrium inefficiency. The most transferable content is the cross-venue funding-mechanics comparison (funding period, premium sampling, caps, oracle source) and the argument that a structural, fee-bounded edge decays gradually rather than dying on discovery. Performance figures are self-reported over a 90-day live sample and should be read as exposition rather than evidence; fees at 4.42 bps against an 8.83 bps breakeven are the binding constraint."
+  },
+  {
     "title": "Crypto Factor Leadership and the Seven-Factor Composite",
     "authors": "Daniel Szemerey",
     "publication_year": 2026,
