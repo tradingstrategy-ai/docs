@@ -4668,6 +4668,18 @@
     "short_description": null
   },
   {
+    "title": "A Hidden Markov Choppiness Classifier for Trend-Following Regimes",
+    "authors": "Andreas Steiner",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/andreassteiner_it-is-well-known-that-investment-strategies-share-7496097958736760832-y5nq/",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-08-20",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Andreas Steiner builds a choppy-vs-trending regime classifier by computing choppiness features (Kaufman efficiency ratio, lag-1 autocorrelation, Lo-MacKinlay VR(5), EWMA realised volatility), z-scoring them into a composite score, and fitting a two-state Gaussian hidden Markov model on the USD MACS universe. The fit splits history 74.6% trending / 25.4% choppy with near-absorbing transition persistence, and the ten choppy spells it isolates map cleanly onto known macro episodes from Bear Stearns 2008 through the 2026 AI-valuation/tariff shock."
+  },
+  {
     "title": "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle",
     "authors": "James D. Hamilton",
     "publication_year": 1989,

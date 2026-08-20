@@ -588,3 +588,16 @@ Key metrics: this is a generator/risk-model study rather than a trading strategy
 Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/PtrPomorski/status/2069804993394430268>`__, where he shared the paper with the quip "this polish baby boy really love HMM lol".
 
 `Read the paper <https://arxiv.org/abs/2606.23492>`__
+
+A Hidden Markov Choppiness Classifier for Trend-Following Regimes
+-----------------------------------------------------------------
+
+Investment strategies are regime-dependent, and time-series momentum (TSMOM) is the canonical example of one that struggles in choppy, directionless markets. This post sketches a concrete route to a choppiness classifier: compute a small panel of choppiness feature time series — the Kaufman efficiency ratio, lag-1 return autocorrelation, the Lo–MacKinlay variance ratio VR(5), and EWMA realised volatility — collapse them into a single z-scored composite choppiness score, then fit a two-state Gaussian hidden Markov model to that composite. The two latent states are read directly as "trending" and "choppy". The data is the USD MACS universe used in the author's previous post.
+
+The fitted model splits history 74.6% trending / 25.4% choppy, with a highly persistent transition matrix (self-transition probabilities of roughly 0.997 and 0.992), so regimes are long-lived rather than flipping bar to bar. The sanity check that makes the exercise interesting is episode-by-episode interpretation: the ten choppy spells the model isolates line up with recognisable macro events rather than looking like statistical noise — Bear Stearns in 2008, the 2008–09 global financial crisis, the 2009–10 post-crisis consolidation, both waves of the European debt crisis, the Irish bailout jitters, COVID-19, the 2022 Fed hiking cycle, the 2025 "Liberation Day" tariff shock, and the 2026 AI-valuation/tariff episode. State means and per-component diagnostics are reported by regime as well.
+
+By Andreas Steiner.
+
+In the discussion, Richard Brennan notes that in agent-based modelling, fat tails and volatility clustering emerge at around a 24% mixture mark even when the underlying distributions are Gaussian — close to the choppy-state frequency the HMM recovers here. The author adds that he covers these and other regime-related topics in his `seminar on Markov regime models <http://www.andreassteiner.net/training>`__.
+
+`Read the post <https://www.linkedin.com/posts/andreassteiner_it-is-well-known-that-investment-strategies-share-7496097958736760832-y5nq/>`__.
