@@ -4740,6 +4740,18 @@
     "short_description": "Foundational online regime-change detection: derives an exact recursive algorithm maintaining the posterior over the current run length (time since last changepoint) via message passing, suitable for streaming market data. Widely implemented; vanilla cost grows with run-length hypotheses so streaming use needs pruning."
   },
   {
+    "title": "Classifying Volatility Regimes with K-Nearest Neighbors",
+    "authors": "Jagteshwar Sodhi",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/jagteshwarsodhi_quantitativefinance-machinelearning-tradingstrategies-share-7496106295595360256-V9u0/",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-08-20",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A conceptual walkthrough of using K-Nearest Neighbors as a non-parametric classifier for volatility regimes across S&P 500 constituents: engineer features (rolling variance, ATR, relative volume spikes, VIX), normalise them so distance is not dominated by scale, find the k nearest historical sessions, and label regimes from forward realised volatility. Notes the curse of dimensionality as the main pitfall and early regime detection as the payoff; presents no backtest results, dataset, or code."
+  },
+  {
     "title": "Continuous Hidden Markov Models for Equity Returns: Heavy-Tail Emission Families and Regime-Conditional Value-at-Risk",
     "authors": "Abdulrahman Alswaidan, Cade Jin, Jeffrey D. Varner",
     "publication_year": 2026,

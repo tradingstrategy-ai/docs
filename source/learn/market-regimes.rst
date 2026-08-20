@@ -601,3 +601,16 @@ By Andreas Steiner.
 In the discussion, Richard Brennan notes that in agent-based modelling, fat tails and volatility clustering emerge at around a 24% mixture mark even when the underlying distributions are Gaussian — close to the choppy-state frequency the HMM recovers here. The author adds that he covers these and other regime-related topics in his `seminar on Markov regime models <http://www.andreassteiner.net/training>`__.
 
 `Read the post <https://www.linkedin.com/posts/andreassteiner_it-is-well-known-that-investment-strategies-share-7496097958736760832-y5nq/>`__.
+
+Classifying Volatility Regimes with K-Nearest Neighbors
+-------------------------------------------------------
+
+Volatility clusters: high-volatility days group together and quiet periods persist, so risk does not follow a simple random walk. This post outlines using K-Nearest Neighbors (KNN) classification to label volatility regimes across S&P 500 constituents. The argument for an instance-based method is that it makes no assumption about the distribution of returns — instead of fitting a parametric law, it classifies the current market by historical proximity, effectively asking what happened the last few times the feature space looked like this. That sidesteps the trouble parametric linear models have with non-linear shocks.
+
+The sketched workflow has four steps: engineer features (rolling return variance, Average True Range, relative volume spikes, and macro context such as the VIX); normalise them by z-score or min-max scaling so high-magnitude features do not dominate the distance computation; compute Euclidean or Manhattan distances to isolate the k most similar historical sessions; and assign discrete regime labels — low volatility, neutral, high volatility — from forward-looking realised volatility windows. The practical cautions are the curse of dimensionality (piling on technical indicators dilutes the distance metric and degrades classification accuracy, so keep feature sets disciplined) and the downstream use case: catching a regime shift early lets an automated strategy resize positions, rebalance option hedges, or widen market-making spreads. The post closes by asking readers how instance-based models compare against GARCH or Hidden Markov Models for the same job.
+
+Note that this is a conceptual walkthrough of the approach — it presents no backtest results, dataset, or code.
+
+By Jagteshwar Sodhi.
+
+`Read the post <https://www.linkedin.com/posts/jagteshwarsodhi_quantitativefinance-machinelearning-tradingstrategies-share-7496106295595360256-V9u0/>`__.
