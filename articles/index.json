@@ -9216,6 +9216,18 @@
     "short_description": null
   },
   {
+    "title": "The Volume Momentum Deviation Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2091750955582980218",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-08-24",
+    "filename": "the-volume-momentum-deviation-factor.pdf",
+    "downloaded_at": "2026-08-24",
+    "download_failure_reason": null,
+    "short_description": "An X post describing a volume-based factor built as a MACD histogram on volume rather than price: sma(volume,13,2) - sma(volume,27,2) minus a 10-period smoothing of that difference. The thesis is a lead-lag effect — short-horizon volume strengthening against its longer-horizon baseline while price has not yet responded signals rising participation and a potential trend or mispricing. The author shows a backtest equity curve and notes the whole factor is two lines of code."
+  },
+  {
     "title": "Time of Day Same Bar Trading",
     "authors": "Petr Podhajsky",
     "publication_year": null,

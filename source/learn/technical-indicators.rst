@@ -178,3 +178,14 @@ By Tomas Nesnidal.
 Mentioned by `Breakout Trading Academy (@onlybreakouts) in this X discussion <https://x.com/onlybreakouts/status/2062596797936075062>`__, where the thread summarizes the article as evidence that bar range relative to ATR, volume, and other simple volatility/participation filters beat more complex indicator conditions across thousands of breakout strategies.
 
 `Read the blog post <https://breakoutos.com/blog/research-indicator-study>`__
+
+The Volume Momentum Deviation Factor
+-------------------------------------
+
+A short, self-contained write-up of a volume-based factor the author calls the Volume Momentum Deviation Factor. The construction is a MACD histogram computed on volume rather than price: take a fast smoothed moving average of volume, subtract a slow one, then subtract that difference's own smoothing, leaving the second-order deviation. The published formula is ``sma(volume,13,2) - sma(volume,27,2) - sma(sma(volume,13,2) - sma(volume,27,2),10,2)`` — a 13/27 volume MACD with a 10-period signal line, expressed in the two-argument SMA convention used by Chinese quant platforms (period, weight).
+
+The economic story is a lead-lag one. When short-horizon volume strengthens sharply against its longer-horizon baseline, participation and trading heat are rising; when that pickup in volume structure is not yet matched by a corresponding price move, the author reads the gap between fund behaviour and price performance as evidence of an incipient trend or a mispricing. The factor is meant to capture that "volume leading, price not yet reflecting" state and the continuation or correction that follows it. The post shows a backtest equity curve and notes that the whole thing is two lines of source code, inviting readers to test it themselves.
+
+By 套利豪仔 (@pritipatelfgoo).
+
+`Read the X post <https://x.com/pritipatelfgoo/status/2091750955582980218>`__.
