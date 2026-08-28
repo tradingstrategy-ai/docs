@@ -3648,6 +3648,18 @@
     "short_description": null
   },
   {
+    "title": "The Volatility Range Expansion Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2093215831199297732",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-08-28",
+    "filename": "the-volatility-range-expansion-factor.pdf",
+    "downloaded_at": "2026-08-28",
+    "download_failure_reason": null,
+    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -MEAN(TrueRange,12), tested on a daily-rebalanced quantile backtest from 2005 to 2026 with the top quantile returning roughly 80x against 12x for the bottom and a cumulative Rank IC above 30. Despite being framed as a volatility-expansion signal, the leading minus sign makes it a low-volatility selector, and the entry explains why it should work — betting-against-beta and lottery-preference effects amplified in retail-dominated A-shares, with true range correctly capturing limit-up gaps that a high-low range would miss. Our analysis flags the main weakness: true range is never normalised by price, so the sort is substantially a low-price and therefore small-cap sort, consistent with the backtest's gains clustering in the 2015 small-cap bubble and the 2024-2026 micro-cap rally."
+  },
+  {
     "title": "Value Premium: Where Does It Really Come From?",
     "authors": null,
     "publication_year": null,
