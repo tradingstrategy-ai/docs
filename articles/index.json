@@ -10008,6 +10008,18 @@
     "short_description": "An X article by Kris Abdelmessih (Moontower) arguing that the volatility risk premium an option seller actually earns depends critically on measurement — ratio (IV/RV) versus spread (IV minus RV) — and on the distinction between volatility and variance, since a short option's P&L scales with the gap in squared vols. Using HYG as the running example, it shows that ratio screens flatter low-vol names: theta-neutral sizing equalizes decay but not variance edge (which requires the square of the theta ratio), so a 10-vol name would have to trade near 17.9 vol to match a 50-vol name at a 20% premium. The takeaway is that variance is the 'V' that matters, vol-point spreads rank opportunities better than ratios, and harvesting low-vol premium is costlier in contracts traded and gamma hedging."
   },
   {
+    "title": "BTC Systematic Options Strategy Index: Same Strangle, Weekend Versus Full Week",
+    "authors": "leifu (@leifuchen)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/leifuchen/status/2092637603556102161",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-08-28",
+    "filename": "btc-systematic-options-strategy-index-weekend-versus-full-week.pdf",
+    "downloaded_at": "2026-08-28",
+    "download_failure_reason": null,
+    "short_description": "An instalment of a recurring biweekly report tracking six systematic BTC option-selling indices built on a common 35-delta strike rule, from base 100 on 2019-07-01 to 2026-08-23, using synthetic 7-day options with no delta hedging and no transaction costs. The headline result is a natural experiment: the weekly 35-delta strangle returns +104% at Sharpe 0.47 with a -66% drawdown, while the identical strangle held only across the 40-hour weekend returns +1393% at Sharpe 2.52 with a -26% drawdown and an 83% weekly win rate. The entry explains the mechanism — options are priced off calendar time while volatility follows information arrival, and weekends carry far less news than their share of the week — and contrasts it with the Thalex weekend long-straddle result elsewhere in the same file, which is a vega trade rather than a realised-variance trade."
+  },
+  {
     "title": "Comparing Deep Learning Models for the Task of Volatility Prediction Using Multivariate Data",
     "authors": "Wenbo Ge, Pooia Lalbakhsh, Leigh Isai, Artem Lensky, and Hanna Suominen",
     "publication_year": null,
