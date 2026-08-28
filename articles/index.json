@@ -9193,7 +9193,7 @@
   },
   {
     "title": "Replicating and Improving the Saty Phase Oscillator Opening-Window Strategy",
-    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren (@etbent1)",
+    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren (@etbent1), Cédric Després (@semoi69)",
     "publication_year": 2026,
     "download_page": "https://x.com/etbent1/status/2092860879712801203",
     "source_file": "technical-indicators.rst",
@@ -9201,7 +9201,7 @@
     "filename": "saty-phase-oscillator-opening-window-strategy-replication.pdf",
     "downloaded_at": "2026-08-28",
     "download_failure_reason": null,
-    "short_description": "An X quote-chain documenting a published intraday NQ strategy — Saty Phase Oscillator on a 10m chart, long above +100 and short below -100, entries 9:30-11:00 ET, exit on opposite cross, no stop or target — and its independent replication in MQL5 and Python on USTEC, landing within 2% of the original. The replicator adds a beta control, a 1000-variant random-entry null and train/test splits, then improves the system by ending the entry window at 10:00, exiting at the 61.8 level, and skipping entries more than 2.5 ATR from session VWAP; the original author then adopts all three on NQ and reports profit factor 3.07, return/drawdown 21.8x and a 5.18 t-statistic over 182 trades since 2019, with shorts outearning longs $140K to $87K. The entry adds our own reading of the mechanism — an opening-imbalance momentum trade whose ATR normaliser is overnight-scaled early in the session — and of why it should rank NQ above the S&P 500 and fail on continuously traded assets."
+    "short_description": "An X quote-chain documenting a published intraday NQ strategy — Saty Phase Oscillator on a 10m chart, long above +100 and short below -100, entries 9:30-11:00 ET, exit on opposite cross, no stop or target — its independent replication in MQL5 and Python on USTEC, and three improvements (10:00 window cutoff, 61.8 exit, 2.5-ATR VWAP filter) that the original author then adopted on NQ, reporting profit factor 3.07 and a 5.18 t-statistic over 182 trades since 2019. A third party then extends the backtest to 2000 under percentage-of-capital sizing and finds the published window is unrepresentative: the strategy runs sideways-to-underwater from roughly 2009 to 2016, and the fixed-contract equity curve is flat before 2019 only because a Nasdaq point buys the same $20 at an index level of 1,500 as at 25,000. The entry adds our own analysis of the mechanism — an opening-imbalance momentum trade whose ATR normaliser is overnight-scaled early in the session — of why it ranks NQ above the S&P 500, and of why the sizing convention and the post-2019 microstructure regime together explain the divergence."
   },
   {
     "title": "SMA Crossovers in Crypto: Why Simpler Trend Signals Outperform Complex Models",
