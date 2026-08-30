@@ -2929,15 +2929,15 @@
   },
   {
     "title": "Crypto Momentum Is Explained by Size: Shorting Pumped Small Caps",
-    "authors": "Scott Phillips",
+    "authors": "Scott Phillips (@ScottPh77711570), dima (@dima_quant)",
     "publication_year": 2026,
     "download_page": "https://x.com/ScottPh77711570/status/2092945468410274091",
     "source_file": "cryptocurrency.rst",
     "included_in_index_at": "2026-08-27",
     "filename": "crypto-momentum-is-explained-by-size-shorting-pumped-small-caps.pdf",
-    "downloaded_at": "2026-08-27",
+    "downloaded_at": "2026-08-30",
     "download_failure_reason": null,
-    "short_description": "A ten-post X thread arguing that the crypto momentum premium is a size effect: momentum is strongest in large coins and turns negative in roughly the smallest decile, so a large one-day gain in a micro-cap token predicts a subsequent fall. The trade is to short the biggest one-day gainers among the smallest names, run many small concurrent positions, and accept short-squeeze losses as the compensated risk rather than filtering for them — the edge persists because capacity is too small for professional capital and squeezes punish anyone who presses size. No backtest, universe definition, or cost assumptions are given."
+    "short_description": "A ten-post X thread arguing that the crypto momentum premium is a size effect: momentum is strongest in large coins and turns negative in roughly the smallest decile, so a large one-day gain in a micro-cap token predicts a subsequent fall. The trade is to short the biggest one-day gainers among the smallest names, run many small concurrent positions, and accept short-squeeze losses as the compensated risk rather than filtering for them — the edge persists because capacity is too small for professional capital and squeezes punish anyone who presses size. A follow-up backtest by dima (@dima_quant) tests a concrete specification — short Binance's bottom 30% by market cap after a 3-sigma daily pump, five positions at 20%, stop at the pump-day seven-day high, take profit at 2R — returning +36.4% over roughly fifteen months at Sharpe 1.36 and a -15.4% drawdown across 124 trades net of fees and funding, though the window is a bear regime and the sample is thin."
   },
   {
     "title": "Crypto Trend Prediction Based on Wavelet Transform and Deep Learning Algorithm",
