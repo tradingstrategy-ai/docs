@@ -9552,6 +9552,18 @@
     "short_description": null
   },
   {
+    "title": "A Simple S&P 100 Breakout System from the RealTest Examples File",
+    "authors": "Ignis (@ignis55)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/ignis55/status/2093754279710363733",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-08-30",
+    "filename": "simple-sp100-breakout-system-realtest-examples-file.pdf",
+    "downloaded_at": "2026-08-30",
+    "download_failure_reason": null,
+    "short_description": "A complete long-only equity trend system stated in six bullets — S&P 100 universe, 100-day breakout entry, fresh breakouts only, ranked by 100-day ROC, Chande-Kroll trailing stop, 0.5% volatility-adjusted risk per trade — which ships as an example file with the RealTest platform. The attached RealTest results row covers 2006-2026 and 973 trades: 9.63% annualised on 11.87% volatility, Sharpe 0.84, maximum drawdown -15.50%, profit factor 1.86, with only 42.65% of trades winning but average winners of 13.50% against losers of 5.34% and holding periods of 81 versus 22 days. The entry explains why each component maps to a documented momentum effect and notes that the achievement is the drawdown profile rather than the return, which merely matches the index, alongside reproducibility gaps around the breakout definition, point-in-time index membership, and the 71.93% of signals skipped."
+  },
+  {
     "title": "A Trend Following Framework for Gold, Bitcoin, and Nasdaq",
     "authors": "Petr Podhajsky",
     "publication_year": null,
