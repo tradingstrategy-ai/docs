@@ -4332,6 +4332,18 @@
     "short_description": null
   },
   {
+    "title": "Risk Management via Anomaly Circumvent: Mnemonic Deep Learning for Midterm Stock Prediction",
+    "authors": "Xinyi Li, Yinchuan Li, Xiao-Yang Liu, Christina Dan Wang",
+    "publication_year": 2019,
+    "download_page": "https://arxiv.org/abs/1908.01112",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-08-31",
+    "filename": "risk-management-via-anomaly-circumvent-mid-lstm-stock-prediction.pdf",
+    "downloaded_at": "2026-08-31",
+    "download_failure_reason": null,
+    "short_description": "Mid-LSTM combines an LSTM, hidden Markov model, and regression layer grounded in an ARMA/CAPM-inspired formulation to forecast 30--60-day stock-price paths and handle market anomalies. On 451 S&P 500 components, it reports modest gains over a conventional LSTM in prediction and trend accuracy, while its selected-portfolio backtest reports a 2.99 average Sharpe ratio but omits execution costs, turnover, and public code."
+  },
+  {
     "title": "Signal or Noise in Multi-Agent LLM-based Stock Recommendations?",
     "authors": "George Fatouros and Kostas Metaxas",
     "publication_year": 2026,

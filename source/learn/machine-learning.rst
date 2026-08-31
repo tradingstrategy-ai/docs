@@ -1542,3 +1542,16 @@ By Andreas Himmelreich (Systematic AI Investing Portfolios).
 Mentioned by Andreas Himmelreich in `this discussion <https://x.com/GfI_Himmelreich/status/2086036103924986045>`__, summarising his AI factor research to date. See also his longer article :ref:`Rethinking the ML Pipeline: Why "Train Wide, Filter Smart" is a Game-Changer for AI Factor Models <train-wide-filter-smart>` above, which covers the buy-filter and normalisation interaction referenced implicitly here.
 
 `Read the post <https://x.com/GfI_Himmelreich/status/2086036103924986045>`__.
+
+Risk Management via Anomaly Circumvent: Mnemonic Deep Learning for Midterm Stock Prediction
+--------------------------------------------------------------------------------------------
+
+Xinyi Li, Yinchuan Li, Xiao-Yang Liu, and Christina Dan Wang propose Mid-LSTM, a hybrid network for forecasting stock prices 30--60 trading days ahead. The model starts from a Mid-ARMA formulation that augments ARMA with trading volume, the market index, and stock-market correlation motivated by CAPM. It combines an LSTM sequence model, a hidden Markov model for latent market states, and a linear-regression component intended to make the market variables interpretable.
+
+Our summary: the useful idea is to predict an entire two-month path recursively rather than only the next price, then use the second month as the medium-term signal. Mid-LSTM is designed to tolerate large market moves by representing trend as a hidden state, and it is most effective for stocks highly correlated with the market index. The experiment is a model-comparison study rather than a production trading-system evaluation: it fits each stock separately, selects assets using model-predicted cumulative returns, uses long-only mean-variance or minimum-variance allocation, and does not report transaction costs, turnover, implementation lag, or a public codebase. The performance claims should therefore be treated as in-sample-style research evidence that needs a costed point-in-time replication.
+
+Data and reproduction: the paper uses Yahoo Finance close prices and volumes for 451 S&P 500 component stocks, with the S&P 500 as market index, across roughly 2009--2018 (2,800 trading days per stock). It uses 60-day rolling windows, trains on 2,380 days and evaluates six 60-day test windows, scoring the 30--60-day segment. The paper supplies sufficient model equations and portfolio rules to reimplement it, but links no public source code or frozen dataset; survivorship handling is limited to dropping stocks with missing data.
+
+Key metrics: mean price-prediction accuracy is 0.9308 for Mid-LSTM versus 0.9258 for a standard LSTM, and 0.9637 on the 50 highly market-correlated stocks. Trend accuracy is 0.8460 overall and 0.9200 for that high-correlation subset, compared with 0.8160 for the standard LSTM. The authors report a peak portfolio return of 120.16% and an average Sharpe ratio of 2.99; in their detailed high-correlation, mean-variance portfolio table, Mid-LSTM averages 26.51% annualised return and 2.99 Sharpe, versus 24.31% and 2.56 for the conventional LSTM, using a 1.5% risk-free rate.
+
+`Read the paper <https://arxiv.org/abs/1908.01112>`__
