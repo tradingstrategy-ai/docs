@@ -233,3 +233,16 @@ Key metrics: all-ETF portfolio — 992 trades, 75% win ratio, 0.68% average gain
 By Oddmund Groette (QuantifiedStrategies.com).
 
 `Read the blog post <https://www.quantifiedstrategies.com/larry-connors-r3-strategy/>`__
+
+Short-horizon Mean Reversion in Cryptocurrency Markets: A Matched Cross-Market Measurement
+--------------------------------------------------------------------------------------------
+
+Nadav A. Kitron and Jonathan M. Wengrowicz measure directional mean reversion on 15-minute bars across 183 Binance USDT spot pairs and a matched sample of 187 liquid US stocks and ETFs. Their pre-specified, strictly out-of-sample walk-forward protocol fits a constrained 12-lag logistic model alongside an unconstrained AR(12) logit, evaluates AUC, and controls false discoveries jointly across the 370 instruments. The authors also test whether the effect transfers to NAV-linked listed wrappers and condition it on aggressive taker flow and order-book information.
+
+Our summary: the paper makes a careful distinction between statistical predictability and a tradeable strategy. Most of the crypto effect is captured by taking the opposite side of the preceding candle's sign, while conventional return autocorrelation is close to zero. It is stable across the study's 2021--2026 checks, survives a frozen six-month post-sample holdout and an exact permutation null, and is stronger after intensive aggressive flow. The flow evidence is consistent with liquidity providers being compensated for absorbing short-lived price pressure, but the authors appropriately do not claim it identifies the mechanism. US-listed crypto and metal funds reproduce the dynamics of their NAV underlyings, whereas merely correlated stocks do not; this suggests the effect is a property of the price process rather than its listing venue.
+
+Data and reproduction: the primary test uses 15-minute Binance and Alpaca bars from 2025-01-01 to 2026-02-11; supporting data include Binance histories back to 2021, Coinbase/OKX/Bybit, Dukascopy, and a 2026-02--2026-08 holdout. The full replication package, frozen symbol lists, source code, result files, and file hashes are available in the authors' `GitHub repository <https://github.com/nadav2/short-horizon-reversion>`__. The underlying market data can be refetched from public exchange APIs, except that reproducing US-listed bars requires Alpaca market-data access.
+
+Key metrics: crypto averages an out-of-sample AUC of 0.531, versus 0.499 for US stocks and ETFs; 164 of 183 crypto pairs (90%) are significant after FDR control, compared with 5 of 187 stocks/ETFs (2.7%). The designed class-mean AUC gap is +0.031; under the most conservative accounting it is +0.011 (95% CI [+0.008, +0.014]). The gross directional edge peaks near 1.3 bp per trade, below the paper's 5 bp cheapest benchmark spot round-trip cost, so the finding is not evidence of an implementable taker strategy at those costs.
+
+`Read the paper <https://arxiv.org/abs/2608.21888>`__

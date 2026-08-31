@@ -5124,6 +5124,18 @@
     "short_description": null
   },
   {
+    "title": "Short-horizon Mean Reversion in Cryptocurrency Markets: A Matched Cross-Market Measurement",
+    "authors": "Nadav A. Kitron, Jonathan M. Wengrowicz",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2608.21888",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-08-31",
+    "filename": "short-horizon-mean-reversion-in-cryptocurrency-markets.pdf",
+    "downloaded_at": "2026-08-31",
+    "download_failure_reason": null,
+    "short_description": "Using a pre-specified, strictly out-of-sample 15-minute walk-forward protocol across 183 Binance pairs and 187 US stocks/ETFs, the authors find pervasive directional reversal in crypto but not equities. The measured effect survives artifact, permutation, and holdout checks, yet its roughly 1.3 bp gross per-trade peak is below a 5 bp benchmark spot round-trip cost, framing it as a limits-to-arbitrage result rather than deployable taker alpha."
+  },
+  {
     "title": "Testing for Mean Reversion in Bitcoin Returns with Gibbs-Sampling-Augmented Randomization",
     "authors": "Douglas Eduardo Turatti, Fernando Henrique P.S. Mendes, and João Frois Caldeira",
     "publication_year": 2020,
