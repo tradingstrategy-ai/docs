@@ -221,3 +221,18 @@ The empirical arc is a clean walk-forward transferability test. In the US develo
 By Michael Trequattrini.
 
 `Read the post <https://www.linkedin.com/posts/mich97_the-excess-return-stayed-at-home-the-defence-ugcPost-7485282498445340672-0E_s/>`__.
+
+Pyramiding Behaves Very Differently Across Trading Models
+------------------------------------------------------------
+
+A short LinkedIn post arguing that scaling into a position is not a neutral sizing choice but one whose sign depends on the payoff distribution of the model underneath it. The case against pyramiding a trend follower is that such models live on rare outlier moves, so adding later in a trend means buying at progressively worse prices, concentrating risk after volatility has already expanded, increasing dependence on whatever remains of a rare winner, and losing more when the breakout reverses. Mean-reversion models can respond in the opposite direction, because later entries benefit from a larger overshoot and a better average price.
+
+The evidence offered is a single test on Binance futures, described as a daily portfolio backtest: three long models sharing the same exit, each entering at a deeper level than the last. Staging the entries is reported to improve expectancy in every test and the Sharpe ratio in almost every test. The attached chart gives the per-model numbers — expectancy, defined as mean net return per trade, rises monotonically from 1.09% to 2.51% to 3.94%, while the annualised Sharpe ratio goes 1.28, 1.64, 1.40. The conclusion drawn is that pyramiding should match the model's payoff distribution, since the same position-sizing rule can improve one model and weaken another.
+
+**Our reading.** The chart is more interesting than the headline and quietly qualifies it. Expectancy increases with entry depth without exception, but risk-adjusted return does not: Sharpe peaks at the middle model and falls at the deepest one, which is the concrete content of "almost every test". Selecting on expectancy alone would pick the deepest entry; selecting on Sharpe would pick the middle. That divergence is what you would expect if deeper thresholds fire less often and require a longer adverse excursion before they trigger, so per-trade edge improves while the capital works less and the path gets worse. The underlying asymmetry the post identifies is nonetheless sound and worth stating plainly: in mean reversion the edge is a function of displacement from fair value, so the signal strengthens as price moves against you and a deeper entry is genuinely a better entry; in trend following the edge is conditional on continuation, so each added unit raises the cost basis precisely when the remaining move is shorter.
+
+Two gaps limit how far this travels. Adding at successively deeper levels is martingale-adjacent — it improves the average entry price at the cost of a fatter left tail, because the trade where reversion never arrives is now a larger one — and neither expectancy nor Sharpe captures that well; no drawdown, tail statistic or stop rule is reported. And the chart shows the three entry thresholds compared side by side rather than the combined staged position, so the statistics of the pyramided book itself are not actually shown. Sample period, universe composition beyond "Binance futures", trade counts and cost assumptions are all unstated.
+
+By Pavel Kýček (ROBUXIO).
+
+`Read the post <https://www.linkedin.com/posts/pavelkycek_pyramiding-behaves-very-differently-across-share-7500123164837085184-xTB-/>`__

@@ -6552,6 +6552,18 @@
     "short_description": null
   },
   {
+    "title": "Pyramiding Behaves Very Differently Across Trading Models",
+    "authors": "Pavel Kýček (ROBUXIO)",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/pavelkycek_pyramiding-behaves-very-differently-across-share-7500123164837085184-xTB-/",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-08-31",
+    "filename": "pyramiding-behaves-very-differently-across-trading-models.pdf",
+    "downloaded_at": "2026-08-31",
+    "download_failure_reason": null,
+    "short_description": "A short LinkedIn post arguing that scaling into a position is not a neutral sizing choice but one whose sign depends on the model's payoff distribution: pyramiding a trend follower buys at worse prices and concentrates risk after volatility has expanded, while a mean-reversion model benefits because later entries capture a larger overshoot and a better average price. The evidence is a Binance futures daily portfolio backtest of three long models sharing one exit at progressively deeper entry levels, with expectancy rising 1.09% to 2.51% to 3.94% per trade while the annualised Sharpe goes 1.28, 1.64, 1.40. Our reading notes that expectancy rises monotonically but Sharpe peaks at the middle model, that deeper staged entries are martingale-adjacent with an unreported left tail, and that the chart shows the three thresholds side by side rather than the combined staged position."
+  },
+  {
     "title": "Risk Beyond Volatility: A Conditional Framework for Downside Harm and Capital Loss",
     "authors": null,
     "publication_year": null,
