@@ -5100,6 +5100,18 @@
     "short_description": "A backtest of Larry Connors' R3 mean-reversion strategy from High Probability ETF Trading (2009), which buys when the 2-day RSI falls three days in a row below 10 while price is above the 200-day moving average, and exits when the 2-day RSI rises above 70. Tested on 25 liquid ETFs through December 2020, the portfolio version produced 992 trades with a 75% win ratio, 2.08 profit factor, 6.47% CAGR and -16% max drawdown. The edge still works twelve years after publication but has decayed, with roughly half the ETFs performing worse than in Connors' original results."
   },
   {
+    "title": "Linda Raschke's 15-Minute EMA Trend-Day Reversion, Backtested on NQ",
+    "authors": "The Milk Man (@MrMilkTrading), original rule by Linda Raschke (@LindaRaschke)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/MrMilkTrading/status/2094768621419471130",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": "linda-raschke-15-minute-ema-trend-day-reversion-nq.pdf",
+    "downloaded_at": "2026-09-01",
+    "download_failure_reason": null,
+    "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. The entry adds our analysis showing the dollar-denominated equity curve is inflated by NQ's fifteen-fold nominal growth over the sample, that the implied average win is 0.89x the average loss despite the high hit rate, and that the flattering 2022-onward split is only ~60 trades; exit and trend-day definitions are unstated in the source post. Archived artifact is the post's backtest card; the follow-up thread could not be retrieved without browser access."
+  },
+  {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
     "authors": "Tim Leung and Xin Li",
     "publication_year": 2015,
