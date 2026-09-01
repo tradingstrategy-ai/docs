@@ -6348,6 +6348,18 @@
     "short_description": "This paper develops a high-fidelity limit order book simulation and uses temporal-difference reinforcement learning with tile coding as a value function approximator to design a market making agent that controls inventory risk via a custom reward function. The RL agent outperforms both simple benchmark strategies and a recent online learning approach, demonstrating that TD learning is effective for market making given appropriate function approximation and reward design."
   },
   {
+    "title": "Multi-Agent Reinforcement Learning for Market Making: Competition without Collusion",
+    "authors": "Ziyi Wang, Carmine Ventre, Maria Polukarov",
+    "publication_year": 2025,
+    "download_page": "https://arxiv.org/abs/2510.25929",
+    "source_file": "reinforcement-learning.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": "multi-agent-reinforcement-learning-for-market-making-competition-without-collusion.pdf",
+    "downloaded_at": "2026-09-01",
+    "download_failure_reason": null,
+    "short_description": "ACM ICAIF 2025 paper using a hierarchical multi-agent RL framework (adversary, self-interested, zero-sum and hybrid market makers trained with PPO) to test whether competing RL market makers learn to collude. They find no collusion — herding ratio 0.000 across all heterogeneous pairings — attributing this to the exogenous price process, unlike retail-pricing settings where agents do form cartels. The zero-sum agent dominates by quoting tighter (83.6% market share) which narrows spreads but lowers combined PnL."
+  },
+  {
     "title": "Recent Advances in Reinforcement Learning in Finance",
     "authors": "Ben Hambly, Renyuan Xu, and Huining Yang",
     "publication_year": 2023,
