@@ -3936,6 +3936,18 @@
     "short_description": null
   },
   {
+    "title": "CMS-VAE: A Strategy-aware Variational AutoEncoder for High-Fidelity Crypto Market Simulation",
+    "authors": "Yihao Ang, Yifan Bao, Qiang Huang, Qiang Wang, Xinyu Xi, Shuyu Lu, Anthony K. H. Tung, Zhiyong Huang",
+    "publication_year": 2025,
+    "download_page": "https://dl.acm.org/doi/10.1145/3768292.3771253",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "publisher_paywall",
+    "short_description": "ACM ICAIF 2025 paper proposing CMS-VAE, a VAE for synthetic crypto market data that uses a dilated CNN encoder/decoder to capture long-range temporal and cross-asset structure, plus an Ensemble Financial Performance Loss (EFPL) that supervises the generator against a set of trading strategies so the output is strategy-consistent rather than only distributionally plausible. Authors report up to 96.8% lower prediction errors and 1.4x Sharpe improvement over state-of-the-art baselines; summary based on the abstract only, as the paper is closed-access."
+  },
+  {
     "title": "Can Machines Time Markets? The Virtue of Complexity in Return Prediction",
     "authors": null,
     "publication_year": null,
