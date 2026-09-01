@@ -4908,6 +4908,18 @@
     "short_description": null
   },
   {
+    "title": "Regime-Switching Factor Investing with Hidden Markov Models",
+    "authors": "Matthew Wang, Yi-Hong Lin, Ilya Mikhelson",
+    "publication_year": 2020,
+    "download_page": "https://www.mdpi.com/1911-8074/13/12/311",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": "regime-switching-factor-investing-with-hidden-markov-models.pdf",
+    "downloaded_at": "2026-09-01",
+    "download_failure_reason": null,
+    "short_description": "A three-state Gaussian HMM fitted with hmmlearn on S&P 500 ETF daily return and 10-day volatility identifies bull, sideways and high-volatility bear regimes (average duration ~12.5 days), and the strategy rotates between six QuantConnect-built factor models according to the detected regime. Reported out-of-sample results for September 2017-April 2020 are a 2.017 Sharpe, 1.64 information ratio and 0.128 maximum drawdown versus -0.174 Sharpe for the S&P 500, but the window is short, ends on the COVID crash, applies an in-sample regime-to-model mapping, and ignores transaction costs."
+  },
+  {
     "title": "Rethinking Trend Following: Optimal Regime-Dependent Allocation",
     "authors": null,
     "publication_year": null,
