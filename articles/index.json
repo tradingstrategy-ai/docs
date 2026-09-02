@@ -5101,7 +5101,7 @@
   },
   {
     "title": "Linda Raschke's 15-Minute EMA Trend-Day Reversion, Backtested on NQ",
-    "authors": "The Milk Man (@MrMilkTrading), original rule by Linda Raschke (@LindaRaschke)",
+    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren / Hawk Quant (@etbent1), original rule by Linda Raschke (@LindaRaschke)",
     "publication_year": 2026,
     "download_page": "https://x.com/MrMilkTrading/status/2094768621419471130",
     "source_file": "mean-reversion.rst",
@@ -5109,7 +5109,7 @@
     "filename": "linda-raschke-15-minute-ema-trend-day-reversion-nq.pdf",
     "downloaded_at": "2026-09-01",
     "download_failure_reason": null,
-    "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. The entry adds our analysis showing the dollar-denominated equity curve is inflated by NQ's fifteen-fold nominal growth over the sample, that the implied average win is 0.89x the average loss despite the high hit rate, and that the flattering 2022-onward split is only ~60 trades; exit and trend-day definitions are unstated in the source post. Archived artifact is the post's backtest card; the follow-up thread could not be retrieved without browser access."
+    "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. An independent replication on nine years of USTEC minute data confirms the headline (75% wins, 2.32 profit factor, 145 trades, 5.1x profit/drawdown) and then decomposes the rule: both EMA-touched cells of a two-by-two lose money and both EMA-untouched cells make it, so the untouched moving average is the discriminator and the trend-day filter is secondary, with loosening the trend threshold from 0.75 to 0.45 lifting net profit from $52,560 to $90,224. The threshold is a plateau not a peak and the result sits at the 100th percentile of a 400-run random-day noise test, but nine other instruments were tested and none passed, and the strategy is stopless by design. The entry adds our analysis of the dollar-curve inflation in both backtests, the 0.89 average-win-to-average-loss ratio implied by the original metrics, and the CFD-versus-future and 20-period-versus-15-minute EMA differences between the two tests."
   },
   {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
