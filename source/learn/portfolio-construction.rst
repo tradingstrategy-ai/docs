@@ -348,3 +348,20 @@ The post is a summary of four posts published over the preceding week; the indiv
 By Build Alpha (@buildalpha).
 
 `Read the post <https://x.com/buildalpha/status/2085708012161814584>`__.
+
+Dynamic Strategies for Asset Allocation
+---------------------------------------
+
+André F. Perold and William F. Sharpe (1988, *Financial Analysts Journal* 44(1):16--27) give a compact framework for choosing how a portfolio should react to moves in its risky asset. The choice is not simply "buy dips" versus "cut losses"; it determines the portfolio's payoff shape and therefore which path of market returns it is designed to tolerate. They compare four rules: buy-and-hold, constant-mix rebalancing, constant-proportion portfolio insurance (CPPI), and option-based portfolio insurance (OBPI).
+
+The mechanics are useful for implementation. Buy-and-hold leaves the initial stock and cash quantities untouched, giving a linear exposure. Constant mix continually restores a fixed risky-asset weight, mechanically selling after rises and buying after falls; it is a contrarian, concave-payoff rule that benefits from oscillating, mean-reverting markets but gives up ground when a market trends persistently. CPPI sets a floor ``F`` and puts ``m * max(V - F, 0)`` dollars into the risky asset, with the balance in the safe asset. It therefore cuts exposure after losses and adds after gains, creating a convex, trend-friendly payoff; OBPI obtains a similar protected payoff by holding the risky asset with a put option.
+
+Our summary: the paper is a decision map, not a horse race with one winner. Constant mix is the appropriate bet when reversals and range trading dominate; CPPI and OBPI exchange that for downside protection and participation in sustained trends. The price of the insurance-style rules is whipsaw in reversals, and CPPI's floor is not a guarantee under discrete price gaps, trading frictions, or an inability to rebalance. In the example highlighted in the linked discussion, a USD 100 portfolio with a USD 75 floor and multiplier two starts with USD 50 in equities; after a 10% equity fall CPPI reduces its equity holding rather than rebalancing it upward.
+
+Data and reproduction: analytical paper with payoff diagrams and stylised path comparisons; no underlying dataset or code. The canonical publisher page is paywalled, but a PDF is available from a Stanford course archive.
+
+Key metrics: no annualised return, Sharpe ratio, or backtest is reported. The key parameters are the constant-mix target weight and, for CPPI, the floor and multiplier; results are conditional on the realised market path and omit implementation costs.
+
+Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/status/2095669007177101478>`__, which uses a 10% equity decline to contrast constant mix's rebalancing purchase with CPPI's exposure reduction.
+
+`Read the paper <https://doi.org/10.2469/faj.v44.n1.16>`__

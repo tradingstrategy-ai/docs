@@ -6096,6 +6096,18 @@
     "short_description": null
   },
   {
+    "title": "Dynamic Strategies for Asset Allocation",
+    "authors": "André F. Perold, William F. Sharpe",
+    "publication_year": 1988,
+    "download_page": "https://doi.org/10.2469/faj.v44.n1.16",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-09-04",
+    "filename": "dynamic-strategies-for-asset-allocation.pdf",
+    "downloaded_at": "2026-09-04",
+    "download_failure_reason": null,
+    "short_description": "Compares buy-and-hold, constant-mix rebalancing, constant-proportion portfolio insurance (CPPI), and option-based portfolio insurance as distinct payoff shapes. Constant mix buys weakness and sells strength, favouring oscillating markets; CPPI and option insurance cut risk after losses and add after gains, providing convex trend participation and downside protection at the cost of whipsaw and gap risk."
+  },
+  {
     "title": "Efficient Portfolio Estimation in Large Risky Asset Universes",
     "authors": null,
     "publication_year": null,
