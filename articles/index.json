@@ -3540,6 +3540,18 @@
     "short_description": null
   },
   {
+    "title": "Gold and Macro Factors",
+    "authors": "Ralph Sueppel (Macrosynergy)",
+    "publication_year": 2026,
+    "download_page": "https://macrosynergy.com/research/gold-and-macro-factors/",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-09-05",
+    "filename": "gold-and-macro-factors.pdf",
+    "downloaded_at": "2026-09-05",
+    "download_failure_reason": null,
+    "short_description": "A Macrosynergy study testing whether theory-based macroeconomic factors predict gold futures returns over 1996-2026. Three conceptual macro themes - persistent U.S. financial/monetary ease, U.S. dollar stability risk, and global economic doom - are z-scored from point-in-time JPMaQS data and combined into a composite 'macro support score' for gold. The composite predicts next-month gold returns with 55% accuracy (Pearson 0.13, p=0.01); a vol-targeted long-short gold strategy earned 6.6% annualised at Sharpe 0.47 versus 4.1%/0.34 for long-only gold, and a macro-timed gold-versus-S&P 500 strategy returned 5.7% (Sharpe 0.28) against -2.2% for a static long-gold-vs-equity position, both with near-zero correlation to gold and equity benchmarks. Fully reproducible via an attached Jupyter notebook."
+  },
+  {
     "title": "Magnificent, but Not Extraordinary: Market Concentration in the US and Beyond",
     "authors": null,
     "publication_year": null,
