@@ -271,3 +271,18 @@ By The Milk Man (@MrMilkTrading), crediting Linda Raschke (@LindaRaschke) for th
 Mentioned by The Milk Man in `this discussion <https://x.com/MrMilkTrading/status/2094768621419471130>`__, where he presents it as "the Legend's EMA strategy" and asks readers to improve on it. The chain runs `the original rule and NQ backtest <https://x.com/MrMilkTrading/status/2094768621419471130>`__ then `the USTEC replication and two-by-two decomposition <https://x.com/etbent1/status/2094880988904243490>`__. Replies on both posts were not retrievable for this entry.
 
 `Read the post <https://x.com/etbent1/status/2094880988904243490>`__.
+
+Mean Reversion Strategies: Backtested Trading Rules
+---------------------------------------------------
+
+Oddmund Groette of QuantifiedStrategies.com presents three long-running ETF/index mean-reversion backtests: buying a deviation from a recent high in the Consumer Staples Select Sector SPDR Fund (XLP), shorting the Internal Bar Strength (IBS) signal in the China Large-Cap ETF (FXI), and buying a five-day low in the S&P 500. The common thesis is to buy weakness or sell strength and exit into a moderate reversal, with low time in market rather than continuous exposure.
+
+The reported results are material but should be treated as research claims rather than executable specifications. From 2000 onward, the XLP test reports 514 trades, 0.32% average gain per trade, 6.7% CAGR versus 4.8% buy-and-hold, 20% maximum drawdown, and profit factor 1.50. The FXI IBS short, run from 2010, reports 450 trades, 0.67% average gain, 14.8% CAGR versus 1.8% buy-and-hold, 47% maximum drawdown, and profit factor 1.75. The S&P 500 five-day-low test reports 393 trades, 0.45% average gain, 7.1% CAGR versus 5.9% buy-and-hold, 23% maximum drawdown, and profit factor 1.60; its buy-and-hold comparator excludes reinvested dividends.
+
+Data and reproduction: the article identifies the instruments and broad signal types, but its three rule blocks are now membership-gated and the offered AmiBroker/TradeStation code is paid. The visible article does not state commission, slippage, short-borrow, or fill assumptions. This prevents an independent reproduction of the reported figures; the appropriate use is as a set of falsifiable templates, particularly the high-drawdown FXI short, rather than as ready-to-trade rules.
+
+By Oddmund Groette (QuantifiedStrategies.com).
+
+Mentioned by QuantifiedStrategies.com in `this X post <https://x.com/QuantifiedStrat/status/2095934668847579471>`__, which says the strategies were partly published earlier, then adjusted and republished as three free examples.
+
+`Read the blog post <https://www.quantifiedstrategies.com/mean-reversion-strategies/>`__.

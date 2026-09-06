@@ -5136,6 +5136,18 @@
     "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. An independent replication on nine years of USTEC minute data confirms the headline (75% wins, 2.32 profit factor, 145 trades, 5.1x profit/drawdown) and then decomposes the rule: both EMA-touched cells of a two-by-two lose money and both EMA-untouched cells make it, so the untouched moving average is the discriminator and the trend-day filter is secondary, with loosening the trend threshold from 0.75 to 0.45 lifting net profit from $52,560 to $90,224. The threshold is a plateau not a peak and the result sits at the 100th percentile of a 400-run random-day noise test, but nine other instruments were tested and none passed, and the strategy is stopless by design. The entry adds our analysis of the dollar-curve inflation in both backtests, the 0.89 average-win-to-average-loss ratio implied by the original metrics, and the CFD-versus-future and 20-period-versus-15-minute EMA differences between the two tests."
   },
   {
+    "title": "Mean Reversion Strategies: Backtested Trading Rules",
+    "authors": "Oddmund Groette (QuantifiedStrategies.com)",
+    "publication_year": 2026,
+    "download_page": "https://www.quantifiedstrategies.com/mean-reversion-strategies/",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-06",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "QuantifiedStrategies reports three mean-reversion backtests: an XLP pullback (6.7% CAGR, 20% maximum drawdown), an FXI IBS short (14.8% CAGR, 47% drawdown), and an S&P 500 five-day-low strategy (7.1% CAGR, 23% drawdown). The published strategy rules and AmiBroker/TradeStation code are membership-gated, and no visible cost, borrow, or fill assumptions support independent reproduction."
+  },
+  {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
     "authors": "Tim Leung and Xin Li",
     "publication_year": 2015,
