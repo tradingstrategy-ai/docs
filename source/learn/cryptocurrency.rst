@@ -276,3 +276,16 @@ The thread quotes `a post by as required. (@0xasrequired) <https://x.com/0xasreq
 `dima (@dima_quant) posted the backtest here <https://x.com/dima_quant/status/2093452753238696280>`__, quoting `Phillips's follow-up post on the entry rule <https://x.com/ScottPh77711570/status/2093272721472004387>`__.
 
 `Read the X thread <https://x.com/ScottPh77711570/status/2092945468410274091>`__
+
+C18 -- Peer Breadth Diffusion
+-----------------------------
+
+The Milk Man's research loop proposes C18, a daily long/short strategy across 20 Binance USDT perpetuals. For each coin, the other 19 form a peer group. A coin is eligible only when at least 80% of that identical peer set has a complete five-day return both today and yesterday; otherwise it produces no signal. The breadth measure is the share of peers with a positive five-day return today, compared with yesterday. Go long when that share crosses above 70% today after being below it yesterday, the coin's own five-day return is positive, and its daily close is up; short on the inverse: negative peer breadth crosses 70% after being below it, the coin's five-day return is negative, and its close is down.
+
+The execution card specifies next-bar entry, a 2.5 ATR(14) stop clamped to 0.5--20%, a 3R target, and a 14-day time stop. It risks 0.25% of equity per opportunity, caps aggregate initial risk at 1.5%, and caps gross notional at 2x; only 477 of 1,313 signals since 2025 passed those portfolio caps, because signals often cluster on the same day. On a USD 100,000 account with 20 bp costs plus funding, the card reports +41.5% return, -4.6% maximum drawdown, 1,403 trades, 1.66 profit factor, and 1.28 Sharpe from 2020; the 2025-onward subset reports +16.7%, -2.8%, 468 trades, PF 2.14, and Sharpe 1.77. The latest 2026 YTD line is +10.5%, -2.4%, 225 trades, PF 2.67, and Sharpe 3.01; the last 90 days are +3.9% with a -1.9% drawdown and PF 3.45.
+
+This is an unverified candidate rather than a validated strategy. The author explicitly says he has not yet checked the research loop's output and intends out-of-sample validation and stress testing. The 65% and 75% neighbouring thresholds reportedly remain positive, which is useful but does not substitute for a full parameter sweep, point-in-time universe checks, realistic Binance execution/funding data, and a holdout that was not used to select C18 from the loop's candidate set. It is not the same strategy as the earlier Raschke NQ EMA reversion entry: C18 is daily, cross-sectional crypto breadth/momentum with ATR exits, whereas the Raschke rule is a next-day single-index reversion setup.
+
+By The Milk Man (@MrMilkTrading); the peer-breadth prompt came from All.them.Witches (@MacFlyMM).
+
+`Read the post <https://x.com/MrMilkTrading/status/2096978472325283950>`__

@@ -2892,6 +2892,18 @@
     "short_description": "Applies wavelet coherence and partial wavelet coherence to the returns, volatility, skewness and kurtosis of Bitcoin and the S&P 500, daily 2011-2022 (2,716 obs). Co-movement is moment- and frequency-dependent: essentially disconnected before 2018, connected from 2018-19, volatility linkage spiking during COVID at medium scales, skew/kurtosis linkage strongest at mid/long scales, with US economic policy uncertainty intermediating. Argues for separate scale-band features per moment rather than one denoised price."
   },
   {
+    "title": "C18 -- Peer Breadth Diffusion",
+    "authors": "The Milk Man (@MrMilkTrading)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/MrMilkTrading/status/2096978472325283950",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-09-07",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An unverified daily long/short Binance-perpetual candidate: trade a coin after 70% of its 19 peers cross into aligned five-day positive or negative returns, with the coin confirming. Its card reports +41.5% return, -4.6% maximum drawdown, 1.66 profit factor, and 1.28 Sharpe from 2020 after 20 bp plus funding, but its author says it is only a research-loop selection awaiting independent validation, out-of-sample testing, and stress tests."
+  },
+  {
     "title": "Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?",
     "authors": "Andrew Phiri",
     "publication_year": 2022,
