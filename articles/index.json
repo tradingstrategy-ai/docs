@@ -10572,6 +10572,18 @@
     "short_description": null
   },
   {
+    "title": "Volatility Salience: Evidence from the Options Market",
+    "authors": "Yintai Ding, Gang Li, Shimeng Shi, Jia Zhai",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.2139/ssrn.7354983",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-09-07",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "Introduces volatility salience theory (VST), measuring how conspicuous a stock's recent realised-volatility deviation is relative to a market benchmark, and finds high-VST US equity calls and puts have lower subsequent delta-hedged returns. A shared figure shows roughly -0.5% high-minus-low monthly return at t+1 for each option type over 1996-2025; the authors claim VST is distinct from variance-risk-premium and other volatility measures, but the SSRN full text and controls were inaccessible for independent verification."
+  },
+  {
     "title": "Volatility-Managed Portfolios",
     "authors": "Alan Moreira and Tyler Muir",
     "publication_year": 2017,

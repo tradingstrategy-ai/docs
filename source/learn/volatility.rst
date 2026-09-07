@@ -553,3 +553,20 @@ Data and code: minute-frequency SPXW 1-minute OHLC bars and intraday quotes obta
 Key metrics: on the 2025 out-of-time hold-out, the seven sizing methods produce annualised Sharpe ratios of 4.31 (quarter-Kelly) to 5.76 (Edge Allocation), against a walk-forward range of 1.90 to 3.11. Edge Allocation returns 10.48% at 1.82% volatility with a 1.43% out-of-time maximum drawdown (2.28% over the walk-forward); the deepest drawdown across all seven methods is 9.25%. Benchmarks over the same hold-out: SPX buy-and-hold 0.46 Sharpe, CBOE PUT 0.18, CBOE WPUT 0.13. Internal baselines are weaker still — random selection 0.34, always-sell-25-delta 0.00, momentum -0.40. Probabilistic Sharpe Ratio for the headline method is 0.964 against the worst external benchmark, but the multiple-testing-corrected Deflated Sharpe Ratio is 0.856 out of time. Execution stress is mild and monotonic: moving from mid fills to selling at the bid costs 6.5% to 10.9% of out-of-time Sharpe, leaving Edge Allocation at 5.31. Per-year dispersion is the number to weigh most heavily: 6.52 (2021) down to 0.41 (2024).
 
 `Read the paper <https://arxiv.org/abs/2608.24786>`__
+
+Volatility Salience: Evidence from the Options Market
+-----------------------------------------------------
+
+Yintai Ding, Gang Li, Shimeng Shi, and Jia Zhai introduce volatility salience theory (VST): a measure of how strongly a stock's recent realised-volatility deviation stands out against a market benchmark. Using US equity-option data, they sort options by VST and evaluate delta-hedged call and put returns. Their stated interpretation is behavioural: investors overweight a salient volatility shock and bid implied volatility above fundamentals, so buying high-salience options subsequently earns lower delta-hedged returns.
+
+The result is a cross-sectional pricing relation rather than a fully specified trading strategy. In the figure shared with the paper, the equal-weighted high-minus-low VST portfolio has roughly -0.5% monthly delta-hedged return at the one-month horizon for both calls and puts; the difference is statistically insignificant at months two and three, then is negative and significant again at later displayed horizons. The chart covers January 1996--August 2025. The abstract says the effect is distinct from the variance risk premium and other volatility measures, and stronger where arbitrage is limited, sentiment is high, or retail participation is greater.
+
+Our summary: the useful hypothesis is not that high realised volatility alone makes an option expensive, but that the *unusualness* of its volatility relative to a benchmark can be priced. That distinction is exactly what the accompanying X discussion challenges: a deviation measure may simply proxy for the volatility level or variance-risk-premium richness, and a t+1 effect that weakens around t+2--t+3 may reflect ordinary volatility-shock decay. The authors claim controls that separate VST from those explanations, but the full SSRN text, regression specification, data description, and robustness tables were inaccessible in this run, so that claim cannot yet be independently assessed.
+
+Data and reproduction: the abstract names US equity-option data; the available figure states the January 1996--August 2025 sample. No code or data release is identified in the accessible metadata. SSRN blocked direct download and the available open-access and curl retrieval paths did not provide a PDF.
+
+Key metrics: the accessible material reports return spreads and statistical significance, not annualised return, Sharpe ratio, drawdown, turnover, or transaction costs. The clearest observed magnitude is the approximately -0.5% high-minus-low monthly delta-hedged return at t+1 for both calls and puts.
+
+Mentioned by Ralph Sueppel (Macrosynergy) in `this X discussion <https://x.com/macro_synergy/status/2096849950001013173>`__, which highlights the lower delta-hedged returns. The replies ask whether VST survives controls for volatility level and the variance risk premium, and whether the fast-decaying effect is simply volatility mean reversion.
+
+`Read the paper <https://doi.org/10.2139/ssrn.7354983>`__
