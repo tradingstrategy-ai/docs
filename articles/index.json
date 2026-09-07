@@ -2901,7 +2901,7 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
-    "short_description": "An unverified daily long/short Binance-perpetual candidate: trade a coin after 70% of its 19 peers cross into aligned five-day positive or negative returns, with the coin confirming. Its card reports +41.5% return, -4.6% maximum drawdown, 1.66 profit factor, and 1.28 Sharpe from 2020 after 20 bp plus funding, but its author says it is only a research-loop selection awaiting independent validation, out-of-sample testing, and stress tests."
+    "short_description": "An unverified daily long/short Binance-perpetual candidate: trade a coin after 70% of its 19 peers cross into aligned five-day positive or negative returns, with the coin confirming. Its card reports +41.5% return, -4.6% maximum drawdown, 1.66 profit factor, and 1.28 Sharpe from 2020 after 20 bp plus funding; the author ranked it first in an automated top-five shortlist, but explicitly says it awaits independent validation, out-of-sample testing, and stress tests. The shortlist's +105% hypothetical 10x YTD display is not compatible with the strategy's stated 2x gross-notional cap and is not a deployable result."
   },
   {
     "title": "Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?",
