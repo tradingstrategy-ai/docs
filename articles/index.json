@@ -6252,6 +6252,18 @@
     "short_description": null
   },
   {
+    "title": "Simple Dynamic Stock/Bond/Gold Portfolios",
+    "authors": "Nikhil Devanathan, Alexandros E. Tzikas, Stephen P. Boyd",
+    "publication_year": 2026,
+    "download_page": "https://web.stanford.edu/~boyd/papers/stock_bond_gold_portfolios.html",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-09-08",
+    "filename": "simple-dynamic-stock-bond-gold-portfolios.pdf",
+    "downloaded_at": "2026-09-08",
+    "download_failure_reason": null,
+    "short_description": "Compares 60/40 and 50/30/20 SPY/AGG/GLD benchmarks with 7% volatility control and monthly long-only Markowitz portfolios from 2006 to 2026, net of 5 bp trading costs. A macro-and-return forecast Markowitz portfolio earns 11.6% annually at 9.0% volatility, Sharpe 1.08 and 18.1% maximum drawdown, versus 8.1%, 11.3%, 0.56 and 33.7% for 60/40; public data and code support replication, though turnover is 284% per year."
+  },
+  {
     "title": "Strategic Drag: Accepting Lower Returns for Better Risk-Adjusted Performance",
     "authors": "Pedma",
     "publication_year": null,

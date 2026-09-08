@@ -365,3 +365,19 @@ Key metrics: no annualised return, Sharpe ratio, or backtest is reported. The ke
 Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/status/2095669007177101478>`__, which uses a 10% equity decline to contrast constant mix's rebalancing purchase with CPPI's exposure reduction.
 
 `Read the paper <https://doi.org/10.2469/faj.v44.n1.16>`__
+
+
+Simple Dynamic Stock/Bond/Gold Portfolios
+-----------------------------------------
+
+Nikhil Devanathan, Alexandros E. Tzikas, and Stephen P. Boyd compare familiar annual-rebalanced 60/40 (SPY/AGG) and 50/30/20 (SPY/AGG/GLD) portfolios with monthly, long-only and unlevered allocations across SPY, AGG, GLD, and cash.  The 2006--2026 backtest uses public daily price and macroeconomic data, charges 5 bp for every rebalance, and measures returns, volatility, drawdowns, and turnover net of those costs.
+
+The first modification is volatility control: each month the fixed-weight portfolio is diluted with cash to a 7% ex-ante volatility target.  The paper then considers ``Simple Markowitz'', which forecasts returns from trailing average returns, and a fuller Markowitz model which adds a small set of public macro and market features.  Both solve a constrained monthly mean--variance allocation with an explicit trading-cost term.  The design remains deliberately simple--no shorts, leverage, derivatives, proprietary data, or discretionary regime labels--but its 284% annual turnover is a material implementation and tax consideration.
+
+The full Markowitz portfolio produced 11.6% annualised return at 9.0% volatility, a 1.08 geometric Sharpe ratio, and an 18.1% maximum drawdown.  By comparison, annual-rebalanced 60/40 returned 8.1% at 11.3% volatility (Sharpe 0.56; 33.7% maximum drawdown); the gold-augmented 50/30/20 portfolio returned 9.1% at 10.3% volatility (Sharpe 0.70).  Simple Markowitz remained strong at 10.4% return and a 0.91 Sharpe, while cash-based volatility control improved the fixed benchmarks but did not match the dynamic models.  The result is compelling but is still one three-asset, 20-year backtest, so the published walk-forward, bootstrap, and sensitivity code is especially useful for evaluating robustness.
+
+The authors provide the full replication package, using Yahoo Finance, FRED, and Fama--French public data; running it requires a FRED API key.
+
+`Source code <https://github.com/cvxgrp/simple-portfolio-code>`__
+
+`Read the paper <https://web.stanford.edu/~boyd/papers/stock_bond_gold_portfolios.html>`__
