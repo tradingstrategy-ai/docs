@@ -3084,6 +3084,18 @@
     "short_description": null
   },
   {
+    "title": "Scott Phillips Quant Q&A: Features, Execution and Finding Edge in Crypto",
+    "authors": "Scott Phillips (@ScottPh77711570), with James (@therobotjames)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/ScottPh77711570/status/2096760358568628681",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-09-08",
+    "filename": "scott-phillips-quant-qa-features-execution-and-finding-edge-in-crypto.pdf",
+    "downloaded_at": "2026-09-08",
+    "download_failure_reason": null,
+    "short_description": "A transcript and topic-by-topic summary of an open quant Q&A that Scott Phillips (@ScottPh77711570) ran on X in September 2026, covering crypto trading features, portfolio construction, execution and implementation priorities. Recurring themes: signals are only worth their non-correlation with what you already trade (build the book 'like a food pyramid'); the core feature stack is trend, momentum, carry and aggression, with the next strongest cross-sectional effect being size; robustness testing in crypto is really the question 'am I being a cunt?' with recent data valued most; capacity is bounded to roughly 5% of ADV or 10% of open interest; and for small traders the highest-return activity is getting into a group chat with people who make money. Product-launch questions about HyperTrend are omitted from the summary."
+  },
+  {
     "title": "Shannon's Demon on Shitters: Volatility Harvesting on Crypto Perps",
     "authors": "Margin Syndicate",
     "publication_year": 2026,
