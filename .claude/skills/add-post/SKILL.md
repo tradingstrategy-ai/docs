@@ -38,12 +38,15 @@ Add a new blog post or article to the documentation collection.
 
    If CAPTCHA appears, ask the user to complete it manually.
 
-4. **Determine category**: Based on the extracted content, automatically determine the category:
-   - **Trading/Finance** (goes to `source/learn/blog-posts.rst`) - for posts about algorithmic trading, quantitative finance, market analysis, portfolio management, risk management, backtesting, etc.
-   - **AI/ML** (goes to `source/learn/ai-and-machine-learning.rst`) - for posts primarily about machine learning, deep learning, neural networks, or AI techniques applied to trading
-     **Not trading related**: Don't add this post. If the user specifically asked to add this post, ask user for confrimation.
+4. **Choose the target file**: Trading/finance and AI/ML posts are filed into the most specific **topic file** under `source/learn/` — there is no catch-all `blog-posts.rst`. Pick the single best-matching file, for example:
+   - `cryptocurrency.rst`, `carry-trade.rst`, `defi-amm.rst`, `market-microstructure.rst`, `order-flow.rst` — crypto and microstructure
+   - `momentum.rst`, `trend-following.rst`, `mean-reversion.rst`, `statistical-arbitrage.rst`, `volatility.rst`, `equity-factors.rst`, `market-regimes.rst`, `signal-decomposition.rst`, `time-series.rst` — strategies and signals
+   - `backtesting.rst`, `portfolio-construction.rst`, `risk-management.rst`, `liquidity-provision.rst`, `algorithmic-trading.rst`, `algorithmic-trading-frameworks.rst` — process and infrastructure
+   - `machine-learning.rst`, `reinforcement-learning.rst` — posts primarily about ML/RL techniques applied to trading
 
-   Only ask the user if the content is ambiguous (e.g., equally about ML techniques AND trading strategies). If clearly one category, proceed without asking.
+   Run `ls source/learn/*.rst` to see the full, current list and match the post to the closest topic. If several fit, choose the one the post spends the most on; only ask the user when it is genuinely ambiguous.
+
+   **Not trading related**: Don't add this post. If the user specifically asked to add it anyway, ask the user for confirmation.
 
 5. **Add to the appropriate .rst file**: Use this exact format (matching existing entries):
 
@@ -105,7 +108,7 @@ If the source of the link is a discussion like a tweet, then include a paragraph
    }
    ```
 
-   Use the same `source_file` you added the entry to (e.g. the topic file such as `volatility.rst`), not a literal `blog-posts.rst`. If the PDF could not be saved, set `filename` and `downloaded_at` to `null` and set `download_failure_reason` to the appropriate reason (`requires_browser`, `paywall`, `not_attempted`).
+   Set `source_file` to the exact topic file you added the entry to in step 5 (e.g. `cryptocurrency.rst` or `volatility.rst`). If the PDF could not be saved, set `filename` and `downloaded_at` to `null` and set `download_failure_reason` to the appropriate reason (`requires_browser`, `paywall`, `not_attempted`).
 
    Keep the array sorted by `source_file` then `title`.
 
