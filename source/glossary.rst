@@ -7934,39 +7934,64 @@ and algorithmic trading.
 
     Ulcer Index
 
-        The Ulcer Index (UI) is a :term:`volatility` indicator that measures downside risk by quantifying both the depth and duration of percentage :term:`drawdown` from previous highs. It was developed by Peter Martin and Byron McCann in 1987 and first published in their 1989 book *The Investor's Guide to Fidelity Funds*. The name stems from the idea that sustained price declines cause the kind of stress that gives investors stomach ulcers — making it an intuitive, pain-weighted measure of portfolio suffering.
+        The Ulcer Index (UI) is a downside-risk measure that quantifies the depth and
+        persistence of percentage :term:`drawdowns <drawdown>` from earlier highs.
+        Peter Martin developed it in 1987; he and Byron McCann first described it in
+        their 1989 book *The Investor's Guide to Fidelity Funds*. Its name reflects
+        the investor discomfort associated with a deep or prolonged loss.
 
-        Unlike standard deviation, which treats upside and downside moves symmetrically, the Ulcer Index focuses exclusively on drawdowns. It is calculated as the square root of the mean of the squared percentage drawdowns from the most recent peak. The squaring effect penalises large drawdowns proportionately more than small ones, so a strategy that suffers a single deep plunge scores far worse than one with many shallow dips of the same cumulative magnitude. This makes the Ulcer Index particularly useful for evaluating long-only portfolios and strategies where investors welcome upside :term:`volatility` but fear sustained losses.
+        Unlike standard deviation, which treats gains and losses symmetrically, UI
+        only increases when the measured value is below a previous high. It is the
+        root mean square of percentage drawdowns: squaring gives deep drawdowns more
+        weight, and a drawdown that persists over several observations contributes at
+        each observation. A lower UI therefore indicates a less severe history of
+        drawdown over the chosen sample. UI is useful when upside :term:`volatility`
+        is not considered a risk, such as in evaluating a long-only investment or a
+        capital-preservation strategy.
 
-        In practice, the Ulcer Index excels on short track records where the :term:`Calmar ratio` can be misleading. Because the Calmar ratio depends on a single :term:`maximum drawdown` event, it can swing dramatically with one additional bad month. The Ulcer Index, by contrast, integrates *all* drawdown episodes over the measurement window, providing a smoother and more representative picture of the investor's actual pain. A lower Ulcer Index indicates less drawdown stress. Typical 14-period readings for the S&P 500 range from 2–5 in calm markets to 15+ during crises.
+        UI is complementary to the :term:`Calmar ratio` and :term:`maximum drawdown`.
+        Those measures are driven by one worst peak-to-trough episode, whereas UI
+        incorporates every drawdown observation in its measurement window. This does
+        not make UI immune to short or unrepresentative histories: the look-back
+        period, sampling frequency, and whether the sample includes stressed markets
+        can all materially affect it.
 
         **Formula**
 
         .. code-block:: text
 
-            Percent_Drawdown_i = (Close_i - Max_Close) / Max_Close × 100
-            Ulcer Index = sqrt( (1/N) × Σ Percent_Drawdown_i² )
+            D_i = 100 × (P_i / max(P_{i-N+1}, ..., P_i) - 1)
+            UI_N = sqrt((D_{i-N+1}² + ... + D_i²) / N)
 
-        where ``Max_Close`` is the highest close over the look-back period and *N* is the number of periods.
+        Here ``P_i`` is the price or portfolio value at observation *i*, ``D_i`` is
+        its percentage drawdown, and *N* is the look-back length. This is the common
+        rolling-indicator implementation: each drawdown is measured against the
+        highest value in its own preceding *N*-period window, then the most recent
+        *N* squared drawdowns are averaged. A portfolio-analysis implementation may
+        instead use the running high from the start of a fixed evaluation period;
+        reports should state which convention, frequency, and look-back were used.
+        For an investment comparison, use the same dates and total-return series for
+        every asset, including distributions, fees, costs, and slippage where
+        applicable.
 
         **Pros**
 
-        - Captures both depth and duration of drawdowns in a single number
-        - Penalises sustained losses more heavily than brief dips
-        - Better suited than the :term:`Calmar ratio` for short histories where a single max-drawdown event dominates
+        - Captures both depth and persistence of drawdowns in a single number
+        - Uses all drawdown observations rather than only the worst episode
+        - Penalises large drawdowns more heavily than small ones
         - Focuses on downside only, unlike standard deviation
 
         **Cons**
 
-        - Less widely known than :term:`Sharpe` or :term:`Sortino`, so comparing across managers can be harder
-        - Sensitive to the look-back window chosen
-        - Does not directly account for :term:`tail risk <Expected shortfall>` beyond drawdown mechanics
+        - Sensitive to the look-back, sampling frequency, and price or total-return series chosen
+        - Has no universal "good" threshold; values are comparable only when calculated consistently
+        - Does not directly estimate loss probabilities or :term:`tail risk <Expected shortfall>`
 
-        `Read more on Wikipedia <https://en.wikipedia.org/wiki/Ulcer_index>`__.
+        Literature and references:
 
-        `Ulcer Index on StockCharts <https://chartschool.stockcharts.com/table-of-contents/technical-indicators-and-overlays/technical-indicators/ulcer-index>`__.
+        - Peter G. Martin, `Ulcer Index and UPI Measure Investment Risk and Risk-Adjusted Performance <https://www.tangotools.com/ui/ui.htm>`__.
 
-        `Portfolio Charts — Ulcer Index explanation <https://portfoliocharts.com/2017/11/01/the-ulcer-index-is-a-helpful-way-to-quantify-portfolio-pain/>`__.
+        - `Ulcer Index on StockCharts <https://chartschool.stockcharts.com/table-of-contents/technical-indicators-and-overlays/technical-indicators/ulcer-index>`__.
 
         See also
 
@@ -7986,38 +8011,53 @@ and algorithmic trading.
 
     Martin ratio
 
-        The Martin ratio, also known as the Ulcer Performance Index (UPI) or Return-to-Ulcer ratio, is a :term:`risk-adjusted return` measure that divides excess return by the :term:`Ulcer Index` rather than by standard deviation (as the :term:`Sharpe` ratio does) or downside deviation (as the :term:`Sortino` ratio does). It was introduced by Peter Martin alongside the Ulcer Index to provide a reward-to-pain metric that reflects how investors actually experience losses — not as abstract variance but as sustained drawdown suffering.
+        The Martin ratio, also called the Ulcer Performance Index (UPI), is a
+        :term:`risk-adjusted return` measure. It divides an investment's excess return
+        by its :term:`Ulcer Index`, using drawdown severity as the risk measure rather
+        than total standard deviation (as in the :term:`Sharpe` ratio) or downside
+        deviation (as in the :term:`Sortino` ratio). Peter Martin introduced the
+        measure alongside UI.
 
-        The formula is straightforward: ``Martin Ratio = (Portfolio Return − Risk-Free Rate) / Ulcer Index``. Because the Ulcer Index captures both the magnitude and the persistence of every drawdown episode, the Martin ratio penalises strategies that spend long periods underwater more heavily than those that recover quickly. This makes it especially valuable for comparing managed-futures (CTA) strategies, trend-following systems, and any approach where capital preservation is paramount.
-
-        Compared to the :term:`Calmar ratio`, which relies on a single worst-case :term:`maximum drawdown`, the Martin ratio uses the full distribution of drawdown events. This means it is far less sample-dependent and more stable across rolling windows. On short track records — where a lucky avoidance of one crisis can inflate the Calmar ratio — the Martin ratio provides a more honest assessment. It is also more granular than the :term:`Sortino` ratio because it weights sustained drawdowns more heavily than isolated bad months that quickly reverse.
+        A higher Martin ratio indicates more excess return for each unit of measured
+        drawdown risk. Because UI incorporates the depth and persistence of all
+        drawdown observations in the selected window, the ratio penalises a strategy
+        that remains below prior highs more than one that quickly recovers from a
+        similar decline. It is therefore a useful complement to the :term:`Calmar ratio`,
+        whose denominator is only the single worst :term:`maximum drawdown`.
+        It does not, however, eliminate the need for adequate history or a consistent
+        calculation window.
 
         **Formula**
 
         .. code-block:: text
 
-            Martin Ratio = (R_p - R_f) / Ulcer Index
+            Martin ratio = (R_p - R_f) / UI
 
-        where ``R_p`` is the portfolio return, ``R_f`` is the risk-free rate, and the :term:`Ulcer Index` measures drawdown pain.
+        ``R_p`` is the portfolio's total return, ``R_f`` is the return on the chosen
+        :term:`risk-free rate` investment, and ``UI`` is the Ulcer Index. The return
+        and risk-free rate must use the same evaluation period and annualisation
+        convention; the UI must be calculated from the same period's value series.
+        Comparisons are meaningful only when all candidates use the same dates,
+        frequency, return treatment, and UI convention.
 
         **Pros**
 
-        - Integrates all drawdown episodes, not just the single worst one
-        - More stable than :term:`Calmar ratio` on short histories
-        - Penalises sustained time underwater, matching investor psychology
-        - Easy to compute once the :term:`Ulcer Index` is available
+        - Relates excess return to both the depth and persistence of drawdowns
+        - Uses all drawdown observations, not just the single worst episode
+        - Complements variance-based measures such as :term:`Sharpe` and :term:`Sortino`
+        - Easy to calculate once the :term:`Ulcer Index` is available
 
         **Cons**
 
-        - Less widely adopted in industry reporting than :term:`Sharpe` or :term:`Sortino`
-        - Not included by default in many :term:`backtest` frameworks, requiring custom implementation
-        - Shares the Ulcer Index's sensitivity to look-back window length
+        - Sensitive to the UI look-back, sampling frequency, and return convention
+        - A high value can reflect an unusually benign sample that omitted a major drawdown
+        - Less widely reported than :term:`Sharpe` or :term:`Sortino`
 
-        `Peter Martin's original description of UPI <https://www.tangotools.com/ui/ui.htm>`__.
+        Literature and references:
 
-        `Ulcer Performance Index on Wikipedia <https://en.wikipedia.org/wiki/Ulcer_index>`__.
+        - Peter G. Martin, `Ulcer Index and UPI Measure Investment Risk and Risk-Adjusted Performance <https://www.tangotools.com/ui/ui.htm>`__.
 
-        `Allocate Smartly — UPI portfolio optimisation <https://allocatesmartly.com/maximum-ulcer-performance-index-upi-portfolios/>`__.
+        - `Ulcer function and Martin-ratio example in thinkorswim <https://toslc.thinkorswim.com/center/reference/thinkScript/Functions/Tech-Analysis/Ulcer>`__.
 
         See also
 
@@ -9053,6 +9093,54 @@ and algorithmic trading.
         - :term:`Factor investing`
 
         - :term:`Betting Against Beta (BAB)`
+
+    BTC beta
+
+        BTC beta, or Bitcoin beta, measures the sensitivity of an asset, strategy, or
+        portfolio's returns to returns on Bitcoin. It is the usual beta calculation
+        with BTC as the benchmark: a beta of 1 means that the subject has historically moved by about
+        1% when BTC moved by 1%; 1.5 indicates larger co-movement; 0 indicates no
+        linear BTC exposure; and a negative beta indicates a tendency to move in the
+        opposite direction. It measures historical co-movement, not a prediction or
+        a causal relationship.
+
+        For matched return observations over a stated look-back window, BTC beta is
+        conventionally estimated either as the slope of a regression on BTC returns
+        or as:
+
+        .. code-block:: text
+
+            BTC beta = Covariance(asset returns, BTC returns) / Variance(BTC returns)
+
+        The result depends materially on the asset or portfolio being measured, the
+        BTC price series, return frequency, currency, and sampling window. In crypto,
+        this measure is useful for separating an altcoin or strategy's broad Bitcoin
+        exposure from its :term:`alpha <Alpha>` relative to BTC. It is also used for
+        traditional portfolios: then it describes their exposure to Bitcoin risk and
+        should normally be estimated alongside equity and bond factors, rather than
+        interpreted as a stand-alone risk measure.
+
+        BTC beta should not be confused with *Bitcoin's beta* to an equity index such
+        as the S&P 500. In the former, BTC is the benchmark and the other asset is the
+        subject; in the latter, BTC is the subject and the equity index is the
+        benchmark. Neither version is stable through time, especially in markets with
+        changing correlations and volatility.
+
+        Literature and references:
+
+        - Zhenhua Huang, Man Xie and Youhong Zhang, `Managing cryptocurrency risk exposures in equity portfolios: Evidence from high-frequency data <https://doi.org/10.1016/j.intfin.2025.102123>`__, *Journal of International Financial Markets, Institutions and Money*, 2025.
+
+        See also
+
+        - :term:`Capital asset pricing model`
+
+        - :term:`Alpha`
+
+        - :term:`Beta-hedged`
+
+        - :term:`Benchmark`
+
+        - :term:`Volatility`
 
     Tokenised fund
 
