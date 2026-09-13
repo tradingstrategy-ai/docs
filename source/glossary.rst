@@ -5902,6 +5902,428 @@ and algorithmic trading.
 
         - :term:`Dataset`
 
+    Information coefficient (IC)
+
+        The information coefficient (IC) measures the predictive skill of a forecast or signal. In quantitative finance, it is the correlation between a signal available at a decision time and the return subsequently realised over a specified holding period. An IC of zero indicates no linear or monotonic association; a positive IC means higher signal values tend to be followed by higher returns, while a negative IC means the reverse. IC values lie between -1 and 1, though useful financial signals usually have much smaller values.
+
+        The conventional IC is :term:`Pearson correlation` between a model's predictions and realised returns. A :term:`Rank IC` instead uses the correlation between their ranks (commonly :term:`Spearman rank correlation`). Rank IC is often preferred for cross-sectional stock selection because it tests whether the model orders opportunities correctly, without requiring its predicted return magnitudes to be perfectly calibrated.
+
+        In :term:`machine learning`, IC is an out-of-sample evaluation metric for a model that predicts returns, relative returns, or asset scores. It complements loss measures such as mean squared error: a model can be useful for ranking assets even when its return estimates are not accurately calibrated. Researchers calculate IC on validation and test periods, inspect its stability across time and market regimes, and may use its mean and variability to compare models. The information-coefficient information ratio (:term:`ICIR`) is commonly defined as mean IC divided by the standard deviation of IC across evaluation periods.
+
+        In algorithmic trading and a :term:`backtest`, a cross-sectional IC is typically calculated at each rebalance date by correlating the signal values across the tradable universe with :term:`forward returns <forward return>` over the intended holding period. A persistently positive out-of-sample IC supports a long-high-signal, short-low-signal or overweight-high-signal portfolio rule; a negative IC may support reversing the signal. IC alone is not a trading result: a strategy must also be tested for turnover, transaction costs, capacity, risk exposure, and robustness. IC measurements must use only information available at each decision time and genuinely out-of-sample returns to avoid look-ahead bias and overfitting.
+
+        See also
+
+        - :term:`Machine learning`
+
+        - :term:`Backtest`
+
+        - :term:`Overfitting`
+
+        - :term:`Algorithmic trading`
+
+        Research and literature
+
+        - Richard C. Grinold, `The Fundamental Law of Active Management <https://doi.org/10.3905/jpm.1989.409211>`__, *The Journal of Portfolio Management* 15(3), 1989.
+
+    Pearson correlation
+
+        Pearson correlation, also called the Pearson product-moment correlation coefficient or Pearson's *r*, measures the strength and direction of a linear relationship between two variables. It is their covariance divided by the product of their standard deviations, and ranges from -1 to 1. A value of +1 or -1 indicates a perfect positive or negative linear relationship; a value near zero indicates no linear relationship.
+
+        Pearson correlation is invariant to changes of scale and location, but it can be strongly affected by outliers and can miss a non-linear relationship. It is the usual form of an :term:`information coefficient (IC)` when raw model predictions are correlated with realised returns.
+
+        Research and literature
+
+        - J. L. Rodgers and W. A. Nicewander, `Thirteen Ways to Look at the Correlation Coefficient <https://doi.org/10.1080/00031305.1988.10475524>`__, *The American Statistician* 42(1), 1988.
+
+    Rank IC
+
+        Rank IC is an :term:`information coefficient (IC)` calculated from ranks rather than raw values. At each evaluation date, assets are ranked by their signal or model score and by their realised :term:`forward return`; the correlation of those two rank vectors, usually :term:`Spearman rank correlation`, is the period's rank IC. Researchers normally summarise the series of period ICs with its mean, standard deviation, and distribution across market regimes.
+
+        Rank IC asks whether a signal orders assets correctly, rather than whether it forecasts the exact size of each return. It is therefore common in cross-sectional factor research and machine-learning stock selection, where portfolio construction often depends on relative ranking. A cross-sectional rank IC is undefined at a date when the feature has no variation across the tradable assets; a time-series evaluation or another suitable metric is needed for such a feature. Rank IC is less sensitive than a raw Pearson IC to extreme returns and nonlinear score scales, but it is still vulnerable to look-ahead bias, an inappropriate asset universe, and multiple testing.
+
+        See also
+
+        - :term:`Cross-sectional analysis`
+
+        - :term:`Information coefficient (IC)`
+
+        - :term:`ICIR`
+
+        Research and literature
+
+        - Richard C. Grinold, `The Fundamental Law of Active Management <https://doi.org/10.3905/jpm.1989.409211>`__, *The Journal of Portfolio Management* 15(3), 1989.
+
+        - Shihao Gu, Bryan Kelly, and Dacheng Xiu, `Empirical Asset Pricing via Machine Learning <https://doi.org/10.1093/rfs/hhaa009>`__, *The Review of Financial Studies* 33(5), 2020.
+
+    ICIR
+
+        ICIR, short for information-coefficient information ratio, measures the stability of an :term:`information coefficient (IC)` through time. It is normally calculated as the mean periodic IC divided by the standard deviation of periodic ICs. Some practitioners annualise the ratio by multiplying by the square root of the number of periods per year; reports should state the convention used.
+
+        A higher ICIR indicates that predictive skill has been more consistent, not merely higher on average. It should not be interpreted as a formal significance test without considering sample size, serial dependence from overlapping :term:`forward returns <forward return>`, and the number of signals or models tried.
+
+        See also
+
+        - :term:`Information coefficient (IC)`
+
+        - :term:`Rank IC`
+
+        - :term:`Out-of-sample testing`
+
+        Research and literature
+
+        - Richard C. Grinold, `The Fundamental Law of Active Management <https://doi.org/10.3905/jpm.1989.409211>`__, *The Journal of Portfolio Management* 15(3), 1989.
+
+    Forward return
+
+        A forward return is the return realised after a decision time over a specified :term:`prediction horizon`. For example, at date *t*, a five-day forward return measures the return from *t* to *t + 5* trading days. It is commonly the :term:`target variable` for a return-prediction model and the realised outcome used to calculate an :term:`information coefficient (IC)`.
+
+        The return definition must be specified: simple or log return, gross or excess return, currency, corporate-action treatment, and whether it includes costs. Its start must follow the time at which the signal was actually available; otherwise the calculation leaks future information. Overlapping forward-return windows create dependent observations, which affects uncertainty estimates and validation design.
+
+        See also
+
+        - :term:`Prediction horizon`
+
+        - :term:`Look-ahead bias`
+
+        - :term:`Backtest`
+
+        Research and literature
+
+        - Shihao Gu, Bryan Kelly, and Dacheng Xiu, `Empirical Asset Pricing via Machine Learning <https://doi.org/10.1093/rfs/hhaa009>`__, *The Review of Financial Studies* 33(5), 2020.
+
+    Prediction horizon
+
+        The prediction horizon is the interval between the time a forecast is made and the end of the outcome it predicts. In trading, it usually defines the holding period of a :term:`forward return`, such as one day, five trading days, or one month. The horizon should be aligned with the rebalance schedule, execution assumptions, and expected signal decay.
+
+        Changing the prediction horizon changes the learning problem and the trade-off between signal persistence, turnover, and transaction costs. Models and backtests should report it explicitly and use the same horizon when training, evaluating predictive accuracy, and constructing portfolios.
+
+        See also
+
+        - :term:`Forward return`
+
+        - :term:`Trade frequency`
+
+        - :term:`Turnover`
+
+    Cross-sectional analysis
+
+        Cross-sectional analysis compares many assets, entities, or observations at the same point in time. In quantitative investing, it commonly asks whether a characteristic, factor, or model score distinguishes the assets that will subsequently earn relatively higher or lower returns within a :term:`trading universe`.
+
+        This differs from time-series analysis, which models the history of one asset or aggregate series through time. A cross-sectional signal is often evaluated with :term:`Rank IC`, quantile portfolios, or a long-short spread. The definition of the universe, treatment of missing data, and availability of historical constituents can materially change the result.
+
+        Research and literature
+
+        - Eugene F. Fama and James D. MacBeth, `Risk, Return, and Equilibrium: Empirical Tests <https://doi.org/10.1086/260061>`__, *Journal of Political Economy* 81(3), 1973.
+
+    Feature
+
+        In :term:`machine learning`, a feature is an input variable used by a model to make a prediction. In a tabular dataset, features are usually the columns of the input matrix; in quantitative finance they may include lagged returns, accounting characteristics, market data, macroeconomic variables, or alternative data.
+
+        A feature must satisfy :term:`decision-time availability`. A variable that is only known after the predicted outcome, or whose historical value has been revised after the fact, is a source of data leakage and can make a backtest appear predictive when it is not. :term:`Feature engineering` creates or transforms features; it does not remove the need for :term:`point-in-time data` and :term:`out-of-sample testing`.
+
+        See also
+
+        - :term:`Label`
+
+        - :term:`Target variable`
+
+        - :term:`Look-ahead bias`
+
+        - :term:`Feature engineering`
+
+        - :term:`Feature selection`
+
+        Research and literature
+
+        - `scikit-learn glossary: feature <https://scikit-learn.org/stable/glossary.html#term-feature>`__.
+
+        - Shihao Gu, Bryan Kelly, and Dacheng Xiu, `Empirical Asset Pricing via Machine Learning <https://doi.org/10.1093/rfs/hhaa009>`__, *The Review of Financial Studies* 33(5), 2020.
+
+    Feature engineering
+
+        Feature engineering is the design, transformation, and preparation of raw data into model inputs. In systematic trading, it commonly converts price, volume, funding, order-book, fundamentals, or alternative data into lagged, rolling, normalised, or cross-sectionally ranked :term:`features <feature>`.
+
+        Good feature engineering defines the calculation, data source, timestamps, missing-value handling, and applicable trading universe. Every transformation must use only :term:`point-in-time data` and be fitted on the training portion of each evaluation fold. A feature is not validated merely because it is well engineered: its incremental predictive and economic value should be assessed with :term:`feature ablation` and :term:`out-of-sample testing`.
+
+        Research and literature
+
+        - Maximilian Christ, Nils Braun, Julius Neuffer, and Andreas W. Kempa-Liehr, `Time Series FeatuRe Extraction on basis of Scalable Hypothesis tests <https://doi.org/10.1016/j.neucom.2018.03.067>`__, *Neurocomputing* 307, 2018.
+
+    Feature generation
+
+        Feature generation is the systematic creation of candidate :term:`features <feature>` from raw or lightly processed data. It may use predefined transformations, such as rolling moments and technical indicators, or automated methods that extract a large library of time-series characteristics. Feature generation expands a research search space; it does not establish that a candidate has predictive or trading value.
+
+        Generated features must meet the same availability and validation requirements as hand-written features. In particular, candidate generation, filtering, and :term:`feature selection` must be performed using only the training data of each fold. Because broad generation creates many opportunities for false discoveries, researchers should compare compact feature families against a matched baseline and retain candidates only when they improve out-of-sample results.
+
+        See also
+
+        - :term:`Feature engineering`
+
+        - :term:`Feature selection`
+
+        - :term:`Feature ablation`
+
+        Research and literature
+
+        - Maximilian Christ, Nils Braun, Julius Neuffer, and Andreas W. Kempa-Liehr, `Time Series FeatuRe Extraction on basis of Scalable Hypothesis tests <https://doi.org/10.1016/j.neucom.2018.03.067>`__, *Neurocomputing* 307, 2018.
+
+    Point-in-time data
+
+        Point-in-time data represents the information that was actually available at a particular historical decision time, rather than a later revised or completed version of the data. For each value used by a model or backtest, its source time, availability time, and trading decision time must be consistent: the value must be available no later than the decision it informs.
+
+        In quantitative research, point-in-time discipline applies to prices, index or trading-universe membership, fundamentals, macroeconomic releases, alternative data, and externally generated forecasts. It normally requires preserving historical versions, using an as-of join to select the latest value available at the decision time, and accounting for publication delays. Without it, a result may contain :term:`look-ahead bias` even when its timestamps appear historical.
+
+        See also
+
+        - :term:`Decision-time availability`
+
+        - :term:`Survivorship bias`
+
+        - :term:`Look-ahead bias`
+
+        Research and literature
+
+        - David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu, `Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance <https://doi.org/10.1090/noti1105458>`__, *Notices of the American Mathematical Society* 61(5), 2014.
+
+    Decision-time availability
+
+        See :term:`point-in-time data`.
+
+    Feature selection
+
+        Feature selection is the process of choosing a subset of available input variables for a model. Methods include filters based on association with the target, wrapper methods that compare subsets through model performance, and embedded methods that select or shrink variables during fitting. Its aims can include better generalisation, lower complexity, lower cost, and greater interpretability.
+
+        In time-ordered financial data, feature selection is part of the model-training procedure. It must be performed separately using each fold's training data; ranking features using validation or test rows leaks outcome information and makes subsequent performance estimates optimistic. A selected feature set should be checked for stability across folds and with :term:`feature ablation`, because a high model-importance ranking does not by itself establish incremental value.
+
+        See also
+
+        - :term:`Variable selection`
+
+        - :term:`Feature generation`
+
+        - :term:`Feature ablation`
+
+        Research and literature
+
+        - Isabelle Guyon and André Elisseeff, `An Introduction to Variable and Feature Selection <https://jmlr.org/papers/v3/guyon03a.html>`__, *Journal of Machine Learning Research* 3, 2003.
+
+    Variable selection
+
+        See :term:`feature selection`.
+
+    Feature ablation
+
+        Feature ablation evaluates whether a feature or feature family adds incremental value by comparing an otherwise identical model with and without it. The comparison should use the same data rows, split boundaries, target definition, tuning policy, and downstream portfolio rules, so that the difference can be attributed to the removed or added input.
+
+        Ablation is stronger evidence than feature importance alone. Importance describes how a fitted model used an input among the other inputs available to it; an ablation tests whether performance deteriorates when that input is unavailable. In trading research, assess both predictive metrics and cost-aware strategy outcomes, and repeat the test across out-of-sample folds.
+
+        See also
+
+        - :term:`Feature selection`
+
+        - :term:`Out-of-sample testing`
+
+        - :term:`Feature engineering`
+
+        Research and literature
+
+        - Isabelle Guyon and André Elisseeff, `An Introduction to Variable and Feature Selection <https://jmlr.org/papers/v3/guyon03a.html>`__, *Journal of Machine Learning Research* 3, 2003.
+
+    Residualisation
+
+        Residualisation removes the part of a variable explained by one or more control variables. It is commonly done by fitting a regression to the controls and using the residual: the component left unexplained by those controls. In quantitative research, it can be applied to a feature, a model prediction, a target, or portfolio returns.
+
+        For example, a cross-sectional signal can be residualised against market beta, volatility, size, momentum, or sector exposures before its :term:`information coefficient (IC)` is remeasured. This tests whether the apparent signal is largely a known exposure. Residualisation depends on the selected controls and their point-in-time estimates; it does not prove causal independence or guarantee that a residualised strategy is tradeable.
+
+        See also
+
+        - :term:`Factor neutralisation`
+
+        - :term:`Feature ablation`
+
+        - :term:`Cross-sectional analysis`
+
+        Research and literature
+
+        - Eugene F. Fama and Kenneth R. French, `Common Risk Factors in the Returns on Stocks and Bonds <https://doi.org/10.1016/0304-405X(93)90023-5>`__, *Journal of Financial Economics* 33(1), 1993.
+
+    Residualization
+
+        See :term:`residualisation`.
+
+    Purged cross-validation
+
+        Purged cross-validation is a time-series validation method that removes training observations whose information sets or label windows overlap a test fold. It is particularly useful when labels are based on :term:`forward returns <forward return>` or events spanning several bars, because otherwise the training and test sets can share information about the same future market movement.
+
+        Purging is applied separately within each fold and is often used with an :term:`embargo`, a buffer of observations immediately following the test interval that is also excluded from training. It addresses one form of leakage but does not replace point-in-time data, a properly held-out test period, or realistic backtesting assumptions.
+
+        See also
+
+        - :term:`Embargo`
+
+        - :term:`Cross validation`
+
+        - :term:`Out-of-sample testing`
+
+        Research and literature
+
+        - Marcos López de Prado, `Advances in Financial Machine Learning <https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086>`__, Wiley, 2018.
+
+    Embargo
+
+        In time-series validation, an embargo is a buffer interval after a test fold during which observations are excluded from training. It reduces information leakage when nearby observations share labels, lookback windows, or serially dependent features with the test period.
+
+        The embargo length should be chosen from the experiment's label horizon and data-dependence structure, not assumed to be universal. It is commonly paired with :term:`purged cross-validation`, which removes observations whose label windows overlap the test fold itself.
+
+        See also
+
+        - :term:`Purged cross-validation`
+
+        - :term:`Forward return`
+
+        Research and literature
+
+        - Marcos López de Prado, `Advances in Financial Machine Learning <https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086>`__, Wiley, 2018.
+
+    Placebo test
+
+        A placebo test is a negative-control test in which the claimed source of predictive power is deliberately replaced, shuffled, or time-reversed. In quantitative research, examples include permuting labels within suitable time blocks, testing a signal against backward-looking returns, or replacing a proposed feature with a random feature while keeping the modelling and selection procedure unchanged.
+
+        The expected result is no meaningful predictive or economic performance. A placebo failure can reveal data leakage, autocorrelation mistaken for prediction, or an overly flexible selection process. Passing a placebo test is necessary evidence against these failure modes, but it does not by itself prove a strategy is valid or profitable.
+
+        See also
+
+        - :term:`Placebo label`
+
+        - :term:`Look-ahead bias`
+
+        - :term:`Out-of-sample testing`
+
+        Research and literature
+
+        - David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu, `Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance <https://doi.org/10.1090/noti1105458>`__, *Notices of the American Mathematical Society* 61(5), 2014.
+
+    Placebo label
+
+        See :term:`placebo test`.
+
+    Placebo labels
+
+        See :term:`placebo test`.
+
+    Label
+
+        In supervised :term:`machine learning`, a label is the observed outcome assigned to a training example. In a trading dataset, a label may be a future-return class, the sign of a :term:`forward return`, whether a price barrier was reached, or the forward return itself. Labels permit supervised models to learn a relationship between features and outcomes.
+
+        Labels are often not known until after the prediction time. They may be used to train and evaluate a model once realised, but must never be included as a contemporaneous feature or allowed to overlap improperly with validation data. The terms *label* and :term:`target variable` are frequently used interchangeably; *label* is especially common for categorical outcomes.
+
+        See also
+
+        - :term:`Feature`
+
+        - :term:`Forward return`
+
+        - :term:`Cross validation`
+
+        Research and literature
+
+        - `scikit-learn glossary: target data <https://scikit-learn.org/stable/glossary.html#term-y>`__.
+
+    Target variable
+
+        The target variable is the outcome a supervised model is trained to predict, conventionally denoted by *y*. A regression model may target a numeric :term:`forward return`; a classification model may target an up-or-down label or another discrete outcome. The target is observed during model development but is unavailable when the model makes a live forecast.
+
+        Choosing a target variable determines the prediction task, loss function, and appropriate evaluation metric. In systematic trading, it should also match the intended portfolio decision and :term:`prediction horizon`. A target that is statistically predictable need not be economically useful after costs and risk constraints.
+
+        See also
+
+        - :term:`Feature`
+
+        - :term:`Label`
+
+        - :term:`Information coefficient (IC)`
+
+        Research and literature
+
+        - `scikit-learn glossary: target data <https://scikit-learn.org/stable/glossary.html#term-y>`__.
+
+    In-sample testing
+
+        In-sample testing evaluates a model or trading rule on data used during its development, including the period used to choose features, parameters, model class, or trading rules. It is useful for fitting and diagnosis, but its performance is optimistically biased when the same evidence influenced the choices being evaluated.
+
+        In-sample results are not an independent estimate of live performance. The more variants, hyperparameters, or signals are searched, the greater the risk that the selected result reflects noise. Keep a later, untouched period for :term:`out-of-sample testing` and document all material research choices.
+
+        See also
+
+        - :term:`Out-of-sample testing`
+
+        - :term:`Overfitting`
+
+        - :term:`Walk-forward analysis`
+
+        Research and literature
+
+        - David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu, `Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance <https://doi.org/10.1090/noti1105458>`__, *Notices of the American Mathematical Society* 61(5), 2014.
+
+    Out-of-sample testing
+
+        Out-of-sample testing evaluates a fully specified model or trading rule on observations that were not used to select or tune it. For time-ordered financial data, the evaluation period should be later than the development period so that the test reflects the information available when a live decision would have been made.
+
+        A valid out-of-sample test uses point-in-time data, realistic execution and cost assumptions, and no repeated tuning in response to its result. Walk-forward analysis repeats the train-then-test sequence through history and is often more informative than one holdout period. Reusing a test set until it guides model changes turns it into in-sample evidence.
+
+        See also
+
+        - :term:`In-sample testing`
+
+        - :term:`Walk-forward analysis`
+
+        - :term:`Backtest`
+
+        Research and literature
+
+        - David H. Bailey, Jonathan M. Borwein, Marcos López de Prado, and Qiji Jim Zhu, `Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance <https://doi.org/10.1090/noti1105458>`__, *Notices of the American Mathematical Society* 61(5), 2014.
+
+    Factor neutralisation
+
+        Factor neutralisation removes, or constrains, unwanted common-factor exposures from a signal or portfolio. Typical exposures include market beta, sector or industry membership, size, value, momentum, currency, or other style factors. The goal is to assess or trade the signal's incremental effect rather than a known risk exposure that may dominate its apparent performance.
+
+        A researcher can neutralise a cross-sectional signal by regressing it on factor exposures at each date and using the residual, or can build a portfolio whose aggregate exposures are constrained near zero. These approaches answer related but different questions: signal residualisation changes the scores before portfolio construction, while portfolio neutralisation changes the tradable weights. Both require point-in-time factor data and can increase turnover, concentration, or trading costs.
+
+        Factor neutralisation does not prove that a signal is independent of all risks or that it will remain neutral after returns move. The factor model, universe, weighting scheme, and constraint tolerances must be reported, and the constrained portfolio should be evaluated separately from the unconstrained result.
+
+        See also
+
+        - :term:`Factor investing`
+
+        - :term:`Market neutral strategy`
+
+        - :term:`Trading universe`
+
+        Research and literature
+
+        - Eugene F. Fama and Kenneth R. French, `Common Risk Factors in the Returns on Stocks and Bonds <https://doi.org/10.1016/0304-405X(93)90023-5>`__, *Journal of Financial Economics* 33(1), 1993.
+
+    Spearman rank correlation
+
+        Spearman rank correlation, also called Spearman's rho, is a non-parametric measure of the monotonic relationship between two variables. It is calculated as the Pearson correlation of the variables' ranks rather than of their raw values. Its value ranges from -1 to 1: +1 means the observations have exactly the same ordering, -1 means exactly the reverse ordering, and 0 indicates no monotonic association.
+
+        Unlike ordinary (Pearson) correlation, Spearman rank correlation does not require a linear relationship and is less affected by extreme values. It measures whether one variable generally rises as the other rises, even if the size of each change is not proportional.
+
+        In quantitative finance, it is commonly used to calculate rank IC: at a rebalance date, rank the assets by a signal and by their forward returns, then correlate the two sets of ranks. This makes it useful for cross-sectional factor research and machine-learning stock selection, where correctly ordering assets can matter more than predicting exact returns.
+
+        See also
+
+        - :term:`Information coefficient (IC)`
+
+        - :term:`Machine learning`
+
+        - :term:`Backtest`
+
+        Research and literature
+
+        - Charles Spearman, `The Proof and Measurement of Association between Two Things <https://doi.org/10.2307/1412159>`__, *The American Journal of Psychology* 15(1), 1904.
+
     Machine learning
 
         Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed to perform specific tasks.
