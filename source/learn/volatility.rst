@@ -570,3 +570,18 @@ Key metrics: the accessible material reports return spreads and statistical sign
 Mentioned by Ralph Sueppel (Macrosynergy) in `this X discussion <https://x.com/macro_synergy/status/2096849950001013173>`__, which highlights the lower delta-hedged returns. The replies ask whether VST survives controls for volatility level and the variance risk premium, and whether the fast-decaying effect is simply volatility mean reversion.
 
 `Read the paper <https://doi.org/10.2139/ssrn.7354983>`__
+
+Advanced Hedging Tactics in Volatility Strategies
+--------------------------------------------------
+
+Menthor Q frames the management of a short-volatility oil-options book as part of the trade, not a mechanical afterthought.  The first lever is hedging cadence: instead of delta-hedging futures every day, the article compares daily, three-day, weekly, and biweekly adjustments.  The proposed intuition is that frequent re-hedging reacts to noise and locks in whipsaw losses, while a slower cadence can allow short-run oil-price mean reversion after a large move.  Less frequent hedging deliberately accepts higher P&L variability in exchange for lower turnover and, potentially, a better hedge level.
+
+The second lever is the volatility input to delta.  If a trader believes realised volatility will be lower than the implied volatility used to price a sold option, the article proposes calculating delta from the lower realised-volatility estimate.  In its $60 put / $70 spot illustration, a 20% rather than 30% volatility delta initially under-hedges the position, then the hedge is increased rapidly once spot approaches or breaches the strike.  Economically, this is not a pure hedge: it retains directional and short-gamma exposure in exchange for an explicit view on realised volatility and a downside trend/threshold rule.  The article also recommends avoiding near-expiry short gamma unless far from the strike, rolling before expiry week, and spreading strikes and maturities to avoid a concentrated gamma cliff.
+
+Our reading: the useful distinction is between risk reduction and P&L optimisation.  A hedge based on a discretionary realised-volatility forecast, a delayed cadence, or a decision to wait above strike can outperform a conventional delta rule only by accepting model, gap, and basis risk; it can therefore conflict with accounting and risk-system Greeks.  The article says lower-volatility deltas improve P&L in backtests, but supplies no contracts, dates, return series, hedge-rule parameters, transaction costs, tail losses, or out-of-sample tests.  It is best read as a set of hypotheses for a cost-aware, path-dependent hedging study rather than evidence that slower or under-hedged execution is generally superior.
+
+By Menthor Q.
+
+Published as an X Article shared in `this X post <https://x.com/MenthorQpro/status/2098847936650080624>`__.
+
+`Read the article <https://x.com/i/article/2080329525523632128>`__

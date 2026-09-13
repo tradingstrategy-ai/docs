@@ -10200,6 +10200,18 @@
     "short_description": "An X article by Kris Abdelmessih (Moontower) arguing that the volatility risk premium an option seller actually earns depends critically on measurement — ratio (IV/RV) versus spread (IV minus RV) — and on the distinction between volatility and variance, since a short option's P&L scales with the gap in squared vols. Using HYG as the running example, it shows that ratio screens flatter low-vol names: theta-neutral sizing equalizes decay but not variance edge (which requires the square of the theta ratio), so a 10-vol name would have to trade near 17.9 vol to match a 50-vol name at a 20% premium. The takeaway is that variance is the 'V' that matters, vol-point spreads rank opportunities better than ratios, and harvesting low-vol premium is costlier in contracts traded and gamma hedging."
   },
   {
+    "title": "Advanced Hedging Tactics in Volatility Strategies",
+    "authors": "Menthor Q",
+    "publication_year": 2026,
+    "download_page": "https://x.com/i/article/2080329525523632128",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-09-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An X Article on hedging a short-volatility oil-options book with slower rebalance cadence, deltas computed from a realised-volatility view, and dispersed gamma exposure across strikes and maturities. It correctly frames these choices as trading risk for potential P&L rather than free risk reduction: no backtest details, transaction costs, tail losses, or out-of-sample evidence are supplied."
+  },
+  {
     "title": "BTC Systematic Options Strategy Index: Same Strangle, Weekend Versus Full Week",
     "authors": "leifu (@leifuchen)",
     "publication_year": 2026,
