@@ -7824,6 +7824,18 @@
     "short_description": null
   },
   {
+    "title": "How I've Approached Smoothing a Signal Without Overfitting or Backtesting",
+    "authors": "St. Hubert",
+    "publication_year": 2026,
+    "download_page": "https://x.com/i/article/2098884271054503936",
+    "source_file": "signal-decomposition.rst",
+    "included_in_index_at": "2026-09-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A practical EWMA-smoothing selection workflow: evaluate mean information coefficient across forward horizons, weighted for intended holding time and IC decay, then choose a broad stable plateau rather than the in-sample peak. For 12-hour and 24-hour base lookbacks, the illustrated plateau spans roughly 160--512 hours and peaks near mean IC 0.037; the article explicitly calls for unseen or walk-forward validation and reports no asset universe, backtest, transaction costs, or strategy performance."
+  },
+  {
     "title": "Hybrid Data Decomposition-Based Deep Learning for Bitcoin Prediction and Algorithm Trading",
     "authors": "Y. Li, S. Jiang et al.",
     "publication_year": 2022,

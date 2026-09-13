@@ -1570,3 +1570,14 @@ Data and reproduction: the paper is primarily theoretical, with the decompositio
 Key metrics: an econometric methods paper, so it reports no annualised return, Sharpe ratio, drawdown or win rate. Its quantitative claims are the share of daily realized variance variability attributable to the semiannual, annual and biannual components, the competitive forecasting performance of that three-component model against HAR, and — in the second application, drawing on related work by Bandi and coauthors — a hump-shaped relation between future excess market returns and past economic uncertainty whose predictive R² peaks around a 16-year scale.
 
 `Read the paper <https://doi.org/10.3982/QE994>`__
+
+How I've Approached Smoothing a Signal Without Overfitting or Backtesting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+St. Hubert presents a practical way to choose smoothing for a predictive feature without simply selecting the in-sample maximum.  Starting with 12-hour and 24-hour lookbacks, the feature is smoothed over a granular EWMA grid.  For each setting, the author calculates the mean information coefficient across several forward-return horizons, weighting those horizons by the intended holding period and the observed decay of IC.  The central idea is to make smoothing a signal-design choice that reflects the actual time available to execute rather than a generic indicator parameter.
+
+The resulting curves make the trade-off visible: insufficient smoothing leaves a noisy, expensive-to-trade signal; additional smoothing raises mean IC until a broad plateau around 160--512 hours; still more smoothing loses predictive power.  The proposed choice is the centre of that stable ``just right'' plateau, or a blend of parameters within it, not the single best point.  Crucially, the article treats this as a provisional in-sample selection rule: it recommends checking IC, IC decay, and Sharpe on an unseen or walk-forward sample before comparing the feature with existing signals or passing it to an optimiser.  The chart peaks near a mean IC of 0.037 for both base lookbacks, but it supplies no instrument universe, sample dates, cost model, out-of-sample result, or strategy return statistics, so it is a research workflow rather than performance evidence.
+
+By St. Hubert.
+
+`Read the article <https://x.com/i/article/2098884271054503936>`__
