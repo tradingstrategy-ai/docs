@@ -5124,6 +5124,18 @@
     "short_description": null
   },
   {
+    "title": "From The Desk",
+    "authors": "Seth Rosenthal (Market Math)",
+    "publication_year": 2026,
+    "download_page": "https://marketmath.substack.com/p/from-the-desk",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-14",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Seth Rosenthal argues that mean reversion is a testable property of a specified process, not a description of any extreme price move. The essay separates negative autocorrelation, stationary levels, cointegration, variance ratios, and half-life, then sets out a disciplined sequence of definition, stability testing, state conditioning, out-of-sample validation, and cost-aware evaluation."
+  },
+  {
     "title": "IV Mean Reversion",
     "authors": "Peter, CrackingMarkets",
     "publication_year": null,

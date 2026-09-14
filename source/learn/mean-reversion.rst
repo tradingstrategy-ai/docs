@@ -286,3 +286,14 @@ By Oddmund Groette (QuantifiedStrategies.com).
 Mentioned by QuantifiedStrategies.com in `this X post <https://x.com/QuantifiedStrat/status/2095934668847579471>`__, which says the strategies were partly published earlier, then adjusted and republished as three free examples.
 
 `Read the blog post <https://www.quantifiedstrategies.com/mean-reversion-strategies/>`__.
+
+From The Desk
+-------------
+
+Seth Rosenthal's Market Math essay argues that mean reversion should be treated as a testable property of a specified process, not as a label for any price move away from a moving average or a high Z-score. It distinguishes a temporary displacement from a permanent repricing, and separates several concepts that are often conflated: negative return autocorrelation, a stationary mean-reverting level process, cointegration in a spread, a low variance ratio, and an estimated half-life.
+
+The article proposes a disciplined research sequence: define the series and equilibrium relation, test stationarity and serial dependence, measure the speed and stability of any decay, condition results on market state, inspect failed reversions, validate out of sample, and include implementation costs. Its central warning is that none of the usual diagnostics alone establishes a tradeable opportunity; apparent reversion can be regime-specific, unstable, or too small to survive liquidity and trading frictions.
+
+By Seth Rosenthal (Market Math).
+
+`Read the blog post <https://marketmath.substack.com/p/from-the-desk>`__.
