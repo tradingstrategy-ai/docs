@@ -3684,6 +3684,18 @@
     "short_description": null
   },
   {
+    "title": "The Price-Volume Decoupling Reversal Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2099689112630653260",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-09-15",
+    "filename": "the-price-volume-decoupling-reversal-factor.pdf",
+    "downloaded_at": "2026-09-15",
+    "download_failure_reason": null,
+    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -1*RANK(COVARIANCE(RANK(CLOSE),RANK(VOLUME),5)), which ranks stocks by how weakly their price and volume have co-moved (in rank terms) over the trailing five days and bets that this price-volume decoupling reverts. A daily-rebalanced quantile backtest from 2005 to 2026 shows the top quantile compounding to roughly 60x against about 12x for the middle quantile and under 3x for the bottom, with a cumulative Rank IC climbing almost monotonically above 100. Our analysis notes the formula cannot distinguish a transient liquidity dislocation from a stock beginning a genuine volume-backed trend, and that rank-covariance is sensitive to a stock's baseline volume regime with no normalisation, sector-neutralisation, or cost accounting shown in the post."
+  },
+  {
     "title": "The Volatility Range Expansion Factor",
     "authors": "套利豪仔 (@pritipatelfgoo)",
     "publication_year": 2026,

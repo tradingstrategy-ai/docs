@@ -296,3 +296,20 @@ Key metrics: over 1996–2026 (~368 vol-targeted trading months), the composite 
 Introduced by Ralph Sueppel (@macro_synergy) in `this discussion <https://x.com/macro_synergy/status/2096134989041619378>`__, where he notes that "theory-based macro factors have significantly predicted gold futures returns at monthly and quarterly horizons" and that related strategies "would have generated respectable long-term P&L value with little correlation to major market benchmarks."
 
 `Read the paper <https://macrosynergy.com/research/gold-and-macro-factors/>`__
+
+The Price-Volume Decoupling Reversal Factor
+---------------------------------------------
+
+Another short, single-formula X post from 套利豪仔 (@pritipatelfgoo), in the same series as :doc:`The Volatility Range Expansion Factor <./equity-factors>` above and :doc:`The Volume Momentum Deviation Factor <./technical-indicators>` — no external write-up, just a factor formula, a paragraph of intuition, and two backtest charts, with an invitation for readers to reproduce it. The author calls it the Price-Volume Decoupling Reversal Factor (价量协同失效反转因子): the premise is that price and volume normally move together — rising prices with rising volume, falling prices with falling volume — and that when this co-movement breaks down over a short window, the resulting "structural mismatch" tends to revert.
+
+**The strategy.** The published formula is ``-1 * RANK(COVARIANCE(RANK(CLOSE), RANK(VOLUME), 5))``. For each stock, close and volume are cross-sectionally ranked every day, then the five-day rolling covariance of those two rank series is taken; a large positive covariance means price and volume have been moving together over the past week, while a value near zero or negative means they have decoupled. Cross-sectionally ranking that covariance and negating the result puts stocks with the *weakest* recent price-volume co-movement at the top of the long bucket, so the strategy is a bet that decoupled names revert toward normal synergy — buying structural divergence and selling structural agreement.
+
+The attached charts are a daily-rebalanced quantile backtest (rebalance period 1, horizon 1) spanning January 2005 to 2026: the top quantile compounds to roughly 60x, versus about 12x for the middle quantile and under 3x for the bottom, alongside a cumulative Rank IC curve that climbs almost monotonically to above 100 over the same period.
+
+**Why it should work.** The mechanism sits close to standard microstructure intuition: a price move accompanied by rising volume usually signals broad participation and a degree of consensus, while a price move without matching volume — or a volume shock without a price reaction — is more consistent with a narrow subset of participants moving price, forced flow, or a temporary imbalance than with information being genuinely absorbed by the market. Ranking on a short five-day covariance window keeps the signal reactive to the kind of transient dislocation that should resolve quickly, rather than to slow, structural shifts in trading activity.
+
+**Our reading of the main weakness.** As posted, the formula gives no way to distinguish a temporary liquidity event from a stock that has simply begun a genuine trend on rising volume — the reversal framing would misclassify the latter as decoupling and bet against it. Rank-covariance of this kind is also sensitive to a stock's baseline volume regime, and no volume-normalisation, sector-neutralisation, or turnover and cost accounting is shown, so the chart evidence is consistent with true reversal alpha but doesn't rule out an uncontrolled size or liquidity tilt either. In the replies, another trader (@DavidHoong1) asked whether this was a repost of an earlier strategy of the author's that he had tested and found didn't work; the author replied simply "Different," so the exchange is inconclusive about this specific factor but a reminder that the account posts many such factors in quick succession.
+
+By 套利豪仔 (@pritipatelfgoo). Quotations are X's own machine translation from the Chinese original.
+
+`Read the X post <https://x.com/pritipatelfgoo/status/2099689112630653260>`__
