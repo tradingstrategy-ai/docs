@@ -1680,6 +1680,18 @@
     "short_description": null
   },
   {
+    "title": "I Tested 1,800 Bollinger Bands Breakout Strategies (Here's the Winner)",
+    "authors": "Tomas Nesnidal",
+    "publication_year": 2026,
+    "download_page": "https://breakoutos.com/blog/bollinger-bands-breakout-strategy",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-09-15",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Tomas Nesnidal describes a search over 1,800 E-mini Nasdaq Bollinger-Band breakout candidates, selecting a Monday-only 1.8-ATR configuration using neighboring-parameter, walk-forward, proprietary robustness, recent-data, and cross-market checks."
+  },
+  {
     "title": "My 7-Step Framework For Accurate Backtesting",
     "authors": "Pedma",
     "publication_year": null,

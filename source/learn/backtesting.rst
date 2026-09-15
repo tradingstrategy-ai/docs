@@ -319,3 +319,16 @@ Mentioned by D. Martin (@dmartin_trading), a systematic trader, in `this discuss
 By D. Martin.
 
 `Read the post <https://x.com/dmartin_trading/status/2089351541203562918>`__.
+
+I Tested 1,800 Bollinger Bands Breakout Strategies (Here's the Winner)
+-----------------------------------------------------------------------
+
+Tomas Nesnidal describes a no-code search over 1,800 intraday Bollinger-Band breakout variants on E-mini Nasdaq, varying the band configuration and ATR-based entry space while restricting the strategy to Mondays and closing positions before midnight. The selected candidate used a 1.8-ATR space multiplier. Rather than presenting its in-sample equity curve alone, the article checks whether the adjacent 1.7 and 1.9 settings also perform, ranks the parameter under walk-forward analysis, applies the platform's proprietary robustness and recent-data-alignment measures, and checks recent performance on YM, ES, and RTY.
+
+The useful methodological point is the insistence that a candidate should occupy a stable region of the parameter surface and survive time- and market-based validation, not merely be the best result from a large search. The reported 86% ``robustness index``, walk-forward rank, and cross-market results are platform-defined, hypothetical backtest claims rather than independently reproducible evidence; the article does not disclose the full parameter grid, sample dates, performance statistics, transaction costs, or the definition of its robustness metric. Its claim that the edge is only three to four years old also makes a genuinely untouched holdout and live forward test especially important.
+
+Mentioned by Breakout Trading Academy (@onlybreakouts) in `this X discussion <https://x.com/onlybreakouts/status/2099958995003797854>`__, which highlights the Monday-only, 1.8-ATR configuration and its neighbor, walk-forward, and recent-data checks.
+
+By Tomas Nesnidal.
+
+`Read the blog post <https://breakoutos.com/blog/bollinger-bands-breakout-strategy>`__.
