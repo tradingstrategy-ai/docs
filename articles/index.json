@@ -4656,6 +4656,18 @@
     "short_description": null
   },
   {
+    "title": "Models for the Impact of All Order Book Events",
+    "authors": "Zoltán Eisler, Jean-Philippe Bouchaud, Julien Kockelkoren",
+    "publication_year": 2011,
+    "download_page": "https://arxiv.org/abs/1107.3364",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-09-17",
+    "filename": "models-for-the-impact-of-all-order-book-events.pdf",
+    "downloaded_at": "2026-09-17",
+    "download_failure_reason": null,
+    "short_description": "Eisler, Bouchaud and Kockelkoren (CFM) generalise the propagator model of market-order impact to all six order book event types at the best quotes (market orders, limit orders and cancellations, each price-changing or not), comparing a transient impact model (TIM) with a history-dependent impact model (HDIM) in which gaps behind the best quote are modulated by past order flow through a 6x3 influence matrix. Calibrated on 14 NASDAQ stocks over 53 days in 2008, they find that price-changing events harden the book and reduce the impact of subsequent same-sign events, and that despite its theoretical inconsistency the TIM reproduces the price diffusion curve better than the HDIM, whose naive calibration overestimates diffusion by about 15% due to a factorisation approximation."
+  },
+  {
     "title": "Optimal Make-Take Fees in a Multi Market Maker Environment",
     "authors": null,
     "publication_year": null,
