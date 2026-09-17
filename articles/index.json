@@ -1608,6 +1608,18 @@
     "short_description": null
   },
   {
+    "title": "Backtesting, Biases, and the Bilbo Box Breakout",
+    "authors": "Milkman Trades",
+    "publication_year": 2026,
+    "download_page": "https://milkmantrades.com/backtesting-writeup.html",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-09-17",
+    "filename": "backtesting-biases-and-the-bilbo-box-breakout.pdf",
+    "downloaded_at": "2026-09-17",
+    "download_failure_reason": null,
+    "short_description": "A retail trader's plain-English writeup of an hourly compression-breakout call-buying strategy (the Bilbo Box, adapted from Saty Mahajan) backtested on 1,031 trades against real option quotes from 2019 to 2026, followed by a primer on lookahead, survivorship and overfitting biases. Key takeaway: a backtest's job is to survive attempts to kill its number, and having one AI model adversarially audit another's analysis catches major bugs most of the time."
+  },
+  {
     "title": "Backtests Are Sanity Checks, Not Predictions: Rethinking Historical Testing",
     "authors": "Pedma",
     "publication_year": null,
