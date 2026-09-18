@@ -10452,6 +10452,18 @@
     "short_description": null
   },
   {
+    "title": "Intraday Volatility Dynamics",
+    "authors": "Carsten H. Chong, Marc Hoffmann, Mathieu Rosenbaum, and Grégoire Szymanski",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.2139/ssrn.7344018",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-09-18",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "A high-frequency econometrics preprint that develops a GMM procedure for the autocorrelation of intraday volatility changes, robust to sampling error, jumps, and market-microstructure noise. In SPY transaction data, it finds negative serial correlation in changes in both latent and realised volatility; the accessible abstract does not give coefficient estimates or replication materials."
+  },
+  {
     "title": "Harvesting the Variance Risk Premium: A Backtest Across Expiry-Day, Stop-Loss and Lot-Scaling Dimensions",
     "authors": "Rohit Trehan",
     "publication_year": 2026,

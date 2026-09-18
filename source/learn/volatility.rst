@@ -585,3 +585,18 @@ By Menthor Q.
 Published as an X Article shared in `this X post <https://x.com/MenthorQpro/status/2098847936650080624>`__.
 
 `Read the article <https://x.com/i/article/2080329525523632128>`__
+
+Intraday Volatility Dynamics
+----------------------------
+
+Carsten H. Chong, Marc Hoffmann, Mathieu Rosenbaum, and Grégoire Szymanski develop inference for the autocorrelation of intraday volatility changes that remains valid when spot-volatility estimates are distorted by sampling error, price jumps, and market-microstructure noise. Their approach combines the limiting autocorrelation structure of continuous-time increments at shrinking horizons—which must match fractional Gaussian noise—with infill asymptotics for realised autocovariances, yielding a feasible generalised-method-of-moments estimator.
+
+Our summary: the contribution is a way to distinguish genuine short-horizon volatility dynamics from serial dependence introduced by the estimator itself. Applied to SPY transaction data, the authors find negative serial correlation in changes in both latent and realised intraday volatility. That makes the paper relevant for intraday volatility forecasts and execution-risk models, where an apparent mean-reversion signal may otherwise be an artefact of noisy high-frequency measurement.
+
+Data and reproduction: the accessible abstract identifies SPY transaction data, but does not disclose the sample dates, cleaning rules, estimator parameters, code, or a downloadable data set. The SSRN preprint PDF was unavailable through the accessible public endpoint, so the detailed empirical design and numerical tables could not be independently checked.
+
+Key metrics: this is an econometric inference paper rather than a trading-strategy backtest; it reports no annualised return, Sharpe ratio, drawdown, turnover, or transaction-cost result in the accessible material. Its primary empirical result is the negative serial correlation of latent and realised intraday-volatility changes in SPY; the accessible abstract does not provide the coefficient estimates or confidence intervals.
+
+Mentioned by Piotr Pomorski (@PtrPomorski) in `this X post <https://x.com/PtrPomorski/status/2100918348376649951>`__.
+
+`Read the paper <https://doi.org/10.2139/ssrn.7344018>`__
