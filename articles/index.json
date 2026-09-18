@@ -1536,6 +1536,18 @@
     "short_description": null
   },
   {
+    "title": "Why the Optimal Path for a Hedge Fund Ends Up Looking Like a Prop Firm",
+    "authors": "0xFaust (@0xFaust12)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/0xFaust12/status/2100743670651924652",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-09-18",
+    "filename": "why-the-optimal-path-for-a-hedge-fund-ends-up-looking-like-a-prop-firm.pdf",
+    "downloaded_at": "2026-09-18",
+    "download_failure_reason": null,
+    "short_description": "An X thread arguing that fundamental hedge funds are structurally outcompeted by vertically integrated prop firms such as Jane Street: to compete, a fund would need to hire quants, build a risk model and optimiser, calibrate a market-impact model from its own trade data, and then overlay short-term execution alphas — at which point it is a prop firm trading against market makers it cannot beat on speed or cost. Captured with the Ethan Kho quote-chain root and the substantive replies and quote-tweets, including pushback that large pod shops already internalise flow into central risk books and that long/short funds compete on research and informational edge rather than execution."
+  },
+  {
     "title": "A Framework for Separating Market Signal from Noise in Trading",
     "authors": "Pedma",
     "publication_year": null,
