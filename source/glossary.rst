@@ -5902,6 +5902,28 @@ and algorithmic trading.
 
         - :term:`Dataset`
 
+    Gain-to-pain ratio
+
+        The gain-to-pain ratio (GPR) measures a strategy's cumulative net gain relative to the total magnitude of its losing periods. In the definition introduced by Jack Schwager, it is calculated from periodic returns, conventionally monthly returns:
+
+        ``GPR = sum(all period returns) / abs(sum(negative period returns))``.
+
+        A GPR of 1 means that the strategy's cumulative net gain equals the total magnitude of all losing periods; larger values indicate more net gain for each unit of realised loss. The ratio penalises both frequent and large losses, while not penalising upside volatility. It should be reported with the sampling frequency, time window, return convention, and treatment of fees and financing costs.
+
+        Some sources instead define a similarly named statistic as the sum of positive returns divided by the absolute sum of negative returns. That is a different convention: using the same periodic returns, it equals the standard GPR plus one. State the formula explicitly when comparing reports, and pair GPR with :term:`drawdown` and tail-risk measures because an apparently smooth sample may not contain the strategy's rare losses.
+
+        Research and literature
+
+        - Jack D. Schwager, `The Gain to Pain Ratio <https://onlinelibrary.wiley.com/doi/10.1002/9781119203469.app1>`__, Appendix A in *Hedge Fund Market Wizards*, Wiley, 2012.
+
+    Gain to pain ratio
+
+        See :term:`gain-to-pain ratio`.
+
+    GPR
+
+        See :term:`gain-to-pain ratio`.
+
     Information coefficient (IC)
 
         The information coefficient (IC) measures the predictive skill of a forecast or signal. In quantitative finance, it is the correlation between a signal available at a decision time and the return subsequently realised over a specified holding period. An IC of zero indicates no linear or monotonic association; a positive IC means higher signal values tend to be followed by higher returns, while a negative IC means the reverse. IC values lie between -1 and 1, though useful financial signals usually have much smaller values.
