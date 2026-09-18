@@ -297,3 +297,18 @@ The article proposes a disciplined research sequence: define the series and equi
 By Seth Rosenthal (Market Math).
 
 `Read the blog post <https://marketmath.substack.com/p/from-the-desk>`__.
+
+Intraday Residual Reversal in the U.S. Stock Market
+----------------------------------------------------
+
+Jonathan Brogaard, Jaehee Han and Hanjun Kim study whether the part of an intraday stock return not explained by known characteristics subsequently reverses. On each 30-minute interval, the authors estimate a factor-based expected return from 15 cross-sectional characteristics, use the unexplained component as a residual-return signal, and form a market-neutral portfolio that buys the most negative-residual S&P 500 stocks and shorts the most positive-residual stocks. Their interpretation is that residual moves partly reflect temporary order-flow and liquidity pressure rather than information about fundamentals, so the long-short return is compensation for supplying liquidity to that transitory component.
+
+Our summary: the paper is a useful bridge between cross-sectional factor modelling and microstructure mean reversion. Its unusually short holding horizon makes the headline return a statement about gross mid-quote predictability, not a ready-to-trade strategy. In the authors' transaction-cost analysis, the 30-minute implementation is not viable at 3 bp per trade; the reversal persists for roughly 3.5 hours, so longer holding periods can retain positive, significant results under some cost assumptions. That is the operative result: any implementation must earn more than spread, impact, borrow, and the cost of repeatedly trading roughly one fifth of the S&P 500, not merely reproduce a residual sort.
+
+Data and reproduction: the study uses S&P 500 constituents from July 1996 through December 2022, 30-minute bid-ask midpoints from TAQ, and daily inputs for the 15 characteristics. The authors report 169 formation/holding variants, all positive and statistically significant before costs. No code or processed dataset is released; reproducing it requires licensed TAQ data plus historical constituent membership, point-in-time characteristic data, and careful treatment of midpoint fills, reconstitution, and shorting.
+
+Key metrics: the baseline residual-reversal portfolio earns a reported gross annualised return of 162.3% (13.5% per month stated in the conference abstract). At the individual 30-minute horizon, the lowest-residual portfolio is reported at 5.39% annualised and the highest-residual portfolio at -2.31%, for a 7.70% annualised long-short spread. The study reports stronger results in high-VIX periods; however, the 30-minute turnover makes transaction costs the binding economic metric rather than the gross return.
+
+Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/status/2100727687518056513>`__, where he highlights the 30-minute residual sort, the headline gross return, and the importance of costs and execution.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4731947>`__.

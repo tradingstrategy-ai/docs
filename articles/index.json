@@ -5196,6 +5196,18 @@
     "short_description": null
   },
   {
+    "title": "Intraday Residual Reversal in the U.S. Stock Market",
+    "authors": "Jonathan Brogaard, Jaehee Han, Hanjun Kim",
+    "publication_year": 2024,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4731947",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-18",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "Brogaard, Han and Kim use 30-minute TAQ midpoint returns for S&P 500 stocks (1996-2022) and residuals from a 15-characteristic intraday factor model to form a long-negative/short-positive residual portfolio. They report a 162.3% gross annualised return, but the 30-minute rebalance fails at 3 bp transaction costs; reversal remains significant for longer holding periods, framing the result as a liquidity-provision effect whose tradeability depends on execution."
+  },
+  {
     "title": "Larry Connors' R3 Strategy (It Still Works)",
     "authors": "Oddmund Groette (QuantifiedStrategies.com)",
     "publication_year": 2020,
