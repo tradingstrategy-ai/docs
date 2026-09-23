@@ -5184,6 +5184,18 @@
     "short_description": null
   },
   {
+    "title": "End-of-Day Reversal",
+    "authors": "Guido Baltussen, Zhi Da, Amar Soebhag",
+    "publication_year": 2025,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5039009",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-23",
+    "filename": "end-of-day-reversal.pdf",
+    "downloaded_at": "2026-09-23",
+    "download_failure_reason": null,
+    "short_description": "Documents a cross-sectional reversal in the final 30 minutes of the US trading day: a stock's return from the prior close to 15:00 negatively predicts its 15:30-16:00 return, giving a long-short portfolio 3.78 bps/day value-weighted (9.5% annualised) and 6.86 bps/day equal-weighted (17.3%) before costs over 1993-2019. The effect is entirely driven by positive price pressure on intraday losers and is explained not by liquidity, gamma hedging or arbitrageur unwinding but by attention-induced retail buy-the-dip purchases and short-sellers cutting new positions before the overnight; the price pressure is transitory and reverses the next day, and the paper provides no net-of-cost backtest."
+  },
+  {
     "title": "From The Desk",
     "authors": "Seth Rosenthal (Market Math)",
     "publication_year": 2026,
@@ -10452,18 +10464,6 @@
     "short_description": null
   },
   {
-    "title": "Intraday Volatility Dynamics",
-    "authors": "Carsten H. Chong, Marc Hoffmann, Mathieu Rosenbaum, and Grégoire Szymanski",
-    "publication_year": 2026,
-    "download_page": "https://doi.org/10.2139/ssrn.7344018",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-09-18",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": "A high-frequency econometrics preprint that develops a GMM procedure for the autocorrelation of intraday volatility changes, robust to sampling error, jumps, and market-microstructure noise. In SPY transaction data, it finds negative serial correlation in changes in both latent and realised volatility; the accessible abstract does not give coefficient estimates or replication materials."
-  },
-  {
     "title": "Harvesting the Variance Risk Premium: A Backtest Across Expiry-Day, Stop-Loss and Lot-Scaling Dimensions",
     "authors": "Rohit Trehan",
     "publication_year": 2026,
@@ -10486,6 +10486,18 @@
     "downloaded_at": "2026-09-01",
     "download_failure_reason": null,
     "short_description": "A LightGBM LambdaRank ranker scores a daily nine-candidate cross-section on the SPXW 0DTE surface (eight delta-targeted short puts from 0.05 to 0.45, plus a SKIP candidate), trained against a path-aware Sortino-on-bars label computed at one-minute resolution with intraday marks at the ask, and gated by an abstention rule keyed to the top-1 vs top-2 score gap. Evaluated under Reg-T margin, tiered IB fees and bid-to-mid fills across a 2021-2024 walk-forward and a held-out 2025 year, seven sizing methods return out-of-time Sharpe ratios of 4.31 to 5.76 versus 0.18 for the CBOE PUT index. The paper is candid that the ratio comes from the denominator (10.48% return at 1.82% volatility per unit of collateral, unreachable leverage to match benchmark vol), that a Diebold-Mariano test cannot resolve the mean P&L difference on one year, that deflated Sharpe falls to 0.856-0.913 out of time, and that per-year Sharpe ranges from 6.52 in 2021 to 0.41 in 2024."
+  },
+  {
+    "title": "Intraday Volatility Dynamics",
+    "authors": "Carsten H. Chong, Marc Hoffmann, Mathieu Rosenbaum, and Grégoire Szymanski",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.2139/ssrn.7344018",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-09-18",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "A high-frequency econometrics preprint that develops a GMM procedure for the autocorrelation of intraday volatility changes, robust to sampling error, jumps, and market-microstructure noise. In SPY transaction data, it finds negative serial correlation in changes in both latent and realised volatility; the accessible abstract does not give coefficient estimates or replication materials."
   },
   {
     "title": "Introducing NBEATSx to Realized Volatility Forecasting",
