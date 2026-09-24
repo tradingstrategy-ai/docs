@@ -1716,6 +1716,18 @@
     "short_description": "Tomas Nesnidal describes a search over 1,800 E-mini Nasdaq Bollinger-Band breakout candidates, selecting a Monday-only 1.8-ATR configuration using neighboring-parameter, walk-forward, proprietary robustness, recent-data, and cross-market checks."
   },
   {
+    "title": "Monday NQ Shorts When Friday's High Holds",
+    "authors": "Jan - Algo Trader (@algojan)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/algojan/status/2103040446411030638",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-09-24",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An X post describes a Monday NQ-futures short strategy triggered when the previous Friday's high was never broken, backtested on tick data from February 2022 through May 2026. The displayed 62-trade results report 573.30% return, 2.96 profit factor, 22.6% win rate, 0.91 Sharpe, and 15.2% maximum drawdown, but omit enough execution and out-of-sample detail that the figures require independent replication."
+  },
+  {
     "title": "My 7-Step Framework For Accurate Backtesting",
     "authors": "Pedma",
     "publication_year": null,

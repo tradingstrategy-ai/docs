@@ -345,3 +345,18 @@ The second half is a short primer on what a backtest is — turning a story into
 By Milkman Trades (@MrMilkTrading).
 
 `Read the blog post <https://milkmantrades.com/backtesting-writeup.html>`__.
+
+Monday NQ Shorts When Friday's High Holds
+------------------------------------------
+
+Jan (Algo Trader) describes a simple weekday-pattern strategy that shorts NQ futures every Monday when the previous Friday's high was never broken. The post reports a backtest on real tick data from February 2022 through May 2026 and presents the results through a Roboquant backtest dashboard.
+
+The displayed results are strong but concentrated in a small sample: 62 trades produced a reported +573.30% return, +$57,330 net P&L, 2.96 profit factor, 22.6% win rate, 10.13 average reward-to-risk ratio, and -15.2% maximum drawdown. The dashboard also shows a 0.91 Sharpe ratio, 0.10 Sortino ratio, 0.73 Calmar ratio, +$924.68 expectancy, a +$6,189.64 average win versus a -$610.94 average loss, and a maximum losing streak of 11 trades. The low win rate and large average-winner/average-loser asymmetry are central to the payoff profile.
+
+Our reading: this is a useful hypothesis for testing a day-of-week and range-break condition, not yet evidence of a deployable edge. The post does not specify commissions, slippage, contract sizing, margin and leverage, roll treatment, exact entry and exit times, or whether the displayed figures are net of all execution costs. Four years of data yielding only 62 trades also leaves substantial uncertainty around the return and drawdown estimates, while the post provides no untouched holdout or live-forward validation. Any replication should test nearby definitions of ``Friday's high was never broken``, use executable NQ prices, and reserve a post-2026 evaluation period.
+
+The post links to `Roboquant <https://roboquant.dev/?via=algojan>`__, an end-to-end AI quant platform, rather than to a separate research article.
+
+Mentioned by Jan - Algo Trader (@algojan) in `this X post <https://x.com/algojan/status/2103040446411030638>`__.
+
+`Read the post <https://x.com/algojan/status/2103040446411030638>`__.
