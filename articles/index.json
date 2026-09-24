@@ -4152,6 +4152,18 @@
     "short_description": "This paper investigates model-free deep reinforcement learning (DRL) traders in a controlled market environment with known mean-reverting factors, allowing direct comparison of DRL performance against an exact dynamic programming solution. The study shows that DRL agents leveraging classical mean-reversion strategies outperform benchmarks even when price dynamics are misspecified or assumptions about extreme events and volatility clustering are violated."
   },
   {
+    "title": "Deep Sector Rotation Swing Trading",
+    "authors": "Joel R. Bock, Akhilesh Maewal",
+    "publication_year": 2023,
+    "download_page": "https://doi.org/10.2139/ssrn.4280640",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-09-24",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "ssrn_paywall",
+    "short_description": "A deep-learning sector-rotation system that trades ETFs representing 11 U.S. economic sectors weekly. The January 2012–December 2022 backtest reports average and median CAGR outperformance of 12.63% and 7.63%, an average Sharpe ratio of 1.39, and mean maximum drawdown of 10%, but excludes trading costs and should be treated as preliminary."
+  },
+  {
     "title": "Dependency structures in cryptocurrency market from high to low frequency",
     "authors": null,
     "publication_year": null,

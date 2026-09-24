@@ -1588,3 +1588,18 @@ Key metrics: on the 2025 holdout, the Hybrid reports 51.26% return, Sharpe 2.44,
 Mentioned by Piotr Pomorski in `this discussion <https://x.com/PtrPomorski/status/2095542585888592300>`__, where he describes it as an interesting paper and notes that hybrid models commonly outperform.
 
 `Read the paper <https://arxiv.org/abs/2608.27076>`__
+
+Deep Sector Rotation Swing Trading
+----------------------------------
+
+Joel R. Bock and Akhilesh Maewal present a deep-learning system for weekly sector-rotation swing trading using ETFs representing 11 major sectors of the U.S. economy. The model uses a multiple-input, multiple-output design to select and allocate among sectors, and the paper evaluates the strategy over January 2012 through December 2022 against a buy-and-hold benchmark.
+
+Our summary: the paper is a compact example of using machine learning for cross-sectional allocation rather than single-stock price prediction. The reported advantage is strongest in the difficult 2022 market: the strategy generated a 28.4% positive alpha while the S&P 500 lost about 18% on a CAGR basis. The result is promising but preliminary. The backtest ends in 2022, the abstract does not establish a genuinely untouched out-of-sample period, and the authors explicitly exclude trading costs, so the published spread should not be interpreted as deployable net performance.
+
+Data and reproduction: the study uses weekly observations for sector ETFs over January 2012--December 2022 and rebalances weekly. The accessible SSRN record identifies the 11-sector universe and the multi-input/multi-output model design, but does not identify a public code repository, frozen data set, full feature list, or detailed transaction-cost assumptions. The PDF could not be retrieved from SSRN in this environment, so those implementation details require verification from the paper itself.
+
+Key metrics: the authors report that annualised CAGR exceeded the buy-and-hold benchmark by an average 12.63% and a median 7.63%; average Sharpe ratio was 1.39 and mean maximum drawdown was 10%. For 2022, the reported positive alpha was 28.4% while the S&P 500 had an approximately 18% CAGR loss. These are gross, preliminary backtest results and exclude commissions, spreads, market impact, ETF trading frictions, and any delay between signal generation and execution.
+
+Mentioned by Matias Scalbi (@MatiasScalbi) in `this discussion <https://x.com/MatiasScalbi/status/2102908597717848077>`__, who highlights the 2022 result while noting the need for post-2022 validation and cost-inclusive testing.
+
+`Read the paper <https://doi.org/10.2139/ssrn.4280640>`__
