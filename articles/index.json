@@ -4404,6 +4404,18 @@
     "short_description": "A Macrosynergy research piece using neural networks to learn U.S. equity sector portfolio weights directly from a point-in-time panel of macroeconomic divergence factors, with candidate networks combined dynamically by estimated out-of-sample performance. Applied to sector allocation, the macro-factor learning approach doubles long-term wealth generation when allowed to shift weights and hold safe-haven Treasuries, and yields profitable long-short sector signals; a JPMaQS-based Jupyter notebook allows full replication."
   },
   {
+    "title": "Practical Transforms for Testing New Datasets on 1-Hour Bars",
+    "authors": "Stat Arb (@quant_arb)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/quant_arb/status/2103850441448767984",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-09-26",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A short practitioner note recommending rolling z-scores, market-cap normalisation, rolling means and standard deviations, and rolling time-series Sharpe ratios as baseline transforms for one-hour financial bars. It emphasises preprocessing, correct sampling, and reducing lookback windows when data is limited; the post is a heuristic checklist rather than a validated trading result."
+  },
+  {
     "title": "Predicting Cryptocurrency Prices with Machine Learning Algorithms: A Comparative Analysis",
     "authors": null,
     "publication_year": null,

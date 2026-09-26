@@ -1603,3 +1603,14 @@ Key metrics: the authors report that annualised CAGR exceeded the buy-and-hold b
 Mentioned by Matias Scalbi (@MatiasScalbi) in `this discussion <https://x.com/MatiasScalbi/status/2102908597717848077>`__, who highlights the 2022 result while noting the need for post-2022 validation and cost-inclusive testing.
 
 `Read the paper <https://doi.org/10.2139/ssrn.4280640>`__
+
+Practical Transforms for Testing New Datasets on 1-Hour Bars
+-------------------------------------------------------------
+
+Stat Arb (@quant_arb) shares a compact starting checklist for testing new financial datasets sampled as one-hour bars. The suggested transforms are a rolling z-score, ``zscore(X, 720)``; market-cap normalisation, ``X / mcap``, when ``X`` is denominated in U.S. dollars; and rolling time-series mean, standard deviation, and Sharpe over 72- and 168-hour windows. The post also recommends preprocessing carefully, sampling consistently, and shortening the lookback windows when the available history is limited.
+
+This is a useful baseline feature-engineering menu, not evidence that any of these transforms creates predictive power. Before using it in a model or backtest, specify whether the z-score is time-series or cross-sectional, use only information available at each timestamp, and make market-cap data point-in-time. For the rolling Sharpe, document the return definition, risk-free rate, annualisation factor, minimum observation count, and zero-volatility handling. Also decide how to treat missing or irregular one-hour bars and whether a window is measured in bars or clock time; these choices can materially change a feature and can otherwise introduce look-ahead or survivorship bias.
+
+Mentioned by Stat Arb (@quant_arb) in `this discussion <https://x.com/quant_arb/status/2103850441448767984>`__.
+
+`Read the post <https://x.com/quant_arb/status/2103850441448767984>`__.
