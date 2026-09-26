@@ -106,6 +106,8 @@ By Luke Leasure.
 
 `Read the article <https://x.com/0xMether/article/2016201886395990198>`__
 
+.. _funding-rate-predictability-oos:
+
 Predictability of Funding Rates: Out-of-Sample Evidence from Bitcoin Perpetuals
 -------------------------------------------------------------------------------
 
@@ -142,6 +144,8 @@ Mentioned by Mikko Ohtamaa (Margin Syndicate / Trading Strategy) in `this Linked
 By Mikko Ohtamaa.
 
 `Read the post <https://www.linkedin.com/posts/funding-monitor-update-settlement-interval-share-7485997110203490304-Zx3m/>`__.
+
+.. _denoising-funding-rate-signals:
 
 Denoising Funding Rate Signals with Z-Scores, Open Interest and Price
 ---------------------------------------------------------------------
@@ -213,3 +217,36 @@ Our summary: read this as a strategy exposition rather than as evidence. The hea
 By Pallas Fund.
 
 `Read the investment thesis <https://app.pallas.fund/thesis/basis-trading-hip-3>`__.
+
+Trading Crypto Funding Rates — Part 1: Do Cheaper-Funding Coins Earn Better Returns?
+------------------------------------------------------------------------------------
+
+dima (@dima_quant) tests whether perpetual futures funding carries tradable cross-sectional information. Each day, rank Binance perpetuals by recent funding, go long the coins where funding is relatively cheap and short the ones where it is relatively expensive, then check whether the funding payments survive the price moves and trading costs. The sample covers Binance perpetuals from 2023 to 2025, including retired contracts to limit survivorship bias. It is split into historical Top 20, Top 50 and Top 100 universes using market caps known before each month. The write-up is a research log that keeps the parts that did not work.
+
+What funding means here: a perpetual future never expires, so the exchange keeps its price anchored to spot with periodic payments between the two sides. When the perp trades rich to spot the rate is positive and longs pay shorts; when it trades cheap, shorts pay longs. The payment is charged on the position's notional at each settlement. A $10,000 short receives $10 at a +0.10% settlement but loses $200 if the price rises 2%, so funding is a cash flow layered on top of full price risk, not free income. In practice the rate is the price of leverage on one side of the market: persistently high funding means longs are crowded and are paying to stay in. The author sums the recorded settlements within each UTC day and annualises them. Settlements are counted rather than assumed to be three a day, because intervals vary by contract; one MYX day had 24 settlements summing to -38.46%. "Cheap" is relative to the other coins. A long in a coin at +10% annualised still pays funding, just less than one at +30%, so this is cross-sectional carry rather than only harvesting negative rates.
+
+Our summary: funding is sticky. Higher funding tends to stay higher, most strongly one day ahead. With a 6-day average, 88% of Top 20 cheap-funding coins were still cheap the next day and 62% six days later. Ranking on the last three days into quintiles, cheapest minus most expensive averaged +10.7, +19.4 and +21.3 bps over the next 1, 3 and 7 days before costs. Over three days, that was +41.5 bps from funding minus 22.2 bps given back on price: cheap-funding coins collect the carry but lag on price. The other findings:
+
+- Short 1–8 day lookbacks separated cheap from expensive better than 32–64 day ones.
+- Cheap funding combined with relative price strength had the best averages.
+- A wider funding gap did not reliably mean a bigger return.
+- The smallest coins showed the largest spreads.
+- The spread was positive in 2023 and 2024 but negative in 2025.
+- The short-expensive leg dragged on the long-cheap leg.
+
+The deliberately simple Top 50 daily long/short book had a gross Sharpe ratio of 0.55 but -0.47 net of 10 bps costs, on 177.9× annual turnover; the trading bill ate the return. A Part 2, not yet published at the time of writing, promises to test trading less and different position sizes.
+
+Entry discussion, why forecasting funding matters: the study implicitly uses a trailing average of past funding as its forecast of future funding, and that is where the discussion picks up. A funding position earns the funding paid over its holding period, not the rate on the screen at entry. Stat Arb (@quant_arb) made this point in `an earlier thread on funding arbitrage <https://x.com/quant_arb/status/1936332646029619454>`__. Picking the highest current rate is a mistake, because a 10,000% APR that reverts ten seconds later is worth roughly nothing and loses money after fees. The job is to predict the lifetime value of the trade. The persistence dima measured is exactly the autocorrelation that makes this possible. @quant_arb's reply to the thread is that funding follows an autoregressive process: a recursive AR(X) model (autoregressive with exogenous inputs, refitted as new data arrives) beats an exponentially weighted moving average (EWMA) of funding for little effort. His follow-up goes further. For a serious attempt, build features and fit a ridge regression, checking that it holds out of sample. The features he names are the basis, open interest, the historical decay of past funding and the AR(X) forecast itself. His reason is that funding has strong regimes. He is candid about the payoff: it will not drive much PnL for most books, but for anyone running a large funding book it is worth what is realistically under a week of work. Another reply suggested a hidden Markov model for the regimes. @quant_arb has `argued before <https://x.com/quant_arb/status/1855256677630579160>`__ that a quantile threshold on a regime feature such as average funding gets most of the way there without one. The same idea appears in the academic literature on this page as :ref:`double-autoregressive forecasts of funding <funding-rate-predictability-oos>`. :ref:`Z-scoring funding within each token's history and cross-checking it against open interest <denoising-funding-rate-signals>` tackles the same regime and baseline problem from the feature side.
+
+How a funding forecast plugs into strategies:
+
+- **Cross-sectional carry** like dima's: rank coins on forecast funding over the intended holding period rather than on a trailing average, so that a transient spike the model expects to revert does not trigger a trade. This goes straight at the cost problem. At 177.9× turnover the main lever is trading less. Knowing how long a coin's cheapness or expensiveness is likely to last lets the book keep positions whose expected remaining funding still covers the round-trip cost, and ignore rank changes that will not.
+- **Delta-neutral funding arbitrage** (long spot and short perp on the same venue, or perp against perp across venues): enter only when the predicted cumulative funding over the expected life of the position exceeds fees, slippage and the basis risk of unwinding, and exit when the forecast drops below that hurdle.
+- **Any directional or statistical-arbitrage book holding perps**: expected funding is a carry-cost term for the portfolio optimiser. @quant_arb has `separately noted <https://x.com/quant_arb/status/1981772973091561512>`__ that security masters often get settlement intervals wrong. His rule of thumb is to count only negative funding as a cost, so the optimiser does not start trading funding for its own sake.
+- **Regime filtering**: forecast funding and its regime can gate other signals, for example standing aside when funding sits at an extreme z-score, rather than serving as a return source in themselves.
+
+Mentioned by Stat Arb (@quant_arb) in `this discussion <https://x.com/quant_arb/status/2103564946277847325>`__, quoting the "How sticky is funding?" post of the author's thread. He suggests fitting "a recursive AR (X) model to forecast funding out", calls it an easy incremental boost over an EWMA, and adds the ridge-regression feature set in `a follow-up quote <https://x.com/quant_arb/status/2103770465361633548>`__. The `original X thread <https://x.com/dima_quant/status/2103529064480804907>`__ summarises the article with its charts.
+
+By dima (@dima_quant).
+
+`Read the blog post <https://dimaquant.substack.com/p/does-funding-contain-useful-information>`__.

@@ -2448,6 +2448,18 @@
     "short_description": null
   },
   {
+    "title": "Trading Crypto Funding Rates — Part 1: Do Cheaper-Funding Coins Earn Better Returns?",
+    "authors": "dima (@dima_quant)",
+    "publication_year": 2026,
+    "download_page": "https://dimaquant.substack.com/p/does-funding-contain-useful-information",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-09-26",
+    "filename": "trading-crypto-funding-rates-part-1-do-cheaper-funding-coins-earn-better-returns.pdf",
+    "downloaded_at": "2026-09-26",
+    "download_failure_reason": null,
+    "short_description": "Tests a cross-sectional funding carry trade on Binance perpetuals from 2023 to 2025: long coins with relatively cheap recent funding, short those with expensive funding. Funding is sticky and the cheap-minus-expensive spread earned +19.4 bps over 3 days before costs, but price moves gave back about half the funding advantage, the spread turned negative in 2025, and a simple daily Top 50 long/short book went from a 0.55 gross to a -0.47 net Sharpe ratio on 177.9x turnover. Discussed by @quant_arb, who notes funding follows an autoregressive process that a recursive AR(X) model or a ridge regression on basis, open interest and funding decay forecasts better than a trailing average — the kind of forecast that lets a carry or funding-arbitrage book trade less and size on expected lifetime funding."
+  },
+  {
     "title": "Adaptive-TFT",
     "authors": null,
     "publication_year": null,
