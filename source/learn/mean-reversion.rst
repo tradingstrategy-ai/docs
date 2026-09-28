@@ -331,3 +331,14 @@ Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/sta
 By Guido Baltussen, Zhi Da, and Amar Soebhag.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5039009>`__.
+
+Front-run monthly rebalancing: SPY or TLT
+------------------------------------------
+
+TiltFolio (@TiltFolio) presents a compact cross-asset mean-reversion and tactical-allocation sketch. The premise is that large funds' monthly portfolio rebalancing can create predictable demand: after stocks outperform bonds, institutional rebalancing may require buying bonds and selling stocks; after bonds outperform stocks, the flow may reverse. The proposed system uses only SPY and TLT and is framed as a way to anticipate those flows, inspired by @jedimarkus77.
+
+The attached chart, titled ``Front-run monthly rebalancing: SPY or TLT``, shows an equity curve beginning at roughly $10,000 around January 2005 and ending near $38,000 by January 2026. Because the X post does not state the exact relative-performance lookback, signal date, trade execution, allocation or cash rules, dividend treatment, leverage, transaction costs, or benchmark, the chart is not a reproducible performance claim. Those details are essential: the result could be testing a cross-asset laggard/mean-reversion signal, a month-end calendar effect, or both, and it may be sensitive to adjusted prices and the precise timing of the rebalance.
+
+Mentioned by TiltFolio (@TiltFolio) in `this discussion <https://x.com/TiltFolio/status/2104191288719352293>`__, where the system is described as being inspired by @jedimarkus77.
+
+`Read the post <https://x.com/TiltFolio/status/2104191288719352293>`__.

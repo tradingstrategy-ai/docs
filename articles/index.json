@@ -5256,6 +5256,18 @@
     "short_description": "Seth Rosenthal argues that mean reversion is a testable property of a specified process, not a description of any extreme price move. The essay separates negative autocorrelation, stationary levels, cointegration, variance ratios, and half-life, then sets out a disciplined sequence of definition, stability testing, state conditioning, out-of-sample validation, and cost-aware evaluation."
   },
   {
+    "title": "Front-run monthly rebalancing: SPY or TLT",
+    "authors": "TiltFolio (@TiltFolio)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/TiltFolio/status/2104191288719352293",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-09-28",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A practitioner sketch of a two-ETF cross-asset mean-reversion system using SPY and TLT to anticipate monthly institutional rebalancing between stocks and long-term Treasuries. The attached chart shows an equity curve from roughly $10,000 in January 2005 to about $38,000 by January 2026, but the post does not specify the lookback, execution timing, allocation, dividend, leverage, or cost assumptions needed to reproduce it."
+  },
+  {
     "title": "IV Mean Reversion",
     "authors": "Peter, CrackingMarkets",
     "publication_year": null,
