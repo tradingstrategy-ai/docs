@@ -704,6 +704,8 @@ the same command without deploying another guard:
         --chain-name=base
 
 The retry uses ``PRIVATE_KEY`` and the configured ``JSON_RPC_*`` connection.
+Other deployment settings are ignored in retry mode; ``--simulate`` and
+``--manual-safe-migration`` are rejected.
 ``--chain-name`` selects one chain and is useful when several RPC connections
 are configured; omit it to retry all pending chains in a multichain record.
 For a single-chain record, configure exactly one connection or select it with
