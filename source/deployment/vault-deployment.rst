@@ -581,18 +581,33 @@ Safe multisignature URL is format of: https://app.safe.global/home?safe=base:0x6
 Upgrading the guard smart contract
 -----------------------------------
 
-When a strategy is updated to trade new assets and vaults, also its guard smart contract needs to be updated.
-For this, a new guard smart contract, a Zodiac module `TradingStrategyModuleV0 <https://github.com/tradingstrategy-ai/web3-ethereum-defi/tree/master/contracts/safe-integration>`__, is deployed.
+When a strategy is updated to trade new assets or vaults, its guard contract may
+also need new permissions. Redeploy the ``TradingStrategyModuleV0`` Zodiac
+module for the existing Safe. The command proposes the Safe module replacement
+automatically; Safe owners must still review and execute it.
+
+Automatic proposals require the deployer's ``PRIVATE_KEY`` to belong to a
+current Safe owner, a supported Safe Transaction Service chain, and a deployed
+MultiSendCallOnly contract. The command checks these before deploying a guard.
+If the deployer was removed from the Safe owner list after the original vault
+deployment, use the explicit manual option described below. A Transaction
+Service API key is optional and can be supplied through
+``SAFE_TRANSACTION_SERVICE_API_KEY``.
 
 The upgrade process is as follows:
 
-1. Stop `trade-executor` Docker
-2. Prepare a new strategy module Python file and backtest it with new assets
-3. Create a new version of the guard smart contract using `lagoon-deloy-vault` script
-4. :ref:`safe-manual-action` to remove the old guard smart contract from the Safe multisignature wallet
-5. :ref:`safe-manual-action` to add the new guard smart contract to the Safe multisignature wallet
-6. Perform `trade-executor peform-test-trade` for newly added assets to see the guard works
-7. Restart `trade-executor` Docker
+1. Stop the ``trade-executor`` Docker service.
+2. Prepare the updated strategy module and backtest it with the new assets.
+3. Run ``lagoon-deploy-vault --guard-only`` with ``SIMULATE=true``, then run it
+   against the live chain. Simulation does not submit a Safe proposal.
+4. Open the Safe transaction URL in the deployment record. Verify that one
+   batch disables the old module and enables the new one, then have the Safe
+   owners execute it. The command only proposes the transaction.
+5. Set ``VAULT_ADAPTER_ADDRESS`` to the new module address in the executor
+   configuration. Update configured satellite module addresses too, if any.
+6. Run ``perform-test-trade`` for the newly permitted assets.
+7. Restart the ``trade-executor`` Docker service after the Safe migration has
+   executed.
 
 Deploy new guard module smart contract
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -627,13 +642,13 @@ Here is an example script:
     # Mark new deployment files with this suffix
     SUFFIX="v3-new-guard"
 
-    if [ "$SIMULATE" = "" ]; then
+    if [ "${SIMULATE:-}" = "" ]; then
         echo "Set SIMULATE=true or SIMULATE=false"
         exit 1
     fi
 
     if [ "$SIMULATE" = "false" ]; then
-        if [ "$ETHERSCAN_API_KEY" = "" ]; then
+        if [ "${ETHERSCAN_API_KEY:-}" = "" ]; then
             echo "Set ETHERSCAN_API_KEY=... to make sure the deployment is verified on Etherscan"
             exit 1
         fi
@@ -646,7 +661,7 @@ Here is an example script:
         $ID \
         lagoon-deploy-vault \
         --guard-only \
-        --etherscan-api-key="$ETHERSCAN_API_KEY" \
+        --etherscan-api-key="${ETHERSCAN_API_KEY:-}" \
         --erc-4626-vaults="$WHITELISTED_VAULTS" \
         --existing-vault-address="$EXISTING_VAULT_ADDRESS" \
         --existing-safe-address="$EXISTING_SAFE_ADDRESS" \
@@ -656,73 +671,71 @@ Here is an example script:
         --uniswap-v3 \
         --aave
 
-When run the script will at the end tell you what Gnosis Safe transactions are needed to upgrade the guard module.
+Safe proposal and recovery
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example output:
+The live command saves a text record and a paired JSON record. For a
+single-chain deployment, ``Guard migration`` in the JSON contains the old and
+new module addresses, the Safe address, the two ordered calls, and
+``safe_proposal``. Multichain records store these under
+``deployments[chain].guard_migration``. Each chain has its own proposal and
+status. The text record includes the Safe transaction URL when submission
+succeeds.
 
-.. code-block:: none
+``safe_proposal.status`` is ``pending`` when submission has not been confirmed,
+including when the batch could not be built; it becomes ``submitted`` after
+the Safe Transaction Service accepts the proposal. This reports submission,
+not Safe execution. The saved ``enabled_modules_at_deployment`` is a historical
+snapshot. For strategy-file deployments, the executor checks the Safe's
+enabled modules at start-up and records the live ``guard_migration.status`` in
+strategy state. A standalone single-chain deployment record does not carry
+that live status; check the Safe's enabled modules directly to confirm the new
+guard is enabled and the old one disabled.
 
-    New guard deployed: 0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393
-    Old guard address: 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac
-    Safe address: 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64
-    Vault address: 0x7d8Fab3E65e6C81ea2a940c050A7c70195d1504f
+If submission fails after deployment, the command exits with an error but
+keeps the deployed guard and pending migration in the record. Retry through
+the same command without deploying another guard:
 
-    Safe transactions needed:
-    1. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.disableModule(0x0000000000000000000000000000000000000001, 0x3275Af9ce73665A1Cd665E5Fa0b48c25249219ac)
-    2. 0x6ad1A91Ca59Cf12D58c5F81dd737E8081c7C6e64.enabledModule(0x6DCCA7f34EB8F1a519ae690E9A3101f705bB0393)
+.. code-block:: shell
 
-Crafting enableModule() transaction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docker compose run \
+        -e SIMULATE=false \
+        base-ath \
+        lagoon-deploy-vault \
+        --retry-guard-proposal \
+        --vault-record-file="deploy/base-ath-v3-new-guard-vault-info.txt" \
+        --chain-name=base
 
-Go to Gnosis Safe transaction builder.
+The retry uses ``PRIVATE_KEY`` and the configured ``JSON_RPC_*`` connection.
+Other deployment settings are ignored in retry mode; ``--simulate`` and
+``--manual-safe-migration`` are rejected.
+``--chain-name`` selects one chain and is useful when several RPC connections
+are configured; omit it to retry all pending chains in a multichain record.
+For a single-chain record, configure exactly one connection or select it with
+``--chain-name``. The command trusts the saved ``submitted`` status and skips
+those proposals without querying the Service again. It checks
+the Safe's old module, the saved nonce and batch data when present, and any
+other pending proposal at that nonce before submitting. If the Safe changed,
+inspect it before retrying. A multichain deployment that stops partway keeps
+the record for each chain already deployed.
 
-You need to create a batch of two transactions.
+Manual Safe migration
+~~~~~~~~~~~~~~~~~~~~~
 
-Get `Gnosis Safe ABI JSON files here <https://app.unpkg.com/@safe-global/safe-contracts@1.4.1-2/files/build/artifacts/contracts>`__
-- `SafeL2 ABI <https://unpkg.com/@safe-global/safe-contracts@1.4.1-2/build/artifacts/contracts/SafeL2.sol/SafeL2.json>`__
+For a chain without a hosted Safe Transaction Service, or when the deployer
+is no longer a Safe owner, pass ``--manual-safe-migration`` together with
+``--guard-only``. The command deploys the new guard and saves the ordered
+Safe calls without posting a proposal. In Safe Transaction Builder or
+equivalent owner tooling, create one atomic batch containing two calls to the
+Safe itself:
 
-For ``enableModule`` / ``disableModule`` the ABI snippet is:
+1. ``disableModule(0x0000000000000000000000000000000000000001, old_guard)``
+2. ``enableModule(new_guard)``
 
-.. code-block:: json
-
-    [
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "enableModule",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "prevModule",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "disableModule",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-    ]
-
-The script above should give you the information for the Gnosis SAfe Transaction builder to craft a batch transaction of:
-
-1. ``disableModule(0x0000000000000000000000000000000000000001, old guard address)`` Disable the old guard module, reset the list with 0x1 special address
-2. ``enableModule(new guard aaddess)`` Enable the new guard module
+Use the addresses and ABI from the saved deployment record. Each call has
+zero value and uses the Call operation. Safe owners must review and execute
+the batch. The manual option applies to every chain in a multichain run.
+``--generate-lighter-api-key`` cannot be combined with ``--guard-only``.
 
 Finishing the transition
 ~~~~~~~~~~~~~~~~~~~~~~~~
