@@ -696,6 +696,7 @@ the same command without deploying another guard:
 .. code-block:: shell
 
     docker compose run \
+        -e SIMULATE=false \
         base-ath \
         lagoon-deploy-vault \
         --retry-guard-proposal \
