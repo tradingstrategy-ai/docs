@@ -91,6 +91,23 @@ html_context = {
     "theme_sidebar_hide_name": True,
 }
 
+# No docs search: Furo's default sidebar without sidebar/search.html
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/scroll-start.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+        "sidebar/variant-selector.html",
+    ]
+}
+
+
+def setup(app):
+    # No docs search: do not build search.html and searchindex.js
+    app.connect("builder-inited", lambda app: setattr(app.builder, "search", False))
+
 #
 # All notebooks in documentation needs an API key and must be pre-executed
 # https://nbsphinx.readthedocs.io/en/0.8.6/never-execute.html
