@@ -642,13 +642,13 @@ Here is an example script:
     # Mark new deployment files with this suffix
     SUFFIX="v3-new-guard"
 
-    if [ "$SIMULATE" = "" ]; then
+    if [ "${SIMULATE:-}" = "" ]; then
         echo "Set SIMULATE=true or SIMULATE=false"
         exit 1
     fi
 
     if [ "$SIMULATE" = "false" ]; then
-        if [ "$ETHERSCAN_API_KEY" = "" ]; then
+        if [ "${ETHERSCAN_API_KEY:-}" = "" ]; then
             echo "Set ETHERSCAN_API_KEY=... to make sure the deployment is verified on Etherscan"
             exit 1
         fi
@@ -661,7 +661,7 @@ Here is an example script:
         $ID \
         lagoon-deploy-vault \
         --guard-only \
-        --etherscan-api-key="$ETHERSCAN_API_KEY" \
+        --etherscan-api-key="${ETHERSCAN_API_KEY:-}" \
         --erc-4626-vaults="$WHITELISTED_VAULTS" \
         --existing-vault-address="$EXISTING_VAULT_ADDRESS" \
         --existing-safe-address="$EXISTING_SAFE_ADDRESS" \
@@ -682,12 +682,15 @@ new module addresses, the Safe address, the two ordered calls, and
 status. The text record includes the Safe transaction URL when submission
 succeeds.
 
-``safe_proposal.status`` is ``pending`` until the Safe Transaction Service
-accepts the proposal, then ``submitted``. This reports submission, not Safe
-execution. The saved ``enabled_modules_at_deployment`` is a historical
-snapshot. After execution, the executor reads the Safe's enabled modules and
-records the live ``guard_migration.status`` in strategy state. Only a live
-module check confirms that the new guard is enabled and the old one disabled.
+``safe_proposal.status`` is ``pending`` when submission has not been confirmed,
+including when the batch could not be built; it becomes ``submitted`` after
+the Safe Transaction Service accepts the proposal. This reports submission,
+not Safe execution. The saved ``enabled_modules_at_deployment`` is a historical
+snapshot. For strategy-file deployments, the executor checks the Safe's
+enabled modules at start-up and records the live ``guard_migration.status`` in
+strategy state. A standalone single-chain deployment record does not carry
+that live status; check the Safe's enabled modules directly to confirm the new
+guard is enabled and the old one disabled.
 
 If submission fails after deployment, the command exits with an error but
 keeps the deployed guard and pending migration in the record. Retry through
@@ -709,7 +712,8 @@ Other deployment settings are ignored in retry mode; ``--simulate`` and
 ``--chain-name`` selects one chain and is useful when several RPC connections
 are configured; omit it to retry all pending chains in a multichain record.
 For a single-chain record, configure exactly one connection or select it with
-``--chain-name``. The command skips already submitted proposals. It checks
+``--chain-name``. The command trusts the saved ``submitted`` status and skips
+those proposals without querying the Service again. It checks
 the Safe's old module, the saved nonce and batch data when present, and any
 other pending proposal at that nonce before submitting. If the Safe changed,
 inspect it before retrying. A multichain deployment that stops partway keeps
