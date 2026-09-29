@@ -56,6 +56,7 @@ html_static_path = ['_static']
 
 
 # See if this fixed Google crawling issues
+# Must end with "/": sphinx-sitemap 2.8 does not add it and would write .../docsapi/...
 html_baseurl = "https://tradingstrategy.ai/docs/"
 
 # Fix "en" in sitemap URL
@@ -108,9 +109,6 @@ nbsphinx_prolog = """
     </a>    
 
 """
-
-# For the sitemap
-html_baseurl = 'https://tradingstrategy.ai/docs'
 
 # https://stackoverflow.com/a/62613202/315168
 autodoc_class_signature = "separated"
