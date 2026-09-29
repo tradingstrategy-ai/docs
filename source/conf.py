@@ -84,13 +84,29 @@ html_js_files = [
 ]
 
 html_css_files = [
-    "https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.4.1",
     "custom.css"
 ]
 
 html_context = {
     "theme_sidebar_hide_name": True,
 }
+
+# No docs search: Furo's default sidebar without sidebar/search.html
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/scroll-start.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+        "sidebar/variant-selector.html",
+    ]
+}
+
+
+def setup(app):
+    # No docs search: do not build search.html and searchindex.js
+    app.connect("builder-inited", lambda app: setattr(app.builder, "search", False))
 
 #
 # All notebooks in documentation needs an API key and must be pre-executed
