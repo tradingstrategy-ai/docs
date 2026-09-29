@@ -45,6 +45,10 @@ jobs:
           make clean-autosummary
           make html
 
+      # Do not publish a sitemap with broken URLs, see trading_strategy_docs/sphinx_sitemap_patch.py
+      - name: Check sitemap
+        run: python scripts/check-sitemap.py build/html/sitemap-docs.xml
+
       # https://zellwk.com/blog/github-actions-deploy/
       # https://github.com/webfactory/ssh-agent
       - name: Install SSH Key
