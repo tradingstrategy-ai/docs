@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy-docs:
     runs-on: ubuntu-latest
+    # Every workflow publishing the docs site and search index must share this group
+    concurrency:
+      group: docs-deploy
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -60,21 +64,29 @@ jobs:
         env:
           # RSYNC_COMMAND="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docs/build/html docs@poly:."
           RSYNC_COMMAND: ${{ secrets.RSYNC_COMMAND }}
-      - name: Run Docsearch Scraper
-        uses: celsiusnarhwal/typesense-scraper@v2
-        with:
-          # The secret containing your Typesense API key. Required.
-          api-key: ${{ secrets.TYPESENSE_API_KEY }}
-          
-          # The hostname or IP address of your Typesense server. Required.
-          host: ${{ secrets.TYPESENSE_HOST }}
-          
-          # The port on which your Typesense server is listening. Optional. Default: 8108.
-          port: 443
-          
-          # The protocol to use when connecting to your Typesense server. Optional. Default: http.
-          protocol: https
-          
-          # The path to your DocSearch config file. Optional. Default: docsearch.config.json.
-          config: ./scraper/config.json
+      # Scraper runs as a pinned image (no third-party action) so the scraper
+      # key is only ever handed to code we have reviewed. The key is scoped to
+      # the dedicated docs Typesense instance, see scraper/README.md
+      - name: Run DocSearch scraper
+        env:
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+        run: |
+          docker run --rm \
+            -e TYPESENSE_API_KEY \
+            -e TYPESENSE_HOST \
+            -e TYPESENSE_PORT=443 \
+            -e TYPESENSE_PROTOCOL=https \
+            -e CONFIG="$(jq -r tostring scraper/config.json)" \
+            typesense/docsearch-scraper:0.12.2@sha256:b055b935fcdd26347854480db7abae6aa4aae480e009733a2f2f681b3ff3926e
 
+      # Check the index with the same public key the docs frontend uses
+      - name: Verify docs search
+        env:
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+        run: |
+          SEARCH_KEY=$(grep -oP "apiKey: '\K[^']+" source/_templates/sidebar/search.html)
+          FOUND=$(curl -sf -H "X-TYPESENSE-API-KEY: $SEARCH_KEY" \
+            "https://$TYPESENSE_HOST/collections/docs/documents/search?q=vault&query_by=content" | jq .found)
+          echo "Docs search hits for 'vault': $FOUND"
+          test "$FOUND" -gt 0

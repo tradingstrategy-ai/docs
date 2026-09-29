@@ -2,7 +2,6 @@
   "index_name": "docs",
 
   "start_urls": [
-    { "url": "https://tradingstrategy.ai/docs/guides/", "page_rank": 10 },
     { "url": "https://tradingstrategy.ai/docs/api/",    "page_rank": 2 },
     "https://tradingstrategy.ai/docs"
   ],

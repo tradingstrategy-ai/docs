@@ -2,7 +2,8 @@
 <script>
   require.config({
     paths: {
-      docsearch: 'https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4?'
+      // Pinned exact version; the trailing "?" stops requirejs from appending ".js"
+      docsearch: 'https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.1?'
     }
   });
 
@@ -12,14 +13,15 @@
       typesenseCollectionName: 'docs', // Should match the collection name you mention in the docsearch scraper config.js
       typesenseServerConfig: {
         nodes: [{
+          // Dedicated docs-only Typesense instance, see scraper/README.md
           host: 'docsearch-typesense.tradingstrategy.ai',
           port: '443',
           protocol: 'https'
         }],
-        apiKey: '2TAEds0j1y7v58qMr1Q9tz8TLfToSb37', // Use API Key with only Search permissions
+        // PUBLIC key: documents:search on the "docs" collection only.
+        // Never put any other Typesense key here - this repository is public.
+        apiKey: 'pkFCDAWSfvPuExxVoBA2aKcnS8L8zc3y',
       },
     });
   });
 </script>
-
-
