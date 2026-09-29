@@ -14,7 +14,8 @@
     "https://tradingstrategy.ai/docs/genindex.html",
     "https://tradingstrategy.ai/docs/search.html",
     "https://tradingstrategy.ai/docs/py-modindex.html",
-    "https://tradingstrategy.ai/docs/modindex.html"
+    "https://tradingstrategy.ai/docs/modindex.html",
+    "https://tradingstrategy.ai/docs/_modules/.*"
   ],
 
   "selectors": {
@@ -28,8 +29,7 @@
     "lvl3": "article h3",
     "lvl4": "article h4",
     "lvl5": "article h5",
-    "text": "article p, article li, dd",
-    "page_rank": "section[data-page*='/api/']"
+    "text": "article p, article li, dd"
   },
 
   "selectors_exclude": [
