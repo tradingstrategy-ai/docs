@@ -168,7 +168,7 @@ and algorithmic trading.
         
         Onchain transactions are typically considered to be more secure and transparent than off-chain transactions, as they are recorded in a public ledger that is immutable and auditable. Additionally, onchain transactions are often processed more quickly and with lower fees than off-chain transactions, as they do not require intermediaries or intermediating networks.
 
-        Examples of onchain activities include cryptocurrency transfers, smart contract execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
+        Examples of onchain activities include cryptocurrency transfers, :term:`smart contract` execution, and decentralised applications (dApps). These activities are all processed directly on the blockchain network, providing a secure and transparent means of conducting transactions and executing code.
 
 
         See also
@@ -391,8 +391,8 @@ and algorithmic trading.
     Uniswap
 
         The most popular :term:`AMM` based :term:`decentralised exchange`. Uniswap has two major versions.
-        In version 2 (v2) the liquidity is evenly distributed across the bonding curve. In version 3, the
-        liquidity providers can have liquidity on a partial curve, simulate order book and have better
+        In version 2 (v2) the liquidity is evenly distributed across the :term:`bonding curve`. In version 3, the
+        :term:`liquidity providers <liquidity provider>` can have liquidity on a partial curve, simulate an :term:`order book` and have better
         capital efficiency. Most decentralised exchanges are Uniswap v2 :term:`clones <clone>`.
 
         See also
@@ -463,7 +463,7 @@ and algorithmic trading.
 
     Bucket
 
-        The (time) bucket to a time period for :term:`candle` data. It is also known time frame by some systems.
+        The (time) bucket to a time period for :term:`candle` data. It is also known as a :term:`time frame` by some systems.
 
         For example, you can have one minute, one hour or time buckets, describing for the what period of a time the candle includes the trades.
 
@@ -582,14 +582,14 @@ and algorithmic trading.
 
     Dataset server
 
-        The server than indexes blockchains and creates :term:`candle` and other :term:`datasets <dataset>` for research, analysis and trade execution. Currently centralised and you need an API key to access.
+        The server than indexes blockchains and creates :term:`candle` and other :term:`datasets <dataset>` for research, analysis and trade execution. Currently centralised and you need an :term:`API key` to access.
 
     Notebook
 
         A notebook is a web-based interactive platform for writing and running code, as well as documenting and sharing work in a variety of formats, including text, code, and graphics. It is commonly used in the fields of data science, machine learning, and scientific computing for developing and testing algorithms, analysing data, and creating visualisations.
         
         In a notebook, users can write code in a variety of programming languages, including Python, and run it directly within the platform. The output of the code, including any visualisations or results, is displayed within the notebook alongside the code itself. This allows users to iteratively develop and test their algorithms, as well as document their work in a readable and reproducible format.
-        Notebooks also provide a convenient platform for collaboration and sharing, as they can be easily exported and shared as files, or hosted on platforms such as Jupyter or Google Colab. This makes them a popular choice for data scientists and researchers who need to share their work with others, as well as for organisations who need to collaborate on large data projects.
+        Notebooks also provide a convenient platform for collaboration and sharing, as they can be easily exported and shared as files, or hosted on platforms such as Jupyter or :term:`Google Colab`. This makes them a popular choice for data scientists and researchers who need to share their work with others, as well as for organisations who need to collaborate on large data projects.
 
         Overall, notebooks provide a powerful and flexible platform for data analysis, scientific computing, and code development, making them an essential tool for many researchers and data professionals.
         
@@ -815,11 +815,11 @@ and algorithmic trading.
     Directional strategy
 
         A directional strategy is a type of a :term:`trading strategy` that involves taking a :term:`bullish <bull market>` or :term:`bearish <bear market>` view on a particular asset or market,
-        and then attempt to make :term`profit <cumulative profit>` on the :term:`volatility` of the asset. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
+        and then attempt to make :term:`profit <cumulative profit>` on the :term:`volatility` of the asset. This means that the strategy is based on the expectation of the asset or market moving in a specific direction, either up or down.
         
         Directional strategies are typically used by traders and investors who are trying to profit from market movements. They can take various forms, including long positions (where an investor buys an asset with the expectation that its price will increase), short positions (where an investor sells an asset with the expectation that its price will decrease), or a combination of both.
         
-        Some common examples of directional strategies include trend-following, momentum trading, and breakout trading. These strategies often involve using technical analysis, fundamental analysis, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
+        Some common examples of directional strategies include :term:`trend-following`, momentum trading, and breakout trading. These strategies often involve using :term:`technical analysis`, :term:`fundamental analysis`, or both to identify market trends, momentum, or key price levels, and to make investment decisions.
 
         The opposite of directional strategy is :term:`market neutral strategy`.
 
@@ -890,7 +890,7 @@ and algorithmic trading.
         Self-custodial means that a third party does not have ownership of your assets in a service. Self-custodial
         model is also called :term:`non-custodial`, self-hosted, unhosted wallets and such.
 
-        A self-custodial business model usually means s smart contract based service model where the owner of the assets never lose the control of the assets. This is opposite to most :term:`traditional finance` services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in the traditional finance thus needs to be guaranteed through regulation or government bailouts. The self-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
+        A self-custodial business model usually means a :term:`smart contract`-based service model where the owner of the assets never loses control of the assets. This is opposite to most :term:`traditional finance` services where you cannot see what happens to your money after the deposit or whether you are able to withdraw. The integrity of the service provider in traditional finance thus needs to be guaranteed through regulation or government bailouts. The self-custodial model is specific to smart contracts and cannot be achieved without a blockchain. `Read more <https://stackoverflow.com/questions/65009246/what-does-non-custodial-mean>`__.
 
         Self-custodial :term:`decentralised finance` :term:`protocol` models have become popular in a blockchain, after FTX and Celsius blow-ups: not your keys, not your coins.
 
@@ -1110,6 +1110,8 @@ and algorithmic trading.
 
         - :term:`Vault`
 
+        - :term:`Depeg`
+
     Pine Script
 
         Pine Script is a popular :term:`backtesting <backtest>` framework for :term:`trading strategies <trading strategy>`.
@@ -1234,7 +1236,7 @@ and algorithmic trading.
 
         The mid price, in the context of AMM, is the price that reflects the ratio of reserves in one or more pairs. There are three ways we can think about this price. Perhaps most simply, it defines the relative value of one token in terms of the other. It also represents the price at which you could theoretically trade an infinitesimal amount (ε) of one token for the other. Finally, it can be interpreted as the current market-clearing or fair value price of the assets.
 
-        The mid price, in the context of order book based exchange is :math:`(best bid + best ask) / 2`,
+        The mid price, in the context of an :term:`order book`-based exchange is :math:`(best bid + best ask) / 2`,
         i.e. the price between the best sell offer and the best buy offer.
 
         `More information about the mid price on Uniswap documentation <https://docs.uniswap.org/sdk/2.0.0/guides/pricing>`_.
@@ -1330,6 +1332,8 @@ and algorithmic trading.
 
         - :term:`Enzyme protocol`
 
+        - :term:`Tokenised fund`
+
     Technical indicator
 
         A technical indicator, or just an indicator, is a calculated value
@@ -1360,7 +1364,7 @@ and algorithmic trading.
 
     EMA
 
-        Exponential moving average. One of the most common :term:`technical indicators <technical indicator>`.
+        Exponential :term:`moving average`. One of the most common :term:`technical indicators <technical indicator>`.
         By comparing the current price of an asset to the moving average price,
         one can determine if the current price is likely dislodged above or
         below the market trend.
@@ -1839,6 +1843,8 @@ and algorithmic trading.
 
         - :term:`Lending protocol`
 
+        - :term:`Tokenised fund`
+
         - :term:`Aave`
 
         - :term:`Uniswap`
@@ -1938,7 +1944,7 @@ and algorithmic trading.
 
     Bear market
     
-        A bear market is a condition in the stock market where the overall trend is downward and prices are falling. It is characterised by widespread pessimism and negative investor sentiment, leading to a decrease in the prices of securities. In a bear market, most asset classes tend to decline, and it can last anywhere from a few months to several years. During a bear market, it is common for investors to sell their holdings, leading to further declines in prices. The opposite of a bear market is a bull market, where prices are rising and investor sentiment is positive. Bear markets can be caused by various factors, such as economic recession, high unemployment, and declining corporate earnings.
+        A bear market is a condition in the stock market where the overall trend is downward and prices are falling. It is characterised by widespread pessimism and negative investor sentiment, leading to a decrease in the prices of securities. In a bear market, most asset classes tend to decline, and it can last anywhere from a few months to several years. During a bear market, it is common for investors to sell their holdings, leading to further declines in prices. The opposite of a bear market is a :term:`bull market`, where prices are rising and investor sentiment is positive. Bear markets can be caused by various factors, such as economic recession, high unemployment, and declining corporate earnings.
 
     Bull market
     
@@ -2128,7 +2134,7 @@ and algorithmic trading.
 
         Trend-following traders typically use technical analysis tools and :term:`technical indicators <technical indicator>`, such as :term:`moving averages <EMA>`, trend lines, and momentum indicators, to identify trends and determine when to enter or exit trades. The goal is to buy an asset when the trend is bullish (i.e., prices are rising) and sell it when the trend is bearish (i.e., prices are falling).
 
-        The key principle of trend-following is to let profits run and cut losses quickly. This means that trend-following traders will typically use stop loss orders or other risk management techniques to limit their potential losses if the trend reverses.
+        The key principle of trend-following is to let profits run and cut losses quickly. This means that trend-following traders will typically use :term:`stop loss` orders or other risk management techniques to limit their potential losses if the trend reverses.
 
         Trend-following strategies can be applied to a wide range of financial instruments, including stocks, bonds, currencies, and commodities. The strategy is popular among both individual and institutional traders and has been used successfully by many well-known traders and hedge funds.
 
@@ -2171,7 +2177,7 @@ and algorithmic trading.
 
     Bollinger bands
     
-        Bollinger Bands are a technical analysis indicator used to measure market volatility and identify potential buying or selling opportunities. The indicator consists of a set of three lines plotted on a price chart, with the middle line being a simple moving average of the security's price, and the upper and lower bands serving as a measure of volatility, typically set 2 standard deviations away from the moving average.
+        Bollinger Bands are a :term:`technical analysis` indicator used to measure market :term:`volatility` and identify potential buying or selling opportunities. The indicator consists of a set of three lines plotted on a price chart, with the middle line being a simple :term:`moving average` of the security's price, and the upper and lower bands serving as a measure of volatility, typically set 2 standard deviations away from the moving average.
 
         In a market with low volatility, the Bollinger Bands will be closer together, while in a market with high volatility, the bands will be further apart. When prices move outside the upper band, it can be a sign that the security is overbought, and a potential selling opportunity, while a move below the lower band can indicate that the security is oversold and a potential buying opportunity.
 
@@ -2228,7 +2234,7 @@ and algorithmic trading.
 
         In systematic trading, trades are executed automatically based on the rules established in the trading system. These rules can be based on technical indicators, market data, or other signals, and are designed to identify and take advantage of market inefficiencies and price discrepancies. The models used in systematic trading are typically back-tested using historical market data to assess their viability and refine their parameters.
 
-        Systematic trading is often used in quantitative finance and high-frequency trading, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, :term:`futures`, :term:`options`, and currencies.
+        Systematic trading is often used in :term:`quantitative finance` and :term:`high-frequency trading`, where trades are executed at a high rate and on a large scale. It can be applied to a wide range of financial instruments, including stocks, bonds, :term:`futures`, :term:`options`, and currencies.
 
     Custodial
     
@@ -2297,7 +2303,7 @@ and algorithmic trading.
 
         Lending protocols enable :term:`shorting` of different :term:`lending pool` tokens.
 
-        Popular lending protocols include :term:`Aave`, Compound and Euler.
+        Popular lending protocols include :term:`Aave`, Compound and :term:`Euler`.
 
         See also
 
@@ -2324,9 +2330,9 @@ and algorithmic trading.
 
         In :term:`decentralised finance`, a lending pool is a pool of a single asset in a :term:`lending protocol`.
 
-        Sometimes a lending pool is also called *reserve* (:`term`Aave`).
+        Sometimes a lending pool is also called *reserve* (see :term:`Aave`).
 
-        The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as margin trading, :term:`liquidity provision`, or to meet other financial obligations.
+        The assets are typically held in a pool and are lent out to borrowers, who can use them for a variety of purposes such as :term:`margin trading`, :term:`liquidity provision`, or to meet other financial obligations.
 
         Lending pools typically offer a high yield investment opportunity for lenders, as they can earn interest on their cryptocurrency assets without having to sell them. Borrowers, on the other hand, can access the assets they need to meet their financial obligations, without having to sell their own assets or go through the traditional lending process.
 
@@ -2476,7 +2482,7 @@ and algorithmic trading.
 
         For EVM-compatible chains
 
-        - Same Solidity and Vyper smart contracts work
+        - Same :term:`Solidity` and Vyper :term:`smart contracts <smart contract>` work
 
         - Same JSON-RPC API works
 
@@ -2542,7 +2548,7 @@ and algorithmic trading.
         In a swap you you trade against :term:`liquidity providers <liquidity provider>`
         with market order like trades.
 
-        The user interacts with a :term:`liquidity pool` using :their term:`non-custodial` :term:`wallet`
+        The user interacts with a :term:`liquidity pool` using their :term:`non-custodial` :term:`wallet`
         to perform a swap.
 
         Some example swaps:
@@ -2610,7 +2616,7 @@ and algorithmic trading.
 
         Protocol fee is revenue for the protocol itself.
 
-        The distribution of the protocol fee is decided by a DAO.
+        The distribution of the protocol fee is decided by a :term:`DAO`.
 
         Usually protocol fee is 0.00% (Uniswap v3 default) - 0.005% (PancakeSwap, Sushi).
 
@@ -2893,7 +2899,7 @@ and algorithmic trading.
     Auto-compounding
 
         Auto-compounding is a :term:`trading strategy` in which the investors's investment yields are automatically reinvested into the investment principal at regular intervals.
-        This is called :`compound`.
+        This is called :term:`compounding <compound>`.
 
         Auto-compounding strategies are :term:`benchmarked <benchmark>` using metrics having compounding factored in
 
@@ -3224,6 +3230,8 @@ and algorithmic trading.
 
         - :term:`NFT`
 
+        - :term:`Tokenised fund`
+
         - :term:`Onchain`
 
     WalletConnect
@@ -3343,7 +3351,7 @@ and algorithmic trading.
 
         The framework consists of
 
-        - Market data feed reader in the form of :term:`Trading Strategy Client`
+        - :term:`Market data feed` reader in the form of :term:`Trading Strategy Client`
 
         - :term:`Backtesting framework <backtest>` based on :term:`Jupyter Notebook`
 
@@ -3536,7 +3544,7 @@ and algorithmic trading.
 
         Leverage in trading is the use of borrowed funds to increase one's trading position beyond what would be available from their cash balance alone.
 
-        Leverage trading is also known as margin trading.
+        Leverage trading is also known as :term:`margin trading`.
 
         It enables traders to open a position worth much more than the money they deposit.
 
@@ -3634,6 +3642,310 @@ and algorithmic trading.
 
         - :term:`Factor investing`
 
+        - :term:`Return stacking`
+
+    Return stacking
+
+        Return stacking is a :term:`portfolio construction` technique that keeps a
+        core :term:`market exposure` while adding another return stream on top of it.
+        :term:`Futures`, swaps, or other capital-efficient instruments can provide
+        one of the exposures without requiring the full notional amount to be paid
+        upfront. The remaining capital can support the other exposure or serve as
+        :term:`collateral`. The approach is related to :term:`portable alpha` when the
+        additional strategy seeks :term:`alpha` independently of the core market.
+
+        For example, a portfolio with $100 of capital might obtain $100 of broad
+        stock exposure through index futures, keep cash for margin, and add $100 of
+        :term:`notional exposure` to managed futures. Its combined gross market
+        exposure is then about $200 for each $100 invested. The managed futures
+        strategy can diversify the stocks if their returns behave differently, but
+        it can also lose money at the same time. Notional exposure describes
+        position size; it neither promises doubled returns nor measures total risk.
+
+        Stacking uses :term:`leverage` and introduces financing or futures carry
+        costs, trading expenses, margin requirements, and the risk of losses across
+        both exposures. The benefit depends on the additional strategy's returns
+        *after* those costs and on how its risks interact with the core portfolio.
+        Investors should compare total exposure and :term:`drawdown` risk with the
+        unstacked portfolio, rather than comparing only the cash allocated to each
+        holding.
+
+        Further reading:
+
+        - `CME Group — Futures Driven Portable Alpha <https://www.cmegroup.com/education/articles-and-reports/futures-driven-portable-alpha>`__.
+
+        - `Return Stacked — What Is Return Stacking for Outperformance? <https://www.returnstacked.com/what-is-return-stacking-for-outperformance/>`__.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Futures`
+
+        - :term:`Leverage`
+
+        - :term:`Collateral`
+
+        - :term:`Alpha`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Portable alpha`
+
+        - :term:`Notional exposure`
+
+    Portable alpha
+
+        Portable alpha is a :term:`portfolio construction` approach that combines a
+        chosen :term:`market exposure` (:term:`beta`) with a separately selected
+        strategy intended to earn :term:`alpha`. For example, an investor can fund
+        a long-short strategy and use equity-index :term:`futures` to retain the
+        stock-market exposure otherwise given up to pay for it. The alpha is
+        "portable" because its source need not be the same market that supplies the
+        beta. This is a form of :term:`return stacking` focused on adding an active
+        return stream to a specified benchmark exposure.
+
+        **The funding problem** is central: buying an alternative investment by
+        selling part of a stock or bond allocation changes the portfolio's market
+        exposure. A :term:`beta overlay` can restore the intended exposure while
+        the capital supports the alternative strategy. The portfolio's result then
+        depends on the benchmark return, the strategy's *actual* alpha, financing
+        and trading costs, and how their risks combine. An apparent alpha source
+        may carry hidden market beta, so exposure must be measured across the whole
+        portfolio.
+
+        In a *Flirting with Models* episode, Peter Hecht frames portable alpha as a
+        solution to this funding problem. The conversation also
+        draws lessons from the 2008 crisis: a portfolio can run short of cash for
+        futures margin when its alpha investments are illiquid, and underestimated
+        beta can magnify losses. Investors need sufficient liquid collateral,
+        realistic financing assumptions, appropriate position sizes, and a plan for
+        rebalancing. Evaluate the combined portfolio's :term:`drawdown` and
+        :term:`tracking error`, as well as the alpha strategy on its own. Its
+        :term:`line item` performance may look different from its portfolio impact.
+
+        Further reading:
+
+        - `Listen to Peter Hecht — Portable Alpha: Solving the Funding Problem of Alternatives on Spotify <https://open.spotify.com/episode/2iISZMpklfUmNVzrVEwkum>`__.
+
+        - `Episode notes: Peter Hecht — Portable Alpha: Solving the Funding Problem of Alternatives <https://www.flirtingwithmodels.com/episodes/s9ah4A0xmHW>`__.
+
+        - `AQR — Portable Alpha: Why Now? <https://www.aqr.com/-/media/AQR/Documents/Insights/White-Papers/Portable-Alpha-Why-Now.pdf?sc_lang=en>`__.
+
+        See also
+
+        - :term:`Return stacking`
+
+        - :term:`Alpha`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Futures`
+
+        - :term:`Collateral`
+
+        - :term:`Leverage`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Tracking error`
+
+        - :term:`Line item`
+
+        - :term:`Beta overlay`
+
+        - :term:`Market exposure`
+
+    Beta
+
+        Beta measures how sensitive an asset's or :term:`portfolio`'s returns are to
+        returns on a specified :term:`benchmark`, usually a broad market index. A
+        beta of 1 indicates approximately one unit of benchmark-related movement
+        for each unit of benchmark movement; a beta above 1 indicates greater
+        sensitivity, and a negative beta indicates movement in the opposite
+        direction *on average*. It does not mean the asset will match the benchmark
+        on every day or that beta captures all of its risk.
+
+        For observations over the same dates and at the same frequency, beta is
+        commonly estimated as the slope of a regression or as:
+
+        .. code-block:: text
+
+            Beta = covariance(asset returns, benchmark returns) / variance(benchmark returns)
+
+        Beta changes with the benchmark, sample period, and return frequency. In
+        :term:`portable alpha`, an investor may hold or recreate the desired market
+        beta while seeking an independent :term:`alpha` source. This use of "beta"
+        can also mean the market exposure itself, rather than its estimated
+        sensitivity coefficient.
+
+        Further reading:
+
+        - `CFA Institute — Investment Performance Measurement <https://rpc.cfainstitute.org/-/media/documents/code/gips/measures-risk-adjusted-return.pdf>`__.
+
+        See also
+
+        - :term:`Benchmark`
+
+        - :term:`Market exposure`
+
+        - :term:`Beta overlay`
+
+        - :term:`BTC beta`
+
+        - :term:`Alpha`
+
+        - :term:`Capital asset pricing model`
+
+    Beta overlay
+
+        A beta overlay is a position added to an existing :term:`portfolio` to
+        adjust its :term:`beta` or :term:`market exposure` without replacing its
+        underlying investments. Equity-index :term:`futures` or swaps are common
+        instruments: a long overlay can add or restore benchmark exposure, while a
+        short overlay can reduce it. For example, a portfolio with estimated equity
+        beta of 0.4 might add an equity-index futures position sized to supply about
+        0.6 more beta and target an overall equity beta near 1.
+
+        In :term:`portable alpha`, the overlay can replace the market exposure given
+        up when capital is allocated to an alternative strategy. Its
+        :term:`notional exposure` may be large relative to the cash posted as
+        :term:`collateral`. Maintaining it requires margin liquidity, rebalancing,
+        and attention to financing costs and :term:`tracking error`; hidden beta in
+        the underlying strategy can make the combined exposure exceed its target.
+
+        Further reading:
+
+        - `CME Group — Overlay Strategies <https://www.cmegroup.com/education/overlay-strategies>`__.
+
+        See also
+
+        - :term:`Beta`
+
+        - :term:`Portable alpha`
+
+        - :term:`Return stacking`
+
+        - :term:`Notional exposure`
+
+        - :term:`Futures`
+
+    Notional exposure
+
+        Notional exposure is the face amount of an underlying market position
+        represented by a derivative. For an index :term:`futures` position, it is
+        typically the index level multiplied by the contract multiplier and the
+        number of contracts. The investor normally posts only a fraction of this
+        amount as :term:`collateral` or margin. For linear futures, gains and losses
+        respond to changes in the underlying position's full notional amount;
+        options and other non-linear derivatives have different sensitivities.
+
+        A :term:`return stacking` strategy may therefore combine $100 of stock
+        exposure with $100 of futures notional for every $100 of capital. It has
+        $200 of *gross* exposure, calculated by adding the absolute amounts of the
+        positions. Long and short exposures to the same market can offset in a
+        *net* measure. Neither gross nor net notional alone describes the risk of
+        the portfolio: direction, underlying assets, volatility, and hedges matter.
+
+        Further reading:
+
+        - `CME Group — About Contract Notional Value <https://www.cmegroup.com/education/courses/introduction-to-futures/about-contract-notional-value>`__.
+
+        - `SEC — Use of Derivatives by Registered Investment Companies <https://www.sec.gov/files/rules/final/2020/ic-34084.pdf>`__.
+
+        See also
+
+        - :term:`Market exposure`
+
+        - :term:`Beta overlay`
+
+        - :term:`Leverage`
+
+        - :term:`Futures`
+
+        - :term:`Collateral`
+
+    Line item
+
+        In portfolio allocation, a line item is one holding or strategy shown
+        separately in an account statement, allocation report, or performance table.
+        Its displayed return describes that holding. Its contribution to the whole
+        :term:`portfolio` return depends on its allocation weight; its effect on
+        portfolio risk also depends on how it moves with the other holdings. For
+        example, a strategy with a 10% starting weight that loses 20% in a period
+        contributes about -2 percentage points to that period's portfolio return,
+        before rebalancing.
+
+        *Line-item risk* describes the practical difficulty of holding a strategy
+        whose standalone performance looks uncomfortable, even when it has a useful
+        role in the wider portfolio. In Peter Hecht's *Flirting with Models* episode,
+        this is a design and sizing concern: an alternative strategy can have a large
+        :term:`drawdown` on its own while having a smaller, potentially diversifying
+        effect at the portfolio level. Investors should examine both views so they
+        can judge the strategy's risk and maintain an allocation they can tolerate.
+
+        `Listen to the Peter Hecht episode on Spotify <https://open.spotify.com/episode/2iISZMpklfUmNVzrVEwkum>`__.
+
+        See also
+
+        - :term:`Portfolio construction`
+
+        - :term:`Portable alpha`
+
+        - :term:`Return stacking`
+
+        - :term:`Tracking error`
+
+        - :term:`Drawdown`
+
+    Tracking error
+
+        Tracking error, also called *active risk*, measures how much a portfolio's
+        returns vary relative to a chosen :term:`benchmark`. It is the
+        :term:`standard deviation` of the period-by-period differences between portfolio and
+        benchmark returns, often annualised for reporting:
+
+        .. code-block:: text
+
+            Tracking error = standard deviation(portfolio return - benchmark return)
+
+        A higher value means greater variability of benchmark-relative returns; it
+        does not say whether the portfolio tends to outperform. Tracking error is
+        also distinct from the average return gap or the largest single-period
+        deviation. Comparisons require the same benchmark, return frequency,
+        measurement window, and annualisation convention.
+
+        For :term:`portfolio construction`, calculate tracking error on the *whole*
+        portfolio against its intended allocation benchmark. A :term:`portable alpha`
+        or :term:`return stacking` overlay can differ greatly from the benchmark as
+        a standalone :term:`line item`, yet have a smaller effect on total-portfolio
+        tracking error when it is modestly sized or diversifies other holdings.
+        Conversely, hidden market exposure or correlated losses can increase the
+        portfolio's active risk. The Peter Hecht podcast episode discusses this
+        distinction when assessing portable-alpha allocations.
+
+        Further reading:
+
+        - `CFA Institute — Investment Performance Measurement <https://rpc.cfainstitute.org/-/media/documents/code/gips/sharpe-ratio-and-the-information-ratio.pdf>`__.
+
+        - `Peter Hecht episode notes — Portable Alpha: Solving the Funding Problem of Alternatives <https://www.flirtingwithmodels.com/episodes/s9ah4A0xmHW>`__.
+
+        See also
+
+        - :term:`Benchmark`
+
+        - :term:`Portfolio construction`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Portable alpha`
+
+        - :term:`Line item`
+
+        - :term:`Market exposure`
+
+        - :term:`Beta overlay`
+
     Portfolio
 
         In :term:`quantitative finance`, portfolio means the list of assets that a :term:`trading strategy` is currently holding.
@@ -3676,7 +3988,7 @@ and algorithmic trading.
 
         Alpha models can be constructed using a variety of techniques, such as statistical analysis, machine learning algorithms, or financial modeling. The inputs to an alpha model may include company financial statements, price and volume data, macroeconomic indicators, and other market data.
 
-        Once an alpha model generates :term:`trading signals <trading signal>`, the portfolio manager can use those signals to construct a portfolio that aims to generate alpha (i.e., excess returns) relative to a benchmark index. The portfolio manager may use other tools, such as risk management techniques or diversification strategies, to manage portfolio risk and optimize performance.
+        Once an alpha model generates :term:`trading signals <trading signal>`, the portfolio manager can use those signals to construct a portfolio that aims to generate alpha (i.e., :term:`excess returns`) relative to a benchmark index. The portfolio manager may use other tools, such as risk management techniques or diversification strategies, to manage portfolio risk and optimize performance.
 
         It is important to note that alpha models are not foolproof and can be subject to various biases and errors. As such, portfolio managers must continually test and refine their alpha models to ensure that they are producing accurate and robust trading signals.
 
@@ -3696,11 +4008,11 @@ and algorithmic trading.
 
     Alpha signal
 
-        In :term:`quantitative finance` and :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including fundamental analysis, technical analysis, and quantitative models. Portfolio construction is a specific type of :term:``trading strategy`.
+        In :term:`quantitative finance` and :term:`portfolio construction`, an alpha signal refers to a metric or indicator used to identify investments that are likely to outperform the broader market. Alpha signals can be derived from a variety of sources, including :term:`fundamental analysis`, :term:`technical analysis`, and quantitative models. Portfolio construction is a specific type of :term:`trading strategy`.
 
         Alpha signals are also known as *trading signals*.
 
-        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a :term:`portfolio` that generates excess returns (i.e., alpha) relative to a benchmark index.
+        The goal of using an alpha signal is to identify securities that are undervalued or overvalued compared to their peers, and to use that information to construct a :term:`portfolio` that generates :term:`excess returns` (i.e., alpha) relative to a benchmark index.
 
         Examples of alpha signals include measures of company profitability, earnings growth, price momentum, and valuation ratios. A portfolio manager may use one or more alpha signals to construct a portfolio that is expected to outperform the benchmark index.
 
@@ -4010,7 +4322,7 @@ and algorithmic trading.
 
         Sharpe, or The Sharpe Ratio, is a widely used financial metric that measures the :term:`risk-adjusted return` of an investment. It was developed by Nobel laureate William F. Sharpe in 1966.
 
-        The Sharpe ratio is calculated by subtracting the risk-free rate (such as the yield on a Treasury bond) from the return of the investment, and then dividing the result by the standard deviation of the investment's returns. The formula is:
+        The Sharpe ratio is calculated by subtracting the :term:`risk-free rate` (such as the yield on a Treasury bond) from the return of the investment, and then dividing the result by the :term:`standard deviation` of the investment's returns. The formula is:
 
         `Sharpe Ratio = (Return of investment - Risk-free rate) / Standard deviation of investment's returns`
 
@@ -4486,6 +4798,19 @@ and algorithmic trading.
 
         - :term:`HyperEVM`
 
+    Solidity
+
+        Solidity is a programming language used to write :term:`smart contracts <smart contract>`
+        that run on the :term:`EVM` and :term:`EVM-compatible` blockchains.
+
+        See also
+
+        - :term:`Smart contract`
+
+        - :term:`EVM`
+
+        - :term:`EVM-compatible`
+
     Crystallisation
 
         In :term:`quantitative finance`, "crystallisation" typically refers to the process by which the value of a fund investment is determined or realized. It involves calculating the net asset value (NAV) of the fund and providing investors with a clear picture of their investment's worth.
@@ -4905,7 +5230,7 @@ and algorithmic trading.
 
         - :term:`Annual Percentage Yield (APY)`
 
-        If an automated strategy does compounding it is called :term:`auto-compound` strategy.
+        If an automated strategy reinvests its returns, it is called an :term:`auto-compounding` strategy.
 
         See also
 
@@ -5135,6 +5460,55 @@ and algorithmic trading.
 
         - :term:`Longest drawdown duration`
 
+        - :term:`Maximum pullback`
+
+        - :term:`IID Gaussian drawdown`
+
+    IID Gaussian drawdown
+
+        An IID Gaussian drawdown is a :term:`drawdown` generated under the simplifying
+        assumption that successive returns are **independent and identically
+        distributed** (IID) draws from a Gaussian (normal) distribution. It is a
+        model-based benchmark for how deep or long a drawdown could be by chance,
+        given an assumed average return, :term:`volatility`, observation frequency,
+        and investment horizon. It is not a separate drawdown statistic: the usual
+        :term:`maximum drawdown` or drawdown duration is measured on a path produced
+        by the model.
+
+        One implementation draws log returns from ``N(mu, sigma²)``, accumulates them
+        into a positive :term:`equity curve`, and measures each path's decline from
+        its running peak. Repeating this for many paths gives a distribution of
+        maximum drawdown depths and time spent below a previous peak. An observed
+        strategy drawdown can then be compared with that distribution under the IID
+        Gaussian assumptions. The result depends on the estimated mean and
+        volatility, the sample interval, the horizon, and whether returns are
+        modelled as log or simple returns.
+
+        Real trading returns may have fat tails, changing volatility, or serial
+        dependence, all of which the IID Gaussian model excludes. Its simulated
+        quantiles are therefore a baseline, not a reliable upper bound on future
+        losses. A drawdown within the model's expected range does not prove that a
+        strategy is healthy; a drawdown outside it may indicate that the return model
+        or its parameter estimates need revisiting.
+
+        Literature and references:
+
+        - Adam Rej, Philip Seager and Jean-Philippe Bouchaud, `You are in a drawdown. When should you start worrying? <https://arxiv.org/abs/1707.01457>`__, 2017.
+
+        - Malik Magdon-Ismail, Amir F. Atiya, Amrit Pratap and Yaser S. Abu-Mostafa, `On the maximum drawdown of a Brownian motion <https://work.caltech.edu/pub/Magdon-Ismail2004drawdown.pdf>`__, *Journal of Applied Probability*, 2004.
+
+        See also
+
+        - :term:`Drawdown`
+
+        - :term:`Maximum Drawdown`
+
+        - :term:`Longest drawdown duration`
+
+        - :term:`Volatility`
+
+        - :term:`Backtest`
+
     Take Profit
 
         The predetermined price level at which you plan to close out an open position for a profit. This is set when you initially establish the position. This is the price at which you want to sell and take your profit. It is important to set a take profit target and stick to it. If you don’t, you may end up holding a position for too long and lose your profit.
@@ -5302,11 +5676,27 @@ and algorithmic trading.
 
     Market Exposure
 
-        Market exposure refers to the extent to which an investment portfolio is subject to fluctuations in the overall financial market or a specific asset class. It describes the amount of risk or potential for gain that an investor or organization faces as a result of having invested in a particular market, sector, or individual security.
+        Market exposure is the extent to which a :term:`portfolio`'s value responds
+        to a specified market, asset class, sector, or risk factor. It includes both
+        direct holdings and exposure created or offset by derivatives. The market
+        and measurement method should be stated: dollar or percentage exposure
+        describes position size, while :term:`beta` estimates sensitivity of returns
+        to a particular :term:`benchmark`.
 
-        Example: An investor with a :term:`portfolio` heavily weighted in technology stocks has significant market exposure to the technology sector. If the technology sector performs well, the investor stands to gain; conversely, if the sector performs poorly, the investor is at risk of incurring losses.
+        For example, $100 of stocks and $100 of short equity-index :term:`futures`
+        have about $200 of *gross* equity exposure when the absolute position sizes
+        are added. Their *net* equity exposure may be close to zero if the holdings
+        closely track the index. The positions can still have stock-specific risk,
+        imperfect hedging, and margin needs. A :term:`beta overlay` can similarly
+        add exposure to a portfolio without buying the underlying shares.
 
-        Unrealized risk and market exposure are often interconnected, as the level of market exposure can directly impact the degree of unrealized risk in a portfolio. A portfolio with high market exposure to volatile sectors will inherently carry a higher degree of unrealized risk until positions are closed.
+        A derivative's :term:`notional exposure` is a useful starting measure of
+        market exposure, but it is not by itself a complete measure of risk,
+        especially across different markets or non-linear instruments.
+
+        Further reading:
+
+        - `CME Group — Overlay Strategies <https://www.cmegroup.com/education/overlay-strategies>`__.
 
         See also
 
@@ -5317,6 +5707,12 @@ and algorithmic trading.
         - :term:`Portfolio construction`
 
         - :term:`Trading strategy`
+
+        - :term:`Beta`
+
+        - :term:`Beta overlay`
+
+        - :term:`Notional exposure`
 
     Median
 
@@ -5492,6 +5888,8 @@ and algorithmic trading.
         - :term:`Risk-adjusted return`
 
         - :term:`Delta neutral`
+
+        - :term:`DVOL`
 
     Compound Annual Growth Rate (CAGR)
 
@@ -5854,9 +6252,11 @@ and algorithmic trading.
 
         - :term:`Best trading strategy`
 
+        - :term:`Dollar cost averaging (DCA)`
+
     Overfitting
 
-        In term:`quantitative finance`, overfitting of :term:`trading strategy` means that the
+        In :term:`quantitative finance`, overfitting of :term:`trading strategy` means that the
         trading strategy results in :term:`backtest` where mostly luck-driven and there is no real :term:`alpha`.
 
         Because of limited historical data, backtesting results, especially :term:`grid search` results
@@ -5878,7 +6278,7 @@ and algorithmic trading.
           a usual method in :term:`machine learning`
 
         - `Monte Carlo-method <https://www.linkedin.com/pulse/monte-carlo-backtesting-traders-ace-dfi-labs/>`__ by
-          creating random asset prices where the behavior resembles the :term:`
+          creating random asset prices that resemble the behaviour of the market.
 
         - For continuous markets like cryptocurrency markets, you can do `shifted trading hours <https://tradingstrategy.ai/blog/outperfoming-eth>`__ on    :term:`OHLCV` data.
 
@@ -5895,6 +6295,8 @@ and algorithmic trading.
         - :term:`Best trading strategy`
 
         - :term:`Training set`
+
+        - :term:`Regularization`
 
         - :term:`Alpha`
 
@@ -6064,7 +6466,7 @@ and algorithmic trading.
 
     Feature engineering
 
-        Feature engineering is the design, transformation, and preparation of raw data into model inputs. In systematic trading, it commonly converts price, volume, funding, order-book, fundamentals, or alternative data into lagged, rolling, normalised, or cross-sectionally ranked :term:`features <feature>`.
+        Feature engineering is the design, transformation, and preparation of raw data into model inputs. In :term:`systematic trading`, it commonly converts price, volume, funding, order-book, fundamentals, or :term:`alternative data` into lagged, rolling, normalised, or cross-sectionally ranked :term:`features <feature>`.
 
         Good feature engineering defines the calculation, data source, timestamps, missing-value handling, and applicable trading universe. Every transformation must use only :term:`point-in-time data` and be fitted on the training portion of each evaluation fold. A feature is not validated merely because it is well engineered: its incremental predictive and economic value should be assessed with :term:`feature ablation` and :term:`out-of-sample testing`.
 
@@ -6256,7 +6658,7 @@ and algorithmic trading.
 
         The target variable is the outcome a supervised model is trained to predict, conventionally denoted by *y*. A regression model may target a numeric :term:`forward return`; a classification model may target an up-or-down label or another discrete outcome. The target is observed during model development but is unavailable when the model makes a live forecast.
 
-        Choosing a target variable determines the prediction task, loss function, and appropriate evaluation metric. In systematic trading, it should also match the intended portfolio decision and :term:`prediction horizon`. A target that is statistically predictable need not be economically useful after costs and risk constraints.
+        Choosing a target variable determines the prediction task, :term:`loss function`, and appropriate evaluation metric. In :term:`systematic trading`, it should also match the intended portfolio decision and :term:`prediction horizon`. A target that is statistically predictable need not be economically useful after costs and risk constraints.
 
         See also
 
@@ -6363,7 +6765,7 @@ and algorithmic trading.
 
         - :term:`High-Frequency Trading`: Machine learning techniques are applied in high-frequency trading strategies, where trades are executed within milliseconds to exploit fleeting market inefficiencies. These algorithms leverage advanced statistical models and data analysis techniques to identify profitable trading opportunities in high-speed trading environments.
 
-        - :term:`Sentiment Analysis: Machine learning models analyze news articles, social media feeds, and other textual data sources to gauge market sentiment and investor opinions. Sentiment analysis helps traders and investors make informed decisions by assessing the impact of public sentiment on financial markets.
+        - :term:`Sentiment analysis`: Machine learning models analyse news articles, social media feeds, and other textual data sources to gauge :term:`market sentiment` and investor opinions. This helps traders and investors assess the impact of public sentiment on financial markets.
 
         See also
 
@@ -6432,7 +6834,7 @@ and algorithmic trading.
 
         In :term:`quantitative finance`, a "cash and carry trade" refers to a strategy where an investor simultaneously buys an asset and sells (or "carries") a related derivative contract. This :term:`trading strategy` is typically employed when the asset is expected to appreciate in value over time, and the investor seeks to profit from the price difference between the asset and its derivative.
 
-        This trade can be also known as carry trade, spot-forward basis and basis trade.
+        This trade can also be known as a :term:`carry trade`, :term:`spot-forward basis` trade, or basis trade.
 
         Cash and carry trades are commonly used in markets where futures or forward contracts are actively traded and where there are opportunities for arbitrage or speculation based on expected price movements.
 
@@ -6605,7 +7007,7 @@ and algorithmic trading.
 
         - :term:`Volatility` Measurement: ATR provides a measure of market volatility. Higher ATR values indicate higher volatility, while lower values suggest lower volatility.
 
-        - Setting :term:`stop loss` and Take Profit Levels: Traders can use ATR to set dynamic stop loss and take profit levels based on the current volatility of the market. For example, they may set stop losses a certain number of ATR units away from the entry price to account for market fluctuations.
+        - Setting :term:`stop loss` and :term:`Take Profit` levels: Traders can use ATR to set dynamic stop loss and take profit levels based on the current volatility of the market. For example, they may set stop losses a certain number of ATR units away from the entry price to account for market fluctuations.
 
         - :term:`Position sizing`: ATR can be used to adjust position sizes based on market volatility. In highly volatile markets, traders may reduce their position sizes to manage risk, while in low volatility markets, they may increase position sizes to take advantage of potential larger moves.
 
@@ -6684,7 +7086,7 @@ and algorithmic trading.
 
     Stochastic RSI indicator
 
-        Stochastic RSI (StochRSI) is a :term:`technical indicator` used in :term:`quantitative finance`, combining the concepts of the :term;`Stochastic Oscillator` and the Relative Strength Index (RSI). It is primarily used to identify overbought and oversold conditions in a market, as well as potential price reversals. The Stochastic RSI is more sensitive and responsive than the traditional RSI, making it popular among traders looking for early signals.
+        Stochastic RSI (StochRSI) is a :term:`technical indicator` used in :term:`quantitative finance`, combining the concepts of the :term:`Stochastic oscillator` and the Relative Strength Index (RSI). It is primarily used to identify overbought and oversold conditions in a market, as well as potential price reversals. The Stochastic RSI is more sensitive and responsive than the traditional RSI, making it popular among traders looking for early signals.
 
         Key Components:
 
@@ -7854,12 +8256,12 @@ and algorithmic trading.
 
     MegaVault
 
-        MegaVault is a feature on the dYdX :term:`perpetual future` :term:`DEX`, specifically within the dYdX Chain ecosystem, designed to enhance liquidity and provide users with a way to earn passive yield. It allows users to deposit :term`USDC` (a stablecoin pegged to the U.S. dollar) into a centralized liquidity pool, which is then used to support automated market-making strategies across various markets on the dYdX Chain. In return, depositors can earn yield from sources such as profits and losses (PnL) on vault positions, funding rate payments, and a share of the protocol’s trading fee revenue.
+        MegaVault is a feature on the dYdX :term:`perpetual future` :term:`DEX`, specifically within the dYdX Chain ecosystem, designed to enhance liquidity and provide users with a way to earn passive yield. It allows users to deposit :term:`USDC` (a stablecoin pegged to the U.S. dollar) into a centralized :term:`liquidity pool`, which is then used to support automated market-making strategies across various markets on the dYdX Chain. In return, depositors can earn yield from sources such as profits and losses (PnL) on vault positions, :term:`funding rate` payments, and a share of the protocol’s trading fee revenue.
 
         Here’s how MegaVault works at a high level:
 
         - **Liquidity Provision**: When users deposit USDC into MegaVault, these funds are allocated to multiple “sub-vaults,” each tied to a specific market on dYdX. These sub-vaults employ automated market-making strategies to provide liquidity, ensuring smooth trading and sufficient market depth across the platform, including for newly listed markets.
-        - **Yield Generation**: Depositors earn a yield based on the performance of MegaVault’s market-making activities and a portion of the protocol’s revenue (e.g., trading fees). The yield is variable and depends on factors like market conditions, vault performance, and :term:`total value locked` (TVL) in the vault. For example, as more users deposit USDC, the yield may dilute across participants.
+        - **Yield Generation**: Depositors earn a yield based on the performance of MegaVault’s market-making activities and a portion of the protocol’s revenue (e.g., trading fees). The yield is variable and depends on factors like market conditions, vault performance, and :term:`total value locked (TVL) <Total value locked (TVL)>` in the vault. For example, as more users deposit USDC, the yield may dilute across participants.
         - **Flexibility**: Users can deposit USDC into MegaVault at any time and typically withdraw their funds whenever they choose, though withdrawals may incur “slippage” (a potential cost) depending on the vault’s positions and market conditions. In certain cases, such as deposits tied to launching new markets, funds may be locked for a period (e.g., 30 days), but this applies only to specific scenarios.
         - **Governance and Operation**: Initially, MegaVault relies on an “operator” elected through dYdX’s governance process to manually manage tasks like allocating USDC between sub-vaults and adjusting market-making parameters (e.g., quoting strategies). Over time, these processes may become fully automated. The dYdX community also governs aspects like the share of protocol revenue allocated to MegaVault (currently set at 25% as of March 24, 2025, per recent community decisions).
 
@@ -7932,7 +8334,7 @@ and algorithmic trading.
         but has expanded to include cross-chain functionality.
         `GMX saw a hacking incident in July 2025 from which it recovered <https://www.google.com/search?q=gmx+hack&sca_esv=53f892ddff1617d9&hl=en&ei=-A3JaNPhK9yxwPAPoueP8Q8&start=10&sa=N&sstk=Ac65TH6389bl2w7it5NOm9PYcB84kQsMy3g3h7SI5jDpQxdQ9yJ0SNQe2uotMiMya0GtFAxg6GGRazcWSoMNNmG5kuQJAn-eDIwtzA&ved=2ahUKEwjTvcHL3dyPAxXcGBAIHaLzI_4Q8NMDegQIChAW&biw=1376&bih=928&dpr=2>`__.
 
-        GMX has its own :term:`pools` for :term:`market making` where pools users can provide liquidity
+        GMX has its own :term:`liquidity pools <liquidity pool>` for :term:`market making` where pool users can provide liquidity
         and take the other side of the trade. There are `GLP vaults <https://x.com/GMX_IO/status/1831403607972892737?lang=en>`__
         in GMX v2 and older GLP vaults in GMX v1. GLV is the index pool of GMX's markets,
         rebalancing liquidity to its best-performing GM pools and generating fees from them.
@@ -8011,7 +8413,7 @@ and algorithmic trading.
         CCXT is developed in domain-specific language variation of TypeScript, and API bindings are generated for
         multiple programming languages, including :term:`Python`, JavaScript, PHP, Rust and C#.
 
-        CCXT supports :term:`spot markets <spot market>`, :term:`perpetual futures <perpetual futures>`.
+        CCXT supports :term:`spot markets <spot market>` and :term:`perpetual futures <perpetual future>`.
 
         More about CCXT:
 
@@ -8213,7 +8615,7 @@ and algorithmic trading.
 
         **Risks and considerations**
 
-        ADL can shock even experienced traders by forcibly reducing winning positions, potentially locking in profits prematurely or at unfavorable prices. It amplifies risks in crypto's 24/7, high-volatility environment, where flash crashes can trigger mass liquidations. To mitigate, traders can use lower leverage, monitor ADL indicators, or employ hedging strategies (e.g., :term:`delta-neutral <delta hedged>` across :term:`spot markets` and futures), which may lower ranking priority. While rare, ADL events have occurred during major market moves, like crypto crashes, affecting platforms such as Bybit, OKX, Binance, and others.
+        ADL can shock even experienced traders by forcibly reducing winning positions, potentially locking in profits prematurely or at unfavorable prices. It amplifies risks in crypto's 24/7, high-volatility environment, where flash crashes can trigger mass liquidations. To mitigate, traders can use lower leverage, monitor ADL indicators, or employ hedging strategies (e.g., :term:`delta-neutral <delta hedged>` across :term:`spot markets <spot market>` and futures), which may lower ranking priority. While rare, ADL events have occurred during major market moves, like crypto crashes, affecting platforms such as Bybit, OKX, Binance, and others.
 
         See also
 
@@ -8229,7 +8631,7 @@ and algorithmic trading.
 
     Cascading liquidation
 
-        Cascading liquidation, also known as a liquidation cascade, refers to a chain reaction in cryptocurrency markets where an initial wave of forced position closures triggers further :term:`liquidations <liquidation>`, often resulting in rapid and amplified price declines. This phenomenon is particularly prevalent in leveraged trading environments, such as :term:`perpetual futures <perpetual future>` or margin trading on crypto exchanges, where traders borrow funds to amplify their positions. When the market moves against these positions (e.g., a sharp price drop for long positions), accounts fall below required margin levels, prompting automated liquidations to repay borrowed funds. The selling pressure from these closures pushes prices even lower, hitting more liquidation thresholds and creating a self-reinforcing downward spiral.
+        Cascading liquidation, also known as a liquidation cascade, refers to a chain reaction in cryptocurrency markets where an initial wave of forced position closures triggers further :term:`liquidations <liquidation>`, often resulting in rapid and amplified price declines. This phenomenon is particularly prevalent in leveraged trading environments, such as :term:`perpetual futures <perpetual future>` or :term:`margin trading` on crypto exchanges, where traders borrow funds to amplify their positions. When the market moves against these positions (e.g., a sharp price drop for long positions), accounts fall below required margin levels, prompting automated liquidations to repay borrowed funds. The selling pressure from these closures pushes prices even lower, hitting more liquidation thresholds and creating a self-reinforcing downward spiral.
 
         ** How cascading liquidations occur**
 
@@ -8237,7 +8639,7 @@ and algorithmic trading.
 
         2. **Domino Effect**: The forced sales increase supply in the market, driving prices down further. This activates liquidations for positions with slightly higher thresholds, compounding the sell-off. In extreme cases, this can lead to flash crashes, where prices plummet temporarily before recovering.
 
-        3. **Market-Wide Impact**: Cascades often spread beyond a single asset due to correlations in crypto (e.g., Bitcoin's drop affecting altcoins). They are more common in bear markets with low confidence, high speculation, and over-leveraged participants. Exchanges may implement mechanisms like insurance funds or auto-deleverage to mitigate systemic risks, but these aren't always sufficient during high volatility.
+        3. **Market-Wide Impact**: Cascades often spread beyond a single asset due to correlations in crypto (e.g., Bitcoin's drop affecting altcoins). They are more common in bear markets with low confidence, high speculation, and over-leveraged participants. Exchanges may implement mechanisms like insurance funds or :term:`auto-deleverage <Automatic deleverage>` to mitigate systemic risks, but these aren't always sufficient during high volatility.
 
         ### Risks and Consequences
         - Heightened :term:`volatility`: Rapid price swings can erode market confidence and lead to broader instability.
@@ -8249,7 +8651,7 @@ and algorithmic trading.
         To avoid being caught in a cascade, traders can:
         - Use lower :term:`leverage` to increase buffer against price swings.
         - Set :term:`stop loss` orders to exit positions before liquidation thresholds.
-        - Monitor open interest, funding rates, and market news for signs of over-leveraging.
+        - Monitor :term:`open interest`, :term:`funding rates <funding rate>`, and market news for signs of over-leveraging.
         - Diversify across assets and maintain sufficient account balances to handle margin calls.
 
         While cascading liquidations highlight the risks of crypto's 24/7, high-leverage ecosystem, they also create opportunities for contrarian traders who anticipate rebounds after the dust settles in the form of "buy the dip" :term:`trading strategies <trading strategy>`.
@@ -8265,6 +8667,8 @@ and algorithmic trading.
         - :term:`Leverage`
 
         - :term:`Stop loss`
+
+        - :term:`Automatic deleverage`
 
     Recursive looping
 
@@ -9442,7 +9846,7 @@ and algorithmic trading.
 
     Beta-hedged
 
-        A position or factor is beta-hedged when its exposure to the broad market (its :term:`market beta <Capital asset pricing model>`) has been neutralised, typically by shorting an index or futures in proportion to the position's beta. What remains is the idiosyncratic or factor-specific return, stripped of the general up-and-down of the market.
+        A position or factor is beta-hedged when its exposure to the broad market (its :term:`market beta <Beta>`) has been neutralised, typically by shorting an index or futures in proportion to the position's beta. What remains is the idiosyncratic or factor-specific return, stripped of the general up-and-down of the market.
 
         Beta-hedging matters in :term:`factor investing` research because comparing raw factor returns can be misleading if some factors carry hidden market exposure. Hedging out beta isolates the pure factor premium, making :term:`Sharpe` ratios comparable across factors. It is the factor-research analogue of :term:`delta hedging <Delta hedged>` in options.
 
@@ -9520,7 +9924,11 @@ and algorithmic trading.
 
     Capital asset pricing model
 
-        The Capital Asset Pricing Model (CAPM) is the foundational asset-pricing theory stating that an asset's expected return is determined solely by its **beta** — its sensitivity to the overall market. Beta of 1 moves with the market; below 1 is less volatile, above 1 more volatile. Under CAPM the only compensated risk is market risk, and any return not explained by beta is called :term:`alpha <Alpha>`.
+        The Capital Asset Pricing Model (CAPM) relates an asset's expected return to
+        its :term:`beta`, or sensitivity to the overall market. Expected return is
+        the :term:`risk-free rate` plus beta times the expected excess market return.
+        Under CAPM, market risk is the compensated risk; return unexplained by that
+        market exposure is called :term:`alpha <Alpha>`.
 
         Decades of research document violations of CAPM that motivate :term:`factor investing`: the :term:`size and value premia <Fama-French factors>`, the :term:`momentum <Momentum>` effect, and the low-beta anomaly behind :term:`BAB <Betting Against Beta (BAB)>` all earn returns CAPM cannot explain. **Beta** in CAPM is also what gets neutralised when a factor is :term:`beta-hedged`.
 
@@ -9531,6 +9939,8 @@ and algorithmic trading.
         See also
 
         - :term:`Beta-hedged`
+
+        - :term:`Beta`
 
         - :term:`Alpha`
 
@@ -9577,6 +9987,8 @@ and algorithmic trading.
         See also
 
         - :term:`Capital asset pricing model`
+
+        - :term:`Beta`
 
         - :term:`Alpha`
 
