@@ -27,6 +27,8 @@ Advanced Futures Trading Strategies
 
 In Advanced Futures Trading Strategies, Robert Carver provides a complete practical guide to 30 trading strategies for the futures markets. Advanced Futures Trading Strategies is the definitive practical guide to futures trading strategies.
 
+Our review: the book's real subject is not the 30 strategies but the framework that turns a signal into a tradeable position. Carver builds it incrementally — rolling futures accounting, sizing positions against a volatility-based risk budget, updating risk estimates, diversifying across instruments, expressing predictions as scaled and capped forecasts, combining forecasts across horizons, and finally making the target portfolio tradeable after costs, contract rounding and liquidity limits. The strategies themselves (trend, carry, breakout, value, acceleration, skew, fast mean reversion on hourly data, cross-instrument spreads and calendar trades, among others) are mostly successive refinements or overlays on the same engine, and Strategy 11 — the trend and carry combination — serves as the recurring benchmark. Carver is unusually honest about modest results: many modifications add only a few hundredths of Sharpe, more "accurate" carry can perform worse, and relative-value hedges can hide large gross leverage behind low measured volatility. Read the headline Sharpe ratios as backtest outcomes from a large, diversified "Jumbo" portfolio with differing sample lengths, not as expected live returns for a small account. If you only read one book on systematic futures trading, this is it.
+
 `Buy the book <https://www.amazon.com/Advanced-Futures-Trading-Strategies-Robert/dp/0857199684>`__.
 
 Beating the Financial Futures Market
@@ -214,6 +216,47 @@ It is not a trading book and contains no strategies, but the failure mode it tar
 Mentioned by D. Martin (@dmartin_trading) in `this discussion <https://x.com/dmartin_trading/status/2090076324186489203>`__, where he notes it "is not directly a trading book, but it does a good job of teaching you how to make good decisions under uncertainty."
 
 `Buy the book <https://www.amazon.com/dp/0735216355>`__
+
+Introduction To Algo Trading: How Retail Traders Can Successfully Compete With Professional Traders
+---------------------------------------------------------------------------------------------------
+
+Kevin J. Davey (2018) gives a short orientation to systematic trading for retail traders. Davey defines algorithmic trading broadly as trading by explicit rules, whether calculated by hand or automated, and argues that the retail trader's advantage is not speed but a disciplined process: state an idea precisely, test it, understand its behaviour, follow it consistently and eventually combine several strategies. The twelve chapters cover what algo trading is and whether it fits your personality, the benefits of backtesting and diversification, common misconceptions, choosing a trading platform, and writing and evaluating a first EasyLanguage strategy in TradeStation.
+
+Our review: a good first book for a discretionary trader considering systematic trading, and an 80-page read. Its most valuable lesson is a sceptical attitude to trading demonstrations. Writing rules, programming them, producing a profitable backtest and automating orders are four separate achievements, and none of them proves an economic edge. Davey stresses that out-of-sample data is a finite resource consumed by every re-test, that diversification depends on how strategies behave rather than on which markets they trade, and that automation moves emotional decisions to position sizing and to switching strategies on and off rather than removing them. The weakness is that the rigorous development process the book's claims depend on is repeatedly deferred to Davey's other books and courses, and the worked strategy is explicitly not tradeable. You learn why validation matters more than how to design a full validation protocol.
+
+`Buy the book <https://www.amazon.com/Introduction-Algo-Trading-Successfully-Professional/dp/1981038353>`__
+
+Algo Trading Cheat Codes
+------------------------
+
+Kevin J. Davey (2021) presents research-driven shortcuts for developing algorithmic trading systems faster. Davey ran large comparative studies across futures markets and summarises them as 57 "cheat codes". The book covers realistic expectations and testing habits, a bar-size study across 40 futures markets, ten mean-reversion entry constructions, risk controls, bull/bear regime filters, fifteen exit types, reward-to-risk settings, and exits that close on profitable or losing bars.
+
+Our review: the value is in the comparative research rather than in any single strategy. Several findings recur and are worth internalising. Trading costs reorder strategy rankings, and high-frequency variants that look best before costs often look worst after them. Longer bar sizes were a better starting point in the tested futures. Simple baselines are hard to beat: in the exit study, plain stop-and-reverse had the best average return on account among the twelve exit types ranked, ahead of dollar targets, trailing stops, chandelier and parabolic exits. Filters that improve the average often eliminate most of the very profitable cases. Note that most "best" aggregate results in the exit study are still negative on average. These are research priorities for where to look first, not ready-made systems, and the published code snippets do not reproduce every reported result without additional settings.
+
+`Buy the book <https://www.amazon.com/ALGO-TRADING-CHEAT-CODES-Efficiently/dp/B0948FFC58>`__
+
+Winning Algorithmic Trading Strategies
+--------------------------------------
+
+Thomas West (2025, "2026 Edition") is a practical guide to building indicator-based trading rules on TradingView. It covers writing a starter Pine Script v5 strategy, a taxonomy of band, oscillator, moving-average and ATR-based indicators, separating the market-context filter from the entry trigger, defining profit and protective exits in advance, interpreting TradingView backtest reports, and connecting alerts to execution services via webhooks. The core of the book is a catalogue of 15 public community strategies, with their authors, settings and selected historical statistics, mostly demonstrated on Bitcoin.
+
+Our review: useful as a catalogue of hypotheses and as an introduction to a clean system architecture — filter, trigger, profit exit, protective exit — but the evidence does not support the "winning" in the title. The reported profit factors, win rates and drawdowns generally omit test dates, data feeds, exact strategy versions, capital and position-sizing assumptions, and transaction costs, and there is no out-of-sample or independent validation. Several Pine Script examples contain substantive errors and some probability and safety claims are overstated. Position sizing, aggregate exposure and tail risk are barely developed. Treat the numbers as claims to reproduce yourself, not as a ranking of strategies ready to deploy.
+
+`Buy the book <https://www.amazon.com/Winning-Algorithmic-Trading-Strategies-Step-ebook/dp/B0G6ZBT46D>`__
+
+Algorithmic Trading For Beginners: Different Tools And Strategies Used In Algo Trading
+--------------------------------------------------------------------------------------
+
+Travis Selley (2022) is a broad introductory survey in 17 chapters. The first half covers what algorithmic trading is, its benefits and drawbacks, building versus buying software, platforms, brokers and analytics tools, trend-following indicators (moving averages, MACD, RSI, OBV) and the skills required. The second half is an introductory Python tutorial covering types, variables, conditionals, loops and data structures, building towards a simple trading bot and a Backtrader backtest.
+
+Our review: usable as a checklist of topics a beginner will encounter, and its recurring advice is sound — formalise rules, test on historical data, account for costs, diversify, monitor automated systems and distrust overfitted results. It is not reliable as a programming tutorial or implementation guide. The Python chapters mix valid concepts with incorrect outputs and damaged syntax, and the trading bot example has portfolio-accounting and order-generation bugs. The final chapter promises a Backtrader example but never delivers an executable strategy or complete backtest. Readers wanting a code-first introduction are better served elsewhere.
+
+Set Up Algo Trading with Claude
+-------------------------------
+
+JaRaGa (2026, Build-with-AI series, Book 3) is a short guide, around 16 pages, to using Claude to write an automated trading system. Across twelve brief chapters it sketches an architecture that separates market data, decision logic, execution, risk management and monitoring. It walks through a broker login, a polling trading loop, a 9/21 moving-average crossover toy strategy, a six-rule risk table, paper-trading mode, scheduling, alerts and daily reports, and ends with a pre-launch checklist. The examples are oriented towards Indian brokers and exchanges.
+
+Our review: the central message is the right one — AI can reduce the effort of writing execution software, but it cannot supply a trading edge or take over the operator's responsibility, so risk controls, verification of actual broker state, small exposure and paper trading must come before live money. It correctly flags duplicate signals and duplicate processes as separate causes of runaway orders, and treats AI-written code as something the human must read and verify. However, it is an orientation and checklist rather than a build guide. There is no complete runnable engine, no named and versioned broker SDK integration, no backtester, no persistent state or restart recovery, the promised halt-and-flatten mechanism is not implemented, and "paper trading" only logs orders without simulating fills or P&L. For an end-to-end setup you will need considerably more than what is here.
 
 Further reading lists
 =====================

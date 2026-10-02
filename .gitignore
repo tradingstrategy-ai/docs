@@ -27,3 +27,4 @@ dist
 
 # Downloaded paper PDFs
 articles/*.pdf
+articles/*.md
