@@ -4388,6 +4388,60 @@ and algorithmic trading.
         a downward fitted trend. A zero standard error makes the ratio undefined;
         a nearly straight curve can produce an extremely large value.
 
+        **Comparison with other performance metrics**
+
+        K-Ratio describes trend consistency, not every aspect of investment risk.
+        The following measures answer different questions and can rank the same
+        strategies differently:
+
+        - :term:`Sharpe` compares average periodic excess return over the
+          :term:`risk-free rate` with the standard deviation of those excess
+          returns. K-Ratio instead compares the trend in cumulative log wealth
+          with the standard error of its fitted slope; it does not subtract a
+          risk-free return. With a constant per-period risk-free rate, rearranging
+          the same periodic returns leaves the ordinary sample Sharpe unchanged,
+          but can change K-Ratio. For example, grouping losing periods together
+          rather than spreading them among gains changes the wealth path without
+          changing the return sample's mean or standard deviation. This
+          order-independence does not apply to :term:`HAC Sharpe`, which also uses
+          serial dependence in returns.
+
+        - :term:`Sortino` relates return above a specified target to downside
+          deviation: shortfalls below a minimum acceptable return contribute to
+          its risk measure, while returns above that target do not. K-Ratio is
+          not downside-only. Deviations both above and below the fitted log-wealth
+          trend contribute to the slope's standard error. A profitable strategy
+          whose gains arrive in occasional large bursts can therefore have a
+          lower K-Ratio than a more steadily growing strategy, without necessarily
+          being less attractive on a downside-risk basis.
+
+        - :term:`Compound Annual Growth Rate (CAGR)` measures annualised compounded
+          growth from starting to ending wealth, regardless of the intervening
+          path. Strategies with identical CAGR over the same window can have
+          different K-Ratios. Conversely, a nearly straight but slowly growing
+          log-wealth curve can produce a high K-Ratio even when its absolute
+          return is too small to meet the investor's objectives.
+
+        - :term:`Calmar ratio` typically divides CAGR by the absolute
+          :term:`maximum drawdown`. Like K-Ratio, it is path-dependent, but its
+          risk denominator focuses on the single worst peak-to-trough loss
+          rather than deviations throughout the fitted curve. K-Ratio does not
+          directly measure the worst drawdown or time needed to recover from it;
+          a high value is not a guarantee that a strategy respects a drawdown limit.
+
+        - :term:`Ulcer Index` summarises the depth and persistence of percentage
+          :term:`drawdowns <drawdown>` across the evaluation window. The
+          :term:`Martin ratio` divides excess return by this drawdown measure.
+          Both focus on being below previous highs, whereas K-Ratio evaluates
+          departures from a fitted trend, including upside departures. A curve
+          can keep reaching new highs yet have an uneven growth rate and a modest
+          K-Ratio; a low Ulcer Index does not require a straight log-wealth trend.
+
+        Use K-Ratio to ask whether compounded growth has been consistent, Sharpe
+        or Sortino to assess return relative to periodic variability, and drawdown
+        measures to assess the experience of losing and recovering capital. Their
+        numerical values are not interchangeable and have no common scoring scale.
+
         **Use in algorithmic trading**
 
         Use it as an additional diagnostic when :term:`benchmarking <benchmark>`
@@ -4426,6 +4480,14 @@ and algorithmic trading.
         - Zephyr, `StatFACTS: Zephyr K-Ratio <https://informaconnect.com/uploads/Zephyr-StatFACTS-626a8156d64703b57cfdb350440f9741.pdf#page=49>`__.
           Describes the unadjusted variant and why comparisons require context.
 
+        - William F. Sharpe, `The Sharpe Ratio <https://web.stanford.edu/~wfsharpe/art/sr/sr.htm>`__,
+          *The Journal of Portfolio Management*, 1994. Defines the ratio using
+          periodic differential returns and explains its interpretation and limitations.
+
+        - Peter G. Martin, `Ulcer Index and UPI Measure Investment Risk and Risk-Adjusted Performance <https://www.tangotools.com/ui/ui.htm>`__.
+          Explains drawdown-based risk and why the order of returns matters when
+          evaluating the investor's wealth path.
+
         - Investopedia, `K-Ratio: Meaning, Formula and Calculation, Example <https://www.investopedia.com/terms/k/kratio.asp>`__.
           An introductory explanation of the metric and its revisions.
 
@@ -4437,11 +4499,19 @@ and algorithmic trading.
 
         - :term:`Sharpe`
 
+        - :term:`HAC Sharpe`
+
+        - :term:`Sortino`
+
+        - :term:`Compound Annual Growth Rate (CAGR)`
+
         - :term:`Calmar ratio`
 
         - :term:`Maximum drawdown`
 
         - :term:`Ulcer Index`
+
+        - :term:`Martin ratio`
 
         - :term:`Expected shortfall`
 
