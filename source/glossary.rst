@@ -2802,6 +2802,8 @@ and algorithmic trading.
 
         - :term:`Calmar ratio`
 
+        - :term:`K-Ratio`
+
         - :term:`Quantstats`
 
         - :ref:`Profitability calculations <profitability>`
@@ -2895,6 +2897,8 @@ and algorithmic trading.
         - :term:`Cumulative profit`
 
         - :term:`Drawdown`
+
+        - :term:`K-Ratio`
 
     Auto-compounding
 
@@ -4343,6 +4347,109 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - `More metrics to compare trading strategies <https://quant.stackexchange.com/a/75378/48108>`__
+
+        - :term:`K-Ratio`
+
+    K-Ratio
+
+        The K-Ratio measures the growth and consistency of a :term:`trading strategy`'s
+        :term:`equity curve`. It compares the slope of a fitted trend with the standard
+        error of that slope. Lars N. Kestner introduced it in 1996 as a complement to
+        :term:`Sharpe`. Unlike the ordinary Sharpe ratio, it depends on the sequence
+        of returns: rearranging the same returns changes the cumulative wealth path
+        and can change the K-Ratio.
+
+        **Calculation and formula variants**
+
+        For positive portfolio values ``V_t``, construct the logarithm of cumulative
+        wealth and fit an ordinary least-squares regression with an intercept against
+        consecutive, equally spaced observation numbers ``t``. Kestner's 2013
+        version is:
+
+        .. math::
+
+            y_t = \log(V_t / V_0) = a + bt + \epsilon_t
+
+            K_{2013} = \frac{\hat b}{SE_{\mathrm{OLS}}(\hat b)}
+                       \frac{\sqrt{m}}{n}
+
+        Here ``n`` is the number of period-end observations fitted, ``m`` is the
+        expected number of observations per calendar year, and ``SE`` is the
+        *standard error of the regression slope*, not the standard deviation of
+        period returns or the residual standard deviation alone. For monthly data,
+        ``m = 12``; daily equity-market data often use ``m = 252``, while daily
+        cryptocurrency data covering every calendar day use ``m = 365``.
+
+        The Zephyr K-Ratio uses the unadjusted slope-to-standard-error ratio,
+        ``b / SE(b)``; earlier Kestner formulas also use different adjustments.
+        Always name the version, sampling frequency, and evaluation window when
+        reporting results. For example, a raw ratio of 20 over 252 daily observations
+        gives a 2013 K-Ratio of approximately 1.26, not 20. A negative value indicates
+        a downward fitted trend. A zero standard error makes the ratio undefined;
+        a nearly straight curve can produce an extremely large value.
+
+        **Use in algorithmic trading**
+
+        Use it as an additional diagnostic when :term:`benchmarking <benchmark>`
+        strategies with similar mandates over the same dates, observation frequency,
+        and formula convention. It helps distinguish relatively steady growth from
+        an uneven path whose profits arrive in isolated bursts. Evaluate it alongside
+        :term:`Compound Annual Growth Rate (CAGR)`, Sharpe, :term:`maximum drawdown`,
+        and :term:`Ulcer Index`: a smooth curve does not establish that the absolute
+        return is worthwhile or that losses are tolerable.
+
+        Calculate it from periodic portfolio returns after fees, :term:`slippage`,
+        and financing costs, including the changing value of open positions and
+        adjusting for external deposits and withdrawals. A curve based only on
+        closed trades or stale valuations can hide risk. Assess it on
+        :term:`out-of-sample testing` periods and across market regimes; optimising
+        only the K-Ratio can encourage :term:`overfitting` to a particular return path.
+
+        There is no universal threshold for a good K-Ratio across versions and
+        strategies. It does not subtract a :term:`risk-free rate`, measure
+        :term:`alpha`, or quantify unobserved tail losses. Although the raw ratio
+        resembles a regression t-statistic, cumulative wealth observations are
+        dependent; an ordinary OLS calculation is not, by itself, a valid test of
+        statistical significance or evidence of future profitability.
+
+        Research and literature
+
+        - Lars N. Kestner, `(Re)Introducing the K-Ratio <https://ssrn.com/abstract=2230949>`__,
+          working paper, 2013. Explains the observation-count and annual-frequency
+          adjustments used in the formula above.
+
+        - Lars N. Kestner, `Measuring System Performance <https://technical.traders.com/archive/archivelogin.asp?file=%5CV14%5CC03%5CMEASURI.pdf&src=SC>`__,
+          *Technical Analysis of Stocks & Commodities*, March 1996. The original
+          trading-system performance article; its earlier convention should not be
+          assumed equivalent to the 2013 formula.
+
+        - Zephyr, `StatFACTS: Zephyr K-Ratio <https://informaconnect.com/uploads/Zephyr-StatFACTS-626a8156d64703b57cfdb350440f9741.pdf#page=49>`__.
+          Describes the unadjusted variant and why comparisons require context.
+
+        - Investopedia, `K-Ratio: Meaning, Formula and Calculation, Example <https://www.investopedia.com/terms/k/kratio.asp>`__.
+          An introductory explanation of the metric and its revisions.
+
+        See also
+
+        - :term:`Equity curve`
+
+        - :term:`Risk-adjusted return`
+
+        - :term:`Sharpe`
+
+        - :term:`Calmar ratio`
+
+        - :term:`Maximum drawdown`
+
+        - :term:`Ulcer Index`
+
+        - :term:`Expected shortfall`
+
+        - :term:`Backtest`
+
+        - :term:`Out-of-sample testing`
+
+        - :term:`Overfitting`
 
     HAC Sharpe
 
