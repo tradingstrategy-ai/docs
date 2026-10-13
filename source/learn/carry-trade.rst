@@ -50,7 +50,7 @@ This paper identifies and characterizes risk factors driving cryptocurrency futu
 The Risk and Return of Cryptocurrency Carry Trade
 -------------------------------------------------
 
-This paper documents a cryptocurrency carry trade strategy that goes long high-funding-rate assets and shorts low-funding-rate assets, capturing the cross-sectional dispersion in perpetual futures funding rates. The strategy generates substantial risk-adjusted returns and provides evidence that funding rates represent a genuine risk premium in crypto markets.
+Zhenzhen Fan, Feng Jiao, Lei Lü and Xin Tong (2023) study a cross-sectional carry trade in cryptocurrencies based on interest rates rather than perpetual futures funding: the strategy buys high-interest cryptocurrencies and shorts low-interest ones. It earns an annualised return of 43.4% with a Sharpe ratio of 0.74. The returns are not explained by the usual crypto factors (market, size, momentum, volatility, liquidity, downside risk and platform collapse risk), and they are largely unrelated to the fiat currency carry trade. Instead, a significant part of the carry return is compensation for equity market volatility risk, which links crypto returns to risk factors in traditional markets.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666425>`__
 

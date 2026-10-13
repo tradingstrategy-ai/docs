@@ -656,6 +656,8 @@ The post references the ListFold paper by Chen, Li, and Qiao, which introduces a
 
 By `Sione Palu <https://www.linkedin.com/in/sione-palu-62912a85/>`__.
 
+`Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__.
+
 Few-Shot Learning Patterns in Financial Time-Series for Trend-Following Strategies
 -----------------------------------------------------------------------------------
 
@@ -755,8 +757,6 @@ Our summary: this paper is a strong piece of negative evidence against the "just
 Key metrics: with proper preprocessing and hyperparameter tuning, logistic regression and XGBoost match or exceed DeepLOB and Conv1D+LSTM on BTC/USDT LOB classification, at a fraction of the inference cost and with full interpretability. Tested with both Kalman and Savitzky-Golay filters, binary and ternary targets, and multiple sampling intervals.
 
 `Read the paper <https://arxiv.org/abs/2506.05764>`__
-
-`Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7084892137594499072/>`__
 
 Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection
 ----------------------------------------------------------------------------------------------------

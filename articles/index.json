@@ -2377,15 +2377,15 @@
   },
   {
     "title": "The Risk and Return of Cryptocurrency Carry Trade",
-    "authors": null,
-    "publication_year": null,
+    "authors": "Zhenzhen Fan, Feng Jiao, Lei Lü, Xin Tong",
+    "publication_year": 2023,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666425",
     "source_file": "carry-trade.rst",
     "included_in_index_at": "2026-06-05",
     "filename": "fan-jiao-lu-tong-cryptocurrency-carry-trade.pdf",
     "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
-    "short_description": null
+    "short_description": "Cross-sectional crypto carry trade that buys high-interest and shorts low-interest cryptocurrencies, earning 43.4% a year with a Sharpe ratio of 0.74; the returns are not explained by standard crypto factors and are largely compensation for equity market volatility risk."
   },
   {
     "title": "Trading Crypto Funding Rates — Part 1: Do Cheaper-Funding Coins Earn Better Returns?",
