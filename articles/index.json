@@ -1332,18 +1332,6 @@
     "short_description": null
   },
   {
-    "title": "Logistic Regression-Based Systematic Trading: Performance on the S&P 500",
-    "authors": "Conrad O. Voigt",
-    "publication_year": null,
-    "download_page": "https://conradvoigt.github.io/Logistic%20Regression%20Based%20Trading%20on%20the%20S&P%20500.pdf",
-    "source_file": "algorithmic-trading.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "logistic-regression-based-systematic-trading-performance-on-the-sp-500.pdf",
-    "downloaded_at": "2026-05-10",
-    "download_failure_reason": null,
-    "short_description": null
-  },
-  {
     "title": "Market Data Is Social Data: From Fractals to Topological Data Analysis",
     "authors": "Ali H. Askar (Aligrithm)",
     "publication_year": null,
@@ -1378,18 +1366,6 @@
     "downloaded_at": "2026-06-05",
     "download_failure_reason": null,
     "short_description": "This paper formulates multi-period portfolio optimization with alpha decay and transaction costs as an infinite-horizon Markov Decision Process, seeking the policy that maximizes the maximum average expected reward. The authors propose a variant of value iteration to compute the optimal policy and derive a first-order approximation for the case of small transaction costs, finding that frequent trading can generate consistent negative cash outflows that erode alpha."
-  },
-  {
-    "title": "Regime-Adaptive Ensemble Strategy: From Backtest to Live Paper Trading",
-    "authors": "Brayton Beam",
-    "publication_year": null,
-    "download_page": "https://www.linkedin.com/posts/brayton-beam-93633b293_quant-algorithmictrading-systematicinvesting-share-7467215494857580544-BXSZ/",
-    "source_file": "algorithmic-trading.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": "regime-adaptive-ensemble-strategy-from-backtest-to-live-paper-trading.pdf",
-    "downloaded_at": "2026-06-02",
-    "download_failure_reason": null,
-    "short_description": null
   },
   {
     "title": "Saving $200/Day in Execution Costs by Solving Market Capacity Constraints",
@@ -2232,18 +2208,6 @@
     "short_description": "Pallas Fund's 22-page investment thesis for a delta-neutral strategy capturing spreads and funding differentials between Hyperliquid Core and HIP-3 builder perpetual markets, framed on Grossman-Stiglitz equilibrium inefficiency, Lo's Adaptive Markets, and Shleifer-Vishny limits to arbitrage. The transferable content is the cross-venue funding-mechanics comparison, the mark/oracle/index price separation and its liquidation implications, and the enumeration of why funding never fully drives the basis to zero (discrete payments, cap saturation, separate builder pools, clamp dead zone). Performance figures are self-reported over a 90-day live sample and the fee-sensitivity projections assume gross PnL is independent of scale, so read it as exposition rather than evidence; fees at 4.42 bps against an 8.83 bps breakeven are the binding constraint."
   },
   {
-    "title": "Crypto Factor Leadership and the Seven-Factor Composite",
-    "authors": "Daniel Szemerey",
-    "publication_year": 2026,
-    "download_page": "https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/",
-    "source_file": "carry-trade.rst",
-    "included_in_index_at": "2026-07-08",
-    "filename": "crypto-factor-leadership-and-the-seven-factor-composite.pdf",
-    "downloaded_at": "2026-07-08",
-    "download_failure_reason": null,
-    "short_description": "A LinkedIn post summarizing first-half 2026 performance for Aperiodic cross-sectional crypto factors. Polaris and Enhanced Carry led, but the key takeaway is that a seven-factor composite captured much of the upside with lower dependence on predicting which individual carry, momentum, flow, liquidity, supply, or margin-risk sleeve would lead."
-  },
-  {
     "title": "Denoising Funding Rate Signals with Z-Scores, Open Interest and Price",
     "authors": "SK (@StepOneAi)",
     "publication_year": 2026,
@@ -2916,18 +2880,6 @@
     "short_description": "Applies wavelet coherence and partial wavelet coherence to the returns, volatility, skewness and kurtosis of Bitcoin and the S&P 500, daily 2011-2022 (2,716 obs). Co-movement is moment- and frequency-dependent: essentially disconnected before 2018, connected from 2018-19, volatility linkage spiking during COVID at medium scales, skew/kurtosis linkage strongest at mid/long scales, with US economic policy uncertainty intermediating. Argues for separate scale-band features per moment rather than one denoised price."
   },
   {
-    "title": "C18 -- Peer Breadth Diffusion",
-    "authors": "The Milk Man (@MrMilkTrading)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/MrMilkTrading/status/2096978472325283950",
-    "source_file": "cryptocurrency.rst",
-    "included_in_index_at": "2026-09-07",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": "An unverified daily long/short Binance-perpetual candidate: trade a coin after 70% of its 19 peers cross into aligned five-day positive or negative returns, with the coin confirming. Its card reports +41.5% return, -4.6% maximum drawdown, 1.66 profit factor, and 1.28 Sharpe from 2020 after 20 bp plus funding; the author ranked it first in an automated top-five shortlist, but explicitly says it awaits independent validation, out-of-sample testing, and stress tests. The shortlist's +105% hypothetical 10x YTD display is not compatible with the strategy's stated 2x gross-notional cap and is not a deployable result."
-  },
-  {
     "title": "Can Wavelets Produce a Clearer Picture of Weak-Form Market Efficiency in Bitcoin?",
     "authors": "Andrew Phiri",
     "publication_year": 2022,
@@ -2962,18 +2914,6 @@
     "downloaded_at": "2026-04-04",
     "download_failure_reason": null,
     "short_description": null
-  },
-  {
-    "title": "Crypto Momentum Is Explained by Size: Shorting Pumped Small Caps",
-    "authors": "Scott Phillips (@ScottPh77711570), dima (@dima_quant)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/ScottPh77711570/status/2092945468410274091",
-    "source_file": "cryptocurrency.rst",
-    "included_in_index_at": "2026-08-27",
-    "filename": "crypto-momentum-is-explained-by-size-shorting-pumped-small-caps.pdf",
-    "downloaded_at": "2026-08-30",
-    "download_failure_reason": null,
-    "short_description": "A ten-post X thread arguing that the crypto momentum premium is a size effect: momentum is strongest in large coins and turns negative in roughly the smallest decile, so a large one-day gain in a micro-cap token predicts a subsequent fall. The trade is to short the biggest one-day gainers among the smallest names, run many small concurrent positions, and accept short-squeeze losses as the compensated risk rather than filtering for them — the edge persists because capacity is too small for professional capital and squeezes punish anyone who presses size. A follow-up backtest by dima (@dima_quant) tests a concrete specification — short Binance's bottom 30% by market cap after a 3-sigma daily pump, five positions at 20%, stop at the pump-day seven-day high, take profit at 2R — returning +36.4% over roughly fifteen months at Sharpe 1.36 and a -15.4% drawdown across 124 trades net of fees and funding, though the window is a bear regime and the sample is thin."
   },
   {
     "title": "Crypto Trend Prediction Based on Wavelet Transform and Deep Learning Algorithm",
@@ -3444,18 +3384,6 @@
     "short_description": "Kolari, Liu, Liao and Butt use Fama-MacBeth cross-sectional regressions on CRSP daily bank-stock returns (1986-2023) to test whether multifactor models built for nonfinancial stocks can price bank stocks, comparing the CAPM and five multifactor models against the two-factor Mean Variance Pricing (MVP) model (market beta risk plus market-return-dispersion 'zeta' risk). Adding size, value, profitability, investment and momentum factors substantially improves pricing, but the parsimonious two-factor MVP model outperforms on goodness-of-fit and factor-loading significance, reaching an out-of-sample R-squared near 99% on size-sorted bank portfolios with zeta t-statistics above 4 — implying bank stocks are less anomalous than previously believed."
   },
   {
-    "title": "Combining Three Academic Factor Strategies to Compress Drawdown and Multiply Returns",
-    "authors": "AI Data Lab",
-    "publication_year": null,
-    "download_page": "https://aidatalab.jp/jp/portfolio_process.html",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
     "title": "Covariance Implied Risk Factors",
     "authors": null,
     "publication_year": null,
@@ -3564,30 +3492,6 @@
     "short_description": null
   },
   {
-    "title": "Fundamental Indexation Verified on Japanese TOPIX500 (Arnott, Hsu & Moore 2005)",
-    "authors": "AI Data Lab",
-    "publication_year": null,
-    "download_page": "https://aidatalab.jp/jp/papers/arnott_hsu_moore2005/output/report.html",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
-    "title": "Gold and Macro Factors",
-    "authors": "Ralph Sueppel (Macrosynergy)",
-    "publication_year": 2026,
-    "download_page": "https://macrosynergy.com/research/gold-and-macro-factors/",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-09-05",
-    "filename": "gold-and-macro-factors.pdf",
-    "downloaded_at": "2026-09-05",
-    "download_failure_reason": null,
-    "short_description": "A Macrosynergy study testing whether theory-based macroeconomic factors predict gold futures returns over 1996-2026. Three conceptual macro themes - persistent U.S. financial/monetary ease, U.S. dollar stability risk, and global economic doom - are z-scored from point-in-time JPMaQS data and combined into a composite 'macro support score' for gold. The composite predicts next-month gold returns with 55% accuracy (Pearson 0.13, p=0.01); a vol-targeted long-short gold strategy earned 6.6% annualised at Sharpe 0.47 versus 4.1%/0.34 for long-only gold, and a macro-timed gold-versus-S&P 500 strategy returned 5.7% (Sharpe 0.28) against -2.2% for a static long-gold-vs-equity position, both with near-zero correlation to gold and equity benchmarks. Fully reproducible via an attached Jupyter notebook."
-  },
-  {
     "title": "Magnificent, but Not Extraordinary: Market Concentration in the US and Beyond",
     "authors": null,
     "publication_year": null,
@@ -3636,18 +3540,6 @@
     "short_description": null
   },
   {
-    "title": "Quality-Adjusted Size Effect Verified on Japanese TOPIX500 (Asness et al. 2018)",
-    "authors": "AI Data Lab",
-    "publication_year": null,
-    "download_page": "https://aidatalab.jp/jp/papers/asness2018_size/output/report.html",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
     "title": "R&D Alpha: Investment Intensity and Long-Term Stock Returns",
     "authors": null,
     "publication_year": null,
@@ -3672,18 +3564,6 @@
     "short_description": "Gong, Lynch, and Ogden forecast stock-level skewness from lagged firm characteristics and use it to tilt 18 long-short anomaly portfolios toward high-expected-skewness long legs and low-expected-skewness short legs. The skewness-managed portfolios raise annual returns by an average of 5.45 percentage points, improve Sharpe ratios by 0.12, and retain significant alphas after standard factor-model and transaction-cost tests."
   },
   {
-    "title": "Small-Cap × Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)",
-    "authors": "AI Data Lab",
-    "publication_year": null,
-    "download_page": "https://aidatalab.jp/jp/papers/alquist_israel_moskowitz2018/output/report.html",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
-    "short_description": null
-  },
-  {
     "title": "The Concentration Game: Understanding Portfolio Effects of U.S. Equity Market Concentration",
     "authors": "The D. E. Shaw Group",
     "publication_year": null,
@@ -3694,30 +3574,6 @@
     "downloaded_at": "2026-03-04",
     "download_failure_reason": null,
     "short_description": null
-  },
-  {
-    "title": "The Price-Volume Decoupling Reversal Factor",
-    "authors": "套利豪仔 (@pritipatelfgoo)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/pritipatelfgoo/status/2099689112630653260",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-09-15",
-    "filename": "the-price-volume-decoupling-reversal-factor.pdf",
-    "downloaded_at": "2026-09-15",
-    "download_failure_reason": null,
-    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -1*RANK(COVARIANCE(RANK(CLOSE),RANK(VOLUME),5)), which ranks stocks by how weakly their price and volume have co-moved (in rank terms) over the trailing five days and bets that this price-volume decoupling reverts. A daily-rebalanced quantile backtest from 2005 to 2026 shows the top quantile compounding to roughly 60x against about 12x for the middle quantile and under 3x for the bottom, with a cumulative Rank IC climbing almost monotonically above 100. Our analysis notes the formula cannot distinguish a transient liquidity dislocation from a stock beginning a genuine volume-backed trend, and that rank-covariance is sensitive to a stock's baseline volume regime with no normalisation, sector-neutralisation, or cost accounting shown in the post."
-  },
-  {
-    "title": "The Volatility Range Expansion Factor",
-    "authors": "套利豪仔 (@pritipatelfgoo)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/pritipatelfgoo/status/2093215831199297732",
-    "source_file": "equity-factors.rst",
-    "included_in_index_at": "2026-08-28",
-    "filename": "the-volatility-range-expansion-factor.pdf",
-    "downloaded_at": "2026-08-28",
-    "download_failure_reason": null,
-    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -MEAN(TrueRange,12), tested on a daily-rebalanced quantile backtest from 2005 to 2026 with the top quantile returning roughly 80x against 12x for the bottom and a cumulative Rank IC above 30. Despite being framed as a volatility-expansion signal, the leading minus sign makes it a low-volatility selector, and the entry explains why it should work — betting-against-beta and lottery-preference effects amplified in retail-dominated A-shares, with true range correctly capturing limit-up gaps that a high-low range would miss. Our analysis flags the main weakness: true range is never normalised by price, so the sort is substantially a low-price and therefore small-cap sort, consistent with the backtest's gains clustering in the 2015 small-cap bubble and the 2024-2026 micro-cap rally."
   },
   {
     "title": "Value Premium: Where Does It Really Come From?",
@@ -3780,6 +3636,18 @@
     "short_description": "Contrarian crypto factor that classifies executed trades as retail or institutional by size and type, measures retail imbalance with a five-method ensemble and trades against it; illustrative Top 40 portfolio by Unravel. Sharpe 0.97 on Binance since late 2020 and 0.23 on Hyperliquid since October 2024."
   },
   {
+    "title": "Fundamental Indexation Verified on Japanese TOPIX500 (Arnott, Hsu & Moore 2005)",
+    "authors": "AI Data Lab",
+    "publication_year": null,
+    "download_page": "https://aidatalab.jp/jp/papers/arnott_hsu_moore2005/output/report.html",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Funding Rate Carry",
     "authors": "Unravel",
     "publication_year": 2026,
@@ -3790,6 +3658,18 @@
     "downloaded_at": "2026-10-13",
     "download_failure_reason": null,
     "short_description": "Cross-sectional crypto carry factor ranking coins on perpetual funding rates aggregated across 10 exchanges, earning funding plus related price inefficiencies; illustrative Top 40 long/short portfolio by Unravel. Sharpe 1.59 on Binance since April 2020 and 1.29 on Hyperliquid since October 2024."
+  },
+  {
+    "title": "Gold and Macro Factors",
+    "authors": "Ralph Sueppel (Macrosynergy)",
+    "publication_year": 2026,
+    "download_page": "https://macrosynergy.com/research/gold-and-macro-factors/",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-09-05",
+    "filename": "gold-and-macro-factors.pdf",
+    "downloaded_at": "2026-09-05",
+    "download_failure_reason": null,
+    "short_description": "A Macrosynergy study testing whether theory-based macroeconomic factors predict gold futures returns over 1996-2026. Three conceptual macro themes - persistent U.S. financial/monetary ease, U.S. dollar stability risk, and global economic doom - are z-scored from point-in-time JPMaQS data and combined into a composite 'macro support score' for gold. The composite predicts next-month gold returns with 55% accuracy (Pearson 0.13, p=0.01); a vol-targeted long-short gold strategy earned 6.6% annualised at Sharpe 0.47 versus 4.1%/0.34 for long-only gold, and a macro-timed gold-versus-S&P 500 strategy returned 5.7% (Sharpe 0.28) against -2.2% for a static long-gold-vs-equity position, both with near-zero correlation to gold and equity benchmarks. Fully reproducible via an attached Jupyter notebook."
   },
   {
     "title": "Instantaneous Momentum",
@@ -3876,6 +3756,18 @@
     "short_description": "Crypto positioning factor that trades divergences in perpetual futures open interest patterns across a Top 40 universe; illustrative long/short portfolio by Unravel. Sharpe 1.21 on Binance since 2020 and 0.90 on Hyperliquid since October 2024, with a -43% max drawdown on Binance."
   },
   {
+    "title": "Quality-Adjusted Size Effect Verified on Japanese TOPIX500 (Asness et al. 2018)",
+    "authors": "AI Data Lab",
+    "publication_year": null,
+    "download_page": "https://aidatalab.jp/jp/papers/asness2018_size/output/report.html",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Relative Illiquidity",
     "authors": "Unravel",
     "publication_year": 2026,
@@ -3910,6 +3802,54 @@
     "downloaded_at": "2026-10-13",
     "download_failure_reason": null,
     "short_description": "Plain short-term cross-sectional crypto momentum factor, long recent winners and short recent losers in a Top 40 universe; illustrative portfolio by Unravel. Sharpe 0.92 on Binance since 2020 with a -50% max drawdown, and 0.45 on Hyperliquid since October 2024."
+  },
+  {
+    "title": "Small-Cap × Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)",
+    "authors": "AI Data Lab",
+    "publication_year": null,
+    "download_page": "https://aidatalab.jp/jp/papers/alquist_israel_moskowitz2018/output/report.html",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "The Price-Volume Decoupling Reversal Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2099689112630653260",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-09-15",
+    "filename": "the-price-volume-decoupling-reversal-factor.pdf",
+    "downloaded_at": "2026-09-15",
+    "download_failure_reason": null,
+    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -1*RANK(COVARIANCE(RANK(CLOSE),RANK(VOLUME),5)), which ranks stocks by how weakly their price and volume have co-moved (in rank terms) over the trailing five days and bets that this price-volume decoupling reverts. A daily-rebalanced quantile backtest from 2005 to 2026 shows the top quantile compounding to roughly 60x against about 12x for the middle quantile and under 3x for the bottom, with a cumulative Rank IC climbing almost monotonically above 100. Our analysis notes the formula cannot distinguish a transient liquidity dislocation from a stock beginning a genuine volume-backed trend, and that rank-covariance is sensitive to a stock's baseline volume regime with no normalisation, sector-neutralisation, or cost accounting shown in the post."
+  },
+  {
+    "title": "The Volatility Range Expansion Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2093215831199297732",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-08-28",
+    "filename": "the-volatility-range-expansion-factor.pdf",
+    "downloaded_at": "2026-08-28",
+    "download_failure_reason": null,
+    "short_description": "An X post publishing a one-line cross-sectional stock-selection factor, -MEAN(TrueRange,12), tested on a daily-rebalanced quantile backtest from 2005 to 2026 with the top quantile returning roughly 80x against 12x for the bottom and a cumulative Rank IC above 30. Despite being framed as a volatility-expansion signal, the leading minus sign makes it a low-volatility selector, and the entry explains why it should work — betting-against-beta and lottery-preference effects amplified in retail-dominated A-shares, with true range correctly capturing limit-up gaps that a high-low range would miss. Our analysis flags the main weakness: true range is never normalised by price, so the sort is substantially a low-price and therefore small-cap sort, consistent with the backtest's gains clustering in the 2015 small-cap bubble and the 2024-2026 micro-cap rally."
+  },
+  {
+    "title": "The Volume Momentum Deviation Factor",
+    "authors": "套利豪仔 (@pritipatelfgoo)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/pritipatelfgoo/status/2091750955582980218",
+    "source_file": "factor-examples.rst",
+    "included_in_index_at": "2026-08-24",
+    "filename": "the-volume-momentum-deviation-factor.pdf",
+    "downloaded_at": "2026-08-24",
+    "download_failure_reason": null,
+    "short_description": "An X post describing a volume-based factor built as a MACD histogram on volume rather than price: sma(volume,13,2) - sma(volume,27,2) minus a 10-period smoothing of that difference. The thesis is a lead-lag effect — short-horizon volume strengthening against its longer-horizon baseline while price has not yet responded signals rising participation and a potential trend or mispricing. The author shows a backtest equity curve and notes the whole factor is two lines of code."
   },
   {
     "title": "Token Supply Inflation",
@@ -4582,18 +4522,6 @@
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
     "short_description": null
-  },
-  {
-    "title": "Systematic FX trading with regression learning and transaction cost analysis",
-    "authors": "Macrosynergy",
-    "publication_year": 2026,
-    "download_page": "https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/",
-    "source_file": "machine-learning.rst",
-    "included_in_index_at": "2026-06-29",
-    "filename": "systematic-fx-trading-with-regression-learning-and-transaction-cost-analysis.pdf",
-    "downloaded_at": "2026-06-29",
-    "download_failure_reason": null,
-    "short_description": "Macrosynergy shows how regression-based sequential statistical learning can combine ten macro factors into composite signals for systematic developed-market FX forward trading without hindsight bias, paired with a transaction-cost workflow that uses LLM prompts to retrieve cost parameters for Python-based cost imputation. Over 1997-2026 the standard least-squares signal delivered a Sharpe ratio of 0.6 and a Sortino ratio of 0.8 before costs (Sharpe stability ratio 2.7), with a representative book returning 6.1% annualised at 10.7% volatility and near-zero correlation to equities, bonds, and EURUSD forwards; transaction costs reduced the return only modestly to 5.8%. The study is fully reproducible via an attached Jupyter notebook built on J.P. Morgan's JPMaQS macro-quantamental data."
   },
   {
     "title": "Tabular Deep Learning for Algorithmic Trading: Cross-Regime Bayesian Optimisation for Equity Signal Generation",
@@ -5374,30 +5302,6 @@
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
     "short_description": "Brogaard, Han and Kim use 30-minute TAQ midpoint returns for S&P 500 stocks (1996-2022) and residuals from a 15-characteristic intraday factor model to form a long-negative/short-positive residual portfolio. They report a 162.3% gross annualised return, but the 30-minute rebalance fails at 3 bp transaction costs; reversal remains significant for longer holding periods, framing the result as a liquidity-provision effect whose tradeability depends on execution."
-  },
-  {
-    "title": "Larry Connors' R3 Strategy (It Still Works)",
-    "authors": "Oddmund Groette (QuantifiedStrategies.com)",
-    "publication_year": 2020,
-    "download_page": "https://www.quantifiedstrategies.com/larry-connors-r3-strategy/",
-    "source_file": "mean-reversion.rst",
-    "included_in_index_at": "2026-08-14",
-    "filename": "larry-connors-r3-strategy.pdf",
-    "downloaded_at": "2026-08-14",
-    "download_failure_reason": null,
-    "short_description": "A backtest of Larry Connors' R3 mean-reversion strategy from High Probability ETF Trading (2009), which buys when the 2-day RSI falls three days in a row below 10 while price is above the 200-day moving average, and exits when the 2-day RSI rises above 70. Tested on 25 liquid ETFs through December 2020, the portfolio version produced 992 trades with a 75% win ratio, 2.08 profit factor, 6.47% CAGR and -16% max drawdown. The edge still works twelve years after publication but has decayed, with roughly half the ETFs performing worse than in Connors' original results."
-  },
-  {
-    "title": "Linda Raschke's 15-Minute EMA Trend-Day Reversion, Backtested on NQ",
-    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren / Hawk Quant (@etbent1), original rule by Linda Raschke (@LindaRaschke)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/MrMilkTrading/status/2094768621419471130",
-    "source_file": "mean-reversion.rst",
-    "included_in_index_at": "2026-09-01",
-    "filename": "linda-raschke-15-minute-ema-trend-day-reversion-nq.pdf",
-    "downloaded_at": "2026-09-01",
-    "download_failure_reason": null,
-    "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. An independent replication on nine years of USTEC minute data confirms the headline (75% wins, 2.32 profit factor, 145 trades, 5.1x profit/drawdown) and then decomposes the rule: both EMA-touched cells of a two-by-two lose money and both EMA-untouched cells make it, so the untouched moving average is the discriminator and the trend-day filter is secondary, with loosening the trend threshold from 0.75 to 0.45 lifting net profit from $52,560 to $90,224. The threshold is a plateau not a peak and the result sits at the 100th percentile of a 400-run random-day noise test, but nine other instruments were tested and none passed, and the strategy is stopless by design. The entry adds our analysis of the dollar-curve inflation in both backtests, the 0.89 average-win-to-average-loss ratio implied by the original metrics, and the CFD-versus-future and 20-period-versus-15-minute EMA differences between the two tests."
   },
   {
     "title": "Mean Reversion Strategies: Backtested Trading Rules",
@@ -9588,6 +9492,198 @@
     "short_description": null
   },
   {
+    "title": "A Simple S&P 100 Breakout System from the RealTest Examples File",
+    "authors": "Ignis (@ignis55)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/ignis55/status/2093754279710363733",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-30",
+    "filename": "simple-sp100-breakout-system-realtest-examples-file.pdf",
+    "downloaded_at": "2026-08-30",
+    "download_failure_reason": null,
+    "short_description": "A complete long-only equity trend system stated in six bullets — S&P 100 universe, 100-day breakout entry, fresh breakouts only, ranked by 100-day ROC, Chande-Kroll trailing stop, 0.5% volatility-adjusted risk per trade — which ships as an example file with the RealTest platform. The attached RealTest results row covers 2006-2026 and 973 trades: 9.63% annualised on 11.87% volatility, Sharpe 0.84, maximum drawdown -15.50%, profit factor 1.86, with only 42.65% of trades winning but average winners of 13.50% against losers of 5.34% and holding periods of 81 versus 22 days. The entry explains why each component maps to a documented momentum effect and notes that the achievement is the drawdown profile rather than the return, which merely matches the index, alongside reproducibility gaps around the breakout definition, point-in-time index membership, and the 71.93% of signals skipped."
+  },
+  {
+    "title": "A Trend Following Framework for Gold, Bitcoin, and Nasdaq",
+    "authors": "Petr Podhajsky",
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "BTC Systematic Options Strategy Index: Same Strangle, Weekend Versus Full Week",
+    "authors": "leifu (@leifuchen)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/leifuchen/status/2092637603556102161",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-28",
+    "filename": "btc-systematic-options-strategy-index-weekend-versus-full-week.pdf",
+    "downloaded_at": "2026-08-28",
+    "download_failure_reason": null,
+    "short_description": "An instalment of a recurring biweekly report tracking six systematic BTC option-selling indices built on a common 35-delta strike rule, from base 100 on 2019-07-01 to 2026-08-23, using synthetic 7-day options with no delta hedging and no transaction costs. The headline result is a natural experiment: the weekly 35-delta strangle returns +104% at Sharpe 0.47 with a -66% drawdown, while the identical strangle held only across the 40-hour weekend returns +1393% at Sharpe 2.52 with a -26% drawdown and an 83% weekly win rate. The entry explains the mechanism — options are priced off calendar time while volatility follows information arrival, and weekends carry far less news than their share of the week — and contrasts it with the Thalex weekend long-straddle result elsewhere in the same file, which is a vega trade rather than a realised-variance trade."
+  },
+  {
+    "title": "C18 -- Peer Breadth Diffusion",
+    "authors": "The Milk Man (@MrMilkTrading)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/MrMilkTrading/status/2096978472325283950",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-09-07",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "An unverified daily long/short Binance-perpetual candidate: trade a coin after 70% of its 19 peers cross into aligned five-day positive or negative returns, with the coin confirming. Its card reports +41.5% return, -4.6% maximum drawdown, 1.66 profit factor, and 1.28 Sharpe from 2020 after 20 bp plus funding; the author ranked it first in an automated top-five shortlist, but explicitly says it awaits independent validation, out-of-sample testing, and stress tests. The shortlist's +105% hypothetical 10x YTD display is not compatible with the strategy's stated 2x gross-notional cap and is not a deployable result."
+  },
+  {
+    "title": "Combining Three Academic Factor Strategies to Compress Drawdown and Multiply Returns",
+    "authors": "AI Data Lab",
+    "publication_year": null,
+    "download_page": "https://aidatalab.jp/jp/portfolio_process.html",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Crypto Factor Leadership and the Seven-Factor Composite",
+    "authors": "Daniel Szemerey",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-07-08",
+    "filename": "crypto-factor-leadership-and-the-seven-factor-composite.pdf",
+    "downloaded_at": "2026-07-08",
+    "download_failure_reason": null,
+    "short_description": "A LinkedIn post summarizing first-half 2026 performance for Aperiodic cross-sectional crypto factors. Polaris and Enhanced Carry led, but the key takeaway is that a seven-factor composite captured much of the upside with lower dependence on predicting which individual carry, momentum, flow, liquidity, supply, or margin-risk sleeve would lead."
+  },
+  {
+    "title": "Crypto Momentum Is Explained by Size: Shorting Pumped Small Caps",
+    "authors": "Scott Phillips (@ScottPh77711570), dima (@dima_quant)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/ScottPh77711570/status/2092945468410274091",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-27",
+    "filename": "crypto-momentum-is-explained-by-size-shorting-pumped-small-caps.pdf",
+    "downloaded_at": "2026-08-30",
+    "download_failure_reason": null,
+    "short_description": "A ten-post X thread arguing that the crypto momentum premium is a size effect: momentum is strongest in large coins and turns negative in roughly the smallest decile, so a large one-day gain in a micro-cap token predicts a subsequent fall. The trade is to short the biggest one-day gainers among the smallest names, run many small concurrent positions, and accept short-squeeze losses as the compensated risk rather than filtering for them — the edge persists because capacity is too small for professional capital and squeezes punish anyone who presses size. A follow-up backtest by dima (@dima_quant) tests a concrete specification — short Binance's bottom 30% by market cap after a 3-sigma daily pump, five positions at 20%, stop at the pump-day seven-day high, take profit at 2R — returning +36.4% over roughly fifteen months at Sharpe 1.36 and a -15.4% drawdown across 124 trades net of fees and funding, though the window is a bear regime and the sample is thin."
+  },
+  {
+    "title": "Harvesting the Volatility Risk Premium: A Learning-to-Rank Approach",
+    "authors": "Maciej Wysocki",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2608.24786",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": "harvesting-the-volatility-risk-premium-a-learning-to-rank-approach.pdf",
+    "downloaded_at": "2026-09-01",
+    "download_failure_reason": null,
+    "short_description": "A LightGBM LambdaRank ranker scores a daily nine-candidate cross-section on the SPXW 0DTE surface (eight delta-targeted short puts from 0.05 to 0.45, plus a SKIP candidate), trained against a path-aware Sortino-on-bars label computed at one-minute resolution with intraday marks at the ask, and gated by an abstention rule keyed to the top-1 vs top-2 score gap. Evaluated under Reg-T margin, tiered IB fees and bid-to-mid fills across a 2021-2024 walk-forward and a held-out 2025 year, seven sizing methods return out-of-time Sharpe ratios of 4.31 to 5.76 versus 0.18 for the CBOE PUT index. The paper is candid that the ratio comes from the denominator (10.48% return at 1.82% volatility per unit of collateral, unreachable leverage to match benchmark vol), that a Diebold-Mariano test cannot resolve the mean P&L difference on one year, that deflated Sharpe falls to 0.856-0.913 out of time, and that per-year Sharpe ranges from 6.52 in 2021 to 0.41 in 2024."
+  },
+  {
+    "title": "Larry Connors' R3 Strategy (It Still Works)",
+    "authors": "Oddmund Groette (QuantifiedStrategies.com)",
+    "publication_year": 2020,
+    "download_page": "https://www.quantifiedstrategies.com/larry-connors-r3-strategy/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-14",
+    "filename": "larry-connors-r3-strategy.pdf",
+    "downloaded_at": "2026-08-14",
+    "download_failure_reason": null,
+    "short_description": "A backtest of Larry Connors' R3 mean-reversion strategy from High Probability ETF Trading (2009), which buys when the 2-day RSI falls three days in a row below 10 while price is above the 200-day moving average, and exits when the 2-day RSI rises above 70. Tested on 25 liquid ETFs through December 2020, the portfolio version produced 992 trades with a 75% win ratio, 2.08 profit factor, 6.47% CAGR and -16% max drawdown. The edge still works twelve years after publication but has decayed, with roughly half the ETFs performing worse than in Connors' original results."
+  },
+  {
+    "title": "Linda Raschke's 15-Minute EMA Trend-Day Reversion, Backtested on NQ",
+    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren / Hawk Quant (@etbent1), original rule by Linda Raschke (@LindaRaschke)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/MrMilkTrading/status/2094768621419471130",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-09-01",
+    "filename": "linda-raschke-15-minute-ema-trend-day-reversion-nq.pdf",
+    "downloaded_at": "2026-09-01",
+    "download_failure_reason": null,
+    "short_description": "A backtest of a single Linda Raschke rule: when a trend day never trades back to the pit-session 15-minute EMA, fade it the next morning, in and out the same session. Reported on NQ 2008-2026 on one contract after friction: 71% win rate, 2.19 profit factor, $14.3K max drawdown, +$86K cumulative, ~$319 per trade over roughly 15 setups a year. An independent replication on nine years of USTEC minute data confirms the headline (75% wins, 2.32 profit factor, 145 trades, 5.1x profit/drawdown) and then decomposes the rule: both EMA-touched cells of a two-by-two lose money and both EMA-untouched cells make it, so the untouched moving average is the discriminator and the trend-day filter is secondary, with loosening the trend threshold from 0.75 to 0.45 lifting net profit from $52,560 to $90,224. The threshold is a plateau not a peak and the result sits at the 100th percentile of a 400-run random-day noise test, but nine other instruments were tested and none passed, and the strategy is stopless by design. The entry adds our analysis of the dollar-curve inflation in both backtests, the 0.89 average-win-to-average-loss ratio implied by the original metrics, and the CFD-versus-future and 20-period-versus-15-minute EMA differences between the two tests."
+  },
+  {
+    "title": "Logistic Regression-Based Systematic Trading: Performance on the S&P 500",
+    "authors": "Conrad O. Voigt",
+    "publication_year": null,
+    "download_page": "https://conradvoigt.github.io/Logistic%20Regression%20Based%20Trading%20on%20the%20S&P%20500.pdf",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "logistic-regression-based-systematic-trading-performance-on-the-sp-500.pdf",
+    "downloaded_at": "2026-05-10",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Project Kintoun: A Regime-Filtered ORB Strategy",
+    "authors": "Jeremy Hsu",
+    "publication_year": null,
+    "download_page": "https://mrjerm.github.io/project_kintoun.html",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_a_paper",
+    "short_description": null
+  },
+  {
+    "title": "Regime-Adaptive Ensemble Strategy: From Backtest to Live Paper Trading",
+    "authors": "Brayton Beam",
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/brayton-beam-93633b293_quant-algorithmictrading-systematicinvesting-share-7467215494857580544-BXSZ/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "regime-adaptive-ensemble-strategy-from-backtest-to-live-paper-trading.pdf",
+    "downloaded_at": "2026-06-02",
+    "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Replicating and Improving the Saty Phase Oscillator Opening-Window Strategy",
+    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren (@etbent1), Cédric Després (@semoi69)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/etbent1/status/2092860879712801203",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-28",
+    "filename": "saty-phase-oscillator-opening-window-strategy-replication.pdf",
+    "downloaded_at": "2026-08-28",
+    "download_failure_reason": null,
+    "short_description": "An X quote-chain documenting a published intraday NQ strategy — Saty Phase Oscillator on a 10m chart, long above +100 and short below -100, entries 9:30-11:00 ET, exit on opposite cross, no stop — its independent replication in MQL5 and Python on USTEC, and three improvements (10:00 window cutoff, 61.8 exit, 2.5-ATR VWAP filter) the original author then adopted on NQ, reporting profit factor 3.07 over 182 trades since 2019. A follow-up runs the same signal on four instruments keyed to their own session opens — USTEC, BTC, gold and WTI — finding all pairwise correlations within ±0.04 and recovery factor rising from 22.1 to 31.8, while forex produces nothing at any hour and mega-caps are worse than buying blind. A third party then extends the backtest to 2000 under percentage-of-capital sizing and finds the published window unrepresentative, with the strategy sideways-to-underwater from roughly 2009 to 2016. The entry adds our own analysis of the mechanism, of why the session open rather than the instrument is what matters, and of why the sizing convention and microstructure regime explain the divergence."
+  },
+  {
+    "title": "Systematic FX trading with regression learning and transaction cost analysis",
+    "authors": "Macrosynergy",
+    "publication_year": 2026,
+    "download_page": "https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-29",
+    "filename": "systematic-fx-trading-with-regression-learning-and-transaction-cost-analysis.pdf",
+    "downloaded_at": "2026-06-29",
+    "download_failure_reason": null,
+    "short_description": "Macrosynergy shows how regression-based sequential statistical learning can combine ten macro factors into composite signals for systematic developed-market FX forward trading without hindsight bias, paired with a transaction-cost workflow that uses LLM prompts to retrieve cost parameters for Python-based cost imputation. Over 1997-2026 the standard least-squares signal delivered a Sharpe ratio of 0.6 and a Sortino ratio of 0.8 before costs (Sharpe stability ratio 2.7), with a representative book returning 6.1% annualised at 10.7% volatility and near-zero correlation to equities, bonds, and EURUSD forwards; transaction costs reduced the return only modestly to 5.8%. The study is fully reproducible via an attached Jupyter notebook built on J.P. Morgan's JPMaQS macro-quantamental data."
+  },
+  {
+    "title": "The Edge In Buying Straddles For The Weekend",
+    "authors": "Thalex",
+    "publication_year": 2026,
+    "download_page": "https://x.com/i/article/2085245276281880576",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-06",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Thalex reports a two-year options backtest in which buying a long straddle on Saturday morning and selling on Monday morning produced positive P&L primarily through vega rather than gamma. It attributes the result to slower weekend variance consumption and a Monday implied-volatility repricing, while using an entry-time sweep as a basic data-mining check."
+  },
+  {
     "title": "Unravel Foundational Adaptive",
     "authors": "Unravel",
     "publication_year": 2026,
@@ -9646,6 +9742,18 @@
     "downloaded_at": "2026-10-13",
     "download_failure_reason": null,
     "short_description": "High-turnover variant of Unravel's seven-factor market-neutral Spectra crypto portfolio, without a risk overlay. Daily turnover above 130% of capital; Sharpe 2.60 on Binance since 2020 but 1.41 on Hyperliquid since October 2024, showing cost sensitivity."
+  },
+  {
+    "title": "VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence",
+    "authors": "David Mesicek (Alpha Architect)",
+    "publication_year": 2026,
+    "download_page": "https://alphaarchitect.com/vix-trend-following-out-of-sample/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-08-15",
+    "filename": "vix-and-trend-following-revisited-out-of-sample.pdf",
+    "downloaded_at": "2026-08-15",
+    "download_failure_reason": null,
+    "short_description": "An out-of-sample retest of Alpha Architect's 2017 idea that the VIX should set the lookback length of a trend-following momentum signal, run on an ETF proxy (SPY, VXF, EFA, AGG, BIL) from August 2017 through June 2026. The concentrated VIX Top 1 variant delivered 14.09% net CAGR versus 9.87% for a fixed ten-month benchmark, with a higher Sharpe (1.03 vs 0.81) and smaller drawdown, and the edge survived transaction costs up to 50 bps. The caveats matter more than the headline: over 80% of the excess return came from the elevated-but-not-extreme 'Yellow' regime, the strategy beat its benchmark in only 13% of months, the two-asset version added nothing, and neither the t-test (p = 0.17) nor the Wilcoxon test (p = 0.42) reaches significance."
   },
   {
     "title": "100 Trading Indicators Tested Across 4,100+ Strategies",
@@ -9732,30 +9840,6 @@
     "short_description": null
   },
   {
-    "title": "Project Kintoun: A Regime-Filtered ORB Strategy",
-    "authors": "Jeremy Hsu",
-    "publication_year": null,
-    "download_page": "https://mrjerm.github.io/project_kintoun.html",
-    "source_file": "technical-indicators.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_a_paper",
-    "short_description": null
-  },
-  {
-    "title": "Replicating and Improving the Saty Phase Oscillator Opening-Window Strategy",
-    "authors": "The Milk Man (@MrMilkTrading), the Dutch Warren (@etbent1), Cédric Després (@semoi69)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/etbent1/status/2092860879712801203",
-    "source_file": "technical-indicators.rst",
-    "included_in_index_at": "2026-08-28",
-    "filename": "saty-phase-oscillator-opening-window-strategy-replication.pdf",
-    "downloaded_at": "2026-08-28",
-    "download_failure_reason": null,
-    "short_description": "An X quote-chain documenting a published intraday NQ strategy — Saty Phase Oscillator on a 10m chart, long above +100 and short below -100, entries 9:30-11:00 ET, exit on opposite cross, no stop — its independent replication in MQL5 and Python on USTEC, and three improvements (10:00 window cutoff, 61.8 exit, 2.5-ATR VWAP filter) the original author then adopted on NQ, reporting profit factor 3.07 over 182 trades since 2019. A follow-up runs the same signal on four instruments keyed to their own session opens — USTEC, BTC, gold and WTI — finding all pairwise correlations within ±0.04 and recovery factor rising from 22.1 to 31.8, while forex produces nothing at any hour and mega-caps are worse than buying blind. A third party then extends the backtest to 2000 under percentage-of-capital sizing and finds the published window unrepresentative, with the strategy sideways-to-underwater from roughly 2009 to 2016. The entry adds our own analysis of the mechanism, of why the session open rather than the instrument is what matters, and of why the sizing convention and microstructure regime explain the divergence."
-  },
-  {
     "title": "SMA Crossovers in Crypto: Why Simpler Trend Signals Outperform Complex Models",
     "authors": "Pedma",
     "publication_year": null,
@@ -9790,18 +9874,6 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
-  },
-  {
-    "title": "The Volume Momentum Deviation Factor",
-    "authors": "套利豪仔 (@pritipatelfgoo)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/pritipatelfgoo/status/2091750955582980218",
-    "source_file": "technical-indicators.rst",
-    "included_in_index_at": "2026-08-24",
-    "filename": "the-volume-momentum-deviation-factor.pdf",
-    "downloaded_at": "2026-08-24",
-    "download_failure_reason": null,
-    "short_description": "An X post describing a volume-based factor built as a MACD histogram on volume rather than price: sma(volume,13,2) - sma(volume,27,2) minus a 10-period smoothing of that difference. The thesis is a lead-lag effect — short-horizon volume strengthening against its longer-horizon baseline while price has not yet responded signals rising participation and a potential trend or mispricing. The author shows a backtest equity curve and notes the whole factor is two lines of code."
   },
   {
     "title": "Time of Day Same Bar Trading",
@@ -10089,30 +10161,6 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
-    "short_description": null
-  },
-  {
-    "title": "A Simple S&P 100 Breakout System from the RealTest Examples File",
-    "authors": "Ignis (@ignis55)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/ignis55/status/2093754279710363733",
-    "source_file": "trend-following.rst",
-    "included_in_index_at": "2026-08-30",
-    "filename": "simple-sp100-breakout-system-realtest-examples-file.pdf",
-    "downloaded_at": "2026-08-30",
-    "download_failure_reason": null,
-    "short_description": "A complete long-only equity trend system stated in six bullets — S&P 100 universe, 100-day breakout entry, fresh breakouts only, ranked by 100-day ROC, Chande-Kroll trailing stop, 0.5% volatility-adjusted risk per trade — which ships as an example file with the RealTest platform. The attached RealTest results row covers 2006-2026 and 973 trades: 9.63% annualised on 11.87% volatility, Sharpe 0.84, maximum drawdown -15.50%, profit factor 1.86, with only 42.65% of trades winning but average winners of 13.50% against losers of 5.34% and holding periods of 81 versus 22 days. The entry explains why each component maps to a documented momentum effect and notes that the achievement is the drawdown profile rather than the return, which merely matches the index, alongside reproducibility gaps around the breakout definition, point-in-time index membership, and the 71.93% of signals skipped."
-  },
-  {
-    "title": "A Trend Following Framework for Gold, Bitcoin, and Nasdaq",
-    "authors": "Petr Podhajsky",
-    "publication_year": null,
-    "download_page": "https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/",
-    "source_file": "trend-following.rst",
-    "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -10452,18 +10500,6 @@
     "short_description": null
   },
   {
-    "title": "VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence",
-    "authors": "David Mesicek (Alpha Architect)",
-    "publication_year": 2026,
-    "download_page": "https://alphaarchitect.com/vix-trend-following-out-of-sample/",
-    "source_file": "trend-following.rst",
-    "included_in_index_at": "2026-08-15",
-    "filename": "vix-and-trend-following-revisited-out-of-sample.pdf",
-    "downloaded_at": "2026-08-15",
-    "download_failure_reason": null,
-    "short_description": "An out-of-sample retest of Alpha Architect's 2017 idea that the VIX should set the lookback length of a trend-following momentum signal, run on an ETF proxy (SPY, VXF, EFA, AGG, BIL) from August 2017 through June 2026. The concentrated VIX Top 1 variant delivered 14.09% net CAGR versus 9.87% for a fixed ten-month benchmark, with a higher Sharpe (1.03 vs 0.81) and smaller drawdown, and the edge survived transaction costs up to 50 bps. The caveats matter more than the headline: over 80% of the excess return came from the elevated-but-not-extreme 'Yellow' regime, the strategy beat its benchmark in only 13% of months, the two-asset version added nothing, and neither the t-test (p = 0.17) nor the Wilcoxon test (p = 0.42) reaches significance."
-  },
-  {
     "title": "Volatility Targeting: Transforming a -70% Drawdown Strategy into 1,328% Returns",
     "authors": "Pedma",
     "publication_year": null,
@@ -10570,18 +10606,6 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": "An X Article on hedging a short-volatility oil-options book with slower rebalance cadence, deltas computed from a realised-volatility view, and dispersed gamma exposure across strikes and maturities. It correctly frames these choices as trading risk for potential P&L rather than free risk reduction: no backtest details, transaction costs, tail losses, or out-of-sample evidence are supplied."
-  },
-  {
-    "title": "BTC Systematic Options Strategy Index: Same Strangle, Weekend Versus Full Week",
-    "authors": "leifu (@leifuchen)",
-    "publication_year": 2026,
-    "download_page": "https://x.com/leifuchen/status/2092637603556102161",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-08-28",
-    "filename": "btc-systematic-options-strategy-index-weekend-versus-full-week.pdf",
-    "downloaded_at": "2026-08-28",
-    "download_failure_reason": null,
-    "short_description": "An instalment of a recurring biweekly report tracking six systematic BTC option-selling indices built on a common 35-delta strike rule, from base 100 on 2019-07-01 to 2026-08-23, using synthetic 7-day options with no delta hedging and no transaction costs. The headline result is a natural experiment: the weekly 35-delta strangle returns +104% at Sharpe 0.47 with a -66% drawdown, while the identical strangle held only across the 40-hour weekend returns +1393% at Sharpe 2.52 with a -26% drawdown and an 83% weekly win rate. The entry explains the mechanism — options are priced off calendar time while volatility follows information arrival, and weekends carry far less news than their share of the week — and contrasts it with the Thalex weekend long-straddle result elsewhere in the same file, which is a vega trade rather than a realised-variance trade."
   },
   {
     "title": "Comparing Deep Learning Models for the Task of Volatility Prediction Using Multivariate Data",
@@ -10728,18 +10752,6 @@
     "short_description": "A cost-aware backtest of short-volatility strategies designed to harvest the variance risk premium (option-implied volatility exceeding subsequently realized volatility) in short-dated index options, run on one-minute options-chain and index data from September 2024 to June 2026 across expiry-day, stop-loss, and lot-scaling dimensions. The main finding is that positive gross expectancy is erased by transaction costs and taxes at a single lot and only becomes net-positive once positions are scaled up to amortize fixed per-trade costs; the strategies also respond poorly to stop-losses. The author concludes the edge is real but the barriers to capturing it are equally real for retail traders."
   },
   {
-    "title": "Harvesting the Volatility Risk Premium: A Learning-to-Rank Approach",
-    "authors": "Maciej Wysocki",
-    "publication_year": 2026,
-    "download_page": "https://arxiv.org/abs/2608.24786",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-09-01",
-    "filename": "harvesting-the-volatility-risk-premium-a-learning-to-rank-approach.pdf",
-    "downloaded_at": "2026-09-01",
-    "download_failure_reason": null,
-    "short_description": "A LightGBM LambdaRank ranker scores a daily nine-candidate cross-section on the SPXW 0DTE surface (eight delta-targeted short puts from 0.05 to 0.45, plus a SKIP candidate), trained against a path-aware Sortino-on-bars label computed at one-minute resolution with intraday marks at the ask, and gated by an abstention rule keyed to the top-1 vs top-2 score gap. Evaluated under Reg-T margin, tiered IB fees and bid-to-mid fills across a 2021-2024 walk-forward and a held-out 2025 year, seven sizing methods return out-of-time Sharpe ratios of 4.31 to 5.76 versus 0.18 for the CBOE PUT index. The paper is candid that the ratio comes from the denominator (10.48% return at 1.82% volatility per unit of collateral, unreachable leverage to match benchmark vol), that a Diebold-Mariano test cannot resolve the mean P&L difference on one year, that deflated Sharpe falls to 0.856-0.913 out of time, and that per-year Sharpe ranges from 6.52 in 2021 to 0.41 in 2024."
-  },
-  {
     "title": "Intraday Volatility Dynamics",
     "authors": "Carsten H. Chong, Marc Hoffmann, Mathieu Rosenbaum, and Grégoire Szymanski",
     "publication_year": 2026,
@@ -10858,18 +10870,6 @@
     "downloaded_at": "2026-04-22",
     "download_failure_reason": null,
     "short_description": null
-  },
-  {
-    "title": "The Edge In Buying Straddles For The Weekend",
-    "authors": "Thalex",
-    "publication_year": 2026,
-    "download_page": "https://x.com/i/article/2085245276281880576",
-    "source_file": "volatility.rst",
-    "included_in_index_at": "2026-08-06",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": "Thalex reports a two-year options backtest in which buying a long straddle on Saturday morning and selling on Monday morning produced positive P&L primarily through vega rather than gamma. It attributes the result to slower weekend variance consumption and a Monday implied-volatility repricing, while using an entry-time sweep as a basic data-mining check."
   },
   {
     "title": "The Hybrid Forecast of S&P 500 Volatility Ensembled from VIX, GARCH and LSTM Models",

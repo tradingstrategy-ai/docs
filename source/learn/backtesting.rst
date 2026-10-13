@@ -333,6 +333,8 @@ By Tomas Nesnidal.
 
 `Read the blog post <https://breakoutos.com/blog/bollinger-bands-breakout-strategy>`__.
 
+.. _example-backtesting-biases-and-the-bilbo-box-breakout:
+
 Backtesting, Biases, and the Bilbo Box Breakout
 -----------------------------------------------
 

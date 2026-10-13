@@ -566,6 +566,8 @@ By Jagteshwar Sodhi.
 
 `Read the post <https://www.linkedin.com/posts/jagteshwarsodhi_quantitativefinance-machinelearning-tradingstrategies-share-7496106295595360256-V9u0/>`__.
 
+.. _example-regime-switching-factor-investing-with-hidden-markov-models:
+
 Regime-Switching Factor Investing with Hidden Markov Models
 ------------------------------------------------------------
 

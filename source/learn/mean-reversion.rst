@@ -10,6 +10,8 @@ The research collected here covers both the theoretical foundations of mean reve
 
 Related topics include :doc:`Statistical Arbitrage <./statistical-arbitrage>` for pairs-based mean reversion, :doc:`Technical Indicators <./technical-indicators>` for the oscillators commonly used in mean-reversion signal generation, and :doc:`Market Microstructure <./market-microstructure>` for the microstructure dynamics that create mean-reverting patterns at short horizons.
 
+For complete worked examples of trading strategies and individual factors, see :doc:`Strategy Examples <./strategy-examples>` and :doc:`Factor Examples <./factor-examples>`.
+
 Scale Dependent Dynamics in Equity Market Phase Space
 ------------------------------------------------------
 
@@ -111,6 +113,8 @@ By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/navigating-the-market-a-dynamic-approach>`__.
 
+.. _example-short-term-reversal-persists-globally-if-properly-measured:
+
 Short-Term Reversal Persists Globally — If Properly Measured
 -------------------------------------------------------------
 
@@ -125,6 +129,8 @@ Key metrics: standard reversal +0.05% monthly return, industry-adjusted reversal
 Mentioned by Ivan Blanco Sanchez in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-ideas-finding-short-term-share-7457319174034436096-ocSC>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6630998>`__
+
+.. _example-revisiting-trend-following-and-mean-reversion-strategies-in:
 
 Revisiting Trend-Following and Mean-Reversion Strategies in Bitcoin
 --------------------------------------------------------------------
@@ -191,19 +197,6 @@ Key metrics: this is a statistical testing paper rather than a trading strategy.
 
 `Read the paper <https://doi.org/10.1016/j.frl.2019.07.025>`__
 
-Enhanced Mean Reversion: Continuous Basket Methodology for Crypto Cross-Sectional Factors
-------------------------------------------------------------------------------------------
-
-Mark Aron Szulyovszky (Aperiodic) outlines a distinction between different meanings of "mean reversion" in quantitative finance and introduces Aperiodic's Enhanced Mean Reversion factor for crypto markets. In a cross-sectional factor context, mean reversion is about identifying baskets of mean-reverting assets in a walk-forward manner, using a range of transformations and lookback periods to compute an aggregate mean-reversion score for each asset. Traditional pairs trading and statistical arbitrage approaches typically construct baskets with a fixed number of assets where membership is binary — an asset is either in the basket or not.
-
-Aperiodic's framework departs from this by using a continuous methodology: each asset has a probability of being part of a basket rather than a hard inclusion/exclusion boundary. When signals are aggregated to create a cross-sectional score, the mean-reversion signal is multiplied by the probability of the asset belonging to every basket. The Enhanced Mean Reversion factor (AF-MRX) ensembles multiple new transformations and basket-definition methodologies. The factor is constructed as a rank-weighted long/short portfolio of the top 40 crypto assets by market cap, with positions scaled by inverse rolling volatility and hourly point-in-time updates. Since inception (January 2020), the factor has returned +170% with a Sharpe ratio of 1.80 and maximum drawdown of -14.3%, though the author notes the caveats of working with smaller sample sizes in crypto — while the number of tradable assets is close to infinite, the liquid universe is considerably smaller.
-
-See the `Enhanced Mean Reversion factsheet <https://factors.aperiodic.io/catalog/mean_reversion_enhanced>`__ on Aperiodic Factors for live performance, methodology details, and downloadable data. See also Aperiodic's related `Enhanced Momentum factor (AF-MOMX) <https://factors.aperiodic.io/catalog/momentum_enhanced>`__, which exploits the opposite side of the cross-sectional spectrum.
-
-By Mark Aron Szulyovszky (Aperiodic).
-
-`Read the post <https://www.linkedin.com/posts/almostintuitive_mean-reversion-means-a-lot-of-different-share-7470090273981730817-QQ2a/>`__
-
 Profiting From Sector Dispersion: The Case for Trading Sector & Industry ETFs
 ----------------------------------------------------------------------------
 
@@ -219,20 +212,7 @@ Mentioned by Carlo Zarattini (Founder of Concretum Group, co-founder of R-Candle
 
 `Read the research piece <https://concretumgroup.substack.com/p/profiting-from-sector-dispersion>`__
 
-Larry Connors' R3 Strategy (It Still Works)
---------------------------------------------
-
-Quantified Strategies backtests the R3 strategy from Chapter 4 of Larry Connors' 2009 book *High Probability ETF Trading*, checking whether the published edge survived the twelve years after publication. R3 is a short-term mean-reversion system built on the 2-day RSI: the close must be above the 200-day moving average, the 2-day RSI must fall three days in a row with the first drop starting from a reading below 60, and the 2-day RSI must be below 10 on the entry day. The position is exited on the close once the 2-day RSI rises above 70. Connors also proposed an aggressive variant that adds a second unit whenever the position trades below the entry price, but that version is not tested here.
-
-Our summary: replicated on Connors' basket of 20 liquid ETFs (plus GDX, GDXJ, TLT, XLP, and XME added by the author) from inception to December 2020, the strategy still works but has decayed — roughly half the ETFs performed worse over the twelve years since publication, and the author could not reproduce Connors' fill counts exactly despite both using dividend-adjusted data. On SPY the win rate is 90% but there are only 96 trades since 1993. Run as a portfolio across all 25 ETFs from 2000 to 2020, capped at five concurrent positions and 20% equity per position, R3 produced 992 trades, a 75% win ratio, 0.68% average gain per trade, a profit factor of 2.08, a 6.47% CAGR, and a -16% maximum drawdown concentrated in the August 2011 sovereign debt crisis. A QQQ/SPY-only version raises the profit factor to 3.37 but drops the CAGR to 2.69% because the strategy is only in the market 4.5% of the time — the classic mean-reversion trade-off between high per-trade quality and low capital utilisation.
-
-Data and reproduction: Amibroker backtests on 25 dividend-adjusted ETFs from inception (1993 for SPY) through December 2020, with no commissions or slippage included. The full Amibroker code sits behind the site's membership, so the rules are reproducible from the article text but the exact implementation is not published.
-
-Key metrics: all-ETF portfolio — 992 trades, 75% win ratio, 0.68% average gain per trade, profit factor 2.08, CAGR 6.47%, max drawdown -16%. SPY alone — 90% win rate over 96 trades. QQQ/SPY portfolio — profit factor 3.37, CAGR 2.69%, 4.5% time in market.
-
-By Oddmund Groette (QuantifiedStrategies.com).
-
-`Read the blog post <https://www.quantifiedstrategies.com/larry-connors-r3-strategy/>`__
+.. _example-short-horizon-mean-reversion-in-cryptocurrency-markets-a-mat:
 
 Short-horizon Mean Reversion in Cryptocurrency Markets: A Matched Cross-Market Measurement
 --------------------------------------------------------------------------------------------
@@ -246,31 +226,6 @@ Data and reproduction: the primary test uses 15-minute Binance and Alpaca bars f
 Key metrics: crypto averages an out-of-sample AUC of 0.531, versus 0.499 for US stocks and ETFs; 164 of 183 crypto pairs (90%) are significant after FDR control, compared with 5 of 187 stocks/ETFs (2.7%). The designed class-mean AUC gap is +0.031; under the most conservative accounting it is +0.011 (95% CI [+0.008, +0.014]). The gross directional edge peaks near 1.3 bp per trade, below the paper's 5 bp cheapest benchmark spot round-trip cost, so the finding is not evidence of an implementable taker strategy at those costs.
 
 `Read the paper <https://arxiv.org/abs/2608.21888>`__
-
-Linda Raschke's 15-Minute EMA Trend-Day Reversion, Backtested on NQ
---------------------------------------------------------------------
-
-The Milk Man (@MrMilkTrading) backtests a single rule that Linda Raschke posted on X in July 2026: "If no trade to pit session 15 minute EMA on a trend day, it WILL revert to the mean the next day." The setup is a trend day on which price never trades back to the pit-session 15-minute exponential moving average; the trade is to fade that move the following morning, entering and exiting within the same session. Because the condition can only be evaluated once the prior session has closed, the signal is free of look-ahead bias. The author describes the implementation as "in raw form, definitely needs improvement" and invites others to extend it.
-
-The published backtest covers NQ futures from 2008 to 2026 on a single contract, after friction: a 71% win rate (83% since 2022), profit factor 2.19 (2.57 since 2022), maximum peak-to-trough drawdown of $14,300, a profit-to-max-drawdown ratio of 6.0x (6.3x measured in percentage terms), cumulative net profit of about $86,000, an average of $319 per trade and roughly 15 setups a year.
-
-Our analysis: the mechanism is a clean, well-specified counter-trend idea with genuine provenance, but three features of the presentation flatter it. First, the equity curve is plotted as cumulative dollars on one contract and is nearly flat from 2008 to 2015 before turning sharply upward after 2016. NQ rose from roughly 1,200 to over 20,000 across that window, so an identical percentage move pays around fifteen times more dollars at the end of the sample than at the start — a fixed-contract dollar curve bends upward even when the underlying edge is constant. The card's "6.3x in % terms" figure acknowledges this, but the chart is the most persuasive object in the graphic and the most distorted by it. Second, the win rate conceals negative skew: from the reported profit factor and win rate, the average winner is about 0.89 times the average loser, the classic mean-reversion profile of frequent small gains punctuated by larger losses. A 71% hit rate reads as safety while the payoff structure does the opposite, and with roughly 270 trades in total the tail is thinly sampled, so the stated maximum drawdown should be treated as a lower bound. Third, the 2022-onward split is the weakest evidence rather than the strongest: it is about 60 trades, it sits in the period where the dollar-inflation artefact is largest, and it covers an unusually reversion-friendly intraday regime in index futures.
-
-Worth testing before trusting it: replot the results in R-multiples or ATR-normalised units to remove the nominal-growth artefact; split 2008-2016 against 2017-2026 as a genuine holdout; sweep the EMA length and the trend-day threshold looking for a sensitivity plateau rather than a spike; compare entry at the overnight session open against the RTH open, since if the reversion mostly completes overnight the edge is being captured somewhere other than where the strategy trades; and run the same rule on ES, YM and RTY, because a real market-structure effect should replicate across index futures and that is the cheapest available falsification. Note also that neither the trend-day definition, the session boundaries, nor the exit rule are stated in the source post.
-
-**Update: an independent replication, and a decomposition that reassigns the credit.** The Dutch Warren, posting analysis as Hawk Quant (@etbent1), ran the setup on nine years of USTEC minute data (2017-2026, 15 lots, 1.25 points of friction, entry at the next morning's open toward the EMA, flat the same morning, stopless by design). The rule as he implements it is "a trend day that closes near its extreme and never touches the 20-EMA." The headline replicates: 75% wins and a 2.32 profit factor against the original's 71% and 2.19, on 145 trades, $52,560 net on 15 lots after costs, a deepest drawdown of $10,356 and a 5.1x profit-to-drawdown ratio against the original's 6.0x. In his words, "the claim holds."
-
-The more valuable contribution is a two-by-two that splits the rule into its two conditions and prices each separately. Trend day with the EMA untouched gives a 2.32 profit factor over 145 days (+$52,560); trend day with the EMA touched gives 0.95 over 325 days (-$8,445); *ordinary* day with the EMA untouched still gives 1.64 over 140 days (+$32,674); ordinary day with the EMA touched gives 0.90 over 1,710 days (-$84,404). Both EMA-touched cells lose money and both EMA-untouched cells make it, so the discriminating condition is the untouched moving average, not the trend day — the trend-day filter improves an edge that already exists without it. Hence his summary that "the trend day turns out to be the passenger. The untouched 20-EMA is the engine." Acting on that, loosening the trend-day threshold from a body-to-range ratio of 0.75 to 0.45 lifts the sample from 145 to 253 trades and net profit from $52,560 to $90,224, which is what the two-by-two predicts: the days admitted at the looser threshold are less trendy but still EMA-untouched, and they carry the edge.
-
-The robustness work answers two of the tests suggested above, one favourably and one not. The threshold sweep is a plateau rather than a peak, with profit factor holding roughly 2.3 to 2.7 across body-to-range thresholds from 0.2 to 0.9 on 2023-2026 data and 1.7 to 2.0 on 2017-2022 — the published 0.75 is not a spike. A Monte Carlo of 400 runs on random days with random direction centres near 1.0 with a 95th percentile of 1.45, placing the real 2.32 at the 100th percentile of the noise distribution, and the author's own proposed control confirms it: ordinary days entered at the same distance from the EMA give 1.01 and all ordinary days give 0.95. Forty-five exit variants (five targets, three stops, three cut-off times) rank the published exit 11th at 2.32 against a best of roughly 2.5, so the original exit was neither cherry-picked nor optimal. Variants were chosen on 2017-2022 and graded on 2023-2026, and sixteen additional filters were tried without beating random pruning. Against all that, the cross-instrument test fails outright: **nine other instruments were tested and none passed.** That is the cheapest falsification available and the effect does not survive it, which argues the edge is Nasdaq-specific rather than a general property of index intraday behaviour — an important qualification on reading it as market structure.
-
-Three differences from the original are worth holding in view when comparing the two sets of numbers. USTEC is a CFD quoted at 1 USD per index point per lot, not the NQ future, so fills come from a broker's book rather than an exchange and the dollar figures are not comparable to a one-contract NQ result. The EMA is not the same object: Raschke's wording is "pit session 15 minute EMA," most naturally read as an EMA on 15-minute bars with the period unstated, whereas this test uses a 20-period EMA on minute data — so this is a variant reading of the rule, not an exact replication of it. And the window is 2017-2026 against the original's 2008-2026, covering only the later and more favourable portion of it. The per-year bars are the useful corrective to both dollar curves: profit is positive in most years, concentrated in 2022 and 2024 at roughly $13,000 and $14,500, near flat in 2020, and negative in 2026 to date. That distribution is healthier than the original's smooth-looking cumulative ramp implied, but it also confirms the strategy has losing years, and the stopless construction means the tail remains the risk that neither backtest has yet sampled.
-
-By The Milk Man (@MrMilkTrading), crediting Linda Raschke (@LindaRaschke) for the original rule, with the replication and rule decomposition by the Dutch Warren / Hawk Quant (@etbent1).
-
-Mentioned by The Milk Man in `this discussion <https://x.com/MrMilkTrading/status/2094768621419471130>`__, where he presents it as "the Legend's EMA strategy" and asks readers to improve on it. The chain runs `the original rule and NQ backtest <https://x.com/MrMilkTrading/status/2094768621419471130>`__ then `the USTEC replication and two-by-two decomposition <https://x.com/etbent1/status/2094880988904243490>`__. Replies on both posts were not retrievable for this entry.
-
-`Read the post <https://x.com/etbent1/status/2094880988904243490>`__.
 
 Mean Reversion Strategies: Backtested Trading Rules
 ---------------------------------------------------
@@ -298,6 +253,8 @@ By Seth Rosenthal (Market Math).
 
 `Read the blog post <https://marketmath.substack.com/p/from-the-desk>`__.
 
+.. _example-intraday-residual-reversal-in-the-u-s-stock-market:
+
 Intraday Residual Reversal in the U.S. Stock Market
 ----------------------------------------------------
 
@@ -312,6 +269,8 @@ Key metrics: the baseline residual-reversal portfolio earns a reported gross ann
 Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/status/2100727687518056513>`__, where he highlights the 30-minute residual sort, the headline gross return, and the importance of costs and execution.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4731947>`__.
+
+.. _example-end-of-day-reversal:
 
 End-of-Day Reversal
 --------------------

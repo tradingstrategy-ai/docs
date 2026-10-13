@@ -10,6 +10,8 @@ This collection covers the full spectrum of statistical arbitrage research: the 
 
 Related topics include :doc:`Mean Reversion <./mean-reversion>` for single-asset reversion strategies, :doc:`Order Flow <./order-flow>` for microstructure-driven signals used alongside stat arb, and :doc:`Cryptocurrency <./cryptocurrency>` for digital asset applications.
 
+.. _example-pairs-trading-performance-of-a-relative-value-arbitrage-rule:
+
 Pairs Trading: Performance of a Relative-Value Arbitrage Rule
 -------------------------------------------------------------
 
@@ -20,6 +22,8 @@ By Evan Gatev, William N. Goetzmann, and K. Geert Rouwenhorst.
 The methodology operates in two stages: a 12-month formation period matching all liquid stocks by minimizing the sum of squared deviations between normalized cumulative total return indices, followed by a 6-month trading period where positions open when prices diverge by more than two historical standard deviations and close upon convergence. The top 5 pairs portfolio earns an average 6-month excess return of 5.98% on committed capital. Pairs portfolio returns have low volatility (4-6% annualized), are uncorrelated with the S&P 500, and exhibit high Sharpe ratios. Fama-French three-factor regressions show intercepts remain significantly positive, indicating returns are not explained by standard risk factors.
 
 `Read the paper <https://doi.org/10.1093/rfs/hhj020>`__
+
+.. _example-statistical-arbitrage-in-the-u-s-equities-market:
 
 Statistical Arbitrage in the U.S. Equities Market
 --------------------------------------------------
@@ -301,6 +305,8 @@ By Harry Yang and Akhtar Malik.
 
 `Read the paper <https://arxiv.org/abs/2407.16103>`__
 
+.. _example-altcoin-bitcoin-arbitrage:
+
 Altcoin-Bitcoin Arbitrage
 --------------------------
 
@@ -419,6 +425,8 @@ Data: cryptocurrency data at 30-minute intervals. Published in Applied Soft Comp
 Key metrics: DRL agents generate out-of-sample returns ranging from 79.52% to 112.82% without transaction costs, outperforming the Bitcoin benchmark return of 32.51%. Strategies maintain positive returns after transaction costs, with the DRL agent outperforming the standard arbitrage strategy.
 
 `Read the paper <https://doi.org/10.1016/j.asoc.2024.111255>`__
+
+.. _example-cluster-based-pairs-trading-combining-unsupervised-learning:
 
 Cluster-Based Pairs Trading: Combining Unsupervised Learning with Cointegration Filtering
 ------------------------------------------------------------------------------------------

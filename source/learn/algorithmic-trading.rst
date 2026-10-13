@@ -10,6 +10,10 @@ This collection covers optimal execution theory (Gârleanu-Pedersen on alpha dec
 
 Related topics include :doc:`Backtesting & Research Methodology <./backtesting>` for strategy validation before deployment, :doc:`Portfolio Construction <./portfolio-construction>` for multi-asset capital allocation, and :doc:`Market Microstructure <./market-microstructure>` for the theoretical foundations of price formation and execution.
 
+For complete worked examples of trading strategies and individual factors, see :doc:`Strategy Examples <./strategy-examples>` and :doc:`Factor Examples <./factor-examples>`.
+
+.. _example-can-day-trading-really-be-profitable-evidence-from-opening-r:
+
 Can Day Trading Really Be Profitable? Evidence from Opening Range Breakouts
 ---------------------------------------------------------------------------
 
@@ -212,32 +216,6 @@ A Quantitative Trading Strategy Based on A Position Management Model
 This paper presents a quantitative trading strategy that integrates ARIMA-based return forecasting with a systematic position management model for gold and bitcoin. The framework translates probabilistic return forecasts into position sizing decisions that account for forecast confidence and current market conditions.
 
 `Read the paper <https://doi.org/10.54097/ajst.v2i1.901>`__
-
-Logistic Regression-Based Systematic Trading: Performance on the S&P 500
-------------------------------------------------------------------------
-
-Conrad O. Voigt (Stetson University) examines the performance of a Logistic Regression-Based Systematic Trading (LRST) strategy applied to S&P 500 stocks from January 1985 to July 2024. The strategy uses logistic regression to predict binary stock price movements - whether a stock's next-month return will exceed the cross-sectional median - based on 20-day and 12-month cumulative returns as features. The model employs a rolling 10-year window, re-estimating parameters every month to adapt to changing market conditions. Each month, the 20 stocks with the highest predicted probability of outperformance are selected into an equally weighted portfolio.
-
-The LRST strategy delivered strong long-term performance, particularly during the 1990s and early 2000s, but struggled significantly in the 2021-2024 period when it consistently trailed the S&P 500. The author attributes this recent underperformance to the rise of algorithmic trading, macroeconomic shifts, and structural market changes that the simple logistic regression model was not designed to capture. The paper concludes that while the approach shows promise, incorporating additional predictive variables such as sentiment indicators and advanced ML techniques like LSTMs could improve robustness.
-
-The data was sourced from Bloomberg and includes stocks added to or removed from the S&P 500 during the study period to mitigate survivorship bias. No code repository is provided.
-
-Key metrics (1984-2024): annualised return 24.61% (vs 12.88% for S&P 500), annualised standard deviation 26.11%, Sharpe ratio 0.7738 (vs 0.7254), Sortino ratio 0.7514, max monthly return 35.18%, min monthly return -32.47%, monthly downside deviation 7.76%.
-
-Mentioned by `Nam Nguyen in this discussion <https://www.linkedin.com/posts/namnguyento_evaluating-a-logistic-regression-trading-share-7458519268922503168-NSA5>`__.
-
-`Read the paper <https://conradvoigt.github.io/Logistic%20Regression%20Based%20Trading%20on%20the%20S&P%20500.pdf>`__
-
-Regime-Adaptive Ensemble Strategy: From Backtest to Live Paper Trading
-----------------------------------------------------------------------
-
-Brayton Beam documents the launch of his quantitative trading strategy (V3.5) into a paper trading account after a year of development. The system is a regime-adaptive ensemble of four factor experts (momentum, value, low-volatility, and defensive), with per-regime blending governed by independent classifiers: VIX percentile, yield curve, Fed cycle, and a structural-break detector. A 12-month half-life reconsolidation EMA per expert-regime cell serves as the model's memory of which experts work in which regimes. Conditional 1.25x leverage fires only on calm-bull "flow days" where five independent signals align.
-
-The 13.5-year backtest on S&P 500 phantom-filtered top-15 stocks (2012-2025) reports a 31.20% in-sample CAGR (29.37% walk-forward), Sharpe ratio of 1.48, and max drawdown of -30.21%. Six of seven validation tests pass: walk-forward with annual CPI re-tune, parameter perturbation, Monte Carlo simulation (P(Sharpe > 1) = 94%), execution realism with realistic costs, feature ablation, and cross-universe validation. The regime holdout test flagged a Risk-On dependency which the author identifies as an architectural feature — per-ticker alpha autocorrelation captured by the reconsolidation EMA, orthogonal to standard factor exposures (Ken French MOM correlation -0.06, value +0.04). On Day 1, 43 positions filled cleanly and the model correctly de-levered into an Inflationary regime rather than mechanically applying leverage.
-
-By Brayton Beam.
-
-`Read the post <https://www.linkedin.com/posts/brayton-beam-93633b293_quant-algorithmictrading-systematicinvesting-share-7467215494857580544-BXSZ/>`__
 
 Market Data Is Social Data: From Fractals to Topological Data Analysis
 ----------------------------------------------------------------------

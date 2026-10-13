@@ -143,6 +143,8 @@ By Ed Silantyev.
 
 `Read the blog post <https://medium.com/@eliquinox/order-flow-analysis-of-cryptocurrency-markets-b479a0216ad8>`__
 
+.. _example-order-flow-imbalance-a-high-frequency-trading-signal:
+
 Order Flow Imbalance — A High Frequency Trading Signal
 -------------------------------------------------------
 

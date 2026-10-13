@@ -66,6 +66,8 @@ This paper studies how investor attention amplifies both price momentum and earn
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=976394>`__
 
+.. _example-time-series-momentum:
+
 Time Series Momentum
 ---------------------
 
@@ -371,6 +373,8 @@ The momentum in anomaly returns is more pronounced when arbitrage capital is sca
 
 `Read the paper <https://onlinelibrary.wiley.com/doi/abs/10.1111/eufm.12290>`__
 
+.. _example-factor-momentum-and-the-momentum-factor:
+
 Factor Momentum and the Momentum Factor
 -----------------------------------------
 
@@ -406,6 +410,8 @@ Blitz examines whether the 2010–2019 decade represents a structural break in f
 The practical implications are significant for meta-strategy builders: factor performance exhibits extended regime dependence, and a momentum overlay that rotates into recently winning factors would have concentrated into the few factors that worked (momentum, quality) while avoiding the many that didn't. The paper serves as a cautionary case study on the risks of performance chasing at the factor level and the importance of understanding whether decay is temporary or permanent. Published in the Journal of Portfolio Management, 2020.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3562242>`__
+
+.. _example-the-intramonth-momentum-cycle:
 
 The Intramonth Momentum Cycle
 ------------------------------

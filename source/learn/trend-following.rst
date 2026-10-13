@@ -10,6 +10,8 @@ The research here covers the historical evidence for trend following across asse
 
 Related topics include :doc:`Momentum <./momentum>` for cross-sectional and time-series momentum strategies, :doc:`Market Regimes <./market-regimes>` for regime-conditional trend allocation, and :doc:`Portfolio Construction <./portfolio-construction>` for position sizing and risk parity approaches used in trend programs.
 
+For complete worked examples of trading strategies and individual factors, see :doc:`Strategy Examples <./strategy-examples>` and :doc:`Factor Examples <./factor-examples>`.
+
 Catching Crypto Trends: A Tactical Approach for Bitcoin and Altcoins
 ---------------------------------------------------------------------
 
@@ -65,17 +67,6 @@ Quantitative Evaluation of Volatility-Adaptive Trend-Following Models in Cryptoc
 This paper tests multi-horizon moving average trend signals combined with ATR-based volatility adaptation in cryptocurrency markets. The framework evaluates how adapting trend signals to current volatility conditions improves risk-adjusted performance for crypto trend following, with comprehensive backtesting across Bitcoin and major altcoins.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5821842>`__
-
-A Trend Following Framework for Gold, Bitcoin, and Nasdaq
----------------------------------------------------------
-
-A practical framework for systematic trend following across Gold, Nasdaq, and Bitcoin futures. The approach combines a Donchian Channel for trend detection with a Chandelier Stop for risk management. Key components include: volatility-targeted position sizing (risking 2% of equity per trade with stops at 3x ATR), a two-stage exit mechanism using both protective trailing stops and technical exits based on lowest low breakdowns.
-
-The system targets "fat tails" while keeping maximum drawdown to -15%. With a 47% win rate but favorable risk/reward (average win 4.30% vs average loss 2.06%), the framework emphasizes that systematic execution beats emotional guessing. Assets are chosen for their high volatility, strong trends, and low correlation.
-
-By Petr Podhajsky. Tools used: RealTest & Norgate Data.
-
-`Read the post <https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/>`__
 
 Testing the Low-of-Day Stop Loss Rule in Crypto Trend-Following
 ----------------------------------------------------------------
@@ -267,6 +258,8 @@ An X article by trader Walter Ego (@ItsWalterEgo) drawing on his background of o
 
 `Read the article <https://x.com/ItsWalterEgo/article/2024781759498358824>`__
 
+.. _example-leverage-for-the-long-run-a-systematic-approach-to-managing:
+
 Leverage for the Long Run - A Systematic Approach to Managing Risk and Magnifying Returns in Stocks
 ----------------------------------------------------------------------------------------------------
 
@@ -292,6 +285,8 @@ Rather than selecting one exit policy, the authors recommend "ensembling" — al
 By Concretum Research.
 
 `Read the blog post <https://concretumgroup.substack.com/p/how-to-manage-an-intraday-trend-trade>`__
+
+.. _example-demystifying-managed-futures:
 
 Demystifying Managed Futures
 -----------------------------
@@ -372,6 +367,8 @@ Key metrics: over 1969–2018 the long-only market delivers 5.91% annualised at 
 
 `Read the paper <https://doi.org/10.1016/j.jfineco.2023.06.001>`__
 
+.. _example-breaking-bad-trends:
+
 Breaking Bad Trends
 ----------------------
 
@@ -401,39 +398,3 @@ Mentioned by Concretum Research (@ConcretumR) in `this discussion <https://x.com
 By Concretum Research.
 
 `Read the blog post <https://concretumgroup.substack.com/p/the-intraday-seasonality-of-market>`__.
-
-VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence
-------------------------------------------------------------------------------
-
-In September 2017 Alpha Architect published *VIX and Trend-Following, the Killer Combo?*, which asked whether volatility information could improve a traditional trend-following allocation model. The intuition was that market volatility carries information about how fast a momentum signal should be measured: a shorter lookback may react better when volatility rises, while a longer window gives a more stable signal in calm markets. This follow-up tests that hypothesis on data that did not exist when the original was written — August 2017 through June 2026, a period spanning the COVID shock, the 2022 inflation and rate shock, several rapid equity reversals, and long stretches of calm.
-
-The implementation is a transparent ETF proxy rather than an exact replication of the original index backtest. The universe is five liquid ETFs — SPY (US large cap), VXF (US ex-S&P 500), EFA (developed international), AGG (investment-grade bonds), and BIL (T-bills) — ranked monthly by momentum, with the lookback window chosen by a VIX regime classification: Green (lowest volatility, slowest lookback), Yellow (elevated, faster), and Red (extreme, fastest). Signals are computed at month end and applied the following month. Four portfolios are compared: VIX Top 1 and VIX Top 2 against fixed ten-month-momentum benchmarks 10M Top 1 and 10M Top 2.
-
-Our summary: the honest finding is narrower than the headline CAGR gap suggests, and the post is unusually good about saying so. VIX Top 1 beat its benchmark in only 13.08% of months, and the two strategies held different portfolios in just 24.07% of months — most of the time the adaptive lookback picks the same asset the fixed one does. The entire cumulative edge comes from a small cluster of divergent allocation decisions, concentrated in 2020–2021, where rolling twelve-month relative return briefly exceeded 40 percentage points before fading back toward zero. Neither the paired t-test (p = 0.1696) nor the Wilcoxon test (p = 0.4237) reaches significance. The regime decomposition is the most useful part: Green months contributed exactly zero excess return (the strategies were identical there), Yellow months contributed 29.46 percentage points or 81.88% of the total, and the rare Red regime — only three observations — contributed the remaining 18.12%. So the defensible claim rests on the 48-month Yellow sample, not on crisis heroics. The Top 1 versus Top 2 split is the other lesson: diversifying across two assets dilutes exactly the concentrated ranking decisions that generated the edge, while keeping the higher turnover cost, so VIX Top 2 converges to its benchmark and falls behind it once costs rise.
-
-Data and reproduction: monthly rebalanced ETF proxy backtest on SPY, VXF, EFA, AGG, and BIL from August 2017 through June 2026 (107 completed return months, 108 classified signal months), with the volatility regime derived from the ^VIX index. Results are hypothetical and gross of management fees. No code or data release accompanies the post, and the exact VIX regime thresholds and per-regime lookback lengths are described qualitatively rather than specified numerically.
-
-Key metrics: VIX Top 1 produced a gross CAGR of 14.59% and net CAGR of 14.09% against 10.23% and 9.87% for 10M Top 1, with net Sharpe of 1.03 versus 0.81 and maximum drawdown of -11.02% versus -12.99% — a net CAGR improvement of 4.22 percentage points and an Information Ratio of 0.46. The advantage survives every cost assumption tested, still returning 12.10% versus 8.44% at 50 bps per unit of turnover, despite higher turnover (36.92% monthly, 4.43x annualised, versus 27.57% and 3.31x). VIX Top 2 by contrast returned 10.30% net against 10.40% for 10M Top 2, with an Information Ratio of 0.01 and near-identical drawdowns (-15.09% versus -15.08%), and falls to 8.88% versus 9.38% at 50 bps. By regime, VIX Top 1 averaged 1.62% monthly in Yellow versus 1.00% for the benchmark, and 4.57% versus 2.39% in Red.
-
-By David Mesicek (Alpha Architect).
-
-`Read the blog post <https://alphaarchitect.com/vix-trend-following-out-of-sample/>`__
-
-A Simple S&P 100 Breakout System from the RealTest Examples File
-------------------------------------------------------------------
-
-A short X post presenting a complete long-only equity trend system in six bullet points, with the author's point being that it ships as an example file with the RealTest backtesting platform rather than being anyone's proprietary edge. The rules: an S&P 100 universe, entry on a 100-day breakout, only fresh breakouts taken, candidates ranked by 100-day rate of change, a Chande-Kroll trailing stop for exits, and position sizing that risks 0.5% of equity per trade adjusted for volatility. The attached screenshot is the RealTest results row for a run labelled ``tf_trailing_stops`` covering 3 January 2006 to 28 August 2026 — 5,195 periods and 973 trades — together with a log-scale equity curve that compounds steadily across the whole span.
-
-**The reported results.** Annualised return 9.63% on 11.87% volatility, Sharpe 0.84, net profit $569,785 compounded, maximum drawdown −15.50% against an average drawdown of 4.65%, and MAR 0.62. The trade statistics are the informative part: only 42.65% of trades win, but the average winner returns 13.50% against an average loser of 5.34%, giving a profit factor of 1.86 and an expectancy of 2.69% per trade. Winners are held 81.24 days on average and losers 22.20 — winners run almost four times as long as losers. Average exposure is 77.32%, and 71.93% of qualifying signals were skipped.
-
-**Why it should work.** Each component maps to a documented effect. The 100-day breakout is a Donchian-style time-series momentum entry sitting squarely in the three-to-twelve-month band where return autocorrelation is strongest, the horizon at which information diffuses slowly through the investor base and momentum traders amplify the move. Ranking simultaneous breakouts by 100-day rate of change adds a cross-sectional momentum filter on top of the time-series one, so capital goes to names that have both just entered a trending state and are among the strongest movers — the two effects are known to be complementary rather than redundant. Restricting to fresh breakouts is housekeeping rather than edge: it stops the system re-entering the same extended move repeatedly and concentrating risk in one leg. The Chande-Kroll stop is ATR-based, so the exit distance scales with each name's own volatility, and pairing it with a fixed 0.5% risk budget means every position contributes roughly the same risk regardless of how volatile the underlying is. That is what keeps portfolio volatility at 11.87% while running 77% average exposure to high-momentum large caps.
-
-The engine, though, is the asymmetry rather than any of the individual rules. A 42.65% win rate is only profitable because the trailing stop truncates losers at roughly 5% while leaving winners uncapped, and the holding-period split — 81 days against 22 — is the mechanical expression of that. This is the standard trend-following payoff, and the reason the S&P 100 universe suits it is liquidity: breakouts in mega-caps fill with little slippage and produce fewer false signals than a small-cap universe would.
-
-**Our reading.** The headline return is not the achievement. Over 2006–2026 the S&P 500 itself compounded at roughly ten percent, so a 9.63% annualised return is at best in line with simply holding the index. What the system delivers is the drawdown profile — a −15.50% worst case across a window that contains the 2008 crisis, against something in the region of −55% for buy-and-hold — which is where the MAR of 0.62 and the modest 11.87% volatility come from. Judged as a return generator it is unremarkable; judged as a way to hold equity beta with a quarter of the tail, it is a reasonable object. One number cuts against the usual trend-following story: skew is −0.47, whereas trend systems are normally positively skewed at the portfolio level. The trade-level payoff is positively skewed as designed, but the book is long-only equities at high average exposure, so daily portfolio returns inherit equity market crash skew rather than the convexity a long/short managed-futures programme would show.
-
-Three reproducibility gaps are worth stating. The post never defines the breakout precisely — a reader asks exactly this in the replies and it is unanswered — so whether it is a close above the prior 100-day high, an intraday high, or something else is unspecified. Nothing is said about whether S&P 100 membership is point-in-time; running today's constituents back to 2006 would be a severe survivorship bias, since those are precisely the mega-caps that won, and while RealTest with Norgate data handles this properly the post does not confirm it was used. And 71.93% of signals were skipped, meaning most qualifying breakouts went untaken because capital or position limits bound, so the result leans heavily on the 100-day ROC ranking to choose well among candidates — a sensitivity the single reported run cannot show.
-
-By Ignis (@ignis55).
-
-`Read the X post <https://x.com/ignis55/status/2093754279710363733>`__

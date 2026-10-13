@@ -299,6 +299,8 @@ Key metrics: not a trading-strategy paper — the result is distributional. The 
 
 `Read the paper <https://www.jstor.org/stable/1913889>`__
 
+.. _example-predictive-order-flow-imbalance-cross-asset-microstructure-a:
+
 Predictive Order Flow Imbalance: Cross-Asset Microstructure Alpha
 ------------------------------------------------------------------
 

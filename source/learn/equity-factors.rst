@@ -10,6 +10,8 @@ This collection covers the foundational factor papers, including quality-minus-j
 
 Related topics include :doc:`Momentum <./momentum>` for momentum factor strategies, :doc:`Portfolio Construction <./portfolio-construction>` for factor portfolio implementation, and :doc:`Machine Learning <./machine-learning>` for ML-based approaches to factor discovery and timing.
 
+For complete worked examples of trading strategies and individual factors, see :doc:`Strategy Examples <./strategy-examples>` and :doc:`Factor Examples <./factor-examples>`.
+
 Quality Minus Junk
 ------------------
 
@@ -136,50 +138,6 @@ By The D. E. Shaw Group.
 
 `Read the article <https://www.deshaw.com/library/concentration-game>`__
 
-Quality-Adjusted Size Effect Verified on Japanese TOPIX500 (Asness et al. 2018)
----------------------------------------------------------------------------------
-
-A verification report applying Asness, Frazzini, Israel, Moskowitz & Pedersen's 2018 paper "Size Matters, If You Control Your Junk" to Japanese TOPIX500 data. The paper argues that the small-cap premium was being suppressed by low-quality small-caps dragging down the factor's average return. When stocks are scored on four quality dimensions and the analysis is run on quality-matched samples, the size premium re-emerges clearly.
-
-The Japanese market backtest (TOPIX500, 2017–2025) confirms the effect with a long-short strategy going long quality small-caps and short large-caps: +8.1% annualized return, 0.88 Sharpe ratio, -12.9% maximum drawdown.
-
-By AI Data Lab (in Japanese).
-
-`Read the report <https://aidatalab.jp/jp/papers/asness2018_size/output/report.html>`__.
-
-Fundamental Indexation Verified on Japanese TOPIX500 (Arnott, Hsu & Moore 2005)
----------------------------------------------------------------------------------
-
-A verification report applying Arnott, Hsu & Moore's 2005 "Fundamental Indexation" paper to Japanese TOPIX500 data. The paper identifies a structural flaw in market-cap weighting: because stock prices contain noise, market-cap indices mechanically overweight overvalued stocks. The fix is to weight by real economic scale — sales, cash flow, dividends, book value.
-
-The Japanese market backtest (TOPIX500, 2017–2025) delivers +10.8% annualized return, 1.03 Sharpe ratio, and -20.1% maximum drawdown. The t-test p-value of 0.0026 confirms very high statistical confidence.
-
-By AI Data Lab (in Japanese).
-
-`Read the report <https://aidatalab.jp/jp/papers/arnott_hsu_moore2005/output/report.html>`__.
-
-Small-Cap × Multi-Factor Composite Verified on Japanese TOPIX500 (Alquist, Israel & Moskowitz 2018)
-------------------------------------------------------------------------------------------------------
-
-A verification report applying Alquist, Israel & Moskowitz's 2018 "Fact, Fiction, and the Size Effect" to Japanese TOPIX500 data. The paper shows that size acts as a powerful amplification catalyst: small × value, small × quality, and small × momentum portfolios each produce significantly higher returns than their large-cap equivalents.
-
-The Japanese market backtest (TOPIX500, 2017–2025) earns the site's top S-rank (91/100): +6.4% annualized return, 1.40 Sharpe ratio, and only -7.2% maximum drawdown. The t-test p-value is <0.0001 and the effect holds in every sub-period tested.
-
-By AI Data Lab (in Japanese).
-
-`Read the report <https://aidatalab.jp/jp/papers/alquist_israel_moskowitz2018/output/report.html>`__.
-
-Combining Three Academic Factor Strategies to Compress Drawdown and Multiply Returns
--------------------------------------------------------------------------------------
-
-A Japanese-language portfolio construction case study examining how combining three independently sourced, uncorrelated factor strategies transforms risk-adjusted performance far beyond what any strategy achieves alone. When combined with equal weighting and monthly rebalancing, the portfolio compresses maximum drawdown from -13.4% (simple average of the three) to -3.2% — a fourfold reduction — while annualized return rises from +8.4% to +11.3%.
-
-The core insight is that drawdown reduction is not merely defensive — it creates leverage headroom that converts correlation-based diversification into a compounding multiplier on absolute returns.
-
-By AI Data Lab (in Japanese).
-
-`Read the post <https://aidatalab.jp/jp/portfolio_process.html>`__.
-
 Finding an Edge in IPOs: Research and a Backtested Mechanical Trading System
 -----------------------------------------------------------------------------
 
@@ -188,6 +146,8 @@ Research into whether IPOs offer a tradable edge, backed by a fully backtested m
 By Peter, CrackingMarkets.
 
 `Read the blog post <https://www.crackingmarkets.com/finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system/>`__
+
+.. _example-economic-uncertainty-and-the-beta-anomaly-in-g10-countries:
 
 Economic Uncertainty and the Beta Anomaly in G10 Countries
 -----------------------------------------------------------
@@ -216,6 +176,8 @@ The author's key observation is that HML-Devil earns a large 31% weight despite 
 In the replies, eq (@derimonkeyfin) asks whether "Sharpe-optimal" means a mean-variance optimisation, and Green Lark confirms it is, clarifying the objective is the mean-to-standard-deviation ratio. Posted by Green Lark (@the_green_lark) in `this discussion <https://x.com/the_green_lark/status/2067925013575929937>`__.
 
 `Read the post <https://x.com/the_green_lark/status/2067925013575929937>`__.
+
+.. _example-skewness-managed-portfolios:
 
 Skewness Managed Portfolios
 ---------------------------
@@ -259,54 +221,3 @@ Data and reproduction: the empirical work uses FRED-MD (McCracken and Ng, 2016),
 Key metrics: for one-month-ahead S&P 500 equity premium forecasts under the AGER factor-selection criterion, HFA4 achieves a full-sample out-of-sample R² of 0.055 (MSE 11.960) and AHFA 0.054 (11.978), against 0.025 for PCA (12.338) and 0.030 for JMCA (12.286), with the MSE ratios significant under Diebold-Mariano. The gap is widest in the crisis-and-post-crisis window, where PCA turns **negative** at −0.006 — worse than the historical-average benchmark — while HFA4 and AHFA both hold 0.044. Under the ER criterion the ordering is preserved (HFA4 0.053 full sample versus PCA 0.029), but under the JJR criterion it collapses: AHFA 0.024 against PCA 0.027, with no significant MSE improvement. In simulations calibrated to FRED-MD, (Adaptive) HFA recovers weak factors more accurately than PCA and improves the proportion of replications selecting the correct number of factors. JEL: G11, G12, G15.
 
 `Read the paper <https://doi.org/10.1080/07350015.2026.2671240>`__
-
-The Volatility Range Expansion Factor
----------------------------------------
-
-A short X post from the same series as :doc:`The Volume Momentum Deviation Factor <./technical-indicators>` — a single-formula cross-sectional stock-selection factor, posted with its quantile backtest and an invitation to reproduce it. The author calls it the Volatility Range Expansion Factor (波动幅度扩散因子), and the stated motivation is that a stock's true daily movement is not captured by the high-low range alone: overnight gaps carry displacement that an intraday range misses entirely. The construction therefore takes the maximum of three distances — the day's range, yesterday's close to today's high, and yesterday's close to today's low — averages it over twelve days, and negates the result.
-
-**The strategy.** The published formula is ``-MEAN(MAX(MAX((HIGH-LOW),ABS(DELAY(CLOSE,1)-HIGH)),ABS(DELAY(CLOSE,1)-LOW)),12)``. The inner expression is exactly Wilder's True Range, so the factor is the negative of a twelve-day simple-average ATR. The leading minus sign is the whole strategy: because these factors are ranked cross-sectionally and the top bucket is bought, negating the average true range means the portfolio goes long the *least* volatile names and the bottom bucket holds the most volatile. Despite the name and the author's framing around volatility expansion and overreaction, what is actually implemented is a low-volatility stock selector. The attached charts are a daily-rebalanced quantile test (rebalance period 1, horizon 1) running from January 2005 to 2026: cumulative long returns of roughly 80x for the top quantile against about 20x for the middle and 12x for the bottom, with the ordering monotone, plus a cumulative Rank IC curve that ends above 30.
-
-**Why it should work.** The mechanism is the low-volatility anomaly, one of the better-documented failures of the CAPM. Investors who want high returns but cannot or will not use leverage bid up high-beta and high-volatility stocks instead, which leaves those names systematically overpriced and their low-volatility counterparts cheap — the betting-against-beta argument of Frazzini and Pedersen. Running alongside it is the lottery-preference effect: retail investors overpay for stocks with a chance of an extreme payoff, and measures of recent extreme movement predict poor subsequent returns for exactly that reason. Both channels are amplified in a market as retail-dominated as Chinese A-shares, which is the plausible reason a plain low-volatility sort produces a Rank IC this persistent. The choice of true range over the simpler high-low range is the one genuinely well-judged detail, and it matters more in this market than elsewhere: under daily price limits a limit-up day can print a tiny high-low range while gapping the full move from the previous close, so a range-only measure would score the most violently moving stocks as quiet ones. Taking the maximum against both gap distances repairs that. The twelve-day window, roughly two and a half trading weeks, is long enough to describe a persistent state rather than a single event.
-
-**Our reading of the main weakness.** True range is measured in currency units and is never normalised by price, so the cross-sectional ranking is dominated by price level rather than by volatility. Prices across a broad A-share universe span two orders of magnitude while percentage true range spans about one, which means a sort on −ATR is substantially a sort on *low price*, and in this market low price is a close proxy for small and micro-cap. The backtest's shape supports that reading: the top quantile is unremarkable until the 2015 small-cap bubble, where it jumps sharply, and its steepest run comes in the 2024–2026 micro-cap rally — both episodes are size-factor events rather than low-volatility events. Dividing by close, or by a moving average of close, would separate the two hypotheses in a single line of code, and is the first thing worth testing before treating this as a volatility factor at all. Three further gaps: the cumulative Rank IC is essentially flat from 2005 to about 2013, so nearly all of a twenty-one-year result comes from the back half; the bottom quantile still returns 12x, meaning most of the headline number is market beta and only the spread is alpha; and a rebalance period of one day implies very high turnover with no transaction costs, stamp duty or borrow reported anywhere, which in A-shares is enough to consume a spread of this size.
-
-By 套利豪仔 (@pritipatelfgoo). Quotations are X's own machine translation from the Chinese original.
-
-`Read the X post <https://x.com/pritipatelfgoo/status/2093215831199297732>`__
-
-Gold and Macro Factors
-----------------------
-
-Ralph Sueppel (Macrosynergy) asks whether theory-based macroeconomic factors have predictive power for gold futures returns, using 30 years of point-in-time data (1996–2026). Rather than mining price history, the study builds conceptual macro factors from economic first principles that should support the gold price, then tests them out of sample. Three thematic scores are constructed: (1) *persistent U.S. financial and monetary ease* — assembled from CPI inflation shortfalls, unemployment increases, credit tightening, real-estate price shortfalls, and equity carry shortfalls; (2) *U.S. dollar stability risk* — excess government deficits, real trade-weighted USD depreciation, and excess Treasury volatility; and (3) *global economic doom* — GDP-weighted consumer and manufacturing "doom" scores across nine developed markets. These are z-scored, aggregated into thematic factors, and finally combined into a single composite "macro support score" for gold.
-
-Our summary: the core claim is that gold behaves as a hedge against monetary debasement, dollar-stability erosion, and global crisis, and that publicly available macro-quantamental data captures those states well enough to time it. Point-in-time discipline is the methodological backbone — every indicator uses only information that would have been available on the day, so the reported edge is genuinely out-of-sample rather than an in-sample fit. The composite macro support score is the strongest single predictor, beating each of its three thematic components, which is the expected payoff from combining diversifying, theory-motivated signals. The economically important result is not just directional gold timing but the gold-versus-equity application: a macro-conditioned long-short between gold and the S&P 500 turned a structurally money-losing "always long gold versus equity" position into a positive-Sharpe strategy, with near-zero correlation to both gold and equity benchmarks — i.e. the value comes from *when* to hold gold, not from a permanent gold tilt. The caveats are the honest ones for this genre: Sharpe ratios are modest (below 0.55), the strategy is a single-asset directional bet with real drawdowns, and the whole apparatus depends on a proprietary macro-quantamental data feed.
-
-Used data and code: the analysis is fully reproducible via an attached Jupyter notebook built on J.P. Morgan Macrosynergy Quantamental System (JPMaQS) data, downloaded through the DataQuery API (48 tickers, 416,571 rows across nine developed-market cross sections — USD, EUR, GBP, JPY, AUD, CAD, CHF, SEK, NOK — from 1990). The notebook uses the open-source ``macrosynergy`` Python package for factor construction (z-scoring, linear composites), signal-return diagnostics, and naive PnL evaluation; JPMaQS access requires a subscription and API credentials.
-
-Key metrics: over 1996–2026 (~368 vol-targeted trading months), the composite macro support score predicts next-month gold futures returns with 55.2% monthly accuracy, a Pearson correlation of 0.133 (p = 0.011) and Kendall tau of 0.113 (p = 0.001) — outperforming each thematic component (financial/monetary ease 0.125, dollar stability 0.103, global doom 0.096). The directional long-short gold strategy earned 6.6% annualised at 14.1% volatility (Sharpe 0.47, Sortino 0.67) versus 4.1% and Sharpe 0.34 for long-only gold, while cutting the peak-to-trough drawdown from −77% to −32% and holding correlation to gold at just 0.12 and to equities at 0.03 (Sharpe stability ratio 2.75). A macro-managed long-only variant improved to a Sharpe of 0.52 (6.8% return, Sortino 0.73). The gold-versus-S&P 500 relative strategy returned 5.7% at 20.6% volatility (Sharpe 0.28) against −2.2% (Sharpe −0.13) for a static always-long-gold-versus-equity position, again with near-zero correlation to both benchmarks.
-
-Introduced by Ralph Sueppel (@macro_synergy) in `this discussion <https://x.com/macro_synergy/status/2096134989041619378>`__, where he notes that "theory-based macro factors have significantly predicted gold futures returns at monthly and quarterly horizons" and that related strategies "would have generated respectable long-term P&L value with little correlation to major market benchmarks."
-
-`Read the paper <https://macrosynergy.com/research/gold-and-macro-factors/>`__
-
-The Price-Volume Decoupling Reversal Factor
----------------------------------------------
-
-Another short, single-formula X post from 套利豪仔 (@pritipatelfgoo), in the same series as :doc:`The Volatility Range Expansion Factor <./equity-factors>` above and :doc:`The Volume Momentum Deviation Factor <./technical-indicators>` — no external write-up, just a factor formula, a paragraph of intuition, and two backtest charts, with an invitation for readers to reproduce it. The author calls it the Price-Volume Decoupling Reversal Factor (价量协同失效反转因子): the premise is that price and volume normally move together — rising prices with rising volume, falling prices with falling volume — and that when this co-movement breaks down over a short window, the resulting "structural mismatch" tends to revert.
-
-**The strategy.** The published formula is ``-1 * RANK(COVARIANCE(RANK(CLOSE), RANK(VOLUME), 5))``. For each stock, close and volume are cross-sectionally ranked every day, then the five-day rolling covariance of those two rank series is taken; a large positive covariance means price and volume have been moving together over the past week, while a value near zero or negative means they have decoupled. Cross-sectionally ranking that covariance and negating the result puts stocks with the *weakest* recent price-volume co-movement at the top of the long bucket, so the strategy is a bet that decoupled names revert toward normal synergy — buying structural divergence and selling structural agreement.
-
-The attached charts are a daily-rebalanced quantile backtest (rebalance period 1, horizon 1) spanning January 2005 to 2026: the top quantile compounds to roughly 60x, versus about 12x for the middle quantile and under 3x for the bottom, alongside a cumulative Rank IC curve that climbs almost monotonically to above 100 over the same period.
-
-**Why it should work.** The mechanism sits close to standard microstructure intuition: a price move accompanied by rising volume usually signals broad participation and a degree of consensus, while a price move without matching volume — or a volume shock without a price reaction — is more consistent with a narrow subset of participants moving price, forced flow, or a temporary imbalance than with information being genuinely absorbed by the market. Ranking on a short five-day covariance window keeps the signal reactive to the kind of transient dislocation that should resolve quickly, rather than to slow, structural shifts in trading activity.
-
-**Our reading of the main weakness.** As posted, the formula gives no way to distinguish a temporary liquidity event from a stock that has simply begun a genuine trend on rising volume — the reversal framing would misclassify the latter as decoupling and bet against it. Rank-covariance of this kind is also sensitive to a stock's baseline volume regime, and no volume-normalisation, sector-neutralisation, or turnover and cost accounting is shown, so the chart evidence is consistent with true reversal alpha but doesn't rule out an uncontrolled size or liquidity tilt either. In the replies, another trader (@DavidHoong1) asked whether this was a repost of an earlier strategy of the author's that he had tested and found didn't work; the author replied simply "Different," so the exchange is inconclusive about this specific factor but a reminder that the account posts many such factors in quick succession.
-
-**Related research.** The idea that a break in the normal price-volume relationship is informative has a long academic history, and the literature is split on which way that information cuts — which sharpens rather than resolves the weakness above. `Campbell, Grossman & Wang (1993) <https://web.mit.edu/wangj/www/pap/CampbellGrossmanWang93.pdf>`__ model risk-averse market makers who absorb selling pressure from liquidity traders and demand a higher expected return for doing so; in their framework a price decline on high volume is a stronger signal of future outperformance than the same decline on low volume, a reversal story. `Llorente, Michaely, Saar & Wang (2002) <http://web.mit.edu/~wangj/www/pap/LlorenteMichaelySaarWang02.pdf>`__ sharpen this by splitting volume by what generates it: returns following high-volume days *continue* when the volume reflects informed, speculative trading, but *reverse* when it reflects risk-sharing or liquidity-driven trading, with the split empirically tracking proxies such as market capitalisation and bid-ask spread. A five-day rank-covariance between price and volume has no way to tell which of these two regimes it is looking at, which is exactly why it cannot cleanly separate the reversal cases the strategy wants from the continuation cases that would work against it.
-
-The high-volume side of the same question has its own literature, with a market-specific wrinkle worth flagging given the A-share setting these charts appear to run on. `Gervais, Kaniel & Mingelgrin (2001) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=146468>`__ document a "high-volume return premium" in US data: stocks with unusually high trading activity over a day or a week tend to appreciate over the following month, which they attribute to volume shocks raising a stock's visibility and subsequent demand. Testing the same premium in China, `Wang, Wen & Singh (2017) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2730453>`__ find it does not hold — high-turnover Chinese stocks instead earn a return *discount* relative to low-turnover stocks, concentrated in the small-cap, low-institutional-ownership names where retail speculation is heaviest. If that discount extends from volume levels to short-horizon price-volume mismatches, it would favour the reversal factor specifically in this market, which is a more market-structure-grounded reason to expect it to work here than the post's own intuition supplies — but it also means the result may not transfer to markets where the high-volume premium runs the other way.
-
-By 套利豪仔 (@pritipatelfgoo). Quotations are X's own machine translation from the Chinese original.
-
-`Read the X post <https://x.com/pritipatelfgoo/status/2099689112630653260>`__

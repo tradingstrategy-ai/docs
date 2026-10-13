@@ -353,6 +353,8 @@ Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/sta
 `Read the paper <https://doi.org/10.2469/faj.v44.n1.16>`__
 
 
+.. _example-simple-dynamic-stock-bond-gold-portfolios:
+
 Simple Dynamic Stock/Bond/Gold Portfolios
 -----------------------------------------
 

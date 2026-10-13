@@ -10,6 +10,8 @@ This collection covers the theoretical foundations of carry in cross-sectional a
 
 Related topics include :doc:`Cryptocurrency <./cryptocurrency>` for broader crypto asset pricing research, :doc:`Statistical Arbitrage <./statistical-arbitrage>` for related relative-value strategies, and :doc:`Market Regimes <./market-regimes>` for regime-conditional carry exposure management.
 
+For complete worked examples of trading strategies and individual factors, see :doc:`Strategy Examples <./strategy-examples>` and :doc:`Factor Examples <./factor-examples>`.
+
 Dissecting Investment Strategies in the Cross Section and Time Series
 ---------------------------------------------------------------------
 
@@ -66,6 +68,8 @@ This paper examines how perpetual futures behave compared to quarterly futures d
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4329400>`__
 
+.. _example-exploring-risk-and-return-profiles-of-funding-rate-arbitrage:
+
 Exploring Risk and Return Profiles of Funding Rate Arbitrage on CEX and DEX
 ----------------------------------------------------------------------------
 
@@ -111,19 +115,6 @@ Our summary: this paper provides clean out-of-sample evidence that funding rates
 Data: Bitcoin perpetual futures funding rate data from Binance and Bybit.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5576424>`__
-
-Crypto Factor Leadership and the Seven-Factor Composite
--------------------------------------------------------
-
-Daniel Szemerey reports a first-half 2026 update on Aperiodic's cross-sectional crypto factors. The best single factor, Polaris, returned +15.35%, while Enhanced Carry returned +12.06%; but the main point is portfolio construction rather than leaderboard chasing. The seven-factor blend returned +9.25% year to date with a 1.80 Sharpe ratio, 9.9% volatility, and a 6.1% maximum drawdown, capturing most of the upside from the winning factor while avoiding the need to forecast which signal would lead.
-
-Entry discussion: Enhanced Carry is the carry sleeve most directly connected to this file. It is not just a naive harvest of perpetual funding payments; the post says its return was largely driven by the predictive signal embedded in funding rates. In practice, that means ranking assets by cross-sectional funding pressure, using a composite across venues, and building a market-neutral long/short book that benefits when expensive-to-own perpetuals subsequently underperform cheaper or negative-funding assets. Supply Velocity is the on-chain supply-risk sleeve: assets with faster token supply growth or inflationary pressure are expected to lag assets with cleaner supply dynamics, although the factor cooled to +4.29% after a much stronger prior year. Margin Risk is a derivatives crowding and liquidation-overhang signal: assets with more positions near forced liquidation thresholds can underperform less leveraged assets because modest price moves can trigger mechanical selling or short-covering cascades. Altair and Relative Illiquidity are liquidity/microstructure signals; Retail Flow is a contrarian flow signal that rebounded as retail positioning shifted. The useful lesson is that these sleeves are economically different enough to diversify one another, so the composite can be more robust than any single "best" factor.
-
-Mentioned by Daniel Szemerey in `this LinkedIn discussion <https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/>`__, where he also links to `Aperiodic Factors <https://factors.aperiodic.io/>`__ for the live factor board.
-
-By Daniel Szemerey.
-
-`Read the post <https://www.linkedin.com/posts/daniel-szemerey_our-best-crypto-alpha-factor-returned-1535-ugcPost-7480553339462754304-ZMPu/>`__
 
 Funding Monitor: Why Settlement Intervals Break Perpetual Carry Math
 --------------------------------------------------------------------
@@ -198,6 +189,8 @@ By SK (@StepOneAi).
 
 `Read the post <https://x.com/StepOneAi/status/2085971924727865757>`__.
 
+.. _example-basis-trading-and-hip-3-spread-capture:
+
 Basis Trading and HIP-3 Spread Capture
 ----------------------------------------
 
@@ -210,6 +203,8 @@ Our summary: read this as a strategy exposition rather than as evidence. The hea
 By Pallas Fund.
 
 `Read the investment thesis <https://app.pallas.fund/thesis/basis-trading-hip-3>`__.
+
+.. _example-trading-crypto-funding-rates-part-1-do-cheaper-funding-coins:
 
 Trading Crypto Funding Rates — Part 1: Do Cheaper-Funding Coins Earn Better Returns?
 ------------------------------------------------------------------------------------
