@@ -29,16 +29,24 @@ We propose a novel Multi-source Aggregated Classification (MAC) method for stock
 Clustered Feature Importance
 -----------------------------
 
-This paper addresses the problem of correlated feature importance in machine learning models applied to financial data. Standard feature importance measures are unreliable when predictors are correlated, a common situation in finance. The clustered feature importance approach groups correlated features and computes importance at the cluster level, providing more reliable attribution.
+Marcos López de Prado introduces Clustered Feature Importance (CFI) to address a major failure mode of standard Mean-Decrease-Impurity (MDI) and Mean-Decrease-Accuracy (MDA) feature-importance measures: the "substitution effect" that distorts importances when two or more features share predictive power. The methodology groups correlated / redundant features into clusters using the Optimal Number of Clusters (ONC) algorithm and then computes importance at the cluster level. Subsequently incorporated into *Machine Learning for Asset Managers* (Cambridge, 2020).
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851167>`__
+Our summary: any research pipeline that selects features by MDI or MDA is vulnerable to collinear-feature substitution — two correlated features will split the true importance between them, causing both to appear weakly important and potentially getting dropped. CFI is the right fix: cluster correlated features first, then compute importance on the clusters, either by shuffling all members of a cluster jointly (clustered MDA) or by aggregating impurity decreases across cluster members (clustered MDI). The cluster count is data-driven via ONC, which uses a silhouette-t-statistic elbow over candidate k values. The result is a feature-importance ranking that correctly identifies the importance of *groups* of substitutable features instead of being diluted by their collinearity. For microstructure feature libraries where OFI, book imbalance, and CVD are heavily correlated, CFI is essentially mandatory.
+
+Key metrics: methodological paper; CFI is demonstrated to be robust to both linear and non-linear substitution effects and to recover the correct ranking of relevant feature groups in simulations where standard MDI/MDA fail.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3517595>`__
 
 Does Meta-Labeling Add to Signal Efficacy?
 -------------------------------------------
 
-This paper provides an empirical evaluation of the meta-labeling methodology introduced by López de Prado, testing whether a secondary ML classifier that predicts the probability of a primary signal being correct actually improves trading performance. The paper quantifies the conditions under which meta-labeling adds value and when it does not.
+Ashutosh Singh and Jacques Francois Joubert (Hudson & Thames, 2022) empirically evaluate whether meta-labelling — a secondary machine-learning classifier layered on top of a primary trading signal to predict whether to *act* on that signal — improves signal efficacy. They combine event-based sampling (CUSUM) with triple-barrier labels and test on S&P 500 E-mini futures tick data from July 2011 to February 2019.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851168>`__
+Our summary: meta-labelling is one of the ten fixes in López de Prado's "10 Reasons" paper, and this whitepaper is the best compact empirical demonstration that the fix actually works. Two primary strategies are tested; for both, adding a meta-label classifier improves classification precision and accuracy substantially, and the improvements carry over (albeit more modestly) to the held-out test set. The intuition is that the primary signal decides the *side* of the trade, while the meta-label classifier decides the *size* — specifically whether to take the trade at all or skip it. Skipping low-confidence primary signals filters out a large share of false positives and dramatically reduces the noise in the P&L stream without requiring any change to the primary strategy itself.
+
+Key metrics: Strategy 1 validation set — accuracy improves 20% → 77%, precision 0.21 → 0.39; Strategy 1 test (OOS) — accuracy 17% → 63%, precision 0.17 → 0.20. Strategy 2 validation — accuracy 37% → 56%, precision 0.37 → 0.42. Portfolio-level Sharpe and drawdown metrics also improve out-of-sample.
+
+`Read the paper <https://hudsonthames.org/wp-content/uploads/2022/04/Does-Meta-Labeling-Add-to-Signal-Efficacy.pdf>`__
 
 Algorithmic Crypto Trading Using Information-Driven Bars, Triple-Barrier Labeling and Deep Learning
 ----------------------------------------------------------------------------------------------------
@@ -50,9 +58,13 @@ This paper implements the full López de Prado pipeline — information-driven b
 Stock Price Prediction Using Triple-Barrier Labeling and Raw OHLCV Data
 ------------------------------------------------------------------------
 
-This paper applies triple-barrier labeling to generate target labels for stock price prediction from raw OHLCV data, without relying on financial features or alternative data. The study demonstrates that triple-barrier labels align the ML objective with actual trading outcomes, improving the practical utility of ML predictions compared to simple directional classification.
+Sungwoo Kang shows that simple deep learning models trained on raw OHLCV data can match more elaborate models — including XGBoost with engineered technical features — when the prediction target is created using an optimised triple-barrier labelling scheme. Evaluated on the Korean equity universe 2006–2024.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851170>`__
+Our summary: this paper is a useful data point for two questions. First, it confirms that triple-barrier labelling extends beyond the high-frequency microstructure domain where it is usually demonstrated — it works at multi-day horizons on daily equity data. Second, it shows that feature engineering and labelling choices often matter more than model complexity: an LSTM fed only raw OHLCV matches a heavily-engineered XGBoost baseline once the label is defined sensibly. The authors identify the optimal triple-barrier configuration as a 29-day holding-period window with 9% barrier width, which they select to balance the label distribution. The best LSTM configuration is small (hidden size 8, window size 100), which is a useful reminder that model depth is rarely the bottleneck on financial time series.
+
+Key metrics: optimal triple-barrier configuration of 29-day window with 9% barriers; best LSTM configuration has window size 100 and hidden size 8; LSTM on raw OHLCV matches XGBoost with technical indicators; full OHLCV input outperforms close-only or close+volume variants.
+
+`Read the paper <https://arxiv.org/abs/2504.02249>`__
 
 Beyond delta neutrality: Confidence-scaled hedging with machine learning forecasts
 -----------------------------------------------------------------------------------
@@ -135,7 +147,6 @@ XGBoost for Classifying Ethereum Short-term Return Based on Technical Factor
 The concept of digital cash has the potential to completely change how people think about money. Digital currency has emerged as a possible alternative for exchanging currency and traditional payment systems, in addition to a popular investment option due to its potential for high returns. One of the three main varieties of digital currency is cryptocurrency that is secured by blockchain technology. Bitcoin, Ethereum, and many other cryptocurrencies exist in crypto markets. Investing in cryptocurrencies still carries risks and uncertainties due to the price volatility. It is thus important to approach such investments with caution and thoroughly research the market and its risks before making investment decisions. This paper presents an application of AI technology for learning the price movement of Ethereum (ETH) which is second only to Bitcoin in market capitalization. Based on the Technical factor, the XGBoost model is constructed for classification of return on Ethereum close price. The technical indicators such as moving averages and relative strength index, together with the Bitcoin price trend are chosen to determine influence on Ethereum price further used for computing the short-term return separate into 3 classes: downtrend, sideway, and uptrend. The model performance is measured by multiclass ROC-AUC, achieving the micro-average ROC-AUC of 0.66 saying the model is reasonably good at predicting the overall trend of ETH price.
 
 `Read the paper <https://dl.acm.org/doi/fullHtml/10.1145/3605423.3605462>`__.
-
 
 Predicting Cryptocurrency Prices with Machine Learning Algorithms: A Comparative Analysis
 -----------------------------------------------------------------------------------------
@@ -223,7 +234,6 @@ BITCOIN-USD Trading Using SVM to Detect The Current day’s Trend in The Market
 Cryptocurrency trade is now a popular type of investment. Cryptocurrency market has been treated similar to foreign exchange and stock market. The Characteristics of Bitcoin have made Bitcoin keep rising In the last few years. Bitcoin exchange rate to American Dollar (USD) is $3990 USD on November 2018, with daily pice fluctuations could reach 4.55%2. It is important to able to predict value to ensure profitable investment. However, because of its volatility, there’s a need for a prediction tool for investors to help them consider investment decisions for cryptocurrency trade. Nowadays, computing based tools are commonly used in stock and foreign exchange market predictions. There has been much research about SVM prediction on stocks and foreign exchange as case studies but none on cryptocurrency. Therefore, this research studied method to predict the market value of one of the most used cryptocurrency, Bitcoin. The preditct methods will be used on this research is regime prediction to develop model to predict the close value of Bitcoin and use Support vector classifier algorithm to predict the current day’s trend at the opening of the market
 
 `Read the paper <https://www.researchgate.net/publication/331822518_BITCOIN-USD_TRADING_USING_SVM_TO_DETECT_THE_CURRENT_DAY'S_TREND_IN_THE_MARKET>`__.
-
 
 Intelligent Algorithmic Trading Strategy Using Reinforcement Learning and Directional Change
 --------------------------------------------------------------------------------------------
@@ -1047,7 +1057,6 @@ Data and code: daily Bitcoin metadata from the Blockchain Research Center (BRC) 
 Key metrics: regime prediction F1-scores improve with the weighted LSTM compared to unweighted LSTM and ARMA-GARCH baselines, with the weighting hyperparameter lambda controlling emphasis on regime-switch accuracy. For RL trading, the regime-probability variant achieves the highest training reward, but out-of-sample annualized returns, volatility, and Sharpe ratios are not significantly different across the three variants (with regimes, without regimes, probabilities only). The paper does not report final out-of-sample Sharpe ratios or drawdown figures, focusing instead on the training reward progression and regime prediction accuracy.
 
 `Read the paper <https://link.springer.com/article/10.1007/s42521-024-00123-2>`__
-
 
 AutomataGPT: Transformer-Based Forecasting and Ruleset Inference for Two-Dimensional Cellular Automata
 ------------------------------------------------------------------------------------------------------

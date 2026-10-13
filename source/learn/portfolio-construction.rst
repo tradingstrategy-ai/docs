@@ -43,9 +43,17 @@ This paper benchmarks nine portfolio allocation strategies ranging from classica
 Optimizing Portfolio Performance through Clustering and Sharpe Ratio-Based Optimization
 ----------------------------------------------------------------------------------------
 
-This paper combines K-means clustering of assets with Sharpe ratio-based optimization at the cluster level, creating a two-stage approach that first groups correlated assets and then optimizes across clusters. The method improves diversification and out-of-sample performance compared to single-stage optimization.
+This paper introduces a two-stage portfolio construction framework that combines K-Means clustering with Sharpe ratio-based weight optimisation. In the first stage, a universe of financial assets is segmented into clusters based on historical log-returns, grouping together assets with similar return characteristics. In the second stage, each cluster is treated as a sub-portfolio and Sharpe ratio maximisation is applied within each cluster to derive optimal weights — directly incorporating the return/volatility trade-off rather than relying on mean-variance optimisation's sensitivity to expected return estimates.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851175>`__
+The framework is evaluated through a backtesting study across multiple asset classes, comparing the cumulative returns of optimised per-cluster portfolios against a traditional equal-weighted benchmark. The approach allows targeted portfolio construction within homogeneous asset groups while maintaining diversification across clusters.
+
+Key metrics: Optimised portfolios outperform the equal-weighted benchmark in cumulative return terms across the backtest period. Specific Sharpe ratio, max drawdown, and annualised return figures are not reported in the abstract; the primary comparison is cumulative return trajectories per cluster versus the equal-weighted baseline.
+
+Mentioned by `QFinancePapers <https://x.com/QFinancePapers>`__ in `this discussion <https://x.com/QFinancePapers/status/1882220409203962241>`__.
+
+By Keon Vin Park, January 2025.
+
+`Read the paper <https://arxiv.org/abs/2501.12074>`__
 
 Dynamic Black-Litterman
 ------------------------
@@ -351,7 +359,6 @@ Key metrics: no annualised return, Sharpe ratio, or backtest is reported. The ke
 Mentioned by Matias Scalbi in `this X discussion <https://x.com/MatiasScalbi/status/2095669007177101478>`__, which uses a 10% equity decline to contrast constant mix's rebalancing purchase with CPPI's exposure reduction.
 
 `Read the paper <https://doi.org/10.2469/faj.v44.n1.16>`__
-
 
 .. _example-simple-dynamic-stock-bond-gold-portfolios:
 

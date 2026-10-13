@@ -19,12 +19,12 @@ This paper provides a unified framework for decomposing carry, momentum, and val
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2695101>`__
 
-Model-Free RL Framework for Portfolio Allocation with Carry Trade Signals
+Enhancing FX Portfolio Allocations through Reinforcement Learning
 --------------------------------------------------------------------------
 
-This paper applies model-free reinforcement learning to portfolio allocation problems that incorporate carry trade signals, comparing RL-based allocation against mean-variance optimization for FX carry strategies. The study demonstrates that RL agents can adapt to changing carry environments more effectively than static optimization approaches.
+This paper introduces a model-free Reinforcement Learning (RL) framework for portfolio allocation across Foreign Exchange (FX) assets, with a particular focus on carry trade strategies. The study examines whether RL-based approaches can yield distinct outcomes compared to traditional portfolio allocation techniques, such as Mean-Variance Optimization (MVO). The objective is to evaluate the performance of an RL agent in constructing a portfolio driven by FX carry signals and benchmark it against MVO. This work contributes to the literature by demonstrating the adaptability of RL to dynamic FX environments and its potential to outperform static optimization methods under varying market conditions.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150722>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6004794>`__
 
 Geopolitical Risk in Currency Markets
 ---------------------------------------
@@ -57,18 +57,24 @@ Zhenzhen Fan, Feng Jiao, Lei Lü and Xin Tong (2023) study a cross-sectional car
 The Crypto Carry Trade
 -----------------------
 
-This paper examines the classic cash-and-carry trade structure in crypto markets: going long spot while simultaneously shorting perpetual futures to capture the basis premium. The analysis covers the mechanics, risks, and historical returns of this delta-neutral strategy and identifies conditions under which the carry premium is most reliably positive.
+Nicolas Christin, Bryan Routledge, Kyle Soska, and Ariel Zetlin-Jones (Carnegie Mellon) study the long-spot, short-perpetual cash-and-carry trade in bitcoin. They document very large in-sample Sharpe ratios for the strategy and attribute the profits to differences of opinion between leveraged long speculators and capital-constrained arbitrageurs, amplified by exchange funding caps.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262359>`__
+Our summary: this is the paper that first quantified just how large the cash-and-carry carry can be in crypto, and it is the reference point for anyone who claims that "funding rate = free money". The authors carefully separate USDT-settled perps (where carry is richest) from coin-settled perps (where the premium is smaller but still very large) and show that the USDT/coin gap maps directly onto differences in collateral constraints and funding caps. They also decompose carry into a mark-price premium plus an interest component, which lines up with the Ackerer–Hugonnier–Jermann pricing framework. The reported Sharpes are in-sample and benefit from not fully accounting for liquidation risk and exchange risk — but even after generous haircuts, the strategy is extraordinarily profitable relative to traditional carry trades.
+
+Key metrics: in-sample annualised Sharpe ratios of approximately 12.8 for USDT-settled bitcoin perpetuals and 7.0 for coin-settled bitcoin perpetuals. Returns are tightly linked to the level and stickiness of the funding rate and are constrained by exchange-imposed funding caps. Tick-level data from Binance and BitMEX.
+
+`Read the paper <https://www.andrew.cmu.edu/user/azj/files/CarryTrade.v1.0.pdf>`__
 
 Perpetual Futures and Basis Risk: Evidence from Cryptocurrency
 --------------------------------------------------------------
 
-This paper examines how perpetual futures behave compared to quarterly futures during cryptocurrency market crises, documenting that basis risk — the risk that spot and futures prices diverge — spikes during stress events. The analysis identifies the structural features of perpetuals that create basis risk and quantifies the impact on delta-neutral carry strategies.
+Will Gornall, Martin Rinaldi, and Yizhou Xiao compare perpetual versus quarterly bitcoin futures contracts and argue that the small, frequent funding payments embedded in perpetuals materially reduce basis risk during market crises. They develop a tractable model of capital-constrained arbitrage and test its predictions on BitMEX, Binance, and CME futures around large spot moves.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4329400>`__
+Our summary: this paper is the best explanation of *why* perpetuals dominate crypto derivatives volume. Dated futures are structurally fragile in crises because the basis is sensitive to the remaining time to expiry and to collateral availability, so during stress episodes the quarterly basis can blow out by 8–10%, eating through all of the expected carry in a single day. Perpetuals, by contrast, settle PnL continuously via funding payments, which damps the basis dislocation to around 3% in the same stress episodes. The practical implication for basis-trading strategies is that perpetuals are a far better instrument than quarterlies for cash-and-carry during volatile regimes, and funding-rate-based entry rules inherit this crisis-resilient property.
 
-.. _example-exploring-risk-and-return-profiles-of-funding-rate-arbitrage:
+Key metrics: during large spot moves, quarterly bitcoin futures dislocate from spot by 8–10%, while perpetuals dislocate by only ~3%. Drawdowns of common cash-and-carry arbitrage strategies are cut by more than half when implemented on perpetuals instead of quarterlies. The comparison holds across BitMEX, Binance, and CME.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5036933>`__
 
 Exploring Risk and Return Profiles of Funding Rate Arbitrage on CEX and DEX
 ----------------------------------------------------------------------------

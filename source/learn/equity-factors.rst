@@ -56,9 +56,17 @@ This paper examines the rise in US equity market concentration among mega-cap st
 Value Premium: Where Does It Really Come From?
 -----------------------------------------------
 
-This paper investigates the structural source of the value premium, finding that style migrants — stocks that move from growth to value status — drive a disproportionate share of value portfolio returns. The mechanism operates through fundamental improvement among distressed growth companies rather than passive mean reversion of valuations, explaining why the value premium is related to business cycle dynamics.
+This paper investigates the sources of the value premium by distinguishing between newly classified and incumbent value and growth stocks. The authors observe that roughly half of value and growth stocks are newly reclassified each year, and explore whether these "style migrants" — stocks that have recently transitioned into value or growth categories — drive the bulk of the value premium.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827685>`__
+The key finding is that recent style migrants disproportionately drive the value premium. Newly promoted growth stocks persistently underperform, suggesting that the fresh rotations into style categories matter most for explaining the value effect. Not all value is created equal — the source of a stock's value or growth classification carries significant information about future returns.
+
+The spread between new value and new growth stocks is 0.33% per month, more than double the 0.15% per month spread between incumbent value and growth stocks. Annualized, the new entrant value-growth spread is approximately 4.0%, compared to roughly 1.8% for incumbents, indicating that recent style migration accounts for the dominant share of the aggregate value premium.
+
+By Chen, Huang & Jiang.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2026337576387289360>`__: "Not all value is created equal. The fresh rotations matter most."
+
+`Read the paper <https://doi.org/10.1080/0015198X.2026.2624532>`__
 
 Multiples for Valuation: Go High, Go Low, Ignore the Middle
 ------------------------------------------------------------

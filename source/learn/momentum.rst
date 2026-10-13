@@ -13,9 +13,9 @@ Related topics include :doc:`Trend Following <./trend-following>`, which shares 
 Momentum and trend following trading strategies for currencies and bitcoin
 --------------------------------------------------------------------------
 
-This paper tests EMA-based time-series and cross-sectional momentum strategies on currencies and Bitcoin. The authors find that momentum signals generate positive risk-adjusted returns in both asset classes, with Bitcoin exhibiting particularly strong trending behavior. The paper compares various lookback periods and provides practical guidance on implementation for systematic traders.
+Momentum trading strategies are thoroughly described in the academic literature and used in many trading strategies by hedge funds, asset managers, and proprietary traders. Baz et al. (2015) describe a momentum strategy for different asset classes in great detail from a practitioner’s point of view. Using a geometric Brownian Motion for the dynamics of the returns of financial instruments, we extensively explain the motivation and background behind each step of a momentum trading strategy. Constants and parameters that are used for the practical implementation are derived in a theoretical setting and deviations from those used in Baz et al. (2015) are shown. The trading signal is computed as a mixture of exponential moving averages with different time horizons. We give a statistical justification for the optimal selection of time horizons. Furthermore, we test our approach on global currency markets, including G10 currencies, emerging market currencies, and cryptocurrencies. Both a time series portfolio and a cross-sectional portfolio are considered. We find that the strategy works best for traditional fiat currencies when considering a time series based momentum strategy. For cryptocurrencies, a cross-sectional approach is more suitable. The momentum strategy exhibits higher Sharpe ratios for more volatile currencies. Thus, emerging market currencies and cryptocurrencies have better performances than the G10 currencies. This is the first comprehensive study showing both the underlying statistical reasons of how such trading strategies are constructed in the industry as well as empirical results using a large universe of currencies, including cryptocurrencies.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3306117>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2949379>`__.
 
 Momentum trading in cryptocurrencies: short-term returns and diversification benefits
 --------------------------------------------------------------------------------------
@@ -94,9 +94,13 @@ This paper examines the detailed structure of the momentum effect in equities, f
 Time Series Momentum: Is It There?
 ------------------------------------
 
-A skeptical reexamination of the time-series momentum evidence, testing whether the phenomenon holds up under alternative specifications, out-of-sample periods, and risk adjustment methods. The paper provides a balanced assessment of the evidence and identifies conditions under which TSMOM profits are most reliably present.
+Dashan Huang, Jiangyuan Li, Liyao Wang, and Guofu Zhou (Journal of Financial Economics, 2020) reexamine the Moskowitz-Ooi-Pedersen evidence using the same broad futures data set but a more skeptical statistical lens. They argue that pooled regressions overstate the strength of TSMOM because of fixed-effect issues, persistent predictors, and the interaction between volatility scaling and heterogeneous asset means.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2657404>`__
+Our summary: this is the main empirical challenge paper in the TSMOM debate. The authors' point is not that trend-following strategies cannot make money, but that the specific claim of statistically reliable return predictability from past 12-month returns is much weaker than it first appears once you examine assets individually and use bootstrap-adjusted inference. Even if one ultimately disagrees with the conclusion, this paper is essential because it raises the methodological bar for what counts as convincing TSMOM evidence.
+
+Key metrics: in asset-by-asset regressions, 47 of 55 assets have t-statistics below 1.65 and only 3 assets deliver significant out-of-sample R^2 at the 10% level. In pooled regressions the headline t-statistic is 4.34, but the paper reports bootstrap critical values of 12.53 and 4.83, implying the pooled result is not statistically significant under their more conservative tests.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3165284>`__
 
 Bitcoin Intraday Time-Series Momentum
 ---------------------------------------

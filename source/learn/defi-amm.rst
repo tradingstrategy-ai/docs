@@ -27,72 +27,78 @@ We consider the impact of trading fees on the profits of arbitrageurs trading ag
 Optimizing Liquidity Provision on Uniswap v3: A Comparative Analysis of Adaptive Strategies
 ---------------------------------------------------------------------------------------------
 
-This paper examines adaptive strategies for liquidity provision on Uniswap v3's concentrated liquidity framework, comparing passive range selection against dynamic rebalancing approaches. The analysis quantifies how different range widths and rebalancing triggers affect LP returns across different volatility regimes, providing practical guidance for capital-efficient liquidity provision.
+A comprehensive six-month backtesting study (April-September 2024) comparing multiple liquidity provision strategies on ETH/USDC pools in Uniswap v3. Tested approaches include constant intervals, moving averages, and dual-range allocations. The study examines capital efficiency, range width effects, and market volatility impacts, with parameter optimization across different strategy configurations. Results highlight the challenges of active liquidity management in volatile market conditions. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4590720>`__
+`Read the post <https://medium.com/zelos-research/optimizing-liquidity-provision-on-uniswap-v3-a-comparative-analysis-of-adaptive-strategies-for-c049dc30fb7b>`__
 
 How Demeter Improves the Calculation of Liquidity Fees in Uniswap V3
 ---------------------------------------------------------------------
 
-This paper addresses boundary crossing effects in Uniswap v3 fee calculations, demonstrating that naive fee computation methods introduce systematic errors when prices cross tick boundaries during a single block. The Demeter framework provides more accurate fee accounting that better reflects the actual income received by concentrated liquidity providers.
+This post addresses the problem of fee calculation accuracy when prices cross liquidity position boundaries within a single minute. The enhanced algorithm assumes uniform price movement within one-minute intervals and allocates fees proportionally based on how many ticks the price has passed within the market-making range. This boundary crossing detection and linear price interpolation significantly improves backtesting precision for Uniswap V3 liquidity positions. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645182>`__
+`Read the post <https://medium.com/zelos-research/how-demeter-improves-the-calculation-of-liquidity-fees-in-uniswap-v3-81272aa1bf35>`__
 
 Pricing Uniswap V3 with Stochastic Process, Part 4
 ----------------------------------------------------
 
-This paper applies optimal stopping theory and Chapman-Kolmogorov equations to value Uniswap v3 liquidity positions as derivatives contracts. The stochastic process framework provides a principled approach to pricing LP positions that accounts for the path-dependent nature of fee income and impermanent loss under concentrated liquidity.
+A technical exposition of mathematical tools needed for pricing Uniswap V3 positions, including optimal stopping theorems, Laplace transforms, and Chapman-Kolmogorov equations. The authors establish foundations for deriving stopping time formulas that determine when liquidity positions reach price boundaries, covering martingale stopping theorem, two-boundary stopping problems, and exponential martingales. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645183>`__
+`Read the post <https://medium.com/zelos-research/pricing-uniswap-v3-with-stochastic-process-part4-98c8465696b4>`__
 
 Delta Neutral Strategy and Optimization of Uniswap V3
 ------------------------------------------------------
 
-This paper develops a delta-neutral hedging strategy for Uniswap v3 LP positions using AAVE borrowing to offset directional exposure. By dynamically adjusting the hedge ratio, LPs can reduce their impermanent loss exposure while retaining fee income, creating a more stable return stream from concentrated liquidity positions.
+Explores hedging strategies for Uniswap V3 liquidity provision using delta neutrality via AAVE borrowing. The approach divides the initial capital into two parts and uses borrowed assets to offset directional exposure while capturing fee income. The study performs backtesting to identify optimal market-making ranges through volatility-linked parameters, covering Greeks analysis, leveraged liquidity, capital allocation formulas, and volatility-adjusted range selection using the Demeter backtesting framework. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645184>`__
+`Read the post <https://medium.com/zelos-research/delta-neutral-strategy-and-optimization-of-uniswap-v3-a399d07b28d3>`__
 
 Pricing Uniswap V3 with Stochastic Process, Part 5
 ----------------------------------------------------
 
-Extending the stochastic process valuation framework, this paper develops European and American-style option analogies for Uniswap v3 positions. The framework allows LPs to compute fair values for their positions and optimal rebalancing timing using classical options pricing techniques adapted to the DeFi context.
+Presents pricing models for Uniswap V3 positions using stochastic calculus. The work assumes geometric Brownian motion price dynamics and derives both European-style (exit only at boundaries) and American-style (exit anytime) valuation formulas. Fee collection models transition from boundary-only to continuous collection scenarios, covering optimal stopping strategies and boundary crossing problems. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645185>`__
+`Read the post <https://medium.com/zelos-research/pricing-uniswap-v3-with-stochastic-process-part5-dda219a45b0f>`__
 
 An LVR Approach Proof of Guillaume Lambert's Uniswap V3 Implied Volatility
 ---------------------------------------------------------------------------
 
-This paper provides a formal proof of the equivalence between loss-versus-rebalancing (LVR) and the implied volatility embedded in Uniswap v3 LP positions. The result connects DeFi liquidity provision to options pricing theory, showing that LP positions are equivalent to selling options at the AMM's implied volatility.
+Demonstrates that LVR-based and Guillaume Lambert's approaches produce identical implied volatility formulas for Uniswap V3 positions. The authors prove mathematical consistency between the two methodologies, showing both rely on similar assumptions about risk-free rates and instantaneous liquidity conditions. The proof covers LVR instantaneous loss calculations, Lambert's IV formula, normalization approaches, and fee acquisition rates. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645186>`__
+`Read the post <https://medium.com/zelos-research/an-lvr-approach-proof-of-guillaume-lambert-s-uniswap-v3-implied-volatility-6671883e46e2>`__
 
 Implied Volatility from Uniswap V3 Liquidity Positions
 -------------------------------------------------------
 
-This paper extracts implied volatility signals from the distribution of Uniswap v3 liquidity positions across the price range. The concentration of LP positions reveals market participants' collective beliefs about future price ranges, providing a decentralized measure of implied volatility derived entirely from on-chain data.
+Presents methodology for calculating implied volatility in Uniswap V3 by deriving volatility perspectives from liquidity provider behaviors. The approach uses bisection methods to align theoretical option pricing with real market conditions, enabling a distribution of volatility views weighted by their liquidity's dollar value. Covers option pricing formulas, position-level IV analysis, time series IV tracking, and weighted averaging methodology. Part 6 in the Uniswap V3 pricing series. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645187>`__
+`Read the post <https://medium.com/zelos-research/part6-implied-volatility-d8bfee4b7db2>`__
 
 Uniswap v4: Insights on Performance
 -------------------------------------
 
-This paper provides a comparative analysis of Uniswap v4 versus v3, examining how the new hook architecture, singleton design, and gas optimization changes affect LP returns, arbitrage dynamics, and overall market efficiency. The analysis covers early performance data and theoretical implications of v4's architectural improvements.
+A comparative performance analysis of Uniswap v4 versus v3, examining trading execution and liquidity provision metrics. The research shows that v4 trading participation has been gradually increasing and overtaking v3, and for small-to-mid size trades, v4 achieves lower levels of slippage. However, v4 maintains lower overall liquidity than v3, though fee returns are more stable. Covers hook features, trading participation metrics, slippage analysis, and fee generation stability. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645188>`__
+`Read the post <https://medium.com/zelos-research/uniswap-v4-insights-on-performance-a012671e2020>`__
 
 Stochastic Processes and the Pricing of Uniswap V2
 ----------------------------------------------------
 
-This paper applies stochastic process theory to value Uniswap v2 LP positions, deriving closed-form expressions for impermanent loss and loss-versus-rebalancing under geometric Brownian motion price dynamics. The framework establishes the theoretical foundation for understanding AMM LP positions as derivatives contracts.
+Analyzes Uniswap V2 liquidity provider positions through stochastic processes, examining impermanent loss (IL) and loss versus rebalancing (LVR). The authors apply martingale stopping methods to derive pricing formulas for V2 positions, treating them as exotic options. Key findings include that the value of the V2 position is independent of volatility in their model, though they acknowledge this oversimplifies by ignoring position reconstruction costs during price swings. Covers geometric Brownian motion modeling, American perpetual option pricing, and Jensen's inequality applications. By Zelos Research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645189>`__
+`Read the post <https://medium.com/zelos-research/stochastic-processes-and-the-pricing-of-uniswap-v2-f8daf81b0f7b>`__
 
 Vault Allocation Strategies
 ----------------------------
 
-This paper examines the limitations and risks of crypto yield vault strategies, analyzing how TVL growth, rebalancing mechanics, and market impact constraints affect realized returns. The study provides a practical framework for evaluating vault strategy sustainability and identifying when yield-bearing vault products can no longer deliver their historical returns.
+This post examines the quantitative limitations of current crypto vault allocation strategies in DeFi. The author argues that most vault strategies marketed as "yield optimization" are in practice rule-of-thumb routing engines rather than proper quantitative portfolio construction. The analysis identifies five structural weaknesses: absence of formal optimization frameworks (no mean-variance or drawdown minimization, just "higher APY wins"), weak risk modeling relying on caps and allowlists rather than distributions and tail scenarios, ignored correlation across risk factors, static or reactive allocation with little predictive signal, and under-modeled liquidity where withdrawal queues are not priced into allocation decisions.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645190>`__
+The post concludes that current vaults are constrained routing engines with basic risk controls sitting on top of structural yield sources (emissions, lending demand, structural carry), not quantitative funds. The author proposes that the next generation of vaults should incorporate proper objective functions, factor-aware allocation, correlation modeling, and liquidity-adjusted returns to move from the "rules-based allocator" phase to a true "quant portfolio" phase.
+
+No quantitative backtest metrics are presented — the post is a qualitative framework analysis rather than an empirical study with performance results.
+
+Mentioned by `Amy O. Khaldoun <https://www.linkedin.com/in/amykhaldoun>`__ (Vess3l, Quant Consultant) in `this LinkedIn post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__.
+
+`Read the post <https://www.linkedin.com/posts/amykhaldoun_vault-allocation-strategies-ugcPost-7439522102115737600-m6ip/>`__
 
 Arbitrage Opportunities and Efficiency Tests in Crypto Derivatives
 ------------------------------------------------------------------

@@ -41,9 +41,13 @@ This paper analyzes optimal leverage for investors who face genuine uncertainty 
 Wasserstein-Kelly Portfolios
 -----------------------------
 
-This paper develops a distributionally robust version of the Kelly Criterion using Wasserstein distance ambiguity sets, providing portfolio sizing recommendations that are robust to uncertainty about the underlying return distribution. The approach hedges against model misspecification by optimizing against the worst-case distribution within a Wasserstein ball around the empirical distribution.
+Jonathan Yu-Meng Li (2023) proposes a robust version of Kelly portfolio optimization based on Wasserstein distributionally robust optimization. The investor chooses a log-optimal portfolio against the worst-case distribution within a Wasserstein ball around the empirical return distribution, turning the Kelly problem into a tractable convex program that is computationally efficient while explicitly addressing estimation error in the input distribution.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851180>`__
+Our summary: this paper is a practical answer to the biggest weakness of Kelly sizing — sensitivity to the input distribution. Rather than asking the user to pick a fractional-Kelly multiplier or a tail exponent by hand, the Wasserstein-Kelly formulation lets the radius of the ambiguity ball do that work automatically, and the resulting program remains convex. It is a good modern reference for anyone who wants to keep the growth-optimal framing of Kelly but cannot accept how aggressively plug-in Kelly bets on noisy estimates.
+
+Key metrics: empirical tests on financial data show that the Wasserstein-Kelly portfolio outperforms the traditional plug-in Kelly portfolio in out-of-sample evaluation across multiple metrics and delivers noticeably more stable allocations over time.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4372148>`__
 
 Credit Spread News and Financial Market Risk
 --------------------------------------------
