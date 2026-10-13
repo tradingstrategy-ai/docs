@@ -15,14 +15,14 @@ Scale Dependent Dynamics in Equity Market Phase Space
 
 This paper models mean reversion in equity markets as a scale-dependent power-law decay process, documenting that mean-reversion strength varies with both the magnitude of deviation and the time horizon. The framework provides a rigorous theoretical foundation for understanding why some mean-reversion strategies are profitable in certain regimes but not others.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456789>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6380118>`__
 
 Advanced Signal Filtering for Mean Reversion Trading
 -----------------------------------------------------
 
 This paper develops a regime-aware neural signal filter for mean-reversion trading that achieves a Sharpe ratio of 11.05 in backtesting. The approach uses machine learning to identify when mean-reversion signals are likely to succeed versus when trending dynamics will overwhelm reversion attempts, significantly improving the timing of mean-reversion entries.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150721>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6225198>`__
 
 Buy the Dip
 -----------

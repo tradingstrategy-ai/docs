@@ -33,21 +33,7 @@ Clustering Market Regimes Using the Wasserstein Distance
 
 This paper introduces Wasserstein k-means clustering for identifying market regimes from return distributions. Unlike standard clustering that uses Euclidean distance on summary statistics, the Wasserstein approach operates directly on distributional properties, capturing the full shape of the return distribution in each period and identifying regime changes that conventional methods miss.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3830626>`__
-
-Rethinking Trend Following: Optimal Regime-Dependent Allocation
-----------------------------------------------------------------
-
-This paper develops a framework for regime-dependent time-series momentum allocation, showing that the optimal trend signal depends on the current market regime. The authors demonstrate that adapting trend parameters and allocations to the identified regime generates superior risk-adjusted performance compared to static trend following implementations.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3411948>`__
-
-Dynamic Mean-Variance Portfolio Allocation under Regime-Switching Jump-Diffusions with Absorbing Barriers
-----------------------------------------------------------------------------------------------------------
-
-This paper solves the dynamic mean-variance portfolio allocation problem under a regime-switching jump-diffusion model with absorbing barriers representing ruin. The optimal allocation policy depends on the current regime and adapts to regime transitions, providing a rigorous framework for regime-aware portfolio construction under realistic market dynamics.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827694>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3947905>`__
 
 Regularised jump models for regime identification and feature selection
 -----------------------------------------------------------------------
@@ -62,17 +48,6 @@ Dynamic Asset Allocation with Asset-Specific Regime Forecasts
 This article introduces a novel hybrid regime identification-forecasting framework that leverages both unsupervised and supervised learning to generate tailored regime forecasts for individual assets. The statistical jump model derives regime labels, and a gradient-boosted decision tree classifier predicts future regimes using return features and cross-asset macro-features. The framework is applied to a multi-asset portfolio comprising twelve risky assets from 1991 to 2023.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
-
-Forecasting Market Regimes with the sUSDe Term Structure
----------------------------------------------------------
-
-An exploration of how the sUSDe term structure on Pendle can serve as a forward-looking signal for crypto market sentiment and regime forecasting. The article explains how crypto prices are heavily influenced by leveraged trading in perpetual futures, and how Ethena's sUSDe effectively captures the basis from funding rates through delta-neutral strategies.
-
-The article demonstrates that the term spread—the difference between back month and front month implied yields—is highly correlated with underlying yield regimes and produces a stronger signal for returns than the underlying yield alone. Historical analysis supports using this term structure as a leading indicator for changes in cost of carry and BTC price levels.
-
-By Luke Leasure.
-
-`Read the article <https://x.com/0xMether/article/2016201886395990198>`__
 
 Testing the January Barometer as a Regime Filter for Crypto Trend Models
 ------------------------------------------------------------------------
@@ -95,17 +70,6 @@ The article tests systematic approaches to identifying and responding to differe
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/research-article-26-bitcoin-volatility>`__.
-
-Systematic Regime Detection for Momentum Strategy Timing
----------------------------------------------------------
-
-An article on the systematic approach to regime targeting for momentum trading strategies. The article argues that trading against the general market direction is one of the most common causes of losses, and presents a framework for identifying favorable market regimes.
-
-The article covers how to define and detect market regimes, how to adjust strategy exposure based on the current regime, and how to avoid trading during unfavorable conditions. The practical framework helps momentum traders align their positions with the broader market trend while knowing when to reduce exposure.
-
-By Pedma.
-
-`Read the blog post <https://www.tradingresearchub.com/p/optimizing-trading-strategies-mastering>`__.
 
 Detecting VIX Term Structure Regimes
 -------------------------------------
@@ -243,19 +207,6 @@ Key metrics: the paper is primarily methodological/statistical rather than a tra
 Critical view: this is a solid, carefully derived statistical contribution, and expectiles are a defensible (elicitable, coherent) risk target. The main caveats are that the empirical evaluation is essentially descriptive and in-sample: the model is fit to the full Bitcoin sample and interpreted, rather than being used to produce genuinely out-of-sample, regime-conditional VaR/ES forecasts that are backtested against realized exceptions. Regime assignment relies on smoothed probabilities (full-sample information), so the apparent clarity of the regimes would lag in a real-time filtered setting. There is also the usual hidden-Markov risk of overfitting the number of states, and crypto's short, single-asset history (Bitcoin) limits how strongly the regime structure can be claimed to generalize. As a modelling paper it is convincing; as evidence of usable predictive risk performance it is suggestive rather than demonstrated.
 
 `Read the paper <https://link.springer.com/article/10.1007/s11222-023-10377-2>`__
-
-Regime-Switching Factor Investing with Hidden Markov Models
------------------------------------------------------------
-
-This study (Wang, Lin & Mikhelson, Journal of Risk and Financial Management, 2020) uses a hidden Markov model (HMM) to identify latent market regimes in the US stock market and proposes a strategy that switches among factor-investing models depending on the regime currently detected. The authors first backtest an array of individual factor models over a roughly 10.5-year period from January 2007 to September 2017, then train a Gaussian HMM on S&P 500 ETF (SPY) historical return data to label the market into discrete regimes. The investment rule selects, in each regime, the factor model that historically performed best under that regime, producing a dynamic regime-conditional factor allocation.
-
-Our summary: the contribution is a simple, intuitive bridge between unsupervised regime detection and factor rotation, showing that conditioning factor exposure on an HMM-inferred state can beat any single static factor strategy. The headline result is that the regime-switching combination delivered higher absolute returns and better traditional portfolio metrics than each constituent factor model when evaluated out-of-sample.
-
-Key metrics: regimes are detected with a Gaussian HMM trained on SPY; the in-sample factor backtest spans Jan 2007-Sep 2017 and the out-of-sample test spans Sep 2017-Apr 2020 (a window that notably includes the COVID-19 crash). The paper reports that the switching strategy achieves higher absolute returns and superior risk-adjusted metrics than the individual factor models, but it does not present a rigorous standardized table of Sharpe ratios, drawdowns, turnover, or transaction-cost-adjusted returns. No formal VaR/ES backtest or HMM AIC/BIC model-selection results are emphasized.
-
-Critical view: the idea is sound and the out-of-sample window is genuinely held out, which is a point in its favour. However, the evidence is thin and prone to overstatement. The out-of-sample period is short (about 2.5 years) and dominated by a few large events, so a small number of well-timed regime calls can drive most of the outperformance. The "best factor per regime" mapping is learned in-sample, creating a clear data-snooping/selection channel; the number of HMM states and the factor menu are degrees of freedom that can be tuned to flatter results. Crucially, regime labels from an HMM are typically smoothed and the paper does not clearly establish that switching used only real-time filtered probabilities, so look-ahead and regime-detection lag are real concerns. Transaction costs and turnover from switching factor sleeves are not seriously accounted for. Overall: a plausible, well-motivated proof of concept, but the performance claims should be treated as illustrative rather than robustly established.
-
-`Read the paper <https://www.mdpi.com/1911-8074/13/12/311>`__
 
 Identifying Risk Regimes in a Sectoral Stock Index Through a Multivariate Hidden Markov Framework
 -------------------------------------------------------------------------------------------------

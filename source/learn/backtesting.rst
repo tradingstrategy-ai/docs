@@ -29,7 +29,7 @@ The Sharpe Stability Ratio: Temporal Consistency of Risk-Adjusted Performance
 
 This paper introduces the Sharpe Stability Ratio, a metric that measures how consistently a strategy delivers its risk-adjusted performance over time rather than simply its average Sharpe ratio over the full sample. A high average Sharpe that comes from a few concentrated periods of outperformance is less reliable than a consistently positive Sharpe across many sub-periods, and this metric quantifies that distinction.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851169>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6344658>`__
 
 The 10 Reasons Most Machine Learning Funds Fail
 -----------------------------------------------

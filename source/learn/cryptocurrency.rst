@@ -22,42 +22,42 @@ Low-volatility strategies for highly liquid cryptocurrencies
 
 This paper develops and tests low-volatility investment strategies for liquid cryptocurrencies, combining volatility targeting with stop-loss rules to control downside risk. The authors document that lower-volatility crypto assets deliver competitive risk-adjusted returns compared to higher-volatility alternatives, consistent with the low-volatility anomaly documented in equity markets.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3302929>`__
+`Read the paper <https://doi.org/10.1016/j.frl.2021.102422>`__
 
 Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing
 -------------------------------------------------------------------
 
 This paper documents the distributional characteristics of cryptocurrency returns, including extreme fat tails, volatility clustering, and unique autocorrelation structures. The authors develop risk-based momentum strategies that account for these distributional properties, showing that momentum signals calibrated for crypto's unique characteristics outperform equity-style implementations.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3098304>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__
 
 Cryptocurrency trading: A systematic mapping study
 --------------------------------------------------
 
 A comprehensive literature review mapping the academic research on cryptocurrency trading strategies. The survey covers technical analysis approaches, machine learning methods, market microstructure studies, and quantitative strategies, providing a structured overview of the state of crypto trading research.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3610006>`__
+`Read the paper <https://doi.org/10.1016/j.jjimei.2024.100240>`__
 
 Optimal Allocation to Cryptocurrencies in Diversified Portfolios
------------------------------------------------------------------
+----------------------------------------------------------------
 
-This paper uses quantitative optimization to determine the optimal portfolio allocation to cryptocurrencies for a mean-variance investor. The analysis finds that the optimal allocation to BTC and ETH in a diversified portfolio is approximately 2.7%, balancing the diversification benefits of low crypto-equity correlations against the high volatility of crypto assets.
+This paper applies four quantitative methods for optimal allocation to Bitcoin and Ether within alternative and balanced portfolios. Using roll-forward historical simulations, all four allocation methods produce a persistent positive allocation to Bitcoin and Ether with a median allocation of about 2.7%, emphasizing the diversification benefits of cryptocurrencies as an asset class.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3401952>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4217841>`__
 
 Risks and Returns of Cryptocurrency
 -------------------------------------
 
 A foundational paper on cryptocurrency asset pricing that characterizes the risk-return tradeoff for major cryptocurrencies. The authors document systematic risk factors in crypto markets and analyze how these factors relate to traditional asset pricing models, providing a framework for thinking about crypto risk premia.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3506504>`__
+`Read the paper <https://doi.org/10.3386/w24877>`__
 
 Common Risk Factors in Cryptocurrency
 --------------------------------------
 
 This paper develops a three-factor model for cryptocurrency returns — market, size, and momentum factors — analogous to the Fama-French model in equities. The factor model explains a substantial portion of the cross-section of crypto returns and provides a framework for evaluating whether trading strategies generate genuine alpha or simply load on common factors.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3379347>`__
+`Read the paper <https://doi.org/10.3386/w25882>`__
 
 A Factor Model for Cryptocurrency Returns
 ------------------------------------------
@@ -66,21 +66,21 @@ Daniele Bianchi and Mykola Babiak develop a latent-factor model for cryptocurren
 
 Our summary: this paper is the natural next step after the early crypto factor literature. Whereas Liu-Tsyvinski-Wu establish that crypto has its own factor structure, Bianchi and Babiak ask whether a more flexible latent-factor model can describe that structure better than fixed observable factors. The answer is yes: crypto returns appear to have a richer, time-varying risk architecture than simple bottom-up factor portfolios can capture.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3407248>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3996160>`__
 
 ASRI: An Aggregated Systemic Risk Index for Cryptocurrency Markets
 ------------------------------------------------------------------
 
 This paper develops a systemic risk framework for cryptocurrency markets that simultaneously identifies high-risk periods and characterizes the market regime. The ASRI (Aggregated Systemic Risk Index) combines multiple risk indicators to provide an early warning system for periods of elevated contagion risk in crypto ecosystems.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150726>`__
+`Read the paper <https://arxiv.org/abs/2602.03874>`__
 
 Crypto Contagion
 -----------------
 
 This paper examines how the introduction of Bitcoin ETFs affected the diversification properties of crypto assets within traditional portfolios. The authors find that ETF introduction inverted the diversification relationship — crypto assets became more correlated with equities — demonstrating that institutional adoption changed the fundamental risk characteristics of the asset class.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150727>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5630550>`__
 
 The Low-Volatility Factor in Cryptocurrency Asset Selection
 ------------------------------------------------------------

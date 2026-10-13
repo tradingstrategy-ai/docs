@@ -10,13 +10,6 @@ The research here covers both methodology — how to properly apply ML to financ
 
 Related topics include :doc:`Backtesting & Research Methodology <./backtesting>` for overfitting detection and validation frameworks, :doc:`Time Series Forecasting <./time-series>` for forecasting-specific methods, and :doc:`Volatility Modeling <./volatility>` for ML approaches to volatility prediction.
 
-The 10 Reasons Most Machine Learning Funds Fail
-------------------------------------------------
-
-Marcos López de Prado (Journal of Portfolio Management 2018) distils the ten most common methodological mistakes that cause quantitative ML funds to fail in practice. The paper is the canonical practitioner reference for the methodology family that follows: information-driven bars, triple-barrier labelling, meta-labelling, sample uniqueness, purged K-fold cross-validation, combinatorial purged CV, deflated Sharpe ratio, and probability of backtest overfitting.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3104816>`__
-
 On technical trading and social media indicators for cryptocurrency price classification through deep learning
 --------------------------------------------------------------------------------------------------------------
 
@@ -30,20 +23,6 @@ Multi-source aggregated classification for stock price movement prediction
 We propose a novel Multi-source Aggregated Classification (MAC) method for stock price movement prediction. MAC incorporates the numerical features and market-driven news sentiments of target stocks, as well as the news sentiments of their related stocks. To better represent real market sentiments from the news, we pre-train an embedding feature generator by fitting the news to real stock price movements. Moreover, MAC introduces a graph convolutional network to capture the news effects of related companies on the target stock.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1566253522002019>`__.
-
-Clustering Market Regimes Using the Wasserstein Distance
----------------------------------------------------------
-
-This paper introduces Wasserstein k-means clustering for identifying market regimes from return distributions. Unlike standard clustering that uses Euclidean distance on summary statistics, the Wasserstein approach operates directly on distributional properties, capturing the full shape of the return distribution in each period and identifying regime changes that conventional methods miss.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3830626>`__
-
-Asset Allocation: From Markowitz to Deep Reinforcement Learning
-----------------------------------------------------------------
-
-This paper benchmarks nine portfolio allocation strategies ranging from classical Markowitz mean-variance optimization to deep reinforcement learning approaches, providing a comprehensive comparison of their risk-adjusted performance across different market environments. The study clarifies when traditional optimization approaches outperform ML alternatives and vice versa.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851166>`__
 
 Clustered Feature Importance
 -----------------------------
@@ -64,7 +43,7 @@ Algorithmic Crypto Trading Using Information-Driven Bars, Triple-Barrier Labelin
 
 This paper implements the full López de Prado pipeline — information-driven bars, triple-barrier labeling, meta-labeling, and purged cross-validation — on cryptocurrency data with deep learning classifiers. The study provides one of the most complete empirical implementations of the AFML methodology, demonstrating how each component contributes to out-of-sample performance.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851169>`__
+`Read the paper <https://doi.org/10.1186/s40854-025-00866-w>`__
 
 Stock Price Prediction Using Triple-Barrier Labeling and Raw OHLCV Data
 ------------------------------------------------------------------------
@@ -73,33 +52,12 @@ This paper applies triple-barrier labeling to generate target labels for stock p
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851170>`__
 
-Nonlinear Time Series Momentum
---------------------------------
-
-This paper applies machine learning methods to capture nonlinear features of time-series momentum signals, documenting that momentum signals exhibit nonlinear dynamics that linear models miss. The authors show that ML-enhanced momentum strategies outperform their linear counterparts, particularly in periods of regime change and when lookback window length interacts with current volatility.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950660>`__
-
 Beyond delta neutrality: Confidence-scaled hedging with machine learning forecasts
 -----------------------------------------------------------------------------------
 
 This paper develops a machine learning approach to options hedging that scales the hedge ratio by the model's confidence in its forecast. Rather than maintaining a constant delta hedge, the strategy reduces hedging intensity when the ML model has low confidence and increases it when confidence is high, improving risk-adjusted hedging performance.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851172>`__
-
-Regularised jump models for regime identification and feature selection
------------------------------------------------------------------------
-
-A regime modelling framework that jointly performs regime identification and feature selection using regularised jump models. The framework identifies the active regime from market and macroeconomic variables while simultaneously selecting features that best distinguish between regimes, improving both interpretability and regime identification accuracy compared to standard jump models.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4950423>`__.
-
-Dynamic Asset Allocation with Asset-Specific Regime Forecasts
---------------------------------------------------------------
-
-This article introduces a novel hybrid regime identification-forecasting framework designed to enhance multi-asset portfolio construction by integrating asset-specific regime forecasts. The framework leverages both unsupervised and supervised learning to generate tailored regime forecasts for individual assets, combining a statistical jump model for historical label generation with a gradient-boosted decision tree classifier for real-time regime prediction.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
+`Read the paper <https://doi.org/10.1016/j.frl.2025.109098>`__
 
 Using AI to Improve the ADX Indicator for Breakout Trading
 -----------------------------------------------------------
@@ -107,17 +65,6 @@ Using AI to Improve the ADX Indicator for Breakout Trading
 A video walkthrough demonstrating how AI-suggested modifications to the ADX (Average Directional Index) indicator can dramatically improve a breakout trading strategy's performance. Thomas Nissendal ("Mr. Breakout") takes an e-mini futures strategy built with his breakout trading formula and replaces its traditionally calibrated ADX filter with an AI-proposed approach: applying a simple moving average directly on ADX values with unified period lengths.
 
 `Read the article <https://x.com/buildalpha/status/2019143439485661382>`__
-
-Signal Validation Techniques Inspired by Robert Carver's Systematic Trading
-----------------------------------------------------------------------------
-
-Research Article #35 from Trading Research Hub. Focused on testing and verifying trading signals effectively, inspired by Robert Carver's book "Systematic Trading." The article addresses the common question of whether a given trading signal actually makes sense, using examples like RSI-based rules.
-
-The article presents a framework for signal validation that goes beyond simple backtesting to assess whether a signal has genuine predictive power.
-
-By Pedma.
-
-`Read the blog post <https://www.tradingresearchub.com/p/research-article-35-building-robust>`__.
 
 Adaptive Multi-Signal Position Sizing for Crypto Trading
 ---------------------------------------------------------
@@ -503,15 +450,6 @@ By Yijia Xiao, Edward Sun, Di Luo, and Wei Wang.
 Mentioned by Quant Science in `this discussion <https://x.com/quantscience_/status/2016920152739131471>`__.
 
 `Read the paper <https://arxiv.org/abs/2412.20138>`__
-
-Deep Learning Statistical Arbitrage
-------------------------------------
-
-Statistical arbitrage exploits temporal price differences between similar assets. This paper develops a unifying conceptual framework for statistical arbitrage and a novel data-driven solution. The approach constructs arbitrage portfolios of similar assets as residual portfolios from conditional latent asset pricing factors, extracts time series signals using a convolutional transformer, and uses these signals to form an optimal trading policy that maximizes risk-adjusted returns under constraints. The comprehensive empirical study on daily US equities shows high compensation for arbitrageurs to enforce the law of one price, with consistently high out-of-sample mean returns and Sharpe ratios that substantially outperform benchmark approaches.
-
-By Jorge Guijarro-Ordonez, Markus Pelger, and Greg Zanotti.
-
-`Read the paper <https://arxiv.org/abs/2106.04028>`__
 
 Enhancing Time Series Momentum Strategies Using Deep Neural Networks
 ---------------------------------------------------------------------
@@ -1180,17 +1118,6 @@ Data: daily Bitcoin transaction data from Kaggle, DataHub, and DataWorld (Septem
 Key metrics: ADE-TFT with 8 hidden layers achieves RMSE 167.12 and MAPE 23.17%, outperforming ARIMA (RMSE 302.53, MAPE 42.24%), GRU (RMSE 381.34, MAPE 49.81%), and LSTM (RMSE 603.68, MAPE 87.41%). The paper does not report trading strategy metrics such as Sharpe ratio or drawdown.
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S2405844024161737>`__
-
-Temporal Fusion Transformer-Based Trading Strategy for Multi-Crypto Assets Using On-Chain and Technical Indicators
--------------------------------------------------------------------------------------------------------------------
-
-Ming-Che Lee (2025) introduces a TFT-based forecasting framework that integrates on-chain behavioural metrics with classical technical indicators to forecast five major cryptocurrencies — BTC, ETH, USDT, XRP, and BNB — and translates model outputs into a signal-based trading strategy generating daily buy, hold, or sell signals. On-chain features include Spent Output Profit Ratio (SOPR), Total Value Locked (TVL), active addresses, exchange net flow, Realized Cap HODL Waves, and the Crypto Fear and Greed Index, combined with RSI and MACD as technical signals.
-
-Our summary: this paper is notable for combining on-chain and technical indicator feature sets within a TFT architecture specifically designed for multi-asset crypto trading rather than single-asset forecasting. The attention mechanism of TFT provides interpretability about which on-chain signals drive predictions, which is valuable for understanding whether behavioural blockchain metrics add genuine forecasting value beyond price-derived technical indicators. The benchmark comparison against LSTM, GRU, SVR, and XGBoost using standard regression metrics provides a clean evaluation of the TFT advantage in the crypto domain.
-
-Data: daily data for BTC, ETH, USDT, XRP, and BNB with on-chain metrics from blockchain data providers. No public code repository.
-
-`Read the paper <https://www.mdpi.com/2079-8954/13/6/474>`__
 
 Boosting the Accuracy of Stock Market Prediction via Multi-Layer Hybrid MTL Structure
 -------------------------------------------------------------------------------------

@@ -22,49 +22,49 @@ Momentum trading in cryptocurrencies: short-term returns and diversification ben
 
 This paper studies J/K momentum strategies in cryptocurrency markets, examining whether buying recent winners and selling recent losers generates risk-adjusted returns. Using DCC correlation models to analyze portfolio diversification, the authors document positive momentum payoffs in crypto markets and explore how these strategies interact with traditional asset portfolios.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3505204>`__
+`Read the paper <https://doi.org/10.1016/j.econlet.2019.108728>`__
 
 Pure Momentum in Cryptocurrency Markets
 ----------------------------------------
 
 This paper documents a pure momentum anomaly in cryptocurrency markets, attributing it to the behavioral dynamics of a 24/7 trading environment with no circuit breakers. The authors find momentum effects that are distinct from those in equity markets, driven by the unique microstructure and participant composition of crypto markets.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3984188>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4138685>`__
 
 Optimizing the Persistence of Price Momentum: Which Trends Are Your Friends?
 -----------------------------------------------------------------------------
 
 This paper examines the persistence of price momentum across different market segments, finding that style and industry momentum exhibit different decay patterns than traditional cross-sectional momentum. The authors develop methods for identifying which momentum trends are most likely to persist and provide guidance on lookback period selection.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2906243>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5716502>`__
 
 All Days Are Not Created Equal: Understanding Momentum by Learning to Weight Past Returns
 -----------------------------------------------------------------------------------------
 
 This paper introduces a flexible framework for weighting past returns when constructing momentum signals, challenging the standard equal-weighting of each month in a formation window. The authors learn optimal past-return weights from data, showing that simple modifications to return weighting can significantly improve momentum signal quality and out-of-sample performance.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3745000>`__
+`Read the paper <https://doi.org/10.1016/j.jbankfin.2025.107565>`__
 
 Beat the Market: An Effective Intraday Momentum Strategy for S&P500 ETF (SPY)
 ------------------------------------------------------------------------------
 
 This paper documents an intraday momentum effect in S&P 500 ETF trading, showing that the first half-hour return predicts the last half-hour return with sufficient consistency to generate a strategy that delivered approximately 1,985% return over the sample period. The strategy exploits persistent intraday autocorrelation that has proven robust over multiple years of testing.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2687349>`__
+`Read the paper <https://www.alexandria.unisg.ch/handle/20.500.14171/122124>`__
 
 Risk-adjusted Momentum Strategy Construction and Industry Heterogeneity Analysis Based on STARR Indicator
 ----------------------------------------------------------------------------------------------------------
 
 This paper proposes using the STARR (Stable Tail Adjusted Return Ratio) indicator to construct risk-adjusted momentum strategies that control for downside risk while capturing momentum premia. The authors document industry heterogeneity in momentum returns and show that risk-adjusted construction improves risk-adjusted performance relative to raw return momentum.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4401552>`__
+`Read the paper <https://doi.org/10.54254/2754-1169/2025.lh25691>`__
 
 A Tale of Two Anomalies: The Implications of Investor Attention for Price and Earnings Momentum
 ------------------------------------------------------------------------------------------------
 
 This paper studies how investor attention amplifies both price momentum and earnings momentum, finding that assets receiving less investor attention tend to exhibit stronger momentum effects. The results connect momentum to the gradual information diffusion hypothesis, where attention constraints slow the market's incorporation of fundamental information.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1462497>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=976394>`__
 
 Time Series Momentum
 ---------------------
@@ -80,14 +80,14 @@ Time Series Momentum and Volatility Scaling
 
 This paper decomposes the returns of time-series momentum strategies to show that volatility scaling — adjusting position sizes inversely to recent volatility — is the primary source of their superior risk-adjusted performance. The authors demonstrate that the constant-volatility version of TSMOM outperforms the raw version, providing theoretical and empirical support for volatility-targeted implementation.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2599874>`__
+`Read the paper <https://doi.org/10.1016/j.finmar.2016.05.003>`__
 
 Is Momentum Really Momentum?
 ------------------------------
 
 This paper examines the detailed structure of the momentum effect in equities, finding that the 12-7 month lookback window — which skips the most recent month — is the specification that generates the most robust and statistically significant momentum profits. The paper addresses concerns about data mining and provides guidance on which lookback configurations are most reliable.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1898995>`__
+`Read the paper <https://doi.org/10.1016/j.jfineco.2011.05.003>`__
 
 Time Series Momentum: Is It There?
 ------------------------------------
@@ -101,7 +101,7 @@ Bitcoin Intraday Time-Series Momentum
 
 This paper documents an intraday time-series momentum effect in Bitcoin, showing that the first half-hour of Bitcoin trading predicts the last half-hour with statistical significance. The effect is analogous to the SPY intraday momentum documented by Gao et al. and suggests that the mechanisms driving intraday autocorrelation operate similarly in crypto markets.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3681439>`__
+`Read the paper <https://doi.org/10.1111/fire.12290>`__
 
 Value and Momentum Everywhere
 ------------------------------
@@ -124,21 +124,21 @@ Dynamic Time Series Momentum of Cryptocurrencies
 
 This paper studies time-series momentum across 20 major cryptocurrencies, finding that the TSMOM effect in crypto is stronger and persists over longer horizons than in traditional equity markets. The authors develop a dynamic version of TSMOM that adapts to the unique distributional characteristics of crypto returns.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3901012>`__
+`Read the paper <https://doi.org/10.1016/j.najef.2021.101428>`__
 
 A Trend Factor for the Cross Section of Cryptocurrency Returns
 ---------------------------------------------------------------
 
 This paper develops the CTREND factor — a trend-based cross-sectional factor for cryptocurrency returns — and shows that it explains a significant portion of the cross-section of crypto returns. The factor captures both time-series and cross-sectional momentum components and provides a unified framework for understanding trend-related return predictability in crypto markets.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3913248>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4601972>`__
 
 Nonlinear Time Series Momentum
---------------------------------
+------------------------------
 
-This paper applies machine learning methods to capture nonlinear features of time-series momentum signals, documenting that momentum signals exhibit nonlinear dynamics that linear models miss. The authors show that ML-enhanced momentum strategies outperform their linear counterparts, particularly in periods of regime change.
+This paper applies machine learning methods to capture nonlinear features of time-series momentum signals, documenting that momentum signals exhibit nonlinear dynamics that linear models miss. The authors show that ML-enhanced momentum strategies outperform their linear counterparts, particularly in periods of regime change and when lookback window length interacts with current volatility.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950660>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5933974>`__
 
 Simple Crypto Momentum Strategy: Buying Corrections
 -----------------------------------------------------
@@ -172,17 +172,6 @@ The strategy uses a systematic momentum approach with volatility targeting to de
 By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/249-returns-with-82-less-volatility>`__.
-
-A Counter-Intuitive RSI Strategy Delivering 602% Returns at Half the Drawdown
--------------------------------------------------------------------------------
-
-Research Article #60 from Trading Research Hub. Presents a systematic RSI-based trading strategy that achieved 602.91% total return while limiting maximum drawdown to -33.22% compared to the market's -92.58%. The strategy delivered a Sharpe Ratio of 0.9925, significantly outperforming benchmark risk-adjusted metrics.
-
-The approach transforms traditional RSI interpretations by using a methodical, counter-intuitive framework that turns market volatility from a threat into an opportunity. Rather than relying on complex algorithms or high-frequency trading, the strategy demonstrates how systematic application of a well-tested RSI variant can capture meaningful crypto upside while maintaining remarkably lower risk metrics.
-
-By Pedma.
-
-`Read the blog post <https://www.tradingresearchub.com/p/the-contrarian-rsi-strategy-602-returns>`__.
 
 Applying Faber's Relative Strength Framework to Cryptocurrency Markets
 -----------------------------------------------------------------------

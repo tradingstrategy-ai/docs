@@ -26,7 +26,7 @@ Early Birds Get the Vol: Morning Volatility Uncertainty and Variance Risk Premiu
 
 This paper documents that morning-session implied volatility uncertainty — measured using VVIX, the volatility of the VIX — predicts the next-day variance risk premium with significant lead time. The finding suggests that the early-session options market efficiently incorporates information about forthcoming volatility regimes, providing a tradeable signal for variance-premium strategies.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851171>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6212458>`__
 
 A Simple Approximate Long-Memory Model of Realized Volatility
 -------------------------------------------------------------
@@ -60,17 +60,6 @@ Our summary: this is the most up-to-date comparison of regime-switching approach
 Key metrics: regime-switching HAR models outperform linear HAR in-sample and generally out-of-sample, with Markov-switching preferred over smooth transition. Daily-horizon gains are less clear-cut than weekly and monthly.
 
 `Read the paper <https://www.sciencedirect.com/science/article/pii/S105905602500334X>`__
-
-Regime Changes in Bitcoin GARCH Volatility Dynamics
-----------------------------------------------------
-
-David Ardia, Keven Bluteau, and Maxime Rüede apply Markov-switching GARCH (MSGARCH) models to Bitcoin daily returns and find strong statistical evidence of regime changes in the volatility dynamics. The paper compares single-regime GARCH, EGARCH, GJR-GARCH, and TGARCH specifications against their two-state Markov-switching counterparts, testing both Normal and Student-t innovation distributions. The regime-switching models consistently outperform single-regime specifications for one-step-ahead Value-at-Risk forecasting. Published in Finance Research Letters, Vol. 29, 2019.
-
-Our summary: this is the cleanest direct evidence that crypto volatility is genuinely regime-switching rather than merely persistent. The paper is short and focused, and the result is actionable: a two-state MSGARCH model produces better VaR forecasts than any single-regime GARCH variant for Bitcoin. The authors later released the MSGARCH R package, making this one of the more reproducible crypto volatility results.
-
-Key metrics: MSGARCH models significantly outperform single-regime GARCH for Bitcoin one-day VaR forecasting. The two-state model identifies a low-volatility and a high-volatility regime with markedly different GARCH parameters. Likelihood ratio tests reject the null of a single regime across all specifications tested.
-
-`Read the paper <https://www.sciencedirect.com/science/article/pii/S1544612318303970>`__
 
 Realized Volatility Forecasting with Neural Networks
 ----------------------------------------------------

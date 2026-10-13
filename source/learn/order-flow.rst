@@ -22,14 +22,14 @@ Order Flow and Cryptocurrency Returns
 
 This paper applies the Evans-Lyons order flow framework to cryptocurrency markets, finding that world order flow predicts 11% of daily cryptocurrency returns. The results confirm that the order flow mechanism central to FX market microstructure operates similarly in crypto markets, with important differences driven by crypto's 24/7 trading and retail-dominated participant base.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3507004>`__
+`Read the paper <https://doi.org/10.1016/j.finmar.2026.101047>`__
 
 Flow Toxicity and Liquidity in a High Frequency World
 ------------------------------------------------------
 
 This paper introduces VPIN (Volume-Synchronized Probability of Informed Neotarding), a metric for measuring order flow toxicity derived from the imbalance between buyer- and seller-initiated trades within sequential equal-volume buckets. VPIN provides a real-time estimate of the probability that a liquidity provider is trading against an informed counterparty, with applications to market making risk management and pre-crash detection.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1695460>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1695596>`__
 
 The Price Impact of Order Book Events
 ---------------------------------------
@@ -43,21 +43,21 @@ Queue Imbalance as a One-Tick-Ahead Price Predictor in a Limit Order Book
 
 This paper demonstrates that the imbalance between the bid and ask queue sizes at the best level of the limit order book provides significant one-tick-ahead predictive power for price direction. The metric is computable in real time and provides a valuable signal for high-frequency market making and execution algorithms.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2233580>`__
+`Read the paper <https://arxiv.org/abs/1512.03492>`__
 
 The Micro-Price: A High-Frequency Estimator of Future Prices
 -------------------------------------------------------------
 
 This paper derives the micro-price, a martingale estimator of the next trade price that weights the best bid and ask by the queue imbalance at each level. The micro-price is more accurate than the midprice as a predictor of execution prices and provides a theoretical foundation for using order book imbalance in price prediction.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2812881>`__
+`Read the paper <https://doi.org/10.1080/14697688.2018.1489139>`__
 
 Deep Order Flow Imbalance: Extracting Alpha at Multiple Horizons from the Limit Order Book
 -------------------------------------------------------------------------------------------
 
 This paper applies deep learning to extract alpha from multiple levels of the limit order book simultaneously, capturing order flow imbalance patterns that are invisible when looking only at the best bid and ask. The model processes the full depth of the order book to generate return predictions at multiple horizons, significantly outperforming top-of-book OFI measures.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900244>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900141>`__
 
 Cross-Impact of Order Flow Imbalance in Equity Markets
 -------------------------------------------------------

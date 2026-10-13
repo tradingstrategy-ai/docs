@@ -29,28 +29,28 @@ Geopolitical Risk in Currency Markets
 
 This paper introduces the GHML factor capturing geopolitical risk exposure in currency markets and documents how geopolitical events systematically affect carry trade returns. Countries with higher geopolitical risk exposure offer higher carry premia as compensation, creating a geopolitical carry trade that is distinct from the traditional interest rate carry.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3685139>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6438919>`__
 
 Anatomy of Cryptocurrency Perpetual Futures Returns
 ----------------------------------------------------
 
 This paper decomposes the total returns of cryptocurrency perpetual futures into their constituent components, separating the directional price return from the funding rate component. The decomposition reveals how funding rates contribute to or detract from total returns across different market conditions, providing a quantitative framework for evaluating perpetual futures as investment vehicles.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150724>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6365329>`__
 
 An Empirical Investigation on Risk Factors in Cryptocurrency Futures
 --------------------------------------------------------------------
 
 This paper identifies and characterizes risk factors driving cryptocurrency futures returns, including the basis (spot-futures spread), momentum, and basis-momentum factors. The factor structure provides a framework for understanding what drives cross-sectional differences in crypto futures returns and how these factors relate to traditional asset pricing factors.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3907667>`__
+`Read the paper <https://doi.org/10.1002/fut.22425>`__
 
 The Risk and Return of Cryptocurrency Carry Trade
 -------------------------------------------------
 
 This paper documents a cryptocurrency carry trade strategy that goes long high-funding-rate assets and shorts low-funding-rate assets, capturing the cross-sectional dispersion in perpetual futures funding rates. The strategy generates substantial risk-adjusted returns and provides evidence that funding rates represent a genuine risk premium in crypto markets.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4080671>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666425>`__
 
 The Crypto Carry Trade
 -----------------------
@@ -65,13 +65,6 @@ Perpetual Futures and Basis Risk: Evidence from Cryptocurrency
 This paper examines how perpetual futures behave compared to quarterly futures during cryptocurrency market crises, documenting that basis risk — the risk that spot and futures prices diverge — spikes during stress events. The analysis identifies the structural features of perpetuals that create basis risk and quantifies the impact on delta-neutral carry strategies.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4329400>`__
-
-Predictability of Funding Rates
----------------------------------
-
-This paper develops double-autoregressive models for predicting cryptocurrency perpetual futures funding rates, documenting significant time-series predictability. Funding rate predictability has direct implications for carry strategies and market timing: if funding rates are predictable, carry positions can be timed to enter when carry is most likely to remain positive.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150725>`__
 
 Exploring Risk and Return Profiles of Funding Rate Arbitrage on CEX and DEX
 ----------------------------------------------------------------------------

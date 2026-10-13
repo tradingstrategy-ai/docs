@@ -57,7 +57,7 @@ Didact AI
 
 The anatomy of an ML-powered stock picking engine.
 
-`Read post <https://daehkim.github.io/pair-trading/>`__.
+`Read post <https://principiamundi.com/posts/didact-anatomy/>`__.
 
 Trend following regime filter with HMM
 --------------------------------------

@@ -15,21 +15,21 @@ Catching Crypto Trends: A Tactical Approach for Bitcoin and Altcoins
 
 This paper develops a tactical trend-following framework for Bitcoin and altcoins using Donchian Channel breakout signals combined with volatility-based position sizing. The approach demonstrates consistent performance across different crypto market conditions and provides practical implementation guidance for systematic crypto trend following.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4028648>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5209907>`__
 
 Does Trend-Following Still Work on Stocks?
 -------------------------------------------
 
 This paper examines the profitability of trend-following strategies on US stocks, testing whether the time-series momentum documented in futures markets also generates risk-adjusted returns in equity markets. The authors evaluate multiple trend specifications and find that trend following remains profitable in equities, though with important differences from futures-based implementations.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2528780>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5084316>`__
 
 Following a Trend with an Exponential Moving Average: Analytical Results for a Gaussian Model
 ----------------------------------------------------------------------------------------------
 
 This paper derives analytical results for the P&L distribution of EMA-based trend following strategies under Gaussian price dynamics. The mathematical framework provides closed-form expressions for expected returns, volatility, and Sharpe ratios as functions of the EMA parameter and underlying asset drift, offering theoretical grounding for practitioner choices about moving average length.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2590662>`__
+`Read the paper <https://doi.org/10.1016/j.physa.2013.10.007>`__
 
 Trend Following in Strategic Asset Allocation: A Long-Horizon Analysis
 -----------------------------------------------------------------------
@@ -43,35 +43,28 @@ A Century of Evidence on Trend-Following Investing
 
 AQR's landmark study providing a century of evidence on trend following, testing the strategy from 1880 to the present across equities, currencies, commodities, and bonds. The paper shows that trend following has delivered consistent positive risk-adjusted returns with low correlation to traditional asset classes throughout the entire sample, including periods of market stress.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2660000>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2993026>`__
 
 Two Centuries of Trend Following
 ----------------------------------
 
 This paper extends the trend-following evidence to over 200 years of data across multiple asset classes, achieving a t-statistic exceeding 10.0 for the trend premium. The extreme statistical significance makes it virtually impossible to attribute the trend premium to chance, providing the strongest available evidence that trend-following captures a genuine and persistent market phenomenon.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2718321>`__
-
-Demystifying Managed Futures
------------------------------
-
-This paper shows that the returns of managed futures funds can be largely explained by dynamic trend-following exposures across asset classes. The authors demonstrate that a simple replication approach based on trend signals explains the time-series variation in CTA returns, demystifying the apparent complexity of managed futures and showing that trend following is the core alpha source.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2041960>`__
+`Read the paper <https://doi.org/10.21314/jois.2014.043>`__
 
 Rethinking Trend Following: Optimal Regime-Dependent Allocation
 ----------------------------------------------------------------
 
 This paper develops a framework for regime-dependent time-series momentum allocation, showing that the optimal trend signal depends on the current market regime. The authors demonstrate that adapting trend parameters and allocations to the identified regime generates superior risk-adjusted performance compared to static trend following implementations.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3411948>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6376479>`__
 
 Quantitative Evaluation of Volatility-Adaptive Trend-Following Models in Cryptocurrency Markets
 ------------------------------------------------------------------------------------------------
 
 This paper tests multi-horizon moving average trend signals combined with ATR-based volatility adaptation in cryptocurrency markets. The framework evaluates how adapting trend signals to current volatility conditions improves risk-adjusted performance for crypto trend following, with comprehensive backtesting across Bitcoin and major altcoins.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150720>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5821842>`__
 
 A Trend Following Framework for Gold, Bitcoin, and Nasdaq
 ---------------------------------------------------------

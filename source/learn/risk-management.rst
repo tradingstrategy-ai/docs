@@ -15,28 +15,28 @@ Risk Beyond Volatility: A Conditional Framework for Downside Harm and Capital Lo
 
 This paper develops a conditional framework for measuring downside risk that goes beyond symmetric volatility measures. The approach models the conditional probability and magnitude of capital loss below a threshold, providing risk measures that better align with investors' actual loss aversion and the asymmetric consequences of drawdowns.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851177>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5954796>`__
 
 The Kelly Criterion and the Stock Market
 -----------------------------------------
 
 This paper provides a practitioner-accessible introduction to the Kelly Criterion applied to stock market investing, covering the derivation of optimal bet sizing from first principles and the practical modifications needed for continuous-time markets. The paper bridges the gap between the theoretical optimality of Kelly sizing and the pragmatic use of fractional Kelly in portfolio management.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1265446>`__
+`Read the paper <https://doi.org/10.1080/00029890.1992.11995955>`__
 
 Portfolio Choice and the Bayesian Kelly Criterion
 --------------------------------------------------
 
 This paper develops a Bayesian extension of the Kelly Criterion that incorporates uncertainty about the distribution of returns, producing more conservative leverage recommendations than the classical Kelly formula when parameter uncertainty is high. The Bayesian Kelly framework naturally leads to fractional Kelly sizing as the optimal solution under uncertainty.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851178>`__
+`Read the paper <https://doi.org/10.2307/1428168>`__
 
 Leverage and Uncertainty
 --------------------------
 
 This paper analyzes optimal leverage for investors who face genuine uncertainty (Knightian) about the return distribution, as opposed to risk where probabilities are known. The results show that fat-tailed return distributions and parameter uncertainty jointly imply fractional Kelly as the robust optimal strategy, providing a theoretical justification for the empirical practice of using less than full Kelly sizing.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851179>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2925462>`__
 
 Wasserstein-Kelly Portfolios
 -----------------------------
@@ -48,9 +48,9 @@ This paper develops a distributionally robust version of the Kelly Criterion usi
 Credit Spread News and Financial Market Risk
 --------------------------------------------
 
-This paper shows that credit spread innovations carry information about equity market risk that is not captured by standard equity risk factors. Credit spread widening predicts equity market volatility and drawdown risk with significant lead times, providing a cross-market signal for equity risk management.
+This paper shows that credit spread innovations carry information about equity market risk that is not captured by standard equity risk factors. Credit spread widening predicts equity market volatility and drawdown risk with significant lead times, providing a cross-market signal for equity risk management and tactical allocation.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827684>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5994074>`__
 
 Debugging a Volatility Target Miss: Realizing 20% When Targeting 40%
 ----------------------------------------------------------------------

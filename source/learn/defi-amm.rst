@@ -99,7 +99,7 @@ Arbitrage Opportunities and Efficiency Tests in Crypto Derivatives
 
 This paper tests fiat-free put-call parity conditions in cryptocurrency derivatives markets, documenting the frequency and magnitude of arbitrage deviations. The study examines whether crypto options markets are efficiently priced relative to each other and identifies structural factors that allow deviations to persist.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3609519>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4571439>`__
 
 Yield as a Risk Signal: Part II
 ---------------------------------

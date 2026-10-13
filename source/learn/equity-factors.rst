@@ -28,35 +28,28 @@ This paper challenges conventional factor models by showing that factor pricing 
 
 By Sophia Zhengzi Li, Peixuan Yuan, and Guofu Zhou.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827680>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6083826>`__
 
 A Unified Framework for Anomalies based on Daily Returns
 ---------------------------------------------------------
 
 This paper introduces the DRIF (Daily Return-based Intraday Factor) framework, demonstrating that many documented return anomalies can be captured using daily return decomposition. The unified approach shows that intraday and overnight return components carry different information, with systematic differences across factor portfolios that reveal the mechanism behind return anomalies.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827681>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6005614>`__
 
 R&D Alpha: Investment Intensity and Long-Term Stock Returns
 -----------------------------------------------------------
 
 This paper documents that R&D investment intensity is a strong positive predictor of long-term stock returns, driven by the market's systematic undervaluation of intangible capital. Firms with high R&D expenditure relative to assets subsequently outperform, providing evidence that intangible investment creates a predictable return premium not captured by standard factor models.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827682>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6002295>`__
 
 Magnificent, but Not Extraordinary: Market Concentration in the US and Beyond
 ------------------------------------------------------------------------------
 
 This paper examines the rise in US equity market concentration among mega-cap stocks, documenting that today's concentration reflects genuine fundamental outperformance rather than pure valuation expansion (as in the dot-com era). The analysis explores international comparison, implications for active management, and whether current concentration levels are structurally sustainable.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827683>`__
-
-Credit Spread News and Financial Market Risk
---------------------------------------------
-
-This paper shows that credit spread innovations carry information about equity market risk that is not captured by standard equity risk factors. Credit spread widening predicts equity market volatility and drawdown risk with significant lead times, providing a cross-market signal for equity risk management and tactical allocation.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827684>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6080632>`__
 
 Value Premium: Where Does It Really Come From?
 -----------------------------------------------
@@ -70,56 +63,56 @@ Multiples for Valuation: Go High, Go Low, Ignore the Middle
 
 This paper demonstrates that valuation multiples (P/E, P/B, EV/EBITDA) carry predictive power primarily at the extremes — the cheapest and most expensive stocks. The middle range of valuations provides little signal for subsequent returns, suggesting that factor-based valuation strategies should focus on the tails of the cross-sectional distribution rather than linear ranking.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827686>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6152048>`__
 
 Covariance Implied Risk Factors
 ---------------------------------
 
 This paper develops a heteroskedastic PCA approach that extracts equity risk factors from the covariance structure of returns, allowing factor loadings to vary with market conditions. The method identifies more stable and predictive risk factors than standard PCA, particularly during periods of market stress when factor dynamics shift significantly.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827687>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136149>`__
 
 Anomaly Premiums with Dynamic Exits
 -------------------------------------
 
 This paper develops machine-learning-optimized exit strategies for anomaly-based long-short portfolios, showing that dynamic exits based on return-to-risk conditions significantly improve the risk-adjusted performance of factor strategies. The approach moves beyond static formation-holding windows to adaptive portfolio management that responds to changing factor dynamics.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827688>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6076808>`__
 
 Optimal Factor Timing in a High-Dimensional Setting
 ----------------------------------------------------
 
 This paper develops a framework for equity factor timing in a high-dimensional setting when the number of factors and factor return predictors can be large. To ensure good out-of-sample performance, the approach is disciplined by shrinkage that effectively expresses a degree of skepticism about outsized gains from timing. In their empirical application, the predictors include macroeconomic variables and factor-specific characteristics spreads between the long and short legs of the factors. They find sizable gains from timing equity factors, including for factors constructed only from large-cap stocks.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4864358>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4938729>`__
 
 Cross-Sectional Skewness
 --------------------------
 
 This paper documents that cross-sectional return skewness follows a power law driven by idiosyncratic shocks, with implications for factor portfolio construction and risk management. The skewness structure explains why equal-weighted and value-weighted factor portfolios differ dramatically, and provides a framework for understanding lottery-like return distributions in factor portfolios.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827690>`__
+`Read the paper <https://doi.org/10.3386/w25113>`__
 
 Expected Returns with Cash Flow Trends and Cycles
 --------------------------------------------------
 
 This paper decomposes expected returns into cash flow trend and cycle components, showing that trend-following and mean-reversion signals operate on different horizons of the cash flow process. The decomposition provides a fundamental framework for understanding when value and growth factors are expected to perform and how they interact with business cycle dynamics.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827691>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6332619>`__
 
 Dynamic Factor Allocation via Momentum-Based Regime Switching
 --------------------------------------------------------------
 
 This paper develops a framework for dynamically allocating across equity factors using momentum-based regime switching signals. The approach identifies when each factor is in a favorable regime and adjusts portfolio weights accordingly, generating superior risk-adjusted returns compared to static equal-weight factor allocation.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827692>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6333378>`__
 
 Don't Mix What Should Be Separated: Why Combining Value and Momentum Signals Destroys Alpha
 --------------------------------------------------------------------------------------------
 
 This paper demonstrates that combining value and momentum signals into a composite ranking — a common industry practice — destroys alpha compared to running separate long-short sleeves. The interaction between value and momentum signals is sufficiently negative that the diversification benefit is better captured through separate portfolios, with allocation between them determined at the portfolio construction level.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827693>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6255159>`__
 
 Why Low Beta Improves Value in US Small Caps
 --------------------------------------------

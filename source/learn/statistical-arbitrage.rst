@@ -315,7 +315,7 @@ Trading and Arbitrage in Cryptocurrency Markets
 
 This paper studies cross-exchange arbitrage opportunities in cryptocurrency markets, documenting persistent pricing discrepancies between exchanges and quantifying the returns available from exploiting them. The authors analyze the structural reasons for arbitrage persistence including capital transfer frictions, withdrawal limits, and timing risks.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171150>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171204>`__
 
 Pairs Trading - Selection via Scoring Systems
 ---------------------------------------------

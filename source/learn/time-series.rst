@@ -15,7 +15,7 @@ On Covariance Estimation of Non-Synchronously Observed Diffusion Processes
 
 This paper addresses the problem of estimating covariances between assets that do not trade simultaneously or at the same frequency, a ubiquitous problem in multi-asset portfolio construction when assets trade across different exchanges or time zones. The method provides consistent covariance estimates without the bias introduced by naive synchronization approaches such as last-price imputation.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851172>`__
+`Read the paper <https://doi.org/10.3150/bj/1116340299>`__
 
 Time Series Fundamentals
 ------------------------

@@ -1421,24 +1421,6 @@ Our summary: the à trous (redundant, undecimated) transform is causal-friendly,
 
 `Read the paper <https://doi.org/10.1109/TSMCB.2005.850182>`__
 
-Deep Multi-Hybrid Forecasting System with Random EWT Extraction for Crude Oil Futures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Wang and Wang (Expert Systems with Applications, 2020) segment the Fourier spectrum into six components with the Empirical Wavelet Transform (EWT): the low-frequency trend is routed to a deep bidirectional LSTM, the five high-frequency components to an Elman RNN with a "variational learning rate," and a random-inheritance-formula error-correction step downweights older samples. Applied to WTI and Brent daily futures (1500 train / 500 test, 2011/12–2019), it reports R² 0.9977 (Brent) / 0.9966 (WTI) and SMAPE 0.34%.
-
-Our summary: treat those headline numbers as unusable as a benchmark. The words "leakage" and "look-ahead" never appear, the decomposition figures span the full 2000-point sample while the split is only 1500/500, and R² near 0.998 on daily oil is precisely the pattern the leakage literature (B1–B3) diagnoses — matching it would itself be evidence of a leak. The genuinely portable ideas are frequency-routed model selection (different model per band) and the causal time-decay loss weighting.
-
-`Read the paper <https://doi.org/10.1016/j.eswa.2020.113686>`__
-
-Depth Feature Extraction-Based Deep Ensemble Learning for High-Frequency Futures Price Forecasting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Wang, Chen, Zhu and Xu (Digital Signal Processing, 2022) build a VMD-based pipeline (often misfiled as EWT): Variational Mode Decomposition followed by Savitzky-Golay denoising and multi-scale-entropy band consolidation, with exogenous variables screened by Spearman correlation and compressed by a stacked autoencoder, an attention-LSTM per component, and a LightGBM ensemble that combines the component forecasts non-additively. Applied to CSI 300, rebar and apple futures at 5-minute frequency (2021), it reports MAPE 0.3480 / 0.2639 / 0.1676%.
-
-Our summary: this is another decompose-then-split leak — the decomposition precedes the 60/20/20 split, and the centred Savitzky-Golay filter (window 19) uses samples up to t+9 by construction, roughly 45 minutes of future information on 5-minute bars. The reusable, causally-safe ideas are entropy-based band consolidation and the non-linear (rather than additive) recombination of per-band forecasts via a gradient-boosted ensemble.
-
-`Read the paper <https://doi.org/10.1016/j.dsp.2022.103567>`__
-
 A Practical Guide to Wavelet Analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

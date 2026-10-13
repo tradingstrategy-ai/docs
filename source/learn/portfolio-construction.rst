@@ -26,33 +26,19 @@ This paper combines cardinality constraints with the classical Markowitz mean-va
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4914246>`__.
 
-Optimal Allocation to Cryptocurrencies in Diversified Portfolios
------------------------------------------------------------------
-
-This paper applies four quantitative methods for optimal allocation to Bitcoin and Ether within alternative and balanced portfolios. Using roll-forward historical simulations, all four allocation methods produce a persistent positive allocation to Bitcoin and Ether with a median allocation of about 2.7%, emphasizing the diversification benefits of cryptocurrencies as an asset class.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4217841>`__
-
 Efficient Portfolio Estimation in Large Risky Asset Universes
 --------------------------------------------------------------
 
 This paper develops a constrained sparse regression approach for large-dimensional portfolio optimization that produces stable, interpretable portfolio weights without requiring full covariance matrix estimation. The method handles universes of hundreds or thousands of assets while maintaining the convexity properties needed for tractable optimization.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851174>`__
-
-Covariance Implied Risk Factors
----------------------------------
-
-This paper develops a heteroskedastic PCA approach that extracts equity risk factors from the covariance structure of returns, allowing factor loadings to vary with market conditions. The method identifies more stable and predictive risk factors than standard PCA, providing better covariance matrix estimates for portfolio construction.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827687>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6059635>`__
 
 Asset Allocation: From Markowitz to Deep Reinforcement Learning
-----------------------------------------------------------------
+---------------------------------------------------------------
 
-This paper benchmarks nine portfolio allocation strategies ranging from classical Markowitz mean-variance optimization to deep reinforcement learning approaches, providing a comprehensive comparison of their risk-adjusted performance across different market environments.
+This paper benchmarks nine portfolio allocation strategies ranging from classical Markowitz mean-variance optimization to deep reinforcement learning approaches, providing a comprehensive comparison of their risk-adjusted performance across different market environments. The study clarifies when traditional optimization approaches outperform ML alternatives and vice versa.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851166>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4148379>`__
 
 Optimizing Portfolio Performance through Clustering and Sharpe Ratio-Based Optimization
 ----------------------------------------------------------------------------------------
@@ -66,14 +52,14 @@ Dynamic Black-Litterman
 
 This paper extends the Black-Litterman framework to a continuous-time dynamic setting, allowing investor views to evolve and the model to adapt to changing market conditions. The dynamic formulation provides a principled way to incorporate time-varying beliefs about expected returns while maintaining the model's property of producing well-diversified portfolios.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851176>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811035>`__
 
 Dynamic Mean-Variance Portfolio Allocation under Regime-Switching Jump-Diffusions with Absorbing Barriers
-----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
-This paper solves the dynamic mean-variance portfolio allocation problem under a regime-switching jump-diffusion model with absorbing barriers representing ruin. The optimal allocation policy depends on the current regime and adapts to regime transitions, providing a rigorous framework for regime-aware portfolio construction.
+This paper solves the dynamic mean-variance portfolio allocation problem under a regime-switching jump-diffusion model with absorbing barriers representing ruin. The optimal allocation policy depends on the current regime and adapts to regime transitions, providing a rigorous framework for regime-aware portfolio construction under realistic market dynamics.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827694>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6534579>`__
 
 Why Mean-Variance Optimization Breaks Down
 ------------------------------------------

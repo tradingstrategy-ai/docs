@@ -24,7 +24,7 @@ Key metrics: the study reports a 2.81 Sharpe ratio and 36% annualized alpha for 
 
 This reference covers over 150 distinct trading strategies across equity, fixed income, currency, and commodity markets, organized by asset class and strategy type. Each strategy includes a description of the signal, implementation details, and academic references, making it the most comprehensive publicly available catalog of systematic trading approaches.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__
+`Read the paper <https://doi.org/10.1007/978-3-030-02792-6>`__
 
 Dynamic Trading with Predictable Returns and Transaction Costs
 --------------------------------------------------------------
@@ -139,17 +139,6 @@ By Pedma.
 
 `Read the blog post <https://www.tradingresearchub.com/p/understanding-edge-decay-systematic>`__.
 
-Building Regime-Robust Trading Systems Through Market Cycle Analysis
---------------------------------------------------------------------
-
-An article on building robust long-term trading systems, explaining the market dynamics of inventory accumulation and distribution. The article describes how a trading system with a reliable signal acts like a lighthouse, attracting market participants and creating the conditions for profitable trading through systematic inventory management.
-
-The article emphasizes the importance of distinguishing between systems that work in specific market conditions (like 2020's bull market) versus those that are genuinely robust across different regimes.
-
-By Pedma.
-
-`Read the blog post <https://www.tradingresearchub.com/p/navigating-market-seas-the-art-and>`__.
-
 What Constitutes Genuine Edge in Financial Markets
 ---------------------------------------------------
 
@@ -215,14 +204,14 @@ The CoinAlg Bind: Profitability-Fairness Tradeoffs in Collective Investment Algo
 
 This paper analyzes the tension between profit maximization and fair treatment of investors in collective investment algorithms. The "CoinAlg Bind" describes the fundamental tradeoff where strategies that maximize aggregate portfolio returns may systematically disadvantage certain investor classes, with implications for the design of pooled investment vehicles and robo-advisors.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851168>`__
+`Read the paper <https://arxiv.org/abs/2601.00523>`__
 
 A Quantitative Trading Strategy Based on A Position Management Model
 ---------------------------------------------------------------------
 
 This paper presents a quantitative trading strategy that integrates ARIMA-based return forecasting with a systematic position management model for gold and bitcoin. The framework translates probabilistic return forecasts into position sizing decisions that account for forecast confidence and current market conditions.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851167>`__
+`Read the paper <https://doi.org/10.54097/ajst.v2i1.901>`__
 
 Logistic Regression-Based Systematic Trading: Performance on the S&P 500
 ------------------------------------------------------------------------

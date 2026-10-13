@@ -17,14 +17,14 @@ This paper presents results from a live trading experiment on the Binance Bitcoi
 
 The paper demonstrates the consequences with a naive market making strategy that continuously quotes at the touch and rebalances to zero inventory after each fill. This strategy lost nearly 60% in three days, producing an annualised Sharpe ratio of −109 with an average holding time of 11 seconds and an average loss of 0.44 basis points per roundtrip. The authors then model "reversals" using logistic regression and random forest classifiers. A balanced-inventory strategy that only trades when the model predicts a reversal with probability exceeding the 0.24 threshold improves the Sharpe ratio to 11.97 (logistic regression) while maintaining 327 roundtrips per day.
 
-`Read the paper <https://arxiv.org/abs/2404.18822>`__
+`Read the paper <https://arxiv.org/abs/2502.18625>`__
 
 Optimal Make-Take Fees in a Multi Market Maker Environment
 -----------------------------------------------------------
 
 This paper develops the optimal exchange fee structure when multiple market makers compete to provide liquidity. The analysis shows how maker rebates and taker fees should be set to maximize market quality, volume, and exchange revenue simultaneously, with implications for how exchange design affects market maker behavior and trading costs.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3851173>`__
+`Read the paper <https://doi.org/10.1137/19m1277412>`__
 
 Where Is the Price of Bitcoin Determined? Price Discovery in a Fragmented Market
 ----------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ The Two-Tiered Structure of Cryptocurrency Funding Rate Markets
 
 This paper examines the price discovery dynamics for perpetual futures funding rates across CEX and DEX venues, documenting a two-tiered structure where CEX funding rates lead DEX rates. The analysis quantifies the lead-lag relationship and identifies the structural factors — trading volume, liquidity, and participant composition — that determine which venue plays the price discovery role.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4645191>`__
+`Read the paper <https://doi.org/10.3390/math14020346>`__
 
 Market Microstructure Foundations
 ----------------------------------
