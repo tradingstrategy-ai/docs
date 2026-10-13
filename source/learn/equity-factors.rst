@@ -35,21 +35,37 @@ By Sophia Zhengzi Li, Peixuan Yuan, and Guofu Zhou.
 A Unified Framework for Anomalies based on Daily Returns
 ---------------------------------------------------------
 
-This paper introduces the DRIF (Daily Return-based Intraday Factor) framework, demonstrating that many documented return anomalies can be captured using daily return decomposition. The unified approach shows that intraday and overnight return components carry different information, with systematic differences across factor portfolios that reveal the mechanism behind return anomalies.
+Numerous cross-sectional equity anomalies draw on the same underlying information: the sequence of daily returns over the previous month. Using a data-driven approach, the authors estimate the empirical mapping from the distribution of last month's daily returns to future performance without imposing functional forms. The resulting Daily Return Information Factor (DRIF) earns economically large premia, holds across subsamples and research designs, and remains significant after controlling for the modern factor zoo. DRIF subsumes most short-horizon and lottery-style anomalies and emerges as a key factor in asset pricing tests.
+
+By Nusret Cakici, Christian Fieberg, Gabor Neszveda, Robert J. Bianchi, and Adam Zaremba.
+
+Mentioned by Quantitativo in `this discussion <https://substack.com/@quantitativo/note/c-196576483>`__: "The factor zoo isn't crowded. It's redundant. Daily returns already contain the signal — we just kept slicing them the wrong way."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6005614>`__
 
 R&D Alpha: Investment Intensity and Long-Term Stock Returns
 -----------------------------------------------------------
 
-This paper documents that R&D investment intensity is a strong positive predictor of long-term stock returns, driven by the market's systematic undervaluation of intangible capital. Firms with high R&D expenditure relative to assets subsequently outperform, providing evidence that intangible investment creates a predictable return premium not captured by standard factor models.
+This paper tests whether high research and development (R&D) intensity predicts higher subsequent equity returns in a large-cap U.S. universe using methodology designed for portfolio implementability. Each year, S&P 500 stocks are sorted into quintiles by R&D intensity (R&D expense divided by revenue) and subsequent returns are evaluated with timing designed to mitigate look-ahead bias.
+
+The high-minus-low R&D factor averages 3.73% per year, with monthly factor spanning tests confirming a statistically distinct premium (FF5 alpha = 4.37%, p < 0.01). The investable RD20 strategy, a simple long-only portfolio holding the top 20 stocks by R&D intensity equal-weighted, delivers 7.52% annual excess return versus SPY after transaction costs. The paper documents sector tilts, factor exposures, and regime dependence, noting that much of the value comes from sector tilts and regime dependence rather than a clean textbook factor.
+
+By Abhishek Sehgal.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2019799495723085860>`__: "Worth a read for anyone thinking seriously about intangible capital, innovation exposure, and practical factor implementation."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6002295>`__
 
 Magnificent, but Not Extraordinary: Market Concentration in the US and Beyond
 ------------------------------------------------------------------------------
 
-This paper examines the rise in US equity market concentration among mega-cap stocks, documenting that today's concentration reflects genuine fundamental outperformance rather than pure valuation expansion (as in the dot-com era). The analysis explores international comparison, implications for active management, and whether current concentration levels are structurally sustainable.
+This paper examines equity market concentration in the US since 1926 and in several developed markets. The authors find that current index weights of the largest firms align with historical and international patterns, and that valuation concentration moves with earnings concentration. A geometric Brownian motion benchmark with firm-specific shocks reproduces observed concentration, with idiosyncratic volatility identified as the key driver.
+
+The central finding is that high concentration alone does not justify deviations from market weights or policy conclusions about firm breakups. The market portfolio remains optimal in the authors' benchmark framework. Their evidence constrains pure multiple-expansion narratives and behavioral channels by linking valuations to fundamentals, pushing back on the popular narrative that the Magnificent 7 represent an unprecedented anomaly.
+
+By Per Bye, Jens Soerlie Kvaerner, and Bas J.M. Werker.
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance>`__: "If you believe today's US equity market is uniquely concentrated because of the Magnificent 7, history may disagree."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6080632>`__
 
@@ -71,21 +87,39 @@ Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/stat
 Multiples for Valuation: Go High, Go Low, Ignore the Middle
 ------------------------------------------------------------
 
-This paper demonstrates that valuation multiples (P/E, P/B, EV/EBITDA) carry predictive power primarily at the extremes — the cheapest and most expensive stocks. The middle range of valuations provides little signal for subsequent returns, suggesting that factor-based valuation strategies should focus on the tails of the cross-sectional distribution rather than linear ranking.
+This paper examines whether valuation multiples such as D/P (dividend-to-price), P/E (price-to-earnings), and CAPE (cyclically adjusted P/E) can forecast stock returns, and under what conditions they are most useful. Using US data spanning 1871–2025, the author finds that multiples are far more useful at predicting forward returns when they are at relatively high or low levels than when they sit in the middle of their historical range.
+
+The key finding is that the predictive power of valuation multiples is concentrated at the extremes. When multiples fall into the top or bottom quartile of their historical distribution, the in-sample correlation with subsequent approximately ten-year returns is substantially higher, with R² reaching up to 0.70. Out-of-sample forecasts generated from extreme multiples also significantly outperform those derived from mid-range multiples. The practical implication is that investors should pay close attention to valuations when they are unusually stretched in either direction, but can largely ignore them when they are near the middle of their historical range.
+
+By Javier Estrada (IESE Business School).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2027063861971415486>`__: "Do multiples predict returns? Valuations Only Matter at Extremes."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6152048>`__
 
 Covariance Implied Risk Factors
 ---------------------------------
 
-This paper develops a heteroskedastic PCA approach that extracts equity risk factors from the covariance structure of returns, allowing factor loadings to vary with market conditions. The method identifies more stable and predictive risk factors than standard PCA, particularly during periods of market stress when factor dynamics shift significantly.
+This paper examines the role of heteroskedasticity in extracting latent risk factors from asset returns. Standard principal component analysis (PCA) suffers from distortions when assets exhibit heterogeneous idiosyncratic variances, causing estimated factors to reflect clusters of idiosyncratic risk rather than true systematic risk. The author applies heteroskedastic PCA (heteroPCA) to correct for this bias by iteratively replacing the diagonal of the sample covariance matrix with estimates implied by the off-diagonal structure.
+
+HeteroPCA delivers substantially better out-of-sample cross-sectional pricing performance compared to standard PCA across multiple equity portfolio sorts. The identified factors exhibit clearer economic interpretability, and the implied stochastic discount factor achieves lower Hansen-Jagannathan distances. The method trades off slightly worse time-series fit for much stronger cross-sectional pricing power, a tradeoff the author argues is economically favorable.
+
+Key results: On AP-Tree portfolios, heteroPCA achieves out-of-sample Sharpe ratios of 0.46 (Tree10) and 0.55 (Tree40), compared to 0.18 and 0.26 from standard PCA. Across double-sorted portfolios, heteroPCA consistently outperforms: Size & Book-to-Market Sharpe ratio 0.28 vs 0.15, Size & Accruals 0.21 vs 0.13, Size & Investment 0.32 vs 0.20, and Size & Idiosyncratic Volatility 0.35 vs 0.21. Sharpe ratio gains often exceed 50% relative to standard PCA. RMS pricing errors are also lower, with heteroPCA reducing RMS alpha from 0.85-0.90 to 0.72-0.80 on AP-Tree portfolios.
+
+By Mohammed Mehdi Kaebi (Insper Institute of Education and Research).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2029237686410612736>`__: "Your PCA might be lying to you. Standard PCA distorts latent factors when assets have different idiosyncratic variances. The fix? Heteroskedastic PCA."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136149>`__
 
 Anomaly Premiums with Dynamic Exits
 -------------------------------------
 
-This paper develops machine-learning-optimized exit strategies for anomaly-based long-short portfolios, showing that dynamic exits based on return-to-risk conditions significantly improve the risk-adjusted performance of factor strategies. The approach moves beyond static formation-holding windows to adaptive portfolio management that responds to changing factor dynamics.
+Anomaly premiums are traditionally based on long-short portfolios held passively for a fixed horizon. This paper estimates premiums when exits are instead optimized using machine learning with a computationally light architecture. The authors use randomized kernels to generate high-dimensional representations of time-series inputs. A classifier ingests the inputs and predicts optimal exits. In a conservative universe with only large-cap value-weighted portfolios, dynamic exits generate premiums of about 100 basis points per month for momentum, profitability, and value. These premiums are not replicated with static or random exits, without random re-representations, in non-anomaly portfolios, and are robust to reasonable transaction cost hurdles.
+
+By Nitin Kumar (Nanyang Technological University), Nagpurnanand Prabhala (Johns Hopkins Carey Business School), and Ravi Ranjan (UNC Kenan-Flagler Business School).
+
+Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/2018712332625445079>`__: "Most anomalies don't decay smoothly; they switch off and rotate. Dynamic exits materially improve Sharpe ratios across many classic anomalies, and drawdowns are meaningfully reduced by avoiding low-signal periods. The gains come more from risk control and timing exits than from boosting raw returns."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6076808>`__
 
@@ -99,14 +133,30 @@ This paper develops a framework for equity factor timing in a high-dimensional s
 Cross-Sectional Skewness
 --------------------------
 
-This paper documents that cross-sectional return skewness follows a power law driven by idiosyncratic shocks, with implications for factor portfolio construction and risk management. The skewness structure explains why equal-weighted and value-weighted factor portfolios differ dramatically, and provides a framework for understanding lottery-like return distributions in factor portfolios.
+This paper investigates what distribution best characterizes the time series and cross section of individual stock returns. The authors estimate the degree of cross-sectional return skewness relative to a flexible benchmark that nests many standard models in the literature, including lognormal, stochastic volatility, and jump-diffusion specifications. The central finding is a striking asymmetry across horizons: cross-sectional skewness in monthly returns far exceeds what the benchmark model predicts, while cross-sectional skewness in long-run returns is substantially below what the model predicts.
 
-`Read the paper <https://doi.org/10.3386/w25113>`__
+The resolution lies in fat-tailed idiosyncratic events — rare, firm-specific jumps that generate extreme short-term returns but whose effects attenuate over longer holding periods. The authors show that incorporating power-law-distributed idiosyncratic shocks into the return-generating process is necessary to reconcile both the excess short-horizon skewness and the deficit of long-horizon skewness observed in the data. This has direct implications for asset pricing and portfolio construction: models that ignore fat-tailed idiosyncratic risk will systematically misprice lottery-like payoffs at short horizons and underestimate diversification benefits at longer horizons.
+
+Key metrics: This is a theoretical and empirical asset pricing paper rather than a backtested trading strategy. The primary quantitative results concern the magnitude of cross-sectional skewness relative to model predictions across different return horizons. No annualised return, Sharpe ratio, or drawdown figures are reported. The paper's contribution is to the understanding of return distributions and the role of rare idiosyncratic events in shaping cross-sectional risk.
+
+By Sangmin Oh (Columbia Business School) and Jessica A. Wachter (Wharton / NBER / SEC). Published in Review of Asset Pricing Studies 12(1):155-198, March 2022.
+
+Mentioned by Darren (@ReformedTrader) in `this discussion <https://x.com/ReformedTrader/status/2034719148690087962>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3079715>`__
 
 Expected Returns with Cash Flow Trends and Cycles
 --------------------------------------------------
 
-This paper decomposes expected returns into cash flow trend and cycle components, showing that trend-following and mean-reversion signals operate on different horizons of the cash flow process. The decomposition provides a fundamental framework for understanding when value and growth factors are expected to perform and how they interact with business cycle dynamics.
+This paper argues that cash flow growth contains a permanent trend component, rendering the price-dividend ratio a noisy proxy for expected returns. Using an Extended Kalman Filter to jointly estimate trend growth, cash flow cycles, and expected returns, the authors demonstrate that cash flow noise generates severe attenuation bias in standard predictive regressions — making valuation ratios appear far weaker than they truly are.
+
+By decomposing the price-dividend ratio into discount-rate variation (the return-predicting signal) and cash-flow dynamics (the noise), and then purging this noise, return predictability is substantially restored. Discount-rate variation dominates price-dividend movements at short and medium horizons, while trend growth dominates at longer horizons.
+
+The cleaned signal delivers out-of-sample R² of approximately 9% at the one-year horizon and 22% at the five-year horizon, where traditional valuation ratios uniformly fall short at every tested horizon.
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-valuation-ratios-arent-share-7442576675743256576-pQjJ/>`__: "Valuation ratios aren't weak predictors. They're noisy ones. There's a difference."
+
+By Sebastian Hillenbrand and Odhrain McCarthy.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6332619>`__
 

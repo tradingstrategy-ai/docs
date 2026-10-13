@@ -13,7 +13,13 @@ Related topics include :doc:`Portfolio Construction <./portfolio-construction>` 
 Risk Beyond Volatility: A Conditional Framework for Downside Harm and Capital Loss
 -----------------------------------------------------------------------------------
 
-This paper develops a conditional framework for measuring downside risk that goes beyond symmetric volatility measures. The approach models the conditional probability and magnitude of capital loss below a threshold, providing risk measures that better align with investors' actual loss aversion and the asymmetric consequences of drawdowns.
+Volatility remains the dominant operational proxy for risk in portfolio theory, asset pricing, and performance evaluation. Despite its widespread adoption, volatility treats upside and downside deviations symmetrically and abstracts away from the temporal and path-dependent nature of capital loss. This paper argues that these properties reflect not an economic definition of risk, but a modeling convenience rooted in early mean-variance theory.
+
+The authors propose a conditional framework in which risk is defined as cumulative downside exposure relative to an explicit evaluation horizon and constraint set. This formulation captures both the magnitude and persistence of losses while preserving the asymmetry inherent in capital impairment. The paper shows that volatility-based metrics can misrank risk across strategies and assets exhibiting similar dispersion but substantially different drawdown dynamics.
+
+By Ryan Nelson (The University of Tampa).
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2018955197045694601>`__: "Paper proposes an alternative to volatility where risk is defined as cumulative downside exposure relative to an explicit evaluation horizon... It captures both the magnitude and persistence of losses while preserving the asymmetry inherent in capital impairment."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5954796>`__
 
@@ -52,7 +58,13 @@ Key metrics: empirical tests on financial data show that the Wasserstein-Kelly p
 Credit Spread News and Financial Market Risk
 --------------------------------------------
 
-This paper shows that credit spread innovations carry information about equity market risk that is not captured by standard equity risk factors. Credit spread widening predicts equity market volatility and drawdown risk with significant lead times, providing a cross-market signal for equity risk management and tactical allocation.
+This paper shows that credit spread news, defined by changes and absolute changes in corporate bond credit spreads, predict a substantial share of future variation in financial market risk. The author first documents a strong and robust predictive relationship between credit spread news and financial market risk, then investigates the economic mechanism underlying this relationship.
+
+Both theoretical and empirical evidence highlight a central role for financial intermediaries' risk expectations in driving the predictive power of credit spread changes. The findings establish credit spread news as statistically significant and economically meaningful predictors of financial market risk, offering a practical signal for macro-oriented systematic traders.
+
+By Fabrizio Ghezzi.
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2020764100608004604>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5994074>`__
 

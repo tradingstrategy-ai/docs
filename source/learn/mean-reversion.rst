@@ -15,14 +15,28 @@ For complete worked examples of trading strategies and individual factors, see :
 Scale Dependent Dynamics in Equity Market Phase Space
 ------------------------------------------------------
 
-This paper models mean reversion in equity markets as a scale-dependent power-law decay process, documenting that mean-reversion strength varies with both the magnitude of deviation and the time horizon. The framework provides a rigorous theoretical foundation for understanding why some mean-reversion strategies are profitable in certain regimes but not others.
+This paper extends the stochastic damped harmonic oscillator (SDHO) framework to longer timescales and investigates why the transition from mean-reversion to momentum occurs at the 2-3 month horizon where the Jegadeesh-Titman momentum anomaly begins. Using phase-space analysis on 32 years of SPY daily prices, 154 years of Shiller S&P 500 data, and 308 years of Bank of England UK equity data, the authors show that mean-reversion strength decays as a power law with observation horizon, following k(tau) = A * tau^(-alpha).
+
+The paper identifies the Voronoi-Delaunay tessellation as mathematically equivalent to the finite-volume discretization of the Fokker-Planck equation on irregular phase-space data, connecting the empirical dynamics to non-equilibrium statistical mechanics. A 2x2x2 factorial analysis on both SPY daily data and ES futures minute data (5.38 million observations) resolves an apparent R-squared discrepancy between overlapping and non-overlapping sampling, finding that the sampling effect accounts for 92-97% of the apparent improvement across six futures markets spanning five asset classes. A null-model test shows that the power-law decay arises from temporal coarse-graining of stationary SDHO dynamics rather than from scale-dependent coupling constants, though the practical implications for momentum and mean-reversion strategies remain the same.
+
+Key metrics: the mean-reversion coefficient follows k(tau) = 1.61 * tau^(-1.13) with R-squared = 0.99 across 34 measurements spanning 462 combined years of data. Mean-reversion remains strictly positive (k > 0 in 34/34 measurements) but decays to negligible levels at the momentum horizon. All six futures markets tested cluster within a narrow parameter band (R-squared in [0.56, 0.60], omega in [1.11, 1.22]), suggesting a common dynamical equilibrium across liquid markets.
+
+Mentioned by `Symplectic.Research <https://x.com/QuantSymplectic>`__ in `this discussion <https://x.com/QuantSymplectic/status/2033529584986022067>`__.
+
+By Bruce H. Dean (Independent Researcher), March 2026.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6380118>`__
 
 Advanced Signal Filtering for Mean Reversion Trading
 -----------------------------------------------------
 
-This paper develops a regime-aware neural signal filter for mean-reversion trading that achieves a Sharpe ratio of 11.05 in backtesting. The approach uses machine learning to identify when mean-reversion signals are likely to succeed versus when trending dynamics will overwhelm reversion attempts, significantly improving the timing of mean-reversion entries.
+This paper develops a regime-aware mean-reversion trading framework in which adaptive neural signal filters determine the latent fair price of an asset. The core idea is that the spot price is driven by high-frequency noise around a smooth "fair value", and the spread between the two creates buy/sell opportunities. The authors introduce a novel optimisation objective — the Local Average Filtering Objective (LAFO) — which interpolates between pointwise fitting and global averaging, yielding a controllable low-pass filter. Penalty terms restore identifiability, encode structural regime assumptions, and stabilise the extracted signal. Modern neural network architectures — including recurrent, convolutional, and state-space models — are shown to approximate solutions within this framework.
+
+On S&P 500 intraday data (2-minute frequency), the neural filters dramatically outperform traditional EMA baselines. The best-performing model, a 2-layer CNN, achieved an annualised Sharpe Ratio of 11.05, a Sortino Ratio of 39.13, a hit rate of 47.9%, and positive excess returns of 10.5% after transaction costs of 3 bps. WaveNet (Sharpe 8.01, Sortino 24.17) and a Deep Kalman Filter (Sharpe 4.92, Sortino 12.89) also produced strong risk-adjusted returns, while standard EMA filters yielded deeply negative Sharpe ratios. The results demonstrate that appropriate signal extraction is central to mean-reversion profitability.
+
+Mentioned by `Piotr Pomorski (@PtrPomorski) <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2038223897640968316>`__.
+
+By Zhichen Xu, Nick Firoozye, Andreas Koukorinis, Philip Treleaven, and Wilbur Zhu. Department of Computer Science, University College London.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6225198>`__
 
