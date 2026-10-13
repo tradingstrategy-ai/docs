@@ -244,3 +244,93 @@ Mentioned by Stat Arb (@quant_arb) in `this discussion <https://x.com/quant_arb/
 By dima (@dima_quant).
 
 `Read the blog post <https://dimaquant.substack.com/p/does-funding-contain-useful-information>`__.
+
+Funding Rate Suppression Detection in Crypto Derivatives Markets
+----------------------------------------------------------------
+
+A detailed analysis of funding rate manipulation on centralised crypto exchanges, with a focus on the BEAT token on Binance. The author identifies a stark anomaly: a 2:1 long/short ratio that should produce elevated positive funding, yet the rate sits pinned at 0.005% — flat and unresponsive to market conditions.
+
+To systematically detect this behaviour, Margin Syndicate built a Funding Rate Suppression Detector with four layers: (1) **Cross-sectional analysis** — comparing a token's funding rate against its long/short imbalance relative to every other token on the exchange to flag statistical outliers; (2) **Event response** — checking whether funding moves after liquidation events (e.g. 179K in shorts liquidated with no rate movement suggests instant replacement); (3) **Variance analysis** — identifying tokens with near-zero funding variance over 24+ periods while the rest of the exchange fluctuates normally; and (4) **Cross-exchange comparison** — detecting divergences between venues (e.g. 0.60 short ratio on OKX vs 2.31 long ratio on Binance for the same token).
+
+In a `follow-up discussion <https://www.linkedin.com/feed/update/urn:li:ugcPost:7441884273613246464?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7441884273613246464%2C7441891124870500352%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287441891124870500352%2Curn%3Ali%3AugcPost%3A7441884273613246464%29>`__, the author maps these findings to MiCA Article 91 market manipulation provisions — covering wash trading ($5M reported volume vs $240 organic), artificial price positioning, dissemination of misleading volume figures, and cross-exchange manipulation via coordinated positions across venues. The mechanics are broken down: running opposing positions to keep the long/short ratio flat, timing around 8-hour settlement windows, instantly replacing liquidated shorts, and pinning the rate at a level too low to attract arbitrage traders but not negative enough to raise automated flags.
+
+By Steven Paterson, `Margin Syndicate <https://marginsyndicate.co.uk/>`__.
+
+`Read the post <https://www.linkedin.com/posts/steven-paterson-10a1619_why-is-the-funding-rate-on-binance-for-beat-ugcPost-7441884273613246464--e41>`__
+
+Liminal and Rysk: Two Approaches to Yield Generation on Hyperliquid
+-------------------------------------------------------------------
+
+A detailed comparison of two DeFi protocols building yield-generating products on Hyperliquid's perpetual futures infrastructure: Liminal and Rysk Finance. Liminal automates delta-neutral carry strategies by holding spot and shorting perpetuals to capture funding rate payments — a technique long used by professional trading desks. Since crypto perpetual funding rates are positive 85–90% of the time (longs pay shorts), Liminal positions users on the receiving end. The neutral funding rate on Hyperliquid has historically averaged around 10.95% annualised, with rates spiking significantly during high-leverage demand periods. Users deposit stablecoins and receive yield-bearing xTokens (xHYPE, xBTC) that appreciate as funding accumulates, with composability across DeFi lending markets enabling stacked yields.
+
+Rysk takes a different approach, generating yield from options volatility premiums through covered calls and cash-secured puts. The protocol uses a Request for Quote (RFQ) system where market makers compete in 2-second auctions to price options, with settlement handled on-chain. Covered calls on BTC offer 10–142% annualised depending on strike distance, while cash-secured puts pay users a premium for committing to buy at a lower price — effectively monetising conviction while waiting. All options are European-style, physically settled, and fully collateralised. The article provides concrete examples with current pricing, making it a practical primer on how both funding rate capture and options writing work as systematic yield strategies in crypto derivatives markets.
+
+Mentioned by `@0xMacroGuy <https://x.com/0xMacroguy>`__ in `this discussion <https://x.com/0xMacroguy/status/2038991439162413164>`__.
+
+`Read the article <https://x.com/0xMacroguy/status/2038991439162413164>`__
+
+The Delta-Neutral Funding Rate Mechanics Problem: Entry Rate vs. Settlement Rate
+--------------------------------------------------------------------------------
+
+A Twitter thread by @zirodelta examining a key flaw in delta-neutral funding rate strategies: the assumption that the rate you enter at is the rate you receive. Ethena's $3B AUM delta-neutral strategy proved the core thesis — short the perp, hold spot, collect funding — but leaves open a crucial mechanics problem: funding periods run every 1–8 hours depending on the exchange, and the published rate is continuously recalculated within that window. If you enter at 0.03% per 8h but the rate drifts to 0.01% before settlement, you settle at the time-weighted average, not the entry rate. Ethena hedges this across many symbols, but does not eliminate the basis — it hedges it with size.
+
+The thread argues that sharp Sharpe ratios in delta-neutral backtests are misleading: if you backtest using the published 8h rate and assume that is what you receive, you are overstating yield. Direction is predictable (89% of extreme rates mean-revert within 24 hours across a dataset of 9.4M settlements), but magnitude is not — Ornstein-Uhlenbeck describes the direction of travel, not the landing point. The thread introduces "Settled," a protocol designed to address magnitude uncertainty through binary outcomes resolving against actual settled rates. The analogy drawn is to interest rate swaps, which decoupled direction from duration risk; funding rate derivatives do the same one layer down.
+
+By `@zirodelta <https://x.com/zirodelta>`__.
+
+`Read the thread <https://twitter-thread.com/t/2040067413002289243>`__
+
+Crypto Carry
+------------
+
+Maik Schmeling, Andreas Schrimpf, and Karamfil Todorov (BIS Working Paper 1087) analyse the dynamics of the carry — the difference between futures and spot prices — in bitcoin and ether derivatives. They document that crypto carry can exceed 40% per annum with substantial time variation and trace this to two forces: demand from smaller trend-chasing investors seeking leveraged long exposure, and limited arbitrage capital due to regulatory, funding, and margin frictions on the short side.
+
+Our summary: this is the most rigorous academic treatment of the crypto cash-and-carry basis and its predictive content. Interest-rate differentials explain almost none of the variation in crypto carry; the dominant driver is a time-varying convenience yield linked to speculative demand for long leverage. Crucially, high carry is not a free lunch — it acts as a crash-risk premium. The paper explicitly shows that a 10% rise in standardised carry predicts roughly a 22% increase in short-futures liquidations as a fraction of total open interest over the following month, and is associated with richer option-implied crash-risk insurance. This reframes the perp-spot basis not just as an arbitrage target but as a state variable for tail risk.
+
+Key metrics: the authors report crypto carry reaching peaks above 40% annualised across bitcoin and ether futures venues (CME and crypto-native exchanges). Predictive regressions of one-month-ahead short-side liquidations (scaled by open interest) on standardised carry produce statistically significant positive coefficients, implying ~2.2% liquidation response per 1% carry standardisation. Similar predictive content shows up in option skew changes. The carry premium is orders of magnitude larger than in traditional FX carry trades, and the drivers are structurally different.
+
+`Read the paper <https://www.bis.org/publ/work1087.pdf>`__
+
+Fundamentals of Perpetual Futures
+---------------------------------
+
+Songrun He, Asaf Manela, Omri Ross, and Victor von Wachter derive no-arbitrage prices for perpetual futures contracts in both frictionless and cost-adjusted markets. Unlike fixed-maturity futures, perpetual futures have no expiry date, so the usual convergence argument that pins the price to spot at maturity does not apply. Instead, alignment with spot is enforced only by the periodic funding mechanism. The paper derives explicit bounds on the perp-spot deviation in the presence of trading costs and funding frictions, and empirically characterises those deviations across major crypto venues.
+
+Our summary: this paper provides the theoretical backbone for treating the perp-spot basis and funding rate as joint predictive signals. The key result is that perpetual futures are not guaranteed to track spot, so any persistent basis deviation is informative. Deviations are larger in crypto than in traditional FX perpetual analogues, comove strongly across coins (suggesting a common market-wide factor), and decline over time as markets mature — both of which are testable predictions for any trading model that uses basis features. The authors further show that the size of the current deviation is itself a predictor of the next funding payment, which ties the two signals together in a theoretically grounded way.
+
+Key metrics: the authors construct an explicit arbitrage strategy — going long (or short) spot and taking the opposite side in the perpetual — that captures funding payments on BitMEX, Binance, FTX, and OKX. The reported Sharpe ratios of the arbitrage portfolio are high across all exchanges, with the cross-venue strategy delivering materially better risk-adjusted returns than any single-venue implementation. Measured deviations of perp prices from their no-arbitrage values are an order of magnitude larger in crypto than in perpetual-style FX contracts.
+
+`Read the paper <https://arxiv.org/abs/2212.06888>`__
+
+Perpetual Futures Pricing
+-------------------------
+
+Damien Ackerer, Julien Hugonnier, and Urban Jermann derive closed-form no-arbitrage prices for linear, inverse, and quanto perpetual futures contracts in both discrete and continuous time. The paper provides the first fully tractable pricing framework that accounts for the random-maturity nature of perpetuals (the funding mechanism can be viewed as a stream of infinitesimal settlements) and for the distinct payoff geometries of the three main contract types used in crypto derivatives markets.
+
+Our summary: this is the canonical theoretical reference for anyone modelling perpetuals. The authors show that under standard diffusion assumptions, the perpetual-spot basis and the funding rate together encode information about expected spot returns and convenience yields, formalising the intuition behind all the empirical basis/funding predictability papers. Their framework allows a clean decomposition of observed basis into a "fair" component implied by the funding mechanism and a deviation term that can be interpreted as either an arbitrage opportunity or a risk premium. The paper is calibrated to bitcoin perpetual data and provides an explicit benchmark against which to measure empirical dislocations.
+
+Key metrics: under the authors' calibration to BTC perpetuals, observed funding rates and basis deviations line up well with the model's predictions in normal market conditions but diverge in stress episodes. The divergence itself carries information content, consistent with the crash-prediction findings of Schmeling et al. and Gornall et al.
+
+`Read the paper <https://finance.wharton.upenn.edu/~jermann/AHJ-main-10.pdf>`__
+
+Pricing Efficiency and Arbitrage in the Bitcoin Spot and Futures Markets
+------------------------------------------------------------------------
+
+Seungho Lee, Nabil El Meslmani, and Lorne N. Switzer (Concordia University) study Bitcoin pricing efficiency using spot prices alongside all CBOE and CME futures contracts traded from January 2018 to March 2019. They test cost-of-carry and no-arbitrage conditions and the predictive content of the futures basis for subsequent spot moves.
+
+Our summary: this is the empirical complement to He–Manela–Ross–von Wachter's theoretical perpetuals-pricing work, focused on the dated futures era (CBOE XBT, CME BTC). The authors find that the futures basis has some predictive power for future spot-price changes and for the risk premium but is a *biased* predictor, so it cannot be used as a clean standalone signal. Cointegration tests confirm that futures prices are biased predictors of spot. Arbitrage deviations are persistent and, crucially, *widen substantially* around Bitcoin-specific events — security incidents (hacks) and alt-coin launches — which is the same limits-to-arbitrage pattern documented by Hattori–Ishida. Published in Research in International Business and Finance Vol 53 (2020).
+
+Key metrics: basis has predictive power for future spot moves but is a biased predictor; cointegration/VECM tests confirm the bias; no-arbitrage deviations widen around hacks and alt-coin launches, matching the capital-constraints-in-crises pattern seen in other basis-crypto studies.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0275531919309808>`__
+
+The Relationship Between Arbitrage in Futures and Spot Markets and Bitcoin Price Movements
+------------------------------------------------------------------------------------------
+
+Takahiro Hattori and Ryo Ishida use intraday CBOE bitcoin futures and Gemini spot data to reconstruct the actual cash-and-carry condition faced by arbitrageurs in real time. They test how arbitrage profit opportunities vary across calm and crash regimes and relate the dislocation to capital constraints on the short side.
+
+Our summary: this paper documents the uncomfortable truth about basis-based trading in crypto: the basis becomes most attractive exactly when you are least able to trade it. In normal markets, cash-and-carry opportunities are rare and small. During bitcoin crashes, the basis blows out dramatically — but exactly those episodes are when arbitrage capital is constrained, margin requirements jump, and liquidation risk is highest. This is a textbook limits-to-arbitrage story applied to crypto, and it mirrors Gornall et al.'s finding that quarterlies dislocate much more than perpetuals during crises. For anyone building a basis-trading strategy, the practical lesson is to size for the tails, not the averages.
+
+Key metrics: the paper documents statistically significant widening of cash-and-carry arbitrage spreads during bitcoin crash episodes, with the basis reaching levels many standard deviations above normal-regime values. Arbitrage is typically unavailable outside these stress regimes. High-frequency CBOE-Gemini matched-pair data.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3209625>`__

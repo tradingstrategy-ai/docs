@@ -404,3 +404,34 @@ Mentioned by Concretum Research (@ConcretumR) in `this discussion <https://x.com
 By Concretum Research.
 
 `Read the blog post <https://concretumgroup.substack.com/p/the-intraday-seasonality-of-market>`__.
+
+Testing Larry Williams' Volatility Expansion Strategy in Crypto
+---------------------------------------------------------------
+
+Research Article #40 from Trading Research Hub. Tests and improves upon Larry Williams' Volatility Expansion Strategy, a momentum-based approach that enters positions when price volatility expands beyond recent ranges. The study applies this classic trading methodology to cryptocurrency markets with systematic modifications.
+
+The article goes beyond simple implementation to test various improvements to the original strategy, including different parameter settings and additional filters. The in-depth analysis demonstrates how a strategy concept from traditional markets can be adapted and enhanced for the unique characteristics of crypto trading.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/research-article-40-larry-williams>`__.
+
+Day Trading Volatility Breakouts Systematically - All Rules Included
+--------------------------------------------------------------------
+
+A complete rule set for systematically day trading volatility breakouts. The post provides all the mechanical rules needed to trade intraday breakouts driven by volatility expansion, including entry triggers based on ATR-derived levels, position sizing, stop placement, and exit criteria. The approach is designed to be fully systematic with no discretionary decisions, making it suitable for automation.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/day-trading-volatility-breakouts-systematically-all-rules-included/>`__.
+
+Market Open Trend Strategy: Long Only Nasdaq
+--------------------------------------------
+
+A simple yet effective intraday trend-following strategy for Nasdaq futures that captures upward market trends by entering at the 9:30 AM market open. The strategy uses two filters before entry: price must be above yesterday's open (momentum filter) and above VWAP anchored at the 18:00 session open. Position sizing is adaptive, scaled by distance to VWAP — the closer price is to VWAP, the larger the position. Exits occur either at market close (4:00 PM) or on a 5-minute close below VWAP, whichever comes first.
+
+The 15-year NQ backtest with cost and slippage included shows robust performance. The author also presents a compounding variant using percentage-based sizing (33% to 100% of account) instead of fixed contracts, which dramatically improves returns through compounding gains. The post includes a discussion of potential overfitting concerns: whether trading only the long side constitutes overfitting even when both long and short are profitable, and whether delaying entry by 15 minutes to avoid opening volatility is a legitimate filter or curve-fitting.
+
+Mentioned by Rob (@BostonRobTrades) in `this discussion <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
+
+`Read the post <https://x.com/BostonRobTrades/status/2048141906102845655>`__.

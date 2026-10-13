@@ -296,3 +296,69 @@ Root of the quote chain: `Ethan Kho (@ethanrkho) <https://x.com/ethanrkho/status
 By 0xFaust (@0xFaust12).
 
 `Read the thread <https://x.com/0xFaust12/status/2100743670651924652>`__.
+
+Designing a Crypto Price Data Dashboard from Scratch
+----------------------------------------------------
+
+The first article in a series on building a multi-strategy portfolio from scratch, covering the design and implementation of a crypto price data dashboard. The author documents the process of building automated trading infrastructure from the ground up, starting with the most fundamental component: reliable price data.
+
+The article covers practical aspects of connecting to exchange APIs, storing historical price data, and creating visual representations of market data. It serves as a starting point for traders who want to build their own automated systems, demonstrating that the process begins with proper data infrastructure before moving to signal generation and execution.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/designing-a-simple-crypto-price-data>`__.
+
+Comparing Affordable Intraday Data Sources: TradeStation vs. Polygon vs. Alpaca
+-------------------------------------------------------------------------------
+
+A practical comparison of three affordable intraday data sources for retail algorithmic traders: TradeStation, Polygon, and Alpaca. The post evaluates each provider on cost, data quality, coverage, API usability, and suitability for backtesting intraday strategies. It helps retail traders navigate the often confusing landscape of market data providers and make an informed choice based on their specific needs and budget.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/comparing-affordable-intraday-data-sources-tradestation-vs-polygon-vs-alpaca/>`__.
+
+Downloading Stock/ETF Market Data with Python and Alpaca API
+------------------------------------------------------------
+
+A step-by-step tutorial on downloading stock and ETF market data using Python and the free Alpaca API. The post walks through setting up the API connection, requesting historical price data at various timeframes, handling pagination, and storing the data for backtesting. This is a foundational building block for any Python-based trading research workflow, providing the data pipeline needed before strategy development can begin.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/downloading-stock-etf-market-data-with-python-and-alpaca-api/>`__.
+
+How to Simulate Like a Quant Desk: Every Model, Every Formula, Runnable Code
+----------------------------------------------------------------------------
+
+A comprehensive, progressive tutorial on quantitative simulation techniques for prediction markets, structured as a narrative that builds from basic Monte Carlo to production-grade systems. The article starts with a simple coin flip analogy for Polymarket contracts, then develops increasingly sophisticated methods: Monte Carlo estimation of binary contract probabilities with confidence intervals, importance sampling for pricing extreme tail-risk contracts (achieving 100-10,000x variance reduction), and Sequential Monte Carlo particle filters for real-time probability updating during live events like election night.
+
+The article then covers variance reduction techniques (antithetic variates, control variates, stratified sampling) that stack multiplicatively, copula-based dependency modeling for correlated prediction market portfolios (comparing Gaussian, Student-t, Clayton, and Gumbel copulas with vine copula extensions), and agent-based market simulation using zero-intelligence traders and Kyle's lambda for price impact. Each section includes runnable Python code. The final section outlines a five-layer production stack from WebSocket data ingestion through risk management and monitoring.
+
+By gemchanger.
+
+`Read the article <https://x.com/gemchange_ltd/status/2027744530124951831>`__
+
+The Quant Playbook for Polymarket
+---------------------------------
+
+A comprehensive guide to six quantitative formulas that hedge funds use to extract edge from prediction markets like Polymarket. The playbook covers the LMSR (Logarithmic Market Scoring Rule) pricing model that powers Polymarket's AMM, the Kelly Criterion for optimal position sizing, Expected Value gap analysis for detecting mispricings, KL-Divergence for scanning correlated market arbitrage, Bregman Projection for multi-outcome arbitrage optimisation, and Bayesian updating for dynamic probability adjustment in fast-moving markets.
+
+Each formula is presented with mathematical definitions, practical examples from real Polymarket contracts, Python code for implementation, and risk warnings. The author also outlines a system integration pipeline covering data setup via Polygon API, backtesting with walk-forward validation, deployment with cron jobs and Telegram alerts, and risk management using fractional Kelly sizing with drawdown stops.
+
+Mentioned by `0xRicker in this discussion <https://x.com/0xRicker/status/2032798292128522327>`__.
+
+`Read the post <https://x.com/0xRicker/status/2032798292128522327>`__
+
+Opening Range Breakout (ORB) Strategy for NQ Futures
+----------------------------------------------------
+
+Rob (@BostonRobTrades) shares his implementation of an Opening Range Breakout strategy for NQ (NASDAQ-100) futures. The strategy trades the break of the first 15-minute range after market open at 9:30 AM, using VWAP as a directional filter: long when price breaks above the range and is above VWAP, short when price breaks below the range and is below VWAP. Entry triggers on a 5-minute candle close outside the range, with exits at end of day or on a 5-minute close back through VWAP or the opposite side of the range. Position sizing is 1–3 contracts, scaled by momentum, range size, and VWAP distance. The author claims a 15-year backtest on this logic.
+
+The ORB concept is one of the oldest intraday strategies in the practitioner literature. Its theoretical basis is sound: the opening period concentrates the highest volume and institutional order flow of the day, and the resulting range reflects where the market aggregates overnight information into a price consensus. Breaking out of that range signals directional conviction. Academic support exists: Zarattini, Barbon, and Aziz (SSRN 4729284, 2024) demonstrate that a 5-minute ORB applied to a filtered portfolio of high-activity U.S. stocks achieved a 2.81 Sharpe ratio and 36% annualized alpha from 2016–2023. Earlier work by the same group on SPY intraday momentum (SSRN 4824172, 2024) showed 19.6% annualized returns and a 1.33 Sharpe from 2007–2024. Timely ORB strategies on five major index futures (DJIA, S&P 500, NASDAQ, HSI, TAIEX) achieved statistically significant 8%+ annual returns from 2003–2013 (IEEE Xplore, 2019).
+
+However, several caveats apply to the strategy as described. First, raw ORB without stock or instrument selection filters has largely been arbitraged away on liquid index futures; the strongest recent academic results come from applying ORB to "Stocks in Play" (stocks with unusual pre-market activity), not broad index futures. Second, the 15-minute opening range is sensitive to regime: on low-volatility days the range is tiny and produces frequent false breakouts, while on high-volatility days the range is wide and the risk-reward deteriorates. Third, using a fixed number of contracts rather than volatility-adjusted sizing means outsized losses on small-range sessions and undersized positions on high-conviction setups; the post mentions scaling by range size and momentum but does not describe a formal risk model. Fourth, the VWAP confirmation filter adds value—it aligns the trade with institutional flow direction—but VWAP in the first 15 minutes is dominated by the opening print and is less informative than later-session VWAP. Fifth, no out-of-sample metrics, transaction cost assumptions, or drawdown figures are provided; a 15-year backtest claim without published equity curves, Sharpe ratios, or maximum drawdowns cannot be independently evaluated.
+
+The broader intraday momentum literature provides context: Gao, Han, Li, and Zhou (Journal of Financial Economics, 2018) show that first-half-hour returns predict last-half-hour returns, consistent with the ORB thesis. Rosa (Journal of Futures Markets, 2022) finds intraday momentum strategies across 62 futures markets achieve Sharpe ratios of 0.87–1.73 at the asset-class level, with stronger performance during recessions. This suggests the ORB edge is real but regime-dependent and likely smaller on a single liquid instrument (NQ) than across a diversified futures portfolio.
+
+Mentioned by Rob (`@BostonRobTrades <https://x.com/BostonRobTrades>`__) in `this discussion <https://x.com/BostonRobTrades/status/2046770986599461326>`__: "Here is a profitable trading strategy that works. ORB - Opening Range Breakout. I have seen many people teach strategies and concepts about trading the opening range but rarely a 15 year backtest on their logic."
+
+`Read the post <https://x.com/BostonRobTrades/status/2046770986599461326>`__.

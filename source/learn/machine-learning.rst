@@ -1541,3 +1541,36 @@ This is a useful baseline feature-engineering menu, not evidence that any of the
 Mentioned by Stat Arb (@quant_arb) in `this discussion <https://x.com/quant_arb/status/2103850441448767984>`__.
 
 `Read the post <https://x.com/quant_arb/status/2103850441448767984>`__.
+
+Temporal Fusion Transformers in FinTorch
+----------------------------------------
+
+FinTorch provides a tutorial-style implementation of Temporal Fusion Transformers for financial time-series forecasting. The walkthrough demonstrates how TFT can be applied to stock-tick style data, with attention to model setup and practical deep-learning workflow rather than to a full trading-system backtest.
+
+This is a useful hands-on companion to the original TFT paper because it is explicitly finance-oriented. It is best treated as implementation guidance: the tutorial can help readers structure data and experiments, but the resulting forecasts still need independent walk-forward testing before being used for trading or risk management.
+
+By FinTorch.
+
+`Read the tutorial <https://fintorch.readthedocs.io/en/latest/tutorials/tft/tft.html>`__.
+
+Training a Transformer Model to Predict 1-Minute Stock Prices, Part 2
+---------------------------------------------------------------------
+
+A practical Medium tutorial on using a Transformer-style forecasting model, including Temporal Fusion Transformer ideas, for short-horizon stock-price prediction. The post focuses on one-minute stock data and walks through the modeling setup, training workflow, and how forecasts can be interpreted with confidence intervals.
+
+The article is useful as an applied bridge from TFT papers to notebook-level experimentation. Its value is educational rather than evidentiary: it helps readers understand how to structure high-frequency data and model outputs, but it should not be read as proof that one-minute TFT forecasts survive realistic execution costs, slippage, and market-impact constraints.
+
+By Itay Bittan.
+
+`Read the blog post <https://medium.com/@itay1542/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-2-0169ed80dfae>`__.
+
+Training a Transformer Model to Predict 1-Minute Stock Prices, Part 3
+---------------------------------------------------------------------
+
+The third part of the one-minute stock-price Transformer tutorial continues the practical implementation thread, expanding on architecture choices, data preparation, and code-level details for building a short-horizon market forecasting model.
+
+For systematic traders, the post is most useful as a worked example of how a deep sequence model is wired into a financial time-series workflow. The same caveat applies as with most tutorial material: model fit and attractive plots are not enough for a tradable strategy unless the full pipeline includes walk-forward validation, realistic fills, transaction costs, and a robust signal-to-position mapping.
+
+By Itay Bittan.
+
+`Read the blog post <https://readmedium.com/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-3-41cf84841d0b>`__.

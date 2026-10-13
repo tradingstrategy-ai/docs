@@ -167,3 +167,36 @@ By Tomas Nesnidal.
 Mentioned by `Breakout Trading Academy (@onlybreakouts) in this X discussion <https://x.com/onlybreakouts/status/2062596797936075062>`__, where the thread summarizes the article as evidence that bar range relative to ATR, volume, and other simple volatility/participation filters beat more complex indicator conditions across thousands of breakout strategies.
 
 `Read the blog post <https://breakoutos.com/blog/research-indicator-study>`__
+
+Does Bitcoin's January Performance Predict the Rest of the Year?
+----------------------------------------------------------------
+
+Research Article #30 from Trading Research Hub. Applies the January Barometer concept to Bitcoin, testing whether January's performance can forecast the remaining eleven months of the year. The author notes that while the original test in equities used a 152-year backtesting period, the Bitcoin data history is more limited.
+
+The article provides a quantitative analysis of Bitcoin's January performance relative to subsequent year returns, including the author's own backtesting results on the S&P 500 for comparison. The study evaluates whether this well-known calendar anomaly from traditional finance translates to cryptocurrency markets with enough statistical significance to be useful for systematic trading.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/research-article-30-bitcoin-january>`__.
+
+Testing the Pre-Holiday Return Anomaly in Bitcoin
+-------------------------------------------------
+
+Research Article #29 from Trading Research Hub. Tests the pre-holiday effect anomaly in Bitcoin, an effect originally documented in U.S. equity and international stock markets. The strategy based on this anomaly shows historical unleveraged returns of 226% in the backtesting period.
+
+The article examines whether returns in the days leading up to major holidays show a systematic positive bias in Bitcoin, and whether this pattern is exploitable as a trading strategy. The study bridges the extensive academic literature on calendar anomalies in traditional markets with practical application in the cryptocurrency space.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/research-article-29-bitcoin-pre-holiday>`__.
+
+The Turn-of-the-Month Effect in Bitcoin Returns
+-----------------------------------------------
+
+Research Article #28 from Trading Research Hub. Tests the turn-of-the-month effect in Bitcoin, a well-known calendar anomaly in equities where returns tend to be higher around the end and beginning of each month. The study examines whether this pattern, potentially driven by institutional fund flows and salary-based investing, exists in crypto markets.
+
+The article applies systematic testing methodology to determine if Bitcoin's return distribution shows a statistically significant pattern around month boundaries. If the effect exists, it could serve as a timing signal or regime filter for systematic crypto trading strategies.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/research-article-28-turn-of-the-month>`__.

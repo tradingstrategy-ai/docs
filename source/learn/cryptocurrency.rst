@@ -300,3 +300,36 @@ By Scott Phillips (@ScottPh77711570), with James (@therobotjames).
 People involved in the discussion: `@ScottPh77711570 <https://x.com/ScottPh77711570>`__, `@therobotjames <https://x.com/therobotjames>`__, `@Avik_Saikat <https://x.com/Avik_Saikat>`__, `@Cyespx <https://x.com/Cyespx>`__, `@fin_constructor <https://x.com/fin_constructor>`__, `@wiltonhotz <https://x.com/wiltonhotz>`__, `@dima_quant <https://x.com/dima_quant>`__, `@quant_arb <https://x.com/quant_arb>`__, `@HF_Trader <https://x.com/HF_Trader>`__, `@trad62866 <https://x.com/trad62866>`__, `@HerrOak <https://x.com/HerrOak>`__, `@AnyonCurve <https://x.com/AnyonCurve>`__, `@risk_taker88 <https://x.com/risk_taker88>`__, `@JstSomeGuy <https://x.com/JstSomeGuy>`__, `@olvehe <https://x.com/olvehe>`__, `@PostTradeZen <https://x.com/PostTradeZen>`__, `@SidKZ0 <https://x.com/SidKZ0>`__, `@eyshu_tw <https://x.com/eyshu_tw>`__, `@AffectiveAutism <https://x.com/AffectiveAutism>`__, `@jxy610 <https://x.com/jxy610>`__, `@6enginecig <https://x.com/6enginecig>`__, `@gotRekt1337 <https://x.com/gotRekt1337>`__, `@OnlyDeFiGuy <https://x.com/OnlyDeFiGuy>`__, `@Squankulous <https://x.com/Squankulous>`__, `@yungp9rple <https://x.com/yungp9rple>`__, `@299792458MaxHH <https://x.com/299792458MaxHH>`__, `@NikolasBohm <https://x.com/NikolasBohm>`__, `@b_ruug <https://x.com/b_ruug>`__, `@simnmayer <https://x.com/simnmayer>`__, `@123skely <https://x.com/123skely>`__, `@_unyk <https://x.com/_unyk>`__, `@BalefulWatcher <https://x.com/BalefulWatcher>`__, `@Vladimi72981101 <https://x.com/Vladimi72981101>`__, `@lifeenjoyer___ <https://x.com/lifeenjoyer___>`__, `@Metinique1 <https://x.com/Metinique1>`__, `@derivative_bro <https://x.com/derivative_bro>`__, `@miquel_malaga <https://x.com/miquel_malaga>`__, `@RobinLi247502 <https://x.com/RobinLi247502>`__, `@vndeniable <https://x.com/vndeniable>`__, `@markovschainsaw <https://x.com/markovschainsaw>`__, `@DMTCapital <https://x.com/DMTCapital>`__, `@0xelevenquit <https://x.com/0xelevenquit>`__, `@HazeGenesis <https://x.com/HazeGenesis>`__, `@wock9000 <https://x.com/wock9000>`__, `@DPhantomOfDPits <https://x.com/DPhantomOfDPits>`__, `@quant_spence <https://x.com/quant_spence>`__, `@meurfault <https://x.com/meurfault>`__, `@kwertytwo <https://x.com/kwertytwo>`__, `@Swan_Pineapple <https://x.com/Swan_Pineapple>`__, `@warp_sys <https://x.com/warp_sys>`__, `@etant0x <https://x.com/etant0x>`__, `@idiotek77777 <https://x.com/idiotek77777>`__, `@predictsnfn <https://x.com/predictsnfn>`__.
 
 `Read the X Q&A thread <https://x.com/ScottPh77711570/status/2096760358568628681>`__
+
+Bitcoin Beta De-noising: Isolating Altcoin-Specific Trading Signals
+-------------------------------------------------------------------
+
+Research Article #34 from Trading Research Hub. Presents a step-by-step guide to isolating asset-specific signals by removing Bitcoin's dominant influence from altcoin price movements. The technique of "beta de-noising" separates the idiosyncratic component of an altcoin's returns from its correlation with Bitcoin.
+
+The article demonstrates how this de-noised signal can improve predictive accuracy for trading strategies on assets like Ethereum. By stripping away the market-wide factor (Bitcoin's influence), traders can identify cleaner asset-specific signals that may provide genuine alpha rather than simply proxying for Bitcoin momentum.
+
+By Pedma.
+
+`Read the blog post <https://www.tradingresearchub.com/p/research-article-34-trading-strategies>`__.
+
+Cross-Sectional Alpha Factors in Crypto: 2+ Sharpe Ratio Without Overfitting
+----------------------------------------------------------------------------
+
+An in-depth examination of how traditional quantitative finance factor models — originally developed for equities by Fama and French — can be adapted to cryptocurrency markets to generate alpha. The authors argue these factors still qualify as alpha in crypto because the market hasn't fully arbitraged them away. The methodology involves constructing long/short factor portfolios across the top 50 digital assets by market cap: ranking tokens daily by a chosen metric, going long the top 20% and short the bottom 20% to isolate factor exposure while maintaining zero directional market exposure.
+
+The research focuses on two primary factors: cross-sectional momentum (which operates on ~30-day horizons in crypto, much shorter than the 6–12 months typical in equities) and carry (exploiting perpetual futures funding rate differentials using open-interest-weighted composite rates across exchanges). By combining momentum and carry into a multi-factor portfolio, the researchers achieve a 2+ Sharpe ratio. Key practical challenges addressed include survivorship bias from delisted tokens, extreme volatility dispersion between Bitcoin and memecoins, and limited reliable data before 2020. The authors apply inverse volatility weighting and volume filters to manage these issues, and find that diversification benefits plateau at roughly six factors with achievable Sharpe ratios around 2.5 for single portfolios.
+
+By Mark Aron Szulyovszky and Daniel Szemerey.
+
+`Read the blog post <https://blog.unravel.finance/p/cross-sectional-alpha-factors-in>`__
+
+How Speculative Money Flows into Crypto
+---------------------------------------
+
+A framework for understanding and predicting speculative capital flows into cryptocurrency markets, structured across three concentric layers. The outermost layer examines macro/global factors including momentum spillover effects from other asset classes — particularly cloud computing sector momentum as a leading indicator for Bitcoin — and Bitcoin-Gold correlation as a proxy for institutional safe-haven perception. The middle layer tracks ecosystem entry points via stablecoin market capitalization, stablecoin exchange inflows (capital "parked for purchasing"), and Bitcoin spot ETF netflows representing institutional interest.
+
+The innermost layer monitors internal leverage metrics: perpetual futures funding rates, liquidation volumes, long/short position ratios, and margin borrowing rates. The author recommends reducing directional exposure when speculative flows decelerate and proactively cutting positions during over-leveraged periods before liquidation cascades. These signals prove even more effective on smaller-cap, more speculative assets like Ethereum. The key insight is that traditional volatility-based risk management is insufficient given crypto's leverage concentration and lack of circuit-breakers — incorporating exogenous money-flow and liquidity metrics provides a superior risk framework for digital asset portfolio management.
+
+By Mark Aron Szulyovszky.
+
+`Read the blog post <https://blog.unravel.finance/p/how-speculative-money-flows-into>`__

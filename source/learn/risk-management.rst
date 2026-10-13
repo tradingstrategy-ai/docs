@@ -240,3 +240,25 @@ Two gaps limit how far this travels. Adding at successively deeper levels is mar
 By Pavel Kýček (ROBUXIO).
 
 `Read the post <https://www.linkedin.com/posts/pavelkycek_pyramiding-behaves-very-differently-across-share-7500123164837085184-xTB-/>`__
+
+ML-Optimized Dynamic Position Sizing for Trading Strategies
+-----------------------------------------------------------
+
+A practical demonstration of how machine learning can enhance a baseline trading strategy — not by changing the entry/exit logic, but by optimising position sizing. In a walk-forward out-of-sample test, the baseline and ML-optimised versions share a nearly identical 70% win rate and similar trade counts, yet the ML version delivers +83% higher total return (in R-multiples) while cutting maximum drawdown by 46%.
+
+The edge comes from dynamic, conviction-weighted position sizing. The ML model assigns a probability to each trade and scales risk accordingly: 1.0R at 50–60% conviction, ramping to 2.5R above 70%. Crucially, the model also scales *down* in low-conviction environments, staying small during losing streaks and pressing only when the statistical edge is highest. The result is an asymmetric risk profile — bigger bets on the best setups, smaller exposure during drawdowns — demonstrating that ML's value in systematic trading can lie in bet sizing rather than signal generation. Built with a custom Python pipeline using Scikit-Learn.
+
+Mentioned by `@Eddie_Fibonacci <https://x.com/Eddie_Fibonacci>`__ in `this discussion <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__.
+
+`Read the post <https://x.com/Eddie_Fibonacci/status/2037875563180741006>`__
+
+The Unreasonable Effectiveness of Volatility Targeting — and Where It Falls Short
+---------------------------------------------------------------------------------
+
+Part 1 of an investigative series on how quantitative risk management can enhance risk-adjusted returns. The post explores volatility targeting — a technique for maintaining consistent portfolio volatility through active exposure adjustments using inverse volatility scaling, where exposure decreases as an asset becomes more volatile. The author describes it as "among the very few effective, universal techniques in quantitative finance," alongside diversification.
+
+A central paradox emerges: while high-volatility periods historically produce higher forward returns, volatility targeting paradoxically improves risk-adjusted performance by reducing exposure during these periods. The explanation lies in volatility drag — the mathematical distinction between cumulative returns (multiplicative) and average returns (additive). Applying volatility targeting to the S&P 500 typically yields 10–20% improvements in risk-adjusted returns. However, the author identifies critical blind spots: low-volatility regimes can mask systemic risks when market liquidity structurally declines, leverage across the financial system remains elevated, or implied volatility reaches historically suppressed levels. The August 2024 market disruption exemplified how synchronized de-leveraging events can overwhelm volatility-targeting protections. The post proposes incorporating forward-looking, exogenous risk factors alongside historical volatility metrics. An open-source Python package called "risklab" is referenced for transparent implementation.
+
+By Mark Aron Szulyovszky.
+
+`Read the blog post <https://blog.unravel.finance/p/the-unreasonable-effectiveness-of>`__

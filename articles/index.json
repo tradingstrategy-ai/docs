@@ -12,18 +12,6 @@
     "short_description": "DCE framework combining VMD, SOM clustering, and KELM for forex forecasting. Published in J. Management Science and Engineering, 2019."
   },
   {
-    "title": "A Dirty Long Vol VIX Trade",
-    "authors": "Robot James",
-    "publication_year": 2026,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "a-dirty-long-vol-vix-trade.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
-    "short_description": "A practitioner post describing a tactical long-volatility trade in VIX futures exploiting sticky customer positioning and tourist trading behavior, going long VX30 when a value metric falls below a z-score threshold."
-  },
-  {
     "title": "A Novel Hybrid Model (EMD-TI-LSTM) for Enhanced Financial Forecasting",
     "authors": "Olcay Ozupek, Reyat Yilmaz, Bita Ghasemkhani, Derya Birant, Recep Alp Kut",
     "publication_year": 2024,
@@ -132,18 +120,6 @@
     "short_description": "Ensemble learning (Boosting, Bagging, NSGA-II) for Chinese stock index prediction using investor sentiment features with SHAP interpretability."
   },
   {
-    "title": "Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics",
-    "authors": "Mark Aron Szulyovszky, Daniel Szemerey",
-    "publication_year": 2026,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "aperiodic-democratizing-crypto-order-flow.pdf",
-    "downloaded_at": "2026-04-03",
-    "download_failure_reason": null,
-    "short_description": "Announces the public launch of Aperiodic, a crypto data platform providing 200+ TB of tick data including point-in-time liquidity metrics, order flow imbalance, and full exchange coverage without survivorship bias."
-  },
-  {
     "title": "Application of the Deep Learning Integrated Framework CEEMDAN-GRU-Informer in Financial Time Series Prediction",
     "authors": null,
     "publication_year": 2025,
@@ -240,54 +216,6 @@
     "short_description": "CEEMDAN decomposition with transformer attention for stock trend prediction, capturing local and global temporal dependencies."
   },
   {
-    "title": "Can Safety and Profitability Coexist? Performance Analysis of Pairs Trading among S&P 500 Stocks",
-    "authors": "Mustafa Hussein",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "can-safety-and-profitability-coexist-pairs-trading-sp500.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
-    "short_description": "Master's thesis analyzing cointegration-based pairs trading on S&P 500 stocks, investigating whether market-neutral stat arb can deliver both capital safety and profitability."
-  },
-  {
-    "title": "Comparing Affordable Intraday Data Sources: TradeStation vs. Polygon vs. Alpaca",
-    "authors": "Peter",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "comparing-affordable-intraday-data-sources-tradestation-vs-polygon-vs-alpaca.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets comparison of three affordable 1-minute US stock data providers via REST API, evaluating price accuracy, volume consistency, and cost."
-  },
-  {
-    "title": "Cross-Sectional Alpha Factors in Crypto: 2+ Sharpe Ratio Without Overfitting",
-    "authors": "Mark Aron Szulyovszky, Daniel Szemerey",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "cross-sectional-alpha-factors-in-crypto.pdf",
-    "downloaded_at": "2026-04-03",
-    "download_failure_reason": null,
-    "short_description": "Demonstrates Fama-French style cross-sectional factors (momentum, value, quality) remain exploitable in crypto, achieving Sharpe >2 with 0.05% costs from 2020-2025."
-  },
-  {
-    "title": "Crypto Carry",
-    "authors": "Maik Schmeling, Andreas Schrimpf, Karamfil Todorov",
-    "publication_year": 2023,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "schmeling-schrimpf-todorov-crypto-carry.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
-    "short_description": "BIS Working Paper studying carry trade in crypto futures, measuring Bitcoin/Ether futures basis and its relationship to funding rates, sentiment, and limits to arbitrage."
-  },
-  {
     "title": "Data-Driven Volatile Cryptocurrency Price Forecasting via VMD and BiLSTM",
     "authors": null,
     "publication_year": 2022,
@@ -358,18 +286,6 @@
     "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
     "short_description": "DeepLOB combining Inception Module CNN with LSTM for LOB mid-price prediction. New SOTA on FI-2010 benchmark with robust OOS generalization on LSE data."
-  },
-  {
-    "title": "Deleting Filters to Improve Win Rate: A Forex Structural Breakout Architecture",
-    "authors": "Iqbal Zainal",
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "deleting-filters-to-improve-win-rate-forex-structural-breakout.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
-    "short_description": "Practitioner discovery that removing session/time/weekend filters from a forex algo increased win rate to 75% across 881 live trades with 1.50 profit factor and 3.2% max drawdown."
   },
   {
     "title": "Do LLMs Make Markets More Efficient?",
@@ -492,18 +408,6 @@
     "short_description": "Models cross-asset crypto volatility spillovers using HAR-type frameworks to improve Bitcoin realized volatility forecasts."
   },
   {
-    "title": "Funding Rate Suppression Detection in Crypto Derivatives Markets",
-    "authors": "Steven Paterson",
-    "publication_year": 2026,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "funding-rate-suppression-detection-crypto-derivatives.pdf",
-    "downloaded_at": "2026-03-25",
-    "download_failure_reason": null,
-    "short_description": "Four-layer detection framework for spotting artificially suppressed funding rates in crypto perpetual futures via cross-sectional, liquidation, variance, and cross-exchange comparison."
-  },
-  {
     "title": "GA-Optimized Hybrid Model for Agricultural Price Forecasting Based on VMD and LSTM",
     "authors": null,
     "publication_year": 2025,
@@ -550,18 +454,6 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": "Uses HHT (EMD + Hilbert spectral analysis) to generate adaptive non-linear features for financial ML models."
-  },
-  {
-    "title": "How Speculative Money Flows into Crypto",
-    "authors": "Mark Aron Szulyovszky",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "how-speculative-money-flows-into-crypto.pdf",
-    "downloaded_at": "2026-04-03",
-    "download_failure_reason": null,
-    "short_description": "Systematic framework for measuring exogenous risk factors predicting crypto returns, from global macro indicators to ecosystem-specific on-chain signals."
   },
   {
     "title": "How to Simulate Like a Quant Desk",
@@ -612,18 +504,6 @@
     "short_description": "Multi-stage hybrid combining ICEEMDAN, PSO-tuned VMD, and BiLSTM for stock price prediction with layered decomposition."
   },
   {
-    "title": "Interactive Brokers IV Downloader",
-    "authors": "Peter",
-    "publication_year": 2024,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "interactive-brokers-iv-downloader.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets Python script to download implied volatility data from Interactive Brokers for free, formatted for RealTest backtesting platform."
-  },
-  {
     "title": "Interpretable ML for High-Frequency Execution",
     "authors": "Timothee Fabre, Vincent Ragel",
     "publication_year": 2024,
@@ -648,30 +528,6 @@
     "short_description": "Applies TFT to multi-horizon crypto return forecasting with attention-based interpretability, outperforming LSTM and ARIMA baselines."
   },
   {
-    "title": "Intraday Breakout Strategy - RealTest Analysis Script",
-    "authors": "Peter",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "intraday-breakout-strategy-realtest-analysis-script.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets RealTest script for portfolio construction and performance analysis on top of raw intraday breakout signals."
-  },
-  {
-    "title": "Intraday Breakout Strategy Backtester",
-    "authors": "Peter",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "intraday-breakout-strategy-backtester.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets Python backtester generating raw trades from 1-minute OHLCV data using ATR-based breakout levels."
-  },
-  {
     "title": "Intraday Market Making on Cointegrated Equity Pairs Using Avellaneda-Stoikov and Kalman Filter",
     "authors": "Duarte Abracos",
     "publication_year": null,
@@ -684,18 +540,6 @@
     "short_description": "Intraday market-making on WFC/AXP using Avellaneda-Stoikov with Kalman Filter hedge ratios. OOS Sharpe 1.21, net PnL +$4,870 on $100K, max DD -2.49%."
   },
   {
-    "title": "Intraday Volatility Breakout Blueprint",
-    "authors": "Peter",
-    "publication_year": 2025,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "intraday-volatility-breakout-blueprint.pdf",
-    "downloaded_at": "2026-02-18",
-    "download_failure_reason": null,
-    "short_description": "CrackingMarkets guide to building intraday ATR-based breakout systems using free Python tools and Alpaca data, with equity curve from 2017-2024."
-  },
-  {
     "title": "Is Return Seasonality Due to Risk or Mispricing?",
     "authors": null,
     "publication_year": null,
@@ -706,18 +550,6 @@
     "downloaded_at": "2026-04-22",
     "download_failure_reason": null,
     "short_description": "Tests whether calendar seasonality patterns in stock returns are explained by rational risk compensation or behavioral mispricing, finding much seasonality inconsistent with standard risk models."
-  },
-  {
-    "title": "Liminal and Rysk: Two Approaches to Yield Generation on Hyperliquid",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "liminal-and-rysk-two-approaches-to-yield-generation-on-hyperliquid.pdf",
-    "downloaded_at": "2026-03-31",
-    "download_failure_reason": null,
-    "short_description": "Compares two DeFi protocols generating yield on Hyperliquid perpetuals exchange through different mechanisms (options vaults vs liquidity provision)."
   },
   {
     "title": "MEEMD-LSTM Precious Metals Price Forecasting",
@@ -780,18 +612,6 @@
     "short_description": "Long-only intraday trend strategy entering at 9:30 open using price>yesterday's open and price>VWAP filters with VWAP-proximity position sizing."
   },
   {
-    "title": "Mean Reversion on Renko Charts: Exploiting the 70% Ranging Market",
-    "authors": "Stefan Friedrichowski",
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "mean-reversion-on-renko-charts-exploiting-the-70-percent-ranging-market.pdf",
-    "downloaded_at": "2026-04-24",
-    "download_failure_reason": null,
-    "short_description": "Uses percentage-based Renko charts to expose alternating up/down brick patterns in mean-reverting regimes, arguing 70% of market time is ranging."
-  },
-  {
     "title": "Multi-Feature Stock Price Prediction by LSTM Based on VMD and TMFG",
     "authors": null,
     "publication_year": 2025,
@@ -840,18 +660,6 @@
     "short_description": "VMD-LSTM for Zinc/Copper/Aluminum prices on LME, outperforming six benchmarks. Published in Knowledge-Based Systems, 2019."
   },
   {
-    "title": "Opening Range Breakout (ORB) Strategy for NQ Futures",
-    "authors": null,
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "opening-range-breakout-orb-strategy-nq-futures.pdf",
-    "downloaded_at": "2026-04-22",
-    "download_failure_reason": null,
-    "short_description": "Opening Range Breakout strategy on Nasdaq futures using opening period high/low as breakout levels for intraday entries."
-  },
-  {
     "title": "Orthogonalized Variational Mode Decomposition (OVMD)",
     "authors": null,
     "publication_year": null,
@@ -862,18 +670,6 @@
     "downloaded_at": "2026-04-27",
     "download_failure_reason": null,
     "short_description": "OVMD enforcing orthogonality constraints on VMD modes to reduce mode-mixing and redundancy for cleaner financial time series decomposition."
-  },
-  {
-    "title": "Perpetual Futures Pricing",
-    "authors": "Damien Ackerer, Julien Hugonnier, Urban Jermann",
-    "publication_year": 2024,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "ackerer-hugonnier-jermann-perpetual-futures-pricing.pdf",
-    "downloaded_at": "2026-04-10",
-    "download_failure_reason": null,
-    "short_description": "Derives no-arbitrage pricing formulas for perpetual futures contracts where funding payments anchor futures to spot prices. Shows the futures price equals the risk-neutral expectation of spot sampled at a random time reflecting price-anchoring intensity."
   },
   {
     "title": "Predicting Short-Term Crypto Returns with Market Microstructure",
@@ -1044,18 +840,6 @@
     "short_description": "Ensemble portfolio optimization incorporating Bitcoin alongside commodity assets. Published in Financial Innovation, 2021."
   },
   {
-    "title": "The Fokker-Planck Equation: The Deterministic Twin of a Stochastic Process",
-    "authors": "Titouan Baraud",
-    "publication_year": null,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "the-fokker-planck-equation-the-deterministic-twin-of-a-stochastic-process.pdf",
-    "downloaded_at": "2026-04-11",
-    "download_failure_reason": null,
-    "short_description": "Practitioner explainer on how the Fokker-Planck equation governs probability density evolution for SDEs underlying Black-Scholes, Heston, Vasicek, and SABR models."
-  },
-  {
     "title": "The Unreasonable Effectiveness of Volatility Targeting - And Where It Falls Short",
     "authors": "Mark Aron Szulyovszky",
     "publication_year": 2025,
@@ -1066,18 +850,6 @@
     "downloaded_at": "2026-04-03",
     "download_failure_reason": null,
     "short_description": "Investigates how inverse volatility scaling improves risk-adjusted returns, explores the seeming paradox, and identifies the strategy's blindspots."
-  },
-  {
-    "title": "Three Dead Simple Edges in Macro ETFs",
-    "authors": "Robot James",
-    "publication_year": 2026,
-    "download_page": null,
-    "source_file": null,
-    "included_in_index_at": "2026-06-05",
-    "filename": "three-dead-simple-edges-in-macro-etfs.pdf",
-    "downloaded_at": "2026-04-13",
-    "download_failure_reason": null,
-    "short_description": "Three simple systematic trading edges for SPY and TLT based on understanding structural sources of edge in markets."
   },
   {
     "title": "Transaction Activity and Bitcoin Realized Volatility",
@@ -1284,6 +1056,42 @@
     "short_description": null
   },
   {
+    "title": "Comparing Affordable Intraday Data Sources: TradeStation vs. Polygon vs. Alpaca",
+    "authors": "Peter",
+    "publication_year": 2025,
+    "download_page": "https://www.crackingmarkets.com/comparing-affordable-intraday-data-sources-tradestation-vs-polygon-vs-alpaca/",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "comparing-affordable-intraday-data-sources-tradestation-vs-polygon-vs-alpaca.pdf",
+    "downloaded_at": "2026-02-18",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets comparison of three affordable 1-minute US stock data providers via REST API, evaluating price accuracy, volume consistency, and cost."
+  },
+  {
+    "title": "Designing a Crypto Price Data Dashboard from Scratch",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/designing-a-simple-crypto-price-data",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Downloading Stock/ETF Market Data with Python and Alpaca API",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.crackingmarkets.com/downloading-stock-etf-market-data-with-python-and-alpaca-api/",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Dynamic Trading with Predictable Returns and Transaction Costs",
     "authors": "Nicolae B. Gârleanu and Lasse H. Pedersen",
     "publication_year": 2013,
@@ -1305,6 +1113,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "How to Simulate Like a Quant Desk: Every Model, Every Formula, Runnable Code",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/gemchange_ltd/status/2027744530124951831",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -1368,6 +1188,18 @@
     "short_description": "This paper formulates multi-period portfolio optimization with alpha decay and transaction costs as an infinite-horizon Markov Decision Process, seeking the policy that maximizes the maximum average expected reward. The authors propose a variant of value iteration to compute the optimal policy and derive a first-order approximation for the case of small transaction costs, finding that frequent trading can generate consistent negative cash outflows that erode alpha."
   },
   {
+    "title": "Opening Range Breakout (ORB) Strategy for NQ Futures",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/BostonRobTrades",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "opening-range-breakout-orb-strategy-nq-futures.pdf",
+    "downloaded_at": "2026-04-22",
+    "download_failure_reason": null,
+    "short_description": "Opening Range Breakout strategy on Nasdaq futures using opening period high/low as breakout levels for intraday entries."
+  },
+  {
     "title": "Saving $200/Day in Execution Costs by Solving Market Capacity Constraints",
     "authors": "Pedma",
     "publication_year": null,
@@ -1401,6 +1233,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
+    "short_description": null
+  },
+  {
+    "title": "The Quant Playbook for Polymarket",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/0xRicker/status/2032798292128522327",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -1608,6 +1452,18 @@
     "short_description": null
   },
   {
+    "title": "Building a Backtesting Dashboard for Multi-Strategy Portfolios",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/building-a-backtesting-tab",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Cohort-Level Bid/Ask Depth for Realistic Options Backtests",
     "authors": "Halcyon Waters",
     "publication_year": 2026,
@@ -1680,6 +1536,42 @@
     "short_description": "Tomas Nesnidal describes a search over 1,800 E-mini Nasdaq Bollinger-Band breakout candidates, selecting a Monday-only 1.8-ATR configuration using neighboring-parameter, walk-forward, proprietary robustness, recent-data, and cross-market checks."
   },
   {
+    "title": "Intraday Breakout Strategy - RealTest Analysis Script",
+    "authors": "Peter",
+    "publication_year": 2025,
+    "download_page": "https://www.crackingmarkets.com/intraday-breakout-strategy-realtest-analysis-script/",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "intraday-breakout-strategy-realtest-analysis-script.pdf",
+    "downloaded_at": "2026-02-18",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets RealTest script for portfolio construction and performance analysis on top of raw intraday breakout signals."
+  },
+  {
+    "title": "Intraday Breakout Strategy Backtester",
+    "authors": "Peter",
+    "publication_year": 2025,
+    "download_page": "https://www.crackingmarkets.com/intraday-breakout-strategy-backtester/",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "intraday-breakout-strategy-backtester.pdf",
+    "downloaded_at": "2026-02-18",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets Python backtester generating raw trades from 1-minute OHLCV data using ATR-based breakout levels."
+  },
+  {
+    "title": "Intraday Volatility Breakout Blueprint",
+    "authors": "Peter",
+    "publication_year": 2025,
+    "download_page": "https://www.crackingmarkets.com/intraday-volatility-breakout-blueprint/",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "intraday-volatility-breakout-blueprint.pdf",
+    "downloaded_at": "2026-02-18",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets guide to building intraday ATR-based breakout systems using free Python tools and Alpaca data, with equity curve from 2017-2024."
+  },
+  {
     "title": "Monday NQ Shorts When Friday's High Holds",
     "authors": "Jan - Algo Trader (@algojan)",
     "publication_year": 2026,
@@ -1713,6 +1605,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "Research Bits #1: The Most Underrated Metric in (Factor) Research",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://blog.unravel.finance/p/research-bits-1-the-most-underrated",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2208,6 +2112,18 @@
     "short_description": "Pallas Fund's 22-page investment thesis for a delta-neutral strategy capturing spreads and funding differentials between Hyperliquid Core and HIP-3 builder perpetual markets, framed on Grossman-Stiglitz equilibrium inefficiency, Lo's Adaptive Markets, and Shleifer-Vishny limits to arbitrage. The transferable content is the cross-venue funding-mechanics comparison, the mark/oracle/index price separation and its liquidation implications, and the enumeration of why funding never fully drives the basis to zero (discrete payments, cap saturation, separate builder pools, clamp dead zone). Performance figures are self-reported over a 90-day live sample and the fee-sensitivity projections assume gross PnL is independent of scale, so read it as exposition rather than evidence; fees at 4.42 bps against an 8.83 bps breakeven are the binding constraint."
   },
   {
+    "title": "Crypto Carry",
+    "authors": "Maik Schmeling, Andreas Schrimpf, Karamfil Todorov",
+    "publication_year": 2023,
+    "download_page": "https://www.bis.org/publ/work1087.pdf",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "schmeling-schrimpf-todorov-crypto-carry.pdf",
+    "downloaded_at": "2026-04-10",
+    "download_failure_reason": null,
+    "short_description": "BIS Working Paper studying carry trade in crypto futures, measuring Bitcoin/Ether futures basis and its relationship to funding rates, sentiment, and limits to arbitrage."
+  },
+  {
     "title": "Denoising Funding Rate Signals with Z-Scores, Open Interest and Price",
     "authors": "SK (@StepOneAi)",
     "publication_year": 2026,
@@ -2268,6 +2184,18 @@
     "short_description": null
   },
   {
+    "title": "Fundamentals of Perpetual Futures",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://arxiv.org/abs/2212.06888",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Funding Monitor: Why Settlement Intervals Break Perpetual Carry Math",
     "authors": "Mikko Ohtamaa",
     "publication_year": 2026,
@@ -2302,6 +2230,18 @@
     "included_in_index_at": "2026-08-08",
     "downloaded_at": "2026-08-08",
     "download_failure_reason": null
+  },
+  {
+    "title": "Funding Rate Suppression Detection in Crypto Derivatives Markets",
+    "authors": "Steven Paterson",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/posts/steven-paterson-10a1619_why-is-the-funding-rate-on-binance-for-beat-ugcPost-7441884273613246464--e41",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "funding-rate-suppression-detection-crypto-derivatives.pdf",
+    "downloaded_at": "2026-03-25",
+    "download_failure_reason": null,
+    "short_description": "Four-layer detection framework for spotting artificially suppressed funding rates in crypto perpetual futures via cross-sectional, liquidation, variance, and cross-exchange comparison."
   },
   {
     "title": "Geopolitical Risk in Currency Markets",
@@ -2340,6 +2280,30 @@
     "short_description": "An instalment in a high-frequency market-making infrastructure series explaining why funding rates from different venues are not directly comparable: a funding rate is a venue-defined measurement, not an emergent market reading, and its rule set contains adjustable parts often mistaken for constants. Two traps are documented — the settlement period is per-contract and occasionally adjusted rather than a fixed 8 hours, while funding history endpoints return only rate and timestamp, so assuming an 8-hour grid misaligns the series; and 'time-weighted average' does not fix the weight function, with some venues publishing a linear ramp under which the final sample carries n times the weight of the first (n = 480 for 8 hours of one-minute samples). The takeaway is that intuitions about how pre-settlement deviations move the final rate are venue-specific and must be measured where the weight shape is unpublished."
   },
   {
+    "title": "Liminal and Rysk: Two Approaches to Yield Generation on Hyperliquid",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/0xMacroguy",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "liminal-and-rysk-two-approaches-to-yield-generation-on-hyperliquid.pdf",
+    "downloaded_at": "2026-03-31",
+    "download_failure_reason": null,
+    "short_description": "Compares two DeFi protocols generating yield on Hyperliquid perpetuals exchange through different mechanisms (options vaults vs liquidity provision)."
+  },
+  {
+    "title": "Perpetual Futures Pricing",
+    "authors": "Damien Ackerer, Julien Hugonnier, Urban Jermann",
+    "publication_year": 2024,
+    "download_page": "https://finance.wharton.upenn.edu/~jermann/AHJ-main-10.pdf",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "ackerer-hugonnier-jermann-perpetual-futures-pricing.pdf",
+    "downloaded_at": "2026-04-10",
+    "download_failure_reason": null,
+    "short_description": "Derives no-arbitrage pricing formulas for perpetual futures contracts where funding payments anchor futures to spot prices. Shows the futures price equals the risk-neutral expectation of spot sampled at a random time reflecting price-anchoring intensity."
+  },
+  {
     "title": "Perpetual Futures and Basis Risk: Evidence from Cryptocurrency",
     "authors": null,
     "publication_year": null,
@@ -2364,6 +2328,18 @@
     "short_description": null
   },
   {
+    "title": "Pricing Efficiency and Arbitrage in the Bitcoin Spot and Futures Markets",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.sciencedirect.com/science/article/pii/S0275531919309808",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "The Crypto Carry Trade",
     "authors": null,
     "publication_year": null,
@@ -2373,6 +2349,30 @@
     "filename": "christin-crypto-carry-trade.pdf",
     "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "The Delta-Neutral Funding Rate Mechanics Problem: Entry Rate vs. Settlement Rate",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://twitter-thread.com/t/2040067413002289243",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "The Relationship Between Arbitrage in Futures and Spot Markets and Bitcoin Price Movements",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3209625",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -2856,6 +2856,18 @@
     "short_description": null
   },
   {
+    "title": "Bitcoin Beta De-noising: Isolating Altcoin-Specific Trading Signals",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-34-trading-strategies",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Bitcoin Price Formation and Signed Order Flow",
     "authors": "Lev",
     "publication_year": null,
@@ -2902,6 +2914,18 @@
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
     "short_description": null
+  },
+  {
+    "title": "Cross-Sectional Alpha Factors in Crypto: 2+ Sharpe Ratio Without Overfitting",
+    "authors": "Mark Aron Szulyovszky, Daniel Szemerey",
+    "publication_year": 2025,
+    "download_page": "https://blog.unravel.finance/p/cross-sectional-alpha-factors-in",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "cross-sectional-alpha-factors-in-crypto.pdf",
+    "downloaded_at": "2026-04-03",
+    "download_failure_reason": null,
+    "short_description": "Demonstrates Fama-French style cross-sectional factors (momentum, value, quality) remain exploitable in crypto, achieving Sharpe >2 with 0.05% costs from 2020-2025."
   },
   {
     "title": "Crypto Contagion",
@@ -2974,6 +2998,18 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": "Rescaled-range (Hurst) plus wavelet analysis of long memory and cyclical persistence across Bitcoin, Ethereum and Ripple. Reports long memory and cyclical persistence/anti-persistence across Bitcoin's full history but not for Ethereum or Ripple, a caution against assuming BTC-fitted scale structure transfers to altcoins, directly relevant to a cross-sectional perp universe and the case for channel-clustering models."
+  },
+  {
+    "title": "How Speculative Money Flows into Crypto",
+    "authors": "Mark Aron Szulyovszky",
+    "publication_year": 2025,
+    "download_page": "https://blog.unravel.finance/p/how-speculative-money-flows-into",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "how-speculative-money-flows-into-crypto.pdf",
+    "downloaded_at": "2026-04-03",
+    "download_failure_reason": null,
+    "short_description": "Systematic framework for measuring exogenous risk factors predicting crypto returns, from global macro indicators to ecosystem-specific on-chain signals."
   },
   {
     "title": "January 2026 Syndicate API Report: Performance Reporting Update",
@@ -3480,6 +3516,18 @@
     "short_description": null
   },
   {
+    "title": "Factor Models and Fama-MacBeth: Explaining Variance vs. Pricing Risk",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/andreassteiner_factor-models-are-central-to-empirical-asset-share-7446952080881213440-alFv",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Finding an Edge in IPOs: Research and a Backtested Mechanical Trading System",
     "authors": "Peter, CrackingMarkets",
     "publication_year": null,
@@ -3489,6 +3537,18 @@
     "filename": "finding-an-edge-in-ipos-research-and-a-backtested-mechanical-trading-system.pdf",
     "downloaded_at": "2026-02-18",
     "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Is Return Seasonality Due to Risk or Mispricing? Evidence from Anomaly Seasonality",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6441120",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4536,6 +4596,18 @@
     "short_description": "A cross-regime Bayesian-optimisation framework selects equity-signal model and portfolio hyperparameters across 2022--2024 validation regimes, then tests 2025 out of sample. A rank-aggregated XGBoost--TabNet Hybrid reports 51.26% return, 2.44 Sharpe, and -7.76% maximum drawdown, but the paper acknowledges survivorship bias, a single-year holdout, multiple-configuration selection without a Deflated Sharpe Ratio, and unmodelled short-borrow costs."
   },
   {
+    "title": "Temporal Fusion Transformers in FinTorch",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://fintorch.readthedocs.io/en/latest/tutorials/tft/tft.html",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Tick, Dollar and Volume Bars: Smarter Sampling of Financial Data (with code)",
     "authors": "QuantBeckman",
     "publication_year": 2025,
@@ -4546,6 +4618,30 @@
     "downloaded_at": "2026-07-23",
     "download_failure_reason": null,
     "short_description": "A code-first QuantBeckman newsletter piece on converting raw high-frequency trade streams into model-ready bars, framed as fixed-time sampling (a security camera every minute) versus event-based sampling (a motion-activated camera). It works through time, tick, volume, VWAP and dollar bars with Python, arguing the sampling choice is the first and most profound obstacle in a quant pipeline. Paid newsletter post; archived as an original summary card."
+  },
+  {
+    "title": "Training a Transformer Model to Predict 1-Minute Stock Prices, Part 2",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://medium.com/@itay1542/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-2-0169ed80dfae",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Training a Transformer Model to Predict 1-Minute Stock Prices, Part 3",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://readmedium.com/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-3-41cf84841d0b",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
   },
   {
     "title": "Using AI to Improve the ADX Indicator for Breakout Trading",
@@ -4620,6 +4716,18 @@
     "short_description": "Ahmed Nabil empirically tests whether tick, volume and dollar bars are truly information-driven using a three-month SIP trade dataset, showing 70.8% odd-lot prints and severe share-rank vs dollar-rank mismatches break volume and tick sampling on a modern internalized tape. He argues for dollar-runs bars, which close when the directional persistence of signed order flow becomes statistically surprising, isolating buy/sell asymmetry and detecting structural order-book changes before standard dollar bars breach their thresholds."
   },
   {
+    "title": "Attack of the MM (1): Market Maker Inventory-Based Quoting Systems",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/bc1qDave",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Bid-Ask Spread Decomposition",
     "authors": "Simone Menaldo",
     "publication_year": null,
@@ -4629,6 +4737,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "Fat Tails in Crypto Markets and Implications for Market Making",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/0xAlcibiades",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -4665,6 +4785,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "Intraday Market Making on Cointegrated Equity Pairs with Avellaneda-Stoikov and Kalman Filter",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/duarte-abracos_quantitativefinance-algorithmictrading-marketmaking-share-7443324306358505472-vSu1",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5316,6 +5448,18 @@
     "short_description": "QuantifiedStrategies reports three mean-reversion backtests: an XLP pullback (6.7% CAGR, 20% maximum drawdown), an FXI IBS short (14.8% CAGR, 47% drawdown), and an S&P 500 five-day-low strategy (7.1% CAGR, 23% drawdown). The published strategy rules and AmiBroker/TradeStation code are membership-gated, and no visible cost, borrow, or fill assumptions support independent reproduction."
   },
   {
+    "title": "Mean Reversion on Renko Charts: Exploiting the 70% Ranging Market",
+    "authors": "Stefan Friedrichowski",
+    "publication_year": null,
+    "download_page": "https://x.com/bettersystrader",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "mean-reversion-on-renko-charts-exploiting-the-70-percent-ranging-market.pdf",
+    "downloaded_at": "2026-04-24",
+    "download_failure_reason": null,
+    "short_description": "Uses percentage-based Renko charts to expose alternating up/down brick patterns in mean-reverting regimes, arguing 70% of market time is ranging."
+  },
+  {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
     "authors": "Tim Leung and Xin Li",
     "publication_year": 2015,
@@ -5410,6 +5554,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "Three Dead Simple Edges in Macro ETFs",
+    "authors": "Robot James",
+    "publication_year": 2026,
+    "download_page": "https://robotjames.substack.com/p/three-dead-simple-edges-in-macro",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "three-dead-simple-edges-in-macro-etfs.pdf",
+    "downloaded_at": "2026-04-13",
+    "download_failure_reason": null,
+    "short_description": "Three simple systematic trading edges for SPY and TLT based on understanding structural sources of edge in markets."
   },
   {
     "title": "Trading Multiple Mean Reversion",
@@ -5520,6 +5676,18 @@
     "short_description": null
   },
   {
+    "title": "Backtesting Kullamagi's Episodic Pivot Setup in Crypto Markets",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-44-kristjan-kullamagis",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Backtesting a Community-Sourced Momentum Strategy",
     "authors": "Pedma",
     "publication_year": null,
@@ -5544,6 +5712,18 @@
     "short_description": null
   },
   {
+    "title": "Bimodality Everywhere: International Evidence of Deep Momentum",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4452964",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Bitcoin Intraday Time-Series Momentum",
     "authors": null,
     "publication_year": null,
@@ -5553,6 +5733,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
+    "short_description": null
+  },
+  {
+    "title": "Building and Using Crypto Momentum Scanners for Systematic Trading",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-31-crypto-momentum",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -5976,6 +6168,18 @@
     "short_description": "This paper documents consistent value and momentum return premia across eight diverse asset classes and markets, finding a strong common factor structure where value and momentum returns are more strongly correlated across asset classes than within them. The two factors are negatively correlated with each other across all asset classes, and global funding liquidity risk is identified as a partial source of these patterns, presenting a challenge to existing behavioral, institutional, and rational asset pricing theories."
   },
   {
+    "title": "Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics",
+    "authors": "Mark Aron Szulyovszky, Daniel Szemerey",
+    "publication_year": 2026,
+    "download_page": "https://blog.unravel.finance/p/aperiodic-democratizing-crypto-order",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "aperiodic-democratizing-crypto-order-flow.pdf",
+    "downloaded_at": "2026-04-03",
+    "download_failure_reason": null,
+    "short_description": "Announces the public launch of Aperiodic, a crypto data platform providing 200+ TB of tick data including point-in-time liquidity metrics, order flow imbalance, and full exchange coverage without survivorship bias."
+  },
+  {
     "title": "Bitcoin Wild Moves: Evidence from Order Flow Toxicity and Price Jumps",
     "authors": "Atiwat Kitvanitphasu et al.",
     "publication_year": null,
@@ -6057,6 +6261,18 @@
     "filename": "scaillet-treccani-trevisan-hf-jump-analysis-of-bitcoin.pdf",
     "downloaded_at": "2026-04-10",
     "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Most-Predictive: Which Microstructure Metric Best Forecasts Short-Term Crypto Returns",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://aperiodic.io/notebooks/most-predictive",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -6828,6 +7044,18 @@
     "short_description": null
   },
   {
+    "title": "ML-Optimized Dynamic Position Sizing for Trading Strategies",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/Eddie_Fibonacci",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Mastering the Calmar Ratio for Risk Analysis",
     "authors": null,
     "publication_year": null,
@@ -6945,6 +7173,18 @@
     "filename": "the-math-needed-for-position-sizing-complete-roadmap.pdf",
     "downloaded_at": "2026-02-22",
     "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "The Unreasonable Effectiveness of Volatility Targeting — and Where It Falls Short",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://blog.unravel.finance/p/the-unreasonable-effectiveness-of",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -9036,6 +9276,18 @@
     "short_description": null
   },
   {
+    "title": "Can Safety and Profitability Coexist? Performance Analysis of Pairs Trading among S&P 500 Stocks",
+    "authors": "Mustafa Hussein",
+    "publication_year": 2025,
+    "download_page": "https://gupea.ub.gu.se/items/dc1a29d8-4290-42c7-bf97-ee82eb7251d9",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "can-safety-and-profitability-coexist-pairs-trading-sp500.pdf",
+    "downloaded_at": "2026-04-24",
+    "download_failure_reason": null,
+    "short_description": "Master's thesis analyzing cointegration-based pairs trading on S&P 500 stocks, investigating whether market-neutral stat arb can deliver both capital safety and profitability."
+  },
+  {
     "title": "Cluster-Based Pairs Trading: Combining Unsupervised Learning with Cointegration Filtering",
     "authors": "Fuwen Gan and Ramy Mizrachi",
     "publication_year": null,
@@ -9528,6 +9780,18 @@
     "short_description": "An instalment of a recurring biweekly report tracking six systematic BTC option-selling indices built on a common 35-delta strike rule, from base 100 on 2019-07-01 to 2026-08-23, using synthetic 7-day options with no delta hedging and no transaction costs. The headline result is a natural experiment: the weekly 35-delta strangle returns +104% at Sharpe 0.47 with a -66% drawdown, while the identical strangle held only across the 40-hour weekend returns +1393% at Sharpe 2.52 with a -26% drawdown and an 83% weekly win rate. The entry explains the mechanism — options are priced off calendar time while volatility follows information arrival, and weekends carry far less news than their share of the week — and contrasts it with the Thalex weekend long-straddle result elsewhere in the same file, which is a vega trade rather than a realised-variance trade."
   },
   {
+    "title": "Building a NASDAQ Pivot Point Breakout Strategy",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.youtube.com/watch?v=PFI0xLCUx_4",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "C18 -- Peer Breadth Diffusion",
     "authors": "The Milk Man (@MrMilkTrading)",
     "publication_year": 2026,
@@ -9574,6 +9838,30 @@
     "downloaded_at": "2026-08-30",
     "download_failure_reason": null,
     "short_description": "A ten-post X thread arguing that the crypto momentum premium is a size effect: momentum is strongest in large coins and turns negative in roughly the smallest decile, so a large one-day gain in a micro-cap token predicts a subsequent fall. The trade is to short the biggest one-day gainers among the smallest names, run many small concurrent positions, and accept short-squeeze losses as the compensated risk rather than filtering for them — the edge persists because capacity is too small for professional capital and squeezes punish anyone who presses size. A follow-up backtest by dima (@dima_quant) tests a concrete specification — short Binance's bottom 30% by market cap after a 3-sigma daily pump, five positions at 20%, stop at the pump-day seven-day high, take profit at 2R — returning +36.4% over roughly fifteen months at Sharpe 1.36 and a -15.4% drawdown across 124 trades net of fees and funding, though the window is a bear regime and the sample is thin."
+  },
+  {
+    "title": "David Varadi's Growth and Inflation Sector Timing: A Wildcard Strategy",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://allocatesmartly.com/david-varadis-growth-and-inflation-sector-timing-a-wildcard-strategy/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Deleting Filters to Improve Win Rate: A Forex Structural Breakout Architecture",
+    "authors": "Iqbal Zainal",
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/yllvar_quanttrading-algorithmictrading-python-share-7453244613466705920-SHPe/",
+    "source_file": "strategy-examples.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "deleting-filters-to-improve-win-rate-forex-structural-breakout.pdf",
+    "downloaded_at": "2026-04-24",
+    "download_failure_reason": null,
+    "short_description": "Practitioner discovery that removing session/time/weekend filters from a forex algo increased win rate to 75% across 881 live trades with 1.50 profit factor and 3.2% max drawdown."
   },
   {
     "title": "Harvesting the Volatility Risk Premium: A Learning-to-Rank Approach",
@@ -9816,6 +10104,18 @@
     "short_description": null
   },
   {
+    "title": "Does Bitcoin's January Performance Predict the Rest of the Year?",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-30-bitcoin-january",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "EMA Rate-of-Change as a Trend Signal: 3,906% Returns with Controlled Drawdowns",
     "authors": "Pedma",
     "publication_year": null,
@@ -9864,6 +10164,18 @@
     "short_description": null
   },
   {
+    "title": "Testing the Pre-Holiday Return Anomaly in Bitcoin",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-29-bitcoin-pre-holiday",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Testing the Sell-in-May Seasonal Pattern in Bitcoin",
     "authors": "Pedma",
     "publication_year": null,
@@ -9873,6 +10185,18 @@
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
+    "short_description": null
+  },
+  {
+    "title": "The Turn-of-the-Month Effect in Bitcoin Returns",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-28-turn-of-the-month",
+    "source_file": "technical-indicators.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -10018,6 +10342,18 @@
     "downloaded_at": null,
     "download_failure_reason": "ssrn_paywall",
     "short_description": null
+  },
+  {
+    "title": "The Fokker-Planck Equation: The Deterministic Twin of a Stochastic Process",
+    "authors": "Titouan Baraud",
+    "publication_year": null,
+    "download_page": "https://www.linkedin.com/posts/titouan-baraud_quantfinance-fokkerplanck-stochasticcalculus-ugcPost-7448101214195441664-aAGi",
+    "source_file": "time-series.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "the-fokker-planck-equation-the-deterministic-twin-of-a-stochastic-process.pdf",
+    "downloaded_at": "2026-04-11",
+    "download_failure_reason": null,
+    "short_description": "Practitioner explainer on how the Fokker-Planck equation governs probability density evolution for SDEs underlying Black-Scholes, Heston, Vasicek, and SABR models."
   },
   {
     "title": "The Sandwich: Running Any Forecasting Model in Laplace's Coordinates",
@@ -10224,6 +10560,18 @@
     "short_description": null
   },
   {
+    "title": "Day Trading Volatility Breakouts Systematically - All Rules Included",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.crackingmarkets.com/day-trading-volatility-breakouts-systematically-all-rules-included/",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Diagnosing and Fixing an Underperforming Trend Model",
     "authors": "Pedma",
     "publication_year": null,
@@ -10356,6 +10704,18 @@
     "short_description": null
   },
   {
+    "title": "Market Open Trend Strategy: Long Only Nasdaq",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://x.com/BostonRobTrades/status/2048141906102845655",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Momentum Turning Points",
     "authors": "Christian L. Goulding, Campbell R. Harvey, Michele G. Mazzoleni",
     "publication_year": 2023,
@@ -10389,6 +10749,18 @@
     "filename": "rethinking-trend-following-optimal-regime-dependent-allocation.pdf",
     "downloaded_at": "2026-04-13",
     "download_failure_reason": null,
+    "short_description": null
+  },
+  {
+    "title": "Testing Larry Williams' Volatility Expansion Strategy in Crypto",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.tradingresearchub.com/p/research-article-40-larry-williams",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
     "short_description": null
   },
   {
@@ -10536,6 +10908,30 @@
     "short_description": "A curated list of 30 intermediate-to-advanced quant finance project ideas for candidates targeting quant research, market risk, model validation, derivatives pricing, or credit roles. Projects are grouped into market risk, derivatives pricing, volatility modeling, fixed income, credit risk, and quantitative research, plus a bonus tier of advanced systems (XVA, copula risk, Longstaff-Schwartz exotics, Black-Litterman, HMM regimes), with the advice to build projects that demonstrate depth rather than familiarity."
   },
   {
+    "title": "A Dirty Long Vol VIX Trade",
+    "authors": "Robot James",
+    "publication_year": 2026,
+    "download_page": "https://robotjames.substack.com/p/a-dirty-long-vol-vix-trade",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "a-dirty-long-vol-vix-trade.pdf",
+    "downloaded_at": "2026-04-10",
+    "download_failure_reason": null,
+    "short_description": "A practitioner post describing a tactical long-volatility trade in VIX futures exploiting sticky customer positioning and tourist trading behavior, going long VX30 when a value metric falls below a z-score threshold."
+  },
+  {
+    "title": "A GARCH-temporal fusion transformer model for the volatility prediction of exchange traded funds",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://link.springer.com/article/10.1007/s00521-025-11468-z",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
     "authors": "Adil Reghai, Lama Tarsissi, Gérard Biau, and Alex Lipton",
     "publication_year": 2026,
@@ -10606,6 +11002,30 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": "An X Article on hedging a short-volatility oil-options book with slower rebalance cadence, deltas computed from a realised-volatility view, and dispersed gamma exposure across strikes and maturities. It correctly frames these choices as trading risk for potential P&L rather than free risk reduction: no backtest details, transaction costs, tail losses, or out-of-sample evidence are supplied."
+  },
+  {
+    "title": "Advances in forecasting realized volatility: a review of methodologies",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://link.springer.com/article/10.1186/s40854-025-00809-5",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Assessing the Risk of Bitcoin Futures Market: New Evidence",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://link.springer.com/article/10.1007/s40745-024-00517-4",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
   },
   {
     "title": "Comparing Deep Learning Models for the Task of Volatility Prediction Using Multivariate Data",
@@ -10680,6 +11100,18 @@
     "short_description": "A progress-note X thread from DeltaDog on building a risk model, finding that fast, short-lookback EWMA realized-volatility estimators consistently beat slow ones on daily data. The follow-up discussion warns this \"faster always wins\" result may be an artifact of unrealistically low modelled trading costs — the net (after-cost) equity curve tracks the gross (before-cost) one too closely to penalise the fast estimators' higher turnover, so a practitioner may deliberately blend in slower estimators for robustness."
   },
   {
+    "title": "Forecasting Bitcoin realized volatility by measuring the spillover effect among cryptocurrencies",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0165176521003694",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
     "title": "Forecasting Realised Volatility Using Regime-Switching Models",
     "authors": "Yi Ding, Dimos S. Kambouroudis, and David G. McMillan",
     "publication_year": 2025,
@@ -10710,6 +11142,18 @@
     "download_page": "https://ideas.repec.org/p/zbw/iwqwdp/032023.html",
     "source_file": "volatility.rst",
     "included_in_index_at": "2026-06-05",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "GNAR-HARX Models for Realised Volatility: Incorporating Exogenous Predictors and Network Effects",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://arxiv.org/abs/2510.24443",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
     "filename": null,
     "downloaded_at": null,
     "download_failure_reason": "not_attempted",
@@ -10750,6 +11194,18 @@
     "downloaded_at": "2026-07-01",
     "download_failure_reason": null,
     "short_description": "A cost-aware backtest of short-volatility strategies designed to harvest the variance risk premium (option-implied volatility exceeding subsequently realized volatility) in short-dated index options, run on one-minute options-chain and index data from September 2024 to June 2026 across expiry-day, stop-loss, and lot-scaling dimensions. The main finding is that positive gross expectancy is erased by transaction costs and taxes at a single lot and only becomes net-positive once positions are scaled up to amortize fixed per-trade costs; the strategies also respond poorly to stop-losses. The author concludes the edge is real but the barriers to capturing it are equally real for retail traders."
+  },
+  {
+    "title": "Interactive Brokers IV Downloader",
+    "authors": "Peter",
+    "publication_year": 2024,
+    "download_page": "https://www.crackingmarkets.com/interactive-brokers-iv-downloader/",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-06-05",
+    "filename": "interactive-brokers-iv-downloader.pdf",
+    "downloaded_at": "2026-02-18",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets Python script to download implied volatility data from Interactive Brokers for free, formatted for RealTest backtesting platform."
   },
   {
     "title": "Intraday Volatility Dynamics",
@@ -10906,6 +11362,30 @@
     "downloaded_at": null,
     "download_failure_reason": "publisher_paywall",
     "short_description": "Using USO ETF option data and quantile regressions, this study examines how crude-oil returns relate asymmetrically to changes in option-implied volatility, skewness, and kurtosis. Negative returns have stronger effects on implied volatility and kurtosis, especially in upper quantiles, while positive returns more strongly affect implied skewness at lower quantiles."
+  },
+  {
+    "title": "The role of implied volatility in forecasting future realized volatility and jumps in foreign exchange, stock, and bond markets",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0304407610000564",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
+  },
+  {
+    "title": "Transaction activity and bitcoin realized volatility",
+    "authors": null,
+    "publication_year": null,
+    "download_page": "https://www.sciencedirect.com/science/article/abs/pii/S0167637721001000",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "not_attempted",
+    "short_description": null
   },
   {
     "title": "Understanding Multivariate GARCH Models",

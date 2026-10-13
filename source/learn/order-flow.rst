@@ -155,3 +155,31 @@ The OFI metric shows statistical significance in predicting price direction with
 By Dean Markwick.
 
 `Read the blog post <https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html>`__
+
+Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics
+-------------------------------------------------------------------------------------
+
+An announcement and technical overview of Aperiodic, a cryptocurrency data platform designed to democratize access to institutional-grade market microstructure metrics. The authors identify a significant gap in the crypto data market where existing platforms provide incomplete solutions: building quantitative strategies requires point-in-time data, comprehensive liquidity metrics, unique microstructure indicators, full exchange coverage without survivorship bias, and locally-timestamped time series — and existing providers typically offer only one or two of these.
+
+Aperiodic provides over 100 metrics including deep L2 order book imbalances across multiple depth levels, flow entropy (Shannon entropy measuring order flow predictability — low entropy indicates structured, trend-friendly markets; high entropy suggests choppy, mean-reverting conditions), slippage against live order books, Kyle Lambda (price impact per unit of signed order flow), and large trade reversal metrics distinguishing informed flow from uninformed liquidity-driven flow. The platform delivers pre-signed parquet files enabling unlimited concurrent downloads, with a lightweight Python wrapper for simplified access. This eliminates the need for organizations to independently purchase, store, and maintain terabytes of raw tick data.
+
+By Mark Aron Szulyovszky and Daniel Szemerey.
+
+`Read the blog post <https://blog.unravel.finance/p/aperiodic-democratizing-crypto-order>`__
+
+Most-Predictive: Which Microstructure Metric Best Forecasts Short-Term Crypto Returns
+-------------------------------------------------------------------------------------
+
+An interactive notebook from Aperiodic that tackles a deceptively simple question: across the full catalog of crypto microstructure metrics — order flow, book imbalance, funding rates, trade size distributions, spread dynamics — which single metric is the most predictive of short-term returns? The notebook provides a reproducible framework for ranking dozens of pre-aggregated metrics by their forecasting power across instruments and horizons, letting users run the same analysis to surface similar signals on their own.
+
+The approach works because crypto perpetual futures have a relatively transparent microstructure where aggressive (taker) order flow is the primary short-term price driver. Market makers continuously adjust quotes in response to net buy/sell pressure, so metrics that capture directional flow imbalance — the difference between taker buy and taker sell volume — tend to carry strong predictive signal over intrabar and multi-bar horizons. Unlike derived indicators built on price alone, order flow metrics observe the cause (aggressive trading activity) rather than the effect (price movement), giving them a structural information advantage. The notebook demonstrates this empirically: flow-based features dominate book-state and derivatives-based features in out-of-sample predictive power, consistent with the broader academic literature on order flow and cryptocurrency returns. For practitioners, the key takeaway is that a single, well-constructed order flow metric can outperform complex multi-factor models for short-horizon alpha, especially in instruments with high taker-driven volume like BTC and ETH perpetuals.
+
+The notebook sits within a broader framework described by the same author in `How Speculative Money Flows into Crypto <https://blog.unravel.finance/p/how-speculative-money-flows-into>`__, which maps the full chain of crypto liquidity drivers from the outside in: macro-level speculative flow (measured via Bitcoin's rolling correlation with gold versus tech equities), ecosystem-level capital inflows (stablecoin exchange deposits tracked across 40+ exchanges, spot ETF netflows), and leverage proxies (perpetual funding rates, liquidation volumes, long/short ratios, margin borrow rates). Each layer operates on a different timescale — macro factors are slow-moving regime indicators, stablecoin flows are medium-frequency positioning signals, and microstructure metrics like order flow imbalance update tick-by-tick.
+
+This layered view explains why the "most predictive" metric for short-term returns comes from the innermost ring: at the shortest horizons, the macro and ecosystem layers are essentially constant, so all the predictive variation concentrates in order-level activity. The framework also highlights the risk management application — when ecosystem-wide leverage is elevated and capital inflows are drying up, even a small shock can cascade into forced liquidations. A composite speculative flow index that combines metrics across these layers shows meaningful predictive power for medium-term drawdown risk, complementing the short-horizon alpha signal that the most-predictive notebook isolates.
+
+Mentioned by `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive/>`__ in `this discussion <https://www.linkedin.com/posts/almostintuitive_its-kind-of-an-open-secret-in-crypto-microstructure-share-7444821512399781888-EEfI>`__: "It's kind of an open secret in crypto microstructure: one metric predicts short-term returns better than almost anything else."
+
+By `Aperiodic <https://aperiodic.io>`__.
+
+`Run the notebook <https://aperiodic.io/notebooks/most-predictive>`__

@@ -491,6 +491,19 @@ By AI Data Lab (in Japanese).
 
 `Read the post <https://aidatalab.jp/jp/portfolio_process.html>`__.
 
+David Varadi's Growth and Inflation Sector Timing: A Wildcard Strategy
+----------------------------------------------------------------------
+
+A review of David Varadi's tactical sector rotation strategy that times stock market sector exposure based on growth and inflation regimes. The strategy operates within a "four seasons" framework using two signals: the current trend of the S&P 500 as a forward-looking proxy for economic growth, and a novel "Sector-Implied Expected Inflation" indicator constructed from the ratio of two hypothetical portfolios — one holding sectors with positive inflation beta (Energy, Industrials, Financials, Materials) and another with negative inflation beta (Utilities, Healthcare, Staples). At the close of each trading day, the strategy determines the current regime and buys the corresponding sector ETF: Technology (XLK) in growth-up/inflation-down environments, Energy (XLE) in growth-up/inflation-up, and other sectors for stagflation and deflation scenarios. Despite daily rebalancing potential, the strategy averages fewer than 6 position changes per year.
+
+Backtested from 1991 to present (net of 0.1% trading friction per trade), the strategy shows strong absolute returns but extreme volatility — it holds a single sector at all times, making it a concentrated risk asset rather than a total portfolio solution. In 2025 it experienced a 24% drawdown mid-year before recovering to 39% YTD gains. The monthly correlation to the S&P 500 is 0.60, and the average pairwise correlation to other tactical strategies is 0.41. The article notes the strategy would have reduced broad market drawdowns but has failed to outperform the broad market since 2008. Allocate Smartly tracks a modified version with reduced turnover. Areas for further research include testing direct inflation measures like TIPS breakeven rates and beta-adjusting the inflation expectation portfolios, since the positive inflation portfolio exhibits significantly higher market beta.
+
+By Allocate Smartly.
+
+Mentioned by `Quantocracy <https://x.com/Quantocracy>`__ in `this discussion <https://x.com/Quantocracy/status/2041392422543069477>`__.
+
+`Read the blog post <https://allocatesmartly.com/david-varadis-growth-and-inflation-sector-timing-a-wildcard-strategy/>`__
+
 Futures Strategies
 ==================
 
@@ -584,6 +597,17 @@ By Petr Podhajsky. Tools used: RealTest & Norgate Data.
 
 `Read the post <https://www.linkedin.com/posts/petr-podhajsky_terrified-of-buying-the-top-in-gold-bitcoin-ugcPost-7424474305478000640-bV86/>`__
 
+Building a NASDAQ Pivot Point Breakout Strategy
+-----------------------------------------------
+
+A step-by-step walkthrough of prototyping, robustness-testing, and cross-validating a pivot point breakout strategy on E-mini NASDAQ (NQ) futures. The setup is minimalist: calculate the daily Pivot S1 from the 4 PM Chicago close, add 2.2× ATR above it, and go long on a breakout — exiting at the close, trading only Mondays and Tuesdays. No indicators or filters beyond the day-of-week restriction.
+
+The robustness testing is thorough. The Space metric (how many pivot-level and multiplier combinations produce positive results) scored 92% on R1 and 86% on S1. The selected 2.2× multiplier ranked first on walk-forward unseen data over three years, and neighbouring values (2.0, 2.4) remained profitable — evidence of a stable parameter region rather than a curve-fitted outlier. Cross-validation across five additional index futures (S&P, Dow, Nikkei, S&P 400, Russell) showed all six passing on both all-time and recent-year data, with Nikkei outperforming NASDAQ. The day-of-week filter was driven by data: Friday was consistently destructive and Thursday marginal, so restricting to Monday–Tuesday improved both average trade quality and net-profit-to-drawdown ratio.
+
+Mentioned by `@onlybreakouts <https://x.com/onlybreakouts>`__ (Breakout Trading Academy) in `this discussion <https://x.com/onlybreakouts/status/2037229660803604972>`__.
+
+`Watch the video <https://www.youtube.com/watch?v=PFI0xLCUx_4>`__
+
 FX Strategies
 =============
 
@@ -601,6 +625,21 @@ Key metrics: over 1997-2026 the standard least-squares signal produced a Sharpe 
 Mentioned by Piotr Pomorski (@PtrPomorski) in `this discussion <https://x.com/PtrPomorski/status/2071321989114151372>`__, who calls it "another goldmine from Macrosynergy" and agrees with the factor selection, while noting it is striking that the strategy's correlation with market performance is near zero across most currencies.
 
 `Read the article <https://macrosynergy.com/research/systematic-macro-trading-with-regression-learning-and-transaction-cost-analysis/>`__
+
+Deleting Filters to Improve Win Rate: A Forex Structural Breakout Architecture
+------------------------------------------------------------------------------
+
+A LinkedIn post by Iqbal Zainal describing how removing almost all filters from his forex algorithmic trading system — session filters, time filters, and weekend filters — caused the win rate to jump to 75% across 881 live trades over 90 days. The remaining signal logic is a four-component structural breakout system: (1) an H4 trend filter using Directional Indicator crossover on closed bars to prevent repaint bias, (2) a live price breakout above the most recent H4 swing high, (3) an entry distance filter capping the distance from breakout level to 30 pips, and (4) H1 RSI > 40 as momentum confirmation at the moment of breakout. Risk management uses a dynamic stop-loss of max(H1_ATR * 1.5, 25 pips) with a trailing stop that activates at +15 pips and locks at +5 pips.
+
+The reported 90-day metrics are: 881 trades, 75.0% win rate, profit factor 1.50, and maximum drawdown of 3.2%. The author frames the lesson as "simplicity survives; over-optimisation dies in production" — arguing that protective filters were actually skipping profitable trades rather than protecting capital.
+
+The thesis that fewer filters improve live performance has some support in the systematic trading literature. The concept aligns with the bias-variance trade-off well-documented in machine learning and quantitative finance: complex models with many parameters fit training data well but generalise poorly to unseen data. López de Prado (2018, "Advances in Financial Machine Learning") devotes extensive discussion to how additional strategy rules often amount to overfitting, and Robert Carver's "Systematic Trading" (2015) explicitly recommends minimising the number of trading rules, arguing that each additional filter increases the risk of data-mining bias without proportional improvement in out-of-sample performance. Bailey et al. (2014, "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance") demonstrate that the probability of finding a spurious strategy increases exponentially with the number of parameters tested.
+
+However, several aspects of the claims warrant critical scrutiny. First, **881 trades over 90 days is a limited sample for drawing firm conclusions**. Harvey, Liu, and Zhu (2016, "...and the Cross-Section of Expected Returns") argue that t-statistics should exceed 3.0 (not the traditional 1.96) to account for multiple testing, and White's (2000) Reality Check and Romano and Wolf's (2005) stepwise multiple testing frameworks show that strategy performance must be evaluated against a null of random selection. A 75% win rate with a 1.50 profit factor is not exceptional when considered against the full distribution of possible 90-day outcomes — a simple Monte Carlo simulation would reveal the probability of observing such metrics by chance for any breakout strategy with a moderate edge. Second, **the profit factor of 1.50 with a 75% win rate implies that the average losing trade is roughly 2x the average winner** — this is characteristic of breakout strategies with tight trailing stops that lock in small gains but occasionally get stopped for full ATR-based losses. The asymmetry means the strategy is vulnerable to any regime shift that increases the frequency of false breakouts, even temporarily. Third, **the claim that removing filters improved performance is confounded by the simultaneous bug fix**: the author notes that an absolute value bug in the entry distance filter was causing 60% of prior losses. Attributing the improvement to "simplicity" when a material coding error was simultaneously corrected conflates two distinct effects. Fourth, **90-day drawdown of 3.2% cannot be extrapolated to long-term risk** — Magdon-Ismail et al. (2004) show that maximum drawdown grows as O(sqrt(T)) for diffusion processes, so a 3.2% drawdown over 90 days is consistent with substantially larger drawdowns over a full year or multi-year period. Fifth, the strategy lacks any **regime filter or volatility regime awareness** — forex breakout strategies are well-documented to suffer during low-volatility range-bound environments (Menkhoff et al., 2012, "Currency Momentum Strategies"), and the removal of session/time filters eliminates exactly the kind of structural information that might protect against adverse regimes such as illiquid Asian session breakouts in European pairs.
+
+Mentioned by Iqbal Zainal (`@yllvar <https://www.linkedin.com/in/yllvar/>`__) in `this discussion <https://www.linkedin.com/posts/yllvar_quanttrading-algorithmictrading-python-share-7453244613466705920-SHPe/>`__: "I just deleted almost every filter from my algorithmic trading architecture. The win rate jumped to 75.0%. Simplicity survives. Over-optimization dies in production."
+
+`Read the post <https://www.linkedin.com/posts/yllvar_quanttrading-algorithmictrading-python-share-7453244613466705920-SHPe/>`__.
 
 More Strategy Examples in the Learning Section
 ==============================================

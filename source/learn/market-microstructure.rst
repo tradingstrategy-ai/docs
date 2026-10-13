@@ -368,3 +368,36 @@ The data set consists of 14 randomly selected liquid NASDAQ stocks over 53 tradi
 This is a theoretical and empirical microstructure paper, not a trading strategy, so there are no return, Sharpe or drawdown figures. The key quantitative results concern how well each model reproduces the observed price diffusion curve :math:`D(\ell)/\ell` on small-tick stocks. The TIM, when calibrated on returns rather than on response functions directly, matches the empirical diffusion surprisingly well at long lags while underestimating it at short lags where high-frequency noise dominates; the constant-gap approximation (no gap dynamics) overestimates volatility, showing that gap adaptation to order flow reduces price volatility. The naively calibrated HDIM overestimates :math:`D(\ell)` by roughly 15% at large lags; multiplying all calibrated :math:`\kappa` kernels by a factor of three greatly improves the fit to both the response functions and the diffusion curve, and a constant high-frequency contribution of about 0.04 ticks squared is needed at small lags. On large-tick stocks the gap fluctuation terms are around two orders of magnitude smaller, so the constant-gap HDIM alone reproduces both the response functions and the diffusion with very good agreement, while the TIM is numerically unstable there because small errors in :math:`G_\pi` are amplified in the variance.
 
 `Read the paper <https://arxiv.org/abs/1107.3364>`__
+
+Intraday Market Making on Cointegrated Equity Pairs with Avellaneda-Stoikov and Kalman Filter
+---------------------------------------------------------------------------------------------
+
+A hands-on walkthrough of building an intraday market-making system that applies the Avellaneda-Stoikov optimal quoting framework to cointegrated equity pairs (WFC/AXP), with dynamic hedge ratio estimation via Kalman Filter on 619K minute bars. The pipeline covers pair selection via cointegration testing across S&P 100 constituents, Kalman Filter with EM calibration for hedge ratios, Avellaneda-Stoikov optimal quoting with fee floors, and out-of-sample validation with phantom fill prevention.
+
+The author emphasises the gap between mathematical elegance and market reality — the first version produced a Sharpe of -11 before six structural bugs were identified and fixed. Out-of-sample results (2024–2026, net of costs) show a Sharpe Ratio of 1.21, net PnL of +$4,870 on $100K notional (peak capital deployed ~$36K, yielding 13.56% over 27 months or ~5.9% annualised), and a maximum drawdown of -2.49% with the model active on 100% of bars. Full source code is available on GitHub.
+
+By `Duarte Abraços <https://www.linkedin.com/in/duarte-abracos>`__.
+
+`Read the post <https://www.linkedin.com/posts/duarte-abracos_quantitativefinance-algorithmictrading-marketmaking-share-7443324306358505472-vSu1>`__
+
+Fat Tails in Crypto Markets and Implications for Market Making
+--------------------------------------------------------------
+
+A concise analysis of why standard Gaussian assumptions fail in crypto market microstructure and what this means for market making strategies. Standard financial literature models order arrivals as Poisson, uses Geometric Brownian motion for optimal control, and assumes normally distributed returns — but crypto markets, especially at high frequency, exhibit kurtosis an order of magnitude above Gaussian assumptions.
+
+The post explains how fat-tailed distributions interact with crypto-specific dynamics: in markets with points or liquidity incentives where daily volume runs 10–20x open interest, prices behave like an Ornstein–Uhlenbeck process, which is part of why medium-frequency mean reversion works in perpetual futures. For market makers, fill sizes are extremely fat-tailed with larger fills carrying negative 5-second markouts, meaning naive linear-cost models produce equity curves that only go down. The practical takeaway: market making requires a convex payoff structure with respect to risk — a super-linear premium for taking it on and a sub-linear cost for exiting — along with contrarian treatment of signals like order imbalance by estimating reversal probabilities.
+
+By `Alcibiades <https://x.com/0xAlcibiades>`__.
+
+`Read the post <https://x.com/0xAlcibiades/status/2039679350572728376>`__
+
+Attack of the MM (1): Market Maker Inventory-Based Quoting Systems
+------------------------------------------------------------------
+
+A crypto market microstructure explainer on why prices often move against retail traders immediately after they buy or sell illiquid altcoins. The core argument is that this behavior is usually not "whale manipulation" but a natural consequence of inventory-based quoting: when aggressive retail flow pushes a market maker off balance, the maker adjusts quotes to reduce inventory risk and adverse selection exposure.
+
+The post walks through the main mechanics using the Avellaneda-Stoikov framework: quote skewing to attract offsetting flow, spread widening when inventory imbalance worsens, and reservation-price shifts as inventory changes. It also emphasizes why retail traders are especially vulnerable in small-cap markets, where thin liquidity and concentrated market orders make them the dominant source of toxic flow. A practical takeaway is to split entries into smaller increments so you work with the market maker's quoting adjustments instead of paying the full adverse-move cost in one trade.
+
+By `Dave.0xU <https://x.com/bc1qDave>`__.
+
+`Read the post <https://x.com/bc1qDave/status/2004000120132850068>`__
