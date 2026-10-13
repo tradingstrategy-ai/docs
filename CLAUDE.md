@@ -1,5 +1,9 @@
 # Dealing with document repository
 
+## Building the docs
+
+**Never run a Sphinx build** (`sphinx-build`, `make html`, `make build-html` or similar) unless the user explicitly asks for it. To check edited `.rst` files, use lightweight checks such as `python scripts/check-rst-tables.py <file>` instead.
+
 ## Websites and skills
 
 There are websites that do not work with the _WebFetch_ tool.
