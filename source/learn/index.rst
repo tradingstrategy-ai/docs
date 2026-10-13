@@ -35,6 +35,15 @@ Strategy Research
    carry-trade
    technical-indicators
 
+Strategy Examples
+~~~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   strategy-examples
+   factor-examples
+
 Market Analysis
 ~~~~~~~~~~~~~~~
 
