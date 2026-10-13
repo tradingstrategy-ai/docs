@@ -26,9 +26,9 @@ Key metrics: the study reports a 2.81 Sharpe ratio and 36% annualized alpha for 
 151 Trading Strategies
 ----------------------
 
-This reference covers over 150 distinct trading strategies across equity, fixed income, currency, and commodity markets, organized by asset class and strategy type. Each strategy includes a description of the signal, implementation details, and academic references, making it the most comprehensive publicly available catalog of systematic trading approaches.
+We provide detailed descriptions, including over 550 mathematical formulas, for over 150 trading strategies across a host of asset classes (and trading styles). This includes stocks, options, fixed income, futures, ETFs, indexes, commodities, foreign exchange, convertibles, structured assets, volatility (as an asset class), real estate, distressed assets, cash, cryptocurrencies, miscellany (such as weather, energy, inflation), global macro, infrastructure, and tax arbitrage. Some strategies are based on machine learning algorithms (such as artificial neural networks, Bayes, k-nearest neighbors). We also give: source code for illustrating out-of-sample backtesting with explanatory notes; around 2,000 bibliographic references; and over 900 glossary, acronym and math definitions. The presentation is intended to be descriptive and pedagogical. This is the complete version of the book.
 
-`Read the paper <https://doi.org/10.1007/978-3-030-02792-6>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247865>`__.
 
 Dynamic Trading with Predictable Returns and Transaction Costs
 --------------------------------------------------------------
@@ -97,11 +97,13 @@ By Pedma.
 The Realities and Operational Challenges of Running Algorithmic Trading Systems
 -------------------------------------------------------------------------------
 
-An article covering the operational realities of running automated trading systems, including infrastructure reliability, risk monitoring, and the management of live positions across multiple strategies. The piece addresses the gap between strategy research and the operational complexity of deploying and maintaining algorithmic trading systems in production.
+An article providing an unvarnished look at the realities and challenges of algorithmic trading as a career. While algorithmic traders are freed from the daily grind of manual execution, the article argues that this freedom comes with its own unique set of challenges that can significantly impact a trader's operations and well-being.
+
+The article covers the practical challenges facing algorithmic traders including system reliability, external risks such as exchange failures, infrastructure management, and the mental toll of monitoring automated systems. It serves as a realistic counterpoint to the glamorous portrayal of automated trading, providing valuable context for anyone considering building a systematic trading operation.
 
 By Pedma.
 
-`Read the blog post <https://www.tradingresearchub.com/p/the-realities-of-running-algo>`__.
+`Read the blog post <https://www.tradingresearchub.com/p/navigating-the-high-seas-of-algorithmic>`__.
 
 From Market Observation to Testable Hypothesis: Starting Steps of a Trading Model
 ----------------------------------------------------------------------------------
@@ -137,20 +139,24 @@ By Pedma.
 Understanding Directional Edge Decay and System Robustness in Trading
 ----------------------------------------------------------------------
 
-An article on the concept of edge decay in systematic trading — the gradual erosion of a strategy's profitability as market participants adapt, conditions change, or the signal becomes crowded. The article provides frameworks for detecting early signs of edge decay and building systems that remain robust across different market environments.
+An article unraveling the complexities of directional trading models, edge decay, and the quest for system robustness. The article explains how directional models willingly embrace directional risk exposure and rely on two foundational assumptions: directional persistence after position entry and sustained price movement triggered by the signal.
+
+The article contrasts directional models with arbitrage approaches and discusses the unique challenges of maintaining a directional edge over time. It covers the concepts of edge decay, system robustness across market regimes, and how to build trading systems that remain profitable even as market dynamics evolve.
 
 By Pedma.
 
-`Read the blog post <https://www.tradingresearchub.com/p/understanding-edge-decay-systematic>`__.
+`Read the blog post <https://www.tradingresearchub.com/p/navigating-the-market-maze-understanding>`__.
 
 What Constitutes Genuine Edge in Financial Markets
 ---------------------------------------------------
 
-An article examining what separates genuine trading edge from random luck or temporary market inefficiencies. The piece explores the characteristics that make a trading edge durable — persistence across different market conditions, economic rationale, and robustness to small parameter changes.
+An article breaking down the concept of trading edge from first principles, starting with the fundamental nature of markets as venues where buyers and sellers agree on prices. The article explains how the speed of modern financial markets often causes traders to overlook this basic dynamic.
+
+The article provides a framework for understanding what constitutes genuine edge in trading, covering how to identify situations where the odds favor one side of a trade. It connects the fundamental market mechanics of buying low and selling high to the practical implementation of systematic strategies that can consistently exploit these opportunities.
 
 By Pedma.
 
-`Read the blog post <https://www.tradingresearchub.com/p/what-constitutes-genuine-edge>`__.
+`Read the blog post <https://www.tradingresearchub.com/p/finding-edge-in-the-financial-markets>`__.
 
 Building a Crypto Market Scanner in Python with Binance API
 ------------------------------------------------------------
@@ -175,11 +181,13 @@ By Pedma.
 The Signal Types Needed for Trading
 -------------------------------------
 
-An article classifying trading signals by type — binary (on/off), ensemble (combined scoring), and continuous (scaled exposure) — and explaining when each is appropriate for systematic portfolio management. The piece addresses how signal type affects portfolio construction, position sizing, and capital efficiency.
+A comprehensive guide to the three signal types used in systematic trading: Binary, Ensemble, and Continuous signals. The article breaks down each type with practical examples and explains when to use each approach for building robust trading strategies.
 
-By Pedma.
+Binary signals are the simplest form (ON/OFF), easy to implement but treat all signals equally regardless of conviction. Ensemble signals combine multiple weak learners using methods like Majority Voting, Equal-Weight Scoring, and Weighted Averaging to create stronger, more robust signals—based on Condorcet's Jury Theorem. Continuous signals output values on a spectrum (-1 to +1) that map directly to position size ("bet sizing"), allowing traders to express varying conviction levels and produce smoother equity curves. The article also covers critical concepts including the three sources of error in trading models (Bias, Variance, Irreducible Error), Bagging vs Boosting in financial applications, the Observation Redundancy Problem specific to financial data, and how these signal types connect in a complete trading pipeline.
 
-`Read the blog post <https://www.tradingresearchub.com/p/signal-types-systematic-trading>`__.
+By Goshawk Trades.
+
+`Read the article <https://x.com/GoshawkTrades/status/2019810833904373805>`__
 
 Building a Crypto Trade Execution Model in Python
 -------------------------------------------------
@@ -206,16 +214,39 @@ By Pedma.
 The CoinAlg Bind: Profitability-Fairness Tradeoffs in Collective Investment Algorithms
 ---------------------------------------------------------------------------------------
 
-This paper analyzes the tension between profit maximization and fair treatment of investors in collective investment algorithms. The "CoinAlg Bind" describes the fundamental tradeoff where strategies that maximize aggregate portfolio returns may systematically disadvantage certain investor classes, with implications for the design of pooled investment vehicles and robo-advisors.
+Collective In vestment Algorithms (CoinAlgs) are increas-
+ingly popular systems that deploy shared trading strate-
+gies for investor communities. Their goal is to democratize
+sophisticated—often AI-based—investing tools.
+We identify and demonstrate a fundamental profitability-
+fairness tradeoff in CoinAlgs that we call the CoinAlg Bind:
+CoinAlgs cannot ensure economic fairness without losing
+profit to arbitrage.
+We present a formal model of CoinAlgs, with definitions of
+privacy (incomplete algorithm disclosure) and economic fair-
+ness (value extraction by an adversarial insider). We prove two
+complementary results that together demonstrate the CoinAlg
+Bind. First, privacy in a CoinAlg is a precondition for insider
+attacks on economic fairness. Conversely, in a game-theoretic
+model, lack of privacy, i.e., transparency, enables arbitrageurs
+to erode the profitability of a CoinAlg.
+Using data from Uniswap, a decentralized exchange, we
+empirically study both sides of the CoinAlg Bind. We quantify
+the impact of arbitrage against transparent CoinAlgs. We show
+the risks posed by a private CoinAlg: Even low-bandwidth
+covert-channel information leakage enables unfair value ex-
+traction.
 
-`Read the paper <https://arxiv.org/abs/2601.00523>`__
+`Read the paper <https://arxiv.org/pdf/2601.00523>`__
 
 A Quantitative Trading Strategy Based on A Position Management Model
 ---------------------------------------------------------------------
 
-This paper presents a quantitative trading strategy that integrates ARIMA-based return forecasting with a systematic position management model for gold and bitcoin. The framework translates probabilistic return forecasts into position sizing decisions that account for forecast confidence and current market conditions.
+This paper establishes a quantitative trading strategy based on a position management model, applied to gold and bitcoin trading. The approach combines ARIMA time-series forecasting for price prediction with a position management framework that governs trade sizing and entry/exit rules. The authors develop differential autoregressive moving average models calibrated at different cycle times, finding that a 60-day data window produces the smallest prediction error, with the relative error of the average prediction value controlled at 0.003016. The position management model then uses these forecasts to determine optimal trade timing and allocation.
 
-`Read the paper <https://doi.org/10.54097/ajst.v2i1.901>`__
+The strategy achieves an annualized rate of return of 25%, with accumulated income reaching $223,640.58 USD by September 10, 2021. Profitability and risk resistance are evaluated using Principal Component Analysis, and model validation via parameter variation confirms the solution is locally optimal and consistent with the initial parameterization. Sensitivity analysis shows that as initial commission increases or principal decreases, both trade count and returns decline gradually, confirming the model behaves as expected under parameter perturbation.
+
+`Read the paper <https://www.researchgate.net/publication/367593705_A_Quantitative_Trading_Strategy_Based_on_A_Position_Management_Model>`__
 
 Market Data Is Social Data: From Fractals to Topological Data Analysis
 ----------------------------------------------------------------------

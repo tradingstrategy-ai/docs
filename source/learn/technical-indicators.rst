@@ -15,7 +15,11 @@ For complete worked examples of trading strategies and individual factors, see :
 Are Simple Technical Trading Rules Profitable in Bitcoin Markets?
 -----------------------------------------------------------------
 
-This paper empirically evaluates whether simple technical trading rules — moving average crossovers, filter rules, and momentum strategies — generate statistically significant profits in Bitcoin markets. The study applies these classic technical analysis rules to Bitcoin price data and tests their performance against appropriate benchmarks, addressing whether the well-documented technical trading profits in traditional markets extend to the newer cryptocurrency market.
+This paper examines the profitability of simple technical trading rules in bitcoin markets comprehensively, taking into account realistic investor behavior. The study investigates whether classic technical analysis strategies such as moving average rules can generate excess returns in cryptocurrency markets, contributing to the ongoing debate about market efficiency in digital asset markets.
+
+By Michael Frömmel and Niek Deprez, published in the International Review of Economics & Finance (2024).
+
+Mentioned by Jungle Rock in `this discussion <https://x.com/JungleRockRes/status/2019145963844100349>`__.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4401552>`__
 

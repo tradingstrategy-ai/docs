@@ -27,14 +27,14 @@ This paper studies J/K momentum strategies in cryptocurrency markets, examining 
 Pure Momentum in Cryptocurrency Markets
 ----------------------------------------
 
-This paper documents a pure momentum anomaly in cryptocurrency markets, attributing it to the behavioral dynamics of a 24/7 trading environment with no circuit breakers. The authors find momentum effects that are distinct from those in equity markets, driven by the unique microstructure and participant composition of crypto markets.
+Momentum is one of the most widespread, persistent, and puz- zling phenomenon in asset pricing. The prevailing explanation for momentum is that investors under-react to new information, and thus asset prices tend to drift over time. We use a unique fea- ture of cryptocurrency markets: the fact that they are open 24/7, and report returns over the last 24 hours. Thus, the one-day re- turn is subject to predictable fluctuations based on the removal of lagged information. We show that investors respond positively to changes in reported returns that are unrelated to any new release of information, or change in the asset fundamentals. We call this behavioral anomaly “Pure Momentum”.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4138685>`__
+`Read the paper <https://assets.ctfassets.net/c5bd0wqjc7v0/4RzmvaUG64ixNPXWuZGXbo/7115cc7bef963d2ff5abbacf879f5b1e/SSRN-id4138685.pdf>`__.
 
 Optimizing the Persistence of Price Momentum: Which Trends Are Your Friends?
 -----------------------------------------------------------------------------
 
-This paper examines the persistence of price momentum across different market segments, finding that style and industry momentum exhibit different decay patterns than traditional cross-sectional momentum. The authors develop methods for identifying which momentum trends are most likely to persist and provide guidance on lookback period selection.
+The traditional wisdom that price momentum which ranks stocks’ raw trailing returns is crash-prone fails to differentiate the various drivers of stocks’ past performances. As such, we compare the persistence of different sources of stocks’ price momentum discerned from applying factor-based performance attribution to their trailing 12-month returns. Our empirical analysis shows that beta- and country-driven price trends were not robust while style and industry momentum persisted both over the intermediate and, more strongly, short-term. Stock-specific momentum persisted over the intermediate term but strongly reverted over the short term; it was subsumed as a stand-alone strategy by both industry and style momentum and should be downweighed when optimizing a momentum signal for persistence. Our results suggest that style momentum is mostly a proxy for static factor tilts while industry and stock-specific momentum appear a separate anomaly that is strongest conditional on low-volatility market regimes. Their premium may reflect investor underreaction to economic shifts to which stocks’ exposures are imperfectly captured by binary industry classifications. Our results corroborate a strand of the extant literature through the novel lens of exactly decomposing the cross-section of stocks’ price momentum; contradicting findings are explained by methodological differences.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5716502>`__
 
@@ -48,16 +48,24 @@ This paper introduces a flexible framework for weighting past returns when const
 Beat the Market: An Effective Intraday Momentum Strategy for S&P500 ETF (SPY)
 ------------------------------------------------------------------------------
 
-This paper documents an intraday momentum effect in S&P 500 ETF trading, showing that the first half-hour return predicts the last half-hour return with sufficient consistency to generate a strategy that delivered approximately 1,985% return over the sample period. The strategy exploits persistent intraday autocorrelation that has proven robust over multiple years of testing.
+This paper investigates the profitability of a simple yet effective intraday momentum strategy applied to SPY, one of the most liquid ETFs tracking the S&P 500. Unlike academic literature that typically limits trading to the last 30 minutes of the trading session, this model initiates trend-following positions as soon as there is an indication of abnormal demand/supply imbalance in the intraday price action. The strategy introduces dynamic trailing stops to mitigate downside risks while allowing for unlimited upside potential. From 2007 to early 2024, the resulting intraday momentum portfolio achieved a total return of 1,985% (net of costs), an annualized return of 19.6%, and a Sharpe Ratio of 1.33.
 
-`Read the paper <https://www.alexandria.unisg.ch/handle/20.500.14171/122124>`__
+By Carlo Zarattini, Andrew Aziz, and Andrea Barbon.
+
+Mentioned by Pasta Capital in `this discussion <https://x.com/Pasta_Capital/status/2008856283387531360>`__.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824172>`__
 
 Risk-adjusted Momentum Strategy Construction and Industry Heterogeneity Analysis Based on STARR Indicator
 ----------------------------------------------------------------------------------------------------------
 
-This paper proposes using the STARR (Stable Tail Adjusted Return Ratio) indicator to construct risk-adjusted momentum strategies that control for downside risk while capturing momentum premia. The authors document industry heterogeneity in momentum returns and show that risk-adjusted construction improves risk-adjusted performance relative to raw return momentum.
+This paper proposes a risk-adjusted momentum strategy using the STARR (Stable Tail-adjusted Return Ratio) indicator — a metric that replaces standard deviation in the Sharpe ratio with Conditional Value at Risk (CVaR) to better capture downside tail risk. The study constructs both Sharpe-based and STARR-based momentum factors across industry-level ETFs from the S&P 500 and Nikkei 225, applying mean-variance optimisation to monthly data spanning 2010–2025.
 
-`Read the paper <https://doi.org/10.54254/2754-1169/2025.lh25691>`__
+The STARR-based strategy demonstrates superior downside risk control compared to conventional Sharpe-based momentum, particularly during extreme market conditions such as the COVID-19 crisis. Performance varies significantly across sectors and volatility regimes, confirming meaningful industry heterogeneity in momentum returns. The strategy maintains robustness through alternative parameter configurations and cross-market validation between U.S. and Japanese equities, suggesting that incorporating downside-sensitive metrics like CVaR into momentum signal construction can enhance risk-adjusted returns and improve portfolio stability in diverse market environments.
+
+By Xupeng Zhang (McGill University).
+
+`Read the paper <https://www.researchgate.net/publication/394351939_Risk-adjusted_Momentum_Strategy_Construction_and_Industry_Heterogeneity_Analysis_Based_on_STARR_Indicator>`__
 
 A Tale of Two Anomalies: The Implications of Investor Attention for Price and Earnings Momentum
 ------------------------------------------------------------------------------------------------
@@ -71,9 +79,11 @@ This paper studies how investor attention amplifies both price momentum and earn
 Time Series Momentum
 ---------------------
 
-The seminal Moskowitz, Ooi, and Pedersen paper documenting time-series momentum across 58 liquid futures contracts in equities, currencies, commodities, and fixed income. The paper shows that past 12-month returns positively predict the next month's returns across all asset classes, with a t-statistic exceeding 5.0. This is the foundational reference for all subsequent time-series momentum research.
+Tobias J. Moskowitz, Yao Hua Ooi, and Lasse Heje Pedersen (Journal of Financial Economics, 2012) document a remarkably broad time-series momentum effect across 58 liquid futures and forward contracts spanning equity indices, sovereign bonds, currencies, and commodities. Using a security's own past return rather than its return relative to peers, they show that return persistence is strong from one to twelve months and then partially reverses at longer horizons.
 
-By Tobias J. Moskowitz, Yao Hua Ooi, and Lasse Heje Pedersen.
+Our summary: this is the canonical modern TSMOM paper. It matters because it separates "trend following" from the usual cross-sectional winner-minus-loser construction and shows that a security's own lagged return has predictive power across very different asset classes. The paper also argues that most of the effect comes from positive auto-covariance rather than lead-lag structure across assets, and it links the profits to speculators effectively riding the trend while hedgers absorb the other side. If you need one foundational citation for multi-asset trend following, this is it.
+
+Key metrics: the paper reports positive 12-month time-series momentum profits for all 58 contracts in the sample. A diversified TSMOM portfolio earns a Sharpe ratio greater than 1 on an annual basis, roughly 2.5x the Sharpe ratio of the equity market, with little correlation to passive asset-class benchmarks or standard pricing factors.
 
 `Read the paper <https://pages.stern.nyu.edu/~lpederse/papers/TimeSeriesMomentum.pdf>`__
 
@@ -87,9 +97,13 @@ This paper decomposes the returns of time-series momentum strategies to show tha
 Is Momentum Really Momentum?
 ------------------------------
 
-This paper examines the detailed structure of the momentum effect in equities, finding that the 12-7 month lookback window — which skips the most recent month — is the specification that generates the most robust and statistically significant momentum profits. The paper addresses concerns about data mining and provides guidance on which lookback configurations are most reliable.
+Robert Novy-Marx (Journal of Financial Economics, 2012) argues that the classic momentum effect is driven much more by intermediate-horizon returns than by very recent continuation. In his formulation, what investors usually call "momentum" often looks more like an echo from returns earned roughly 12 to 7 months before portfolio formation than a clean near-term persistence effect.
 
-`Read the paper <https://doi.org/10.1016/j.jfineco.2011.05.003>`__
+Our summary: this paper matters because it reframes momentum from a single monolithic anomaly into a term-structure question. If intermediate-horizon returns do the heavy lifting while the most recent month is polluted by reversal, then naive short-lookback momentum rules are badly specified from the start. That is exactly why this paper remains important background for anyone experimenting with very short-horizon trend signals: it explains why some "momentum" setups fail even when the broader anomaly is real.
+
+Key metrics: Novy-Marx finds that strategies based on firms' performance 12 to 7 months before formation are more profitable than strategies based on the recent 6 to 2 months, especially among the largest and most liquid stocks. He also shows that similar intermediate-horizon patterns appear in international equity indices, commodities, and currencies.
+
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S0304405X11001152>`__
 
 Time Series Momentum: Is It There?
 ------------------------------------
@@ -105,9 +119,13 @@ Key metrics: in asset-by-asset regressions, 47 of 55 assets have t-statistics be
 Bitcoin Intraday Time-Series Momentum
 ---------------------------------------
 
-This paper documents an intraday time-series momentum effect in Bitcoin, showing that the first half-hour of Bitcoin trading predicts the last half-hour with statistical significance. The effect is analogous to the SPY intraday momentum documented by Gao et al. and suggests that the mechanisms driving intraday autocorrelation operate similarly in crypto markets.
+Dehua Shen, Andrew Urquhart, and Pengfei Wang study whether Bitcoin exhibits an intraday time-series momentum effect despite trading continuously around the clock. Because Bitcoin has no natural exchange open and close like equities, the paper defines effective trading sessions using volume spikes and then tests whether returns early in the trading day predict returns later in the same day.
 
-`Read the paper <https://doi.org/10.1111/fire.12290>`__
+Our summary: this is the closest academic match for sub-daily BTC trend-following questions. The paper shows that intraday momentum in Bitcoin is not just a stylized-fact curiosity; it has practical trading content and seems strongest when market activity is elevated. Equally important, the authors test competing mechanisms and conclude the effect is more consistent with liquidity provision, disposition effects, and aversion to overnight risk than with a simple late-information story.
+
+Key metrics: the first half-hour of Bitcoin trading significantly predicts the last half-hour in both in-sample and out-of-sample tests. The effect is strongest during sessions with the highest trading volume or volatility, and the authors report substantial economic gains from intraday momentum-based trading, especially during Bitcoin downturns.
+
+`Read the paper <https://centaur.reading.ac.uk/100181/3/21Sep2021Bitcoin%20Intraday%20Time-Series%20Momentum.R2.pdf>`__
 
 Value and Momentum Everywhere
 ------------------------------
@@ -128,21 +146,29 @@ This paper tests classic cross-sectional momentum strategies across a large univ
 Dynamic Time Series Momentum of Cryptocurrencies
 --------------------------------------------------
 
-This paper studies time-series momentum across 20 major cryptocurrencies, finding that the TSMOM effect in crypto is stronger and persists over longer horizons than in traditional equity markets. The authors develop a dynamic version of TSMOM that adapts to the unique distributional characteristics of crypto returns.
+Oliver Borgards (North American Journal of Economics and Finance, 2021) investigates momentum effects across twenty cryptocurrencies relative to US equities using a dynamic modelling framework that evaluates momentum periods following formation periods at both daily and intraday frequencies. The paper documents that formation periods frequently precede momentum periods across all time scales, and that cryptocurrencies exhibit notably stronger and longer momentum periods than equities.
 
-`Read the paper <https://doi.org/10.1016/j.najef.2021.101428>`__
+Our summary: this paper provides strong evidence that time-series momentum in crypto is not only present but qualitatively different from the equity version — stronger, longer-lasting, and more exploitable. The author attributes the amplification to the difficulty of valuing intrinsic worth in crypto assets, which attracts more noise traders and delays mean-reversion. A momentum-based trading strategy outperforms buy-and-hold for both asset classes, but only the cryptocurrency strategy delivers superior risk-adjusted returns and diminished downside exposure. The identification of critical price thresholds where volatility spikes temporarily and triggers directional price movements is a useful practical detail for signal design.
+
+Key metrics: the paper reports that momentum strategies outperform buy-and-hold for both cryptocurrencies and the stock market index, but only crypto momentum strategies generate higher risk-adjusted returns and lower downside exposure than a passive investment. Formation periods are followed by momentum periods at both daily and intraday frequencies across all twenty cryptocurrencies studied.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1062940821000590>`__
 
 A Trend Factor for the Cross Section of Cryptocurrency Returns
 ---------------------------------------------------------------
 
-This paper develops the CTREND factor — a trend-based cross-sectional factor for cryptocurrency returns — and shows that it explains a significant portion of the cross-section of crypto returns. The factor captures both time-series and cross-sectional momentum components and provides a unified framework for understanding trend-related return predictability in crypto markets.
+Christian Fieberg, Gerrit Liedtke, Thorsten Poddig, Thomas Walker, and Adam Zaremba (Journal of Financial and Quantitative Analysis) propose CTREND, a new trend factor for cryptocurrency returns that aggregates price and volume information across different time horizons. Using data on more than 3,000 coins and machine learning methods to exploit information from various technical indicators, they show that the resulting signal reliably predicts cryptocurrency returns, cannot be subsumed by known factors, and remains robust across different subperiods, market states, and alternative research designs.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4601972>`__
+Our summary: this is one of the most thorough cross-sectional crypto trend studies to date. The key practical finding is that the signal survives transaction costs and persists in big and liquid coins — answering the perennial concern that crypto momentum results depend on trading micro-caps that cannot actually be traded. By using ML to combine multiple technical indicators across horizons rather than relying on a single lookback, the paper also demonstrates that the crypto trend premium has a richer information structure than simple price momentum. An asset pricing model that incorporates CTREND outperforms competing factor models, making it a strong candidate for any crypto factor framework.
+
+Key metrics: the CTREND factor generates statistically significant returns that survive transaction costs and remain robust in large and liquid coins. The effect persists across different subperiods and market states, and an asset pricing model incorporating CTREND provides a superior explanation of cryptocurrency returns compared to competing factor models.
+
+`Read the paper <https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4C1509ACBA33D5DCAF0AC24379148178/S0022109024000747a.pdf/a-trend-factor-for-the-cross-section-of-cryptocurrency-returns.pdf>`__
 
 Nonlinear Time Series Momentum
 ------------------------------
 
-This paper applies machine learning methods to capture nonlinear features of time-series momentum signals, documenting that momentum signals exhibit nonlinear dynamics that linear models miss. The authors show that ML-enhanced momentum strategies outperform their linear counterparts, particularly in periods of regime change and when lookback window length interacts with current volatility.
+We document a persistent nonlinear relationship between price trends and risk-adjusted returns across markets and asset classes that is consistent with asset pricing theory. Nonlinearities in time series momentum are consistent with past returns reflecting information about conditional expected returns, in line with investors using conditioning information to form efficient portfolios. Machine learning techniques are useful in uncovering these relationships and yield economically and statistically significant out-of-sample improvements in time series momentum strategies.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5933974>`__
 
@@ -503,4 +529,4 @@ Key metrics: Deep Momentum outperforms traditional momentum and naïve machine l
 
 Mentioned by Ivan Blanco (`@iblanco_finance <https://x.com/iblanco_finance/status/2046250537914384442>`__) in `this discussion <https://x.com/iblanco_finance/status/2046250537914384442>`__: "Momentum stocks don't just win or lose, they polarize. The distribution shape tells you more than the mean."
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4452964>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7124071>`__

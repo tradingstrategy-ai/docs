@@ -22,16 +22,16 @@ We provide practical insights for investors seeking exposure to the growing cryp
 Low-volatility strategies for highly liquid cryptocurrencies
 ------------------------------------------------------------
 
-This paper develops and tests low-volatility investment strategies for liquid cryptocurrencies, combining volatility targeting with stop-loss rules to control downside risk. The authors document that lower-volatility crypto assets deliver competitive risk-adjusted returns compared to higher-volatility alternatives, consistent with the low-volatility anomaly documented in equity markets.
+Managing extreme price fluctuations in cryptocurrency markets are of central importance for investors in this market segment. Using a sample of highly liquid cryptocurrencies from January 2017 to June 2021, this paper proposes a dynamic investment strategy that selects cryptocurrencies based on their historical volatility and is complemented by a simple stop-loss rule. Our results reveal that investing in highly concentrated low volatility cryptocurrency portfolios with six to twelve months volatility look-back and holding period generate statistically significant excess returns. By including a simple stop-loss rule, the downside risk of cryptocurrency portfolios is reduced markedly, and the Sharpe ratios are improved significantly.
 
-`Read the paper <https://doi.org/10.1016/j.frl.2021.102422>`__
+`Read the paper <https://www.sciencedirect.com/science/article/pii/S1544612321004116>`__.
 
 Cryptocurrencies: Stylized Facts and Risk Based Momentum Investing
 -------------------------------------------------------------------
 
-This paper documents the distributional characteristics of cryptocurrency returns, including extreme fat tails, volatility clustering, and unique autocorrelation structures. The authors develop risk-based momentum strategies that account for these distributional properties, showing that momentum signals calibrated for crypto's unique characteristics outperform equity-style implementations.
+The motivation of this research is in two folds, to understand the distributional characteristics of cryptocurrencies by means of stylized facts, and also to assess the feasibility of risk based and trend following approaches to investing in this asset class. Cryptocurrencies are more of a recent phenomenon, unlike the traditional asset classes. This poses an explicit constraint on the availability of longer history and also reliability of investment performance. Acknowledging such constraint, I focus my analysis based on the few years of data that is available.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4666898>`__.
 
 Cryptocurrency trading: A systematic mapping study
 --------------------------------------------------
@@ -50,9 +50,13 @@ This paper applies four quantitative methods for optimal allocation to Bitcoin a
 Risks and Returns of Cryptocurrency
 -------------------------------------
 
-A foundational paper on cryptocurrency asset pricing that characterizes the risk-return tradeoff for major cryptocurrencies. The authors document systematic risk factors in crypto markets and analyze how these factors relate to traditional asset pricing models, providing a framework for thinking about crypto risk premia.
+Yukun Liu and Aleh Tsyvinski (Review of Financial Studies, 2021) provide one of the foundational asset-pricing treatments of major cryptocurrencies. Studying Bitcoin, Ripple, and Ethereum, they show that crypto returns are largely distinct from stocks, currencies, and precious metals, and are better explained by crypto-native drivers such as user adoption, network activity, investor attention, and trend effects.
 
-`Read the paper <https://doi.org/10.3386/w24877>`__
+Our summary: this paper is the bridge between "crypto as a weird asset" and "crypto as an asset class that deserves its own factor language." The most important takeaway is not merely that crypto is different, but that the relevant predictors are different in a systematic way. That makes this paper foundational for any crypto momentum or factor research stack: it says you should not expect stock-market factors to do most of the explanatory work.
+
+Key metrics: the paper reports a strong time-series momentum effect in major cryptocurrencies and finds that investor-attention proxies significantly forecast future returns, while exposures to most common stock, currency, commodity, and macro factors are weak or absent.
+
+`Read the paper <https://academic.oup.com/rfs/article/34/6/2689/5912024>`__
 
 Common Risk Factors in Cryptocurrency
 --------------------------------------

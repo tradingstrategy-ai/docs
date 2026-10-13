@@ -20,14 +20,24 @@ The landmark Evans and Lyons paper demonstrating that FX order flow explains mor
 Order Flow and Cryptocurrency Returns
 --------------------------------------
 
-This paper applies the Evans-Lyons order flow framework to cryptocurrency markets, finding that world order flow predicts 11% of daily cryptocurrency returns. The results confirm that the order flow mechanism central to FX market microstructure operates similarly in crypto markets, with important differences driven by crypto's 24/7 trading and retail-dominated participant base.
+This paper investigates the role of order flow in explaining and predicting cryptocurrency returns. The authors construct an aggregate "world" order flow measure from 11 major fiat currencies across multiple exchanges and test its explanatory power on a cross-section of 82 cryptocurrencies using panel regressions with controls for established return predictors.
 
-`Read the paper <https://doi.org/10.1016/j.finmar.2026.101047>`__
+World order flow explains approximately 11% of daily and 20% of weekly cross-sectional cryptocurrency returns, with strong evidence of permanent price impact — indicating that order flow carries genuine information rather than transient liquidity effects. The paper demonstrates that order flow dominates macroeconomic fundamentals for out-of-sample prediction, especially when using non-linear machine learning models. Long-short portfolios constructed from ML forecasts conditioning on daily order flow achieve an alpha of up to 0.79% per day with an annualized Sharpe ratio of 3.63.
+
+By Alexia Anastasopoulos, Nikola Gradojevic, Jiaao Liu, Alex Maynard, and Christos Tsiakas. Published in Journal of Financial Markets (2026).
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5020002>`__
 
 Flow Toxicity and Liquidity in a High Frequency World
 ------------------------------------------------------
 
-This paper introduces VPIN (Volume-Synchronized Probability of Informed Neotarding), a metric for measuring order flow toxicity derived from the imbalance between buyer- and seller-initiated trades within sequential equal-volume buckets. VPIN provides a real-time estimate of the probability that a liquidity provider is trading against an informed counterparty, with applications to market making risk management and pre-crash detection.
+Order flow is toxic when it adversely selects market makers, who may be unaware they are providing liquidity at a loss. This paper by David Easley, Marcos López de Prado, and Maureen O'Hara introduces the Volume-Synchronized Probability of Informed Trading (VPIN) — a real-time, high-frequency metric for estimating the probability that order flow is driven by informed participants. Unlike the earlier PIN model, which requires maximum-likelihood estimation of unobservable parameters, VPIN operates in volume time rather than clock time and uses a novel Bulk Volume Classification (BVC) procedure to classify trade volume as buy- or sell-initiated without requiring tick-level quote data. The metric is updated continuously as volume buckets fill, making it directly applicable to high-frequency and algorithmic trading environments.
+
+The paper's central empirical contribution is the application of VPIN to the May 6, 2010 Flash Crash. The authors demonstrate that the cumulative distribution function of VPIN (CDF(VPIN)) reached its 0.97 threshold more than one hour before the crash, signalling historically elevated order flow toxicity well before the market collapsed. As informed traders concentrated activity on the sell side, market makers faced severe adverse selection. The resulting withdrawal of liquidity amplified the crash dynamics. Beyond the Flash Crash, the authors show that VPIN serves as a useful short-term indicator of toxicity-induced volatility. Practitioner-calibrated thresholds place sustained readings above 0.85 (90th–95th percentile) as operationally significant for liquidity risk monitoring. Subsequent debate — notably by Andersen and Bondarenko (2014) — has questioned the precise timing and predictive power of VPIN around the Flash Crash, arguing that elevated readings occurred partly after the event and reflect a mechanical relationship with trading intensity. The original authors have responded and refined their analysis, but the controversy underscores the importance of understanding VPIN's assumptions before deploying it in production.
+
+Published in the Review of Financial Studies, Vol. 25, No. 5, pp. 1457–1493, 2012.
+
+Mentioned by `0xAlcibiades <https://x.com/0xAlcibiades>`__ in `this discussion <https://x.com/0xAlcibiades/status/2040056013189943678>`__: "In 2010 Easley, Lopez de Prado, and O'Hara built a way to measure this. VPIN."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1695596>`__
 
@@ -48,16 +58,24 @@ This paper demonstrates that the imbalance between the bid and ask queue sizes a
 The Micro-Price: A High-Frequency Estimator of Future Prices
 -------------------------------------------------------------
 
-This paper derives the micro-price, a martingale estimator of the next trade price that weights the best bid and ask by the queue imbalance at each level. The micro-price is more accurate than the midprice as a predictor of execution prices and provides a theoretical foundation for using order book imbalance in price prediction.
+Sasha Stoikov defines the *micro-price* as the limit of a sequence of martingale mid-price estimates conditioned on the order book state. Formally, Pᵗᵐⁱᶜʳᵒ = lim Pᵗⁱ, where Pᵗⁱ = E[M_{τᵢ} | ℱₜ] and τ₁, …, τₙ are the (random) times at which the mid-price next changes. The order book state is summarised by the triple (Mₜ, Iₜ, Sₜ) — mid-price, imbalance Iₜ = Qᵇ/(Qᵇ+Qᵃ), and bid-ask spread Sₜ — and assumed to form a Markov process whose dynamics are independent of the price level. Under these assumptions, the micro-price is a Markovian, martingale, and computationally tractable adjustment to the mid-price.
 
-`Read the paper <https://doi.org/10.1080/14697688.2018.1489139>`__
+Our summary: the paper provides a principled answer to the question "what is the fair value of an asset given its order book?" The mid-price is not a martingale because of the bid-ask bounce, and the volume-weighted mid-price *Mʷ = I·Pᵃ + (1−I)·Pᵇ* produces counter-intuitive behaviour (e.g., the "fair" price can move *down* after a cancellation on the ask side). Stoikov's micro-price fixes both issues by iterating the conditional expectation until convergence, yielding a fair value that lives between the bid and ask and reacts smoothly to changes in imbalance and spread. The resulting estimator can be pre-computed as a table indexed by (I, S) and used as a continuous predictive signal rather than a discrete trading trigger. Empirically, it is a better short-term predictor than either the mid-price or the weighted mid-price and serves as a standard building block for high-frequency market making and execution models.
+
+Key metrics: Stoikov reports empirical results on Nasdaq data for liquid stocks showing that the micro-price dominates both the mid-price and the weighted mid-price as a predictor of future mid-price realisations at horizons of a few ticks. The micro-price adjustment can be material — a significant fraction of the spread for imbalanced books — and is reported as a smooth, bounded function of imbalance that vanishes at the extremes.
+
+`Read the paper <https://www.tandfonline.com/doi/full/10.1080/14697688.2018.1489139>`__
 
 Deep Order Flow Imbalance: Extracting Alpha at Multiple Horizons from the Limit Order Book
 -------------------------------------------------------------------------------------------
 
-This paper applies deep learning to extract alpha from multiple levels of the limit order book simultaneously, capturing order flow imbalance patterns that are invisible when looking only at the best bid and ask. The model processes the full depth of the order book to generate return predictions at multiple horizons, significantly outperforming top-of-book OFI measures.
+Petter N. Kolm, Jeremy Turiel, and Nicholas Westray apply deep learning to high-frequency return prediction for 115 Nasdaq-listed stocks using the full depth of the limit order book. Their central finding is that models trained on *order flow* features (stationary increments at each level of the book) significantly outperform models trained on raw order book *states* (volumes at each level). They show that simple LSTM and feed-forward neural network architectures trained on multi-level order-flow imbalance features deliver superior predictive performance to more elaborate architectures fed raw state, and the predictions remain useful across multiple forecasting horizons.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900141>`__
+Our summary: the paper generalises the Cont–Kukanov–Stoikov OFI idea by (a) extending order flow imbalance beyond the top of book to all quoted levels, (b) making the features properly stationary so that neural networks can learn from them without collapsing, and (c) comparing forecasting performance across horizons rather than at a single fixed lag. The result is a practical recipe for feature engineering in deep microstructure models: instead of feeding raw book snapshots into a network and hoping it learns the right invariance, construct multi-level OFI features first and let the network focus on the nonlinear dynamics. The authors also document cross-sectional heterogeneity — some stocks are "information-rich" with higher predictability, and useful stock-specific forecasts extend to roughly two average price changes.
+
+Key metrics: across 115 Nasdaq stocks, deep OFI models achieve materially higher out-of-sample R² than models trained on raw book states at short horizons (seconds to tens of seconds). Forecasting performance degrades gracefully with horizon but remains significant out to approximately two average mid-price moves per stock. LSTM variants give a modest lift over feed-forward networks once the input is already stationary OFI, suggesting most of the predictable signal lives in the feature construction rather than the architecture.
+
+`Read the paper <https://ideas.repec.org/a/bla/mathfi/v33y2023i4p1044-1081.html>`__
 
 Cross-Impact of Order Flow Imbalance in Equity Markets
 -------------------------------------------------------

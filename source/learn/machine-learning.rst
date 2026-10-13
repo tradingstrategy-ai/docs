@@ -51,9 +51,13 @@ Key metrics: Strategy 1 validation set — accuracy improves 20% → 77%, precis
 Algorithmic Crypto Trading Using Information-Driven Bars, Triple-Barrier Labeling and Deep Learning
 ----------------------------------------------------------------------------------------------------
 
-This paper implements the full López de Prado pipeline — information-driven bars, triple-barrier labeling, meta-labeling, and purged cross-validation — on cryptocurrency data with deep learning classifiers. The study provides one of the most complete empirical implementations of the AFML methodology, demonstrating how each component contributes to out-of-sample performance.
+Przemysław Grądzki, Piotr Wójcik (University of Warsaw), and Stefan Lessmann (Humboldt-Universität zu Berlin) apply the full López de Prado methodological pipeline — information-driven sampling, triple-barrier labels, meta-labelling — to Bitcoin and Ethereum trading, combined with a deep learning classifier. Published in Financial Innovation (2025).
 
-`Read the paper <https://doi.org/10.1186/s40854-025-00866-w>`__
+Our summary: this is the clearest end-to-end empirical application of the AFML pipeline to crypto. The authors benchmark fixed-time bars against CUSUM filters, range bars, volume bars and dollar bars, and replace next-bar return prediction with triple-barrier labelling that uses volatility-scaled up/down barriers and a time-out. The result is that information-driven sampling meaningfully outperforms time bars on both classification and trading metrics for BTC and ETH, and that the triple-barrier labels produce targets better aligned with realised trading outcomes than standard next-bar classification. For a crypto strategy that wants a credible methodological anchor, this paper is the empirical reference point: it shows that every piece of the AFML pipeline adds economic value when applied correctly to the right data.
+
+Key metrics: information-driven bars (CUSUM, dollar, volume) improve both classification metrics and backtest-level trading metrics relative to time bars on BTC and ETH; end-to-end pipeline produces positive net-of-cost results. Specific numerical Sharpe / F1 values are in the paper tables.
+
+`Read the paper <https://link.springer.com/article/10.1186/s40854-025-00866-w>`__
 
 Stock Price Prediction Using Triple-Barrier Labeling and Raw OHLCV Data
 ------------------------------------------------------------------------
@@ -69,9 +73,17 @@ Key metrics: optimal triple-barrier configuration of 29-day window with 9% barri
 Beyond delta neutrality: Confidence-scaled hedging with machine learning forecasts
 -----------------------------------------------------------------------------------
 
-This paper develops a machine learning approach to options hedging that scales the hedge ratio by the model's confidence in its forecast. Rather than maintaining a constant delta hedge, the strategy reduces hedging intensity when the ML model has low confidence and increases it when confidence is high, improving risk-adjusted hedging performance.
+This paper studies whether machine learning forecasts can enhance option portfolio performance by relaxing strict delta neutrality. The authors propose a confidence-scaled hedging framework that dynamically adjusts hedge ratios based on the classification confidence of ML models. Rather than targeting a delta of zero, the framework applies a parameter α as a multiplier to the hedge ratio: when delta is positive and the model anticipates an upward move, the hedge is reduced to retain more directional exposure; when delta is negative and a decline is predicted, the hedge magnitude is similarly reduced. This creates a mechanism for translating model confidence directly into portfolio positioning.
 
-`Read the paper <https://doi.org/10.1016/j.frl.2025.109098>`__
+The study uses option and underlying ETF data to evaluate the framework empirically. The key finding is that moderate confidence scaling improves Sharpe ratios relative to a strict delta-neutral benchmark, while aggressive scaling increases volatility and weakens long-term returns. The results demonstrate that ML forecasts can be translated into economically meaningful improvements in risk-adjusted performance, provided the confidence scaling parameter is calibrated carefully.
+
+Key metrics: moderate confidence scaling improves Sharpe ratios versus the delta-neutral benchmark; aggressive scaling increases portfolio volatility and degrades long-term returns. The framework introduces a single tunable parameter α that governs the trade-off between return enhancement and increased risk exposure. No specific numeric Sharpe or return figures are disclosed in the abstract.
+
+Mentioned by `Nam Nguyen, Ph.D. <https://www.linkedin.com/in/namnguyento>`__ (Quantitative Strategist and Derivatives Specialist) in `this LinkedIn discussion <https://www.linkedin.com/posts/namnguyento_options-riskmanagement-volatility-share-7441870249068564481-y4yh>`__.
+
+By Boyan Li and Chongfeng Wu. Published in Finance Research Letters, 2025.
+
+`Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S1544612325023475>`__
 
 Using AI to Improve the ADX Indicator for Breakout Trading
 -----------------------------------------------------------

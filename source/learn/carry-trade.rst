@@ -15,9 +15,13 @@ For complete worked examples of trading strategies and individual factors, see :
 Dissecting Investment Strategies in the Cross Section and Time Series
 ---------------------------------------------------------------------
 
-This paper provides a unified framework for decomposing carry, momentum, and value strategies across both cross-sectional and time-series dimensions. The analysis demonstrates that carry and momentum strategies are related but distinct risk premia, with carry capturing static income differences while momentum captures dynamic trend persistence. The framework helps practitioners understand when each factor is likely to dominate.
+Jamil Baz, Nicolas Granger, Campbell R. Harvey, Nicolas Le Roux, and Sandy Rattray compare time-series and cross-sectional implementations of carry, momentum, and value across asset classes. Rather than treating the two portfolio constructions as interchangeable wrappers around the same anomaly, the paper studies when each representation works best and how the underlying market environment changes the relative edge.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2695101>`__
+Our summary: this is one of the clearest practitioner-academic bridges in the momentum literature. The important contribution is not merely that both time-series and cross-sectional versions can work, but that they load on different economic structures. Time-series approaches are better aligned with persistent directional trends, while cross-sectional portfolios often shine when dispersion across assets is more informative than the market's aggregate direction. For anyone designing trend systems, this paper is a reminder that "signal" and "portfolio construction" are inseparable design choices.
+
+Key metrics: the paper does not reduce the result to a single headline Sharpe ratio because the focus is comparative across carry, momentum, and value in both time-series and cross-sectional form. Its main empirical claim is that market conditions materially affect which implementation dominates, and that the choice is strategy- and regime-dependent rather than universal.
+
+`Read the paper <https://www.cmegroup.com/education/files/dissecting-investment-strategies-in-the-cross-section-and-time-series.pdf>`__.
 
 Enhancing FX Portfolio Allocations through Reinforcement Learning
 --------------------------------------------------------------------------
@@ -29,21 +33,35 @@ This paper introduces a model-free Reinforcement Learning (RL) framework for por
 Geopolitical Risk in Currency Markets
 ---------------------------------------
 
-This paper introduces the GHML factor capturing geopolitical risk exposure in currency markets and documents how geopolitical events systematically affect carry trade returns. Countries with higher geopolitical risk exposure offer higher carry premia as compensation, creating a geopolitical carry trade that is distinct from the traditional interest rate carry.
+This paper by Alessandro Melone (Ohio State University) and Andreas Stathopoulos (UNC Chapel Hill) documents that geopolitical risk is a priced factor in the cross-section of currency returns. The authors sort currencies into five portfolios based on the rolling forecast coefficient of their excess returns on Caldara and Iacoviello's (2022) Global Geopolitical Threats (GPT) index. The resulting long-short strategy, GHML (Geopolitical High Minus Low), invests in currencies with high geopolitical exposure and shorts those with low exposure. GHML is nearly orthogonal to standard currency risk factors (DOL and CAR), representing a genuinely new source of systematic variation in FX markets.
+
+The paper further links geopolitical risk factor loadings to international capital flows: countries that attract higher-than-average net capital flows during geopolitical turmoil have currencies that hedge geopolitical risk ("safe havens"), while countries experiencing capital outflows have geopolitically risky currencies ("danger zones"). Safe haven currencies carry a GHML loading 0.32 lower than danger zone currencies. Importantly, geopolitical factor loadings are unrelated to policy uncertainty measures like the Economic Policy Uncertainty (EPU) index or the Trade Policy Uncertainty (TPU) index, establishing geopolitical risk as a distinct phenomenon.
+
+Key metrics: The GHML strategy yields an annualised excess return of 3.28%, with an annualised standard deviation of 8.37% and a Sharpe ratio of 0.39. After controlling for dollar (DOL) and carry (CAR) factors, the annualised alpha is 2.76%, with the regression adjusted R-squared for GHML at just 2% — confirming the factor is essentially unexplained by existing currency risk models. Portfolio GHML loadings increase monotonically from -0.49 (Portfolio 1) to 0.51 (Portfolio 5). The sample covers 41 developed and emerging market currencies from February 1988 to December 2024 (443 monthly observations).
+
+Mentioned by `Ivan Blanco <https://www.linkedin.com/in/ivanblancosanchez>`__ in `this LinkedIn discussion <https://www.linkedin.com/posts/ivanblancosanchez_new-research-geopolitical-risk-is-a-priced-share-7442578033414410240-Qbes>`__: "New research: geopolitical risk is a priced factor in the cross-section of currency returns."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6438919>`__
 
 Anatomy of Cryptocurrency Perpetual Futures Returns
 ----------------------------------------------------
 
-This paper decomposes the total returns of cryptocurrency perpetual futures into their constituent components, separating the directional price return from the funding rate component. The decomposition reveals how funding rates contribute to or detract from total returns across different market conditions, providing a quantitative framework for evaluating perpetual futures as investment vehicles.
+Yi Cao, Pengfei Luo, Yuhan Cheng, and Yizhe Dong (University of Edinburgh) develop a cost-of-carry model tailored specifically to perpetual contracts and use it to decompose perpetual futures returns into a spot premium, a log basis, and an expected funding spread. They then run the most comprehensive horse race to date of candidate return predictors in the cross-section of crypto perpetuals, testing 134 signals drawn from the basis, momentum, volume, size, and volatility literatures.
+
+Our summary: this is the paper to cite when arguing that basis is the dominant cross-sectional predictor in crypto perpetual futures. Of the 134 candidates tested, 48 deliver statistically significant cross-sectional spreads at the 5% level, and every single one of them is spanned by a two-factor model built from a basis factor and a price–volume factor. In other words, after controlling for basis and price–volume, no other signal in their universe carries incremental predictive power. This is a strong empirical argument for placing the perp-spot basis at the centre of any cross-sectional crypto strategy and treating other signals as secondary.
+
+Key metrics: cross-sectional sorts on basis deliver statistically significant long-short spreads in perpetual futures returns, and the basis factor is the single strongest predictor among the 134 candidates tested. The two-factor (basis + price–volume) model prices all 48 significant anomalies with zero significant alphas. The paper does not report a single headline Sharpe but documents the basis factor as economically and statistically dominant.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6365329>`__
 
 An Empirical Investigation on Risk Factors in Cryptocurrency Futures
 --------------------------------------------------------------------
 
-This paper identifies and characterizes risk factors driving cryptocurrency futures returns, including the basis (spot-futures spread), momentum, and basis-momentum factors. The factor structure provides a framework for understanding what drives cross-sectional differences in crypto futures returns and how these factors relate to traditional asset pricing factors.
+Yeguang Chi, Wenyan Hao, Jiangdong Hu, and Zhenkai Ran (Journal of Futures Markets 2023) test basis, momentum, and basis-momentum factors — borrowed from the commodity futures literature — in the cross-section of cryptocurrency futures from 2017 to 2021. They construct long-short factor portfolios sorted on each signal and measure their premia at daily, weekly, and monthly frequencies.
+
+Our summary: the paper confirms that basis is the strongest single predictor of cross-sectional crypto futures returns, echoing Cao et al. A novel finding is that the basis-momentum factor — a robust premium in commodities — has a statistically significant raw return in crypto but is entirely subsumed by the basis factor once you control for it. Most importantly for implementation, the predictive content of basis is high-frequency: daily factor returns are strongest, weekly returns are weaker, and monthly returns are insignificant. This matters a lot for anyone building a basis-factor strategy — the alpha lives at daily or faster horizons.
+
+Key metrics: daily long-short portfolios sorted on basis deliver statistically significant excess returns and Sharpe ratios that exceed momentum and basis-momentum factors in the same universe. The basis premium shrinks monotonically as the rebalancing frequency drops from daily to weekly to monthly, with the monthly premium indistinguishable from zero. Commodity-style basis-momentum has zero incremental alpha after controlling for basis.
 
 `Read the paper <https://doi.org/10.1002/fut.22425>`__
 

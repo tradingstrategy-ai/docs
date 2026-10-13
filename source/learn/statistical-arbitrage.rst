@@ -72,13 +72,11 @@ By Sun (University of Warsaw Working Paper 2025-19).
 Deep Learning Statistical Arbitrage
 ------------------------------------
 
-A comprehensive framework for statistical arbitrage using deep learning. The authors construct arbitrage portfolios of similar assets as residual portfolios from conditional latent asset pricing factors, extract time series signals with a CNN+Transformer architecture, and form an optimal trading policy that maximizes risk-adjusted returns under constraints. On top-500 U.S. stocks over 19 years, the method achieves approximately 20% annualized returns with volatility below 6%, Sharpe ratios up to 4 (gross), and near-zero Fama-French exposure, robust to transaction costs. Published in Management Science (2025).
+Statistical arbitrage exploits temporal price differences between similar assets. This paper develops a unifying conceptual framework for statistical arbitrage and a novel data-driven solution. The approach constructs arbitrage portfolios of similar assets as residual portfolios from conditional latent asset pricing factors, extracts time series signals using a convolutional transformer, and uses these signals to form an optimal trading policy that maximizes risk-adjusted returns under constraints. The comprehensive empirical study on daily US equities shows high compensation for arbitrageurs to enforce the law of one price, with consistently high out-of-sample mean returns and Sharpe ratios that substantially outperform benchmark approaches.
 
-By Jorge Guijarro-Ordonez (BlackRock), Markus Pelger, and Greg Zanotti (Stanford).
+By Jorge Guijarro-Ordonez, Markus Pelger, and Greg Zanotti.
 
-Mentioned by Ivan Blanco in `this discussion <https://x.com/iblanco_finance/status/1789324804325482946>`__.
-
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3862004>`__
+`Read the paper <https://arxiv.org/abs/2106.04028>`__
 
 Attention Factors for Statistical Arbitrage
 --------------------------------------------
@@ -319,7 +317,11 @@ By Zura Kakushadze and Willie Yu.
 Trading and Arbitrage in Cryptocurrency Markets
 ------------------------------------------------
 
-This paper studies cross-exchange arbitrage opportunities in cryptocurrency markets, documenting persistent pricing discrepancies between exchanges and quantifying the returns available from exploiting them. The authors analyze the structural reasons for arbitrage persistence including capital transfer frictions, withdrawal limits, and timing risks.
+This paper studies the efficiency and price formation of cryptocurrency markets. The authors document large, recurrent arbitrage opportunities across exchanges, with price deviations much larger across countries than within countries, highlighting the role of capital controls in limiting arbitrage capital flows. The common component of signed volume on each exchange explains approximately 80% of Bitcoin returns, while idiosyncratic components help explain arbitrage spreads between exchanges.
+
+Price deviations across countries co-move and widen during periods of large Bitcoin appreciation, with countries exhibiting higher Bitcoin premia over the US price seeing the largest arbitrage deviations. The paper provides foundational evidence that Bitcoin's price formation is heavily flow-driven, resembling foreign exchange markets more than equities.
+
+By Igor Makarov and Antoinette Schoar. Published in Journal of Financial Economics (2020), vol 135, issue 2, pp 293-319.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171204>`__
 

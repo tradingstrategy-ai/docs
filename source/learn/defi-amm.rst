@@ -103,9 +103,13 @@ Mentioned by `Amy O. Khaldoun <https://www.linkedin.com/in/amykhaldoun>`__ (Vess
 Arbitrage Opportunities and Efficiency Tests in Crypto Derivatives
 ------------------------------------------------------------------
 
-This paper tests fiat-free put-call parity conditions in cryptocurrency derivatives markets, documenting the frequency and magnitude of arbitrage deviations. The study examines whether crypto options markets are efficiently priced relative to each other and identifies structural factors that allow deviations to persist.
+Carol Alexander, Xi Chen, Jun Deng, and Tianyi Wang test joint efficiency of bitcoin and ether options and perpetual futures markets using a fiat-currency-free put–call parity relation. They identify the determinants and time-variation of cross-market arbitrage profits and quantify how arbitrage profitability has evolved as crypto derivatives markets have matured.
 
-`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4571439>`__
+Our summary: the paper extends the basis/funding predictability toolkit to include options. Their put–call parity relation ties together spot, perpetual futures, and options on a single instrument and provides a unified framework for detecting mispricings across all three markets. The arbitrage strategies that exploit these mispricings remain profitable after slippage, especially during high-volume and congestion regimes, although the opportunities are shrinking over time as liquidity improves. BTC markets are measurably more efficient than ETH markets. For a basis-trading model, this paper provides a rigorous benchmark against which to measure whether observed deviations represent tradable alpha or just execution friction.
+
+Key metrics: arbitrage strategies linking perpetuals and options remain profitable even after slippage, especially in high-volume and congestion regimes. BTC derivatives markets are more efficient than ETH, and efficiency is improving over time, particularly for options with maturity ≥ 15 days. Deribit-sourced option data combined with perp data from major venues.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4495548>`__
 
 Yield as a Risk Signal: Part II
 ---------------------------------
