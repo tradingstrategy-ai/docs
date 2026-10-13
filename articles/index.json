@@ -4956,6 +4956,18 @@
     "short_description": "Easley, López de Prado and O'Hara argue HFT's defining feature is operating in a volume-clock (event-based time) metric rather than speed, providing the conceptual foundation for tick/volume/dollar information-driven bars. Sampling in volume time removes intra-session seasonality, partially recovers Normality and the IID assumption, and fixes the asynchronous-transaction problem in high-frequency correlation estimation; the paper traces the lineage to Mandelbrot-Taylor, Clark and Ané-Geman, introduces VPIN order-flow toxicity, and uses the 2010 flash crash as its cautionary case."
   },
   {
+    "title": "Time to talk about pricing in HFT",
+    "authors": "matthias (@0xevolve)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/0xevolve/status/2110043518697623972",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-10-13",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "A practitioner note on filtering noisy mid-price and micro-price estimates using confirmation, order-book depth, and spread tightness. It discusses Kalman filtering of fast and slow sources with origin-timestamp alignment and rewind-correct-replay updates, and cites futures-roll oracle pricing as a historical example of pricing discrepancies rather than a current trading edge."
+  },
+  {
     "title": "TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure",
     "authors": null,
     "publication_year": null,

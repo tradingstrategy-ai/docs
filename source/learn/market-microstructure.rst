@@ -411,3 +411,16 @@ The post walks through the main mechanics using the Avellaneda-Stoikov framework
 By `Dave.0xU <https://x.com/bc1qDave>`__.
 
 `Read the post <https://x.com/bc1qDave/status/2004000120132850068>`__
+
+Time to talk about pricing in HFT
+---------------------------------
+
+A practitioner note on estimating fair value for high-frequency trading rather than taking mid-price or micro-price at face value. Matthias warns that these prices can be noisy or manipulated, particularly on weekends and in illiquid markets. He recommends waiting for confirmation before reacting to price moves, anchoring estimates to the deeper side of the order book, and keeping estimates closer to the mid when spreads are tight. These are qualitative heuristics, not a specified filter or an empirically validated trading strategy.
+
+The post discusses Kalman filtering for combining a fast but noisy price source with a slower, more reliable one, while warning against using it for lead-lag arbitrage or tight quoting. It points readers to *Algorithmic Trading: Winning Strategies and Their Rationale* and stresses aligning observations by their origin timestamps, with a rewind-correct-replay approach to updating past estimates. It also highlights futures-contract rolls and market-specific oracle rules as places to investigate pricing discrepancies.
+
+Mentioned by matthias (@0xevolve) in `this discussion <https://x.com/0xevolve/status/2110043518697623972>`__, which cites `Ari's commodity-perpetual discussion <https://x.com/AriPingle/status/2042229041923572106>`__ as a historical futures-roll pricing example rather than a claim of a currently available edge.
+
+By `matthias (@0xevolve) <https://x.com/0xevolve>`__.
+
+`Read the post <https://x.com/0xevolve/status/2110043518697623972>`__.
