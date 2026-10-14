@@ -1,7 +1,7 @@
 ---
 name: add-post
 description: Add a new blog post or article to the documentation collection. Use when user provides a URL to a blog post, article, or tweet linking to one.
-argument-hint: [url]
+argument-hint: "[url]"
 ---
 
 # Add new blog post
