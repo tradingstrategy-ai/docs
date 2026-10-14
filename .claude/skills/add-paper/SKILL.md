@@ -100,7 +100,8 @@ IMPORTANT. If the paper already exists, do not add it again. Check `articles/ind
    Keep the array sorted by `source_file` then `title`.
 
 7. **Commit and push**:
-   - Stage the modified `.rst` file, the PDF (if downloaded), and `articles/index.json`
+   - Stage the modified `.rst` file and `articles/index.json`
+   - Do not stage the PDF: `articles/*.pdf` and `articles/*.md` are gitignored and stay local, never force-add them
    - Commit with message: "Add: {Paper Title}"
    - Push to master branch
 
