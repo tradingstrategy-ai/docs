@@ -6312,6 +6312,18 @@
     "short_description": null
   },
   {
+    "title": "One-Sided Flow Becomes Toxic When the Market Moves With It",
+    "authors": "Mark Aron Szulyovszky (Aperiodic)",
+    "publication_year": 2026,
+    "download_page": "https://www.linkedin.com/feed/update/urn:li:activity:7511449664941064192/",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-10-29",
+    "filename": "one-sided-flow-becomes-toxic-when-the-market-moves-with-it.pdf",
+    "downloaded_at": "2026-10-29",
+    "download_failure_reason": null,
+    "short_description": "Introduces Aperiodic's flow toxicity score, a simplified time-bar alternative to VPIN defined as past-normalized signed notional flow multiplied by past-normalized short-horizon realized volatility. The score spikes only when aggressive flow is both unusually one-sided and moving the price, which is when liquidity providers are most likely trading against informed or urgent flow."
+  },
+  {
     "title": "Order Flow Analysis of Cryptocurrency Markets",
     "authors": "Ed Silantyev",
     "publication_year": null,

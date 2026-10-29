@@ -201,3 +201,14 @@ Mentioned by `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive
 By `Aperiodic <https://aperiodic.io>`__.
 
 `Run the notebook <https://aperiodic.io/notebooks/most-predictive>`__
+
+One-Sided Flow Becomes Toxic When the Market Moves With It
+----------------------------------------------------------
+
+A short note from Aperiodic introducing its *flow toxicity score*, a crypto order-flow metric that estimates how likely it is that the aggressive flow hitting the book is informed. The idea comes from VPIN (see *Flow Toxicity and Liquidity in a High Frequency World* earlier in this file), which measures order imbalance in volume time and links it to liquidity providers pulling back. Aperiodic's version is deliberately simpler and works on ordinary time bars, so it can sit alongside other bar-based features without building volume buckets or classifying trades in bulk.
+
+The score is defined as past-normalized signed notional flow multiplied by past-normalized short-horizon realized volatility. Normalizing each input against its own history turns both into z-score-like quantities, and multiplying them means the score only spikes when both are abnormal at once. The author's point is that one-sided trading on its own is not necessarily informative, and neither is volatility, even though the two are correlated. What matters is the moment when aggressive flow is both unusually one-sided and moving the price, the point at which the market struggles to absorb it and market makers are most likely trading against informed or urgent flow. The accompanying chart shows the three series side by side: a burst of signed flow and a volatility spike line up, and the toxicity score rises to around 4σ only where they overlap. Compared with VPIN, this is a signed measure, so it shows which side the toxic flow came from as well as how strong it was. The score is served as one field of Aperiodic's `flow metrics <https://aperiodic.io/catalog/flow>`__, alongside volume delta, flow entropy and taker size-bucket breakdowns, as part of the platform's 100+ point-in-time microstructure, flow and liquidity metrics.
+
+By `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive/>`__ (`Aperiodic <https://aperiodic.io>`__).
+
+`Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7511449664941064192/>`__
