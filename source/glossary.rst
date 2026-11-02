@@ -10,6 +10,61 @@ and algorithmic trading.
     :sorted:
 
 
+    Pendle
+
+        Pendle is a marketplace for trading the future income or rewards from crypto assets separately from their redemption value.
+        It splits an eligible asset into a :term:`principal token`, representing the redemption part, and a yield token, representing income or rewards until :term:`maturity`.
+        Buying the principal token at a discount can provide a known return in the market's specified asset if held until maturity and redeemed successfully; it does not guarantee a profit in dollars.
+
+        See the `Pendle introduction <https://docs.pendle.finance/pendle-academy/pendle-101/pendle-101-key-takeaways>`__.
+
+    Principal token
+
+        A principal token (PT) is a token representing the redemption value of an investment, separated from its income or rewards before a specified date.
+        On :term:`Pendle`, that date is called :term:`maturity`.
+        Redemption is measured in the market's accounting asset, the asset named in brackets in its market listing; it is not necessarily one unit of the token deposited or one US dollar.
+
+        **Hypothetical example**
+
+        Suppose a PT costs 0.95 units of its accounting asset and can be redeemed for 1 unit at maturity.
+        Buying 100 PT costs 95 units and returns 100 units if redemption succeeds: a gain of 5 units, or about 5.26% over the holding period, before fees.
+        This is not an annualised rate or a current offer.
+        A fall in the accounting asset's dollar price can still cause a dollar loss, and selling the PT before maturity may produce a different result.
+
+        The redemption terms do not remove risks from the underlying investment or its software.
+        Borrowing to buy PT adds changing interest costs and :term:`liquidation` risk; see the worked example under :term:`recursive looping`.
+        See `Pendle's principal-token documentation <https://docs.pendle.finance/pendle-v2/ProtocolMechanics/YieldTokenization/PT>`__.
+
+    USDat
+
+        USDat is Saturn's :term:`stablecoin`, a digital token intended to track the value of the US dollar.
+        `Saturn's website <https://saturn.credit/>`__ describes its backing as PayPal USD through PYUSDx, a token representing that backing.
+        USDat is distinct from sUSDat, the investment shares received when depositing USDat into Saturn's separate income-generating product.
+
+        Saturn describes sUSDat's investments as exposure to Strategy's STRC preferred shares through Ondo STRCon, a token representing those company securities.
+        Those shares can pay dividends, but holding USDat itself is not the same as holding sUSDat or receiving those dividends.
+        USDat's price and ability to be exchanged depend on its backing, operating rules and available trading funds; a dollar target is not a guarantee.
+        See `Saturn's terms <https://saturn.credit/legal/terms-conditions>`__ for eligibility and redemption limitations.
+
+    Morpho
+
+        Morpho is a crypto lending platform where lenders supply tokens and borrowers obtain loans against :term:`collateral`, assets pledged to secure repayment.
+        Its variable-rate markets pair one loan asset with one collateral asset, with separate borrowing limits and price feeds for each market.
+        Borrowers pay interest that can change, and insufficient collateral can trigger :term:`liquidation`, a forced sale to repay lenders.
+
+        An isolated market keeps its loan accounting separate from other markets; this does not remove risks from shared assets, price feeds or software.
+        See `Morpho's variable-rate market documentation <https://docs.morpho.org/learn/concepts/blue/>`__.
+
+    Maturity
+
+        Maturity is the date when an investment becomes due for repayment or eligible for redemption under its terms.
+        For a :term:`Pendle` :term:`principal token`, it marks when the principal redemption becomes available.
+        It does not guarantee payment in dollars or mean that a vault holding the token must return investors' money that day.
+
+        A vault can sell before maturity at the available market price, or replace a maturing investment with one due later, a process called rolling over.
+        Its own withdrawal rules and available :term:`liquidity` determine when depositors can receive money.
+        See `Pendle's maturity and redemption explanation <https://docs.pendle.finance/pendle-v2/ProtocolMechanics/YieldTokenization/PT>`__.
+
     Trading strategy
 
         In :term:`quantitative finance`, a trading strategy is a fixed plan that is designed to achieve a profitable returns for its investors.
@@ -8849,47 +8904,31 @@ and algorithmic trading.
 
     Recursive looping
 
-        Recursive looping, also known as recursive lending or borrowing loops, is a :term:`leveraged <leverage>` :term:`yield farming` strategy in :term:`decentralised finance` (DeFi) lending markets. It involves repeatedly borrowing against deposited collateral—often using the borrowed assets as additional collateral—to amplify exposure to interest rates, liquidity mining rewards, or other yields offered by lending protocols like Aave, Compound, or Euler. This creates a "loop" that multiplies the effective capital deployed without requiring additional external funds, essentially allowing users to borrow from themselves to lend back into the protocol.
+        Recursive looping means borrowing against an investment and reinvesting the borrowed money, potentially repeating the process to increase the position.
+        The investment serves as :term:`collateral`, assets pledged to secure a loan from lenders through a :term:`lending protocol`.
+        The borrower owes those lenders money; they are not borrowing from themselves.
 
-        **How Recursive Looping Works**
+        This creates :term:`leverage`: a larger investment than the investor's own money could buy.
+        A vault may automate buying assets, pledging them, borrowing and reinvesting.
+        Returns depend on income from the entire investment minus interest on the debt and other costs.
 
-        The process typically leverages overcollateralized lending mechanics in DeFi, where loans require collateral worth more than the borrowed amount (e.g., a 75% loan-to-value ratio means you can borrow up to 75% of your collateral's value). Here's a step-by-step breakdown:
+        **Hypothetical example**
 
-        1. **Initial Deposit**: A user deposits an asset (e.g., 100 USDC) as collateral into a :term:`lending protocol` like :term:`Aave`, earning supply interest and possibly governance tokens (e.g., ETH on Ethereum).
+        Suppose an investor supplies 100 USDC and borrows a further 200 USDC to hold 300 USDC worth of investments for one year.
+        If the investments earn 5%, they generate 15 USDC; if borrowing costs 3% on the 200 USDC debt, interest costs 6 USDC.
+        The remaining 9 USDC is a 9% return on the investor's 100 USDC, before fees.
 
-        2. **Borrowing**: They borrow against this collateral—often the same asset or a correlated one (e.g., borrow 75 USDC against the 100 USDC collateral). The borrowed amount incurs borrowing interest, but if supply rewards outweigh borrowing costs, the net yield is positive.
+        If borrowing instead costs 8% for that year, interest is 16 USDC, leaving a 1 USDC loss even though the investments earned income.
+        These simplified figures assume unchanged asset prices and balances, simple annual interest, no compounding and no fees; they are not current rates or an offer.
+        A 10% fall in the investment's price would separately lose 30 USDC, or 30% of the investor's original money, before interest and fees.
 
-        3. **Re-Deposit and Repeat**: The borrowed asset is re-deposited as additional collateral, enabling more borrowing. This loop is repeated multiple times (e.g., 3-5x) to achieve higher leverage, such as turning 100 USDC into effective exposure of 300-400 USDC. Modern implementations often use flash loans (temporary, uncollateralized loans repaid in the same transaction) to automate the entire loop atomically, avoiding multiple on-chain steps and reducing gas fees.
+        Borrowing rates, collateral prices and market rules can change the outcome.
+        Insufficient collateral can trigger :term:`liquidation`, and limited :term:`liquidity` can make repaying debt or selling investments difficult.
+        Price-feed errors and software failures can also cause losses.
 
-        4. **Yield Amplification**: The strategy profits from the spread between supply APY (annual percentage yield) and borrow APY, plus any token incentives. For instance, if supplying earns 5% APY plus rewards while borrowing costs 3%, the net yield per loop compounds. It's commonly applied to stablecoins or real-world asset (RWA) tokens for lower volatility.
+        See `Morpho's variable-rate market documentation <https://docs.morpho.org/learn/concepts/blue/>`__ for the underlying lending mechanics, and :term:`principal token` for an example of buying a token below its redemption value.
 
-        In vault-based DeFi (e.g., Yearn Finance or recursive yield loops), automated strategies or "vaults" handle this recursively, where the vault borrows to fund its own liquidity provision, creating self-sustaining yield loops.
-
-        **Risks and considerations**
-
-        - **Liquidation Risk**: Leverage amplifies losses; a small price drop in the collateral asset can trigger cascading liquidations if the loan-to-value ratio exceeds safe levels.
-        - **Interest Rate Volatility**: If borrow rates spike above supply rates (e.g., due to market stress), the loop becomes unprofitable, leading to negative yields.
-        - **Smart Contract and Protocol Risks**: Bugs, oracle failures, or protocol exploits can lead to total loss.
-        - **Tax Implications**: In some jurisdictions, each borrow/re-deposit may trigger taxable events, creating a "recursive tax" burden.
-        - **Systemic Effects**: Widespread recursive looping can inflate protocol TVL (total value locked) artificially, potentially masking underlying risks and contributing to market bubbles and :term:`cascading liquidation`.
-
-        While recursive looping can generate high APYs (e.g., 10-50% or more in bull markets), it's suited for experienced users who monitor health factors and use tools like DeFi aggregators for optimization.
-
-        See also
-
-        - :term:`Lending protocol`
-
-        - :term:`Aave`
-
-        - :term:`Liquidation`
-
-        - :term:`Leverage`
-
-        - :term:`Cascading liquidation`
-
-        - :term:`Yield farming`
-
-        - :term:`Decentralised finance`
+        See also :term:`decentralised finance`.
 
     FreqTrade
 
