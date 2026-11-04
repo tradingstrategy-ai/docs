@@ -274,3 +274,16 @@ A central paradox emerges: while high-volatility periods historically produce hi
 By Mark Aron Szulyovszky.
 
 `Read the blog post <https://blog.unravel.finance/p/the-unreasonable-effectiveness-of>`__
+
+A Stop Is What Happens When the Loss Budget Runs Out
+----------------------------------------------------
+
+D2 Finance, which says it has run stops for ten years across a prop desk, a hedge fund and, since 2023, vaults, replies to a thread by `@DeepDishEnjoyer <https://x.com/DeepDishEnjoyer/status/2117684814073446460>`__ arguing that "calculating a stop loss" is nonsense. That thread allows only two reasons to leave a trade you still believe has positive expectancy: changed margin or value-at-risk concerns, and an orthogonal signal that the trade has gone bad, such as evidence of adverse selection. The rest it dismisses as retail comfort. D2 answers that the first reason already is a stop. A stop says nothing about whether the asset is good. It is what happens when the loss budget runs out, and that decision is made in advance, while you can still think straight.
+
+The argument runs on two constraints. Every dollar of drawdown comes off a finite loss budget, and realised volatility tends to rise as a position moves against you, so the vol-scaled size you may hold shrinks at the same time. The stop is the level where both bind at once, set as sigma times a horizon times a multiplier: the point where the remaining budget no longer covers the next move. The second reason is treated as the same decision taken at design time. A mean reversion thesis that expects the adverse move gets a wider stop, and anything the thesis does not cover fires it. For capital run under a mandate, the post adds that holding on conviction would replace the investors' loss tolerance with the manager's. Its example is the hXXI vault, which stopped its long delta at 76K in the March selloff, a 23% BTC drawdown, and closed the epoch within 30 bps, while the unstopped book would have carried long delta to 66K. The accompanying image shows the sizing rule behind this: below half Kelly, computed on live equity and re-marked daily, with the stop being where that rule fires all at once.
+
+The post also states the costs and limits of a stop. It is not a put, because it pays for the floor in forgone rebounds rather than premium, and it can gap. Both sides agree that chart-level stops with no volatility input are theatre, that a stop inside the bid-ask noise is a donation to the market maker, and that a stop wider than the position's maximum loss is not a stop. D2 concedes the discretionary view works for one person trading their own money with no mandate. The hXXI figures are the vault manager's own and cover a single event, so they illustrate the mechanism and do not measure it.
+
+By `D2 Finance <https://x.com/D2_Finance>`__.
+
+`Read the post <https://x.com/D2_Finance/status/2117977100665696546>`__

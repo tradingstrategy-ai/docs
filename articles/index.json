@@ -6972,6 +6972,18 @@
     "short_description": null
   },
   {
+    "title": "A Stop Is What Happens When the Loss Budget Runs Out",
+    "authors": "D2 Finance",
+    "publication_year": 2026,
+    "download_page": "https://x.com/D2_Finance/status/2117977100665696546",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-11-04",
+    "filename": "a-stop-is-what-happens-when-the-loss-budget-runs-out.pdf",
+    "downloaded_at": "2026-11-04",
+    "download_failure_reason": null,
+    "short_description": "A vault manager's rebuttal to the claim that calculated stop losses are retail comfort, arguing that a stop is a pre-committed response to an exhausted loss budget, not a view on the asset. The stop level is derived from volatility, horizon and the remaining budget, and is illustrated by the hXXI vault stopping its long delta at 76K in a 23% BTC drawdown and closing the epoch within 30 bps."
+  },
+  {
     "title": "A Survival-First Approach to Trading System Development",
     "authors": "Pedma",
     "publication_year": null,
