@@ -6960,6 +6960,18 @@
     "short_description": "This paper presents FinRL-Meta, an open-source library providing hundreds of gym-style market environments built via a DataOps pipeline that collects dynamic real-world market datasets and processes them for financial reinforcement learning research. The framework addresses key challenges of low signal-to-noise ratio, survivorship bias, and backtesting overfitting by providing standardized environments, reproduced benchmark papers, and community competition infrastructure."
   },
   {
+    "title": "Financial Context-Rich Strategy for Actor-Critic based Agents: A Deep Reinforcement Learning Approach for Stock Trading",
+    "authors": "Hrishikesh Singh, Aarti Sharma, Millie Pant",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.32237",
+    "source_file": "reinforcement-learning.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "financial-context-rich-strategy-for-actor-critic-based-agents-a-deep-reinforcement-learning-approach-for-stock-trading.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Compares A2C, PPO, DDPG, TD3 and SAC agents trading five large Indian stocks from June 2023 to June 2024 with no sentiment, FinBERT sentiment in the state, and sentiment in both state and reward. DDPG with sentiment in state and reward reports the top annual return of 0.70 and Sharpe ratio of 2.75, against 0.31 and 2.09 without sentiment, while the added reward term has no position component and the A2C and PPO table values conflict with the paper's own figures."
+  },
+  {
     "title": "Market Making via Reinforcement Learning",
     "authors": "Thomas Spooner, John Fearnley, Rahul Savani, and Andreas Koukorinis",
     "publication_year": 2018,

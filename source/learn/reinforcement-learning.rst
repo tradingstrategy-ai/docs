@@ -257,3 +257,40 @@ Key metrics: solo, Agent A earns mean PnL 506.49 (Sharpe 1.749) in a fixed marke
 Added after a search for the two ACM ICAIF 2025 publications claimed by `Stratwise <https://stratwise.ai/#team>`__; those specific papers could not be located in the ICAIF 2025 proceedings, Crossref, OpenAlex, DBLP or arXiv, and this is an unrelated genuine ICAIF 2025 paper on the same topic.
 
 `Read the paper <https://arxiv.org/abs/2510.25929>`__
+
+Financial Context-Rich Strategy for Actor-Critic based Agents: A Deep Reinforcement Learning Approach for Stock Trading
+-----------------------------------------------------------------------------------------------------------------------
+
+This paper tests five actor-critic deep reinforcement learning agents (A2C, PPO, DDPG, TD3 and SAC) trading five large Indian stocks under three setups: no sentiment, partial infusion (a FinBERT news sentiment score in the state) and deep infusion (sentiment in both state and reward). The authors report that agents combining policy optimisation with Q-learning improve under deep infusion, led by DDPG, with TD3 as the exception. A first-page note says the paper is in press and received the Best Paper Award at BAMS-ORSI 2024.
+
+The base reward is the change in asset value over the step (Eq. 3). Deep infusion adds r_avg, the mean across stocks of each stock's price change multiplied by its daily inclination score, an average of signed FinBERT headline scores (Eqs. 4-7). Eq. 7 has no position term and no weighting coefficient. Our inference: a flat agent earns the same bonus as a fully invested one, and since the paper describes no market impact, the agent cannot influence this term through its trades. The authors do not discuss this, and attribute TD3's decline to increased variability in the reward signal.
+
+The paper says A2C "remained consistent" from partial to deep infusion, yet its annual return drops from 0.61 to 0.26. The abstract says "significantly", but the paper reports no statistical test or repeated seeds, and covers a single trading year.
+
+The tables and figures disagree, and the paper does not comment on it. In Figure 6, the with-sentiment curves for A2C and PPO end near the 1.8 and 1.6 ticks of a 1e6 axis, from 1 million INR, while Table 4 gives annual returns of 0.26 and 0.25. The without-sentiment curves end near the 1.5 tick for A2C and the 1.1 tick for SAC, against 0.16 and 0.34 in Table 2 (our chart readings). The DDPG and TD3 curves and the SAC with-sentiment curve do match their table values. If the figures are right, the finding that deep infusion mainly helps Q-learning agents does not follow.
+
+**Data and code.** Daily Yahoo Finance data for Reliance, Adani Ports, Bharti Airtel, HDFC Bank and ICICI Bank, January 2019 to June 2024, plus Google RSS news headlines (1 to 10 per day). Trading runs June 2023 to June 2024 from 1 million INR. The paper links no code repository. It gives no training window, hyperparameter values or transaction cost level (Figure 2 lists transaction cost under reward, but Eqs. 3 and 7 have no such term), and does not call the trading year out-of-sample, so results cannot be reproduced from the paper alone.
+
+**Key metrics.** The paper reports annual return, annual volatility, Sharpe ratio, stability and max drawdown per agent as fractions, with no win rate and no buy-and-hold or index benchmark. Sequences below run no sentiment, partial infusion, deep infusion.
+
+- DDPG with deep infusion (Table 4): annual return 0.70, Sharpe ratio 2.75, stability 0.95, max drawdown -0.07, the highest return and Sharpe ratio in the paper's tables.
+
+- DDPG without sentiment (Table 2): annual return 0.31, Sharpe ratio 2.09, stability 0.83, max drawdown -0.09.
+
+- PPO without sentiment (Table 2): annual return 0.45, Sharpe ratio 2.50, stability 0.91, max drawdown -0.06, the best of the five agents on all four.
+
+- PPO with sentiment: annual return 0.26 and Sharpe ratio 1.32 (partial), 0.25 and 1.24 (deep).
+
+- TD3 annual return 0.28, 0.63, 0.33, with Sharpe ratio 1.40, 2.46, 1.78.
+
+- A2C annual return 0.16, 0.61, 0.26, with Sharpe ratio 1.06, 2.36, 1.23.
+
+- SAC annual return 0.34, 0.41, 0.46, with Sharpe ratio 2.14, 2.01, 2.02, so its Sharpe ratio stays below the no-sentiment level.
+
+- Annual volatility ranges from 0.14 (DDPG, SAC) to 0.19 (TD3) without sentiment, and from 0.17 (TD3) to 0.21 (A2C) with deep infusion.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2114969324376957207>`__, who argues that the additional reward depends on price changes and sentiment, rather than on how much of each asset the agent holds or trades. Eqs. 4-7 support this for r_avg, while the base term in Eq. 3 is the change in asset value, which does reflect holdings.
+
+By Hrishikesh Singh, Aarti Sharma and Millie Pant.
+
+`Read the paper <https://arxiv.org/abs/2610.32237>`__
