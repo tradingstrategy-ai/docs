@@ -4344,6 +4344,18 @@
     "short_description": null
   },
   {
+    "title": "FinLLM-KG: Knowledge Graph-Enhanced LLMs for Financial Sentiment Analysis in Algorithmic Trading",
+    "authors": "Giorgos Iacovides, Oliver Hannibal, Wuyang Zhou, Danilo Mandic",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.36083",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "finllm-kg-knowledge-graph-enhanced-llms-for-financial-sentiment-analysis-in-algorithmic-trading.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "FinLLM-KG injects point-in-time SEC 10-K facts, as company profiles or top-k relevance-ranked triples, into a frozen causal LLM to score financial news sentiment without updating model weights. In a daily 35% long-short S&P 100 portfolio traded open-to-open over February 2015 to June 2021, top-k triples reach a Sharpe of 3.15 against 2.55 for the article-only FinDPO baseline. Results are reported at no transaction cost and with no out-of-sample split."
+  },
+  {
     "title": "Financial Machine Learning Part 0: Bars",
     "authors": "Maks Ivanov",
     "publication_year": 2019,

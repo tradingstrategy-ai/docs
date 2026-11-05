@@ -1586,3 +1586,36 @@ For systematic traders, the post is most useful as a worked example of how a dee
 By Itay Bittan.
 
 `Read the blog post <https://readmedium.com/training-a-transformer-model-to-predict-1-minute-stock-prices-tutorial-with-code-samples-part-3-41cf84841d0b>`__.
+
+FinLLM-KG: Knowledge Graph-Enhanced LLMs for Financial Sentiment Analysis in Algorithmic Trading
+------------------------------------------------------------------------------------------------
+
+FinLLM-KG gives a frozen causal LLM company-level facts from SEC 10-K filings at inference time, without updating model weights, so that news sentiment reflects firm context beyond the article. Context arrives as a natural-language company profile or as relevance-ranked factual triples. In a daily 35% long-short S&P 100 portfolio, both variants beat the article-only FinDPO baseline on every reported metric, with top-k triples at a Sharpe of 3.15 against 2.55, at no transaction cost.
+
+The graph is the published FinReflectKG, covering more than 700 companies over fiscal years 2014-2024, with each triple aligned to its EDGAR filing date. Context is limited to the latest 10-K filed strictly before the article, and the score stays undefined if none exists. Claude Haiku 4.5 writes the profiles, and triples are retrieved by cosine similarity with a default of k = 4.
+
+Sentiment from articles on trading day t sets the portfolio at the open of t + 1, held for one trading day and closed at the next open, so returns are open-to-open. The top 35% of ranked companies go long and the bottom 35% short, equally weighted, and companies without sentiment that day are left out.
+
+Table 1 is stated at no transaction cost, with no turnover, slippage or stock borrow figures. The paper reports no train, validation or test split, so all metrics cover one sample period. LLM weights stay frozen here, which limits fitting within the paper (our inference), but the paper does not say what period the FinDPO base model was trained on. It reports no sensitivity to the 35% allocation or k, no significance test on the Sharpe differences and no sub-period results, and it states no limitations.
+
+In the worked Boeing example from 11 March 2020, four retrieved 10-K facts sum to +1.656 and move the score from -0.866 to +0.790, a sign change worth checking against the prompt's instruction to favour current news (our reading).
+
+**Data and code.** Approximately 200,000 financial news articles from February 2015 to June 2021, cut to approximately 160,000 by a BERT-base-NER filter at 98% confidence on the target company, plus daily returns for the 100 S&P 100 companies from Yahoo Finance, 1,672 days per company. Daily inclusion depends on having news and market data, and the paper does not say whether the 100 names reflect historical index membership. The news dataset is not named and the paper links no code repository, so the results cannot be reproduced from the paper alone.
+
+**Key metrics.** The paper reports full-period returns and Sharpe, Sortino and Calmar ratios, none labelled out-of-sample. It reports no maximum drawdown or win rate and does not say whether cumulative returns are compounded.
+
+- Top-k Triples: Sharpe 3.15, Sortino 4.96, Calmar 6.12
+- Top-k Triples: cumulative return 329.54%, annualised return 48.69%
+- Summary (company profile): Sharpe 3.07, Sortino 4.60, Calmar 6.07
+- Summary (company profile): cumulative return 325.06%, annualised return 47.98%
+- Baseline (FinDPO, article only): Sharpe 2.55, Sortino 4.12, Calmar 4.38
+- Baseline (FinDPO, article only): cumulative return 275.04%, annualised return 40.39%
+- S&P 500 benchmark: Sharpe 0.72, Sortino 0.90, Calmar 0.46, cumulative return 94.75%, annualised return 12.77%
+- SPY betas of -0.04 to -0.06 for the long-short portfolios, which the authors read as signal alpha rather than market exposure
+- Portfolio figures at no transaction cost, with the risk-free rate set to Rf = 0
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2116813671401701459>`__, who says that with a Sharpe ratio of 3.15 the main concerns are potential backtest selection bias, unrealistic trading assumptions and insufficient out-of-sample evidence. The paper does not address these points: the 3.15 is a full-period figure at no transaction cost, with no held-out test period.
+
+By Giorgos Iacovides, Oliver Hannibal, Wuyang Zhou and Danilo Mandic.
+
+`Read the paper <https://arxiv.org/abs/2610.36083>`__
