@@ -424,3 +424,36 @@ Mentioned by matthias (@0xevolve) in `this discussion <https://x.com/0xevolve/st
 By `matthias (@0xevolve) <https://x.com/0xevolve>`__.
 
 `Read the post <https://x.com/0xevolve/status/2110043518697623972>`__.
+
+Calibration of Passive Market Impact with a Queue-Sensitive Propagator Model
+----------------------------------------------------------------------------
+
+The paper calibrates passive market impact, the price response to liquidity-providing limit orders, in a model combining Hawkes market-order flow with queue-reactive limit orders and cancellations. The price splits into a universal propagator term and a correction for how price sensitivity depends on volume at the best quotes, giving a regression on two observable signals. On E-mini S&P 500 futures the queue term adds explanatory power beyond the propagator, and thicker queues attenuate trade impact.
+
+Passive orders have no signed price term here: they change the queue that later market orders meet. The headline regressions use an unrestricted two-factor dictionary (decay rates 0.003 and 0.1 per second) in place of the fitted Hawkes kernel, so the coefficients are projection coefficients.
+
+The main proxy is the weighted mid-price, (A qb + B qa) / (qa + qb), where A and B are the best ask and bid and qa and qb the best queues, and the queue signal uses the same best-queue state. Section 4.1 concedes that part of the estimated state dependence is "necessarily mechanical": even with fixed quotes, a buy moves the proxy further when the ask is thinner. On the plain mid-price kappa1 keeps its sign and magnitude (*t* from -5.9 to -11.4 for 30 to 300 s). Section 4.1 promises this proxy equal prominence in Section 4.4, yet no R-squared on it appears there, and a decomposition subtracting the mechanical increment is "not reported". Our inference: the weighted mid stays between the quotes, so its mechanical offset from the mid is capped at half the spread and should matter less at horizons of minutes.
+
+The regressors are increments over the same interval as the price change, so they include trades occurring during it. "Out-of-sample" means coefficients fitted on the previous 16 days and applied to the next day's realized flow (our reading of equations 15 and 18). The R-squared thus describes how much of a move is explained once that flow is known. The paper runs no trading rule and reports no costs.
+
+Passive impact is simulated, with no fill model and no feedback from posted liquidity to market-order arrivals. The authors call the queue mean-reversion rate the dominant uncertainty.
+
+**Data and code.** CME order-book messages for E-mini S&P 500 futures in 2025 plus the first days of January 2026: 263 regular trading days, 193 used for testing, front-month contract, 10:00 to 16:00. Comparisons cover NQ, RTY and YM over 2023-2025, ES in 2023 and 2024, and four Treasury futures in 2025. The paper links no code repository or dataset, so results cannot be reproduced from it alone, and its "pair" specification is undefined in the text.
+
+**Key metrics.** The paper reports regression coefficients, mean daily R-squared and simulated impact. It reports no annualized return, Sharpe ratio, drawdown or win rate.
+
+- Queue slope kappa1: -8.1 x 10^-6 index points per AES volume unit per AES queue unit (s.e. 1.7 x 10^-6), ES 2025, weighted mid, 212 s. Section 4.1 and Figure 4 give 116 s for ES 2025 instead.
+- Propagator only: in-sample R-squared 0.482, out-of-sample 0.422. Affine model: in-sample 0.500, out-of-sample 0.437 (Table 1, 193 test days).
+- Affine out-of-sample gain over the propagator by horizon: +0.021 at 30 s, +0.018 at 60 s, +0.015 at 212 s, +0.012 at 300 s (Table 6).
+- With 3 sigma forecast truncation, out-of-sample R-squared on ES 2025: propagator 0.458, affine 0.469, log 0.473, 105-parameter full-dictionary ridge 0.603 (0.597 without truncation).
+- Full-dictionary out-of-sample lift over the propagator: 0.06 to 0.19 across twelve equity-index cells over 2023-2025 (Newey West *t* 7 to 13, gains on 85 to 95% of test days), and 0.06 to 0.09 in four 2025 Treasury futures (*t* 7 to 12).
+- Control for the anticipation term: kappa1 unchanged at -8.1 x 10^-6, out-of-sample R-squared 0.437 to 0.438.
+- Slope stability: negative in every twenty-session rolling window. First-half mean -1.8 x 10^-5 (*t* = -5.8), second-half mean -9.5 x 10^-6 (*t* = -7.1), difference significant (*t* = -2.6).
+- Simulated peak for 100 AES posted over 50 s: 1.5 x 10^-2 index points, about 6 percent of a tick. It falls to 1.0 x 10^-2 with a mean-reversion rate of 1.6 per second and 3.0 x 10^-4 with 77 per second.
+- Peak impact scales with posted volume: log-log slope 0.98 for V of 10 AES or more (s.e. 0.004). Aggressive execution is 22 times larger at V = 50 AES over 50 s (Figure 8).
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2116455549332042118>`__, who says the main price proxy depends on the explanatory variables and that a high R-squared is different from a tradeable signal; the authors concede the first point in Section 4.1 and report no trading results.
+
+By Yadh Hafsi, Fabrizio Lillo and Grégoire Szymanski.
+
+`Read the paper <https://arxiv.org/abs/2610.38442>`__

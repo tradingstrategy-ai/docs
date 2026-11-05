@@ -4752,6 +4752,18 @@
     "short_description": null
   },
   {
+    "title": "Calibration of Passive Market Impact with a Queue-Sensitive Propagator Model",
+    "authors": "Yadh Hafsi, Fabrizio Lillo, Grégoire Szymanski",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.38442",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "calibration-of-passive-market-impact-with-a-queue-sensitive-propagator-model.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Decomposes the price in a Hawkes and queue-reactive model into a propagator term and a queue-state correction, then regresses E-mini S&P 500 price changes on the two signals over 193 test days in 2025. At 212 s the queue term lifts mean daily out-of-sample R-squared on the weighted mid-price from 0.422 to 0.437 with a slope of -8.1 x 10^-6, and the simulated peak impact of 100 AES posted over 50 s is 1.5 x 10^-2 index points, about 6 percent of a tick."
+  },
+  {
     "title": "Fat Tails in Crypto Markets and Implications for Market Making",
     "authors": null,
     "publication_year": null,
