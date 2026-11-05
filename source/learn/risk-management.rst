@@ -287,3 +287,34 @@ The post also states the costs and limits of a stop. It is not a put, because it
 By `D2 Finance <https://x.com/D2_Finance>`__.
 
 `Read the post <https://x.com/D2_Finance/status/2117977100665696546>`__
+
+Functional Tensor Trains for High-Order Greeks and Exposure Tails of Multi-Asset Structured Products
+----------------------------------------------------------------------------------------------------
+
+This JPMorganChase paper replaces Monte Carlo for worst-of Phoenix autocallables with a deterministic backward solve that stores the continuation value as an hp functional tensor train (hp-FTT), with piecewise-polynomial cores split at the barriers. One solve gives Greeks to third order and the potential future exposure (PFE). On monthly notes on three to five assets, Monte Carlo stays cheaper for deltas at 1% accuracy, hp-FTT is cheaper for third-order Greeks, and at 0.1% hp-FTT is cheaper for every Greek the authors could check.
+
+The worst performer is above a barrier exactly when every asset is, so each event is a rank-one product of one-asset indicators, applied exactly because barriers are panel edges. Given one common factor the assets move independently, so a transition smooths each core separately, with 12 Gauss-Hermite nodes as a shared bond. Greeks integrate the derivatives of the first step's density against the stored surface, so the factor s^-k that inflates a sampler's variance multiplies surface error instead, and each extra digit costs a few modes. At three assets the price and five Greeks at 151 spots took 0.6 core-seconds after a solve of 13.
+
+At three assets an uncompressed array on the same mesh is a strong competitor, with cross-speed ratios at 1% of 614 and 95 under the two models, against 336-424 and 155-214 for the tensor; at five assets it would need 269 gigabytes. Nested Monte Carlo wins loose exposure targets because the surface build is a fixed cost, but its inner noise biases the quantile, and with a jackknife its error falls only as cost^-0.40 to cost^-0.47.
+
+Neither model is calibrated, and the authors note that local volatility misprices the forward smile. Stochastic local volatility is their next test, stochastic volatility may favor the sampler, and the solver has run on neither. Vega and vanna are future work. Ratios compare CPU work on one machine, with no GPU timing or hedged profit-and-loss test. Tolerances were chosen with deep Monte Carlo; choosing them from two solves a decade apart multiplies the solver's charge by about four.
+
+**Data and code.** The main results are simulations with no market data: a 3-year note with autocall, coupon and protection levels of 1, 0.8 and 0.7, a 12% annual coupon, rate 3%, sigma = 0.2 and rho = 0.5, under geometric Brownian motion and local volatility sigma(x) = min{max{0.2 exp(-0.6 x), 0.05}, 1}. Appendices measure factors on daily returns of 119 US large caps and price an indicative GOOGL, JPM and WMT term sheet, with no cost comparison. Runs used Julia on one Apple M4 Max laptop. The paper links no code repository, so the timings cannot be reproduced directly, although the contract and model parameters are stated in full.
+
+**Key metrics.** The paper reports compute-cost ratios, Monte Carlo core-seconds over tensor core-seconds at a relative error target, with the tensor charged a full solve for one Greek at one spot; above 1 the tensor is cheaper. There is no annualized return, Sharpe, drawdown or win rate, and no in-sample or out-of-sample split. Unless stated, ratios are against the tuned likelihood-ratio estimator at log-spot -0.10 with monthly observation.
+
+- Geometric Brownian motion, three assets, 1%: delta 0.044-0.056, gamma 1.1-1.2, speed 13-17, cross-gamma 13-14, cross-speed 336-424.
+- Geometric Brownian motion, three assets, 0.1%: delta 3.0-3.4, gamma 86-109, speed 928-1,172, cross-gamma 884-1,011; cross-speed is not scored because the reference does not resolve it.
+- Geometric Brownian motion, five assets, 1%: delta 0.035-0.045, gamma 0.67-0.92, speed 4.2-6.4, cross-gamma 4.2-7.2, cross-speed 215-323. Costing Monte Carlo from measured runs moves this gamma to 1.7-2.3. Against bump-and-reprice on conditioned paths, cross-gamma is 0.38-0.65.
+- Local volatility near the continuum limit, three assets: delta 0.051-0.054 and cross-speed 132-151 at 1%; delta 4.6-5.1 and speed 3,085-3,551 at 0.1%.
+- Pathwise delta estimator, five assets, geometric Brownian motion, 0.1%: 0.82-1.2, level with the tensor, which is 3.3 to 18 times cheaper at 0.05%.
+- Ten assets, geometric Brownian motion: speed 1.5-2.6 at 1% and delta 0.36-0.63 at 0.1%, with a solve of 1,044 core-seconds at rank 130 and tolerance 10^-8.
+- Six observation dates, five assets: Monte Carlo conditioned on the common factor reaches 1% on every Greek in at most 1.1 core-seconds, 2.3 to 7.3 times less than the tensor's charge.
+- PFE at 97.5% at month 18, errors in % of PFE - EE, geometric Brownian motion only: Monte Carlo is cheaper at 1% by 10, 13 and 15 times at three, four and five assets; the tensor is cheaper at 0.1% by at least 11, 6.0 and 4.3 times. With a surface already built for the Greeks it is at least 73 to 424 times cheaper at 0.1%.
+- Agreement under geometric Brownian motion: 36 comparisons of the tightest solve with the deepest runs, 4.3 x 10^9 to 5.3 x 10^10 samples, give a root-mean-square z-score of 1.05, largest 2.2.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2117506833132732508>`__, who notes that the main experiments assume a stylized local-volatility model with constant equicorrelation and a common market factor, while market autocallables exhibit stochastic volatility, forward-skew dynamics and changing correlations; the paper runs that setup alongside geometric Brownian motion, and the authors themselves flag that neither model is calibrated and that stochastic volatility is untested.
+
+By Javier Lopez-Piqueres, Atithi Acharya, Yue Sun and Niraj Kumar.
+
+`Read the paper <https://arxiv.org/abs/2610.42119>`__

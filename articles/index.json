@@ -7080,6 +7080,18 @@
     "short_description": null
   },
   {
+    "title": "Functional Tensor Trains for High-Order Greeks and Exposure Tails of Multi-Asset Structured Products",
+    "authors": "Javier Lopez-Piqueres, Atithi Acharya, Yue Sun, Niraj Kumar",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.42119",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "functional-tensor-trains-for-high-order-greeks-and-exposure-tails-of-multi-asset-structured-products.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Backward solve of worst-of Phoenix autocallables on an hp functional tensor train with barriers on panel edges, giving Greeks to third order and potential future exposure from stored surfaces, compared with tuned Monte Carlo under geometric Brownian motion and uncalibrated local volatility. At three assets under geometric Brownian motion, Monte Carlo cost over tensor cost at 1% is 0.044-0.056 on delta and 336-424 on cross-speed. For the 97.5% exposure at month 18, Monte Carlo is 10 to 15 times cheaper at 1% of PFE - EE at three to five assets, while the tensor is cheaper at 0.1%."
+  },
+  {
     "title": "Implementing Dynamic Stop Losses in a Multi-Signal Trading Strategy",
     "authors": "Pedma",
     "publication_year": null,
