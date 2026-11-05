@@ -318,3 +318,34 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Javier Lopez-Piqueres, Atithi Acharya, Yue Sun and Niraj Kumar.
 
 `Read the paper <https://arxiv.org/abs/2610.42119>`__
+
+Expected shortfall estimation and capital coverage under overlapping scenarios
+------------------------------------------------------------------------------
+
+This paper tests order-statistic expected shortfall (ES) estimators built for independent samples on 250 overlapping 10-day P&L scenarios, the construction used for market risk capital under the Fundamental Review of the Trading Book. Six estimators from the EBA catalogue and a VaR benchmark are compared on simulations and market data. The authors find that overlap shifts ES estimates systematically downward and weakens capital coverage, that serial dependence acts in the same direction and that heavy tails amplify both.
+
+The central metric is the safe confidence threshold (CT), the lowest ES level at which the position plus reserve is acceptable, with a 2.5% target. Aggregating to 10 days also moves the target law closer to Gaussian, so the authors say dependence is isolated only in the Gaussian case. There, 250 overlapping observations match the variance of about 57 independent ones for estimator #1, a figure that covers only the variance penalty.
+
+Serial dependence alone reproduces much of the damage: estimator #1 on non-overlapping GARCH-norm-1 data has a mean bias of -10.7%, worse than the -6.7% on overlapping Normal data. No estimator is best overall, and with heavy tails, dependence and overlap together even the conservative #5 and #6 stay outside the safe zone (CT at or below 5%). The authors judge re-weighting unlikely to suffice and offer no replacement estimator.
+
+On market data, daily CT lies above every i.i.d. curve and below the GARCH curves. Under overlap, the Gaussian and Student-t5 curves stay below the lower end of the market boxes, so the authors advise validation simulations that combine heavy tails with serially dependent volatility. The ES-to-VaR ratio moves little because overlap affects both estimates through the same channel, so clearing the 0.9 floor says little about capital adequacy. True ES is unknown on market data, and dependence and shape effects cannot be separated there.
+
+**Data and code.** Simulations use K = 10^6 samples of n = 250 from Gaussian, Student-t, generalized Pareto and normal-inverse Gaussian laws and four GARCH(1,1) models. Market data are twelve daily risk-factor series across rates, credit, equities, FX and commodities over 2010-2025 (SOFR from 2018) and 4024 daily returns for 99 Fama-French portfolios, from public sources. Anonymised ECB bank P&L data only check tail characteristics. The paper links no code repository, and the public-data results can be rebuilt in principle from the stated design.
+
+**Key metrics.** The paper reports estimation accuracy and capital coverage. It tests no trading strategy, so there is no annualised return, Sharpe ratio, drawdown or win rate.
+
+- Estimator #1 mean bias (SB), non-overlapping to overlapping simulated data: Normal -1.4% to -6.7%, GPD(xi = 1/3) -2.0% to -20.6%, GARCH-t-1 -10.8% to -21.1%.
+- Estimator #1 CT, same comparison: Normal 3.0% to 5.5%, GPD(xi = 1/3) 3.5% to 9.3%, GARCH-t-1 6.1% to 9.8%, against a 2.5% target.
+- Simulated averages across static distributions and estimators #1-#6: CT from about 2.91% to 6.95%, and UP5, the probability of estimating below 95% of true ES, from about 40.7% to 65.8%.
+- Twelve risk factors, median realised CT: 4.0% (#1) to 3.2% (#6) on daily returns, against 8.0% (#1) to 7.2% (#6) on overlapping 10-day returns.
+- Excluding SOFR and the US 1M Bill, realised CT spans 2.6-5.7% daily and 3.6-11.6% under overlap. Those two series reach 5.8-16.3% daily and 14.0-20.5% under overlap.
+- 99 Fama-French portfolios: CT clusters at 3-5% on daily returns, with medians of 8-9% under overlap and outliers approaching 11%.
+- VaR benchmark, median realised CT scaled by 2.5 to the ES target: 2.8% daily to 6.0% under overlap. ES ends at 3.2 times its reference level against 2.4 for VaR.
+- ES-to-VaR ratio, median across risk factors of the mean: 0.953 (#1) to 1.022 (#6) daily and 0.958 to 0.995 under overlap, with no series mean below the 0.9 floor.
+- Regulatory backtest blind spot: the 1-day VaR estimator has a median exception rate of 1.1% against its nominal 1%, while the 10-day overlapping ES for estimator #1 secures the position only at 8.0% against a 2.5% target.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2117187131089068118>`__, who says the deterioration could be explained by overlap and Gaussian generated data. The experiments support overlap as a driver, alongside serial dependence and heavy tails, and do not support the Gaussian part: Normal data give the lowest overlapping CT and smallest bias of all simulated models, and median CT roughly doubles on market data, where nothing is generated.
+
+By Martin Aichele, Igor Cialenco, Damian Jelito and Marcin Pitera.
+
+`Read the paper <https://arxiv.org/abs/2610.41624>`__

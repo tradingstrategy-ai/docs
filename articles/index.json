@@ -7080,6 +7080,18 @@
     "short_description": null
   },
   {
+    "title": "Expected shortfall estimation and capital coverage under overlapping scenarios",
+    "authors": "Martin Aichele, Igor Cialenco, Damian Jelito, Marcin Pitera",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.41624",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "expected-shortfall-estimation-and-capital-coverage-under-overlapping-scenarios.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Compares six order-statistic ES estimators at the 2.5% level on 250 overlapping 10-day versus non-overlapping daily scenarios, using simulated static and GARCH data plus market data on twelve risk factors and 99 Fama-French portfolios. Overlap pushes ES estimates systematically downward, with estimator #1 mean bias moving from -1.4% to -6.7% on Normal data and from -2.0% to -20.6% on GPD(xi = 1/3) data. On market data the median realised safe confidence threshold rises from 4.0% to 8.0% for estimator #1 and from 3.2% to 7.2% for estimator #6, against a 2.5% target, while the ES-to-VaR ratio changes comparatively little."
+  },
+  {
     "title": "Functional Tensor Trains for High-Order Greeks and Exposure Tails of Multi-Asset Structured Products",
     "authors": "Javier Lopez-Piqueres, Atithi Acharya, Yue Sun, Niraj Kumar",
     "publication_year": 2026,
