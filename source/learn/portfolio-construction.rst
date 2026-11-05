@@ -448,3 +448,34 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Alejandro Rodriguez Dominguez.
 
 `Read the paper <https://arxiv.org/abs/2610.00147>`__
+
+Simple Portfolios that Deliver Consistent Decent Returns
+--------------------------------------------------------
+
+An empirical study of established portfolio construction methods under private-investor constraints: 59 liquid US ETFs, monthly trading at a 5 basis point spread, no shorting, no leverage and an 8% target volatility. It backtests fixed weights, volatility control and risk-based methods on small ETF portfolios, plus a Markowitz problem with momentum and moving-average signals on whole asset categories. The authors report that portfolios of as few as three ETFs deliver consistent, decent returns (6% to 10% a year) and outperform the 60/40 over 2005-2025.
+
+Asset selection is in-sample. The authors backtest every equal-weight combination of three, four and five ETFs from a 23-ETF subset over the whole window, rank them by Sharpe and by Sharpe followed by LQ (the lower quartile of annual Sharpe ratios), and read off what the winners share: growth equities, government bonds and gold. The proposed portfolios follow from those findings and are reported on the same window. There is no train-test split or walk-forward re-selection of assets, and no multiple-testing adjustment is reported. "Without tuning" refers to parameters, which are round literature values fixed once. Our reading: the weights are causal, since risk and signals use trailing data, while the asset lists are chosen with hindsight.
+
+The authors flag part of this. The best portfolio found, QQQ/XLP/TLT/GLD/IBIT, is called "a product of hindsight" and is not proposed. The category removals behind the Momentum Universe came from backtest results, so some improvement "is still due to selection". They consider that bias modest because Futures and Countries were argued against on structural grounds; Sectors, also removed, was a result they did not expect. IBIT and ETHA are extended back to 2017 with coin prices, although crypto could not be reached through an ordinary brokerage account before 2024. The universe is survivorship-biased and the bias is not estimated.
+
+The sensitivity check drops the first or last five years, so both windows sit inside the selection period (our reading: no out-of-sample test). Section 6.4 says the ordering holds, yet in 2010-2025 the 60/40 has a higher Sharpe than equal-weight SPY/AGG/GLD. Forecasts are tested out of sample: ridge regression on three price features has negative R-squared at every regularization level, and the authors conclude it has no statistical support.
+
+**Data and code.** Daily adjusted close prices from Yahoo Finance and the federal funds rate from FRED, 2005-01-01 to 2025-01-01, 5,032 trading days, 59 US-listed ETFs. Code is at https://github.com/AlexEmrik/consistent-decent-returns and the risk model package at https://github.com/oskaredenwallberg/covforge. Public data and open code make the results reproducible in principle; we have not rerun them.
+
+**Key metrics.** The paper reports return (r), volatility (sigma), maximum drawdown (MDD), annual turnover (TO), Sharpe ratio (SR) and LQ. Figures are full-window backtests on assets selected over that same window, unless stated.
+
+- Top equal-weight three-ETF portfolio by SR, QQQ/IEF/GLD: SR 0.81, LQ 0.44, MDD 0.22; the best four- and five-ETF portfolios both reach SR 0.84.
+- QQQ/XLP/TLT/GLD: SR 0.91 and LQ 0.70 under inverse volatility, against SR 0.84 and LQ 0.62 under equal weights.
+- Proposed SPY/AGG/GLD, equal weights: r 0.08, sigma 0.09, MDD 0.24, TO 0.17, SR 0.68, LQ 0.49.
+- Proposed SPY/TLT/GLD/IBIT, maximum diversification: r 0.10, sigma 0.09, MDD 0.28, TO 0.42, SR 0.90, LQ 0.54; SR is 0.82 without IBIT.
+- Proposed Momentum Universe (26 ETFs), Markowitz: r 0.08, sigma 0.08, MDD 0.16, TO 0.81, SR 0.78, LQ 0.40; SR is 0.43 on the full universe before the category removals, and 0.29 on the full universe without Crypto.
+- 60/40 benchmark in Table 25: r 0.07, sigma 0.10, MDD 0.30, SR 0.52, LQ 0.13. Section 6.2 and Table 28 instead give the 60/40 SR 0.51 and MDD 0.36. Our observation: the Table 25 row matches the 50/50 row of Table 28, which may be a labeling error.
+- SR in 2010-2025: 60/40 0.78, SPY/AGG/GLD 0.75, Momentum Universe 0.86, SPY/TLT/GLD/IBIT 1.02.
+- SR in 2005-2020: 60/40 0.58, SPY/AGG/GLD 0.71, Momentum Universe 0.83, SPY/TLT/GLD/IBIT 1.09.
+- Regret bound, using realized future returns with yearly trading and not implementable: SR 1.57, MDD 0.36.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2115332182633750916>`__, who says a portfolio that performed well historically is a different thing from showing that the portfolio-selection process will work out of sample. The paper does not run that test on its selection process, and its authors call their best-found portfolio a product of hindsight.
+
+By Oskar Edén Wallberg and Alexander Karolin.
+
+`Read the paper <https://arxiv.org/abs/2610.36491>`__

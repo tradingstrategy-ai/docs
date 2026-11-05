@@ -6756,6 +6756,18 @@
     "short_description": "Compares 60/40 and 50/30/20 SPY/AGG/GLD benchmarks with 7% volatility control and monthly long-only Markowitz portfolios from 2006 to 2026, net of 5 bp trading costs. A macro-and-return forecast Markowitz portfolio earns 11.6% annually at 9.0% volatility, Sharpe 1.08 and 18.1% maximum drawdown, versus 8.1%, 11.3%, 0.56 and 33.7% for 60/40; public data and code support replication, though turnover is 284% per year."
   },
   {
+    "title": "Simple Portfolios that Deliver Consistent Decent Returns",
+    "authors": "Oskar Edén Wallberg, Alexander Karolin",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.36491",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "simple-portfolios-that-deliver-consistent-decent-returns.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Backtests risk-based and Markowitz portfolios on 59 liquid US ETFs over 2005-2025 with monthly trading, a 5 basis point spread, no shorting or leverage and an 8% volatility target. Equal-weight SPY/AGG/GLD reaches a Sharpe ratio of 0.68, SPY/TLT/GLD/IBIT under maximum diversification 0.90 and a momentum Markowitz portfolio 0.78, against 0.52 for the 60/40. Assets are selected on the same window used for reporting, so these results are in-sample with respect to selection, while ridge return forecasts have negative out-of-sample R-squared at every regularization level."
+  },
+  {
     "title": "Strategic Drag: Accepting Lower Returns for Better Risk-Adjusted Performance",
     "authors": "Pedma",
     "publication_year": null,
