@@ -3972,6 +3972,18 @@
     "short_description": null
   },
   {
+    "title": "Optimal Size in Market Making under State-Dependent Hawkes Process",
+    "authors": "Jonathan Chávez Casillas, Li Gan",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.31903",
+    "source_file": "liquidity-provision.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "optimal-size-in-market-making-under-state-dependent-hawkes-process.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Models executed volume in market making as average order size times an exponential demand function times a Prony-series multiplier driven by a state-dependent Hawkes process, calibrated by CMA-ES around a backward dynamic program on MSFT limit-order-book data from November 3-7, 2014. On the single evaluation day the headline policy reports $119,707/day at a peak inventory of 9,988 shares, an 11.4× uplift over the hard-bound-retrained calibration ($10,460/day). Section 3.1 states that the policy incorporates order-flow observations subsequent to each decision time, so these results are retrospective, conditional on the observed daily path."
+  },
+  {
     "title": "Providing Liquidity in Uniswap V3",
     "authors": null,
     "publication_year": 2021,

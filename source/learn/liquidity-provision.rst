@@ -80,3 +80,42 @@ The thread closes on the capital-efficiency argument for Fluid's design: supplyi
 Posted as a thread by letsgetonchain (@letsgetonchain, whose bio reads "everything onchain capital markets"). One reply from @litocoen jokes, "ffs you just made me deposit now you re diluting my yield," underscoring the thread's remark that only limited spare capacity remains in the strategy.
 
 `Read the thread <https://x.com/letsgetonchain/status/2072659542194688441>`__
+
+Optimal Size in Market Making under State-Dependent Hawkes Process
+------------------------------------------------------------------
+
+This paper models executed volume in market making as an average order size times an exponential demand function times a Prony-series multiplier in quote depth, market-order count and state-dependent Hawkes (sdHawkes) intensity. On MSFT limit-order-book data, the authors report that the selected calibration achieves higher terminal utility than a baseline while respecting the inventory bound, in retrospective evaluations conditional on realised order-flow paths.
+
+On a one-second grid, count bins and queue imbalance give twelve event types and five states, for 1452 sdHawkes parameters. Cancellations are omitted. Two Prony terms per side give 16 coefficients, which CMA-ES tunes as policy parameters by maximising the initial value of a backward recursion across training days, under a hard bound of 10,000 shares.
+
+The central caveat is in Section 3.1. On the evaluation day the recursion is solved again on that day's path, so "this policy incorporates order-flow observations subsequent to each decision time", and the experiment evaluates the size parameters "retrospectively, conditional on the observed daily path". The authors offer no further justification and no causal variant, and Sections 5.5 and 6 quote "out-of-sample" values without repeating the caveat. Our reading: out-of-sample applies only to the frozen parameters, and the dollar figures do not measure what a live policy would earn. Intensity inputs do use only records strictly before each grid time (Section 4.4).
+
+The authors flag sensitivity to local optima. CMA-ES first sampled a feasible candidate at generation 6 and its best value stayed there. The headline policy Sopt uses parameters trained without the hard bound, then evaluated under it with a no-post action that went unused. Our reading: the choice between Sopt and the bound-trained Sretr rests on the single evaluation day.
+
+**Data and code.** LOBSTER-format, millisecond-stamped MSFT messages with ten book levels, November 3-7, 2014, 09:30-16:00: approximately 5.4×10^6 messages and 117,000 one-second intervals. November 3-6 is training and November 7 is evaluation. The paper links no code repository, so reproduction needs the data and a reimplementation.
+
+**Key metrics.** The paper reports daily dollar values and inventories for one stock and one evaluation day, plus in-sample values. There is no annualised return, Sharpe ratio, drawdown or win rate. Every November 7 figure is conditional on that day's realised path.
+
+- Sopt on November 7, 2014 (penalty 0.05, bound 10,000 shares): $119,707/day, peak absolute inventory 9,988 shares, terminal inventory -16.5 shares.
+
+- Sretr: $10,460/day, peak 9,992 shares, terminal +7.5 shares. Trivial multiplier S0 (f ≡ 1): $8,559/day, peak 9,944 shares, terminal -12.4 shares.
+
+- Sopt uplift as stated by the authors: 11.4× over Sretr and 14.0× over S0.
+
+- Inventory-blind baselines: fixed quote N1 at -$24,712,461, ending at +222,627 shares, and myopic greedy N2 at -$20,250,905, ending at -201,894 shares. Both breach the bound.
+
+- Intraday cumulative reward: Sopt $100,277 against N2 $103,512, with the value gap attributed to inventory at the close.
+
+- In-sample value: $7,462.80/day against $4,338.39/day for f ≡ 1 under the same bound, a factor of 1.72.
+
+- Soft penalty at 0.01, 0.05, 0.10 under the bound: training value $7,462.80 to $7,462.41, evaluation value $10,516.24 to $10,443.89, with identical coefficients.
+
+- Sopt action mix in active seconds: L+ = 2 in 47.8%, L+ = 1 in 40.7%, L- = 1 in 59.1%, L- = 2 in 36.9%.
+
+- sdHawkes fit: largest self-excitation ratio 0.42 (buy N = 0, neutral state), at most 0.02 for active bins, decay rates from 0.15 to 2.62 per second.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2114605183736967665>`__, who says the authors acknowledge in Section 3.1 that the dynamic program uses the entire realised order-flow path of the evaluation day, including information arriving after each decision, and calls this look-ahead bias. Section 3.1 confirms the mechanism and calls the experiment retrospective, without using that term.
+
+By Jonathan Chávez Casillas and Li Gan.
+
+`Read the paper <https://arxiv.org/abs/2610.31903>`__
