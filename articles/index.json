@@ -6648,6 +6648,18 @@
     "short_description": null
   },
   {
+    "title": "Mitigating Return Drag and Regime Whipsaws in Sector Rotation: An Asymmetric Downside-Aware Nested Clustered Optimization Framework",
+    "authors": "Supriadi",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2611.05310",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "mitigating-return-drag-and-regime-whipsaws-in-sector-rotation-an-asymmetric-downside-aware-nested-clustered-optimization-framework.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Replaces symmetric covariance in Nested Clustered Optimization with the Bawa-Lindenberg downside semi-covariance matrix and adds a Sticky Gaussian HMM for tactical rotation across the 11 S&P 500 sector ETFs. Over 65 out-of-sample months (August 2020 to December 2025) CAGR rises from 10.65% for Plain NCO to 13.41%, regime switches fall from 16 to 4, and Calmar reaches 0.94, while Sharpe of 0.63 stays below SPY's 0.86. PBO on the nine-point hyperparameter grid is 0.85, which the author treats as a warning against in-sample selection and offsets with a DSR of 0.9976 and a plateau of six identical configurations."
+  },
+  {
     "title": "Optimizing Portfolio Performance through Clustering and Sharpe Ratio-Based Optimization",
     "authors": null,
     "publication_year": null,

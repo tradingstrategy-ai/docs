@@ -380,3 +380,34 @@ The authors provide the full replication package, using Yahoo Finance, FRED, and
 `Source code <https://github.com/cvxgrp/simple-portfolio-code>`__
 
 `Read the paper <https://web.stanford.edu/~boyd/papers/stock_bond_gold_portfolios.html>`__
+
+Mitigating Return Drag and Regime Whipsaws in Sector Rotation: An Asymmetric Downside-Aware Nested Clustered Optimization Framework
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Supriadi proposes Asymmetric Downside-Risk Nested Clustered Optimization with Sticky Regime Dynamics (Asym-Sticky-NCO) for tactical rotation across the 11 S&P 500 GICS sector ETFs. It replaces symmetric covariance with the Bawa-Lindenberg downside semi-covariance matrix and adds a Sticky Gaussian HMM with a persistence prior (kappa) and a confidence threshold (delta). Over 65 out-of-sample walk-forward months (August 2020 to December 2025), CAGR rises from 10.65% for Plain NCO to 13.41% and regime switches fall from 16 to 4.
+
+Each month, a rolling 24-month window estimates semi-covariances and expected returns, and an expanding window fits a 2-state HMM on the S&P 500 return and standardised VIX. With kappa = 0.30, the regime flips only when the opposite state's posterior reaches delta = 0.65. Bull regimes maximise a Sortino utility and Bear regimes minimise downside variance.
+
+The ablation credits the regime layer. Downside semi-covariance alone adds +44 bps of CAGR and deepens maximum drawdown from -14.48% to -20.32%, while the sticky HMM adds a further +232 bps and brings drawdown to -14.22%. The gains are relative to the NCO baselines: CAGR stays below SPY and Equal-Weight, volatility is the highest tested, and Sharpe and Sortino stay below SPY's. The author places the edge on maximum drawdown, Calmar and turnover, although Table I shows Min-Variance with a smaller drawdown and Plain NCO with lower turnover.
+
+Section V.D applies Combinatorial Symmetric Cross-Validation to the nine-point kappa-delta grid and reports a PBO of 0.85, read as the in-sample best configuration being "not reliably stable out-of-sample". The author calls this economically immaterial, because six of the nine configurations produce identical portfolios, treats it as a warning against selecting hyperparameters by in-sample ranking alone, and says the single-market, 65-month sample limits the power of these diagnostics. Our reading: the grid was swept over the same 65 months reported as out-of-sample, and the paper does not say how kappa and delta were chosen or how tied configurations are ranked.
+
+**Data and code.** Monthly data from August 2018 through December 2025 (89 monthly periods) for the 11 Select Sector SPDR ETFs, SPY, CBOE VIX and 13-week Treasury bill yields, from Yahoo Finance. Code is at `sp500-asymmetric-nco <https://github.com/obo-cloud/sp500-asymmetric-nco>`__, which the paper says holds the price data, backtesting pipelines and figure scripts, so the results should be reproducible. We have not run it.
+
+**Key metrics.** The paper reports CAGR, Sharpe, Sortino, drawdown, Calmar and turnover, with no win rate. Figures are out-of-sample over the 65 months and before costs unless stated.
+
+- CAGR: 13.41% for Asym-Sticky-NCO, against 10.65% for Plain NCO (+276 bps/year), 11.05% for Baseline Regime-NCO (+236 bps), 14.28% for Equal-Weight and 16.36% for SPY.
+- Total return: 97.74%, against 72.99% for Plain NCO and 127.26% for SPY.
+- Sharpe 0.63 and Sortino 1.07, against 0.86 and 1.47 for SPY and 0.58 and 0.97 for Plain NCO.
+- Annualised volatility: 17.71%, against 15.58% for SPY and 14.03% for Plain NCO.
+- Maximum drawdown: -14.22%, against -23.93% for SPY, -14.48% for Plain NCO and -13.52% for Min-Variance.
+- Calmar: 0.94, the highest tested, against 0.68 for SPY (+38.2%) and 0.51 for Baseline Regime-NCO (+84.3%).
+- Regime switches and turnover: 4 switches against 16 for the Baseline 1D-HMM (75.0% fewer), and 30.48%/month turnover against 60.78%/month for Baseline Regime-NCO and 26.99%/month for Plain NCO.
+- Net CAGR at 20 bps costs: 12.60%, against 9.94% for Plain NCO and 9.43% for Baseline Regime-NCO.
+- Overfitting diagnostics: DSR 0.9976 at K = 15 trials; PBO 0.85 on the nine-point grid (S = 16 groups, 12,870 splits); six grid points give 13.41% CAGR and three give 11.47%.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2117871513831686200>`__, who says the PBO of 0.85 means the in-sample winning configuration is very likely to rank poorly out of sample under the study's cross-validation procedure. The paper reports 0.85 on the hyperparameter grid only and argues the instability is economically immaterial.
+
+By Supriadi.
+
+`Read the paper <https://arxiv.org/abs/2611.05310>`__
