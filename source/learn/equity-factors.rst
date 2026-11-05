@@ -305,3 +305,34 @@ Key metrics: the raw seasonality strategy generates 1.45% monthly alpha. After c
 Mentioned by Ivan Blanco (`@iblanco_finance <https://www.linkedin.com/in/iblanco-finance/>`__) in `this discussion <https://www.linkedin.com/feed/update/urn:li:activity:7452728873336811521/>`__: "Most anomalies are just seasonality in disguise. A lot of what the literature calls anomaly seems to be the same calendar effect wearing different costumes."
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6441120>`__
+
+Det-MASO: Diversity-Regularized Multi-Agent Sequential Optimization for Factor Generation
+-----------------------------------------------------------------------------------------
+
+Det-MASO trains several independent neural agents to generate continuous equity alpha factors under one objective, with a differentiable negative log-determinant penalty on the inter-agent correlation matrix so that they do not collapse into one signal. A context-conditioned scheduler reweights the agents across market regimes. Tests use CSI300 and S&P 500. The abstract cites improvements of 1.1% in IC, 6.4% in annualised return and 0.33 in Sharpe ratio without naming the market or baseline behind each figure.
+
+The penalty is computed on each date. Each of n agents, an MLP with its own parameters, scores N assets from the same 34 features. Each score vector goes through the differentiable soft-rank operator of Blondel et al. and is z-scored across assets to form a column of F, and Sigma_t = F'F / N is the n-by-n matrix of soft rank correlations between agents. The objective penalises -log det(Sigma_t) with weight c_div = 0.1, next to the agent ICs, a rolling portfolio Sharpe and scheduler entropy. The determinant is 1 for mutually orthogonal agents and tends to 0 as two agents become linearly dependent, so this log barrier grows without limit as agents collapse. Its gradient, -tr(Sigma_t^-1 dSigma_t/dtheta_k), needs only the n-by-n inverse, giving O(N n^2 + n^3) cost per step against O(N^2) for MMD and SND. It requires continuous outputs, which is why the authors drop symbolic formulas, and soft ranks keep it on the same metric as the Spearman target.
+
+Eq. 10 and 11 show that the penalty ignores the scheduler: the IC gradient to an agent is scaled by its scheduler weight and a regime mask (1 in its own regime, lambda_mask = 0.1 elsewhere), while the diversity gradient carries neither, so every agent is repelled on every date. Silhouette-optimal K-means on market states sets n = 5 on both markets.
+
+The guarantees are narrow. Proposition 1 rules out convergence to identical agents for trajectories with non-decreasing objective at a fixed date, and Remark 2 says this does not imply a good optimum. Proposition 2 assumes det(Sigma) >= epsilon > 0, then gives lambda_min >= epsilon / n^(n-1). Section 4.2 says removing the penalty drops IC below Single-MLP on both markets, but Table 5 shows it above. Our own check, not in the paper: the Figure 3 log-determinants sit close to the two-agent value log(1 - rho^2) and above what five equally correlated agents at those levels would produce, so the figure may not describe the five-agent model. Table 7 names no period, but its default row repeats the test figures, so the tuning scan appears to use test data (our inference). The authors' stated limit is that factor scores stay black-box neural outputs.
+
+**Data and code.** Daily data for CSI300 (300 constituents) and S&P 500 (500 constituents) from the Qlib platform, with a 20-day forward return target. Training runs 2012/01/01 to 2022/12/31, validation 2023/01/01 to 2024/02/28 and test 2024/03/01 to 2026/03/01. The paper links no code repository. Reproduction would need values it omits, including the rolling window T_train, the soft-rank base temperature, the hidden-layer widths and K_max.
+
+**Key metrics.** The paper reports IC, ICIR, annualised return, Sharpe ratio and maximum drawdown for a top-decile long portfolio out-of-sample. It reports no win rate, transaction costs, portfolio turnover or significance tests, and Table 5 gives no spread across seeds.
+
+- Det-MASO on CSI300, out-of-sample: IC 0.081, Sharpe 1.85, annualised return 31.5%, maximum drawdown 8.5%.
+- Det-MASO on S&P 500, out-of-sample: IC 0.072, Sharpe 1.58, annualised return 26.8%, maximum drawdown 8.2%.
+- AlphaForge, the best formulaic baseline on CSI300: IC 0.070, Sharpe 1.42, annualised return 25.1%, maximum drawdown 10.2%. The authors put Det-MASO 15.7% ahead on IC and 30.3% ahead on Sharpe.
+- S&P 500 baselines, out-of-sample: best IC 0.059 (AlphaSage), best Sharpe 1.25 (AlphaForge).
+- Single-MLP, out-of-sample: IC 0.055 and Sharpe 1.05 on CSI300, IC 0.048 and Sharpe 0.92 on S&P 500.
+- IC by diversity method on CSI300, out-of-sample: no penalty 0.058, SND 0.071, MMD 0.074, log-determinant 0.081. On S&P 500: 0.050, 0.060, 0.064 and 0.072.
+- Ablation on CSI300 test period: removing the penalty takes IC from 0.081 to 0.058, ICIR from 0.62 to 0.42 and Sharpe from 1.85 to 1.12. Removing the scheduler gives IC 0.072 and Sharpe 1.48.
+- Scan of c_div on CSI300 (Table 7): IC 0.069 and Sharpe 1.40 at 0.01, IC 0.081 and Sharpe 1.85 at 0.1, IC 0.072 and Sharpe 1.55 at 0.5.
+- Training-phase diversity (last 40 epochs, 5 seeds): mean absolute pairwise correlation 0.98 with no penalty, 0.75 SND, 0.64 MMD, 0.49 Det-MASO, with log det(Sigma_t) of -3.13, -0.82, -0.52 and -0.28.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2116056655980810472>`__, who says he got an idea from incorporating a differentiable diversity penalty into an ensemble, which matches the log-determinant term the paper places in the joint objective of its scheduler-mixed agents (Eq. 11).
+
+By Tiantian Wu and Peng Yang.
+
+`Read the paper <https://arxiv.org/abs/2610.34936>`__

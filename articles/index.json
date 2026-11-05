@@ -3444,6 +3444,18 @@
     "short_description": null
   },
   {
+    "title": "Det-MASO: Diversity-Regularized Multi-Agent Sequential Optimization for Factor Generation",
+    "authors": "Tiantian Wu, Peng Yang",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.34936",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "det-maso-diversity-regularized-multi-agent-sequential-optimization-for-factor-generation.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Trains five regime-specialised neural agents under a joint objective with a differentiable negative log-determinant penalty on their soft-rank correlation matrix, and mixes them with a context-conditioned scheduler. On a top-decile long portfolio with a 20-day target, it reports out-of-sample IC 0.081 and Sharpe 1.85 on CSI300, and IC 0.072 and Sharpe 1.58 on S&P 500, over a 2024/03/01 to 2026/03/01 test period."
+  },
+  {
     "title": "Don't Mix What Should Be Separated: Why Combining Value and Momentum Signals Destroys Alpha",
     "authors": null,
     "publication_year": null,
