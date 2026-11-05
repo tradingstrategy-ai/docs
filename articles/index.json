@@ -9432,6 +9432,18 @@
     "short_description": null
   },
   {
+    "title": "Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage",
+    "authors": "Minkey Chang",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.25802",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "amortized-neural-filtering-for-calibrated-posteriors-in-statistical-arbitrage.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Trains a neural filter on simulated mean-reverting paths to return a posterior over each residual spread's half-life, and sizes positions from it on 120 Korean stocks. Out of sample and net of costs, the NFE earns a Sharpe ratio of 1.49 against 1.45 for AFM residuals under the base rule, a difference the paper calls not resolvable. The posterior adds no alpha, but the amortized methods have forecast-realized gaps of 137-588 bp per hold against 1084 bp for the point estimate."
+  },
+  {
     "title": "Attention Factors for Statistical Arbitrage",
     "authors": "Elliot L. Epstein, Rose Wang, Jaewon Choi, and Markus Pelger",
     "publication_year": null,

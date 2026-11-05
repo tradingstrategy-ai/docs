@@ -522,3 +522,34 @@ Key metrics (optimised high-volume pairs, out-of-sample 2015-2024): annualised r
 Mentioned by Nam Nguyen, Ph.D. (`@namnguyento <https://www.linkedin.com/in/namnguyento/>`__) in `this discussion <https://www.linkedin.com/posts/namnguyento_arbitrage-trading-quantitativefinance-share-7453094800922275840-Qm_T>`__: "The paper revisits the age-old strategy of pairs trading and incorporates volume analysis into the framework. Trading volume is a dominant performance driver, with high-volume pairs consistently outperforming low-volume counterparts."
 
 `Read the paper <https://gupea.ub.gu.se/items/dc1a29d8-4290-42c7-bf97-ee82eb7251d9>`__
+
+Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage
+-----------------------------------------------------------------------------
+
+The paper introduces the Neural Filter Estimator (NFE), a recurrent network trained on simulated mean-reverting paths that returns, in one forward pass, a posterior over the half-life of every residual spread in a cross-section, and sizes positions from it. On Korean equities net of costs the posterior adds no alpha over a point estimate, and its contribution is a correct account of its own uncertainty. Accepted at ICAIF '26 as an oral presentation.
+
+The regime is defined relative to the trade: with a 60-day window and 20-day hold, a spread is converging when its half-life is at most 60 days. No real returns enter network training. Real data choose the simulator's innovation law through a classifier two-sample test, which only stochastic volatility with asymmetric lognormal shocks passes on both cross-sections, and the selected process remains distinguishable from the data.
+
+The largest identification loss comes from estimating the level from the same window as the reversion: a 120-day half-life completes only 29% of its reversion in 60 days, so it resembles the fast state. A point forecast rescaled by one constant reaches the posterior's forecast-realized gap within sampling error, so that reduction is a uniform shrinkage, and the interval is what the posterior adds.
+
+Results come from one training seed and are exploratory unless stated. No strategy outperforms the benchmark in the earlier period, end-of-sample universe selection makes the levels an upper bound, and the Korean transaction tax and short-sale restrictions are not modeled. The AFM row is AFM's residuals under this paper's base rule. AFM's own trading network reaches 0.25 under a convention that is not its own, and the author says this is not a replication.
+
+**Data and code.** Daily data on 120 KRX stocks with complete history, 2010-2026 (4,072 days), with six point-in-time characteristics from 2016. The sample splits at 2018-04, the first 30% of each period trains, and costs are 5 bp per unit of turnover plus 1 bp per day on the short notional. Package, scripts and data pipeline are at https://github.com/minkeymouse/nfe, but vendor prices are not redistributed, so reproduction depends on access to the price data.
+
+**Key metrics.** Table 1 gives out-of-sample results net of costs for the days after the training split of the 2018-04 to 2026-07 period. No win rate is reported.
+
+- NFE: Sharpe 1.49, mean return 10.6%, volatility 7.1%, maximum drawdown 4.1%, turnover 0.055 (one training seed).
+- AFM residuals under the base rule: Sharpe 1.45, mean return 10.4%, volatility 7.2%, maximum drawdown 4.2%, turnover 0.055.
+- Annualized Sharpe of the daily return difference to the random benchmark: +1.38 for NFE and +1.35 for AFM, with a standard error of 0.41 for either.
+- Other Sharpe ratios in the same period: FF3 -0.12, PCA 0.57 (0.68 with posterior sizing, 0.75 with the threshold rule), random benchmark -0.23.
+- NFE mean Sharpe over three disjoint seeds, later and earlier period: 1.424 and -0.259 with the training prior, 1.470 and -0.193 with the per-asset prior.
+- Forecast-realized gap per holding period at unit gross, held-out PCA residuals: OU point estimate 1084 bp, mixture density net 798 bp, amortized OU-form 588 bp, boosted quantiles 277 bp, amortized direct 137 bp.
+- Skill score (CRPSS) against an unconditional baseline: OU point estimate -0.97, mixture density net -0.50, amortized OU-form -0.11, boosted quantiles -0.03, amortized direct 0.00. No method has positive skill.
+- Regime identification on simulated draws: 0.61-0.66 AUC for every practical estimator against 0.93 for the fully informed Bayes bound. Separation rises from 0.62-0.64 to 0.79-0.81 when the level is known.
+- Control trading the 250-day deviation directly: Sharpe 2.77 in the later period and -0.91 in the earlier one, which the author does not claim as a gain.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2113927025849508066>`__, who says the NFE's Sharpe ratio of 1.49 against 1.45 for AFM on the same residual factors is a 0.04 difference too small to distinguish from sampling noise. The paper agrees in section 4.1, calling the difference not resolvable, although its 0.41 standard error is measured against the random benchmark and it gives no paired test of NFE against AFM.
+
+By Minkey Chang.
+
+`Read the paper <https://arxiv.org/abs/2610.25802>`__
