@@ -6468,6 +6468,18 @@
     "short_description": "Decomposes the counterintuitive underperformance of 2x and 3x leveraged S&P 500 ETFs during 2022-2023 into volatility drag from compounding (two-thirds) and a timing effect from the negative covariance between realized leverage deviations and index returns (one-third)."
   },
   {
+    "title": "Admissible Portfolio Optimization: Information Constraints, Conditional Efficient Frontiers and the Price of Causal Identification",
+    "authors": "Alejandro Rodriguez Dominguez",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.00147",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "admissible-portfolio-optimization-information-constraints-conditional-efficient-frontiers-and-the-price-of-causal-identification.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Makes the conditioning information of mean-variance portfolio choice a decision variable, selected by a lexicographic admissibility order with no risk-return quantity in it and certified by the maximal absolute residual correlation after conditioning. On 147 S&P 500 names that defect falls from 0.90 to 0.71 against a tolerance of 0.34 and no window is admissible, while the variance implied by the full residual is 1.14 times the diagonal model's prediction with 180 candidate series and 2.39 times at the median with 127 macro series. Selecting drivers by decision loss promises 2.6% volatility and delivers 12.0%, and the paper states that certification does not change what the portfolio realizes under the standard minimum-variance rule."
+  },
+  {
     "title": "Asset Allocation: Combining Investor Views with Market Equilibrium (Black-Litterman)",
     "authors": "Fischer Black, Robert Litterman",
     "publication_year": 1991,

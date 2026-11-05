@@ -411,3 +411,40 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Supriadi.
 
 `Read the paper <https://arxiv.org/abs/2611.05310>`__
+
+Admissible Portfolio Optimization: Information Constraints, Conditional Efficient Frontiers and the Price of Causal Identification
+----------------------------------------------------------------------------------------------------------------------------------
+
+The paper makes the conditioning information of mean-variance portfolio choice a decision variable under hard constraints. A contract declared before estimation requires availability at the decision time, no arbitrage, removal of common dependence between assets and, for interventional claims, invariance across regimes. A lexicographic order with no risk-return quantity selects the class, and the classical problem is solved inside it. On market data the condition holds on small sets of individual securities and fails on pre-diversified portfolios and on books of realistic size.
+
+Separation is certified by the screening defect, the maximal absolute residual correlation after conditioning, on a block kept apart from estimation and evaluation. The consequence statistic gives the share of a portfolio's variance that a diagonal residual discards. On large books the maximum over pairs stops discriminating between representations and this statistic becomes the diagnostic. Sorted portfolios fail because a common residual survives averaging inside a basket while idiosyncratic noise cancels. Any rule selecting information by decision loss admits look-ahead information whenever it is offered, and with correctly dated series the same mechanism appears as overfitting.
+
+The stated limits are specific. Moment errors move realized loss at second order and reported risk at first order, so certification changes what a risk model can say about itself and does not change what the portfolio realizes under the standard minimum-variance rule. The representations are contemporaneous: with drivers lagged one session the defect reduction on the twelve-equity panel falls from 50% to 4%. The interventional branch prices stability across observational environments, the primary panel carries survivorship, and the controlled experiments are Gaussian and affine.
+
+**Data and code.** A simulated Gaussian system of eight assets and two common states; 147 S&P 500 constituents, daily, 2010-2024, 3,312 sessions, against 180 candidate series; 12 US equities, 2001-2023; sorted portfolios; 1,336 Spanish bonds, 2014-2018; 17 strategy indices. The paper mentions accompanying code and a repository but links no code repository. The equity, driver, individual-name and hedge-fund panels are licensed and not redistributed, so the market results cannot be reproduced from public data alone.
+
+**Key metrics.** Mostly dependence, risk-calibration and realized-volatility statistics. Annualized return and drawdown appear only for the twelve-equity strategy paths, and there is no win rate. The first three bullets are certification-block values; the rest are out of sample, apart from promised volatility.
+
+- Primary panel: maximal absolute residual correlation over 10,731 pairs of 0.90 before conditioning and 0.71 after twelve drivers, against a pair-calibrated tolerance of 0.34, with no window admissible.
+
+- Across universes, 127 candidates, at most eight drivers, medians over windows, daily 2001-2023: 12 US equities 0.67 to 0.34 with 17% of windows admissible; 48 industries 0.92 to 0.76 and 25 US size/value portfolios 0.98 to 0.93, both with 0% admissible.
+
+- Variance implied by the full residual relative to the diagonal model's prediction, primary panel: 1.14 times with 180 candidates and 2.39 at the median with the 127 macro series alone (interquartile range 1.71 to 3.83).
+
+- Realized over predicted volatility of the held portfolio, primary panel, 180 candidates: 1.50 with the full residual and 1.76 with the diagonal restriction at 189 estimation sessions; 1.22 and 1.34 at 378.
+
+- Loss-based selection of eight drivers: 2.6% promised against 12.0% delivered volatility on the primary panel, a ratio of 4.3; 7.6% against 14.4% on the twelve-equity panel.
+
+- Long-only minimum-variance, primary panel, median realized volatility: least-defect drivers with thresholded residual 11.59% against DCC-NL 11.61% at 378 estimation sessions (p = 0.449); least-defect drivers with diagonal residual 12.48% against Ledoit-Wolf linear 11.57% at 189 (p = 0.755).
+
+- Global minimum variance, twelve equities, 81 windows, medians, conditional against Ledoit-Wolf linear: volatility 14.22% and 14.20%, Sharpe 0.52 and 0.49, turnover 0.35 and 0.44; paired p = 0.007 for realized variance and 0.105 for Sharpe.
+
+- Long-only twelve-equity strategy, 80 rebalances, November 2003 to March 2023, net of 10 basis points per unit of turnover: conditional return 5.24%, volatility 17.27%, Sharpe 0.38, maximum drawdown -50.2%; equal weights 7.51%, 22.42%, 0.44 and -67.3%.
+
+- Price of invariance, primary panel with calendar regimes: 4 of 127 drivers pass, the attained defect rises from 0.83 to 0.90 and out-of-sample variance rises 16% at the median, in 81% of windows; with Federal Reserve target-rate regimes 2 drivers pass, at 17% of variance in 71% of windows.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2115694222409883669>`__, who says the paper defines a separator as information making returns mutually conditionally independent and then ties it to zero maximum absolute conditional correlation, an equivalence he calls false without additional distributional assumptions. His post predates version 2 of the paper. Version 1 states that the defect is "equal to zero exactly for separators" under the mutual independence definition, which fits his objection. Version 2, summarised here, keeps the independence wording in Section 3.2 but limits the claim to a separator "in the second-moment sense", and Definition A.2 defines a separator by diagonal conditional covariance, reserving independence for a structural separator. No Gaussian or other distributional assumption is added for this step.
+
+By Alejandro Rodriguez Dominguez.
+
+`Read the paper <https://arxiv.org/abs/2610.00147>`__
