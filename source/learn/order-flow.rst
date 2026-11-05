@@ -212,3 +212,33 @@ The score is defined as past-normalized signed notional flow multiplied by past-
 By `Mark Aron Szulyovszky <https://www.linkedin.com/in/almostintuitive/>`__ (`Aperiodic <https://aperiodic.io>`__).
 
 `Read the post <https://www.linkedin.com/feed/update/urn:li:activity:7511449664941064192/>`__
+
+Beyond Anonymous Order Flow: Wallet Identity as a Feature for Short-Horizon Return Prediction
+---------------------------------------------------------------------------------------------
+
+Public order-book data summarises trading without identifying the accounts behind it, but Hyperliquid's Level-4 record also exposes persistent pseudonymous wallet addresses. The authors reconstruct full-depth books from consensus-ordered messages and test wallet identity as a feature for short-horizon return prediction, asking whether wallet markout rankings persist across disjoint windows and whether the activity of previously high-ranked wallets improves forecasts beyond a literature-based anonymous benchmark. Accepted at ACM ICAIF '26.
+
+The study scores wallets on July 1-10, 2026, fits models on July 11-20 and evaluates on July 21-27. A wallet's score is its notional-weighted ten-second signed markout on aggressive orders, excluding TWAP and liquidation events, and the 231 top-decile wallets among the 2,314 scored form the "toxic" cohort. The authors stress that this is a descriptive label and not a claim of private information. A ten-variable anonymous block covers prices, quotes and flow. Eleven identity variables then add cohort versions of the quote and flow measures, plus wallet-only measures such as distinct-buyer breadth and the cohort's share of best-quote depth. Ridge and LightGBM forecast forward midpoint returns on a 100 ms grid for BTC, ETH and SOL, chosen to match the venue's block clock (median gap 67.6 ms).
+
+Top-decile markouts keep rising after the trade, from 1.25 bp at half a second to 2.11 bp at ten seconds, and stay elevated at five minutes, which argues against purely transient price pressure. Simple latency arbitrage against the venue's oracle does not explain them either, as top-decile orders trade on the side of the oracle gap only 41.3% of the time against 57.9% for the bottom decile. That check uses an oracle polled every ten seconds, so it cannot rule out sub-second cross-venue arbitrage. Identity features alone reach 10.06% R-squared at one second, close to the anonymous block, while the two combined add only 1.43 points. The authors therefore note that the two blocks largely span each other and that identity may partly be a lower-noise readout of the same flow. Drop-one refits fit this: near-touch imbalance contributes 1.93 points in the anonymous model but only 0.24 once identity is added.
+
+The paper is unusually open about its limits. The top-decile focus, the near-touch volatility scaling and the July evaluation window were all selected after results were available, so the authors call it a chronological out-of-sample comparison and not a prospectively locked test, and treat the *t*-statistics as descriptive. The December 2025 replication is specification-dependent: without the volatility scaling, its one-second ridge increment is -1.17 percentage points. The evaluation covers only seven days, carries states forward across data gaps, and indexes timing by consensus timestamp and not by audited receipt time. The anonymous benchmark is also deliberately non-maximal, and richer predictors may shrink the increment.
+
+**Data and code.** July 1-27, 2026 Hyperliquid Level-4 data collected by the authors through a non-validating node: 17.1 billion messages, 14.3 million aggressive orders by 147,113 wallets and $84.3 billion in taker notional across ten perpetual markets, with estimation on BTC, ETH and SOL only. The December 2025 comparison uses the public release of `An Open Book: Level 4 Order Book Data from the Hyperliquid Exchange <https://doi.org/10.5281/zenodo.18184441>`__. The paper links no code repository and does not state that the July dataset is available, so the headline results cannot be reproduced directly.
+
+**Key metrics.** The paper reports forecasting fit only and no annualised return, Sharpe, maximum drawdown or win rate. It states that it does not establish executable profit, which would still depend on latency, queue priority, fill probabilities, spreads, fees and inventory.
+
+- Score persistence: Spearman rank correlation of 0.52 across adjacent ten-day windows (965 wallets), with an adjusted validation markout of 3.11 bp in the top ventile
+- One-second out-of-sample R-squared, ridge: 10.88% to 12.31% (+13.2%, *t* = 9.2)
+- One-second out-of-sample R-squared, gradient-boosted trees: 19.48% to 20.65% (+6.0%, *t* = 5.0)
+- Horizon decay of the relative gain, 200 ms to 30 s: 18.7% to 3.0% for ridge, 10.7% to 2.7% for trees
+- Placebo: the 1.43-point increment compares with 0.88 for the best of 200 activity-matched cohorts, although those cohorts are slightly smaller
+- Peer-adjusted score: a smaller one-second ridge gain of 6.8%
+- Feature delays of 200 and 300 ms: ridge gains of 10.2% and 9.1%, while the anonymous R-squared falls to 6.40% at 300 ms
+- December 2025 sample with the same volatility-scaled specification: 12.36% to 14.16% (+14.6%, *t* = 3.9)
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2118231160841007524>`__, who notes that the study does separate wallet scoring, model fitting and evaluation chronologically, but that the authors disclose choosing the top-decile focus, volatility scaling and evaluation window after results were available.
+
+By Jingqiu Ding and Daojing Zhai.
+
+`Read the paper <https://arxiv.org/abs/2611.05218>`__

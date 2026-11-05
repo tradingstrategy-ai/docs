@@ -6192,6 +6192,18 @@
     "short_description": "Announces the public launch of Aperiodic, a crypto data platform providing 200+ TB of tick data including point-in-time liquidity metrics, order flow imbalance, and full exchange coverage without survivorship bias."
   },
   {
+    "title": "Beyond Anonymous Order Flow: Wallet Identity as a Feature for Short-Horizon Return Prediction",
+    "authors": "Jingqiu Ding, Daojing Zhai",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2611.05218",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "beyond-anonymous-order-flow-wallet-identity-as-a-feature-for-short-horizon-return-prediction.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Reconstructs Hyperliquid Level-4 order books for July 2026, scores persistent wallets by ten-second aggressive-order markouts, and tests whether features from previously top-ranked wallets improve short-horizon return forecasts beyond an anonymous benchmark. Rankings persist across ten-day windows (Spearman 0.52), and identity raises one-second out-of-sample R-squared from 10.88% to 12.31% under ridge and from 19.48% to 20.65% under gradient-boosted trees. The specification was selected retrospectively and no trading profit is established."
+  },
+  {
     "title": "Bitcoin Wild Moves: Evidence from Order Flow Toxicity and Price Jumps",
     "authors": "Atiwat Kitvanitphasu et al.",
     "publication_year": null,
