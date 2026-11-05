@@ -457,3 +457,34 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Yadh Hafsi, Fabrizio Lillo and Grégoire Szymanski.
 
 `Read the paper <https://arxiv.org/abs/2610.38442>`__
+
+Understanding the Inner Workings of a State-Space Foundation Model for Limit Order Books
+----------------------------------------------------------------------------------------
+
+This paper, accepted at ICAIF '26, asks what autoregressive foundation models of the limit order book learn about market microstructure. The authors train an 8.2M-parameter Mamba-3 state-space model on the tokenised message stream of eight large-cap US equities, never showing it the book, then probe and steer its internal state. The recurrent state holds a representation of the market: order-flow imbalance (OFI) decodes at R-squared of about 0.59, the representation extends to unseen stocks, and pushing the state shifts next-message beliefs monotonically in dose, which they call consistent with the emergence of a world model.
+
+The 0.59 decodes realised OFI over the 500 messages the model has just read, so it tracks current flow; forecasting is tested separately. Because the Mamba-3 recurrence has an exact attention form, the state can be attributed message by message: across all layers the newest message accounts for 58% of write magnitude, yet it supplies 7% of the decoded OFI signal, half of which takes the last 56 messages. At layer 3, four of eight heads have half-lives of 28-66 messages, and the random-weights twin has none above 10.
+
+The forward tests are weak: a readout of the frozen state is level with the L10 book snapshot on the mid-price move, adds a small signal on future OFI, and shows no signal beyond about 100 messages. The high-frequency trading use in the conclusion is stated as potential and is not tested.
+
+A probe shows only that a quantity is in the state; steering tests whether the model uses it. Replayed through the matching engine, steered beliefs only partly materialise: the volume push carries through, the flow push shifts order flow on the sell side only while the mid stays within the null band, and the volatility push does not carry through. Our reading is that "causally steerable" describes the model's own beliefs, and the paper makes no claim of causal accuracy about real markets.
+
+**Data and code.** Training uses LOBSTER-format message streams, with the book removed, for GOOG, AAPL, NVDA, AMZN, META, TSLA, MSFT and AMD over 2022-01 to 2025-12, in 500-message windows. Probing tests GOOG over January 2026, held out during training, with N = 2,014 windows spanning 20 trading days; generalisation tests add the other seven tickers plus JPM and ORCL, never seen in training. The paper links no code repository, so results cannot be reproduced from its published materials.
+
+**Key metrics.** The paper reports decoding R-squared, attribution shares, belief shifts and directional accuracy, with no annualised return, Sharpe ratio, drawdown, win rate or trading simulation. R-squared values are held-out on January 2026 under day-grouped cross-validation unless marked forward-chaining; horizon H is in messages.
+
+- OFI level 1, window of 500 messages (layer 3, GOOG): R-squared 0.59, forward-chaining 0.53, random-weights twin 0.01, boundary book snapshot 0.12.
+- Traded volume: 0.50 (forward-chaining 0.44, twin 0.03, book 0.11). Realised volatility: 0.51 (forward-chaining 0.50, twin 0.15, book 0.23). OFI, volume and volatility all decode at 0.06 or less from the residual stream.
+- Touch: 0.83 in the state against 0.26 in the residual stream and 0.43 for the twin. Log L10 depth: 0.38 against 0.64 for the stale window-start snapshot.
+- Forward regression: 4% of next-25-message mid-move variance against book R-squared of 0.036 at H=25; at most 5% of future top-5 OFI against book R-squared of 0.013 or less; twin at or below zero at every horizon.
+- Binary up-versus-down accuracy on windows where the mid moved: 61.2% at H=25 and 60.0% at H=50, against 61.8% and 60.9% for the book readout, 50.5% for the majority baseline and 50-51% for the twin. It fades to 57.8% at H=100 and 53.0% at H=200, and reaches chance by H=500.
+- Three-class macro-F1 at H=10, 25 and 50: 0.33, 0.36 and 0.42 for the state, 0.28, 0.27 and 0.38 for the book, 0.28, 0.23 and 0.37 for the twin. From H=200 the book matches or exceeds the state.
+- Steering across the seen dose range: next-message buy probability 0.42 to 0.61; execution probability 0.002 to 0.090, about 1.4 times per unit dose; a turbulence push widens the next-price forecast nine-fold.
+- Engine replay over 50 generated messages: median executed volume is 25 shares at dose 0, 187 at +2.4 and 1 at -2.1.
+- Cross-stock raw OFI level 1: 0.26 to 0.60 on all stocks but META and MSFT, near zero on those two, which the paper links to extreme bursts the linear readout misses, against book at or below 0.14 and twin at or below 0.04. Winsorised or rank R-squared reaches at least 0.4 for level 1 and 0.5 for top-5 on in-training stocks and on JPM and ORCL.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2114266397031416139>`__, who says that learning a representation of market microstructure is not equivalent to learning a predictive, economically useful or causally accurate model of financial markets; the paper's results fit that caution, since it finds little forward information beyond the visible book and runs no economic test.
+
+By Valentin Mohl, Alexandre Bismuth, Aramis Marti-Shahandeh, George Nigmatulin, Kang Li, Stefan Zohren, Jakob Foerster, Mihai Cucuringu and Anisoara Calinescu.
+
+`Read the paper <https://arxiv.org/abs/2610.28753>`__

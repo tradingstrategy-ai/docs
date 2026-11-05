@@ -5052,6 +5052,18 @@
     "short_description": null
   },
   {
+    "title": "Understanding the Inner Workings of a State-Space Foundation Model for Limit Order Books",
+    "authors": "Valentin Mohl, Alexandre Bismuth, Aramis Marti-Shahandeh, George Nigmatulin, Kang Li, Stefan Zohren, Jakob Foerster, Mihai Cucuringu, Anisoara Calinescu",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2610.28753",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-05",
+    "filename": "understanding-the-inner-workings-of-a-state-space-foundation-model-for-limit-order-books.pdf",
+    "downloaded_at": "2026-11-05",
+    "download_failure_reason": null,
+    "short_description": "Mechanistic interpretability study of an 8.2M-parameter Mamba-3 state-space model trained autoregressively on the message stream of eight large-cap US equities, using kernel ridge probes of the recurrent state and causal steering. Realised order-flow imbalance decodes at held-out R-squared of 0.59 against 0.01 for a random-weights twin and 0.12 for a book snapshot, and steering shifts the model's next-message beliefs monotonically in dose. Forward value is weak: the state explains 4% of the next-25-message mid-price move, level with the visible book at 0.036."
+  },
+  {
     "title": "Where Is the Price of Bitcoin Determined? Price Discovery in a Fragmented Market",
     "authors": "Riccardo Cosenza and Simon Stalder",
     "publication_year": null,
