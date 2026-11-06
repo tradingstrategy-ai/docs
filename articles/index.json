@@ -5316,6 +5316,18 @@
     "short_description": null
   },
   {
+    "title": "Stagflation and Asset Management",
+    "authors": "Panashe Bera, Campbell R. Harvey, Kristina Hooper",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7662619",
+    "source_file": "market-regimes.rst",
+    "included_in_index_at": "2026-11-06",
+    "filename": "stagflation-and-asset-management.pdf",
+    "downloaded_at": "2026-11-06",
+    "download_failure_reason": null,
+    "short_description": "Labels each month from 1919 to 2026 as Overheating, Stagflation or Contained using lagged, trailing-window CPI and industrial production signals, then compares average real returns across 47 asset and strategy series. The 60/40 averages -1.3% in Overheating and -0.2% in Stagflation against 9.0% in Contained months, while simulated multi-asset trend, gold and equity factors hold up better; results are descriptive, with no significance tests or tested switching rule."
+  },
+  {
     "title": "Testing the January Barometer as a Regime Filter for Crypto Trend Models",
     "authors": "Pedma",
     "publication_year": null,
