@@ -1,7 +1,7 @@
 ---
 name: add-book
 description: Add a new book to the documentation collection. Use when user provides a URL to a book page or tweet linking to one.
-argument-hint: [url]
+argument-hint: "[url]"
 ---
 
 # Add new book
