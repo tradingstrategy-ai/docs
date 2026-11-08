@@ -3168,6 +3168,18 @@
     "short_description": "Applies wavelet analysis to high-frequency crypto prices to test weak-form efficiency, reporting cyclical persistence at different frequencies and arguing for causal structure at specific horizons. One of very few high-frequency (rather than daily) crypto wavelet studies, the regime a perp book actually trades; read from abstract, it does not name the coins or sampling frequency."
   },
   {
+    "title": "What drives crypto returns over time? A PIT Barra Factor Model",
+    "authors": "Astraeus (@AstraeusCap)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/AstraeusCap/status/2117314412587483565",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-11-08",
+    "filename": "what-drives-crypto-returns-over-time-a-pit-barra-factor-model.pdf",
+    "downloaded_at": "2026-11-08",
+    "download_failure_reason": null,
+    "short_description": "Builds a Barra-style factor model for a point-in-time top-100 universe of Binance and Bybit USDT perpetuals (2022 to October 2026) with market, sector and nine style factors. The model explains 62% of the median coin's daily variance (49% for small caps, 70% for large), and gross of costs only 2-5 day reversal, size and 8-14 day momentum earned positive Sharpe ratios (0.53-0.88), none clearly significant and all varying sharply by year."
+  },
+  {
     "title": "A Simple Market Making Bot for 01 Exchange",
     "authors": null,
     "publication_year": null,
