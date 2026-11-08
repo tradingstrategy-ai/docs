@@ -1521,6 +1521,36 @@ and algorithmic trading.
 
         - :term:`Alpha`
 
+    Barra factors
+
+        Barra factors are the common explanatory variables in a Barra-style multi-factor risk model, the approach developed by Barr Rosenberg and the firm Barra, which is now part of MSCI. The model writes each asset's return over a period as its exposures to a set of factors multiplied by those factors' returns, plus a specific return the factors do not explain: :math:`r_i = \sum_k X_{ik} f_k + u_i`.
+
+        The factor set usually includes a market or country factor, industry or sector factors, and style factors such as size, :term:`beta`, :term:`momentum`, short-term reversal, volatility, liquidity and value; crypto versions add funding-rate carry. Exposures :math:`X_{ik}` are characteristics observed at each date and standardised across assets, and the factor returns :math:`f_k` are estimated each period by a cross-sectional regression of asset returns on those exposures, often weighted by the square root of market capitalisation. This differs from the Fama-French approach, where factors are returns of long-short portfolios built from sorts and each asset's exposures are estimated by time-series regression.
+
+        The model is used to forecast a covariance matrix from a small factor covariance matrix plus specific variances, to decompose portfolio risk and attribute performance, to neutralise a portfolio or signal against known exposures, and to isolate the specific return in which any asset-specific edge has to be found. The results depend on the chosen factors and on measuring exposures as :term:`point-in-time data`. A factor's return series describes a gross, idealised portfolio, not a strategy that can be traded after costs.
+
+        See also
+
+        - :term:`Factor investing`
+
+        - :term:`Residualisation`
+
+        - :term:`Factor neutralisation`
+
+        - :term:`Cross-sectional analysis`
+
+        - :term:`Market neutral strategy`
+
+        Research and literature
+
+        - Barr Rosenberg, `Extra-Market Components of Covariance in Security Returns <https://doi.org/10.2307/2330104>`__, *Journal of Financial and Quantitative Analysis* 9(2), 1974.
+
+        - Astraeus, :ref:`What drives crypto returns over time? A PIT Barra Factor Model <what-drives-crypto-returns-pit-barra-factor-model>`, a Barra-style model for crypto perpetual futures.
+
+    Barra factor model
+
+        See :term:`Barra factors`.
+
     Alpha generation platform
 
         In :term:`quantitative finance`, alpha generation platform is a technology used in algorithmic trading to develop quantitative financial models, or :term:`trading strategies <trading strategy>`, that generate consistent returns.
