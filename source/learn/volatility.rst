@@ -661,3 +661,30 @@ Data and code: Bitcoin high-frequency price data and on-chain transaction data. 
 Key metrics: incorporating transaction activity and jump variation improves out-of-sample forecast accuracy for Bitcoin realized volatility relative to baseline HAR and RF models. Results are reported using standard forecast evaluation metrics; no Sharpe ratio or drawdown metrics are reported as the paper focuses on volatility forecasting accuracy rather than a trading strategy.
 
 `Read the paper <https://www.sciencedirect.com/science/article/abs/pii/S0167637721001000>`__
+
+Trading Volatility with VIX, VIX3M, and eVRP
+--------------------------------------------
+
+English summary of Kashin's Japanese-language post about a volatility-trading
+strategy combining eVRP with the VIX term structure. The post defines eVRP as
+VIX minus annualized S&P 500 realized volatility over the preceding 10 days,
+and uses VIX below VIX3M to identify calm conditions and VIX above VIX3M to
+identify stressed conditions. These signals inform long or short positions
+in volatility ETNs such as VXX; the attached figures contain the detailed rules.
+
+Kashin reports a backtest starting in 2008 with more than 1,200% cumulative
+return, approximately 30% maximum drawdown, and a Sharpe ratio of 1.0. The post
+also reports that allocating 10–20% to the strategy alongside S&P 500
+buy-and-hold improves portfolio Sharpe by roughly 20%. These are the author's
+reported results, rather than independently reproduced findings.
+
+By Kashin (@kashin_moneylab), published November 8, 2026. The heading above is
+an editorial English title for the untitled post.
+
+Mentioned by Kashin in `this discussion
+<https://x.com/kashin_moneylab/status/2119440436670738737>`__, which highlights
+the strategy's backtest and portfolio diversification results and links to
+`the underlying paper on SSRN
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5316487>`__.
+
+`Read the post <https://x.com/kashin_moneylab/status/2119440436670738737>`__.

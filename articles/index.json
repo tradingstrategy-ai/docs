@@ -11592,6 +11592,18 @@
     "short_description": null
   },
   {
+    "title": "Trading Volatility with VIX, VIX3M, and eVRP",
+    "authors": "Kashin (@kashin_moneylab)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/kashin_moneylab/status/2119440436670738737",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-11-09",
+    "filename": "trading-volatility-with-vix-vix3m-and-evrp.pdf",
+    "downloaded_at": "2026-11-09",
+    "download_failure_reason": null,
+    "short_description": "English translation of Kashin's Japanese post describing a volatility strategy combining VIX minus trailing 10-day annualized realized volatility (eVRP) with VIX/VIX3M term-structure signals. The author reports over 1,200% cumulative backtest return since 2008, roughly 30% maximum drawdown, and a Sharpe ratio of 1.0, plus diversification benefits alongside S&P 500 buy-and-hold."
+  },
+  {
     "title": "Transaction activity and bitcoin realized volatility",
     "authors": null,
     "publication_year": null,
