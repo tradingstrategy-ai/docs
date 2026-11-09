@@ -352,3 +352,18 @@ Our summary: this paper documents the uncomfortable truth about basis-based trad
 Key metrics: the paper documents statistically significant widening of cash-and-carry arbitrage spreads during bitcoin crash episodes, with the basis reaching levels many standard deviations above normal-regime values. Arbitrage is typically unavailable outside these stress regimes. High-frequency CBOE-Gemini matched-pair data.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3209625>`__
+
+A Funding-Rate Carry Strategy for Crypto Perpetual Futures in the Hyperliquid Market
+------------------------------------------------------------------------------------
+
+Yoshihiko Ichikawa (Insight Edge) and Kei Nakagawa (Osaka Metropolitan University) study a dollar-neutral funding-rate (FR) carry portfolio built only from perpetual futures on 28 assets on Hyperliquid, which settles funding hourly. Pure FR carry shorts high-funding assets and longs low-funding ones. Without a spot hedge, it is exposed to relative price moves between the legs. The paper is written in Japanese and was published in the proceedings of the JSAI Financial Informatics Workshop (SIG-FIN-037, 2026).
+
+Our summary: the paper splits carry P&L into FR income and relative price return. In a two-asset model, with funding spread Δf and expected relative price return κΔf, the carry earns (1−κ)Δf, so it loses money when κ>1. The authors derive a closed-form portfolio that maximizes the signal-to-risk ratio under dollar neutrality, in which the common funding level cancels out. The signal is "μ − λ × average FR", which blends 30-day price momentum μ with funding carry. Funding is highly persistent: the hourly AR(1) median is 0.883, and the 30-day FR asset ranking still has 0.595 rank correlation a month later. Persistence alone does not make the trade profitable, though. Over the full Feb 2024 – Aug 2026 sample, mean-variance pure FR carry returned −2.9% a year: +11.7% from funding and −14.6% from price, a price-offset ratio of about 1.25. The momentum-tilted mean-variance dollar-neutral portfolio returned +8.2% (λ=0) to +8.5% (λ=1) before costs.
+
+Key metrics: adding the FR tilt to momentum barely moves the mean-variance portfolio (+0.3 pp return, +0.01 Sharpe). The quantile portfolio gains more (+3.1 pp, +0.10 Sharpe), because small FR adjustments can flip assets near the long/short boundary. Using the covariance matrix cuts variance to 0.19× that of an identity-matrix control. Costs decide the outcome. With a 4.5 bp taker fee plus half-spread, the cost-adjusted Sharpe is −0.07 over the full period and +0.44 over the recent 6.5 months. With idealized maker execution it is 0.46 and 1.00. Break-even needs about a 14% maker fill ratio.
+
+Mentioned by Yoshihiko Ichikawa in `this discussion <https://x.com/Yoshihiko_ICKW/status/2119574944371908765>`__. Ichikawa, a co-author, posted a long English summary of the results. They conclude that FR persistence alone cannot establish profitability. FR income, relative price P&L, diversification and execution costs must each be evaluated separately.
+
+By Yoshihiko Ichikawa and Kei Nakagawa.
+
+`Read the paper <https://doi.org/10.11517/jsaisigtwo.2026.FIN-037_168>`__

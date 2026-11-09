@@ -2076,6 +2076,18 @@
     "short_description": "The standard reference for the discrete side of wavelet analysis: DWT and MODWT algorithms, wavelet variance and covariance, multiresolution analysis, and boundary handling. The canonical citation for MODWT in finance wavelet papers and the authoritative source for correctly counting boundary-affected coefficients, exactly what a leakage-aware live pipeline needs."
   },
   {
+    "title": "A Funding-Rate Carry Strategy for Crypto Perpetual Futures in the Hyperliquid Market",
+    "authors": "Yoshihiko Ichikawa, Kei Nakagawa",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.11517/jsaisigtwo.2026.FIN-037_168",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-11-09",
+    "filename": "a-funding-rate-carry-strategy-for-crypto-perpetual-futures-in-the-hyperliquid-market.pdf",
+    "downloaded_at": "2026-11-09",
+    "download_failure_reason": null,
+    "short_description": "Japanese-language JSAI SIG-FIN workshop paper on a dollar-neutral funding-rate carry portfolio of 28 Hyperliquid perpetuals, decomposing P&L into funding income and relative price return. Pure FR carry loses money over Feb 2024 – Aug 2026 because high-funding assets outperform (price offset of about 1.25× the funding income), while combining 30-day momentum with an FR tilt in a covariance-aware mean-variance portfolio earns about 8.5% a year before costs. Net performance hinges on execution: taker fills erase the edge over the full sample, while maker execution gives a Sharpe ratio of 0.46–1.00."
+  },
+  {
     "title": "An Empirical Investigation on Risk Factors in Cryptocurrency Futures",
     "authors": null,
     "publication_year": null,
