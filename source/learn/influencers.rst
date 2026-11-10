@@ -72,6 +72,22 @@ Quant traders on X
 - `Alekzz <https://x.com/AIexey_Stark>`__
 - `Walter Ego <https://x.com/ItsWalterEgo>`__
 - `Michael (MichaelZTrading) <https://x.com/MichaelZTrading>`__
+- `jeff.hl <https://x.com/chameleon_jeff>`__
+- `撸毛小狗 (LumaoDoggie) <https://x.com/LumaoDoggie>`__
+- `路克 (0xLUKE777crypt) <https://x.com/0xLUKE777crypt>`__
+- `Tristan <https://x.com/Tristan0x>`__
+- `Planemo Trading <https://x.com/PlanemoTrading>`__
+- `Psyche <https://x.com/0xpsyche1>`__
+- `ak0 <https://x.com/annanay>`__
+- `matthias <https://x.com/0xevolve>`__
+- `おもしろフラッシュトレード倉庫 (supermomonga) <https://x.com/supermomonga>`__
+- `yourQuantGuy <https://x.com/yourQuantGuy>`__
+- `ust_mean <https://x.com/UST_mean>`__
+- `Boywus <https://x.com/Boywus>`__
+- `Doggg <https://x.com/ApriloneHS>`__
+- `DC (Zuudot) <https://x.com/0xDC_MA>`__
+- `0xJA (Whale.Dance) <https://x.com/JXiaoLoong>`__
+- `cryppi <https://x.com/cryppimagic>`__
 
 Quant traders on LinkedIn
 -------------------------
