@@ -3504,6 +3504,18 @@
     "short_description": "Trains five regime-specialised neural agents under a joint objective with a differentiable negative log-determinant penalty on their soft-rank correlation matrix, and mixes them with a context-conditioned scheduler. On a top-decile long portfolio with a 20-day target, it reports out-of-sample IC 0.081 and Sharpe 1.85 on CSI300, and IC 0.072 and Sharpe 1.58 on S&P 500, over a 2024/03/01 to 2026/03/01 test period."
   },
   {
+    "title": "Disagreement of Disagreement",
+    "authors": "Christian L. Goulding, Campbell R. Harvey, Hrvoje Kurtović",
+    "publication_year": 2026,
+    "download_page": "https://doi.org/10.1016/j.jfineco.2026.104379",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "disagreement-of-disagreement.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "JFE paper showing that the standard disagreement proxies (analyst dispersion, IVOL, short interest) are nearly uncorrelated, then deriving a frictionless model in which disagreement plus positive skewness causes overpricing; the model implies a nonlinear composite measure, DIS. On US stocks with at least two analysts from 1994 to 2022, a value-weighted low-minus-high DIS decile spread earns 17-21% annualised alpha, mostly from the short leg. DIS absorbs the IVOL puzzle, predicts returns in all macro regimes, and stays predictive even where short-sale frictions do not bind."
+  },
+  {
     "title": "Don't Mix What Should Be Separated: Why Combining Value and Momentum Signals Destroys Alpha",
     "authors": null,
     "publication_year": null,

@@ -336,3 +336,27 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Tiantian Wu and Peng Yang.
 
 `Read the paper <https://arxiv.org/abs/2610.34936>`__
+
+Disagreement of Disagreement
+----------------------------
+
+Christian L. Goulding, Campbell R. Harvey and Hrvoje Kurtović (Journal of Financial Economics, 2026) show that the leading proxies for investor disagreement have near-zero cross-correlation, which makes inferences about how disagreement is priced difficult. They develop a frictionless model that generates overpricing from latent disagreement, jointly rationalises the major proxies and produces new testable predictions. The model's equilibrium relationships motivate a new disagreement measure, DIS, which predicts the cross-section of returns better than the major proxies and more consistently across macroeconomic regimes. DIS also offers a disagreement-based account of the idiosyncratic volatility (IVOL) puzzle.
+
+Our summary: the literature measures disagreement with three families of proxies: analyst forecast dispersion, idiosyncratic volatility and short interest. Their pairwise correlations are close to zero ("disagreement of disagreement"), so results depend on which proxy is chosen. The model is a two-period market with expected-utility investors who hold differing opinions, with no short-sale frictions. Because most stocks have positively skewed payoffs, optimists buy more aggressively than pessimists short, a prudence-driven demand asymmetry. Disagreement therefore pushes prices above fundamentals and lowers subsequent returns. Solving the equilibrium for the latent disagreement scale gives a nonlinear composite: a volatility × short-interest term multiplied by an exponential amplification term in idiosyncratic skewness and analyst dispersion. DIS is the log of 1 plus this composite. Because the composite is multiplicative, it flags high disagreement only when several components are elevated at once.
+
+The empirical tests support the model on several fronts. Returns fall with DIS, with the alpha coming mostly from the overpriced high-DIS short leg (about 5:1 short to long). DIS absorbs IVOL's return predictability in Fama–MacBeth regressions, which gives a micro-founded resolution of the IVOL puzzle. DIS predicts returns in both high and low states of eight macro, stress and sentiment indicators, whereas IVOL and short interest work mainly in low-uncertainty regimes, which the authors take as a sign of aggregate contamination. Using institutional ownership as an inverse short-sale-friction proxy, IVOL and short interest predict mainly where frictions bind (Miller's 1977 channel), while DIS stays predictive even as institutional ownership approaches 100%. The paper presents this as the first evidence that a frictionless disagreement channel coexists with the friction-based one. Linear combinations, equal-weighted composites and principal components of the same inputs add nothing once DIS is included, so the model-implied nonlinearity matters. High-DIS firms tend to be younger, more financially constrained, R&D-intensive and less searched on Google.
+
+Data and code: CRSP/COMPUSTAT common stocks on NYSE, AMEX and NASDAQ, January 1994 to December 2022 (719,940 stock-months), with price above $5 and at least two I/B/E/S analysts. The measure combines Fama–French three-factor IVOL, COMPUSTAT/NASDAQ short interest, analyst forecast dispersion and Boyer–Mitton–Vorkink expected idiosyncratic skewness (extended through 2022 by its authors), with CRRA risk aversion γ = 2. The original data is deposited on Mendeley Data. The author's free Elsevier share link is valid until December 3, 2026; after that, the SSRN version is `abstract 4647471 <https://papers.ssrn.com/abstract=4647471>`__.
+
+Key metrics:
+
+- Value-weighted low-minus-high DIS decile spread, annualised: CAPM alpha 21.3% (t = 4.95), FF3 alpha 20.3% (t = 5.53), Carhart alpha 17.0% (t = 4.41); all t-statistics exceed the Harvey–Liu–Zhu multiple-testing threshold of 3.0
+- Legs: high-DIS decile −1.49% a month CAPM alpha against +0.28% for the low-DIS decile
+- Excluding the 20% most illiquid and the 20% most retail-owned stocks removes 9.4% of observations; CAPM alpha stays at 21.5% (t = 4.95)
+- DIS spread alpha exceeds the equivalent analyst-dispersion sort by 8.9%, the IVOL sort by 6.1% and the short-interest sort by 13.1% a year
+- Fama–MacBeth: DIS coefficient −1.55 (t = −3.98), implying a 1.03% a month (12.4% a year) high-low spread; 7.7% a year marginal contribution net of other predictors and existing disagreement proxies
+- Robust to risk aversion γ from 0.5 to 8; p-values are unadjusted for multiple testing, as the authors note
+
+Mentioned by `Campbell Harvey <https://x.com/camharvey>`__ in `this discussion <https://x.com/camharvey/status/2119841460883427394>`__. The co-author notes that disagreement gets far less attention than expectations, that the usual proxies have zero correlation with each other, so the measures of disagreement themselves disagree, and that high-disagreement stocks have low subsequent returns with a large, significant alpha: "it is not just the expectations that matter".
+
+`Read the paper <https://doi.org/10.1016/j.jfineco.2026.104379>`__
