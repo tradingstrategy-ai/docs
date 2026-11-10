@@ -6444,6 +6444,18 @@
     "short_description": "Introduces Aperiodic's flow toxicity score, a simplified time-bar alternative to VPIN defined as past-normalized signed notional flow multiplied by past-normalized short-horizon realized volatility. The score spikes only when aggressive flow is both unusually one-sided and moving the price, which is when liquidity providers are most likely trading against informed or urgent flow."
   },
   {
+    "title": "Order Book Imbalance and the Direction of the Next Mid-Price Change: Evidence from Nasdaq TotalView-ITCH",
+    "authors": "VisualHFT Research",
+    "publication_year": 2026,
+    "download_page": "https://visualhft.com/research/lob-imbalance",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "order-book-imbalance-and-the-direction-of-the-next-mid-price-change-evidence-from-nasdaq-totalview-itch.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "Pre-registered hold-out test of a distance-weighted 10-level order book imbalance from the VisualHFT application on Nasdaq TotalView-ITCH data, covering the 100 most active stocks on each of seven 2019-2020 sample days. The sign of the reading predicts the next mid-price change 55.1% of the time against a 50.0% base rate, more strongly at a one-tick spread, for cheaper stocks and for faster changes, as the queue-race model of Avellaneda-Reed-Stoikov predicts, and it survives controls for the last change and signed volume. The predicted move averages only 0.186 ticks against a 5.73-tick half spread, so it is not profitable for takers who cross the spread; the vendor of the software wrote the study."
+  },
+  {
     "title": "Order Flow Analysis of Cryptocurrency Markets",
     "authors": "Ed Silantyev",
     "publication_year": null,

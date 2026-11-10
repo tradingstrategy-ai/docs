@@ -242,3 +242,28 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Jingqiu Ding and Daojing Zhai.
 
 `Read the paper <https://arxiv.org/abs/2611.05218>`__
+
+Order Book Imbalance and the Direction of the Next Mid-Price Change: Evidence from Nasdaq TotalView-ITCH
+--------------------------------------------------------------------------------------------------------
+
+VisualHFT Research tests whether order book imbalance, as computed by the VisualHFT order book visualization application, predicts the direction of the next mid-price change. On four held-out days, under a pre-analysis plan fixed before their outcomes were computed, the sign of the reading matched the next change 55.1% of the time against a base rate of 50.0%, over 7.7 million events among the 100 most active Nasdaq-listed stocks of each day. The relation is stronger at a one-tick spread, for lower-priced stocks and for mid-price changes that arrive soonest, and it survives controls for the last mid-price change and recent signed volume.
+
+Our summary: the paper takes the queue-race model of Avellaneda, Reed and Stoikov and of Cont and de Larrard as its theory. At a one-tick spread the mid price moves only when one of the best queues empties, and the shorter queue tends to lose the race. From this the authors derive five testable predictions: direction, a stronger relation at a one-tick spread, a stronger relation for large-tick (cheap) stocks, information beyond the last price change and recent trades, and a weaker relation the longer the next change takes. The measure is a distance-weighted imbalance over ten book levels per side, with weights that fall with distance from the best quote measured in running-median spreads. It covers more than the two best queues the model uses, so the extra levels act partly as measurement error. The paper's main strength is its discipline. The measure's settings were chosen on a different day in an earlier study. The hold-out days, the six hypotheses, the pass rule (p < 0.01 and at least 3 percentage points, pooled and on each day) and every robustness check were committed before any hold-out day was replayed. The tests use Holm familywise correction with standard errors clustered by stock. All five predictions and the shape test are supported. One-parameter independent-queue calibration fails, however: the data are steeper near zero and flatter at the extremes than the arctan form allows.
+
+The practical conclusion is negative for directional taker trading. The next mid move, signed by the reading, averages 0.186 ticks against a mean half spread of 5.73 ticks (0.15 against 0.50 at a one-tick spread). Crossing the spread to act on the reading pays more on entry than the predicted move. The authors suggest the signal may still be useful for passive decisions such as where to rest orders and when to cancel them, but they do not test this. Their own classification puts the evidence in the middle "mechanism" class, not the "tradeable" class. Two caveats: the book and mid price are Nasdaq-only rather than the consolidated NBBO, and 40.8% of next changes arrive within one millisecond, so the results assume zero reaction latency. Check (f), which keeps only changes at least 1 ms after the reading, still gives a slope of 0.183. VisualHFT builds and sells the software whose measure is studied, a conflict of interest the paper discloses.
+
+Data and code: seven full days of Nasdaq's public TotalView-ITCH 5.0 sample files (2019-01-30 to 2020-01-30, four of them held out), plus a 2023-08-22 packet capture held by VisualHFT that is reported separately. The imbalance code (ImbalanceCalculator.cs, SpreadScaleResolver.cs, P2Quantile.cs) is open source in the `VisualHFT repository <https://github.com/visualHFT/VisualHFT>`__. The replay program, analysis code and pre-analysis plan are available to researchers on request, and their commit hashes and SHA-256 digests are printed in the appendix.
+
+Key metrics:
+
+- Pre-registered hold-out test, 4 days, 7,722,048 events, 183 stocks: hit rate 55.1% against a base rate of 50.0%, difference 5.02 pp (s.e. 0.30, z = 16.9, 99% CI 4.26 to 5.79 pp); each day passes on its own (4.88 to 5.11 pp), and the difference is positive for 99% of stocks
+- Linear probability slope of P(up) on the reading, 7 pooled day files, 14.8M events: 0.202 (t = 14.4); 0.180 (t = 18.3) with controls for the last change and signed volume, retaining 89%
+- Slope by spread: 0.413 at one tick against 0.134 at 11+ ticks; one-tick hit rate 59.9% (+9.9 pp)
+- Price interaction: −0.058 per tenfold increase in price; time-to-change interaction: −0.021 per tenfold increase in time
+- Calibration: share of up moves rises from 40.2% in the lowest reading bin to 60.8% in the highest; fitted arctan attenuation λ = 0.302, with gaps of up to 6.6 pp in the tails
+- Replication: positive, significant slope on all 7 days (0.179 to 0.234); capture day 0.244, hit rate 56.0%
+- Economic magnitude: mean signed move 0.186 ticks against a mean half spread of 5.73 ticks (ratio 0.032); 0.181 against 5.37 (ratio 0.034) on the hold-out days
+
+By VisualHFT Research.
+
+`Read the paper <https://visualhft.com/research/lob-imbalance>`__
