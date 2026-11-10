@@ -3984,6 +3984,18 @@
     "short_description": "An X thread by letsgetonchain explaining a leveraged \"looping\" liquidity-provision strategy that earns ~16% trailing 30-day APY on Bitcoin by providing WBTC/cbBTC liquidity on the Fluid DEX using smart-collateral and smart-debt primitives. The yield comes from ~0.7% average trading-fee APY amplified by ~18x leverage; liquidation risk is minimal because both tokens are oracle-marked at 1 BTC, with the main risk being a spike in BTC borrow rates on Fluid."
   },
   {
+    "title": "HFT for Dummies, Part 1: Basic Intro to Algo-Trading",
+    "authors": "Tristan (@Tristan0x)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/Tristan0x/status/2115509914768687299",
+    "source_file": "liquidity-provision.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "hft-for-dummies-part-1-basic-intro-to-algo-trading.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "First post in an 11-part X series on building a delta-neutral, reference-price market maker for crypto perpetuals: Binance market data serves as the fair-price reference and quotes are posted on another venue (Bullet), with a self-reported, unaudited $6K PnL in 30 days on $10K over $158M of volume. It frames market making as sub-basis-point edge per fill that lives or dies on latency and adverse selection, and sets tick-to-order targets of under 10 ms (stretch under 1 ms) with low jitter. It also lays out an agenda from a simple Rust bot through telemetry, AWS colocation, websockets, rate limits, Linux tuning and hot-path profiling, plus an architecture diagram of the tick-to-trade loop."
+  },
+  {
     "title": "Opportunity Costs and Profitability: Insights into LP Behavior",
     "authors": null,
     "publication_year": null,

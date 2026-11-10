@@ -119,3 +119,16 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Jonathan Chávez Casillas and Li Gan.
 
 `Read the paper <https://arxiv.org/abs/2610.31903>`__
+
+HFT for Dummies, Part 1: Basic Intro to Algo-Trading
+----------------------------------------------------
+
+Tristan opens a planned 11-part X series on building a low-latency market maker for crypto perpetual futures. The strategy is a delta-neutral, reference-price market maker: stream Binance market data as the fair-price reference, quote a bid and an ask around it on another venue, and hedge inventory. The example venue is Bullet. The author reports $6K PnL in 30 days on $10K of capital over $158M+ of volume, with the strategy built together with Claude as an LLM "quant". These are unaudited, self-reported figures.
+
+Our summary: this first post sets out the economics and the engineering targets rather than code. The edge per fill is under half a basis point per dollar traded, so profit comes from volume. The main risk is adverse selection: if the reference market moves and your quotes are slow to update, takers pick off the stale prices. The stated goal is under 10 ms from tick to order sent, under 1 ms as a stretch target, with a focus on cutting jitter, because the slowest orders lose the most PnL. Bullet's 100 ms speed bump on takers is presented as a buffer that lets small market makers compete with professional HFT firms. The planned agenda moves from "saving seconds" (a simple Rust market maker, telemetry and Amdahl's law, AWS colocation) through "saving millis" (websockets instead of polling, order execution, API rate limits, Linux CPU pinning and IRQ tuning) to "saving micros" (hot-path profiling in Rust, last-mile AWS networking, DeFi nonce quirks). An architecture diagram maps the tick-to-trade loop: Binance websocket, parse, fair price (reference mid or microprice), strategy with inventory skew, non-blocking executor, venue order websocket, and fill acknowledgements feeding inventory state back into the quotes.
+
+The author's development timeline is a useful reality check. A basic harness and venue integrations took days, a semi-competitive version took weeks, and tuning it to proper profitability took months. The author expects one-person quant shops on on-chain venues such as Hyperliquid to become a significant trend as market data and connectivity become open to everyone.
+
+By `Tristan <https://x.com/Tristan0x>`__.
+
+`Read the post <https://x.com/Tristan0x/status/2115509914768687299>`__
