@@ -297,7 +297,7 @@ Mentioned by `Stat Arb (@quant_arb) in this discussion <https://x.com/quant_arb/
 `Read the post <https://x.com/quant_arb/status/2064277274451697953>`__
 
 A London-Session Continuation Model: 9.5 Years, 3 Markets, Frozen Rules
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Oscar-K-Trader (@OKTrader14), a Netherlands-based day trader, shares a mechanical London-session continuation model summarised as "my whole trading style in one chart" — a single systematic strategy backtested over 9.5 years across three markets (the charts reference EURUSD, NAS100 and GER40). It is an ICT/"smart money"-style intraday setup, but frozen into fixed rules and run as a strategy tester rather than traded discretionarily. The stated appeal is transparency: real backtest trade lists with the equity curves attached, "not a signal service — just the system, with the receipts."
 
@@ -408,7 +408,7 @@ By `yenwod <https://x.com/yenwod_>`__.
 `Read the article <https://x.com/yenwod_/status/2119896129794126320>`__
 
 Switching a Cross-Venue Arbitrage Bot from Python to Rust: Where the Latency Actually Goes
------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 Captain (@mycndota) reports, in a Simplified Chinese X post with English auto-translation, the latency effect of rewriting a cross-venue arbitrage bot from Python to Rust. The strategy posts maker orders on Arcus and, as soon as one fills, hedges with an IOC taker order on Lighter, capturing the price difference between the two venues' SPY perpetuals. The post has no title; the one used here is descriptive.
 
