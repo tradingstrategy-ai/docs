@@ -3984,6 +3984,18 @@
     "short_description": "An X thread by letsgetonchain explaining a leveraged \"looping\" liquidity-provision strategy that earns ~16% trailing 30-day APY on Bitcoin by providing WBTC/cbBTC liquidity on the Fluid DEX using smart-collateral and smart-debt primitives. The yield comes from ~0.7% average trading-fee APY amplified by ~18x leverage; liquidation risk is minimal because both tokens are oracle-marked at 1 BTC, with the main risk being a spike in BTC borrow rates on Fluid."
   },
   {
+    "title": "From Avellaneda-Stoikov to GLFT: Market Making Models and Regime Switching for HIP-3 Stock Perps",
+    "authors": "路克 (@0xLUKE777crypt)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/0xLUKE777crypt/status/2115621807562821745",
+    "source_file": "liquidity-provision.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "from-avellaneda-stoikov-to-glft-market-making-models-and-regime-switching-for-hip-3-stock-perps.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "Traditional Chinese X post (the PDF includes the English auto-translation) surveying optimal market making models: Avellaneda-Stoikov's reservation price and why its terminal time and unbounded inventory fail in 24/7 crypto, GLFT's inventory bounds and time-independent asymptotic quotes calibrated from fill intensity A and decay k, and Cartea-Jaimungal alpha-skewed quoting, Hawkes processes and RL. It argues the opportunity lies in HIP-3 stock perps such as SNDK on trade.xyz, whose oracle switches between the external price and the perp's own book, so market makers should use regime-switching parameters: external-price skew on weekdays, higher risk aversion and tighter inventory caps at weekends, and early switches around earnings gaps. Conceptual only, with no backtest."
+  },
+  {
     "title": "HFT for Dummies, Part 1: Basic Intro to Algo-Trading",
     "authors": "Tristan (@Tristan0x)",
     "publication_year": 2026,

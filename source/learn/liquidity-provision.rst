@@ -132,3 +132,18 @@ The author's development timeline is a useful reality check. A basic harness and
 By `Tristan <https://x.com/Tristan0x>`__.
 
 `Read the post <https://x.com/Tristan0x/status/2115509914768687299>`__
+
+From Avellaneda-Stoikov to GLFT: Market Making Models and Regime Switching for HIP-3 Stock Perps
+------------------------------------------------------------------------------------------------
+
+路克 (Luke, @0xLUKE777crypt) writes a short Traditional Chinese X post, also readable through X's English auto-translation, that walks through the standard optimal market making models and then argues that the opening for crypto market makers is regime-aware quoting on Hyperliquid HIP-3 stock perpetuals. The post has no title; the one used here is descriptive.
+
+Our summary: the post starts with Avellaneda–Stoikov (2008). The market maker quotes around an inventory-adjusted *reservation price* rather than the mid. The more inventory, volatility and time remaining, the further that price is skewed to shed inventory. The spread is set by risk aversion together with a fill probability that decays exponentially with distance from the mid. The author identifies two reasons the model breaks on crypto: it needs a terminal time T that a 24/7 market does not have, and it puts no cap on inventory, so a one-sided market can run the bot over. The Guéant–Lehalle–Fernandez-Tapia (GLFT, 2013) model fixes both, with inventory bounds and an asymptotic solution as time goes to infinity, so quotes depend only on current inventory. That suits perpetuals, and the parameters can be calibrated: fit fill intensity A and decay k from trade data, then add volatility and risk aversion to get the quote width and skew for every inventory level. Both models still assume a random-walk mid and ignore adverse selection. The Cartea–Jaimungal line of work adds short-term alpha, skewing quotes on order flow imbalance and microprice as well as inventory. Beyond that come Hawkes processes for self-exciting trade arrivals and reinforcement learning.
+
+The practical argument is about HIP-3 equity perps such as SNDK on trade.xyz. During US market hours the oracle tracks the external stock price; outside them it switches to the perp's own order book. The same contract therefore changes regime twice a week, and GLFT parameters (k, volatility) calibrated on weekdays stop working at weekends. The author proposes three adjustments. On weekdays, use the external price as an alpha signal to skew quotes, since the perp chases it. At weekends, when the external signal disappears and fill intensity drops, raise risk aversion and tighten the inventory cap. Around earnings and other gap events, switch parameters ahead of time. The claim is that whoever builds regime switching into a market making model first can earn spreads in these thin books that others cannot. The post cites the `hftbacktest documentation <https://hftbacktest.readthedocs.io/en/latest/>`__ and a `quant67 market making write-up <https://quant67.com/post/quant/25-market-making/25-market-making.html>`__ as sources. It is a conceptual overview with no backtest or PnL figures.
+
+Mentioned by `cryppi <https://x.com/cryppimagic>`__ in `this discussion <https://x.com/cryppimagic/status/2120054913736815033>`__, a list of the best X accounts on HFT, market making and arbitrage, which describes it as part one of "literally a whole series on getting into market making".
+
+By `路克 (0xLUKE777crypt) <https://x.com/0xLUKE777crypt>`__.
+
+`Read the post <https://x.com/0xLUKE777crypt/status/2115621807562821745>`__
