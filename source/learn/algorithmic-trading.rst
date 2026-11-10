@@ -393,3 +393,29 @@ The broader intraday momentum literature provides context: Gao, Han, Li, and Zho
 Mentioned by Rob (`@BostonRobTrades <https://x.com/BostonRobTrades>`__) in `this discussion <https://x.com/BostonRobTrades/status/2046770986599461326>`__: "Here is a profitable trading strategy that works. ORB - Opening Range Breakout. I have seen many people teach strategies and concepts about trading the opening range but rarely a 15 year backtest on their logic."
 
 `Read the post <https://x.com/BostonRobTrades/status/2046770986599461326>`__.
+
+How to HFT
+----------
+
+yenwod's X article sets out a step-by-step syllabus for building a minimal high-frequency trading stack and deploying it on decentralised crypto perpetual exchanges, starting with Hyperliquid and later adding Lighter. The author expects it to take a strong programmer who is new to trading a couple of months, and warns it is unlikely to pay right away.
+
+Our summary: the core design principle is "packets in → state machine → packets out", with all nondeterministic code pushed to the edges. The first steps build a single-threaded connector that logs every TCP connect and close, HTTP request and response, and websocket message to an append-only file with local timestamps. Third-party libraries are used only for "sans-io" parts such as TLS and websocket framing, and async language features are avoided. A state machine consumes events from that file, and a *replay* mode must reproduce the live output exactly; for example, time comes from the event rather than the system clock. Actions (place, cancel, nothing) are logged before they are sent, so a live session can be replayed and its actions checked against the log. Later steps rewrite the networking as an epoll reactor (or mio), add a one-second timer event, kernel timestamps and a queue abstraction (with a TODO to implement a Chronicle-Queue-style transport). The monolithic state machine is then split into three: state tracking (books, own orders, balances), the desired-quote strategy, and a reconciler that compares desired with actual orders, including pending ones. The first strategy is a naive market maker with inventory skew: with x the absolute fraction of maximum inventory held, the quote on the side you were hit on moves away from mid by spread·x/(1−x), and the other side moves closer by spread·x.
+
+The second half turns this into a cross-venue trade: post a maker order on Lighter at the price where it can be hedged as a taker on Hyperliquid plus a margin, and fire an IOC hedge on every fill. The author stresses being meticulous: compute fees correctly, compare account-stream and public-feed latency, test redundant TCP connections, sort fills into good and bad and study the feed around each, and use an LLM-built dashboard to step through logs and spot lost queue priority or needless cancel-replaces. The system should then run for 24 hours, filling tens to hundreds of times an hour. Next comes a simulator calibrated against real sessions, with seeded randomness for latency, to answer what-if questions such as maker versus taker hedging, a faster round trip, or whether paying priority fees is worth it. The last step is signal research on 24-hour captures, pointing to the `deep order flow imbalance paper <https://arxiv.org/pdf/2108.09750>`__ and *The Elements of Statistical Learning*. A short-horizon Hyperliquid mid-price predictor will have decent R² but will not be monetisable on its own, so it should be used to improve fills on the cross-venue trade. The whole stack should be about 5–15k lines, with small core state machines.
+
+By `yenwod <https://x.com/yenwod_>`__.
+
+`Read the article <https://x.com/yenwod_/status/2119896129794126320>`__
+
+Switching a Cross-Venue Arbitrage Bot from Python to Rust: Where the Latency Actually Goes
+-----------------------------------------------------------------------------------------
+
+Captain (@mycndota) reports, in a Simplified Chinese X post with English auto-translation, the latency effect of rewriting a cross-venue arbitrage bot from Python to Rust. The strategy posts maker orders on Arcus and, as soon as one fills, hedges with an IOC taker order on Lighter, capturing the price difference between the two venues' SPY perpetuals. The post has no title; the one used here is descriptive.
+
+Our summary: the rewrite is about three times faster on the code the author controls. Fill notification to hedge order sent falls from 21.6 ms to 6.5–8.6 ms, and signing to request sent from 5–9 ms to 1.2–1.5 ms. Order sent to exchange acknowledgement barely changes (15–29 ms to 15–18 ms) because it is mostly network. Lighter's matching and execution takes about 300–400 ms whatever language the client uses. The attached breakdown shows the bot's own path falling from about 70 ms (unoptimised Python) to 47 ms (fixed Python) to 26 ms (Rust). End-to-end time to the hedge fill only drops from about 470 to 455 to 419 ms, with Lighter's matching about 90% of the total. The conclusion is a useful Amdahl's-law reality check: Rust saved about 15 ms, only 3–4% of the roughly 420 ms round trip, so venue matching latency rather than client language dominates hedging risk on this pair. The author also notes that the earlier 100% win rate has now been broken (best streak 10 wins), though the win rate is still high.
+
+The quoted earlier post, claiming "stable profitability", shows how small the numbers are. Its configuration table lists 22 rounds over about $263K of Arcus volume for a net −$9.59 (about −$3.6 per $100K). The latest configuration has 7/7 winning rounds on about $69K of volume for +$1.19 (about +$1.7 per $100K). This is a small, early-stage personal experiment, not evidence of a durable edge.
+
+By `Captain <https://x.com/mycndota>`__.
+
+`Read the post <https://x.com/mycndota/status/2119991722323374226>`__

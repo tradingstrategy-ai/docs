@@ -1116,6 +1116,18 @@
     "short_description": null
   },
   {
+    "title": "How to HFT",
+    "authors": "yenwod (@yenwod_)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/yenwod_/status/2119896129794126320",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "how-to-hft.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "A 15-step syllabus for building a minimal HFT stack on crypto perp DEXs (Hyperliquid, then Lighter): log all network traffic to an append-only file, drive a deterministic state machine that replays sessions exactly, move to an epoll reactor, and split the logic into state-tracking, strategy and order-reconciliation machines. It then builds an inventory-skewed market maker and a Lighter-maker/Hyperliquid-taker cross-venue hedge, a seeded simulator reconciled against live sessions, and a signal-research loop on 24h captures, all in about 5-15k lines."
+  },
+  {
     "title": "How to Simulate Like a Quant Desk: Every Model, Every Formula, Runnable Code",
     "authors": null,
     "publication_year": null,
@@ -1222,6 +1234,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "Switching a Cross-Venue Arbitrage Bot from Python to Rust: Where the Latency Actually Goes",
+    "authors": "Captain (@mycndota)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/mycndota/status/2119991722323374226",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "switching-a-cross-venue-arbitrage-bot-from-python-to-rust-where-the-latency-actually-goes.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "Simplified Chinese X post (the PDF includes the English auto-translation and screenshots) measuring a Python-to-Rust rewrite of an Arcus-maker/Lighter-IOC-hedge SPY perp arbitrage bot. Client-side latency falls about 3x (from 47 ms to 26 ms to exchange acknowledgement), but end-to-end time to the hedge fill only drops from 455 to 419 ms because Lighter's matching takes about 90% of the round trip, so Rust saves just 3-4%. The quoted PnL table shows tiny, early-stage results (+$1.19 on about $69K of volume for the latest configuration, -$9.59 on about $263K overall)."
   },
   {
     "title": "The CoinAlg Bind: Profitability-Fairness Tradeoffs in Collective Investment Algorithms",
