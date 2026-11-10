@@ -3264,6 +3264,18 @@
     "short_description": null
   },
   {
+    "title": "Arbitrage Trading between Decentral and Central Cryptocurrency Exchanges",
+    "authors": "Lennart Schwertfeger, Bodo Vogt",
+    "publication_year": 2026,
+    "download_page": "https://www.sciencedirect.com/science/article/pii/S0378426626000956",
+    "source_file": "defi-amm.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "arbitrage-trading-between-decentral-and-central-cryptocurrency-exchanges.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "Analyses realised trades from live DEX-CEX arbitrage bots that quote limit orders on KuCoin around AMM spot prices (reconstructed from the mempool) and hedge on DeFiChain and SEI DEXs via two-point and triangular arbitrage. Bots earned USD 20,237 with monthly ROIs of 6-33%, showing persistent fragmentation on mid-cap pairs, with transaction-ordering uncertainty, wrapping costs and liquidity constraints as the main limits to arbitrage."
+  },
+  {
     "title": "Automated Market Making and Arbitrage Profits in the Presence of Fees",
     "authors": null,
     "publication_year": 2023,
