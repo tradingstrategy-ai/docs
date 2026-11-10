@@ -7332,6 +7332,18 @@
     "short_description": null
   },
   {
+    "title": "Leveraged Long-Short Factor Bets Cannot Be Managed into Neutrality",
+    "authors": "Andreas Himmelreich",
+    "publication_year": 2026,
+    "download_page": "https://x.com/GfI_Himmelreich/status/2120059829242744856",
+    "source_file": "risk-management.rst",
+    "included_in_index_at": "2026-11-10",
+    "filename": "leveraged-long-short-factor-bets-cannot-be-managed-into-neutrality.pdf",
+    "downloaded_at": "2026-11-10",
+    "download_failure_reason": null,
+    "short_description": "Practitioner X post arguing that a leveraged long-short factor book cannot be managed into true neutrality: beta-neutral and idiosyncratic labels are model-relative, hedge ratios drift in stress, crowding turns idiosyncratic names into a common factor, and OLS correlation understates tail dependence between the legs. The only real levers, sizing down or buying tail protection, erode the product's return."
+  },
+  {
     "title": "ML-Optimized Dynamic Position Sizing for Trading Strategies",
     "authors": null,
     "publication_year": null,

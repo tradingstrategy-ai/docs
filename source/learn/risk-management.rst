@@ -217,7 +217,7 @@ Key metrics: the contribution is the closed-form/​numerical optimal bet fracti
 `Read the paper <https://doi.org/10.1287/deca.2013.0271>`__
 
 How Much Should We Get Paid for Skew Risk? Not as Much as You Think!
--------------------------------------------------------------------
+--------------------------------------------------------------------
 
 Rob Carver challenges the long-standing trend-following defence that positive skewness compensates for a lower Sharpe ratio — and the mirror-image claim that negatively-skewed strategies (option selling, carry) must earn a large Sharpe premium. He builds a framework that prices skew in Sharpe-ratio terms by maximising the geometric mean of returns across different quantiles of the outcome distribution, then reads off indifference curves that hold long-run growth constant as Sharpe and skew vary together.
 
@@ -349,3 +349,16 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Martin Aichele, Igor Cialenco, Damian Jelito and Marcin Pitera.
 
 `Read the paper <https://arxiv.org/abs/2610.41624>`__
+
+Leveraged Long-Short Factor Bets Cannot Be Managed into Neutrality
+------------------------------------------------------------------
+
+A short practitioner post with no title of its own; the heading here is descriptive. Andreas Himmelreich argues that a highly leveraged long-short factor book cannot be risk-managed into true neutrality. The only real levers are sizing it down or paying for tail protection, and both erode the return the product is sold on.
+
+He lists four reasons. "Beta-neutral" and "idiosyncratic" are model labels set before the fact, not stable properties of the market. Betas and hedge ratios estimated in calm periods drift in stress, often faster than the book can be rebalanced. Whether a position counts as idiosyncratic depends on the chosen factor set, universe and covariance estimate, and crowding among many funds holding the same "idio" names turns them into a shared liquidity factor. Finally, OLS correlation describes the conditional mean, not the tail: two legs can look uncorrelated while their joint losses in a sell-off are high, and that tail dependence is exactly the scenario that hurts a long-short book. The post is an argument without data or backtests.
+
+In a `follow-up <https://x.com/GfI_Himmelreich/status/2120124170365173848>`__ he adds that the same limit applies to long-only AI factor models. They can handle most market regimes, but when correlations go to one in a crash, a total-return portfolio falls with the market.
+
+By Andreas Himmelreich (Systematic AI Investing Portfolios).
+
+`Read the post <https://x.com/GfI_Himmelreich/status/2120059829242744856>`__.
