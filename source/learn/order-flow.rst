@@ -267,3 +267,38 @@ Key metrics:
 By VisualHFT Research.
 
 `Read the paper <https://visualhft.com/research/lob-imbalance>`__
+
+Market-Making Practice Notes #6: Order-Flow Intensity under Mutual Excitation
+-----------------------------------------------------------------------------
+
+Luke explains how self-exciting and mutually exciting Hawkes processes model
+clusters of market buy and sell orders, drawing on Cartea, Jaimungal, and
+Ricci (2018) and Hawkes (1971). The post distinguishes market-order arrival
+intensity from a resting quote's fill rate: execution also depends on the
+conditional probability of an incoming order reaching that quote, which
+changes with order-book shape and other market makers' responses. Increased
+intensity alone does not establish toxic flow or a change in fair value.
+The author's bot uses recent clustering as a risk-control input to review
+exposed quotes, reduce size in directions that add risk, and potentially
+stop adding inventory, while accounting for cancellation latency.
+
+The post also warns that one aggressive order can generate multiple public
+fills, inflating apparent event intensity when each fill is treated as an
+independent arrival. Its attached Binance BTCUSDT perpetual chart covers
+108 recorded hours from October 30 to November 10, 2026, excluding connection
+outages: 43.7% of aggregate trades contain multiple fills and account for
+78.4% of raw fills. The chart reports 5,720,735 raw fills versus 2,196,134
+aggregate trades (2.60 times in total), with per-second ratios labelled
+1.75 overall and 2.54 in the busiest 1% of seconds. These are descriptive
+observations from the author's recorded feed, not fitted Hawkes parameters
+or evidence of trading profitability.
+
+By Luke (@0xLUKE777crypt), published November 11, 2026. The title is translated
+from the Chinese original.
+
+Mentioned by Luke in `this discussion
+<https://x.com/0xLUKE777crypt/status/2120355556326330402>`__, which argues for
+using clustering to manage quote exposure while separately analysing fill
+probabilities and subsequent price moves.
+
+`Read the post <https://x.com/0xLUKE777crypt/status/2120355556326330402>`__.

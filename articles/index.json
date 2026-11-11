@@ -6456,6 +6456,18 @@
     "short_description": null
   },
   {
+    "title": "Market-Making Practice Notes #6: Order-Flow Intensity under Mutual Excitation",
+    "authors": "Luke (@0xLUKE777crypt)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/0xLUKE777crypt/status/2120355556326330402",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-11-11",
+    "filename": "market-making-practice-notes-6-order-flow-intensity-under-mutual-excitation.pdf",
+    "downloaded_at": "2026-11-11",
+    "download_failure_reason": null,
+    "short_description": "Luke explains self-exciting and mutually exciting order flow, distinguishing arrival intensity from quote execution probability, toxicity, and fair-value changes. The post uses clustering as a quote-risk input and illustrates how counting raw Binance fills as independent orders can inflate measured activity; its chart is descriptive rather than a Hawkes calibration."
+  },
+  {
     "title": "Most-Predictive: Which Microstructure Metric Best Forecasts Short-Term Crypto Returns",
     "authors": null,
     "publication_year": null,
