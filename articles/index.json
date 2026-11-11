@@ -5601,7 +5601,7 @@
     "filename": "i-reverse-engineered-a-1-9-sharpe-hyperliquid-vault.pdf",
     "downloaded_at": "2026-11-11",
     "download_failure_reason": null,
-    "short_description": "Reverse engineers a Hyperliquid vault from its public, role-tagged order history into a dip-buying ladder on large-cap perpetuals: a 0.364%-of-equity first buy, five doubling adds down to -9.85%, and a full exit at about +0.56% over average entry. A systematic version with a 5-day time stop reaches Sharpe 2.39 after fees on the top 10 coins in 2023-2026, but the crash premium it harvests is shrinking (yearly Sharpe 7.4 to 1.4) and the strategy is short gamma."
+    "short_description": "Reverse engineers a Hyperliquid vault from its public, role-tagged order history into a dip-buying ladder on large-cap perpetuals: a 0.364%-of-equity first buy, five doubling adds down to -9.85%, and a full exit at about +0.56% over average entry. A systematic version with a 5-day time stop reaches Sharpe 2.39 after fees on the top 10 coins in 2023-2026, but the crash premium it harvests is shrinking (yearly Sharpe 7.4 to 1.4) and the strategy is short gamma. The vault's manager replied that risk layers and daily coin selection, which the fills do not show, matter more than the ladder."
   },
   {
     "title": "IV Mean Reversion",
