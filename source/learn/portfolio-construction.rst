@@ -479,3 +479,30 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Oskar Edén Wallberg and Alexander Karolin.
 
 `Read the paper <https://arxiv.org/abs/2610.36491>`__
+
+Trading Volume Alpha
+--------------------
+
+Portfolio optimization focuses on risk and return prediction, yet implementation costs critically matter. Predicting trading costs is challenging because costs depend on trade size and trader identity, thus impeding a generic solution. The authors focus on a component of trading costs that applies universally: trading volume. Individual stock trading volume is highly predictable, especially with machine learning. They model the economic benefits of predicting volume through a portfolio framework that trades off tracking error versus net-of-cost performance, translating volume prediction into net-of-cost alpha. The economic benefits of predicting individual stock volume are as large as those from stock return predictability.
+
+Price impact is modelled as linear in the participation rate (the trader's dollar trade divided by the stock's total dollar volume), following Kyle (1985) and Frazzini, Israel and Moskowitz (2018). Volume is the one part of that cost that does not depend on who is trading, so a volume forecast is a cost forecast any trader can use. The portfolio takes a pre-cost target position as given and chooses each day how far to trade toward it, balancing price impact against tracking error to the target. Because impact rises steeply as volume approaches zero, overestimating volume costs more than underestimating it, and the optimal policy trades conservatively. The authors point out this is an additional source of limits to arbitrage.
+
+The prediction target is the log dollar volume shock: today's log dollar volume minus its five-day moving average. The 175 predictors are added in groups: lagged returns and volume, firm characteristics from the Jensen-Kelly-Pedersen (JKP) dataset, calendar dummies (early closes, double and triple witching, Russell rebalancing) and earnings release timing. Models are OLS, a three-layer feed-forward network and an LSTM. Each is first trained on mean squared error and then fine-tuned on the portfolio's own objective. That economic loss gives up some statistical R-squared but improves after-cost performance, because it puts weight where forecast errors cost money.
+
+The paper tests two implementation tasks. The first is a daily long-short target with an unrealistic before-cost Sharpe ratio of about 7, run at fund sizes from $10 million to $10 billion. The second is 153 monthly-rebalanced long-short factor portfolios from the JKP characteristics at $10 billion. Gains are largest for mid-sized funds: at $10 million every method trades aggressively and performance converges. Among factors, high-turnover styles such as short-term reversal benefit most. The authors stress they are not building the best cost model, only measuring what volume prediction is worth. Price impact is the only cost modelled; bid-ask spreads are left out.
+
+**Data and code.** Daily stock-level dollar trading volume for US stocks, 2018 to 2022 (1,258 days, about 4,700 stocks, 4.4 million stock-days), with JKP firm characteristics and earnings dates from Capital IQ Key Developments. The first three years are used for training and the last two for testing, with a single fit and no rolling re-estimation. No code is published, and the volume and Capital IQ data are commercial.
+
+**Key metrics.** All figures are out of sample, 2021-2022, net of modelled price impact. The baseline (ma5) predicts volume with its five-day moving average.
+
+- Volume prediction: the five-day moving average explains 93.68% of log dollar volume. Of the shock left over, OLS with all predictors explains 15.99%, the feed-forward network 18.45% and the LSTM 19.86%.
+- Daily strategy, $1 billion AUM: annualised return rises from 6.47% (ma5) to 8.95% (LSTM fine-tuned on the economic loss, all predictors), and Sharpe from 2.21 to 4.53. With perfect knowledge of future volume ("oracle") the figures are 9.89% and 4.97. The text gives the return as 8.98%; Table 3 gives 8.95%.
+- Daily strategy, $10 billion AUM: return 3.88% to 4.68%, Sharpe 2.00 to 2.50; oracle 6.47% and 3.05.
+- Daily strategy, $100 million AUM: Sharpe 5.47 to 5.85. At $10 million: Sharpe 6.55 to 6.68.
+- Factor portfolios at $10 billion: the gain over ma5 is 0.2% to 0.6% a year for low-turnover factors, up to about 1% a year for high-turnover ones, and 0.3 to 0.4 in Sharpe ratio for the highest-turnover factors.
+
+Mentioned by `Ivan Blanco <https://es.linkedin.com/in/ivanblancosanchez>`__ in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_most-of-what-it-costs-to-trade-a-stock-activity-7527030078086524928-TldR>`__, who summarises the paper as showing that predicting volume is worth about as much as predicting returns. His reading is that execution is not an afterthought in a systematic strategy: it looks like part of the alpha and deserves as much research time as the signals.
+
+By Ruslan Goyenko, Bryan T. Kelly, Tobias J. Moskowitz, Yinan Su and Chao Zhang.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802345>`__
