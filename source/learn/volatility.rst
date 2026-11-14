@@ -688,3 +688,20 @@ the strategy's backtest and portfolio diversification results and links to
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5316487>`__.
 
 `Read the post <https://x.com/kashin_moneylab/status/2119440436670738737>`__.
+
+HyperIV: Real-time Implied Volatility Smoothing
+-----------------------------------------------
+
+A short ICML 2025 talk (12 May 2025) by Wenqi Chen of Queen Mary University of London, joint work with Yongxin Yang, Chao Shu and Timothy Hospedales. HyperIV builds a full arbitrage-free implied volatility surface from a handful of liquid option quotes, fast enough for real-time use in high-frequency trading and hedging.
+
+Implied volatility is the volatility that makes the Black-Scholes price match the market price. The fitting problem is to construct a continuous surface over strike and maturity from sparse contracts while avoiding calendar and butterfly arbitrage. Classical quantitative-finance models such as SVI or SABR use about five parameters and ML models use hundreds to thousands. HyperIV uses a hypernetwork. A set-embedding network, an order-invariant transformer encoder with no positional embedding, reads a reference set of just nine liquid contracts (at-the-money and 25-delta calls and puts at 7-day, 1-month and 3-month maturities) and outputs the weights of a compact surface network, an MLP with two hidden layers of 16 neurons and 337 parameters in total. That network maps strike and maturity to implied volatility. The surface comes out in about 2 milliseconds. Slices of total implied variance do not cross and the implied density has no negative values, which the authors read as the absence of calendar and butterfly arbitrage.
+
+The comparison is against SSVI, a VAE and a graph neural operator (GNO) on SPX, NDX, RUT, VIX, MXWLD and MXEF at one-minute and one-day intervals. The conclusion claims superior accuracy and robustness across diverse assets, but the slide's tables show GNO ahead in some cells (for SPX at one minute GNO scores 0.0140 against 0.0167 for HyperIV).
+
+**Data and code.** Option data for the six indices above, with the source not named on the slides. The paper is at https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5078198 and code at https://github.com/qmfin/hyperiv.
+
+**Key metrics.** The surface network has 337 parameters (SSVI: 4) and the whole model 243,153. Testing time per surface is about 2.09 ms against 13.11 ms for SSVI, 0.34 ms for the VAE and 7.86 ms for GNO. Training takes 2.82 seconds, against 2.87 s for the VAE and 5.08 s for GNO. Errors are reported as mean absolute error in implied volatility and in option price; no trading returns are reported.
+
+By Wenqi Chen, Yongxin Yang, Chao Shu, Timothy Hospedales.
+
+`Watch the presentation <https://slideslive.com/39042677/hyperiv-realtime-implied-volatility-smoothing>`__.

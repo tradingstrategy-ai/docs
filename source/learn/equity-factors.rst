@@ -360,3 +360,30 @@ Key metrics:
 Mentioned by `Campbell Harvey <https://x.com/camharvey>`__ in `this discussion <https://x.com/camharvey/status/2119841460883427394>`__. The co-author notes that disagreement gets far less attention than expectations, that the usual proxies have zero correlation with each other, so the measures of disagreement themselves disagree, and that high-disagreement stocks have low subsequent returns with a large, significant alpha: "it is not just the expectations that matter".
 
 `Read the paper <https://doi.org/10.1016/j.jfineco.2026.104379>`__
+
+Uncertainty-Aware Lookahead Factor Models for Improved Quantitative Investing
+-----------------------------------------------------------------------------
+
+A short ICML 2020 talk by Lakshay Chauhan, John Alberg (Euclidean Technologies) and Zachary Lipton (Carnegie Mellon University). Factor models rank stocks on current fundamentals, but returns are driven by future fundamentals. The authors build value factors from forecast fundamentals, estimate the forecast uncertainty and use it to scale the factor, then simulate portfolios on US stocks.
+
+The setup uses EBIT divided by enterprise value (EV) as the value factor. The quantitative factor model (QFM) uses current EBIT. The lookahead factor model (LFM) uses EBIT forecast 12 months ahead by a deep network. The uncertainty-quantified variant divides the forecast by the predicted variance, so that companies with noisier forecasts are weighted less: EBIT forecast over sigma squared times EV. Because financial data is heteroskedastic, the network splits its final layer into a mean head and a variance head and is trained with a Gaussian likelihood, which penalises over-confident predictions. Epistemic uncertainty is added from Monte Carlo draws of the dropout mask. A clairvoyant model given true future fundamentals shows a large advantage, which motivates forecasting them. Models tested are auto-regression, linear, MLP and LSTM, each with and without uncertainty, with multi-task learning on all fundamentals, max norm and dropout, and a genetic-algorithm search for hyperparameters.
+
+The portfolio simulation takes the top 50 stocks ranked by factor, rebalances monthly over 50 simulated years, uses point-in-time data without survivorship or look-ahead bias and includes transaction costs and price slippage. Out-of-sample performance covers 2000 to 2019. The authors conclude that forecasting fundamentals is valuable in quantitative investing and that deep networks that forecast fundamentals and their uncertainty improve return and Sharpe ratio.
+
+**Data and code.** US stocks from 1970 to 2019 on NYSE, NASDAQ and AMEX with market capitalisation above $100 million (about 12,000 stocks). Inputs are five-year series at 12-month steps of fundamentals (revenue, cost of goods sold, EBIT, current and long-term debt), 1, 3, 6 and 9-month relative momentum, short interest, industry group and size category. The first period is split randomly 70/30 into training and validation sets, and 2000 to 2019 is held out. The data source is not named and no code is linked.
+
+**Key metrics.** Out-of-sample 2000 to 2019, compound annual return (CAR) and Sharpe ratio, with forecast MSE in parentheses.
+
+- S&P 500: CAR 6.05%, Sharpe 0.32
+- Current-fundamentals QFM: CAR 14.0%, Sharpe 0.52 (MSE 0.65)
+- Lookahead auto-regression: CAR 14.2%, Sharpe 0.56 (MSE 0.58)
+- Lookahead linear: CAR 15.5%, Sharpe 0.64 (MSE 0.52)
+- Lookahead MLP: CAR 16.1%, Sharpe 0.68 (MSE 0.48)
+- Lookahead LSTM: CAR 16.2%, Sharpe 0.68 (MSE 0.48)
+- Lookahead with uncertainty, LSTM: CAR 17.7%, Sharpe 0.84 (MSE 0.48)
+- Lookahead with uncertainty, MLP: CAR 17.3%, Sharpe 0.83 (MSE 0.47)
+- Pairwise t-statistics for the Sharpe difference between the uncertainty-aware models and QFM are 5.57 and 6.01. Maximum drawdown is not reported.
+
+By Lakshay Chauhan, John Alberg, Zachary Lipton.
+
+`Watch the presentation <https://slideslive.com/38927599/uncertaintyaware-lookahead-factor-models-for-improved-quantitative-investing>`__.

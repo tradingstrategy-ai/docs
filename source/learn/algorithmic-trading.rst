@@ -419,3 +419,20 @@ The quoted earlier post, claiming "stable profitability", shows how small the nu
 By `Captain <https://x.com/mycndota>`__.
 
 `Read the post <https://x.com/mycndota/status/2119991722323374226>`__
+
+Evology: an Empirically-Calibrated Market Ecology Agent-Based Model for Trading Strategy Search
+-----------------------------------------------------------------------------------------------
+
+A work-in-progress talk of 23 July 2022 by Aymeric Vié (Mathematical Institute and Institute for New Economic Thinking, University of Oxford). Evology is an empirically calibrated agent-based model of a financial market with diverse trading strategies, proposed both as a policy laboratory for financial stability and as a training environment for machine-learning trading and investment strategies. The slides ask the audience to help improve it.
+
+The model runs a multi-period, single-asset market. Each period it initialises agents, collects their trading strategies, computes excess demand, clears the market, pays interest and dividends, handles investment flows, evolves strategies and may terminate. A simulation run shows stock price against fundamental value, volume and the wealth shares of noise traders, value investors and trend followers, which change over time. The slides argue for simulation-based training because it can account for the market impact of an adaptive agent, landscape changes from crowding and mutualism, and coevolution, imitation and adaptation, none of which exist in historical time-series training. The cost is that building a good simulation is hard.
+
+The learning tasks are to optimise fund trading strategies, to optimise investor strategies, and to test robustness, interpretability and real-world safety. The baseline is the performance of base strategies and real funds in annual return and Sharpe ratio. Two training environments are planned: a static one with a single adaptive fund and a dynamic coevolution environment that adds hedge and active funds, with variants in initial conditions and enforced policies such as the interest rate.
+
+**Data and code.** The model is calibrated empirically, but the slides do not list the data. Code is at https://github.com/aymericvie/evology.
+
+**Key metrics.** None; the talk presents the design only and a single simulated run.
+
+By Aymeric Vié.
+
+`Watch the presentation <https://slideslive.com/38985923/evology-an-empiricallycalibrated-market-ecology-agentbased-model-for-trading-strategy-search>`__.

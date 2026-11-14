@@ -447,3 +447,20 @@ The 15-year NQ backtest with cost and slippage included shows robust performance
 Mentioned by Rob (@BostonRobTrades) in `this discussion <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
 
 `Read the post <https://x.com/BostonRobTrades/status/2048141906102845655>`__.
+
+Trend-Following Trading Strategies and Financial Market Stability
+-----------------------------------------------------------------
+
+A talk at the ICML 2019 AI for Finance workshop by Michael Wellman of the University of Michigan Strategic Reasoning Group, presenting work with Erik Brinkman and Uday Rajan. It asks under what conditions a market shock is amplified when some agents follow trends.
+
+The method is empirical game-theoretic analysis (EGTA): define a strategy space, simulate strategy profiles in an agent-based financial market, induce an empirical game from the simulation data and characterise behaviour at its equilibria. The trend follower is a simple technical strategy, called a high-frequency trend follower on the slides. It continually looks for monotonic trends in transaction prices, takes the best price in the direction of the trend and resubmits at a more extreme price, and withdraws if its order stays untransacted for a long period. Shocks are modelled as the exogenous insertion of a large sell order.
+
+When agents observe the current fundamental value, the market stabilises quickly after a shock. When they observe it with noise, beliefs are influenced by prices and the shock has a more persistent effect. In that noisy-observation model, market frictions contribute to mispricing, and longer trends signal profit opportunities, so a trend-following strategy is present in equilibrium. Trend followers reduce mispricing during trends, but they crowd out the use of transaction price information and increase adverse selection. The slides report the fraction of agents using transaction information as 100% and 54% in the two runs without trend followers against 23% with them. Trend following also amplifies the magnitude of a shock while shortening its duration, which the speakers call representative of flash crashes, and it helps recovery as measured by RMSD. The effects on volatility and price discovery are small and flagged as possibly artifacts.
+
+**Data and code.** Simulation only, with no market data. No code is linked on the slides.
+
+**Key metrics.** The slides report market efficiency of 50.7% and 50.3% without trend followers against 40.6% with them. The maximum price difference after a shock reaches 4,194 with trend followers at 100 shock orders. Volatility is 1,071 and 1,055 without trend followers against 1,013 with them, and mispricing is 573 and 571 against 595. The slides give no returns or Sharpe ratios for the strategy.
+
+By Michael Wellman, Erik Brinkman, Uday Rajan.
+
+`Watch the presentation <https://slideslive.com/38917472/trendfollowing-trading-strategies-and-financial-market-stability>`__.

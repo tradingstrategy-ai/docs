@@ -488,3 +488,69 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Valentin Mohl, Alexandre Bismuth, Aramis Marti-Shahandeh, George Nigmatulin, Kang Li, Stefan Zohren, Jakob Foerster, Mihai Cucuringu and Anisoara Calinescu.
 
 `Read the paper <https://arxiv.org/abs/2610.28753>`__
+
+Adversarial Attacks on Machine Learning Systems for High-Frequency Trading
+--------------------------------------------------------------------------
+
+A 2021 talk by Micah Goldblum and Avi Schwarzschild (University of Maryland) on a paper with Ankit Patel and Tom Goldstein. It asks whether an attacker can fool a machine-learning price predictor by placing orders that change the order book it reads, and what that implies for the definition of spoofing.
+
+Exchanges publish a constant stream of orders, and traders use that stream to inform their own decisions. High-frequency systems act on timescales humans cannot check, and the talk questions whether spoofing, which is prohibited by the Dodd-Frank Act, can be defined by intent when most agents are automated. The valuation model takes a sequence of limit order book snapshots, ten price levels each side so that a snapshot has 40 entries, and predicts the future price movement. The attacker's perturbations are orders. It solves a maximisation of the model's loss over the orders it places, which needs a differentiable trading simulation that propagates the added orders through the book. The authors compare this to the panda-to-gibbon image attack and note domain constraints such as integer-valued orders. Optimised attacks are smaller, cheaper and harder to detect than hand-crafted spoofs.
+
+The first demonstration uses knowledge of the future and of the victim model's parameters, and the model is fooled into predicting an upward move. The transfer attack asks what an attacker can do without the future or the model, and uses universal adversarial perturbations, which can be applied at any time during trading and are not propagated through the book.
+
+**Data and code.** The slides do not name the order book dataset and no code is linked. The related paper is cited on the second slide.
+
+**Key metrics.** None. The slides show perturbed order book heatmaps, not success rates or trading losses.
+
+By Micah Goldblum, Avi Schwarzschild, Ankit Patel, Tom Goldstein.
+
+`Watch the presentation <https://slideslive.com/38960186/adversarial-attacks-on-machine-learning-systems-for-highfrequency-trading>`__.
+
+How Robust are Limit Order Book Representations under Data Perturbation?
+------------------------------------------------------------------------
+
+A talk at the ICML 2021 Workshop on Representation Learning for Finance and e-Commerce Applications from J.P. Morgan AI Research. It argues that the representations commonly used for limit order book (LOB) data make deep price-forecasting models fragile.
+
+A standard LOB input keeps ten price levels on each side. The authors perturb it by inserting small orders, with a volume of one each, that push existing levels out of the visible window, so the ten-level view shows a much narrower slice of the market. Ten such orders of volume one move the representation by a Euclidean distance of 344.623. The effect is measured on the FI-2010 benchmark with a history of 10 snapshots as input, for a price-movement task with three classes (up, stationary, down). Four models are compared: logistic regression, a multilayer perceptron, an LSTM and DeepLOB, which combines convolutional layers with an LSTM. They are trained on the same data and tested with and without perturbation on the ask side, the bid side or both.
+
+More complex models perform better in normal conditions but lose more under perturbation, so performance and fragility rise together. The authors conclude that current deep models for LOB tasks are not reliable because the data representation is not robust, and set out four desiderata for representations: smoothness, efficiency, stochasticity and validity.
+
+**Data and code.** FI-2010, the public limit order book benchmark. No code is linked.
+
+**Key metrics.** F-score without perturbation against both-sides perturbation, in percent: MLP 55.6 to 39.3 (a fall of 16.3 points), LSTM 68.2 to 54.8 (13.4) and DeepLOB 75.1 to 22.2 (52.9). Accuracy for DeepLOB falls from 77.2 to 47.5. The logistic regression is much less affected. No trading returns are reported.
+
+By Yufei Wu, Mahmoud Mahfouz, Daniele Magazzeni, Manuela Veloso.
+
+`Watch the presentation <https://slideslive.com/38960190/how-robust-are-limit-order-book-representations-under-data-perturbation>`__.
+
+A Parametric Contextual Online Learning Theory of Brokerage
+-----------------------------------------------------------
+
+An ICML 2025 talk by François Bachoc, Tom Cesari and Roberto Colomboni on a theoretical problem in market microstructure. A broker sits between two traders who each hold a secret valuation of an asset they want to trade. At every step the broker sees contextual data about the asset and market conditions and proposes a price. The traders then reveal only whether they accept it. A trade happens when the price falls between the two valuations, and the broker's reward is the gain from trade, the difference between the buyer's and the seller's valuation, if the trade happens and zero otherwise. The broker's goal is to learn from this feedback and to keep regret low against the best price it could have chosen.
+
+The slides walk through the setup with a two-character example, a seller valuing at $0.2 and a buyer at $0.7, whose deal at $0.6 shows the gain split. The results table gives regret rates by feedback type. With two-bit feedback (only the acceptance of each trader) under a bounded-density assumption the regret scales as the square root of L d T, where T is the horizon and L and d are the problem's parameters. With full feedback (valuations revealed) the rate falls to L d log T. In the general case, without the bounded-density assumption, the table gives T for both feedback types, that is, linear regret.
+
+This is a theory result in a stylised model with no market data, backtest or code. It matters for trading mainly as a bound on how fast a market maker or broker can learn good prices from accept-or-reject feedback.
+
+**Key metrics.** Regret bounds only: the square root of L d T for two-bit feedback and L d log T for full feedback under bounded density, and linear in T in the general case.
+
+By François Bachoc, Tom Cesari, Roberto Colomboni.
+
+`Watch the presentation <https://slideslive.com/39040359/a-parametric-contextual-online-learning-theory-of-brokerage>`__.
+
+LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data
+-------------------------------------------------------------------------------------------
+
+An ICML 2025 talk on LOB-Bench, a benchmark for generative models of limit order book (LOB) data, by authors from the University of Oxford and J.P. Morgan AI Research. LOB data is high-dimensional, has causal structure and long-range dependencies, so generated message streams need their own evaluation paradigm.
+
+The contributions are a distributional evaluation of generative LOB models using interpretable scoring functions, a model-agnostic framework, a quantification of error divergence during sampling and a framework that transfers to other data with similar characteristics (financial transactions, payment data, forex offers, crypto). Each scoring function projects the data to one dimension, such as spread, ask volume, order imbalance, inter-arrival time or cancellation levels, and the benchmark compares the distribution of real data against generated data with L1 and Wasserstein distances. It evaluates unconditional distributions, conditional distributions (for example ask volume given the spread), and how the divergence grows with the prediction horizon over generated messages. It also compares impact response functions, the price impact of market orders, limit orders and cancellations over event lags, against the real data.
+
+The talk benchmarks autoregressive token-based models (LOB S5, RWKV4, RWKV6), a conditional GAN from Coletta et al. and a parametric statistical baseline, on GOOG and INTC. LOB S5 dominates on all aggregate metrics for both stocks. The conclusion quotes Goodhart's law as a warning that a measure that becomes a target stops being a good one, and says LLM-style autoregressive models appear promising for LOB data while long sequence generation and error accumulation remain open.
+
+**Data and code.** Real LOB data for the tickers GOOG and INTC, with the source not named on the slides. No code link is shown.
+
+**Key metrics.** The talk reports distribution-distance scores (L1 and Wasserstein) and impact response curves in figures rather than trading metrics, so there are no returns or Sharpe ratios.
+
+By Peer Nagy, Sascha Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Anisoara Calinescu, Jakob Foerster.
+
+`Watch the presentation <https://slideslive.com/39041706/lobbench-benchmarking-generative-ai-for-finance-an-application-to-limit-order-book-data>`__.

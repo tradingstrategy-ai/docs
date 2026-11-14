@@ -1104,6 +1104,18 @@
     "short_description": null
   },
   {
+    "title": "Evology: an Empirically-Calibrated Market Ecology Agent-Based Model for Trading Strategy Search",
+    "authors": "Aymeric Vié",
+    "publication_year": 2022,
+    "download_page": "https://slideslive.com/38985923/evology-an-empiricallycalibrated-market-ecology-agentbased-model-for-trading-strategy-search",
+    "source_file": "algorithmic-trading.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "evology-an-empirically-calibrated-market-ecology-agent-based-model-for-trading-strategy-search.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "Work-in-progress 2022 talk presenting Evology, an Oxford agent-based market model with noise traders, value investors and trend followers whose wealth shares evolve, intended as a policy laboratory and as a simulation environment for training machine-learning trading and investment strategies."
+  },
+  {
     "title": "From Market Observation to Testable Hypothesis: Starting Steps of a Trading Model",
     "authors": "Pedma",
     "publication_year": null,
@@ -3720,6 +3732,18 @@
     "short_description": null
   },
   {
+    "title": "Uncertainty-Aware Lookahead Factor Models for Improved Quantitative Investing",
+    "authors": "Lakshay Chauhan, John Alberg, Zachary Lipton",
+    "publication_year": 2020,
+    "download_page": "https://slideslive.com/38927599/uncertaintyaware-lookahead-factor-models-for-improved-quantitative-investing",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "uncertainty-aware-lookahead-factor-models-for-improved-quantitative-investing.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2020 talk on value factors built from deep-network forecasts of next-year fundamentals (EBIT/EV) with a learned variance used to down-weight uncertain forecasts. In a monthly top-50 simulation on US stocks from 2000 to 2019, the best model reaches a 17.7% annual return and Sharpe 0.84 against 14.0% and 0.52 for current fundamentals and 6.05% and 0.32 for the S&P 500."
+  },
+  {
     "title": "Value Premium: Where Does It Really Come From?",
     "authors": null,
     "publication_year": null,
@@ -4488,6 +4512,18 @@
     "short_description": "The opening post of a series applying López de Prado's Advances in Financial Machine Learning to real data, giving a hands-on, code-first tour of time, tick, volume and dollar bars on Bitcoin (XBT) trade data with per-bar VWAP. Its memorable illustration: tick bars reveal a ~10% flash rally and flash crash hidden in the time-bar representation, motivating activity-based sampling. Archived as an original summary card."
   },
   {
+    "title": "Foundation Models for Automated Trading",
+    "authors": "Marc Khoury (HRT AI Labs)",
+    "publication_year": 2025,
+    "download_page": "https://slideslive.com/39043823/foundation-models-for-automated-trading",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "foundation-models-for-automated-trading.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2025 invited talk from HRT AI Labs: an introduction to limit order books and adverse selection, then the design choices for a trading foundation model (transformers versus recurrent models, one-minute event bins, prediction horizon, neural scaling on 20+ years and about 100 TB of market data) with no reported results."
+  },
+  {
     "title": "From Man vs. Machine to Man Machine: The Art and AI of Stock Analyses",
     "authors": null,
     "publication_year": null,
@@ -4522,6 +4558,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "Intra-day Stock Price Prediction as a Measure of Market Efficiency",
+    "authors": "Tucker Balch, David Byrd",
+    "publication_year": 2019,
+    "download_page": "https://slideslive.com/38917611/intraday-stock-price-prediction-as-a-measure-of-market-efficiency",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "intra-day-stock-price-prediction-as-a-measure-of-market-efficiency.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2019 AI for Finance workshop talk from J.P. Morgan AI Research and Georgia Tech. A neural network and a logistic regression predict each stock's direction at the close from minute returns up to 15:30, and a long-short strategy earns steady returns in 2003 to mid-2008 that vanish afterwards, which the speakers link to rising high-frequency trading volume."
   },
   {
     "title": "Machine learning portfolio allocation",
@@ -4752,6 +4800,18 @@
     "short_description": "A code-first QuantBeckman newsletter piece on converting raw high-frequency trade streams into model-ready bars, framed as fixed-time sampling (a security camera every minute) versus event-based sampling (a motion-activated camera). It works through time, tick, volume, VWAP and dollar bars with Python, arguing the sampling choice is the first and most profound obstacle in a quant pipeline. Paid newsletter post; archived as an original summary card."
   },
   {
+    "title": "Towards AI Innovation in the Financial Domain",
+    "authors": "Manuela M. Veloso",
+    "publication_year": 2019,
+    "download_page": "https://slideslive.com/38917185/towards-ai-innovation-in-the-financial-domain",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "towards-ai-innovation-in-the-financial-domain.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2019 AI for Finance workshop overview by the head of J.P. Morgan AI Research: four research themes and projects including Mondrian (time series as images, 95% accuracy on historical S&P 500 data), a market-maker simulation, trader eye-gaze tracking and payments analytics."
+  },
+  {
     "title": "Training a Transformer Model to Predict 1-Minute Stock Prices, Part 2",
     "authors": null,
     "publication_year": null,
@@ -4836,6 +4896,18 @@
     "short_description": "ICML 2026 workshop talk slides from XTX Markets' research director on applying large-scale deep learning to fully automated trading: price forecasting framed as multivariate time-series prediction on order book data, a bet on shared cross-stock structure learned by a single foundation model, and private GPU and custom-silicon infrastructure. It lists the obstacles (noise, non-stationarity, no way to curate data) and argues that generic or LLM-derived time-series foundation models miss microstructure dynamics, short evaluations are unreliable, and continual learning is a necessity because the firm's own trading shifts the data distribution."
   },
   {
+    "title": "A Parametric Contextual Online Learning Theory of Brokerage",
+    "authors": "François Bachoc, Tom Cesari, Roberto Colomboni",
+    "publication_year": 2025,
+    "download_page": "https://slideslive.com/39040359/a-parametric-contextual-online-learning-theory-of-brokerage",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "a-parametric-contextual-online-learning-theory-of-brokerage.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2025 theory talk on a broker that sets prices between two traders with private valuations using contextual information and only accept-or-reject feedback. Regret grows as the square root of the horizon with two-bit feedback and logarithmically with full feedback under bounded density, and linearly without it."
+  },
+  {
     "title": "A Subordinated Stochastic Process Model with Finite Variance for Speculative Prices",
     "authors": "Peter K. Clark",
     "publication_year": 1973,
@@ -4846,6 +4918,18 @@
     "downloaded_at": "2026-07-23",
     "download_failure_reason": null,
     "short_description": "Clark's founding 'business time' paper: he models speculative prices as a subordinated stochastic process — Brownian motion evaluated in a random operational time directed by trading volume (a lognormal subordinator) — so that random variation in activity per calendar interval produces fat-tailed but finite-variance returns, an alternative to Mandelbrot's infinite-variance stable family. Bayes and Kolmogorov-Smirnov tests on cotton futures favour the finite-variance subordinated model. It is the theoretical root of the volume clock (Easley-López de Prado-O'Hara) and transaction clock (Ané-Geman) behind tick/volume/dollar bars."
+  },
+  {
+    "title": "Adversarial Attacks on Machine Learning Systems for High-Frequency Trading",
+    "authors": "Micah Goldblum, Avi Schwarzschild, Ankit Patel, Tom Goldstein",
+    "publication_year": 2021,
+    "download_page": "https://slideslive.com/38960186/adversarial-attacks-on-machine-learning-systems-for-highfrequency-trading",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "adversarial-attacks-on-machine-learning-systems-for-high-frequency-trading.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "2021 talk on adversarial attacks against deep learning price predictors that read the limit order book. An attacker places a small number of optimised orders, found through a differentiable trading simulation, to push the model to a wrong prediction, and universal perturbations transfer without access to the model."
   },
   {
     "title": "Are Tick, Volume and Dollar Bars Truly Information-Driven? Validating Bar Sampling on SIP Data",
@@ -4932,6 +5016,18 @@
     "short_description": "Extends the Avellaneda-Stoikov market-making model to non-martingale mid-price processes under linear and exponential utility functions. Introduces an inventory-risk-aversion parameter that allows the market-maker to place directional bets on price trends while controlling inventory risk, deriving closed-form optimal bid-ask quotes via Hamilton-Jacobi-Bellman equations. Monte Carlo simulations show the market-maker can increase PNL by over 15% versus the martingale benchmark or double her Sharpe ratio by tuning the risk-reward trade-off."
   },
   {
+    "title": "How Robust are Limit Order Book Representations under Data Perturbation?",
+    "authors": "Yufei Wu, Mahmoud Mahfouz, Daniele Magazzeni, Manuela Veloso",
+    "publication_year": 2021,
+    "download_page": "https://slideslive.com/38960190/how-robust-are-limit-order-book-representations-under-data-perturbation",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "how-robust-are-limit-order-book-representations-under-data-perturbation.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2021 workshop talk from J.P. Morgan AI Research showing that tiny inserted orders push existing levels out of the ten-level order book window and sharply degrade price-forecasting models on FI-2010; the most accurate model, DeepLOB, loses 52.9 F-score points (75.1 to 22.2)."
+  },
+  {
     "title": "Information-Based Models in Market Microstructure",
     "authors": "Simone Menaldo",
     "publication_year": null,
@@ -4966,6 +5062,18 @@
     "downloaded_at": null,
     "download_failure_reason": "requires_browser",
     "short_description": null
+  },
+  {
+    "title": "LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data",
+    "authors": "Peer Nagy, Sascha Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Anisoara Calinescu, Jakob Foerster",
+    "publication_year": 2025,
+    "download_page": "https://slideslive.com/39041706/lobbench-benchmarking-generative-ai-for-finance-an-application-to-limit-order-book-data",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "lob-bench-benchmarking-generative-ai-for-finance-an-application-to-limit-order-book-data.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2025 talk introducing LOB-Bench, which scores generative limit order book models with interpretable statistics such as spread and order imbalance, in unconditional, conditional and horizon-dependent comparisons plus impact response functions; on GOOG and INTC the LOB S5 model beats RWKV, a conditional GAN and a parametric baseline."
   },
   {
     "title": "Limit Order Book Structure",
@@ -11208,6 +11316,18 @@
     "short_description": null
   },
   {
+    "title": "Trend-Following Trading Strategies and Financial Market Stability",
+    "authors": "Michael Wellman, Erik Brinkman, Uday Rajan",
+    "publication_year": 2019,
+    "download_page": "https://slideslive.com/38917472/trendfollowing-trading-strategies-and-financial-market-stability",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "trend-following-trading-strategies-and-financial-market-stability.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2019 AI for Finance workshop talk using empirical game-theoretic analysis of an agent-based market. Trend followers are present in equilibrium and reduce mispricing during trends, but crowd out price information, lower market efficiency (50.7% to 40.6%) and amplify shocks in a way the authors compare to flash crashes."
+  },
+  {
     "title": "Two Centuries of Trend Following",
     "authors": null,
     "publication_year": null,
@@ -11566,6 +11686,18 @@
     "downloaded_at": "2026-07-01",
     "download_failure_reason": null,
     "short_description": "A cost-aware backtest of short-volatility strategies designed to harvest the variance risk premium (option-implied volatility exceeding subsequently realized volatility) in short-dated index options, run on one-minute options-chain and index data from September 2024 to June 2026 across expiry-day, stop-loss, and lot-scaling dimensions. The main finding is that positive gross expectancy is erased by transaction costs and taxes at a single lot and only becomes net-positive once positions are scaled up to amortize fixed per-trade costs; the strategies also respond poorly to stop-losses. The author concludes the edge is real but the barriers to capturing it are equally real for retail traders."
+  },
+  {
+    "title": "HyperIV: Real-time Implied Volatility Smoothing",
+    "authors": "Wenqi Chen, Yongxin Yang, Chao Shu, Timothy Hospedales",
+    "publication_year": 2025,
+    "download_page": "https://slideslive.com/39042677/hyperiv-realtime-implied-volatility-smoothing",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "hyperiv-real-time-implied-volatility-smoothing.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2025 talk on a hypernetwork that builds an arbitrage-free implied volatility surface from nine liquid option quotes in about 2 ms, with a 337-parameter surface network, compared with SSVI, a VAE and a graph neural operator on six equity and volatility indices at one-minute and daily frequency."
   },
   {
     "title": "Interactive Brokers IV Downloader",

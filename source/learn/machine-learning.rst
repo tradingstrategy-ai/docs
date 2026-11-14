@@ -1641,3 +1641,50 @@ The talk gives no model details, backtest results or performance numbers. The sl
 By Atlas Wang, XTX Markets.
 
 `Watch the presentation <https://slideslive.com/39084408/xtx-markets-algorithmic-trading-with-largescale-deep-learning>`__.
+
+Intra-day Stock Price Prediction as a Measure of Market Efficiency
+------------------------------------------------------------------
+
+A talk at the ICML 2019 AI for Finance workshop by Tucker Balch (J.P. Morgan AI Research and Georgia Tech) and David Byrd (Georgia Tech), titled "Intraday Equity Price Prediction" on the slides. It asks whether the prices of an equity from 9:30 to 15:30 can predict the direction of the day's close, and uses the answer as a probe of market efficiency.
+
+The talk starts from an earlier pattern-matching predictor, ThinkAI, which found the best matching historical day and was deployed on the TDAmeritrade retail platform from 2008 to 2014. Its up/down accuracy was 50% to 55%, profits did not overcome commissions and its efficacy tailed off after 2010. The authors reframe the task as classification with deep learning. The input is a 1x360 vector of minute cumulative market-relative returns, fed through fully connected layers of 180 and 20 units to a softmax that outputs buy or ignore. The data is NYSE TAQ from WRDS (second resolution for 2001 to 2014, millisecond for 2014 to 2018), aggregated into one-minute bars for the 500 highest dollar-volume stocks of the prior 12 months. Training runs in walk-forward cycles with separate training, validation and test windows.
+
+The trading rule classifies all 500 stocks at 15:30 with both a neural network and a logistic regression. Where the two agree, it goes long or short at 15:31, with 50% of capital long and 50% short in equal allocations, and exits at the close. A random classifier is the benchmark. On the slides' charts, both models earn steadily positive cumulative returns from 2003 to mid-2008, reaching roughly 1.0 on the chart axis (read off the plot, not stated in text). From mid-2008 to 2018 the return is flat to slightly negative. The "Why?" slide plots the model's cumulative return, which peaks around 2009 to 2010 and then decays, against the share of volume traded by high-frequency traders, which rises toward 0.5. The speakers' hypothesis is that high-frequency trading made the market more efficient, so that the weak form of the efficient market hypothesis now holds. As next steps they propose testing this in simulation by ramping up HFT volume and richer inputs (order book data, time series as images, CNNs and LSTMs).
+
+**Data and code.** NYSE TAQ from WRDS, a commercial dataset. The talk points to ABIDES, an open-source discrete-event simulator of equity markets with NASDAQ protocol and nanosecond resolution, at https://github.com/abides-sim. No code for the predictor is given.
+
+**Key metrics.** The slides show cumulative-return and daily-return charts only: no Sharpe ratio, drawdown, turnover or transaction costs. The only numbers are the 50% to 55% accuracy of the earlier ThinkAI product and the 500-stock universe.
+
+By Tucker Balch, David Byrd.
+
+`Watch the presentation <https://slideslive.com/38917611/intraday-stock-price-prediction-as-a-measure-of-market-efficiency>`__.
+
+Towards AI Innovation in the Financial Domain
+---------------------------------------------
+
+A keynote-style overview at the ICML 2019 AI for Finance workshop (14 June 2019) by Manuela M. Veloso, then Head of J.P. Morgan AI Research, on leave from Carnegie Mellon University. The deck is titled "AI Research @ JPMorgan Chase" and describes how the bank organises AI research and which problems it works on.
+
+The talk sets the scale of the firm (over 80% of Fortune 500 companies as clients, 47 million active digital customers, more than 100 markets, 253,000 employees including 50,000 technologists) and four research themes: agency ("closing the loop" by learning from experience), exposing the internals of AI and ML for explainability, real-time and secure multimodal data with cryptography, and lasting human-AI interaction. A table lists the projects: Mondrian, which processes time-series market data as images; eye-gaze tracking of traders; payments, with 2.5 billion wire transactions from 2016 to 2019 across 258 countries; simulation of multi-player adversarial markets; and secure multiparty computation.
+
+The trading-related content is brief. The simulation project builds an over-the-counter market with market-maker agents that learn optimal policies against investors. Mondrian renders time-series functions as images so that a deep network can classify them as buy or don't buy, and the slide states 95% accuracy on historical S&P 500 data without saying how the test set was chosen or what a trade would earn. Eye-gaze patterns of traders are used to explain activities and behaviour.
+
+The talk is an overview with no method details, code or data. The one performance claim, 95% accuracy for Mondrian, is a classification accuracy with no trading metrics behind it.
+
+By Manuela M. Veloso.
+
+`Watch the presentation <https://slideslive.com/38917185/towards-ai-innovation-in-the-financial-domain>`__.
+
+Foundation Models for Automated Trading
+---------------------------------------
+
+A 52-minute ICML 2025 invited talk by Marc Khoury of HRT AI Labs on what it takes to build a foundation model for trading. It starts from first principles for an audience of machine-learning researchers and moves to modelling choices.
+
+The first half explains how a limit order book works. An order is a set of instructions about your intent to trade, and the book is walked through bids and asks, the spread, the mid-price and a market maker's profit and loss. A chart of average US spreads in basis points from 1994 to 2014 (from Credit Suisse) shows them shrinking, and a lemon-market picture illustrates adverse selection: a market maker who quotes both sides loses when the people who trade against them know more.
+
+The second half is about modelling. Trading is cast as turning data into decisions with a supervised model, and the slides plot a smart-versus-fast Pareto frontier of predictive power against inference time. For architecture it contrasts transformers (good for long contexts and parallel on GPUs) with recurrent models (fast inference, poor on long contexts and not parallelisable, which state-space models partly fix), and says they also have different inductive biases. Events arrive irregularly, so the input design groups them into fixed time bins of one minute and embeds each bin, which speeds up training and inference. A one-hour prediction horizon is contrasted with shorter ones, with more capacity but lower signal to noise, more autocorrelation and factor exposure. The punchline of this section is that "all we've done is define (X, y)". The talk then asks whether this is really deep learning: the firm has 20 or more years of market data across equities, futures and crypto worldwide, on the order of 100 TB or a trillion tokens, so the work becomes research on architectures, training dynamics, hyperparameter transfer and inference time, with neural scaling laws as the guide. On the bar for models, it says you have to be superhuman to start. Finally it contrasts the supervised view with reinforcement learning, which has perfect simulators and infinite data in games but imperfect simulators and adversaries in robotics and markets.
+
+The slides contain no performance numbers, datasets or code.
+
+By Marc Khoury (HRT AI Labs).
+
+`Watch the presentation <https://slideslive.com/39043823/foundation-models-for-automated-trading>`__.
