@@ -1619,3 +1619,25 @@ Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion 
 By Giorgos Iacovides, Oliver Hannibal, Wuyang Zhou and Danilo Mandic.
 
 `Read the paper <https://arxiv.org/abs/2610.36083>`__
+
+XTX Markets: Algorithmic Trading with Large-Scale Deep Learning
+---------------------------------------------------------------
+
+A 41-minute talk by Atlas Wang, Research Director at XTX Markets, at the ICML 2026 workshop "Forecasting as a New Frontier of Intelligence" (6 July 2026). XTX is a London algorithmic trading firm founded in 2015 that runs fully automated, deep-learning-based price forecasts on over 50,000 instruments across equities, fixed income, currencies, commodities and crypto. It trades over $300 billion a day in 35 countries with about 250 employees and makes markets directly to clients. The talk explains why the firm thinks large-scale deep learning suits trading, why it is hard, and which research problems are still open.
+
+Wang frames quant research as learning y = f(x): mid-frequency quants mostly look for more inputs x, high-frequency quants for a stronger function f. Stock price prediction is presented as multivariate time-series forecasting on limit order book, trade and market data, framed as regression or classification, with models ranging from linear regression and XGBoost through LSTMs to transformers. The case for scale is data: about 100 billion quotes on NASDAQ alone from March 2024 to February 2025 across more than 3,300 listed stocks, and 0.71 billion quotes for NVIDIA in 2024. The firm's bet is that stocks share structure through common market factors, so a single foundation model could learn signals that generalise across time and across stocks, even zero-shot to new listings, while overfitting less. Latency is handled by proprietary custom hardware and compilers: private GPUs for training (including a new €1 billion data centre in Finland with H200s and B100s) and custom silicon for deployment.
+
+The difficulties are extreme noise, regime shifts, non-stationarity and data imbalance across stocks and periods. Unlike LLM training there is no good way to clean or curate the data, since no day's market is "cleaner" than another. Open problems listed are data embedding and sampling, model architecture, optimisation (called very important), neural scaling on very noisy data, and distributed training infrastructure.
+
+Four discussion points close the talk:
+
+- Time-series foundation models: time series has no universal structural prior like language or vision. Many LLM-derived time-series models exploit semantic shortcuts, while high-frequency predictive power lies in causal and temporal microstructure dynamics. XTX doubts a generic or text-aligned model transfers to microstructure prediction; an effective model has to encode domain-specific temporal and cross-asset structure.
+- Agentic AI for alpha research: public LLM priors fit proprietary trading knowledge poorly. The research pipeline is long and coupled, and reliable intermediate rewards are scarce without full backtests or simulation. Wang leaves open whether agents are ready.
+- Evaluation: performance over days or months is almost always statistically unreliable. Short backtests can look persistently profitable and then collapse under a regime shift or tail event, while longer windows add structural drift. The slide uses the public LLM trading contest Alpha Arena (October 2025) as an example of apparent day-to-day profitability.
+- Continual learning: no edge is permanent. Signal half-life has shrunk, by perhaps 100 times compared with five years ago by the speaker's guess. Algorithmic market makers now supply about 70-75% of liquidity, so at XTX's scale the firm's own quotes and trades shift the distribution its model learns from ("self-induced drift"). Continual learning is therefore a necessity, but prone to overreacting or catastrophic forgetting.
+
+The talk gives no model details, backtest results or performance numbers. The slides are image-only, 21 frames including step-by-step builds, and are marked "Private & Confidential" by XTX although the recording and slides are publicly posted by ICML on SlidesLive.
+
+By Atlas Wang, XTX Markets.
+
+`Watch the presentation <https://slideslive.com/39084408/xtx-markets-algorithmic-trading-with-largescale-deep-learning>`__.

@@ -4824,6 +4824,18 @@
     "short_description": null
   },
   {
+    "title": "XTX Markets: Algorithmic Trading with Large-Scale Deep Learning",
+    "authors": "Atlas Wang (XTX Markets)",
+    "publication_year": 2026,
+    "download_page": "https://slideslive.com/39084408/xtx-markets-algorithmic-trading-with-largescale-deep-learning",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-14",
+    "filename": "xtx-markets-algorithmic-trading-with-large-scale-deep-learning.pdf",
+    "downloaded_at": "2026-11-14",
+    "download_failure_reason": null,
+    "short_description": "ICML 2026 workshop talk slides from XTX Markets' research director on applying large-scale deep learning to fully automated trading: price forecasting framed as multivariate time-series prediction on order book data, a bet on shared cross-stock structure learned by a single foundation model, and private GPU and custom-silicon infrastructure. It lists the obstacles (noise, non-stationarity, no way to curate data) and argues that generic or LLM-derived time-series foundation models miss microstructure dynamics, short evaluations are unreliable, and continual learning is a necessity because the firm's own trading shifts the data distribution."
+  },
+  {
     "title": "A Subordinated Stochastic Process Model with Finite Variance for Speculative Prices",
     "authors": "Peter K. Clark",
     "publication_year": 1973,
