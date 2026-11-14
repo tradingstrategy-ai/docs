@@ -6962,14 +6962,14 @@
   {
     "title": "Trading Volume Alpha",
     "authors": "Ruslan Goyenko, Bryan T. Kelly, Tobias J. Moskowitz, Yinan Su, Chao Zhang",
-    "publication_year": 2024,
+    "publication_year": 2026,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802345",
     "source_file": "portfolio-construction.rst",
     "included_in_index_at": "2026-11-13",
     "filename": "trading-volume-alpha.pdf",
-    "downloaded_at": "2026-11-13",
+    "downloaded_at": "2026-11-14",
     "download_failure_reason": null,
-    "short_description": "Forecasts daily US stock dollar volume with OLS, feed-forward and LSTM networks on 175 technical, fundamental, calendar and earnings predictors, then plugs the forecast into a portfolio rule that trades off linear-in-participation-rate price impact against tracking error, fine-tuning the networks on that economic loss. Out of sample in 2021-2022, a $1 billion daily strategy goes from a 2.21 to a 4.53 Sharpe ratio versus a five-day moving average volume forecast, and factor portfolios gain 0.2% to 1% a year, so volume prediction is worth about as much as return prediction."
+    "short_description": "Forecasts daily US stock dollar volume with OLS, feed-forward and LSTM networks on 175 technical, fundamental, calendar and earnings predictors, and fine-tunes the networks on a portfolio loss that trades off linear-in-participation-rate price impact against tracking error, since the cost of volume forecast errors is asymmetric and grows with fund size. Out of sample in 2021-2022, a $1 billion daily strategy goes from a 2.21 to a 4.53 Sharpe ratio versus a five-day moving average volume forecast, and JKP factor portfolios at $10 billion gain 0.23 to 0.94 percentage points a year, so volume prediction can be worth as much as return prediction."
   },
   {
     "title": "Understanding Covariance Matrices for Systematic Portfolio Allocation",
