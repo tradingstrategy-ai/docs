@@ -11244,6 +11244,18 @@
     "short_description": null
   },
   {
+    "title": "Systematic Trend-Following with Adaptive Portfolio Construction: Enhancing Risk-Adjusted Alpha in Cryptocurrency Markets",
+    "authors": "Duc Bui, Thanh Nguyen",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2602.11708",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "systematic-trend-following-with-adaptive-portfolio-construction-enhancing-risk-adjusted-alpha-in-cryptocurrency-markets.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "AdaptiveTrend trades 6-hour momentum signals with ATR trailing stops on 150+ Binance perpetuals. Each month it re-selects assets by market cap and recent Sharpe, then allocates 70% long and 30% short. Out-of-sample over 2022 to 2024 it reports a Sharpe of 2.41 and a maximum drawdown of −12.7%. Profits come mostly from bull regimes, with near-flat results (−4.2% annualised) in bear markets."
+  },
+  {
     "title": "Testing Larry Williams' Volatility Expansion Strategy in Crypto",
     "authors": null,
     "publication_year": null,
