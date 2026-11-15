@@ -705,3 +705,20 @@ The comparison is against SSVI, a VAE and a graph neural operator (GNO) on SPX, 
 By Wenqi Chen, Yongxin Yang, Chao Shu, Timothy Hospedales.
 
 `Watch the presentation <https://slideslive.com/39042677/hyperiv-realtime-implied-volatility-smoothing>`__.
+
+Trends, Volatility, Correlations, and Critical Phenomena in Financial Markets
+----------------------------------------------------------------------------
+
+We forecast future volatilities and correlations of financial markets based on the current trends in these markets. This complements previous work that models future expected returns by a cubic polynomial of the current trend strength. Empirically, we observe that volatilities and correlations tend to increase day after day in times of strong up- or down-trends. This effect is particularly pronounced in down-trends. It can be accurately quantified by quadratic polynomials of today's trend strengths, which refine common mean-reversion models of volatilities and correlations.
+
+The paper extends Schmidhuber's earlier result that tomorrow's return is a cubic polynomial of today's trend strength (the trend's t-statistic). The linear term captures trend persistence and the cubic term captures trend reversion. Here the authors model the noise around that forecast. Tomorrow's squared return is regressed on today's EWMA variance plus a linear and a quadratic term in today's trend strength. The quadratic term is positive, so variance grows day after day while a strong trend lasts. The linear term is negative, so down-trends raise variance faster than up-trends. That is the leverage effect, and it turns out to be mostly an equity phenomenon that comes from trends of a few weeks. Only trends with horizons up to about three months help predict variance. A log-variance version of the model fits equally well and refines stochastic log-volatility models such as Hull-White and SABR.
+
+For correlations, the next-week correlation of two assets is regressed on today's correlation and the trend strengths of both assets. The significant term is the cross-product of the two trend strengths. When both assets trend strongly in the same direction, correlation runs about 0.1–0.2 above its long-term level. When they trend in opposite directions, it runs about the same amount below. Equities additionally show higher correlation when both trend down, which is the "everything falls together in a crisis" effect. Conditional skewness (−0.18) and kurtosis (5.4) do not depend on trend strength. However, mixing the trend-dependent variance over the fat-tailed distribution of trend strengths reproduces the observed power-law tails of returns. The authors close by linking the variance dynamics to their lattice-gas, near-critical-point model of markets.
+
+**Data and code.** 33 years (1991 to June 2023) of daily Bloomberg futures prices for 24 markets across equity indices, 10-year government bonds, currencies and commodities, with trend horizons of 2 to 1,024 days. An earlier version of the dataset is published on Mendeley Data (doi:10.17632/v73nzdt7rt.1). No code is published. Errors come from 100 bootstrap samples and out-of-sample R² from 16-fold cross validation.
+
+**Key metrics.** No trading strategy or returns are reported. These are the next-day variance model coefficients: d = 0.79 ± 0.05 on today's variance (variance mean-reverts with λ ≈ 0.17 per day), e = −0.06 ± 0.01 on the trend strength, and f = 0.09 ± 0.01 on the squared trend strength. The out-of-sample R² is 0.118, against 0.116 for the variance alone and 0.027 for trends alone. Equities have a much stronger asymmetry (e = −0.17, t = 10.9) than other asset classes (e ≈ −0.03). The trend-aware model's R² rises to 0.27 for 1-week variance and 0.38 for 3-month variance. In the correlation model, the coefficient on today's correlation is g = 0.58 ± 0.03 and the trend cross-term is o = 0.026 ± 0.006 (t = 4.1), with out-of-sample R² of 0.029.
+
+By Sara A. Safari and Christof Schmidhuber (Zurich University of Applied Sciences; University of Zurich), submitted to arXiv on 18 June 2026.
+
+`Read the paper <https://arxiv.org/abs/2606.20145>`__.

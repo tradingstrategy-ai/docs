@@ -11904,6 +11904,18 @@
     "short_description": null
   },
   {
+    "title": "Trends, Volatility, Correlations, and Critical Phenomena in Financial Markets",
+    "authors": "Sara A. Safari, Christof Schmidhuber",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2606.20145",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "trends-volatility-correlations-and-critical-phenomena-in-financial-markets.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Using 33 years of daily data on 24 futures markets, the authors regress next-day variance and next-week correlations on today's variance or correlation and polynomials of current trend strength (t-statistic). Variance rises during strong trends, especially down-trends (a leverage effect concentrated in equities), and correlations rise when two assets trend strongly in the same direction. The trend-aware models refine mean-reverting volatility and correlation models and are linked to a lattice-gas critical-point model of markets."
+  },
+  {
     "title": "Understanding Multivariate GARCH Models",
     "authors": "Simone Menaldo",
     "publication_year": null,
