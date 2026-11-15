@@ -11304,6 +11304,18 @@
     "short_description": "Derives exact identities showing that trend-following P&L is the difference between long-term and short-term realised variance. This gives a parabolic (or, when capped, V-shaped) convex payoff and positive skew on the trend timescale. A simple 180-day trend replicator on 20 futures tracks the SG CTA Index with over 80% correlation, and the index's convexity to the S&P 500 rises from R² 0.02 to 0.18 when measured at the right horizon. The paper also shows that trend hedges risk parity portfolios and is a cheaper hedge than a strangle portfolio with the same long-term variance exposure."
   },
   {
+    "title": "Technical Trading and Cryptocurrencies",
+    "authors": "Robert Hudson, Andrew Urquhart",
+    "publication_year": 2021,
+    "download_page": "https://link.springer.com/article/10.1007/s10479-019-03357-1",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "technical-trading-and-cryptocurrencies.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Tests 14,919 daily technical trading rules from five families (moving average, filter, support-resistance, RSI oscillator and channel breakout) on two Bitcoin price series, Litecoin, Ripple and Ethereum up to 2017, using stationary bootstrap p-values, multiple-testing corrections and break-even transaction costs. Every rule family is significantly profitable in-sample, with gains coming from buy signals, but the best in-sample Bitcoin rule loses money in the 2018 out-of-sample bear market while the other coins stay profitable."
+  },
+  {
     "title": "Testing Larry Williams' Volatility Expansion Strategy in Crypto",
     "authors": null,
     "publication_year": null,
