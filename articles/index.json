@@ -11376,6 +11376,18 @@
     "short_description": null
   },
   {
+    "title": "The Effectiveness of Technical Trading Rules in Cryptocurrency Markets",
+    "authors": "Shaen Corbet, Veysel Eraslan, Brian Lucey, Ahmet Sensoy",
+    "publication_year": 2019,
+    "download_page": "https://doi.org/10.1016/j.frl.2019.04.027",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "the-effectiveness-of-technical-trading-rules-in-cryptocurrency-markets.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Tests variable-length and fixed-length moving average crossover rules and trading range breakout rules on one-minute Bitfinex BTC/USD prices from 2014 to mid-2018, with Bonferroni-adjusted significance and no transaction costs. The variable-length moving average rule produces significant buy-minus-sell spreads in 43 of 48 tests, while fixed-length crossovers mostly fail and short-horizon breakouts tend to reverse."
+  },
+  {
     "title": "The Intraday Seasonality of Market Trends",
     "authors": "Concretum Research",
     "publication_year": 2026,
