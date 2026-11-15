@@ -6240,6 +6240,18 @@
     "short_description": null
   },
   {
+    "title": "Momentum in the Cryptocurrency Market: A Comprehensive Analysis under Realistic Assumptions",
+    "authors": "Chulwoo Han, Byeongguk Kang, Jehyeon Ryu",
+    "publication_year": 2023,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4675565",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "momentum-in-the-cryptocurrency-market-a-comprehensive-analysis-under-realistic-assumptions.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Tests time-series and cross-sectional momentum on liquid cryptocurrencies from 2013 to 2023 with daily mark-to-market, 2x leveraged long-short books, cross- and isolated-margin liquidation rules and realistic Binance transaction costs. Long-only time-series momentum on the market portfolio roughly doubles the market Sharpe ratio, to 1.51, by avoiding bear-market drawdowns, while short legs lose money and many cross-sectional portfolios are liquidated. Because returns are skewed and fat-tailed, mean returns overstate profitability, and log-return tests show much weaker evidence."
+  },
+  {
     "title": "Momentum trading in cryptocurrencies: short-term returns and diversification benefits",
     "authors": null,
     "publication_year": null,
