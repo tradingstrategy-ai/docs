@@ -464,3 +464,20 @@ When agents observe the current fundamental value, the market stabilises quickly
 By Michael Wellman, Erik Brinkman, Uday Rajan.
 
 `Watch the presentation <https://slideslive.com/38917472/trendfollowing-trading-strategies-and-financial-market-stability>`__.
+
+A Decade of Evidence of Trend Following Investing in Cryptocurrencies
+---------------------------------------------------------------------
+
+Cryptocurrency markets have many of the characteristics of 20th century commodities markets, making them an attractive candidate for trend following strategies. We present a decade of evidence from the infancy of bitcoin, showcasing the potential investor returns in cryptocurrency trend following, 255% walkforward annualised returns. We find that cryptocurrencies offer similar returns characteristics to commodities with similar risk-adjusted returns, and strong bear market diversification against traditional equities.
+
+The paper tests moving-average crossover rules on hourly BTCUSD spot prices from Bitstamp, from September 2011 to December 2019, and runs the same tests on the daily S&P 500 for comparison. It uses three trend filters: simple (SMA), exponential (EMA) and double exponential (DEMA) moving averages. A buy signal fires when the short average crosses above the long average, and a sell signal fires on the opposite cross. Short and long windows range from 1 to 1,000 hours for bitcoin and 1 to 50 days for the S&P 500. Each backtest starts with 10,000 USD and buys or sells the maximum volume on each signal. Window pairs are chosen to maximise the Sharpe ratio. The walk-forward test uses the best pair from year Y to trade year Y+1. Fees, spread, slippage and market impact are all assumed to be negligible. The best-performing short windows are generally above 200 hours. The authors find no profitable intraday trend-following strategies for BTCUSD spot. The conclusion says that simple moving averages of about 10 and 40 days work consistently, with yearly Sharpe ratios of about 0.5 to 1.5 and only one losing year. The results section is less upbeat. It reports variable walk-forward Sharpe ratios below 1 for the 2015 to 2018 training slices, some of them negative, and finds "no predictable and attractive Sharpe ratios" from one-year training windows.
+
+The paper does not measure skew or convexity. It also does not split strategy returns into up and down markets. The "bear market diversification" claim rests on the low correlation between bitcoin and US equities. The authors themselves note that the sample covers a long equity bull market with no prolonged recession. The 255% annualised figure compounds parameters fitted in-sample each year, with zero costs, over bitcoin's early growth period. It is best read as an upper bound. The extracted text is complete. The paper is only 8 pages long.
+
+**Data and code.** BTCUSD spot trades from Bitstamp, downloaded from bitcoincharts and resampled to hourly bars from 13 September 2011 to 12 December 2019. That gives 72,299 rows, of which 5,835 were missing and forward-filled (the mean date of the missing rows is March 2012). Daily S&P 500 OHLC data comes from Yahoo! Finance for the same period. Code is published at https://github.com/Globe-Research/bittrends.
+
+**Key metrics.** The combined walk-forward SMA return over 2011 to 2019 is 73,700%, or 255% annualised. These are the best full-period, in-sample results (Table 1): SMA with 141/781-hour windows has a Sharpe of 1.09 and a Sortino of 0.80. EMA with 721/951 hours has a Sharpe of 1.35 and a Sortino of 12.98. DEMA with 791/981 hours has a Sharpe of 1.32 and a Sortino of 2.21. For EMA and DEMA, the optimal short and long window sizes have a correlation above 0.65. Bitcoin and S&P 500 daily returns show a small negative correlation that is not statistically significant. A bottom-up estimate puts maximum strategy capacity at $323m. The paper does not report maximum drawdown, win rate or skew.
+
+By Evans Rozario, Samuel Holt, James West, Shaun Ng.
+
+`Read the paper <https://arxiv.org/abs/2009.12155>`__

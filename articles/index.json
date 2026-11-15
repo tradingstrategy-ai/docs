@@ -10968,6 +10968,18 @@
     "short_description": null
   },
   {
+    "title": "A Decade of Evidence of Trend Following Investing in Cryptocurrencies",
+    "authors": "Evans Rozario, Samuel Holt, James West, Shaun Ng",
+    "publication_year": 2020,
+    "download_page": "https://arxiv.org/abs/2009.12155",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "a-decade-of-evidence-of-trend-following-investing-in-cryptocurrencies.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Backtests SMA, EMA and DEMA crossover trend rules on hourly Bitstamp BTCUSD spot from 2011 to 2019, with Sharpe-optimised windows refitted each year in a walk-forward test and costs assumed negligible. The walk-forward SMA strategy compounds to 73,700% (255% annualised), and the best full-period Sharpe ratios are 1.09 to 1.35. Bitcoin shows no significant correlation with the S&P 500 and no intraday trend rule is profitable."
+  },
+  {
     "title": "A Filtering Method that Increased Crypto Trend-Following Win Rate to 60%",
     "authors": "Pedma",
     "publication_year": null,
