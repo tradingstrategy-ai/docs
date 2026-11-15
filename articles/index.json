@@ -11053,15 +11053,15 @@
   },
   {
     "title": "Catching Crypto Trends: A Tactical Approach for Bitcoin and Altcoins",
-    "authors": null,
-    "publication_year": null,
+    "authors": "Carlo Zarattini, Alberto Pagani, Andrea Barbon",
+    "publication_year": 2025,
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5209907",
     "source_file": "trend-following.rst",
     "included_in_index_at": "2026-06-05",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "ssrn_paywall",
-    "short_description": null
+    "filename": "catching-crypto-trends-a-tactical-approach-for-bitcoin-and-altcoins.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Long-only Donchian breakout trend-following with midpoint trailing stops and 25% volatility targeting, averaged across nine lookbacks from 5 to 360 days, on survivorship-free CoinMarketCap data from 2015 to March 2025. On Bitcoin the ensemble earns a gross Sharpe of 1.58 with a 19% maximum drawdown against more than 80% for holding, and a monthly-rotated 20-coin version earns a Sharpe of 1.57, 11% maximum drawdown and 10.8% alpha versus Bitcoin net of 10 bps costs. Win rates of 40-49% with gain-to-loss ratios of 3.7-6.7 give a positively skewed trade profile."
   },
   {
     "title": "Combining Trend Signals with Volatility Targeting for 1,127% Return at 67% Less Risk",
