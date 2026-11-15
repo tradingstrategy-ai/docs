@@ -11196,6 +11196,18 @@
     "short_description": null
   },
   {
+    "title": "Making Fat Right Tails Fatter with Trend Following... Most of the Time",
+    "authors": "Capital Fund Management (CFM)",
+    "publication_year": 2018,
+    "download_page": "https://www.cfm.com/making-fat-right-tails-fatter-with-trend-following-most-of-the-time/",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "making-fat-right-tails-fatter-with-trend-following-most-of-the-time.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "A CFM technical note arguing that the mechanical convexity of trend following is the same thing as positive skew. That skew is zero for daily returns and peaks at return horizons near the trend timescale. Using the February 2018 sell-off, it shows that trend cannot protect against sudden jumps, only against drawn-out moves. It recommends a stable core allocation, because positive skew punishes investors who try to time trend."
+  },
+  {
     "title": "Market Open Trend Strategy: Long Only Nasdaq",
     "authors": null,
     "publication_year": null,
