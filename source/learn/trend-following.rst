@@ -498,3 +498,20 @@ The paper motivates its design by crypto's positive skew in bull markets and hea
 By Duc Bui, Thanh Nguyen.
 
 `Read the paper <https://arxiv.org/abs/2602.11708>`__
+
+The Convexity of Trend Following
+--------------------------------
+
+Much has been made recently of crisis alpha or crisis risk offset. And, in particular, of using trend following as a hedge of future downside moves in, mostly, equity markets. We demonstrate that trend following is mechanically convex relative to the underlying upon which one is trending, but, that the overall convexity offered by CTAs is mitigated by implementation steps that improve risk and execution cost adjusted returns. Trend Following should primarily be viewed as a highly statistically significant strategy, while the existence of convexity, albeit weak, should be considered a bonus feature to an investment in Trend Following.
+
+This CFM technical note from February 2018 is subtitled "Protecting your assets but perhaps not as much as you would like!". It is the non-technical companion to the CFM academic paper "Tail protection for long investors: Trend convexity at work". Start with a toy trend follower whose position equals the price change since a start date. Its total P&L is exactly half the squared cumulative move minus half the sum of squared daily moves. In other words, trend P&L is long-timescale variance minus short-timescale variance. With an EMA trend signal the same identity holds after smoothing. An EMA of P&L over τ/2 is proportional to τ times the squared EMA of returns, minus an EMA of squared daily returns. Plot smoothed trend P&L against the smoothed return of the underlying and you get a U-shaped parabola. That parabola appears even for a random walk with zero Sharpe, so the convexity is mechanical and does not depend on trends being profitable. The note also states that the strategy is positively skewed on the trend timescale. It loses more often than it gains, but its gains are larger than its losses. The protection only covers moves that persist over a period comparable to the trend timescale.
+
+The second half shows how standard CTA practice weakens convexity to any single market, such as equities. Diversifying across many instruments blurs the parabola against the S&P 500, though a lower envelope of the original parabola remains. Some equity convexity also survives because bonds tend to rally when equities crash. Capping positions, taken to the extreme of trading only the sign of the trend, flattens the U into a V and trims fat tails. Smoothing the signal with a second EMA to save costs delays trades and blunts the response to sudden moves. Each of these steps improves risk-adjusted or cost-adjusted returns at the expense of convexity. For the SG CTA Index the note uses a trend timescale of about 6 months, taken from an earlier replication. A naive plot of monthly CTA returns against monthly S&P 500 returns shows almost no convexity. Measured at the right timescales, the convexity is clear. The note also compares trend with buying index puts, which it calls a systematically negative strategy. Its conclusion is to hold trend following for its robustness and treat the protection as a bonus.
+
+**Data and code.** Simulated random walks, a synthetic 9-instrument universe of independent random walks, about 35 years of S&P 500 E-mini futures (Bloomberg ESA) and first generic Wheat futures (Bloomberg W 1), and monthly SG CTA Index returns. P&L in the charts is normalised to 1% daily volatility. No code is provided.
+
+**Key metrics.** For SG CTA Index returns against the S&P 500, the parabolic fit has R² = 0.02 using raw monthly returns. It rises to R² = 0.18 with the EMA method at the best-fitting trend timescale of about 6 months. The earlier CFM trend replication of the SG CTA Index reached about 85% correlation. The SG CTA Index was up 13.1% in 2008. The note gives expected Sharpe ratios of 0.3 to 0.4 for equities. It reports no strategy returns, Sharpe ratios or drawdowns of its own.
+
+By Capital Fund Management (CFM).
+
+`Read the paper <https://www.cfm.com/wp-content/uploads/2022/12/266-2018-The-Convexity-of-trend-following.pdf>`__

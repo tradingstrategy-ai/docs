@@ -11304,6 +11304,18 @@
     "short_description": null
   },
   {
+    "title": "The Convexity of Trend Following",
+    "authors": "Capital Fund Management (CFM)",
+    "publication_year": 2018,
+    "download_page": "https://www.cfm.com/wp-content/uploads/2022/12/266-2018-The-Convexity-of-trend-following.pdf",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "the-convexity-of-trend-following.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "A CFM technical note showing that trend P&L equals long-timescale variance minus short-timescale variance. This makes trend mechanically convex, with a U-shaped payoff even on a random walk. Diversification, position capping and signal smoothing improve Sharpe but weaken convexity to equities. The SG CTA Index shows convexity to the S&P 500 only at the right timescale (R² of 0.18 against 0.02 for raw monthly returns)."
+  },
+  {
     "title": "The EWMAC Crypto Strategy: Continuous Trend Signals for Better Position Sizing",
     "authors": "Pedma",
     "publication_year": null,
