@@ -3048,6 +3048,18 @@
     "short_description": "Rescaled-range (Hurst) plus wavelet analysis of long memory and cyclical persistence across Bitcoin, Ethereum and Ripple. Reports long memory and cyclical persistence/anti-persistence across Bitcoin's full history but not for Ethereum or Ripple, a caution against assuming BTC-fitted scale structure transfers to altcoins, directly relevant to a cross-sectional perp universe and the case for channel-clustering models."
   },
   {
+    "title": "Hedging with Bitcoin Futures: The Effect of Liquidation Loss Aversion and Aggressive Trading",
+    "authors": "Carol Alexander, Jun Deng, Bin Zou",
+    "publication_year": 2021,
+    "download_page": "https://arxiv.org/abs/2101.01261",
+    "source_file": "cryptocurrency.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "hedging-with-bitcoin-futures-the-effect-of-liquidation-loss-aversion-and-aggressive-trading.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Derives a semi-closed-form hedge ratio for a short BTC perpetual futures hedge that minimises portfolio variance plus a loss-aversion penalty on the probability of exchange liquidation, using extreme value theory for the heavy right tail of perpetual returns. Tested on 1-minute data for Coinbase spot and seven inverse and USDT perpetuals on five exchanges (July 2020-May 2021), the optimal hedge removes over 95% of variance with ample collateral, keeps liquidation probability at or below about 3% and leverage at 8X or less, and inverse perpetuals beat the more speculative USDT perpetuals at longer horizons."
+  },
+  {
     "title": "How Speculative Money Flows into Crypto",
     "authors": "Mark Aron Szulyovszky",
     "publication_year": 2025,
