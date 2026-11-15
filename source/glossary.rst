@@ -2045,6 +2045,8 @@ and algorithmic trading.
         with the goal of profiting from the reversion to the mean. Mean reversion strategies can be applied to a variety of assets,
         such as stocks, bonds, commodities, and currencies, and are commonly used in quantitative finance and :term:`algorithmic trading`.
 
+        Vaults using this strategy: `mean reversion <https://tradingstrategy.ai/vaults/strategies/mean-reversion>`__, `grid trading <https://tradingstrategy.ai/vaults/strategies/grid-trading>`__ and `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__ vaults. See also :term:`martingale strategy`, :term:`grid trading` and :term:`averaging down`.
+
         See also
 
         - :term:`Technical indicator`
@@ -2059,6 +2061,8 @@ and algorithmic trading.
 
         - :term:`Algorithmic trading`
 
+        - :term:`Short volatility`
+
     Swing trading
     
         Swing trading is a type of short-term trading strategy that aims to take advantage of intermediate-term price movements, typically holding positions for several days to a few weeks. The goal of swing trading is to identify trends and ride them for a profit, rather than trying to predict the market's direction in the long-term. Swing traders use technical analysis to identify potential trades, focusing on price patterns, support and resistance levels, and momentum indicators. They typically trade more frequently than long-term investors and hold positions for a shorter period, but with the potential for larger profits or losses. Swing trading can be used in a variety of markets, including stocks, bonds, commodities, and currencies.
@@ -2070,6 +2074,8 @@ and algorithmic trading.
         For example, an investor who wants to invest $10,000 in a stock may choose to invest $1,000 every month for 10 months, rather than investing the full $10,000 in one lump sum. 
 
         This approach can help to reduce the impact of short-term market fluctuations and allow the investor to accumulate more shares when prices are low and fewer shares when prices are high.
+
+        Not to be confused with a "DCA bot" that adds to a losing position; see :term:`averaging down`.
 
     Longing
 
@@ -2225,6 +2231,8 @@ and algorithmic trading.
 
         One potential disadvantage of trend-following is that it can be subject to false signals and whipsaws, particularly in volatile or choppy markets. In addition, trend-following can be slow to react to sudden market shifts or changes in investor sentiment, which can result in missed opportunities or losses. As with any trading strategy, it's important to carefully consider the risks and benefits of trend-following and to use it in combination with other tools and techniques to manage risk and optimize performance.
 
+        Vaults using this strategy: `trend-following vaults <https://tradingstrategy.ai/vaults/strategies/trend-following>`__. See also :term:`anti-martingale strategy`.
+
         See also
 
         - :term:`Trend`
@@ -2232,6 +2240,8 @@ and algorithmic trading.
         - :term:`Technical indicator`
 
         - :term:`Trading strategy`
+
+        - :term:`Long volatility`
 
     Momentum
 
@@ -4199,6 +4209,8 @@ and algorithmic trading.
 
         One advantage of statistical arbitrage is that it can be used in a variety of market conditions, including both up and down markets. However, the strategy can be complex and may require significant computational resources and expertise to implement effectively. In addition, as with any investment strategy, there is always the risk of losses due to unforeseen market events or unexpected changes in correlations between securities.
 
+        Vaults using this strategy: `statistical arbitrage <https://tradingstrategy.ai/vaults/strategies/statistical-arbitrage>`__ and `pair trading <https://tradingstrategy.ai/vaults/strategies/pair-trading>`__ vaults.
+
         See also
 
         - :term:`High-frequency trading`
@@ -4212,6 +4224,8 @@ and algorithmic trading.
         - :term:`Longing`
 
         - :term:`Shorting`
+
+        - :term:`Short volatility`
 
     Market order
 
@@ -4869,6 +4883,8 @@ and algorithmic trading.
 
         To minimize the risk of ruin, traders should employ prudent risk management techniques, such as setting appropriate position sizes, using stop-loss orders, and maintaining a diversified portfolio. Additionally, monitoring the performance of a trading strategy and making adjustments as needed can help reduce the likelihood of ruin.
 
+        See also :term:`martingale strategy` and :term:`Kelly criterion`.
+
         See also:
 
         - :term:`Quantitative finance`
@@ -4944,6 +4960,8 @@ and algorithmic trading.
         risk exposure and take advantage of potential profit
         opportunities.
 
+        Vaults using options: `options vaults <https://tradingstrategy.ai/vaults/strategies/options>`__.
+
         See also:
 
         - :term:`Quantitative finance`
@@ -4951,6 +4969,12 @@ and algorithmic trading.
         - :term:`Trading strategy`
 
         - :term:`Futures`
+
+        - :term:`Short volatility`
+
+        - :term:`Long volatility`
+
+        - :term:`Selling volatility`
 
     Grid search
 
@@ -5525,6 +5549,8 @@ and algorithmic trading.
         - *Value-at-Risk (VaR)*: VaR is a risk management metric that estimates the maximum potential loss within a specified confidence level over a given time horizon. Position sizing based on VaR involves allocating capital in a way that limits the potential loss to a predetermined threshold.
 
         - *Optimization techniques*: Mathematical optimization methods can be used to find the optimal position size that maximizes a specific objective function, such as :term:`risk-adjusted returns <risk-adjusted return>` or portfolio diversification.
+
+        See also :term:`Kelly criterion`, :term:`martingale strategy` and :term:`anti-martingale strategy`.
 
         See also
 
@@ -6152,6 +6178,10 @@ and algorithmic trading.
         - :term:`Delta neutral`
 
         - :term:`DVOL`
+
+        - :term:`Short volatility`
+
+        - :term:`Long volatility`
 
     Compound Annual Growth Rate (CAGR)
 
@@ -7106,6 +7136,8 @@ and algorithmic trading.
 
         - `Perpetual futures explained by Patrick McKenzie <https://www.bitsaboutmoney.com/archive/perpetual-futures-explained/>`__
 
+        Vaults using this strategy: `carry trade <https://tradingstrategy.ai/vaults/strategies/carry-trade>`__ and `funding rate arbitrage <https://tradingstrategy.ai/vaults/strategies/funding-rate-arbitrage>`__ vaults.
+
         See also
 
         - :term:`Perpetual future`
@@ -7129,6 +7161,8 @@ and algorithmic trading.
         - :term:`Ethena`
 
         - :term:`Ether`
+
+        - :term:`Short volatility`
 
     Carry trade
 
@@ -7445,6 +7479,8 @@ and algorithmic trading.
         Market makers often do not want to take inventory risk and try to stay :term:`delta neutral` when
         providing liquidity.
 
+        Vaults using this strategy: `market making <https://tradingstrategy.ai/vaults/strategies/market-making>`__, `orderbook market making <https://tradingstrategy.ai/vaults/strategies/market-making-clob>`__ and `AMM market making <https://tradingstrategy.ai/vaults/strategies/market-making-amm>`__ vaults.
+
         See also:
 
         - :term:`AMM` (Automated market making)
@@ -7464,6 +7500,8 @@ and algorithmic trading.
         - :term:`Decentralised exchange`
 
         - :term:`Liquidity`
+
+        - :term:`Short volatility`
 
     Credit market
 
@@ -7584,6 +7622,8 @@ and algorithmic trading.
 
         - :term:`Uniswap`
 
+        - :term:`Short volatility`
+
     Delta hedged
 
         Delta hedging is a technique used in :term:`quantitative finance` to manage risk associated with options trading.
@@ -7598,6 +7638,8 @@ and algorithmic trading.
         - *Opening a short perpetual futures position with a delta of 0.8*: This creates an offsetting position that profits if the price goes down, counteracting potential losses in your long position.
 
         If the price moves too fast, delta hedging might not be enough, but you need be :term:`gamma hedged`.
+
+        Vaults using this approach: `delta neutral vaults <https://tradingstrategy.ai/vaults/strategies/delta-neutral>`__.
 
         See
 
@@ -7618,6 +7660,8 @@ and algorithmic trading.
         - :term:`Demeter`
 
         - :term:`Ethena`
+
+        - :term:`Long volatility`
 
     Gamma hedged
 
@@ -7655,6 +7699,10 @@ and algorithmic trading.
         - :term:`Lending protocol`
 
         - :term:`Demeter`
+
+        - :term:`Short volatility`
+
+        - :term:`Long volatility`
 
     Perpetual future
 
@@ -8840,9 +8888,11 @@ and algorithmic trading.
 
     Selling volatility
 
-        In :term:`quantitative finance`, "selling volatility" (also known as being "short volatility" or "short vol" or "selling vol") refers to implementing :term:`trading strategies <trading strategy>` that profit when market :term:`volatility` decreases, remains stable, or when realized (actual) volatility turns out lower than the implied volatility priced into financial instruments. This is often done by selling options contracts, such as calls, puts, straddles, or strangles, where the seller collects a premium upfront. If the underlying asset's price doesn't move significantly (i.e., low volatility), the options may expire worthless, allowing the seller to retain the premium as profit. However, this approach carries substantial risk, as a sudden spike in volatility can lead to large losses—often described as "picking up pennies in front of a steamroller." Other methods include shorting volatility futures (e.g., VIX futures), exchange-traded products like inverse volatility ETFs, or variance swaps. These strategies are common in hedge funds and proprietary trading desks, where quantitative models forecast volatility to identify overpriced implied vol for selling.
+        In :term:`quantitative finance`, "selling volatility" (also known as being :term:`short volatility`, "short vol" or "selling vol") refers to implementing :term:`trading strategies <trading strategy>` that profit when market :term:`volatility` decreases, remains stable, or when realized (actual) volatility turns out lower than the implied volatility priced into financial instruments. This is often done by selling options contracts, such as calls, puts, straddles, or strangles, where the seller collects a premium upfront. If the underlying asset's price doesn't move significantly (i.e., low volatility), the options may expire worthless, allowing the seller to retain the premium as profit. However, this approach carries substantial risk, as a sudden spike in volatility can lead to large losses—often described as "picking up pennies in front of a steamroller." Other methods include shorting volatility futures (e.g., VIX futures), exchange-traded products like inverse volatility ETFs, or variance swaps. These strategies are common in hedge funds and proprietary trading desks, where quantitative models forecast volatility to identify overpriced implied vol for selling.
 
         In cryptocurrency trading, the concept is similar but adapted to the crypto ecosystem's unique characteristics, such as 24/7 markets and inherently high baseline volatility driven by factors like low :term:`liquidity`, speculation, and sentiment swings. Selling volatility typically involves selling options on cryptocurrencies like Bitcoin or Ethereum through centralized exchanges (e.g., Deribit, OKX) or decentralized platforms. Traders might sell call or put options to collect premiums, betting that crypto prices won't fluctuate wildly beyond the strike prices before expiration. In perpetual futures markets, :term:`delta-neutral <Delta hedged>` strategies can also mimic short vol positions by hedging :term:`spot market` exposure while profiting from funding rates during low-vol periods. The appeal in crypto stems from elevated implied volatilities (often 50-100% annualized for major coins), but the risks are amplified due to potential flash crashes or extreme price swings, making it a high-stakes quant strategy for experienced traders.
+
+        Vaults using this strategy: `options <https://tradingstrategy.ai/vaults/strategies/options>`__ and `risk premium harvesting <https://tradingstrategy.ai/vaults/strategies/risk-premium-harvest>`__ vaults.
 
         See also
 
@@ -8859,6 +8909,500 @@ and algorithmic trading.
         - :term:`Delta hedged`
 
         - :term:`Spot market`
+
+        - :term:`Short volatility`
+
+        - :term:`Long volatility`
+
+        - :term:`Options`
+
+    Short volatility
+
+        A short volatility ("short vol") position or :term:`trading strategy` makes money when markets stay calm and loses money when prices move sharply. Its profit falls as :term:`volatility` rises: it earns when realised volatility turns out lower than the volatility priced into options, or simply when prices stay within a range, and it loses when large moves happen. The most direct way to be short volatility is to sell :term:`options`; the mechanics are described under :term:`selling volatility`. Many strategies that never touch an option have the same exposure, so the term describes how a strategy behaves, not only which instruments it trades. The opposite exposure is :term:`long volatility`.
+
+        The profile resembles selling insurance: frequent small gains from collecting a premium, and rare large losses when the insured event happens. In option terms the position has negative gamma, also called being short convexity: the payoff is concave, so losses accelerate as the move grows. Returns are negatively skewed with a fat left tail, the losses tend to arrive together with market crashes and liquidity crises, and a long calm track record can show a high :term:`Sharpe` ratio and a small :term:`maximum drawdown` until the first large move. Traders describe this as "picking up pennies in front of a steamroller". Short volatility is not the same as being short the asset: a :term:`delta neutral` position can be long or short volatility depending on its gamma.
+
+        Short volatility strategies are paid because many investors want protection against large moves and pay for it. Option implied volatility has historically been higher on average than the volatility that followed. Sellers of options and variance swaps collect this gap, called the volatility or variance risk premium, in exchange for crash risk (Carr and Wu 2009; Bakshi and Kapadia 2003).
+
+        **Typical short volatility strategies**
+
+        - *Option selling*: covered calls, cash-secured puts, short straddles and strangles, iron condors and option-writing vaults. See :term:`selling volatility`.
+
+        - *Short volatility products*: short VIX futures, short variance swaps and inverse volatility exchange-traded products. The XIV inverse VIX note lost most of its value on 5 February 2018, when the VIX more than doubled in a day, and was then terminated.
+
+        - *Market making and liquidity provision*: a :term:`market making` strategy or an AMM :term:`liquidity provider` sells immediacy and loses to informed traders on large moves. An AMM position is short gamma, which shows up as :term:`impermanent loss` and :term:`loss-versus-rebalancing <Loss-Versus-Rebalancing (LVR)>`; trading fees are the premium (Milionis et al. 2022). Market-making vaults such as a :term:`Hyperliquid Provider Vault` have the same profile.
+
+        - *Mean reversion and statistical arbitrage*: :term:`mean reversion` and :term:`statistical arbitrage` strategies buy dips and sell rallies, earning while prices oscillate and losing when a move keeps going instead of reverting.
+
+        - *Carry and basis trades*: currency carry trades, :term:`cash and carry` and :term:`funding rate` harvesting earn a steady yield in calm markets and lose in sudden unwinds, funding reversals or liquidations of the hedge leg. Brunnermeier, Nagel and Pedersen (2008) show that currency carry returns carry crash risk.
+
+        - *Merger and risk arbitrage*: Mitchell and Pulvino (2001) find that merger arbitrage returns resemble those of selling uncovered index put options: small gains in flat and rising markets, large losses in sharp declines.
+
+        - *Leveraged yield*: :term:`recursive looping` and other leveraged lending positions earn a spread while prices are stable and face :term:`liquidation` in sharp moves.
+
+        - *Cross-sectional momentum after panics*: Daniel and Moskowitz (2016) show that after bear markets the short side of a momentum portfolio behaves like a short call option, which makes the strategy short volatility in rebounds. See :term:`momentum crash`.
+
+        Hidden short volatility can be spotted by checking whether a strategy's returns are negatively skewed, whether its worst periods coincide with spikes in implied volatility indices such as VIX or :term:`DVOL`, and whether its returns plotted against the market's form a concave shape. Tail measures such as :term:`expected shortfall` and :term:`risk of ruin` describe the risk better than volatility or the Sharpe ratio.
+
+        Vault strategy categories with this profile include `options <https://tradingstrategy.ai/vaults/strategies/options>`__, `risk premium harvesting <https://tradingstrategy.ai/vaults/strategies/risk-premium-harvest>`__, `market making <https://tradingstrategy.ai/vaults/strategies/market-making>`__, `liquidity provider <https://tradingstrategy.ai/vaults/strategies/liquidity-provider>`__, `mean reversion <https://tradingstrategy.ai/vaults/strategies/mean-reversion>`__, `statistical arbitrage <https://tradingstrategy.ai/vaults/strategies/statistical-arbitrage>`__, `carry trade <https://tradingstrategy.ai/vaults/strategies/carry-trade>`__, `funding rate arbitrage <https://tradingstrategy.ai/vaults/strategies/funding-rate-arbitrage>`__, `lending looping <https://tradingstrategy.ai/vaults/strategies/lending-looping>`__, `grid trading <https://tradingstrategy.ai/vaults/strategies/grid-trading>`__ and `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__ vaults. See also :term:`martingale strategy` and :term:`grid trading`.
+
+        Literature and references:
+
+        - Peter Carr and Liuren Wu, `Variance Risk Premiums <https://doi.org/10.1093/rfs/hhn038>`__, *Review of Financial Studies* 22(3), 2009.
+
+        - Gurdip Bakshi and Nikunj Kapadia, `Delta-Hedged Gains and the Negative Market Volatility Risk Premium <https://doi.org/10.1093/rfs/hhg002>`__, *Review of Financial Studies* 16(2), 2003.
+
+        - Joshua D. Coval and Tyler Shumway, `Expected Option Returns <https://doi.org/10.1111/0022-1082.00352>`__, *Journal of Finance* 56(3), 2001.
+
+        - Roni Israelov and Lars N. Nielsen, `Covered Calls Uncovered <https://doi.org/10.2469/faj.v71.n6.1>`__, *Financial Analysts Journal* 71(6), 2015.
+
+        - Mark Mitchell and Todd Pulvino, `Characteristics of Risk and Return in Risk Arbitrage <https://doi.org/10.1111/0022-1082.00401>`__, *Journal of Finance* 56(6), 2001.
+
+        - Markus K. Brunnermeier, Stefan Nagel and Lasse H. Pedersen, `Carry Trades and Currency Crashes <https://doi.org/10.1086/593088>`__, *NBER Macroeconomics Annual* 23, 2008.
+
+        - Kent Daniel and Tobias J. Moskowitz, `Momentum Crashes <https://doi.org/10.1016/j.jfineco.2015.12.002>`__, *Journal of Financial Economics*, 2016.
+
+        - Jason Milionis, Ciamac C. Moallemi, Tim Roughgarden and Anthony Lee Zhang, `Automated Market Making and Loss-Versus-Rebalancing <https://arxiv.org/abs/2208.06046>`__, 2022.
+
+        - Nassim Nicholas Taleb, *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley, 1997.
+
+        See also
+
+        - :term:`Long volatility`
+
+        - :term:`Selling volatility`
+
+        - :term:`Volatility`
+
+        - :term:`Options`
+
+        - :term:`DVOL`
+
+        - :term:`Gamma hedged`
+
+        - :term:`Delta neutral`
+
+        - :term:`Market making`
+
+        - :term:`Liquidity provision`
+
+        - :term:`Impermanent loss`
+
+        - :term:`Mean reversion`
+
+        - :term:`Cash and carry`
+
+        - :term:`Funding rate`
+
+        - :term:`Momentum crash`
+
+        - :term:`Expected shortfall`
+
+        - :term:`Drawdown`
+
+        - :term:`Negative convexity`
+
+    Long volatility
+
+        A long volatility ("long vol") position or :term:`trading strategy` gains when prices move sharply or :term:`volatility` rises, and tends to lose a little in calm markets. It takes the other side of :term:`short volatility`: it buys the insurance that short volatility strategies sell. The most direct way to be long volatility is to buy :term:`options`, for example puts or straddles; many strategies that never trade options have the same exposure.
+
+        The profile is convex, with positive gamma: small, steady losses while nothing happens, often called premium bleed or negative carry, and large gains during crashes, squeezes and other extreme moves. Returns are positively skewed. Because sellers of protection earn a risk premium on average, being long volatility on its own usually has a low or negative expected return (Carr and Wu 2009). Its value is the payoff during crises, when most other assets and short volatility strategies lose, so it is used to hedge portfolios and to cut their :term:`drawdowns <drawdown>`.
+
+        **Typical long volatility strategies**
+
+        - *Option buying*: long puts and calls, straddles and strangles, and tail-risk hedging programmes that buy far out-of-the-money puts.
+
+        - *Delta-hedged long options (gamma scalping)*: holding options and trading the underlying to stay :term:`delta hedged`. The position earns when realised volatility exceeds the implied volatility paid for the options. See :term:`gamma hedged`.
+
+        - *Long volatility products*: long VIX futures or calls, long variance swaps and, in crypto, long :term:`DVOL` futures.
+
+        - *Trend-following*: :term:`trend-following` and time-series momentum strategies behave like long volatility. Fung and Hsieh (2001) show that trend-follower returns resemble those of lookback straddles. Moskowitz, Ooi and Pedersen (2012) find that time-series momentum earns its best returns in extreme up and down markets, a pattern they call the "smile". Hurst, Ooi and Pedersen (2017) find that trend-following performed well during most of the largest drawdowns of a 60/40 portfolio over more than a century, often called "crisis alpha". Unlike options, trend-following has to see a move develop before it profits, so it protects better against prolonged sell-offs than against one-day crashes, and it loses in choppy, range-bound markets.
+
+        - *Breakout strategies*: entering when price breaks out of a range, which pays off when ranges give way to large moves and loses on false breakouts.
+
+        Two related ideas are often confused with long volatility. Cross-sectional :term:`momentum` is not reliably long volatility, because it can crash in rebounds after panics; see :term:`momentum crash`. Volatility targeting, as in :term:`volatility-based position sizing`, cuts exposure when volatility rises (Moreira and Muir 2017); it changes position size but does not by itself make a strategy profit from large moves.
+
+        Pairing long and short volatility strategies is a common way to balance a portfolio: the short volatility leg earns in calm periods and the long volatility leg pays off in crises.
+
+        Vaults using related strategies: `trend-following <https://tradingstrategy.ai/vaults/strategies/trend-following>`__ and `options <https://tradingstrategy.ai/vaults/strategies/options>`__ vaults. See also :term:`anti-martingale strategy`.
+
+        Literature and references:
+
+        - William Fung and David A. Hsieh, `The Risk in Hedge Fund Strategies: Theory and Evidence from Trend Followers <https://doi.org/10.1093/rfs/14.2.313>`__, *Review of Financial Studies* 14(2), 2001.
+
+        - Tobias J. Moskowitz, Yao Hua Ooi and Lasse Heje Pedersen, `Time Series Momentum <https://doi.org/10.1016/j.jfineco.2011.11.003>`__, *Journal of Financial Economics* 104(2), 2012.
+
+        - Brian Hurst, Yao Hua Ooi and Lasse Heje Pedersen, `A Century of Evidence on Trend-Following Investing <https://doi.org/10.3905/jpm.2017.44.1.015>`__, *Journal of Portfolio Management* 44(1), 2017.
+
+        - Peter Carr and Liuren Wu, `Variance Risk Premiums <https://doi.org/10.1093/rfs/hhn038>`__, *Review of Financial Studies* 22(3), 2009.
+
+        - Alan Moreira and Tyler Muir, `Volatility-Managed Portfolios <https://doi.org/10.1111/jofi.12513>`__, *Journal of Finance* 72(4), 2017.
+
+        - Nassim Nicholas Taleb, *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley, 1997.
+
+        See also
+
+        - :term:`Short volatility`
+
+        - :term:`Volatility`
+
+        - :term:`Options`
+
+        - :term:`DVOL`
+
+        - :term:`Gamma hedged`
+
+        - :term:`Delta hedged`
+
+        - :term:`Trend-following`
+
+        - :term:`Momentum`
+
+        - :term:`Momentum crash`
+
+        - :term:`Drawdown`
+
+        - :term:`Volatility-Based Position Sizing`
+
+        - :term:`Positive convexity`
+
+    Positive convexity
+
+        A position or :term:`trading strategy` has positive convexity when its profit grows faster than the market move that causes it. Plotted against the price of the underlying asset, its value bends upwards: gains speed up as the market moves in its favour, and losses slow down as the market moves against it. Mathematically, the second derivative of value with respect to price (or yield) is positive. The opposite is :term:`negative convexity`.
+
+        The term comes from two places in finance:
+
+        - *Options*: a bought option has positive gamma, the rate at which its delta changes as the underlying moves. A long call becomes more like the underlying as the price rises and less like it as the price falls, so it keeps most of the upside and caps the downside at the premium paid. See :term:`options` and :term:`gamma hedged`.
+
+        - *Bonds*: an ordinary fixed-rate bond gains more when yields fall than it loses when yields rise by the same amount. Bond analysts measure this with convexity, the second-order term after duration.
+
+        Positive convexity benefits from large moves in either direction. By Jensen's inequality, a convex payoff is worth more on average than the payoff of the average move, and the gap grows with :term:`volatility`. This is why positive convexity and :term:`long volatility` describe the same exposure. The benefit is not free. Option buyers pay a premium and lose it through time decay, and bonds with more convexity offer lower yields, because the market prices convexity in. The typical cost is a small, steady loss in calm markets, and the typical return distribution is positively skewed: many small losses and a few large gains.
+
+        **Positive convexity in trading strategies**
+
+        In strategy and :term:`vault` descriptions, "positive convexity" or "+convexity" usually means that the strategy aims to capture large market moves in either direction, without necessarily trading options. The common way to do this is :term:`trend-following`: the strategy goes long in sustained rises and short in sustained declines, so its profit grows with the size of the trend. Fung and Hsieh (2001) show that trend-follower returns resemble those of lookback straddles. Dao, Nguyen, Deremble, Lempérière, Bouchaud and Potters (2016) show that the profit of a trend-following strategy equals the difference between long-term and short-term realised variance, which makes it convex in the trend-filter time scale. Man Group (2022) compares trend-following with rolling straddles on the S&P 500 and finds that straddles are more convex over one month, while trend is more convex over three months and costs less.
+
+        Strategy-based convexity differs from option convexity in three ways:
+
+        - It depends on the price path. A trend-follower profits from a move that builds over its look-back window, not from a sudden jump. A one-day crash can hit it before it has turned short.
+
+        - It shows only at the strategy's own time scale. A six-month trend system can look convex on quarterly returns and linear on daily ones.
+
+        - It loses in choppy, range-bound markets, where it keeps entering and exiting on false signals. This is its version of option premium.
+
+        Other ways to build convex exposure are :term:`stop losses <stop loss>` and :term:`trailing stop losses <trailing stop loss>`, which cut losing trades and keep winning ones, breakout entries and :term:`anti-martingale <anti-martingale strategy>` sizing such as pyramiding, which adds to positions only while they are working.
+
+        **How to check a convexity claim**
+
+        Plot the strategy's returns against the market's returns over the same periods. A convex strategy shows a smile: its best results come in the largest up and down markets (Moskowitz, Ooi and Pedersen 2012). Treynor and Mazuy (1966) test this by adding a squared market-return term to a regression of fund returns on market returns: a positive coefficient means a convex profile. Henriksson and Merton (1981) use an option-like regression with separate up-market and down-market betas. Check the result at several return horizons, and check positive skew and the strategy's results during past crashes. Many small wins and a few large losses point to :term:`negative convexity` instead, whatever the strategy is called.
+
+        Vaults using related strategies: `trend-following <https://tradingstrategy.ai/vaults/strategies/trend-following>`__ and `options <https://tradingstrategy.ai/vaults/strategies/options>`__ vaults.
+
+        Literature and references:
+
+        - William Fung and David A. Hsieh, `The Risk in Hedge Fund Strategies: Theory and Evidence from Trend Followers <https://doi.org/10.1093/rfs/14.2.313>`__, *Review of Financial Studies* 14(2), 2001.
+
+        - Tung-Lam Dao, Trung-Tu Nguyen, Cyril Deremble, Yves Lempérière, Jean-Philippe Bouchaud and Marc Potters, `Tail Protection for Long Investors: Trend Convexity at Work <https://arxiv.org/abs/1607.02410>`__, *Journal of Investment Strategies*, 2016.
+
+        - Man Group, `Creating Portfolio Convexity: Trend Versus Options <https://www.man.com/insights/creating-portfolio-convexity>`__, 2022.
+
+        - Tobias J. Moskowitz, Yao Hua Ooi and Lasse Heje Pedersen, `Time Series Momentum <https://doi.org/10.1016/j.jfineco.2011.11.003>`__, *Journal of Financial Economics* 104(2), 2012.
+
+        - Jack L. Treynor and Kay K. Mazuy, Can Mutual Funds Outguess the Market?, *Harvard Business Review* 44(4), 1966.
+
+        - Roy D. Henriksson and Robert C. Merton, `On Market Timing and Investment Performance. II. Statistical Procedures for Evaluating Forecasting Skills <https://doi.org/10.1086/296144>`__, *Journal of Business* 54(4), 1981.
+
+        - Frank J. Fabozzi, *Bond Markets, Analysis, and Strategies*, Pearson (convexity of bond prices).
+
+        - Nassim Nicholas Taleb, *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley, 1997.
+
+        - Nassim Nicholas Taleb, *Antifragile: Things That Gain from Disorder*, Random House, 2012.
+
+        See also
+
+        - :term:`Negative convexity`
+
+        - :term:`Long volatility`
+
+        - :term:`Trend-following`
+
+        - :term:`Anti-martingale strategy`
+
+        - :term:`Options`
+
+        - :term:`Gamma hedged`
+
+        - :term:`Volatility`
+
+        - :term:`Stop loss`
+
+    Negative convexity
+
+        A position or :term:`trading strategy` has negative convexity when its value bends downwards as the market moves: gains slow down or stop as the market moves in its favour, and losses speed up as it moves against it. The second derivative of value with respect to price (or yield) is negative, so the payoff is concave. It is the opposite of :term:`positive convexity` and describes the same exposure as :term:`short volatility`.
+
+        The two textbook examples are:
+
+        - *Sold options*: a sold option has negative gamma. The seller's gain is capped at the premium received, while the loss grows with the size of the move. See :term:`selling volatility`.
+
+        - *Callable bonds and mortgage-backed securities*: when interest rates fall, borrowers refinance and repay early, so the price rises less than an ordinary bond's would; when rates rise, repayments slow and the security behaves like a longer bond just as its price falls. Hanson (2014) shows that investors hedging this mortgage convexity buy and sell government bonds in the direction of the rate move, which amplifies yield moves.
+
+        Investors take negative convexity because they are paid for it. The seller of an option collects a premium, a callable bond pays a higher yield than a non-callable one, and a market maker earns a spread. The result is frequent small gains and rare large losses, a negatively skewed return distribution, and a track record that can look smooth until the first large move. By Jensen's inequality, a concave payoff loses value as :term:`volatility` rises, so the position also loses when the market prices in more risk.
+
+        **Negative convexity in trading strategies and DeFi**
+
+        - *AMM liquidity provision*: the value of a constant-product :term:`liquidity provider` position grows with the square root of the price ratio, a concave function. The loss against holding is :term:`impermanent loss`, and a :term:`CLMM` position is more concave inside its range. Fees are the premium (Milionis et al. 2022).
+
+        - *Option-selling vaults*: covered calls, cash-secured puts and other option-writing strategies.
+
+        - *Market making*, :term:`grid trading`, :term:`mean reversion` and :term:`martingale <martingale strategy>` strategies, which add to positions as the price moves against them.
+
+        - *Leveraged yield and carry*: :term:`recursive looping`, :term:`cash and carry` and :term:`funding rate` harvesting, which earn steadily and face forced unwinds or :term:`liquidation` in sharp moves.
+
+        Dealers and hedgers who are short convexity and :term:`delta hedge <delta hedged>` have to buy as prices rise and sell as they fall. When many hold the same exposure, their hedging adds to the move.
+
+        Negative convexity is found by the same checks as positive convexity: a frown instead of a smile when strategy returns are plotted against market returns, a negative coefficient on the squared market-return term in a Treynor and Mazuy (1966) regression, negative skew, and losses that coincide with spikes in implied volatility. Tail measures such as :term:`expected shortfall` and :term:`risk of ruin` describe the risk better than the :term:`Sharpe` ratio.
+
+        Vault strategy categories with this profile include `options <https://tradingstrategy.ai/vaults/strategies/options>`__, `liquidity provider <https://tradingstrategy.ai/vaults/strategies/liquidity-provider>`__, `market making <https://tradingstrategy.ai/vaults/strategies/market-making>`__, `grid trading <https://tradingstrategy.ai/vaults/strategies/grid-trading>`__, `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__ and `lending looping <https://tradingstrategy.ai/vaults/strategies/lending-looping>`__ vaults.
+
+        Literature and references:
+
+        - Samuel G. Hanson, `Mortgage Convexity <https://doi.org/10.1016/j.jfineco.2014.05.002>`__, *Journal of Financial Economics* 113(2), 2014.
+
+        - Jason Milionis, Ciamac C. Moallemi, Tim Roughgarden and Anthony Lee Zhang, `Automated Market Making and Loss-Versus-Rebalancing <https://arxiv.org/abs/2208.06046>`__, 2022.
+
+        - Peter Carr and Liuren Wu, `Variance Risk Premiums <https://doi.org/10.1093/rfs/hhn038>`__, *Review of Financial Studies* 22(3), 2009.
+
+        - Frank J. Fabozzi, *Bond Markets, Analysis, and Strategies*, Pearson (negative convexity of callable bonds and mortgage-backed securities).
+
+        - Nassim Nicholas Taleb, *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley, 1997.
+
+        See also
+
+        - :term:`Positive convexity`
+
+        - :term:`Short volatility`
+
+        - :term:`Selling volatility`
+
+        - :term:`Liquidity provider`
+
+        - :term:`Impermanent loss`
+
+        - :term:`Market making`
+
+        - :term:`Martingale strategy`
+
+        - :term:`Grid trading`
+
+        - :term:`Gamma hedged`
+
+        - :term:`Expected shortfall`
+
+    Martingale strategy
+
+        A martingale strategy increases the size of a position after each loss, so that a single win recovers all earlier losses plus a small profit. The name comes from an 18th-century betting system: double the stake after every lost coin flip, and the first win leaves you one unit ahead. In trading, "martingale" or "martingale-like" describes any :term:`position sizing` rule that adds to a losing position in growing amounts, usually inside a :term:`mean reversion` strategy that expects the price to bounce back.
+
+        A typical trading version places a ladder of buy orders below the current price, each larger than the one before (for example 1.5 to 2 times), and a :term:`take profit` slightly above the average entry price. Each new fill lowers the average entry, so a smaller rebound closes the whole position in profit. Crypto bots, :term:`grid trading` systems and some market-making :term:`vaults <vault>` use this pattern. :term:`Averaging down` is the same idea without the growing size.
+
+        **Why it looks good and why it fails**
+
+        Most price moves partially reverse, so most ladders close in profit. The result is a very high win rate, a smooth :term:`equity curve` and a high :term:`Sharpe` ratio, until a move keeps going. Position size grows geometrically: with doubling, after n losses the total committed is 2ⁿ − 1 units and the next order is 2ⁿ units. A trader who starts with 1% of capital has committed 63% after six losing steps and cannot place the seventh order of 64%. At that point the strategy holds its largest position at its worst price, and with :term:`leverage` it faces :term:`liquidation`. One such event can erase years of small gains.
+
+        The mathematics is unforgiving. In a fair game, no staking system changes the expected profit when capital and time are finite; this follows from Doob's optional stopping theorem. A martingale only reshapes the distribution: many small wins, a rare ruinous loss, and a :term:`risk of ruin` that approaches certainty the longer the strategy runs. Arbitrage pricing theory excludes doubling strategies for the same reason, since with unlimited credit they would be a money machine (Harrison and Kreps 1979). A martingale-like strategy can be profitable only if the underlying signal has a real edge, and then the sizing rule adds tail risk on top of that edge instead of creating it.
+
+        The profile is hidden :term:`short volatility`: steady income in calm, range-bound markets and large losses in strong trends and crashes. :term:`Backtests <backtest>` flatter it, because a short history may contain no move large enough to exhaust the ladder. Goetzmann, Ingersoll, Spiegel and Welch (2007) show that doubling-type strategies can inflate the Sharpe ratio and other performance measures without skill. Brown and Steenbeek (2001) show that Nick Leeson's trading, which brought down Barings Bank in 1995, followed a doubling strategy. Signs to check are a win rate close to 100%, a :term:`Maximum Adverse Excursion (MAE)` that grows with position size, and the distance to liquidation at the deepest ladder level. See :term:`Kelly criterion` for sizing that shrinks after losses and :term:`anti-martingale strategy` for the opposite approach.
+
+        Vaults using this approach: `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__, `grid trading <https://tradingstrategy.ai/vaults/strategies/grid-trading>`__ and `mean reversion <https://tradingstrategy.ai/vaults/strategies/mean-reversion>`__ vaults.
+
+        Literature and references:
+
+        - J. L. Doob, *Stochastic Processes*, Wiley, 1953.
+
+        - Lester E. Dubins and Leonard J. Savage, *How to Gamble If You Must: Inequalities for Stochastic Processes*, McGraw-Hill, 1965.
+
+        - J. Michael Harrison and David M. Kreps, `Martingales and Arbitrage in Multiperiod Securities Markets <https://doi.org/10.1016/0022-0531(79)90043-7>`__, *Journal of Economic Theory* 20(3), 1979.
+
+        - Stephen J. Brown and Onno W. Steenbeek, `Doubling: Nick Leeson's Trading Strategy <https://doi.org/10.1016/S0927-538X(01)00004-X>`__, *Pacific-Basin Finance Journal* 9(2), 2001.
+
+        - William Goetzmann, Jonathan Ingersoll, Matthew Spiegel and Ivo Welch, `Portfolio Performance Manipulation and Manipulation-proof Performance Measures <https://doi.org/10.1093/rfs/hhm025>`__, *Review of Financial Studies* 20(5), 2007.
+
+        See also
+
+        - :term:`Anti-martingale strategy`
+
+        - :term:`Averaging down`
+
+        - :term:`Grid trading`
+
+        - :term:`Kelly criterion`
+
+        - :term:`Mean reversion`
+
+        - :term:`Short volatility`
+
+        - :term:`Position sizing`
+
+        - :term:`Risk of ruin`
+
+        - :term:`Maximum Adverse Excursion (MAE)`
+
+        - :term:`Maximum drawdown`
+
+        - :term:`Liquidation`
+
+        - :term:`Stop loss`
+
+    Anti-martingale strategy
+
+        An anti-martingale strategy, also called a reverse martingale, increases position size after gains and reduces it after losses. It is the opposite of a :term:`martingale strategy`. In trading the best-known form is pyramiding: adding to a winning position as the price moves in its favour, often while moving a :term:`trailing stop loss` up behind it.
+
+        Because exposure grows only when the trade is working, losses are taken on small positions and gains on large ones. The result is many small losses, a low win rate and occasional large wins: a convex profile, similar to :term:`long volatility`. It fits :term:`trend-following` and breakout strategies, where a few long trends pay for many false starts. The costs are a worse average entry price as the position grows, and giving back profit when a trend reverses sharply after the last addition.
+
+        Sizing as a fixed fraction of current equity is also anti-martingale, because the amount at risk grows with the account after wins and shrinks after losses. This includes fixed fractional sizing, the :term:`Kelly criterion` and :term:`volatility-based position sizing`. Shrinking after losses keeps the :term:`risk of ruin` low, where a martingale drives it towards certainty.
+
+        Vaults using this approach: `trend-following vaults <https://tradingstrategy.ai/vaults/strategies/trend-following>`__.
+
+        Literature and references:
+
+        - Ralph Vince, *The Mathematics of Money Management: Risk Analysis Techniques for Traders*, Wiley, 1992.
+
+        - Van K. Tharp, *Trade Your Way to Financial Freedom*, 2nd edition, McGraw-Hill, 2006.
+
+        - William Fung and David A. Hsieh, `The Risk in Hedge Fund Strategies: Theory and Evidence from Trend Followers <https://doi.org/10.1093/rfs/14.2.313>`__, *Review of Financial Studies* 14(2), 2001.
+
+        See also
+
+        - :term:`Martingale strategy`
+
+        - :term:`Kelly criterion`
+
+        - :term:`Trend-following`
+
+        - :term:`Long volatility`
+
+        - :term:`Position sizing`
+
+        - :term:`Trailing stop loss`
+
+        - :term:`Momentum`
+
+    Pyramiding
+
+        See :term:`anti-martingale strategy`.
+
+    Grid trading
+
+        Grid trading is a :term:`trading strategy` that places buy and sell :term:`limit orders <limit order>` at preset price intervals above and below a reference price, forming a grid. Each time the price falls one step, the grid buys; each time it rises one step, it sells. Every completed down-and-up step earns the grid spacing as profit, without any forecast of direction. Grid bots are common on crypto exchanges, on both the :term:`spot market` and :term:`perpetual futures <perpetual future>`.
+
+        A grid earns while the price oscillates inside its range. The risk is a move out of the range. In a sustained fall the grid keeps buying and ends up holding its largest inventory at a loss; in a sustained rise a spot grid sells out early and misses the move, and a short or neutral futures grid accumulates a losing short. The profile is :term:`short volatility`, like an AMM :term:`liquidity provider`: steady income from range-bound trading against exposure to trends and breakouts. A :term:`CLMM` liquidity position is in effect a continuous grid, and grid profits net of inventory losses compare to trading fees net of :term:`impermanent loss`.
+
+        Chen, Chen and Jang (2025) show that under simple assumptions the expected return of a traditional grid is essentially zero, and propose a variant that resets the grid dynamically. The practical conclusion is that a grid's profit depends on choosing the range, the spacing relative to :term:`volatility` and trading fees, and the rule for what to do when price leaves the range.
+
+        Variants differ in how they size orders. An equal-size grid is a form of :term:`mean reversion` and :term:`market making`. A grid whose buy orders grow as the price falls is a :term:`martingale strategy`. With :term:`leverage`, the lowest grid level has to sit above the :term:`liquidation` price for the whole inventory. Grid trading is unrelated to :term:`grid search`, which is a method for optimising strategy parameters.
+
+        Vaults using this approach: `grid trading <https://tradingstrategy.ai/vaults/strategies/grid-trading>`__, `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__ and `market making <https://tradingstrategy.ai/vaults/strategies/market-making>`__ vaults.
+
+        Literature and references:
+
+        - Kai-Yuan Chen, Kai-Hsin Chen and Jyh-Shing Roger Jang, `Dynamic Grid Trading Strategy: From Zero Expectation to Market Outperformance <https://arxiv.org/abs/2506.11921>`__, 2025.
+
+        - Jason Milionis, Ciamac C. Moallemi, Tim Roughgarden and Anthony Lee Zhang, `Automated Market Making and Loss-Versus-Rebalancing <https://arxiv.org/abs/2208.06046>`__, 2022.
+
+        See also
+
+        - :term:`Martingale strategy`
+
+        - :term:`Averaging down`
+
+        - :term:`Mean reversion`
+
+        - :term:`Market making`
+
+        - :term:`Short volatility`
+
+        - :term:`Limit order`
+
+        - :term:`CLMM`
+
+        - :term:`Impermanent loss`
+
+        - :term:`Liquidity provision`
+
+    Averaging down
+
+        Averaging down means buying more of an asset after its price has fallen below your entry, which lowers the average entry price of the position. For example, buying one unit at 100 and another at 80 gives an average of 90, so the position breaks even at 90 instead of 100. For a short position the mirror image is adding as the price rises.
+
+        Automated versions are sold as "DCA bots" on crypto trading platforms: after an initial order, the bot places further "safety orders" each time the price drops by a set step, then closes everything at a :term:`take profit` above the average entry. This is not the same as :term:`dollar cost averaging <Dollar cost averaging (DCA)>` in the investing sense, which buys a fixed amount on a time schedule whatever the price does. A DCA bot adds only to a losing position, and when each safety order is larger than the last it is a :term:`martingale strategy`.
+
+        Averaging down improves the break-even price at the cost of a larger position in an asset that is moving against you. It pays when prices revert, which is why it appears inside :term:`mean reversion` strategies, and it loses most when a fall continues: the position is largest at the bottom. Without a limit on the number of additions and a :term:`stop loss` or maximum loss for the whole position, the tail risk is that of :term:`short volatility`.
+
+        Discretionary traders are also drawn to it for psychological reasons. Investors tend to hold losing positions too long and sell winners too early, a pattern called the disposition effect (Shefrin and Statman 1985; Odean 1998), and adding to a loser postpones realising the loss. Averaging down as a planned rule with a fixed budget, as in scaling into a value position, differs from adding to avoid admitting a mistake.
+
+        Vaults using this approach: `martingale-like <https://tradingstrategy.ai/vaults/strategies/martingale-like>`__ and `mean reversion <https://tradingstrategy.ai/vaults/strategies/mean-reversion>`__ vaults.
+
+        Literature and references:
+
+        - Hersh Shefrin and Meir Statman, `The Disposition to Sell Winners Too Early and Ride Losers Too Long: Theory and Evidence <https://doi.org/10.1111/j.1540-6261.1985.tb05002.x>`__, *Journal of Finance* 40(3), 1985.
+
+        - Terrance Odean, `Are Investors Reluctant to Realize Their Losses? <https://doi.org/10.1111/0022-1082.00072>`__, *Journal of Finance* 53(5), 1998.
+
+        See also
+
+        - :term:`Martingale strategy`
+
+        - :term:`Grid trading`
+
+        - :term:`Dollar cost averaging (DCA)`
+
+        - :term:`Mean reversion`
+
+        - :term:`Short volatility`
+
+        - :term:`Position sizing`
+
+        - :term:`Stop loss`
+
+        - :term:`Maximum Adverse Excursion (MAE)`
+
+    DCA bot
+
+        See :term:`averaging down`.
+
+    Kelly criterion
+
+        The Kelly criterion is a :term:`position sizing` formula that gives the fraction of capital to risk on each bet or trade in order to maximise the long-run growth rate of the capital. John L. Kelly Jr. derived it at Bell Labs in 1956, and Edward O. Thorp applied it to blackjack and then to investing.
+
+        For a bet that wins with probability p and pays b units per unit staked, the Kelly fraction is f* = p − (1 − p) / b. With a 55% chance of winning an even-money bet (b = 1), f* = 0.55 − 0.45 = 0.10, so the bet is 10% of current capital. For a trading strategy with normally distributed returns, the equivalent is f* = μ / σ², the expected excess return divided by the :term:`variance` of returns, which is the optimal :term:`leverage`. With no edge the formula gives zero: do not bet.
+
+        Because the stake is a fraction of current capital, it shrinks after losses and grows after gains. Kelly sizing is therefore an :term:`anti-martingale strategy`, and under its assumptions it never loses the whole capital, unlike a :term:`martingale strategy`. Betting more than Kelly lowers long-run growth and raises :term:`drawdowns <drawdown>`; betting twice the Kelly fraction reduces the growth rate to about zero.
+
+        In practice the inputs are estimates, and overestimating the edge leads to overbetting. Full Kelly also produces deep drawdowns even with correct inputs. Most practitioners use fractional Kelly, commonly half, which gives about three quarters of the growth rate with half the volatility (Thorp 2006; MacLean, Thorp and Ziemba 2011). The formula assumes the return distribution is known and stable, and that losses are bounded as modelled. It is unsafe for strategies with rare large losses, such as :term:`short volatility`, where a short sample understates the tail and Kelly recommends too much leverage.
+
+        Literature and references:
+
+        - J. L. Kelly Jr., `A New Interpretation of Information Rate <https://doi.org/10.1002/j.1538-7305.1956.tb03809.x>`__, *Bell System Technical Journal* 35(4), 1956.
+
+        - Edward O. Thorp, `The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market <https://doi.org/10.1016/B978-044453248-0.50015-0>`__, in *Handbook of Asset and Liability Management*, Elsevier, 2006.
+
+        - Leonard C. MacLean, Edward O. Thorp and William T. Ziemba (editors), `The Kelly Capital Growth Investment Criterion: Theory and Practice <https://doi.org/10.1142/7598>`__, World Scientific, 2011.
+
+        See also
+
+        - :term:`Position sizing`
+
+        - :term:`Anti-martingale strategy`
+
+        - :term:`Martingale strategy`
+
+        - :term:`Risk of ruin`
+
+        - :term:`Leverage`
+
+        - :term:`Volatility-Based Position Sizing`
+
+        - :term:`Drawdown`
+
+        - :term:`Sharpe`
 
     Automatic deleverage
 
@@ -9605,6 +10149,8 @@ and algorithmic trading.
 
         Liquidity provision is the act of depositing assets into a :term:`liquidity pool`, typically on an :term:`AMM`-based :term:`decentralised exchange`, to facilitate trading and earn :term:`swap fees <swap fee>`. When users provide liquidity, they receive LP tokens representing their share of the pool and become exposed to :term:`impermanent loss` if the deposited asset prices diverge. Liquidity provision is a :term:`passive strategy` that allows anyone to participate in :term:`market making` and earn trading fees without specialised infrastructure. Advanced forms include concentrated :term:`liquidity <CLMM>` provision, where capital is deployed within specific price ranges for greater efficiency.
 
+        Vaults using this strategy: `liquidity provider <https://tradingstrategy.ai/vaults/strategies/liquidity-provider>`__ and `AMM market making <https://tradingstrategy.ai/vaults/strategies/market-making-amm>`__ vaults.
+
         See also
 
         - :term:`Liquidity provider`
@@ -9622,6 +10168,8 @@ and algorithmic trading.
         - :term:`Impermanent loss`
 
         - :term:`Delta neutral`
+
+        - :term:`Short volatility`
 
     Moving average
 
@@ -9677,6 +10225,8 @@ and algorithmic trading.
 
         - :term:`Loss-Versus-Rebalancing (LVR)`
 
+        - :term:`Short volatility`
+
     Funding rate
 
         A funding rate is a periodic fee exchanged between :term:`long <longing>` and :term:`short <shorting>` position holders in :term:`perpetual future` contracts to keep the derivative's price anchored to the underlying asset's :term:`spot market` price. Funding rates enable :term:`delta neutral` :term:`cash and carry` strategies, where traders earn passive income by simultaneously holding opposite positions in spot and perpetual markets while remaining hedged against price movements.
@@ -9722,6 +10272,8 @@ and algorithmic trading.
 
         :term:`Delta neutral` strategies like :term:`Ethena` continuously monitor both open interest and funding rate to size their positions and assess the sustainability of funding yield — high funding is only profitable if it persists, and high open interest on one side is a leading indicator that it may not.
 
+        Vaults using this: `funding rate arbitrage vaults <https://tradingstrategy.ai/vaults/strategies/funding-rate-arbitrage>`__.
+
         See also
 
         - :term:`Perpetual future`
@@ -9749,6 +10301,8 @@ and algorithmic trading.
         - :term:`Ethena`
 
         - :term:`Hyperliquid`
+
+        - :term:`Short volatility`
 
     Collateral
 
@@ -9962,6 +10516,10 @@ and algorithmic trading.
 
         - :term:`Delta hedged`
 
+        - :term:`Short volatility`
+
+        - :term:`Long volatility`
+
     Fama-French factors
 
         The Fama-French factors are a set of equity :term:`risk factors <factor investing>` introduced by Eugene Fama and Kenneth French to explain the cross-section of stock returns beyond the single market factor of the :term:`CAPM <Capital asset pricing model>`. The original 1993 three-factor model adds **SMB** (Small Minus Big, a size premium) and **HML** (High Minus Low, a :term:`value <Value factor>` premium based on book-to-market) to the market factor. The 2015 five-factor model further adds **RMW** (Robust Minus Weak profitability) and **CMA** (Conservative Minus Aggressive investment).
@@ -10129,6 +10687,8 @@ and algorithmic trading.
         - :term:`HML-Devil`
 
         - :term:`Drawdown`
+
+        - :term:`Short volatility`
 
     Value factor
 
