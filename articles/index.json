@@ -11100,6 +11100,18 @@
     "short_description": null
   },
   {
+    "title": "Design and analysis of momentum trading strategies",
+    "authors": "Richard J. Martin",
+    "publication_year": 2021,
+    "download_page": "https://arxiv.org/abs/2101.01006",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "design-and-analysis-of-momentum-trading-strategies.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Derives closed-form skewness of linear and nonlinear EMA momentum strategies, assuming independent, symmetric volatility-normalised returns. Trend strategies are positively skewed even with zero expected return, with a skewness term structure that peaks near the signal lookback and decays as the inverse square root of the horizon. Comparing sigmoid, reverting-sigmoid and dead-zone double-step position functions on futures data, it finds that capping and reverting lower skewness and a plain binary bet has none, and recommends a dead zone or a mildly reverting sigmoid, since average Sharpe ratios are nearly the same across shapes."
+  },
+  {
     "title": "Diagnosing and Fixing an Underperforming Trend Model",
     "authors": "Pedma",
     "publication_year": null,
