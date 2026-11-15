@@ -7104,6 +7104,18 @@
     "short_description": "Seminal result on portfolio choice under parameter uncertainty: when return parameters are unknown, the optimal strategy is to optimize expected utility over the Bayesian predictive density rather than plug in point estimates. The theoretical root of Bayesian portfolio construction and Bayesian position sizing."
   },
   {
+    "title": "The Hidden Sharpe Ratio",
+    "authors": "Mikhail Chernov, Bryan T. Kelly, Semyon Malamud, Johannes Schwab",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7679420",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-11-15",
+    "filename": "the-hidden-sharpe-ratio.pdf",
+    "downloaded_at": "2026-11-15",
+    "download_failure_reason": null,
+    "short_description": "Estimates the maximal Sharpe ratio directly using higher-order debiased GRS statistics and random matrix theory, without constructing the efficient portfolio. US equity estimates are approximately 7.4 overall and 5.0 excluding microcaps, gross of trading costs; ridge-regularized portfolios face a persistent shortfall. Upper-bound estimates depend on an additional assumption and coincide with lower bounds by construction in most broad-universe rolling windows."
+  },
+  {
     "title": "Trading Volume Alpha",
     "authors": "Ruslan Goyenko, Bryan T. Kelly, Tobias J. Moskowitz, Yinan Su, Chao Zhang",
     "publication_year": 2026,

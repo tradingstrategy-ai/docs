@@ -507,3 +507,25 @@ Mentioned by `Ivan Blanco <https://es.linkedin.com/in/ivanblancosanchez>`__ in `
 By Ruslan Goyenko, Bryan T. Kelly, Tobias J. Moskowitz, Yinan Su and Chao Zhang.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802345>`__
+
+The Hidden Sharpe Ratio
+-----------------------
+
+Mikhail Chernov, Bryan T. Kelly, Semyon Malamud and Johannes Schwab estimate the maximum Sharpe ratio available within a large universe of characteristic-managed portfolios without constructing the efficient portfolio itself. Their November 2026 working paper uses higher-order, bias-corrected Gibbons-Ross-Shanken statistics and random matrix theory to recover contributions from small covariance eigenvalues that ridge regularization suppresses. The method produces lower and upper bounds with asymptotic confidence intervals even when the number of portfolios exceeds the number of observations.
+
+The empirical analysis compares 132 portfolios with weights linear in stock characteristics against 5,000 portfolios formed from nonlinear ReLU random features. Nonlinear weights expand the estimated investment frontier in every size group except mega caps. A separate exercise admits characteristics only after their recorded original publication year; characteristics introduced after 2004 add little further estimated Sharpe ratio. Corporate bonds increase the estimated maximum, but the improvement is not statistically significant. The authors also derive a persistent shortfall for ridge-regularized Markowitz portfolios when the asset universe grows proportionally with the sample size.
+
+Our reading: this is an estimate of a frictionless investment opportunity set, not an executable strategy or an out-of-sample trading track record. Full-sample estimates use the entire historical window, while rolling estimates use 240 months. The upper bound requires an additional, untestable restriction on how much Sharpe ratio lies in small-eigenvalue directions ("subdiagonality"). In 97% of rolling windows for both the combined and micro-excluded universes, the threshold-selection rule makes the upper and lower point estimates equal by construction. Their proximity therefore provides no independent confirmation of precision; the authors emphasize the lower bound, which does not require that additional restriction.
+
+**Data and code.** US NYSE/AMEX/NASDAQ stocks with CRSP share codes 10-12, January 1963 to December 2025, using 132 Jensen-Kelly-Pedersen firm characteristics. Stocks below the first NYSE market-cap percentile are excluded throughout; the micro-excluded universe retains stocks above the 20th percentile. Characteristics are rank-standardized, with missing observations filtered and remaining missing values replaced by the cross-sectional median. The corporate-bond extension uses 65 characteristics over January 1986 to December 2025 from Lehman, BAML/ICE and TRACE, supplemented by equity characteristics. The paper describes the estimator and portfolio construction and provides an `online appendix <https://www.nber.org/data-appendix/w35988>`__, but neither the paper nor the NBER appendix directory links a replication code package. Reproduction requires access to the underlying stock and bond datasets; we have not rerun the estimates.
+
+**Key metrics.** All Sharpe ratios are annualized and gross of trading costs. The paper does not report annualized profit, maximum drawdown or win rate for a constructed efficient strategy.
+
+- Headline maximum Sharpe: approximately 7.4 for all eligible stocks and 5.0 excluding microcaps. Figure 2 gives point estimates of 7.34 and 5.05, with confidence limits of 6.45-8.01 and 4.26-5.62 respectively, formed from the bounds' one-sided 97.5% confidence limits.
+- By size, the prose reports approximately 2.2 for mega caps, 3.6 for large caps, 4.9 for small caps and 7.6 for microcaps. Illiquid stocks contribute substantially, and trading costs would lower realizable performance.
+- The estimated structural penalty for ridge portfolios is about 1.8 on squared Sharpe, implying Sharpe ceilings near 5.5 overall and 3.7 excluding microcaps, roughly three-quarters of the estimated maxima. These are theoretical ceilings, not achieved backtest results.
+- Existing portfolio-based studies cited by the authors report Sharpe ratios around 1.0-4.0; comparisons depend on whether microcaps are included.
+
+Mentioned by `Piotr Pomorski <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2122012754404114576>`__, who highlights direct estimation without constructing portfolios, the 7.4 and 5.0 headline Sharpe ratios, and the systematic shortfall of regularized Markowitz portfolios. His post also shares the figure comparing linear and nonlinear portfolio weights.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7679420>`__ (`NBER version and PDF <https://www.nber.org/papers/w35988>`__).
