@@ -529,3 +529,26 @@ Our reading: this is an estimate of a frictionless investment opportunity set, n
 Mentioned by `Piotr Pomorski <https://x.com/PtrPomorski>`__ in `this discussion <https://x.com/PtrPomorski/status/2122012754404114576>`__, who highlights direct estimation without constructing portfolios, the 7.4 and 5.0 headline Sharpe ratios, and the systematic shortfall of regularized Markowitz portfolios. His post also shares the figure comparing linear and nonlinear portfolio weights.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7679420>`__ (`NBER version and PDF <https://www.nber.org/papers/w35988>`__).
+
+Beyond Optimization: Testing the Structural Validity of Portfolio Models
+------------------------------------------------------------------------
+
+David Quayefio compares ten portfolio construction rules on five ETFs (SPY, EFA, AGG, GLD and VNQ) using 3,519 daily returns from January 2012 to December 2025. The rules are equal weight, long-only GMV, mean–variance, max-Sharpe, capped minimum volatility, Ledoit–Wolf minimum variance, robust mean–variance, risk parity, Black–Litterman and EWMA minimum variance. Alongside a monthly-rebalanced, 504-day rolling walk-forward backtest, the paper scores each rule on five structural-stability measures: weight instability (S1), bootstrap input sensitivity (S2), the gap between in-sample and out-of-sample Sharpe (S3), Sharpe dispersion across volatility regimes (S4) and sensitivity to perturbing the estimated means (S5). It argues that solving the optimisation correctly is a different question from whether the estimated inputs justify the resulting allocation.
+
+Our summary: in this five-asset universe, errors in the estimated means matter much more than errors in the covariance matrix. At N = 5 and T = 504 the theoretical GMV variance inflation from covariance error is only about 0.8%, and Ledoit–Wolf shrinkage intensity stays below 0.17. Swapping the sample covariance for Ledoit–Wolf, OAS or a constant-correlation target leaves bootstrap weight movement essentially unchanged (0.023–0.028), even though Ledoit–Wolf halves the condition number. The four rules that use estimated means (mean–variance, Black–Litterman, robust mean–variance and max-Sharpe) take the four worst composite stability ranks. They have the largest in-sample to out-of-sample Sharpe decay and end the sample piling into gold after its 2024–2025 rally: Black–Litterman puts 100% in GLD and robust mean–variance 81%. Minimum-variance rules collapse into roughly 92–97% bonds with an effective N of about 1.2–1.3. Capped minimum volatility (25% cap per asset) and risk parity are the only optimised rules that are both stable and better than equal weight. The data also show the regime problems these rules face: the SPY–AGG correlation flips from about −0.4 to +0.3 in March 2020, mean pairwise correlation rises from 0.25 in calm periods to 0.52 in bear markets, and Box's M strongly rejects equal covariance matrices in high- and low-volatility regimes. The rankings depend on the backtest design. With a 756-day window or an expanding window, max-Sharpe and mean–variance rise to Sharpe ratios of about 0.92–0.99 and beat equal weight on point estimates. The author is explicit that the study is exploratory, the hypotheses were not pre-registered, and the composite score is not a validated measure.
+
+Data and code: adjusted daily prices from Yahoo Finance via ``yfinance``. The `GitHub repository <https://github.com/davidquayefio/ml-ai-research-portfolio/tree/main/03-portfolio-structural-validity>`__ contains nine Jupyter notebooks (data exploration through final comparison), source code, scripts, tests and results. The author notes that the notebooks and the pipeline script still differ in file names, bootstrap counts and cost grids, so the analysis is not yet end-to-end reproducible. The five-ETF universe is small and survivor-selected.
+
+Key metrics (baseline walk-forward, net of 10 bp per side, zero risk-free rate):
+
+- Capped minimum volatility: 8.62% annual return, 9.57% volatility, Sharpe 0.912, Sortino 1.276, max drawdown −21.1%, Calmar 0.409.
+- Risk parity: 6.37% return, 7.07% volatility, Sharpe 0.909, max drawdown −17.9%.
+- Equal weight: 8.31% return, 10.72% volatility, Sharpe 0.798, max drawdown −23.5%.
+- Max-Sharpe: Sharpe 0.696 net, compared with 1.450 in sample. Black–Litterman is worst at Sharpe 0.465, max drawdown −28.3% and 0.181 turnover per rebalance.
+- Capped minimum volatility vs. equal weight: Sharpe difference 0.114 (95% block-bootstrap CI [0.011, 0.223], p = 0.036), annual certainty-equivalent gain 0.8%. No comparison passes the nine-test Bonferroni threshold of 0.0056.
+- Composite stability ranks: equal weight 1.4, capped minimum volatility 3.6, max-Sharpe 9.6. The Spearman correlation between stability score and net Sharpe is −0.505 (p = 0.137).
+- At costs from 0 to 50 bp, capped minimum volatility and risk parity remain the top two. Mean–variance falls below equal weight from 25 bp.
+
+By David Quayefio.
+
+`Read the paper <https://github.com/davidquayefio/ml-ai-research-portfolio/blob/main/03-portfolio-structural-validity/paper/paper.pdf>`__

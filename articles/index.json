@@ -6864,6 +6864,18 @@
     "short_description": "Closes the main gap in Black-Litterman by adding a formal likelihood so the posterior reflects three sources — market equilibrium prior, subjective views, and historical-data evidence — making BL a fully coherent Bayesian updating scheme. The natural next read after the original Black-Litterman model."
   },
   {
+    "title": "Beyond Optimization: Testing the Structural Validity of Portfolio Models",
+    "authors": "David Quayefio",
+    "publication_year": 2026,
+    "download_page": "https://github.com/davidquayefio/ml-ai-research-portfolio/blob/main/03-portfolio-structural-validity/paper/paper.pdf",
+    "source_file": "portfolio-construction.rst",
+    "included_in_index_at": "2026-11-17",
+    "filename": "beyond-optimization-testing-the-structural-validity-of-portfolio-models.pdf",
+    "downloaded_at": "2026-11-17",
+    "download_failure_reason": null,
+    "short_description": "Exploratory study of ten portfolio construction rules on five ETFs (SPY, EFA, AGG, GLD, VNQ) from 2012 to 2025, combining a 504-day walk-forward backtest with five structural-stability measures: weight instability, bootstrap input sensitivity, in-sample/out-of-sample Sharpe gap, regime inconsistency and mean-perturbation fragility. Capped minimum volatility (Sharpe 0.912) and risk parity (0.909) beat equal weight (0.798) net of 10 bp costs, but none of the comparisons survives Bonferroni correction. Rules that depend on estimated means (max-Sharpe, Black–Litterman, robust mean–variance) are the least stable and decay most out of sample, which suggests that mean-estimation error dominates covariance error in small universes."
+  },
+  {
     "title": "Breadth, Correlation, and Sizing: What the Strategy Report Does Not Show",
     "authors": "Build Alpha (@buildalpha)",
     "publication_year": 2026,
