@@ -5004,6 +5004,18 @@
     "short_description": null
   },
   {
+    "title": "Funding Rate Effectiveness and Price Discovery in Binance Gold Perpetuals (XAU and PAXG)",
+    "authors": "0xJude (@Jude_Ma_rs)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/Jude_Ma_rs/status/2122682039929536877",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-17",
+    "filename": "funding-rate-effectiveness-and-price-discovery-in-binance-gold-perpetuals-xau-and-paxg.pdf",
+    "downloaded_at": "2026-11-17",
+    "download_failure_reason": null,
+    "short_description": "Simplified Chinese working paper shared as page screenshots on X (the PDF adds an English translation of the abstract). Using 2026 one-minute data for Binance's XAU and PAXG gold perpetuals, it reverse-engineers all 1,636 funding settlements, showing a ±0.05% dead band where funding is a fixed interest payment, and finds that basis deviations mean-revert with a 2.6–3.0 hour half-life. Spot does most of the correcting: the XAU perpetual takes only 16% of the 4-hour adjustment (PAXG 40%), funding acts mostly as a pre-settlement repositioning effect, and the XAU perpetual's weekend move explains the Monday FX opening gap with R² = 0.72."
+  },
+  {
     "title": "HFT Arbitrage in Commodities",
     "authors": "Brett Harrison",
     "publication_year": 2026,
