@@ -113,6 +113,7 @@ If the source of the link is a discussion like a tweet, then include a paragraph
    Keep the array sorted by `source_file` then `title`.
 
 8. **Commit and push**:
-   - Stage the modified `.rst` file, the PDF (force-add with `git add -f`, since `articles/*.pdf` is gitignored), and `articles/index.json`
+   - Stage the modified `.rst` file and `articles/index.json`
+   - Do not stage the PDF: `articles/*.pdf` and `articles/*.md` are gitignored and stay local, never force-add them
    - Commit with message: "Add: {Blog Post Title}"
    - Push to master branch
