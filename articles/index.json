@@ -4500,6 +4500,18 @@
     "short_description": null
   },
   {
+    "title": "FEV-Causal-16: Standardized AutoGluon FEV Evaluation of Causal-FM v2.1 Across 49 Out-of-Sample Tasks",
+    "authors": "Muzikayise Khuzwayo (Dubstrata)",
+    "publication_year": 2026,
+    "download_page": "https://dubstrata.com/research/fev-causal-16-benchmark",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-19",
+    "filename": "fev-causal-16-standardized-autogluon-fev-evaluation-of-causal-fm-v2-1-across-49-out-of-sample-tasks.pdf",
+    "downloaded_at": "2026-11-19",
+    "download_failure_reason": null,
+    "short_description": "Dubstrata's self-published benchmark of its 5.69M-parameter, 16-channel Causal-FM v2.1 forecasting model (microstructure, prediction-market, knowledge-graph and macro inputs) against Chronos-Bolt, LightGBM, Ridge VAR, AutoETS and AutoTheta. It uses the AutoGluon FEV harness on 49 out-of-sample BTC, gold and FX tasks from 5 minutes to 24 hours. Chronos wins up to 1 hour, Causal-FM edges ahead by about one percentage point at 4–24 hours (24h SQL skill +66.22% vs +65.23%), and zero-shot on gold and FX it roughly matches Chronos-Small. A variance-floor fix contributed more than any input channel, and the weights are gated, the inputs are proprietary and there is no trading backtest."
+  },
+  {
     "title": "FinLLM-KG: Knowledge Graph-Enhanced LLMs for Financial Sentiment Analysis in Algorithmic Trading",
     "authors": "Giorgos Iacovides, Oliver Hannibal, Wuyang Zhou, Danilo Mandic",
     "publication_year": 2026,
