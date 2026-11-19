@@ -5016,6 +5016,18 @@
     "short_description": null
   },
   {
+    "title": "Fine-Tuning an Order-Flow Foundation Model for Sub-Second Forecasting",
+    "authors": "Fedor Shabashev",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2611.14117",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-19",
+    "filename": "fine-tuning-an-order-flow-foundation-model-for-sub-second-forecasting.pdf",
+    "downloaded_at": "2026-11-19",
+    "download_failure_reason": null,
+    "short_description": "Pretrains a 300M-parameter Llama-style generative model on TradeFM-style tokenized Level-3 order flow from Bitstamp and Bitfinex, then LoRA fine-tunes it to forecast the BTC/USD microprice return and realised volatility from 200 ms to 30 s. At sub-second horizons it beats order-book imbalance (direction correlation 0.44 vs 0.23 at 200 ms), gradient boosting on order-flow features (+0.04 to +0.14 across five holdouts) and GARCH on volatility, and it transfers zero-shot to ETH and SOL. The edge disappears beyond a few seconds, and the predicted moves are below the roughly 2 bp trading cost, so its uses are in execution rather than directional alpha."
+  },
+  {
     "title": "Funding Rate Effectiveness and Price Discovery in Binance Gold Perpetuals (XAU and PAXG)",
     "authors": "0xJude (@Jude_Ma_rs)",
     "publication_year": 2026,
