@@ -1703,7 +1703,7 @@ By Muzikayise Khuzwayo (Dubstrata).
 `Read the blog post <https://dubstrata.com/research/fev-causal-16-benchmark>`__.
 
 Auto-Alpha: A Framework for Autonomous Factor Research
------------------------------------------------------
+------------------------------------------------------
 
 A November 2026 paper from StepFun describing an LLM-driven workflow for researching equity factors. An idea agent proposes an economic mechanism and a signal construction; a research agent implements it, runs backtests, inspects diagnostics and revises the code. Separate semantic audits and quantitative screens inform human admission to a Factor Library, while an Experience Library stores conditional lessons from successful and failed investigations. The workflow starts from quantitative research reports and then generates new ideas or refines earlier candidates. This is distinct from the similarly named AutoAlpha evolutionary-search system published in 2020.
 
