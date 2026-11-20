@@ -1701,3 +1701,30 @@ Model: the weights are published as `Dubstrata/causal-fm-v2.1 on Hugging Face <h
 By Muzikayise Khuzwayo (Dubstrata).
 
 `Read the blog post <https://dubstrata.com/research/fev-causal-16-benchmark>`__.
+
+Auto-Alpha: A Framework for Autonomous Factor Research
+-----------------------------------------------------
+
+A November 2026 paper from StepFun describing an LLM-driven workflow for researching equity factors. An idea agent proposes an economic mechanism and a signal construction; a research agent implements it, runs backtests, inspects diagnostics and revises the code. Separate semantic audits and quantitative screens inform human admission to a Factor Library, while an Experience Library stores conditional lessons from successful and failed investigations. The workflow starts from quantitative research reports and then generates new ideas or refines earlier candidates. This is distinct from the similarly named AutoAlpha evolutionary-search system published in 2020.
+
+The production records start with 120 reports and 120 implementations, yielding 32 admitted factor lineages. Subsequent self-directed research produces 420 implementations and 62 selections: 43 recorded admissions plus 19 candidates that passed the latest batch's Sharpe and correlation screens, whose formal admission status is not supplied. The evaluated snapshot contains 105 factors: 32 report-guided, 43 self-directed and 30 prior or other factors; it excludes the latest batch. More research does not reliably improve a candidate: of 73 recorded parent-child comparisons, 30 improve and 43 decline, with a median change in net long-short Sharpe of -0.139. These are observational production records under changing configurations, without controlled ablations establishing the benefit of report guidance, memory or additional search.
+
+Our reading: the portfolio is a retrospective illustration of selected factors, not a discovery-time out-of-sample test. Factor definitions, directions and admission decisions were developed using historical data that includes the displayed evaluation period. Using only matured return labels to fit rolling combination weights prevents future observations entering that fit, but does not undo hindsight in choosing the factor library. The authors explicitly acknowledge this distinction. Human approval remains part of the workflow, the LLM audit is not proof of timing correctness, and the review process is not enforced as an unbypassable automatic gate.
+
+The portfolio combines daily factor ranks using nonnegative maximum-ICIR weights, fitted every 20 trading days from up to 252 past daily IC observations, with a 126-observation minimum and 10% diagonal covariance shrinkage. It holds the 300 highest-scoring eligible stocks at equal weights and rebalances weekly, executing on the next trading day. Starting capital is RMB 100 million. The model charges 1 basis point on buys and 6 on sells, with a RMB 5 minimum per stock and direction, plus 10 basis points of slippage each way. It includes approximate lot sizes, suspensions and price limits, but no market-impact estimate or participation cap. Stocks receive dividend-adjusted returns while the benchmark is the CSI 1000 price index; there are no matching industry or size constraints, so their return difference does not isolate stock-selection alpha.
+
+**Data and code.** Mainland Chinese A-shares, with market, financial and reference data from Tushare and daily style exposures from JoinQuant. Inputs include daily and intraday prices, order-size flows, quarterly statements and earnings disclosures. The default universe excludes Beijing-listed stocks, ST stocks and listings younger than 60 calendar days. Accounting inputs are filtered by disclosure date. Factor diagnostics cover 2013-01-04 to 2026-11-03; the portfolio covers 2020-01-02 to 2026-11-03. The paper describes example Python implementations, audit records and sanitized ledgers as packaged artifacts, but the inspected `arXiv v1 source archive <https://arxiv.org/src/2611.25732v1>`__ contains manuscript sources, tables and figures, without those example files or a runnable research system. Full task histories, campaign cost and the mapping of deployment labels to underlying models are unavailable. Reproduction requires the underlying data and implementation; we have not rerun the results.
+
+**Key metrics.** Historical figures below describe the retrospectively selected library and include the stated costs where applicable.
+
+- Weekly Top-300 portfolio: annualized return 16.81%, volatility 24.26%, Sharpe 0.763 using a zero risk-free rate, maximum drawdown 32.16%, annualized one-way turnover 19.15 times account value and information ratio 1.552 versus CSI 1000.
+- CSI 1000 price-index reference: annualized return 1.71%, volatility 25.12%, Sharpe 0.193 and maximum drawdown 46.71%.
+- Library: median one-day Rank IC 0.0301, maximum 0.0651 and median unannualized ICIR 0.530. The combined score has one-day Rank IC 0.0471 and unannualized ICIR 0.947 over the portfolio period.
+- Two positions without fresh quotes for more than 60 trading sessions represent 0.53% of terminal account value. Writing them off reduces annualized return to 16.71%; this is a terminal valuation sensitivity, not a historical delisting replay.
+- A separate daily rank-weighted long-short diagnostic for the composite reports Sharpe 5.53 and drawdown 2.5%. It does not model borrow availability and is distinct from the weekly long-only account above. No trade win rate is reported.
+
+Mentioned by `Quant Beckman <https://x.com/quantbeckman>`__ in `this discussion <https://x.com/quantbeckman/status/2123659180112310327>`__, who points out that choosing a factor in 2026 and backtesting it in 2020 creates hindsight bias even if its portfolio weight uses only pre-2020 observations. His criticism concerns the research-selection decision, and agrees with the limitation the authors state for their fixed factor-library backtest.
+
+By Hui Cai, Kangcheng Deng, Tianyi Ma, Qixuan Yang, Jiacheng Lu, Rui Sun, Beidi Luan, Jing Li and Zuo Bai.
+
+`Read the paper <https://arxiv.org/abs/2611.25732>`__.

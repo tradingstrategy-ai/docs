@@ -4284,6 +4284,18 @@
     "short_description": null
   },
   {
+    "title": "Auto-Alpha: A Framework for Autonomous Factor Research",
+    "authors": "Hui Cai, Kangcheng Deng, Tianyi Ma, Qixuan Yang, Jiacheng Lu, Rui Sun, Beidi Luan, Jing Li, Zuo Bai",
+    "publication_year": 2026,
+    "download_page": "https://arxiv.org/abs/2611.25732",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-20",
+    "filename": "auto-alpha-a-framework-for-autonomous-factor-research.pdf",
+    "downloaded_at": "2026-11-20",
+    "download_failure_reason": null,
+    "short_description": "An LLM-driven factor-research workflow combines report-guided ideas, iterative backtesting, persistent experience and human admission. A retrospectively selected 105-factor library produces a weekly Chinese A-share Top-300 backtest with 16.81% annualized return, Sharpe 0.763 and 32.16% maximum drawdown after stated costs. Rolling combination weights do not remove factor-selection hindsight, and the study does not establish out-of-sample generalization or causal benefits of the agent architecture."
+  },
+  {
     "title": "BITCOIN-USD Trading Using SVM to Detect The Current day's Trend in The Market",
     "authors": null,
     "publication_year": null,
