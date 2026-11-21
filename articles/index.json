@@ -6564,6 +6564,18 @@
     "short_description": "Announces the public launch of Aperiodic, a crypto data platform providing 200+ TB of tick data including point-in-time liquidity metrics, order flow imbalance, and full exchange coverage without survivorship bias."
   },
   {
+    "title": "BTC Rallies 5.2% in 35 Minutes: What Happened?",
+    "authors": "Bidao (@BidaoOfficial)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/BidaoOfficial/status/2124034438379995332",
+    "source_file": "order-flow.rst",
+    "included_in_index_at": "2026-11-21",
+    "filename": "btc-rallies-5-2-percent-in-35-minutes-what-happened.pdf",
+    "downloaded_at": "2026-11-21",
+    "download_failure_reason": null,
+    "short_description": "Bidao interprets a reported 5.2% BTC rebound in 35 minutes through declining derivatives open interest, aggressive buying and thin sell-side liquidity. The post links the move to short covering and discusses resistance near $58,000; its figures and causal claims are not accompanied by reproducible market data."
+  },
+  {
     "title": "Beyond Anonymous Order Flow: Wallet Identity as a Feature for Short-Horizon Return Prediction",
     "authors": "Jingqiu Ding, Daojing Zhai",
     "publication_year": 2026,

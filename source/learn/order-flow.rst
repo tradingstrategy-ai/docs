@@ -302,3 +302,16 @@ using clustering to manage quote exposure while separately analysing fill
 probabilities and subsequent price moves.
 
 `Read the post <https://x.com/0xLUKE777crypt/status/2120355556326330402>`__.
+
+BTC Rallies 5.2% in 35 Minutes: What Happened?
+----------------------------------------------
+
+Bidao interprets Bitcoin's reported rise from $55,130 to $58,016 on November 21, 2026 as a short-covering squeeze after spot selling exhausted itself. The attached chart places the move at 14:16-14:51 Beijing time. The post reports a 2,434 BTC reduction in aggregate open interest across four derivatives venues, including 1,370 BTC on Binance and 566 BTC on OKX, alongside 4,108 BTC of net aggressive buying on Binance perpetuals over 36 minutes. It also reports no large Coinbase sell orders within $600 above the market and an OKX one-hour aggressive buy-minus-sell flow changing from -$19.77 million to +$8.31 million. The author's explanation is that position closures and stop orders swept through thin offers, amplifying the rebound.
+
+The post then connects the move to exchange transfers, options concentrations and trader positioning. Bidao says an earlier 4,069 BTC sell flow had cleared and interprets a subsequent 1,000 BTC Kraken transfer as replenishment rather than renewed selling. The proposed resistance zone combines the previous yearly low at $57,655, the 300-week moving average at $57,765 and a Deribit options concentration at $58,000. After the peak, the reported Binance retail account long/short ratio rises from 2.97 to 3.15 while the large-trader position ratio remains at 1.70. The post uses that divergence to argue that late buyers were chasing an already advanced squeeze. These figures and causal interpretations are the author's observations, not independently verified measurements: the post supplies an infographic, but no underlying order-book, trade or liquidation dataset, sampling method or definition of a "large" order. Falling open interest and aggressive buying are consistent with covering, but do not by themselves identify how much buying was forced liquidation or establish that a transfer generated no subsequent selling. No trading strategy backtest or profitability metrics are provided.
+
+By Bidao (@BidaoOfficial), published November 21, 2026. The heading is an English rendering of the Chinese post's opening question.
+
+Mentioned by Bidao in `this discussion <https://x.com/BidaoOfficial/status/2124034438379995332>`__, which attributes the rebound to exhausted spot selling, short covering and thin liquidity, and warns about chasing the move near $58,000.
+
+`Read the post <https://x.com/BidaoOfficial/status/2124034438379995332>`__.
