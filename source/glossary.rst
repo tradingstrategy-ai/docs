@@ -9771,7 +9771,7 @@ and algorithmic trading.
 
         The key insight is that the standard error of the Sharpe ratio depends not only on the sample size but also on the skewness and kurtosis of returns. Strategies with negative skew (occasional large losses) or high kurtosis (fat tails) require much longer track records before their Sharpe estimates become reliable. PSR incorporates all four moments of the return distribution into a single probability statement. A related concept is the *Minimum Track Record Length (MinTRL)* — the smallest number of observations needed for the measured Sharpe to be statistically significant at a given confidence level. López de Prado showed that for typical hedge fund return distributions, MinTRL can easily exceed several years of monthly data.
 
-        Building on PSR, Bailey and López de Prado introduced the *Deflated Sharpe Ratio (DSR)*, which further corrects for multiple-testing bias. When a researcher tries hundreds of parameter combinations and reports only the best one, the winning Sharpe is inflated by selection bias. DSR adjusts the PSR threshold upward based on the number of independent trials, providing a more honest assessment of whether a strategy genuinely outperforms or merely won a data-mining lottery. Together, PSR and DSR form a rigorous statistical framework that belongs in every quant's :term:`overfitting` detection toolkit.
+        Building on PSR, Bailey and López de Prado introduced the :term:`deflated Sharpe ratio` (DSR), which further corrects for multiple-testing bias. When a researcher tries hundreds of parameter combinations and reports only the best one, the winning Sharpe is inflated by selection bias. DSR adjusts the PSR threshold upward based on the number of independent trials, providing a more honest assessment of whether a strategy genuinely outperforms or merely won a data-mining lottery. Together, PSR and DSR form a rigorous statistical framework that belongs in every quant's :term:`overfitting` detection toolkit.
 
         **Formula**
 
@@ -10025,7 +10025,7 @@ and algorithmic trading.
 
         Walk-forward analysis (WFA) is a :term:`backtest` validation methodology that tests a :term:`trading strategy` by repeatedly optimising parameters on an in-sample window, then evaluating performance on the immediately following out-of-sample window, and rolling both windows forward through time. Unlike a single train/test split, WFA produces a chain of out-of-sample results that together reveal whether the strategy's edge persists across different market regimes — or whether it was merely :term:`overfitting` to a particular historical period. It is widely considered the gold standard for parameter validation in quantitative trading.
 
-        A key output of walk-forward analysis is the *walk-forward efficiency* (WFE): the ratio of annualised out-of-sample return to annualised in-sample return. A WFE above 50% is generally considered acceptable, meaning the strategy retains at least half its optimised performance when applied to unseen data. Below 50%, the strategy is likely overfit. Closely related is the *walk-forward win rate across slices* — the proportion of out-of-sample windows where the optimised parameter set remains in the top quartile of all tested configurations. A strategy that wins 70%+ of slices demonstrates genuine parameter stability; one that wins only 30% is fragile and sample-dependent, regardless of its aggregate performance.
+        A common measure of performance retention is :term:`walk-forward efficiency` (WFE). Closely related is the *walk-forward win rate across slices* — the proportion of out-of-sample windows where the optimised parameter set remains in the top quartile of all tested configurations. A strategy that wins 70%+ of slices demonstrates genuine parameter stability; one that wins only 30% is fragile and sample-dependent, regardless of its aggregate performance.
 
         The practical design of walk-forward analysis involves several critical choices. The in-sample window must be long enough to capture meaningful market cycles but not so long that it includes stale, irrelevant data. The out-of-sample window must be long enough to produce statistically meaningful results but not so long that the parameters grow stale before re-optimisation. Common splits include 2–5 years in-sample with 3–12 months out-of-sample. The number of parameters being optimised also matters: more parameters require longer in-sample windows and produce lower walk-forward efficiency, reinforcing the principle that simpler models generalise better. WFA should be combined with :term:`probabilistic Sharpe ratio` analysis and :term:`cost drag` estimation for a complete robustness assessment.
 
@@ -10898,3 +10898,399 @@ and algorithmic trading.
         - :term:`Onchain`
 
         - :term:`Decentralised finance`
+
+    Basis point
+
+        A basis point (bp, plural bps) is 0.01 percentage points, or 0.0001 in decimal form.
+        If a trading fee falls from 0.10% to 0.08%, the saving is 2 bps per fill.
+        On 50,000 USD of executed orders that reduces :term:`transaction cost` by 10 USD.
+
+    Net asset value
+
+        Net asset value (NAV) is what remains for investors after subtracting liabilities from the value of all assets at the same valuation time.
+        Suppose a fund holds 40,000 USD in cash and positions marked at 180,000 USD, and owes 20,000 USD.
+        Its NAV is 200,000 USD. With 10,000 shares outstanding, NAV per share is 20 USD.
+
+        Issuing 500 shares at that price adds 10,000 USD to total NAV while leaving NAV per share at 20 USD.
+        To assess investment performance, distinguish investor flows from gains and losses, including :term:`unrealised profit and loss` on open positions.
+
+        The SEC's investor glossary gives both the fund-level and per-share calculations.
+        See `Net Asset Value <https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value>`__.
+
+    Portfolio sleeve
+
+        A sleeve groups positions and their allocated capital under one mandate within a larger portfolio.
+        For example, a report might attribute 25% of starting :term:`net asset value` to :term:`trend-following` and the rest to cash.
+        If the sleeve gains 8% and cash earns zero, its contribution to the portfolio return is 2 percentage points, assuming no transfers during the period.
+        Where allocations change, calculate contributions over the subperiods in which those weights applied.
+
+        Orion's managed-account documentation illustrates how sleeves within one custodial account can follow different models and have their performance reported separately.
+        See `Orion's guide to managed-account sleeves <https://orionadvisorservices.my.site.com/OrionSupportApp/s/article/Guidance-on-Sleeves-and-Associated-Areas>`__.
+
+    Weighted average cost
+
+        Weighted average cost (WAC) is the acquisition cost per unit still held under average-cost accounting.
+        Buying 30 units at 40 USD and 10 at 60 USD gives a WAC of (1,200 + 600) / 40 = 45 USD before fees.
+        Selling 10 units at 50 USD books 50 USD of :term:`realised profit and loss` and leaves the other 30 with the same 45 USD unit cost.
+        A later purchase changes that average. Include acquisition fees consistently when comparing it with a sale price.
+
+        For an application to eligible US mutual fund shares, the IRS illustrates how to divide total acquisition cost by the number of shares held.
+        See `the IRS average-basis example <https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home/mutual-funds-costs-distributions-etc/mutual-funds-costs-distributions-etc-1>`__.
+
+    Volume-weighted average price
+
+        Volume-weighted average price (VWAP) weights each execution price by the quantity traded.
+        Divide total traded value by total units. A purchase of 20 units at 99 and 80 at 101 has a fill VWAP of 100.60.
+        If market VWAP for the same instrument, venue and execution window was 100.80, the buyer paid 0.20 less per unit before fees.
+        For a seller, a higher fill VWAP is favourable. State the window because its start and end determine which trades enter the benchmark.
+        See also :term:`slippage`.
+
+        Busseti and Boyd use market VWAP as the benchmark for a broker splitting a large order into smaller trades, accounting for uncertainty about how much volume will trade during the session.
+        See `Volume Weighted Average Price Optimal Execution <https://web.stanford.edu/~boyd/papers/vwap_opt_exec.html>`__.
+
+    Best bid and offer
+
+        The best bid and offer (BBO) are the highest displayed buy quote and lowest displayed sell quote on a venue's :term:`order book` at a given instant.
+        Quotes of 49.95 and 50.05 have a :term:`bid-ask spread` of 0.10, or 20 basis points relative to their midpoint of 50.
+        If only 12 units are offered at 50.05, a buyer seeking 20 immediately may pay a higher price for the remainder.
+        A narrower spread lowers the quoted cost of crossing the book for quantities available at those quotes.
+
+        Coinbase Exchange exposes the best quotes and sizes at level 1 and offers deeper snapshots at levels 2 and 3.
+        See `the Coinbase Exchange order-book API <https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-book>`__.
+
+    Maker order
+
+        A maker order adds available quantity to an :term:`order book`. Its resting quantity earns the venue's maker fee treatment when another order trades against it.
+        For example, a bid at 49 can wait behind earlier bids at the same price. It may earn a rebate if filled, but can miss the trade if the market rises.
+        A single :term:`limit order` can generate both maker and :term:`taker <taker order>` fills if only part executes on arrival.
+
+        Coinbase Advanced applies maker fees to fills against the resting remainder of a partially matched order.
+        See `Coinbase Advanced fees <https://help.coinbase.com/en/coinbase/trading-and-funding/advanced-trade/advanced-trade-fees>`__.
+
+    Taker order
+
+        A taker order consumes resting :term:`liquidity` and its immediate fills incur the venue's taker fee schedule.
+        A buy :term:`limit order` for ten units at 52 can take six offered at 51 and four at 52.
+        Its :term:`volume-weighted average price` is 51.40. The price limit protects against paying more than 52, so an order may fill only partly.
+
+        Coinbase Exchange matches incoming taker orders against open maker orders under price, display and time priority.
+        See `Coinbase Markets Trading Rules <https://www.coinbase.com/legal/trading_rules>`__.
+
+    Post-only order
+
+        A post-only order instructs the venue to accept a :term:`limit order` only on terms that allow maker fills.
+        Suppose a trader submits a bid at 75 while the lowest offer is 76. If the offer falls to 75 in transit, the bid would take liquidity.
+        A venue that rejects crossing post-only orders will reject this bid. Check the venue's handling rule when modelling the fill rate of a :term:`maker order`.
+
+        Coinbase documents rejection of the full order if any part would execute immediately.
+        See `Coinbase's order-type documentation <https://help.coinbase.com/en/pro/trading-and-funding/orders/overview-of-order-types-and-settings-stop-limit-market>`__.
+
+    Order book imbalance
+
+        Order book imbalance (OBI) compares displayed buying and selling quantities in a snapshot of the :term:`order book`.
+        With bid quantity B and ask quantity A over the same chosen depth, a common measure is (B − A) / (B + A).
+        Depths of 90 and 30 units give +0.50. Zero means equal depth, and values approaching −1 indicate a book concentrated on the offer side.
+        The ratio is undefined for an empty book. Quotes can be cancelled, so a large positive reading describes available depth and cannot assure a price rise.
+        Compare snapshots at the same depth and see :term:`order flow imbalance` for changes between snapshots.
+
+        Gould and Bonart found that best-quote imbalance helped predict the next midpoint move in ten liquid Nasdaq stocks. The improvement over their baseline was greater for large-tick stocks.
+        See `Queue Imbalance as a One-Tick-Ahead Price Predictor in a Limit Order Book <https://arxiv.org/abs/1512.03492>`__.
+
+    Order flow imbalance
+
+        Order flow imbalance (OFI) measures net changes in demand at the :term:`best bid and offer` over an interval.
+        At unchanged quotes, add increases in bid size and decreases in ask size, and subtract changes in the opposite directions.
+        Adding 40 units to the bid and cancelling 15 on the offer gives +55 units even with zero trading volume.
+
+        When the best bid improves, count the new bid queue as added demand. When it falls, count the departed queue as lost demand.
+        Apply the opposite signs on the offer side and sum the event contributions.
+        Cont, Kukanov and Stoikov found a stronger short-horizon price response to a given imbalance in shallower books.
+        See `The Price Impact of Order Book Events <https://arxiv.org/abs/1011.6402>`__.
+
+        Xu, Gould and Howison extend the measure to several book levels. Adding deeper levels improved the fit to price changes over the same interval in their Nasdaq sample.
+        See `Multi-Level Order-Flow Imbalance in a Limit Order Book <https://arxiv.org/abs/1907.06230>`__.
+
+    Volatility risk premium
+
+        The volatility risk premium (VRP), quoted in volatility points, is option-implied :term:`volatility` minus expected realised volatility for the same asset and horizon under a common sign convention.
+        An annualised implied volatility of 35% against a 30% annualised forecast over the option's remaining month gives a premium of 5 volatility points.
+        A positive estimate favours :term:`selling volatility` if the forecast holds and the premium covers costs. An unexpected large move can overwhelm it.
+
+        Historical studies can substitute subsequently realised volatility, which was unknown when the position opened.
+        State whether a report uses volatility or squared volatility. Carr and Wu study the related premium in variance units in `Variance Risk Premiums <https://doi.org/10.1093/rfs/hhn038>`__.
+
+        Bollerslev, Tauchen and Zhou used the gap between model-free implied and realised variance to study market return predictability. The variance gap predicted quarterly market excess returns in their sample.
+        See `Expected Stock Returns and Variance Risk Premia <https://www.federalreserve.gov/econres/feds/expected-stock-returns-and-variance-risk-premia.htm>`__.
+
+    Holdout set
+
+        A holdout set is a portion of the data reserved to evaluate a rule chosen on other observations.
+        For a chronological :term:`backtest`, a researcher might use four years to select the trading rule, freeze its parameters and run it once on year five.
+        If the researcher changes an exit after seeing year five, that year has informed the selection. An independent final evaluation then needs fresh observations.
+        Leave enough time at the boundary for training trades or return labels to finish before evaluation begins.
+
+        Cawley and Talbot show how repeatedly optimising against a noisy validation score can bias the reported performance and discuss evaluating the full model-selection procedure on separate data.
+        See `On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation <https://www.jmlr.org/papers/v11/cawley10a.html>`__.
+
+    Walk-forward efficiency
+
+        Walk-forward efficiency (WFE) measures how much of a fitted strategy's performance carried into the next unseen period of a :term:`walk-forward analysis`.
+        One return-based convention divides annualised out-of-sample return by annualised in-sample return, using the same fee assumptions.
+        If those returns are 9% and 15%, WFE is 0.60. With positive fitted performance, 1 means full retention and a negative value means a subsequent loss.
+
+        A small positive denominator can produce an impressive ratio from modest gains, and two losses can produce a positive ratio.
+        Report both returns and state how windows were combined. Averaging window ratios can give a different result from comparing aggregate returns.
+
+        Robert Pardo covers how to construct and evaluate successive fitting and test periods in the `Walk-Forward Analysis chapter of The Evaluation and Optimization of Trading Strategies <https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119196969.ch11>`__.
+
+    Combinatorially symmetric cross-validation
+
+        Combinatorially symmetric cross-validation (CSCV) tests how reliably the process of picking a winning strategy transfers to other parts of the same history.
+        Align all candidates' returns by date and divide the history into equal contiguous blocks. With six blocks, there are 20 ways to choose three for selection.
+        For each choice, select the best candidate by a fixed metric such as :term:`Sharpe`, then rank that same candidate among its peers on the remaining three blocks.
+
+        The ranks give an estimate of the :term:`probability of backtest overfitting`. Some selections use dates later than their evaluation dates.
+        Use :term:`walk-forward analysis` to simulate the information available at successive trading decisions.
+        Bailey, Borwein, López de Prado and Zhu describe the procedure in `The Probability of Backtest Overfitting <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2326253>`__.
+
+        The worked examples show how the same splits can also reveal performance decay from selection to evaluation.
+        See `the full paper and examples <https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf>`__.
+
+    Probability of backtest overfitting
+
+        The probability of backtest overfitting (PBO) estimates how often choosing the best candidate in sample leads to a below-median rank among the same candidates out of sample.
+        In :term:`combinatorially symmetric cross-validation`, count those splits and divide by the number evaluated.
+        If the selected winner ranks below the median on 14 of 20 splits, PBO is 70%. Selection has usually favoured a candidate that subsequently lagged its peers.
+
+        Lower values indicate more consistent relative selection under the specified metric and candidate set.
+        Even a consistently top-ranked candidate can lose money when all candidates lose. Report the held-out returns alongside the ranks.
+
+        Bailey and colleagues illustrate the rank diagnostic on investment strategy searches and also measure the frequency of losses on the held-out blocks.
+        See `The Probability of Backtest Overfitting <https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf>`__.
+
+    Deflated Sharpe ratio
+
+        The deflated Sharpe ratio (DSR) applies the :term:`probabilistic Sharpe ratio` to the winner of a strategy search.
+        Its benchmark is the Sharpe ratio expected from the best trial under a no-skill assumption, estimated using the dispersion of trial Sharpes and the :term:`effective number of independent trials`.
+        The observed winner's return history supplies the sample length, skewness and kurtosis used to estimate uncertainty.
+
+        DSR is on a probability scale. A value of 0.97 clears a prespecified 95% evidence threshold against the adjusted benchmark, while 0.80 falls short.
+        A broader search raises the hurdle for the same observed Sharpe, all else equal.
+        See Bailey and López de Prado, `The Deflated Sharpe Ratio <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551>`__.
+
+        The authors' worked Treasury trading example starts with an annualised Sharpe ratio of 2.5. The statistical hurdle rises once it accounts for the other configurations tested.
+        See `the full paper and worked example <https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf>`__.
+
+    Effective number of independent trials
+
+        The effective number of independent trials estimates how many distinct chances a search had to produce a strong result by luck.
+        For example, if 40 :term:`backtest` runs consist of identical copies of four mutually independent return histories, the effective count is four.
+        With partially correlated variants the count must be estimated. A report using clusters of correlated returns should give the similarity measure and clustering threshold.
+        Include unsuccessful trials in the search history. Understating its breadth can inflate the :term:`deflated Sharpe ratio`.
+
+        Bailey and López de Prado outline one approach based on average correlation among trial returns in Appendix A.3 of `The Deflated Sharpe Ratio <https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf#page=14>`__.
+
+    Time-series momentum
+
+        Time-series momentum (TSMOM) uses the direction of an instrument's own past return as a :term:`trend-following` signal.
+        For example, a monthly futures rule might go long each contract with a positive trailing 12-month excess return and short each contract with a negative one.
+        If all returns are positive, all signals are long. The return sign sets direction, while :term:`position sizing` determines how much risk each contract contributes.
+
+        Moskowitz, Ooi and Pedersen studied this rule across equity index, bond, commodity and currency contracts.
+        See :ref:`their time-series momentum study <example-time-series-momentum>` and compare :term:`cross-sectional momentum`.
+
+        Huang and colleagues re-examined the futures evidence. They found weak evidence that an individual contract's past 12-month return predicts its next return and showed that pooled test statistics can overstate the evidence.
+        See `Time series momentum: Is it there? <https://scholars.hkbu.edu.hk/en/publications/time-series-momentum-is-it-there-2/>`__.
+
+    Cross-sectional momentum
+
+        Cross-sectional momentum ranks assets by their past returns over a common window and buys the leaders, sometimes also shorting the laggards.
+        Suppose three assets returned −2%, −7% and −12%. A long-short rule buys the first and shorts the third.
+        With equal dollar legs it profits if the first subsequently outperforms the third by enough to cover costs. A long-only version can lose even if it picks the strongest asset.
+
+        Jegadeesh and Titman formed winner and loser portfolios of US stocks to test persistence in those relative rankings.
+        See `Returns to Buying Winners and Selling Losers <https://doi.org/10.1111/j.1540-6261.1993.tb04702.x>`__ and :term:`momentum crash`.
+
+        Asness, Moskowitz and Pedersen studied momentum across eight markets and asset classes. They found that momentum returns shared common variation across markets, which matters when sizing exposures across strategies.
+        See `Value and Momentum Everywhere <https://doi.org/10.1111/jofi.12021>`__.
+
+    Dual momentum
+
+        Dual momentum combines a peer ranking (:term:`cross-sectional momentum`) with a test of the winner's own performance (:term:`time-series momentum`).
+        In Gary Antonacci's framework, the two decisions are which risky asset to own and whether to hold risky assets at all.
+        Suppose the strongest equity fund gained 2% over the lookback while Treasury bills earned 3%.
+        A rule requiring the winner to beat bills would move to its defensive holding for the next period. The choice of hurdle and defensive holding both affect reported returns.
+        See the discussion of Antonacci in :doc:`Momentum <learn/momentum>`.
+
+        Antonacci tests relative strength and absolute-return filters across several asset pairs and compares the combination with using either filter alone.
+        See `Risk Premia Harvesting Through Dual Momentum <https://doi.org/10.2139/SSRN.2042750>`__.
+
+    Residual momentum
+
+        Residual momentum ranks assets on the part of their past returns left over after accounting for common factors such as the market.
+        For each observation, subtract the return fitted by the factor model from the observed return, then aggregate those residuals over the ranking window.
+        A stock returning 6% in a month when its fitted return was 9% contributes a −3 percentage point residual. Strong raw performance can therefore coincide with weak residual performance.
+
+        Blitz, Huij and Martens used volatility-adjusted residual returns to rank equities in `Residual Momentum <https://pure.eur.nl/en/publications/residual-momentum/>`__ (2011).
+        Estimate factor exposures with data available at the ranking date to avoid :term:`look-ahead bias`. See also :term:`factor neutralisation`.
+
+    Cross-sectional reversal
+
+        Cross-sectional reversal takes the opposite side of recent relative performance. It buys laggards, shorts leaders, or does both in anticipation of a change in their ranking.
+        If two stocks rose 1% and 5% last week, the first is the relative loser. A paired reversal trade profits before costs if that stock outperforms the second over the holding period.
+        Lehmann studied weekly winner-loser reversals in `Fads, Martingales, and Market Efficiency <https://www.nber.org/papers/w2533>`__ (published in 1990).
+        At short horizons the :term:`bid-ask spread` on entry and exit can absorb much of a measured reversal. Compare :term:`cross-sectional momentum`.
+
+    Breakout trading
+
+        Breakout trading opens a position when price passes a boundary fixed by an earlier trading range.
+        A :term:`Donchian channel` rule might buy on a close above the highest high of the preceding 20 sessions.
+        If that high was 105 and today's price reaches 107 but closes at 104, an intraday trigger fires and the closing trigger stays silent.
+        In a :term:`backtest`, record the trigger and the first executable price separately. A gap can carry the fill well beyond the boundary.
+
+        Brock, Lakonishok and LeBaron tested trading-range breaks on the Dow Jones Industrial Average.
+        Sullivan, Timmermann and White extended the test to a larger family of rules and used a bootstrap to account for data snooping.
+        See `Simple Technical Trading Rules and the Stochastic Properties of Stock Returns <https://doi.org/10.1111/j.1540-6261.1992.tb04681.x>`__ and `Data-Snooping, Technical Trading Rule Performance, and the Bootstrap <https://doi.org/10.1111/0022-1082.00163>`__.
+
+    Donchian channel
+
+        A Donchian channel describes the range of the last N bars of :term:`OHLCV` data. Its upper and lower bands are the maximum high and minimum low, and its centre is their arithmetic mean.
+        If the last 20 completed sessions span 80 to 100, the centre is 90. A subsequent print at 101 crosses yesterday's upper band.
+        For :term:`breakout trading`, lag the channel by one bar when testing a new high. Including the current high in the maximum makes a strict break above it impossible.
+
+        For an implementation reference with all three bands, see `TradingView's Donchian channel calculation <https://www.tradingview.com/support/solutions/43000502253-donchian-channels-dc/>`__.
+
+    Pullback entry
+
+        A pullback entry buys a retreat within an established uptrend or sells a rally within a downtrend.
+        A rule might require price above its 100-day :term:`moving average`, then bid 2% below the latest close.
+        After a close at 50, the bid is 49. A continuing rally can leave the order unfilled, while a trend reversal can fill it on the way down.
+        Compare the fill rate and subsequent returns of these bids with entering immediately. See :term:`limit order`.
+
+        Connors Research gives a stock example that combines a low ConnorsRSI reading with a limit bid below the signal day's close.
+        See the entry rules in the `ConnorsRSI Pullback Strategy Guidebook <https://alvarezquanttrading.com/wp-content/uploads/2016/05/ConnorsRSIGuidebook.pdf#page=17>`__.
+
+    Support reclaim
+
+        A support reclaim occurs when price trades below a level previously identified as support, then recovers above it.
+        Suppose yesterday's low of 40 is the chosen level. A session that trades at 39 and closes at 41 qualifies under a closing-confirmation rule.
+        A :term:`backtest` that requires the close can submit an order after that observation. Crediting the trade with an entry at 39 would introduce :term:`look-ahead bias`.
+
+        Carol Osler analysed orders at a large foreign exchange bank and found that stop-loss and take-profit orders clustered around round numbers, where traders often set support and resistance.
+        See `Currency Orders and Exchange-Rate Dynamics <https://www.newyorkfed.org/research/staff_reports/sr125>`__.
+
+    Volatility contraction pattern
+
+        The volatility contraction pattern (VCP), described by Mark Minervini in `Trade Like a Stock Market Wizard <https://www.mheducation.com/highered/mhp/product/trade-like-stock-market-wizard-how-achieve-super-performance-stocks-any-market.html>`__, is a :term:`breakout trading` setup with successively shallower declines within a price base.
+        For example, peak-to-trough pullbacks of 16%, 9% and 4% show narrowing swings. Traders also look for lighter volume during the final contraction.
+        A rule can use the high of that final swing as its buy trigger. To reproduce the pattern in a :term:`backtest`, specify when each swing becomes identifiable and how volume is compared across swings.
+
+    Ichimoku cloud
+
+        The Ichimoku cloud is the area between two forward-plotted lines used to judge trend direction.
+        In the conventional daily settings, first take the midpoint of the highest high and lowest low over each of 9, 26 and 52 sessions.
+        The first leading span averages the 9- and 26-session midpoints. The second is the 52-session midpoint. Both are drawn 26 sessions ahead.
+
+        If the spans plotted at today's date are 96 and 100, a close at 103 is above the cloud and passes a common bullish trend filter.
+        A close at 98 is inside it. To reproduce the chart in a :term:`backtest`, compare today's close with spans calculated 26 sessions earlier.
+        Reversing that alignment can introduce :term:`look-ahead bias`.
+
+        For the formulas and plot offsets, see `TradingView's Ichimoku Cloud documentation <https://www.tradingview.com/support/solutions/43000589152-ichimoku-cloud/>`__.
+
+    Supertrend
+
+        Supertrend is a :term:`technical indicator` that tracks a trailing price boundary and switches trend direction when price breaches it.
+        Start with the bar's high-low midpoint and add or subtract a multiple of :term:`average true range (ATR)`.
+        A midpoint of 100, ATR of 2 and multiplier of 3 give initial bands of 94 and 106.
+
+        In an uptrend the active lower band ratchets upward as new lower bands rise. A close below the trailing level turns the trend down and activates the upper band.
+        A larger multiplier requires a wider adverse move from the reference price, usually reducing switches at the cost of a slower exit.
+        Specify the ATR lookback and whether the rule waits for the close.
+
+        TradingView documents how its implementation carries both bands forward and determines which band is active at each close.
+        See `the Supertrend calculation and trend rules <https://www.tradingview.com/support/solutions/43000634738-supertrend/>`__.
+
+    Pairs trading
+
+        Pairs trading buys one instrument and shorts a related one when their prices diverge, seeking to profit as the gap closes.
+        Suppose one share of A usually trades near twice the price of B. With A at 105 and B at 50, a trader shorts one A and buys two B.
+        If A reaches 106 and B reaches 53, the spread falls from 5 to zero and the trade gains 5 before fees and borrow costs.
+        A change in the relationship can leave a widening loss on both legs combined.
+
+        Gatev, Goetzmann and Rouwenhorst matched stocks by the historical distance between normalised prices. Other methods use :term:`cointegration` to estimate a :term:`hedge ratio`.
+        See `Pairs Trading: Performance of a Relative-Value Arbitrage Rule <https://doi.org/10.1093/rfs/hhj020>`__.
+
+        For a worked cryptocurrency example, Leung and Nguyen estimate cointegrating portfolios and use deviations from the estimated relationship as entry signals.
+        See `Constructing Cointegrated Cryptocurrency Portfolios for Statistical Arbitrage <https://doi.org/10.1108/SEF-08-2018-0264>`__.
+
+    Cointegration
+
+        Price series that drift over time are cointegrated if a fixed linear combination of them is stationary, with fluctuations around a stable level.
+        In :term:`pairs trading`, a candidate spread might be the price of A minus 1.5 times the price of B.
+        Strong :term:`Pearson correlation` between daily returns can coexist with a spread that wanders for years.
+
+        In the Engle–Granger procedure, estimate a long-run relation and test its residuals for a unit root using cointegration-specific critical values.
+        Rejection supports a stationary spread over the fitted period. Its trading value also depends on how quickly it converges, costs and whether the relationship persists.
+        See Engle and Granger, `Co-integration and Error Correction <https://doi.org/10.2307/1913236>`__ (1987).
+
+        The original paper also relates cointegration to error correction, which models how changes in the individual series respond to departures from their long-run relationship.
+        See `the full Engle–Granger paper <https://users.ssc.wisc.edu/~behansen/718/EngleGranger1987.pdf>`__.
+
+    Hedge ratio
+
+        A hedge ratio specifies the offsetting exposure required per unit of the position being hedged. Its units depend on how the hedge is estimated.
+        A portfolio with market :term:`beta` of 1.2 needs about 120,000 USD short in a beta-one index to offset the estimated market exposure of a 100,000 USD long.
+        For futures, divide that dollar amount by the notional value per contract to obtain the order quantity.
+        By contrast, a :term:`pairs trading` regression in share prices can give a ratio in shares of B per share of A. Assess a hedge by the exposure remaining after execution.
+
+        Ederington tests minimum-variance hedges for spot positions using futures. When the spot and futures price changes are expressed in compatible units, that hedge ratio is their covariance divided by the variance of the futures price change.
+        See `The Hedging Performance of the New Futures Markets <https://doi.org/10.1111/j.1540-6261.1979.tb02077.x>`__.
+
+    Dollar-neutral portfolio
+
+        A dollar-neutral portfolio has equal long and short market values in the reporting currency at the time of measurement.
+        With 60,000 USD on each side, net dollar exposure is zero and gross exposure is 120,000 USD.
+        If the longs have :term:`beta` of 1.4 and the shorts 0.8, a 1% market rise implies an estimated gain of 840 − 480 = 360 USD from market exposure alone.
+        A :term:`market neutral strategy` targeting zero beta would need to adjust its holdings or :term:`hedge ratio`.
+
+        Frazzini and Pedersen illustrate a different construction. Their betting-against-beta factor scales the dollar sizes of its low- and high-beta legs so that each has the same estimated beta exposure.
+        See `Betting Against Beta <https://www.nber.org/papers/w16601>`__.
+
+    Funding-rate carry
+
+        Funding-rate carry seeks income from recurring payments on a :term:`perpetual future`, usually with an offsetting spot or futures position.
+        Where a positive :term:`funding rate` means longs pay shorts, buying spot and shorting 50,000 USD of the perpetual earns 5 USD at a settlement rate of 1 basis point.
+        If financing and trading costs allocated to that interval total 7 USD, net carry is −2 USD before any change in the spot–perpetual spread.
+        A favourable current rate can reverse at the next settlement. Report receipts on actual notional and returns on the capital committed to both legs.
+
+        Ackerer, Hugonnier and Jermann model how funding links perpetual futures prices to spot. For a concrete settlement example, Hyperliquid documents its payment calculation and sign convention.
+        See `Perpetual Futures Pricing <https://www.nber.org/papers/w32936>`__ and `Hyperliquid's funding rules <https://hyperliquid.gitbook.io/hyperliquid-docs/trading/funding>`__.
+
+    Constant-mix strategy
+
+        A constant-mix strategy trades back to fixed portfolio weights on a schedule or when weights cross a tolerance band.
+        Suppose a portfolio starts with 50 USD in stock and 50 USD in cash. After the stock gains 20%, total value is 110 USD.
+        Restoring equal weights means selling 5 USD of stock. A subsequent price fall triggers buying at the next :term:`rebalance`.
+        Perold and Sharpe's `Dynamic Strategies for Asset Allocation <https://web.stanford.edu/class/msande348/papers/PeroldSharpe.pdf>`__ explains why this rule benefits from reversals and can lag :term:`buy and hold` in a sustained trend.
+        See :doc:`Portfolio construction <learn/portfolio-construction>`.
+
+    Volatility harvesting
+
+        Volatility harvesting seeks to increase compounded portfolio growth by repeatedly rebalancing assets whose relative prices fluctuate.
+        In the :term:`constant-mix strategy` example, rebalancing leaves 55 USD each in stock and cash after the stock rises 20%.
+        If the stock then returns to its starting price, the shares are worth 55 / 1.20, or 45.83 USD. Together with cash the portfolio holds 100.83 USD, against 100 USD for :term:`buy and hold`.
+
+        The 0.83 USD advantage depends on the reversal and excludes :term:`transaction cost`. If the stock instead keeps rising, the rebalance has reduced the position in the winner.
+        Compare compounded returns after costs over the same price path and starting allocation.
+
+        Willenbrock compares rebalanced and buy-and-hold portfolios and traces the rebalanced portfolio's diversification return to trades that sell assets after relative gains and buy after relative declines.
+        See `Diversification Return, Portfolio Rebalancing, and the Commodity Return Puzzle <https://arxiv.org/abs/1109.1256>`__.
+
+    Time stop
+
+        A time stop closes a position once a specified holding period expires. A :term:`cross-sectional reversal` rule might expect convergence within three sessions and exit on the fourth session's open.
+        This releases capital even when the price has barely moved. A price-based :term:`stop loss` can still close the trade earlier.
+        To evaluate the deadline, compare net returns and time invested across holding periods on a :term:`holdout set`.
+
+        Kitapbayev and Leung study a finite liquidation deadline for a mean-reverting position and show how the optimal exit boundary changes as the deadline approaches.
+        See `Mean Reversion Trading with Sequential Deadlines and Transaction Costs <https://arxiv.org/abs/1707.03498>`__.
