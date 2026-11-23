@@ -10068,6 +10068,18 @@
     "short_description": "This paper challenges the common belief that LLMs are unsuitable for financial return prediction by applying the Chronos model to large-cap US stocks and constructing long/short statistical arbitrage portfolios. Performance simulations demonstrate that fine-tuned LLMs can identify market inefficiencies in near-random time series and generate alpha, with significant room for improvement remaining relative to benchmark models."
   },
   {
+    "title": "Lead-Lag Detection and Network Clustering for Multivariate Time Series with an Application to the US Equity Market",
+    "authors": "Stefanos Bennett, Mihai Cucuringu, Gesine Reinert",
+    "publication_year": 2022,
+    "download_page": "https://arxiv.org/abs/2201.08283",
+    "source_file": "statistical-arbitrage.rst",
+    "included_in_index_at": "2026-11-23",
+    "filename": "lead-lag-detection-and-network-clustering-for-multivariate-time-series.pdf",
+    "downloaded_at": "2026-11-23",
+    "download_failure_reason": null,
+    "short_description": "Builds a directed network of pairwise lead-lag scores (cross-correlation, distance correlation or second-order path signature areas) and clusters it with Hermitian spectral methods to find leading and lagging groups of time series. On 434 liquid NYSE stocks (2000-2019) the clusters are statistically significant and not explained by industry, volume or size, and a signal forecasting lagging clusters from leading ones earns an out-of-sample Sharpe of 0.62 before costs with 0.04 market correlation."
+  },
+  {
     "title": "Neural Augmented Kalman Filtering with Bollinger Bands for Pairs Trading (KBPT)",
     "authors": "Amit Milstein, Haoran Deng, Guy Revach, Hai Morgenstern, Nir Shlezinger",
     "publication_year": 2024,
