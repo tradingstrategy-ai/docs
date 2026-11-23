@@ -11952,6 +11952,18 @@
     "short_description": null
   },
   {
+    "title": "Local Volatility: From the Implied Vol Surface to Risk-Neutral Dynamics",
+    "authors": "Inflection Quant",
+    "publication_year": 2026,
+    "download_page": "https://inflectionquant.com/articles/local_vol/",
+    "source_file": "volatility.rst",
+    "included_in_index_at": "2026-11-23",
+    "filename": "local-volatility-from-the-implied-vol-surface-to-risk-neutral-dynamics.pdf",
+    "downloaded_at": "2026-11-23",
+    "download_failure_reason": null,
+    "short_description": "Tutorial deriving Dupire's local volatility formula from Fokker-Planck and calibrating it from an arbitrage-free implied vol surface in Gatheral's total-variance form. On a hypothetical SSVI equity surface it shows local vol matches Black-Scholes vanilla prices and vega but gives lower delta, double the gamma and a different P&L split (skew stickiness ratio about 2 against 1 for sticky strike), and prices an up-and-out call 45% higher than constant vol. Via Gyöngy's result it explains why local vol matches marginals but flattens forward smiles, and why it breaks for commodity strips such as natural gas."
+  },
+  {
     "title": "Meta-Learning Neural Process for Implied Volatility Surfaces with SABR-induced Priors",
     "authors": "Jirong Zhuang and Xuan Wu",
     "publication_year": 2025,
