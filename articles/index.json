@@ -6264,6 +6264,18 @@
     "short_description": null
   },
   {
+    "title": "Momentum Earns More the Smaller the Stocks",
+    "authors": "Ivan Blanco",
+    "publication_year": 2026,
+    "download_page": "https://www.noaxcapital.com/research/momentum-across-size",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-11-23",
+    "filename": "momentum-earns-more-the-smaller-the-stocks.pdf",
+    "downloaded_at": "2026-11-23",
+    "download_failure_reason": null,
+    "short_description": "Sorts US stocks (1966-2025, JKP/CRSP data) on 12-1 momentum inside four NYSE size groups and finds the value-weighted long-short Sharpe rises from 0.39 in mega caps to 1.02 in micro caps, with about four fifths of the extra small-cap premium coming from slow-falling losers. After estimated trading costs the Sharpe falls to 0.16-0.36, and borrow fees on hard-to-short sub-$5 micro-cap losers could erase the remaining gap."
+  },
+  {
     "title": "Momentum Factor Investing: Evidence and Evolution",
     "authors": "Baltussen, Dom, Van Vliet, and Vidojevic",
     "publication_year": 2025,

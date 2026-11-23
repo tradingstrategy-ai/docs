@@ -547,3 +547,20 @@ Time-series momentum is strong but works only in a :term:`bull market`. When the
 By Chulwoo Han, Byeongguk Kang, Jehyeon Ryu.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4675565>`__
+
+Momentum Earns More the Smaller the Stocks
+------------------------------------------
+
+Noax Research No. 3 by Ivan Blanco sorts US stocks on their past 12-month return inside four size groups, from 1966 to 2025. :term:`Momentum` pays in all four groups and much more in small stocks, with a Sharpe ratio rising from 0.39 in mega caps to 1.02 in micro caps. The gap comes mostly from small losers, and most of it is hard to collect after costs.
+
+Our summary: the note revisits an old disagreement in the literature. Hong, Lim and Stein (2000) found momentum weakening as firms get larger, while Israel and Moskowitz (2013) found it in every size group. Both turn out to be right. The premium exists in mega caps, but volatility is about 24-25% a year in every group, so the larger raw premium in small stocks translates directly into higher Sharpe ratios. Splitting the long-short into legs and comparing each with its own size group shows that winners beat their group by a similar 6-9% a year everywhere, whereas losers lag by 3.5% in mega caps and 16.2% in micro caps. About four fifths of the micro-versus-mega gap therefore sits in the short leg, matching the "bad news travels slowly" story for small, thinly covered firms. That is also where the strategy is hardest to implement. After half-spread trading costs (Corwin-Schultz high-low estimate, roughly 35% monthly turnover per leg) the Sharpe gap shrinks sharply. On average 54% of micro-cap losers trade below $5, many of them expensive or impossible to borrow. A borrow fee of 4.9% a year on the micro-cap short leg is enough to bring it down to mega-cap levels, and 8.8% wipes it out. Long-only, the size pattern disappears. The author concludes that a momentum backtest that looks great in small caps should be read with the borrow market in mind. He also notes that residual momentum and volatility scaling, neither tested here, are known improvements over the plain 12-1 signal.
+
+Data and code: Jensen, Kelly and Pedersen (JKP) global factor data for the US, built from CRSP and Compustat, common stocks 1966-2025, monthly rebalancing, price above $1. Momentum is the t-12 to t-1 return. Size groups use NYSE breakpoints (mega above the 80th percentile, large 50-80th, small 20-50th, micro 1-20th). Portfolios are value-weighted top decile minus bottom decile inside each group. No borrow fees or shorting limits are modelled, and no code is released. The data requires WRDS access.
+
+Key metrics: gross long-short returns of 9.3% a year in mega caps (t-stat 3.0), 12.3% in large caps, 17.9% in small caps and 24.8% in micro caps (t-stat 7.9). Compounded, that is 6.5% and 23.8% a year for mega and micro caps. Gross Sharpe ratios are 0.39, 0.50, 0.72 and 1.02. Post-publication (1994-2025) the Sharpe is 0.39 in mega caps and 0.66 in micro caps. Estimated :term:`transaction costs <transaction cost>` are 5.3% a year in mega caps and 15.9% in micro caps. Net Sharpe ratios are 0.16, 0.23, 0.34 and 0.36, and the micro-mega return gap falls from 15.5 to 4.9 points a year. Long-only winners beat their size group by about 2-3% a year after costs, with a Sharpe near 0.2 that is not significantly different from zero. In the 2009 momentum crash the long-short lost 48% in mega caps and 72% in micro caps.
+
+Mentioned by Ivan Blanco in `this discussion <https://www.linkedin.com/posts/ivanblancosanchez_noax-research-no-3-momentum-earns-more-ugcPost-7530572172600401920-pm2x/>`__: "The extra premium in small caps is real in the data and very hard to collect."
+
+By Ivan Blanco, Noax Capital.
+
+`Read the article <https://www.noaxcapital.com/research/momentum-across-size>`__
