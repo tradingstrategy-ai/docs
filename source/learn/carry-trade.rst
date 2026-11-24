@@ -367,3 +367,16 @@ Mentioned by Yoshihiko Ichikawa in `this discussion <https://x.com/Yoshihiko_ICK
 By Yoshihiko Ichikawa and Kei Nakagawa.
 
 `Read the paper <https://doi.org/10.11517/jsaisigtwo.2026.FIN-037_168>`__
+
+Lockstep: the yield hidden in perps markets
+-------------------------------------------
+
+Lockstep's launch article describes a funding carry trade on BTC and ETH. When perpetual funding is positive, the strategy shorts the perpetual and buys a synthetic forward made from a long call and a short put with the same strike and expiry. It reverses both sides when negative funding makes the opposite trade attractive. The offsetting positions are designed to hedge the underlying price exposure. The economics depend on whether funding received over the holding period exceeds the implied forward carry and execution costs. Lockstep says it evaluates quotes and market depth, requires the last seven days' average funding to clear the estimated breakeven rate before entry, and coordinates closing the perpetual when the options settle. It describes execution on Derive and Paradex through user-owned accounts with portfolio margin.
+
+For August 2024 to August 2026, the article reports annualised funding of 10.3% for BTC and 9.6% for ETH against forward carry of 7.3% and 6.2%, respectively. After about 0.6 percentage points of assumed annualised execution costs, it reports net spreads of 2.4% and 2.7% on notional. A separate chart with an endpoint of November 2, 2026 shows simulated annualised returns on deposited capital at 10x leverage of 26.9% for BTC and 31.4% for ETH, with peak-to-trough drawdowns of 15% and 28%, respectively. From November 2025 through May 2026, funding averaged 3.3% against a reported 7% breakeven threshold, and some entry dates produced sustained losses. The article provides historical simulations and charts, with no linked dataset, code or realised user returns. Portfolio margin reduces collateral requirements, while changes in the perp basis, unmatched execution and venue margin rules can still affect the hedge and expose capital to losses. The article also discusses variable funding, limited options depth, outages and settlement risk.
+
+By Lockstep (@lockstep_eth), published November 24, 2026.
+
+Mentioned by Lockstep in `this discussion <https://x.com/lockstep_eth/status/2125243410680258876>`__, which announces the product launch and highlights the options and perpetuals hedge, historical performance and execution workflow.
+
+`Read the article <https://x.com/i/article/2124600178686496768>`__.

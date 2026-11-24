@@ -2340,6 +2340,18 @@
     "short_description": "Compares two DeFi protocols generating yield on Hyperliquid perpetuals exchange through different mechanisms (options vaults vs liquidity provision)."
   },
   {
+    "title": "Lockstep: the yield hidden in perps markets",
+    "authors": "Lockstep (@lockstep_eth)",
+    "publication_year": 2026,
+    "download_page": "https://x.com/i/article/2124600178686496768",
+    "source_file": "carry-trade.rst",
+    "included_in_index_at": "2026-11-24",
+    "filename": "lockstep-the-yield-hidden-in-perps-markets.pdf",
+    "downloaded_at": "2026-11-24",
+    "download_failure_reason": null,
+    "short_description": "Lockstep describes a crypto funding carry strategy that pairs a synthetic options forward with an opposite perpetual position. Its historical simulations at 10x leverage show annualised returns of 26.9% on BTC and 31.4% on ETH, with 15% and 28% drawdowns. Sustained low funding produced losses for some entry dates."
+  },
+  {
     "title": "Perpetual Futures Pricing",
     "authors": "Damien Ackerer, Julien Hugonnier, Urban Jermann",
     "publication_year": 2024,
