@@ -4776,6 +4776,18 @@
     "short_description": null
   },
   {
+    "title": "Research Desk: I Tested a 2025 ML Paper on Telecom Customers and SPY",
+    "authors": "Ayrat Murtazin (AlgoEdge Insights)",
+    "publication_year": 2026,
+    "download_page": "https://algoedgeinsights.beehiiv.com/p/machine-learning-random-split-leakage-trading-backtest",
+    "source_file": "machine-learning.rst",
+    "included_in_index_at": "2026-11-25",
+    "filename": "research-desk-i-tested-a-2025-ml-paper-on-telecom-customers-and-spy.pdf",
+    "downloaded_at": "2026-11-25",
+    "download_failure_reason": null,
+    "short_description": "Re-tests a 2025 churn-prediction literature review on the IBM Telco dataset, finding logistic regression beats random forest and XGBoost in 28 of 30 splits and that SMOTE is mostly a threshold shift that breaks calibration. Applied to a 21-day SPY crash label, a random train-test split inflates XGBoost AUC to 0.88, while a chronological split with a gap drops all models to 0.55-0.58 and a plain 63-day volatility rule beats them walk-forward."
+  },
+  {
     "title": "Risk Management via Anomaly Circumvent: Mnemonic Deep Learning for Midterm Stock Prediction",
     "authors": "Xinyi Li, Yinchuan Li, Xiao-Yang Liu, Christina Dan Wang",
     "publication_year": 2019,
