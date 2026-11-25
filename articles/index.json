@@ -5256,6 +5256,18 @@
     "short_description": "Tests Level-1 order-flow imbalance as an intraday alpha signal across twelve U.S. equity, ETF, and futures instruments using walk-forward Ridge regressions and a two-state HMM regime model. The signal has small but statistically positive out-of-sample information coefficients, yet at ten-second execution its gross edge is overwhelmed by bid-ask crossing costs. A holding-period analysis identifies 30 minutes as the minimum viable horizon under the stated cost model, while passive execution and richer order-book depth remain proposed extensions."
   },
   {
+    "title": "Side, Not Price: How On-Chain Market Makers Manage Inventory, and What It Does to Prices",
+    "authors": "Kethan S E",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7713678",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-25",
+    "filename": "side-not-price-on-chain-market-makers-inventory.pdf",
+    "downloaded_at": "2026-11-25",
+    "download_failure_reason": null,
+    "short_description": "Uses Hyperliquid's account-tagged order data (165 million quotes, 230 maker accounts, five coins, 86 days) and pre-registered tests to show that market makers manage inventory by choosing which side to quote (-6.2 pp bid share per SD of inventory) rather than by shading prices (-0.24 ticks), rejecting three GLFT predictions. Makers' combined long inventory goes with Hyperliquid trading 0.70 bps below Binance, a gap that is about one-third closed within an hour."
+  },
+  {
     "title": "Strategic Trading Models",
     "authors": "Simone Menaldo",
     "publication_year": null,
