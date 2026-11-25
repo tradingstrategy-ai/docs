@@ -5844,6 +5844,18 @@
     "short_description": "Uses percentage-based Renko charts to expose alternating up/down brick patterns in mean-reverting regimes, arguing 70% of market time is ranging."
   },
   {
+    "title": "Nasdaq Reversion Semanal: el compañero perfecto de INT Clenow/Momentum",
+    "authors": "Bolsa y Cartera",
+    "publication_year": 2026,
+    "download_page": "https://www.bolsaycartera.com/2026/11/24/nasdaq-reversion-semanal-el-companero-perfecto-de-int-clenow-momentum/",
+    "source_file": "mean-reversion.rst",
+    "included_in_index_at": "2026-11-25",
+    "filename": "nasdaq-reversion-semanal-el-companero-perfecto-de-int-clenow-momentum.pdf",
+    "downloaded_at": "2026-11-25",
+    "download_failure_reason": null,
+    "short_description": "Spanish-language backtest review of a weekly Nasdaq 100 mean-reversion system that buys pullbacks in uptrending stocks, reworked after a record 2026 drawdown by moving the market filter and exit onto parameter plateaus and selling stopped-out positions at the next open. Combined 50/50 with the author's Clenow-style momentum system (monthly return correlation 0.13), it reports 28.7% CAR, a -14% maximum drawdown and no losing year over 2003-2026, though the parameters were tuned in-sample."
+  },
+  {
     "title": "Optimal Mean Reversion Trading with Transaction Costs and Stop-Loss Exit",
     "authors": "Tim Leung and Xin Li",
     "publication_year": 2015,
