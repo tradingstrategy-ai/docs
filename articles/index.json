@@ -5040,6 +5040,18 @@
     "short_description": "Decomposes the price in a Hawkes and queue-reactive model into a propagator term and a queue-state correction, then regresses E-mini S&P 500 price changes on the two signals over 193 test days in 2025. At 212 s the queue term lifts mean daily out-of-sample R-squared on the weighted mid-price from 0.422 to 0.437 with a slope of -8.1 x 10^-6, and the simulated peak impact of 100 AES posted over 50 s is 1.5 x 10^-2 index points, about 6 percent of a tick."
   },
   {
+    "title": "Execution Costs Eat Into Your PnL: How Lighter Traders Saved $42.7M In 90 Days",
+    "authors": "Lighter",
+    "publication_year": 2026,
+    "download_page": "https://x.com/Lighter_xyz/status/2125767064162017523",
+    "source_file": "market-microstructure.rst",
+    "included_in_index_at": "2026-11-26",
+    "filename": "execution-costs-eat-into-your-pnl-how-lighter-traders-saved-42-7m-in-90-days.pdf",
+    "downloaded_at": "2026-11-26",
+    "download_failure_reason": null,
+    "short_description": "Lighter replays 112.6M of its taker trades ($157B volume, 90 days) against the real Binance, Bybit and Hyperliquid order books to compare fee plus slippage. Mostly thanks to zero fees, its all-in cost averages 1.53 bps against 4.26 bps on the next-cheapest venue, which it puts at $42.7M saved against Hyperliquid. Strategies earning 1.5-4.3 bps per trade would be profitable only on Lighter."
+  },
+  {
     "title": "Fat Tails in Crypto Markets and Implications for Market Making",
     "authors": null,
     "publication_year": null,

@@ -621,3 +621,14 @@ Mentioned by `Kethan S. <https://www.linkedin.com/in/kethan-s-654751408/>`__, th
 By Kethan S E.
 
 `Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7713678>`__.
+
+Execution Costs Eat Into Your PnL: How Lighter Traders Saved $42.7M In 90 Days
+------------------------------------------------------------------------------
+
+An X article from the decentralised :term:`perpetual futures <Perpetual future>` exchange Lighter measures what execution costs a taker would have paid on other venues. It takes every eligible Lighter taker trade over 90 days: $157B in volume, 112.6M trades and 41,000 traders. Each one is replayed on Binance, Bybit and :term:`Hyperliquid` with the same side and size, against that venue's real :term:`order book` at the same moment. Execution cost is the trading fee plus :term:`slippage` against the mid price. Lighter's figure is $42.73M saved against Hyperliquid, the next-cheapest venue, $45.59M against Binance and $53.46M against Bybit.
+
+Our summary: the gap comes mostly from fees. Most Lighter users trade at zero fees, and Lighter's average fee is 0.30 :term:`bps <Basis point>` including paid account types. The next-cheapest venue averages 3.19 bps after staking and volume discounts, against base taker rates of 4.5–5.5 bps. All-in, a Lighter trade starts on average 1.53 bps in the red, against 4.26 bps on the next-cheapest venue, or about $273 more per $1M traded. The authors conclude that a strategy earning 1.5–4.3 bps per trade makes money on Lighter and loses money everywhere else they measured. They highlight three zero-fee taker addresses on majors whose PnL would have been $2.08M lower elsewhere; for two of them, Lighter is the only venue where their strategy is profitable. On method, Hyperliquid's book is matched to the exact millisecond, Binance's within about 25 ms and Bybit's within 200 ms. Other venues are charged the taker fee at the tier the trader's volume would earn there, which the authors say favours those venues. Liquidations, maker fills and orders the other book could not fill within 1% of mid are excluded. The authors report that the result holds whether prices are taken at the fill or before Lighter's speed bump (300 ms, 140 ms for Premium), and whether each venue's own mid is used or the usual price gap between venues is adjusted for. Keep in mind that this is a vendor measuring its own venue. Replaying fills assumes the same orders would have been sent and filled the same way elsewhere, with no change to the strategy, and the zero-fee advantage depends on Lighter keeping its current fee policy. The underlying data and a savings leaderboard are public at `app.lighter.xyz/savings <https://app.lighter.xyz/savings>`__.
+
+By Lighter.
+
+`Read the article <https://x.com/Lighter_xyz/status/2125767064162017523>`__.
