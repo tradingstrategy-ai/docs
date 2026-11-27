@@ -564,3 +564,18 @@ Mentioned by Ivan Blanco in `this discussion <https://www.linkedin.com/posts/iva
 By Ivan Blanco, Noax Capital.
 
 `Read the article <https://www.noaxcapital.com/research/momentum-across-size>`__
+
+When Does Momentum Thrive? Business Cycles, Geopolitical Risk, and over 150 Years of UK Equity Returns
+------------------------------------------------------------------------------------------------------
+
+This 2026 working paper by Gareth Campbell, Minyou Fan, Jiadong Liu and Le Zheng examines how domestic business cycles and geopolitical risk affect the spread between past stock winners and losers. The authors report positive momentum returns in expansions and recessions, with prior losers underperforming more sharply in recessions and often widening the spread.
+
+Lower geopolitical risk predicts higher subsequent momentum returns in both phases of the business cycle. The authors control for business-cycle conditions, market returns and recent market and momentum volatility. The cycle comparison shows which side of the portfolio accounts for the wider recession spread, while the forward-return analysis tests whether geopolitical risk adds information after accounting for the cycle.
+
+The authors assembled more than 150 years of monthly UK equity returns. The public abstract and table excerpt were available for review. Dataset and code availability, portfolio construction details and trading cost assumptions remain unverified.
+
+The table shared with the discussion reports a 1.54% alpha (t-statistic 8.98) and a beta of -0.35 (t-statistic -3.76) across 1,494 observations from 1900 to 2024. During expansions, alpha is 1.77% in the low-risk group and 1.20% in the high-risk group. During recessions, the corresponding estimates are 1.43% and 1.53%, based on 108 and 121 observations. These are within-regime alpha estimates. The forward-return result described in the abstract incorporates additional controls. Annualised performance, Sharpe ratio, maximum drawdown and win rate remain unverified.
+
+Mentioned by Ralph Sueppel in `this discussion <https://x.com/macro_synergy/status/2126217711839756291>`__, where he highlights the short leg's role in recessions and the link between lower geopolitical risk and stronger subsequent momentum returns.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691978>`__

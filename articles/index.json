@@ -6624,6 +6624,18 @@
     "short_description": "This paper documents consistent value and momentum return premia across eight diverse asset classes and markets, finding a strong common factor structure where value and momentum returns are more strongly correlated across asset classes than within them. The two factors are negatively correlated with each other across all asset classes, and global funding liquidity risk is identified as a partial source of these patterns, presenting a challenge to existing behavioral, institutional, and rational asset pricing theories."
   },
   {
+    "title": "When Does Momentum Thrive? Business Cycles, Geopolitical Risk, and over 150 Years of UK Equity Returns",
+    "authors": "Gareth Campbell, Minyou Fan, Jiadong Liu, Le Zheng",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691978",
+    "source_file": "momentum.rst",
+    "included_in_index_at": "2026-11-27",
+    "filename": null,
+    "downloaded_at": null,
+    "download_failure_reason": "requires_browser",
+    "short_description": "Using more than 150 years of monthly UK equity returns, the authors compare stock momentum across business-cycle and geopolitical-risk regimes. The momentum spread is positive in both expansions and recessions and often stronger in recessions as past losers fare worse. Lower geopolitical risk predicts higher subsequent momentum returns after controlling for the business cycle, market returns and recent market and momentum volatility."
+  },
+  {
     "title": "Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics",
     "authors": "Mark Aron Szulyovszky, Daniel Szemerey",
     "publication_year": 2026,
