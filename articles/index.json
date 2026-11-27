@@ -1608,6 +1608,18 @@
     "short_description": "CrackingMarkets guide to building intraday ATR-based breakout systems using free Python tools and Alpaca data, with equity curve from 2017-2024."
   },
   {
+    "title": "Introducing True Backtesting",
+    "authors": "Rob Carver",
+    "publication_year": 2026,
+    "download_page": "https://qoppac.blogspot.com/2026/11/introducing-true-backtesting.html",
+    "source_file": "backtesting.rst",
+    "included_in_index_at": "2026-11-27",
+    "filename": "introducing-true-backtesting.pdf",
+    "downloaded_at": "2026-11-27",
+    "download_failure_reason": null,
+    "short_description": "Rob Carver argues that even careful walk-forward backtests remain contaminated by tacit fitting (only testing ideas you already know work) and implicit fitting (killing ideas after seeing results). His True Backtesting protocol makes backtests symmetric, flipping the sign of rules that lost money before optimisation, and write-only, so rules are never removed and only reweighted. An S&P 500 futures example with 28 EWMAC pairs and carry shows mean reversion being learnt at fast speeds and carry being kept at a small weight instead of dropped."
+  },
+  {
     "title": "Monday NQ Shorts When Friday's High Holds",
     "authors": "Jan - Algo Trader (@algojan)",
     "publication_year": 2026,

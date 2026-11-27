@@ -419,3 +419,14 @@ The team's approach treats turnover as a first-class citizen in their research m
 By Mark Aron Szulyovszky and Daniel Szemerey.
 
 `Read the blog post <https://blog.unravel.finance/p/research-bits-1-the-most-underrated>`__
+
+Introducing True Backtesting
+----------------------------
+
+Rob Carver proposes a backtesting protocol meant to remove the in-sample fitting that survives even a careful walk-forward process. A conventional backtest with forward-looking-free data, rolling-window robust fitting and significance tests still leaves two biases. Tacit fitting means only testing ideas you already know work, because they came from books, papers, market folklore or an LLM trained on recent data. Implicit fitting means killing or selecting ideas after seeing their backtest. Carver's answer is "True Backtesting": backtests that are symmetric, so both the long and the reversed version of every rule are considered, and write-only, so a rule, once added, is never removed and only its weight changes. These ideas are implemented in his private "Autofitter" codebase, which he plans to release with a future book on backtesting.
+
+The worked example uses a single S&P 500 future from 1982. The "old school" version picks EWMAC N,4N trend rules, fits forecast weights with a robust 20-year rolling mean-variance optimisation (Sharpe shrinkage 0.5, correlation shrinkage 0.75), adds carry, and then drops carry because the combined result gets worse. Carver points to three mistakes: the N,4N choice is tacit fitting, killing carry is implicit fitting, and dropping carry overrides the positive weight the robust optimiser gave it. The True Backtesting version replaces N,4N with all 28 EWMAC X,Y pairs from doubling spans 2-256, whose bounds come from theory, fake data or a short burn-in period rather than performance. In each annual refit, any variation that lost money before costs over the rolling window has its forecast sign flipped, the long-only optimisation is run, and flipped rules get negative weights. For S&P 500, 8 of the 28 final weights are negative, mostly faster pairs trading mean reversion. Over the whole period the result is less profitable, with a longer learning phase, but it is more consistent after 1995. Carry stays in with a weight of about 6%, and the overall performance hardly changes. Because nothing is ever thrown away, each new rule creates a new "vintage" of the backtest rather than another test, so Carver argues no multiple-testing correction is needed. He also warns that the True Backtest is good for realistic past performance and for choosing future weights, but not for estimating future turnover, skew, optimal leverage or drawdown, which need a separate backtest with the final weights that is inflated by in-sample fitting.
+
+By Rob Carver, This Blog is Systematic.
+
+`Read the blog post <https://qoppac.blogspot.com/2026/11/introducing-true-backtesting.html>`__.
