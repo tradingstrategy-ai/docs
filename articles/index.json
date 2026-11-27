@@ -11388,6 +11388,18 @@
     "short_description": null
   },
   {
+    "title": "Intraday Breakout Details That Matter: Exits, Slippage and 0DTE Options",
+    "authors": "Peter, CrackingMarkets",
+    "publication_year": 2026,
+    "download_page": "https://www.crackingmarkets.com/intraday-breakout-details-that-matter-exits-slippage-and-0dte-options/",
+    "source_file": "trend-following.rst",
+    "included_in_index_at": "2026-11-27",
+    "filename": "intraday-breakout-details-that-matter-exits-slippage-and-0dte-options.pdf",
+    "downloaded_at": "2026-11-27",
+    "download_failure_reason": null,
+    "short_description": "CrackingMarkets tests execution details for its live ATR intraday breakout system on NQ, ES and MBT futures from 2016 to 2026. A fixed stop-or-close exit earns the most (CAGR 28.5%, Sharpe 1.53), while trailing only after +2R of profit gives a similar Sharpe of 1.58 and is easier to hold. Delayed limit entries match stop entries once slippage reaches 2 ticks per side, and the same breakout traded with in-the-money 0DTE SPY and QQQ options broadly tracks the ETF version with much less capital."
+  },
+  {
     "title": "Is Trend Still Your Friend? A Microstructural Account of the Demise of Short-Term Trend-Following",
     "authors": "Jutta G. Kurth, Zoltan Eisler, Adam Rej, Jean-Philippe Bouchaud",
     "publication_year": 2026,

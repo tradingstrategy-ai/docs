@@ -610,3 +610,27 @@ Section 4 turns the normalised signal into a position through a nonlinear "activ
 By Richard J. Martin.
 
 `Read the paper <https://arxiv.org/abs/2101.01006>`__
+
+Intraday Breakout Details That Matter: Exits, Slippage and 0DTE Options
+-----------------------------------------------------------------------
+
+A follow-up to the CrackingMarkets live intraday volatility breakout system. Positions are entered when price breaks a level set at the daily open plus or minus a multiple of ATR, only in conditions where a strong trend day is more likely, with a small initial stop. The article tests three practical details that decide whether the edge survives live trading: how to exit, how to enter when slippage grows with position size, and whether the same breakout can be traded with 0DTE (same-day expiry) index options instead of ETFs and futures.
+
+The baseline exit, one trade per market per day held until the initial stop or the close, is the most robust, because the few strong trend days pay for the many small losses. Commissions already eat about 10% of gross profit in the author's live trading. Tight trailing stops are sensitive to their parameters and cut off those trend days, so the author prefers a delayed trail: start trailing only after +2R of open profit, then trail about 1R behind the best price. It earns slightly less than the fixed exit but is easier to hold with real money. For entries, a delayed limit order is compared with the standard stop entry: wait for a one-minute close beyond the level, then work a limit at that close, repriced each minute. At 0.75 ticks of slippage per side the stop entry wins, but at 2 ticks the two are equal, so limit entries become worthwhile as size grows. The same delayed-limit logic is then applied to buying in-the-money 0DTE calls and puts held to the close. Premium caps the loss without a stop, convexity pays on trend days and the capital needed is only a few hundred dollars per contract. The 0DTE version broadly tracks the ETF version since November 2022. The author plans to split risk roughly 50/50 between ETFs and micro futures with the 2R delayed trail, and 0DTE options with a fixed hold to the close.
+
+Data and code: the exit and entry tests use 1-minute data on NQ, ES and MBT (micro Bitcoin) futures from 2016 to mid-2026 at 1% risk per trade, with fees and slippage. The 0DTE test uses SPY and QQQ options from November 2022, with consolidated option prices, measured slippage, $1 per contract per side fees, and $1,500 per trade. A live Interactive Brokers account trading a simpler market-order 0DTE version is shown as a screenshot. The code is not published, and the updated IBKR tools are reserved for the author's paid implementation programme.
+
+Key metrics (NQ + ES + MBT portfolio, 1,433 trades, fees and slippage included):
+
+- Fixed stop-or-close exit: total return +1,285%, CAGR 28.5%, max drawdown 13.5%, Sharpe 1.53, profit factor 1.49, win rate 52.2%.
+- Trailing after +2R: +1,092%, CAGR 26.7%, max drawdown 12.9%, Sharpe 1.58, profit factor 1.45, win rate 53.1%.
+- Trailing after +1R: +706%, CAGR 22.0%, max drawdown 14.0%, Sharpe 1.45.
+- Immediate trailing: +1,064%, CAGR 26.4%, max drawdown 11.7%, Sharpe 1.80, profit factor 1.60. It has the best Sharpe but is the most parameter-sensitive, so the author treats it as less robust.
+- Stop vs delayed limit entry with the 2R trail: Sharpe 1.58 vs 1.47 at 0.75 ticks of slippage per side, and 1.31 vs 1.33 at 2 ticks.
+- SPY + QQQ from November 2022, at $1,500 per trade and not compounded: cumulative P&L of roughly $110,000 for the ETFs and $93,000 for 0DTE options after slippage.
+
+Mentioned by Petr Podhajsky in `this LinkedIn post <https://www.linkedin.com/posts/petr-podhajsky_if-you-trade-intraday-breakouts-in-the-s-share-7532102957933404160-GaNP/>`__, which compares the breakout traded with ETFs against the same breakout traded with out-of-the-money options. He backtests the options leg with bid/ask data and limit orders, matching how his live automation places orders, and says the convexity shows up on strong trend days, with much larger winners and less capital needed. A commenter replies that such days are rare, and that the price is exposure to outliers and a slow grinding loss from mid-2024 on, adding that equity systems often fail when moved to options.
+
+By Peter, CrackingMarkets.
+
+`Read the blog post <https://www.crackingmarkets.com/intraday-breakout-details-that-matter-exits-slippage-and-0dte-options/>`__.
