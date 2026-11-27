@@ -6630,10 +6630,10 @@
     "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691978",
     "source_file": "momentum.rst",
     "included_in_index_at": "2026-11-27",
-    "filename": null,
-    "downloaded_at": null,
-    "download_failure_reason": "requires_browser",
-    "short_description": "Using more than 150 years of monthly UK equity returns, the authors compare stock momentum across business-cycle and geopolitical-risk regimes. The momentum spread is positive in both expansions and recessions and often stronger in recessions as past losers fare worse. Lower geopolitical risk predicts higher subsequent momentum returns after controlling for the business cycle, market returns and recent market and momentum volatility."
+    "filename": "when-does-momentum-thrive-business-cycles-geopolitical-risk-and-over-150-years-of-uk-equity-returns.pdf",
+    "downloaded_at": "2026-11-27",
+    "download_failure_reason": null,
+    "short_description": "Using a newly assembled monthly UK equity dataset for 1869-2024, the authors build 16 Jegadeesh-Titman momentum strategies and condition them on business-cycle phases and the Caldara-Iacoviello geopolitical risk index. The 12-1 strategy earns 1.16% per month and remains profitable in both expansions and recessions. Recession strength comes mainly from sharper losses on prior losers. Lower geopolitical risk predicts higher next-month momentum returns after cycle, market and volatility controls, because high geopolitical risk lifts loser returns and compresses cross-sectional dispersion."
   },
   {
     "title": "Aperiodic: Democratizing Crypto Order Flow, Liquidity & Market Microstructure Metrics",
