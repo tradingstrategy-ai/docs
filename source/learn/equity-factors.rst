@@ -387,3 +387,18 @@ The portfolio simulation takes the top 50 stocks ranked by factor, rebalances mo
 By Lakshay Chauhan, John Alberg, Zachary Lipton.
 
 `Watch the presentation <https://slideslive.com/38927599/uncertaintyaware-lookahead-factor-models-for-improved-quantitative-investing>`__.
+
+Time-Varying U.S. Equity Market Integration
+-------------------------------------------
+
+Filip Jedmo and Andrew J. Patton study whether the same equity factor exposure earns the same risk premium across the U.S. stock market. They estimate trailing three-year factor exposures and use a variant of k-means to group test portfolios by the prices they earn for those exposures. Cross-validation selects three groups that roughly correspond to the broad market, a small-cap core and a speculative periphery. The authors measure segmentation using the dispersion of factor risk prices across the groups after adjusting for estimation error.
+
+Segmentation rises around episodes of market stress, with different timing and magnitudes across factors. Higher trading volume, illiquidity and recessions are associated with wider dispersion. Tighter funding liquidity is associated with more persistent dispersion. The authors' preferred-habitat model links these patterns to investor demand concentrated in particular segments and to the costs and risks arbitrageurs face when trading across them.
+
+The study uses daily returns on 234 value-weighted U.S. equity portfolios from Kenneth French's data library from January 1963 through December 2024. The baseline uses the five Fama–French factors plus Carhart momentum. The macro-financial analysis starts in 1986 and uses inputs including CRSP trading volume and the FRED TED spread. The authors provide the group assignments and data construction in the `supplemental appendix <https://public.econ.duke.edu/~ap172/Jedmo_Patton_Mkt_Seg_sep26_APP.pdf>`__. A public replication package could not be verified.
+
+Constant segmentation is rejected at p < 0.001, and daily tests reject equal risk prices at the 1% level on 62.2% of dates. In the highest segmentation tercile, allowing group-specific risk prices raises annualised Sharpe from 0.78 to 1.15 at a 10% ex ante volatility target (one-sided bootstrap p = 0.028). The gains in the low and middle terciles are 0.13 and 0.18 and are statistically insignificant. The comparison assumes frictionless trading and uses cluster assignments estimated over the full sample.
+
+Mentioned by Piotr Pomorski in `this discussion <https://x.com/PtrPomorski/status/2126360401524805791>`__, where he highlights the changes in factor risk compensation over time and shares the paper's factor-level and aggregate segmentation indices.
+
+`Read the paper <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7473221>`__

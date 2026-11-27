@@ -3768,6 +3768,18 @@
     "short_description": null
   },
   {
+    "title": "Time-Varying U.S. Equity Market Integration",
+    "authors": "Filip Jedmo, Andrew J. Patton",
+    "publication_year": 2026,
+    "download_page": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7473221",
+    "source_file": "equity-factors.rst",
+    "included_in_index_at": "2026-11-27",
+    "filename": "time-varying-us-equity-market-integration.pdf",
+    "downloaded_at": "2026-11-27",
+    "download_failure_reason": null,
+    "short_description": "The authors use clustering to estimate how the compensation for the same factor exposure differs across 234 U.S. equity portfolios from 1963 to 2024. Risk-price dispersion varies over time and is associated with high trading volume, illiquidity and recessions. Group-specific risk prices significantly improve the annualised Sharpe ratio in high-segmentation months in a frictionless portfolio comparison."
+  },
+  {
     "title": "Uncertainty-Aware Lookahead Factor Models for Improved Quantitative Investing",
     "authors": "Lakshay Chauhan, John Alberg, Zachary Lipton",
     "publication_year": 2020,
